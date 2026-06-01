@@ -1908,3 +1908,33 @@ html {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* USDT deposit rows (wallet page) */
+.deposit-list {
+  display: grid;
+  gap: 10px;
+}
+
+.deposit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--paper-soft, #fbfdfc);
+}
+
+.deposit-meta {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.deposit-address {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}

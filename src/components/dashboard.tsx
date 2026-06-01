@@ -11,6 +11,7 @@ import {
   Search,
   Trophy,
   Users,
+  Wallet,
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
@@ -435,6 +436,10 @@ export function Dashboard({
             <Users size={16} />
             Invite
           </a>
+          <Link href={{ pathname: "/wallet" }}>
+            <Wallet size={16} />
+            Wallet
+          </Link>
           <Link href={{ pathname: "/login" }}>
             <Lock size={16} />
             Login
