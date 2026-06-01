@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "test": "node --experimental-strip-types --import ./tests/register.mjs --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
-    "generate:migrations": "node scripts/generate-worldcup-sql.mjs && node scripts/generate-worldcup-kickoff-sql.mjs"
+    "generate:migrations": "node scripts/generate-worldcup-sql.mjs && node scripts/generate-worldcup-kickoff-sql.mjs",
+    "smoke:prod": "node scripts/production-smoke.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.87.0",

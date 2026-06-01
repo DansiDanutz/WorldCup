@@ -92,6 +92,21 @@ Expected response:
 }
 ```
 
+## Production Smoke Test
+
+Run the non-destructive production smoke checks after each deploy:
+
+```bash
+npm run smoke:prod
+```
+
+This verifies the homepage, `/admin`, `/api/health`, admin authorization rejection, and baseline
+security headers. To also probe the distributed rate limiter with a short anonymous burst:
+
+```bash
+npm run smoke:prod -- --rate-limit
+```
+
 ## Manual Deployment Checklist
 
 1. Connect GitHub repository `DansiDanutz/WorldCup` to Vercel.
