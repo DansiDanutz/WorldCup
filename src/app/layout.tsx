@@ -8,7 +8,14 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://worldcup.example.com");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "WorldCup — Predict the Game · WorldCup26",
     template: "%s · WorldCup",
@@ -16,6 +23,19 @@ export const metadata: Metadata = {
   description:
     "Pick 3 teams before the FIFA World Cup 2026 and climb the leaderboard as they earn points.",
   applicationName: "WorldCup",
+  openGraph: {
+    title: "WorldCup — Predict the Game · WorldCup26",
+    description:
+      "Pick 3 teams before the FIFA World Cup 2026 and climb the leaderboard as they earn points.",
+    siteName: "WorldCup",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WorldCup — Predict the Game · WorldCup26",
+    description:
+      "Pick 3 teams before the FIFA World Cup 2026 and climb the leaderboard as they earn points.",
+  },
 };
 
 export const viewport: Viewport = {
