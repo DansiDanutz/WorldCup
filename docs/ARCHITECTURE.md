@@ -42,6 +42,7 @@ flowchart TD
 - Show only the final public prize pool to players; keep the tournament fee internal.
 - Pay top 10 places when there are 100+ participants, otherwise pay the top 10% rounded up.
 - Split paid places with the weighted curve 35/20/13/9/7/5/4/3/2/2, normalized for fewer paid places.
+- Keep raw entries, picks, referral profiles, referral agreements, tickets, and wallet transactions private behind RLS.
 - Require one assigned ticket before an authenticated user can lock an entry.
 - Record wallet transfers as an internal ledger, not as external bank/payment movement.
 
@@ -135,3 +136,10 @@ Cron endpoint. Requires `CRON_SECRET`. It checks due matches, optionally fetches
 ### `/api/cron/apply`
 
 Cron helper endpoint. Requires `CRON_SECRET`. It applies points for all completed matches that have not yet been awarded.
+
+## Security Hardening
+
+- Private WorldCup tables are not directly readable or writable with the anon key.
+- Admin endpoints use a shared server-side secret verifier as an interim control.
+- Public responses include baseline security headers from `next.config.ts`.
+- Vercel schedules both result ingestion and a point-application retry cron.

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
+import { isValidAdminSecret } from "@/lib/admin-auth";
 import { calculateWalletBalance, normalizeMoneyAmount } from "@/lib/economy";
-import { requireEnv } from "@/lib/env";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import type { AdminWalletTransferPayload } from "@/lib/types";
 
@@ -14,7 +14,7 @@ type WalletTransaction = {
 export async function POST(request: Request) {
   const payload = (await request.json()) as AdminWalletTransferPayload;
 
-  if (payload.adminSecret !== requireEnv("ADMIN_RESULT_SECRET")) {
+  if (!isValidAdminSecret(payload.adminSecret)) {
     return NextResponse.json({ error: "Invalid admin secret." }, { status: 401 });
   }
 

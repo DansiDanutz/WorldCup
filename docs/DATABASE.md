@@ -76,10 +76,13 @@ Stores all 104 matches, kickoff data, match result fields, and point application
 ### `worldcup_entries`
 
 Stores one leaderboard entry per player.
+Raw entry rows are private. Public ranking data is exposed through the leaderboard views, while
+entry creation goes through the server API so ticket checks cannot be bypassed from the browser.
 
 ### `worldcup_entry_teams`
 
 Stores the 3 selected teams for an entry.
+Raw pick rows are private; public pick display comes from the awarded leaderboard view.
 
 ### `worldcup_tickets`
 
@@ -100,12 +103,15 @@ invite links and WhatsApp share messages.
 
 Also stores the user's latest Google email so admins can identify accounts when assigning tickets
 or transferring internal wallet funds.
+Profile rows are private PII. The authenticated owner can access their own profile, and admin/server
+routes use the service role for account management.
 
 ### `worldcup_referrals`
 
 Stores accepted referral relationships for the tournament. When a referred user locks an entry, the
 row records the inviter, invited Google user, referral code, accepted timestamp, and the tiered referred
 winner agreement.
+Referral rows are private and are exposed only through authenticated user/admin server routes.
 
 Referral payout tiers:
 

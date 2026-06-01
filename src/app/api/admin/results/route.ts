@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { requireEnv } from "@/lib/env";
+import { isValidAdminSecret } from "@/lib/admin-auth";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import type { ResultPayload } from "@/lib/types";
 
@@ -11,7 +11,7 @@ function numberOrNull(value: number | null | undefined) {
 export async function POST(request: Request) {
   const payload = (await request.json()) as ResultPayload;
 
-  if (payload.adminSecret !== requireEnv("ADMIN_RESULT_SECRET")) {
+  if (!isValidAdminSecret(payload.adminSecret)) {
     return NextResponse.json({ error: "Invalid admin secret." }, { status: 401 });
   }
 
@@ -56,4 +56,3 @@ export async function POST(request: Request) {
     awardedRows: applyResult.data ?? 0,
   });
 }
-

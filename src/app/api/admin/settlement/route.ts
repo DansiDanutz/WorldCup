@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { requireEnv } from "@/lib/env";
+import { isValidAdminSecret } from "@/lib/admin-auth";
 import {
   calculateNetPrizePool,
   calculatePaidPlaces,
@@ -31,7 +31,7 @@ type ProfileRecord = {
 export async function POST(request: Request) {
   const payload = (await request.json()) as AdminReferralReportPayload;
 
-  if (payload.adminSecret !== requireEnv("ADMIN_RESULT_SECRET")) {
+  if (!isValidAdminSecret(payload.adminSecret)) {
     return NextResponse.json({ error: "Invalid admin secret." }, { status: 401 });
   }
 
