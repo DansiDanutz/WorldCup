@@ -94,24 +94,9 @@ export function Dashboard({
   const [selectedTeams, setSelectedTeams] = useState<string[]>([]);
   const [displayName, setDisplayName] = useState("");
   const [session, setSession] = useState<Session | null>(null);
-  const [referralCode, setReferralCode] = useState(() => {
-    if (typeof window === "undefined") {
-      return "";
-    }
-
-    const initialRef = new URLSearchParams(window.location.search).get("ref");
-    const storedRef = window.localStorage.getItem("worldcup_referral_code");
-
-    return normalizeReferralCode(initialRef ?? storedRef ?? "");
-  });
+  const [referralCode, setReferralCode] = useState("");
   const [referralInviter, setReferralInviter] = useState<string | null>(null);
-  const [referralAccepted, setReferralAccepted] = useState(() => {
-    if (typeof window === "undefined") {
-      return false;
-    }
-
-    return window.localStorage.getItem("worldcup_referral_accepted") === "true";
-  });
+  const [referralAccepted, setReferralAccepted] = useState(false);
   const [noReferral, setNoReferral] = useState(false);
   const [myReferralCode, setMyReferralCode] = useState<string | null>(null);
   const [myReferrals, setMyReferrals] = useState<MyReferral[]>([]);
@@ -162,6 +147,20 @@ export function Dashboard({
         `Join my WorldCup leaderboard. Use my referral link: ${shareUrl}`,
       )}`
     : "";
+
+  useEffect(() => {
+    window.queueMicrotask(() => {
+      const initialRef = new URLSearchParams(window.location.search).get("ref");
+      const storedRef = window.localStorage.getItem("worldcup_referral_code");
+      const nextReferralCode = normalizeReferralCode(initialRef ?? storedRef ?? "");
+
+      setReferralCode(nextReferralCode);
+      setReferralAccepted(
+        Boolean(nextReferralCode) &&
+          window.localStorage.getItem("worldcup_referral_accepted") === "true",
+      );
+    });
+  }, []);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
