@@ -1,4 +1,4 @@
-const DEFAULT_BASE_URL = "https://worldcup-ten-eta.vercel.app";
+const DEFAULT_BASE_URL = "https://worldcup26.world";
 const DEFAULT_SUPABASE_URL = "https://lxhjfdxowpxzrybxdasi.supabase.co";
 const baseUrl = (process.env.SMOKE_BASE_URL ?? DEFAULT_BASE_URL).replace(/\/$/, "");
 const supabaseUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? DEFAULT_SUPABASE_URL).replace(/\/$/, "");
