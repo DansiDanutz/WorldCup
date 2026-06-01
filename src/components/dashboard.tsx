@@ -405,12 +405,15 @@ export function Dashboard({
                         <span
                           className={`leaderboard-team-chip ${getPickColorClass(index)}`}
                           key={team.team_id}
-                          title={`Coefficient ${formatCoefficient(team.team_coefficient)}`}
+                          title={`${formatPoints(team.total_points ?? 0)} points, coefficient ${formatCoefficient(team.team_coefficient)}`}
                         >
                           <span className="team-color-dot" aria-hidden="true" />
                           <span className="pick-chip-label">Pick {index + 1}</span>
                           <span>{team.team_name}</span>
-                          <strong>{formatCoefficient(team.team_coefficient)}</strong>
+                          <strong>{formatPoints(team.total_points ?? 0)} pts</strong>
+                          <span className="leaderboard-team-coef">
+                            x{formatCoefficient(team.team_coefficient)}
+                          </span>
                         </span>
                       ))}
                     </div>
