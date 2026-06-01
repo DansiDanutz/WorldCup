@@ -39,6 +39,7 @@ Implemented in the Supabase **Games** project:
 - Internal wallet transfer ledger between accounts
 - Referral invite links with tiered referred-winner agreement tracking: 5% for referral-chain inviters, 3% for direct inviters
 - Player-facing prize pool with paid places and weighted payout preview calculated from participation
+- Admin settlement report with gross prize, referral obligation, and winner net amounts
 - Cron-ready match timing fields
 - Durable point-award ledger
 - Leaderboard views

@@ -58,6 +58,8 @@ The fee is not shown in the player UI. Paid places are top 10 when the tournamen
 participants; otherwise paid places are the top 10% of participants, rounded up.
 The payout preview uses a weighted top-10 curve: 35%, 20%, 13%, 9%, 7%, 5%, 4%, 3%, 2%, 2%.
 When fewer than 10 places are paid, the same curve is truncated and normalized to 100%.
+The admin settlement report applies the same payout curve and subtracts referral obligations from
+the winning player's gross prize to produce an auditable net amount before any wallet transfer.
 
 ### `worldcup_stages`
 

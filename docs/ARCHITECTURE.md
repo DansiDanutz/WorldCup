@@ -108,6 +108,10 @@ Server-only result fallback. Requires `ADMIN_RESULT_SECRET` and updates one matc
 
 Server-only referral report. Requires `ADMIN_RESULT_SECRET` and returns accepted referral agreements with inviter, referred entry, accepted timestamp, percentage tier, and current leaderboard position for payout auditing.
 
+### `/api/admin/settlement`
+
+Server-only payout audit report. Requires `ADMIN_RESULT_SECRET` and returns current paid leaderboard entries with gross prize, referral obligation, winner net amount, and report totals. It does not move wallet funds.
+
 ### `/api/admin/prize-pool`
 
 Server-only prize pool update. Requires `ADMIN_RESULT_SECRET`, stores the collected amount on the tournament, and keeps the public prize pool calculated internally without exposing the fee in the player UI.

@@ -38,6 +38,7 @@ import type {
   DueMatch,
   LeaderboardRow,
   AdminReferralReportRow,
+  AdminSettlementReport,
   AdminAccountRow,
   MyAccountStatus,
   WorldCupTournament,
@@ -131,9 +132,12 @@ export function Dashboard({
   const [adminMessage, setAdminMessage] = useState<string | null>(null);
   const [adminError, setAdminError] = useState<string | null>(null);
   const [adminReferralRows, setAdminReferralRows] = useState<AdminReferralReportRow[]>([]);
+  const [adminSettlementReport, setAdminSettlementReport] =
+    useState<AdminSettlementReport | null>(null);
   const [isPending, startTransition] = useTransition();
   const [isAdminPending, startAdminTransition] = useTransition();
   const [isReferralReportPending, startReferralReportTransition] = useTransition();
+  const [isSettlementPending, startSettlementTransition] = useTransition();
   const [isAccountsPending, startAccountsTransition] = useTransition();
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
@@ -425,6 +429,28 @@ export function Dashboard({
 
       setAdminReferralRows(result.referrals ?? []);
       setAdminMessage(`Referral report loaded. Rows: ${result.referrals?.length ?? 0}.`);
+    });
+  }
+
+  function loadSettlementReport() {
+    setAdminError(null);
+    setAdminMessage(null);
+
+    startSettlementTransition(async () => {
+      const response = await fetch("/api/admin/settlement", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ adminSecret: adminState.adminSecret }),
+      });
+      const result = (await response.json()) as (AdminSettlementReport & { error?: string });
+
+      if (!response.ok) {
+        setAdminError(result.error ?? "Could not load settlement report.");
+        return;
+      }
+
+      setAdminSettlementReport(result);
+      setAdminMessage(`Settlement report loaded. Paid rows: ${result.rows.length}.`);
     });
   }
 
@@ -1430,6 +1456,83 @@ export function Dashboard({
               {adminError ? <div className="message error">{adminError}</div> : null}
               <div className="message">
                 Due checks: {dueMatches.length}. Cron should call <strong>/api/cron/results</strong>.
+              </div>
+              <div className="admin-report">
+                <div className="admin-report-header">
+                  <div>
+                    <strong>Settlement report</strong>
+                    <span>Current paid winners, referral obligations, and net prize amounts.</span>
+                  </div>
+                  <button
+                    className="button secondary"
+                    disabled={!adminState.adminSecret || isSettlementPending}
+                    onClick={loadSettlementReport}
+                    type="button"
+                  >
+                    {isSettlementPending ? "Loading..." : "Load Settlement"}
+                  </button>
+                </div>
+                {adminSettlementReport ? (
+                  <>
+                    <div className="settlement-summary">
+                      <div>
+                        <span>Participants</span>
+                        <strong>{adminSettlementReport.participantCount}</strong>
+                      </div>
+                      <div>
+                        <span>Paid places</span>
+                        <strong>{adminSettlementReport.paidPlaces}</strong>
+                      </div>
+                      <div>
+                        <span>Prize pool</span>
+                        <strong>{formatMoneyAmount(adminSettlementReport.prizePoolAmount)}</strong>
+                      </div>
+                      <div>
+                        <span>Referral total</span>
+                        <strong>{formatMoneyAmount(adminSettlementReport.referralTotal)}</strong>
+                      </div>
+                      <div>
+                        <span>Winner net</span>
+                        <strong>{formatMoneyAmount(adminSettlementReport.netPrizeTotal)}</strong>
+                      </div>
+                    </div>
+                    {adminSettlementReport.rows.length > 0 ? (
+                      <div className="admin-referral-list">
+                        {adminSettlementReport.rows.map((row) => (
+                          <div className="admin-referral-row settlement-row" key={row.entryId}>
+                            <div>
+                              <strong>
+                                #{row.leaderboardRank} {row.displayName}
+                              </strong>
+                              <span>{formatPoints(row.totalPoints)} pts</span>
+                              <span>
+                                Referral:{" "}
+                                {row.inviterDisplayName
+                                  ? `${row.inviterDisplayName} (${formatCoefficient(
+                                      row.referralFeePercent,
+                                    )}%)`
+                                  : "none"}
+                              </span>
+                            </div>
+                            <div>
+                              <strong>{formatMoneyAmount(row.netPrize)}</strong>
+                              <span>Gross {formatMoneyAmount(row.grossPrize)}</span>
+                              <span>Referral {formatMoneyAmount(row.referralAmount)}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="field-note">
+                        No settlement rows yet. Set a prize pool and wait for paid entries.
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <div className="field-note">
+                    Load the settlement report before making final payout transfers.
+                  </div>
+                )}
               </div>
               <div className="admin-report">
                 <div className="admin-report-header">
