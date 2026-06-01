@@ -6,6 +6,7 @@ import {
   Check,
   CircleDollarSign,
   ClipboardCheck,
+  GitBranch,
   Lock,
   RefreshCw,
   Search,
@@ -213,6 +214,10 @@ export function Dashboard({
             <BookOpen size={16} />
             Rules
           </a>
+          <Link href={{ pathname: "/schema" }}>
+            <GitBranch size={16} />
+            Schema
+          </Link>
           <a href="#leaderboard">
             <Trophy size={16} />
             Leaderboard

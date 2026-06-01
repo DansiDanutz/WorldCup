@@ -11,6 +11,7 @@ The repository now includes a Next.js app with:
 - team selection workflow
 - leaderboard
 - match schedule
+- full tournament schema from group stage to final
 - admin result fallback
 - cron endpoints for result ingestion and point application
 - responsive layouts for mobile, tablet, and desktop

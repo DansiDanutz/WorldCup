@@ -69,10 +69,15 @@ Main dashboard:
 
 - choose exactly 3 teams
 - read the in-app rules and scoring formula
+- open the full tournament schema from group stage to final
 - lock entry
 - view leaderboard
 - inspect match schedule
 - manually enter results through the admin fallback form
+
+### `/schema`
+
+Shows all 104 matches grouped by competition stage, from group stage through the final. Completed matches display the calculated team points that are added to users who selected each team; scheduled matches show points as pending.
 
 ### `/api/entries`
 

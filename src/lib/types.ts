@@ -73,6 +73,22 @@ export type DueMatch = {
   points_applied_at: string | null;
 };
 
+export type MatchTeamPoints = {
+  match_id: string;
+  tournament_id: string;
+  match_number: number;
+  stage_id: string;
+  team_id: string;
+  team_name: string;
+  team_coefficient: string;
+  stage_coefficient: string;
+  result_base_points: string;
+  goal_bonus_points: string;
+  clean_sheet_bonus_points: string;
+  base_points: string;
+  final_points: string;
+};
+
 export type EntryPayload = {
   displayName: string;
   teamIds: string[];

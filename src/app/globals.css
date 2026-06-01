@@ -498,7 +498,8 @@ a {
   gap: 10px;
 }
 
-.coefficients-hero {
+.coefficients-hero,
+.schema-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(230px, 0.28fr);
   gap: 18px;
@@ -511,13 +512,15 @@ a {
   box-shadow: var(--shadow);
 }
 
-.coefficients-hero h1 {
+.coefficients-hero h1,
+.schema-hero h1 {
   margin: 4px 0 8px;
   font-size: clamp(28px, 4vw, 42px);
   line-height: 1.05;
 }
 
-.coefficients-hero p {
+.coefficients-hero p,
+.schema-hero p {
   max-width: 760px;
   margin: 0;
   color: var(--muted);
@@ -532,7 +535,8 @@ a {
   text-transform: uppercase;
 }
 
-.coefficient-summary {
+.coefficient-summary,
+.schema-summary {
   display: grid;
   gap: 5px;
   padding: 16px;
@@ -541,14 +545,16 @@ a {
   background: var(--green-soft);
 }
 
-.coefficient-summary span {
+.coefficient-summary span,
+.schema-summary span {
   color: var(--muted);
   font-size: 13px;
   font-weight: 750;
   text-transform: uppercase;
 }
 
-.coefficient-summary strong {
+.coefficient-summary strong,
+.schema-summary strong {
   color: var(--green);
   font-size: 24px;
 }
@@ -593,6 +599,98 @@ a {
 
 .odds-value {
   text-align: right;
+}
+
+.schema-stages {
+  display: grid;
+  gap: 18px;
+}
+
+.schema-stage {
+  box-shadow: var(--shadow);
+}
+
+.schema-match-list {
+  display: grid;
+}
+
+.schema-match {
+  display: grid;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.schema-match-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.schema-match-number {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.schema-match h3 {
+  margin: 3px 0 0;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.schema-match-meta,
+.schema-award-state {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.schema-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.schema-point-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 66px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.schema-point-line span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.schema-point-line strong {
+  display: block;
+  margin-top: 2px;
+  overflow-wrap: anywhere;
+}
+
+.schema-point-value {
+  text-align: right;
+}
+
+.schema-point-value strong {
+  color: var(--green);
+  font-size: 18px;
+}
+
+.schema-point-value.pending strong {
+  color: var(--muted);
 }
 
 .admin-form {
@@ -693,8 +791,10 @@ a {
 
   .grid,
   .coefficients-hero,
+  .schema-hero,
   .matches-section,
   .rule-grid,
+  .schema-points,
   .stage-rules,
   .two-col {
     grid-template-columns: 1fr;
@@ -772,7 +872,8 @@ a {
   }
 
   .leaderboard-main,
-  .match-main {
+  .match-main,
+  .schema-match-top {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -783,6 +884,14 @@ a {
 
   .match-main {
     gap: 9px;
+  }
+
+  .schema-match {
+    padding: 14px;
+  }
+
+  .schema-point-line {
+    align-items: flex-start;
   }
 
   .points {
