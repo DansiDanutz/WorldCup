@@ -51,6 +51,7 @@ Prize pool fields:
 
 - `prize_pool_amount`: gross amount set by the operator
 - `prize_pool_fee_percent`: platform/organization fee, currently 20%
+- `ticket_price_amount`: admin-set gross price used when assigning new entry tickets
 
 The visible prize pool is calculated as gross amount minus the fee.
 
@@ -74,10 +75,25 @@ Stores one leaderboard entry per player.
 
 Stores the 3 selected teams for an entry.
 
+### `worldcup_tickets`
+
+Stores tickets assigned by admin to Google/referral profiles. A user must have one unused ticket to
+lock an entry. When the entry is created, the ticket is marked with `consumed_by_entry_id` and
+`consumed_at`.
+
+### `worldcup_wallet_transactions`
+
+Stores the internal wallet ledger. A transfer records the source user, destination user, amount,
+note, timestamp, and admin-created audit metadata. This is internal accounting only; it does not move
+external bank or card funds.
+
 ### `worldcup_referral_profiles`
 
 Stores one referral code per Google-authenticated user. The app uses this code to build direct
 invite links and WhatsApp share messages.
+
+Also stores the user's latest Google email so admins can identify accounts when assigning tickets
+or transferring internal wallet funds.
 
 ### `worldcup_referrals`
 

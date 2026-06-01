@@ -34,6 +34,8 @@ Implemented in the Supabase **Games** project:
 - 104 World Cup 2026 matches
 - User entries with exactly 3 selected teams
 - Google-only sign-in for locked entries
+- Admin-assigned entry tickets with configurable ticket price
+- Internal wallet transfer ledger between accounts
 - Referral invite links with tiered referred-winner agreement tracking: 5% for referral-chain inviters, 3% for direct inviters
 - Cron-ready match timing fields
 - Durable point-award ledger
@@ -88,6 +90,8 @@ lxhjfdxowpxzrybxdasi
 - `worldcup_entry_teams`
 - `worldcup_referral_profiles`
 - `worldcup_referrals`
+- `worldcup_tickets`
+- `worldcup_wallet_transactions`
 - `worldcup_entry_match_points`
 - `worldcup_match_team_points`
 - `worldcup_entry_team_totals`

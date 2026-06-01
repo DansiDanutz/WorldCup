@@ -85,6 +85,27 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Team selection is locked." }, { status: 403 });
   }
 
+  const availableTicket = await supabase
+    .from("worldcup_tickets")
+    .select("id")
+    .eq("tournament_id", tournamentResult.data.id)
+    .eq("user_id", user.id)
+    .is("consumed_at", null)
+    .order("assigned_at", { ascending: true })
+    .limit(1)
+    .maybeSingle();
+
+  if (availableTicket.error) {
+    return NextResponse.json({ error: "Could not verify entry ticket." }, { status: 500 });
+  }
+
+  if (!availableTicket.data) {
+    return NextResponse.json(
+      { error: "You need an assigned ticket before entering the game." },
+      { status: 403 },
+    );
+  }
+
   let referrerUserId: string | null = null;
 
   if (referralCode) {
@@ -153,7 +174,26 @@ export async function POST(request: Request) {
   });
 
   if (finalizeResult.error) {
+    await supabase.from("worldcup_entries").delete().eq("id", entryResult.data.id);
+
     return NextResponse.json({ error: "Could not lock entry." }, { status: 500 });
+  }
+
+  const ticketResult = await supabase
+    .from("worldcup_tickets")
+    .update({
+      consumed_by_entry_id: entryResult.data.id,
+      consumed_at: new Date().toISOString(),
+    })
+    .eq("id", availableTicket.data.id)
+    .is("consumed_at", null)
+    .select("id")
+    .single();
+
+  if (ticketResult.error || !ticketResult.data) {
+    await supabase.from("worldcup_entries").delete().eq("id", entryResult.data.id);
+
+    return NextResponse.json({ error: "Could not consume entry ticket." }, { status: 500 });
   }
 
   if (referrerUserId) {

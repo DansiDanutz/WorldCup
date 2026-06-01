@@ -16,6 +16,7 @@ import {
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 
+import { formatMoneyAmount } from "@/lib/economy";
 import {
   calculateNetPrizePool,
   formatPrizeAmount,
@@ -36,6 +37,7 @@ import type {
   DueMatch,
   LeaderboardRow,
   AdminReferralReportRow,
+  AdminAccountRow,
   WorldCupTournament,
   WorldCupMatch,
   WorldCupStage,
@@ -115,12 +117,21 @@ export function Dashboard({
   const [adminState, setAdminState] = useState<AdminResultState>(initialAdminState);
   const [prizePoolAmount, setPrizePoolAmount] = useState(tournament.prize_pool_amount);
   const [prizePoolFeePercent, setPrizePoolFeePercent] = useState(tournament.prize_pool_fee_percent);
+  const [ticketPriceAmount, setTicketPriceAmount] = useState(tournament.ticket_price_amount);
+  const [adminAccounts, setAdminAccounts] = useState<AdminAccountRow[]>([]);
+  const [ticketUserId, setTicketUserId] = useState("");
+  const [ticketQuantity, setTicketQuantity] = useState("1");
+  const [walletFromUserId, setWalletFromUserId] = useState("");
+  const [walletToUserId, setWalletToUserId] = useState("");
+  const [walletAmount, setWalletAmount] = useState("");
+  const [walletNote, setWalletNote] = useState("");
   const [adminMessage, setAdminMessage] = useState<string | null>(null);
   const [adminError, setAdminError] = useState<string | null>(null);
   const [adminReferralRows, setAdminReferralRows] = useState<AdminReferralReportRow[]>([]);
   const [isPending, startTransition] = useTransition();
   const [isAdminPending, startAdminTransition] = useTransition();
   const [isReferralReportPending, startReferralReportTransition] = useTransition();
+  const [isAccountsPending, startAccountsTransition] = useTransition();
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const teamsById = useMemo(() => groupTeamsById(teams), [teams]);
@@ -426,6 +437,110 @@ export function Dashboard({
     setAdminMessage("Prize pool saved.");
   }
 
+  function loadAdminAccounts() {
+    setAdminError(null);
+    setAdminMessage(null);
+
+    startAccountsTransition(async () => {
+      const response = await fetch("/api/admin/accounts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ adminSecret: adminState.adminSecret }),
+      });
+      const result = (await response.json()) as {
+        error?: string;
+        accounts?: AdminAccountRow[];
+        ticketPriceAmount?: string;
+      };
+
+      if (!response.ok) {
+        setAdminError(result.error ?? "Could not load accounts.");
+        return;
+      }
+
+      setAdminAccounts(result.accounts ?? []);
+      setTicketPriceAmount(result.ticketPriceAmount ?? ticketPriceAmount);
+      setAdminMessage(`Accounts loaded. Rows: ${result.accounts?.length ?? 0}.`);
+    });
+  }
+
+  async function saveTicketPrice() {
+    setAdminError(null);
+    setAdminMessage(null);
+
+    const response = await fetch("/api/admin/tickets", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        action: "set_price",
+        adminSecret: adminState.adminSecret,
+        ticketPriceAmount: Number(ticketPriceAmount),
+      }),
+    });
+    const result = (await response.json()) as { error?: string; ticketPriceAmount?: string };
+
+    if (!response.ok) {
+      setAdminError(result.error ?? "Could not save ticket price.");
+      return;
+    }
+
+    setTicketPriceAmount(result.ticketPriceAmount ?? ticketPriceAmount);
+    setAdminMessage("Ticket price saved.");
+  }
+
+  async function assignTickets() {
+    setAdminError(null);
+    setAdminMessage(null);
+
+    const response = await fetch("/api/admin/tickets", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        action: "assign",
+        adminSecret: adminState.adminSecret,
+        userId: ticketUserId,
+        quantity: Number(ticketQuantity),
+      }),
+    });
+    const result = (await response.json()) as { error?: string; assignedTickets?: number };
+
+    if (!response.ok) {
+      setAdminError(result.error ?? "Could not assign tickets.");
+      return;
+    }
+
+    setAdminMessage(`Assigned tickets: ${result.assignedTickets ?? ticketQuantity}.`);
+    loadAdminAccounts();
+  }
+
+  async function transferWalletFunds() {
+    setAdminError(null);
+    setAdminMessage(null);
+
+    const response = await fetch("/api/admin/wallet-transfer", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        adminSecret: adminState.adminSecret,
+        fromUserId: walletFromUserId,
+        toUserId: walletToUserId,
+        amount: Number(walletAmount),
+        note: walletNote,
+      }),
+    });
+    const result = (await response.json()) as { error?: string; transferId?: string };
+
+    if (!response.ok) {
+      setAdminError(result.error ?? "Could not transfer funds.");
+      return;
+    }
+
+    setWalletAmount("");
+    setWalletNote("");
+    setAdminMessage(`Transfer saved: ${result.transferId}.`);
+    loadAdminAccounts();
+  }
+
   return (
     <main className="app-shell">
       <header className="topbar">
@@ -575,7 +690,7 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Entry</h2>
                 <p className="panel-subtitle">
-                  You can join after the start if all 3 chosen teams are still selectable.
+                  You need an assigned ticket, then you can join if all 3 teams are still selectable.
                 </p>
               </div>
               <Lock size={18} color="var(--green)" />
@@ -974,6 +1089,166 @@ export function Dashboard({
                     setAdminState((current) => ({ ...current, adminSecret: event.target.value }))
                   }
                 />
+              </div>
+              <div className="admin-report">
+                <div className="admin-report-header">
+                  <div>
+                    <strong>Tickets & Wallets</strong>
+                    <span>Assign entry tickets and record internal fund transfers.</span>
+                  </div>
+                  <button
+                    className="button secondary"
+                    disabled={!adminState.adminSecret || isAccountsPending}
+                    onClick={loadAdminAccounts}
+                    type="button"
+                  >
+                    {isAccountsPending ? "Loading..." : "Load Accounts"}
+                  </button>
+                </div>
+                <div className="two-col">
+                  <div className="field">
+                    <label htmlFor="ticket-price">Ticket price</label>
+                    <input
+                      id="ticket-price"
+                      min="0"
+                      onChange={(event) => setTicketPriceAmount(event.target.value)}
+                      type="number"
+                      value={ticketPriceAmount}
+                    />
+                  </div>
+                  <button
+                    className="button secondary"
+                    disabled={!adminState.adminSecret}
+                    onClick={saveTicketPrice}
+                    type="button"
+                  >
+                    Save Ticket Price
+                  </button>
+                </div>
+                <div className="two-col">
+                  <div className="field">
+                    <label htmlFor="ticket-account">Assign ticket to account</label>
+                    <select
+                      id="ticket-account"
+                      onChange={(event) => setTicketUserId(event.target.value)}
+                      value={ticketUserId}
+                    >
+                      <option value="">Select account</option>
+                      {adminAccounts.map((account) => (
+                        <option key={account.userId} value={account.userId}>
+                          {account.displayName} · {account.email ?? account.referralCode}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="field">
+                    <label htmlFor="ticket-quantity">Quantity</label>
+                    <input
+                      id="ticket-quantity"
+                      min="1"
+                      onChange={(event) => setTicketQuantity(event.target.value)}
+                      type="number"
+                      value={ticketQuantity}
+                    />
+                  </div>
+                </div>
+                <button
+                  className="button secondary"
+                  disabled={!adminState.adminSecret || !ticketUserId}
+                  onClick={assignTickets}
+                  type="button"
+                >
+                  Assign Tickets
+                </button>
+                <div className="two-col">
+                  <div className="field">
+                    <label htmlFor="wallet-from">Transfer from</label>
+                    <select
+                      id="wallet-from"
+                      onChange={(event) => setWalletFromUserId(event.target.value)}
+                      value={walletFromUserId}
+                    >
+                      <option value="">Select account</option>
+                      {adminAccounts.map((account) => (
+                        <option key={account.userId} value={account.userId}>
+                          {account.displayName} · balance {formatMoneyAmount(account.walletBalance)}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="field">
+                    <label htmlFor="wallet-to">Transfer to</label>
+                    <select
+                      id="wallet-to"
+                      onChange={(event) => setWalletToUserId(event.target.value)}
+                      value={walletToUserId}
+                    >
+                      <option value="">Select account</option>
+                      {adminAccounts.map((account) => (
+                        <option key={account.userId} value={account.userId}>
+                          {account.displayName} · {account.email ?? account.referralCode}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className="two-col">
+                  <div className="field">
+                    <label htmlFor="wallet-amount">Amount</label>
+                    <input
+                      id="wallet-amount"
+                      min="0"
+                      onChange={(event) => setWalletAmount(event.target.value)}
+                      type="number"
+                      value={walletAmount}
+                    />
+                  </div>
+                  <div className="field">
+                    <label htmlFor="wallet-note">Note</label>
+                    <input
+                      id="wallet-note"
+                      onChange={(event) => setWalletNote(event.target.value)}
+                      placeholder="Reason for transfer"
+                      value={walletNote}
+                    />
+                  </div>
+                </div>
+                <button
+                  className="button secondary"
+                  disabled={
+                    !adminState.adminSecret ||
+                    !walletFromUserId ||
+                    !walletToUserId ||
+                    !walletAmount
+                  }
+                  onClick={transferWalletFunds}
+                  type="button"
+                >
+                  Transfer Funds
+                </button>
+                {adminAccounts.length > 0 ? (
+                  <div className="admin-referral-list">
+                    {adminAccounts.map((account) => (
+                      <div className="admin-referral-row" key={account.userId}>
+                        <div>
+                          <strong>{account.displayName}</strong>
+                          <span>{account.email ?? "No email stored"} · {account.referralCode}</span>
+                          <span>
+                            Tickets: {account.ticketsAvailable}/{account.ticketsAssigned} available
+                          </span>
+                        </div>
+                        <div>
+                          <strong>{formatMoneyAmount(account.walletBalance)}</strong>
+                          <span>Wallet</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="field-note">
+                    Load accounts to assign tickets or transfer funds.
+                  </div>
+                )}
               </div>
               <div className="field">
                 <label htmlFor="match">Match</label>

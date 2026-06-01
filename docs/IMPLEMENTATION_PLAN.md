@@ -21,6 +21,7 @@ This plan records the current professional build order.
 - Google-only referral invite flow implemented.
 - Admin referral agreement report implemented.
 - Dedicated login/register page with referral-code resolution implemented.
+- Admin ticket assignment, ticket price, and internal wallet transfer ledger implemented.
 
 ## Next
 
@@ -28,5 +29,5 @@ This plan records the current professional build order.
 2. Deploy the Next.js app.
 3. Connect an official or trusted result API.
 4. Add a full admin page with result audit history.
-5. Add end-to-end tests for login/register, referral acceptance, entry creation, result entry, and leaderboard updates.
+5. Add end-to-end tests for login/register, referral acceptance, ticket-gated entry creation, result entry, and leaderboard updates.
 6. Run usability testing on real phones before launch.

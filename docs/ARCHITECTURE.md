@@ -40,6 +40,8 @@ flowchart TD
 - Use an award ledger to avoid double-counting when cron jobs retry.
 - Keep the existing generic Games tables untouched.
 - Show the public prize pool as the configured gross amount minus the tournament fee.
+- Require one assigned ticket before an authenticated user can lock an entry.
+- Record wallet transfers as an internal ledger, not as external bank/payment movement.
 
 ## Supabase Layers
 
@@ -54,6 +56,8 @@ flowchart TD
 
 - `worldcup_entries`
 - `worldcup_entry_teams`
+- `worldcup_tickets`
+- `worldcup_wallet_transactions`
 
 ### Scoring Data
 
@@ -91,7 +95,7 @@ Shows all 104 matches from group stage through the final. The page includes grou
 
 ### `/api/entries`
 
-Creates and locks a user entry after exactly 3 valid teams are selected. Late entries are allowed, but each selected team must still be before kickoff of its second group-stage match. The database also enforces this cutoff on `worldcup_entry_teams` inserts.
+Creates and locks a user entry after exactly 3 valid teams are selected. Late entries are allowed, but each selected team must still be before kickoff of its second group-stage match. The database also enforces this cutoff on `worldcup_entry_teams` inserts. The API requires one unused assigned ticket and consumes it when the entry is locked.
 
 ### `/api/admin/results`
 
@@ -104,6 +108,18 @@ Server-only referral report. Requires `ADMIN_RESULT_SECRET` and returns accepted
 ### `/api/admin/prize-pool`
 
 Server-only prize pool update. Requires `ADMIN_RESULT_SECRET`, stores the gross prize amount on the tournament, and keeps the public prize pool calculated as gross amount minus the 20% fee.
+
+### `/api/admin/accounts`
+
+Server-only account report. Requires `ADMIN_RESULT_SECRET` and returns Google/referral profiles with wallet balance, assigned ticket count, and available ticket count.
+
+### `/api/admin/tickets`
+
+Server-only ticket management. Requires `ADMIN_RESULT_SECRET`. Admins can set the ticket price for the tournament and assign one or more tickets to an existing account.
+
+### `/api/admin/wallet-transfer`
+
+Server-only internal wallet transfer. Requires `ADMIN_RESULT_SECRET`. Records an audited transfer from one existing account wallet to another existing account wallet after checking the source balance.
 
 ### `/api/cron/results`
 

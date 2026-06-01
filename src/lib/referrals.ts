@@ -5,6 +5,7 @@ type ReferralProfile = {
   user_id: string;
   referral_code: string;
   display_name: string | null;
+  email: string | null;
 };
 
 export function normalizeReferralCode(value: string | null | undefined) {
@@ -38,7 +39,7 @@ export async function getOrCreateReferralProfile(
 ): Promise<ReferralProfile> {
   const existing = await supabase
     .from("worldcup_referral_profiles")
-    .select("user_id,referral_code,display_name")
+    .select("user_id,referral_code,display_name,email")
     .eq("user_id", user.id)
     .maybeSingle();
 
@@ -48,11 +49,12 @@ export async function getOrCreateReferralProfile(
 
   if (existing.data) {
     const displayName = getUserDisplayName(user);
+    const email = user.email ?? null;
 
-    if (existing.data.display_name !== displayName) {
+    if (existing.data.display_name !== displayName || existing.data.email !== email) {
       await supabase
         .from("worldcup_referral_profiles")
-        .update({ display_name: displayName, updated_at: new Date().toISOString() })
+        .update({ display_name: displayName, email, updated_at: new Date().toISOString() })
         .eq("user_id", user.id);
     }
 
@@ -60,6 +62,7 @@ export async function getOrCreateReferralProfile(
   }
 
   const displayName = getUserDisplayName(user);
+  const email = user.email ?? null;
 
   for (let attempt = 0; attempt < 5; attempt += 1) {
     const referralCode = randomBytes(5).toString("hex").toUpperCase();
@@ -69,8 +72,9 @@ export async function getOrCreateReferralProfile(
         user_id: user.id,
         referral_code: referralCode,
         display_name: displayName,
+        email,
       })
-      .select("user_id,referral_code,display_name")
+      .select("user_id,referral_code,display_name,email")
       .single();
 
     if (!created.error && created.data) {

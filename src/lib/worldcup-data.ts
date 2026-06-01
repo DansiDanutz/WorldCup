@@ -16,7 +16,9 @@ export async function getDashboardData() {
     await Promise.all([
       supabase
         .from("worldcup_tournaments")
-        .select("id,slug,name,season_year,status,prize_pool_amount,prize_pool_fee_percent")
+        .select(
+          "id,slug,name,season_year,status,prize_pool_amount,prize_pool_fee_percent,ticket_price_amount",
+        )
         .eq("slug", "fifa-world-cup-2026")
         .single(),
       supabase

@@ -15,6 +15,7 @@ export type WorldCupTournament = {
   status: "setup" | "open" | "locked" | "in_progress" | "completed";
   prize_pool_amount: string;
   prize_pool_fee_percent: string;
+  ticket_price_amount: string;
 };
 
 export type WorldCupStage = {
@@ -113,6 +114,35 @@ export type AdminReferralReportPayload = {
 export type AdminPrizePoolPayload = {
   adminSecret: string;
   prizePoolAmount: number;
+};
+
+export type AdminTicketAssignPayload = {
+  adminSecret: string;
+  userId: string;
+  quantity: number;
+};
+
+export type AdminTicketPricePayload = {
+  adminSecret: string;
+  ticketPriceAmount: number;
+};
+
+export type AdminWalletTransferPayload = {
+  adminSecret: string;
+  fromUserId: string;
+  toUserId: string;
+  amount: number;
+  note?: string;
+};
+
+export type AdminAccountRow = {
+  userId: string;
+  displayName: string;
+  email: string | null;
+  referralCode: string;
+  walletBalance: string;
+  ticketsAssigned: number;
+  ticketsAvailable: number;
 };
 
 export type AdminReferralReportRow = {
