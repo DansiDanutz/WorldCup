@@ -42,7 +42,6 @@ flowchart TD
 - Show only the final public prize pool to players; keep the tournament fee internal.
 - Pay top 10 places when there are 100+ participants, otherwise pay the top 10% rounded up.
 - Split paid places with the weighted curve 35/20/13/9/7/5/4/3/2/2, normalized for fewer paid places.
-- Keep raw entries, picks, referral profiles, referral agreements, tickets, and wallet transactions private behind RLS.
 - Require one assigned ticket before an authenticated user can lock an entry.
 - Record wallet transfers as an internal ledger, not as external bank/payment movement.
 
@@ -109,10 +108,6 @@ Server-only result fallback. Requires `ADMIN_RESULT_SECRET` and updates one matc
 
 Server-only referral report. Requires `ADMIN_RESULT_SECRET` and returns accepted referral agreements with inviter, referred entry, accepted timestamp, percentage tier, and current leaderboard position for payout auditing.
 
-### `/api/admin/settlement`
-
-Server-only payout audit report. Requires `ADMIN_RESULT_SECRET` and returns current paid leaderboard entries with gross prize, referral obligation, winner net amount, and report totals. It does not move wallet funds.
-
 ### `/api/admin/prize-pool`
 
 Server-only prize pool update. Requires `ADMIN_RESULT_SECRET`, stores the collected amount on the tournament, and keeps the public prize pool calculated internally without exposing the fee in the player UI.
@@ -135,11 +130,43 @@ Cron endpoint. Requires `CRON_SECRET`. It checks due matches, optionally fetches
 
 ### `/api/cron/apply`
 
-Cron helper endpoint. Requires `CRON_SECRET`. It applies points for all completed matches that have not yet been awarded.
+Cron helper endpoint. Requires `CRON_SECRET`. It applies points for all completed matches that have not yet been awarded, then advances the knockout bracket.
 
-## Security Hardening
+## Admin authorization model
 
-- Private WorldCup tables are not directly readable or writable with the anon key.
-- Admin endpoints use a shared server-side secret verifier as an interim control.
-- Public responses include baseline security headers from `next.config.ts`.
-- Vercel schedules both result ingestion and a point-application retry cron.
+Admin routes are authorized by `requireAdmin` (`src/lib/admin-auth.ts`):
+
+1. **Primary:** a signed-in Google user whose verified email is on the
+   `ADMIN_EMAILS` allowlist (token in the `Authorization` header).
+2. **Break-glass:** a constant-time match of the `x-admin-secret` header against
+   `ADMIN_RESULT_SECRET`.
+
+The admin console lives at `/admin` (its own route and bundle), not on the
+public dashboard. All mutating routes are validated (`src/lib/validation.ts`)
+and rate limited (`src/lib/rate-limit.ts`).
+
+### `/api/admin/advance-bracket`
+
+Admin-authorized. Resolves and fills any knockout participants that current
+results make determinable (group winners/runners-up, best-third-place
+allocation, and winner/loser of feeder matches). Safe to re-run.
+
+### `/api/admin/assign-match-teams`
+
+Admin-authorized manual override to set a knockout match's home/away teams (for
+example to correct a best-third-place allocation).
+
+### `/api/admin/settle-payouts`
+
+Admin-authorized. Runs `worldcup_settle_payouts` once the tournament is
+completed, writing the `worldcup_payouts` ledger and matching wallet credits.
+
+## Row-Level Security
+
+Reference data (`worldcup_tournaments`, `worldcup_stages`, `worldcup_teams`,
+`worldcup_matches`) is publicly readable. Player data is owner-scoped: entries,
+picks, referral profiles, referrals, tickets, wallet transactions and payouts
+are not readable with the anon key beyond the owner's own rows. The public
+leaderboard/points views run with the view owner's privileges, so they keep
+working without exposing base-table rows. All writes to game data go through
+the service role inside `SECURITY DEFINER` RPCs.

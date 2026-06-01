@@ -189,3 +189,39 @@ SUPABASE_SERVICE_ROLE_KEY
 ```
 
 The service-role key must never be exposed to the browser.
+
+## Hardening additions
+
+These migrations add the security, integrity and settlement layer
+(see `docs/AUDIT.md`).
+
+### `20260602010000_worldcup_security_hardening.sql`
+
+Removes the public PII reads and public INSERT policies. Entries, picks,
+referral profiles and referrals become owner-scoped (`auth.uid()`). Widens the
+entry referral-fee check to `(0, 3, 5)`.
+
+### `20260602010500_worldcup_atomic_entry_wallet.sql`
+
+- `worldcup_create_entry(...)` — atomic, advisory-locked, ticket-gated entry
+  creation: validates and consumes a ticket, inserts the entry and 3 picks,
+  locks the entry, and records the referral, all in one transaction.
+- `worldcup_wallet_transfer(...)` — advisory-locked transfer that recomputes the
+  sender balance and inserts the ledger row atomically, preventing double-spend.
+
+### `20260602011000_worldcup_payout_settlement.sql`
+
+- `worldcup_payouts` — auditable payout ledger (prize and referral rows), one
+  row per recipient per place, linked to its wallet transaction.
+- `worldcup_settle_payouts(tournament_id)` — idempotent settlement that splits
+  each paid place into a prize credit (net of any referral owed) and a referral
+  credit to the inviter, writing both to `worldcup_payouts` and
+  `worldcup_wallet_transactions`. Requires the tournament to be `completed`.
+
+### Knockout progression
+
+Knockout participants are resolved in application code (`src/lib/bracket.ts`)
+from the seeded slot text and current results, then written back to
+`worldcup_matches`. This runs automatically after result ingestion (cron and the
+admin result form) and on demand via `/api/admin/advance-bracket`, with
+`/api/admin/assign-match-teams` as a manual override.

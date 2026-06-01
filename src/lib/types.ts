@@ -107,34 +107,6 @@ export type EntryPayload = {
   referralTermsAccepted?: boolean;
 };
 
-export type AdminReferralReportPayload = {
-  adminSecret: string;
-};
-
-export type AdminPrizePoolPayload = {
-  adminSecret: string;
-  prizePoolAmount: number;
-};
-
-export type AdminTicketAssignPayload = {
-  adminSecret: string;
-  userId: string;
-  quantity: number;
-};
-
-export type AdminTicketPricePayload = {
-  adminSecret: string;
-  ticketPriceAmount: number;
-};
-
-export type AdminWalletTransferPayload = {
-  adminSecret: string;
-  fromUserId: string;
-  toUserId: string;
-  amount: number;
-  note?: string;
-};
-
 export type AdminAccountRow = {
   userId: string;
   displayName: string;
@@ -162,29 +134,6 @@ export type AdminReferralReportRow = {
   feePercent: string;
   invitedTotalPoints: string;
   invitedLeaderboardRank: number | null;
-};
-
-export type AdminSettlementRow = {
-  entryId: string;
-  displayName: string;
-  leaderboardRank: number;
-  totalPoints: string;
-  grossPrize: string;
-  referralFeePercent: string;
-  referralAmount: string;
-  netPrize: string;
-  inviterDisplayName: string | null;
-  inviterReferralCode: string | null;
-};
-
-export type AdminSettlementReport = {
-  participantCount: number;
-  paidPlaces: number;
-  prizePoolAmount: string;
-  grossPrizeTotal: string;
-  referralTotal: string;
-  netPrizeTotal: string;
-  rows: AdminSettlementRow[];
 };
 
 export type ResultPayload = {

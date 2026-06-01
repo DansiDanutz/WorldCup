@@ -1,38 +1,63 @@
 import { NextResponse } from "next/server";
 
-import { isValidAdminSecret } from "@/lib/admin-auth";
-import { calculateWalletBalance, normalizeMoneyAmount } from "@/lib/economy";
+import { requireAdmin } from "@/lib/admin-auth";
+import { normalizeMoneyAmount } from "@/lib/economy";
+import { enforceRateLimit, jsonError } from "@/lib/http";
 import { createServiceSupabaseClient } from "@/lib/supabase";
-import type { AdminWalletTransferPayload } from "@/lib/types";
+import {
+  optionalString,
+  requirePositiveAmount,
+  requireObject,
+  requireString,
+  ValidationError,
+} from "@/lib/validation";
 
-type WalletTransaction = {
-  from_user_id: string | null;
-  to_user_id: string | null;
-  amount: string;
+const TRANSFER_ERROR_MESSAGES: Record<string, { status: number; message: string }> = {
+  INSUFFICIENT_FUNDS: { status: 400, message: "Source account does not have enough funds." },
+  SAME_ACCOUNT: { status: 400, message: "Choose two different accounts." },
+  INVALID_AMOUNT: { status: 400, message: "Transfer amount must be higher than zero." },
 };
 
 export async function POST(request: Request) {
-  const payload = (await request.json()) as AdminWalletTransferPayload;
-
-  if (!isValidAdminSecret(payload.adminSecret)) {
-    return NextResponse.json({ error: "Invalid admin secret." }, { status: 401 });
-  }
-
-  const amount = normalizeMoneyAmount(payload.amount);
-
-  if (!payload.fromUserId || !payload.toUserId) {
-    return NextResponse.json({ error: "Both source and destination accounts are required." }, { status: 400 });
-  }
-
-  if (payload.fromUserId === payload.toUserId) {
-    return NextResponse.json({ error: "Choose two different accounts." }, { status: 400 });
-  }
-
-  if (amount <= 0) {
-    return NextResponse.json({ error: "Transfer amount must be higher than zero." }, { status: 400 });
+  const limited = enforceRateLimit(request, "admin", { limit: 30, windowMs: 60_000 });
+  if (limited) {
+    return limited;
   }
 
   const supabase = createServiceSupabaseClient();
+  const auth = await requireAdmin(request, supabase);
+
+  if (!auth.ok) {
+    return jsonError(auth.error, auth.status);
+  }
+
+  let fromUserId: string;
+  let toUserId: string;
+  let amount: number;
+  let note: string | null;
+
+  try {
+    const body = requireObject(await request.json());
+    fromUserId = requireString(body.fromUserId, "Source account", { max: 64 });
+    toUserId = requireString(body.toUserId, "Destination account", { max: 64 });
+    amount = normalizeMoneyAmount(requirePositiveAmount(body.amount, "Amount"));
+    note = optionalString(body.note, "Note", 200);
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return jsonError(error.message, 400);
+    }
+
+    return jsonError("Invalid request body.", 400);
+  }
+
+  if (fromUserId === toUserId) {
+    return jsonError("Choose two different accounts.", 400);
+  }
+
+  if (amount <= 0) {
+    return jsonError("Transfer amount must be higher than zero.", 400);
+  }
+
   const tournament = await supabase
     .from("worldcup_tournaments")
     .select("id")
@@ -40,59 +65,41 @@ export async function POST(request: Request) {
     .single();
 
   if (tournament.error || !tournament.data) {
-    return NextResponse.json({ error: "Tournament is not available." }, { status: 500 });
+    return jsonError("Tournament is not available.", 500);
   }
 
-  const [profiles, transactions] = await Promise.all([
-    supabase
-      .from("worldcup_referral_profiles")
-      .select("user_id")
-      .in("user_id", [payload.fromUserId, payload.toUserId]),
-    supabase
-      .from("worldcup_wallet_transactions")
-      .select("from_user_id,to_user_id,amount")
-      .eq("tournament_id", tournament.data.id),
-  ]);
+  const profiles = await supabase
+    .from("worldcup_referral_profiles")
+    .select("user_id")
+    .in("user_id", [fromUserId, toUserId]);
 
-  if (profiles.error || transactions.error) {
-    return NextResponse.json(
-      { error: profiles.error?.message ?? transactions.error?.message ?? "Could not verify accounts." },
-      { status: 500 },
-    );
+  if (profiles.error) {
+    return jsonError(profiles.error.message, 500);
   }
 
   if ((profiles.data ?? []).length !== 2) {
-    return NextResponse.json({ error: "Both accounts must exist before transfer." }, { status: 400 });
+    return jsonError("Both accounts must exist before transfer.", 400);
   }
 
-  const fromBalance = calculateWalletBalance(
-    payload.fromUserId,
-    (transactions.data ?? []) as WalletTransaction[],
-  );
+  const transfer = await supabase.rpc("worldcup_wallet_transfer", {
+    p_tournament_id: tournament.data.id,
+    p_from_user_id: fromUserId,
+    p_to_user_id: toUserId,
+    p_amount: amount,
+    p_note: note,
+    p_created_by: auth.via === "email" ? auth.adminEmail : "admin",
+  });
 
-  if (fromBalance < amount) {
-    return NextResponse.json({ error: "Source account does not have enough funds." }, { status: 400 });
+  if (transfer.error) {
+    const code = transfer.error.message?.match(/[A-Z_]{4,}/)?.[0] ?? "";
+    const mapped = TRANSFER_ERROR_MESSAGES[code];
+
+    if (mapped) {
+      return jsonError(mapped.message, mapped.status);
+    }
+
+    return jsonError("Could not save transfer.", 500);
   }
 
-  const insertResult = await supabase
-    .from("worldcup_wallet_transactions")
-    .insert({
-      tournament_id: tournament.data.id,
-      from_user_id: payload.fromUserId,
-      to_user_id: payload.toUserId,
-      amount,
-      transaction_type: "transfer",
-      note: payload.note?.trim() || null,
-    })
-    .select("id")
-    .single();
-
-  if (insertResult.error || !insertResult.data) {
-    return NextResponse.json(
-      { error: insertResult.error?.message ?? "Could not save transfer." },
-      { status: 500 },
-    );
-  }
-
-  return NextResponse.json({ transferId: insertResult.data.id });
+  return NextResponse.json({ transferId: transfer.data });
 }

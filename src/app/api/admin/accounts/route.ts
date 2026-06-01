@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
-import { isValidAdminSecret } from "@/lib/admin-auth";
+import { requireAdmin } from "@/lib/admin-auth";
 import { calculateWalletBalance } from "@/lib/economy";
+import { enforceRateLimit, jsonError } from "@/lib/http";
 import { createServiceSupabaseClient } from "@/lib/supabase";
-import type { AdminReferralReportPayload } from "@/lib/types";
 
 type WalletTransaction = {
   from_user_id: string | null;
@@ -12,13 +12,18 @@ type WalletTransaction = {
 };
 
 export async function POST(request: Request) {
-  const payload = (await request.json()) as AdminReferralReportPayload;
-
-  if (!isValidAdminSecret(payload.adminSecret)) {
-    return NextResponse.json({ error: "Invalid admin secret." }, { status: 401 });
+  const limited = enforceRateLimit(request, "admin", { limit: 30, windowMs: 60_000 });
+  if (limited) {
+    return limited;
   }
 
   const supabase = createServiceSupabaseClient();
+  const auth = await requireAdmin(request, supabase);
+
+  if (!auth.ok) {
+    return jsonError(auth.error, auth.status);
+  }
+
   const tournament = await supabase
     .from("worldcup_tournaments")
     .select("id,ticket_price_amount")
@@ -26,7 +31,7 @@ export async function POST(request: Request) {
     .single();
 
   if (tournament.error || !tournament.data) {
-    return NextResponse.json({ error: "Tournament is not available." }, { status: 500 });
+    return jsonError("Tournament is not available.", 500);
   }
 
   const [profiles, transactions, tickets] = await Promise.all([
@@ -38,15 +43,12 @@ export async function POST(request: Request) {
       .from("worldcup_wallet_transactions")
       .select("from_user_id,to_user_id,amount")
       .eq("tournament_id", tournament.data.id),
-    supabase
-      .from("worldcup_tickets")
-      .select("user_id,consumed_at")
-      .eq("tournament_id", tournament.data.id),
+    supabase.from("worldcup_tickets").select("user_id,consumed_at").eq("tournament_id", tournament.data.id),
   ]);
 
   for (const result of [profiles, transactions, tickets]) {
     if (result.error) {
-      return NextResponse.json({ error: result.error.message }, { status: 500 });
+      return jsonError(result.error.message, 500);
     }
   }
 

@@ -1,52 +1,72 @@
 import { NextResponse } from "next/server";
 
+import { enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import { getAuthProvider, normalizeReferralCode } from "@/lib/referrals";
-import { getInviterReferralPercent } from "@/lib/referral-rates";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import { getLockedTeamIds } from "@/lib/team-eligibility";
-import type { EntryPayload } from "@/lib/types";
+import {
+  requireObject,
+  requireString,
+  requireStringArray,
+  ValidationError,
+} from "@/lib/validation";
+
+const ENTRY_ERROR_MESSAGES: Record<string, { status: number; message: string }> = {
+  NO_TICKET: { status: 403, message: "You need an assigned ticket before entering the game." },
+  TEAM_SELECTION_CLOSED: { status: 403, message: "Team selection is closed." },
+  TOURNAMENT_NOT_FOUND: { status: 500, message: "Tournament is not available." },
+  INVALID_TEAM_COUNT: { status: 400, message: "Choose exactly 3 different teams." },
+};
 
 export async function POST(request: Request) {
-  const payload = (await request.json()) as EntryPayload;
-  const displayName = payload.displayName?.trim();
-  const teamIds = Array.isArray(payload.teamIds) ? payload.teamIds : [];
-  const referralCode = normalizeReferralCode(payload.referralCode);
-  const token = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
+  const limited = enforceRateLimit(request, "entries", { limit: 10, windowMs: 60_000 });
+  if (limited) {
+    return limited;
+  }
 
-  if (!displayName) {
-    return NextResponse.json({ error: "Display name is required." }, { status: 400 });
+  let displayName: string;
+  let teamIds: string[];
+  let referralCode: string;
+  let referralTermsAccepted: boolean;
+
+  try {
+    const body = requireObject(await request.json());
+    displayName = requireString(body.displayName, "Display name", { max: 60 });
+    teamIds = requireStringArray(body.teamIds, "teamIds");
+    referralCode = normalizeReferralCode(typeof body.referralCode === "string" ? body.referralCode : "");
+    referralTermsAccepted = body.referralTermsAccepted === true;
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return jsonError(error.message, 400);
+    }
+
+    return jsonError("Invalid request body.", 400);
   }
 
   if (new Set(teamIds).size !== 3) {
-    return NextResponse.json({ error: "Choose exactly 3 different teams." }, { status: 400 });
+    return jsonError("Choose exactly 3 different teams.", 400);
   }
 
+  const token = getBearerToken(request);
   const supabase = createServiceSupabaseClient();
   const userResult = token ? await supabase.auth.getUser(token) : null;
 
   if (!userResult?.data.user || userResult.error) {
-    return NextResponse.json({ error: "Sign in with Google before locking an entry." }, { status: 401 });
+    return jsonError("Sign in with Google before locking an entry.", 401);
   }
 
   const user = userResult.data.user;
 
   if (getAuthProvider(user) !== "google") {
-    return NextResponse.json({ error: "Only Google sign-in is allowed." }, { status: 403 });
+    return jsonError("Only Google sign-in is allowed.", 403);
   }
 
-  if (referralCode && !payload.referralTermsAccepted) {
-    return NextResponse.json(
-      { error: "Accept the referral agreement before joining with a referral code." },
-      { status: 400 },
-    );
+  if (referralCode && !referralTermsAccepted) {
+    return jsonError("Accept the referral agreement before joining with a referral code.", 400);
   }
 
   const [tournamentResult, teamsResult, groupMatchesResult] = await Promise.all([
-    supabase
-      .from("worldcup_tournaments")
-      .select("id,status")
-      .eq("slug", "fifa-world-cup-2026")
-      .single(),
+    supabase.from("worldcup_tournaments").select("id,status").eq("slug", "fifa-world-cup-2026").single(),
     supabase.from("worldcup_teams").select("id,name").in("id", teamIds),
     supabase
       .from("worldcup_matches")
@@ -56,15 +76,15 @@ export async function POST(request: Request) {
   ]);
 
   if (tournamentResult.error || !tournamentResult.data) {
-    return NextResponse.json({ error: "Tournament is not available." }, { status: 500 });
+    return jsonError("Tournament is not available.", 500);
   }
 
   if (teamsResult.error || !teamsResult.data || teamsResult.data.length !== 3) {
-    return NextResponse.json({ error: "Choose exactly 3 valid teams." }, { status: 400 });
+    return jsonError("Choose exactly 3 valid teams.", 400);
   }
 
   if (groupMatchesResult.error) {
-    return NextResponse.json({ error: "Could not check team availability." }, { status: 500 });
+    return jsonError("Could not check team availability.", 500);
   }
 
   const lockedTeamIds = getLockedTeamIds(teamIds, groupMatchesResult.data ?? []);
@@ -73,36 +93,9 @@ export async function POST(request: Request) {
     const namesById = new Map((teamsResult.data ?? []).map((team) => [team.id, team.name]));
     const lockedTeamNames = lockedTeamIds.map((teamId) => namesById.get(teamId) ?? teamId);
 
-    return NextResponse.json(
-      {
-        error: `${lockedTeamNames.join(", ")} can no longer be selected because the second group match has started.`,
-      },
-      { status: 403 },
-    );
-  }
-
-  if (tournamentResult.data.status !== "open") {
-    return NextResponse.json({ error: "Team selection is locked." }, { status: 403 });
-  }
-
-  const availableTicket = await supabase
-    .from("worldcup_tickets")
-    .select("id")
-    .eq("tournament_id", tournamentResult.data.id)
-    .eq("user_id", user.id)
-    .is("consumed_at", null)
-    .order("assigned_at", { ascending: true })
-    .limit(1)
-    .maybeSingle();
-
-  if (availableTicket.error) {
-    return NextResponse.json({ error: "Could not verify entry ticket." }, { status: 500 });
-  }
-
-  if (!availableTicket.data) {
-    return NextResponse.json(
-      { error: "You need an assigned ticket before entering the game." },
-      { status: 403 },
+    return jsonError(
+      `${lockedTeamNames.join(", ")} can no longer be selected because the second group match has started.`,
+      403,
     );
   }
 
@@ -116,118 +109,43 @@ export async function POST(request: Request) {
       .maybeSingle();
 
     if (referralProfile.error || !referralProfile.data) {
-      return NextResponse.json({ error: "Referral code is not valid." }, { status: 400 });
+      return jsonError("Referral code is not valid.", 400);
     }
 
     if (referralProfile.data.user_id === user.id) {
-      return NextResponse.json({ error: "You cannot use your own referral code." }, { status: 400 });
+      return jsonError("You cannot use your own referral code.", 400);
     }
 
     referrerUserId = referralProfile.data.user_id;
   }
 
-  const entryResult = await supabase
-    .from("worldcup_entries")
-    .insert({
-      tournament_id: tournamentResult.data.id,
-      user_id: user.id,
-      display_name: displayName,
-      referral_code: referralCode || null,
-      referrer_user_id: referrerUserId,
-      referral_fee_percent: referrerUserId ? 5 : 0,
-      referral_terms_accepted_at: referrerUserId ? new Date().toISOString() : null,
-      auth_provider: "google",
-    })
-    .select("id")
-    .single();
-
-  if (entryResult.error || !entryResult.data) {
-    if (entryResult.error?.code === "23505") {
-      return NextResponse.json(
-        { error: "You already locked an entry for this tournament." },
-        { status: 409 },
-      );
-    }
-
-    return NextResponse.json({ error: "Could not create entry." }, { status: 500 });
-  }
-
-  const picks = teamIds.map((teamId, index) => ({
-    entry_id: entryResult.data.id,
-    team_id: teamId,
-    pick_slot: index + 1,
-  }));
-
-  const pickResult = await supabase.from("worldcup_entry_teams").insert(picks);
-
-  if (pickResult.error) {
-    await supabase.from("worldcup_entries").delete().eq("id", entryResult.data.id);
-
-    return NextResponse.json(
-      { error: pickResult.error.message ?? "Could not save selected teams." },
-      { status: 500 },
-    );
-  }
-
-  const finalizeResult = await supabase.rpc("worldcup_finalize_entry", {
-    target_entry_id: entryResult.data.id,
+  const entryResult = await supabase.rpc("worldcup_create_entry", {
+    p_user_id: user.id,
+    p_tournament_id: tournamentResult.data.id,
+    p_display_name: displayName,
+    p_team_ids: teamIds,
+    p_referral_code: referralCode || null,
+    p_referrer_user_id: referrerUserId,
   });
 
-  if (finalizeResult.error) {
-    await supabase.from("worldcup_entries").delete().eq("id", entryResult.data.id);
+  if (entryResult.error) {
+    const code = entryResult.error.message?.match(/[A-Z_]{4,}/)?.[0] ?? "";
+    const mapped = ENTRY_ERROR_MESSAGES[code];
 
-    return NextResponse.json({ error: "Could not lock entry." }, { status: 500 });
-  }
-
-  const ticketResult = await supabase
-    .from("worldcup_tickets")
-    .update({
-      consumed_by_entry_id: entryResult.data.id,
-      consumed_at: new Date().toISOString(),
-    })
-    .eq("id", availableTicket.data.id)
-    .is("consumed_at", null)
-    .select("id")
-    .single();
-
-  if (ticketResult.error || !ticketResult.data) {
-    await supabase.from("worldcup_entries").delete().eq("id", entryResult.data.id);
-
-    return NextResponse.json({ error: "Could not consume entry ticket." }, { status: 500 });
-  }
-
-  if (referrerUserId) {
-    const inviterEntry = await supabase
-      .from("worldcup_entries")
-      .select("referrer_user_id")
-      .eq("tournament_id", tournamentResult.data.id)
-      .eq("user_id", referrerUserId)
-      .maybeSingle();
-
-    if (inviterEntry.error) {
-      return NextResponse.json({ error: "Could not verify inviter referral rate." }, { status: 500 });
+    if (mapped) {
+      return jsonError(mapped.message, mapped.status);
     }
 
-    const inviterReferralPercent = getInviterReferralPercent(
-      Boolean(inviterEntry.data?.referrer_user_id),
-    );
-    const referralResult = await supabase.from("worldcup_referrals").upsert(
-      {
-        tournament_id: tournamentResult.data.id,
-        entry_id: entryResult.data.id,
-        inviter_user_id: referrerUserId,
-        invited_user_id: user.id,
-        referral_code: referralCode,
-        referral_fee_percent: inviterReferralPercent,
-        accepted_at: new Date().toISOString(),
-      },
-      { onConflict: "tournament_id,invited_user_id" },
-    );
-
-    if (referralResult.error) {
-      return NextResponse.json({ error: "Could not save referral agreement." }, { status: 500 });
+    if (entryResult.error.code === "23505") {
+      return jsonError("You already locked an entry for this tournament.", 409);
     }
+
+    if (/second group-stage match/i.test(entryResult.error.message ?? "")) {
+      return jsonError("A selected team can no longer be picked; its second group match has started.", 403);
+    }
+
+    return jsonError("Could not create entry.", 500);
   }
 
-  return NextResponse.json({ entryId: entryResult.data.id });
+  return NextResponse.json({ entryId: entryResult.data });
 }
