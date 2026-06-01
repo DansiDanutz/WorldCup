@@ -2,6 +2,8 @@
 
 WorldCup is implemented as a Supabase-backed fantasy leaderboard game.
 
+The application layer is a Next.js app. Public tournament data is read through the Supabase anon key. Result updates and cron operations run through server routes that use the Supabase service-role key.
+
 ## Product Model
 
 The user does not predict every match. Instead:
@@ -58,4 +60,32 @@ flowchart TD
 ## Why Dedicated Tables
 
 The Games project already has generic tables such as `games`, `tournaments`, and `player_scores`. WorldCup uses dedicated `worldcup_*` tables so football scoring, fixtures, coefficients, and cron processing stay clean and do not disturb existing game features.
+
+## Web Application Routes
+
+### `/`
+
+Main dashboard:
+
+- choose exactly 3 teams
+- lock entry
+- view leaderboard
+- inspect match schedule
+- manually enter results through the admin fallback form
+
+### `/api/entries`
+
+Creates and locks a user entry after exactly 3 teams are selected.
+
+### `/api/admin/results`
+
+Server-only result fallback. Requires `ADMIN_RESULT_SECRET` and updates one match result, then applies points for that match.
+
+### `/api/cron/results`
+
+Cron endpoint. Requires `CRON_SECRET`. It checks due matches, optionally fetches results from `RESULT_API_URL`, updates completed matches, and applies points.
+
+### `/api/cron/apply`
+
+Cron helper endpoint. Requires `CRON_SECRET`. It applies points for all completed matches that have not yet been awarded.
 

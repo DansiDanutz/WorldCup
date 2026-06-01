@@ -27,6 +27,22 @@ select *
 from public.worldcup_matches_due_for_result_check;
 ```
 
+In the web app, the cron endpoint is:
+
+```http
+POST /api/cron/results
+Authorization: Bearer <CRON_SECRET>
+```
+
+If an external result API is configured, set:
+
+```text
+RESULT_API_URL
+RESULT_API_KEY
+```
+
+The endpoint passes `match_number` as a query parameter to the configured result API.
+
 For each returned match:
 
 1. Query the official result source.
@@ -88,6 +104,13 @@ If results are already updated and cron only needs to apply points:
 select public.worldcup_apply_completed_match_points();
 ```
 
+Or through the web app:
+
+```http
+POST /api/cron/apply
+Authorization: Bearer <CRON_SECRET>
+```
+
 ## Production Leaderboard
 
 Use:
@@ -97,4 +120,3 @@ select *
 from public.worldcup_awarded_leaderboard
 order by leaderboard_rank;
 ```
-

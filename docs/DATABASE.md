@@ -119,3 +119,19 @@ Awards points for every completed match that has not yet been applied.
 
 Marks a match as checked by the result cron.
 
+## Application Access
+
+The frontend reads public data using:
+
+```text
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+```
+
+Admin and cron routes write results using:
+
+```text
+SUPABASE_SERVICE_ROLE_KEY
+```
+
+The service-role key must never be exposed to the browser.

@@ -4,6 +4,16 @@ WorldCup is a team-picking leaderboard game for the FIFA World Cup 2026.
 
 Each user chooses exactly **3 teams** before the tournament starts. Those teams earn points after every match they play. The user's leaderboard score is the sum of the points earned by their selected teams.
 
+## Application
+
+The repository now includes a Next.js app with:
+
+- team selection workflow
+- leaderboard
+- match schedule
+- admin result fallback
+- cron endpoints for result ingestion and point application
+
 ## Core Formula
 
 ```text
@@ -33,7 +43,12 @@ docs/
   CRON.md
   DATABASE.md
   GITHUB.md
+  IMPLEMENTATION_PLAN.md
   SCORING.md
+src/
+  app/
+  components/
+  lib/
 scripts/
   generate-worldcup-sql.mjs
   generate-worldcup-kickoff-sql.mjs
@@ -74,6 +89,7 @@ lxhjfdxowpxzrybxdasi
 - [Database Schema](docs/DATABASE.md)
 - [Cron Workflow](docs/CRON.md)
 - [GitHub Organization](docs/GITHUB.md)
+- [Implementation Plan](docs/IMPLEMENTATION_PLAN.md)
 
 ## Development Commands
 
@@ -94,6 +110,26 @@ Check migration history:
 ```bash
 supabase migration list --linked
 ```
+
+Run the web app:
+
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```
+
+Required runtime values:
+
+```text
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY
+ADMIN_RESULT_SECRET
+CRON_SECRET
+```
+
+Server routes that use `SUPABASE_SERVICE_ROLE_KEY` must only run on trusted server infrastructure.
 
 ## Data Sources
 
