@@ -134,8 +134,9 @@ export function LoginRegister() {
           <span className="status-pill">Referral entry</span>
           <h1 id="auth-title">Register with Google. Join with a referral. Build your own chain.</h1>
           <p>
-            Every player can invite friends. Join through a referral to unlock 5% from referred
-            winners. Join without a referral and your invite link still works, but your rate is 3%.
+            Accepting a referral gives the inviter 5% if you win, and it gives you the same 5%
+            earning deal for your own future referrals. Join without a referral and your invite link
+            still works, but your rate is 3%.
           </p>
         </div>
 
@@ -146,7 +147,7 @@ export function LoginRegister() {
           </div>
           <div>
             <CircleDollarSign size={18} />
-            <span>Referral members earn 5%; direct members earn 3%</span>
+            <span>Accept a referral to unlock the same 5% deal</span>
           </div>
           <div>
             <Users size={18} />
@@ -194,7 +195,7 @@ export function LoginRegister() {
             {referralCode ? (
               <div className={`field-note ${referralInviter ? "success-note" : ""}`}>
                 {referralInviter
-                  ? `Referral recognized from ${referralInviter}. Inviter rate: ${referralPercent}%.`
+                  ? `Referral recognized from ${referralInviter}. You keep the ${referralPercent}% referral deal for your own invites.`
                   : referralChecked
                     ? "This referral code was not found."
                     : "Checking referral code..."}
@@ -216,7 +217,10 @@ export function LoginRegister() {
               }}
               type="checkbox"
             />
-            <span>I do not have a referral code, and I understand my referral rate will be 3%.</span>
+            <span>
+              I do not have a referral code, and I understand my own referral rate will be 3%
+              instead of 5%.
+            </span>
           </label>
 
           {referralCode ? (
@@ -236,12 +240,14 @@ export function LoginRegister() {
           <div className="auth-loop">
             <div>
               <Check size={16} />
-              <span>Your inviter can earn {referralCode ? referralPercent : 3}% if you win.</span>
+              <span>
+                Your inviter can earn {referralCode ? referralPercent : 3}% if you win.
+              </span>
             </div>
             <div>
               <Check size={16} />
               <span>
-                You get your own link: 5% if you joined through a referral, 3% if you joined direct.
+                You get the same 5% deal when you accept a referral; direct signups get 3%.
               </span>
             </div>
           </div>
