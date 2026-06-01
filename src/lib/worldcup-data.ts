@@ -3,6 +3,7 @@ import type {
   DueMatch,
   LeaderboardRow,
   MatchTeamPoints,
+  WorldCupTournament,
   WorldCupMatch,
   WorldCupStage,
   WorldCupTeam,
@@ -11,8 +12,13 @@ import type {
 export async function getDashboardData() {
   const supabase = createPublicSupabaseClient();
 
-  const [teamsResult, stagesResult, matchesResult, leaderboardResult, dueResult] =
+  const [tournamentResult, teamsResult, stagesResult, matchesResult, leaderboardResult, dueResult] =
     await Promise.all([
+      supabase
+        .from("worldcup_tournaments")
+        .select("id,slug,name,season_year,status,prize_pool_amount,prize_pool_fee_percent")
+        .eq("slug", "fifa-world-cup-2026")
+        .single(),
       supabase
         .from("worldcup_teams")
         .select("id,name,confederation,group_code,winner_odds,reward_coefficient")
@@ -43,6 +49,7 @@ export async function getDashboardData() {
     ]);
 
   for (const result of [
+    tournamentResult,
     teamsResult,
     stagesResult,
     matchesResult,
@@ -55,6 +62,7 @@ export async function getDashboardData() {
   }
 
   return {
+    tournament: tournamentResult.data as WorldCupTournament,
     teams: (teamsResult.data ?? []) as WorldCupTeam[],
     stages: (stagesResult.data ?? []) as WorldCupStage[],
     matches: (matchesResult.data ?? []) as WorldCupMatch[],

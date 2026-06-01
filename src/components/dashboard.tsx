@@ -17,6 +17,11 @@ import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 
 import {
+  calculateNetPrizePool,
+  formatPrizeAmount,
+  PRIZE_POOL_FEE_PERCENT,
+} from "@/lib/prize-pool";
+import {
   formatCoefficient,
   formatKickoff,
   formatPoints,
@@ -31,6 +36,7 @@ import type {
   DueMatch,
   LeaderboardRow,
   AdminReferralReportRow,
+  WorldCupTournament,
   WorldCupMatch,
   WorldCupStage,
   WorldCupTeam,
@@ -38,6 +44,7 @@ import type {
 import type { Session } from "@supabase/supabase-js";
 
 type DashboardProps = {
+  tournament: WorldCupTournament;
   teams: WorldCupTeam[];
   stages: WorldCupStage[];
   matches: WorldCupMatch[];
@@ -85,6 +92,7 @@ const referralAgreementText =
   "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
 
 export function Dashboard({
+  tournament,
   teams,
   stages,
   matches,
@@ -104,6 +112,8 @@ export function Dashboard({
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
   const [adminState, setAdminState] = useState<AdminResultState>(initialAdminState);
+  const [prizePoolAmount, setPrizePoolAmount] = useState(tournament.prize_pool_amount);
+  const [prizePoolFeePercent, setPrizePoolFeePercent] = useState(tournament.prize_pool_fee_percent);
   const [adminMessage, setAdminMessage] = useState<string | null>(null);
   const [adminError, setAdminError] = useState<string | null>(null);
   const [adminReferralRows, setAdminReferralRows] = useState<AdminReferralReportRow[]>([]);
@@ -135,6 +145,7 @@ export function Dashboard({
 
   const visibleMatches = matches.slice(0, 24);
   const completedCount = matches.filter((match) => match.status === "completed").length;
+  const netPrizePool = calculateNetPrizePool(prizePoolAmount, prizePoolFeePercent);
   const teamEligibility = useMemo(
     () => getTeamEligibility(teams.map((team) => team.id), matches),
     [matches, teams],
@@ -383,6 +394,34 @@ export function Dashboard({
     });
   }
 
+  async function savePrizePool() {
+    setAdminError(null);
+    setAdminMessage(null);
+
+    const response = await fetch("/api/admin/prize-pool", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        adminSecret: adminState.adminSecret,
+        prizePoolAmount: Number(prizePoolAmount),
+      }),
+    });
+    const result = (await response.json()) as {
+      error?: string;
+      prizePoolAmount?: string;
+      prizePoolFeePercent?: string;
+    };
+
+    if (!response.ok) {
+      setAdminError(result.error ?? "Could not save prize pool.");
+      return;
+    }
+
+    setPrizePoolAmount(result.prizePoolAmount ?? prizePoolAmount);
+    setPrizePoolFeePercent(result.prizePoolFeePercent ?? prizePoolFeePercent);
+    setAdminMessage("Prize pool saved.");
+  }
+
   return (
     <main className="app-shell">
       <header className="topbar">
@@ -391,6 +430,16 @@ export function Dashboard({
             <Trophy size={20} />
           </span>
           <span>WorldCup</span>
+        </div>
+        <div className="prize-pool" aria-label="Prize pool">
+          <CircleDollarSign size={18} />
+          <div>
+            <span>Prize Pool</span>
+            <strong>{netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}</strong>
+          </div>
+          <small>
+            {Number(prizePoolFeePercent || PRIZE_POOL_FEE_PERCENT).toFixed(0)}% fee
+          </small>
         </div>
         <nav className="nav" aria-label="Primary navigation">
           <a href="#pick">
@@ -873,6 +922,44 @@ export function Dashboard({
               <ClipboardCheck size={18} color="var(--green)" />
             </div>
             <div className="admin-form">
+              <div className="admin-report">
+                <div className="admin-report-header">
+                  <div>
+                    <strong>Prize Pool</strong>
+                    <span>Visible pool is gross amount minus 20% fee.</span>
+                  </div>
+                  <strong>{netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}</strong>
+                </div>
+                <div className="two-col">
+                  <div className="field">
+                    <label htmlFor="prize-pool-amount">Gross amount</label>
+                    <input
+                      id="prize-pool-amount"
+                      min="0"
+                      onChange={(event) => setPrizePoolAmount(event.target.value)}
+                      type="number"
+                      value={prizePoolAmount}
+                    />
+                  </div>
+                  <div className="field">
+                    <label htmlFor="prize-pool-fee">Fee</label>
+                    <input
+                      disabled
+                      id="prize-pool-fee"
+                      value={`${Number(prizePoolFeePercent || PRIZE_POOL_FEE_PERCENT).toFixed(0)}%`}
+                    />
+                  </div>
+                </div>
+                <button
+                  className="button secondary"
+                  disabled={!adminState.adminSecret}
+                  onClick={savePrizePool}
+                  type="button"
+                >
+                  Save Prize Pool
+                </button>
+              </div>
+
               <div className="field">
                 <label htmlFor="admin-secret">Admin secret</label>
                 <input

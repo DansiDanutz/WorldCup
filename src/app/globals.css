@@ -84,6 +84,48 @@ a {
   box-shadow: 0 10px 24px rgba(16, 107, 79, 0.2);
 }
 
+.prize-pool {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--green);
+  background: var(--surface);
+}
+
+.prize-pool svg {
+  flex: 0 0 auto;
+}
+
+.prize-pool div {
+  display: grid;
+  gap: 1px;
+}
+
+.prize-pool span,
+.prize-pool small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.prize-pool strong {
+  color: var(--green);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.prize-pool small {
+  padding-left: 8px;
+  border-left: 1px solid var(--border);
+  white-space: nowrap;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -1364,6 +1406,12 @@ a {
   .brand-mark {
     width: 34px;
     height: 34px;
+  }
+
+  .prize-pool {
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
   }
 
   .nav {

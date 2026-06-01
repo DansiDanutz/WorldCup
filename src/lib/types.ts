@@ -7,6 +7,16 @@ export type WorldCupTeam = {
   reward_coefficient: string;
 };
 
+export type WorldCupTournament = {
+  id: string;
+  slug: string;
+  name: string;
+  season_year: number;
+  status: "setup" | "open" | "locked" | "in_progress" | "completed";
+  prize_pool_amount: string;
+  prize_pool_fee_percent: string;
+};
+
 export type WorldCupStage = {
   id: string;
   name: string;
@@ -98,6 +108,11 @@ export type EntryPayload = {
 
 export type AdminReferralReportPayload = {
   adminSecret: string;
+};
+
+export type AdminPrizePoolPayload = {
+  adminSecret: string;
+  prizePoolAmount: number;
 };
 
 export type AdminReferralReportRow = {

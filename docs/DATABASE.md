@@ -47,6 +47,13 @@ Adds cron-ready timing and durable award storage:
 
 Stores tournament metadata and pick-lock configuration.
 
+Prize pool fields:
+
+- `prize_pool_amount`: gross amount set by the operator
+- `prize_pool_fee_percent`: platform/organization fee, currently 20%
+
+The visible prize pool is calculated as gross amount minus the fee.
+
 ### `worldcup_stages`
 
 Stores stage coefficients.

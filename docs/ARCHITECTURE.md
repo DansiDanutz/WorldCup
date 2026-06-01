@@ -39,6 +39,7 @@ flowchart TD
 - Store raw match results once, then derive team points.
 - Use an award ledger to avoid double-counting when cron jobs retry.
 - Keep the existing generic Games tables untouched.
+- Show the public prize pool as the configured gross amount minus the tournament fee.
 
 ## Supabase Layers
 
@@ -99,6 +100,10 @@ Server-only result fallback. Requires `ADMIN_RESULT_SECRET` and updates one matc
 ### `/api/admin/referrals`
 
 Server-only referral report. Requires `ADMIN_RESULT_SECRET` and returns accepted 5% referral agreements with inviter, referred entry, accepted timestamp, and current leaderboard position for payout auditing.
+
+### `/api/admin/prize-pool`
+
+Server-only prize pool update. Requires `ADMIN_RESULT_SECRET`, stores the gross prize amount on the tournament, and keeps the public prize pool calculated as gross amount minus the 20% fee.
 
 ### `/api/cron/results`
 
