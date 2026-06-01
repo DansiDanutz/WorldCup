@@ -16,6 +16,7 @@ This plan records the current professional build order.
 - Leaderboard implemented.
 - Admin result fallback implemented.
 - Cron endpoints implemented.
+- Responsive mobile/tablet/desktop layout pass implemented.
 
 ## Next
 
@@ -26,4 +27,4 @@ This plan records the current professional build order.
 5. Add authentication if the game should use real user accounts instead of display names.
 6. Add a full admin page with result audit history.
 7. Add end-to-end tests for entry creation, result entry, and leaderboard updates.
-
+8. Run usability testing on real phones before launch.

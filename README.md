@@ -13,6 +13,7 @@ The repository now includes a Next.js app with:
 - match schedule
 - admin result fallback
 - cron endpoints for result ingestion and point application
+- responsive layouts for mobile, tablet, and desktop
 
 ## Core Formula
 
