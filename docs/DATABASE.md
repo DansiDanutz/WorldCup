@@ -210,6 +210,13 @@ entry referral-fee check to `(0, 3, 5)`.
   credit to the inviter, writing both to `worldcup_payouts` and
   `worldcup_wallet_transactions`. Requires the tournament to be `completed`.
 
+### `20260602011500_worldcup_rate_limits.sql`
+
+- `worldcup_rate_limits` + `worldcup_rate_limit_hit(key, limit, window_seconds)`
+  — an atomic fixed-window counter shared across serverless instances. The app
+  calls it from `enforceRateLimit` and falls back to the in-memory limiter only
+  if the database is unavailable.
+
 ### Knockout progression
 
 Knockout participants are resolved in application code (`src/lib/bracket.ts`)
