@@ -30,6 +30,7 @@ import { getTeamEligibility } from "@/lib/team-eligibility";
 import type {
   DueMatch,
   LeaderboardRow,
+  AdminReferralReportRow,
   WorldCupMatch,
   WorldCupStage,
   WorldCupTeam,
@@ -106,8 +107,10 @@ export function Dashboard({
   const [adminState, setAdminState] = useState<AdminResultState>(initialAdminState);
   const [adminMessage, setAdminMessage] = useState<string | null>(null);
   const [adminError, setAdminError] = useState<string | null>(null);
+  const [adminReferralRows, setAdminReferralRows] = useState<AdminReferralReportRow[]>([]);
   const [isPending, startTransition] = useTransition();
   const [isAdminPending, startAdminTransition] = useTransition();
+  const [isReferralReportPending, startReferralReportTransition] = useTransition();
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const teamsById = useMemo(() => groupTeamsById(teams), [teams]);
@@ -379,6 +382,31 @@ export function Dashboard({
 
       setAdminMessage(`Result saved. Awarded rows: ${result.awardedRows ?? 0}.`);
       window.setTimeout(() => window.location.reload(), 900);
+    });
+  }
+
+  function loadReferralReport() {
+    setAdminError(null);
+    setAdminMessage(null);
+
+    startReferralReportTransition(async () => {
+      const response = await fetch("/api/admin/referrals", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ adminSecret: adminState.adminSecret }),
+      });
+      const result = (await response.json()) as {
+        error?: string;
+        referrals?: AdminReferralReportRow[];
+      };
+
+      if (!response.ok) {
+        setAdminError(result.error ?? "Could not load referral report.");
+        return;
+      }
+
+      setAdminReferralRows(result.referrals ?? []);
+      setAdminMessage(`Referral report loaded. Rows: ${result.referrals?.length ?? 0}.`);
     });
   }
 
@@ -1002,6 +1030,48 @@ export function Dashboard({
               {adminError ? <div className="message error">{adminError}</div> : null}
               <div className="message">
                 Due checks: {dueMatches.length}. Cron should call <strong>/api/cron/results</strong>.
+              </div>
+              <div className="admin-report">
+                <div className="admin-report-header">
+                  <div>
+                    <strong>Referral report</strong>
+                    <span>Accepted 5% agreements for referred players.</span>
+                  </div>
+                  <button
+                    className="button secondary"
+                    disabled={!adminState.adminSecret || isReferralReportPending}
+                    onClick={loadReferralReport}
+                    type="button"
+                  >
+                    {isReferralReportPending ? "Loading..." : "Load Report"}
+                  </button>
+                </div>
+                {adminReferralRows.length > 0 ? (
+                  <div className="admin-referral-list">
+                    {adminReferralRows.map((row) => (
+                      <div className="admin-referral-row" key={row.id}>
+                        <div>
+                          <strong>{row.invitedDisplayName}</strong>
+                          <span>
+                            Invited by {row.inviterDisplayName} · code {row.referralCode}
+                          </span>
+                          <span>Accepted {formatDateTime(row.acceptedAt)}</span>
+                        </div>
+                        <div>
+                          <strong>{formatCoefficient(row.feePercent)}%</strong>
+                          <span>
+                            Rank {row.invitedLeaderboardRank ?? "-"} ·{" "}
+                            {formatPoints(row.invitedTotalPoints)} pts
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="field-note">
+                    Load the report to see accepted referral agreements.
+                  </div>
+                )}
               </div>
             </div>
           </div>

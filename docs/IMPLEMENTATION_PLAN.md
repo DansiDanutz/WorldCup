@@ -18,13 +18,14 @@ This plan records the current professional build order.
 - Cron endpoints implemented.
 - Responsive mobile/tablet/desktop layout pass implemented.
 - Vercel deployment configuration and health check implemented.
+- Google-only referral invite flow implemented.
+- Admin referral agreement report implemented.
 
 ## Next
 
 1. Configure deployment environment variables.
 2. Deploy the Next.js app.
 3. Connect an official or trusted result API.
-4. Add authentication if the game should use real user accounts instead of display names.
-5. Add a full admin page with result audit history.
-6. Add end-to-end tests for entry creation, result entry, and leaderboard updates.
-7. Run usability testing on real phones before launch.
+4. Add a full admin page with result audit history.
+5. Add end-to-end tests for entry creation, result entry, referral acceptance, and leaderboard updates.
+6. Run usability testing on real phones before launch.

@@ -92,6 +92,10 @@ Creates and locks a user entry after exactly 3 valid teams are selected. Late en
 
 Server-only result fallback. Requires `ADMIN_RESULT_SECRET` and updates one match result, then applies points for that match.
 
+### `/api/admin/referrals`
+
+Server-only referral report. Requires `ADMIN_RESULT_SECRET` and returns accepted 5% referral agreements with inviter, referred entry, accepted timestamp, and current leaderboard position for payout auditing.
+
 ### `/api/cron/results`
 
 Cron endpoint. Requires `CRON_SECRET`. It checks due matches, optionally fetches results from `RESULT_API_URL`, updates completed matches, and applies points.

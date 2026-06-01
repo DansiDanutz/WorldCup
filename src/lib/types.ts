@@ -96,6 +96,22 @@ export type EntryPayload = {
   referralTermsAccepted?: boolean;
 };
 
+export type AdminReferralReportPayload = {
+  adminSecret: string;
+};
+
+export type AdminReferralReportRow = {
+  id: string;
+  referralCode: string;
+  inviterDisplayName: string;
+  inviterReferralCode: string;
+  invitedDisplayName: string;
+  acceptedAt: string;
+  feePercent: string;
+  invitedTotalPoints: string;
+  invitedLeaderboardRank: number | null;
+};
+
 export type ResultPayload = {
   adminSecret: string;
   matchId: string;
