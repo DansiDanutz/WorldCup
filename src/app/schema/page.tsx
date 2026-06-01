@@ -11,6 +11,12 @@ import {
   groupStagesById,
   groupTeamsById,
 } from "@/lib/scoring";
+import {
+  buildGroupDraw,
+  formatGoalDifference,
+  groupMatchesByStage,
+  groupPointsByMatch,
+} from "@/lib/schema-draw";
 import type { MatchTeamPoints, WorldCupMatch } from "@/lib/types";
 import { getTournamentSchemaData } from "@/lib/worldcup-data";
 
@@ -309,160 +315,4 @@ function TeamPointLine({
       )}
     </div>
   );
-}
-
-function groupPointsByMatch(points: MatchTeamPoints[]) {
-  const grouped = new Map<string, MatchTeamPoints[]>();
-
-  for (const point of points) {
-    grouped.set(point.match_id, [...(grouped.get(point.match_id) ?? []), point]);
-  }
-
-  return grouped;
-}
-
-function groupMatchesByStage(matches: WorldCupMatch[]) {
-  const grouped = new Map<string, WorldCupMatch[]>();
-
-  for (const match of matches) {
-    grouped.set(match.stage_id, [...(grouped.get(match.stage_id) ?? []), match]);
-  }
-
-  return grouped;
-}
-
-function buildGroupDraw(teams: Awaited<ReturnType<typeof getTournamentSchemaData>>["teams"], matches: WorldCupMatch[]) {
-  const groupMatches = matches.filter((match) => match.stage_id === "group_stage");
-  const groups = [...new Set(teams.map((team) => team.group_code).filter(Boolean))]
-    .toSorted()
-    .map((groupCode) => {
-      const groupTeams = teams
-        .filter((team) => team.group_code === groupCode)
-        .map((team) => calculateGroupStanding(team, groupMatches))
-        .toSorted(compareGroupStanding);
-
-      return {
-        code: groupCode as string,
-        teams: groupTeams,
-        paths: getGroupPaths(groupCode as string, matches),
-      };
-    });
-
-  return groups;
-}
-
-function calculateGroupStanding(
-  team: Awaited<ReturnType<typeof getTournamentSchemaData>>["teams"][number],
-  groupMatches: WorldCupMatch[],
-) {
-  const standing = {
-    team,
-    played: 0,
-    won: 0,
-    drawn: 0,
-    lost: 0,
-    goalsFor: 0,
-    goalsAgainst: 0,
-    goalDifference: 0,
-    points: 0,
-  };
-
-  for (const match of groupMatches) {
-    const isHome = match.home_team_id === team.id;
-    const isAway = match.away_team_id === team.id;
-
-    if (!match.status || match.status !== "completed" || (!isHome && !isAway)) {
-      continue;
-    }
-
-    const goalsFor = isHome ? match.home_goals_90 : match.away_goals_90;
-    const goalsAgainst = isHome ? match.away_goals_90 : match.home_goals_90;
-
-    if (goalsFor === null || goalsAgainst === null) {
-      continue;
-    }
-
-    standing.played += 1;
-    standing.goalsFor += goalsFor;
-    standing.goalsAgainst += goalsAgainst;
-
-    if (goalsFor > goalsAgainst) {
-      standing.won += 1;
-      standing.points += 3;
-    } else if (goalsFor === goalsAgainst) {
-      standing.drawn += 1;
-      standing.points += 1;
-    } else {
-      standing.lost += 1;
-    }
-  }
-
-  standing.goalDifference = standing.goalsFor - standing.goalsAgainst;
-
-  return standing;
-}
-
-function compareGroupStanding(
-  first: ReturnType<typeof calculateGroupStanding>,
-  second: ReturnType<typeof calculateGroupStanding>,
-) {
-  return (
-    second.points - first.points ||
-    second.goalDifference - first.goalDifference ||
-    second.goalsFor - first.goalsFor ||
-    first.team.name.localeCompare(second.team.name)
-  );
-}
-
-function getGroupPaths(groupCode: string, matches: WorldCupMatch[]) {
-  const winner = findSlotPath(matches, `Group ${groupCode} winners`);
-  const runnerUp = findSlotPath(matches, `Group ${groupCode} runners-up`);
-  const thirdPlace = matches
-    .filter((match) =>
-      [match.home_slot, match.away_slot].some((slot) => thirdPlaceSlotIncludesGroup(slot, groupCode)),
-    )
-    .map((match) => {
-      const slot = match.home_slot.includes("third place") ? match.home_slot : match.away_slot;
-
-      return describePathMatch(match, slot);
-    })
-    .join(" or ");
-
-  return {
-    winner,
-    runnerUp,
-    thirdPlace: thirdPlace || null,
-  };
-}
-
-function findSlotPath(matches: WorldCupMatch[], slotName: string) {
-  const match = matches.find(
-    (candidate) => candidate.home_slot === slotName || candidate.away_slot === slotName,
-  );
-
-  return match ? describePathMatch(match, slotName) : null;
-}
-
-function thirdPlaceSlotIncludesGroup(slot: string, groupCode: string) {
-  const match = slot.match(/^Group ([A-L/]+) third place$/);
-
-  if (!match) {
-    return false;
-  }
-
-  return match[1].split("/").includes(groupCode);
-}
-
-function describePathMatch(match: WorldCupMatch, slotName: string) {
-  const opponent = match.home_slot === slotName ? match.away_slot : match.home_slot;
-
-  return `Match #${match.match_number} vs ${opponent}`;
-}
-
-function formatGoalDifference(value: number) {
-  if (value > 0) {
-    return `+${value}`;
-  }
-
-  return String(value);
 }
