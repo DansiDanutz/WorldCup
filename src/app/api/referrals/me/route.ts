@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { calculateWalletBalance } from "@/lib/economy";
 import {
   getAuthProvider,
   getOrCreateReferralProfile,
@@ -38,6 +39,36 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Could not load referral activity." }, { status: 500 });
   }
 
+  const tournament = await supabase
+    .from("worldcup_tournaments")
+    .select("id,ticket_price_amount")
+    .eq("slug", "fifa-world-cup-2026")
+    .single();
+
+  if (tournament.error || !tournament.data) {
+    return NextResponse.json({ error: "Tournament is not available." }, { status: 500 });
+  }
+
+  const [tickets, transactions] = await Promise.all([
+    supabase
+      .from("worldcup_tickets")
+      .select("id,consumed_at")
+      .eq("tournament_id", tournament.data.id)
+      .eq("user_id", user.id),
+    supabase
+      .from("worldcup_wallet_transactions")
+      .select("from_user_id,to_user_id,amount")
+      .eq("tournament_id", tournament.data.id)
+      .or(`from_user_id.eq.${user.id},to_user_id.eq.${user.id}`),
+  ]);
+
+  if (tickets.error || transactions.error) {
+    return NextResponse.json(
+      { error: tickets.error?.message ?? transactions.error?.message ?? "Could not load account status." },
+      { status: 500 },
+    );
+  }
+
   const entryIds = (referrals.data ?? [])
     .map((referral) => referral.entry_id)
     .filter((entryId): entryId is string => Boolean(entryId));
@@ -57,6 +88,10 @@ export async function GET(request: Request) {
   return NextResponse.json({
     referralCode: profile.referral_code,
     displayName: profile.display_name ?? getUserDisplayName(user),
+    walletBalance: calculateWalletBalance(user.id, transactions.data ?? []).toFixed(2),
+    ticketsAssigned: tickets.data?.length ?? 0,
+    ticketsAvailable: (tickets.data ?? []).filter((ticket) => !ticket.consumed_at).length,
+    ticketPriceAmount: tournament.data.ticket_price_amount,
     referrals: (referrals.data ?? []).map((referral) => ({
       id: referral.id,
       entryId: referral.entry_id,

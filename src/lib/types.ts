@@ -145,6 +145,13 @@ export type AdminAccountRow = {
   ticketsAvailable: number;
 };
 
+export type MyAccountStatus = {
+  walletBalance: string;
+  ticketsAssigned: number;
+  ticketsAvailable: number;
+  ticketPriceAmount: string;
+};
+
 export type AdminReferralReportRow = {
   id: string;
   referralCode: string;

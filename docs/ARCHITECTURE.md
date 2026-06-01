@@ -82,6 +82,7 @@ Main dashboard:
 - open the full tournament schema from group stage to final
 - lock entry
 - view leaderboard
+- view own assigned tickets and internal wallet balance after Google login
 - inspect match schedule
 - manually enter results through the admin fallback form
 

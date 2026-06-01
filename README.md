@@ -10,6 +10,7 @@ The repository now includes a Next.js app with:
 
 - team selection workflow
 - leaderboard
+- signed-in account status for tickets and internal wallet balance
 - match schedule
 - full tournament schema from group stage to final
 - admin result fallback

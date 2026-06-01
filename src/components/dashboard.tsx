@@ -38,6 +38,7 @@ import type {
   LeaderboardRow,
   AdminReferralReportRow,
   AdminAccountRow,
+  MyAccountStatus,
   WorldCupTournament,
   WorldCupMatch,
   WorldCupStage,
@@ -111,6 +112,7 @@ export function Dashboard({
   const [referralAccepted, setReferralAccepted] = useState(false);
   const [myReferralCode, setMyReferralCode] = useState<string | null>(null);
   const [myReferrals, setMyReferrals] = useState<MyReferral[]>([]);
+  const [myAccountStatus, setMyAccountStatus] = useState<MyAccountStatus | null>(null);
   const [inviteMessage, setInviteMessage] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
@@ -247,6 +249,7 @@ export function Dashboard({
       if (!token || !signedInWithGoogle) {
         setMyReferralCode(null);
         setMyReferrals([]);
+        setMyAccountStatus(null);
         return;
       }
 
@@ -257,13 +260,24 @@ export function Dashboard({
         const result = (await response.json()) as {
           referralCode?: string;
           referrals?: MyReferral[];
+          walletBalance?: string;
+          ticketsAssigned?: number;
+          ticketsAvailable?: number;
+          ticketPriceAmount?: string;
         };
 
         setMyReferralCode(result.referralCode ?? null);
         setMyReferrals(result.referrals ?? []);
+        setMyAccountStatus({
+          walletBalance: result.walletBalance ?? "0.00",
+          ticketsAssigned: result.ticketsAssigned ?? 0,
+          ticketsAvailable: result.ticketsAvailable ?? 0,
+          ticketPriceAmount: result.ticketPriceAmount ?? "0",
+        });
       } catch {
         setMyReferralCode(null);
         setMyReferrals([]);
+        setMyAccountStatus(null);
       }
     });
   }, [session?.access_token, signedInWithGoogle]);
@@ -338,6 +352,7 @@ export function Dashboard({
     setSession(null);
     setMyReferralCode(null);
     setMyReferrals([]);
+    setMyAccountStatus(null);
   }
 
   async function copyInviteLink() {
@@ -808,6 +823,23 @@ export function Dashboard({
             <div className="invite-content">
               {signedInWithGoogle && myReferralCode ? (
                 <>
+                  <div className="account-status-grid">
+                    <div>
+                      <span>Tickets available</span>
+                      <strong>{myAccountStatus?.ticketsAvailable ?? 0}</strong>
+                      <small>{myAccountStatus?.ticketsAssigned ?? 0} assigned</small>
+                    </div>
+                    <div>
+                      <span>Wallet balance</span>
+                      <strong>{formatMoneyAmount(myAccountStatus?.walletBalance ?? 0)}</strong>
+                      <small>Internal funds</small>
+                    </div>
+                    <div>
+                      <span>Ticket price</span>
+                      <strong>{formatMoneyAmount(myAccountStatus?.ticketPriceAmount ?? 0)}</strong>
+                      <small>Set by admin</small>
+                    </div>
+                  </div>
                   <div className="referral-code-card">
                     <span>Your referral code</span>
                     <strong>{myReferralCode}</strong>
