@@ -19,7 +19,7 @@ const ENTRY_ERROR_MESSAGES: Record<string, { status: number; message: string }> 
 };
 
 export async function POST(request: Request) {
-  const limited = enforceRateLimit(request, "entries", { limit: 10, windowMs: 60_000 });
+  const limited = await enforceRateLimit(request, "entries", { limit: 10, windowMs: 60_000 });
   if (limited) {
     return limited;
   }

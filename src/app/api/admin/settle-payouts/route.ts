@@ -11,7 +11,7 @@ const SETTLE_ERROR_MESSAGES: Record<string, { status: number; message: string }>
 };
 
 export async function POST(request: Request) {
-  const limited = enforceRateLimit(request, "admin", { limit: 10, windowMs: 60_000 });
+  const limited = await enforceRateLimit(request, "admin", { limit: 10, windowMs: 60_000 });
   if (limited) {
     return limited;
   }

@@ -6,7 +6,7 @@ import { getInviterReferralPercent } from "@/lib/referral-rates";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 
 export async function GET(request: Request) {
-  const limited = enforceRateLimit(request, "referral-resolve", { limit: 30, windowMs: 60_000 });
+  const limited = await enforceRateLimit(request, "referral-resolve", { limit: 30, windowMs: 60_000 });
   if (limited) {
     return limited;
   }

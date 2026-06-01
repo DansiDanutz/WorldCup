@@ -21,7 +21,7 @@ progression). All three areas are addressed here.
 | 1 | `worldcup_referral_profiles` was world-readable via the anon key, exposing every player's email. | RLS migration restricts reads to the owner (`auth.uid() = user_id`); the server reads via the service role. |
 | 2 | Public `INSERT` policies on `worldcup_entries`/`worldcup_entry_teams` let the anon key bypass the ticket gate and forge entries. | Public INSERT policies dropped; entries are written only by the server through the `worldcup_create_entry` RPC. Reads restricted to the owner. |
 | 3 | A single shared `ADMIN_RESULT_SECRET` typed into the public dashboard guarded results, money, tickets and emails. | New `/admin` route gated by a Google email allowlist (`ADMIN_EMAILS`). Shared secret retained only as a constant-time **break-glass** header (`x-admin-secret`). Admin UI removed from the public bundle. |
-| 4 | No rate limiting. | Sliding-window limiter applied to entries, referral resolution, and all admin routes. |
+| 4 | No rate limiting. | Cross-instance limiter (Postgres `worldcup_rate_limit_hit`) applied to entries, referral resolution, and all admin routes, with the in-memory limiter as a fail-soft fallback. |
 | 5 | No security headers. | `next.config.ts` sets HSTS, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`. |
 
 ### Money integrity
@@ -55,13 +55,14 @@ progression). All three areas are addressed here.
    - `20260602010000_worldcup_security_hardening.sql`
    - `20260602010500_worldcup_atomic_entry_wallet.sql`
    - `20260602011000_worldcup_payout_settlement.sql`
+   - `20260602011500_worldcup_phase0_rls_hardening.sql`
+   - `20260602012000_worldcup_rate_limits.sql`
 2. **Set `ADMIN_EMAILS`** (comma-separated Google emails) in the deployment env.
 3. Keep `ADMIN_RESULT_SECRET` set for break-glass access.
 4. Review `docs/COMPLIANCE.md` before handling real money.
 
 ## Out of scope (tracked for later)
 
-- Distributed (shared-store) rate limiting; the current limiter is per-instance.
 - Full KYC / identity verification and payment-rail integration.
 - i18n and a formal accessibility audit.
 - Replacing the dynamic `worldcup_leaderboard` / `worldcup_entry_team_totals`
