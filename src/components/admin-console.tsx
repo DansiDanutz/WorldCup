@@ -302,10 +302,17 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   }
 
   async function signInWithGoogle() {
-    await supabase.auth.signInWithOAuth({
+    setError(null);
+    setMessage(null);
+
+    const { error: authError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo: typeof window !== "undefined" ? window.location.href : undefined },
     });
+
+    if (authError) {
+      setError(getOAuthErrorMessage(authError.message));
+    }
   }
 
   return (
@@ -722,6 +729,14 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
       </div>
     </main>
   );
+}
+
+function getOAuthErrorMessage(message: string) {
+  if (message.toLowerCase().includes("unsupported provider")) {
+    return "Google login is not enabled in Supabase yet. Enable the Google provider in Supabase Auth before using the admin console.";
+  }
+
+  return message;
 }
 
 function NumberField({

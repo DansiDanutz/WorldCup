@@ -45,6 +45,33 @@ Return `404` until the result is official. Return official scores with `winner: 
 - `CRON_SECRET` protects scheduled result ingestion.
 - Security headers are configured in `next.config.ts`.
 
+## Supabase Auth
+
+Google login must be enabled in the Supabase **Games** project before users or admins can sign in.
+
+1. In Google Cloud Console, create an OAuth 2.0 Client ID for a web application.
+2. Add this authorized redirect URI:
+
+```text
+https://lxhjfdxowpxzrybxdasi.supabase.co/auth/v1/callback
+```
+
+3. In Supabase Dashboard, open **Authentication > Providers > Google**.
+4. Enable Google and paste the Google Client ID and Client Secret.
+5. Save the provider settings.
+6. Confirm these allowlisted admin emails can sign in at `/admin`:
+
+```text
+semebitcoin@gmail.com
+seme@kryptostack.com
+```
+
+If Google is not enabled, Supabase returns:
+
+```json
+{"code":400,"error_code":"validation_failed","msg":"Unsupported provider: provider is not enabled"}
+```
+
 ## Vercel Cron
 
 `vercel.json` schedules:

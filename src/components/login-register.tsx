@@ -110,7 +110,7 @@ export function LoginRegister() {
     });
 
     if (authError) {
-      setError(authError.message);
+      setError(getOAuthErrorMessage(authError.message));
     }
   }
 
@@ -278,4 +278,12 @@ export function LoginRegister() {
 
 function normalizeReferralCode(value: string) {
   return value.trim().toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 12);
+}
+
+function getOAuthErrorMessage(message: string) {
+  if (message.toLowerCase().includes("unsupported provider")) {
+    return "Google login is not enabled in Supabase yet. Enable the Google provider in Supabase Auth before users can register.";
+  }
+
+  return message;
 }
