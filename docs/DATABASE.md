@@ -58,6 +58,8 @@ The fee is not shown in the player UI. Paid places are top 10 when the tournamen
 participants; otherwise paid places are the top 10% of participants, rounded up.
 The payout preview uses a weighted top-10 curve: 35%, 20%, 13%, 9%, 7%, 5%, 4%, 3%, 2%, 2%.
 When fewer than 10 places are paid, the same curve is truncated and normalized to 100%.
+The admin settlement report applies the same payout curve and subtracts referral obligations from
+the winning player's gross prize to produce an auditable net amount before any wallet transfer.
 
 ### `worldcup_stages`
 
@@ -74,10 +76,13 @@ Stores all 104 matches, kickoff data, match result fields, and point application
 ### `worldcup_entries`
 
 Stores one leaderboard entry per player.
+Raw entry rows are private. Public ranking data is exposed through the leaderboard views, while
+entry creation goes through the server API so ticket checks cannot be bypassed from the browser.
 
 ### `worldcup_entry_teams`
 
 Stores the 3 selected teams for an entry.
+Raw pick rows are private; public pick display comes from the awarded leaderboard view.
 
 ### `worldcup_tickets`
 
@@ -98,12 +103,15 @@ invite links and WhatsApp share messages.
 
 Also stores the user's latest Google email so admins can identify accounts when assigning tickets
 or transferring internal wallet funds.
+Profile rows are private PII. The authenticated owner can access their own profile, and admin/server
+routes use the service role for account management.
 
 ### `worldcup_referrals`
 
 Stores accepted referral relationships for the tournament. When a referred user locks an entry, the
 row records the inviter, invited Google user, referral code, accepted timestamp, and the tiered referred
 winner agreement.
+Referral rows are private and are exposed only through authenticated user/admin server routes.
 
 Referral payout tiers:
 
