@@ -77,7 +77,7 @@ Main dashboard:
 
 ### `/schema`
 
-Shows all 104 matches grouped by competition stage, from group stage through the final. Completed matches display the calculated team points that are added to users who selected each team; scheduled matches show points as pending.
+Shows all 104 matches from group stage through the final. The page includes group standings, winner/runner-up/third-place qualification paths, a knockout draw board, and detailed match rows. Completed matches display the calculated team points that are added to users who selected each team; scheduled matches show points as pending.
 
 ### `/api/entries`
 

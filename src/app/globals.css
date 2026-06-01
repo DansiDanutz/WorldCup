@@ -606,6 +606,206 @@ a {
   gap: 18px;
 }
 
+.draw-section {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.section-heading h2 {
+  margin: 4px 0 0;
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.group-draw-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.group-card {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow);
+}
+
+.group-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.group-card-header h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.group-card-header span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.standings-table {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.standings-head,
+.standings-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34px 40px 40px;
+  gap: 8px;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 9px;
+  border-bottom: 1px solid var(--border);
+}
+
+.standings-head {
+  color: var(--muted);
+  background: var(--surface-strong);
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.standings-row:last-child {
+  border-bottom: 0;
+}
+
+.standings-row strong {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.standings-row span {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+
+.qualification-paths {
+  display: grid;
+  gap: 8px;
+}
+
+.path-line {
+  display: grid;
+  gap: 3px;
+  padding: 9px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.path-line span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.path-line strong {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.knockout-board {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(210px, 1fr));
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  overscroll-behavior-x: contain;
+}
+
+.knockout-column {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-width: 210px;
+}
+
+.knockout-column-header {
+  position: sticky;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-strong);
+}
+
+.knockout-column-header h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.knockout-column-header span {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.draw-match {
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.draw-match.completed {
+  border-color: #9fcab9;
+  background: var(--green-soft);
+}
+
+.draw-match-number {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.draw-match-side {
+  min-height: 28px;
+  padding: 7px 8px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.draw-match-meta {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
 .schema-stage {
   box-shadow: var(--shadow);
 }
@@ -731,6 +931,7 @@ a {
 
 @media (max-width: 1180px) {
   .grid,
+  .group-draw-grid,
   .matches-section,
   .rule-grid,
   .stage-rules,
@@ -792,6 +993,7 @@ a {
   .grid,
   .coefficients-hero,
   .schema-hero,
+  .group-draw-grid,
   .matches-section,
   .rule-grid,
   .schema-points,
@@ -815,6 +1017,7 @@ a {
   }
 
   .grid,
+  .draw-section,
   .matches-section {
     gap: 14px;
   }
@@ -873,6 +1076,7 @@ a {
 
   .leaderboard-main,
   .match-main,
+  .section-heading,
   .schema-match-top {
     align-items: flex-start;
     flex-direction: column;

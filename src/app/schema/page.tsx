@@ -27,6 +27,8 @@ export default async function SchemaPage() {
   const stagesById = groupStagesById(stages);
   const pointsByMatchId = groupPointsByMatch(matchTeamPoints);
   const matchesByStage = groupMatchesByStage(matches);
+  const groups = buildGroupDraw(teams, matches);
+  const knockoutStages = stages.filter((stage) => stage.id !== "group_stage");
   const completedCount = matches.filter((match) => match.status === "completed").length;
 
   return (
@@ -64,6 +66,80 @@ export default async function SchemaPage() {
           </div>
         </section>
 
+        <section className="draw-section" aria-labelledby="group-draw-title">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Current tables</p>
+              <h2 id="group-draw-title">Group Stage Standings</h2>
+            </div>
+            <span className="status-pill">Winner and runner-up paths</span>
+          </div>
+
+          <div className="group-draw-grid">
+            {groups.map((group) => (
+              <article className="group-card" key={group.code}>
+                <div className="group-card-header">
+                  <h3>Group {group.code}</h3>
+                  <span>{group.teams.length} teams</span>
+                </div>
+
+                <div className="standings-table" role="table" aria-label={`Group ${group.code}`}>
+                  <div className="standings-head" role="row">
+                    <span role="columnheader">Team</span>
+                    <span role="columnheader">P</span>
+                    <span role="columnheader">GD</span>
+                    <span role="columnheader">Pts</span>
+                  </div>
+                  {group.teams.map((team, index) => (
+                    <div className="standings-row" key={team.team.id} role="row">
+                      <strong role="cell">
+                        {index + 1}. {team.team.name}
+                      </strong>
+                      <span role="cell">{team.played}</span>
+                      <span role="cell">{formatGoalDifference(team.goalDifference)}</span>
+                      <span role="cell">{team.points}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="qualification-paths">
+                  <PathLine label="Winner" path={group.paths.winner} />
+                  <PathLine label="Runner-up" path={group.paths.runnerUp} />
+                  <PathLine label="Third-place route" path={group.paths.thirdPlace} />
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="draw-section" aria-labelledby="knockout-draw-title">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Road to the trophy</p>
+              <h2 id="knockout-draw-title">Knockout Draw</h2>
+            </div>
+            <span className="status-pill">Round of 32 to Final</span>
+          </div>
+
+          <div className="knockout-board">
+            {knockoutStages.map((stage) => (
+              <div className="knockout-column" key={stage.id}>
+                <div className="knockout-column-header">
+                  <h3>{stage.name}</h3>
+                  <span>x{formatCoefficient(stage.stage_coefficient)}</span>
+                </div>
+                {(matchesByStage.get(stage.id) ?? []).map((match) => (
+                  <DrawMatch
+                    key={match.id}
+                    match={match}
+                    teamsById={teamsById}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="schema-stages">
           {stages.map((stage) => {
             const stageMatches = matchesByStage.get(stage.id) ?? [];
@@ -98,6 +174,37 @@ export default async function SchemaPage() {
         </section>
       </div>
     </main>
+  );
+}
+
+function PathLine({ label, path }: { label: string; path: string | null }) {
+  return (
+    <div className="path-line">
+      <span>{label}</span>
+      <strong>{path ?? "To be confirmed"}</strong>
+    </div>
+  );
+}
+
+function DrawMatch({
+  match,
+  teamsById,
+}: {
+  match: WorldCupMatch;
+  teamsById: ReturnType<typeof groupTeamsById>;
+}) {
+  const homeName = getTeamDisplayName(match.home_team_id, match.home_slot, teamsById);
+  const awayName = getTeamDisplayName(match.away_team_id, match.away_slot, teamsById);
+
+  return (
+    <article className={`draw-match ${match.status}`}>
+      <div className="draw-match-number">#{match.match_number}</div>
+      <div className="draw-match-side">{homeName}</div>
+      <div className="draw-match-side">{awayName}</div>
+      <div className="draw-match-meta">
+        {match.status === "completed" ? getMatchScore(match) : formatKickoff(match.kickoff_at)}
+      </div>
+    </article>
   );
 }
 
@@ -222,4 +329,140 @@ function groupMatchesByStage(matches: WorldCupMatch[]) {
   }
 
   return grouped;
+}
+
+function buildGroupDraw(teams: Awaited<ReturnType<typeof getTournamentSchemaData>>["teams"], matches: WorldCupMatch[]) {
+  const groupMatches = matches.filter((match) => match.stage_id === "group_stage");
+  const groups = [...new Set(teams.map((team) => team.group_code).filter(Boolean))]
+    .toSorted()
+    .map((groupCode) => {
+      const groupTeams = teams
+        .filter((team) => team.group_code === groupCode)
+        .map((team) => calculateGroupStanding(team, groupMatches))
+        .toSorted(compareGroupStanding);
+
+      return {
+        code: groupCode as string,
+        teams: groupTeams,
+        paths: getGroupPaths(groupCode as string, matches),
+      };
+    });
+
+  return groups;
+}
+
+function calculateGroupStanding(
+  team: Awaited<ReturnType<typeof getTournamentSchemaData>>["teams"][number],
+  groupMatches: WorldCupMatch[],
+) {
+  const standing = {
+    team,
+    played: 0,
+    won: 0,
+    drawn: 0,
+    lost: 0,
+    goalsFor: 0,
+    goalsAgainst: 0,
+    goalDifference: 0,
+    points: 0,
+  };
+
+  for (const match of groupMatches) {
+    const isHome = match.home_team_id === team.id;
+    const isAway = match.away_team_id === team.id;
+
+    if (!match.status || match.status !== "completed" || (!isHome && !isAway)) {
+      continue;
+    }
+
+    const goalsFor = isHome ? match.home_goals_90 : match.away_goals_90;
+    const goalsAgainst = isHome ? match.away_goals_90 : match.home_goals_90;
+
+    if (goalsFor === null || goalsAgainst === null) {
+      continue;
+    }
+
+    standing.played += 1;
+    standing.goalsFor += goalsFor;
+    standing.goalsAgainst += goalsAgainst;
+
+    if (goalsFor > goalsAgainst) {
+      standing.won += 1;
+      standing.points += 3;
+    } else if (goalsFor === goalsAgainst) {
+      standing.drawn += 1;
+      standing.points += 1;
+    } else {
+      standing.lost += 1;
+    }
+  }
+
+  standing.goalDifference = standing.goalsFor - standing.goalsAgainst;
+
+  return standing;
+}
+
+function compareGroupStanding(
+  first: ReturnType<typeof calculateGroupStanding>,
+  second: ReturnType<typeof calculateGroupStanding>,
+) {
+  return (
+    second.points - first.points ||
+    second.goalDifference - first.goalDifference ||
+    second.goalsFor - first.goalsFor ||
+    first.team.name.localeCompare(second.team.name)
+  );
+}
+
+function getGroupPaths(groupCode: string, matches: WorldCupMatch[]) {
+  const winner = findSlotPath(matches, `Group ${groupCode} winners`);
+  const runnerUp = findSlotPath(matches, `Group ${groupCode} runners-up`);
+  const thirdPlace = matches
+    .filter((match) =>
+      [match.home_slot, match.away_slot].some((slot) => thirdPlaceSlotIncludesGroup(slot, groupCode)),
+    )
+    .map((match) => {
+      const slot = match.home_slot.includes("third place") ? match.home_slot : match.away_slot;
+
+      return describePathMatch(match, slot);
+    })
+    .join(" or ");
+
+  return {
+    winner,
+    runnerUp,
+    thirdPlace: thirdPlace || null,
+  };
+}
+
+function findSlotPath(matches: WorldCupMatch[], slotName: string) {
+  const match = matches.find(
+    (candidate) => candidate.home_slot === slotName || candidate.away_slot === slotName,
+  );
+
+  return match ? describePathMatch(match, slotName) : null;
+}
+
+function thirdPlaceSlotIncludesGroup(slot: string, groupCode: string) {
+  const match = slot.match(/^Group ([A-L/]+) third place$/);
+
+  if (!match) {
+    return false;
+  }
+
+  return match[1].split("/").includes(groupCode);
+}
+
+function describePathMatch(match: WorldCupMatch, slotName: string) {
+  const opponent = match.home_slot === slotName ? match.away_slot : match.home_slot;
+
+  return `Match #${match.match_number} vs ${opponent}`;
+}
+
+function formatGoalDifference(value: number) {
+  if (value > 0) {
+    return `+${value}`;
+  }
+
+  return String(value);
 }
