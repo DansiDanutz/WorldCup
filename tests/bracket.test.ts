@@ -233,3 +233,74 @@ describe("computeBracketAssignments", () => {
     assert.deepEqual([...thirds].sort(), ["A3", "B3", "C3"]);
   });
 });
+
+describe("computeBracketAssignments across rounds", () => {
+  // Mirrors the cron's repeated-call design: each pass fills whatever is now
+  // resolvable, downstream rounds resolve once their feeders complete.
+  function applyAssignments(
+    source: WorldCupMatch[],
+    assignments: ReturnType<typeof computeBracketAssignments>,
+  ): WorldCupMatch[] {
+    const byId = new Map(assignments.map((entry) => [entry.matchId, entry]));
+
+    return source.map((current) => {
+      const update = byId.get(current.id);
+
+      if (!update) {
+        return current;
+      }
+
+      return {
+        ...current,
+        home_team_id: current.home_team_id ?? update.homeTeamId ?? null,
+        away_team_id: current.away_team_id ?? update.awayTeamId ?? null,
+      };
+    });
+  }
+
+  function complete(source: WorldCupMatch[], matchNumber: number, winner: string): WorldCupMatch[] {
+    return source.map((current) =>
+      current.match_number === matchNumber
+        ? { ...current, status: "completed", winner_team_id: winner }
+        : current,
+    );
+  }
+
+  it("propagates winners and losers through R16, QF and the third-place match", () => {
+    const teams = ["A", "B", "C", "D"].map((id) => team(id, null));
+    let matches: WorldCupMatch[] = [
+      // Two completed feeder matches.
+      match({ match_number: 500, stage_id: "round_of_16", home_slot: "A", away_slot: "B", home_team_id: "A", away_team_id: "B", status: "completed", winner_team_id: "A" }),
+      match({ match_number: 501, stage_id: "round_of_16", home_slot: "C", away_slot: "D", home_team_id: "C", away_team_id: "D", status: "completed", winner_team_id: "C" }),
+      // Semi-final fed by the two winners.
+      match({ match_number: 600, stage_id: "semi_final", home_slot: "Winner Match 500", away_slot: "Winner Match 501" }),
+      // Final + third-place fed by the semi (only one semi here for brevity).
+      match({ match_number: 700, stage_id: "final", home_slot: "Winner Match 600", away_slot: "Winner Match 501" }),
+      match({ match_number: 701, stage_id: "third_place", home_slot: "Loser Match 600", away_slot: "Loser Match 500" }),
+    ];
+
+    // Pass 1: the semi-final fills from the two completed feeders.
+    matches = applyAssignments(matches, computeBracketAssignments(teams, matches));
+    const semi = matches.find((m) => m.match_number === 600);
+    assert.equal(semi?.home_team_id, "A");
+    assert.equal(semi?.away_team_id, "C");
+
+    // The final and third-place still depend on the semi result.
+    assert.equal(matches.find((m) => m.match_number === 700)?.home_team_id, null);
+    assert.equal(matches.find((m) => m.match_number === 701)?.home_team_id, null);
+
+    // Complete the semi: A beats C.
+    matches = complete(matches, 600, "A");
+
+    // Pass 2: final gets the semi winner (A); third-place gets the semi loser
+    // (C) and the loser of match 500 (B).
+    matches = applyAssignments(matches, computeBracketAssignments(teams, matches));
+    const final = matches.find((m) => m.match_number === 700);
+    const thirdPlace = matches.find((m) => m.match_number === 701);
+    assert.equal(final?.home_team_id, "A");
+    assert.equal(final?.away_team_id, "C");
+    assert.equal(thirdPlace?.home_team_id, "C");
+    assert.equal(thirdPlace?.away_team_id, "B");
+  });
+});
+
