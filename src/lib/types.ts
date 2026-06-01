@@ -107,34 +107,6 @@ export type EntryPayload = {
   referralTermsAccepted?: boolean;
 };
 
-export type AdminReferralReportPayload = {
-  adminSecret: string;
-};
-
-export type AdminPrizePoolPayload = {
-  adminSecret: string;
-  prizePoolAmount: number;
-};
-
-export type AdminTicketAssignPayload = {
-  adminSecret: string;
-  userId: string;
-  quantity: number;
-};
-
-export type AdminTicketPricePayload = {
-  adminSecret: string;
-  ticketPriceAmount: number;
-};
-
-export type AdminWalletTransferPayload = {
-  adminSecret: string;
-  fromUserId: string;
-  toUserId: string;
-  amount: number;
-  note?: string;
-};
-
 export type AdminAccountRow = {
   userId: string;
   displayName: string;

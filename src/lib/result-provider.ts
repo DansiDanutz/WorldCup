@@ -18,12 +18,28 @@ export async function fetchExternalResult(context: ResultMatchContext): Promise<
   const url = new URL(resultApiUrl);
   url.searchParams.set("match_number", String(context.matchNumber));
 
-  const response = await fetch(url, {
-    headers: process.env.RESULT_API_KEY
-      ? { Authorization: `Bearer ${process.env.RESULT_API_KEY}` }
-      : undefined,
-    cache: "no-store",
-  });
+  // Bound the upstream call so a hanging provider cannot stall the cron run.
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10_000);
+
+  let response: Response;
+  try {
+    response = await fetch(url, {
+      headers: process.env.RESULT_API_KEY
+        ? { Authorization: `Bearer ${process.env.RESULT_API_KEY}` }
+        : undefined,
+      cache: "no-store",
+      signal: controller.signal,
+    });
+  } catch (error) {
+    if (error instanceof Error && error.name === "AbortError") {
+      throw new Error("Result API timed out");
+    }
+
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
 
   if (response.status === 404) {
     return { status: "not_found" };

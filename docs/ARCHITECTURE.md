@@ -130,4 +130,43 @@ Cron endpoint. Requires `CRON_SECRET`. It checks due matches, optionally fetches
 
 ### `/api/cron/apply`
 
-Cron helper endpoint. Requires `CRON_SECRET`. It applies points for all completed matches that have not yet been awarded.
+Cron helper endpoint. Requires `CRON_SECRET`. It applies points for all completed matches that have not yet been awarded, then advances the knockout bracket.
+
+## Admin authorization model
+
+Admin routes are authorized by `requireAdmin` (`src/lib/admin-auth.ts`):
+
+1. **Primary:** a signed-in Google user whose verified email is on the
+   `ADMIN_EMAILS` allowlist (token in the `Authorization` header).
+2. **Break-glass:** a constant-time match of the `x-admin-secret` header against
+   `ADMIN_RESULT_SECRET`.
+
+The admin console lives at `/admin` (its own route and bundle), not on the
+public dashboard. All mutating routes are validated (`src/lib/validation.ts`)
+and rate limited (`src/lib/rate-limit.ts`).
+
+### `/api/admin/advance-bracket`
+
+Admin-authorized. Resolves and fills any knockout participants that current
+results make determinable (group winners/runners-up, best-third-place
+allocation, and winner/loser of feeder matches). Safe to re-run.
+
+### `/api/admin/assign-match-teams`
+
+Admin-authorized manual override to set a knockout match's home/away teams (for
+example to correct a best-third-place allocation).
+
+### `/api/admin/settle-payouts`
+
+Admin-authorized. Runs `worldcup_settle_payouts` once the tournament is
+completed, writing the `worldcup_payouts` ledger and matching wallet credits.
+
+## Row-Level Security
+
+Reference data (`worldcup_tournaments`, `worldcup_stages`, `worldcup_teams`,
+`worldcup_matches`) is publicly readable. Player data is owner-scoped: entries,
+picks, referral profiles, referrals, tickets, wallet transactions and payouts
+are not readable with the anon key beyond the owner's own rows. The public
+leaderboard/points views run with the view owner's privileges, so they keep
+working without exposing base-table rows. All writes to game data go through
+the service role inside `SECURITY DEFINER` RPCs.

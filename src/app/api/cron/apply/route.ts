@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { advanceBracket } from "@/lib/bracket-advance";
 import { requireEnv } from "@/lib/env";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 
@@ -15,7 +16,14 @@ async function runApplyCron(request: Request) {
     return NextResponse.json({ error: result.error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ awardedRows: result.data ?? 0 });
+  let bracketAdvanced = 0;
+  try {
+    bracketAdvanced = (await advanceBracket(supabase)).assigned;
+  } catch {
+    // Non-fatal; advancement retries on the next run.
+  }
+
+  return NextResponse.json({ awardedRows: result.data ?? 0, bracketAdvanced });
 }
 
 export async function GET(request: Request) {

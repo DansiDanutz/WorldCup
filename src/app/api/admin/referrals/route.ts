@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
-import { requireEnv } from "@/lib/env";
+import { requireAdmin } from "@/lib/admin-auth";
+import { enforceRateLimit, jsonError } from "@/lib/http";
 import { createServiceSupabaseClient } from "@/lib/supabase";
-import type { AdminReferralReportPayload } from "@/lib/types";
 
 type ReferralRecord = {
   id: string;
@@ -15,22 +15,25 @@ type ReferralRecord = {
 };
 
 export async function POST(request: Request) {
-  const payload = (await request.json()) as AdminReferralReportPayload;
-
-  if (payload.adminSecret !== requireEnv("ADMIN_RESULT_SECRET")) {
-    return NextResponse.json({ error: "Invalid admin secret." }, { status: 401 });
+  const limited = enforceRateLimit(request, "admin", { limit: 30, windowMs: 60_000 });
+  if (limited) {
+    return limited;
   }
 
   const supabase = createServiceSupabaseClient();
+  const auth = await requireAdmin(request, supabase);
+
+  if (!auth.ok) {
+    return jsonError(auth.error, auth.status);
+  }
+
   const referralsResult = await supabase
     .from("worldcup_referrals")
-    .select(
-      "id,entry_id,inviter_user_id,invited_user_id,referral_code,referral_fee_percent,accepted_at",
-    )
+    .select("id,entry_id,inviter_user_id,invited_user_id,referral_code,referral_fee_percent,accepted_at")
     .order("accepted_at", { ascending: false });
 
   if (referralsResult.error) {
-    return NextResponse.json({ error: referralsResult.error.message }, { status: 500 });
+    return jsonError(referralsResult.error.message, 500);
   }
 
   const referrals = (referralsResult.data ?? []) as ReferralRecord[];
@@ -59,7 +62,7 @@ export async function POST(request: Request) {
 
   for (const result of [entriesResult, profilesResult, leaderboardResult]) {
     if (result.error) {
-      return NextResponse.json({ error: result.error.message }, { status: 500 });
+      return jsonError(result.error.message, 500);
     }
   }
 
@@ -69,19 +72,13 @@ export async function POST(request: Request) {
   const profilesByUserId = new Map(
     (profilesResult.data ?? []).map((profile) => [
       profile.user_id,
-      {
-        displayName: profile.display_name ?? "Inviter",
-        referralCode: profile.referral_code,
-      },
+      { displayName: profile.display_name ?? "Inviter", referralCode: profile.referral_code },
     ]),
   );
   const leaderboardByEntryId = new Map(
     (leaderboardResult.data ?? []).map((row) => [
       row.entry_id,
-      {
-        totalPoints: row.total_points,
-        leaderboardRank: row.leaderboard_rank,
-      },
+      { totalPoints: row.total_points, leaderboardRank: row.leaderboard_rank },
     ]),
   );
 

@@ -1,23 +1,36 @@
 import { NextResponse } from "next/server";
 
-import { requireEnv } from "@/lib/env";
+import { requireAdmin } from "@/lib/admin-auth";
+import { enforceRateLimit, jsonError } from "@/lib/http";
 import { createServiceSupabaseClient } from "@/lib/supabase";
-import type { AdminPrizePoolPayload } from "@/lib/types";
+import { requireNonNegativeAmount, requireObject, ValidationError } from "@/lib/validation";
 
 export async function POST(request: Request) {
-  const payload = (await request.json()) as AdminPrizePoolPayload;
-
-  if (payload.adminSecret !== requireEnv("ADMIN_RESULT_SECRET")) {
-    return NextResponse.json({ error: "Invalid admin secret." }, { status: 401 });
-  }
-
-  const grossAmount = Number(payload.prizePoolAmount);
-
-  if (!Number.isFinite(grossAmount) || grossAmount < 0) {
-    return NextResponse.json({ error: "Prize pool amount must be zero or higher." }, { status: 400 });
+  const limited = enforceRateLimit(request, "admin", { limit: 30, windowMs: 60_000 });
+  if (limited) {
+    return limited;
   }
 
   const supabase = createServiceSupabaseClient();
+  const auth = await requireAdmin(request, supabase);
+
+  if (!auth.ok) {
+    return jsonError(auth.error, auth.status);
+  }
+
+  let grossAmount: number;
+
+  try {
+    const body = requireObject(await request.json());
+    grossAmount = requireNonNegativeAmount(body.prizePoolAmount, "Prize pool amount");
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return jsonError(error.message, 400);
+    }
+
+    return jsonError("Invalid request body.", 400);
+  }
+
   const updateResult = await supabase
     .from("worldcup_tournaments")
     .update({
@@ -30,10 +43,7 @@ export async function POST(request: Request) {
     .single();
 
   if (updateResult.error || !updateResult.data) {
-    return NextResponse.json(
-      { error: updateResult.error?.message ?? "Could not save prize pool." },
-      { status: 500 },
-    );
+    return jsonError(updateResult.error?.message ?? "Could not save prize pool.", 500);
   }
 
   return NextResponse.json({

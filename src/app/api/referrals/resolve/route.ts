@@ -1,10 +1,16 @@
 import { NextResponse } from "next/server";
 
+import { enforceRateLimit } from "@/lib/http";
 import { normalizeReferralCode } from "@/lib/referrals";
 import { getInviterReferralPercent } from "@/lib/referral-rates";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 
 export async function GET(request: Request) {
+  const limited = enforceRateLimit(request, "referral-resolve", { limit: 30, windowMs: 60_000 });
+  if (limited) {
+    return limited;
+  }
+
   const url = new URL(request.url);
   const referralCode = normalizeReferralCode(url.searchParams.get("code"));
 
