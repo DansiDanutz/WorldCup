@@ -1,5 +1,8 @@
 const DEFAULT_BASE_URL = "https://worldcup-ten-eta.vercel.app";
+const DEFAULT_SUPABASE_URL = "https://lxhjfdxowpxzrybxdasi.supabase.co";
 const baseUrl = (process.env.SMOKE_BASE_URL ?? DEFAULT_BASE_URL).replace(/\/$/, "");
+const supabaseUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? DEFAULT_SUPABASE_URL).replace(/\/$/, "");
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const runRateLimitProbe = process.argv.includes("--rate-limit");
 
 function assert(condition, message) {
@@ -70,6 +73,36 @@ async function checkRateLimit() {
   assert(statuses.includes(429), `Expected at least one 429 from rate limiter, got ${statuses.join(",")}`);
 }
 
+async function checkSupabaseAuth() {
+  assert(supabaseAnonKey, "Missing NEXT_PUBLIC_SUPABASE_ANON_KEY for Supabase Auth smoke check");
+
+  const settingsResponse = await fetch(`${supabaseUrl}/auth/v1/settings`, {
+    headers: { apikey: supabaseAnonKey },
+  });
+  const settingsText = await settingsResponse.text();
+
+  assert(settingsResponse.status === 200, `Supabase auth settings expected 200, got ${settingsResponse.status}`);
+
+  const settings = JSON.parse(settingsText);
+  assert(settings.external?.google === true, "Supabase Google provider is not enabled");
+  assert(settings.external?.email === false, "Supabase email provider should be disabled for Google-only signup");
+
+  const authorizeUrl = new URL(`${supabaseUrl}/auth/v1/authorize`);
+  authorizeUrl.searchParams.set("provider", "google");
+  authorizeUrl.searchParams.set("redirect_to", baseUrl);
+
+  const authorizeResponse = await fetch(authorizeUrl, {
+    headers: { apikey: supabaseAnonKey },
+    redirect: "manual",
+  });
+
+  const location = authorizeResponse.headers.get("location") ?? "";
+  assert(
+    authorizeResponse.status === 302 && location.includes("accounts.google.com"),
+    "Supabase Google authorize did not redirect to Google",
+  );
+}
+
 async function main() {
   console.log(`Smoke testing ${baseUrl}`);
 
@@ -78,6 +111,7 @@ async function main() {
   await checkHealth();
   await checkAdminRejection();
   await checkSecurityHeaders(homeResponse);
+  await checkSupabaseAuth();
 
   if (runRateLimitProbe) {
     await checkRateLimit();
