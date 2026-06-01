@@ -15,6 +15,7 @@ import {
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 
+import { MINIMUM_AGE } from "@/lib/consent";
 import { formatMoneyAmount } from "@/lib/economy";
 import {
   calculatePaidPlaces,
@@ -88,6 +89,9 @@ export function Dashboard({
   const [inviteMessage, setInviteMessage] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
+  const [consented, setConsented] = useState<boolean | null>(null);
+  const [ageConfirmed, setAgeConfirmed] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
@@ -242,6 +246,73 @@ export function Dashboard({
       }
     });
   }, [session?.access_token, signedInWithGoogle]);
+
+  useEffect(() => {
+    const token = session?.access_token;
+    let active = true;
+
+    Promise.resolve().then(async () => {
+      if (!token || !signedInWithGoogle) {
+        if (active) {
+          setConsented(null);
+        }
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/consent", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const data = (await response.json()) as { consented?: boolean };
+        if (active) {
+          setConsented(Boolean(data.consented));
+        }
+      } catch {
+        if (active) {
+          setConsented(null);
+        }
+      }
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [session?.access_token, signedInWithGoogle]);
+
+  function submitConsent() {
+    setEntryError(null);
+    setEntryMessage(null);
+
+    if (!session?.access_token) {
+      return;
+    }
+
+    if (!ageConfirmed || !termsAccepted) {
+      setEntryError("Confirm your age and accept the Terms to continue.");
+      return;
+    }
+
+    startTransition(async () => {
+      const response = await fetch("/api/consent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({ ageConfirmed, termsAccepted }),
+      });
+
+      const result = (await response.json()) as { error?: string; consented?: boolean };
+
+      if (!response.ok) {
+        setEntryError(result.error ?? "Could not save consent.");
+        return;
+      }
+
+      setConsented(true);
+      setEntryMessage("Thanks — you are verified. You can lock your entry now.");
+    });
+  }
 
   function toggleTeam(teamId: string) {
     if (teamEligibility.get(teamId)?.available === false) {
@@ -554,6 +625,44 @@ export function Dashboard({
                   );
                 })}
               </div>
+              {signedInWithGoogle && consented === false ? (
+                <div className="consent-gate" aria-label="Eligibility confirmation">
+                  <label className="check-row">
+                    <input
+                      checked={ageConfirmed}
+                      onChange={(event) => setAgeConfirmed(event.target.checked)}
+                      type="checkbox"
+                    />
+                    <span>I confirm I am at least {MINIMUM_AGE} years old.</span>
+                  </label>
+                  <label className="check-row">
+                    <input
+                      checked={termsAccepted}
+                      onChange={(event) => setTermsAccepted(event.target.checked)}
+                      type="checkbox"
+                    />
+                    <span>
+                      I accept the{" "}
+                      <Link className="inline-link" href={{ pathname: "/terms" }} target="_blank">
+                        Terms
+                      </Link>{" "}
+                      and{" "}
+                      <Link className="inline-link" href={{ pathname: "/privacy" }} target="_blank">
+                        Privacy Policy
+                      </Link>
+                      .
+                    </span>
+                  </label>
+                  <button
+                    className="button secondary"
+                    disabled={!ageConfirmed || !termsAccepted || isPending}
+                    onClick={submitConsent}
+                    type="button"
+                  >
+                    Confirm &amp; continue
+                  </button>
+                </div>
+              ) : null}
               <button
                 className="button"
                 disabled={
@@ -561,6 +670,7 @@ export function Dashboard({
                   !displayName.trim() ||
                   !signedInWithGoogle ||
                   (Boolean(referralCode) && !referralAccepted) ||
+                  (signedInWithGoogle && consented !== true) ||
                   isPending
                 }
                 onClick={submitEntry}
