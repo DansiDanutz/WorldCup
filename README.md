@@ -90,6 +90,9 @@ lxhjfdxowpxzrybxdasi
 - `worldcup_leaderboard`
 - `worldcup_awarded_leaderboard`
 
+The production leaderboard view returns selected teams in Pick 1/2/3 order and includes each
+team's awarded point contribution.
+
 ## Documentation
 
 - [Architecture](docs/ARCHITECTURE.md)

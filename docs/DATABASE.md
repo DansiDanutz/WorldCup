@@ -95,7 +95,10 @@ Dynamic leaderboard from current match results.
 
 Ledger-based leaderboard from stored awards.
 
-This should be the production leaderboard once cron jobs are running.
+This is the production leaderboard once cron jobs are running. Its `teams` JSON is ordered by
+`worldcup_entry_teams.pick_slot`, so the UI can keep Pick 1, Pick 2, and Pick 3 colors stable.
+Each team object includes the selected team id, team name, fixed coefficient, and the awarded
+`total_points` contributed by that team.
 
 ### `worldcup_matches_due_for_result_check`
 

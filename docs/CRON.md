@@ -167,3 +167,7 @@ select *
 from public.worldcup_awarded_leaderboard
 order by leaderboard_rank;
 ```
+
+The `teams` JSON returned by this view is ordered by pick slot and includes each selected team's
+awarded `total_points`, allowing the app to show Pick 1, Pick 2, and Pick 3 contributions directly
+on the leaderboard.
