@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { isConsentCurrent } from "@/lib/consent";
 import { enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import { getAuthProvider, normalizeReferralCode } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
@@ -63,6 +64,20 @@ export async function POST(request: Request) {
 
   if (referralCode && !referralTermsAccepted) {
     return jsonError("Accept the referral agreement before joining with a referral code.", 400);
+  }
+
+  const consentResult = await supabase
+    .from("worldcup_consent")
+    .select("age_confirmed,terms_version")
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  if (consentResult.error) {
+    return jsonError("Could not verify consent.", 500);
+  }
+
+  if (!isConsentCurrent(consentResult.data)) {
+    return jsonError("Confirm your age and accept the Terms before entering.", 403);
   }
 
   const [tournamentResult, teamsResult, groupMatchesResult] = await Promise.all([
