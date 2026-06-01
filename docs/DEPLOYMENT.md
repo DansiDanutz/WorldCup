@@ -39,10 +39,11 @@ Return `404` until the result is official. Return official scores with `winner: 
 
 ## Security Rules
 
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` is safe for browser reads because Row Level Security is enabled.
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` is safe for browser reads because Row Level Security is enabled and private WorldCup tables do not allow public raw reads/writes.
 - `SUPABASE_SERVICE_ROLE_KEY` must never be exposed to the browser.
-- `ADMIN_RESULT_SECRET` protects manual result submission.
+- `ADMIN_RESULT_SECRET` protects the temporary admin APIs and is checked server-side.
 - `CRON_SECRET` protects scheduled result ingestion.
+- Security headers are configured in `next.config.ts`.
 
 ## Vercel Cron
 
@@ -50,12 +51,20 @@ Return `404` until the result is official. Return official scores with `winner: 
 
 ```json
 {
-  "path": "/api/cron/results",
-  "schedule": "0 * * * *"
+  "crons": [
+    {
+      "path": "/api/cron/results",
+      "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/cron/apply",
+      "schedule": "15 * * * *"
+    }
+  ]
 }
 ```
 
-This checks due matches every hour.
+This checks due matches every hour and then runs a follow-up point-application safety net.
 
 Vercel calls cron endpoints with:
 

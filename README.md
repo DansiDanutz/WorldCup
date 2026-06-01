@@ -39,6 +39,8 @@ Implemented in the Supabase **Games** project:
 - Internal wallet transfer ledger between accounts
 - Referral invite links with tiered referred-winner agreement tracking: 5% for referral-chain inviters, 3% for direct inviters
 - Player-facing prize pool with paid places and weighted payout preview calculated from participation
+- Admin settlement report with gross prize, referral obligation, and winner net amounts
+- Hardened RLS for private entry, referral, wallet, ticket, and profile tables
 - Cron-ready match timing fields
 - Durable point-award ledger
 - Leaderboard views
@@ -161,6 +163,8 @@ CRON_SECRET
 ```
 
 Server routes that use `SUPABASE_SERVICE_ROLE_KEY` must only run on trusted server infrastructure.
+Private player/account tables are not directly readable or writable with the browser anon key; user
+entry creation, admin reports, ticket assignment, and wallet transfers go through server routes.
 
 ## Data Sources
 
