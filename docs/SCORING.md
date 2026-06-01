@@ -13,6 +13,10 @@ user_total_points =
 
 An entry can be finalized only when exactly 3 teams are selected.
 
+Users can still join after the tournament starts, as long as every selected team is still open for new picks.
+
+A team becomes unavailable for new entries when its second group-stage match starts. This means a late user can join with teams that have played only their first group match, but cannot select a team whose second group match has already started.
+
 ## Final Points Formula
 
 ```text
@@ -96,4 +100,3 @@ Spain wins the final 2-0:
 base_points = 5 + 1.0 + 1 = 7
 final_points = 7 * 1.00 * 2.00 = 14
 ```
-

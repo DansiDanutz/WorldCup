@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  BookOpen,
   CalendarClock,
   Check,
   CircleDollarSign,
@@ -105,8 +106,13 @@ export function Dashboard({
 
   const visibleMatches = matches.slice(0, 24);
   const completedCount = matches.filter((match) => match.status === "completed").length;
+  const teamEligibility = useMemo(() => getTeamEligibility(matches), [matches]);
 
   function toggleTeam(teamId: string) {
+    if (teamEligibility.get(teamId)?.available === false) {
+      return;
+    }
+
     setEntryError(null);
     setEntryMessage(null);
     setSelectedTeams((current) => {
@@ -198,6 +204,10 @@ export function Dashboard({
             <Users size={16} />
             Pick Teams
           </a>
+          <a href="#rules">
+            <BookOpen size={16} />
+            Rules
+          </a>
           <a href="#leaderboard">
             <Trophy size={16} />
             Leaderboard
@@ -238,7 +248,9 @@ export function Dashboard({
             <div className="panel-header">
               <div>
                 <h1 className="panel-title">Choose 3 Teams</h1>
-                <p className="panel-subtitle">Favorites start at 1.00, longshots reach 3.00.</p>
+                <p className="panel-subtitle">
+                  Late entries are open, but a team locks when its second group match starts.
+                </p>
               </div>
               <span className="status-pill">{selectedTeams.length}/3 selected</span>
             </div>
@@ -265,19 +277,30 @@ export function Dashboard({
             <div className="team-list">
               {filteredTeams.map((team) => {
                 const selected = selectedTeams.includes(team.id);
+                const eligibility = teamEligibility.get(team.id);
+                const unavailable = eligibility?.available === false;
 
                 return (
                   <button
-                    className={`team-row ${selected ? "selected" : ""}`}
+                    className={`team-row ${selected ? "selected" : ""} ${
+                      unavailable ? "unavailable" : ""
+                    }`}
+                    disabled={unavailable}
                     key={team.id}
                     onClick={() => toggleTeam(team.id)}
                     type="button"
+                    title={
+                      unavailable
+                        ? "This team can no longer be selected because its second group match has started."
+                        : undefined
+                    }
                   >
                     <span className="select-dot">{selected ? <Check size={16} /> : null}</span>
                     <span>
                       <span className="team-name">{team.name}</span>
                       <span className="team-meta">
                         Group {team.group_code ?? "-"} · {team.confederation}
+                        {unavailable ? " · Locked" : ""}
                       </span>
                     </span>
                     <span className="coefficient">{formatCoefficient(team.reward_coefficient)}</span>
@@ -292,7 +315,9 @@ export function Dashboard({
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Entry</h2>
-                <p className="panel-subtitle">Lock exactly 3 teams into the leaderboard.</p>
+                <p className="panel-subtitle">
+                  You can join after the start if all 3 chosen teams are still selectable.
+                </p>
               </div>
               <Lock size={18} color="var(--green)" />
             </div>
@@ -362,6 +387,90 @@ export function Dashboard({
                   </div>
                 ))
               )}
+            </div>
+          </div>
+
+          <div className="panel rules-panel" id="rules">
+            <div className="panel-header">
+              <div>
+                <h2 className="panel-title">Rules</h2>
+                <p className="panel-subtitle">How picks, coefficients, and points work.</p>
+              </div>
+              <BookOpen size={18} color="var(--green)" />
+            </div>
+            <div className="rules-content">
+              <div className="rule-block">
+                <h3>How to join</h3>
+                <p>
+                  Choose exactly 3 teams. You may join even after the tournament starts, but only
+                  with teams that have not started their second group-stage match.
+                </p>
+                <p>
+                  As soon as one of your chosen teams has started its second group match, that team
+                  is locked for new users and cannot be selected anymore.
+                </p>
+              </div>
+
+              <div className="rule-block">
+                <h3>Points formula</h3>
+                <div className="formula">
+                  (base points + goal bonus + clean sheet bonus) x team coefficient x stage
+                  coefficient
+                </div>
+              </div>
+
+              <div className="rule-grid">
+                <div className="rule-card">
+                  <span>Win / qualify in 90 min</span>
+                  <strong>5 pts</strong>
+                </div>
+                <div className="rule-card">
+                  <span>Qualify after extra time</span>
+                  <strong>4 pts</strong>
+                </div>
+                <div className="rule-card">
+                  <span>Qualify after penalties</span>
+                  <strong>3 pts</strong>
+                </div>
+                <div className="rule-card">
+                  <span>Group draw</span>
+                  <strong>2 pts</strong>
+                </div>
+                <div className="rule-card">
+                  <span>Lose after penalties</span>
+                  <strong>1.5 pts</strong>
+                </div>
+                <div className="rule-card">
+                  <span>Lose after extra time</span>
+                  <strong>1 pt</strong>
+                </div>
+                <div className="rule-card">
+                  <span>Goal scored</span>
+                  <strong>+0.5</strong>
+                </div>
+                <div className="rule-card">
+                  <span>Clean sheet in 90 min</span>
+                  <strong>+1</strong>
+                </div>
+              </div>
+
+              <div className="rule-block">
+                <h3>Team coefficient</h3>
+                <p>
+                  Favorites carry a lower multiplier. The most favored teams start at 1.00, while
+                  the biggest underdogs can reach 3.00. The team coefficient stays fixed for the
+                  whole competition.
+                </p>
+              </div>
+
+              <div className="stage-rules">
+                {stages.map((stage) => (
+                  <div className="stage-rule" key={stage.id}>
+                    <span>{stage.name}</span>
+                    <strong>{formatCoefficient(stage.stage_coefficient)}</strong>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -566,3 +675,44 @@ function NumberField({
   );
 }
 
+function getTeamEligibility(matches: WorldCupMatch[]) {
+  const now = Date.now();
+  const groupMatchesByTeam = new Map<string, WorldCupMatch[]>();
+
+  for (const match of matches) {
+    if (match.stage_id !== "group_stage") {
+      continue;
+    }
+
+    for (const teamId of [match.home_team_id, match.away_team_id]) {
+      if (!teamId) {
+        continue;
+      }
+
+      const teamMatches = groupMatchesByTeam.get(teamId) ?? [];
+      teamMatches.push(match);
+      groupMatchesByTeam.set(teamId, teamMatches);
+    }
+  }
+
+  return new Map(
+    [...groupMatchesByTeam.entries()].map(([teamId, teamMatches]) => {
+      const sortedMatches = teamMatches.toSorted(
+        (first, second) =>
+          new Date(first.kickoff_at).getTime() - new Date(second.kickoff_at).getTime(),
+      );
+      const secondGroupMatch = sortedMatches[1] ?? null;
+      const secondKickoff = secondGroupMatch
+        ? new Date(secondGroupMatch.kickoff_at).getTime()
+        : null;
+
+      return [
+        teamId,
+        {
+          available: secondKickoff === null || now < secondKickoff,
+          secondKickoff,
+        },
+      ];
+    }),
+  );
+}

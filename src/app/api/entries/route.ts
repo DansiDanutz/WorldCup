@@ -1,7 +1,40 @@
 import { NextResponse } from "next/server";
 
-import { createPublicSupabaseClient } from "@/lib/supabase";
+import { createServiceSupabaseClient } from "@/lib/supabase";
 import type { EntryPayload } from "@/lib/types";
+
+function getLockedTeamIds(
+  teamIds: string[],
+  groupMatches: Array<{
+    home_team_id: string | null;
+    away_team_id: string | null;
+    kickoff_at: string;
+  }>,
+) {
+  const now = Date.now();
+  const matchesByTeam = new Map<string, Array<{ kickoff_at: string }>>();
+
+  for (const match of groupMatches) {
+    for (const teamId of [match.home_team_id, match.away_team_id]) {
+      if (!teamId || !teamIds.includes(teamId)) {
+        continue;
+      }
+
+      const matches = matchesByTeam.get(teamId) ?? [];
+      matches.push({ kickoff_at: match.kickoff_at });
+      matchesByTeam.set(teamId, matches);
+    }
+  }
+
+  return teamIds.filter((teamId) => {
+    const secondGroupMatch = (matchesByTeam.get(teamId) ?? []).toSorted(
+      (first, second) =>
+        new Date(first.kickoff_at).getTime() - new Date(second.kickoff_at).getTime(),
+    )[1];
+
+    return secondGroupMatch ? now >= new Date(secondGroupMatch.kickoff_at).getTime() : false;
+  });
+}
 
 export async function POST(request: Request) {
   const payload = (await request.json()) as EntryPayload;
@@ -16,16 +49,46 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Choose exactly 3 different teams." }, { status: 400 });
   }
 
-  const supabase = createPublicSupabaseClient();
+  const supabase = createServiceSupabaseClient();
 
-  const tournamentResult = await supabase
-    .from("worldcup_tournaments")
-    .select("id,status")
-    .eq("slug", "fifa-world-cup-2026")
-    .single();
+  const [tournamentResult, teamsResult, groupMatchesResult] = await Promise.all([
+    supabase
+      .from("worldcup_tournaments")
+      .select("id,status")
+      .eq("slug", "fifa-world-cup-2026")
+      .single(),
+    supabase.from("worldcup_teams").select("id,name").in("id", teamIds),
+    supabase
+      .from("worldcup_matches")
+      .select("home_team_id,away_team_id,kickoff_at")
+      .eq("stage_id", "group_stage")
+      .or(`home_team_id.in.(${teamIds.join(",")}),away_team_id.in.(${teamIds.join(",")})`),
+  ]);
 
   if (tournamentResult.error || !tournamentResult.data) {
     return NextResponse.json({ error: "Tournament is not available." }, { status: 500 });
+  }
+
+  if (teamsResult.error || !teamsResult.data || teamsResult.data.length !== 3) {
+    return NextResponse.json({ error: "Choose exactly 3 valid teams." }, { status: 400 });
+  }
+
+  if (groupMatchesResult.error) {
+    return NextResponse.json({ error: "Could not check team availability." }, { status: 500 });
+  }
+
+  const lockedTeamIds = getLockedTeamIds(teamIds, groupMatchesResult.data ?? []);
+
+  if (lockedTeamIds.length > 0) {
+    const namesById = new Map((teamsResult.data ?? []).map((team) => [team.id, team.name]));
+    const lockedTeamNames = lockedTeamIds.map((teamId) => namesById.get(teamId) ?? teamId);
+
+    return NextResponse.json(
+      {
+        error: `${lockedTeamNames.join(", ")} can no longer be selected because the second group match has started.`,
+      },
+      { status: 403 },
+    );
   }
 
   if (tournamentResult.data.status !== "open") {
@@ -54,7 +117,12 @@ export async function POST(request: Request) {
   const pickResult = await supabase.from("worldcup_entry_teams").insert(picks);
 
   if (pickResult.error) {
-    return NextResponse.json({ error: "Could not save selected teams." }, { status: 500 });
+    await supabase.from("worldcup_entries").delete().eq("id", entryResult.data.id);
+
+    return NextResponse.json(
+      { error: pickResult.error.message ?? "Could not save selected teams." },
+      { status: 500 },
+    );
   }
 
   const finalizeResult = await supabase.rpc("worldcup_finalize_entry", {
@@ -67,4 +135,3 @@ export async function POST(request: Request) {
 
   return NextResponse.json({ entryId: entryResult.data.id });
 }
-

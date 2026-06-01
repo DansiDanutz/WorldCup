@@ -62,6 +62,7 @@ supabase/
     20260601193000_worldcup_game.sql
     20260601194500_worldcup_kickoff_cron_points.sql
     20260601211500_worldcup_due_match_team_ids.sql
+    20260601224500_worldcup_team_pick_cutoff.sql
 ```
 
 ## Supabase Project

@@ -225,6 +225,13 @@ a {
   background: var(--green-soft);
 }
 
+.team-row.unavailable {
+  cursor: not-allowed;
+  color: var(--muted);
+  background: #f4f7f6;
+  opacity: 0.72;
+}
+
 .select-dot {
   display: grid;
   place-items: center;
@@ -408,6 +415,81 @@ a {
   gap: 18px;
 }
 
+.rules-panel {
+  grid-column: 1 / -1;
+}
+
+.rules-content {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.rule-block {
+  display: grid;
+  gap: 8px;
+}
+
+.rule-block h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.rule-block p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.formula {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--green);
+  background: var(--green-soft);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.rule-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.rule-card,
+.stage-rule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 54px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.rule-card span,
+.stage-rule span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.rule-card strong,
+.stage-rule strong {
+  color: var(--green);
+  white-space: nowrap;
+}
+
+.stage-rules {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+}
+
 .admin-form {
   display: grid;
   gap: 12px;
@@ -447,6 +529,8 @@ a {
 @media (max-width: 1180px) {
   .grid,
   .matches-section,
+  .rule-grid,
+  .stage-rules,
   .status-row {
     grid-template-columns: 1fr 1fr;
   }
@@ -504,6 +588,8 @@ a {
 
   .grid,
   .matches-section,
+  .rule-grid,
+  .stage-rules,
   .two-col {
     grid-template-columns: 1fr;
   }
@@ -546,7 +632,8 @@ a {
 
   .panel-tools,
   .entry-form,
-  .admin-form {
+  .admin-form,
+  .rules-content {
     padding: 14px;
   }
 

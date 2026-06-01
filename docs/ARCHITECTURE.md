@@ -68,6 +68,7 @@ The Games project already has generic tables such as `games`, `tournaments`, and
 Main dashboard:
 
 - choose exactly 3 teams
+- read the in-app rules and scoring formula
 - lock entry
 - view leaderboard
 - inspect match schedule
@@ -75,7 +76,7 @@ Main dashboard:
 
 ### `/api/entries`
 
-Creates and locks a user entry after exactly 3 teams are selected.
+Creates and locks a user entry after exactly 3 valid teams are selected. Late entries are allowed, but each selected team must still be before kickoff of its second group-stage match. The database also enforces this cutoff on `worldcup_entry_teams` inserts.
 
 ### `/api/admin/results`
 
@@ -88,4 +89,3 @@ Cron endpoint. Requires `CRON_SECRET`. It checks due matches, optionally fetches
 ### `/api/cron/apply`
 
 Cron helper endpoint. Requires `CRON_SECRET`. It applies points for all completed matches that have not yet been awarded.
-
