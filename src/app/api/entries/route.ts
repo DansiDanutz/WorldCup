@@ -1,40 +1,8 @@
 import { NextResponse } from "next/server";
 
 import { createServiceSupabaseClient } from "@/lib/supabase";
+import { getLockedTeamIds } from "@/lib/team-eligibility";
 import type { EntryPayload } from "@/lib/types";
-
-function getLockedTeamIds(
-  teamIds: string[],
-  groupMatches: Array<{
-    home_team_id: string | null;
-    away_team_id: string | null;
-    kickoff_at: string;
-  }>,
-) {
-  const now = Date.now();
-  const matchesByTeam = new Map<string, Array<{ kickoff_at: string }>>();
-
-  for (const match of groupMatches) {
-    for (const teamId of [match.home_team_id, match.away_team_id]) {
-      if (!teamId || !teamIds.includes(teamId)) {
-        continue;
-      }
-
-      const matches = matchesByTeam.get(teamId) ?? [];
-      matches.push({ kickoff_at: match.kickoff_at });
-      matchesByTeam.set(teamId, matches);
-    }
-  }
-
-  return teamIds.filter((teamId) => {
-    const secondGroupMatch = (matchesByTeam.get(teamId) ?? []).toSorted(
-      (first, second) =>
-        new Date(first.kickoff_at).getTime() - new Date(second.kickoff_at).getTime(),
-    )[1];
-
-    return secondGroupMatch ? now >= new Date(secondGroupMatch.kickoff_at).getTime() : false;
-  });
-}
 
 export async function POST(request: Request) {
   const payload = (await request.json()) as EntryPayload;

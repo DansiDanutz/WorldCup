@@ -23,6 +23,7 @@ import {
   groupStagesById,
   groupTeamsById,
 } from "@/lib/scoring";
+import { getTeamEligibility } from "@/lib/team-eligibility";
 import type {
   DueMatch,
   LeaderboardRow,
@@ -106,7 +107,10 @@ export function Dashboard({
 
   const visibleMatches = matches.slice(0, 24);
   const completedCount = matches.filter((match) => match.status === "completed").length;
-  const teamEligibility = useMemo(() => getTeamEligibility(matches), [matches]);
+  const teamEligibility = useMemo(
+    () => getTeamEligibility(teams.map((team) => team.id), matches),
+    [matches, teams],
+  );
 
   function toggleTeam(teamId: string) {
     if (teamEligibility.get(teamId)?.available === false) {
@@ -672,47 +676,5 @@ function NumberField({
         onChange={(event) => onChange(event.target.value)}
       />
     </div>
-  );
-}
-
-function getTeamEligibility(matches: WorldCupMatch[]) {
-  const now = Date.now();
-  const groupMatchesByTeam = new Map<string, WorldCupMatch[]>();
-
-  for (const match of matches) {
-    if (match.stage_id !== "group_stage") {
-      continue;
-    }
-
-    for (const teamId of [match.home_team_id, match.away_team_id]) {
-      if (!teamId) {
-        continue;
-      }
-
-      const teamMatches = groupMatchesByTeam.get(teamId) ?? [];
-      teamMatches.push(match);
-      groupMatchesByTeam.set(teamId, teamMatches);
-    }
-  }
-
-  return new Map(
-    [...groupMatchesByTeam.entries()].map(([teamId, teamMatches]) => {
-      const sortedMatches = teamMatches.toSorted(
-        (first, second) =>
-          new Date(first.kickoff_at).getTime() - new Date(second.kickoff_at).getTime(),
-      );
-      const secondGroupMatch = sortedMatches[1] ?? null;
-      const secondKickoff = secondGroupMatch
-        ? new Date(secondGroupMatch.kickoff_at).getTime()
-        : null;
-
-      return [
-        teamId,
-        {
-          available: secondKickoff === null || now < secondKickoff,
-          secondKickoff,
-        },
-      ];
-    }),
   );
 }
