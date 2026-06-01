@@ -386,9 +386,18 @@ export function Dashboard({
             </div>
             <div className="leaderboard-list">
               {leaderboard.length === 0 ? (
-                <div className="leaderboard-row">
-                  <div className="leaderboard-name">No locked entries yet.</div>
-                  <div className="leaderboard-teams">First entries will appear here.</div>
+                <div className="leaderboard-empty">
+                  <div className="empty-icon">
+                    <Trophy size={20} />
+                  </div>
+                  <div>
+                    <div className="leaderboard-name">No locked entries yet.</div>
+                    <p>Be the first on the board by choosing 3 teams and locking your entry.</p>
+                  </div>
+                  <a className="button secondary" href="#pick">
+                    <Users size={16} />
+                    Choose teams
+                  </a>
                 </div>
               ) : (
                 leaderboard.map((row) => (

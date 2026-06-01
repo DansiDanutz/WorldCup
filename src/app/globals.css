@@ -418,6 +418,32 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
+.leaderboard-empty {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-bottom: 1px solid var(--border);
+  background: #fbfdfc;
+}
+
+.leaderboard-empty p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.empty-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  color: var(--green);
+  background: var(--green-soft);
+}
+
 .leaderboard-main,
 .match-main {
   display: flex;
@@ -1160,6 +1186,16 @@ a {
   .leaderboard-row,
   .match-row {
     padding: 13px 14px;
+  }
+
+  .leaderboard-empty {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 14px;
+  }
+
+  .leaderboard-empty .button {
+    grid-column: 1 / -1;
+    width: 100%;
   }
 
   .leaderboard-main,
