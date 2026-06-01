@@ -11,7 +11,8 @@
     "test": "node --experimental-strip-types --import ./tests/register.mjs --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
     "generate:migrations": "node scripts/generate-worldcup-sql.mjs && node scripts/generate-worldcup-kickoff-sql.mjs",
-    "smoke:prod": "node scripts/production-smoke.mjs"
+    "smoke:prod": "node scripts/production-smoke.mjs",
+    "supabase:enable-google-auth": "node scripts/enable-supabase-google-auth.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.87.0",
