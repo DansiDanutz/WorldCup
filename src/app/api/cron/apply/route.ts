@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { requireEnv } from "@/lib/env";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 
-export async function POST(request: Request) {
+async function runApplyCron(request: Request) {
   if (request.headers.get("authorization") !== `Bearer ${requireEnv("CRON_SECRET")}`) {
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
   }
@@ -18,3 +18,10 @@ export async function POST(request: Request) {
   return NextResponse.json({ awardedRows: result.data ?? 0 });
 }
 
+export async function GET(request: Request) {
+  return runApplyCron(request);
+}
+
+export async function POST(request: Request) {
+  return runApplyCron(request);
+}

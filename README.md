@@ -43,6 +43,7 @@ docs/
   ARCHITECTURE.md
   CRON.md
   DATABASE.md
+  DEPLOYMENT.md
   GITHUB.md
   IMPLEMENTATION_PLAN.md
   SCORING.md
@@ -89,6 +90,7 @@ lxhjfdxowpxzrybxdasi
 - [Scoring Rules](docs/SCORING.md)
 - [Database Schema](docs/DATABASE.md)
 - [Cron Workflow](docs/CRON.md)
+- [Deployment](docs/DEPLOYMENT.md)
 - [GitHub Organization](docs/GITHUB.md)
 - [Implementation Plan](docs/IMPLEMENTATION_PLAN.md)
 

@@ -5,7 +5,7 @@ import { fetchExternalResult } from "@/lib/result-provider";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import type { DueMatch } from "@/lib/types";
 
-export async function POST(request: Request) {
+async function runResultCron(request: Request) {
   const authorization = request.headers.get("authorization");
   const expected = `Bearer ${requireEnv("CRON_SECRET")}`;
 
@@ -95,3 +95,10 @@ export async function POST(request: Request) {
   return NextResponse.json({ processed });
 }
 
+export async function GET(request: Request) {
+  return runResultCron(request);
+}
+
+export async function POST(request: Request) {
+  return runResultCron(request);
+}

@@ -27,10 +27,10 @@ select *
 from public.worldcup_matches_due_for_result_check;
 ```
 
-In the web app, the cron endpoint is:
+In the web app, the cron endpoint supports both `GET` and `POST`:
 
 ```http
-POST /api/cron/results
+GET /api/cron/results
 Authorization: Bearer <CRON_SECRET>
 ```
 
@@ -107,7 +107,7 @@ select public.worldcup_apply_completed_match_points();
 Or through the web app:
 
 ```http
-POST /api/cron/apply
+GET /api/cron/apply
 Authorization: Bearer <CRON_SECRET>
 ```
 
