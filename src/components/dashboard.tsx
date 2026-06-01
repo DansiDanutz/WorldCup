@@ -353,7 +353,10 @@ export function Dashboard({
                       className={`selected-team ${team ? getPickColorClass(slot) : "empty-slot"}`}
                       key={slot}
                     >
-                      <span>{team ? team.name : `Team slot ${slot + 1}`}</span>
+                      <span className="pick-slot-label">Pick {slot + 1}</span>
+                      <span className="selected-team-name">
+                        {team ? team.name : `Team slot ${slot + 1}`}
+                      </span>
                       <strong>{team ? formatCoefficient(team.reward_coefficient) : "-"}</strong>
                     </div>
                   );
@@ -405,6 +408,7 @@ export function Dashboard({
                           title={`Coefficient ${formatCoefficient(team.team_coefficient)}`}
                         >
                           <span className="team-color-dot" aria-hidden="true" />
+                          <span className="pick-chip-label">Pick {index + 1}</span>
                           <span>{team.team_name}</span>
                           <strong>{formatCoefficient(team.team_coefficient)}</strong>
                         </span>

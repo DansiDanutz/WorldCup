@@ -302,15 +302,33 @@ a {
 }
 
 .selected-team {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 8px 12px;
   padding: 12px;
   border: 1px solid var(--pick-border, var(--border));
   border-left: 5px solid var(--pick-accent, var(--border-strong));
   border-radius: 8px;
   background: var(--pick-bg, #fff);
+}
+
+.pick-slot-label,
+.pick-chip-label {
+  color: var(--pick-text, var(--muted));
+  font-size: 11px;
+  font-weight: 820;
+  text-transform: uppercase;
+}
+
+.selected-team-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-weight: 760;
+}
+
+.selected-team strong {
+  color: var(--pick-text, var(--text));
 }
 
 .empty-slot {
@@ -449,7 +467,7 @@ a {
   font-weight: 720;
 }
 
-.leaderboard-team-chip span:nth-child(2) {
+.leaderboard-team-chip span:nth-child(3) {
   overflow-wrap: anywhere;
 }
 
