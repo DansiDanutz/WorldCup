@@ -18,9 +18,9 @@ import { useEffect, useMemo, useState, useTransition } from "react";
 
 import { formatMoneyAmount } from "@/lib/economy";
 import {
+  calculatePaidPlaces,
   calculateNetPrizePool,
   formatPrizeAmount,
-  PRIZE_POOL_FEE_PERCENT,
 } from "@/lib/prize-pool";
 import {
   formatCoefficient,
@@ -160,6 +160,8 @@ export function Dashboard({
   const visibleMatches = matches.slice(0, 24);
   const completedCount = matches.filter((match) => match.status === "completed").length;
   const netPrizePool = calculateNetPrizePool(prizePoolAmount, prizePoolFeePercent);
+  const participantCount = leaderboard.length;
+  const paidPlaces = calculatePaidPlaces(participantCount);
   const teamEligibility = useMemo(
     () => getTeamEligibility(teams.map((team) => team.id), matches),
     [matches, teams],
@@ -571,9 +573,7 @@ export function Dashboard({
             <span>Prize Pool</span>
             <strong>{netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}</strong>
           </div>
-          <small>
-            {Number(prizePoolFeePercent || PRIZE_POOL_FEE_PERCENT).toFixed(0)}% fee
-          </small>
+          <small>{paidPlaces > 0 ? `Top ${paidPlaces} paid` : "Paid places TBA"}</small>
         </div>
         <nav className="nav" aria-label="Primary navigation">
           <a href="#pick">
@@ -890,7 +890,13 @@ export function Dashboard({
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Leaderboard</h2>
-                <p className="panel-subtitle">Stored awards from completed matches.</p>
+                <p className="panel-subtitle">
+                  {participantCount >= 100
+                    ? "Top 10 positions share the prize pool."
+                    : paidPlaces > 0
+                      ? `Top ${paidPlaces} positions share the prize pool.`
+                      : "Paid places are calculated after players lock entries."}
+                </p>
               </div>
               <CircleDollarSign size={18} color="var(--gold)" />
             </div>
@@ -1077,13 +1083,13 @@ export function Dashboard({
                 <div className="admin-report-header">
                   <div>
                     <strong>Prize Pool</strong>
-                    <span>Visible pool is gross amount minus 20% fee.</span>
+                    <span>Only the final player-facing prize pool is shown publicly.</span>
                   </div>
                   <strong>{netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}</strong>
                 </div>
                 <div className="two-col">
                   <div className="field">
-                    <label htmlFor="prize-pool-amount">Gross amount</label>
+                    <label htmlFor="prize-pool-amount">Collected amount</label>
                     <input
                       id="prize-pool-amount"
                       min="0"
@@ -1093,11 +1099,11 @@ export function Dashboard({
                     />
                   </div>
                   <div className="field">
-                    <label htmlFor="prize-pool-fee">Fee</label>
+                    <label htmlFor="paid-places">Paid places</label>
                     <input
                       disabled
-                      id="prize-pool-fee"
-                      value={`${Number(prizePoolFeePercent || PRIZE_POOL_FEE_PERCENT).toFixed(0)}%`}
+                      id="paid-places"
+                      value={paidPlaces > 0 ? `Top ${paidPlaces}` : "TBA"}
                     />
                   </div>
                 </div>

@@ -1,4 +1,7 @@
 export const PRIZE_POOL_FEE_PERCENT = 20;
+export const LARGE_CONTEST_PARTICIPANT_THRESHOLD = 100;
+export const LARGE_CONTEST_PAID_PLACES = 10;
+export const SMALL_CONTEST_PAID_PERCENT = 10;
 
 export function calculateNetPrizePool(
   grossAmount: string | number | null | undefined,
@@ -23,4 +26,16 @@ export function formatPrizeAmount(value: string | number) {
     maximumFractionDigits: 0,
     minimumFractionDigits: 0,
   }).format(Number(value));
+}
+
+export function calculatePaidPlaces(participantCount: number) {
+  if (!Number.isFinite(participantCount) || participantCount <= 0) {
+    return 0;
+  }
+
+  if (participantCount >= LARGE_CONTEST_PARTICIPANT_THRESHOLD) {
+    return LARGE_CONTEST_PAID_PLACES;
+  }
+
+  return Math.max(1, Math.ceil(participantCount * (SMALL_CONTEST_PAID_PERCENT / 100)));
 }

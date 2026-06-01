@@ -54,6 +54,8 @@ Prize pool fields:
 - `ticket_price_amount`: admin-set gross price used when assigning new entry tickets
 
 The visible prize pool is calculated as gross amount minus the fee.
+The fee is not shown in the player UI. Paid places are top 10 when the tournament has 100 or more
+participants; otherwise paid places are the top 10% of participants, rounded up.
 
 ### `worldcup_stages`
 

@@ -39,7 +39,8 @@ flowchart TD
 - Store raw match results once, then derive team points.
 - Use an award ledger to avoid double-counting when cron jobs retry.
 - Keep the existing generic Games tables untouched.
-- Show the public prize pool as the configured gross amount minus the tournament fee.
+- Show only the final public prize pool to players; keep the tournament fee internal.
+- Pay top 10 places when there are 100+ participants, otherwise pay the top 10% rounded up.
 - Require one assigned ticket before an authenticated user can lock an entry.
 - Record wallet transfers as an internal ledger, not as external bank/payment movement.
 
@@ -108,7 +109,7 @@ Server-only referral report. Requires `ADMIN_RESULT_SECRET` and returns accepted
 
 ### `/api/admin/prize-pool`
 
-Server-only prize pool update. Requires `ADMIN_RESULT_SECRET`, stores the gross prize amount on the tournament, and keeps the public prize pool calculated as gross amount minus the 20% fee.
+Server-only prize pool update. Requires `ADMIN_RESULT_SECRET`, stores the collected amount on the tournament, and keeps the public prize pool calculated internally without exposing the fee in the player UI.
 
 ### `/api/admin/accounts`
 

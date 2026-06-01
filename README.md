@@ -38,6 +38,7 @@ Implemented in the Supabase **Games** project:
 - Admin-assigned entry tickets with configurable ticket price
 - Internal wallet transfer ledger between accounts
 - Referral invite links with tiered referred-winner agreement tracking: 5% for referral-chain inviters, 3% for direct inviters
+- Player-facing prize pool with paid places calculated from participation
 - Cron-ready match timing fields
 - Durable point-award ledger
 - Leaderboard views
