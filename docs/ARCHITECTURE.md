@@ -8,18 +8,23 @@ The application layer is a Next.js app. Public tournament data is read through t
 
 The user does not predict every match. Instead:
 
-1. A user creates an entry.
-2. The user selects exactly 3 teams.
-3. The selected teams earn points throughout the tournament.
-4. The final user score is the sum of all awarded team points.
-5. The leaderboard ranks locked entries by total score.
+1. A user enters a referral code or confirms that they do not have one.
+2. A user signs in with Google.
+3. The user creates an entry.
+4. The user selects exactly 3 teams.
+5. The selected teams earn points throughout the tournament.
+6. The final user score is the sum of all awarded team points.
+7. The leaderboard ranks locked entries by total score.
 
 ## Data Flow
 
 ```mermaid
 flowchart TD
-  User["User picks 3 teams"] --> Entry["worldcup_entries"]
+  Referral["Referral code + 5% agreement"] --> Auth["Google sign-in"]
+  Auth --> User["User picks 3 teams"]
+  User --> Entry["worldcup_entries"]
   Entry --> Picks["worldcup_entry_teams"]
+  Entry --> Referrals["worldcup_referrals"]
   Match["worldcup_matches"] --> Result["Result update"]
   Result --> TeamPoints["worldcup_match_team_points"]
   Picks --> Awards["worldcup_entry_match_points"]

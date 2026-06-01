@@ -14,7 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import Link from "next/link";
-import { useMemo, useState, useTransition } from "react";
+import { useEffect, useMemo, useState, useTransition } from "react";
 
 import {
   formatCoefficient,
@@ -25,6 +25,7 @@ import {
   groupStagesById,
   groupTeamsById,
 } from "@/lib/scoring";
+import { createBrowserSupabaseClient } from "@/lib/supabase";
 import { getTeamEligibility } from "@/lib/team-eligibility";
 import type {
   DueMatch,
@@ -33,6 +34,7 @@ import type {
   WorldCupStage,
   WorldCupTeam,
 } from "@/lib/types";
+import type { Session } from "@supabase/supabase-js";
 
 type DashboardProps = {
   teams: WorldCupTeam[];
@@ -69,6 +71,8 @@ const initialAdminState: AdminResultState = {
 };
 
 const pickColorClasses = ["pick-color-one", "pick-color-two", "pick-color-three"] as const;
+const referralAgreementText =
+  "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
 
 export function Dashboard({
   teams,
@@ -80,6 +84,28 @@ export function Dashboard({
   const [query, setQuery] = useState("");
   const [selectedTeams, setSelectedTeams] = useState<string[]>([]);
   const [displayName, setDisplayName] = useState("");
+  const [session, setSession] = useState<Session | null>(null);
+  const [referralCode, setReferralCode] = useState(() => {
+    if (typeof window === "undefined") {
+      return "";
+    }
+
+    const initialRef = new URLSearchParams(window.location.search).get("ref");
+    const storedRef = window.localStorage.getItem("worldcup_referral_code");
+
+    return normalizeReferralCode(initialRef ?? storedRef ?? "");
+  });
+  const [referralInviter, setReferralInviter] = useState<string | null>(null);
+  const [referralAccepted, setReferralAccepted] = useState(() => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+
+    return window.localStorage.getItem("worldcup_referral_accepted") === "true";
+  });
+  const [noReferral, setNoReferral] = useState(false);
+  const [myReferralCode, setMyReferralCode] = useState<string | null>(null);
+  const [inviteMessage, setInviteMessage] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
   const [adminState, setAdminState] = useState<AdminResultState>(initialAdminState);
@@ -88,6 +114,7 @@ export function Dashboard({
   const [isPending, startTransition] = useTransition();
   const [isAdminPending, startAdminTransition] = useTransition();
 
+  const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const teamsById = useMemo(() => groupTeamsById(teams), [teams]);
   const stagesById = useMemo(() => groupStagesById(stages), [stages]);
 
@@ -115,6 +142,88 @@ export function Dashboard({
     () => getTeamEligibility(teams.map((team) => team.id), matches),
     [matches, teams],
   );
+  const signedInWithGoogle = session?.user.app_metadata.provider === "google";
+  const shareUrl =
+    typeof window === "undefined" || !myReferralCode
+      ? ""
+      : `${window.location.origin}/?ref=${encodeURIComponent(myReferralCode)}`;
+  const whatsappUrl = myReferralCode
+    ? `https://wa.me/?text=${encodeURIComponent(
+        `Join my WorldCup leaderboard. Use my referral link: ${shareUrl}`,
+      )}`
+    : "";
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+    });
+
+    const { data } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+      setSession(nextSession);
+    });
+
+    return () => data.subscription.unsubscribe();
+  }, [supabase]);
+
+  useEffect(() => {
+    if (referralCode) {
+      window.localStorage.setItem("worldcup_referral_code", referralCode);
+    } else {
+      window.localStorage.removeItem("worldcup_referral_code");
+      window.localStorage.removeItem("worldcup_referral_accepted");
+    }
+  }, [referralCode]);
+
+  useEffect(() => {
+    if (referralAccepted && referralCode) {
+      window.localStorage.setItem("worldcup_referral_accepted", "true");
+    } else {
+      window.localStorage.removeItem("worldcup_referral_accepted");
+    }
+  }, [referralAccepted, referralCode]);
+
+  useEffect(() => {
+    const normalized = normalizeReferralCode(referralCode);
+
+    const timeout = window.setTimeout(async () => {
+      if (!normalized) {
+        setReferralInviter(null);
+        return;
+      }
+
+      const response = await fetch(`/api/referrals/resolve?code=${encodeURIComponent(normalized)}`);
+      const result = (await response.json()) as {
+        valid?: boolean;
+        inviterName?: string | null;
+      };
+
+      setReferralInviter(result.valid ? result.inviterName ?? "another player" : null);
+    }, 250);
+
+    return () => window.clearTimeout(timeout);
+  }, [referralCode]);
+
+  useEffect(() => {
+    const token = session?.access_token;
+
+    Promise.resolve().then(async () => {
+      if (!token || !signedInWithGoogle) {
+        setMyReferralCode(null);
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/referrals/me", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const result = (await response.json()) as { referralCode?: string };
+
+        setMyReferralCode(result.referralCode ?? null);
+      } catch {
+        setMyReferralCode(null);
+      }
+    });
+  }, [session?.access_token, signedInWithGoogle]);
 
   function toggleTeam(teamId: string) {
     if (teamEligibility.get(teamId)?.available === false) {
@@ -140,13 +249,28 @@ export function Dashboard({
     setEntryError(null);
     setEntryMessage(null);
 
+    if (!session?.access_token || !signedInWithGoogle) {
+      setEntryError("Sign in with Google before locking your entry.");
+      return;
+    }
+
+    if (referralCode && !referralAccepted) {
+      setEntryError("Accept the 5% referral agreement before joining with a referral code.");
+      return;
+    }
+
     startTransition(async () => {
       const response = await fetch("/api/entries", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${session.access_token}`,
+        },
         body: JSON.stringify({
           displayName,
           teamIds: selectedTeams,
+          referralCode,
+          referralTermsAccepted: referralAccepted,
         }),
       });
 
@@ -160,8 +284,52 @@ export function Dashboard({
       setEntryMessage("Entry locked. You are on the leaderboard.");
       setDisplayName("");
       setSelectedTeams([]);
+      window.localStorage.removeItem("worldcup_referral_code");
+      window.localStorage.removeItem("worldcup_referral_accepted");
       window.setTimeout(() => window.location.reload(), 900);
     });
+  }
+
+  async function signInWithGoogle() {
+    setEntryError(null);
+
+    if (!referralCode && !noReferral) {
+      setEntryError("Enter a referral code or confirm that you do not have one before Google sign-in.");
+      return;
+    }
+
+    if (referralCode && !referralAccepted) {
+      setEntryError("Accept the 5% referral agreement before Google sign-in.");
+      return;
+    }
+
+    if (referralCode) {
+      window.localStorage.setItem("worldcup_referral_code", referralCode);
+      window.localStorage.setItem("worldcup_referral_accepted", "true");
+    }
+
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/?ref=${encodeURIComponent(referralCode)}`,
+      },
+    });
+  }
+
+  async function signOut() {
+    await supabase.auth.signOut();
+    setSession(null);
+    setMyReferralCode(null);
+  }
+
+  async function copyInviteLink() {
+    if (!shareUrl) {
+      return;
+    }
+
+    await navigator.clipboard.writeText(shareUrl);
+    setInviteMessage("Invite link copied.");
+    window.setTimeout(() => setInviteMessage(null), 1800);
   }
 
   function submitAdminResult() {
@@ -223,6 +391,10 @@ export function Dashboard({
           <a href="#leaderboard">
             <Trophy size={16} />
             Leaderboard
+          </a>
+          <a href="#invite">
+            <Users size={16} />
+            Invite
           </a>
           <a href="#matches">
             <CalendarClock size={16} />
@@ -335,6 +507,69 @@ export function Dashboard({
               <Lock size={18} color="var(--green)" />
             </div>
             <div className="entry-form">
+              <div className="auth-box">
+                <div>
+                  <strong>{signedInWithGoogle ? "Google account connected" : "Google sign-in required"}</strong>
+                  <p>
+                    {signedInWithGoogle
+                      ? session.user.email
+                      : "Before creating an account, enter your referral code or confirm that you do not have one."}
+                  </p>
+                </div>
+                {signedInWithGoogle ? (
+                  <button className="button secondary" onClick={signOut} type="button">
+                    Sign out
+                  </button>
+                ) : (
+                  <button className="button secondary" onClick={signInWithGoogle} type="button">
+                    Continue with Google
+                  </button>
+                )}
+              </div>
+
+              <div className="field">
+                <label htmlFor="referral-code">Referral code</label>
+                <input
+                  id="referral-code"
+                  value={referralCode}
+                  onChange={(event) => {
+                    setReferralCode(normalizeReferralCode(event.target.value));
+                    setNoReferral(false);
+                    setReferralAccepted(false);
+                  }}
+                  placeholder="Ask your inviter for their code"
+                  disabled={signedInWithGoogle}
+                />
+                {referralCode ? (
+                  <div className="field-note">
+                    {referralInviter
+                      ? `Referral recognized from ${referralInviter}.`
+                      : "This referral code will be checked before your entry is locked."}
+                  </div>
+                ) : null}
+              </div>
+
+              <label className="check-row">
+                <input
+                  checked={noReferral}
+                  disabled={Boolean(referralCode) || signedInWithGoogle}
+                  onChange={(event) => setNoReferral(event.target.checked)}
+                  type="checkbox"
+                />
+                <span>I do not have a referral code.</span>
+              </label>
+
+              {referralCode ? (
+                <label className="check-row referral-consent">
+                  <input
+                    checked={referralAccepted}
+                    onChange={(event) => setReferralAccepted(event.target.checked)}
+                    type="checkbox"
+                  />
+                  <span>{referralAgreementText}</span>
+                </label>
+              ) : null}
+
               <div className="field">
                 <label htmlFor="display-name">Display name</label>
                 <input
@@ -364,7 +599,13 @@ export function Dashboard({
               </div>
               <button
                 className="button"
-                disabled={selectedTeams.length !== 3 || !displayName.trim() || isPending}
+                disabled={
+                  selectedTeams.length !== 3 ||
+                  !displayName.trim() ||
+                  !signedInWithGoogle ||
+                  (Boolean(referralCode) && !referralAccepted) ||
+                  isPending
+                }
                 onClick={submitEntry}
                 type="button"
               >
@@ -373,6 +614,41 @@ export function Dashboard({
               </button>
               {entryMessage ? <div className="message">{entryMessage}</div> : null}
               {entryError ? <div className="message error">{entryError}</div> : null}
+            </div>
+          </div>
+
+          <div className="panel invite-panel" id="invite">
+            <div className="panel-header">
+              <div>
+                <h2 className="panel-title">Invite Friend</h2>
+                <p className="panel-subtitle">
+                  Share your referral link. A referred winner agrees to pay 5% to the inviter.
+                </p>
+              </div>
+              <Users size={18} color="var(--green)" />
+            </div>
+            <div className="invite-content">
+              {signedInWithGoogle && myReferralCode ? (
+                <>
+                  <div className="referral-code-card">
+                    <span>Your referral code</span>
+                    <strong>{myReferralCode}</strong>
+                  </div>
+                  <div className="invite-actions">
+                    <a className="button" href={whatsappUrl} rel="noreferrer" target="_blank">
+                      Send on WhatsApp
+                    </a>
+                    <button className="button secondary" onClick={copyInviteLink} type="button">
+                      Copy link
+                    </button>
+                  </div>
+                  {inviteMessage ? <div className="message">{inviteMessage}</div> : null}
+                </>
+              ) : (
+                <div className="message">
+                  Sign in with Google first to generate your referral code and WhatsApp invite link.
+                </div>
+              )}
             </div>
           </div>
 
@@ -697,6 +973,10 @@ export function Dashboard({
 
 function getPickColorClass(index: number) {
   return pickColorClasses[index] ?? "";
+}
+
+function normalizeReferralCode(value: string) {
+  return value.trim().toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 12);
 }
 
 function NumberField({

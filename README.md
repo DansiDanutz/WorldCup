@@ -33,6 +33,8 @@ Implemented in the Supabase **Games** project:
 - 7 competition stage coefficients
 - 104 World Cup 2026 matches
 - User entries with exactly 3 selected teams
+- Google-only sign-in for locked entries
+- Referral invite links with 5% referred-winner agreement tracking
 - Cron-ready match timing fields
 - Durable point-award ledger
 - Leaderboard views
@@ -84,6 +86,8 @@ lxhjfdxowpxzrybxdasi
 - `worldcup_matches`
 - `worldcup_entries`
 - `worldcup_entry_teams`
+- `worldcup_referral_profiles`
+- `worldcup_referrals`
 - `worldcup_entry_match_points`
 - `worldcup_match_team_points`
 - `worldcup_entry_team_totals`

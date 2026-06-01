@@ -92,6 +92,8 @@ export type MatchTeamPoints = {
 export type EntryPayload = {
   displayName: string;
   teamIds: string[];
+  referralCode?: string;
+  referralTermsAccepted?: boolean;
 };
 
 export type ResultPayload = {

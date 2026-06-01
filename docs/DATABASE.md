@@ -67,6 +67,17 @@ Stores one leaderboard entry per player.
 
 Stores the 3 selected teams for an entry.
 
+### `worldcup_referral_profiles`
+
+Stores one referral code per Google-authenticated user. The app uses this code to build direct
+invite links and WhatsApp share messages.
+
+### `worldcup_referrals`
+
+Stores accepted referral relationships for the tournament. When a referred user locks an entry, the
+row records the inviter, invited Google user, referral code, accepted timestamp, and the 5% referred
+winner agreement.
+
 ### `worldcup_entry_match_points`
 
 Stores durable awarded points per entry, match, and team.

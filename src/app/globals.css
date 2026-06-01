@@ -273,6 +273,24 @@ a {
   padding: 18px;
 }
 
+.auth-box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fbfdfc;
+}
+
+.auth-box p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
 .field {
   display: grid;
   gap: 7px;
@@ -294,6 +312,31 @@ a {
   border: 1px solid var(--border);
   border-radius: 7px;
   background: #fff;
+}
+
+.field-note {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.check-row input {
+  margin-top: 2px;
+}
+
+.referral-consent {
+  padding: 10px 12px;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  color: #6f4f14;
+  background: #fff8ec;
 }
 
 .selected-card {
@@ -400,6 +443,45 @@ a {
 .message.error {
   color: var(--red);
   background: #fff0ef;
+}
+
+.invite-panel {
+  grid-column: 1 / -1;
+}
+
+.invite-content {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.referral-code-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.referral-code-card span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.referral-code-card strong {
+  font-size: 22px;
+  letter-spacing: 0.04em;
+}
+
+.invite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .leaderboard-list,
@@ -1155,9 +1237,25 @@ a {
 
   .panel-tools,
   .entry-form,
+  .invite-content,
   .admin-form,
   .rules-content {
     padding: 14px;
+  }
+
+  .auth-box,
+  .referral-code-card {
+    grid-template-columns: 1fr;
+  }
+
+  .referral-code-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .auth-box .button,
+  .invite-actions .button {
+    width: 100%;
   }
 
   .field input,

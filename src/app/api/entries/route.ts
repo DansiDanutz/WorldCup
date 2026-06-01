@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { getAuthProvider, normalizeReferralCode } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import { getLockedTeamIds } from "@/lib/team-eligibility";
 import type { EntryPayload } from "@/lib/types";
@@ -8,6 +9,8 @@ export async function POST(request: Request) {
   const payload = (await request.json()) as EntryPayload;
   const displayName = payload.displayName?.trim();
   const teamIds = Array.isArray(payload.teamIds) ? payload.teamIds : [];
+  const referralCode = normalizeReferralCode(payload.referralCode);
+  const token = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
 
   if (!displayName) {
     return NextResponse.json({ error: "Display name is required." }, { status: 400 });
@@ -18,6 +21,24 @@ export async function POST(request: Request) {
   }
 
   const supabase = createServiceSupabaseClient();
+  const userResult = token ? await supabase.auth.getUser(token) : null;
+
+  if (!userResult?.data.user || userResult.error) {
+    return NextResponse.json({ error: "Sign in with Google before locking an entry." }, { status: 401 });
+  }
+
+  const user = userResult.data.user;
+
+  if (getAuthProvider(user) !== "google") {
+    return NextResponse.json({ error: "Only Google sign-in is allowed." }, { status: 403 });
+  }
+
+  if (referralCode && !payload.referralTermsAccepted) {
+    return NextResponse.json(
+      { error: "Accept the 5% referral agreement before joining with a referral code." },
+      { status: 400 },
+    );
+  }
 
   const [tournamentResult, teamsResult, groupMatchesResult] = await Promise.all([
     supabase
@@ -63,16 +84,49 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Team selection is locked." }, { status: 403 });
   }
 
+  let referrerUserId: string | null = null;
+
+  if (referralCode) {
+    const referralProfile = await supabase
+      .from("worldcup_referral_profiles")
+      .select("user_id")
+      .eq("referral_code", referralCode)
+      .maybeSingle();
+
+    if (referralProfile.error || !referralProfile.data) {
+      return NextResponse.json({ error: "Referral code is not valid." }, { status: 400 });
+    }
+
+    if (referralProfile.data.user_id === user.id) {
+      return NextResponse.json({ error: "You cannot use your own referral code." }, { status: 400 });
+    }
+
+    referrerUserId = referralProfile.data.user_id;
+  }
+
   const entryResult = await supabase
     .from("worldcup_entries")
     .insert({
       tournament_id: tournamentResult.data.id,
+      user_id: user.id,
       display_name: displayName,
+      referral_code: referralCode || null,
+      referrer_user_id: referrerUserId,
+      referral_fee_percent: referrerUserId ? 5 : 0,
+      referral_terms_accepted_at: referrerUserId ? new Date().toISOString() : null,
+      auth_provider: "google",
     })
     .select("id")
     .single();
 
   if (entryResult.error || !entryResult.data) {
+    if (entryResult.error?.code === "23505") {
+      return NextResponse.json(
+        { error: "You already locked an entry for this tournament." },
+        { status: 409 },
+      );
+    }
+
     return NextResponse.json({ error: "Could not create entry." }, { status: 500 });
   }
 
@@ -99,6 +153,25 @@ export async function POST(request: Request) {
 
   if (finalizeResult.error) {
     return NextResponse.json({ error: "Could not lock entry." }, { status: 500 });
+  }
+
+  if (referrerUserId) {
+    const referralResult = await supabase.from("worldcup_referrals").upsert(
+      {
+        tournament_id: tournamentResult.data.id,
+        entry_id: entryResult.data.id,
+        inviter_user_id: referrerUserId,
+        invited_user_id: user.id,
+        referral_code: referralCode,
+        referral_fee_percent: 5,
+        accepted_at: new Date().toISOString(),
+      },
+      { onConflict: "tournament_id,invited_user_id" },
+    );
+
+    if (referralResult.error) {
+      return NextResponse.json({ error: "Could not save referral agreement." }, { status: 500 });
+    }
   }
 
   return NextResponse.json({ entryId: entryResult.data.id });
