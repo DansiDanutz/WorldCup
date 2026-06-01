@@ -56,6 +56,8 @@ Prize pool fields:
 The visible prize pool is calculated as gross amount minus the fee.
 The fee is not shown in the player UI. Paid places are top 10 when the tournament has 100 or more
 participants; otherwise paid places are the top 10% of participants, rounded up.
+The payout preview uses a weighted top-10 curve: 35%, 20%, 13%, 9%, 7%, 5%, 4%, 3%, 2%, 2%.
+When fewer than 10 places are paid, the same curve is truncated and normalized to 100%.
 
 ### `worldcup_stages`
 

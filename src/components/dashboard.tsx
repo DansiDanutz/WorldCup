@@ -19,6 +19,7 @@ import { useEffect, useMemo, useState, useTransition } from "react";
 import { formatMoneyAmount } from "@/lib/economy";
 import {
   calculatePaidPlaces,
+  calculatePayoutPlan,
   calculateNetPrizePool,
   formatPrizeAmount,
 } from "@/lib/prize-pool";
@@ -162,6 +163,7 @@ export function Dashboard({
   const netPrizePool = calculateNetPrizePool(prizePoolAmount, prizePoolFeePercent);
   const participantCount = leaderboard.length;
   const paidPlaces = calculatePaidPlaces(participantCount);
+  const payoutPlan = calculatePayoutPlan(netPrizePool, paidPlaces);
   const teamEligibility = useMemo(
     () => getTeamEligibility(teams.map((team) => team.id), matches),
     [matches, teams],
@@ -900,6 +902,23 @@ export function Dashboard({
               </div>
               <CircleDollarSign size={18} color="var(--gold)" />
             </div>
+            {payoutPlan.length > 0 ? (
+              <div className="payout-strip" aria-label="Prize payout preview">
+                <div className="payout-strip-header">
+                  <strong>Payout Preview</strong>
+                  <span>Weighted split from the current prize pool.</span>
+                </div>
+                <div className="payout-grid">
+                  {payoutPlan.map((row) => (
+                    <div className="payout-cell" key={row.rank}>
+                      <span>#{row.rank}</span>
+                      <strong>{formatMoneyAmount(row.amount)}</strong>
+                      <small>{row.percent.toFixed(2)}%</small>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
             <div className="leaderboard-list">
               {leaderboard.length === 0 ? (
                 <div className="leaderboard-empty">
@@ -1115,6 +1134,17 @@ export function Dashboard({
                 >
                   Save Prize Pool
                 </button>
+                {payoutPlan.length > 0 ? (
+                  <div className="payout-grid compact" aria-label="Admin payout preview">
+                    {payoutPlan.map((row) => (
+                      <div className="payout-cell" key={row.rank}>
+                        <span>#{row.rank}</span>
+                        <strong>{formatMoneyAmount(row.amount)}</strong>
+                        <small>{row.percent.toFixed(2)}%</small>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
               </div>
 
               <div className="field">

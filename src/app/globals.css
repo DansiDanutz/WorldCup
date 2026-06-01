@@ -710,6 +710,66 @@ a {
   font-size: 14px;
 }
 
+.payout-strip {
+  display: grid;
+  gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: #fbfdfc;
+}
+
+.payout-strip-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.payout-strip-header strong {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.payout-strip-header span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.payout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+  gap: 8px;
+}
+
+.payout-grid.compact {
+  margin-top: 6px;
+}
+
+.payout-cell {
+  display: grid;
+  gap: 2px;
+  min-height: 58px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+}
+
+.payout-cell span,
+.payout-cell small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.payout-cell strong {
+  color: var(--green);
+  font-size: 15px;
+}
+
 .leaderboard-list,
 .match-list {
   display: grid;
@@ -1595,6 +1655,16 @@ a {
   .leaderboard-empty .button {
     grid-column: 1 / -1;
     width: 100%;
+  }
+
+  .payout-strip {
+    padding: 13px 14px;
+  }
+
+  .payout-strip-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
   }
 
   .leaderboard-main,

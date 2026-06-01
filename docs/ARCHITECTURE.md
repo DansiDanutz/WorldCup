@@ -41,6 +41,7 @@ flowchart TD
 - Keep the existing generic Games tables untouched.
 - Show only the final public prize pool to players; keep the tournament fee internal.
 - Pay top 10 places when there are 100+ participants, otherwise pay the top 10% rounded up.
+- Split paid places with the weighted curve 35/20/13/9/7/5/4/3/2/2, normalized for fewer paid places.
 - Require one assigned ticket before an authenticated user can lock an entry.
 - Record wallet transfers as an internal ledger, not as external bank/payment movement.
 

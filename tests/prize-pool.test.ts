@@ -4,6 +4,7 @@ import { describe, it } from "node:test";
 import {
   calculateNetPrizePool,
   calculatePaidPlaces,
+  calculatePayoutPlan,
   formatPrizeAmount,
 } from "../src/lib/prize-pool.ts";
 
@@ -40,5 +41,32 @@ describe("calculatePaidPlaces", () => {
 
   it("returns zero before participants join", () => {
     assert.equal(calculatePaidPlaces(0), 0);
+  });
+});
+
+describe("calculatePayoutPlan", () => {
+  it("splits a large contest prize pool across the weighted top 10", () => {
+    const plan = calculatePayoutPlan(1000, 10);
+
+    assert.equal(plan.length, 10);
+    assert.equal(plan[0]?.rank, 1);
+    assert.equal(plan[0]?.percent, 35);
+    assert.equal(plan[0]?.amount, 350);
+    assert.equal(plan[9]?.amount, 20);
+    assert.equal(plan.reduce((sum, row) => sum + row.amount, 0), 1000);
+  });
+
+  it("normalizes the same weighting curve for smaller paid-place counts", () => {
+    const plan = calculatePayoutPlan(1000, 2);
+
+    assert.equal(plan.length, 2);
+    assert.equal(Number(plan[0]?.percent.toFixed(2)), 63.64);
+    assert.equal(Number(plan[1]?.percent.toFixed(2)), 36.36);
+    assert.equal(plan.reduce((sum, row) => sum + row.amount, 0), 1000);
+  });
+
+  it("returns no payout rows before a prize pool and paid places exist", () => {
+    assert.deepEqual(calculatePayoutPlan(0, 10), []);
+    assert.deepEqual(calculatePayoutPlan(1000, 0), []);
   });
 });
