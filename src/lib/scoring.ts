@@ -20,6 +20,7 @@ export function formatKickoff(value: string) {
   return new Intl.DateTimeFormat("en", {
     dateStyle: "medium",
     timeStyle: "short",
+    timeZone: "UTC",
   }).format(new Date(value));
 }
 
@@ -51,4 +52,3 @@ export function getTeamDisplayName(teamId: string | null, fallback: string, team
 
   return teamsById.get(teamId)?.name ?? fallback;
 }
-
