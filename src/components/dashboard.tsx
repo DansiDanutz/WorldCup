@@ -68,6 +68,8 @@ const initialAdminState: AdminResultState = {
   winnerTeamId: "",
 };
 
+const pickColorClasses = ["pick-color-one", "pick-color-two", "pick-color-three"] as const;
+
 export function Dashboard({
   teams,
   stages,
@@ -287,12 +289,13 @@ export function Dashboard({
             <div className="team-list">
               {filteredTeams.map((team) => {
                 const selected = selectedTeams.includes(team.id);
+                const selectedIndex = selectedTeams.indexOf(team.id);
                 const eligibility = teamEligibility.get(team.id);
                 const unavailable = eligibility?.available === false;
 
                 return (
                   <button
-                    className={`team-row ${selected ? "selected" : ""} ${
+                    className={`team-row ${selected ? "selected" : ""} ${getPickColorClass(selectedIndex)} ${
                       unavailable ? "unavailable" : ""
                     }`}
                     disabled={unavailable}
@@ -346,7 +349,10 @@ export function Dashboard({
                   const team = selectedTeamRecords[slot];
 
                   return (
-                    <div className={`selected-team ${team ? "" : "empty-slot"}`} key={slot}>
+                    <div
+                      className={`selected-team ${team ? getPickColorClass(slot) : "empty-slot"}`}
+                      key={slot}
+                    >
                       <span>{team ? team.name : `Team slot ${slot + 1}`}</span>
                       <strong>{team ? formatCoefficient(team.reward_coefficient) : "-"}</strong>
                     </div>
@@ -392,7 +398,17 @@ export function Dashboard({
                       <span className="points">{formatPoints(row.total_points)}</span>
                     </div>
                     <div className="leaderboard-teams">
-                      {(row.teams ?? []).map((team) => team.team_name).join(" · ")}
+                      {(row.teams ?? []).map((team, index) => (
+                        <span
+                          className={`leaderboard-team-chip ${getPickColorClass(index)}`}
+                          key={team.team_id}
+                          title={`Coefficient ${formatCoefficient(team.team_coefficient)}`}
+                        >
+                          <span className="team-color-dot" aria-hidden="true" />
+                          <span>{team.team_name}</span>
+                          <strong>{formatCoefficient(team.team_coefficient)}</strong>
+                        </span>
+                      ))}
                     </div>
                   </div>
                 ))
@@ -661,6 +677,10 @@ export function Dashboard({
       </div>
     </main>
   );
+}
+
+function getPickColorClass(index: number) {
+  return pickColorClasses[index] ?? "";
 }
 
 function NumberField({

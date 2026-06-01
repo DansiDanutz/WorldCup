@@ -223,7 +223,8 @@ a {
 }
 
 .team-row.selected {
-  background: var(--green-soft);
+  border-left: 4px solid var(--pick-accent, var(--green));
+  background: var(--pick-bg, var(--green-soft));
 }
 
 .team-row.unavailable {
@@ -240,7 +241,7 @@ a {
   height: 26px;
   border: 1px solid var(--border-strong);
   border-radius: 50%;
-  color: var(--green);
+  color: var(--pick-accent, var(--green));
   background: #fff;
 }
 
@@ -306,14 +307,38 @@ a {
   justify-content: space-between;
   gap: 12px;
   padding: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--pick-border, var(--border));
+  border-left: 5px solid var(--pick-accent, var(--border-strong));
   border-radius: 8px;
-  background: #fff;
+  background: var(--pick-bg, #fff);
 }
 
 .empty-slot {
   color: var(--muted);
   border-style: dashed;
+  border-left-color: var(--border-strong);
+  background: #fff;
+}
+
+.pick-color-one {
+  --pick-accent: #106b4f;
+  --pick-border: #9ac9b8;
+  --pick-bg: #e5f3ee;
+  --pick-text: #0b513b;
+}
+
+.pick-color-two {
+  --pick-accent: #2f5fbd;
+  --pick-border: #a9c0ec;
+  --pick-bg: #e9effb;
+  --pick-text: #244c96;
+}
+
+.pick-color-three {
+  --pick-accent: #b66b16;
+  --pick-border: #e4bd86;
+  --pick-bg: #fff0dd;
+  --pick-text: #81500f;
 }
 
 .button {
@@ -402,6 +427,44 @@ a {
 .match-sub {
   color: var(--muted);
   font-size: 12px;
+}
+
+.leaderboard-teams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.leaderboard-team-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  min-height: 30px;
+  padding: 5px 8px;
+  border: 1px solid var(--pick-border);
+  border-radius: 7px;
+  color: var(--pick-text);
+  background: var(--pick-bg);
+  font-weight: 720;
+}
+
+.leaderboard-team-chip span:nth-child(2) {
+  overflow-wrap: anywhere;
+}
+
+.leaderboard-team-chip strong {
+  color: var(--pick-text);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.team-color-dot {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--pick-accent);
 }
 
 .points {
