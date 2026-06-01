@@ -12,6 +12,7 @@ import {
   Trophy,
   Users,
 } from "lucide-react";
+import Link from "next/link";
 import { useMemo, useState, useTransition } from "react";
 
 import {
@@ -463,7 +464,10 @@ export function Dashboard({
                 <p>
                   Favorites carry a lower multiplier. The most favored teams start at 1.00, while
                   the biggest underdogs can reach 3.00. The team coefficient stays fixed for the
-                  whole competition.
+                  whole competition.{" "}
+                  <Link className="inline-link" href={{ pathname: "/coefficients" }}>
+                    Click here for the full list.
+                  </Link>
                 </p>
               </div>
 

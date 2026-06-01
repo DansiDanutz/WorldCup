@@ -62,3 +62,17 @@ export async function getDashboardData() {
   };
 }
 
+export async function getTeamCoefficientData() {
+  const supabase = createPublicSupabaseClient();
+  const result = await supabase
+    .from("worldcup_teams")
+    .select("id,name,confederation,group_code,winner_odds,reward_coefficient")
+    .order("reward_coefficient", { ascending: true })
+    .order("name", { ascending: true });
+
+  if (result.error) {
+    throw result.error;
+  }
+
+  return (result.data ?? []) as WorldCupTeam[];
+}
