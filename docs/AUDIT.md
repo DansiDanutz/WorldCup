@@ -55,7 +55,8 @@ progression). All three areas are addressed here.
    - `20260602010000_worldcup_security_hardening.sql`
    - `20260602010500_worldcup_atomic_entry_wallet.sql`
    - `20260602011000_worldcup_payout_settlement.sql`
-   - `20260602011500_worldcup_rate_limits.sql`
+   - `20260602011500_worldcup_phase0_rls_hardening.sql`
+   - `20260602012000_worldcup_rate_limits.sql`
 2. **Set `ADMIN_EMAILS`** (comma-separated Google emails) in the deployment env.
 3. Keep `ADMIN_RESULT_SECRET` set for break-glass access.
 4. Review `docs/COMPLIANCE.md` before handling real money.
