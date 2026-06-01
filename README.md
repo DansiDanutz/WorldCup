@@ -51,13 +51,17 @@ src/
   app/
   components/
   lib/
+tests/
+  result-validation.test.ts
 scripts/
   generate-worldcup-sql.mjs
   generate-worldcup-kickoff-sql.mjs
 supabase/
   migrations/
+    20260524094443_games_project_baseline.sql
     20260601193000_worldcup_game.sql
     20260601194500_worldcup_kickoff_cron_points.sql
+    20260601211500_worldcup_due_match_team_ids.sql
 ```
 
 ## Supabase Project
@@ -120,6 +124,15 @@ Run the web app:
 npm install
 cp .env.example .env.local
 npm run dev
+```
+
+Run verification before shipping changes:
+
+```bash
+npm test
+npm run typecheck
+npm run lint
+npm run build
 ```
 
 Required runtime values:

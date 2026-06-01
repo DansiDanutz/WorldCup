@@ -2,11 +2,13 @@
   "name": "worldcup",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
     "generate:migrations": "node scripts/generate-worldcup-sql.mjs && node scripts/generate-worldcup-kickoff-sql.mjs"
   },
