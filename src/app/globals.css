@@ -1771,3 +1771,140 @@ a {
     font-size: 10px;
   }
 }
+
+/* =========================================================================
+   Design-system sync + accessibility-first polish (WorldCup 2026)
+   Motion stays restrained per the brand: color/opacity shifts only, one
+   gentle entrance, fully disabled under prefers-reduced-motion.
+   ========================================================================= */
+
+/* Admin settlement summary — from the canonical design system */
+.settlement-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  gap: 8px;
+}
+
+.settlement-summary div {
+  display: grid;
+  gap: 3px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.settlement-summary span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.settlement-summary strong {
+  color: var(--green);
+  font-size: 15px;
+}
+
+.settlement-row {
+  align-items: flex-start;
+}
+
+/* Eligibility / consent gate — on-brand inset card with a gold money accent */
+.consent-gate {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  background: var(--paper-soft, #fbfdfc);
+}
+
+.consent-gate .check-row {
+  margin: 0;
+}
+
+/* Accessibility: a clear keyboard focus ring on every interactive element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+  border-radius: 7px;
+}
+
+/* Smooth in-page section navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tasteful, on-brand transitions (no transforms on interaction) + one gentle
+   entrance. Everything here is opt-in via prefers-reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .button,
+  .button.secondary,
+  .team-row,
+  .nav a,
+  input,
+  select,
+  .leaderboard-team-chip,
+  .stat {
+    transition:
+      background-color 0.18s ease,
+      border-color 0.18s ease,
+      color 0.18s ease,
+      opacity 0.18s ease,
+      box-shadow 0.18s ease;
+  }
+
+  @keyframes wc-rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .status-row .stat,
+  .grid > .panel,
+  .matches-section > .panel {
+    animation: wc-rise 0.42s cubic-bezier(0.21, 0.61, 0.35, 1) both;
+  }
+
+  .grid > .panel:nth-child(2) {
+    animation-delay: 0.05s;
+  }
+
+  .grid > .panel:nth-child(3) {
+    animation-delay: 0.1s;
+  }
+
+  .grid > .panel:nth-child(4) {
+    animation-delay: 0.15s;
+  }
+
+  .grid > .panel:nth-child(5) {
+    animation-delay: 0.2s;
+  }
+}
+
+/* Honor users who ask the system to minimize motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
