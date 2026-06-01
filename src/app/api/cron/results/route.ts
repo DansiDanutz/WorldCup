@@ -5,6 +5,10 @@ import { fetchExternalResult } from "@/lib/result-provider";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import type { DueMatch } from "@/lib/types";
 
+function getErrorMessage(error: unknown) {
+  return error instanceof Error ? error.message : "Unknown error.";
+}
+
 async function runResultCron(request: Request) {
   const authorization = request.headers.get("authorization");
   const expected = `Bearer ${requireEnv("CRON_SECRET")}`;
@@ -17,7 +21,7 @@ async function runResultCron(request: Request) {
   const dueResult = await supabase
     .from("worldcup_matches_due_for_result_check")
     .select(
-      "id,tournament_id,match_number,stage_id,home_slot,away_slot,kickoff_at,result_check_after,result_checked_at,status,points_applied_at",
+      "id,tournament_id,match_number,stage_id,home_team_id,away_team_id,home_slot,away_slot,kickoff_at,result_check_after,result_checked_at,status,points_applied_at",
     )
     .order("result_check_after", { ascending: true })
     .limit(25);
@@ -46,7 +50,24 @@ async function runResultCron(request: Request) {
       continue;
     }
 
-    const providerResult = await fetchExternalResult(match.match_number);
+    let providerResult;
+
+    try {
+      providerResult = await fetchExternalResult({
+        matchNumber: match.match_number,
+        homeTeamId: match.home_team_id,
+        awayTeamId: match.away_team_id,
+      });
+    } catch (error) {
+      return NextResponse.json(
+        {
+          error: "Result provider failed.",
+          matchNumber: match.match_number,
+          detail: getErrorMessage(error),
+        },
+        { status: 502 },
+      );
+    }
 
     if (providerResult.status === "not_found") {
       await supabase.rpc("worldcup_mark_match_result_checked", {

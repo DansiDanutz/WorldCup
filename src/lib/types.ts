@@ -62,6 +62,8 @@ export type DueMatch = {
   tournament_id: string;
   match_number: number;
   stage_id: string;
+  home_team_id: string | null;
+  away_team_id: string | null;
   home_slot: string;
   away_slot: string;
   kickoff_at: string;
@@ -88,4 +90,3 @@ export type ResultPayload = {
   awayPenalties?: number | null;
   winnerTeamId?: string | null;
 };
-

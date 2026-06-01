@@ -1,0 +1,5 @@
+-- Baseline migration that already existed in the linked Supabase Games project
+-- before the WorldCup-specific schema was added.
+--
+-- Kept as a local placeholder so Supabase CLI migration history stays aligned
+-- with the remote project. Do not add WorldCup schema changes here.

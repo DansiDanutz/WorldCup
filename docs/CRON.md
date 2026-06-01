@@ -43,6 +43,53 @@ RESULT_API_KEY
 
 The endpoint passes `match_number` as a query parameter to the configured result API.
 
+## Result Provider Contract
+
+`RESULT_API_URL` should return `404` when a match result is not official yet.
+
+When the result is official, return JSON in this shape:
+
+```json
+{
+  "finishMethod": "90",
+  "homeGoals90": 2,
+  "awayGoals90": 1,
+  "homeGoalsTotal": 2,
+  "awayGoalsTotal": 1,
+  "homePenalties": null,
+  "awayPenalties": null,
+  "winner": "home"
+}
+```
+
+Allowed `finishMethod` values:
+
+| Value | Meaning |
+| --- | --- |
+| `90` | Finished in normal time |
+| `extra_time` | Finished after extra time |
+| `penalties` | Finished after penalties |
+
+Allowed `winner` values:
+
+| Value | Meaning |
+| --- | --- |
+| `home` | Home team won |
+| `away` | Away team won |
+| `draw` | Group-stage draw |
+
+The provider may return `winnerTeamId` instead of `winner`, but `winner` is preferred because it keeps the external feed independent from Supabase internal IDs.
+
+The app validates provider data before awarding points:
+
+- scores must be non-negative integers
+- total goals cannot be lower than 90-minute goals
+- 90-minute results must have equal 90-minute and total scores
+- extra-time results must have a winner
+- penalty results must be tied before penalties and have a shootout winner
+- provider winner must not conflict with the score
+- resolved winner must be one of the match teams when those teams are known
+
 For each returned match:
 
 1. Query the official result source.

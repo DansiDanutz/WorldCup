@@ -29,6 +29,14 @@ Optional until a real result provider is connected:
 - `RESULT_API_URL`
 - `RESULT_API_KEY`
 
+`RESULT_API_URL` must implement the contract documented in [CRON.md](./CRON.md). The app will call it as:
+
+```http
+GET <RESULT_API_URL>?match_number=<number>
+```
+
+Return `404` until the result is official. Return official scores with `winner: "home" | "away" | "draw"` so the app can map the result to the currently assigned teams.
+
 ## Security Rules
 
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` is safe for browser reads because Row Level Security is enabled.
@@ -94,4 +102,3 @@ curl -H "Authorization: Bearer $CRON_SECRET" https://<deployment-url>/api/cron/r
 ## Plan Notes
 
 Hourly cron requires a Vercel plan that supports hourly cron frequency. If the deployed project is on a plan that only supports daily cron, either upgrade the plan or use an external scheduler that can call `/api/cron/results` with the `CRON_SECRET` header.
-
