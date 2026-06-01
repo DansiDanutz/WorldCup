@@ -1,6 +1,7 @@
 "use client";
 
-import { Check, CircleDollarSign, Gift, LogIn, Trophy, Users } from "lucide-react";
+import { Check, CircleDollarSign, Gift, LogIn, Users } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
@@ -124,10 +125,7 @@ export function LoginRegister() {
     <main className="auth-page">
       <section className="auth-hero" aria-labelledby="auth-title">
         <Link className="auth-brand" href="/">
-          <span className="brand-mark">
-            <Trophy size={20} />
-          </span>
-          <span>WorldCup</span>
+          <Image src="/logo-lockup.svg" alt="WorldCup" width={122} height={30} priority />
         </Link>
 
         <div className="auth-copy">
