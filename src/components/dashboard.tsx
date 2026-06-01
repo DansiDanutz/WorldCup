@@ -44,6 +44,15 @@ type DashboardProps = {
   dueMatches: DueMatch[];
 };
 
+type MyReferral = {
+  id: string;
+  entryId: string | null;
+  invitedDisplayName: string;
+  referralCode: string;
+  feePercent: string;
+  acceptedAt: string;
+};
+
 type AdminResultState = {
   matchId: string;
   adminSecret: string;
@@ -105,6 +114,7 @@ export function Dashboard({
   });
   const [noReferral, setNoReferral] = useState(false);
   const [myReferralCode, setMyReferralCode] = useState<string | null>(null);
+  const [myReferrals, setMyReferrals] = useState<MyReferral[]>([]);
   const [inviteMessage, setInviteMessage] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
@@ -209,6 +219,7 @@ export function Dashboard({
     Promise.resolve().then(async () => {
       if (!token || !signedInWithGoogle) {
         setMyReferralCode(null);
+        setMyReferrals([]);
         return;
       }
 
@@ -216,11 +227,16 @@ export function Dashboard({
         const response = await fetch("/api/referrals/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
-        const result = (await response.json()) as { referralCode?: string };
+        const result = (await response.json()) as {
+          referralCode?: string;
+          referrals?: MyReferral[];
+        };
 
         setMyReferralCode(result.referralCode ?? null);
+        setMyReferrals(result.referrals ?? []);
       } catch {
         setMyReferralCode(null);
+        setMyReferrals([]);
       }
     });
   }, [session?.access_token, signedInWithGoogle]);
@@ -320,6 +336,7 @@ export function Dashboard({
     await supabase.auth.signOut();
     setSession(null);
     setMyReferralCode(null);
+    setMyReferrals([]);
   }
 
   async function copyInviteLink() {
@@ -641,6 +658,30 @@ export function Dashboard({
                     <button className="button secondary" onClick={copyInviteLink} type="button">
                       Copy link
                     </button>
+                  </div>
+                  <div className="referral-activity">
+                    <div className="referral-activity-header">
+                      <span>Referred players</span>
+                      <strong>{myReferrals.length}</strong>
+                    </div>
+                    {myReferrals.length > 0 ? (
+                      <div className="referral-list">
+                        {myReferrals.map((referral) => (
+                          <div className="referral-row" key={referral.id}>
+                            <div>
+                              <strong>{referral.invitedDisplayName}</strong>
+                              <span>Accepted {formatDateTime(referral.acceptedAt)}</span>
+                            </div>
+                            <span>{formatCoefficient(referral.feePercent)}%</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="field-note">
+                        No accepted referrals yet. When a friend joins through your link, they will
+                        appear here.
+                      </div>
+                    )}
                   </div>
                   {inviteMessage ? <div className="message">{inviteMessage}</div> : null}
                 </>
@@ -977,6 +1018,13 @@ function getPickColorClass(index: number) {
 
 function normalizeReferralCode(value: string) {
   return value.trim().toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 12);
+}
+
+function formatDateTime(value: string) {
+  return new Intl.DateTimeFormat("en", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(new Date(value));
 }
 
 function NumberField({

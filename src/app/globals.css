@@ -484,6 +484,63 @@ a {
   gap: 10px;
 }
 
+.referral-activity {
+  display: grid;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.referral-activity-header,
+.referral-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.referral-activity-header span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.referral-list {
+  display: grid;
+  gap: 8px;
+}
+
+.referral-row {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--paper-soft);
+}
+
+.referral-row div {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.referral-row strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.referral-row span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.referral-row > span {
+  flex: 0 0 auto;
+  color: var(--green);
+  font-size: 14px;
+}
+
 .leaderboard-list,
 .match-list {
   display: grid;
