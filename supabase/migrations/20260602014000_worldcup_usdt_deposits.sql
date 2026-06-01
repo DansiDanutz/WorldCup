@@ -184,3 +184,33 @@ begin
   return v_ticket_id;
 end;
 $$;
+
+-- Server-only RPC permissions ----------------------------------------------
+--
+-- Supabase exposes Postgres functions through PostgREST when roles have
+-- EXECUTE. These money-moving functions are intentionally called only from
+-- server routes using the service-role key.
+revoke execute on function public.worldcup_credit_deposit(uuid, uuid, text, text, text, numeric, text, jsonb)
+from public, anon, authenticated;
+grant execute on function public.worldcup_credit_deposit(uuid, uuid, text, text, text, numeric, text, jsonb)
+to service_role;
+
+revoke execute on function public.worldcup_purchase_ticket(uuid, uuid)
+from public, anon, authenticated;
+grant execute on function public.worldcup_purchase_ticket(uuid, uuid)
+to service_role;
+
+revoke execute on function public.worldcup_create_entry(uuid, uuid, text, text[], text, uuid)
+from public, anon, authenticated;
+grant execute on function public.worldcup_create_entry(uuid, uuid, text, text[], text, uuid)
+to service_role;
+
+revoke execute on function public.worldcup_wallet_transfer(uuid, uuid, uuid, numeric, text, text)
+from public, anon, authenticated;
+grant execute on function public.worldcup_wallet_transfer(uuid, uuid, uuid, numeric, text, text)
+to service_role;
+
+revoke execute on function public.worldcup_settle_payouts(uuid)
+from public, anon, authenticated;
+grant execute on function public.worldcup_settle_payouts(uuid)
+to service_role;
