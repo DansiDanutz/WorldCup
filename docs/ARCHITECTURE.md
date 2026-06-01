@@ -80,6 +80,10 @@ Main dashboard:
 - inspect match schedule
 - manually enter results through the admin fallback form
 
+### `/login`
+
+Dedicated login/register gate. Users enter a referral code or confirm that they do not have one before creating an account with Google. Referral codes are resolved on this page, the referred player accepts the 5% referred-winner agreement, and then OAuth redirects back to the dashboard.
+
 ### `/schema`
 
 Shows all 104 matches from group stage through the final. The page includes group standings, winner/runner-up/third-place qualification paths, a knockout draw board, and detailed match rows. Completed matches display the calculated team points that are added to users who selected each team; scheduled matches show points as pending.

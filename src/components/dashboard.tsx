@@ -98,7 +98,6 @@ export function Dashboard({
   const [referralCode, setReferralCode] = useState("");
   const [referralInviter, setReferralInviter] = useState<string | null>(null);
   const [referralAccepted, setReferralAccepted] = useState(false);
-  const [noReferral, setNoReferral] = useState(false);
   const [myReferralCode, setMyReferralCode] = useState<string | null>(null);
   const [myReferrals, setMyReferrals] = useState<MyReferral[]>([]);
   const [inviteMessage, setInviteMessage] = useState<string | null>(null);
@@ -144,7 +143,7 @@ export function Dashboard({
   const shareUrl =
     typeof window === "undefined" || !myReferralCode
       ? ""
-      : `${window.location.origin}/?ref=${encodeURIComponent(myReferralCode)}`;
+      : `${window.location.origin}/login?ref=${encodeURIComponent(myReferralCode)}`;
   const whatsappUrl = myReferralCode
     ? `https://wa.me/?text=${encodeURIComponent(
         `Join my WorldCup leaderboard. Use my referral link: ${shareUrl}`,
@@ -308,32 +307,6 @@ export function Dashboard({
     });
   }
 
-  async function signInWithGoogle() {
-    setEntryError(null);
-
-    if (!referralCode && !noReferral) {
-      setEntryError("Enter a referral code or confirm that you do not have one before Google sign-in.");
-      return;
-    }
-
-    if (referralCode && !referralAccepted) {
-      setEntryError("Accept the 5% referral agreement before Google sign-in.");
-      return;
-    }
-
-    if (referralCode) {
-      window.localStorage.setItem("worldcup_referral_code", referralCode);
-      window.localStorage.setItem("worldcup_referral_accepted", "true");
-    }
-
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}/?ref=${encodeURIComponent(referralCode)}`,
-      },
-    });
-  }
-
   async function signOut() {
     await supabase.auth.signOut();
     setSession(null);
@@ -440,6 +413,10 @@ export function Dashboard({
             <Users size={16} />
             Invite
           </a>
+          <Link href={{ pathname: "/login" }}>
+            <Lock size={16} />
+            Login
+          </Link>
           <a href="#matches">
             <CalendarClock size={16} />
             Matches
@@ -557,7 +534,7 @@ export function Dashboard({
                   <p>
                     {signedInWithGoogle
                       ? session.user.email
-                      : "Before creating an account, enter your referral code or confirm that you do not have one."}
+                      : "Create your account on the Login / Register page so referral codes are solved first."}
                   </p>
                 </div>
                 {signedInWithGoogle ? (
@@ -565,43 +542,32 @@ export function Dashboard({
                     Sign out
                   </button>
                 ) : (
-                  <button className="button secondary" onClick={signInWithGoogle} type="button">
-                    Continue with Google
-                  </button>
+                  <Link className="button secondary" href={{ pathname: "/login" }}>
+                    Login / Register
+                  </Link>
                 )}
               </div>
 
-              <div className="field">
-                <label htmlFor="referral-code">Referral code</label>
-                <input
-                  id="referral-code"
-                  value={referralCode}
-                  onChange={(event) => {
-                    setReferralCode(normalizeReferralCode(event.target.value));
-                    setNoReferral(false);
-                    setReferralAccepted(false);
-                  }}
-                  placeholder="Ask your inviter for their code"
-                  disabled={signedInWithGoogle}
-                />
-                {referralCode ? (
+              {referralCode ? (
+                <div className="field">
+                  <label htmlFor="referral-code">Referral code</label>
+                  <input
+                    id="referral-code"
+                    value={referralCode}
+                    onChange={(event) => {
+                      setReferralCode(normalizeReferralCode(event.target.value));
+                      setReferralAccepted(false);
+                    }}
+                    placeholder="Ask your inviter for their code"
+                    disabled={signedInWithGoogle}
+                  />
                   <div className="field-note">
                     {referralInviter
                       ? `Referral recognized from ${referralInviter}.`
                       : "This referral code will be checked before your entry is locked."}
                   </div>
-                ) : null}
-              </div>
-
-              <label className="check-row">
-                <input
-                  checked={noReferral}
-                  disabled={Boolean(referralCode) || signedInWithGoogle}
-                  onChange={(event) => setNoReferral(event.target.checked)}
-                  type="checkbox"
-                />
-                <span>I do not have a referral code.</span>
-              </label>
+                </div>
+              ) : null}
 
               {referralCode ? (
                 <label className="check-row referral-consent">

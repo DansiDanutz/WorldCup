@@ -117,6 +117,104 @@ a {
   padding: 28px 32px 48px;
 }
 
+.auth-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 460px);
+  gap: 28px;
+  align-items: center;
+  width: min(1180px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.auth-hero {
+  display: grid;
+  gap: 24px;
+  align-content: center;
+}
+
+.auth-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  color: var(--text);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.auth-copy {
+  display: grid;
+  gap: 14px;
+  max-width: 720px;
+}
+
+.auth-copy h1 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(38px, 6vw, 76px);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.auth-copy p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.auth-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.auth-benefits div,
+.auth-loop div {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.auth-benefits svg,
+.auth-loop svg {
+  flex: 0 0 auto;
+  color: var(--green);
+}
+
+.auth-benefits span,
+.auth-loop span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 680;
+  line-height: 1.35;
+}
+
+.auth-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.auth-loop {
+  display: grid;
+  gap: 8px;
+}
+
+.success-note {
+  color: var(--green);
+  font-weight: 700;
+}
+
 .status-row {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -413,6 +511,7 @@ a {
   border-radius: 7px;
   color: #fff;
   font-weight: 760;
+  text-decoration: none;
   background: var(--green);
 }
 
@@ -1295,6 +1394,7 @@ a {
   }
 
   .grid,
+  .auth-page,
   .coefficients-hero,
   .schema-hero,
   .group-draw-grid,
@@ -1303,6 +1403,21 @@ a {
   .schema-points,
   .stage-rules,
   .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-page {
+    align-items: start;
+    gap: 18px;
+    min-height: auto;
+    padding: 18px 16px 36px;
+  }
+
+  .auth-copy h1 {
+    font-size: 38px;
+  }
+
+  .auth-benefits {
     grid-template-columns: 1fr;
   }
 
@@ -1362,7 +1477,8 @@ a {
   }
 
   .auth-box .button,
-  .invite-actions .button {
+  .invite-actions .button,
+  .auth-card .button {
     width: 100%;
   }
 
