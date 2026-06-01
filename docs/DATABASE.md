@@ -82,8 +82,13 @@ invite links and WhatsApp share messages.
 ### `worldcup_referrals`
 
 Stores accepted referral relationships for the tournament. When a referred user locks an entry, the
-row records the inviter, invited Google user, referral code, accepted timestamp, and the 5% referred
+row records the inviter, invited Google user, referral code, accepted timestamp, and the tiered referred
 winner agreement.
+
+Referral payout tiers:
+
+- 5% when the inviter joined through a referral
+- 3% when the inviter joined without a referral
 
 ### `worldcup_entry_match_points`
 

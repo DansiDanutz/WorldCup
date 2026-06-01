@@ -20,7 +20,7 @@ The user does not predict every match. Instead:
 
 ```mermaid
 flowchart TD
-  Referral["Referral code + 5% agreement"] --> Auth["Google sign-in"]
+  Referral["Referral code + tiered agreement"] --> Auth["Google sign-in"]
   Auth --> User["User picks 3 teams"]
   User --> Entry["worldcup_entries"]
   Entry --> Picks["worldcup_entry_teams"]
@@ -83,7 +83,7 @@ Main dashboard:
 
 ### `/login`
 
-Dedicated login/register gate. Users enter a referral code or confirm that they do not have one before creating an account with Google. Referral codes are resolved on this page, the referred player accepts the 5% referred-winner agreement, and then OAuth redirects back to the dashboard.
+Dedicated login/register gate. Users enter a referral code or confirm that they do not have one before creating an account with Google. Referral codes are resolved on this page, the referred player accepts the referred-winner agreement, and then OAuth redirects back to the dashboard. Users who join through a referral can earn 5% from their own referred winners; users who join without a referral can still invite, but earn 3%.
 
 ### `/schema`
 
@@ -99,7 +99,7 @@ Server-only result fallback. Requires `ADMIN_RESULT_SECRET` and updates one matc
 
 ### `/api/admin/referrals`
 
-Server-only referral report. Requires `ADMIN_RESULT_SECRET` and returns accepted 5% referral agreements with inviter, referred entry, accepted timestamp, and current leaderboard position for payout auditing.
+Server-only referral report. Requires `ADMIN_RESULT_SECRET` and returns accepted referral agreements with inviter, referred entry, accepted timestamp, percentage tier, and current leaderboard position for payout auditing.
 
 ### `/api/admin/prize-pool`
 

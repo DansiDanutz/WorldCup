@@ -14,6 +14,7 @@ export function LoginRegister() {
   const [session, setSession] = useState<Session | null>(null);
   const [referralCode, setReferralCode] = useState("");
   const [referralInviter, setReferralInviter] = useState<string | null>(null);
+  const [referralPercent, setReferralPercent] = useState(3);
   const [referralChecked, setReferralChecked] = useState(false);
   const [referralAccepted, setReferralAccepted] = useState(false);
   const [noReferral, setNoReferral] = useState(false);
@@ -63,10 +64,12 @@ export function LoginRegister() {
       const result = (await response.json()) as {
         valid?: boolean;
         inviterName?: string | null;
+        referralPercent?: number;
       };
 
       setReferralChecked(true);
       setReferralInviter(result.valid ? result.inviterName ?? "another player" : null);
+      setReferralPercent(result.valid ? result.referralPercent ?? 3 : 3);
     }, 250);
 
     return () => window.clearTimeout(timeout);
@@ -88,7 +91,7 @@ export function LoginRegister() {
       }
 
       if (!referralAccepted) {
-        setError("Accept the 5% referral agreement before creating your account.");
+        setError("Accept the referral agreement before creating your account.");
         return;
       }
 
@@ -131,9 +134,8 @@ export function LoginRegister() {
           <span className="status-pill">Referral entry</span>
           <h1 id="auth-title">Register with Google. Join with a referral. Build your own chain.</h1>
           <p>
-            Every player can invite friends. If someone joins through your referral and later wins,
-            they accepted that 5% of their prize goes to you. Then they can invite their own friends
-            too.
+            Every player can invite friends. Join through a referral to unlock 5% from referred
+            winners. Join without a referral and your invite link still works, but your rate is 3%.
           </p>
         </div>
 
@@ -144,7 +146,7 @@ export function LoginRegister() {
           </div>
           <div>
             <CircleDollarSign size={18} />
-            <span>Earn 5% from every referred winner</span>
+            <span>Referral members earn 5%; direct members earn 3%</span>
           </div>
           <div>
             <Users size={18} />
@@ -192,7 +194,7 @@ export function LoginRegister() {
             {referralCode ? (
               <div className={`field-note ${referralInviter ? "success-note" : ""}`}>
                 {referralInviter
-                  ? `Referral recognized from ${referralInviter}.`
+                  ? `Referral recognized from ${referralInviter}. Inviter rate: ${referralPercent}%.`
                   : referralChecked
                     ? "This referral code was not found."
                     : "Checking referral code..."}
@@ -214,7 +216,7 @@ export function LoginRegister() {
               }}
               type="checkbox"
             />
-            <span>I do not have a referral code.</span>
+            <span>I do not have a referral code, and I understand my referral rate will be 3%.</span>
           </label>
 
           {referralCode ? (
@@ -225,18 +227,22 @@ export function LoginRegister() {
                 onChange={(event) => setReferralAccepted(event.target.checked)}
                 type="checkbox"
               />
-              <span>{referralAgreementText}</span>
+              <span>
+                {referralAgreementText.replace("5%", `${referralPercent}%`)}
+              </span>
             </label>
           ) : null}
 
           <div className="auth-loop">
             <div>
               <Check size={16} />
-              <span>Your inviter can earn 5% if you win.</span>
+              <span>Your inviter can earn {referralCode ? referralPercent : 3}% if you win.</span>
             </div>
             <div>
               <Check size={16} />
-              <span>You get your own link and can earn 5% from your referrals.</span>
+              <span>
+                You get your own link: 5% if you joined through a referral, 3% if you joined direct.
+              </span>
             </div>
           </div>
 

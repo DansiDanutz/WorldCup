@@ -34,7 +34,7 @@ Implemented in the Supabase **Games** project:
 - 104 World Cup 2026 matches
 - User entries with exactly 3 selected teams
 - Google-only sign-in for locked entries
-- Referral invite links with 5% referred-winner agreement tracking
+- Referral invite links with tiered referred-winner agreement tracking: 5% for referral-chain inviters, 3% for direct inviters
 - Cron-ready match timing fields
 - Durable point-award ledger
 - Leaderboard views

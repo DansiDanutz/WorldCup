@@ -105,6 +105,7 @@ export function Dashboard({
   const [session, setSession] = useState<Session | null>(null);
   const [referralCode, setReferralCode] = useState("");
   const [referralInviter, setReferralInviter] = useState<string | null>(null);
+  const [referralPercent, setReferralPercent] = useState(3);
   const [referralAccepted, setReferralAccepted] = useState(false);
   const [myReferralCode, setMyReferralCode] = useState<string | null>(null);
   const [myReferrals, setMyReferrals] = useState<MyReferral[]>([]);
@@ -210,6 +211,7 @@ export function Dashboard({
     const timeout = window.setTimeout(async () => {
       if (!normalized) {
         setReferralInviter(null);
+        setReferralPercent(3);
         return;
       }
 
@@ -217,9 +219,11 @@ export function Dashboard({
       const result = (await response.json()) as {
         valid?: boolean;
         inviterName?: string | null;
+        referralPercent?: number;
       };
 
       setReferralInviter(result.valid ? result.inviterName ?? "another player" : null);
+      setReferralPercent(result.valid ? result.referralPercent ?? 3 : 3);
     }, 250);
 
     return () => window.clearTimeout(timeout);
@@ -283,7 +287,7 @@ export function Dashboard({
     }
 
     if (referralCode && !referralAccepted) {
-      setEntryError("Accept the 5% referral agreement before joining with a referral code.");
+      setEntryError("Accept the referral agreement before joining with a referral code.");
       return;
     }
 
@@ -612,7 +616,7 @@ export function Dashboard({
                   />
                   <div className="field-note">
                     {referralInviter
-                      ? `Referral recognized from ${referralInviter}.`
+                      ? `Referral recognized from ${referralInviter}. Inviter rate: ${referralPercent}%.`
                       : "This referral code will be checked before your entry is locked."}
                   </div>
                 </div>
@@ -625,7 +629,7 @@ export function Dashboard({
                     onChange={(event) => setReferralAccepted(event.target.checked)}
                     type="checkbox"
                   />
-                  <span>{referralAgreementText}</span>
+                  <span>{referralAgreementText.replace("5%", `${referralPercent}%`)}</span>
                 </label>
               ) : null}
 
@@ -681,7 +685,7 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Invite Friend</h2>
                 <p className="panel-subtitle">
-                  Share your referral link. A referred winner agrees to pay 5% to the inviter.
+                  Share your referral link. Referral-chain inviters earn 5%; direct inviters earn 3%.
                 </p>
               </div>
               <Users size={18} color="var(--green)" />
@@ -1088,7 +1092,7 @@ export function Dashboard({
                 <div className="admin-report-header">
                   <div>
                     <strong>Referral report</strong>
-                    <span>Accepted 5% agreements for referred players.</span>
+                    <span>Accepted referral agreements for referred players.</span>
                   </div>
                   <button
                     className="button secondary"

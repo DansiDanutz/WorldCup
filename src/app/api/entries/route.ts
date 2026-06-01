@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { getAuthProvider, normalizeReferralCode } from "@/lib/referrals";
+import { getInviterReferralPercent } from "@/lib/referral-rates";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import { getLockedTeamIds } from "@/lib/team-eligibility";
 import type { EntryPayload } from "@/lib/types";
@@ -35,7 +36,7 @@ export async function POST(request: Request) {
 
   if (referralCode && !payload.referralTermsAccepted) {
     return NextResponse.json(
-      { error: "Accept the 5% referral agreement before joining with a referral code." },
+      { error: "Accept the referral agreement before joining with a referral code." },
       { status: 400 },
     );
   }
@@ -156,6 +157,20 @@ export async function POST(request: Request) {
   }
 
   if (referrerUserId) {
+    const inviterEntry = await supabase
+      .from("worldcup_entries")
+      .select("referrer_user_id")
+      .eq("tournament_id", tournamentResult.data.id)
+      .eq("user_id", referrerUserId)
+      .maybeSingle();
+
+    if (inviterEntry.error) {
+      return NextResponse.json({ error: "Could not verify inviter referral rate." }, { status: 500 });
+    }
+
+    const inviterReferralPercent = getInviterReferralPercent(
+      Boolean(inviterEntry.data?.referrer_user_id),
+    );
     const referralResult = await supabase.from("worldcup_referrals").upsert(
       {
         tournament_id: tournamentResult.data.id,
@@ -163,7 +178,7 @@ export async function POST(request: Request) {
         inviter_user_id: referrerUserId,
         invited_user_id: user.id,
         referral_code: referralCode,
-        referral_fee_percent: 5,
+        referral_fee_percent: inviterReferralPercent,
         accepted_at: new Date().toISOString(),
       },
       { onConflict: "tournament_id,invited_user_id" },
