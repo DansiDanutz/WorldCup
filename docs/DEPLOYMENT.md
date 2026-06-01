@@ -2,6 +2,31 @@
 
 The recommended production host is Vercel.
 
+## Domain
+
+Canonical production domain:
+
+```text
+https://worldcup26.world
+```
+
+The Vercel project has these custom domains attached:
+
+```text
+worldcup26.world
+www.worldcup26.world
+```
+
+Add these DNS records at the domain registrar:
+
+```text
+Type  Name  Value
+A     @     76.76.21.21
+CNAME www   cname.vercel-dns.com
+```
+
+If the registrar does not support `@`, use the blank/root host field for the A record. The app redirects `*.vercel.app`, `worldcup-ten-eta.vercel.app`, and `www.worldcup26.world` to `https://worldcup26.world`.
+
 ## Production Environment Variables
 
 Set these in Vercel Project Settings:
