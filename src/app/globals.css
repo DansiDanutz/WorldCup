@@ -2139,6 +2139,7 @@ html {
   font-size: 14.5px;
   font-weight: 850;
   text-decoration: none;
+  border: 0;
   background: linear-gradient(180deg, #ffd980, #e7b24e);
   box-shadow: 0 12px 26px rgba(201, 148, 46, 0.42);
   transition:
@@ -2310,7 +2311,8 @@ html {
 .hero-card--howto .hero-card__scrim,
 .hero-card--prize .hero-card__scrim,
 .hero-card--points .hero-card__scrim,
-.hero-card--coef .hero-card__scrim {
+.hero-card--coef .hero-card__scrim,
+.hero-card--example .hero-card__scrim {
   background: linear-gradient(
     180deg,
     rgba(4, 12, 10, 0.58) 0%,
@@ -2355,9 +2357,8 @@ html {
 .hero-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 8px 18px;
+  gap: 1px;
+  padding: 4px 16px;
 }
 
 .hero-list__row {
@@ -2365,12 +2366,11 @@ html {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  padding-bottom: 11px;
+  padding: 9px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-list__row:last-child {
-  padding-bottom: 0;
   border-bottom: 0;
 }
 
@@ -2396,6 +2396,57 @@ html {
 
 .hero-list__row--head strong {
   font-size: 15px;
+}
+
+/* Distribute pill / list / CTA evenly so the list sits balanced in the card. */
+.hero-card--points .hero-card__content,
+.hero-card--example .hero-card__content,
+.hero-card--coef .hero-card__content {
+  grid-template-rows: auto auto auto;
+  align-content: space-between;
+}
+
+/* Worked-example poster. */
+.hero-card--example {
+  background:
+    radial-gradient(120% 70% at 18% 16%, rgba(201, 148, 46, 0.22), transparent 56%),
+    radial-gradient(120% 70% at 84% 82%, rgba(16, 107, 79, 0.48), transparent 60%),
+    linear-gradient(150deg, #0e1f1a 0%, #12251d 48%, #1c2113 100%);
+}
+
+.hero-list__row--stacked span {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.hero-list__row--stacked b {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 13.5px;
+  font-weight: 760;
+}
+
+.hero-list__row--stacked small {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.hero-list__row--total {
+  margin-top: 4px;
+  padding-top: 11px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0;
+}
+
+.hero-list__row--total span {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 820;
+}
+
+.hero-list__row--total strong {
+  font-size: 21px;
 }
 
 .hero-formula {

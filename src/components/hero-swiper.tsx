@@ -20,7 +20,14 @@ import { HeroCard } from "@/components/hero-card";
 // Slide 1 is the live face-off hero; the rest are on-brand poster slides.
 // Built on CSS scroll-snap (native momentum + touch) with dots, arrows and
 // keyboard support layered on top — no carousel dependency.
-const SLIDE_LABELS = ["The Matchup", "How to play", "Prize pool", "Scoring", "Coefficients"] as const;
+const SLIDE_LABELS = [
+  "The Matchup",
+  "How to play",
+  "Prize pool",
+  "Scoring",
+  "Example",
+  "Coefficients",
+] as const;
 
 export function HeroSwiper() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -85,7 +92,9 @@ export function HeroSwiper() {
             ) : index === 2 ? (
               <PrizePoster />
             ) : index === 3 ? (
-              <PointsPoster />
+              <PointsPoster onSeeExample={() => goTo(4)} />
+            ) : index === 4 ? (
+              <ExamplePoster />
             ) : (
               <CoefficientsPoster />
             )}
@@ -250,7 +259,7 @@ function PrizePoster() {
 }
 
 // Gradient-only poster: how points are awarded — one row per result.
-function PointsPoster() {
+function PointsPoster({ onSeeExample }: { onSeeExample: () => void }) {
   return (
     <section className="hero-card hero-card--points" aria-label="Points awarded">
       <div className="hero-card__scrim" aria-hidden="true" />
@@ -291,10 +300,10 @@ function PointsPoster() {
 
         <div className="hero-card__cards">
           <p className="hero-formula">(base + goals + clean sheet) × team × stage</p>
-          <a className="hero-cta" href="#rules">
-            Full scoring
+          <button className="hero-cta" type="button" onClick={onSeeExample}>
+            See example
             <ArrowRight size={16} aria-hidden="true" />
-          </a>
+          </button>
         </div>
       </div>
     </section>
@@ -354,6 +363,52 @@ function CoefficientsPoster() {
             Full team list
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Gradient-only poster: a worked scoring example for a Norway pick.
+function ExamplePoster() {
+  return (
+    <section className="hero-card hero-card--example" aria-label="Scoring example">
+      <div className="hero-card__scrim" aria-hidden="true" />
+      <div className="hero-card__content">
+        <div className="hero-card__top">
+          <span className="hero-edition">
+            <span className="hero-edition__dot" aria-hidden="true" />
+            EXAMPLE · NORWAY
+          </span>
+        </div>
+
+        <div className="hero-mini hero-list">
+          <div className="hero-list__row hero-list__row--stacked">
+            <span>
+              <b>Group · won 3–0</b>
+              <small>(5 + 1.5 + 1) × 1.6 × 1.0</small>
+            </span>
+            <strong>12.00</strong>
+          </div>
+          <div className="hero-list__row hero-list__row--stacked">
+            <span>
+              <b>Round of 32 · won 1–0</b>
+              <small>(5 + 0.5 + 1) × 1.6 × 1.2</small>
+            </span>
+            <strong>12.48</strong>
+          </div>
+          <div className="hero-list__row hero-list__row--total">
+            <span>Total points</span>
+            <strong>24.48</strong>
+          </div>
+        </div>
+
+        <div className="hero-card__cards">
+          <p className="hero-formula">Win + goals + clean sheet, then × team × stage</p>
+          <a className="hero-cta" href="#pick">
+            Start picking
+            <ArrowRight size={16} aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>
