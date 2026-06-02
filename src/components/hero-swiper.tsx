@@ -5,10 +5,13 @@ import {
   ChevronLeft,
   ChevronRight,
   Crown,
+  Gift,
   Medal,
+  Percent,
   Scale,
   Target,
   Ticket,
+  TrendingUp,
   Users,
 } from "lucide-react";
 import Link from "next/link";
@@ -27,9 +30,17 @@ const SLIDE_LABELS = [
   "Scoring",
   "Example",
   "Coefficients",
+  "Invite a friend",
+  "Login or register",
 ] as const;
 
-export function HeroSwiper() {
+export function HeroSwiper({
+  prizePool,
+  playerCount,
+}: {
+  prizePool?: string;
+  playerCount?: number;
+}) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
@@ -95,8 +106,12 @@ export function HeroSwiper() {
               <PointsPoster onSeeExample={() => goTo(4)} />
             ) : index === 4 ? (
               <ExamplePoster />
-            ) : (
+            ) : index === 5 ? (
               <CoefficientsPoster />
+            ) : index === 6 ? (
+              <InvitePoster />
+            ) : (
+              <LoginPoster prizePool={prizePool} playerCount={playerCount} />
             )}
           </div>
         ))}
@@ -427,6 +442,119 @@ function ExamplePoster() {
             Start picking
             <ArrowRight size={16} aria-hidden="true" />
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Gradient-only poster: the referral / invite rewards.
+function InvitePoster() {
+  return (
+    <section className="hero-card hero-card--invite" aria-label="Invite a friend">
+      <div className="hero-card__photo" aria-hidden="true" />
+      <div className="hero-card__scrim" aria-hidden="true" />
+      <div className="hero-card__content">
+        <div className="hero-card__top">
+          <span className="hero-edition">
+            <span className="hero-edition__dot" aria-hidden="true" />
+            INVITE A FRIEND
+          </span>
+        </div>
+
+        <div className="hero-card__center hero-poster__lede">
+          <strong>
+            Invite.
+            <br />
+            Earn a cut.
+          </strong>
+        </div>
+
+        <div className="hero-card__cards">
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Gift size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>Earn 5%</strong>
+              <small>
+                If you were invited, keep the <b>5%</b> cut on friends you invite.
+              </small>
+            </span>
+          </div>
+
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Percent size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>Earn 3%</strong>
+              <small>
+                Signed up direct? Still earn <b>3%</b> of your invites&#39; winnings.
+              </small>
+            </span>
+          </div>
+
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <TrendingUp size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>Track them</strong>
+              <small>Follow your invited friends&#39; spots on the leaderboard.</small>
+            </span>
+          </div>
+
+          <a className="hero-cta" href="#invite">
+            Invite a friend
+            <ArrowRight size={16} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Gradient-only poster: the final join / login call to action, with live
+// prize-pool and player-count stat cards.
+function LoginPoster({ prizePool, playerCount }: { prizePool?: string; playerCount?: number }) {
+  return (
+    <section className="hero-card hero-card--login" aria-label="Login or register">
+      <div className="hero-card__scrim" aria-hidden="true" />
+      <div className="hero-card__content">
+        <div className="hero-card__top">
+          <span className="hero-edition">
+            <span className="hero-edition__dot" aria-hidden="true" />
+            GET STARTED
+          </span>
+        </div>
+
+        <div className="hero-card__center hero-poster__lede">
+          <strong>
+            Join the
+            <br />
+            game.
+          </strong>
+        </div>
+
+        <div className="hero-card__cards">
+          <div className="hero-login-stats">
+            <div className="hero-mini hero-stat hero-stat--gold">
+              <span>Prize pool</span>
+              <strong>{prizePool ?? "TBA"}</strong>
+            </div>
+            <div className="hero-mini hero-stat">
+              <span>Players</span>
+              <strong>{playerCount != null ? playerCount.toLocaleString() : "—"}</strong>
+            </div>
+          </div>
+
+          <p className="hero-formula">Sign in with Google — one tap, no password</p>
+
+          <Link className="hero-cta" href={{ pathname: "/login" }}>
+            Login / Register
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

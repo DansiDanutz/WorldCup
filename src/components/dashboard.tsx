@@ -453,7 +453,10 @@ export function Dashboard({
       </header>
 
       <div className="page">
-        <HeroSwiper />
+        <HeroSwiper
+          prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
+          playerCount={participantCount}
+        />
 
         <section className="status-row" aria-label="Tournament summary">
           <div className="stat">
