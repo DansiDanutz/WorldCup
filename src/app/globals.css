@@ -3505,8 +3505,10 @@ html {
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Info poster variants (Scoring, Coefficients) — gradient-only, no photo. */
+/* Photo poster variants — all swiper slides after the matchup use this same
+   image-backed poster language as the Agent Deal card. */
 .hero-card--points {
+  --hero-photo: url("/points-bg.png");
   background:
     radial-gradient(120% 70% at 16% 14%, rgba(120, 220, 188, 0.3), transparent 56%),
     radial-gradient(120% 70% at 86% 84%, rgba(16, 107, 79, 0.5), transparent 60%),
@@ -3514,6 +3516,7 @@ html {
 }
 
 .hero-card--coef {
+  --hero-photo: url("/coefficients-bg.png");
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(150, 170, 180, 0.26), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(58, 96, 88, 0.5), transparent 60%),
@@ -3526,7 +3529,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 1px;
-  padding: 4px 16px;
+  padding: 8px 16px;
 }
 
 .hero-list__row {
@@ -3566,16 +3569,9 @@ html {
   font-size: 15px;
 }
 
-/* Distribute pill / list / CTA evenly so the list sits balanced in the card. */
-.hero-card--points .hero-card__content,
-.hero-card--example .hero-card__content,
-.hero-card--coef .hero-card__content {
-  grid-template-rows: auto auto auto;
-  align-content: space-between;
-}
-
 /* Worked-example poster. */
 .hero-card--example {
+  --hero-photo: url("/example-bg.png");
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(201, 148, 46, 0.22), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(16, 107, 79, 0.48), transparent 60%),
@@ -3600,8 +3596,9 @@ html {
     linear-gradient(150deg, #101b18 0%, #1c2516 44%, #123326 100%);
 }
 
-/* Login / join poster — gradient only. */
+/* Login / join poster. */
 .hero-card--login {
+  --hero-photo: url("/login-bg.png");
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(120, 220, 188, 0.3), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(19, 138, 100, 0.55), transparent 60%),

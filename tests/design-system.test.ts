@@ -121,6 +121,25 @@ describe("WorldCup design system integration", () => {
     assert.equal(existsSync("public/agent-deal-bg.png"), true);
   });
 
+  it("keeps every non-matchup swiper poster image-backed like Agent Deal", () => {
+    const posterAssets = [
+      ["HowToPoster", "howto-bg.png"],
+      ["PrizePoster", "prize-bg.png"],
+      ["PointsPoster", "points-bg.png"],
+      ["ExamplePoster", "example-bg.png"],
+      ["CoefficientsPoster", "coefficients-bg.png"],
+      ["InvitePoster", "invite-bg.png"],
+      ["AgentDealPoster", "agent-deal-bg.png"],
+      ["LoginPoster", "login-bg.png"],
+    ] as const;
+
+    for (const [functionName, asset] of posterAssets) {
+      assert.match(heroSwiper, new RegExp(`function ${functionName}[\\s\\S]*?hero-card__photo`));
+      assert.match(globalsCss, new RegExp(`--hero-photo:\\s*url\\("\\/${asset.replace(".", "\\.")}"\\)`));
+      assert.equal(existsSync(`public/${asset}`), true);
+    }
+  });
+
   it("keeps paid-action policy pauses visible before disabled user controls", () => {
     assert.match(homePage, /getPublicPaidActionGates/);
     assert.match(homePage, /publicPaidActionGates/);
