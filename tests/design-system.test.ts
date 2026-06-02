@@ -138,6 +138,11 @@ describe("WorldCup design system integration", () => {
       assert.match(globalsCss, new RegExp(`--hero-photo:\\s*url\\("\\/${asset.replace(".", "\\.")}"\\)`));
       assert.equal(existsSync(`public/${asset}`), true);
     }
+
+    assert.match(heroSwiper, /className=\{`hero-swiper__slide\$\{index === active \? " is-active" : ""\}`\}/);
+    assert.match(globalsCss, /@keyframes wc-poster-caption/);
+    assert.match(globalsCss, /\.hero-swiper__slide\.is-active \.hero-poster__lede/);
+    assert.match(globalsCss, /--poster-lede-y:/);
   });
 
   it("keeps paid-action policy pauses visible before disabled user controls", () => {

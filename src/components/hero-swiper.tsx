@@ -91,7 +91,7 @@ export function HeroSwiper({
       <div className="hero-swiper__track" ref={trackRef} tabIndex={0} onKeyDown={onKeyDown}>
         {SLIDE_LABELS.map((label, index) => (
           <div
-            className="hero-swiper__slide"
+            className={`hero-swiper__slide${index === active ? " is-active" : ""}`}
             key={label}
             role="group"
             aria-roledescription="slide"
