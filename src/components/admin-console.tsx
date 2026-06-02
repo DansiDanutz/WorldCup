@@ -48,6 +48,19 @@ const initialResultForm: ResultForm = {
   winnerTeamId: "",
 };
 
+type AdminAgentRow = {
+  userId: string;
+  email: string | null;
+  displayName: string | null;
+  paidTickets: number;
+  commissionTickets: number;
+  availableCodes: number;
+  redeemedCodes: number;
+  active: boolean;
+};
+
+type AgentPool = { total: number; available: number; assigned: number; redeemed: number };
+
 export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminConsoleProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const [session, setSession] = useState<Session | null>(null);
@@ -67,6 +80,16 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [assignHomeTeamId, setAssignHomeTeamId] = useState("");
   const [assignAwayTeamId, setAssignAwayTeamId] = useState("");
   const [referralRows, setReferralRows] = useState<AdminReferralReportRow[]>([]);
+  const [agents, setAgents] = useState<AdminAgentRow[]>([]);
+  const [agentPool, setAgentPool] = useState<AgentPool>({
+    total: 0,
+    available: 0,
+    assigned: 0,
+    redeemed: 0,
+  });
+  const [agentEmail, setAgentEmail] = useState("");
+  const [assignAgentUserId, setAssignAgentUserId] = useState("");
+  const [assignAgentQty, setAssignAgentQty] = useState("10");
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -297,6 +320,72 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         setMessage(`Referral report loaded. Rows: ${(result.referrals as AdminReferralReportRow[])?.length ?? 0}.`);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not load referral report.");
+      }
+    });
+  }
+
+  async function loadAgents() {
+    const response = await fetch("/api/admin/agents", { method: "GET", headers: authHeaders() });
+    if (response.ok) {
+      const result = (await response.json()) as { agents?: AdminAgentRow[]; pool?: AgentPool };
+      setAgents(result.agents ?? []);
+      if (result.pool) {
+        setAgentPool(result.pool);
+      }
+    }
+  }
+
+  function refreshAgents() {
+    run(async () => {
+      try {
+        await loadAgents();
+        setMessage("Agents loaded.");
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Could not load agents.");
+      }
+    });
+  }
+
+  function addAgent() {
+    run(async () => {
+      try {
+        const response = await fetch("/api/admin/agents", {
+          method: "POST",
+          headers: authHeaders(),
+          body: JSON.stringify({ action: "add", email: agentEmail }),
+        });
+        await readResult(response);
+        setAgentEmail("");
+        setMessage("Agent added.");
+        await loadAgents();
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Could not add agent.");
+      }
+    });
+  }
+
+  function assignAgentCodes() {
+    run(async () => {
+      try {
+        const response = await fetch("/api/admin/agents", {
+          method: "POST",
+          headers: authHeaders(),
+          body: JSON.stringify({
+            action: "assign",
+            agentUserId: assignAgentUserId,
+            quantity: Number(assignAgentQty),
+          }),
+        });
+        const result = (await readResult(response)) as {
+          assigned?: number;
+          commissionAwarded?: number;
+        };
+        setMessage(
+          `Assigned ${result.assigned ?? 0} codes (+${result.commissionAwarded ?? 0} free as commission).`,
+        );
+        await loadAgents();
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Could not assign codes.");
       }
     });
   }
@@ -686,6 +775,127 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 </div>
               ) : (
                 <div className="field-note">Load accounts to assign tickets or transfer funds.</div>
+              )}
+            </div>
+          </div>
+
+          <div className="panel">
+            <div className="panel-header">
+              <div>
+                <h2 className="panel-title">Agents</h2>
+                <p className="panel-subtitle">
+                  Promote a player to agent, then assign ticket codes after a manual payment. Every
+                  10 paid codes auto-awards 1 free.
+                </p>
+              </div>
+              <button
+                className="button secondary"
+                disabled={isPending}
+                onClick={refreshAgents}
+                type="button"
+              >
+                Refresh
+              </button>
+            </div>
+            <div className="entry-form">
+              <div className="status-row" aria-label="Ticket code pool">
+                <div className="stat">
+                  <div className="stat-label">Pool total</div>
+                  <div className="stat-value">{agentPool.total.toLocaleString()}</div>
+                </div>
+                <div className="stat">
+                  <div className="stat-label">Available</div>
+                  <div className="stat-value">{agentPool.available.toLocaleString()}</div>
+                </div>
+                <div className="stat">
+                  <div className="stat-label">Assigned</div>
+                  <div className="stat-value">{agentPool.assigned.toLocaleString()}</div>
+                </div>
+                <div className="stat">
+                  <div className="stat-label">Redeemed</div>
+                  <div className="stat-value">{agentPool.redeemed.toLocaleString()}</div>
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="agent-email">Promote a player to agent (email)</label>
+                <div className="inline-row">
+                  <input
+                    className="search"
+                    id="agent-email"
+                    onChange={(event) => setAgentEmail(event.target.value)}
+                    placeholder="player@email.com"
+                    type="email"
+                    value={agentEmail}
+                  />
+                  <button
+                    className="button"
+                    disabled={isPending || agentEmail.trim().length === 0}
+                    onClick={addAgent}
+                    type="button"
+                  >
+                    Add agent
+                  </button>
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="assign-agent">Assign ticket codes (manual payment)</label>
+                <div className="inline-row">
+                  <select
+                    className="search"
+                    id="assign-agent"
+                    onChange={(event) => setAssignAgentUserId(event.target.value)}
+                    value={assignAgentUserId}
+                  >
+                    <option value="">Select agent…</option>
+                    {agents.map((agent) => (
+                      <option key={agent.userId} value={agent.userId}>
+                        {agent.email ?? agent.displayName ?? agent.userId}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    aria-label="Quantity"
+                    className="search agent-qty"
+                    max="1000"
+                    min="1"
+                    onChange={(event) => setAssignAgentQty(event.target.value)}
+                    type="number"
+                    value={assignAgentQty}
+                  />
+                  <button
+                    className="button"
+                    disabled={isPending || assignAgentUserId.length === 0}
+                    onClick={assignAgentCodes}
+                    type="button"
+                  >
+                    Assign
+                  </button>
+                </div>
+              </div>
+
+              {agents.length > 0 ? (
+                <div className="coefficient-table" role="table" aria-label="Agents">
+                  <div className="coefficient-table-head" role="row">
+                    <span role="columnheader">Agent</span>
+                    <span role="columnheader">Paid</span>
+                    <span role="columnheader">Free</span>
+                    <span role="columnheader">To give</span>
+                    <span role="columnheader">Redeemed</span>
+                  </div>
+                  {agents.map((agent) => (
+                    <div className="coefficient-table-row" key={agent.userId} role="row">
+                      <strong role="cell">{agent.email ?? agent.displayName ?? agent.userId}</strong>
+                      <span role="cell">{agent.paidTickets}</span>
+                      <span role="cell">{agent.commissionTickets}</span>
+                      <span role="cell">{agent.availableCodes}</span>
+                      <span role="cell">{agent.redeemedCodes}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="field-note">No agents loaded. Refresh, or add one by email above.</div>
               )}
             </div>
           </div>

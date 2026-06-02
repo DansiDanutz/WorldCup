@@ -2591,6 +2591,119 @@ html {
   padding: 18px;
 }
 
+/* Full-width wallet section (agent panel). */
+.wallet-wide {
+  width: min(940px, 100%);
+  margin: 18px auto 0;
+}
+
+/* Redeem-a-ticket-code field in the Balance card. */
+.redeem-row {
+  display: grid;
+  gap: 6px;
+}
+
+.redeem-row label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.redeem-input {
+  display: flex;
+  gap: 8px;
+}
+
+.redeem-input .search {
+  flex: 1 1 auto;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.redeem-input .button {
+  flex: 0 0 auto;
+}
+
+/* Agent commission progress + ticket-code inventory. */
+.commission-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-strong);
+  overflow: hidden;
+}
+
+.commission-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  transition: width 0.3s ease;
+}
+
+.code-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 8px;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.code-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--paper-soft);
+}
+
+.code-value {
+  flex: 1 1 auto;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.code-tag {
+  flex: 0 0 auto;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.code-row .button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 0 10px;
+}
+
+/* Inline label-row of inputs/selects + a button (admin agent forms). */
+.inline-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.inline-row .search {
+  flex: 1 1 180px;
+}
+
+.inline-row .button {
+  flex: 0 0 auto;
+}
+
+.agent-qty {
+  flex: 0 0 auto;
+  max-width: 110px;
+}
+
 /* Visually-hidden live region announcing the active swiper slide. */
 .hero-swiper__status {
   position: absolute;
