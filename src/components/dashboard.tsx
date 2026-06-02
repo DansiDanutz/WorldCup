@@ -10,6 +10,7 @@ import {
   RefreshCw,
   Search,
   Trophy,
+  UserRound,
   Users,
   Wallet,
 } from "lucide-react";
@@ -17,6 +18,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 
 import { HeroSwiper } from "@/components/hero-swiper";
+import { MyStanding } from "@/components/my-standing";
 import { MINIMUM_AGE } from "@/lib/consent";
 import { formatMoneyAmount } from "@/lib/economy";
 import {
@@ -417,6 +419,10 @@ export function Dashboard({
           <small>{paidPlaces > 0 ? `Top ${paidPlaces} paid` : "Paid places TBA"}</small>
         </div>
         <nav className="nav" aria-label="Primary navigation">
+          <a href="#me">
+            <UserRound size={16} />
+            My account
+          </a>
           <a href="#pick">
             <Users size={16} />
             Pick Teams
@@ -453,6 +459,7 @@ export function Dashboard({
       </header>
 
       <div className="page">
+        <MyStanding />
         <HeroSwiper
           prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
           playerCount={participantCount}

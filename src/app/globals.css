@@ -2704,6 +2704,193 @@ html {
   max-width: 110px;
 }
 
+/* =========================================================================
+   My standing — the signed-in user's personal cards.
+   ========================================================================= */
+.my-standing {
+  display: grid;
+  gap: 16px;
+  width: min(1100px, 100%);
+  margin: 0 auto 24px;
+}
+
+.standing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 16px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .standing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.standing-rank {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.standing-rank__big {
+  display: grid;
+  gap: 2px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--paper-soft);
+}
+
+.standing-rank__big span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.standing-rank__big strong {
+  color: var(--green);
+  font-size: 32px;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.standing-rank__big small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.standing-teams {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.standing-team {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.standing-team span {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.standing-team strong {
+  color: var(--gold);
+  font-size: 15px;
+  font-weight: 820;
+}
+
+.standing-share {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: #07231a;
+  background: linear-gradient(180deg, #ffe39a, #ecc25c);
+  box-shadow: 0 12px 26px rgba(201, 148, 46, 0.34);
+}
+
+.standing-share svg {
+  flex: 0 0 auto;
+}
+
+.standing-share span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.standing-share strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 880;
+  line-height: 1.1;
+}
+
+.standing-empty {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.standing-empty .button {
+  width: auto;
+}
+
+.ref-list {
+  display: grid;
+  gap: 8px;
+  max-height: 280px;
+  overflow: auto;
+}
+
+.ref-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--paper-soft);
+}
+
+.ref-meta {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.ref-meta strong {
+  overflow: hidden;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ref-meta small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.ref-cut {
+  display: grid;
+  justify-items: end;
+  gap: 1px;
+  text-align: right;
+}
+
+.ref-cut span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ref-cut strong {
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 820;
+}
+
+.ref-pending {
+  color: var(--border-strong);
+  font-size: 18px;
+}
+
 /* Visually-hidden live region announcing the active swiper slide. */
 .hero-swiper__status {
   position: absolute;
