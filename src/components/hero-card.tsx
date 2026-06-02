@@ -3,9 +3,9 @@ import { ArrowRight, Award, Trophy, Users } from "lucide-react";
 // "The Matchup" — the 9:16 portrait hero poster for WorldCup26.world.
 // A cinematic face-off backdrop carries three glass mini-cards: the brand
 // lockup, the Pick-3-Teams pitch, and the Top-10-rewarded payoff, with a
-// full-width call to action beneath them. The photo is optional — drop a 9:16
-// image at /public/hero-matchup.jpg and it layers over the on-brand gradient,
-// which stays as a graceful fallback.
+// full-width call to action beneath them. The face-off photo lives at
+// /public/hero-matchup.png and layers over the on-brand gradient, which stays
+// as a graceful fallback if the image ever fails to load.
 export function HeroCard() {
   return (
     <section className="hero-card" aria-label="WorldCup26.world — Prediction Game">

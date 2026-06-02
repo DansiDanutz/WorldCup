@@ -1911,8 +1911,8 @@ html {
 
 /* =========================================================================
    Landing hero — "The Matchup" (9:16 portrait poster + glass mini-cards)
-   A cinematic face-off poster for WorldCup26.world. Drop a 9:16 photo at
-   /public/hero-matchup.jpg and it layers over the on-brand gradient fallback.
+   A cinematic face-off poster for WorldCup26.world. The photo at
+   /public/hero-matchup.png layers over the on-brand gradient fallback.
    ========================================================================= */
 .hero-card {
   --hero-photo: url("/hero-matchup.png");
