@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { advanceBracket } from "@/lib/bracket-advance";
-import { requireEnv } from "@/lib/env";
+import { isAuthorizedCronRequest } from "@/lib/cron-auth";
 import { fetchExternalResult } from "@/lib/result-provider";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import type { DueMatch } from "@/lib/types";
@@ -11,10 +11,7 @@ function getErrorMessage(error: unknown) {
 }
 
 async function runResultCron(request: Request) {
-  const authorization = request.headers.get("authorization");
-  const expected = `Bearer ${requireEnv("CRON_SECRET")}`;
-
-  if (authorization !== expected) {
+  if (!isAuthorizedCronRequest(request)) {
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
   }
 
