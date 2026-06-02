@@ -1910,25 +1910,25 @@ html {
 }
 
 /* =========================================================================
-   Landing hero — "The Matchup" (16:9 main card + glass mini-cards)
-   A dark, cinematic face-off banner for WorldCup26.world. Drop a 16:9 photo at
+   Landing hero — "The Matchup" (9:16 portrait poster + glass mini-cards)
+   A cinematic face-off poster for WorldCup26.world. Drop a 9:16 photo at
    /public/hero-matchup.jpg and it layers over the on-brand gradient fallback.
    ========================================================================= */
 .hero-card {
   --hero-photo: url("/hero-matchup.jpg");
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  margin-bottom: 22px;
+  width: min(440px, 100%);
+  aspect-ratio: 9 / 16;
+  margin: 0 auto 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
   color: #ffffff;
   background:
-    radial-gradient(120% 130% at 18% 26%, rgba(150, 170, 180, 0.28), transparent 55%),
-    radial-gradient(120% 130% at 86% 70%, rgba(168, 32, 42, 0.5), transparent 62%),
-    linear-gradient(104deg, #10201d 0%, #15242a 40%, #341219 68%, #5d141b 100%);
-  box-shadow: 0 30px 70px rgba(10, 22, 19, 0.3);
+    radial-gradient(110% 60% at 22% 20%, rgba(150, 170, 180, 0.3), transparent 55%),
+    radial-gradient(120% 70% at 82% 74%, rgba(168, 32, 42, 0.55), transparent 60%),
+    linear-gradient(105deg, #11201d 0%, #15242a 42%, #3a1418 64%, #5d141b 100%);
+  box-shadow: 0 34px 80px rgba(10, 22, 19, 0.34);
   isolation: isolate;
 }
 
@@ -1941,22 +1941,23 @@ html {
 .hero-card__photo {
   z-index: 0;
   background-image: var(--hero-photo);
-  background-position: center top;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* Center face-off seam + a legibility scrim (darker top and bottom for cards). */
+/* Center face-off seam + a legibility scrim (heavier at the bottom for cards). */
 .hero-card__scrim {
   z-index: 1;
   background:
-    linear-gradient(90deg, transparent 45%, rgba(255, 255, 255, 0.1) 51%, transparent 57%),
+    linear-gradient(90deg, transparent 44%, rgba(255, 255, 255, 0.1) 50%, transparent 56%),
     linear-gradient(
       180deg,
-      rgba(4, 12, 10, 0.55) 0%,
-      rgba(4, 12, 10, 0.1) 26%,
-      rgba(4, 12, 10, 0.18) 60%,
-      rgba(4, 12, 10, 0.82) 100%
+      rgba(4, 12, 10, 0.6) 0%,
+      rgba(4, 12, 10, 0.08) 20%,
+      rgba(4, 12, 10, 0.12) 44%,
+      rgba(4, 12, 10, 0.78) 76%,
+      rgba(4, 12, 10, 0.92) 100%
     );
 }
 
@@ -1967,7 +1968,7 @@ html {
   grid-template-rows: auto 1fr auto;
   gap: 14px;
   height: 100%;
-  padding: clamp(16px, 2.6vw, 32px);
+  padding: clamp(16px, 4vw, 24px);
 }
 
 .hero-card__top {
@@ -1992,15 +1993,15 @@ html {
 .hero-brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 16px 10px 12px;
+  gap: 11px;
+  padding: 9px 15px 9px 11px;
 }
 
 .hero-brand__mark {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 11px;
   color: #ffffff;
   background: linear-gradient(160deg, #138a64, #0c5a42);
@@ -2014,7 +2015,7 @@ html {
 }
 
 .hero-brand__text strong {
-  font-size: clamp(17px, 1.9vw, 22px);
+  font-size: 19px;
   font-weight: 850;
   letter-spacing: -0.01em;
 }
@@ -2025,7 +2026,7 @@ html {
 
 .hero-brand__text small {
   color: rgba(255, 255, 255, 0.72);
-  font-size: clamp(10px, 1.1vw, 12px);
+  font-size: 11px;
   font-weight: 650;
   letter-spacing: 0.02em;
 }
@@ -2033,14 +2034,14 @@ html {
 .hero-edition {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
+  gap: 7px;
+  padding: 7px 13px;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
   background: rgba(8, 20, 17, 0.36);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  font-size: clamp(12px, 1.3vw, 15px);
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.1em;
 }
@@ -2061,31 +2062,32 @@ html {
 .hero-vs {
   display: grid;
   place-items: center;
-  width: clamp(52px, 7vw, 78px);
-  height: clamp(52px, 7vw, 78px);
+  width: 66px;
+  height: 66px;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 50%;
   background: rgba(8, 20, 17, 0.3);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  font-size: clamp(18px, 2.4vw, 28px);
+  font-size: 25px;
   font-weight: 900;
   font-style: italic;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
+/* Portrait: the three mini-cards stack, with a full-width CTA beneath them. */
 .hero-card__cards {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
-  gap: clamp(10px, 1.4vw, 16px);
-  align-items: stretch;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-content: end;
 }
 
 .hero-feature {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: clamp(12px, 1.6vw, 18px);
+  gap: 13px;
+  padding: 14px;
 }
 
 .hero-feature__icon {
@@ -2103,19 +2105,19 @@ html {
 .hero-feature__body {
   display: grid;
   flex: 1 1 auto;
-  gap: 3px;
+  gap: 2px;
   min-width: 0;
 }
 
 .hero-feature__body strong {
-  font-size: clamp(16px, 1.9vw, 21px);
+  font-size: 18px;
   font-weight: 820;
   letter-spacing: -0.01em;
 }
 
 .hero-feature__body small {
-  color: rgba(255, 255, 255, 0.74);
-  font-size: clamp(11px, 1.2vw, 13px);
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 12.5px;
   line-height: 1.35;
 }
 
@@ -2127,18 +2129,18 @@ html {
 .hero-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
-  flex: 0 0 auto;
-  margin-left: auto;
-  padding: 10px 16px;
-  border-radius: 10px;
+  width: 100%;
+  margin-top: 2px;
+  padding: 13px 16px;
+  border-radius: 12px;
   color: #07231a;
-  font-size: clamp(12px, 1.3vw, 14px);
-  font-weight: 820;
-  white-space: nowrap;
+  font-size: 14.5px;
+  font-weight: 850;
   text-decoration: none;
   background: linear-gradient(180deg, #ffd980, #e7b24e);
-  box-shadow: 0 10px 24px rgba(201, 148, 46, 0.4);
+  box-shadow: 0 12px 26px rgba(201, 148, 46, 0.42);
   transition:
     background-color 0.18s ease,
     box-shadow 0.18s ease;
@@ -2148,35 +2150,9 @@ html {
   background: linear-gradient(180deg, #ffe39a, #efbc5c);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 420px) {
   .hero-card {
-    aspect-ratio: auto;
-    min-height: clamp(480px, 82vh, 640px);
-  }
-
-  .hero-card__cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-card {
-    border-radius: 14px;
-    min-height: clamp(460px, 86vh, 600px);
-  }
-
-  .hero-vs {
-    display: none;
-  }
-
-  .hero-feature {
-    flex-wrap: wrap;
-  }
-
-  .hero-cta {
-    justify-content: center;
-    width: 100%;
-    margin-left: 0;
+    border-radius: 16px;
   }
 }
 
@@ -2192,20 +2168,24 @@ html {
     animation-delay: 0.08s;
   }
 
-  .hero-card__cards .hero-mini {
+  .hero-card__cards > * {
     animation: wc-rise 0.55s cubic-bezier(0.21, 0.61, 0.35, 1) both;
   }
 
-  .hero-card__cards .hero-mini:nth-child(1) {
+  .hero-card__cards > *:nth-child(1) {
     animation-delay: 0.16s;
   }
 
-  .hero-card__cards .hero-mini:nth-child(2) {
-    animation-delay: 0.24s;
+  .hero-card__cards > *:nth-child(2) {
+    animation-delay: 0.22s;
+  }
+
+  .hero-card__cards > *:nth-child(3) {
+    animation-delay: 0.28s;
   }
 
   .hero-vs {
     animation: wc-rise 0.6s cubic-bezier(0.21, 0.61, 0.35, 1) both;
-    animation-delay: 0.3s;
+    animation-delay: 0.32s;
   }
 }

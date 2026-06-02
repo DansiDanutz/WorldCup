@@ -1,10 +1,11 @@
-import { ArrowRight, Target, Trophy, Users } from "lucide-react";
+import { ArrowRight, Award, Trophy, Users } from "lucide-react";
 
-// "The Matchup" — the 16:9 landing hero for WorldCup26.world.
+// "The Matchup" — the 9:16 portrait hero poster for WorldCup26.world.
 // A cinematic face-off backdrop carries three glass mini-cards: the brand
-// lockup, the Prediction Game pitch, and the Choose-3-Teams call to action.
-// The photo is optional — drop a 16:9 image at /public/hero-matchup.jpg and it
-// layers over the on-brand gradient, which stays as a graceful fallback.
+// lockup, the Pick-3-Teams pitch, and the Top-10-rewarded payoff, with a
+// full-width call to action beneath them. The photo is optional — drop a 9:16
+// image at /public/hero-matchup.jpg and it layers over the on-brand gradient,
+// which stays as a graceful fallback.
 export function HeroCard() {
   return (
     <section className="hero-card" aria-label="WorldCup26.world — Prediction Game">
@@ -15,7 +16,7 @@ export function HeroCard() {
         <div className="hero-card__top">
           <div className="hero-mini hero-brand">
             <span className="hero-brand__mark">
-              <Trophy size={22} aria-hidden="true" />
+              <Trophy size={20} aria-hidden="true" />
             </span>
             <span className="hero-brand__text">
               <strong>
@@ -40,29 +41,30 @@ export function HeroCard() {
         <div className="hero-card__cards">
           <div className="hero-mini hero-feature">
             <span className="hero-feature__icon">
-              <Target size={20} aria-hidden="true" />
-            </span>
-            <span className="hero-feature__body">
-              <strong>Prediction Game</strong>
-              <small>Pick 3 teams. Climb the leaderboard.</small>
-            </span>
-          </div>
-
-          <div className="hero-mini hero-feature hero-feature--cta">
-            <span className="hero-feature__icon">
               <Users size={20} aria-hidden="true" />
             </span>
             <span className="hero-feature__body">
-              <strong>Choose 3 Teams</strong>
+              <strong>Pick 3 Teams</strong>
+              <small>Climb the leaderboard.</small>
+            </span>
+          </div>
+
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Award size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>Top 10 Rewarded</strong>
               <small>
-                The <b>top 10</b> best scoring wins.
+                The <b>top 10</b> share the prize pool.
               </small>
             </span>
-            <a className="hero-cta" href="#pick">
-              Play now
-              <ArrowRight size={16} aria-hidden="true" />
-            </a>
           </div>
+
+          <a className="hero-cta" href="#pick">
+            Play now
+            <ArrowRight size={16} aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>
