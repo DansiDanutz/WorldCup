@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,8 +14,13 @@
     "test": "node --experimental-strip-types --import ./tests/register.mjs --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
     "generate:migrations": "node scripts/generate-worldcup-sql.mjs && node scripts/generate-worldcup-kickoff-sql.mjs",
+    "preflight:prod": "node scripts/production-preflight.mjs",
+    "preflight:prod:launch": "node scripts/production-preflight.mjs --require-ready",
     "smoke:prod": "node scripts/production-smoke.mjs",
-    "supabase:enable-google-auth": "node scripts/enable-supabase-google-auth.mjs"
+    "smoke:prod:launch": "node scripts/production-smoke.mjs --auth-flow-probe --deposit-credit-probe --kucoin-live-probe",
+    "supabase:enable-google-auth": "node scripts/enable-supabase-google-auth.mjs",
+    "vercel:domain-guard": "node scripts/vercel-domain-guard.mjs",
+    "vercel:domain-guard:fix": "node scripts/vercel-domain-guard.mjs --fix"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.87.0",
@@ -28,5 +36,8 @@
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.7",
     "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "postcss": "8.5.15"
   }
 }

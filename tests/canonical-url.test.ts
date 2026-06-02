@@ -1,7 +1,11 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 
-import { shouldRedirectToCanonicalHost } from "../src/lib/canonical-url.ts";
+import { readFileSync } from "node:fs";
+
+import { CANONICAL_ORIGIN, shouldRedirectToCanonicalHost } from "../src/lib/canonical-url.ts";
+
+const rootLayout = readFileSync("src/app/layout.tsx", "utf8");
 
 describe("shouldRedirectToCanonicalHost", () => {
   it("redirects Vercel hosts to the canonical domain", () => {
@@ -55,3 +59,11 @@ describe("shouldRedirectToCanonicalHost", () => {
   });
 });
 
+describe("canonical metadata", () => {
+  it("uses the canonical domain as metadata fallback", () => {
+    assert.equal(CANONICAL_ORIGIN, "https://worldcup26.world");
+    assert.match(rootLayout, /process\.env\.NEXT_PUBLIC_SITE_URL \|\| CANONICAL_ORIGIN/);
+    assert.doesNotMatch(rootLayout, /VERCEL_PROJECT_PRODUCTION_URL/);
+    assert.doesNotMatch(rootLayout, /worldcup\.example\.com/);
+  });
+});

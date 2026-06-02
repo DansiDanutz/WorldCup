@@ -6,12 +6,68 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 import { createBrowserSupabaseClient } from "@/lib/supabase";
+import type { PaidActionGate, PaidActionGates } from "@/lib/types";
 import type { Session } from "@supabase/supabase-js";
 
 const referralAgreementText =
   "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
 
-export function LoginRegister() {
+const flagTeams = [
+  ["france", "France", "fr"],
+  ["spain", "Spain", "es"],
+  ["england", "England", "gb-eng"],
+  ["brazil", "Brazil", "br"],
+  ["argentina", "Argentina", "ar"],
+  ["portugal", "Portugal", "pt"],
+  ["germany", "Germany", "de"],
+  ["netherlands", "Netherlands", "nl"],
+  ["norway", "Norway", "no"],
+  ["belgium", "Belgium", "be"],
+  ["morocco", "Morocco", "ma"],
+  ["united_states", "United States", "us"],
+  ["colombia", "Colombia", "co"],
+  ["japan", "Japan", "jp"],
+  ["uruguay", "Uruguay", "uy"],
+  ["turkiye", "Turkiye", "tr"],
+  ["switzerland", "Switzerland", "ch"],
+  ["sweden", "Sweden", "se"],
+  ["mexico", "Mexico", "mx"],
+  ["ecuador", "Ecuador", "ec"],
+  ["senegal", "Senegal", "sn"],
+  ["croatia", "Croatia", "hr"],
+  ["austria", "Austria", "at"],
+  ["paraguay", "Paraguay", "py"],
+  ["canada", "Canada", "ca"],
+  ["cote_divoire", "Cote d'Ivoire", "ci"],
+  ["czechia", "Czechia", "cz"],
+  ["scotland", "Scotland", "gb-sct"],
+  ["egypt", "Egypt", "eg"],
+  ["ghana", "Ghana", "gh"],
+  ["algeria", "Algeria", "dz"],
+  ["korea_republic", "Korea Republic", "kr"],
+  ["bosnia_herzegovina", "Bosnia and Herzegovina", "ba"],
+  ["tunisia", "Tunisia", "tn"],
+  ["australia", "Australia", "au"],
+  ["ir_iran", "IR Iran", "ir"],
+  ["new_zealand", "New Zealand", "nz"],
+  ["congo_dr", "Congo DR", "cd"],
+  ["saudi_arabia", "Saudi Arabia", "sa"],
+  ["qatar", "Qatar", "qa"],
+  ["south_africa", "South Africa", "za"],
+  ["curacao", "Curacao", "cw"],
+  ["jordan", "Jordan", "jo"],
+  ["haiti", "Haiti", "ht"],
+  ["uzbekistan", "Uzbekistan", "uz"],
+  ["cabo_verde", "Cabo Verde", "cv"],
+  ["iraq", "Iraq", "iq"],
+  ["panama", "Panama", "pa"],
+] as const;
+
+type LoginRegisterProps = {
+  publicPaidActionGates?: PaidActionGates;
+};
+
+export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
   const [session, setSession] = useState<Session | null>(null);
   const [referralCode, setReferralCode] = useState("");
   const [referralInviter, setReferralInviter] = useState<string | null>(null);
@@ -25,6 +81,10 @@ export function LoginRegister() {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const canContinueWithReferral = Boolean(referralCode && referralInviter && referralAccepted);
   const canContinue = canContinueWithReferral || noReferral;
+  const depositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
+  const ticketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
+  const entryPolicyPause = getGatePauseMessage(publicPaidActionGates?.entry);
+  const paidActionsPaused = Boolean(depositPolicyPause || ticketPolicyPause || entryPolicyPause);
 
   useEffect(() => {
     window.queueMicrotask(() => {
@@ -129,13 +189,35 @@ export function LoginRegister() {
         </Link>
 
         <div className="auth-copy">
-          <span className="status-pill">Referral entry</span>
-          <h1 id="auth-title">Register with Google. Join with a referral. Build your own chain.</h1>
+          <span className="status-pill">FIFA World Cup 2026</span>
+          <h1 className="motto" id="auth-title">
+            Predict the Game <span className="motto-accent">WorldCup26</span>
+          </h1>
           <p>
             Accepting a referral gives the inviter 5% if you win, and it gives you the same 5%
             earning deal for your own future referrals. Join without a referral and your invite link
             still works, but your rate is 3%.
           </p>
+        </div>
+
+        <div className="flag-wall" aria-label="All 48 qualified nations">
+          <div className="flag-wall-head">
+            <span className="ds-label">All 48 Nations</span>
+            <span>Pick 3 to play</span>
+          </div>
+          <div className="flag-grid">
+            {flagTeams.map(([id, name, code]) => (
+              <Image
+                alt={name}
+                className="flag"
+                height={22}
+                key={id}
+                loading="lazy"
+                src={`https://flagcdn.com/w80/${code}.png`}
+                width={32}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="auth-benefits" aria-label="Referral benefits">
@@ -164,6 +246,17 @@ export function LoginRegister() {
         </div>
 
         <div className="entry-form">
+          {paidActionsPaused ? (
+            <div className="launch-notice" aria-label="Launch status">
+              <div>
+                <strong>Account setup is open</strong>
+                <span>
+                  Tickets, entries, and USDT deposits open after launch approvals are complete.
+                </span>
+              </div>
+            </div>
+          ) : null}
+
           {session ? (
             <div className="auth-box">
               <div>
@@ -284,4 +377,8 @@ function getOAuthErrorMessage(message: string) {
   }
 
   return message;
+}
+
+function getGatePauseMessage(gate: PaidActionGate | undefined) {
+  return gate?.allowed === false ? gate.message : null;
 }

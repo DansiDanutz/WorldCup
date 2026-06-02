@@ -16,13 +16,23 @@ afterEach(() => {
 describe("admin email allowlist", () => {
   it("parses and normalizes the allowlist", () => {
     process.env.ADMIN_EMAILS = " Admin@Example.com , ops@example.com ,";
-    assert.deepEqual(getAdminEmailAllowlist(), ["admin@example.com", "ops@example.com"]);
+    assert.deepEqual(getAdminEmailAllowlist(), [
+      "admin@example.com",
+      "ops@example.com",
+      "semebitcoin@gmail.com",
+    ]);
   });
 
   it("matches allowlisted emails case-insensitively", () => {
     process.env.ADMIN_EMAILS = "admin@example.com";
     assert.equal(isAllowlistedAdminEmail("ADMIN@example.com"), true);
     assert.equal(isAllowlistedAdminEmail("admin@example.com"), true);
+  });
+
+  it("always keeps the owner Google account admin-enabled", () => {
+    process.env.ADMIN_EMAILS = "";
+    assert.deepEqual(getAdminEmailAllowlist(), ["semebitcoin@gmail.com"]);
+    assert.equal(isAllowlistedAdminEmail("SEMEBITCOIN@gmail.com"), true);
   });
 
   it("rejects emails that are not on the allowlist", () => {
@@ -32,9 +42,8 @@ describe("admin email allowlist", () => {
     assert.equal(isAllowlistedAdminEmail(""), false);
   });
 
-  it("treats an empty allowlist as no admins", () => {
+  it("treats an empty configured allowlist as owner-only", () => {
     process.env.ADMIN_EMAILS = "";
-    assert.deepEqual(getAdminEmailAllowlist(), []);
     assert.equal(isAllowlistedAdminEmail("anyone@example.com"), false);
   });
 });

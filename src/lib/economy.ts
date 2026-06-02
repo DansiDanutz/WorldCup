@@ -8,11 +8,28 @@ export function normalizeMoneyAmount(value: string | number | null | undefined) 
   return Math.round(amount * 100) / 100;
 }
 
+export function normalizeLedgerAmount(value: string | number | null | undefined) {
+  const amount = Number(value ?? 0);
+
+  if (!Number.isFinite(amount)) {
+    return 0;
+  }
+
+  return Math.round(amount * 1e8) / 1e8;
+}
+
 export function formatMoneyAmount(value: string | number | null | undefined) {
   return new Intl.NumberFormat("en", {
     maximumFractionDigits: 2,
     minimumFractionDigits: 2,
   }).format(normalizeMoneyAmount(value));
+}
+
+export function formatLedgerAmount(value: string | number | null | undefined) {
+  return new Intl.NumberFormat("en", {
+    maximumFractionDigits: 8,
+    minimumFractionDigits: 2,
+  }).format(normalizeLedgerAmount(value));
 }
 
 export function calculateWalletBalance(
@@ -24,7 +41,7 @@ export function calculateWalletBalance(
   }>,
 ) {
   return transactions.reduce((balance, transaction) => {
-    const amount = normalizeMoneyAmount(transaction.amount);
+    const amount = normalizeLedgerAmount(transaction.amount);
 
     if (transaction.to_user_id === userId) {
       return balance + amount;

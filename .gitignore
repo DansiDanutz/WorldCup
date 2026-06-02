@@ -4,8 +4,13 @@
 !.env.example
 node_modules/
 .next/
-tsconfig.tsbuildinfo
+*.tsbuildinfo
+/*.png
+/*.jpg
+/*.jpeg
+/*.zip
 supabase/.temp/
 .omx/
 .vercel
 .env*.local
+.claude-session-recovery.md

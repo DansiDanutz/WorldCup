@@ -3,24 +3,33 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { getBearerToken } from "@/lib/request";
 import { timingSafeEqualStrings } from "@/lib/secure-compare";
 
+export const OWNER_ADMIN_EMAIL = "semebitcoin@gmail.com";
+
 export type AdminAuthResult =
   | { ok: true; via: "email"; adminEmail: string }
   | { ok: true; via: "secret"; adminEmail: null }
   | { ok: false; status: number; error: string };
 
-export function getAdminEmailAllowlist(): string[] {
-  return (process.env.ADMIN_EMAILS ?? "")
+type AdminEmailEnv = Record<string, string | undefined>;
+
+export function getAdminEmailAllowlist(env: AdminEmailEnv = process.env): string[] {
+  const configuredEmails = (env.ADMIN_EMAILS ?? "")
     .split(",")
     .map((value) => value.trim().toLowerCase())
     .filter(Boolean);
+
+  return Array.from(new Set([...configuredEmails, OWNER_ADMIN_EMAIL]));
 }
 
-export function isAllowlistedAdminEmail(email: string | null | undefined): boolean {
+export function isAllowlistedAdminEmail(
+  email: string | null | undefined,
+  env: AdminEmailEnv = process.env,
+): boolean {
   if (!email) {
     return false;
   }
 
-  return getAdminEmailAllowlist().includes(email.trim().toLowerCase());
+  return getAdminEmailAllowlist(env).includes(email.trim().toLowerCase());
 }
 
 /**

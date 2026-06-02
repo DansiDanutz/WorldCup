@@ -12,6 +12,15 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "flagcdn.com",
+        pathname: "/w80/**",
+      },
+    ],
+  },
   async headers() {
     return [
       {

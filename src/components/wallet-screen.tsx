@@ -1,11 +1,35 @@
 "use client";
 
-import { AlertTriangle, CircleDollarSign, Copy, Gift, Lock, Ticket, Trophy, Wallet } from "lucide-react";
+import {
+  CircleDollarSign,
+  Copy,
+  Gift,
+  Lock,
+  QrCode,
+  Send,
+  ShieldCheck,
+  Ticket,
+  Trophy,
+  Upload,
+  Wallet,
+} from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useState, useTransition } from "react";
+import { useEffect, useMemo, useState, useTransition } from "react";
 
-import { formatMoneyAmount } from "@/lib/economy";
+import {
+  getDepositExplorerAddressUrl,
+  getDepositExplorerTxUrl,
+} from "@/lib/deposits";
+import { formatLedgerAmount, formatMoneyAmount } from "@/lib/economy";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
+import type {
+  MyAccountStatus,
+  PaidActionGate,
+  PaidActionGates,
+  WithdrawalRequestRow,
+} from "@/lib/types";
+import { getWithdrawalExplorerTxUrl } from "@/lib/withdrawals";
 import type { Session } from "@supabase/supabase-js";
 
 type DepositAddress = {
@@ -13,13 +37,21 @@ type DepositAddress = {
   label: string;
   address: string;
   memo: string | null;
+  qrCodePath?: string;
+  shared?: boolean;
 };
 
-type AccountStatus = {
-  walletBalance: string;
-  ticketsAvailable: number;
-  ticketsAssigned: number;
-  ticketPriceAmount: string;
+type DepositClaim = {
+  id: string;
+  network: string;
+  address: string;
+  amount: string;
+  currency: string;
+  txHash: string;
+  status: string;
+  adminNote: string | null;
+  createdAt: string;
+  creditedAt: string | null;
 };
 
 type AgentStatus = {
@@ -32,46 +64,83 @@ type AgentStatus = {
   availableCodes: Array<{ code: string; kind: string }>;
 };
 
-export function WalletScreen() {
+type ResponsiblePlayStatus = {
+  maxEntries: number | null;
+  selfExcluded: boolean;
+  selfExcludedUntil: string | null;
+  ticketsReserved: number | null;
+  entriesUsed: number | null;
+  depositRestriction: string | null;
+  ticketRestriction: string | null;
+  supportResources?: { label: string; url: string }[];
+};
+
+type WalletScreenProps = {
+  publicPaidActionGates?: PaidActionGates;
+};
+
+export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const [session, setSession] = useState<Session | null>(null);
-  const [status, setStatus] = useState<AccountStatus | null>(null);
+  const [status, setStatus] = useState<MyAccountStatus | null>(null);
   const [addresses, setAddresses] = useState<DepositAddress[]>([]);
   const [depositsConfigured, setDepositsConfigured] = useState<boolean | null>(null);
+  const [sharedDepositAddresses, setSharedDepositAddresses] = useState(false);
+  const [depositClaims, setDepositClaims] = useState<DepositClaim[]>([]);
+  const [claimNetwork, setClaimNetwork] = useState("trc20");
+  const [claimAmount, setClaimAmount] = useState("");
+  const [claimTxHash, setClaimTxHash] = useState("");
+  const [withdrawals, setWithdrawals] = useState<WithdrawalRequestRow[]>([]);
+  const [withdrawalNetwork, setWithdrawalNetwork] = useState("trc20");
+  const [withdrawalAddress, setWithdrawalAddress] = useState("");
+  const [withdrawalAmount, setWithdrawalAmount] = useState("");
   const [agent, setAgent] = useState<AgentStatus | null>(null);
   const [redeemCode, setRedeemCode] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
+  const [entryLimitDraft, setEntryLimitDraft] = useState("");
+  const [selfExclusionDuration, setSelfExclusionDuration] = useState("24h");
+  const [selfExclusionReason, setSelfExclusionReason] = useState("");
   const [isPending, startTransition] = useTransition();
 
-  const signedIn = session?.user.app_metadata.provider === "google";
+  const signedIn = Boolean(session?.access_token && session.user.email);
+  const depositClaimAccountLabel =
+    session?.user.email ?? session?.user.id ?? "your signed-in account";
+  const depositRestriction = responsiblePlay?.depositRestriction ?? null;
+  const ticketRestriction = responsiblePlay?.ticketRestriction ?? null;
+  const publicDepositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
+  const publicTicketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
+  const publicWithdrawalPolicyPause = getGatePauseMessage(publicPaidActionGates?.withdrawal);
+  const depositPolicyPause =
+    status?.paidActionGates
+      ? getGatePauseMessage(status.paidActionGates.deposit)
+      : publicDepositPolicyPause;
+  const ticketPolicyPause =
+    status?.paidActionGates
+      ? getGatePauseMessage(status.paidActionGates.ticket)
+      : publicTicketPolicyPause;
+  const withdrawalPolicyPause =
+    status?.paidActionGates
+      ? getGatePauseMessage(status.paidActionGates.withdrawal)
+      : publicWithdrawalPolicyPause;
+  const publicPaidActionsPaused = Boolean(
+    publicDepositPolicyPause || publicTicketPolicyPause || publicWithdrawalPolicyPause,
+  );
+  const launchEvidenceMode = Boolean(
+    signedIn &&
+      publicPaidActionsPaused &&
+      status?.paidActionGates &&
+      status.paidActionGates.deposit.allowed &&
+      status.paidActionGates.ticket.allowed &&
+      status.paidActionGates.withdrawal.allowed,
+  );
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
     const { data } = supabase.auth.onAuthStateChange((_event, next) => setSession(next));
     return () => data.subscription.unsubscribe();
   }, [supabase]);
-
-  const loadStatus = useCallback(async (token: string) => {
-    const response = await fetch("/api/referrals/me", { headers: { Authorization: `Bearer ${token}` } });
-    const me = (await response.json()) as Partial<AccountStatus>;
-    setStatus({
-      walletBalance: me.walletBalance ?? "0.00",
-      ticketsAvailable: me.ticketsAvailable ?? 0,
-      ticketsAssigned: me.ticketsAssigned ?? 0,
-      ticketPriceAmount: me.ticketPriceAmount ?? "0",
-    });
-  }, []);
-
-  const loadAgent = useCallback(async (token: string) => {
-    const response = await fetch("/api/agent/me", { headers: { Authorization: `Bearer ${token}` } });
-    if (!response.ok) {
-      setAgent(null);
-      return;
-    }
-    const data = (await response.json()) as AgentStatus;
-    setAgent(data.isAgent ? data : null);
-  }, []);
 
   useEffect(() => {
     const token = session?.access_token;
@@ -81,32 +150,174 @@ export function WalletScreen() {
         setStatus(null);
         setAddresses([]);
         setDepositsConfigured(null);
+        setSharedDepositAddresses(false);
+        setDepositClaims([]);
+        setWithdrawals([]);
+        setResponsiblePlay(null);
         setAgent(null);
+        setEntryLimitDraft("");
         return;
       }
 
       try {
-        const addressResponse = await fetch("/api/deposits/address", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const [
+          meResponse,
+          addressResponse,
+          claimsResponse,
+          withdrawalResponse,
+          responsibleResponse,
+          agentResponse,
+        ] = await Promise.all([
+          fetch("/api/referrals/me", { headers: { Authorization: `Bearer ${token}` } }),
+          fetch("/api/deposits/address", { headers: { Authorization: `Bearer ${token}` } }),
+          fetch("/api/deposits/claims", { headers: { Authorization: `Bearer ${token}` } }),
+          fetch("/api/withdrawals", { headers: { Authorization: `Bearer ${token}` } }),
+          fetch("/api/responsible-play", { headers: { Authorization: `Bearer ${token}` } }),
+          fetch("/api/agent/me", { headers: { Authorization: `Bearer ${token}` } }),
+        ]);
 
-        await Promise.all([loadStatus(token), loadAgent(token)]);
+        const me = (await meResponse.json()) as Partial<MyAccountStatus>;
+        setStatus({
+          walletBalance: me.walletBalance ?? "0.00",
+          ticketsAvailable: me.ticketsAvailable ?? 0,
+          ticketsAssigned: me.ticketsAssigned ?? 0,
+          ticketPriceAmount: me.ticketPriceAmount ?? "0",
+          paidActionGates: me.paidActionGates,
+        });
 
         if (addressResponse.ok) {
           const data = (await addressResponse.json()) as {
             configured?: boolean;
+            shared?: boolean;
             addresses?: DepositAddress[];
           };
           setDepositsConfigured(Boolean(data.configured));
+          setSharedDepositAddresses(Boolean(data.shared));
           setAddresses(data.addresses ?? []);
         } else {
           setDepositsConfigured(false);
+          setSharedDepositAddresses(false);
+        }
+
+        if (claimsResponse.ok) {
+          const data = (await claimsResponse.json()) as { claims?: DepositClaim[] };
+          setDepositClaims(data.claims ?? []);
+        }
+
+        if (withdrawalResponse.ok) {
+          const data = (await withdrawalResponse.json()) as { withdrawals?: WithdrawalRequestRow[] };
+          setWithdrawals(data.withdrawals ?? []);
+        }
+
+        if (responsibleResponse.ok) {
+          applyResponsiblePlay(await responsibleResponse.json());
+        } else {
+          setResponsiblePlay(null);
+        }
+
+        if (agentResponse.ok) {
+          const data = (await agentResponse.json()) as AgentStatus;
+          setAgent(data.isAgent ? data : null);
+        } else {
+          setAgent(null);
         }
       } catch {
         setError("Could not load your wallet.");
       }
     });
-  }, [session?.access_token, signedIn, loadStatus, loadAgent]);
+  }, [session?.access_token, signedIn]);
+
+  function refreshStatus(token: string) {
+    fetch("/api/referrals/me", { headers: { Authorization: `Bearer ${token}` } })
+      .then((response) => response.json())
+      .then((me: Partial<MyAccountStatus>) =>
+        setStatus({
+          walletBalance: me.walletBalance ?? "0.00",
+          ticketsAvailable: me.ticketsAvailable ?? 0,
+          ticketsAssigned: me.ticketsAssigned ?? 0,
+          ticketPriceAmount: me.ticketPriceAmount ?? "0",
+          paidActionGates: me.paidActionGates,
+        }),
+      )
+      .catch(() => undefined);
+  }
+
+  function refreshAgent(token: string) {
+    fetch("/api/agent/me", { headers: { Authorization: `Bearer ${token}` } })
+      .then((response) => response.json())
+      .then((data: AgentStatus) => setAgent(data.isAgent ? data : null))
+      .catch(() => undefined);
+  }
+
+  function applyResponsiblePlay(data: ResponsiblePlayStatus) {
+    setResponsiblePlay(data);
+    setEntryLimitDraft(data.maxEntries === null ? "" : String(data.maxEntries));
+  }
+
+  function saveEntryLimit() {
+    const token = session?.access_token;
+    if (!token) {
+      return;
+    }
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const trimmed = entryLimitDraft.trim();
+      const response = await fetch("/api/responsible-play", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          maxEntries: trimmed === "" ? null : Number(trimmed),
+        }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        setError(result.error ?? "Could not save responsible play settings.");
+        return;
+      }
+
+      applyResponsiblePlay(result as ResponsiblePlayStatus);
+      setMessage(trimmed === "" ? "Entry limit cleared." : "Entry limit saved.");
+    });
+  }
+
+  function activateSelfExclusion() {
+    const token = session?.access_token;
+    if (!token) {
+      return;
+    }
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const response = await fetch("/api/responsible-play", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          selfExclusion: selfExclusionDuration,
+          reason: selfExclusionReason.trim() || undefined,
+        }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        setError(result.error ?? "Could not activate self-exclusion.");
+        return;
+      }
+
+      applyResponsiblePlay(result as ResponsiblePlayStatus);
+      setSelfExclusionReason("");
+      setMessage("Self-exclusion is active.");
+    });
+  }
 
   function buyTicket() {
     const token = session?.access_token;
@@ -129,13 +340,15 @@ export function WalletScreen() {
       }
 
       setMessage("Ticket purchased. You can lock an entry now.");
-      loadStatus(token);
+      refreshStatus(token);
+      refreshAgent(token);
     });
   }
 
   function redeemTicket() {
     const token = session?.access_token;
     const code = redeemCode.trim();
+
     if (!token || !code) {
       return;
     }
@@ -145,7 +358,10 @@ export function WalletScreen() {
     startTransition(async () => {
       const response = await fetch("/api/tickets/claim", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ code }),
       });
       const result = (await response.json()) as { error?: string; ticketId?: string };
@@ -156,15 +372,101 @@ export function WalletScreen() {
       }
 
       setRedeemCode("");
-      setMessage("Code redeemed — an entry ticket was added to your account.");
-      await Promise.all([loadStatus(token), loadAgent(token)]);
+      setMessage("Code redeemed. An entry ticket was added to your account.");
+      refreshStatus(token);
     });
+  }
+
+  async function copyAddress(address: string) {
+    await navigator.clipboard.writeText(address);
+    setMessage("Address copied.");
+    window.setTimeout(() => setMessage(null), 1600);
   }
 
   async function copyText(value: string, label: string) {
     await navigator.clipboard.writeText(value);
     setMessage(`${label} copied.`);
     window.setTimeout(() => setMessage(null), 1600);
+  }
+
+  function submitDepositClaim() {
+    const token = session?.access_token;
+    if (!token) {
+      return;
+    }
+
+    const amount = claimAmount.trim();
+    const txHash = claimTxHash.trim();
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const response = await fetch("/api/deposits/claims", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          network: claimNetwork,
+          amount,
+          txHash,
+        }),
+      });
+      const result = (await response.json()) as { error?: string; claim?: DepositClaim };
+
+      if (!response.ok) {
+        setError(result.error ?? "Could not submit deposit claim.");
+        return;
+      }
+
+      if (result.claim) {
+        setDepositClaims((current) => [result.claim!, ...current]);
+      }
+      setClaimAmount("");
+      setClaimTxHash("");
+      setMessage("Deposit claim submitted.");
+    });
+  }
+
+  function submitWithdrawalRequest() {
+    const token = session?.access_token;
+    if (!token) {
+      return;
+    }
+
+    const address = withdrawalAddress.trim();
+    const amount = withdrawalAmount.trim();
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const response = await fetch("/api/withdrawals", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          network: withdrawalNetwork,
+          address,
+          amount,
+        }),
+      });
+      const result = (await response.json()) as { error?: string; withdrawal?: WithdrawalRequestRow };
+
+      if (!response.ok) {
+        setError(result.error ?? "Could not submit withdrawal request.");
+        return;
+      }
+
+      if (result.withdrawal) {
+        setWithdrawals((current) => [result.withdrawal!, ...current]);
+      }
+      setWithdrawalAmount("");
+      setWithdrawalAddress("");
+      setMessage("Withdrawal request submitted for admin review.");
+    });
   }
 
   return (
@@ -185,207 +487,554 @@ export function WalletScreen() {
       </header>
 
       <div className="page">
+        {launchEvidenceMode ? (
+          <section className="launch-notice" aria-label="Wallet launch evidence mode">
+            <div>
+              <strong>Admin launch evidence mode</strong>
+              <span>
+                Public paid actions remain paused. This admin account can use TRC20/ERC20
+                deposits and withdrawal requests to record real launch evidence.
+              </span>
+            </div>
+            <Link className="button secondary" href={{ pathname: "/admin" }}>
+              Open Admin
+            </Link>
+          </section>
+        ) : publicPaidActionsPaused ? (
+          <section className="launch-notice" aria-label="Wallet launch status">
+            <div>
+              <strong>Wallet paid actions paused</strong>
+              <span>
+                Login, referrals, and account setup are available. Tickets, USDT deposits, and
+                withdrawals open after launch approvals are complete.
+              </span>
+            </div>
+            <Link className="button secondary" href={{ pathname: "/" }}>
+              View teams
+            </Link>
+          </section>
+        ) : null}
+
         {!signedIn ? (
-          <section className="wallet-solo">
+          <section className="grid">
             <div className="panel">
               <div className="panel-header">
                 <div>
                   <h1 className="panel-title">Wallet</h1>
                   <p className="panel-subtitle">
-                    Sign in with Google to deposit USDT and buy tickets.
+                    {publicPaidActionsPaused
+                      ? "Sign in with Google to prepare your wallet. Paid actions open after launch approvals are complete."
+                      : "Sign in with Google to deposit USDT and buy tickets."}
                   </p>
                 </div>
                 <Lock size={18} color="var(--green)" />
               </div>
-              <div className="panel-body">
-                <Link className="button" href={{ pathname: "/login" }}>
-                  Login / Register
-                </Link>
-              </div>
+              <Link className="button" href={{ pathname: "/login" }}>
+                Login / Register
+              </Link>
             </div>
           </section>
         ) : (
-          <>
-            <section className="wallet-grid">
-              <div className="panel">
-                <div className="panel-header">
-                  <div>
-                    <h1 className="panel-title">Balance</h1>
-                    <p className="panel-subtitle">Internal USDT balance and entry tickets.</p>
-                  </div>
-                  <CircleDollarSign size={18} color="var(--gold)" />
+          <section className="grid">
+            <div className="panel">
+              <div className="panel-header">
+                <div>
+                  <h1 className="panel-title">Balance</h1>
+                  <p className="panel-subtitle">Internal USDT balance and entry tickets.</p>
                 </div>
-                <div className="panel-body">
-                  <div className="account-status-grid">
-                    <div>
-                      <span>Wallet balance</span>
-                      <strong>{formatMoneyAmount(status?.walletBalance ?? 0)}</strong>
-                      <small>USDT</small>
-                    </div>
-                    <div>
-                      <span>Tickets available</span>
-                      <strong>{status?.ticketsAvailable ?? 0}</strong>
-                      <small>{status?.ticketsAssigned ?? 0} total</small>
-                    </div>
-                    <div>
-                      <span>Ticket price</span>
-                      <strong>{formatMoneyAmount(status?.ticketPriceAmount ?? 0)}</strong>
-                      <small>per entry</small>
-                    </div>
-                  </div>
-                  <button className="button" disabled={isPending} onClick={buyTicket} type="button">
-                    <Lock size={16} />
-                    {isPending ? "Processing..." : "Buy entry ticket"}
-                  </button>
-
-                  <div className="redeem-row">
-                    <label htmlFor="redeem-code">Have a ticket code?</label>
-                    <div className="redeem-input">
-                      <input
-                        className="search"
-                        id="redeem-code"
-                        value={redeemCode}
-                        onChange={(event) => setRedeemCode(event.target.value.toUpperCase())}
-                        placeholder="Enter code"
-                        maxLength={32}
-                      />
-                      <button
-                        className="button secondary"
-                        disabled={isPending || redeemCode.trim().length === 0}
-                        onClick={redeemTicket}
-                        type="button"
-                      >
-                        <Ticket size={16} />
-                        Redeem
-                      </button>
-                    </div>
-                  </div>
-
-                  {message ? <div className="message">{message}</div> : null}
-                  {error ? <div className="message error">{error}</div> : null}
+                <CircleDollarSign size={18} color="var(--gold)" />
+              </div>
+              <div className="account-status-grid">
+                <div>
+                  <span>Wallet balance</span>
+                  <strong>{formatLedgerAmount(status?.walletBalance ?? 0)}</strong>
+                  <small>USDT</small>
+                </div>
+                <div>
+                  <span>Tickets available</span>
+                  <strong>{status?.ticketsAvailable ?? 0}</strong>
+                  <small>{status?.ticketsAssigned ?? 0} total</small>
+                </div>
+                <div>
+                  <span>Ticket price</span>
+                  <strong>{formatMoneyAmount(status?.ticketPriceAmount ?? 0)}</strong>
+                  <small>per entry</small>
                 </div>
               </div>
+              <button
+                className="button"
+                disabled={Boolean(ticketRestriction || ticketPolicyPause) || isPending}
+                onClick={buyTicket}
+                type="button"
+              >
+                <Lock size={16} />
+                {isPending ? "Processing..." : "Buy entry ticket"}
+              </button>
+              <div className="redeem-row">
+                <label htmlFor="redeem-code">Have a ticket code?</label>
+                <div className="redeem-input">
+                  <input
+                    className="search"
+                    id="redeem-code"
+                    maxLength={32}
+                    placeholder="Enter code"
+                    value={redeemCode}
+                    onChange={(event) => setRedeemCode(event.target.value.toUpperCase())}
+                  />
+                  <button
+                    className="button secondary"
+                    disabled={isPending || redeemCode.trim().length === 0}
+                    onClick={redeemTicket}
+                    type="button"
+                  >
+                    <Ticket size={16} />
+                    Redeem
+                  </button>
+                </div>
+              </div>
+              {ticketPolicyPause ? <div className="message error">{ticketPolicyPause}</div> : null}
+              {ticketRestriction ? <div className="message error">{ticketRestriction}</div> : null}
+              {message ? <div className="message">{message}</div> : null}
+              {error ? <div className="message error">{error}</div> : null}
+            </div>
 
-              <div className="panel">
+            <div className="panel">
+              <div className="panel-header">
+                <div>
+                  <h2 className="panel-title">Responsible Play</h2>
+                  <p className="panel-subtitle">Set account limits before buying tickets or depositing.</p>
+                </div>
+                <ShieldCheck size={18} color="var(--green)" />
+              </div>
+              <div className="responsible-play-content">
+                {responsiblePlay?.selfExcluded ? (
+                  <div className="message error">
+                    Self-exclusion is active until{" "}
+                    {responsiblePlay.selfExcludedUntil
+                      ? new Date(responsiblePlay.selfExcludedUntil).toLocaleString()
+                      : "the selected end date"}
+                    .
+                  </div>
+                ) : (
+                  <div className="message">
+                    These settings are enforced on deposits, ticket purchases, admin ticket assignment,
+                    and entry locking.
+                  </div>
+                )}
+                <div className="responsible-play-controls">
+                  <div className="field">
+                    <label htmlFor="entry-limit">Entry-ticket limit</label>
+                    <input
+                      id="entry-limit"
+                      max="10"
+                      min="0"
+                      placeholder="No limit"
+                      type="number"
+                      value={entryLimitDraft}
+                      onChange={(event) => setEntryLimitDraft(event.target.value)}
+                    />
+                    <div className="field-note">
+                      Current tickets: {responsiblePlay?.ticketsReserved ?? 0}. Current entries:{" "}
+                      {responsiblePlay?.entriesUsed ?? 0}.
+                    </div>
+                  </div>
+                  <button className="button secondary" disabled={isPending} onClick={saveEntryLimit} type="button">
+                    Save limit
+                  </button>
+                  <div className="field">
+                    <label htmlFor="self-exclusion-duration">Self-exclusion</label>
+                    <select
+                      id="self-exclusion-duration"
+                      value={selfExclusionDuration}
+                      onChange={(event) => setSelfExclusionDuration(event.target.value)}
+                    >
+                      <option value="24h">24 hours</option>
+                      <option value="7d">7 days</option>
+                      <option value="30d">30 days</option>
+                      <option value="season">Rest of tournament</option>
+                    </select>
+                  </div>
+                  <div className="field">
+                    <label htmlFor="self-exclusion-reason">Note</label>
+                    <input
+                      id="self-exclusion-reason"
+                      maxLength={300}
+                      placeholder="Optional"
+                      value={selfExclusionReason}
+                      onChange={(event) => setSelfExclusionReason(event.target.value)}
+                    />
+                  </div>
+                  <button className="button danger" disabled={isPending} onClick={activateSelfExclusion} type="button">
+                    Activate self-exclusion
+                  </button>
+                </div>
+                <div className="support-links" aria-label="Responsible play support resources">
+                  {(responsiblePlay?.supportResources ?? [
+                    { label: "NCPG help and treatment", url: "https://www.ncpgambling.org/help-treatment/" },
+                    { label: "Gambling Therapy support", url: "https://www.gamblingtherapy.org/" },
+                  ]).map((resource) => (
+                    <a href={resource.url} key={resource.url} rel="noreferrer" target="_blank">
+                      {resource.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="panel">
+              <div className="panel-header">
+                <div>
+                  <h2 className="panel-title">Deposit USDT</h2>
+                  <p className="panel-subtitle">
+                    {sharedDepositAddresses
+                      ? "Send only USDT on the matching network and keep the transaction hash."
+                      : "Send only USDT on the matching network. Deposits credit your wallet after on-chain confirmation."}
+                  </p>
+                </div>
+                <QrCode size={18} color="var(--green)" />
+              </div>
+              {sharedDepositAddresses ? (
+                <div className="message">
+                  Shared receive wallet. Keep your transaction hash after sending so the deposit
+                  can be matched to your account. Deposit claims are tied to {depositClaimAccountLabel}.
+                </div>
+              ) : null}
+              {depositPolicyPause ? (
+                <div className="message error">{depositPolicyPause}</div>
+              ) : depositsConfigured === false ? (
+                <div className="message">
+                  USDT deposits are not enabled yet. Check back soon.
+                </div>
+              ) : addresses.length === 0 ? (
+                <div className="field-note">Generating your deposit addresses…</div>
+              ) : (
+                <div className="deposit-list">
+                  {addresses.map((entry) => {
+                    const explorerUrl = getDepositExplorerAddressUrl(entry.network, entry.address);
+
+                    return (
+                      <div className="deposit-row" key={entry.network}>
+                        {entry.qrCodePath ? (
+                          <Image
+                            alt={`${entry.label} deposit QR code`}
+                            className="deposit-qr"
+                            height={116}
+                            src={entry.qrCodePath}
+                            unoptimized
+                            width={116}
+                          />
+                        ) : null}
+                        <div className="deposit-meta">
+                          <span className="pick-slot-label">{entry.label}</span>
+                          <code className="deposit-address">{entry.address}</code>
+                          {entry.memo ? <small>Memo: {entry.memo}</small> : null}
+                          {entry.shared ? <small>Main KuCoin receive wallet</small> : null}
+                          {explorerUrl ? (
+                            <a
+                              className="deposit-explorer-link"
+                              href={explorerUrl}
+                              rel="noreferrer"
+                              target="_blank"
+                            >
+                              View receive wallet
+                            </a>
+                          ) : null}
+                        </div>
+                        <button
+                          className="button secondary"
+                          onClick={() => copyAddress(entry.address)}
+                          type="button"
+                        >
+                          <Copy size={16} />
+                          Copy
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+              <div className="field-note">
+                Only send USDT on the exact network shown. Sending any other asset or network may
+                result in permanent loss.
+              </div>
+              {sharedDepositAddresses ? (
+                <div className="deposit-claim-box">
+                  <div className="panel-header compact">
+                    <div>
+                      <h3 className="panel-title">Submit transaction</h3>
+                      <p className="panel-subtitle">
+                        Paste the transaction hash after sending USDT. Admins see this claim with your
+                        account email or user ID before crediting your balance.
+                      </p>
+                    </div>
+                    <Send size={18} color="var(--green)" />
+                  </div>
+                  <div className="deposit-claim-form">
+                    {depositPolicyPause ? (
+                      <div className="message error full-width">{depositPolicyPause}</div>
+                    ) : null}
+                    {depositRestriction ? (
+                      <div className="message error full-width">{depositRestriction}</div>
+                    ) : null}
+                    <div className="field">
+                      <label htmlFor="claim-network">Network</label>
+                      <select
+                        id="claim-network"
+                        value={claimNetwork}
+                        onChange={(event) => setClaimNetwork(event.target.value)}
+                      >
+                        <option value="trc20">TRC20</option>
+                        <option value="erc20">ERC20</option>
+                      </select>
+                    </div>
+                    <div className="field">
+                      <label htmlFor="claim-amount">Amount sent</label>
+                      <input
+                        id="claim-amount"
+                        min="0"
+                        step="0.000001"
+                        type="number"
+                        value={claimAmount}
+                        onChange={(event) => setClaimAmount(event.target.value)}
+                      />
+                    </div>
+                    <div className="field full-width">
+                      <label htmlFor="claim-tx">Transaction hash</label>
+                      <input
+                        id="claim-tx"
+                        value={claimTxHash}
+                        onChange={(event) => setClaimTxHash(event.target.value)}
+                        placeholder="Paste tx hash"
+                      />
+                    </div>
+                    <button
+                      className="button secondary"
+                      disabled={
+                        !claimAmount ||
+                        !claimTxHash ||
+                        Boolean(depositRestriction || depositPolicyPause) ||
+                        isPending
+                      }
+                      onClick={submitDepositClaim}
+                      type="button"
+                    >
+                      <Send size={16} />
+                      Submit Claim
+                    </button>
+                  </div>
+                  {depositClaims.length > 0 ? (
+                    <div className="deposit-claim-list">
+                      {depositClaims.map((claim) => {
+                        const explorerUrl = getDepositExplorerTxUrl(claim.network, claim.txHash);
+                        const receiveWalletUrl = getDepositExplorerAddressUrl(claim.network, claim.address);
+
+                        return (
+                          <div className="deposit-claim-row" key={claim.id}>
+                            <div>
+                              <strong>
+                                {formatLedgerAmount(claim.amount)} {claim.currency} · {claim.network.toUpperCase()}
+                              </strong>
+                              <code>{claim.address}</code>
+                              {receiveWalletUrl ? (
+                                <a
+                                  className="deposit-explorer-link"
+                                  href={receiveWalletUrl}
+                                  rel="noreferrer"
+                                  target="_blank"
+                                >
+                                  View receive wallet
+                                </a>
+                              ) : null}
+                              <code>{claim.txHash}</code>
+                              {explorerUrl ? (
+                                <a
+                                  className="deposit-explorer-link"
+                                  href={explorerUrl}
+                                  rel="noreferrer"
+                                  target="_blank"
+                                >
+                                  View transaction
+                                </a>
+                              ) : null}
+                              {claim.adminNote ? <small>{claim.adminNote}</small> : null}
+                            </div>
+                            <span className={`claim-status ${claim.status}`}>{claim.status}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
+            </div>
+
+            <div className="panel">
+              <div className="panel-header">
+                <div>
+                  <h2 className="panel-title">Withdraw USDT</h2>
+                  <p className="panel-subtitle">
+                    Request a payout after admin KYC/AML and manual transfer review.
+                  </p>
+                </div>
+                <Upload size={18} color="var(--green)" />
+              </div>
+              <div className="withdrawal-box">
+                <div className="message">
+                  Withdrawals are not automatic. Admins review the request, record the wallet
+                  debit, then mark the external transfer as paid with its transaction hash.
+                </div>
+                {withdrawalPolicyPause ? (
+                  <div className="message error">{withdrawalPolicyPause}</div>
+                ) : null}
+                <div className="deposit-claim-form">
+                  <div className="field">
+                    <label htmlFor="withdrawal-network">Network</label>
+                    <select
+                      id="withdrawal-network"
+                      value={withdrawalNetwork}
+                      onChange={(event) => setWithdrawalNetwork(event.target.value)}
+                    >
+                      <option value="trc20">TRC20</option>
+                      <option value="erc20">ERC20</option>
+                    </select>
+                  </div>
+                  <div className="field">
+                    <label htmlFor="withdrawal-amount">Amount</label>
+                    <input
+                      id="withdrawal-amount"
+                      inputMode="decimal"
+                      min="0"
+                      step="0.000001"
+                      type="number"
+                      value={withdrawalAmount}
+                      onChange={(event) => setWithdrawalAmount(event.target.value)}
+                    />
+                  </div>
+                  <div className="field full-width">
+                    <label htmlFor="withdrawal-address">Receive address</label>
+                    <input
+                      id="withdrawal-address"
+                      value={withdrawalAddress}
+                      onChange={(event) => setWithdrawalAddress(event.target.value)}
+                      placeholder={withdrawalNetwork === "trc20" ? "TRC20 address starts with T" : "ERC20 address starts with 0x"}
+                    />
+                  </div>
+                  <button
+                    className="button secondary"
+                    disabled={!withdrawalAmount || !withdrawalAddress || Boolean(withdrawalPolicyPause) || isPending}
+                    onClick={submitWithdrawalRequest}
+                    type="button"
+                  >
+                    <Upload size={16} />
+                    Request Withdrawal
+                  </button>
+                </div>
+                {withdrawals.length > 0 ? (
+                  <div className="deposit-claim-list">
+                    {withdrawals.map((withdrawal) => {
+                      const explorerUrl =
+                        withdrawal.externalTxHash
+                          ? getWithdrawalExplorerTxUrl(withdrawal.network, withdrawal.externalTxHash)
+                          : null;
+
+                      return (
+                        <div className="deposit-claim-row" key={withdrawal.id}>
+                          <div>
+                            <strong>
+                              {formatLedgerAmount(withdrawal.amount)} {withdrawal.currency} ·{" "}
+                              {withdrawal.network.toUpperCase()}
+                            </strong>
+                            <code>{withdrawal.address}</code>
+                            {withdrawal.externalTxHash ? <code>{withdrawal.externalTxHash}</code> : null}
+                            {explorerUrl ? (
+                              <a
+                                className="deposit-explorer-link"
+                                href={explorerUrl}
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                View payout transaction
+                              </a>
+                            ) : null}
+                            {withdrawal.adminNote ? <small>{withdrawal.adminNote}</small> : null}
+                          </div>
+                          <span className={`claim-status ${withdrawal.status}`}>{withdrawal.status}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : null}
+              </div>
+            </div>
+
+            {agent ? (
+              <div className="panel wallet-wide">
                 <div className="panel-header">
                   <div>
-                    <h2 className="panel-title">Deposit USDT</h2>
+                    <h2 className="panel-title">Agent Codes</h2>
                     <p className="panel-subtitle">
-                      Send only USDT on the matching network. Deposits credit your wallet after
-                      on-chain confirmation.
+                      Hand a code to a player; they redeem it for one entry ticket.
                     </p>
                   </div>
-                  <Wallet size={18} color="var(--green)" />
+                  <Gift size={18} color="var(--gold)" />
                 </div>
                 <div className="panel-body">
-                  {depositsConfigured === false ? (
-                    <div className="message">USDT deposits are not enabled yet. Check back soon.</div>
-                  ) : addresses.length === 0 ? (
-                    <div className="field-note">Generating your deposit addresses…</div>
+                  <div className="account-status-grid agent-stats">
+                    <div>
+                      <span>Available codes</span>
+                      <strong>{agent.availableCount}</strong>
+                      <small>{agent.redeemedCount} redeemed</small>
+                    </div>
+                    <div>
+                      <span>Paid tickets</span>
+                      <strong>{agent.paidTickets}</strong>
+                      <small>{agent.commissionTickets} free earned</small>
+                    </div>
+                    <div>
+                      <span>Commission cycle</span>
+                      <strong>{agent.progressInCycle}/10</strong>
+                      <small>one free per ten paid</small>
+                    </div>
+                  </div>
+                  <div
+                    aria-label={`${agent.progressInCycle} of 10 paid tickets in this commission cycle`}
+                    aria-valuemax={10}
+                    aria-valuemin={0}
+                    aria-valuenow={agent.progressInCycle}
+                    className="commission-bar"
+                    role="progressbar"
+                  >
+                    <span style={{ width: `${(agent.progressInCycle / 10) * 100}%` }} />
+                  </div>
+                  {agent.availableCodes.length === 0 ? (
+                    <div className="field-note">No available codes assigned right now.</div>
                   ) : (
-                    <div className="deposit-list">
-                      {addresses.map((entry) => (
-                        <div className="deposit-row" key={entry.network}>
-                          <div className="deposit-meta">
-                            <span className="pick-slot-label">{entry.label}</span>
-                            <code className="deposit-address">{entry.address}</code>
-                            {entry.memo ? <small>Memo: {entry.memo}</small> : null}
-                          </div>
+                    <div className="code-list">
+                      {agent.availableCodes.map((entry) => (
+                        <div className="code-row" key={entry.code}>
+                          <span className="code-value">{entry.code}</span>
+                          <span className="code-tag">{entry.kind}</span>
                           <button
                             className="button secondary"
-                            onClick={() => copyText(entry.address, "Address")}
+                            onClick={() => copyText(entry.code, "Code")}
                             type="button"
                           >
                             <Copy size={16} />
-                            Copy
                           </button>
                         </div>
                       ))}
                     </div>
                   )}
-                  <p className="deposit-warning">
-                    <AlertTriangle size={16} aria-hidden="true" />
-                    <span>
-                      Only send USDT on the exact network shown. Sending any other asset or network
-                      may result in permanent loss.
-                    </span>
-                  </p>
                 </div>
               </div>
-            </section>
-
-            {agent ? (
-              <section className="wallet-wide">
-                <div className="panel">
-                  <div className="panel-header">
-                    <div>
-                      <h2 className="panel-title">Agent — ticket codes</h2>
-                      <p className="panel-subtitle">
-                        Hand a code to a player; they redeem it for one entry ticket.
-                      </p>
-                    </div>
-                    <Gift size={18} color="var(--gold)" />
-                  </div>
-                  <div className="panel-body">
-                    <div className="account-status-grid agent-stats">
-                      <div>
-                        <span>Codes to give out</span>
-                        <strong>{agent.availableCount}</strong>
-                        <small>{agent.redeemedCount} redeemed</small>
-                      </div>
-                      <div>
-                        <span>Paid tickets</span>
-                        <strong>{agent.paidTickets}</strong>
-                        <small>{agent.commissionTickets} free earned</small>
-                      </div>
-                      <div>
-                        <span>Next free ticket</span>
-                        <strong>{agent.progressInCycle}/10</strong>
-                        <small>+1 free every 10</small>
-                      </div>
-                    </div>
-
-                    <div
-                      className="commission-bar"
-                      role="progressbar"
-                      aria-valuemin={0}
-                      aria-valuemax={10}
-                      aria-valuenow={agent.progressInCycle}
-                    >
-                      <span style={{ width: `${(agent.progressInCycle / 10) * 100}%` }} />
-                    </div>
-
-                    {agent.availableCodes.length === 0 ? (
-                      <div className="field-note">
-                        No codes yet. An admin assigns codes after your payment is recorded.
-                      </div>
-                    ) : (
-                      <div className="code-list">
-                        {agent.availableCodes.map((entry) => (
-                          <div className="code-row" key={entry.code}>
-                            <code className="code-value">{entry.code}</code>
-                            {entry.kind === "commission" ? (
-                              <span className="code-tag">free</span>
-                            ) : null}
-                            <button
-                              className="button secondary"
-                              onClick={() => copyText(entry.code, "Code")}
-                              type="button"
-                            >
-                              <Copy size={16} />
-                              Copy
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </section>
             ) : null}
-          </>
+          </section>
         )}
       </div>
     </main>
   );
+}
+
+function getGatePauseMessage(gate: PaidActionGate | undefined) {
+  return gate && !gate.allowed ? "Paid actions open after launch approvals are complete." : null;
 }

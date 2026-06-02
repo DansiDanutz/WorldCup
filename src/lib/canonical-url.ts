@@ -1,4 +1,5 @@
 export const CANONICAL_HOST = "worldcup26.world";
+export const CANONICAL_ORIGIN = `https://${CANONICAL_HOST}`;
 export const LEGACY_PRODUCTION_HOST = "worldcup-ten-eta.vercel.app";
 export const WWW_CANONICAL_HOST = `www.${CANONICAL_HOST}`;
 
@@ -27,4 +28,3 @@ export function shouldRedirectToCanonicalHost(host: string | null): boolean {
     hostname.endsWith(".vercel.app")
   );
 }
-

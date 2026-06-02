@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
 import { enforceRateLimit, jsonError } from "@/lib/http";
+import { getResponsiblePlayRestriction, loadResponsiblePlayStatus } from "@/lib/responsible-play";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import {
   requireEnum,
@@ -13,7 +14,7 @@ import {
 } from "@/lib/validation";
 
 export async function POST(request: Request) {
-  const limited = await enforceRateLimit(request, "admin", { limit: 30, windowMs: 60_000 });
+  const limited = await enforceRateLimit(request, "admin", { limit: 90, windowMs: 60_000 });
   if (limited) {
     return limited;
   }
@@ -90,6 +91,20 @@ export async function POST(request: Request) {
 
   if (profile.error || !profile.data) {
     return jsonError("Account was not found.", 404);
+  }
+
+  const responsiblePlay = await loadResponsiblePlayStatus(supabase, userId, {
+    tournamentId: tournament.data.id,
+  });
+  if ("error" in responsiblePlay) {
+    return jsonError(responsiblePlay.error, 500);
+  }
+
+  const responsiblePlayRestriction = getResponsiblePlayRestriction(responsiblePlay.status, "ticket", {
+    requestedTickets: quantity,
+  });
+  if (responsiblePlayRestriction) {
+    return jsonError(`Responsible play blocks this assignment. ${responsiblePlayRestriction}`, 403);
   }
 
   const rows = Array.from({ length: quantity }, () => ({

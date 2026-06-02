@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { getGeoEligibility } from "@/lib/geo-eligibility";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { getClientIp } from "@/lib/request";
 import { createServiceSupabaseClient } from "@/lib/supabase";
@@ -8,6 +9,22 @@ export { getBearerToken } from "@/lib/request";
 
 export function jsonError(message: string, status: number) {
   return NextResponse.json({ error: message }, { status });
+}
+
+export function enforceGeoEligibility(
+  request: Request,
+  env: Record<string, string | undefined> = process.env,
+): NextResponse | null {
+  const eligibility = getGeoEligibility(request, env);
+
+  if (eligibility.allowed) {
+    return null;
+  }
+
+  return jsonError(
+    "WorldCup26 is not available for paid entries or deposits from your current location.",
+    403,
+  );
 }
 
 function tooManyRequests(retryAfterSeconds: number) {

@@ -1,0 +1,14 @@
+.git/
+.next/
+.omx/
+.vercel/
+node_modules/
+.env
+.env.*
+!.env.example
+.claude-session-recovery.md
+*.tsbuildinfo
+/*.png
+/*.jpg
+/*.jpeg
+/*.zip

@@ -2,14 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 import { CANONICAL_HOST, shouldRedirectToCanonicalHost } from "@/lib/canonical-url";
 
-export function middleware(request: NextRequest) {
-  // Preview deployments are served on generated *.vercel.app hostnames. Skip the
-  // canonical-host redirect there so each branch's preview stays viewable;
-  // production still canonicalizes to worldcup26.world.
-  if (process.env.VERCEL_ENV === "preview") {
-    return NextResponse.next();
-  }
-
+export function proxy(request: NextRequest) {
   const host = request.headers.get("host");
 
   if (!shouldRedirectToCanonicalHost(host)) {
@@ -27,4 +20,3 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: ["/((?!api|_next|favicon.ico|icon.svg|brand-mark.svg|logo-lockup.svg).*)"],
 };
-

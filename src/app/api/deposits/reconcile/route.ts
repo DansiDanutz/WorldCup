@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { parseDepositAmount } from "@/lib/deposits";
 import { requireEnv } from "@/lib/env";
-import { getKucoinConfig, listBrokerDeposits } from "@/lib/kucoin";
+import { getKucoinConfig, getKucoinDepositExternalId, listBrokerDeposits } from "@/lib/kucoin";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 
 // Credits confirmed USDT deposits to user wallets. Idempotent: the credit RPC
@@ -48,7 +48,7 @@ async function runReconcile(request: Request) {
     }
 
     const amount = parseDepositAmount(deposit.amount);
-    const externalId = deposit.walletTxId || `${deposit.uid}:${deposit.address}:${deposit.createdAt}`;
+    const externalId = getKucoinDepositExternalId(deposit);
 
     if (!amount || !deposit.address) {
       skipped.push(externalId);

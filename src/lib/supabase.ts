@@ -2,6 +2,8 @@ import { createClient } from "@supabase/supabase-js";
 
 import { getPublicSupabaseEnv, requireEnv } from "@/lib/env";
 
+let browserSupabaseClient: ReturnType<typeof createClient> | null = null;
+
 export function createPublicSupabaseClient() {
   const { url, anonKey } = getPublicSupabaseEnv();
 
@@ -14,9 +16,13 @@ export function createPublicSupabaseClient() {
 }
 
 export function createBrowserSupabaseClient() {
+  if (browserSupabaseClient) {
+    return browserSupabaseClient;
+  }
+
   const { url, anonKey } = getPublicSupabaseEnv();
 
-  return createClient(url, anonKey, {
+  browserSupabaseClient = createClient(url, anonKey, {
     auth: {
       persistSession: true,
       autoRefreshToken: true,
@@ -24,6 +30,8 @@ export function createBrowserSupabaseClient() {
       flowType: "pkce",
     },
   });
+
+  return browserSupabaseClient;
 }
 
 export function createServiceSupabaseClient() {

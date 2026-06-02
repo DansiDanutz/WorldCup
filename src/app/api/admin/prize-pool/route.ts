@@ -6,7 +6,7 @@ import { createServiceSupabaseClient } from "@/lib/supabase";
 import { requireNonNegativeAmount, requireObject, ValidationError } from "@/lib/validation";
 
 export async function POST(request: Request) {
-  const limited = await enforceRateLimit(request, "admin", { limit: 30, windowMs: 60_000 });
+  const limited = await enforceRateLimit(request, "admin", { limit: 90, windowMs: 60_000 });
   if (limited) {
     return limited;
   }

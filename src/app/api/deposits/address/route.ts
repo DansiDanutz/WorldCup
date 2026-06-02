@@ -1,13 +1,22 @@
 import { NextResponse } from "next/server";
 
-import { NETWORK_LABELS, SUPPORTED_NETWORKS, subAccountName } from "@/lib/deposits";
-import { enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
+import {
+  getConfiguredMainDepositAddresses,
+  NETWORK_LABELS,
+  SUPPORTED_NETWORKS,
+  subAccountName,
+  type DepositAddressInfo,
+} from "@/lib/deposits";
+import { enforceGeoEligibility, enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import {
   createBrokerSubAccount,
   getKucoinConfig,
   getSubAccountDepositAddress,
 } from "@/lib/kucoin";
+import { getPolicyGeoEnv, loadOperatorPolicy } from "@/lib/operator-policy";
+import { getUserPaidActionGate, isPaidActionLaunchTestAdmin } from "@/lib/paid-action-gates";
 import { getAuthProvider } from "@/lib/referrals";
+import { getResponsiblePlayRestriction, loadResponsiblePlayStatus } from "@/lib/responsible-play";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 
 type AddressRow = {
@@ -23,12 +32,12 @@ export async function GET(request: Request) {
     return limited;
   }
 
+  const supabase = createServiceSupabaseClient();
   const token = getBearerToken(request);
   if (!token) {
     return jsonError("Sign in with Google first.", 401);
   }
 
-  const supabase = createServiceSupabaseClient();
   const userResult = await supabase.auth.getUser(token);
 
   if (userResult.error || !userResult.data.user) {
@@ -38,6 +47,43 @@ export async function GET(request: Request) {
   const user = userResult.data.user;
   if (getAuthProvider(user) !== "google") {
     return jsonError("Only Google sign-in is allowed.", 403);
+  }
+
+  const operatorPolicy = await loadOperatorPolicy(supabase);
+  if (!isPaidActionLaunchTestAdmin(user.email)) {
+    const geoRestricted = enforceGeoEligibility(request, getPolicyGeoEnv(operatorPolicy));
+    if (geoRestricted) {
+      return geoRestricted;
+    }
+  }
+
+  const paidActionGate = await getUserPaidActionGate(supabase, "deposit", {
+    userEmail: user.email,
+  });
+  if (!paidActionGate.allowed) {
+    return jsonError(paidActionGate.message ?? "USDT deposits are paused until launch approvals are complete.", 403);
+  }
+
+  const responsiblePlay = await loadResponsiblePlayStatus(supabase, user.id);
+  if ("error" in responsiblePlay) {
+    return jsonError(responsiblePlay.error, 500);
+  }
+
+  const responsiblePlayRestriction = getResponsiblePlayRestriction(
+    responsiblePlay.status,
+    "deposit",
+  );
+  if (responsiblePlayRestriction) {
+    return jsonError(responsiblePlayRestriction, 403);
+  }
+
+  const mainReceiveAddresses = getConfiguredMainDepositAddresses(process.env);
+  if (mainReceiveAddresses.length === SUPPORTED_NETWORKS.length) {
+    return NextResponse.json({
+      configured: true,
+      shared: true,
+      addresses: mainReceiveAddresses,
+    });
   }
 
   const existing = await supabase
@@ -101,7 +147,7 @@ export async function GET(request: Request) {
   return NextResponse.json({ configured: true, addresses: formatAddresses(byNetwork) });
 }
 
-function formatAddresses(byNetwork: Map<string, AddressRow>) {
+function formatAddresses(byNetwork: Map<string, AddressRow>): DepositAddressInfo[] {
   return SUPPORTED_NETWORKS.filter((network) => byNetwork.has(network)).map((network) => {
     const row = byNetwork.get(network)!;
     return {

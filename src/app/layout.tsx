@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
+import { CANONICAL_ORIGIN } from "@/lib/canonical-url";
+
 import "./globals.css";
 import "./cards.css";
 
@@ -9,11 +11,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "https://worldcup.example.com");
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || CANONICAL_ORIGIN;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -58,4 +56,3 @@ export default function RootLayout({
     </html>
   );
 }
-

@@ -12,7 +12,7 @@ type WalletTransaction = {
 };
 
 export async function POST(request: Request) {
-  const limited = await enforceRateLimit(request, "admin", { limit: 30, windowMs: 60_000 });
+  const limited = await enforceRateLimit(request, "admin", { limit: 90, windowMs: 60_000 });
   if (limited) {
     return limited;
   }
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
         displayName: profile.display_name ?? "WorldCup player",
         email: profile.email ?? null,
         referralCode: profile.referral_code,
-        walletBalance: calculateWalletBalance(profile.user_id, walletTransactions).toFixed(2),
+        walletBalance: calculateWalletBalance(profile.user_id, walletTransactions).toFixed(8),
         ticketsAssigned: userTickets.length,
         ticketsAvailable: userTickets.filter((ticket) => !ticket.consumed_at).length,
       };

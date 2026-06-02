@@ -1,0 +1,114 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { describe, it } from "node:test";
+
+const migration = readFileSync(
+  "supabase/migrations/20260602015500_worldcup_shared_deposit_claims.sql",
+  "utf8",
+);
+const processingMigration = readFileSync(
+  "supabase/migrations/20260602023000_worldcup_deposit_claim_processing.sql",
+  "utf8",
+);
+const migrations = `${migration}\n${processingMigration}`;
+const adminRoute = readFileSync("src/app/api/admin/deposit-claims/route.ts", "utf8");
+const userClaimRoute = readFileSync("src/app/api/deposits/claims/route.ts", "utf8");
+const depositsHelper = readFileSync("src/lib/deposits.ts", "utf8");
+const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
+const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
+
+describe("shared deposit claim migration", () => {
+  it("stores the player identity snapshot needed for manual crediting", () => {
+    assert.match(migration, /user_id uuid not null/);
+    assert.match(migration, /user_email text/);
+    assert.match(migration, /display_name text/);
+    assert.match(migration, /address text not null/);
+    assert.match(migration, /tx_hash text not null/);
+    assert.match(migration, /unique \(network, tx_hash\)/);
+  });
+
+  it("shows users the exact receive wallet tied to each submitted claim", () => {
+    assert.match(userClaimRoute, /select\("id,network,address,amount,currency,tx_hash,status,admin_note,created_at,credited_at"\)/);
+    assert.match(userClaimRoute, /address: row\.address/);
+    assert.match(walletScreen, /type DepositClaim = \{[\s\S]*?address: string;/);
+    assert.match(walletScreen, /getDepositExplorerAddressUrl\(claim\.network, claim\.address\)/);
+    assert.match(walletScreen, /View receive wallet/);
+  });
+
+  it("keeps claims owner-readable and admin/server writable only", () => {
+    assert.match(migration, /enable row level security/);
+    assert.match(migration, /worldcup_deposit_claims_owner_read/);
+    assert.match(migration, /auth\.uid\(\) = user_id/);
+  });
+
+  it("keeps admin review actions optimistic and state-specific", () => {
+    assert.match(migrations, /status in \('submitted', 'processing', 'credited', 'rejected'\)/);
+    assert.match(adminRoute, /\.eq\("status", "submitted"\)/);
+    assert.match(adminRoute, /status: "processing"/);
+    assert.match(adminRoute, /\.eq\("status", "processing"\)/);
+    assert.match(adminRoute, /releaseProcessingClaim/);
+    assert.match(adminRoute, /maybeSingle\(\)/);
+    assert.match(adminRoute, /Deposit claim is already credited/);
+    assert.match(adminRoute, /Deposit claim is already rejected/);
+    assert.match(adminRoute, /Deposit claim is currently being credited/);
+  });
+
+  it("lets admins credit the verified USDT amount with an audit note", () => {
+    assert.match(adminRoute, /parseDepositAmount\(body\.amount\)/);
+    assert.match(adminRoute, /Admin note is required before crediting a deposit claim/);
+    assert.match(adminRoute, /requireKucoinMatch = body\.requireKucoinMatch === true/);
+    assert.match(adminRoute, /requireKucoinMatch && kucoinVerification\.status !== "matched"/);
+    assert.match(adminRoute, /KuCoin matched verification is required before crediting this launch-evidence deposit claim/);
+    assert.match(adminRoute, /manual non-launch credit/);
+    assert.doesNotMatch(adminRoute, /normalizeMoneyAmount\(requirePositiveAmount\(body\.amount/);
+    assert.match(adminRoute, /getClaimKucoinVerification\(row, amount\)/);
+    assert.match(adminRoute, /kucoinMainVerification/);
+    assert.match(adminRoute, /amountMatchesCredit/);
+    assert.match(adminRoute, /userId: reservedRow\.user_id/);
+    assert.match(adminRoute, /network: reservedRow\.network/);
+    assert.match(adminRoute, /address: reservedRow\.address/);
+    assert.match(adminRoute, /txHash: reservedRow\.tx_hash/);
+    assert.match(adminRoute, /currency: reservedRow\.currency/);
+    assert.match(adminRoute, /creditedBy: actor/);
+    assert.match(adminConsole, /Credit amount/);
+    assert.match(adminConsole, /Admin note/);
+    assert.match(adminConsole, /Claim ID: \{claim\.id\}/);
+    assert.match(adminConsole, /Credit requires an admin note for the audit trail/);
+    assert.match(adminConsole, /Require KuCoin match for launch evidence/);
+    assert.match(adminConsole, /Run Verify KuCoin first/);
+    assert.match(adminConsole, /Manual non-launch credit is allowed/);
+    assert.match(adminConsole, /requireKucoinMatch: claim\.status === "submitted"/);
+    assert.match(adminConsole, /verification\?\.status === "matched"/);
+    assert.match(adminConsole, /disabled=\{!canCredit\}/);
+    assert.match(adminConsole, /adminNote: draft\?\.note/);
+    assert.match(adminConsole, /amount: action === "credit" \? draft\?\.amount/);
+    assert.match(adminConsole, /requireKucoinMatch:[\s\S]*action === "credit" \? draft\?\.requireKucoinMatch === true/);
+  });
+
+  it("lets admins verify shared-wallet claims against KuCoin before crediting", () => {
+    assert.match(adminRoute, /action === "verify"/);
+    assert.match(adminRoute, /getKucoinMainConfig/);
+    assert.match(adminRoute, /listMainAccountDeposits/);
+    assert.match(adminRoute, /findMatchingMainDeposit/);
+    assert.match(adminRoute, /status: "matched"/);
+    assert.match(adminRoute, /status: "missing"/);
+    assert.match(adminRoute, /status: "unavailable"/);
+    assert.match(adminRoute, /No matching successful KuCoin deposit was found for this transaction hash and credit amount/);
+    assert.match(adminConsole, /Verify KuCoin/);
+    assert.match(adminConsole, /KuCoin matched/);
+    assert.match(adminConsole, /Verify manually in KuCoin/);
+  });
+
+  it("enforces optional responsible deposit claim limits before saving a claim", () => {
+    assert.match(userClaimRoute, /loadOperatorPolicy/);
+    assert.match(userClaimRoute, /isPaidActionLaunchTestAdmin\(auth\.user\.email\)/);
+    assert.match(userClaimRoute, /getUserPaidActionGate\(auth\.supabase, "deposit"/);
+    assert.match(userClaimRoute, /launch approvals are complete/);
+    assert.match(userClaimRoute, /getDepositLimitConfigFromPolicy\(operatorPolicy\)/);
+    assert.match(userClaimRoute, /sumActiveDepositClaimAmounts/);
+    assert.match(userClaimRoute, /getDepositClaimLimitViolation/);
+    assert.match(userClaimRoute, /Could not verify deposit limits/);
+    assert.match(depositsHelper, /WORLDCUP_MAX_DEPOSIT_CLAIM_AMOUNT_USDT/);
+    assert.match(depositsHelper, /WORLDCUP_MAX_DAILY_DEPOSIT_CLAIM_AMOUNT_USDT/);
+  });
+});

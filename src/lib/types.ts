@@ -117,11 +117,66 @@ export type AdminAccountRow = {
   ticketsAvailable: number;
 };
 
+export type AdminDepositClaimRow = {
+  id: string;
+  userId: string;
+  userEmail: string | null;
+  displayName: string;
+  network: string;
+  address: string;
+  amount: string;
+  currency: string;
+  txHash: string;
+  status: string;
+  adminNote: string | null;
+  createdAt: string;
+  creditedAt: string | null;
+  creditedBy: string | null;
+};
+
+export type WithdrawalRequestRow = {
+  id: string;
+  network: string;
+  address: string;
+  amount: string;
+  currency: string;
+  status: string;
+  adminNote: string | null;
+  createdAt: string;
+  reviewedAt: string | null;
+  paidAt: string | null;
+  externalTxHash: string | null;
+};
+
+export type AdminWithdrawalRequestRow = WithdrawalRequestRow & {
+  userId: string;
+  userEmail: string | null;
+  displayName: string;
+  reviewedBy: string | null;
+  paidBy: string | null;
+  walletTransactionId: string | null;
+  payoutEvidenceReady: boolean;
+};
+
+export type PaidActionGate = {
+  allowed: boolean;
+  missing: string[];
+  message: string | null;
+};
+
+export type PaidActionGates = {
+  deposit: PaidActionGate;
+  ticket: PaidActionGate;
+  entry: PaidActionGate;
+  withdrawal: PaidActionGate;
+};
+
 export type MyAccountStatus = {
   walletBalance: string;
   ticketsAssigned: number;
   ticketsAvailable: number;
   ticketPriceAmount: string;
+  paidActionGates?: PaidActionGates;
 };
 
 export type AdminReferralReportRow = {

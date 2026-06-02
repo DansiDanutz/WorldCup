@@ -94,7 +94,34 @@ lock an entry. When the entry is created, the ticket is marked with `consumed_by
 
 Stores the internal wallet ledger. A transfer records the source user, destination user, amount,
 note, timestamp, and admin-created audit metadata. This is internal accounting only; it does not move
-external bank or card funds.
+external bank or card funds. Ledger amounts use `numeric(20,8)` so USDT deposit credits are not
+silently rounded before ticket purchases or admin review.
+
+### `worldcup_withdrawal_requests`
+
+Stores signed-in user USDT withdrawal requests: identity snapshot, selected
+network, payout address, amount, status, admin note, final external transaction
+hash, and the linked internal wallet debit. Rows are private to the
+authenticated owner; admin/server routes use the service role for review. The
+table does not move external crypto funds.
+
+### `worldcup_responsible_play_settings`
+
+Stores per-user responsible play controls: an optional entry-ticket limit and an
+optional self-exclusion end timestamp. Rows are private to the authenticated
+owner and are written only by server routes using the service role. The app
+enforces these settings on deposit address access, deposit claims, ticket
+purchase, admin ticket assignment, and entry locking.
+
+### `worldcup_operator_policy`
+
+Stores the singleton launch policy controlled from `/admin`: paid-action
+allowed/blocked countries plus per-request or rolling daily USDT limits for
+deposits and withdrawals. Deposits, withdrawals, ticket purchases, and entry
+locking stay paused until the relevant launch policy pieces are configured.
+Server routes use this policy at runtime and fall back to Vercel environment
+variables when database values are empty. Rows are service/admin managed and
+not public.
 
 ### `worldcup_referral_profiles`
 
@@ -173,6 +200,13 @@ Awards points for every completed match that has not yet been applied.
 
 Marks a match as checked by the result cron.
 
+### `worldcup_record_withdrawal(...)`
+
+Approves a reviewed withdrawal request by recomputing the user's internal wallet
+balance inside the database and inserting a `withdrawal` ledger debit. The
+function uses an advisory transaction lock and is executable only by the service
+role. It does not send external crypto.
+
 ## Application Access
 
 The frontend reads public data using:
@@ -224,6 +258,18 @@ entry referral-fee check to `(0, 3, 5)`.
   — an atomic fixed-window counter shared across serverless instances. The app
   calls it from `enforceRateLimit` and falls back to the in-memory limiter only
   if the database is unavailable.
+
+### `20260602030000_worldcup_withdrawal_requests.sql`
+
+- `worldcup_withdrawal_requests` — owner-readable withdrawal request queue for
+  TRC-20 / ERC-20 USDT payout addresses.
+- `worldcup_record_withdrawal(...)` — advisory-locked, balance-checked wallet
+  debit used when an admin approves a request.
+
+### `20260602031500_worldcup_operator_policy.sql`
+
+- `worldcup_operator_policy` — private singleton runtime policy for geo
+  controls and deposit/withdrawal guardrails.
 
 ### Knockout progression
 

@@ -7,8 +7,10 @@ import {
   CircleDollarSign,
   GitBranch,
   Lock,
+  LogOut,
   RefreshCw,
   Search,
+  ShieldCheck,
   Trophy,
   UserRound,
   Users,
@@ -20,7 +22,7 @@ import { useEffect, useMemo, useState, useTransition } from "react";
 import { HeroSwiper } from "@/components/hero-swiper";
 import { MyStanding } from "@/components/my-standing";
 import { MINIMUM_AGE } from "@/lib/consent";
-import { formatMoneyAmount } from "@/lib/economy";
+import { formatLedgerAmount, formatMoneyAmount } from "@/lib/economy";
 import {
   calculatePaidPlaces,
   calculatePayoutPlan,
@@ -42,6 +44,8 @@ import type {
   DueMatch,
   LeaderboardRow,
   MyAccountStatus,
+  PaidActionGate,
+  PaidActionGates,
   WorldCupTournament,
   WorldCupMatch,
   WorldCupStage,
@@ -56,6 +60,7 @@ type DashboardProps = {
   matches: WorldCupMatch[];
   leaderboard: LeaderboardRow[];
   dueMatches: DueMatch[];
+  publicPaidActionGates?: PaidActionGates;
 };
 
 type MyReferral = {
@@ -65,6 +70,15 @@ type MyReferral = {
   referralCode: string;
   feePercent: string;
   acceptedAt: string;
+};
+
+type ResponsiblePlayStatus = {
+  maxEntries: number | null;
+  selfExcluded: boolean;
+  selfExcludedUntil: string | null;
+  ticketsReserved: number | null;
+  entriesUsed: number | null;
+  entryRestriction: string | null;
 };
 
 const pickColorClasses = ["pick-color-one", "pick-color-two", "pick-color-three"] as const;
@@ -78,11 +92,13 @@ export function Dashboard({
   matches,
   leaderboard,
   dueMatches,
+  publicPaidActionGates,
 }: DashboardProps) {
   const [query, setQuery] = useState("");
   const [selectedTeams, setSelectedTeams] = useState<string[]>([]);
   const [displayName, setDisplayName] = useState("");
   const [session, setSession] = useState<Session | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [referralCode, setReferralCode] = useState("");
   const [referralInviter, setReferralInviter] = useState<string | null>(null);
   const [referralPercent, setReferralPercent] = useState(3);
@@ -93,6 +109,7 @@ export function Dashboard({
   const [inviteMessage, setInviteMessage] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
+  const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
   const [consented, setConsented] = useState<boolean | null>(null);
   const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -133,7 +150,7 @@ export function Dashboard({
     () => getTeamEligibility(teams.map((team) => team.id), matches),
     [matches, teams],
   );
-  const signedInWithGoogle = session?.user.app_metadata.provider === "google";
+  const signedInWithGoogle = Boolean(session?.access_token && session.user.email);
   const shareUrl =
     typeof window === "undefined" || !myReferralCode
       ? ""
@@ -143,6 +160,25 @@ export function Dashboard({
         `Join my WorldCup leaderboard. Use my referral link: ${shareUrl}`,
       )}`
     : "";
+  const entryRestriction = responsiblePlay?.entryRestriction ?? null;
+  const publicEntryPolicyPause = getGatePauseMessage(publicPaidActionGates?.entry);
+  const publicDepositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
+  const publicTicketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
+  const entryPolicyPause =
+    myAccountStatus?.paidActionGates
+      ? getGatePauseMessage(myAccountStatus.paidActionGates.entry)
+      : publicEntryPolicyPause;
+  const publicPaidActionsPaused = Boolean(
+    publicEntryPolicyPause || publicDepositPolicyPause || publicTicketPolicyPause,
+  );
+  const launchEvidenceMode = Boolean(
+    signedInWithGoogle &&
+      publicPaidActionsPaused &&
+      myAccountStatus?.paidActionGates &&
+      myAccountStatus.paidActionGates.entry.allowed &&
+      myAccountStatus.paidActionGates.deposit.allowed &&
+      myAccountStatus.paidActionGates.ticket.allowed,
+  );
 
   useEffect(() => {
     window.queueMicrotask(() => {
@@ -213,19 +249,58 @@ export function Dashboard({
 
   useEffect(() => {
     const token = session?.access_token;
+    let active = true;
+
+    Promise.resolve().then(async () => {
+      if (!token || !signedInWithGoogle) {
+        if (active) {
+          setIsAdmin(false);
+        }
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/admin/me", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const result = (await response.json()) as { admin?: boolean };
+
+        if (active) {
+          setIsAdmin(response.ok && Boolean(result.admin));
+        }
+      } catch {
+        if (active) {
+          setIsAdmin(false);
+        }
+      }
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [session?.access_token, signedInWithGoogle]);
+
+  useEffect(() => {
+    const token = session?.access_token;
 
     Promise.resolve().then(async () => {
       if (!token || !signedInWithGoogle) {
         setMyReferralCode(null);
         setMyReferrals([]);
         setMyAccountStatus(null);
+        setResponsiblePlay(null);
         return;
       }
 
       try {
-        const response = await fetch("/api/referrals/me", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const [response, responsibleResponse] = await Promise.all([
+          fetch("/api/referrals/me", {
+            headers: { Authorization: `Bearer ${token}` },
+          }),
+          fetch("/api/responsible-play", {
+            headers: { Authorization: `Bearer ${token}` },
+          }),
+        ]);
         const result = (await response.json()) as {
           referralCode?: string;
           referrals?: MyReferral[];
@@ -233,7 +308,9 @@ export function Dashboard({
           ticketsAssigned?: number;
           ticketsAvailable?: number;
           ticketPriceAmount?: string;
+          paidActionGates?: MyAccountStatus["paidActionGates"];
         };
+        const responsibleResult = (await responsibleResponse.json()) as ResponsiblePlayStatus;
 
         setMyReferralCode(result.referralCode ?? null);
         setMyReferrals(result.referrals ?? []);
@@ -242,11 +319,14 @@ export function Dashboard({
           ticketsAssigned: result.ticketsAssigned ?? 0,
           ticketsAvailable: result.ticketsAvailable ?? 0,
           ticketPriceAmount: result.ticketPriceAmount ?? "0",
+          paidActionGates: result.paidActionGates,
         });
+        setResponsiblePlay(responsibleResponse.ok ? responsibleResult : null);
       } catch {
         setMyReferralCode(null);
         setMyReferrals([]);
         setMyAccountStatus(null);
+        setResponsiblePlay(null);
       }
     });
   }, [session?.access_token, signedInWithGoogle]);
@@ -386,9 +466,11 @@ export function Dashboard({
   async function signOut() {
     await supabase.auth.signOut();
     setSession(null);
+    setIsAdmin(false);
     setMyReferralCode(null);
     setMyReferrals([]);
     setMyAccountStatus(null);
+    setResponsiblePlay(null);
   }
 
   async function copyInviteLink() {
@@ -443,14 +525,27 @@ export function Dashboard({
             <Users size={16} />
             Invite
           </a>
+          {isAdmin ? (
+            <Link href={{ pathname: "/admin" }}>
+              <ShieldCheck size={16} />
+              Admin
+            </Link>
+          ) : null}
           <Link href={{ pathname: "/wallet" }}>
             <Wallet size={16} />
             Wallet
           </Link>
-          <Link href={{ pathname: "/login" }}>
-            <Lock size={16} />
-            Login
-          </Link>
+          {signedInWithGoogle ? (
+            <button onClick={signOut} type="button">
+              <LogOut size={16} />
+              Logout
+            </button>
+          ) : (
+            <Link href={{ pathname: "/login" }}>
+              <Lock size={16} />
+              Login
+            </Link>
+          )}
           <a href="#matches">
             <CalendarClock size={16} />
             Matches
@@ -459,6 +554,34 @@ export function Dashboard({
       </header>
 
       <div className="page">
+        {launchEvidenceMode ? (
+          <section className="launch-notice" aria-label="Launch evidence mode">
+            <div>
+              <strong>Admin launch evidence mode</strong>
+              <span>
+                Public paid actions are still paused. Your admin account can lock entries,
+                buy tickets, and use Wallet to collect real USDT launch evidence.
+              </span>
+            </div>
+            <Link className="button secondary" href={{ pathname: "/wallet" }}>
+              Open Wallet
+            </Link>
+          </section>
+        ) : publicPaidActionsPaused ? (
+          <section className="launch-notice" aria-label="Launch status">
+            <div>
+              <strong>Paid actions paused</strong>
+              <span>
+                Team browsing and referral setup are available. Entries, tickets, and USDT deposits
+                open after launch approvals are complete.
+              </span>
+            </div>
+            <Link className="button secondary" href={{ pathname: "/wallet" }}>
+              Wallet status
+            </Link>
+          </section>
+        ) : null}
+
         <MyStanding />
         <HeroSwiper
           prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
@@ -490,7 +613,9 @@ export function Dashboard({
               <div>
                 <h1 className="panel-title">Choose 3 Teams</h1>
                 <p className="panel-subtitle">
-                  Late entries are open, but a team locks when its second group match starts.
+                  {entryPolicyPause
+                    ? "You can browse teams now. Entry locking opens after launch approvals are complete."
+                    : "Late entries are open, but a team locks when its second group match starts."}
                 </p>
               </div>
               <span className="status-pill">{selectedTeams.length}/3 selected</span>
@@ -569,7 +694,7 @@ export function Dashboard({
                   <strong>{signedInWithGoogle ? "Google account connected" : "Google sign-in required"}</strong>
                   <p>
                     {signedInWithGoogle
-                      ? session.user.email
+                      ? session?.user.email
                       : "Create your account on the Login / Register page so referral codes are solved first."}
                   </p>
                 </div>
@@ -681,6 +806,12 @@ export function Dashboard({
                   </button>
                 </div>
               ) : null}
+              {entryRestriction ? (
+                <div className="message error">{entryRestriction}</div>
+              ) : null}
+              {entryPolicyPause ? (
+                <div className="message error">{entryPolicyPause}</div>
+              ) : null}
               <button
                 className="button"
                 disabled={
@@ -689,6 +820,8 @@ export function Dashboard({
                   !signedInWithGoogle ||
                   (Boolean(referralCode) && !referralAccepted) ||
                   (signedInWithGoogle && consented !== true) ||
+                  Boolean(entryRestriction) ||
+                  Boolean(entryPolicyPause) ||
                   isPending
                 }
                 onClick={submitEntry}
@@ -723,7 +856,7 @@ export function Dashboard({
                     </div>
                     <div>
                       <span>Wallet balance</span>
-                      <strong>{formatMoneyAmount(myAccountStatus?.walletBalance ?? 0)}</strong>
+                      <strong>{formatLedgerAmount(myAccountStatus?.walletBalance ?? 0)}</strong>
                       <small>Internal funds</small>
                     </div>
                     <div>
@@ -986,6 +1119,10 @@ export function Dashboard({
 
 function getPickColorClass(index: number) {
   return pickColorClasses[index] ?? "";
+}
+
+function getGatePauseMessage(gate: PaidActionGate | undefined) {
+  return gate && !gate.allowed ? "Paid actions open after launch approvals are complete." : null;
 }
 
 function normalizeReferralCode(value: string) {

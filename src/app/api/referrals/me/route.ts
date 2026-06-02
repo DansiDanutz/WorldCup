@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { calculateWalletBalance } from "@/lib/economy";
 import { enforceRateLimit } from "@/lib/http";
+import { getUserPaidActionGates } from "@/lib/paid-action-gates";
 import {
   getAuthProvider,
   getOrCreateReferralProfile,
@@ -34,7 +35,10 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Only Google sign-in is allowed." }, { status: 403 });
   }
 
-  const profile = await getOrCreateReferralProfile(supabase, user);
+  const [profile, paidActionGates] = await Promise.all([
+    getOrCreateReferralProfile(supabase, user),
+    getUserPaidActionGates(supabase, { userEmail: user.email }),
+  ]);
   const referrals = await supabase
     .from("worldcup_referrals")
     .select("id,entry_id,referral_code,referral_fee_percent,accepted_at")
@@ -94,10 +98,11 @@ export async function GET(request: Request) {
   return NextResponse.json({
     referralCode: profile.referral_code,
     displayName: profile.display_name ?? getUserDisplayName(user),
-    walletBalance: calculateWalletBalance(user.id, transactions.data ?? []).toFixed(2),
+    walletBalance: calculateWalletBalance(user.id, transactions.data ?? []).toFixed(8),
     ticketsAssigned: tickets.data?.length ?? 0,
     ticketsAvailable: (tickets.data ?? []).filter((ticket) => !ticket.consumed_at).length,
     ticketPriceAmount: tournament.data.ticket_price_amount,
+    paidActionGates,
     referrals: (referrals.data ?? []).map((referral) => ({
       id: referral.id,
       entryId: referral.entry_id,
