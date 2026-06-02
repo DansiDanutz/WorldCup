@@ -769,7 +769,7 @@ export function Dashboard({
           </div>
 
           <div className="panel" id="leaderboard">
-            <div className="panel-header">
+            <div className="panel-header leaderboard-head">
               <div>
                 <h2 className="panel-title">Leaderboard</h2>
                 <p className="panel-subtitle">

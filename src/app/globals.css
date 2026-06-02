@@ -2283,8 +2283,10 @@ html {
   background: var(--green);
 }
 
-/* Gradient-only poster variants (no photo). */
+/* Poster variants — a photo layer (.hero-card__photo reads --hero-photo) over
+   an on-brand gradient that stays as the fallback if the image is missing. */
 .hero-card--howto {
+  --hero-photo: url("/howto-bg.png");
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(120, 220, 188, 0.34), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(16, 107, 79, 0.5), transparent 60%),
@@ -2292,10 +2294,25 @@ html {
 }
 
 .hero-card--prize {
+  --hero-photo: url("/prize-bg.png");
   background:
     radial-gradient(120% 70% at 20% 16%, rgba(255, 214, 130, 0.34), transparent 56%),
     radial-gradient(120% 70% at 82% 82%, rgba(201, 148, 46, 0.46), transparent 60%),
     linear-gradient(150deg, #1a1408 0%, #20240f 44%, #3a2c0c 100%);
+}
+
+/* Fuller scrim for the photo poster slides so the big centered lede stays
+   legible over any imagery. */
+.hero-card--howto .hero-card__scrim,
+.hero-card--prize .hero-card__scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(4, 12, 10, 0.58) 0%,
+    rgba(4, 12, 10, 0.3) 34%,
+    rgba(4, 12, 10, 0.36) 52%,
+    rgba(4, 12, 10, 0.82) 78%,
+    rgba(4, 12, 10, 0.94) 100%
+  );
 }
 
 /* Big centered lede for the gradient poster slides. */
@@ -2407,4 +2424,26 @@ html {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+/* Leaderboard header as a cinematic banner with a darkened photo behind the
+   title. The dark overlay stays a clean green banner if the image is absent. */
+.leaderboard-head {
+  position: relative;
+  min-height: 104px;
+  border-bottom: 0;
+  background-image:
+    linear-gradient(180deg, rgba(6, 18, 15, 0.55), rgba(6, 18, 15, 0.86)),
+    url("/leaderboard-bg.png");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.leaderboard-head .panel-title {
+  color: #ffffff;
+}
+
+.leaderboard-head .panel-subtitle {
+  color: rgba(255, 255, 255, 0.82);
 }

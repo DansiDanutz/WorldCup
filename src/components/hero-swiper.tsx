@@ -116,6 +116,7 @@ export function HeroSwiper() {
 function HowToPoster() {
   return (
     <section className="hero-card hero-card--howto" aria-label="How to play">
+      <div className="hero-card__photo" aria-hidden="true" />
       <div className="hero-card__scrim" aria-hidden="true" />
       <div className="hero-card__content">
         <div className="hero-card__top">
@@ -168,6 +169,7 @@ function HowToPoster() {
 function PrizePoster() {
   return (
     <section className="hero-card hero-card--prize" aria-label="Prize pool">
+      <div className="hero-card__photo" aria-hidden="true" />
       <div className="hero-card__scrim" aria-hidden="true" />
       <div className="hero-card__content">
         <div className="hero-card__top">
