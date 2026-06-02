@@ -3478,6 +3478,7 @@ html {
 .hero-card--points .hero-card__scrim,
 .hero-card--coef .hero-card__scrim,
 .hero-card--example .hero-card__scrim,
+.hero-card--agent .hero-card__scrim,
 .hero-card--invite .hero-card__scrim,
 .hero-card--login .hero-card__scrim {
   background: linear-gradient(
@@ -3588,6 +3589,14 @@ html {
     radial-gradient(120% 70% at 18% 16%, rgba(255, 214, 130, 0.24), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(19, 138, 100, 0.5), transparent 60%),
     linear-gradient(150deg, #0c211c 0%, #122a20 46%, #2a2410 100%);
+}
+
+/* Agent deal poster - ticket-code commission offer for promoted agents. */
+.hero-card--agent {
+  background:
+    radial-gradient(120% 70% at 18% 16%, rgba(201, 148, 46, 0.34), transparent 56%),
+    radial-gradient(120% 70% at 84% 82%, rgba(19, 138, 100, 0.52), transparent 60%),
+    linear-gradient(150deg, #101b18 0%, #1c2516 44%, #123326 100%);
 }
 
 /* Login / join poster — gradient only. */

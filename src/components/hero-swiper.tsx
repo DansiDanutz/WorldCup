@@ -31,6 +31,7 @@ const SLIDE_LABELS = [
   "Example",
   "Coefficients",
   "Invite a friend",
+  "Agent Deal",
   "Login or register",
 ] as const;
 
@@ -110,6 +111,8 @@ export function HeroSwiper({
               <CoefficientsPoster />
             ) : index === 6 ? (
               <InvitePoster />
+            ) : index === 7 ? (
+              <AgentDealPoster />
             ) : (
               <LoginPoster prizePool={prizePool} playerCount={playerCount} />
             )}
@@ -509,6 +512,67 @@ function InvitePoster() {
             Invite a friend
             <ArrowRight size={16} aria-hidden="true" />
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Gradient-only poster: the agent-ticket deal.
+function AgentDealPoster() {
+  return (
+    <section className="hero-card hero-card--agent" aria-label="Agent Deal">
+      <div className="hero-card__scrim" aria-hidden="true" />
+      <div className="hero-card__content">
+        <div className="hero-card__top">
+          <span className="hero-edition">
+            <span className="hero-edition__dot" aria-hidden="true" />
+            AGENT DEAL
+          </span>
+        </div>
+
+        <div className="hero-card__center hero-poster__lede">
+          <strong>
+            10 paid.
+            <br />1 free.
+          </strong>
+        </div>
+
+        <div className="hero-card__cards">
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Ticket size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>Sell ticket codes</strong>
+              <small>Players redeem a code for one entry ticket.</small>
+            </span>
+          </div>
+
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Gift size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>Free commission code</strong>
+              <small>Every 10 paid codes earns 1 extra ticket code.</small>
+            </span>
+          </div>
+
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Users size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>Track in Wallet</strong>
+              <small>See available, redeemed, and commission codes.</small>
+            </span>
+          </div>
+
+          <Link className="hero-cta" href={{ pathname: "/wallet" }}>
+            Open Agent Codes
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

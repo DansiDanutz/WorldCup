@@ -8,6 +8,7 @@ const walletPage = readFileSync("src/app/wallet/page.tsx", "utf8");
 const loginPage = readFileSync("src/app/login/page.tsx", "utf8");
 const loginRegister = readFileSync("src/components/login-register.tsx", "utf8");
 const dashboard = readFileSync("src/components/dashboard.tsx", "utf8");
+const heroSwiper = readFileSync("src/components/hero-swiper.tsx", "utf8");
 const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
 const appIcon = readFileSync("src/app/icon.svg", "utf8");
 const brandMark = readFileSync("public/brand-mark.svg", "utf8");
@@ -107,6 +108,14 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /\{signedInWithGoogle \? \([\s\S]*?<button onClick=\{signOut\} type="button">[\s\S]*?Logout[\s\S]*?\) : \([\s\S]*?pathname: "\/login"[\s\S]*?Login/);
     assert.doesNotMatch(dashboard, /const signedInWithGoogle = session\?\.user\.app_metadata\.provider === "google";/);
     assert.doesNotMatch(walletScreen, /const signedIn = session\?\.user\.app_metadata\.provider === "google";/);
+  });
+
+  it("keeps the agent deal surfaced in the landing swiper", () => {
+    assert.match(heroSwiper, /"Agent Deal"/);
+    assert.match(heroSwiper, /function AgentDealPoster/);
+    assert.match(heroSwiper, /Every 10 paid codes earns 1 extra ticket code\./);
+    assert.match(heroSwiper, /Open Agent Codes/);
+    assert.match(globalsCss, /\.hero-card--agent/);
   });
 
   it("keeps paid-action policy pauses visible before disabled user controls", () => {
