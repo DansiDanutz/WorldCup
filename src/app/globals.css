@@ -21,6 +21,13 @@ html {
   min-width: 320px;
   background: var(--background);
   color: var(--text);
+  /* Stop iOS Safari inflating body text after an orientation change. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Keep in-page nav anchors (#pick, #leaderboard, …) clear of the sticky
+     topbar when smooth-scrolled to; overridden taller on mobile where the
+     topbar stacks. */
+  scroll-padding-top: 88px;
 }
 
 body {
@@ -1482,6 +1489,12 @@ a {
 }
 
 @media (max-width: 760px) {
+  /* The topbar stacks (brand + prize pool + nav) and stays sticky, so anchor
+     jumps need a larger offset to clear it. */
+  html {
+    scroll-padding-top: 168px;
+  }
+
   .topbar {
     position: sticky;
     align-items: stretch;
