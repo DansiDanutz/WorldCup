@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="WorldCup26.world hero card preview — 16:9 main card with Prediction Game and Choose 3 Teams mini-cards">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="0.28">
+      <stop offset="0" stop-color="#10201d"/>
+      <stop offset="0.4" stop-color="#15242a"/>
+      <stop offset="0.68" stop-color="#341219"/>
+      <stop offset="1" stop-color="#5d141b"/>
+    </linearGradient>
+    <radialGradient id="glowL" cx="0.18" cy="0.26" r="0.6">
+      <stop offset="0" stop-color="#96aab4" stop-opacity="0.30"/>
+      <stop offset="0.55" stop-color="#96aab4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowR" cx="0.86" cy="0.70" r="0.62">
+      <stop offset="0" stop-color="#a8202a" stop-opacity="0.52"/>
+      <stop offset="0.62" stop-color="#a8202a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="seam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.51" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="0.57" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="scrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#040c0a" stop-opacity="0.55"/>
+      <stop offset="0.26" stop-color="#040c0a" stop-opacity="0.10"/>
+      <stop offset="0.60" stop-color="#040c0a" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#040c0a" stop-opacity="0.82"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#138a64"/>
+      <stop offset="1" stop-color="#0c5a42"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd980"/>
+      <stop offset="1" stop-color="#e7b24e"/>
+    </linearGradient>
+    <clipPath id="frame"><rect width="1280" height="720" rx="18"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="720" fill="url(#base)"/>
+    <rect width="1280" height="720" fill="url(#glowL)"/>
+    <rect width="1280" height="720" fill="url(#glowR)"/>
+    <rect width="1280" height="720" fill="url(#seam)"/>
+    <rect width="1280" height="720" fill="url(#scrim)"/>
+
+    <!-- Brand mini-card (1): WorldCup26.world -->
+    <g font-family="Inter, system-ui, sans-serif">
+      <rect x="32" y="32" width="320" height="66" rx="14" fill="#0a1714" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.16"/>
+      <rect x="43" y="44" width="42" height="42" rx="11" fill="url(#mark)"/>
+      <g transform="translate(53.2 53.2) scale(0.9)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+        <path d="M4 22h16"/>
+        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+      </g>
+      <text x="99" y="68" font-size="22" font-weight="850" letter-spacing="-0.2" fill="#ffffff">WorldCup26<tspan fill="#c9942e">.world</tspan></text>
+      <text x="100" y="87" font-size="12" font-weight="650" fill="#ffffff" fill-opacity="0.72">Predict the Game</text>
+    </g>
+
+    <!-- Edition pill: 2026 -->
+    <g font-family="Inter, system-ui, sans-serif">
+      <rect x="1144" y="36" width="104" height="40" rx="20" fill="#0a1714" fill-opacity="0.45" stroke="#ffffff" stroke-opacity="0.22"/>
+      <circle cx="1166" cy="56" r="5" fill="#c9942e"/>
+      <circle cx="1166" cy="56" r="9" fill="#c9942e" fill-opacity="0.22"/>
+      <text x="1182" y="62" font-size="15" font-weight="800" letter-spacing="1.5" fill="#ffffff">2026</text>
+    </g>
+
+    <!-- Center VS medallion -->
+    <g font-family="Inter, system-ui, sans-serif">
+      <circle cx="640" cy="338" r="40" fill="#0a1714" fill-opacity="0.40" stroke="#ffffff" stroke-opacity="0.28"/>
+      <text x="640" y="350" font-size="28" font-weight="900" font-style="italic" text-anchor="middle" fill="#ffffff">VS</text>
+    </g>
+
+    <!-- Mini-card (2): Prediction Game -->
+    <g font-family="Inter, system-ui, sans-serif">
+      <rect x="32" y="584" width="533" height="104" rx="14" fill="#0a1714" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.16"/>
+      <rect x="50" y="614" width="44" height="44" rx="12" fill="#138a64" fill-opacity="0.30" stroke="#78dcbc" stroke-opacity="0.30"/>
+      <circle cx="72" cy="636" r="15" fill="none" stroke="#d8f3e9" stroke-width="2"/>
+      <circle cx="72" cy="636" r="9" fill="none" stroke="#d8f3e9" stroke-width="2"/>
+      <circle cx="72" cy="636" r="3.5" fill="#d8f3e9"/>
+      <text x="108" y="630" font-size="21" font-weight="820" letter-spacing="-0.2" fill="#ffffff">Prediction Game</text>
+      <text x="108" y="656" font-size="13" fill="#ffffff" fill-opacity="0.74">Pick. Score. Climb the leaderboard.</text>
+    </g>
+
+    <!-- Mini-card (3): Choose 3 Teams + CTA -->
+    <g font-family="Inter, system-ui, sans-serif">
+      <rect x="581" y="584" width="667" height="104" rx="14" fill="#0a1714" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.16"/>
+      <rect x="599" y="614" width="44" height="44" rx="12" fill="#138a64" fill-opacity="0.30" stroke="#78dcbc" stroke-opacity="0.30"/>
+      <circle cx="614" cy="636" r="6" fill="#106b4f"/>
+      <circle cx="628" cy="636" r="6" fill="#2f5fbd"/>
+      <circle cx="642" cy="636" r="6" fill="#b66b16"/>
+      <text x="665" y="630" font-size="21" font-weight="820" letter-spacing="-0.2" fill="#ffffff">Choose 3 Teams</text>
+      <text x="665" y="656" font-size="13" fill="#ffffff" fill-opacity="0.74">The <tspan fill="#c9942e" font-weight="800">top 10</tspan> best scoring wins.</text>
+      <rect x="1098" y="616" width="132" height="40" rx="10" fill="url(#gold)"/>
+      <text x="1150" y="641" font-size="14" font-weight="820" text-anchor="middle" fill="#07231a">Play now  →</text>
+    </g>
+
+    <rect x="0.5" y="0.5" width="1279" height="719" rx="18" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+  </g>
+</svg>

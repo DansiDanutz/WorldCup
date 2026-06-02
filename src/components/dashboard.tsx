@@ -15,6 +15,7 @@ import {
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 
+import { HeroCard } from "@/components/hero-card";
 import { MINIMUM_AGE } from "@/lib/consent";
 import { formatMoneyAmount } from "@/lib/economy";
 import {
@@ -447,6 +448,8 @@ export function Dashboard({
       </header>
 
       <div className="page">
+        <HeroCard />
+
         <section className="status-row" aria-label="Tournament summary">
           <div className="stat">
             <div className="stat-label">Teams</div>
