@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-auth";
 import { advanceBracket } from "@/lib/bracket-advance";
 import { enforceRateLimit, jsonError } from "@/lib/http";
+import { normalizeResultPayload } from "@/lib/result-validation";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import {
   optionalInteger,
@@ -55,18 +56,59 @@ export async function POST(request: Request) {
     return jsonError("Invalid request body.", 400);
   }
 
+  const match = await supabase
+    .from("worldcup_matches")
+    .select("id,match_number,home_team_id,away_team_id")
+    .eq("id", matchId)
+    .maybeSingle();
+
+  if (match.error) {
+    return jsonError("Could not load the match.", 500);
+  }
+
+  if (!match.data) {
+    return jsonError("Match not found.", 404);
+  }
+
+  // Run the same cross-field validation the automated provider path uses, so a
+  // manually entered result cannot be internally inconsistent (e.g. totals below
+  // the 90-minute goals, penalties on a non-shootout, or a winner that did not
+  // win). This also resolves/validates the winning team against the match teams.
+  let normalized: ReturnType<typeof normalizeResultPayload>;
+  try {
+    normalized = normalizeResultPayload(
+      {
+        finishMethod,
+        homeGoals90,
+        awayGoals90,
+        homeGoalsTotal,
+        awayGoalsTotal,
+        homePenalties,
+        awayPenalties,
+        winnerTeamId,
+      },
+      {
+        matchNumber: match.data.match_number,
+        homeTeamId: match.data.home_team_id,
+        awayTeamId: match.data.away_team_id,
+      },
+    );
+  } catch (error) {
+    return jsonError(error instanceof Error ? error.message : "Invalid result.", 400);
+  }
+
   const updateResult = await supabase
     .from("worldcup_matches")
     .update({
       status: "completed",
-      finish_method: finishMethod,
-      home_goals_90: homeGoals90,
-      away_goals_90: awayGoals90,
-      home_goals_total: homeGoalsTotal,
-      away_goals_total: awayGoalsTotal,
-      home_penalties: homePenalties,
-      away_penalties: awayPenalties,
-      winner_team_id: winnerTeamId,
+      finish_method: normalized.finishMethod,
+      home_goals_90: normalized.homeGoals90,
+      away_goals_90: normalized.awayGoals90,
+      home_goals_total: normalized.homeGoalsTotal,
+      away_goals_total: normalized.awayGoalsTotal,
+      home_penalties: normalized.homePenalties,
+      away_penalties: normalized.awayPenalties,
+      winner_team_id: normalized.winnerTeamId,
       result_checked_at: new Date().toISOString(),
     })
     .eq("id", matchId)
