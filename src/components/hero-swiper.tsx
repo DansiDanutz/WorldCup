@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Crown, Medal, Target, Users } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Crown, Medal, Target, Users } from "lucide-react";
 import { type KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { HeroCard } from "@/components/hero-card";
@@ -80,7 +80,7 @@ export function HeroSwiper() {
           onClick={() => goTo(active - 1)}
           disabled={active === 0}
         >
-          ‹
+          <ChevronLeft size={18} aria-hidden="true" />
         </button>
         <div className="hero-swiper__dots" role="tablist" aria-label="Choose slide">
           {SLIDE_LABELS.map((label, index) => (
@@ -101,9 +101,13 @@ export function HeroSwiper() {
           onClick={() => goTo(active + 1)}
           disabled={active === SLIDE_LABELS.length - 1}
         >
-          ›
+          <ChevronRight size={18} aria-hidden="true" />
         </button>
       </div>
+
+      <p className="hero-swiper__status" aria-live="polite">
+        {`Slide ${active + 1} of ${SLIDE_LABELS.length}: ${SLIDE_LABELS[active]}`}
+      </p>
     </section>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { CircleDollarSign, Copy, Lock, Trophy, Wallet } from "lucide-react";
+import { AlertTriangle, CircleDollarSign, Copy, Lock, Trophy, Wallet } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 
@@ -145,22 +145,26 @@ export function WalletScreen() {
 
       <div className="page">
         {!signedIn ? (
-          <section className="grid">
+          <section className="wallet-solo">
             <div className="panel">
               <div className="panel-header">
                 <div>
                   <h1 className="panel-title">Wallet</h1>
-                  <p className="panel-subtitle">Sign in with Google to deposit USDT and buy tickets.</p>
+                  <p className="panel-subtitle">
+                    Sign in with Google to deposit USDT and buy tickets.
+                  </p>
                 </div>
                 <Lock size={18} color="var(--green)" />
               </div>
-              <Link className="button" href={{ pathname: "/login" }}>
-                Login / Register
-              </Link>
+              <div className="panel-body">
+                <Link className="button" href={{ pathname: "/login" }}>
+                  Login / Register
+                </Link>
+              </div>
             </div>
           </section>
         ) : (
-          <section className="grid">
+          <section className="wallet-grid">
             <div className="panel">
               <div className="panel-header">
                 <div>
@@ -169,29 +173,31 @@ export function WalletScreen() {
                 </div>
                 <CircleDollarSign size={18} color="var(--gold)" />
               </div>
-              <div className="account-status-grid">
-                <div>
-                  <span>Wallet balance</span>
-                  <strong>{formatMoneyAmount(status?.walletBalance ?? 0)}</strong>
-                  <small>USDT</small>
+              <div className="panel-body">
+                <div className="account-status-grid">
+                  <div>
+                    <span>Wallet balance</span>
+                    <strong>{formatMoneyAmount(status?.walletBalance ?? 0)}</strong>
+                    <small>USDT</small>
+                  </div>
+                  <div>
+                    <span>Tickets available</span>
+                    <strong>{status?.ticketsAvailable ?? 0}</strong>
+                    <small>{status?.ticketsAssigned ?? 0} total</small>
+                  </div>
+                  <div>
+                    <span>Ticket price</span>
+                    <strong>{formatMoneyAmount(status?.ticketPriceAmount ?? 0)}</strong>
+                    <small>per entry</small>
+                  </div>
                 </div>
-                <div>
-                  <span>Tickets available</span>
-                  <strong>{status?.ticketsAvailable ?? 0}</strong>
-                  <small>{status?.ticketsAssigned ?? 0} total</small>
-                </div>
-                <div>
-                  <span>Ticket price</span>
-                  <strong>{formatMoneyAmount(status?.ticketPriceAmount ?? 0)}</strong>
-                  <small>per entry</small>
-                </div>
+                <button className="button" disabled={isPending} onClick={buyTicket} type="button">
+                  <Lock size={16} />
+                  {isPending ? "Processing..." : "Buy entry ticket"}
+                </button>
+                {message ? <div className="message">{message}</div> : null}
+                {error ? <div className="message error">{error}</div> : null}
               </div>
-              <button className="button" disabled={isPending} onClick={buyTicket} type="button">
-                <Lock size={16} />
-                {isPending ? "Processing..." : "Buy entry ticket"}
-              </button>
-              {message ? <div className="message">{message}</div> : null}
-              {error ? <div className="message error">{error}</div> : null}
             </div>
 
             <div className="panel">
@@ -205,36 +211,39 @@ export function WalletScreen() {
                 </div>
                 <Wallet size={18} color="var(--green)" />
               </div>
-              {depositsConfigured === false ? (
-                <div className="message">
-                  USDT deposits are not enabled yet. Check back soon.
-                </div>
-              ) : addresses.length === 0 ? (
-                <div className="field-note">Generating your deposit addresses…</div>
-              ) : (
-                <div className="deposit-list">
-                  {addresses.map((entry) => (
-                    <div className="deposit-row" key={entry.network}>
-                      <div className="deposit-meta">
-                        <span className="pick-slot-label">{entry.label}</span>
-                        <code className="deposit-address">{entry.address}</code>
-                        {entry.memo ? <small>Memo: {entry.memo}</small> : null}
+              <div className="panel-body">
+                {depositsConfigured === false ? (
+                  <div className="message">USDT deposits are not enabled yet. Check back soon.</div>
+                ) : addresses.length === 0 ? (
+                  <div className="field-note">Generating your deposit addresses…</div>
+                ) : (
+                  <div className="deposit-list">
+                    {addresses.map((entry) => (
+                      <div className="deposit-row" key={entry.network}>
+                        <div className="deposit-meta">
+                          <span className="pick-slot-label">{entry.label}</span>
+                          <code className="deposit-address">{entry.address}</code>
+                          {entry.memo ? <small>Memo: {entry.memo}</small> : null}
+                        </div>
+                        <button
+                          className="button secondary"
+                          onClick={() => copyAddress(entry.address)}
+                          type="button"
+                        >
+                          <Copy size={16} />
+                          Copy
+                        </button>
                       </div>
-                      <button
-                        className="button secondary"
-                        onClick={() => copyAddress(entry.address)}
-                        type="button"
-                      >
-                        <Copy size={16} />
-                        Copy
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              )}
-              <div className="field-note">
-                Only send USDT on the exact network shown. Sending any other asset or network may
-                result in permanent loss.
+                    ))}
+                  </div>
+                )}
+                <p className="deposit-warning">
+                  <AlertTriangle size={16} aria-hidden="true" />
+                  <span>
+                    Only send USDT on the exact network shown. Sending any other asset or network
+                    may result in permanent loss.
+                  </span>
+                </p>
               </div>
             </div>
           </section>
