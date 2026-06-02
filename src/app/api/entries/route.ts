@@ -34,6 +34,12 @@ export async function POST(request: Request) {
     const body = requireObject(await request.json());
     displayName = requireString(body.displayName, "Display name", { max: 60 });
     teamIds = requireStringArray(body.teamIds, "teamIds");
+    // Team ids are slug identifiers; restrict the charset before they are
+    // interpolated into the PostgREST `.or()` availability filter below so a
+    // crafted id (with `)`/`,`/quotes) cannot manipulate that query.
+    if (teamIds.some((id) => !/^[A-Za-z0-9_-]+$/.test(id))) {
+      throw new ValidationError("teamIds contains an invalid team identifier.");
+    }
     referralCode = normalizeReferralCode(typeof body.referralCode === "string" ? body.referralCode : "");
     referralTermsAccepted = body.referralTermsAccepted === true;
   } catch (error) {
