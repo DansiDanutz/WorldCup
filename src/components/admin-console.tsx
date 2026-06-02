@@ -1,9 +1,22 @@
 "use client";
 
-import { Activity, CircleDollarSign, ClipboardCheck, Copy, Download, FileJson, GitBranch, Lock, ShieldCheck, Trophy, Upload } from "lucide-react";
+import {
+  Activity,
+  CircleDollarSign,
+  ClipboardCheck,
+  Copy,
+  Download,
+  FileJson,
+  GitBranch,
+  Lock,
+  ShieldCheck,
+  Trophy,
+  Upload,
+} from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 
+import { SmartMenu } from "@/components/smart-menu";
 import { CURRENT_TERMS_VERSION } from "@/lib/consent";
 import { getDepositExplorerTxUrl } from "@/lib/deposits";
 import { formatLedgerAmount } from "@/lib/economy";
@@ -1171,16 +1184,24 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
           </span>
           <span>WorldCup Admin</span>
         </div>
-        <nav className="nav" aria-label="Admin navigation">
-          <Link href={{ pathname: "/" }}>
-            <Trophy size={16} />
-            Game
-          </Link>
-          <Link href={{ pathname: "/schema" }}>
-            <GitBranch size={16} />
-            Schema
-          </Link>
-        </nav>
+        <SmartMenu>
+          <nav className="nav nav--app" aria-label="Admin navigation">
+            <Link className="nav-item nav-item--primary" href={{ pathname: "/" }}>
+              <Trophy size={16} />
+              <span className="nav-item__copy">
+                <strong>Game</strong>
+                <small>Player view</small>
+              </span>
+            </Link>
+            <Link className="nav-item" href={{ pathname: "/schema" }}>
+              <GitBranch size={16} />
+              <span className="nav-item__copy">
+                <strong>Schema</strong>
+                <small>Draw view</small>
+              </span>
+            </Link>
+          </nav>
+        </SmartMenu>
       </header>
 
       <div className="page">

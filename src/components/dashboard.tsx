@@ -21,6 +21,7 @@ import { useEffect, useMemo, useState, useTransition } from "react";
 
 import { HeroSwiper } from "@/components/hero-swiper";
 import { MyStanding } from "@/components/my-standing";
+import { SmartMenu } from "@/components/smart-menu";
 import { MINIMUM_AGE } from "@/lib/consent";
 import { formatLedgerAmount, formatMoneyAmount } from "@/lib/economy";
 import {
@@ -500,57 +501,87 @@ export function Dashboard({
           </div>
           <small>{paidPlaces > 0 ? `Top ${paidPlaces} paid` : "Paid places TBA"}</small>
         </div>
-        <nav className="nav" aria-label="Primary navigation">
-          <a href="#me">
-            <UserRound size={16} />
-            My account
-          </a>
-          <a href="#pick">
-            <Users size={16} />
-            Pick Teams
-          </a>
-          <a href="#rules">
-            <BookOpen size={16} />
-            Rules
-          </a>
-          <Link href={{ pathname: "/schema" }}>
-            <GitBranch size={16} />
-            Schema
-          </Link>
-          <a href="#leaderboard">
-            <Trophy size={16} />
-            Leaderboard
-          </a>
-          <a href="#invite">
-            <Users size={16} />
-            Invite
-          </a>
-          {isAdmin ? (
-            <Link href={{ pathname: "/admin" }}>
-              <ShieldCheck size={16} />
-              Admin
+        <SmartMenu>
+          <nav className="nav nav--app" aria-label="Primary navigation">
+            <a className="nav-item nav-item--primary" href="#pick">
+              <Users size={16} />
+              <span className="nav-item__copy">
+                <strong>Pick Teams</strong>
+                <small>Main task</small>
+              </span>
+            </a>
+            <Link className="nav-item" href={{ pathname: "/wallet" }}>
+              <Wallet size={16} />
+              <span className="nav-item__copy">
+                <strong>Wallet</strong>
+                <small>Tickets & USDT</small>
+              </span>
             </Link>
-          ) : null}
-          <Link href={{ pathname: "/wallet" }}>
-            <Wallet size={16} />
-            Wallet
-          </Link>
-          {signedInWithGoogle ? (
-            <button onClick={signOut} type="button">
-              <LogOut size={16} />
-              Logout
-            </button>
-          ) : (
-            <Link href={{ pathname: "/login" }}>
-              <Lock size={16} />
-              Login
-            </Link>
-          )}
-          <a href="#matches">
-            <CalendarClock size={16} />
-            Matches
-          </a>
-        </nav>
+            <a className="nav-item" href="#leaderboard">
+              <Trophy size={16} />
+              <span className="nav-item__copy">
+                <strong>Leaderboard</strong>
+                <small>Ranking</small>
+              </span>
+            </a>
+            {signedInWithGoogle ? (
+              <a className="nav-item" href="#me">
+                <UserRound size={16} />
+                <span className="nav-item__copy">
+                  <strong>Account</strong>
+                  <small>Your entry</small>
+                </span>
+              </a>
+            ) : (
+              <Link className="nav-item" href={{ pathname: "/login" }}>
+                <Lock size={16} />
+                <span className="nav-item__copy">
+                  <strong>Login</strong>
+                  <small>Start here</small>
+                </span>
+              </Link>
+            )}
+            <details className="nav-more">
+              <summary>
+                <GitBranch size={16} />
+                <span className="nav-item__copy">
+                  <strong>Explore</strong>
+                  <small>Rules & draw</small>
+                </span>
+              </summary>
+              <div className="nav-more__menu">
+                <a href="#rules">
+                  <BookOpen size={16} />
+                  Rules
+                </a>
+                <Link href={{ pathname: "/schema" }}>
+                  <GitBranch size={16} />
+                  Schema
+                </Link>
+                <a href="#invite">
+                  <Users size={16} />
+                  Invite
+                </a>
+                <a href="#matches">
+                  <CalendarClock size={16} />
+                  Matches
+                </a>
+                {isAdmin ? (
+                  <Link href={{ pathname: "/admin" }}>
+                    <ShieldCheck size={16} />
+                    Admin
+                  </Link>
+                ) : null}
+                {signedInWithGoogle ? (
+                  <button onClick={signOut} type="button">
+                    <LogOut size={16} />
+                    Logout
+                  </button>
+                ) : null}
+              </div>
+            </details>
+          </nav>
+        </SmartMenu>
       </header>
 
       <div className="page">

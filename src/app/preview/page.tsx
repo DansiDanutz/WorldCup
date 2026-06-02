@@ -1,7 +1,15 @@
-import { ArrowLeft, CalendarClock, CircleCheck, Globe, Trophy, Users } from "lucide-react";
+import {
+  ArrowLeft,
+  CalendarClock,
+  CircleCheck,
+  Globe,
+  Trophy,
+  Users,
+} from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { SmartMenu } from "@/components/smart-menu";
 import {
   FixtureCard,
   PayoutCard,
@@ -173,14 +181,31 @@ export default function PreviewPage() {
           </span>
           <span>WorldCup</span>
         </Link>
-        <nav className="nav" aria-label="Preview navigation">
-          <Link href="/">
-            <ArrowLeft size={16} />
-            Back
-          </Link>
-          <Link href="/#leaderboard">Leaderboard</Link>
-          <Link href="/#matches">Matches</Link>
-        </nav>
+        <SmartMenu>
+          <nav className="nav nav--app" aria-label="Preview navigation">
+            <Link className="nav-item nav-item--primary" href="/">
+              <ArrowLeft size={16} />
+              <span className="nav-item__copy">
+                <strong>Back</strong>
+                <small>Pick teams</small>
+              </span>
+            </Link>
+            <Link className="nav-item" href="/#leaderboard">
+              <Users size={16} />
+              <span className="nav-item__copy">
+                <strong>Leaderboard</strong>
+                <small>Ranks</small>
+              </span>
+            </Link>
+            <Link className="nav-item" href="/#matches">
+              <CalendarClock size={16} />
+              <span className="nav-item__copy">
+                <strong>Matches</strong>
+                <small>Schedule</small>
+              </span>
+            </Link>
+          </nav>
+        </SmartMenu>
       </header>
 
       <div className="page">

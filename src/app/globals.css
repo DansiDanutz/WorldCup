@@ -111,7 +111,10 @@ svg {
 .auth-page > *,
 .auth-card,
 .nav,
-.nav > * {
+.nav > *,
+.smart-menu,
+.smart-menu > *,
+.smart-menu__panel {
   min-width: 0;
 }
 
@@ -189,21 +192,29 @@ svg {
 
 .topbar {
   position: sticky;
-  top: 0;
-  z-index: 10;
+  top: 10px;
+  z-index: 30;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
-  gap: 24px;
-  width: 100%;
-  max-width: 100%;
+  gap: 14px;
+  width: min(1500px, calc(100% - 24px));
+  max-width: calc(100% - 24px);
   min-width: 0;
-  min-height: 72px;
-  padding: 0 32px;
-  border-bottom: 1px solid rgba(216, 227, 223, 0.82);
-  background: rgba(247, 250, 249, 0.92);
-  backdrop-filter: blur(14px);
+  min-height: 78px;
+  margin: 12px auto 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 217, 128, 0.22), transparent 32%),
+    radial-gradient(circle at 86% 0%, rgba(38, 150, 109, 0.26), transparent 34%),
+    linear-gradient(135deg, rgba(8, 25, 20, 0.96), rgba(17, 60, 45, 0.94) 52%, rgba(7, 19, 16, 0.98));
+  box-shadow: 0 24px 60px rgba(7, 28, 22, 0.22);
+  backdrop-filter: blur(16px);
+  overflow: visible;
 }
 
 .brand {
@@ -213,6 +224,7 @@ svg {
   min-width: 0;
   font-weight: 800;
   letter-spacing: 0;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -222,9 +234,9 @@ svg {
   width: 38px;
   height: 38px;
   border-radius: 8px;
-  color: #ffffff;
-  background: var(--green);
-  box-shadow: 0 10px 24px rgba(16, 107, 79, 0.2);
+  color: #08241a;
+  background: linear-gradient(180deg, #ffe29a, #e6b653);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
 }
 
 .prize-pool {
@@ -236,10 +248,11 @@ svg {
   min-height: 44px;
   margin-left: auto;
   padding: 7px 12px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
-  color: var(--green);
-  background: var(--surface);
+  color: #ffd980;
+  background: rgba(8, 20, 17, 0.46);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .prize-pool svg {
@@ -254,22 +267,82 @@ svg {
 
 .prize-pool span,
 .prize-pool small {
-  color: var(--muted);
+  color: rgba(236, 244, 238, 0.68);
   font-size: 11px;
   font-weight: 760;
   text-transform: uppercase;
 }
 
 .prize-pool strong {
-  color: var(--green);
+  color: #ffffff;
   font-size: 16px;
   line-height: 1;
 }
 
 .prize-pool small {
   padding-left: 8px;
-  border-left: 1px solid var(--border);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
   white-space: nowrap;
+}
+
+.smart-menu {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.smart-menu__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 118px;
+  min-height: 58px;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  color: rgba(244, 249, 246, 0.88);
+  font-family: inherit;
+  text-align: left;
+  background: rgba(4, 18, 15, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  cursor: pointer;
+}
+
+.smart-menu__toggle:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.smart-menu.is-closed .smart-menu__toggle {
+  color: #08241a;
+  background: linear-gradient(180deg, #ffe29a, #e6b653);
+  box-shadow: 0 12px 28px rgba(231, 178, 78, 0.28);
+}
+
+.smart-menu.is-closed .smart-menu__toggle .nav-item__copy small {
+  color: rgba(8, 36, 26, 0.68);
+}
+
+.smart-menu__toggle svg {
+  flex: 0 0 auto;
+}
+
+.smart-menu__chevron {
+  margin-left: auto;
+  transition: transform 0.18s ease;
+}
+
+.smart-menu.is-open .smart-menu__chevron {
+  transform: rotate(180deg);
+}
+
+.smart-menu__panel {
+  max-width: 100%;
+}
+
+.smart-menu__panel[hidden] {
+  display: none;
 }
 
 .nav {
@@ -279,33 +352,121 @@ svg {
   max-width: 100%;
   min-width: 0;
   padding: 4px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(4, 18, 15, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  overflow: visible;
 }
 
 .nav a,
-.nav button {
+.nav button,
+.nav-more summary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   min-width: 0;
-  padding: 9px 12px;
+  min-height: 48px;
+  padding: 8px 11px;
   border: 0;
-  border-radius: 6px;
-  color: var(--muted);
-  font-size: 14px;
+  border-radius: 9px;
+  color: rgba(244, 249, 246, 0.88);
+  font-size: 13px;
   font-weight: 650;
   font-family: inherit;
   text-decoration: none;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   cursor: pointer;
   overflow-wrap: anywhere;
 }
 
-.nav a:first-child {
-  color: var(--green);
-  background: var(--green-soft);
+.nav a:hover,
+.nav button:hover,
+.nav-more summary:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-item--primary {
+  color: #08241a !important;
+  background: linear-gradient(180deg, #ffe29a, #e6b653) !important;
+  box-shadow: 0 12px 28px rgba(231, 178, 78, 0.28) !important;
+}
+
+.nav a svg,
+.nav button svg,
+.nav-more summary svg {
+  flex: 0 0 auto;
+}
+
+.nav-item__copy {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+  text-align: left;
+  line-height: 1.05;
+}
+
+.nav-item__copy strong {
+  color: inherit;
+  font-size: 13px;
+  line-height: 1.05;
+}
+
+.nav-item__copy small {
+  color: rgba(236, 244, 238, 0.62);
+  font-size: 10px;
+  font-weight: 780;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.nav-item--primary .nav-item__copy small {
+  color: rgba(8, 36, 26, 0.68);
+}
+
+.nav-more {
+  position: relative;
+  min-width: 0;
+}
+
+.nav-more summary {
+  list-style: none;
+  height: 100%;
+}
+
+.nav-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-more__menu {
+  position: absolute;
+  top: calc(100% + 9px);
+  right: 0;
+  z-index: 50;
+  display: grid;
+  gap: 6px;
+  min-width: 190px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(6, 22, 18, 0.96);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.32);
+}
+
+.nav-more:not([open]) .nav-more__menu {
+  display: none;
+}
+
+.nav-more__menu a,
+.nav-more__menu button {
+  justify-content: flex-start;
+  min-height: 40px;
+  width: 100%;
+  color: rgba(244, 249, 246, 0.88);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .page {
@@ -2192,6 +2353,12 @@ svg {
     flex-wrap: wrap;
   }
 
+  .smart-menu {
+    order: 3;
+    justify-content: center;
+    width: 100%;
+  }
+
   .nav {
     order: 3;
     justify-content: center;
@@ -2245,9 +2412,38 @@ svg {
     white-space: normal;
   }
 
+  .smart-menu {
+    flex-direction: column;
+    width: 100%;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    background: rgba(4, 18, 15, 0.34);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  }
+
+  .smart-menu__toggle {
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 52px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .smart-menu.is-open .smart-menu__toggle {
+    color: rgba(244, 249, 246, 0.88);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .smart-menu__panel {
+    width: 100%;
+  }
+
   .nav {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(86px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
     justify-content: stretch;
     width: 100%;
     max-width: 100%;
@@ -2255,13 +2451,29 @@ svg {
   }
 
   .nav a,
-  .nav button {
-    justify-content: center;
+  .nav button,
+  .nav-more summary {
+    justify-content: flex-start;
     width: 100%;
-    min-height: 44px;
-    padding: 8px 7px;
-    text-align: center;
+    height: auto;
+    min-height: 52px;
+    padding: 9px 10px;
+    text-align: left;
     white-space: normal;
+  }
+
+  .nav-more {
+    grid-column: 1 / -1;
+  }
+
+  .nav-more__menu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    margin-top: 7px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    background: rgba(4, 18, 15, 0.58);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   .grid,
@@ -2330,7 +2542,7 @@ svg {
 
   .nav {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(82px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     position: static;
     justify-content: stretch;
     width: 100%;
@@ -2341,23 +2553,35 @@ svg {
     box-shadow: none;
   }
 
-  .nav a,
-  .nav button {
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    gap: 6px;
-    min-width: 0;
-    min-height: 44px;
-    padding: 8px 6px;
+  .smart-menu {
+    padding: 6px;
+  }
+
+  .smart-menu__toggle {
+    min-height: 50px;
+    padding: 8px;
     font-size: 12px;
     line-height: 1.15;
-    text-align: center;
+  }
+
+  .nav a,
+  .nav button,
+  .nav-more summary {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 6px;
+    min-width: 0;
+    min-height: 50px;
+    padding: 8px;
+    font-size: 12px;
+    line-height: 1.15;
+    text-align: left;
     white-space: normal;
   }
 
   .nav a svg,
-  .nav button svg {
+  .nav button svg,
+  .nav-more summary svg {
     flex: 0 0 auto;
     width: 15px;
     height: 15px;
@@ -2669,13 +2893,27 @@ svg {
   }
 
   .nav a,
-  .nav button {
+  .nav button,
+  .nav-more summary,
+  .smart-menu__toggle {
     font-size: 11px;
     padding-inline: 4px;
   }
 
   .nav {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-item__copy strong {
+    font-size: 12px;
+  }
+
+  .nav-item__copy small {
+    font-size: 9px;
+  }
+
+  .nav-more__menu {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -2756,6 +2994,10 @@ html {
   .team-row,
   .nav a,
   .nav button,
+  .smart-menu__toggle,
+  .nav-more summary,
+  .nav-more__menu a,
+  .nav-more__menu button,
   input,
   select,
   .leaderboard-team-chip,

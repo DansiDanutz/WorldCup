@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  BookOpen,
   CircleDollarSign,
   Copy,
   Gift,
@@ -10,6 +11,7 @@ import {
   ShieldCheck,
   Ticket,
   Trophy,
+  UserRound,
   Upload,
   Wallet,
 } from "lucide-react";
@@ -17,6 +19,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 
+import { SmartMenu } from "@/components/smart-menu";
 import {
   getDepositExplorerAddressUrl,
   getDepositExplorerTxUrl,
@@ -478,12 +481,60 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
           </span>
           <span>WorldCup Wallet</span>
         </div>
-        <nav className="nav" aria-label="Wallet navigation">
-          <Link href={{ pathname: "/" }}>
-            <Trophy size={16} />
-            Game
-          </Link>
-        </nav>
+        <SmartMenu>
+          <nav className="nav nav--app" aria-label="Wallet navigation">
+            <Link className="nav-item nav-item--primary" href={{ pathname: "/", hash: "pick" }}>
+              <Ticket size={16} />
+              <span className="nav-item__copy">
+                <strong>Play</strong>
+                <small>Pick teams</small>
+              </span>
+            </Link>
+            <Link className="nav-item" href={{ pathname: "/", hash: "leaderboard" }}>
+              <Trophy size={16} />
+              <span className="nav-item__copy">
+                <strong>Leaderboard</strong>
+                <small>Ranking</small>
+              </span>
+            </Link>
+            {signedIn ? (
+              <Link className="nav-item" href={{ pathname: "/", hash: "me" }}>
+                <UserRound size={16} />
+                <span className="nav-item__copy">
+                  <strong>Account</strong>
+                  <small>Your entry</small>
+                </span>
+              </Link>
+            ) : (
+              <Link className="nav-item" href={{ pathname: "/login" }}>
+                <Lock size={16} />
+                <span className="nav-item__copy">
+                  <strong>Login</strong>
+                  <small>Start here</small>
+                </span>
+              </Link>
+            )}
+            <details className="nav-more">
+              <summary>
+                <BookOpen size={16} />
+                <span className="nav-item__copy">
+                  <strong>Explore</strong>
+                  <small>Rules & game</small>
+                </span>
+              </summary>
+              <div className="nav-more__menu">
+                <Link href={{ pathname: "/", hash: "rules" }}>
+                  <BookOpen size={16} />
+                  Rules
+                </Link>
+                <Link href={{ pathname: "/" }}>
+                  <Trophy size={16} />
+                  Game Home
+                </Link>
+              </div>
+            </details>
+          </nav>
+        </SmartMenu>
       </header>
 
       <div className="page">

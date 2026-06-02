@@ -6,10 +6,15 @@ const globalsCss = readFileSync("src/app/globals.css", "utf8");
 const homePage = readFileSync("src/app/page.tsx", "utf8");
 const walletPage = readFileSync("src/app/wallet/page.tsx", "utf8");
 const loginPage = readFileSync("src/app/login/page.tsx", "utf8");
+const coefficientsPage = readFileSync("src/app/coefficients/page.tsx", "utf8");
+const schemaPage = readFileSync("src/app/schema/page.tsx", "utf8");
+const previewPage = readFileSync("src/app/preview/page.tsx", "utf8");
 const loginRegister = readFileSync("src/components/login-register.tsx", "utf8");
 const dashboard = readFileSync("src/components/dashboard.tsx", "utf8");
 const heroSwiper = readFileSync("src/components/hero-swiper.tsx", "utf8");
 const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
+const smartMenu = readFileSync("src/components/smart-menu.tsx", "utf8");
+const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
 const appIcon = readFileSync("src/app/icon.svg", "utf8");
 const brandMark = readFileSync("public/brand-mark.svg", "utf8");
 const logoLockup = readFileSync("public/logo-lockup.svg", "utf8");
@@ -63,22 +68,32 @@ describe("WorldCup design system integration", () => {
   });
 
   it("keeps mobile navigation inside the viewport instead of widening the page", () => {
+    assert.match(globalsCss, /\.topbar\s*{[\s\S]*?border-radius:\s*20px;/);
+    assert.match(globalsCss, /\.topbar\s*{[\s\S]*?linear-gradient\(135deg/);
+    assert.match(globalsCss, /\.nav\s*{[\s\S]*?background:\s*rgba\(4,\s*18,\s*15,\s*0\.34\);/);
+    assert.match(globalsCss, /\.nav-item--primary\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#e6b653\)/);
+    assert.match(globalsCss, /\.smart-menu\.is-closed \.smart-menu__toggle\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#e6b653\)/);
+    assert.match(globalsCss, /\.nav-more__menu\s*{[\s\S]*?position:\s*absolute;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.topbar\s*{[\s\S]*?flex-direction:\s*column;/);
+    assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.smart-menu\s*{[\s\S]*?flex-direction:\s*column;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.grid,[\s\S]*?\.auth-page,[\s\S]*?\.coefficients-hero,[\s\S]*?\.schema-hero,[\s\S]*?\.matches-section,[\s\S]*?\.knockout-board,[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.knockout-board\s*{[\s\S]*?overflow-x:\s*visible;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.knockout-column\s*{[\s\S]*?min-width:\s*0;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?display:\s*grid;/);
     assert.match(
       globalsCss,
-      /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?grid-template-columns:\s*repeat\(auto-fit,\s*minmax\(86px,\s*1fr\)\);/,
+      /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/,
     );
+    assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav-more\s*{[\s\S]*?grid-column:\s*1\s*\/\s*-1;/);
+    assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav-more__menu\s*{[\s\S]*?position:\s*static;/);
     assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?display:\s*grid;/);
     assert.match(
       globalsCss,
-      /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?grid-template-columns:\s*repeat\(auto-fit,\s*minmax\(82px,\s*1fr\)\);/,
+      /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/,
     );
-    assert.match(globalsCss, /@media \(max-width:\s*420px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\);/);
-    assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.nav a,\s*\n\s*\.nav button\s*{[\s\S]*?width:\s*100%;/);
+    assert.match(globalsCss, /@media \(max-width:\s*420px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.nav a,\s*\n\s*\.nav button,\s*\n\s*\.nav-more summary\s*{[\s\S]*?width:\s*100%;/);
+    assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav a,\s*\n\s*\.nav button,\s*\n\s*\.nav-more summary\s*{[\s\S]*?height:\s*auto;/);
     assert.match(globalsCss, /\.admin-referral-row span\s*{[\s\S]*?overflow-wrap:\s*anywhere;/);
     assert.match(
       globalsCss,
@@ -92,10 +107,41 @@ describe("WorldCup design system integration", () => {
       globalsCss,
       /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?overflow-x:\s*auto;/,
     );
+    assert.doesNotMatch(globalsCss, /\.nav a:first-child/);
     assert.doesNotMatch(
       globalsCss,
       /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.topbar\s*{[\s\S]*?overflow:\s*hidden;/,
     );
+  });
+
+  it("keeps app topbars on the same card-style menu system", () => {
+    const topbarSurfaces = [
+      ["dashboard", dashboard],
+      ["wallet", walletScreen],
+      ["coefficients", coefficientsPage],
+      ["schema", schemaPage],
+      ["preview", previewPage],
+      ["admin", adminConsole],
+    ] as const;
+
+    for (const [label, source] of topbarSurfaces) {
+      assert.match(source, /<SmartMenu[\s\S]*?>/, `${label} can minimize and maximize nav cards`);
+      assert.match(source, /<nav className="nav nav--app"/, `${label} uses nav--app`);
+      assert.match(source, /className="nav-item nav-item--primary"/, `${label} has a primary action`);
+      assert.match(source, /nav-item__copy/, `${label} gives nav items readable subcopy`);
+    }
+  });
+
+  it("keeps the smart menu clickable and compact on mobile", () => {
+    assert.match(smartMenu, /"use client";/);
+    assert.match(smartMenu, /const \[expanded, setExpanded\] = useState\(true\);/);
+    assert.match(smartMenu, /window\.matchMedia\("\(max-width: 760px\)"\)/);
+    assert.match(smartMenu, /const syncExpandedState = \(\) => setExpanded\(!mediaQuery\.matches\);/);
+    assert.match(smartMenu, /aria-expanded=\{expanded\}/);
+    assert.match(smartMenu, /onClick=\{\(\) => setExpanded\(\(current\) => !current\)\}/);
+    assert.match(smartMenu, /hidden=\{!expanded\}/);
+    assert.match(smartMenu, /summary = "Maximize cards"/);
+    assert.match(smartMenu, /expanded \? "Minimize cards" : summary/);
   });
 
   it("uses the active Supabase session for logged-in navigation and wallet state", () => {
@@ -104,8 +150,14 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /fetch\("\/api\/admin\/me"/);
     assert.match(dashboard, /setIsAdmin\(response\.ok && Boolean\(result\.admin\)\);/);
     assert.match(dashboard, /setIsAdmin\(false\);/);
+    assert.match(dashboard, /<nav className="nav nav--app" aria-label="Primary navigation">/);
+    assert.match(dashboard, /className="nav-item nav-item--primary" href="#pick"[\s\S]*?Pick Teams[\s\S]*?Main task/);
+    assert.match(dashboard, /<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw[\s\S]*?href="#rules"[\s\S]*?pathname: "\/schema"/);
     assert.match(dashboard, /\{isAdmin \? \([\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?\) : null\}/);
     assert.match(dashboard, /\{signedInWithGoogle \? \([\s\S]*?<button onClick=\{signOut\} type="button">[\s\S]*?Logout[\s\S]*?\) : \([\s\S]*?pathname: "\/login"[\s\S]*?Login/);
+    assert.match(walletScreen, /<nav className="nav nav--app" aria-label="Wallet navigation">/);
+    assert.match(walletScreen, /className="nav-item nav-item--primary" href=\{\{ pathname: "\/", hash: "pick" \}\}[\s\S]*?Play[\s\S]*?Pick teams/);
+    assert.match(walletScreen, /<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & game/);
     assert.doesNotMatch(dashboard, /const signedInWithGoogle = session\?\.user\.app_metadata\.provider === "google";/);
     assert.doesNotMatch(walletScreen, /const signedIn = session\?\.user\.app_metadata\.provider === "google";/);
   });
