@@ -3593,6 +3593,7 @@ html {
 
 /* Agent deal poster - ticket-code commission offer for promoted agents. */
 .hero-card--agent {
+  --hero-photo: url("/agent-deal-bg.png");
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(201, 148, 46, 0.34), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(19, 138, 100, 0.52), transparent 60%),

@@ -522,6 +522,7 @@ function InvitePoster() {
 function AgentDealPoster() {
   return (
     <section className="hero-card hero-card--agent" aria-label="Agent Deal">
+      <div className="hero-card__photo" aria-hidden="true" />
       <div className="hero-card__scrim" aria-hidden="true" />
       <div className="hero-card__content">
         <div className="hero-card__top">

@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 
 const globalsCss = readFileSync("src/app/globals.css", "utf8");
@@ -115,7 +115,10 @@ describe("WorldCup design system integration", () => {
     assert.match(heroSwiper, /function AgentDealPoster/);
     assert.match(heroSwiper, /Every 10 paid codes earns 1 extra ticket code\./);
     assert.match(heroSwiper, /Open Agent Codes/);
+    assert.match(heroSwiper, /hero-card__photo/);
     assert.match(globalsCss, /\.hero-card--agent/);
+    assert.match(globalsCss, /--hero-photo:\s*url\("\/agent-deal-bg\.png"\)/);
+    assert.equal(existsSync("public/agent-deal-bg.png"), true);
   });
 
   it("keeps paid-action policy pauses visible before disabled user controls", () => {
