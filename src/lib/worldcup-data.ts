@@ -1,4 +1,4 @@
-import { createServiceSupabaseClient } from "@/lib/supabase";
+import { createServerReadSupabaseClient } from "@/lib/supabase";
 import type {
   DueMatch,
   LeaderboardRow,
@@ -10,7 +10,7 @@ import type {
 } from "@/lib/types";
 
 export async function getDashboardData() {
-  const supabase = createServiceSupabaseClient();
+  const supabase = createServerReadSupabaseClient();
 
   const [tournamentResult, teamsResult, stagesResult, matchesResult, leaderboardResult, dueResult] =
     await Promise.all([
@@ -74,7 +74,7 @@ export async function getDashboardData() {
 }
 
 export async function getTeamCoefficientData() {
-  const supabase = createServiceSupabaseClient();
+  const supabase = createServerReadSupabaseClient();
   const result = await supabase
     .from("worldcup_teams")
     .select("id,name,confederation,group_code,winner_odds,reward_coefficient")
@@ -89,7 +89,7 @@ export async function getTeamCoefficientData() {
 }
 
 export async function getTournamentSchemaData() {
-  const supabase = createServiceSupabaseClient();
+  const supabase = createServerReadSupabaseClient();
   const [teamsResult, stagesResult, matchesResult, pointsResult] = await Promise.all([
     supabase
       .from("worldcup_teams")

@@ -1,6 +1,6 @@
 import { WalletScreen } from "@/components/wallet-screen";
 import { getPublicPaidActionGates } from "@/lib/paid-action-gates";
-import { createServiceSupabaseClient } from "@/lib/supabase";
+import { createServerReadSupabaseClient } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 export default async function WalletPage() {
-  const publicPaidActionGates = await getPublicPaidActionGates(createServiceSupabaseClient());
+  const publicPaidActionGates = await getPublicPaidActionGates(createServerReadSupabaseClient());
 
   return (
     <WalletScreen
