@@ -249,7 +249,7 @@ function PrizePoster() {
   );
 }
 
-// Gradient-only poster: how points are awarded.
+// Gradient-only poster: how points are awarded — one row per result.
 function PointsPoster() {
   return (
     <section className="hero-card hero-card--points" aria-label="Points awarded">
@@ -258,48 +258,39 @@ function PointsPoster() {
         <div className="hero-card__top">
           <span className="hero-edition">
             <span className="hero-edition__dot" aria-hidden="true" />
-            POINTS
+            POINTS AWARDED
           </span>
         </div>
 
-        <div className="hero-card__center hero-poster__lede">
-          <strong>
-            Every result
-            <br />
-            scores.
-          </strong>
+        <div className="hero-mini hero-list">
+          <div className="hero-list__row">
+            <span>Win or qualify in 90′</span>
+            <strong>5</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Qualify after extra time</span>
+            <strong>4</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Qualify after penalties</span>
+            <strong>3</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Group-stage draw</span>
+            <strong>2</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Goal scored</span>
+            <strong>+0.5</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Clean sheet in 90′</span>
+            <strong>+1</strong>
+          </div>
         </div>
 
         <div className="hero-card__cards">
-          <div className="hero-mini hero-points">
-            <div className="hero-points__row">
-              <span>Win in 90′</span>
-              <strong>5</strong>
-            </div>
-            <div className="hero-points__row">
-              <span>Extra time</span>
-              <strong>4</strong>
-            </div>
-            <div className="hero-points__row">
-              <span>Penalties</span>
-              <strong>3</strong>
-            </div>
-            <div className="hero-points__row">
-              <span>Group draw</span>
-              <strong>2</strong>
-            </div>
-            <div className="hero-points__row">
-              <span>Per goal</span>
-              <strong>+0.5</strong>
-            </div>
-            <div className="hero-points__row">
-              <span>Clean sheet</span>
-              <strong>+1</strong>
-            </div>
-          </div>
-
           <p className="hero-formula">(base + goals + clean sheet) × team × stage</p>
-
           <a className="hero-cta" href="#rules">
             Full scoring
             <ArrowRight size={16} aria-hidden="true" />
@@ -310,7 +301,7 @@ function PointsPoster() {
   );
 }
 
-// Gradient-only poster: team and stage coefficients.
+// Gradient-only poster: team and stage coefficients — one row each.
 function CoefficientsPoster() {
   return (
     <section className="hero-card hero-card--coef" aria-label="Coefficients">
@@ -323,52 +314,42 @@ function CoefficientsPoster() {
           </span>
         </div>
 
-        <div className="hero-card__center hero-poster__lede">
-          <strong>
-            Underdogs
-            <br />
-            pay more.
-          </strong>
+        <div className="hero-mini hero-list">
+          <div className="hero-list__row hero-list__row--head">
+            <span>
+              <Scale size={15} aria-hidden="true" />
+              Team multiplier
+            </span>
+            <strong>1.00 → 3.00</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Group stage</span>
+            <strong>×1.0</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Round of 32</span>
+            <strong>×1.2</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Round of 16</span>
+            <strong>×1.35</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Quarter-final</span>
+            <strong>×1.5</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Semi-final</span>
+            <strong>×1.75</strong>
+          </div>
+          <div className="hero-list__row">
+            <span>Final</span>
+            <strong>×2.0</strong>
+          </div>
         </div>
 
         <div className="hero-card__cards">
-          <div className="hero-mini hero-feature">
-            <span className="hero-feature__icon">
-              <Scale size={20} aria-hidden="true" />
-            </span>
-            <span className="hero-feature__body">
-              <strong>Team · 1.00 → 3.00</strong>
-              <small>Favourites low, underdogs high. Fixed all tournament.</small>
-            </span>
-          </div>
-
-          <div className="hero-mini hero-points">
-            <div className="hero-points__row">
-              <span>Group</span>
-              <strong>×1.0</strong>
-            </div>
-            <div className="hero-points__row">
-              <span>Round of 32</span>
-              <strong>×1.2</strong>
-            </div>
-            <div className="hero-points__row">
-              <span>Round of 16</span>
-              <strong>×1.35</strong>
-            </div>
-            <div className="hero-points__row">
-              <span>Quarter</span>
-              <strong>×1.5</strong>
-            </div>
-            <div className="hero-points__row">
-              <span>Semi</span>
-              <strong>×1.75</strong>
-            </div>
-            <div className="hero-points__row">
-              <span>Final</span>
-              <strong>×2.0</strong>
-            </div>
-          </div>
-
+          <p className="hero-formula">Favourites low · underdogs high · fixed all tournament</p>
           <Link className="hero-cta" href={{ pathname: "/coefficients" }}>
             Full team list
             <ArrowRight size={16} aria-hidden="true" />
