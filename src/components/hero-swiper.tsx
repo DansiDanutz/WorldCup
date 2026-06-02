@@ -352,6 +352,10 @@ function CoefficientsPoster() {
             <strong>×1.75</strong>
           </div>
           <div className="hero-list__row">
+            <span>Third place</span>
+            <strong>×1.25</strong>
+          </div>
+          <div className="hero-list__row">
             <span>Final</span>
             <strong>×2.0</strong>
           </div>
@@ -385,26 +389,40 @@ function ExamplePoster() {
         <div className="hero-mini hero-list">
           <div className="hero-list__row hero-list__row--stacked">
             <span>
-              <b>Group · won 3–0</b>
-              <small>(5 + 1.5 + 1) × 1.6 × 1.0</small>
+              <b>Group · v Iraq</b>
+              <small>won 3–0 · 7.5 × 1.6 × 1.0</small>
             </span>
             <strong>12.00</strong>
           </div>
           <div className="hero-list__row hero-list__row--stacked">
             <span>
-              <b>Round of 32 · won 1–0</b>
-              <small>(5 + 0.5 + 1) × 1.6 × 1.2</small>
+              <b>Group · v Senegal</b>
+              <small>won 2–1 · 6.0 × 1.6 × 1.0</small>
+            </span>
+            <strong>9.60</strong>
+          </div>
+          <div className="hero-list__row hero-list__row--stacked">
+            <span>
+              <b>Group · v France</b>
+              <small>drew 1–1 · 2.5 × 1.6 × 1.0</small>
+            </span>
+            <strong>4.00</strong>
+          </div>
+          <div className="hero-list__row hero-list__row--stacked">
+            <span>
+              <b>Round of 32</b>
+              <small>won 1–0 · 6.5 × 1.6 × 1.2</small>
             </span>
             <strong>12.48</strong>
           </div>
           <div className="hero-list__row hero-list__row--total">
             <span>Total points</span>
-            <strong>24.48</strong>
+            <strong>38.08</strong>
           </div>
         </div>
 
         <div className="hero-card__cards">
-          <p className="hero-formula">Win + goals + clean sheet, then × team × stage</p>
+          <p className="hero-formula">3 group games + 1 knockout · Norway ×1.6</p>
           <a className="hero-cta" href="#pick">
             Start picking
             <ArrowRight size={16} aria-hidden="true" />
