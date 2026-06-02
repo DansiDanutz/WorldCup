@@ -1915,7 +1915,7 @@ html {
    /public/hero-matchup.jpg and it layers over the on-brand gradient fallback.
    ========================================================================= */
 .hero-card {
-  --hero-photo: url("/hero-matchup.jpg");
+  --hero-photo: url("/hero-matchup.png");
   position: relative;
   width: min(440px, 100%);
   aspect-ratio: 9 / 16;
@@ -2054,25 +2054,11 @@ html {
   box-shadow: 0 0 0 4px rgba(201, 148, 46, 0.22);
 }
 
+/* Open center spacer — keeps the brand at the top and cards at the bottom
+   while the two-player face-off photo reads through the middle. */
 .hero-card__center {
   display: grid;
   place-items: center;
-}
-
-.hero-vs {
-  display: grid;
-  place-items: center;
-  width: 66px;
-  height: 66px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 50%;
-  background: rgba(8, 20, 17, 0.3);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  font-size: 25px;
-  font-weight: 900;
-  font-style: italic;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* Portrait: the three mini-cards stack, with a full-width CTA beneath them. */
@@ -2182,10 +2168,5 @@ html {
 
   .hero-card__cards > *:nth-child(3) {
     animation-delay: 0.28s;
-  }
-
-  .hero-vs {
-    animation: wc-rise 0.6s cubic-bezier(0.21, 0.61, 0.35, 1) both;
-    animation-delay: 0.32s;
   }
 }

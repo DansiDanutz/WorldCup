@@ -64,9 +64,7 @@
     <circle cx="588" cy="70" r="6" fill="#c9942e"/>
     <text x="606" y="78" font-size="20" font-weight="800" letter-spacing="2" fill="#ffffff">2026</text>
 
-    <!-- Center VS medallion -->
-    <circle cx="360" cy="468" r="54" fill="#0a1714" fill-opacity="0.40" stroke="#ffffff" stroke-opacity="0.28"/>
-    <text x="360" y="484" font-size="42" font-weight="900" font-style="italic" text-anchor="middle" fill="#ffffff">VS</text>
+    <!-- Center: the two-player face-off photo (public/hero-matchup.png) shows through here -->
 
     <!-- Mini-card (2): Pick 3 Teams -->
     <rect x="40" y="946" width="640" height="96" rx="16" fill="#0a1714" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.16"/>

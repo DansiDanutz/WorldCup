@@ -32,11 +32,8 @@ export function HeroCard() {
           </span>
         </div>
 
-        <div className="hero-card__center">
-          <span className="hero-vs" aria-hidden="true">
-            VS
-          </span>
-        </div>
+        {/* Center stays open so the two-player face-off photo reads clearly. */}
+        <div className="hero-card__center" aria-hidden="true" />
 
         <div className="hero-card__cards">
           <div className="hero-mini hero-feature">
