@@ -44,7 +44,7 @@ export function HeroCard() {
             </span>
             <span className="hero-feature__body">
               <strong>Prediction Game</strong>
-              <small>Pick. Score. Climb the leaderboard.</small>
+              <small>Pick 3 teams. Climb the leaderboard.</small>
             </span>
           </div>
 

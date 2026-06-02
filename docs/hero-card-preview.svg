@@ -81,7 +81,7 @@
       <circle cx="72" cy="636" r="9" fill="none" stroke="#d8f3e9" stroke-width="2"/>
       <circle cx="72" cy="636" r="3.5" fill="#d8f3e9"/>
       <text x="108" y="630" font-size="21" font-weight="820" letter-spacing="-0.2" fill="#ffffff">Prediction Game</text>
-      <text x="108" y="656" font-size="13" fill="#ffffff" fill-opacity="0.74">Pick. Score. Climb the leaderboard.</text>
+      <text x="108" y="656" font-size="13" fill="#ffffff" fill-opacity="0.74">Pick 3 teams. Climb the leaderboard.</text>
     </g>
 
     <!-- Mini-card (3): Choose 3 Teams + CTA -->
