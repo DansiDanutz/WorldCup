@@ -6,10 +6,12 @@ import {
   ChevronRight,
   Crown,
   Medal,
+  Scale,
   Target,
   Ticket,
   Users,
 } from "lucide-react";
+import Link from "next/link";
 import { type KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { HeroCard } from "@/components/hero-card";
@@ -18,7 +20,7 @@ import { HeroCard } from "@/components/hero-card";
 // Slide 1 is the live face-off hero; the rest are on-brand poster slides.
 // Built on CSS scroll-snap (native momentum + touch) with dots, arrows and
 // keyboard support layered on top — no carousel dependency.
-const SLIDE_LABELS = ["The Matchup", "How to play", "Prize pool"] as const;
+const SLIDE_LABELS = ["The Matchup", "How to play", "Prize pool", "Scoring", "Coefficients"] as const;
 
 export function HeroSwiper() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -76,7 +78,17 @@ export function HeroSwiper() {
             aria-roledescription="slide"
             aria-label={`${index + 1} of ${SLIDE_LABELS.length}: ${label}`}
           >
-            {index === 0 ? <HeroCard /> : index === 1 ? <HowToPoster /> : <PrizePoster />}
+            {index === 0 ? (
+              <HeroCard />
+            ) : index === 1 ? (
+              <HowToPoster />
+            ) : index === 2 ? (
+              <PrizePoster />
+            ) : index === 3 ? (
+              <PointsPoster />
+            ) : (
+              <CoefficientsPoster />
+            )}
           </div>
         ))}
       </div>
@@ -231,6 +243,136 @@ function PrizePoster() {
             See payouts
             <ArrowRight size={16} aria-hidden="true" />
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Gradient-only poster: how points are awarded.
+function PointsPoster() {
+  return (
+    <section className="hero-card hero-card--points" aria-label="Points awarded">
+      <div className="hero-card__scrim" aria-hidden="true" />
+      <div className="hero-card__content">
+        <div className="hero-card__top">
+          <span className="hero-edition">
+            <span className="hero-edition__dot" aria-hidden="true" />
+            POINTS
+          </span>
+        </div>
+
+        <div className="hero-card__center hero-poster__lede">
+          <strong>
+            Every result
+            <br />
+            scores.
+          </strong>
+        </div>
+
+        <div className="hero-card__cards">
+          <div className="hero-mini hero-points">
+            <div className="hero-points__row">
+              <span>Win in 90′</span>
+              <strong>5</strong>
+            </div>
+            <div className="hero-points__row">
+              <span>Extra time</span>
+              <strong>4</strong>
+            </div>
+            <div className="hero-points__row">
+              <span>Penalties</span>
+              <strong>3</strong>
+            </div>
+            <div className="hero-points__row">
+              <span>Group draw</span>
+              <strong>2</strong>
+            </div>
+            <div className="hero-points__row">
+              <span>Per goal</span>
+              <strong>+0.5</strong>
+            </div>
+            <div className="hero-points__row">
+              <span>Clean sheet</span>
+              <strong>+1</strong>
+            </div>
+          </div>
+
+          <p className="hero-formula">(base + goals + clean sheet) × team × stage</p>
+
+          <a className="hero-cta" href="#rules">
+            Full scoring
+            <ArrowRight size={16} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Gradient-only poster: team and stage coefficients.
+function CoefficientsPoster() {
+  return (
+    <section className="hero-card hero-card--coef" aria-label="Coefficients">
+      <div className="hero-card__scrim" aria-hidden="true" />
+      <div className="hero-card__content">
+        <div className="hero-card__top">
+          <span className="hero-edition">
+            <span className="hero-edition__dot" aria-hidden="true" />
+            COEFFICIENTS
+          </span>
+        </div>
+
+        <div className="hero-card__center hero-poster__lede">
+          <strong>
+            Underdogs
+            <br />
+            pay more.
+          </strong>
+        </div>
+
+        <div className="hero-card__cards">
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Scale size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>Team · 1.00 → 3.00</strong>
+              <small>Favourites low, underdogs high. Fixed all tournament.</small>
+            </span>
+          </div>
+
+          <div className="hero-mini hero-points">
+            <div className="hero-points__row">
+              <span>Group</span>
+              <strong>×1.0</strong>
+            </div>
+            <div className="hero-points__row">
+              <span>Round of 32</span>
+              <strong>×1.2</strong>
+            </div>
+            <div className="hero-points__row">
+              <span>Round of 16</span>
+              <strong>×1.35</strong>
+            </div>
+            <div className="hero-points__row">
+              <span>Quarter</span>
+              <strong>×1.5</strong>
+            </div>
+            <div className="hero-points__row">
+              <span>Semi</span>
+              <strong>×1.75</strong>
+            </div>
+            <div className="hero-points__row">
+              <span>Final</span>
+              <strong>×2.0</strong>
+            </div>
+          </div>
+
+          <Link className="hero-cta" href={{ pathname: "/coefficients" }}>
+            Full team list
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

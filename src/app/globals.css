@@ -2308,7 +2308,9 @@ html {
 /* Fuller scrim for the photo poster slides so the big centered lede stays
    legible over any imagery. */
 .hero-card--howto .hero-card__scrim,
-.hero-card--prize .hero-card__scrim {
+.hero-card--prize .hero-card__scrim,
+.hero-card--points .hero-card__scrim,
+.hero-card--coef .hero-card__scrim {
   background: linear-gradient(
     180deg,
     rgba(4, 12, 10, 0.58) 0%,
@@ -2331,6 +2333,56 @@ html {
   line-height: 1.02;
   letter-spacing: -0.02em;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Info poster variants (Scoring, Coefficients) — gradient-only, no photo. */
+.hero-card--points {
+  background:
+    radial-gradient(120% 70% at 16% 14%, rgba(120, 220, 188, 0.3), transparent 56%),
+    radial-gradient(120% 70% at 86% 84%, rgba(16, 107, 79, 0.5), transparent 60%),
+    linear-gradient(150deg, #0b1f1b 0%, #0f2a24 48%, #0c241c 100%);
+}
+
+.hero-card--coef {
+  background:
+    radial-gradient(120% 70% at 18% 16%, rgba(150, 170, 180, 0.26), transparent 56%),
+    radial-gradient(120% 70% at 84% 82%, rgba(58, 96, 88, 0.5), transparent 60%),
+    linear-gradient(150deg, #0e1c20 0%, #11272a 48%, #14201d 100%);
+}
+
+/* Compact two-column stat grid for the Scoring / Coefficient posters. */
+.hero-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px 16px;
+  padding: 13px 15px;
+}
+
+.hero-points__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.hero-points__row span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.hero-points__row strong {
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 820;
+}
+
+.hero-formula {
+  margin: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 11px;
+  font-weight: 600;
 }
 
 /* USDT deposit rows (wallet page) */
