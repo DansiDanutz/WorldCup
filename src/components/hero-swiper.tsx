@@ -1,6 +1,15 @@
 "use client";
 
-import { ArrowRight, ChevronLeft, ChevronRight, Crown, Medal, Target, Users } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Crown,
+  Medal,
+  Target,
+  Ticket,
+  Users,
+} from "lucide-react";
 import { type KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { HeroCard } from "@/components/hero-card";
@@ -137,10 +146,20 @@ function HowToPoster() {
         <div className="hero-card__cards">
           <div className="hero-mini hero-feature">
             <span className="hero-feature__icon">
+              <Ticket size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>1 · Buy-in 50 USD</strong>
+              <small>Unlocks one entry ticket.</small>
+            </span>
+          </div>
+
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
               <Target size={20} aria-hidden="true" />
             </span>
             <span className="hero-feature__body">
-              <strong>1 · Pick 3 teams</strong>
+              <strong>2 · Pick 3 teams</strong>
               <small>Lock your entry before kickoff.</small>
             </span>
           </div>
@@ -150,7 +169,7 @@ function HowToPoster() {
               <Users size={20} aria-hidden="true" />
             </span>
             <span className="hero-feature__body">
-              <strong>2 · Earn as they win</strong>
+              <strong>3 · Earn as they win</strong>
               <small>Points stack through the tournament.</small>
             </span>
           </div>
