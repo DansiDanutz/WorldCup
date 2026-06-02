@@ -2,6 +2,7 @@
   --background: #f7faf9;
   --surface: #ffffff;
   --surface-strong: #f0f5f2;
+  --paper-soft: #f3f8f5;
   --text: #0c1d1a;
   --muted: #5d6f69;
   --border: #d8e3df;
@@ -21,6 +22,13 @@ html {
   min-width: 320px;
   background: var(--background);
   color: var(--text);
+  /* Stop iOS Safari inflating body text after an orientation change. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Keep in-page nav anchors (#pick, #leaderboard, …) clear of the sticky
+     topbar when smooth-scrolled to; overridden taller on mobile where the
+     topbar stacks. */
+  scroll-padding-top: 88px;
 }
 
 body {
@@ -1482,6 +1490,12 @@ a {
 }
 
 @media (max-width: 760px) {
+  /* The topbar stacks (brand + prize pool + nav) and stays sticky, so anchor
+     jumps need a larger offset to clear it. */
+  html {
+    scroll-padding-top: 168px;
+  }
+
   .topbar {
     position: sticky;
     align-items: stretch;
@@ -1907,4 +1921,821 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+/* =========================================================================
+   Landing hero — "The Matchup" (9:16 portrait poster + glass mini-cards)
+   A cinematic face-off poster for WorldCup26.world. The photo at
+   /public/hero-matchup.png layers over the on-brand gradient fallback.
+   ========================================================================= */
+.hero-card {
+  --hero-photo: url("/hero-matchup.png");
+  position: relative;
+  width: min(440px, 100%);
+  aspect-ratio: 9 / 16;
+  margin: 0 auto 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(110% 60% at 22% 20%, rgba(150, 170, 180, 0.3), transparent 55%),
+    radial-gradient(120% 70% at 82% 74%, rgba(168, 32, 42, 0.55), transparent 60%),
+    linear-gradient(105deg, #11201d 0%, #15242a 42%, #3a1418 64%, #5d141b 100%);
+  box-shadow: 0 34px 80px rgba(10, 22, 19, 0.34);
+  isolation: isolate;
+}
+
+.hero-card__photo,
+.hero-card__scrim {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-card__photo {
+  z-index: 0;
+  background-image: var(--hero-photo);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Center face-off seam + a legibility scrim (heavier at the bottom for cards). */
+.hero-card__scrim {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, transparent 44%, rgba(255, 255, 255, 0.1) 50%, transparent 56%),
+    linear-gradient(
+      180deg,
+      rgba(4, 12, 10, 0.6) 0%,
+      rgba(4, 12, 10, 0.08) 20%,
+      rgba(4, 12, 10, 0.12) 44%,
+      rgba(4, 12, 10, 0.78) 76%,
+      rgba(4, 12, 10, 0.92) 100%
+    );
+}
+
+.hero-card__content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 14px;
+  height: 100%;
+  padding: clamp(16px, 4vw, 24px);
+}
+
+.hero-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Shared frosted-glass treatment for the mini-cards. */
+.hero-mini {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(8, 20, 17, 0.42);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 18px 40px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.hero-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 15px 9px 11px;
+}
+
+.hero-brand__mark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  color: #ffffff;
+  background: linear-gradient(160deg, #138a64, #0c5a42);
+  box-shadow: 0 8px 20px rgba(16, 107, 79, 0.45);
+}
+
+.hero-brand__text {
+  display: grid;
+  gap: 1px;
+  line-height: 1.05;
+}
+
+.hero-brand__text strong {
+  font-size: 19px;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+}
+
+.hero-brand__tld {
+  color: var(--gold);
+}
+
+.hero-brand__text small {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.hero-edition {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(8, 20, 17, 0.36);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.hero-edition__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(201, 148, 46, 0.22);
+}
+
+/* Open center spacer — keeps the brand at the top and cards at the bottom
+   while the two-player face-off photo reads through the middle. */
+.hero-card__center {
+  display: grid;
+  place-items: center;
+}
+
+/* Portrait: the three mini-cards stack, with a full-width CTA beneath them. */
+.hero-card__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-content: end;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px;
+}
+
+.hero-feature__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(120, 220, 188, 0.3);
+  border-radius: 12px;
+  color: #d8f3e9;
+  background: rgba(19, 138, 100, 0.3);
+}
+
+.hero-feature__body {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hero-feature__body strong {
+  font-size: 18px;
+  font-weight: 820;
+  letter-spacing: -0.01em;
+}
+
+.hero-feature__body small {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+.hero-feature__body small b {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  margin-top: 2px;
+  padding: 13px 16px;
+  border-radius: 12px;
+  color: #07231a;
+  font-size: 14.5px;
+  font-weight: 850;
+  text-decoration: none;
+  border: 0;
+  background: linear-gradient(180deg, #ffd980, #e7b24e);
+  box-shadow: 0 12px 26px rgba(201, 148, 46, 0.42);
+  transition:
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.hero-cta:hover {
+  background: linear-gradient(180deg, #ffe39a, #efbc5c);
+}
+
+@media (max-width: 420px) {
+  .hero-card {
+    border-radius: 16px;
+  }
+}
+
+/* Gentle, on-brand entrance for the hero — disabled under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-card {
+    animation: wc-rise 0.5s cubic-bezier(0.21, 0.61, 0.35, 1) both;
+  }
+
+  .hero-brand,
+  .hero-edition {
+    animation: wc-rise 0.55s cubic-bezier(0.21, 0.61, 0.35, 1) both;
+    animation-delay: 0.08s;
+  }
+
+  .hero-card__cards > * {
+    animation: wc-rise 0.55s cubic-bezier(0.21, 0.61, 0.35, 1) both;
+  }
+
+  .hero-card__cards > *:nth-child(1) {
+    animation-delay: 0.16s;
+  }
+
+  .hero-card__cards > *:nth-child(2) {
+    animation-delay: 0.22s;
+  }
+
+  .hero-card__cards > *:nth-child(3) {
+    animation-delay: 0.28s;
+  }
+
+  .hero-card__cards > *:nth-child(4) {
+    animation-delay: 0.34s;
+  }
+}
+
+/* =========================================================================
+   Hero swiper — touch-native carousel of 9:16 posters on the landing.
+   ========================================================================= */
+.hero-swiper {
+  width: min(460px, 100%);
+  margin: 0 auto 24px;
+}
+
+.hero-swiper__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+.hero-swiper__track::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-swiper__track:focus-visible {
+  box-shadow: 0 0 0 3px rgba(201, 148, 46, 0.55);
+}
+
+.hero-swiper__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: grid;
+}
+
+/* The poster fills its slide; the swiper owns the outer spacing. */
+.hero-swiper__slide .hero-card {
+  width: 100%;
+  margin: 0;
+}
+
+.hero-swiper__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.hero-swiper__arrow {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--green);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.hero-swiper__arrow:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.hero-swiper__arrow:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.hero-swiper__dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-swiper__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--border-strong);
+  transition:
+    width 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.hero-swiper__dot.is-active {
+  width: 26px;
+  border-radius: 999px;
+  background: var(--green);
+}
+
+/* Poster variants — a photo layer (.hero-card__photo reads --hero-photo) over
+   an on-brand gradient that stays as the fallback if the image is missing. */
+.hero-card--howto {
+  --hero-photo: url("/howto-bg.png");
+  background:
+    radial-gradient(120% 70% at 18% 16%, rgba(120, 220, 188, 0.34), transparent 56%),
+    radial-gradient(120% 70% at 84% 82%, rgba(16, 107, 79, 0.5), transparent 60%),
+    linear-gradient(150deg, #0c211c 0%, #103129 48%, #0b3b2b 100%);
+}
+
+.hero-card--prize {
+  --hero-photo: url("/prize-bg.png");
+  background:
+    radial-gradient(120% 70% at 20% 16%, rgba(255, 214, 130, 0.34), transparent 56%),
+    radial-gradient(120% 70% at 82% 82%, rgba(201, 148, 46, 0.46), transparent 60%),
+    linear-gradient(150deg, #1a1408 0%, #20240f 44%, #3a2c0c 100%);
+}
+
+/* Fuller scrim for the photo poster slides so the big centered lede stays
+   legible over any imagery. */
+.hero-card--howto .hero-card__scrim,
+.hero-card--prize .hero-card__scrim,
+.hero-card--points .hero-card__scrim,
+.hero-card--coef .hero-card__scrim,
+.hero-card--example .hero-card__scrim,
+.hero-card--invite .hero-card__scrim,
+.hero-card--login .hero-card__scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(4, 12, 10, 0.58) 0%,
+    rgba(4, 12, 10, 0.3) 34%,
+    rgba(4, 12, 10, 0.36) 52%,
+    rgba(4, 12, 10, 0.82) 78%,
+    rgba(4, 12, 10, 0.94) 100%
+  );
+}
+
+/* Big centered lede for the gradient poster slides. */
+.hero-poster__lede {
+  align-content: center;
+  text-align: center;
+}
+
+.hero-poster__lede strong {
+  font-size: clamp(30px, 9vw, 44px);
+  font-weight: 880;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Info poster variants (Scoring, Coefficients) — gradient-only, no photo. */
+.hero-card--points {
+  background:
+    radial-gradient(120% 70% at 16% 14%, rgba(120, 220, 188, 0.3), transparent 56%),
+    radial-gradient(120% 70% at 86% 84%, rgba(16, 107, 79, 0.5), transparent 60%),
+    linear-gradient(150deg, #0b1f1b 0%, #0f2a24 48%, #0c241c 100%);
+}
+
+.hero-card--coef {
+  background:
+    radial-gradient(120% 70% at 18% 16%, rgba(150, 170, 180, 0.26), transparent 56%),
+    radial-gradient(120% 70% at 84% 82%, rgba(58, 96, 88, 0.5), transparent 60%),
+    linear-gradient(150deg, #0e1c20 0%, #11272a 48%, #14201d 100%);
+}
+
+/* Full-width single-column list for the Scoring / Coefficient posters — one
+   stat per line, spread to fill the whole card (these slides carry no photo). */
+.hero-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 4px 16px;
+}
+
+.hero-list__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-list__row:last-child {
+  border-bottom: 0;
+}
+
+.hero-list__row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.hero-list__row span svg {
+  color: var(--gold);
+}
+
+.hero-list__row strong {
+  color: var(--gold);
+  font-size: 16px;
+  font-weight: 820;
+  white-space: nowrap;
+}
+
+.hero-list__row--head strong {
+  font-size: 15px;
+}
+
+/* Distribute pill / list / CTA evenly so the list sits balanced in the card. */
+.hero-card--points .hero-card__content,
+.hero-card--example .hero-card__content,
+.hero-card--coef .hero-card__content {
+  grid-template-rows: auto auto auto;
+  align-content: space-between;
+}
+
+/* Worked-example poster. */
+.hero-card--example {
+  background:
+    radial-gradient(120% 70% at 18% 16%, rgba(201, 148, 46, 0.22), transparent 56%),
+    radial-gradient(120% 70% at 84% 82%, rgba(16, 107, 79, 0.48), transparent 60%),
+    linear-gradient(150deg, #0e1f1a 0%, #12251d 48%, #1c2113 100%);
+}
+
+/* Invite poster — phone/share photo over an on-brand green-gold gradient. */
+.hero-card--invite {
+  --hero-photo: url("/invite-bg.png");
+  background:
+    radial-gradient(120% 70% at 18% 16%, rgba(255, 214, 130, 0.24), transparent 56%),
+    radial-gradient(120% 70% at 84% 82%, rgba(19, 138, 100, 0.5), transparent 60%),
+    linear-gradient(150deg, #0c211c 0%, #122a20 46%, #2a2410 100%);
+}
+
+/* Login / join poster — gradient only. */
+.hero-card--login {
+  background:
+    radial-gradient(120% 70% at 18% 16%, rgba(120, 220, 188, 0.3), transparent 56%),
+    radial-gradient(120% 70% at 84% 82%, rgba(19, 138, 100, 0.55), transparent 60%),
+    linear-gradient(150deg, #0b201b 0%, #0f2a22 48%, #0c3a2a 100%);
+}
+
+/* Two live stat cards (prize pool + players) on the login poster. */
+.hero-login-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.hero-stat {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+}
+
+.hero-stat span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 10.5px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-stat strong {
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 850;
+  line-height: 1.05;
+}
+
+.hero-stat--gold strong {
+  color: var(--gold);
+}
+
+.hero-list__row--stacked span {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.hero-list__row--stacked b {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 13.5px;
+  font-weight: 760;
+}
+
+.hero-list__row--stacked small {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.hero-list__row--total {
+  margin-top: 4px;
+  padding-top: 11px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0;
+}
+
+.hero-list__row--total span {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 820;
+}
+
+.hero-list__row--total strong {
+  font-size: 21px;
+}
+
+.hero-formula {
+  margin: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* USDT deposit rows (wallet page) */
+.deposit-list {
+  display: grid;
+  gap: 10px;
+}
+
+.deposit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--paper-soft, #fbfdfc);
+}
+
+.deposit-meta {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.deposit-address {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+/* Loud, unmissable network warning for deposits. */
+.deposit-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0;
+  padding: 11px 12px;
+  border: 1px solid #e7c08a;
+  border-radius: 8px;
+  color: #8a5a12;
+  background: #fdf4e3;
+  font-size: 12.5px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.deposit-warning svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--gold);
+}
+
+/* =========================================================================
+   Wallet page — its own balanced layout (not the dashboard's 3-col grid).
+   ========================================================================= */
+.wallet-solo {
+  width: min(460px, 100%);
+  margin: 0 auto;
+}
+
+.wallet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+  width: min(940px, 100%);
+  margin: 0 auto;
+}
+
+@media (max-width: 760px) {
+  .wallet-grid {
+    grid-template-columns: 1fr;
+    width: min(460px, 100%);
+  }
+}
+
+/* Padded body for card content beneath a .panel-header. */
+.panel-body {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+/* Full-width wallet section (agent panel). */
+.wallet-wide {
+  width: min(940px, 100%);
+  margin: 18px auto 0;
+}
+
+/* Redeem-a-ticket-code field in the Balance card. */
+.redeem-row {
+  display: grid;
+  gap: 6px;
+}
+
+.redeem-row label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.redeem-input {
+  display: flex;
+  gap: 8px;
+}
+
+.redeem-input .search {
+  flex: 1 1 auto;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.redeem-input .button {
+  flex: 0 0 auto;
+}
+
+/* Agent commission progress + ticket-code inventory. */
+.commission-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-strong);
+  overflow: hidden;
+}
+
+.commission-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  transition: width 0.3s ease;
+}
+
+.code-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 8px;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.code-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--paper-soft);
+}
+
+.code-value {
+  flex: 1 1 auto;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.code-tag {
+  flex: 0 0 auto;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.code-row .button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 0 10px;
+}
+
+/* Inline label-row of inputs/selects + a button (admin agent forms). */
+.inline-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.inline-row .search {
+  flex: 1 1 180px;
+}
+
+.inline-row .button {
+  flex: 0 0 auto;
+}
+
+.agent-qty {
+  flex: 0 0 auto;
+  max-width: 110px;
+}
+
+/* Visually-hidden live region announcing the active swiper slide. */
+.hero-swiper__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Leaderboard header as a cinematic banner with a darkened photo behind the
+   title. The dark overlay stays a clean green banner if the image is absent. */
+.leaderboard-head {
+  position: relative;
+  min-height: 104px;
+  border-bottom: 0;
+  background-image:
+    linear-gradient(180deg, rgba(6, 18, 15, 0.55), rgba(6, 18, 15, 0.86)),
+    url("/leaderboard-bg.png");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.leaderboard-head .panel-title {
+  color: #ffffff;
+}
+
+.leaderboard-head .panel-subtitle {
+  color: rgba(255, 255, 255, 0.82);
 }

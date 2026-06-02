@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 
 import { advanceBracket } from "@/lib/bracket-advance";
-import { requireEnv } from "@/lib/env";
+import { isAuthorizedCronRequest } from "@/lib/cron-auth";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 
 async function runApplyCron(request: Request) {
-  if (request.headers.get("authorization") !== `Bearer ${requireEnv("CRON_SECRET")}`) {
+  if (!isAuthorizedCronRequest(request)) {
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
   }
 

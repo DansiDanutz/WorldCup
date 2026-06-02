@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { calculateWalletBalance } from "@/lib/economy";
+import { enforceRateLimit } from "@/lib/http";
 import {
   getAuthProvider,
   getOrCreateReferralProfile,
@@ -9,6 +10,11 @@ import {
 import { createServiceSupabaseClient } from "@/lib/supabase";
 
 export async function GET(request: Request) {
+  const limited = await enforceRateLimit(request, "referrals", { limit: 30, windowMs: 60_000 });
+  if (limited) {
+    return limited;
+  }
+
   const token = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
 
   if (!token) {

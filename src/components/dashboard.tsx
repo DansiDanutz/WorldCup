@@ -11,10 +11,12 @@ import {
   Search,
   Trophy,
   Users,
+  Wallet,
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 
+import { HeroSwiper } from "@/components/hero-swiper";
 import { MINIMUM_AGE } from "@/lib/consent";
 import { formatMoneyAmount } from "@/lib/economy";
 import {
@@ -435,6 +437,10 @@ export function Dashboard({
             <Users size={16} />
             Invite
           </a>
+          <Link href={{ pathname: "/wallet" }}>
+            <Wallet size={16} />
+            Wallet
+          </Link>
           <Link href={{ pathname: "/login" }}>
             <Lock size={16} />
             Login
@@ -447,6 +453,11 @@ export function Dashboard({
       </header>
 
       <div className="page">
+        <HeroSwiper
+          prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
+          playerCount={participantCount}
+        />
+
         <section className="status-row" aria-label="Tournament summary">
           <div className="stat">
             <div className="stat-label">Teams</div>
@@ -761,7 +772,7 @@ export function Dashboard({
           </div>
 
           <div className="panel" id="leaderboard">
-            <div className="panel-header">
+            <div className="panel-header leaderboard-head">
               <div>
                 <h2 className="panel-title">Leaderboard</h2>
                 <p className="panel-subtitle">
