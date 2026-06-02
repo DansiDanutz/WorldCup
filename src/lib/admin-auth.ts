@@ -1,26 +1,12 @@
-import { timingSafeEqual } from "node:crypto";
-
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 import { getBearerToken } from "@/lib/request";
+import { timingSafeEqualStrings } from "@/lib/secure-compare";
 
 export type AdminAuthResult =
   | { ok: true; via: "email"; adminEmail: string }
   | { ok: true; via: "secret"; adminEmail: null }
   | { ok: false; status: number; error: string };
-
-function constantTimeEqual(a: string, b: string): boolean {
-  const aBuffer = Buffer.from(a);
-  const bBuffer = Buffer.from(b);
-
-  if (aBuffer.length !== bBuffer.length) {
-    // Compare against itself to keep the timing profile stable, then fail.
-    timingSafeEqual(aBuffer, aBuffer);
-    return false;
-  }
-
-  return timingSafeEqual(aBuffer, bBuffer);
-}
 
 export function getAdminEmailAllowlist(): string[] {
   return (process.env.ADMIN_EMAILS ?? "")
@@ -62,7 +48,7 @@ export async function requireAdmin(
   const breakGlassSecret = request.headers.get("x-admin-secret");
   const expectedSecret = process.env.ADMIN_RESULT_SECRET;
 
-  if (breakGlassSecret && expectedSecret && constantTimeEqual(breakGlassSecret, expectedSecret)) {
+  if (breakGlassSecret && expectedSecret && timingSafeEqualStrings(breakGlassSecret, expectedSecret)) {
     return { ok: true, via: "secret", adminEmail: null };
   }
 
