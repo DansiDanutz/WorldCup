@@ -2184,6 +2184,133 @@ html {
   }
 }
 
+/* =========================================================================
+   Hero swiper — touch-native carousel of 9:16 posters on the landing.
+   ========================================================================= */
+.hero-swiper {
+  width: min(460px, 100%);
+  margin: 0 auto 24px;
+}
+
+.hero-swiper__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+.hero-swiper__track::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-swiper__track:focus-visible {
+  box-shadow: 0 0 0 3px rgba(201, 148, 46, 0.55);
+}
+
+.hero-swiper__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: grid;
+}
+
+/* The poster fills its slide; the swiper owns the outer spacing. */
+.hero-swiper__slide .hero-card {
+  width: 100%;
+  margin: 0;
+}
+
+.hero-swiper__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.hero-swiper__arrow {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--green);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.hero-swiper__arrow:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.hero-swiper__arrow:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.hero-swiper__dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-swiper__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--border-strong);
+  transition:
+    width 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.hero-swiper__dot.is-active {
+  width: 26px;
+  border-radius: 999px;
+  background: var(--green);
+}
+
+/* Gradient-only poster variants (no photo). */
+.hero-card--howto {
+  background:
+    radial-gradient(120% 70% at 18% 16%, rgba(120, 220, 188, 0.34), transparent 56%),
+    radial-gradient(120% 70% at 84% 82%, rgba(16, 107, 79, 0.5), transparent 60%),
+    linear-gradient(150deg, #0c211c 0%, #103129 48%, #0b3b2b 100%);
+}
+
+.hero-card--prize {
+  background:
+    radial-gradient(120% 70% at 20% 16%, rgba(255, 214, 130, 0.34), transparent 56%),
+    radial-gradient(120% 70% at 82% 82%, rgba(201, 148, 46, 0.46), transparent 60%),
+    linear-gradient(150deg, #1a1408 0%, #20240f 44%, #3a2c0c 100%);
+}
+
+/* Big centered lede for the gradient poster slides. */
+.hero-poster__lede {
+  align-content: center;
+  text-align: center;
+}
+
+.hero-poster__lede strong {
+  font-size: clamp(30px, 9vw, 44px);
+  font-weight: 880;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
 /* USDT deposit rows (wallet page) */
 .deposit-list {
   display: grid;

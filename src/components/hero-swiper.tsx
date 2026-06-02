@@ -1,0 +1,213 @@
+"use client";
+
+import { ArrowRight, Crown, Medal, Target, Users } from "lucide-react";
+import { type KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
+
+import { HeroCard } from "@/components/hero-card";
+
+// "The Matchup" landing swiper — a touch-native carousel of 9:16 posters.
+// Slide 1 is the live face-off hero; the rest are on-brand poster slides.
+// Built on CSS scroll-snap (native momentum + touch) with dots, arrows and
+// keyboard support layered on top — no carousel dependency.
+const SLIDE_LABELS = ["The Matchup", "How to play", "Prize pool"] as const;
+
+export function HeroSwiper() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+
+  const goTo = useCallback((index: number) => {
+    const track = trackRef.current;
+    if (!track) {
+      return;
+    }
+    const clamped = Math.max(0, Math.min(SLIDE_LABELS.length - 1, index));
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    track.scrollTo({ left: track.clientWidth * clamped, behavior: reduce ? "auto" : "smooth" });
+  }, []);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) {
+      return;
+    }
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        setActive(Math.round(track.scrollLeft / track.clientWidth));
+      });
+    };
+    track.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      track.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  function onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      goTo(active + 1);
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      goTo(active - 1);
+    }
+  }
+
+  return (
+    <section className="hero-swiper" aria-roledescription="carousel" aria-label="WorldCup26 highlights">
+      <div className="hero-swiper__track" ref={trackRef} tabIndex={0} onKeyDown={onKeyDown}>
+        {SLIDE_LABELS.map((label, index) => (
+          <div
+            className="hero-swiper__slide"
+            key={label}
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${index + 1} of ${SLIDE_LABELS.length}: ${label}`}
+          >
+            {index === 0 ? <HeroCard /> : index === 1 ? <HowToPoster /> : <PrizePoster />}
+          </div>
+        ))}
+      </div>
+
+      <div className="hero-swiper__controls">
+        <button
+          className="hero-swiper__arrow"
+          type="button"
+          aria-label="Previous slide"
+          onClick={() => goTo(active - 1)}
+          disabled={active === 0}
+        >
+          ‹
+        </button>
+        <div className="hero-swiper__dots" role="tablist" aria-label="Choose slide">
+          {SLIDE_LABELS.map((label, index) => (
+            <button
+              key={label}
+              type="button"
+              className={`hero-swiper__dot${index === active ? " is-active" : ""}`}
+              aria-label={`Go to ${label}`}
+              aria-current={index === active}
+              onClick={() => goTo(index)}
+            />
+          ))}
+        </div>
+        <button
+          className="hero-swiper__arrow"
+          type="button"
+          aria-label="Next slide"
+          onClick={() => goTo(active + 1)}
+          disabled={active === SLIDE_LABELS.length - 1}
+        >
+          ›
+        </button>
+      </div>
+    </section>
+  );
+}
+
+// Gradient-only poster: the three-step pitch.
+function HowToPoster() {
+  return (
+    <section className="hero-card hero-card--howto" aria-label="How to play">
+      <div className="hero-card__scrim" aria-hidden="true" />
+      <div className="hero-card__content">
+        <div className="hero-card__top">
+          <span className="hero-edition">
+            <span className="hero-edition__dot" aria-hidden="true" />
+            HOW TO PLAY
+          </span>
+        </div>
+
+        <div className="hero-card__center hero-poster__lede">
+          <strong>
+            Three picks.
+            <br />
+            One climb.
+          </strong>
+        </div>
+
+        <div className="hero-card__cards">
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Target size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>1 · Pick 3 teams</strong>
+              <small>Lock your entry before kickoff.</small>
+            </span>
+          </div>
+
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Users size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>2 · Earn as they win</strong>
+              <small>Points stack through the tournament.</small>
+            </span>
+          </div>
+
+          <a className="hero-cta" href="#pick">
+            Start picking
+            <ArrowRight size={16} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Gradient-only poster: the payoff.
+function PrizePoster() {
+  return (
+    <section className="hero-card hero-card--prize" aria-label="Prize pool">
+      <div className="hero-card__scrim" aria-hidden="true" />
+      <div className="hero-card__content">
+        <div className="hero-card__top">
+          <span className="hero-edition">
+            <span className="hero-edition__dot" aria-hidden="true" />
+            PRIZE POOL
+          </span>
+        </div>
+
+        <div className="hero-card__center hero-poster__lede">
+          <strong>
+            Top 10
+            <br />
+            share the pool.
+          </strong>
+        </div>
+
+        <div className="hero-card__cards">
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Crown size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>Winner takes the crown</strong>
+              <small>The biggest slice of the pool.</small>
+            </span>
+          </div>
+
+          <div className="hero-mini hero-feature">
+            <span className="hero-feature__icon">
+              <Medal size={20} aria-hidden="true" />
+            </span>
+            <span className="hero-feature__body">
+              <strong>Top 10 all paid</strong>
+              <small>Every finisher in the top 10 earns.</small>
+            </span>
+          </div>
+
+          <a className="hero-cta" href="#leaderboard">
+            See payouts
+            <ArrowRight size={16} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
