@@ -162,6 +162,8 @@ describe("production smoke coverage", () => {
   });
 
   it("keeps public UI and mobile design smoke coverage", () => {
+    assert.match(productionSmoke, /loadSmokeEnv/);
+    assert.match(productionSmoke, /SMOKE_ENV_FILE/);
     assert.match(productionSmoke, /checkPublicUiShell/);
     assert.match(productionSmoke, /extractStylesheetHrefs/);
     assert.match(productionSmoke, /fetchStylesheetsFromHtml/);
