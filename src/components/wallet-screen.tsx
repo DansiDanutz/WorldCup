@@ -497,23 +497,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 <small>Ranking</small>
               </span>
             </Link>
-            {signedIn ? (
-              <Link className="nav-item" href={{ pathname: "/", hash: "me" }}>
-                <UserRound size={16} />
-                <span className="nav-item__copy">
-                  <strong>Account</strong>
-                  <small>Your entry</small>
-                </span>
-              </Link>
-            ) : (
-              <Link className="nav-item" href={{ pathname: "/login" }}>
-                <Lock size={16} />
-                <span className="nav-item__copy">
-                  <strong>Login</strong>
-                  <small>Start here</small>
-                </span>
-              </Link>
-            )}
             <details className="nav-more">
               <summary>
                 <BookOpen size={16} />
@@ -533,6 +516,23 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 </Link>
               </div>
             </details>
+            {signedIn ? (
+              <Link className="nav-item nav-item--identity" href={{ pathname: "/", hash: "me" }}>
+                <UserRound size={16} />
+                <span className="nav-item__copy">
+                  <strong>Account</strong>
+                  <small>Your entry</small>
+                </span>
+              </Link>
+            ) : (
+              <Link className="nav-item nav-item--identity" href={{ pathname: "/login" }}>
+                <Lock size={16} />
+                <span className="nav-item__copy">
+                  <strong>Login</strong>
+                  <small>Start here</small>
+                </span>
+              </Link>
+            )}
           </nav>
         </SmartMenu>
       </header>

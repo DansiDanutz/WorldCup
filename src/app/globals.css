@@ -190,6 +190,10 @@ svg {
   overflow-x: hidden;
 }
 
+.app-shell--landing {
+  background: #050c0a;
+}
+
 .topbar {
   position: sticky;
   top: 10px;
@@ -215,6 +219,15 @@ svg {
   box-shadow: 0 24px 60px rgba(7, 28, 22, 0.22);
   backdrop-filter: blur(16px);
   overflow: visible;
+}
+
+.app-shell--landing .topbar {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 40;
+  margin: 0;
+  transform: translateX(-50%);
 }
 
 .brand {
@@ -326,6 +339,23 @@ svg {
 
 .smart-menu__toggle svg {
   flex: 0 0 auto;
+}
+
+.smart-menu__mark {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 3px);
+  gap: 3px;
+  flex: 0 0 auto;
+  align-items: center;
+  height: 18px;
+}
+
+.smart-menu__mark span {
+  width: 3px;
+  height: 18px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.9;
 }
 
 .smart-menu__chevron {
@@ -475,6 +505,23 @@ svg {
   min-width: 0;
   margin: 0 auto;
   padding: 28px 32px 48px;
+}
+
+.page--landing {
+  padding-top: 0;
+}
+
+.app-shell--landing .page--landing {
+  padding: 0 clamp(12px, 2.2vw, 32px) 48px;
+}
+
+.app-shell--landing #pick,
+.app-shell--landing #leaderboard,
+.app-shell--landing #matches,
+.app-shell--landing #rules,
+.app-shell--landing #invite,
+.app-shell--landing #me {
+  scroll-margin-top: 118px;
 }
 
 .auth-page {
@@ -2355,8 +2402,14 @@ svg {
 
   .smart-menu {
     order: 3;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: center;
     width: 100%;
+  }
+
+  .smart-menu__toggle {
+    align-self: center;
   }
 
   .nav {
@@ -2463,6 +2516,10 @@ svg {
   }
 
   .nav-more {
+    grid-column: 1 / -1;
+  }
+
+  .nav-item--identity {
     grid-column: 1 / -1;
   }
 
@@ -2589,6 +2646,101 @@ svg {
 
   .page {
     padding: 16px;
+  }
+
+  .app-shell--landing .topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+    min-height: 58px;
+    padding: 8px 10px;
+    border-radius: 18px;
+  }
+
+  .app-shell--landing .brand {
+    width: auto;
+  }
+
+  .app-shell--landing .prize-pool {
+    display: none;
+  }
+
+  .app-shell--landing .smart-menu {
+    position: static;
+    display: flex;
+    grid-column: 2;
+    width: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .app-shell--landing .smart-menu__toggle {
+    width: auto;
+    min-width: 112px;
+    min-height: 46px;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 14px;
+    background: rgba(4, 18, 15, 0.62);
+  }
+
+  .app-shell--landing .smart-menu.is-open .smart-menu__toggle {
+    color: rgba(244, 249, 246, 0.9);
+    background: rgba(4, 18, 15, 0.72);
+  }
+
+  .app-shell--landing .smart-menu__panel {
+    position: fixed;
+    top: 78px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: none;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    background: rgba(4, 18, 15, 0.82);
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.36);
+    backdrop-filter: blur(18px) saturate(135%);
+    -webkit-backdrop-filter: blur(18px) saturate(135%);
+  }
+
+  .app-shell--landing .smart-menu__panel[hidden] {
+    display: none;
+  }
+
+  .app-shell--landing .nav {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 7px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .app-shell--landing .nav-more,
+  .app-shell--landing .nav-item--identity {
+    grid-column: auto;
+  }
+
+  .app-shell--landing .nav a,
+  .app-shell--landing .nav button,
+  .app-shell--landing .nav-more summary {
+    min-height: 48px;
+    padding: 9px 12px;
+  }
+
+  .app-shell--landing .nav-more__menu {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-shell--landing .hero-swiper__slide:first-child .hero-card__content {
+    padding-top: 104px;
+    padding-bottom: 104px;
   }
 
   .grid,
@@ -3598,11 +3750,14 @@ html {
 }
 
 /* =========================================================================
-   Hero swiper — touch-native carousel of 9:16 posters on the landing.
+   Hero swiper — first slide is a full-bleed match image; the rest remain
+   touch-native 9:16 poster cards.
    ========================================================================= */
 .hero-swiper {
-  width: min(460px, 100%);
-  margin: 0 auto 24px;
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0 calc(50% - 50vw) 32px;
 }
 
 .hero-swiper__track {
@@ -3612,7 +3767,7 @@ html {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  border-radius: 20px;
+  border-radius: 0;
   outline: none;
 }
 
@@ -3628,12 +3783,42 @@ html {
   flex: 0 0 100%;
   scroll-snap-align: center;
   display: grid;
+  place-items: center;
+  min-height: min(780px, calc(100svh - 128px));
+  padding: 0 16px;
 }
 
 /* The poster fills its slide; the swiper owns the outer spacing. */
 .hero-swiper__slide .hero-card {
-  width: 100%;
+  width: min(460px, calc(100vw - 32px));
   margin: 0;
+}
+
+.hero-swiper__slide:first-child {
+  min-height: max(640px, 100svh);
+  padding: 0;
+}
+
+.hero-swiper__slide:first-child .hero-card {
+  width: 100vw;
+  height: max(640px, 100svh);
+  min-height: 640px;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.hero-swiper__slide:first-child .hero-card__content {
+  width: min(1500px, 100%);
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 52px);
+  padding-top: clamp(122px, 13vh, 156px);
+  padding-bottom: clamp(96px, 11vh, 128px);
+}
+
+.hero-swiper__slide:first-child .hero-card__cards {
+  width: min(520px, calc(100vw - 32px));
 }
 
 .hero-swiper__controls {
@@ -3641,7 +3826,20 @@ html {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  margin-top: 14px;
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+  left: 0;
+  z-index: 5;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(8, 20, 17, 0.44);
+  box-shadow: 0 18px 38px rgba(7, 28, 22, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .hero-swiper__arrow {
@@ -3650,13 +3848,13 @@ html {
   width: 38px;
   height: 38px;
   padding: 0;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50%;
   font-size: 22px;
   line-height: 1;
-  color: var(--green);
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  color: #f7fffb;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
   transition:
     opacity 0.15s ease,
     transform 0.15s ease;
@@ -3683,7 +3881,7 @@ html {
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: var(--border-strong);
+  background: rgba(255, 255, 255, 0.42);
   transition:
     width 0.2s ease,
     background-color 0.2s ease;
@@ -3692,7 +3890,7 @@ html {
 .hero-swiper__dot.is-active {
   width: 26px;
   border-radius: 999px;
-  background: var(--green);
+  background: #ffd980;
 }
 
 /* Poster variants — a photo layer (.hero-card__photo reads --hero-photo) over

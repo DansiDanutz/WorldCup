@@ -485,7 +485,7 @@ export function Dashboard({
   }
 
   return (
-    <main className="app-shell">
+    <main className="app-shell app-shell--landing">
       <header className="topbar">
         <div className="brand">
           <span className="brand-mark">
@@ -510,13 +510,6 @@ export function Dashboard({
                 <small>Main task</small>
               </span>
             </a>
-            <Link className="nav-item" href={{ pathname: "/wallet" }}>
-              <Wallet size={16} />
-              <span className="nav-item__copy">
-                <strong>Wallet</strong>
-                <small>Tickets & USDT</small>
-              </span>
-            </Link>
             <a className="nav-item" href="#leaderboard">
               <Trophy size={16} />
               <span className="nav-item__copy">
@@ -524,23 +517,13 @@ export function Dashboard({
                 <small>Ranking</small>
               </span>
             </a>
-            {signedInWithGoogle ? (
-              <a className="nav-item" href="#me">
-                <UserRound size={16} />
-                <span className="nav-item__copy">
-                  <strong>Account</strong>
-                  <small>Your entry</small>
-                </span>
-              </a>
-            ) : (
-              <Link className="nav-item" href={{ pathname: "/login" }}>
-                <Lock size={16} />
-                <span className="nav-item__copy">
-                  <strong>Login</strong>
-                  <small>Start here</small>
-                </span>
-              </Link>
-            )}
+            <Link className="nav-item" href={{ pathname: "/wallet" }}>
+              <Wallet size={16} />
+              <span className="nav-item__copy">
+                <strong>Wallet</strong>
+                <small>Tickets & USDT</small>
+              </span>
+            </Link>
             <details className="nav-more">
               <summary>
                 <GitBranch size={16} />
@@ -580,11 +563,35 @@ export function Dashboard({
                 ) : null}
               </div>
             </details>
+            {signedInWithGoogle ? (
+              <a className="nav-item nav-item--identity" href="#me">
+                <UserRound size={16} />
+                <span className="nav-item__copy">
+                  <strong>Account</strong>
+                  <small>Your entry</small>
+                </span>
+              </a>
+            ) : (
+              <Link className="nav-item nav-item--identity" href={{ pathname: "/login" }}>
+                <Lock size={16} />
+                <span className="nav-item__copy">
+                  <strong>Login</strong>
+                  <small>Start here</small>
+                </span>
+              </Link>
+            )}
           </nav>
         </SmartMenu>
       </header>
 
-      <div className="page">
+      <div className="page page--landing">
+        <HeroSwiper
+          prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
+          playerCount={participantCount}
+        />
+
+        <MyStanding />
+
         {launchEvidenceMode ? (
           <section className="launch-notice" aria-label="Launch evidence mode">
             <div>
@@ -598,26 +605,7 @@ export function Dashboard({
               Open Wallet
             </Link>
           </section>
-        ) : publicPaidActionsPaused ? (
-          <section className="launch-notice" aria-label="Launch status">
-            <div>
-              <strong>Paid actions paused</strong>
-              <span>
-                Team browsing and referral setup are available. Entries, tickets, and USDT deposits
-                open after launch approvals are complete.
-              </span>
-            </div>
-            <Link className="button secondary" href={{ pathname: "/wallet" }}>
-              Wallet status
-            </Link>
-          </section>
         ) : null}
-
-        <MyStanding />
-        <HeroSwiper
-          prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
-          playerCount={participantCount}
-        />
 
         <section className="status-row" aria-label="Tournament summary">
           <div className="stat">

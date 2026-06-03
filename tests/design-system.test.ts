@@ -137,11 +137,18 @@ describe("WorldCup design system integration", () => {
     assert.match(smartMenu, /const \[expanded, setExpanded\] = useState\(true\);/);
     assert.match(smartMenu, /window\.matchMedia\("\(max-width: 760px\)"\)/);
     assert.match(smartMenu, /const syncExpandedState = \(\) => setExpanded\(!mediaQuery\.matches\);/);
+    assert.match(smartMenu, /function closeAfterDestinationClick\(event: MouseEvent<HTMLDivElement>\)/);
+    assert.match(smartMenu, /target\.closest\("a, button"\)/);
+    assert.match(smartMenu, /setExpanded\(false\);/);
+    assert.match(smartMenu, /className="smart-menu__mark"/);
+    assert.match(smartMenu, /<div[\s\S]*?className="smart-menu__panel"[\s\S]*?hidden=\{!expanded\}[\s\S]*?id=\{panelId\}[\s\S]*?onClick=\{closeAfterDestinationClick\}[\s\S]*?\{children\}[\s\S]*?<\/div>[\s\S]*?<button/);
     assert.match(smartMenu, /aria-expanded=\{expanded\}/);
+    assert.match(smartMenu, /aria-label=\{expanded \? "Hide navigation cards" : "Show navigation cards"\}/);
     assert.match(smartMenu, /onClick=\{\(\) => setExpanded\(\(current\) => !current\)\}/);
     assert.match(smartMenu, /hidden=\{!expanded\}/);
-    assert.match(smartMenu, /summary = "Maximize cards"/);
-    assert.match(smartMenu, /expanded \? "Minimize cards" : summary/);
+    assert.match(smartMenu, /summary = "Open tabs"/);
+    assert.match(smartMenu, /expanded \? "Tabs open" : summary/);
+    assert.doesNotMatch(smartMenu, /Minimize cards/);
   });
 
   it("uses the active Supabase session for logged-in navigation and wallet state", () => {
@@ -150,14 +157,16 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /fetch\("\/api\/admin\/me"/);
     assert.match(dashboard, /setIsAdmin\(response\.ok && Boolean\(result\.admin\)\);/);
     assert.match(dashboard, /setIsAdmin\(false\);/);
+    assert.match(dashboard, /<main className="app-shell app-shell--landing">/);
     assert.match(dashboard, /<nav className="nav nav--app" aria-label="Primary navigation">/);
-    assert.match(dashboard, /className="nav-item nav-item--primary" href="#pick"[\s\S]*?Pick Teams[\s\S]*?Main task/);
+    assert.match(dashboard, /className="nav-item nav-item--primary" href="#pick"[\s\S]*?Pick Teams[\s\S]*?Main task[\s\S]*?href="#leaderboard"[\s\S]*?Leaderboard[\s\S]*?Ranking[\s\S]*?pathname: "\/wallet"[\s\S]*?Wallet[\s\S]*?Tickets & USDT[\s\S]*?<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw/);
     assert.match(dashboard, /<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw[\s\S]*?href="#rules"[\s\S]*?pathname: "\/schema"/);
     assert.match(dashboard, /\{isAdmin \? \([\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?\) : null\}/);
-    assert.match(dashboard, /\{signedInWithGoogle \? \([\s\S]*?<button onClick=\{signOut\} type="button">[\s\S]*?Logout[\s\S]*?\) : \([\s\S]*?pathname: "\/login"[\s\S]*?Login/);
+    assert.match(dashboard, /<details className="nav-more">[\s\S]*?<\/details>[\s\S]*?\{signedInWithGoogle \? \([\s\S]*?className="nav-item nav-item--identity" href="#me"[\s\S]*?Account[\s\S]*?\) : \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?pathname: "\/login"[\s\S]*?Login/);
     assert.match(walletScreen, /<nav className="nav nav--app" aria-label="Wallet navigation">/);
     assert.match(walletScreen, /className="nav-item nav-item--primary" href=\{\{ pathname: "\/", hash: "pick" \}\}[\s\S]*?Play[\s\S]*?Pick teams/);
     assert.match(walletScreen, /<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & game/);
+    assert.match(walletScreen, /<details className="nav-more">[\s\S]*?<\/details>[\s\S]*?\{signedIn \? \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?Account[\s\S]*?\) : \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?pathname: "\/login"[\s\S]*?Login/);
     assert.doesNotMatch(dashboard, /const signedInWithGoogle = session\?\.user\.app_metadata\.provider === "google";/);
     assert.doesNotMatch(walletScreen, /const signedIn = session\?\.user\.app_metadata\.provider === "google";/);
   });
@@ -195,6 +204,12 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /@keyframes wc-poster-caption/);
     assert.match(globalsCss, /\.hero-swiper__slide\.is-active \.hero-poster__lede/);
     assert.match(globalsCss, /--poster-lede-y:/);
+    assert.match(globalsCss, /\.hero-swiper\s*{[\s\S]*?width:\s*100vw;/);
+    assert.match(globalsCss, /\.hero-swiper__slide:first-child \.hero-card\s*{[\s\S]*?width:\s*100vw;/);
+    assert.match(globalsCss, /\.app-shell--landing \.topbar\s*{[\s\S]*?position:\s*fixed;/);
+    assert.match(globalsCss, /\.app-shell--landing \.smart-menu__panel\s*{[\s\S]*?position:\s*fixed;/);
+    assert.match(globalsCss, /\.app-shell--landing #pick,[\s\S]*?\.app-shell--landing #leaderboard,[\s\S]*?scroll-margin-top:\s*118px;/);
+    assert.match(globalsCss, /\.hero-swiper__slide:first-child \.hero-card\s*{[\s\S]*?height:\s*max\(640px,\s*100svh\);/);
   });
 
   it("keeps paid-action policy pauses visible before disabled user controls", () => {
@@ -206,14 +221,13 @@ describe("WorldCup design system integration", () => {
     assert.match(loginPage, /publicPaidActionGates/);
     assert.match(dashboard, /entryPolicyPause/);
     assert.match(dashboard, /launchEvidenceMode/);
+    assert.match(dashboard, /<div className="page page--landing">[\s\S]*?<HeroSwiper/);
+    assert.doesNotMatch(dashboard, /<strong>Paid actions paused<\/strong>/);
     assert.match(dashboard, /Admin launch evidence mode/);
     assert.match(dashboard, /Your admin account can lock entries/);
     assert.match(dashboard, /\{entryPolicyPause[\s\S]*?Entry locking opens after launch approvals are complete/);
     assert.match(dashboard, /paidActionGates: result\.paidActionGates/);
     assert.match(dashboard, /myAccountStatus\?\.paidActionGates/);
-    assert.match(dashboard, /Paid actions paused/);
-    assert.match(dashboard, /Team browsing and referral setup are available/);
-    assert.match(dashboard, /open after launch approvals are complete/);
     assert.match(dashboard, /Entry locking opens after launch approvals are complete/);
     assert.doesNotMatch(dashboard, /Operator policy is configured/);
     assert.match(globalsCss, /\.launch-notice/);

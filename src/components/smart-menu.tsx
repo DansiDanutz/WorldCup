@@ -1,7 +1,7 @@
 "use client";
 
-import { ChevronDown, Menu } from "lucide-react";
-import { type ReactNode, useEffect, useId, useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { type MouseEvent, type ReactNode, useEffect, useId, useState } from "react";
 
 type SmartMenuProps = {
   children: ReactNode;
@@ -9,7 +9,7 @@ type SmartMenuProps = {
   summary?: string;
 };
 
-export function SmartMenu({ children, label = "Menu", summary = "Maximize cards" }: SmartMenuProps) {
+export function SmartMenu({ children, label = "Menu", summary = "Open tabs" }: SmartMenuProps) {
   const panelId = useId();
   const [expanded, setExpanded] = useState(true);
 
@@ -22,25 +22,46 @@ export function SmartMenu({ children, label = "Menu", summary = "Maximize cards"
     return () => mediaQuery.removeEventListener("change", syncExpandedState);
   }, []);
 
+  function closeAfterDestinationClick(event: MouseEvent<HTMLDivElement>) {
+    const target = event.target;
+    if (!(target instanceof Element)) {
+      return;
+    }
+    if (target.closest("a, button")) {
+      setExpanded(false);
+    }
+  }
+
   return (
     <div className={`smart-menu${expanded ? " is-open" : " is-closed"}`}>
+      <div
+        className="smart-menu__panel"
+        hidden={!expanded}
+        id={panelId}
+        onClick={closeAfterDestinationClick}
+      >
+        {children}
+      </div>
       <button
+        aria-label={expanded ? "Hide navigation cards" : "Show navigation cards"}
         aria-controls={panelId}
         aria-expanded={expanded}
         className="smart-menu__toggle"
         onClick={() => setExpanded((current) => !current)}
+        title={expanded ? "Hide navigation cards" : "Show navigation cards"}
         type="button"
       >
-        <Menu size={16} />
+        <span className="smart-menu__mark" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </span>
         <span className="nav-item__copy">
           <strong>{label}</strong>
-          <small>{expanded ? "Minimize cards" : summary}</small>
+          <small>{expanded ? "Tabs open" : summary}</small>
         </span>
         <ChevronDown className="smart-menu__chevron" size={16} />
       </button>
-      <div className="smart-menu__panel" hidden={!expanded} id={panelId}>
-        {children}
-      </div>
     </div>
   );
 }
