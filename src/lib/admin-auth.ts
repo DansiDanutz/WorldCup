@@ -3,6 +3,11 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { getBearerToken } from "@/lib/request";
 import { timingSafeEqualStrings } from "@/lib/secure-compare";
 
+// Built-in default owner admin Google account. Kept in code for production
+// continuity, but overridable via the OWNER_ADMIN_EMAIL env var (rotate the
+// owner) or removable by setting OWNER_ADMIN_EMAIL to "none"/"disabled"
+// (break-glass via ADMIN_RESULT_SECRET still works). Resolve the effective
+// owner through getOwnerAdminEmail() rather than reading this constant directly.
 export const OWNER_ADMIN_EMAIL = "semebitcoin@gmail.com";
 
 export type AdminAuthResult =
@@ -12,13 +17,33 @@ export type AdminAuthResult =
 
 type AdminEmailEnv = Record<string, string | undefined>;
 
+const OWNER_ADMIN_DISABLED_VALUES = new Set(["none", "disabled", "off", "false"]);
+
+/**
+ * The effective owner admin email. Defaults to OWNER_ADMIN_EMAIL for production
+ * continuity, can be rotated by setting the OWNER_ADMIN_EMAIL env var, or
+ * removed entirely by setting it to "none"/"disabled" (returns null). When
+ * removed, admin access still works via ADMIN_EMAILS and the break-glass secret.
+ */
+export function getOwnerAdminEmail(env: AdminEmailEnv = process.env): string | null {
+  const configured = (env.OWNER_ADMIN_EMAIL ?? "").trim().toLowerCase();
+
+  if (OWNER_ADMIN_DISABLED_VALUES.has(configured)) {
+    return null;
+  }
+
+  return configured || OWNER_ADMIN_EMAIL;
+}
+
 export function getAdminEmailAllowlist(env: AdminEmailEnv = process.env): string[] {
   const configuredEmails = (env.ADMIN_EMAILS ?? "")
     .split(",")
     .map((value) => value.trim().toLowerCase())
     .filter(Boolean);
 
-  return Array.from(new Set([...configuredEmails, OWNER_ADMIN_EMAIL]));
+  const ownerEmail = getOwnerAdminEmail(env);
+
+  return Array.from(new Set([...configuredEmails, ...(ownerEmail ? [ownerEmail] : [])]));
 }
 
 export function isAllowlistedAdminEmail(
