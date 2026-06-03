@@ -1,7 +1,16 @@
-import { ArrowLeft, CheckCircle2, Clock, GitBranch, Trophy } from "lucide-react";
+import {
+  ArrowLeft,
+  BookOpen,
+  CalendarClock,
+  CheckCircle2,
+  Clock,
+  GitBranch,
+  Trophy,
+} from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { SmartMenu } from "@/components/smart-menu";
 import {
   formatCoefficient,
   formatKickoff,
@@ -46,14 +55,31 @@ export default async function SchemaPage() {
           </span>
           <span>WorldCup</span>
         </Link>
-        <nav className="nav" aria-label="Schema navigation">
-          <Link href="/">
-            <ArrowLeft size={16} />
-            Back
-          </Link>
-          <Link href="/#matches">Matches</Link>
-          <Link href="/#rules">Rules</Link>
-        </nav>
+        <SmartMenu>
+          <nav className="nav nav--app" aria-label="Schema navigation">
+            <Link className="nav-item nav-item--primary" href="/">
+              <ArrowLeft size={16} />
+              <span className="nav-item__copy">
+                <strong>Back</strong>
+                <small>Pick teams</small>
+              </span>
+            </Link>
+            <Link className="nav-item" href="/#matches">
+              <CalendarClock size={16} />
+              <span className="nav-item__copy">
+                <strong>Matches</strong>
+                <small>Schedule</small>
+              </span>
+            </Link>
+            <Link className="nav-item" href="/#rules">
+              <BookOpen size={16} />
+              <span className="nav-item__copy">
+                <strong>Rules</strong>
+                <small>Scoring</small>
+              </span>
+            </Link>
+          </nav>
+        </SmartMenu>
       </header>
 
       <div className="page">

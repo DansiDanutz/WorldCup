@@ -1,7 +1,8 @@
-import { ArrowLeft, Trophy } from "lucide-react";
+import { ArrowLeft, BookOpen, Trophy } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { SmartMenu } from "@/components/smart-menu";
 import { formatCoefficient } from "@/lib/scoring";
 import { getTeamCoefficientData } from "@/lib/worldcup-data";
 
@@ -24,13 +25,24 @@ export default async function CoefficientsPage() {
           </span>
           <span>WorldCup</span>
         </Link>
-        <nav className="nav" aria-label="Coefficient navigation">
-          <Link href="/">
-            <ArrowLeft size={16} />
-            Back
-          </Link>
-          <Link href="/#rules">Rules</Link>
-        </nav>
+        <SmartMenu>
+          <nav className="nav nav--app" aria-label="Coefficient navigation">
+            <Link className="nav-item nav-item--primary" href="/">
+              <ArrowLeft size={16} />
+              <span className="nav-item__copy">
+                <strong>Back</strong>
+                <small>Pick teams</small>
+              </span>
+            </Link>
+            <Link className="nav-item" href="/#rules">
+              <BookOpen size={16} />
+              <span className="nav-item__copy">
+                <strong>Rules</strong>
+                <small>How points work</small>
+              </span>
+            </Link>
+          </nav>
+        </SmartMenu>
       </header>
 
       <div className="page">

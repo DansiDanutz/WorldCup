@@ -91,7 +91,7 @@ export function HeroSwiper({
       <div className="hero-swiper__track" ref={trackRef} tabIndex={0} onKeyDown={onKeyDown}>
         {SLIDE_LABELS.map((label, index) => (
           <div
-            className="hero-swiper__slide"
+            className={`hero-swiper__slide${index === active ? " is-active" : ""}`}
             key={label}
             role="group"
             aria-roledescription="slide"
@@ -160,7 +160,7 @@ export function HeroSwiper({
   );
 }
 
-// Gradient-only poster: the three-step pitch.
+// Photo poster: the three-step pitch.
 function HowToPoster() {
   return (
     <section className="hero-card hero-card--howto" aria-label="How to play">
@@ -223,7 +223,7 @@ function HowToPoster() {
   );
 }
 
-// Gradient-only poster: the payoff.
+// Photo poster: the payoff.
 function PrizePoster() {
   return (
     <section className="hero-card hero-card--prize" aria-label="Prize pool">
@@ -276,10 +276,11 @@ function PrizePoster() {
   );
 }
 
-// Gradient-only poster: how points are awarded — one row per result.
+// Photo poster: how points are awarded.
 function PointsPoster({ onSeeExample }: { onSeeExample: () => void }) {
   return (
     <section className="hero-card hero-card--points" aria-label="Points awarded">
+      <div className="hero-card__photo" aria-hidden="true" />
       <div className="hero-card__scrim" aria-hidden="true" />
       <div className="hero-card__content">
         <div className="hero-card__top">
@@ -289,34 +290,34 @@ function PointsPoster({ onSeeExample }: { onSeeExample: () => void }) {
           </span>
         </div>
 
-        <div className="hero-mini hero-list">
-          <div className="hero-list__row">
-            <span>Win or qualify in 90′</span>
-            <strong>5</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Qualify after extra time</span>
-            <strong>4</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Qualify after penalties</span>
-            <strong>3</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Group-stage draw</span>
-            <strong>2</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Goal scored</span>
-            <strong>+0.5</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Clean sheet in 90′</span>
-            <strong>+1</strong>
-          </div>
+        <div className="hero-card__center hero-poster__lede">
+          <strong>
+            Every result
+            <br />
+            can score.
+          </strong>
         </div>
 
         <div className="hero-card__cards">
+          <div className="hero-mini hero-list">
+            <div className="hero-list__row">
+              <span>Win or qualify in 90′</span>
+              <strong>5</strong>
+            </div>
+            <div className="hero-list__row">
+              <span>Group-stage draw</span>
+              <strong>2</strong>
+            </div>
+            <div className="hero-list__row">
+              <span>Goal scored</span>
+              <strong>+0.5</strong>
+            </div>
+            <div className="hero-list__row">
+              <span>Clean sheet in 90′</span>
+              <strong>+1</strong>
+            </div>
+          </div>
+
           <p className="hero-formula">(base + goals + clean sheet) × team × stage</p>
           <button className="hero-cta" type="button" onClick={onSeeExample}>
             See example
@@ -328,10 +329,11 @@ function PointsPoster({ onSeeExample }: { onSeeExample: () => void }) {
   );
 }
 
-// Gradient-only poster: team and stage coefficients — one row each.
+// Photo poster: team and stage coefficients.
 function CoefficientsPoster() {
   return (
     <section className="hero-card hero-card--coef" aria-label="Coefficients">
+      <div className="hero-card__photo" aria-hidden="true" />
       <div className="hero-card__scrim" aria-hidden="true" />
       <div className="hero-card__content">
         <div className="hero-card__top">
@@ -341,45 +343,37 @@ function CoefficientsPoster() {
           </span>
         </div>
 
-        <div className="hero-mini hero-list">
-          <div className="hero-list__row hero-list__row--head">
-            <span>
-              <Scale size={15} aria-hidden="true" />
-              Team multiplier
-            </span>
-            <strong>1.00 → 3.00</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Group stage</span>
-            <strong>×1.0</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Round of 32</span>
-            <strong>×1.2</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Round of 16</span>
-            <strong>×1.35</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Quarter-final</span>
-            <strong>×1.5</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Semi-final</span>
-            <strong>×1.75</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Third place</span>
-            <strong>×1.25</strong>
-          </div>
-          <div className="hero-list__row">
-            <span>Final</span>
-            <strong>×2.0</strong>
-          </div>
+        <div className="hero-card__center hero-poster__lede">
+          <strong>
+            Risk can
+            <br />
+            multiply.
+          </strong>
         </div>
 
         <div className="hero-card__cards">
+          <div className="hero-mini hero-list">
+            <div className="hero-list__row hero-list__row--head">
+              <span>
+                <Scale size={15} aria-hidden="true" />
+                Team multiplier
+              </span>
+              <strong>1.00 → 3.00</strong>
+            </div>
+            <div className="hero-list__row">
+              <span>Group stage</span>
+              <strong>×1.0</strong>
+            </div>
+            <div className="hero-list__row">
+              <span>Knockouts rise</span>
+              <strong>×1.2 → ×1.75</strong>
+            </div>
+            <div className="hero-list__row">
+              <span>Final</span>
+              <strong>×2.0</strong>
+            </div>
+          </div>
+
           <p className="hero-formula">Favourites low · underdogs high · fixed all tournament</p>
           <Link className="hero-cta" href={{ pathname: "/coefficients" }}>
             Full team list
@@ -391,10 +385,11 @@ function CoefficientsPoster() {
   );
 }
 
-// Gradient-only poster: a worked scoring example for a Norway pick.
+// Photo poster: a worked scoring example for a Norway pick.
 function ExamplePoster() {
   return (
     <section className="hero-card hero-card--example" aria-label="Scoring example">
+      <div className="hero-card__photo" aria-hidden="true" />
       <div className="hero-card__scrim" aria-hidden="true" />
       <div className="hero-card__content">
         <div className="hero-card__top">
@@ -404,42 +399,43 @@ function ExamplePoster() {
           </span>
         </div>
 
-        <div className="hero-mini hero-list">
-          <div className="hero-list__row hero-list__row--stacked">
-            <span>
-              <b>Group · v Iraq</b>
-              <small>won 3–0 · 7.5 × 1.6 × 1.0</small>
-            </span>
-            <strong>12.00</strong>
-          </div>
-          <div className="hero-list__row hero-list__row--stacked">
-            <span>
-              <b>Group · v Senegal</b>
-              <small>won 2–1 · 6.0 × 1.6 × 1.0</small>
-            </span>
-            <strong>9.60</strong>
-          </div>
-          <div className="hero-list__row hero-list__row--stacked">
-            <span>
-              <b>Group · v France</b>
-              <small>drew 1–1 · 2.5 × 1.6 × 1.0</small>
-            </span>
-            <strong>4.00</strong>
-          </div>
-          <div className="hero-list__row hero-list__row--stacked">
-            <span>
-              <b>Round of 32</b>
-              <small>won 1–0 · 6.5 × 1.6 × 1.2</small>
-            </span>
-            <strong>12.48</strong>
-          </div>
-          <div className="hero-list__row hero-list__row--total">
-            <span>Total points</span>
-            <strong>38.08</strong>
-          </div>
+        <div className="hero-card__center hero-poster__lede">
+          <strong>
+            One run.
+            <br />
+            38.08 pts.
+          </strong>
         </div>
 
         <div className="hero-card__cards">
+          <div className="hero-mini hero-list">
+            <div className="hero-list__row hero-list__row--stacked">
+              <span>
+                <b>Group wins</b>
+                <small>Iraq 3-0 · Senegal 2-1</small>
+              </span>
+              <strong>21.60</strong>
+            </div>
+            <div className="hero-list__row hero-list__row--stacked">
+              <span>
+                <b>Group draw</b>
+                <small>France 1-1</small>
+              </span>
+              <strong>4.00</strong>
+            </div>
+            <div className="hero-list__row hero-list__row--stacked">
+              <span>
+                <b>Round of 32</b>
+                <small>won 1-0</small>
+              </span>
+              <strong>12.48</strong>
+            </div>
+            <div className="hero-list__row hero-list__row--total">
+              <span>Total points</span>
+              <strong>38.08</strong>
+            </div>
+          </div>
+
           <p className="hero-formula">3 group games + 1 knockout · Norway ×1.6</p>
           <a className="hero-cta" href="#pick">
             Start picking
@@ -451,7 +447,7 @@ function ExamplePoster() {
   );
 }
 
-// Gradient-only poster: the referral / invite rewards.
+// Photo poster: the referral / invite rewards.
 function InvitePoster() {
   return (
     <section className="hero-card hero-card--invite" aria-label="Invite a friend">
@@ -518,7 +514,7 @@ function InvitePoster() {
   );
 }
 
-// Gradient-only poster: the agent-ticket deal.
+// Photo poster: the agent-ticket deal.
 function AgentDealPoster() {
   return (
     <section className="hero-card hero-card--agent" aria-label="Agent Deal">
@@ -580,11 +576,12 @@ function AgentDealPoster() {
   );
 }
 
-// Gradient-only poster: the final join / login call to action, with live
+// Photo poster: the final join / login call to action, with live
 // prize-pool and player-count stat cards.
 function LoginPoster({ prizePool, playerCount }: { prizePool?: string; playerCount?: number }) {
   return (
     <section className="hero-card hero-card--login" aria-label="Login or register">
+      <div className="hero-card__photo" aria-hidden="true" />
       <div className="hero-card__scrim" aria-hidden="true" />
       <div className="hero-card__content">
         <div className="hero-card__top">
