@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, CircleDollarSign, Gift, LogIn, Users } from "lucide-react";
+import { Check, CircleDollarSign, Gift, LogIn, MousePointer2, ShieldCheck, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -194,10 +194,27 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
             Predict the Game <span className="motto-accent">WorldCup26</span>
           </h1>
           <p>
-            Accepting a referral gives the inviter 5% if you win, and it gives you the same 5%
-            earning deal for your own future referrals. Join without a referral and your invite link
-            still works, but your rate is 3%.
+            Create your account and choose three teams. Use Wallet for tickets and USDT after
+            launch approvals open. Referral terms are handled before Google sign-in.
           </p>
+        </div>
+
+        <div className="auth-steps" aria-label="Signup steps">
+          <div>
+            <span>1</span>
+            <strong>Referral</strong>
+            <small>Enter an inviter code or choose direct signup.</small>
+          </div>
+          <div>
+            <span>2</span>
+            <strong>Google</strong>
+            <small>One account, no password to manage.</small>
+          </div>
+          <div>
+            <span>3</span>
+            <strong>Play</strong>
+            <small>Pick teams, buy tickets, track wallet activity.</small>
+          </div>
         </div>
 
         <div className="flag-wall" aria-label="All 48 qualified nations">
@@ -223,11 +240,11 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
         <div className="auth-benefits" aria-label="Referral benefits">
           <div>
             <Gift size={18} />
-            <span>Get your own invite code after Google login</span>
+            <span>Referral accepted: your own invites can earn 5%</span>
           </div>
           <div>
             <CircleDollarSign size={18} />
-            <span>Accept a referral to unlock the same 5% deal</span>
+            <span>Direct signup: your own invites earn 3%</span>
           </div>
           <div>
             <Users size={18} />
@@ -240,7 +257,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
         <div className="panel-header">
           <div>
             <h2 className="panel-title">Login / Register</h2>
-            <p className="panel-subtitle">Referral is solved before your Google account is created.</p>
+            <p className="panel-subtitle">Choose a signup path, then continue with Google.</p>
           </div>
           <LogIn size={18} color="var(--green)" />
         </div>
@@ -268,6 +285,19 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
               </button>
             </div>
           ) : null}
+
+          <div className="auth-choice-grid" aria-label="Signup path options">
+            <div className={referralCode ? "active" : ""}>
+              <MousePointer2 size={16} />
+              <strong>Using a referral</strong>
+              <span>Paste the inviter code, then accept the prize-share agreement.</span>
+            </div>
+            <div className={noReferral ? "active" : ""}>
+              <ShieldCheck size={16} />
+              <strong>Direct signup</strong>
+              <span>No inviter code. Your future referral rate starts at 3%.</span>
+            </div>
+          </div>
 
           <div className="field">
             <label htmlFor="login-referral-code">Referral code</label>
@@ -348,15 +378,22 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
               Continue to game
             </Link>
           ) : (
-            <button
-              className="button"
-              disabled={!canContinue}
-              onClick={continueWithGoogle}
-              type="button"
-            >
-              <LogIn size={16} />
-              Continue with Google
-            </button>
+            <>
+              {!canContinue ? (
+                <div className="auth-next-step">
+                  Choose one path: enter a valid referral code and accept it, or confirm direct signup.
+                </div>
+              ) : null}
+              <button
+                className="button"
+                disabled={!canContinue}
+                onClick={continueWithGoogle}
+                type="button"
+              >
+                <LogIn size={16} />
+                Create account with Google
+              </button>
+            </>
           )}
 
           {message ? <div className="message">{message}</div> : null}

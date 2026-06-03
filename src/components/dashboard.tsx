@@ -689,7 +689,10 @@ export function Dashboard({
                         {unavailable ? " · Locked" : ""}
                       </span>
                     </span>
-                    <span className="coefficient">{formatCoefficient(team.reward_coefficient)}</span>
+                    <span className="coefficient">
+                      <span className="coefficient-label">Coef</span>
+                      {formatCoefficient(team.reward_coefficient)}
+                    </span>
                     <span className="odds">{team.winner_odds}</span>
                   </button>
                 );

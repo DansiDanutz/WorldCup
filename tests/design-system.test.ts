@@ -146,7 +146,7 @@ describe("WorldCup design system integration", () => {
     assert.match(smartMenu, /aria-label=\{expanded \? "Hide navigation cards" : "Show navigation cards"\}/);
     assert.match(smartMenu, /onClick=\{\(\) => setExpanded\(\(current\) => !current\)\}/);
     assert.match(smartMenu, /hidden=\{!expanded\}/);
-    assert.match(smartMenu, /summary = "Open tabs"/);
+    assert.match(smartMenu, /summary = "Tap for pages"/);
     assert.match(smartMenu, /expanded \? "Tabs open" : summary/);
     assert.doesNotMatch(smartMenu, /Minimize cards/);
   });
