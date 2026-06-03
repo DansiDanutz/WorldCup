@@ -18,7 +18,7 @@ import { useEffect, useMemo, useState, useTransition } from "react";
 
 import { SmartMenu } from "@/components/smart-menu";
 import { CURRENT_TERMS_VERSION } from "@/lib/consent";
-import { getDepositExplorerTxUrl } from "@/lib/deposits";
+import { getDepositExplorerAddressUrl, getDepositExplorerTxUrl } from "@/lib/deposits";
 import { formatLedgerAmount } from "@/lib/economy";
 import {
   getCurrentLegalApprovalEvidenceNoteRequirement,
@@ -810,7 +810,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         const claims = (result.claims as AdminDepositClaimRow[]) ?? [];
         setDepositClaims(claims);
         hydrateDepositClaimDrafts(claims);
-        setMessage(`Deposit claims loaded. Rows: ${claims.length}.`);
+        setMessage(`Incoming transfers loaded. Rows: ${claims.length}.`);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not load deposit claims.");
       }
@@ -843,7 +843,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         hydrateDepositClaimDrafts(claims);
         setWithdrawals(rows);
         hydrateWithdrawalDrafts(rows);
-        setMessage(`Payment queues loaded. Deposit claims: ${claims.length}. Withdrawals: ${rows.length}.`);
+        setMessage(`Payment queues loaded. Incoming transfers: ${claims.length}. Withdrawals: ${rows.length}.`);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not load payment queues.");
       }
@@ -915,7 +915,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               depositClaimReviewDrafts[claim.id]?.note ||
               `KuCoin verified ${claim.network.toUpperCase()} tx ${verification.walletTxId ?? claim.txHash}`,
           });
-          setMessage("KuCoin deposit matched. Review the amount, then credit.");
+          setMessage("KuCoin receive-wallet deposit matched. Cross-check sender wallet, then credit.");
         } else {
           setMessage(
             verification.status === "unavailable"
@@ -2133,7 +2133,8 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     <option value="">Select account</option>
                     {accounts.map((account) => (
                       <option key={account.userId} value={account.userId}>
-                        {account.displayName} · {account.email ?? account.referralCode}
+                        {account.displayName} · {account.accountRole === "agent" ? "Agent" : "User"} ·{" "}
+                        {account.email ?? account.referralCode}
                       </option>
                     ))}
                   </select>
@@ -2155,7 +2156,8 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     <option value="">Select account</option>
                     {accounts.map((account) => (
                       <option key={account.userId} value={account.userId}>
-                        {account.displayName} · balance {formatLedgerAmount(account.walletBalance)}
+                        {account.displayName} · {account.accountRole === "agent" ? "Agent" : "User"} · balance{" "}
+                        {formatLedgerAmount(account.walletBalance)}
                       </option>
                     ))}
                   </select>
@@ -2166,7 +2168,8 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     <option value="">Select account</option>
                     {accounts.map((account) => (
                       <option key={account.userId} value={account.userId}>
-                        {account.displayName} · {account.email ?? account.referralCode}
+                        {account.displayName} · {account.accountRole === "agent" ? "Agent" : "User"} ·{" "}
+                        {account.email ?? account.referralCode}
                       </option>
                     ))}
                   </select>
@@ -2197,11 +2200,24 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   {accounts.map((account) => (
                     <div className="admin-referral-row" key={account.userId}>
                       <div>
-                        <strong>{account.displayName}</strong>
+                        <strong>
+                          {account.displayName}
+                          <span className={`account-role-badge ${account.accountRole}`}>
+                            {account.accountRole}
+                          </span>
+                        </strong>
                         <span>{account.email ?? "No email stored"} · {account.referralCode}</span>
                         <span>
                           Tickets: {account.ticketsAvailable}/{account.ticketsAssigned} available
                         </span>
+                        {account.usdtSenderWalletAddress ? (
+                          <code className="deposit-address">
+                            USDT sender: {account.usdtSenderWalletAddress} (
+                            {account.usdtSenderWalletNetwork?.toUpperCase() ?? "NETWORK UNKNOWN"})
+                          </code>
+                        ) : (
+                          <span>No USDT sender wallet saved yet</span>
+                        )}
                       </div>
                       <div>
                         <strong>{formatLedgerAmount(account.walletBalance)}</strong>
@@ -2219,27 +2235,36 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
           <div className="panel" id="admin-deposit-claims-panel">
             <div className="panel-header">
               <div>
-                <h2 className="panel-title">Deposit claims</h2>
-                <p className="panel-subtitle">Match shared KuCoin deposits to signed-in players.</p>
+                <h2 className="panel-title">Incoming transfers</h2>
+                <p className="panel-subtitle">
+                  Manual USDT payment history with sender wallet, amount, and agent/user status.
+                </p>
               </div>
               <button className="button secondary" disabled={isPending} onClick={loadDepositClaims} type="button">
-                Load Claims
+                Load Transfers
               </button>
             </div>
             <div className="admin-form">
               <div className="launch-evidence-checklist" aria-label="Real USDT deposit launch checklist">
                 <strong>Real USDT deposit launch evidence</strong>
                 <span>
-                  TRC20 and ERC20 each need one credited USDT claim linked to a server-side KuCoin match.
+                  TRC20 and ERC20 each need one credited USDT claim linked to a server-side KuCoin
+                  receive-wallet match.
                 </span>
                 <span>
-                  Keep Require KuCoin match checked, run Verify KuCoin, then Credit. Manual non-launch credit will not complete these sign-offs.
+                  Keep Require KuCoin match checked, run Verify KuCoin, cross-check the
+                  self-reported sender wallet on-chain, then Credit. Manual non-launch credit will
+                  not complete these sign-offs.
                 </span>
               </div>
               {depositClaims.length > 0 ? (
                 <div className="admin-referral-list">
                   {depositClaims.map((claim) => {
                     const explorerUrl = getDepositExplorerTxUrl(claim.network, claim.txHash);
+                    const senderWalletUrl = claim.senderWalletAddress
+                      ? getDepositExplorerAddressUrl(claim.network, claim.senderWalletAddress)
+                      : null;
+                    const receiveWalletUrl = getDepositExplorerAddressUrl(claim.network, claim.address);
                     const verification = depositClaimVerifications[claim.id];
                     const reviewDraft = depositClaimReviewDrafts[claim.id] ?? {
                       amount: claim.amount,
@@ -2258,12 +2283,41 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                       <div className="admin-referral-row" key={claim.id}>
                         <div>
                           <strong>
-                            {claim.displayName} · {formatLedgerAmount(claim.amount)} {claim.currency}
+                            {claim.displayName} · {claim.accountRole === "agent" ? "Agent" : "User"} ·{" "}
+                            {formatLedgerAmount(claim.amount)} {claim.currency}
                           </strong>
                           <span>
                             {claim.userEmail ?? claim.userId} · {claim.network.toUpperCase()} · {claim.status}
                           </span>
                           <code className="deposit-address">Claim ID: {claim.id}</code>
+                          {claim.senderWalletAddress ? (
+                            <>
+                              <code className="deposit-address">Incoming from: {claim.senderWalletAddress}</code>
+                              {senderWalletUrl ? (
+                                <a
+                                  className="deposit-explorer-link"
+                                  href={senderWalletUrl}
+                                  rel="noreferrer"
+                                  target="_blank"
+                                >
+                                  View sender wallet
+                                </a>
+                              ) : null}
+                            </>
+                          ) : (
+                            <span className="field-note">No sender wallet captured on this older claim.</span>
+                          )}
+                          <code className="deposit-address">WorldCup receive wallet: {claim.address}</code>
+                          {receiveWalletUrl ? (
+                            <a
+                              className="deposit-explorer-link"
+                              href={receiveWalletUrl}
+                              rel="noreferrer"
+                              target="_blank"
+                            >
+                              View receive wallet
+                            </a>
+                          ) : null}
                           <code className="deposit-address">{claim.txHash}</code>
                           {explorerUrl ? (
                             <a
@@ -2278,9 +2332,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                           {verification ? (
                             <span className={`field-note ${verification.status === "matched" ? "success-note" : ""}`}>
                               {verification.status === "matched"
-                                ? `KuCoin matched ${formatLedgerAmount(verification.amount ?? claim.amount)} ${claim.currency}${
+                                ? `KuCoin confirmed ${formatLedgerAmount(verification.amount ?? claim.amount)} ${claim.currency} reached the shared receive wallet${
                                     verification.amountMatchesClaim === false ? " (different from claimed amount)" : ""
-                                  }.`
+                                  }. Sender wallet is self-reported; cross-check it against the public transaction before crediting.`
                                 : verification.message ?? "KuCoin deposit was not found yet."}
                             </span>
                           ) : null}
@@ -2337,8 +2391,8 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                           ) : null}
                           {claim.status === "submitted" && requiresKucoinMatch && verification?.status !== "matched" ? (
                             <span className="field-note">
-                              Run Verify KuCoin first. Manual credit without a server-side KuCoin match
-                              will not satisfy the TRC20/ERC20 launch sign-off.
+                              Run Verify KuCoin first. Manual credit without a server-side receive-wallet
+                              match will not satisfy the TRC20/ERC20 launch sign-off.
                             </span>
                           ) : null}
                           {claim.status === "submitted" && !requiresKucoinMatch ? (

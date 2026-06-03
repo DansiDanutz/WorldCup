@@ -102,6 +102,9 @@ export async function GET(request: Request) {
     ticketsAssigned: tickets.data?.length ?? 0,
     ticketsAvailable: (tickets.data ?? []).filter((ticket) => !ticket.consumed_at).length,
     ticketPriceAmount: tournament.data.ticket_price_amount,
+    usdtSenderWalletAddress: profile.usdt_sender_wallet_address ?? null,
+    usdtSenderWalletNetwork: profile.usdt_sender_wallet_network ?? null,
+    usdtSenderWalletUpdatedAt: profile.usdt_sender_wallet_updated_at ?? null,
     paidActionGates,
     referrals: (referrals.data ?? []).map((referral) => ({
       id: referral.id,

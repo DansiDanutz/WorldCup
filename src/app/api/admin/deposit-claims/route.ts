@@ -25,6 +25,7 @@ type DepositClaimRow = {
   display_name: string | null;
   network: string;
   address: string;
+  sender_wallet_address: string | null;
   amount: string;
   currency: string;
   tx_hash: string;
@@ -57,7 +58,7 @@ type ClaimKucoinVerification =
     };
 
 const CLAIM_SELECT =
-  "id,tournament_id,user_id,user_email,display_name,network,address,amount,currency,tx_hash,status,admin_note,created_at,credited_at,credited_by,worldcup_deposit_id";
+  "id,tournament_id,user_id,user_email,display_name,network,address,sender_wallet_address,amount,currency,tx_hash,status,admin_note,created_at,credited_at,credited_by,worldcup_deposit_id";
 
 const CLAIM_VERIFICATION_WINDOW_MS = 14 * 24 * 60 * 60 * 1000;
 
@@ -249,7 +250,7 @@ async function listClaims(supabase: any) {
     return jsonError("Could not load deposit claims.", 500);
   }
 
-  return NextResponse.json({ claims: (claims.data ?? []).map(formatClaim) });
+  return NextResponse.json({ claims: await formatClaims(supabase, (claims.data ?? []) as DepositClaimRow[]) });
 }
 
 async function rejectClaim(
@@ -288,7 +289,7 @@ async function rejectClaim(
     return staleClaimResponse(supabase, claimId, "reject");
   }
 
-  return NextResponse.json({ claim: formatClaim(update.data as DepositClaimRow) });
+  return NextResponse.json({ claim: await formatClaimWithRole(supabase, update.data as DepositClaimRow) });
 }
 
 async function creditClaim(
@@ -363,6 +364,7 @@ async function creditClaim(
       displayName: reservedRow.display_name,
       network: reservedRow.network,
       address: reservedRow.address,
+      senderWalletAddress: reservedRow.sender_wallet_address,
       txHash: reservedRow.tx_hash,
       currency: reservedRow.currency,
       amountClaimed: reservedRow.amount,
@@ -409,7 +411,7 @@ async function creditClaim(
     );
   }
 
-  return NextResponse.json({ claim: formatClaim(update.data as DepositClaimRow) });
+  return NextResponse.json({ claim: await formatClaimWithRole(supabase, update.data as DepositClaimRow) });
 }
 
 async function releaseProcessingClaim(supabase: any, claimId: string) {
@@ -478,7 +480,46 @@ function getProcessedClaimMessage(row: DepositClaimRow, action: "credit" | "reje
   return `Only submitted deposit claims can be ${action === "credit" ? "credited" : "rejected"}.`;
 }
 
-function formatClaim(row: DepositClaimRow) {
+async function formatClaimWithRole(supabase: any, row: DepositClaimRow) {
+  const roles = await loadAccountRoles(supabase, [row]);
+  return formatClaim(row, roles.get(row.user_id) ?? "user");
+}
+
+async function formatClaims(supabase: any, rows: DepositClaimRow[]) {
+  const roles = await loadAccountRoles(supabase, rows);
+  return rows.map((row) => formatClaim(row, roles.get(row.user_id) ?? "user"));
+}
+
+async function loadAccountRoles(supabase: any, rows: DepositClaimRow[]) {
+  const roles = new Map<string, "agent" | "user">();
+  const userIds = [...new Set(rows.map((row) => row.user_id).filter(Boolean))];
+  const tournamentIds = [...new Set(rows.map((row) => row.tournament_id).filter(Boolean))];
+
+  if (userIds.length === 0 || tournamentIds.length === 0) {
+    return roles;
+  }
+
+  const agents = await supabase
+    .from("worldcup_agents")
+    .select("user_id")
+    .in("user_id", userIds)
+    .in("tournament_id", tournamentIds)
+    .eq("active", true);
+
+  if (agents.error) {
+    return roles;
+  }
+
+  for (const agent of agents.data ?? []) {
+    if (agent.user_id) {
+      roles.set(agent.user_id, "agent");
+    }
+  }
+
+  return roles;
+}
+
+function formatClaim(row: DepositClaimRow, accountRole: "agent" | "user") {
   return {
     id: row.id,
     userId: row.user_id,
@@ -486,10 +527,12 @@ function formatClaim(row: DepositClaimRow) {
     displayName: row.display_name ?? "WorldCup player",
     network: row.network,
     address: row.address,
+    senderWalletAddress: row.sender_wallet_address,
     amount: row.amount,
     currency: row.currency,
     txHash: row.tx_hash,
     status: row.status,
+    accountRole,
     adminNote: row.admin_note,
     createdAt: row.created_at,
     creditedAt: row.credited_at,

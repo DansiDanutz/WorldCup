@@ -20,7 +20,8 @@ export default function PrivacyPage() {
               <p>
                 WorldCup26 stores the information needed to operate the game: your Google account
                 email, display name, user ID, team picks, entries, referral relationships, consent
-                records, wallet ledger entries, deposit claims, admin audit notes, and prize records.
+                records, wallet ledger entries, deposit claims, saved USDT sender wallet addresses,
+                admin audit notes, and prize records.
               </p>
             </div>
             <div className="rule-block">
@@ -34,10 +35,10 @@ export default function PrivacyPage() {
             <div className="rule-block">
               <h3>Payment and blockchain data</h3>
               <p>
-                Deposit claims include the network, receiving address, transaction hash, claimed
-                amount, verified amount, and review status. Blockchain transactions are public, so
-                transaction hashes and wallet addresses may remain visible on external block
-                explorers even if your WorldCup26 account is later deleted.
+                Deposit claims include the network, receiving address, sending wallet address,
+                transaction hash, claimed amount, verified amount, and review status. Blockchain
+                transactions are public, so transaction hashes and wallet addresses may remain
+                visible on external block explorers even if your WorldCup26 account is later deleted.
               </p>
             </div>
             <div className="rule-block">

@@ -753,6 +753,7 @@ async function checkDepositCreditProbe() {
 
     for (const [index, config] of networks.entries()) {
       const txHash = buildProbeTxHash(config.network, stamp + index, "a");
+      const senderWalletAddress = buildProbeWithdrawalAddress(config.network);
       const verifiedAmount = `0.0100012${index + 3}`;
       const adminNote = `Codex production ${config.network.toUpperCase()} deposit-credit probe - verified override, no real funds`;
       const claim = await restPost("worldcup_deposit_claims", {
@@ -762,6 +763,7 @@ async function checkDepositCreditProbe() {
         display_name: "Codex Deposit Credit Probe",
         network: config.network,
         address: config.address,
+        sender_wallet_address: senderWalletAddress,
         amount: claimedAmount,
         currency: "USDT",
         tx_hash: txHash,
@@ -846,6 +848,11 @@ async function checkDepositCreditProbe() {
         credit.data.claim.adminNote === adminNote,
         `Deposit probe ${config.network} credit response did not preserve the admin note`,
       );
+      assert(
+        credit.data.claim.senderWalletAddress === senderWalletAddress &&
+          credit.data.claim.accountRole === "user",
+        `Deposit probe ${config.network} credit response did not expose sender wallet and user status`,
+      );
       const depositId = credit.data.claim.worldcupDepositId;
       assert(depositId, `Deposit probe ${config.network} credit response did not include a deposit id`);
       depositIds.push(depositId);
@@ -869,6 +876,7 @@ async function checkDepositCreditProbe() {
       assert(
         String(deposit.data[0].raw?.amountClaimed) === claimedAmount &&
           String(deposit.data[0].raw?.amountCredited) === verifiedAmount &&
+          deposit.data[0].raw?.senderWalletAddress === senderWalletAddress &&
           deposit.data[0].raw?.adminNote === adminNote,
         `Deposit probe could not verify ${config.network} deposit raw audit fields`,
       );
@@ -1256,6 +1264,7 @@ async function checkAuthenticatedUserFlowProbe() {
       const claimStamp = Date.now();
       for (const [index, config] of networks.entries()) {
         const txHash = buildProbeTxHash(config.network, claimStamp + index, "b");
+        const senderWalletAddress = buildProbeWithdrawalAddress(config.network);
         const claim = await fetchUserJson(
           "/api/deposits/claims",
           player.accessToken,
@@ -1265,6 +1274,7 @@ async function checkAuthenticatedUserFlowProbe() {
             body: JSON.stringify({
               network: config.network,
               amount: "0.01",
+              senderWalletAddress,
               txHash,
             }),
           },
@@ -1273,7 +1283,8 @@ async function checkAuthenticatedUserFlowProbe() {
           claim.response.status === 200 &&
             claim.data?.claim?.status === "submitted" &&
             claim.data.claim.network === config.network &&
-            claim.data.claim.address === config.address,
+            claim.data.claim.address === config.address &&
+            claim.data.claim.senderWalletAddress === senderWalletAddress,
           `Auth flow probe could not submit ${config.network} deposit claim: ${claim.response.status}`,
         );
         state.claimIds.push(claim.data.claim.id);
@@ -1282,9 +1293,23 @@ async function checkAuthenticatedUserFlowProbe() {
           network: config.network,
           address: config.address,
           amount: "0.01",
+          senderWalletAddress,
           txHash: claim.data.claim.txHash ?? txHash,
         });
       }
+
+      const savedSenderWalletProfile = await restGet(
+        "worldcup_referral_profiles",
+        `select=user_id,usdt_sender_wallet_address,usdt_sender_wallet_network&user_id=eq.${player.userId}&limit=1`,
+      );
+      const latestNetwork = networks[networks.length - 1].network;
+      assert(
+        savedSenderWalletProfile.response.ok &&
+          savedSenderWalletProfile.data?.[0]?.usdt_sender_wallet_address ===
+            buildProbeWithdrawalAddress(latestNetwork) &&
+          savedSenderWalletProfile.data?.[0]?.usdt_sender_wallet_network === latestNetwork,
+        `Auth flow probe could not verify saved USDT sender wallet profile: ${savedSenderWalletProfile.response.status}`,
+      );
     } else {
       assertPaidActionPaused(addresses, "Auth flow deposit address");
       const blockedClaim = await fetchUserJson(
@@ -1296,6 +1321,7 @@ async function checkAuthenticatedUserFlowProbe() {
           body: JSON.stringify({
             network: networks[0].network,
             amount: "0.01",
+            senderWalletAddress: buildProbeWithdrawalAddress(networks[0].network),
             txHash: buildProbeTxHash(networks[0].network, Date.now(), "b"),
           }),
         },
@@ -1314,6 +1340,7 @@ async function checkAuthenticatedUserFlowProbe() {
               row.network === expected.network &&
               row.address === expected.address &&
               row.amount === expected.amount &&
+              row.senderWalletAddress === expected.senderWalletAddress &&
               row.txHash === expected.txHash,
           ),
         ),

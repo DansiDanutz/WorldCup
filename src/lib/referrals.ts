@@ -6,6 +6,9 @@ type ReferralProfile = {
   referral_code: string;
   display_name: string | null;
   email: string | null;
+  usdt_sender_wallet_address?: string | null;
+  usdt_sender_wallet_network?: string | null;
+  usdt_sender_wallet_updated_at?: string | null;
 };
 
 export function normalizeReferralCode(value: string | null | undefined) {
@@ -39,7 +42,7 @@ export async function getOrCreateReferralProfile(
 ): Promise<ReferralProfile> {
   const existing = await supabase
     .from("worldcup_referral_profiles")
-    .select("user_id,referral_code,display_name,email")
+    .select("user_id,referral_code,display_name,email,usdt_sender_wallet_address,usdt_sender_wallet_network,usdt_sender_wallet_updated_at")
     .eq("user_id", user.id)
     .maybeSingle();
 
@@ -74,7 +77,7 @@ export async function getOrCreateReferralProfile(
         display_name: displayName,
         email,
       })
-      .select("user_id,referral_code,display_name,email")
+      .select("user_id,referral_code,display_name,email,usdt_sender_wallet_address,usdt_sender_wallet_network,usdt_sender_wallet_updated_at")
       .single();
 
     if (!created.error && created.data) {

@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   const [profiles, transactions, tickets] = await Promise.all([
     supabase
       .from("worldcup_referral_profiles")
-      .select("user_id,display_name,email,referral_code")
+      .select("user_id,display_name,email,referral_code,usdt_sender_wallet_address,usdt_sender_wallet_network,usdt_sender_wallet_updated_at")
       .order("display_name", { ascending: true }),
     supabase
       .from("worldcup_wallet_transactions")
@@ -53,6 +53,21 @@ export async function POST(request: Request) {
   }
 
   const walletTransactions = (transactions.data ?? []) as WalletTransaction[];
+  const userIds = (profiles.data ?? []).map((profile) => profile.user_id).filter(Boolean);
+  const agents = userIds.length > 0
+    ? await supabase
+        .from("worldcup_agents")
+        .select("user_id")
+        .eq("tournament_id", tournament.data.id)
+        .in("user_id", userIds)
+        .eq("active", true)
+    : { data: [], error: null };
+
+  if (agents.error) {
+    return jsonError("Could not load account agent statuses.", 500);
+  }
+
+  const agentUserIds = new Set((agents.data ?? []).map((agent) => agent.user_id));
 
   return NextResponse.json({
     ticketPriceAmount: tournament.data.ticket_price_amount,
@@ -64,6 +79,10 @@ export async function POST(request: Request) {
         displayName: profile.display_name ?? "WorldCup player",
         email: profile.email ?? null,
         referralCode: profile.referral_code,
+        accountRole: agentUserIds.has(profile.user_id) ? "agent" : "user",
+        usdtSenderWalletAddress: profile.usdt_sender_wallet_address ?? null,
+        usdtSenderWalletNetwork: profile.usdt_sender_wallet_network ?? null,
+        usdtSenderWalletUpdatedAt: profile.usdt_sender_wallet_updated_at ?? null,
         walletBalance: calculateWalletBalance(profile.user_id, walletTransactions).toFixed(8),
         ticketsAssigned: userTickets.length,
         ticketsAvailable: userTickets.filter((ticket) => !ticket.consumed_at).length,

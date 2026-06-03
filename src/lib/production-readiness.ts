@@ -278,7 +278,7 @@ export function buildReadinessNextActions(
     actions.push({
       label: "Run real USDT tests",
       detail: "Prove TRC20 deposit, ERC20 deposit, and withdrawal payout with live wallet evidence.",
-      action: "Use Wallet for the test user, verify in Deposit claims and Withdrawal requests, then load Sign-offs.",
+      action: "Use Wallet for the test user, verify in Incoming transfers and Withdrawal requests, then load Sign-offs.",
       status: "warning",
       target: "payments",
       ctaLabel: "Load Payment Queues",

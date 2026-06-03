@@ -10,7 +10,11 @@ const processingMigration = readFileSync(
   "supabase/migrations/20260602023000_worldcup_deposit_claim_processing.sql",
   "utf8",
 );
-const migrations = `${migration}\n${processingMigration}`;
+const senderWalletMigration = readFileSync(
+  "supabase/migrations/20260603083000_worldcup_manual_usdt_incoming_transfers.sql",
+  "utf8",
+);
+const migrations = `${migration}\n${processingMigration}\n${senderWalletMigration}`;
 const adminRoute = readFileSync("src/app/api/admin/deposit-claims/route.ts", "utf8");
 const userClaimRoute = readFileSync("src/app/api/deposits/claims/route.ts", "utf8");
 const depositsHelper = readFileSync("src/lib/deposits.ts", "utf8");
@@ -25,14 +29,35 @@ describe("shared deposit claim migration", () => {
     assert.match(migration, /address text not null/);
     assert.match(migration, /tx_hash text not null/);
     assert.match(migration, /unique \(network, tx_hash\)/);
+    assert.match(senderWalletMigration, /add column if not exists sender_wallet_address text/);
+    assert.match(senderWalletMigration, /usdt_sender_wallet_address text/);
+    assert.match(senderWalletMigration, /usdt_sender_wallet_network text/);
+    assert.match(senderWalletMigration, /worldcup_referral_profiles_usdt_sender_wallet_idx/);
   });
 
   it("shows users the exact receive wallet tied to each submitted claim", () => {
-    assert.match(userClaimRoute, /select\("id,network,address,amount,currency,tx_hash,status,admin_note,created_at,credited_at"\)/);
+    assert.match(userClaimRoute, /select\("id,network,address,sender_wallet_address,amount,currency,tx_hash,status,admin_note,created_at,credited_at"\)/);
     assert.match(userClaimRoute, /address: row\.address/);
+    assert.match(userClaimRoute, /senderWalletAddress: row\.sender_wallet_address/);
     assert.match(walletScreen, /type DepositClaim = \{[\s\S]*?address: string;/);
+    assert.match(walletScreen, /senderWalletAddress: string \| null;/);
     assert.match(walletScreen, /getDepositExplorerAddressUrl\(claim\.network, claim\.address\)/);
     assert.match(walletScreen, /View receive wallet/);
+  });
+
+  it("requires and saves the sender wallet used for manual incoming transfers", () => {
+    assert.match(userClaimRoute, /normalizeDepositAddress/);
+    assert.match(userClaimRoute, /requireString\(body\.senderWalletAddress, "Sending wallet address"/);
+    assert.match(userClaimRoute, /Sending wallet address must match the selected network/);
+    assert.match(userClaimRoute, /usdt_sender_wallet_address: senderWalletAddress/);
+    assert.match(userClaimRoute, /usdt_sender_wallet_network: network/);
+    assert.match(userClaimRoute, /sender_wallet_address: senderWalletAddress/);
+    assert.match(walletScreen, /const \[claimSenderWalletAddress, setClaimSenderWalletAddress\]/);
+    assert.match(walletScreen, /Sending wallet address/);
+    assert.match(walletScreen, /Saved to your account for manual ticket\/payment matching/);
+    assert.match(walletScreen, /senderWalletAddress,/);
+    assert.match(walletScreen, /!claimSenderWalletAddress/);
+    assert.match(walletScreen, /View sending wallet/);
   });
 
   it("keeps claims owner-readable and admin/server writable only", () => {
@@ -67,6 +92,7 @@ describe("shared deposit claim migration", () => {
     assert.match(adminRoute, /userId: reservedRow\.user_id/);
     assert.match(adminRoute, /network: reservedRow\.network/);
     assert.match(adminRoute, /address: reservedRow\.address/);
+    assert.match(adminRoute, /senderWalletAddress: reservedRow\.sender_wallet_address/);
     assert.match(adminRoute, /txHash: reservedRow\.tx_hash/);
     assert.match(adminRoute, /currency: reservedRow\.currency/);
     assert.match(adminRoute, /creditedBy: actor/);
@@ -75,6 +101,9 @@ describe("shared deposit claim migration", () => {
     assert.match(adminConsole, /Claim ID: \{claim\.id\}/);
     assert.match(adminConsole, /Credit requires an admin note for the audit trail/);
     assert.match(adminConsole, /Require KuCoin match for launch evidence/);
+    assert.match(adminConsole, /receive-wallet match/);
+    assert.match(adminConsole, /self-reported sender wallet/);
+    assert.match(adminConsole, /cross-check it against the public transaction before crediting/);
     assert.match(adminConsole, /Run Verify KuCoin first/);
     assert.match(adminConsole, /Manual non-launch credit is allowed/);
     assert.match(adminConsole, /requireKucoinMatch: claim\.status === "submitted"/);
@@ -83,6 +112,17 @@ describe("shared deposit claim migration", () => {
     assert.match(adminConsole, /adminNote: draft\?\.note/);
     assert.match(adminConsole, /amount: action === "credit" \? draft\?\.amount/);
     assert.match(adminConsole, /requireKucoinMatch:[\s\S]*action === "credit" \? draft\?\.requireKucoinMatch === true/);
+  });
+
+  it("shows incoming transfers with sender wallet and account role in admin", () => {
+    assert.match(adminRoute, /worldcup_agents/);
+    assert.match(adminRoute, /accountRole/);
+    assert.match(adminConsole, /Incoming transfers/);
+    assert.match(adminConsole, /Manual USDT payment history with sender wallet, amount, and agent\/user status/);
+    assert.match(adminConsole, /Incoming from: \{claim\.senderWalletAddress\}/);
+    assert.match(adminConsole, /WorldCup receive wallet: \{claim\.address\}/);
+    assert.match(adminConsole, /claim\.accountRole === "agent" \? "Agent" : "User"/);
+    assert.match(adminConsole, /No sender wallet captured on this older claim/);
   });
 
   it("lets admins verify shared-wallet claims against KuCoin before crediting", () => {
@@ -95,7 +135,8 @@ describe("shared deposit claim migration", () => {
     assert.match(adminRoute, /status: "unavailable"/);
     assert.match(adminRoute, /No matching successful KuCoin deposit was found for this transaction hash and credit amount/);
     assert.match(adminConsole, /Verify KuCoin/);
-    assert.match(adminConsole, /KuCoin matched/);
+    assert.match(adminConsole, /KuCoin confirmed/);
+    assert.match(adminConsole, /Sender wallet is self-reported/);
     assert.match(adminConsole, /Verify manually in KuCoin/);
   });
 

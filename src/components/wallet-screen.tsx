@@ -48,6 +48,7 @@ type DepositClaim = {
   id: string;
   network: string;
   address: string;
+  senderWalletAddress: string | null;
   amount: string;
   currency: string;
   txHash: string;
@@ -92,6 +93,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [depositClaims, setDepositClaims] = useState<DepositClaim[]>([]);
   const [claimNetwork, setClaimNetwork] = useState("trc20");
   const [claimAmount, setClaimAmount] = useState("");
+  const [claimSenderWalletAddress, setClaimSenderWalletAddress] = useState("");
   const [claimTxHash, setClaimTxHash] = useState("");
   const [withdrawals, setWithdrawals] = useState<WithdrawalRequestRow[]>([]);
   const [withdrawalNetwork, setWithdrawalNetwork] = useState("trc20");
@@ -155,6 +157,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         setDepositsConfigured(null);
         setSharedDepositAddresses(false);
         setDepositClaims([]);
+        setClaimSenderWalletAddress("");
         setWithdrawals([]);
         setResponsiblePlay(null);
         setAgent(null);
@@ -179,14 +182,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
           fetch("/api/agent/me", { headers: { Authorization: `Bearer ${token}` } }),
         ]);
 
-        const me = (await meResponse.json()) as Partial<MyAccountStatus>;
-        setStatus({
-          walletBalance: me.walletBalance ?? "0.00",
-          ticketsAvailable: me.ticketsAvailable ?? 0,
-          ticketsAssigned: me.ticketsAssigned ?? 0,
-          ticketPriceAmount: me.ticketPriceAmount ?? "0",
-          paidActionGates: me.paidActionGates,
-        });
+        applyAccountStatus((await meResponse.json()) as Partial<MyAccountStatus>);
 
         if (addressResponse.ok) {
           const data = (await addressResponse.json()) as {
@@ -233,16 +229,29 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   function refreshStatus(token: string) {
     fetch("/api/referrals/me", { headers: { Authorization: `Bearer ${token}` } })
       .then((response) => response.json())
-      .then((me: Partial<MyAccountStatus>) =>
-        setStatus({
-          walletBalance: me.walletBalance ?? "0.00",
-          ticketsAvailable: me.ticketsAvailable ?? 0,
-          ticketsAssigned: me.ticketsAssigned ?? 0,
-          ticketPriceAmount: me.ticketPriceAmount ?? "0",
-          paidActionGates: me.paidActionGates,
-        }),
-      )
+      .then((me: Partial<MyAccountStatus>) => applyAccountStatus(me))
       .catch(() => undefined);
+  }
+
+  function applyAccountStatus(me: Partial<MyAccountStatus>) {
+    setStatus({
+      walletBalance: me.walletBalance ?? "0.00",
+      ticketsAvailable: me.ticketsAvailable ?? 0,
+      ticketsAssigned: me.ticketsAssigned ?? 0,
+      ticketPriceAmount: me.ticketPriceAmount ?? "0",
+      usdtSenderWalletAddress: me.usdtSenderWalletAddress ?? null,
+      usdtSenderWalletNetwork: me.usdtSenderWalletNetwork ?? null,
+      usdtSenderWalletUpdatedAt: me.usdtSenderWalletUpdatedAt ?? null,
+      paidActionGates: me.paidActionGates,
+    });
+
+    if (me.usdtSenderWalletAddress) {
+      setClaimSenderWalletAddress(me.usdtSenderWalletAddress);
+    }
+
+    if (me.usdtSenderWalletNetwork === "trc20" || me.usdtSenderWalletNetwork === "erc20") {
+      setClaimNetwork(me.usdtSenderWalletNetwork);
+    }
   }
 
   function refreshAgent(token: string) {
@@ -400,6 +409,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
 
     const amount = claimAmount.trim();
     const txHash = claimTxHash.trim();
+    const senderWalletAddress = claimSenderWalletAddress.trim();
 
     setError(null);
     setMessage(null);
@@ -413,6 +423,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         body: JSON.stringify({
           network: claimNetwork,
           amount,
+          senderWalletAddress,
           txHash,
         }),
       });
@@ -425,10 +436,13 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
 
       if (result.claim) {
         setDepositClaims((current) => [result.claim!, ...current]);
+        if (result.claim.senderWalletAddress) {
+          setClaimSenderWalletAddress(result.claim.senderWalletAddress);
+        }
       }
       setClaimAmount("");
       setClaimTxHash("");
-      setMessage("Deposit claim submitted.");
+      setMessage("Deposit claim submitted. Sending wallet saved to your account.");
     });
   }
 
@@ -746,8 +760,9 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               </div>
               {sharedDepositAddresses ? (
                 <div className="message">
-                  Shared receive wallet. Keep your transaction hash after sending so the deposit
-                  can be matched to your account. Deposit claims are tied to {depositClaimAccountLabel}.
+                  Shared receive wallet. Save the wallet address you send from and keep your
+                  transaction hash so the deposit can be matched to your account. Deposit claims
+                  are tied to {depositClaimAccountLabel}.
                 </div>
               ) : null}
               {depositPolicyPause ? (
@@ -814,8 +829,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <div>
                       <h3 className="panel-title">Submit transaction</h3>
                       <p className="panel-subtitle">
-                        Paste the transaction hash after sending USDT. Admins see this claim with your
-                        account email or user ID before crediting your balance.
+                        Paste the wallet you sent from and the transaction hash after sending USDT.
+                        Admins use both before crediting your balance.
                       </p>
                     </div>
                     <Send size={18} color="var(--green)" />
@@ -850,6 +865,18 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       />
                     </div>
                     <div className="field full-width">
+                      <label htmlFor="claim-sender-wallet">Sending wallet address</label>
+                      <input
+                        id="claim-sender-wallet"
+                        value={claimSenderWalletAddress}
+                        onChange={(event) => setClaimSenderWalletAddress(event.target.value)}
+                        placeholder={claimNetwork === "trc20" ? "TRC20 wallet starts with T" : "ERC20 wallet starts with 0x"}
+                      />
+                      <div className="field-note">
+                        Saved to your account for manual ticket/payment matching after USDT is received.
+                      </div>
+                    </div>
+                    <div className="field full-width">
                       <label htmlFor="claim-tx">Transaction hash</label>
                       <input
                         id="claim-tx"
@@ -862,6 +889,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       className="button secondary"
                       disabled={
                         !claimAmount ||
+                        !claimSenderWalletAddress ||
                         !claimTxHash ||
                         Boolean(depositRestriction || depositPolicyPause) ||
                         isPending
@@ -878,6 +906,9 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       {depositClaims.map((claim) => {
                         const explorerUrl = getDepositExplorerTxUrl(claim.network, claim.txHash);
                         const receiveWalletUrl = getDepositExplorerAddressUrl(claim.network, claim.address);
+                        const senderWalletUrl = claim.senderWalletAddress
+                          ? getDepositExplorerAddressUrl(claim.network, claim.senderWalletAddress)
+                          : null;
 
                         return (
                           <div className="deposit-claim-row" key={claim.id}>
@@ -885,6 +916,23 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                               <strong>
                                 {formatLedgerAmount(claim.amount)} {claim.currency} · {claim.network.toUpperCase()}
                               </strong>
+                              {claim.senderWalletAddress ? (
+                                <>
+                                  <span>Sent from</span>
+                                  <code>{claim.senderWalletAddress}</code>
+                                  {senderWalletUrl ? (
+                                    <a
+                                      className="deposit-explorer-link"
+                                      href={senderWalletUrl}
+                                      rel="noreferrer"
+                                      target="_blank"
+                                    >
+                                      View sending wallet
+                                    </a>
+                                  ) : null}
+                                </>
+                              ) : null}
+                              <span>Received by WorldCup</span>
                               <code>{claim.address}</code>
                               {receiveWalletUrl ? (
                                 <a
