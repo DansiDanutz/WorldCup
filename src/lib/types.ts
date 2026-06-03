@@ -112,6 +112,10 @@ export type AdminAccountRow = {
   displayName: string;
   email: string | null;
   referralCode: string;
+  accountRole: "agent" | "user";
+  usdtSenderWalletAddress: string | null;
+  usdtSenderWalletNetwork: string | null;
+  usdtSenderWalletUpdatedAt: string | null;
   walletBalance: string;
   ticketsAssigned: number;
   ticketsAvailable: number;
@@ -124,14 +128,17 @@ export type AdminDepositClaimRow = {
   displayName: string;
   network: string;
   address: string;
+  senderWalletAddress: string | null;
   amount: string;
   currency: string;
   txHash: string;
   status: string;
+  accountRole: "agent" | "user";
   adminNote: string | null;
   createdAt: string;
   creditedAt: string | null;
   creditedBy: string | null;
+  worldcupDepositId: string | null;
 };
 
 export type WithdrawalRequestRow = {
@@ -176,6 +183,9 @@ export type MyAccountStatus = {
   ticketsAssigned: number;
   ticketsAvailable: number;
   ticketPriceAmount: string;
+  usdtSenderWalletAddress?: string | null;
+  usdtSenderWalletNetwork?: string | null;
+  usdtSenderWalletUpdatedAt?: string | null;
   paidActionGates?: PaidActionGates;
 };
 

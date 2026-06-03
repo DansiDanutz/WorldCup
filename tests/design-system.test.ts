@@ -249,8 +249,10 @@ describe("WorldCup design system integration", () => {
     assert.match(walletScreen, /Sign in with Google to prepare your wallet/);
     assert.match(walletScreen, /Paid actions open after launch approvals are complete/);
     assert.match(walletScreen, /depositClaimAccountLabel/);
-    assert.match(walletScreen, /Deposit claims are tied to/);
-    assert.match(walletScreen, /account email or user ID before crediting your balance/);
+    assert.match(walletScreen, /Deposit claims\s+are tied to/);
+    assert.match(walletScreen, /Save the wallet address you send from/);
+    assert.match(walletScreen, /Admins use both before crediting your balance/);
+    assert.match(walletScreen, /Sending wallet address/);
     assert.doesNotMatch(walletScreen, /Operator policy is configured/);
     assert.match(walletScreen, /Boolean\(depositRestriction \|\| depositPolicyPause\)/);
     assert.match(walletScreen, /Boolean\(ticketRestriction \|\| ticketPolicyPause\)/);

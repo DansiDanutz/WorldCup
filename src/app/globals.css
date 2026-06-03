@@ -1902,9 +1902,39 @@ svg {
 }
 
 .admin-referral-row strong {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
   overflow: clip;
   text-overflow: ellipsis;
+}
+
+.account-role-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 3px 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 850;
+  line-height: 1;
+  text-transform: uppercase;
   white-space: nowrap;
+}
+
+.account-role-badge.agent {
+  border-color: #cda957;
+  color: #8a6419;
+  background: #fff4d2;
+}
+
+.account-role-badge.user {
+  border-color: #a8cdbc;
+  color: var(--green);
+  background: var(--green-soft);
 }
 
 .admin-referral-row > div:last-child {

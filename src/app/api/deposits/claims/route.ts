@@ -4,6 +4,7 @@ import {
   DEPOSIT_CLAIM_LIMIT_WINDOW_HOURS,
   getConfiguredMainDepositAddress,
   getDepositClaimLimitViolation,
+  normalizeDepositAddress,
   normalizeDepositTxHash,
   normalizeNetwork,
   parseDepositAmount,
@@ -33,6 +34,7 @@ type DepositClaimRow = {
   id: string;
   network: string;
   address: string;
+  sender_wallet_address: string | null;
   amount: string;
   currency: string;
   tx_hash: string;
@@ -89,7 +91,7 @@ export async function GET(request: Request) {
 
   const claims = await auth.supabase
     .from("worldcup_deposit_claims")
-    .select("id,network,address,amount,currency,tx_hash,status,admin_note,created_at,credited_at")
+    .select("id,network,address,sender_wallet_address,amount,currency,tx_hash,status,admin_note,created_at,credited_at")
     .eq("user_id", auth.user.id)
     .order("created_at", { ascending: false })
     .limit(20);
@@ -146,6 +148,7 @@ export async function POST(request: Request) {
   let network;
   let amount: number | null;
   let txHash: string | null;
+  let senderWalletAddress: string | null = null;
 
   try {
     const body = requireObject(await request.json());
@@ -165,6 +168,14 @@ export async function POST(request: Request) {
     );
     if (!txHash) {
       return jsonError("Transaction hash does not match the selected network.", 400);
+    }
+
+    senderWalletAddress = normalizeDepositAddress(
+      network,
+      requireString(body.senderWalletAddress, "Sending wallet address", { min: 20, max: 128 }),
+    );
+    if (!senderWalletAddress) {
+      return jsonError("Sending wallet address must match the selected network.", 400);
     }
   } catch (error) {
     if (error instanceof ValidationError) {
@@ -215,6 +226,21 @@ export async function POST(request: Request) {
   }
 
   const profile = await getOrCreateReferralProfile(auth.supabase, auth.user);
+  const now = new Date().toISOString();
+  const senderWalletUpdate = await auth.supabase
+    .from("worldcup_referral_profiles")
+    .update({
+      usdt_sender_wallet_address: senderWalletAddress,
+      usdt_sender_wallet_network: network,
+      usdt_sender_wallet_updated_at: now,
+      updated_at: now,
+    })
+    .eq("user_id", auth.user.id);
+
+  if (senderWalletUpdate.error) {
+    return jsonError("Could not save sending wallet address.", 500);
+  }
+
   const insert = await auth.supabase
     .from("worldcup_deposit_claims")
     .insert({
@@ -224,11 +250,12 @@ export async function POST(request: Request) {
       display_name: profile.display_name ?? getUserDisplayName(auth.user),
       network,
       address: address.address,
+      sender_wallet_address: senderWalletAddress,
       amount,
       currency: "USDT",
       tx_hash: txHash,
     })
-    .select("id,network,address,amount,currency,tx_hash,status,admin_note,created_at,credited_at")
+    .select("id,network,address,sender_wallet_address,amount,currency,tx_hash,status,admin_note,created_at,credited_at")
     .single();
 
   if (insert.error) {
@@ -247,6 +274,7 @@ function formatClaim(row: DepositClaimRow) {
     id: row.id,
     network: row.network,
     address: row.address,
+    senderWalletAddress: row.sender_wallet_address,
     amount: row.amount,
     currency: row.currency,
     txHash: row.tx_hash,
