@@ -183,7 +183,7 @@ export async function POST(request: Request) {
     .single();
 
   if (result.error) {
-    return jsonError(result.error.message, 500);
+    return jsonError("Could not save the launch sign-off.", 500);
   }
 
   const signoffs = await attachLaunchSignoffEvidenceStatuses(

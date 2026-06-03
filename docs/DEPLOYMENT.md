@@ -66,6 +66,8 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY
 SUPABASE_SERVICE_ROLE_KEY
 ADMIN_RESULT_SECRET
 CRON_SECRET
+OWNER_ADMIN_EMAIL
+PAID_ACTION_LAUNCH_TEST_BYPASS
 WORLDCUP_ALLOWED_COUNTRIES
 WORLDCUP_BLOCKED_COUNTRIES
 WORLDCUP_MAX_DEPOSIT_CLAIM_AMOUNT_USDT
@@ -84,6 +86,18 @@ Required immediately:
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `ADMIN_RESULT_SECRET`
 - `CRON_SECRET`
+
+Optional admin controls:
+
+- `OWNER_ADMIN_EMAIL`
+- `PAID_ACTION_LAUNCH_TEST_BYPASS`
+
+`OWNER_ADMIN_EMAIL` rotates the built-in owner admin account. Set it to
+`none` or `disabled` to remove the built-in owner from the admin allowlist
+entirely; break-glass access through `ADMIN_RESULT_SECRET` still works.
+`PAID_ACTION_LAUNCH_TEST_BYPASS` lets allowlisted admins bypass paid-action
+launch gates and geo checks only during controlled pre-launch evidence tests.
+Leave it empty outside those test windows.
 
 Optional until a real result provider is connected:
 
@@ -125,9 +139,9 @@ items are configured: deposits require a country policy plus a deposit cap,
 withdrawal requests require a country policy plus a withdrawal cap, and ticket
 purchases / entry locking require a country policy.
 Public paid actions also stay paused until all required launch sign-offs are
-completed. Allowlisted admins can still use the paid-action APIs before public
-launch to run the real TRC20 deposit, ERC20 deposit, and withdrawal payout
-evidence tests.
+completed. Allowlisted admins can use the paid-action APIs before public launch
+only when `PAID_ACTION_LAUNCH_TEST_BYPASS` is explicitly enabled for controlled
+TRC20 deposit, ERC20 deposit, and withdrawal payout evidence tests.
 
 Responsible-play self-exclusion and entry-ticket limits are stored in
 `worldcup_responsible_play_settings` and do not require extra environment

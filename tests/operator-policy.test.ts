@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { describe, it } from "node:test";
+import { afterEach, describe, it } from "node:test";
 
 import {
   formatOperatorPolicy,
@@ -35,6 +35,16 @@ const ticketPurchaseRoute = readFileSync("src/app/api/tickets/purchase/route.ts"
 const entryRoute = readFileSync("src/app/api/entries/route.ts", "utf8");
 const withdrawalRoute = readFileSync("src/app/api/withdrawals/route.ts", "utf8");
 const referralsMeRoute = readFileSync("src/app/api/referrals/me/route.ts", "utf8");
+
+const originalPaidActionBypass = process.env.PAID_ACTION_LAUNCH_TEST_BYPASS;
+
+afterEach(() => {
+  if (originalPaidActionBypass === undefined) {
+    delete process.env.PAID_ACTION_LAUNCH_TEST_BYPASS;
+  } else {
+    process.env.PAID_ACTION_LAUNCH_TEST_BYPASS = originalPaidActionBypass;
+  }
+});
 
 describe("operator policy", () => {
   it("creates a private singleton operator policy table", () => {
@@ -204,6 +214,13 @@ describe("operator policy", () => {
   });
 
   it("keeps public paid actions paused on launch sign-off gaps while allowing admin evidence tests", async () => {
+    // The admin bypass is OFF by default so it can never silently skip the
+    // launch gate or geo checks in production.
+    delete process.env.PAID_ACTION_LAUNCH_TEST_BYPASS;
+    assert.equal(isPaidActionLaunchTestAdmin("semebitcoin@gmail.com"), false);
+
+    // It activates only for allowlisted admins when explicitly enabled.
+    process.env.PAID_ACTION_LAUNCH_TEST_BYPASS = "1";
     assert.equal(isPaidActionLaunchTestAdmin("semebitcoin@gmail.com"), true);
     assert.equal(isPaidActionLaunchTestAdmin("player@example.com"), false);
 

@@ -35,8 +35,30 @@ export type PaidActionLaunchEvidenceProbe = {
 const PUBLIC_LAUNCH_SIGNOFF_MESSAGE =
   "Paid actions are paused until launch sign-offs are completed by an operator.";
 
-export function isPaidActionLaunchTestAdmin(userEmail?: string | null): boolean {
-  return isAllowlistedAdminEmail(userEmail);
+type GateEnv = Record<string, string | undefined>;
+
+/**
+ * Whether the admin paid-action launch-test bypass is enabled. This bypass lets
+ * allowlisted operators exercise real paid flows (deposit/ticket/entry/
+ * withdrawal) BEFORE the public launch gate and geo checks open, so it must
+ * never be on silently in production. It is OFF unless
+ * PAID_ACTION_LAUNCH_TEST_BYPASS is explicitly set. Enable it only for a
+ * controlled pre-launch test window, then turn it off before public launch.
+ */
+export function isPaidActionLaunchTestBypassEnabled(env: GateEnv = process.env): boolean {
+  const value = (env.PAID_ACTION_LAUNCH_TEST_BYPASS ?? "").trim().toLowerCase();
+  return value === "1" || value === "true" || value === "yes" || value === "on";
+}
+
+export function isPaidActionLaunchTestAdmin(
+  userEmail?: string | null,
+  env: GateEnv = process.env,
+): boolean {
+  if (!isPaidActionLaunchTestBypassEnabled(env)) {
+    return false;
+  }
+
+  return isAllowlistedAdminEmail(userEmail, env);
 }
 
 export async function getLaunchSignoffPaidActionGate(

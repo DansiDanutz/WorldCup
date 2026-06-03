@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     .order("accepted_at", { ascending: false });
 
   if (referralsResult.error) {
-    return jsonError(referralsResult.error.message, 500);
+    return jsonError("Could not load the referral report.", 500);
   }
 
   const referrals = (referralsResult.data ?? []) as ReferralRecord[];
@@ -62,7 +62,7 @@ export async function POST(request: Request) {
 
   for (const result of [entriesResult, profilesResult, leaderboardResult]) {
     if (result.error) {
-      return jsonError(result.error.message, 500);
+      return jsonError("Could not load the referral report.", 500);
     }
   }
 

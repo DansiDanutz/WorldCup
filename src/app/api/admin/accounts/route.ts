@@ -48,7 +48,7 @@ export async function POST(request: Request) {
 
   for (const result of [profiles, transactions, tickets]) {
     if (result.error) {
-      return jsonError(result.error.message, 500);
+      return jsonError("Could not load accounts.", 500);
     }
   }
 
