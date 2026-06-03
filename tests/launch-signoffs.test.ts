@@ -241,8 +241,9 @@ describe("launch sign-offs", () => {
     assert.match(adminConsole, /Deposit claim credited\. Production readiness and launch sign-offs refreshed\./);
     assert.match(adminConsole, /Withdrawal marked as paid\. Production readiness and launch sign-offs refreshed\./);
     assert.match(adminConsole, /Real USDT deposit launch evidence/);
-    assert.match(adminConsole, /server-side KuCoin match/);
-    assert.match(adminConsole, /Manual non-launch credit will not complete these sign-offs/);
+    assert.match(adminConsole, /server-side KuCoin\s+receive-wallet match/);
+    assert.match(adminConsole, /self-reported sender wallet/);
+    assert.match(adminConsole, /Manual non-launch credit will\s+not complete these sign-offs/);
     assert.match(adminConsole, /Real USDT withdrawal launch evidence/);
     assert.match(adminConsole, /send the USDT payout manually/);
     assert.match(adminConsole, /Keep Count this paid payout as real launch evidence checked/);

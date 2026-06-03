@@ -101,6 +101,9 @@ describe("shared deposit claim migration", () => {
     assert.match(adminConsole, /Claim ID: \{claim\.id\}/);
     assert.match(adminConsole, /Credit requires an admin note for the audit trail/);
     assert.match(adminConsole, /Require KuCoin match for launch evidence/);
+    assert.match(adminConsole, /receive-wallet match/);
+    assert.match(adminConsole, /self-reported sender wallet/);
+    assert.match(adminConsole, /cross-check it against the public transaction before crediting/);
     assert.match(adminConsole, /Run Verify KuCoin first/);
     assert.match(adminConsole, /Manual non-launch credit is allowed/);
     assert.match(adminConsole, /requireKucoinMatch: claim\.status === "submitted"/);
@@ -132,7 +135,8 @@ describe("shared deposit claim migration", () => {
     assert.match(adminRoute, /status: "unavailable"/);
     assert.match(adminRoute, /No matching successful KuCoin deposit was found for this transaction hash and credit amount/);
     assert.match(adminConsole, /Verify KuCoin/);
-    assert.match(adminConsole, /KuCoin matched/);
+    assert.match(adminConsole, /KuCoin confirmed/);
+    assert.match(adminConsole, /Sender wallet is self-reported/);
     assert.match(adminConsole, /Verify manually in KuCoin/);
   });
 

@@ -915,7 +915,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               depositClaimReviewDrafts[claim.id]?.note ||
               `KuCoin verified ${claim.network.toUpperCase()} tx ${verification.walletTxId ?? claim.txHash}`,
           });
-          setMessage("KuCoin deposit matched. Review the amount, then credit.");
+          setMessage("KuCoin receive-wallet deposit matched. Cross-check sender wallet, then credit.");
         } else {
           setMessage(
             verification.status === "unavailable"
@@ -2248,10 +2248,13 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               <div className="launch-evidence-checklist" aria-label="Real USDT deposit launch checklist">
                 <strong>Real USDT deposit launch evidence</strong>
                 <span>
-                  TRC20 and ERC20 each need one credited USDT claim linked to a server-side KuCoin match.
+                  TRC20 and ERC20 each need one credited USDT claim linked to a server-side KuCoin
+                  receive-wallet match.
                 </span>
                 <span>
-                  Keep Require KuCoin match checked, run Verify KuCoin, then Credit. Manual non-launch credit will not complete these sign-offs.
+                  Keep Require KuCoin match checked, run Verify KuCoin, cross-check the
+                  self-reported sender wallet on-chain, then Credit. Manual non-launch credit will
+                  not complete these sign-offs.
                 </span>
               </div>
               {depositClaims.length > 0 ? (
@@ -2329,9 +2332,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                           {verification ? (
                             <span className={`field-note ${verification.status === "matched" ? "success-note" : ""}`}>
                               {verification.status === "matched"
-                                ? `KuCoin matched ${formatLedgerAmount(verification.amount ?? claim.amount)} ${claim.currency}${
+                                ? `KuCoin confirmed ${formatLedgerAmount(verification.amount ?? claim.amount)} ${claim.currency} reached the shared receive wallet${
                                     verification.amountMatchesClaim === false ? " (different from claimed amount)" : ""
-                                  }.`
+                                  }. Sender wallet is self-reported; cross-check it against the public transaction before crediting.`
                                 : verification.message ?? "KuCoin deposit was not found yet."}
                             </span>
                           ) : null}
@@ -2388,8 +2391,8 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                           ) : null}
                           {claim.status === "submitted" && requiresKucoinMatch && verification?.status !== "matched" ? (
                             <span className="field-note">
-                              Run Verify KuCoin first. Manual credit without a server-side KuCoin match
-                              will not satisfy the TRC20/ERC20 launch sign-off.
+                              Run Verify KuCoin first. Manual credit without a server-side receive-wallet
+                              match will not satisfy the TRC20/ERC20 launch sign-off.
                             </span>
                           ) : null}
                           {claim.status === "submitted" && !requiresKucoinMatch ? (
