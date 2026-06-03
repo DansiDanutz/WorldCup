@@ -562,6 +562,7 @@ async function checkApiRejection(path, init, expectedText) {
 
 async function checkSecurityHeaders(response) {
   const requiredHeaders = [
+    "content-security-policy",
     "permissions-policy",
     "referrer-policy",
     "strict-transport-security",
