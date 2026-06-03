@@ -1,4 +1,56 @@
 import { createHmac } from "node:crypto";
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
+const envFiles = [
+  process.env.SMOKE_ENV_FILE,
+  ".env.local",
+  "/Users/davidai/Documents/WorldCup/.env.local",
+].filter(Boolean);
+
+function loadEnvFile(path) {
+  if (!existsSync(path)) {
+    return false;
+  }
+
+  const text = readFileSync(path, "utf8");
+
+  for (const line of text.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) {
+      continue;
+    }
+
+    const separator = trimmed.indexOf("=");
+    if (separator === -1) {
+      continue;
+    }
+
+    const key = trimmed.slice(0, separator).trim();
+    let value = trimmed.slice(separator + 1).trim();
+
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+
+    if (key && process.env[key] === undefined) {
+      process.env[key] = value;
+    }
+  }
+
+  return true;
+}
+
+function loadSmokeEnv() {
+  for (const path of envFiles) {
+    loadEnvFile(resolve(path));
+  }
+}
+
+loadSmokeEnv();
 
 const DEFAULT_BASE_URL = "https://worldcup26.world";
 const DEFAULT_SUPABASE_URL = "https://lxhjfdxowpxzrybxdasi.supabase.co";
