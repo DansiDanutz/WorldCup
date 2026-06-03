@@ -81,7 +81,7 @@ export function createWalletTransferPostHandler(deps: WalletTransferDeps) {
       .in("user_id", [fromUserId, toUserId]);
 
     if (profiles.error) {
-      return jsonError(profiles.error.message, 500);
+      return jsonError("Could not verify the accounts.", 500);
     }
 
     if ((profiles.data ?? []).length !== 2) {

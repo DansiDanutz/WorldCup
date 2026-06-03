@@ -55,7 +55,7 @@ export async function POST(request: Request) {
   const teams = await supabase.from("worldcup_teams").select("id").in("id", teamIds);
 
   if (teams.error) {
-    return jsonError(teams.error.message, 500);
+    return jsonError("Could not load teams.", 500);
   }
 
   const knownIds = new Set((teams.data ?? []).map((team) => team.id));
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
   const result = await supabase.from("worldcup_matches").update(update).eq("id", matchId).select("id").single();
 
   if (result.error) {
-    return jsonError(result.error.message, 500);
+    return jsonError("Could not assign match teams.", 500);
   }
 
   return NextResponse.json({ matchId: result.data.id });

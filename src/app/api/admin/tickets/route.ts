@@ -116,7 +116,7 @@ export async function POST(request: Request) {
   const insertResult = await supabase.from("worldcup_tickets").insert(rows).select("id");
 
   if (insertResult.error) {
-    return jsonError(insertResult.error.message, 500);
+    return jsonError("Could not assign tickets.", 500);
   }
 
   return NextResponse.json({

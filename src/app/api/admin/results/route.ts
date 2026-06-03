@@ -116,7 +116,7 @@ export async function POST(request: Request) {
     .single();
 
   if (updateResult.error) {
-    return jsonError(updateResult.error.message, 500);
+    return jsonError("Could not save the match result.", 500);
   }
 
   const applyResult = await supabase.rpc("worldcup_apply_match_points", {
@@ -124,7 +124,7 @@ export async function POST(request: Request) {
   });
 
   if (applyResult.error) {
-    return jsonError(applyResult.error.message, 500);
+    return jsonError("Could not apply match points.", 500);
   }
 
   // Progress the bracket if this result resolves any knockout participants.
