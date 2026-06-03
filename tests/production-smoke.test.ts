@@ -27,6 +27,7 @@ describe("production smoke coverage", () => {
 
   it("runs the complete production preflight from one script", () => {
     assert.match(productionPreflight, /loadPreflightEnv/);
+    assert.match(productionPreflight, /loadedEnvFiles/);
     assert.match(productionPreflight, /scripts\/vercel-domain-guard\.mjs/);
     assert.match(productionPreflight, /scripts\/production-smoke\.mjs/);
     assert.match(productionPreflight, /--auth-flow-probe/);
@@ -183,7 +184,7 @@ describe("production smoke coverage", () => {
     assert.match(productionSmoke, /\.admin-referral-row/);
     assert.match(productionSmoke, /overflow-wrap:anywhere/);
     assert.match(productionSmoke, /@media \(max-width:760px\)/);
-    assert.match(productionSmoke, /grid-template-columns:repeat\(auto-fit,minmax\(82px,1fr\)\)/);
+    assert.match(productionSmoke, /grid-template-columns:repeat\(auto-fit,minmax\(92px,1fr\)\)/);
     assert.match(productionSmoke, /grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
     assert.match(productionSmoke, /\/brand-mark\.svg/);
     assert.match(productionSmoke, /\/logo-lockup\.svg/);
