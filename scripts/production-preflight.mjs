@@ -52,13 +52,15 @@ function loadEnvFile(path) {
 }
 
 function loadPreflightEnv() {
+  const loadedEnvFiles = [];
+
   for (const path of envFiles) {
     if (loadEnvFile(resolve(path))) {
-      return path;
+      loadedEnvFiles.push(path);
     }
   }
 
-  return null;
+  return loadedEnvFiles;
 }
 
 function assert(condition, message) {
@@ -131,13 +133,17 @@ async function checkReadiness() {
 }
 
 async function main() {
-  const loadedEnvFile = loadPreflightEnv();
+  const loadedEnvFiles = loadPreflightEnv();
   const passMessage = strictLaunchReady
     ? "Production launch preflight passed."
     : "Production preflight passed.";
 
   console.log(`${strictLaunchReady ? "Production launch preflight" : "Production preflight"} for ${baseUrl}`);
-  console.log(`Env file: ${loadedEnvFile ?? "not loaded; using current process environment"}`);
+  console.log(
+    `Env files: ${
+      loadedEnvFiles.length > 0 ? loadedEnvFiles.join(", ") : "not loaded; using current process environment"
+    }`,
+  );
 
   await runNodeScript("Vercel domain guard", "scripts/vercel-domain-guard.mjs");
   await runNodeScript("Production smoke", "scripts/production-smoke.mjs");

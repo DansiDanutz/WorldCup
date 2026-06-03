@@ -214,7 +214,7 @@ async function checkPublicUiShell() {
     ".admin-referral-row",
     "overflow-wrap:anywhere",
     "@media (max-width:760px)",
-    "grid-template-columns:repeat(auto-fit,minmax(82px,1fr))",
+    "grid-template-columns:repeat(auto-fit,minmax(92px,1fr))",
     "@media (max-width:420px)",
     "grid-template-columns:repeat(3,minmax(0,1fr))",
     "width:100%",
