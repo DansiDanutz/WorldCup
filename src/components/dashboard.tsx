@@ -247,10 +247,14 @@ export function Dashboard({
   const publicTicketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
   const publicPaidActionsPaused = Boolean(publicDepositPolicyPause || publicTicketPolicyPause);
   const ticketsAvailable = myAccountStatus?.ticketsAvailable ?? 0;
+  const accountStatusLoaded = myAccountStatus !== null;
+  const hasEntryTicket = ticketsAvailable > 0;
+  const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket;
+  const entryTicketPurchasePause = needsEntryTicketPurchase ? publicTicketPolicyPause : null;
   const walletBalance = myAccountStatus?.walletBalance ?? 0;
   const ticketPriceAmount = myAccountStatus?.ticketPriceAmount ?? 0;
   const missingEntryTicket =
-    signedInWithGoogle && myAccountStatus !== null && selectedTeams.length === 3 && ticketsAvailable < 1;
+    signedInWithGoogle && accountStatusLoaded && selectedTeams.length === 3 && !hasEntryTicket;
   const entryLockBlocker = getEntryLockBlocker({
     consented,
     displayName,
@@ -1187,30 +1191,30 @@ export function Dashboard({
                   <div className="ticket-requirement-card__head">
                     <div>
                       <strong>
-                        {ticketsAvailable > 0
+                        {hasEntryTicket
                           ? "Ticket ready"
                           : signedInWithGoogle
                             ? "You need 1 entry ticket"
                             : "Ticket required after sign-in"}
                       </strong>
                       <span>
-                        {ticketsAvailable > 0
+                        {hasEntryTicket
                           ? `${ticketsAvailable} ticket${ticketsAvailable === 1 ? "" : "s"} available for locking entries.`
                           : "Pay the buy-in with USDT, or use Agent Call after paying an agent directly."}
                       </span>
                     </div>
                     <span className="ticket-status-pill">
-                      {ticketsAvailable > 0 ? `${ticketsAvailable} available` : "0 available"}
+                      {hasEntryTicket ? `${ticketsAvailable} available` : "0 available"}
                     </span>
                   </div>
-                  {ticketsAvailable > 0 ? (
+                  {hasEntryTicket ? (
                     <div className="ticket-ready-note">
                       <Check size={16} />
                       <span>
                         Buy-in is covered. Locking your entry will use 1 ticket from your account.
                       </span>
                     </div>
-                  ) : (
+                  ) : needsEntryTicketPurchase ? (
                     <>
                       <div className="ticket-option-grid">
                         <div>
@@ -1228,6 +1232,9 @@ export function Dashboard({
                           Buy with USDT
                         </Link>
                       </div>
+                      {entryTicketPurchasePause ? (
+                        <div className="message error">{entryTicketPurchasePause}</div>
+                      ) : null}
                     <div className="agent-call-box">
                       <div>
                         <strong>Agent Call</strong>
@@ -1267,6 +1274,11 @@ export function Dashboard({
                       {agentRequestError ? <div className="message error">{agentRequestError}</div> : null}
                     </div>
                     </>
+                  ) : (
+                    <div className="ticket-ready-note">
+                      <Ticket size={16} />
+                      <span>Sign in first. Your ticket options load only after your account is connected.</span>
+                    </div>
                   )}
                 </div>
               </div>
