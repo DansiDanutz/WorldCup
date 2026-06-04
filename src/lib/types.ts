@@ -165,6 +165,25 @@ export type AdminWithdrawalRequestRow = WithdrawalRequestRow & {
   payoutEvidenceReady: boolean;
 };
 
+export type WalletAgeVerification = {
+  status: "unverified" | "pending" | "verified" | "rejected";
+  note: string | null;
+  submittedAt: string | null;
+  verifiedAt: string | null;
+  contact: string;
+};
+
+export type AdminAgeVerificationRow = {
+  userId: string;
+  email: string | null;
+  displayName: string;
+  status: "unverified" | "pending" | "verified" | "rejected";
+  note: string | null;
+  submittedAt: string | null;
+  verifiedAt: string | null;
+  verifiedBy: string | null;
+};
+
 export type PaidActionGate = {
   allowed: boolean;
   missing: string[];

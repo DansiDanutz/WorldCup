@@ -2,7 +2,7 @@
 // CURRENT_TERMS_VERSION whenever the Terms or Privacy Policy change so users
 // must re-accept the current public rules before entering.
 
-export const CURRENT_TERMS_VERSION = "2026-06-02";
+export const CURRENT_TERMS_VERSION = "2026-06-04";
 export const MINIMUM_AGE = 18;
 
 export type ConsentRecord = {

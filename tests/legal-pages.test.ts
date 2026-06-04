@@ -19,7 +19,7 @@ describe("public legal pages", () => {
   });
 
   it("requires fresh consent for the current public terms version", () => {
-    assert.match(consentPolicy, /CURRENT_TERMS_VERSION = "2026-06-02"/);
+    assert.match(consentPolicy, /CURRENT_TERMS_VERSION = "2026-06-04"/);
   });
 
   it("keeps production smoke anchored to the published legal pages", () => {

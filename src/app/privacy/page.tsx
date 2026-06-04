@@ -11,8 +11,8 @@ export default function PrivacyPage() {
         <article className="panel" style={{ maxWidth: 760, margin: "0 auto" }}>
           <h1 className="panel-title">WorldCup26 Privacy Policy</h1>
           <p className="panel-subtitle">
-            Effective June 2, 2026. This policy explains what WorldCup26 collects and how
-            it is used to run accounts, entries, deposits, referrals, and prizes.
+            Effective June 4, 2026. This policy explains what WorldCup26 collects and how
+            it is used to run accounts, entries, deposits, referrals, prizes, and payouts.
           </p>
           <div className="rules-content">
             <div className="rule-block">
@@ -21,7 +21,19 @@ export default function PrivacyPage() {
                 WorldCup26 stores the information needed to operate the game: your Google account
                 email, display name, user ID, team picks, entries, referral relationships, consent
                 records, wallet ledger entries, deposit claims, saved USDT sender wallet addresses,
-                admin audit notes, and prize records.
+                age-verification status, admin audit notes, and prize records.
+              </p>
+            </div>
+            <div className="rule-block">
+              <h3>Age and identity verification</h3>
+              <p>
+                WorldCup26 is for adults only. If you request a withdrawal or win a prize, the
+                operator asks you to send government photo identification so staff can confirm you are
+                at least 18 years old before any payout. The operator reviews those documents to
+                confirm your age and retains them only as long as needed to evidence the check,
+                prevent fraud, and meet record-keeping obligations. The game database records only the
+                review outcome (pending, verified, or rejected), the review timestamp, and an admin
+                note; it does not publish your documents.
               </p>
             </div>
             <div className="rule-block">

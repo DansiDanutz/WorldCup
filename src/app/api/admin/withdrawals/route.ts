@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
+import { isAgeVerified, loadAgeVerification } from "@/lib/age-verification";
 import { enforceRateLimit, jsonError } from "@/lib/http";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import {
@@ -151,6 +152,23 @@ async function approveWithdrawal(
   }
 
   const row = reserved.data as WithdrawalRequestRow;
+
+  // Backstop: never debit/approve a payout for an account that is not
+  // age-verified (18+), even if the request predates verification. Release the
+  // reservation so the request stays actionable after the player verifies.
+  const ageVerification = await loadAgeVerification(supabase, row.user_id);
+  if ("error" in ageVerification) {
+    await releaseApprovedWithdrawal(supabase, withdrawalId, adminNote, actor);
+    return jsonError("Could not confirm the account's age verification status.", 500);
+  }
+  if (!isAgeVerified(ageVerification.verification.status)) {
+    await releaseApprovedWithdrawal(supabase, withdrawalId, adminNote, actor);
+    return jsonError(
+      "This account is not age-verified (18+). Confirm the player in Age verification before approving the payout.",
+      403,
+    );
+  }
+
   const note = `Withdrawal approved for ${row.network.toUpperCase()} ${row.address}. ${adminNote}`;
   const record = await supabase.rpc("worldcup_record_withdrawal", {
     p_withdrawal_request_id: row.id,

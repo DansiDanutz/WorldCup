@@ -12,7 +12,11 @@ before launch.
       lottery vs. gambling) and any required licences.
 - [x] **Terms of Use** and **Privacy Policy** published and linked from
       the entry flow, with explicit acceptance recorded per user.
-- [x] **Age gating** currently enforces 18+ consent before entry creation.
+- [x] **Age gating** enforces self-attested 18+ consent before entry creation,
+      **and** requires document-backed 18+ age verification before any
+      withdrawal/payout (documents reviewed off-platform; an admin records the
+      verified/rejected state, which gates the withdrawal request and the admin
+      approval).
 - [x] **Configurable geo-restriction** for paid entries and deposits via
       `WORLDCUP_ALLOWED_COUNTRIES` / `WORLDCUP_BLOCKED_COUNTRIES`.
 - [ ] **KYC / identity verification** for prize payouts above applicable
@@ -47,6 +51,12 @@ before launch.
   country policy plus a deposit cap, withdrawals require a country policy plus a
   withdrawal cap, and ticket purchase / entry locking require a country policy.
 - Google-only login gating for paid entries.
+- Document-backed **18+ age verification before payouts**
+  (`worldcup_referral_profiles.age_verification_status`). Players send a
+  government photo ID off-platform; an admin records `verified`/`rejected` in
+  `/admin`. Both the user withdrawal request (`POST /api/withdrawals`) and the
+  admin approval refuse to move funds until the account is `verified`. No ID
+  images are stored in the app — only the review state, timestamp, and note.
 - Shared USDT TRC20/ERC20 deposit addresses with QR assets, user deposit
   claims, admin review, KuCoin lookup support, required audit notes, and wallet
   ledger crediting.
