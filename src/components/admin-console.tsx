@@ -1152,10 +1152,18 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         });
         const result = (await readResult(response)) as {
           assigned?: number;
+          agentCodesAssigned?: number;
+          personalTicketAssigned?: number;
           commissionAwarded?: number;
         };
+        const agentCodesAssigned = result.agentCodesAssigned ?? result.assigned ?? 0;
+        const personalTicketAssigned = result.personalTicketAssigned ?? 0;
+        const personalTicketNote =
+          personalTicketAssigned > 0 ? `, plus ${personalTicketAssigned} personal user ticket` : "";
         setMessage(
-          `Assigned ${result.assigned ?? 0} codes (+${result.commissionAwarded ?? 0} free as commission).`,
+          `Assigned ${agentCodesAssigned} agent codes${personalTicketNote} (+${
+            result.commissionAwarded ?? 0
+          } free as commission).`,
         );
         await loadAgents();
       } catch (err) {
