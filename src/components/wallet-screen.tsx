@@ -6,11 +6,13 @@ import {
   Copy,
   Gift,
   Lock,
+  Phone,
   QrCode,
   Send,
   ShieldCheck,
   Ticket,
   Trophy,
+  UserPlus,
   UserRound,
   Upload,
   Wallet,
@@ -60,6 +62,11 @@ type DepositClaim = {
 
 type AgentStatus = {
   isAgent: boolean;
+  applicationStatus?: "none" | "pending" | "active";
+  contactName?: string | null;
+  whatsappNumber?: string | null;
+  registeredAt?: string | null;
+  updatedAt?: string | null;
   paidTickets: number;
   commissionTickets: number;
   availableCount: number;
@@ -110,6 +117,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [withdrawalAddress, setWithdrawalAddress] = useState("");
   const [withdrawalAmount, setWithdrawalAmount] = useState("");
   const [agent, setAgent] = useState<AgentStatus | null>(null);
+  const [agentName, setAgentName] = useState("");
+  const [agentWhatsapp, setAgentWhatsapp] = useState("");
   const [redeemCode, setRedeemCode] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -226,7 +235,9 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
 
         if (agentResponse.ok) {
           const data = (await agentResponse.json()) as AgentStatus;
-          setAgent(data.isAgent ? data : null);
+          setAgent(data.isAgent || data.applicationStatus === "pending" ? data : null);
+          if (data.contactName) setAgentName(data.contactName);
+          if (data.whatsappNumber) setAgentWhatsapp(data.whatsappNumber);
         } else {
           setAgent(null);
         }
@@ -267,8 +278,48 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   function refreshAgent(token: string) {
     fetch("/api/agent/me", { headers: { Authorization: `Bearer ${token}` } })
       .then((response) => response.json())
-      .then((data: AgentStatus) => setAgent(data.isAgent ? data : null))
+      .then((data: AgentStatus) => {
+        setAgent(data.isAgent || data.applicationStatus === "pending" ? data : null);
+        if (data.contactName) setAgentName(data.contactName);
+        if (data.whatsappNumber) setAgentWhatsapp(data.whatsappNumber);
+      })
       .catch(() => undefined);
+  }
+
+  function registerAsAgent() {
+    const token = session?.access_token;
+    if (!token) {
+      return;
+    }
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const response = await fetch("/api/agent/me", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: agentName.trim(),
+          whatsapp: agentWhatsapp.trim(),
+        }),
+      });
+      const result = (await response.json()) as AgentStatus & { error?: string };
+
+      if (!response.ok) {
+        setError(result.error ?? "Could not register agent account.");
+        return;
+      }
+
+      setAgent(result);
+      setMessage(
+        result.applicationStatus === "active"
+          ? "Agent contact details updated."
+          : "Agent registration saved. Your account activates after your first ticket deposit is assigned.",
+      );
+    });
   }
 
   function acceptAgentTicketRequest(requestId: string) {
@@ -1152,101 +1203,149 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               </div>
             </div>
 
-            {agent ? (
+            {signedIn ? (
               <div className="panel wallet-wide">
                 <div className="panel-header">
                   <div>
-                    <h2 className="panel-title">Agent Codes</h2>
+                    <h2 className="panel-title">{agent?.isAgent ? "Agent Codes" : "Become an Agent"}</h2>
                     <p className="panel-subtitle">
-                      Hand a code to a player; they redeem it for one entry ticket.
+                      {agent?.isAgent
+                        ? "Hand a code to a player; they redeem it for one entry ticket."
+                        : "Register with your name and WhatsApp. Your agent account activates after your first ticket deposit is assigned."}
                     </p>
                   </div>
-                  <Gift size={18} color="var(--gold)" />
+                  {agent?.isAgent ? (
+                    <Gift size={18} color="var(--gold)" />
+                  ) : (
+                    <UserPlus size={18} color="var(--green)" />
+                  )}
                 </div>
                 <div className="panel-body">
-                  <div className="account-status-grid agent-stats">
-                    <div>
-                      <span>Available codes</span>
-                      <strong>{agent.availableCount}</strong>
-                      <small>{agent.redeemedCount} redeemed</small>
-                    </div>
-                    <div>
-                      <span>Paid tickets</span>
-                      <strong>{agent.paidTickets}</strong>
-                      <small>{agent.commissionTickets} free earned</small>
-                    </div>
-                    <div>
-                      <span>Commission cycle</span>
-                      <strong>{agent.progressInCycle}/10</strong>
-                      <small>one free per ten paid</small>
-                    </div>
-                  </div>
-                  <div
-                    aria-label={`${agent.progressInCycle} of 10 paid tickets in this commission cycle`}
-                    aria-valuemax={10}
-                    aria-valuemin={0}
-                    aria-valuenow={agent.progressInCycle}
-                    className="commission-bar"
-                    role="progressbar"
-                  >
-                    <span style={{ width: `${(agent.progressInCycle / 10) * 100}%` }} />
-                  </div>
-                  {agent.availableCodes.length === 0 ? (
-                    <div className="field-note">No available codes assigned right now.</div>
-                  ) : (
-                    <div className="code-list">
-                      {agent.availableCodes.map((entry) => (
-                        <div className="code-row" key={entry.code}>
-                          <span className="code-value">{entry.code}</span>
-                          <span className="code-tag">{entry.kind}</span>
-                          <button
-                            className="button secondary"
-                            onClick={() => copyText(entry.code, "Code")}
-                            type="button"
-                          >
-                            <Copy size={16} />
-                          </button>
+                  {!agent?.isAgent ? (
+                    <div className="agent-register-box">
+                      {agent?.applicationStatus === "pending" ? (
+                        <div className="message">
+                          Registration received. Send your first ticket payment to the operator; once tickets are assigned to you, this panel unlocks automatically.
                         </div>
-                      ))}
+                      ) : null}
+                      <div className="deposit-claim-form">
+                        <div className="field">
+                          <label htmlFor="agent-name">Agent name</label>
+                          <input
+                            id="agent-name"
+                            value={agentName}
+                            onChange={(event) => setAgentName(event.target.value)}
+                            placeholder="Your public agent name"
+                          />
+                        </div>
+                        <div className="field">
+                          <label htmlFor="agent-whatsapp">WhatsApp number</label>
+                          <input
+                            id="agent-whatsapp"
+                            inputMode="tel"
+                            value={agentWhatsapp}
+                            onChange={(event) => setAgentWhatsapp(event.target.value)}
+                            placeholder="+40 700 000 000"
+                          />
+                        </div>
+                        <button
+                          className="button secondary"
+                          disabled={!agentName.trim() || !agentWhatsapp.trim() || isPending}
+                          onClick={registerAsAgent}
+                          type="button"
+                        >
+                          <Phone size={16} />
+                          {agent?.applicationStatus === "pending" ? "Update Agent Details" : "Register as Agent"}
+                        </button>
+                      </div>
                     </div>
-                  )}
-                  <div className="agent-request-section">
-                    <div>
-                      <strong>Agent Call requests</strong>
-                      <span>Accept only after you received the player payment. Requests expire after 24 hours.</span>
-                    </div>
-                    {agent.ticketRequests.filter((request) => request.status === "pending").length === 0 ? (
-                      <div className="field-note">No pending Agent Call requests.</div>
-                    ) : (
-                      <div className="agent-request-list">
-                        {agent.ticketRequests
-                          .filter((request) => request.status === "pending")
-                          .map((request) => (
-                            <div className="agent-request-row" key={request.id}>
-                              <div>
-                                <strong>{request.requesterDisplayName}</strong>
-                                <span>{request.requesterEmail ?? "No email"}</span>
-                                <small>Expires {new Date(request.expiresAt).toLocaleString()}</small>
-                              </div>
+                  ) : (
+                    <>
+                      <div className="account-status-grid agent-stats">
+                        <div>
+                          <span>Available codes</span>
+                          <strong>{agent.availableCount}</strong>
+                          <small>{agent.redeemedCount} redeemed</small>
+                        </div>
+                        <div>
+                          <span>Paid tickets</span>
+                          <strong>{agent.paidTickets}</strong>
+                          <small>{agent.commissionTickets} free earned</small>
+                        </div>
+                        <div>
+                          <span>Commission cycle</span>
+                          <strong>{agent.progressInCycle}/10</strong>
+                          <small>one free per ten paid</small>
+                        </div>
+                      </div>
+                      <div
+                        aria-label={`${agent.progressInCycle} of 10 paid tickets in this commission cycle`}
+                        aria-valuemax={10}
+                        aria-valuemin={0}
+                        aria-valuenow={agent.progressInCycle}
+                        className="commission-bar"
+                        role="progressbar"
+                      >
+                        <span style={{ width: `${(agent.progressInCycle / 10) * 100}%` }} />
+                      </div>
+                      {agent.availableCodes.length === 0 ? (
+                        <div className="field-note">No available codes assigned right now.</div>
+                      ) : (
+                        <div className="code-list">
+                          {agent.availableCodes.map((entry) => (
+                            <div className="code-row" key={entry.code}>
+                              <span className="code-value">{entry.code}</span>
+                              <span className="code-tag">{entry.kind}</span>
                               <button
-                                className="button"
-                                disabled={agent.availableCount < 1 || isPending}
-                                onClick={() => acceptAgentTicketRequest(request.id)}
+                                className="button secondary"
+                                onClick={() => copyText(entry.code, "Code")}
                                 type="button"
                               >
-                                <Ticket size={16} />
-                                Accept
+                                <Copy size={16} />
                               </button>
                             </div>
                           ))}
+                        </div>
+                      )}
+                      <div className="agent-request-section">
+                        <div>
+                          <strong>Agent Call requests</strong>
+                          <span>Accept only after you received the player payment. Requests expire after 24 hours.</span>
+                        </div>
+                        {agent.ticketRequests.filter((request) => request.status === "pending").length === 0 ? (
+                          <div className="field-note">No pending Agent Call requests.</div>
+                        ) : (
+                          <div className="agent-request-list">
+                            {agent.ticketRequests
+                              .filter((request) => request.status === "pending")
+                              .map((request) => (
+                                <div className="agent-request-row" key={request.id}>
+                                  <div>
+                                    <strong>{request.requesterDisplayName}</strong>
+                                    <span>{request.requesterEmail ?? "No email"}</span>
+                                    <small>Expires {new Date(request.expiresAt).toLocaleString()}</small>
+                                  </div>
+                                  <button
+                                    className="button"
+                                    disabled={agent.availableCount < 1 || isPending}
+                                    onClick={() => acceptAgentTicketRequest(request.id)}
+                                    type="button"
+                                  >
+                                    <Ticket size={16} />
+                                    Accept
+                                  </button>
+                                </div>
+                              ))}
+                          </div>
+                        )}
+                        {agent.availableCount < 1 ? (
+                          <div className="message error">
+                            You need available agent tickets before accepting requests. Pending requests stay open until they expire.
+                          </div>
+                        ) : null}
                       </div>
-                    )}
-                    {agent.availableCount < 1 ? (
-                      <div className="message error">
-                        You need available agent tickets before accepting requests. Pending requests stay open until they expire.
-                      </div>
-                    ) : null}
-                  </div>
+                    </>
+                  )}
                 </div>
               </div>
             ) : null}
