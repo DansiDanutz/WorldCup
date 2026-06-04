@@ -27,7 +27,7 @@ describe("agent self-registration", () => {
     assert.doesNotMatch(migration, /and tournament_id = p_tournament_id and active;/);
     assert.match(migration, /active = true/);
     assert.match(migration, /activated_at = coalesce\(activated_at, now\(\)\)/);
-    assert.match(adminAgentsRoute, /worldcup_agent_assign_codes/);
+    assert.match(adminAgentsRoute, /worldcup_admin_assign_agent_tickets/);
   });
 
   it("shows users registration, pending activation, and active agent tools in the wallet", () => {

@@ -219,7 +219,60 @@ type AdminAgentRow = {
   activatedAt: string | null;
 };
 
-type AgentPool = { total: number; available: number; assigned: number; redeemed: number };
+type AgentPool = { total: number; available: number; admin: number; assigned: number; redeemed: number };
+
+type TicketFinancialMovement = {
+  id: string;
+  movementType: "admin_request" | "admin_to_agent" | "admin_to_user";
+  paymentMethod: "internal" | "cash" | "usdt";
+  sourceAdminUserId: string | null;
+  targetUserId: string | null;
+  targetAgentUserId: string | null;
+  quantity: number;
+  ticketPriceAmount: string;
+  totalAmount: string;
+  note: string | null;
+  metadata: Record<string, unknown> | null;
+  createdBy: string;
+  createdAt: string;
+};
+
+function getMovementLabel(type: TicketFinancialMovement["movementType"]) {
+  if (type === "admin_request") return "Request Tickets";
+  if (type === "admin_to_agent") return "Admin to Agent";
+  return "Admin to User";
+}
+
+function getMovementTicketSummary(metadata: TicketFinancialMovement["metadata"]) {
+  if (!metadata) return "No ticket numbers stored.";
+
+  const keys = [
+    "ticketNumbers",
+    "userTicketNumbers",
+    "personalTicketNumbers",
+    "paidTicketNumbers",
+    "commissionTicketNumbers",
+  ];
+  const ticketNumbers = keys.flatMap((key) => {
+    const value = metadata[key];
+    if (!Array.isArray(value)) return [];
+    return value
+      .map((entry) => {
+        if (typeof entry === "number") return entry;
+        if (entry && typeof entry === "object" && "ticketNumber" in entry) {
+          const numberValue = (entry as { ticketNumber?: unknown }).ticketNumber;
+          return typeof numberValue === "number" ? numberValue : null;
+        }
+        return null;
+      })
+      .filter((entry): entry is number => entry !== null);
+  });
+
+  if (ticketNumbers.length === 0) return "No ticket numbers stored.";
+  const uniqueNumbers = Array.from(new Set(ticketNumbers)).sort((a, b) => a - b);
+  const visible = uniqueNumbers.slice(0, 12).join(", ");
+  return `Tickets ${visible}${uniqueNumbers.length > 12 ? ` +${uniqueNumbers.length - 12} more` : ""}`;
+}
 
 export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminConsoleProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
@@ -232,6 +285,8 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [accounts, setAccounts] = useState<AdminAccountRow[]>([]);
   const [ticketUserId, setTicketUserId] = useState("");
   const [ticketQuantity, setTicketQuantity] = useState("1");
+  const [ticketPaymentMethod, setTicketPaymentMethod] = useState<"cash" | "usdt">("cash");
+  const [ticketAssignmentNote, setTicketAssignmentNote] = useState("");
   const [walletFromUserId, setWalletFromUserId] = useState("");
   const [walletToUserId, setWalletToUserId] = useState("");
   const [walletAmount, setWalletAmount] = useState("");
@@ -263,12 +318,17 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [agentPool, setAgentPool] = useState<AgentPool>({
     total: 0,
     available: 0,
+    admin: 0,
     assigned: 0,
     redeemed: 0,
   });
+  const [requestTicketQty, setRequestTicketQty] = useState("10000");
   const [agentEmail, setAgentEmail] = useState("");
   const [assignAgentUserId, setAssignAgentUserId] = useState("");
   const [assignAgentQty, setAssignAgentQty] = useState("10");
+  const [assignAgentPaymentMethod, setAssignAgentPaymentMethod] = useState<"cash" | "usdt">("cash");
+  const [assignAgentNote, setAssignAgentNote] = useState("");
+  const [financialMovements, setFinancialMovements] = useState<TicketFinancialMovement[]>([]);
   const [settlementPayouts, setSettlementPayouts] = useState<SettlementPayoutRow[]>([]);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -459,11 +519,19 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         const response = await fetch("/api/admin/tickets", {
           method: "POST",
           headers: authHeaders(),
-          body: JSON.stringify({ action: "assign", userId: ticketUserId, quantity: Number(ticketQuantity) }),
+          body: JSON.stringify({
+            action: "assign",
+            userId: ticketUserId,
+            quantity: Number(ticketQuantity),
+            paymentMethod: ticketPaymentMethod,
+            note: ticketAssignmentNote,
+          }),
         });
         const result = await readResult(response);
+        setTicketAssignmentNote("");
         setMessage(`Assigned tickets: ${result.assignedTickets ?? ticketQuantity}.`);
         await reloadAccounts();
+        await loadAgents();
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not assign tickets.");
       }
@@ -1153,11 +1221,16 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   async function loadAgents() {
     const response = await fetch("/api/admin/agents", { method: "GET", headers: authHeaders() });
     if (response.ok) {
-      const result = (await response.json()) as { agents?: AdminAgentRow[]; pool?: AgentPool };
+      const result = (await response.json()) as {
+        agents?: AdminAgentRow[];
+        pool?: AgentPool;
+        financialMovements?: TicketFinancialMovement[];
+      };
       setAgents(result.agents ?? []);
       if (result.pool) {
         setAgentPool(result.pool);
       }
+      setFinancialMovements(result.financialMovements ?? []);
     }
   }
 
@@ -1190,6 +1263,26 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
     });
   }
 
+  function requestAdminTickets() {
+    run(async () => {
+      try {
+        const response = await fetch("/api/admin/agents", {
+          method: "POST",
+          headers: authHeaders(),
+          body: JSON.stringify({
+            action: "request_inventory",
+            quantity: Number(requestTicketQty),
+          }),
+        });
+        const result = await readResult(response);
+        setMessage(`Admin inventory received: ${result.requested ?? requestTicketQty} tickets.`);
+        await loadAgents();
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Could not request tickets.");
+      }
+    });
+  }
+
   function assignAgentCodes() {
     run(async () => {
       try {
@@ -1200,6 +1293,8 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             action: "assign",
             agentUserId: assignAgentUserId,
             quantity: Number(assignAgentQty),
+            paymentMethod: assignAgentPaymentMethod,
+            note: assignAgentNote,
           }),
         });
         const result = (await readResult(response)) as {
@@ -1217,6 +1312,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             result.commissionAwarded ?? 0
           } free as commission).`,
         );
+        setAssignAgentNote("");
         await loadAgents();
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not assign codes.");
@@ -2176,7 +2272,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Tickets & wallets</h2>
-                <p className="panel-subtitle">Assign entry tickets and record internal transfers.</p>
+                <p className="panel-subtitle">Assign user tickets from admin inventory and record internal transfers.</p>
               </div>
               <button className="button secondary" disabled={isPending} onClick={loadAccounts} type="button">
                 Load Accounts
@@ -2189,9 +2285,13 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   Save Ticket Price
                 </button>
               </div>
+              <div className="field-note">
+                User ticket assignments are manual admin approvals. The selected payment method is stored in the
+                financial statement.
+              </div>
               <div className="two-col">
                 <div className="field">
-                  <label htmlFor="ticket-account">Assign ticket to account</label>
+                  <label htmlFor="ticket-account">Assign ticket for user</label>
                   <select id="ticket-account" value={ticketUserId} onChange={(e) => setTicketUserId(e.target.value)}>
                     <option value="">Select account</option>
                     {accounts.map((account) => (
@@ -2204,13 +2304,35 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 </div>
                 <NumberField label="Quantity" value={ticketQuantity} onChange={setTicketQuantity} />
               </div>
+              <div className="two-col">
+                <div className="field">
+                  <label htmlFor="ticket-payment-method">Payment method</label>
+                  <select
+                    id="ticket-payment-method"
+                    value={ticketPaymentMethod}
+                    onChange={(event) => setTicketPaymentMethod(event.target.value as "cash" | "usdt")}
+                  >
+                    <option value="cash">Cash</option>
+                    <option value="usdt">USDT</option>
+                  </select>
+                </div>
+                <div className="field">
+                  <label htmlFor="ticket-assignment-note">Approval note</label>
+                  <input
+                    id="ticket-assignment-note"
+                    value={ticketAssignmentNote}
+                    onChange={(event) => setTicketAssignmentNote(event.target.value)}
+                    placeholder="Receipt, sender wallet, or manual note"
+                  />
+                </div>
+              </div>
               <button
                 className="button secondary"
                 disabled={!ticketUserId || isPending}
                 onClick={assignTickets}
                 type="button"
               >
-                Assign Tickets
+                Assign user ticket
               </button>
               <div className="two-col">
                 <div className="field">
@@ -2757,8 +2879,8 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               <div>
                 <h2 className="panel-title">Agents</h2>
                 <p className="panel-subtitle">
-                  Promote a player to agent, then assign ticket codes after a manual payment. Every
-                  10 paid codes auto-awards 1 free.
+                  Request numbered tickets into admin inventory, then sell them to agents after manual payment. Every
+                  10 paid agent tickets auto-awards 1 free.
                 </p>
               </div>
               <button
@@ -2781,6 +2903,10 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   <div className="stat-value">{agentPool.available.toLocaleString()}</div>
                 </div>
                 <div className="stat">
+                  <div className="stat-label">Admin</div>
+                  <div className="stat-value">{agentPool.admin.toLocaleString()}</div>
+                </div>
+                <div className="stat">
                   <div className="stat-label">Assigned</div>
                   <div className="stat-value">{agentPool.assigned.toLocaleString()}</div>
                 </div>
@@ -2788,6 +2914,32 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   <div className="stat-label">Redeemed</div>
                   <div className="stat-value">{agentPool.redeemed.toLocaleString()}</div>
                 </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="request-ticket-qty">Request Tickets</label>
+                <div className="inline-row">
+                  <input
+                    aria-label="Request ticket quantity"
+                    className="search agent-qty"
+                    max="10000"
+                    min="1"
+                    onChange={(event) => setRequestTicketQty(event.target.value)}
+                    type="number"
+                    value={requestTicketQty}
+                  />
+                  <button
+                    className="button"
+                    disabled={isPending || Number(requestTicketQty) < 1}
+                    onClick={requestAdminTickets}
+                    type="button"
+                  >
+                    Request Tickets
+                  </button>
+                </div>
+                <span className="field-note">
+                  Moves the next numbered tickets from the generated 10,000 pool into admin inventory.
+                </span>
               </div>
 
               <div className="field">
@@ -2813,7 +2965,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               </div>
 
               <div className="field">
-                <label htmlFor="assign-agent">Assign ticket codes (manual payment)</label>
+                <label htmlFor="assign-agent">Assign Tickets for Agents</label>
                 <div className="inline-row">
                   <select
                     className="search"
@@ -2837,15 +2989,34 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     type="number"
                     value={assignAgentQty}
                   />
+                  <select
+                    aria-label="Agent payment method"
+                    className="search agent-qty"
+                    onChange={(event) => setAssignAgentPaymentMethod(event.target.value as "cash" | "usdt")}
+                    value={assignAgentPaymentMethod}
+                  >
+                    <option value="cash">Cash</option>
+                    <option value="usdt">USDT</option>
+                  </select>
                   <button
                     className="button"
                     disabled={isPending || assignAgentUserId.length === 0}
                     onClick={assignAgentCodes}
                     type="button"
                   >
-                    Assign
+                    Assign agent tickets
                   </button>
                 </div>
+                <input
+                  className="search"
+                  onChange={(event) => setAssignAgentNote(event.target.value)}
+                  placeholder="Approval note, receipt, wallet, or cash collector"
+                  value={assignAgentNote}
+                />
+                <span className="field-note">
+                  Admin inventory goes out in ticket-number order. If the agent has no personal user ticket yet, the
+                  first paid ticket is assigned to that agent user account.
+                </span>
               </div>
 
               {agents.length > 0 ? (
@@ -2876,6 +3047,30 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               ) : (
                 <div className="field-note">No agents loaded. Refresh, or add one by email above.</div>
               )}
+
+              <div className="admin-referral-list" aria-label="Financial statement">
+                <h3 className="section-heading">Financial statement</h3>
+                {financialMovements.length > 0 ? (
+                  financialMovements.map((movement) => (
+                    <div className="admin-referral-row" key={movement.id}>
+                      <div>
+                        <strong>
+                          {getMovementLabel(movement.movementType)} - {movement.paymentMethod.toUpperCase()}
+                        </strong>
+                        <span>
+                          Qty {movement.quantity.toLocaleString()} - total{" "}
+                          {formatLedgerAmount(String(movement.totalAmount ?? "0"))} USDT
+                        </span>
+                        <small>{getMovementTicketSummary(movement.metadata)}</small>
+                        {movement.note ? <small>Note: {movement.note}</small> : null}
+                      </div>
+                      <span>{new Date(movement.createdAt).toLocaleString()}</span>
+                    </div>
+                  ))
+                ) : (
+                  <div className="field-note">No ticket financial movements loaded yet.</div>
+                )}
+              </div>
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
+import { resolveAdminUserIdentity } from "@/lib/admin-user";
 import { enforceRateLimit, jsonError } from "@/lib/http";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import {
@@ -12,9 +13,19 @@ import {
 } from "@/lib/validation";
 
 const ASSIGN_ERROR_MESSAGES: Record<string, { status: number; message: string }> = {
+  ADMIN_ACCOUNT_REQUIRED: { status: 403, message: "Admin account profile was not found." },
   AGENT_NOT_FOUND: { status: 404, message: "Agent was not found." },
   INVALID_QUANTITY: { status: 400, message: "Quantity must be between 1 and 1000." },
+  INVALID_PAYMENT_METHOD: { status: 400, message: "Payment method must be cash or USDT." },
+  INSUFFICIENT_ADMIN_CODES: { status: 409, message: "Not enough tickets in admin inventory. Request tickets first." },
   INSUFFICIENT_CODES: { status: 409, message: "Not enough unassigned ticket codes left in the pool." },
+  TOURNAMENT_NOT_FOUND: { status: 500, message: "Tournament is not available." },
+};
+
+const REQUEST_ERROR_MESSAGES: Record<string, { status: number; message: string }> = {
+  ADMIN_ACCOUNT_REQUIRED: { status: 403, message: "Admin account profile was not found." },
+  INVALID_QUANTITY: { status: 400, message: "Quantity must be between 1 and 10000." },
+  INSUFFICIENT_CODES: { status: 409, message: "Not enough generated tickets left in the pool." },
   TOURNAMENT_NOT_FOUND: { status: 500, message: "Tournament is not available." },
 };
 
@@ -49,7 +60,7 @@ export async function GET(request: Request) {
       .order("created_at", { ascending: false }),
     supabase
       .from("worldcup_ticket_codes")
-      .select("agent_user_id,status")
+      .select("agent_user_id,admin_user_id,status")
       .eq("tournament_id", tournament.data.id),
   ]);
 
@@ -57,11 +68,12 @@ export async function GET(request: Request) {
     return jsonError("Could not load agents.", 500);
   }
 
-  const pool = { total: 0, available: 0, assigned: 0, redeemed: 0 };
+  const pool = { total: 0, available: 0, admin: 0, assigned: 0, redeemed: 0 };
   const perAgent = new Map<string, { available: number; redeemed: number }>();
   for (const entry of codes.data ?? []) {
     pool.total += 1;
     if (entry.status === "available") pool.available += 1;
+    else if (entry.status === "admin") pool.admin += 1;
     else if (entry.status === "assigned") pool.assigned += 1;
     else if (entry.status === "redeemed") pool.redeemed += 1;
 
@@ -71,6 +83,19 @@ export async function GET(request: Request) {
     if (entry.status === "assigned") stats.available += 1;
     else if (entry.status === "redeemed") stats.redeemed += 1;
     perAgent.set(owner, stats);
+  }
+
+  const movements = await supabase
+    .from("worldcup_ticket_financial_movements")
+    .select(
+      "id,movement_type,payment_method,source_admin_user_id,target_user_id,target_agent_user_id,quantity,ticket_price_amount,total_amount,note,metadata,created_by,created_at",
+    )
+    .eq("tournament_id", tournament.data.id)
+    .order("created_at", { ascending: false })
+    .limit(25);
+
+  if (movements.error) {
+    return jsonError("Could not load financial statement.", 500);
   }
 
   return NextResponse.json({
@@ -88,6 +113,21 @@ export async function GET(request: Request) {
       active: agent.active,
       activatedAt: agent.activated_at,
     })),
+    financialMovements: (movements.data ?? []).map((movement) => ({
+      id: movement.id,
+      movementType: movement.movement_type,
+      paymentMethod: movement.payment_method,
+      sourceAdminUserId: movement.source_admin_user_id,
+      targetUserId: movement.target_user_id,
+      targetAgentUserId: movement.target_agent_user_id,
+      quantity: movement.quantity,
+      ticketPriceAmount: movement.ticket_price_amount,
+      totalAmount: movement.total_amount,
+      note: movement.note,
+      metadata: movement.metadata,
+      createdBy: movement.created_by,
+      createdAt: movement.created_at,
+    })),
   });
 }
 
@@ -104,10 +144,10 @@ export async function POST(request: Request) {
   }
 
   let body: Record<string, unknown>;
-  let action: "add" | "assign";
+  let action: "add" | "assign" | "request_inventory";
   try {
     body = requireObject(await request.json());
-    action = requireEnum(body.action, "Action", ["add", "assign"] as const);
+    action = requireEnum(body.action, "Action", ["add", "assign", "request_inventory"] as const);
   } catch (error) {
     return jsonError(error instanceof ValidationError ? error.message : "Invalid request body.", 400);
   }
@@ -117,7 +157,39 @@ export async function POST(request: Request) {
     return jsonError("Tournament is not available.", 500);
   }
 
-  const createdBy = auth.via === "email" ? auth.adminEmail : "admin";
+  const adminIdentity = await resolveAdminUserIdentity(supabase, auth.via === "email" ? auth.adminEmail : null);
+  if (!adminIdentity) {
+    return jsonError("Admin account profile was not found. Sign in once with the owner Google account.", 403);
+  }
+
+  const createdBy = auth.via === "email" ? auth.adminEmail : adminIdentity.email;
+
+  if (action === "request_inventory") {
+    let quantity: number;
+    try {
+      quantity = requireInteger(body.quantity, "Quantity", { min: 1, max: 10000 });
+    } catch (error) {
+      return jsonError(error instanceof ValidationError ? error.message : "Invalid request quantity.", 400);
+    }
+
+    const requestInventory = await supabase.rpc("worldcup_admin_request_ticket_inventory", {
+      p_tournament_id: tournament.data.id,
+      p_admin_user_id: adminIdentity.userId,
+      p_quantity: quantity,
+      p_created_by: createdBy,
+    });
+
+    if (requestInventory.error) {
+      const errorCode = requestInventory.error.message?.match(/[A-Z_]{4,}/)?.[0] ?? "";
+      const mapped = REQUEST_ERROR_MESSAGES[errorCode];
+      if (mapped) {
+        return jsonError(mapped.message, mapped.status);
+      }
+      return jsonError("Could not request admin tickets.", 500);
+    }
+
+    return NextResponse.json(requestInventory.data);
+  }
 
   if (action === "add") {
     let email: string;
@@ -166,18 +238,24 @@ export async function POST(request: Request) {
 
   let agentUserId: string;
   let quantity: number;
+  let paymentMethod: "cash" | "usdt";
   try {
     agentUserId = requireString(body.agentUserId, "Agent account", { max: 64 });
     quantity = requireInteger(body.quantity, "Quantity", { min: 1, max: 1000 });
+    paymentMethod = requireEnum(body.paymentMethod ?? "cash", "Payment method", ["cash", "usdt"] as const);
   } catch (error) {
     return jsonError(error instanceof ValidationError ? error.message : "Invalid assignment.", 400);
   }
+  const note = typeof body.note === "string" ? body.note.slice(0, 500) : "";
 
-  const assign = await supabase.rpc("worldcup_agent_assign_codes", {
-    p_agent_user_id: agentUserId,
+  const assign = await supabase.rpc("worldcup_admin_assign_agent_tickets", {
     p_tournament_id: tournament.data.id,
+    p_admin_user_id: adminIdentity.userId,
+    p_agent_user_id: agentUserId,
     p_quantity: quantity,
+    p_payment_method: paymentMethod,
     p_created_by: createdBy,
+    p_note: note,
   });
 
   if (assign.error) {
