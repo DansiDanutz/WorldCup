@@ -185,8 +185,8 @@ describe("production readiness checks", () => {
     );
     assert.match(actions[0].detail, /1 blocker/);
     assert.match(actions[2].action, /Incoming transfers and Withdrawal requests/);
-    assert.match(actions[3].detail, /Terms\/Privacy version 2026-06-02/);
-    assert.match(actions[3].action, /Terms\/Privacy version 2026-06-02/);
+    assert.match(actions[3].detail, /Terms\/Privacy version 2026-06-04/);
+    assert.match(actions[3].action, /Terms\/Privacy version 2026-06-04/);
     assert.match(actions[3].action, /evidence note and URL/);
   });
 });

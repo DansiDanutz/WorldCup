@@ -38,6 +38,7 @@ import { createBrowserSupabaseClient } from "@/lib/supabase";
 import { getWithdrawalExplorerTxUrl } from "@/lib/withdrawals";
 import type {
   AdminAccountRow,
+  AdminAgeVerificationRow,
   AdminDepositClaimRow,
   AdminReferralReportRow,
   AdminWithdrawalRequestRow,
@@ -252,6 +253,8 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [withdrawalReviewDrafts, setWithdrawalReviewDrafts] = useState<
     Record<string, WithdrawalReviewDraft>
   >({});
+  const [ageVerifications, setAgeVerifications] = useState<AdminAgeVerificationRow[]>([]);
+  const [ageVerificationNotes, setAgeVerificationNotes] = useState<Record<string, string>>({});
   const [assignMatchId, setAssignMatchId] = useState("");
   const [assignHomeTeamId, setAssignHomeTeamId] = useState("");
   const [assignAwayTeamId, setAssignAwayTeamId] = useState("");
@@ -1083,6 +1086,55 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         ...patch,
       },
     }));
+  }
+
+  function loadAgeVerifications() {
+    run(async () => {
+      try {
+        const response = await fetch("/api/admin/age-verifications", {
+          method: "POST",
+          headers: authHeaders(),
+          body: JSON.stringify({ action: "list" }),
+        });
+        const result = await readResult(response);
+        const rows = (result.verifications as AdminAgeVerificationRow[]) ?? [];
+        setAgeVerifications(rows);
+        setMessage(`Age verifications loaded. Rows: ${rows.length}.`);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Could not load age verifications.");
+      }
+    });
+  }
+
+  function updateAgeVerificationNote(userId: string, note: string) {
+    setAgeVerificationNotes((current) => ({ ...current, [userId]: note }));
+  }
+
+  function reviewAgeVerification(action: "verify" | "reject", userId: string) {
+    run(async () => {
+      try {
+        const note = ageVerificationNotes[userId]?.trim();
+        const response = await fetch("/api/admin/age-verifications", {
+          method: "POST",
+          headers: authHeaders(),
+          body: JSON.stringify({ action, userId, note }),
+        });
+        const result = await readResult(response);
+        const updated = result.verification as AdminAgeVerificationRow | undefined;
+        if (updated) {
+          setAgeVerifications((current) =>
+            current.map((row) => (row.userId === updated.userId ? updated : row)),
+          );
+        }
+        setMessage(
+          action === "verify"
+            ? "Player marked age-verified (18+). Withdrawals can now be approved."
+            : "Age verification rejected.",
+        );
+      } catch (err) {
+        setError(err instanceof Error ? err.message : `Could not ${action} age verification.`);
+      }
+    });
   }
 
   function loadReferralReport() {
@@ -2602,6 +2654,92 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 </div>
               ) : (
                 <div className="field-note">Load withdrawals after a player submits a payout request.</div>
+              )}
+            </div>
+          </div>
+
+          <div className="panel" id="admin-age-verification-panel">
+            <div className="panel-header">
+              <div>
+                <h2 className="panel-title">Age verification</h2>
+                <p className="panel-subtitle">
+                  Confirm players are 18 or older from their submitted ID before approving any payout.
+                </p>
+              </div>
+              <button
+                className="button secondary"
+                disabled={isPending}
+                onClick={loadAgeVerifications}
+                type="button"
+              >
+                Load Age Verifications
+              </button>
+            </div>
+            <div className="admin-form">
+              {ageVerifications.length > 0 ? (
+                <div className="admin-referral-list">
+                  {ageVerifications.map((row) => {
+                    const note = ageVerificationNotes[row.userId] ?? row.note ?? "";
+                    const canReview = !isPending && Boolean(note.trim());
+
+                    return (
+                      <div className="admin-referral-row" key={row.userId}>
+                        <div>
+                          <strong>{row.displayName}</strong>
+                          <span>
+                            {row.email ?? row.userId} · {row.status}
+                          </span>
+                          {row.submittedAt ? (
+                            <span>Documents sent: {new Date(row.submittedAt).toLocaleString()}</span>
+                          ) : null}
+                          {row.verifiedAt ? (
+                            <span>
+                              Reviewed: {new Date(row.verifiedAt).toLocaleString()}
+                              {row.verifiedBy ? ` · ${row.verifiedBy}` : ""}
+                            </span>
+                          ) : null}
+                          {row.note ? <span>{row.note}</span> : null}
+                        </div>
+                        <div className="deposit-review">
+                          <div className="field">
+                            <label htmlFor={`age-note-${row.userId}`}>Review note</label>
+                            <input
+                              id={`age-note-${row.userId}`}
+                              onChange={(event) => updateAgeVerificationNote(row.userId, event.target.value)}
+                              placeholder="Required audit note (e.g. ID checked, 18+)"
+                              value={note}
+                            />
+                          </div>
+                          {!note.trim() ? (
+                            <span className="field-note">A review note is required to verify or reject.</span>
+                          ) : null}
+                          <div className="deposit-review-actions">
+                            <button
+                              className="button secondary"
+                              disabled={!canReview || row.status === "verified"}
+                              onClick={() => reviewAgeVerification("verify", row.userId)}
+                              type="button"
+                            >
+                              Mark 18+ Verified
+                            </button>
+                            <button
+                              className="button secondary"
+                              disabled={!canReview}
+                              onClick={() => reviewAgeVerification("reject", row.userId)}
+                              type="button"
+                            >
+                              Reject
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="field-note">
+                  Load age verifications after a player marks their documents as sent.
+                </div>
               )}
             </div>
           </div>

@@ -27,9 +27,10 @@ User → shared USDT receive address (TRC-20 / ERC-20)
 Withdrawal request flow:
 
 ```
-User → submits USDT network, payout address, and amount
-     → app checks Google session, geo rules, withdrawal limits, and wallet balance
-     → admin approves with an audit note
+User → proves 18+ once (sends government photo ID off-platform; admin records it)
+     → submits USDT network, payout address, and amount
+     → app checks Google session, geo rules, age verification, withdrawal limits, and wallet balance
+     → admin approves with an audit note (blocked unless the account is age-verified)
      → worldcup_record_withdrawal() debits the internal wallet
      → operator sends USDT manually outside the app
      → admin marks the request paid with the external transaction hash

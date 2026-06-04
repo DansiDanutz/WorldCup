@@ -284,7 +284,7 @@ describe("launch sign-offs", () => {
       evidenceTarget: "legal_review",
       evidenceActionLabel: "Open Legal Evidence",
       evidenceRequirement:
-        "Manual legal/compliance approval for Terms/Privacy version 2026-06-02, with HTTPS evidence URL and a note that includes that version.",
+        "Manual legal/compliance approval for Terms/Privacy version 2026-06-04, with HTTPS evidence URL and a note that includes that version.",
     });
   });
 
@@ -293,7 +293,7 @@ describe("launch sign-offs", () => {
 
     assert.equal(pending.evidenceReady, false);
     assert.match(pending.evidenceStatus, /Manual legal approval evidence must be recorded/);
-    assert.match(pending.evidenceStatus, /Terms\/Privacy version 2026-06-02/);
+    assert.match(pending.evidenceStatus, /Terms\/Privacy version 2026-06-04/);
 
     const completedMissingUrl = await getLaunchSignoffEvidenceStatus(
       fakeSupabase({}),
@@ -302,26 +302,26 @@ describe("launch sign-offs", () => {
 
     assert.equal(completedMissingUrl.evidenceReady, false);
     assert.match(completedMissingUrl.evidenceStatus, /Approval evidence URL must be recorded/);
-    assert.match(completedMissingUrl.evidenceStatus, /Terms\/Privacy version 2026-06-02/);
+    assert.match(completedMissingUrl.evidenceStatus, /Terms\/Privacy version 2026-06-04/);
 
     const completed = await getLaunchSignoffEvidenceStatus(
       fakeSupabase({}),
       legalSignoff({
         status: "completed",
-        evidenceNote: "Legal approved Terms/Privacy version 2026-06-02.",
+        evidenceNote: "Legal approved Terms/Privacy version 2026-06-04.",
         evidenceUrl: "https://worldcup26.world/legal-approval/2026-06-02",
       }),
     );
 
     assert.equal(completed.evidenceReady, true);
     assert.match(completed.evidenceStatus, /Manual legal approval evidence note and URL are recorded/);
-    assert.match(completed.evidenceStatus, /Terms\/Privacy version 2026-06-02/);
+    assert.match(completed.evidenceStatus, /Terms\/Privacy version 2026-06-04/);
 
     const completedHttpUrl = await getLaunchSignoffEvidenceStatus(
       fakeSupabase({}),
       legalSignoff({
         status: "completed",
-        evidenceNote: "Legal approved Terms/Privacy version 2026-06-02.",
+        evidenceNote: "Legal approved Terms/Privacy version 2026-06-04.",
         evidenceUrl: "http://worldcup26.world/legal-approval/2026-06-02",
       }),
     );
@@ -341,7 +341,7 @@ describe("launch sign-offs", () => {
     assert.equal(completedStaleNote.evidenceReady, false);
     assert.equal(
       completedStaleNote.evidenceStatus,
-      "Evidence note must include Terms/Privacy version 2026-06-02.",
+      "Evidence note must include Terms/Privacy version 2026-06-04.",
     );
   });
 
@@ -353,11 +353,11 @@ describe("launch sign-offs", () => {
       getLaunchSignoffEvidenceNoteRequirement(),
       "Evidence note is required for completed or waived launch sign-offs.",
     );
-    assert.equal(isCurrentLegalApprovalEvidenceNote("Legal approved Terms/Privacy version 2026-06-02."), true);
+    assert.equal(isCurrentLegalApprovalEvidenceNote("Legal approved Terms/Privacy version 2026-06-04."), true);
     assert.equal(isCurrentLegalApprovalEvidenceNote("Legal approved old public terms."), false);
     assert.equal(
       getCurrentLegalApprovalEvidenceNoteRequirement(),
-      "Evidence note must include Terms/Privacy version 2026-06-02.",
+      "Evidence note must include Terms/Privacy version 2026-06-04.",
     );
   });
 
@@ -415,7 +415,7 @@ describe("launch sign-offs", () => {
 
     assert.deepEqual(legal.launchEvidence, {
       kind: "legal_compliance",
-      termsVersion: "2026-06-02",
+      termsVersion: "2026-06-04",
     });
 
     const payment = buildLaunchSignoffAuditContext({

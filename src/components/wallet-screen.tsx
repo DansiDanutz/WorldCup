@@ -32,6 +32,7 @@ import type {
   MyAccountStatus,
   PaidActionGate,
   PaidActionGates,
+  WalletAgeVerification,
   WithdrawalRequestRow,
 } from "@/lib/types";
 import { getWithdrawalExplorerTxUrl } from "@/lib/withdrawals";
@@ -119,6 +120,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [claimSenderWalletAddress, setClaimSenderWalletAddress] = useState("");
   const [claimTxHash, setClaimTxHash] = useState("");
   const [withdrawals, setWithdrawals] = useState<WithdrawalRequestRow[]>([]);
+  const [ageVerification, setAgeVerification] = useState<WalletAgeVerification | null>(null);
   const [withdrawalNetwork, setWithdrawalNetwork] = useState("trc20");
   const [withdrawalAddress, setWithdrawalAddress] = useState("");
   const [withdrawalAmount, setWithdrawalAmount] = useState("");
@@ -190,6 +192,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         setDepositClaims([]);
         setClaimSenderWalletAddress("");
         setWithdrawals([]);
+        setAgeVerification(null);
         setResponsiblePlay(null);
         setAgent(null);
         setEntryLimitDraft("");
@@ -237,8 +240,12 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         }
 
         if (withdrawalResponse.ok) {
-          const data = (await withdrawalResponse.json()) as { withdrawals?: WithdrawalRequestRow[] };
+          const data = (await withdrawalResponse.json()) as {
+            withdrawals?: WithdrawalRequestRow[];
+            ageVerification?: WalletAgeVerification;
+          };
           setWithdrawals(data.withdrawals ?? []);
+          setAgeVerification(data.ageVerification ?? null);
         }
 
         if (responsibleResponse.ok) {
@@ -628,6 +635,41 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       setWithdrawalAmount("");
       setWithdrawalAddress("");
       setMessage("Withdrawal request submitted for admin review.");
+    });
+  }
+
+  function submitAgeDocs() {
+    const token = session?.access_token;
+    if (!token) {
+      return;
+    }
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const response = await fetch("/api/age-verification", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: "{}",
+      });
+      const result = (await response.json()) as WalletAgeVerification & { error?: string };
+
+      if (!response.ok) {
+        setError(result.error ?? "Could not submit your age verification.");
+        return;
+      }
+
+      setAgeVerification({
+        status: result.status,
+        note: result.note ?? null,
+        submittedAt: result.submittedAt ?? null,
+        verifiedAt: result.verifiedAt ?? null,
+        contact: result.contact,
+      });
+      setMessage("Thanks — your documents are marked as sent. Withdrawals open after an admin confirms you are 18 or older.");
     });
   }
 
@@ -1258,6 +1300,27 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 {withdrawalPolicyPause ? (
                   <div className="message error">{withdrawalPolicyPause}</div>
                 ) : null}
+                {ageVerification && ageVerification.status !== "verified" ? (
+                  <div className={`message${ageVerification.status === "rejected" ? " error" : ""}`}>
+                    <strong>Confirm you are 18 or older to withdraw</strong>
+                    <p>
+                      {ageVerification.status === "pending"
+                        ? "Your documents are under review. Withdrawals open once an admin confirms you are 18 or older."
+                        : `Send a government photo ID to ${ageVerification.contact}, then tap the button below so an admin can review it.`}
+                    </p>
+                    {ageVerification.note ? <small>{ageVerification.note}</small> : null}
+                    {ageVerification.status !== "pending" ? (
+                      <button
+                        className="button secondary"
+                        disabled={isPending}
+                        onClick={submitAgeDocs}
+                        type="button"
+                      >
+                        I&apos;ve sent my documents
+                      </button>
+                    ) : null}
+                  </div>
+                ) : null}
                 <div className="deposit-claim-form">
                   <div className="field">
                     <label htmlFor="withdrawal-network">Network</label>
@@ -1293,7 +1356,13 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   </div>
                   <button
                     className="button secondary"
-                    disabled={!withdrawalAmount || !withdrawalAddress || Boolean(withdrawalPolicyPause) || isPending}
+                    disabled={
+                      !withdrawalAmount ||
+                      !withdrawalAddress ||
+                      Boolean(withdrawalPolicyPause) ||
+                      ageVerification?.status !== "verified" ||
+                      isPending
+                    }
                     onClick={submitWithdrawalRequest}
                     type="button"
                   >

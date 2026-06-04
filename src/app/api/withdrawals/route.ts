@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server";
 
+import {
+  getAgeVerificationContact,
+  getWithdrawalAgeGateMessage,
+  isAgeVerified,
+  loadAgeVerification,
+} from "@/lib/age-verification";
 import { calculateWalletBalance } from "@/lib/economy";
 import { enforceGeoEligibility, enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import {
@@ -103,7 +109,19 @@ export async function GET(request: Request) {
     return jsonError("Could not load withdrawal requests.", 500);
   }
 
-  return NextResponse.json({ withdrawals: (requests.data ?? []).map(formatWithdrawalRequest) });
+  const ageVerification = await loadAgeVerification(auth.supabase, auth.user.id);
+  const verification = "error" in ageVerification ? null : ageVerification.verification;
+
+  return NextResponse.json({
+    withdrawals: (requests.data ?? []).map(formatWithdrawalRequest),
+    ageVerification: {
+      status: verification?.status ?? "unverified",
+      note: verification?.note ?? null,
+      submittedAt: verification?.submittedAt ?? null,
+      verifiedAt: verification?.verifiedAt ?? null,
+      contact: getAgeVerificationContact(),
+    },
+  });
 }
 
 export async function POST(request: Request) {
@@ -133,6 +151,20 @@ export async function POST(request: Request) {
   });
   if (!paidActionGate.allowed) {
     return jsonError(paidActionGate.message ?? "Withdrawal requests are paused until launch approvals are complete.", 403);
+  }
+
+  // Winners must prove they are 18+ before any payout. Documents are reviewed
+  // off-platform and an admin records the result; the player cannot self-verify.
+  const ageVerification = await loadAgeVerification(auth.supabase, auth.user.id);
+  if ("error" in ageVerification) {
+    return jsonError(ageVerification.error, 500);
+  }
+  if (!isAgeVerified(ageVerification.verification.status)) {
+    return jsonError(
+      getWithdrawalAgeGateMessage(ageVerification.verification.status, getAgeVerificationContact()) ??
+        "Age verification is required before withdrawing.",
+      403,
+    );
   }
 
   let network;
