@@ -58,6 +58,26 @@ export async function GET(request: Request) {
     return jsonError("Could not load your ticket codes.", 500);
   }
 
+  await supabase
+    .from("worldcup_agent_ticket_requests")
+    .update({ status: "expired", updated_at: new Date().toISOString() })
+    .eq("tournament_id", tournament.data.id)
+    .eq("agent_user_id", user.id)
+    .eq("status", "pending")
+    .lte("expires_at", new Date().toISOString());
+
+  const requests = await supabase
+    .from("worldcup_agent_ticket_requests")
+    .select("id,requester_email,requester_display_name,status,requested_at,expires_at,accepted_at,ticket_id")
+    .eq("tournament_id", tournament.data.id)
+    .eq("agent_user_id", user.id)
+    .order("requested_at", { ascending: false })
+    .limit(20);
+
+  if (requests.error) {
+    return jsonError("Could not load Agent Call requests.", 500);
+  }
+
   const all = codes.data ?? [];
   const available = all.filter((entry) => entry.status === "assigned");
   const redeemed = all.filter((entry) => entry.status === "redeemed").length;
@@ -72,5 +92,15 @@ export async function GET(request: Request) {
     redeemedCount: redeemed,
     progressInCycle: paid % 10,
     availableCodes: available.map((entry) => ({ code: entry.code as string, kind: entry.kind as string })),
+    ticketRequests: (requests.data ?? []).map((request) => ({
+      id: request.id as string,
+      requesterEmail: request.requester_email as string | null,
+      requesterDisplayName: request.requester_display_name as string,
+      status: request.status as string,
+      requestedAt: request.requested_at as string,
+      expiresAt: request.expires_at as string,
+      acceptedAt: request.accepted_at as string | null,
+      ticketId: request.ticket_id as string | null,
+    })),
   });
 }

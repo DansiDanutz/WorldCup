@@ -182,6 +182,52 @@ describe("WorldCup design system integration", () => {
     assert.equal(existsSync("public/agent-deal-bg.png"), true);
   });
 
+  it("keeps the three-team pick workflow guided on mobile", () => {
+    assert.match(dashboard, /const remainingPickCount = Math\.max\(0, 3 - selectedTeams\.length\);/);
+    assert.match(dashboard, /const pickInstruction =/);
+    assert.match(dashboard, /function removeTeam\(teamId: string\)/);
+    assert.match(dashboard, /function clearSelectedTeams\(\)/);
+    assert.match(dashboard, /className="pick-flow"/);
+    assert.match(dashboard, /aria-label="Team pick progress"/);
+    assert.match(dashboard, /className="pick-slot-strip"/);
+    assert.match(dashboard, /Continue to Entry/);
+    assert.match(dashboard, /const atPickLimit = selectedTeams\.length >= 3 && !selected;/);
+    assert.match(dashboard, /className="team-row-action"/);
+    assert.match(dashboard, /No teams found/);
+    assert.match(dashboard, /<div className="panel" id="entry">/);
+    assert.match(globalsCss, /\.pick-flow\s*{/);
+    assert.match(globalsCss, /\.pick-slot-strip\s*{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /\.team-row\s*{[\s\S]*?grid-template-columns:\s*36px minmax\(0,\s*1fr\) 74px 72px 76px;/);
+    assert.match(globalsCss, /\.team-row-action\s*{/);
+    assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.pick-slot-strip\s*{[\s\S]*?grid-template-columns:\s*1fr;/);
+    assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.team-row\s*{[\s\S]*?grid-template-columns:\s*30px minmax\(0,\s*1fr\) auto auto;/);
+    assert.match(globalsCss, /@media \(max-width:\s*420px\)\s*{[\s\S]*?\.team-row \.coefficient\s*{[\s\S]*?display:\s*none;/);
+  });
+
+  it("keeps ticket purchase guidance visible before locking an entry", () => {
+    assert.match(dashboard, /const missingEntryTicket =/);
+    assert.match(dashboard, /ticketsAvailable < 1/);
+    assert.match(dashboard, /className=\{`ticket-requirement-card/);
+    assert.match(dashboard, /You need 1 entry ticket/);
+    assert.match(dashboard, /Pay the buy-in with USDT, or use Agent Call after paying an agent directly\./);
+    assert.match(dashboard, /Ticket price/);
+    assert.match(dashboard, /Your balance/);
+    assert.match(dashboard, /Buy with USDT/);
+    assert.match(dashboard, /Agent Call/);
+    assert.match(dashboard, /Agent code or email/);
+    assert.match(dashboard, /Request ticket/);
+    assert.match(dashboard, /\/api\/agent-ticket-requests/);
+    assert.match(walletScreen, /Agent Call requests/);
+    assert.match(walletScreen, /acceptAgentTicketRequest/);
+    assert.match(dashboard, /pathname: "\/wallet", hash: "tickets"/);
+    assert.match(dashboard, /missingEntryTicket \|\|/);
+    assert.match(walletScreen, /<div className="panel" id="tickets">/);
+    assert.match(globalsCss, /\.ticket-requirement-card\s*{/);
+    assert.match(globalsCss, /\.ticket-requirement-card\.needs-ticket/);
+    assert.match(globalsCss, /\.ticket-requirement-actions\s*{/);
+    assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.ticket-requirement-card\s*{[\s\S]*?grid-template-columns:\s*1fr;/);
+  });
+
   it("keeps every non-matchup swiper poster image-backed like Agent Deal", () => {
     const posterAssets = [
       ["HowToPoster", "howto-bg.png"],

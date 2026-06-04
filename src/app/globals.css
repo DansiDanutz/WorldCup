@@ -911,6 +911,113 @@ svg {
   border-bottom: 1px solid var(--border);
 }
 
+.pick-flow {
+  display: grid;
+  gap: 12px;
+  padding: 14px 18px 16px;
+  border-top: 1px solid rgba(216, 227, 223, 0.72);
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(135deg, rgba(229, 243, 238, 0.86), rgba(255, 248, 236, 0.72)),
+    #fbfdfc;
+}
+
+.pick-flow__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pick-flow__head div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.pick-flow__head strong {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.pick-flow__head span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0;
+  border: 0;
+  color: var(--green);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 850;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  background: transparent;
+}
+
+.pick-slot-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.pick-slot-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 86px;
+  padding: 10px;
+  border: 1px solid var(--pick-border, var(--border));
+  border-left: 5px solid var(--pick-accent, var(--border-strong));
+  border-radius: 8px;
+  background: var(--pick-bg, #ffffff);
+}
+
+.pick-slot-card div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.pick-slot-card strong {
+  min-width: 0;
+  color: var(--pick-text, var(--text));
+  font-size: 14px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.pick-slot-card span:last-child {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--pick-border, var(--border));
+  border-radius: 999px;
+  color: var(--pick-text, var(--muted));
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.pick-flow__action {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .team-list {
   max-height: min(650px, 68vh);
   overflow: auto;
@@ -919,7 +1026,7 @@ svg {
 
 .team-row {
   display: grid;
-  grid-template-columns: 36px minmax(0, 1fr) 74px 78px;
+  grid-template-columns: 36px minmax(0, 1fr) 74px 72px 76px;
   gap: 10px;
   align-items: center;
   min-width: 0;
@@ -939,6 +1046,11 @@ svg {
 .team-row.selected {
   border-left: 4px solid var(--pick-accent, var(--green));
   background: var(--pick-bg, var(--green-soft));
+}
+
+.team-row.at-limit:not(.selected) {
+  color: var(--muted);
+  background: #f8faf9;
 }
 
 .team-row.unavailable {
@@ -993,6 +1105,43 @@ svg {
   color: var(--muted);
   font-size: 13px;
   text-align: right;
+}
+
+.team-row-action {
+  justify-self: end;
+  min-width: 58px;
+  padding: 7px 9px;
+  border: 1px solid var(--pick-border, var(--border));
+  border-radius: 999px;
+  color: var(--pick-text, var(--green));
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1;
+  text-align: center;
+  background: #ffffff;
+}
+
+.team-row.selected .team-row-action {
+  color: #ffffff;
+  background: var(--pick-accent, var(--green));
+}
+
+.team-row.at-limit:not(.selected) .team-row-action {
+  color: var(--muted);
+  background: #eef3f1;
+}
+
+.empty-list-state {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 30px 18px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.empty-list-state strong {
+  color: var(--text);
 }
 
 .entry-form {
@@ -1112,6 +1261,189 @@ svg {
 
 .selected-team strong {
   color: var(--pick-text, var(--text));
+}
+
+.ticket-requirement-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--green);
+  border-radius: 8px;
+  background: #fbfdfc;
+}
+
+.ticket-requirement-card.needs-ticket {
+  border-color: #e4bd86;
+  border-left-color: var(--gold);
+  background: #fff8ec;
+}
+
+.ticket-requirement-card__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.ticket-requirement-card.needs-ticket .ticket-requirement-card__icon {
+  color: #81500f;
+  background: #ffe7bf;
+}
+
+.ticket-requirement-card__content {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.ticket-requirement-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ticket-requirement-card__head div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ticket-requirement-card__head strong {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.ticket-requirement-card__head span:not(.ticket-status-pill) {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.ticket-status-pill {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--green);
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.ticket-option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ticket-option-grid div {
+  display: grid;
+  gap: 3px;
+  padding: 10px;
+  border: 1px solid rgba(216, 227, 223, 0.82);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.ticket-option-grid span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 820;
+  text-transform: uppercase;
+}
+
+.ticket-option-grid strong {
+  color: var(--text);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.ticket-requirement-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.agent-call-box {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(201, 148, 46, 0.38);
+  border-radius: 8px;
+  background: rgba(255, 248, 236, 0.72);
+}
+
+.agent-call-box > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.agent-call-box strong,
+.agent-request-section strong {
+  color: var(--text);
+}
+
+.agent-call-box span,
+.agent-request-section span,
+.agent-request-row small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.agent-call-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.agent-request-section {
+  display: grid;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.agent-request-section > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.agent-request-list {
+  display: grid;
+  gap: 8px;
+}
+
+.agent-request-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.agent-request-row div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.agent-request-row span,
+.agent-request-row strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .empty-slot {
@@ -3075,6 +3407,53 @@ svg {
     margin-bottom: 14px;
   }
 
+  .pick-flow {
+    padding: 12px;
+  }
+
+  .pick-flow__head {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .link-button {
+    align-self: flex-start;
+  }
+
+  .pick-slot-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .pick-slot-card {
+    min-height: 68px;
+  }
+
+  .pick-flow__action,
+  .pick-flow__action .button,
+  .pick-flow__action button {
+    width: 100%;
+  }
+
+  .team-list {
+    max-height: none;
+  }
+
+  .team-row {
+    grid-template-columns: 30px minmax(0, 1fr) auto auto;
+    gap: 8px;
+    min-height: 72px;
+    padding: 12px;
+  }
+
+  .team-row .odds {
+    display: none;
+  }
+
+  .team-row-action {
+    min-width: 54px;
+    padding: 7px 8px;
+  }
+
   .launch-notice {
     align-items: stretch;
     flex-direction: column;
@@ -3126,7 +3505,35 @@ svg {
   }
 
   .auth-box,
-  .referral-code-card {
+  .referral-code-card,
+  .ticket-requirement-card {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-requirement-card__head {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ticket-status-pill {
+    align-self: flex-start;
+  }
+
+  .ticket-option-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-requirement-actions,
+  .ticket-requirement-actions .button,
+  .agent-call-form,
+  .agent-call-form .button,
+  .agent-request-row,
+  .agent-request-row .button {
+    width: 100%;
+  }
+
+  .agent-call-form,
+  .agent-request-row {
     grid-template-columns: 1fr;
   }
 
@@ -3155,9 +3562,9 @@ svg {
   }
 
   .team-row {
-    grid-template-columns: 32px minmax(0, 1fr) 64px;
-    min-height: 62px;
-    padding: 10px 14px;
+    grid-template-columns: 30px minmax(0, 1fr) auto auto;
+    min-height: 72px;
+    padding: 12px;
   }
 
   .coefficient {
@@ -3166,6 +3573,12 @@ svg {
 
   .odds {
     display: none;
+  }
+
+  .team-row-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .leaderboard-row,
@@ -3293,9 +3706,18 @@ svg {
   }
 
   .team-row {
-    grid-template-columns: 30px minmax(0, 1fr) 50px;
+    grid-template-columns: 28px minmax(0, 1fr) auto;
     gap: 8px;
     padding-inline: 12px;
+  }
+
+  .team-row .coefficient {
+    display: none;
+  }
+
+  .team-row-action {
+    min-width: 52px;
+    padding-inline: 7px;
   }
 
   .team-name,

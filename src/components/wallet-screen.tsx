@@ -66,6 +66,16 @@ type AgentStatus = {
   redeemedCount: number;
   progressInCycle: number;
   availableCodes: Array<{ code: string; kind: string }>;
+  ticketRequests: Array<{
+    id: string;
+    requesterEmail: string | null;
+    requesterDisplayName: string;
+    status: string;
+    requestedAt: string;
+    expiresAt: string;
+    acceptedAt: string | null;
+    ticketId: string | null;
+  }>;
 };
 
 type ResponsiblePlayStatus = {
@@ -259,6 +269,32 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       .then((response) => response.json())
       .then((data: AgentStatus) => setAgent(data.isAgent ? data : null))
       .catch(() => undefined);
+  }
+
+  function acceptAgentTicketRequest(requestId: string) {
+    const token = session?.access_token;
+    if (!token) {
+      return;
+    }
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const response = await fetch(`/api/agent-ticket-requests/${requestId}/accept`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const result = (await response.json()) as { error?: string; ticketId?: string };
+
+      if (!response.ok) {
+        setError(result.error ?? "Could not accept Agent Call request.");
+        await refreshAgent(token);
+        return;
+      }
+
+      setMessage("Agent Call accepted. One ticket was assigned to the player.");
+      refreshAgent(token);
+    });
   }
 
   function applyResponsiblePlay(data: ResponsiblePlayStatus) {
@@ -620,7 +656,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
           </section>
         ) : (
           <section className="wallet-grid">
-            <div className="panel">
+            <div className="panel" id="tickets">
               <div className="panel-header">
                 <div>
                   <h1 className="panel-title">Balance</h1>
@@ -1174,6 +1210,43 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       ))}
                     </div>
                   )}
+                  <div className="agent-request-section">
+                    <div>
+                      <strong>Agent Call requests</strong>
+                      <span>Accept only after you received the player payment. Requests expire after 24 hours.</span>
+                    </div>
+                    {agent.ticketRequests.filter((request) => request.status === "pending").length === 0 ? (
+                      <div className="field-note">No pending Agent Call requests.</div>
+                    ) : (
+                      <div className="agent-request-list">
+                        {agent.ticketRequests
+                          .filter((request) => request.status === "pending")
+                          .map((request) => (
+                            <div className="agent-request-row" key={request.id}>
+                              <div>
+                                <strong>{request.requesterDisplayName}</strong>
+                                <span>{request.requesterEmail ?? "No email"}</span>
+                                <small>Expires {new Date(request.expiresAt).toLocaleString()}</small>
+                              </div>
+                              <button
+                                className="button"
+                                disabled={agent.availableCount < 1 || isPending}
+                                onClick={() => acceptAgentTicketRequest(request.id)}
+                                type="button"
+                              >
+                                <Ticket size={16} />
+                                Accept
+                              </button>
+                            </div>
+                          ))}
+                      </div>
+                    )}
+                    {agent.availableCount < 1 ? (
+                      <div className="message error">
+                        You need available agent tickets before accepting requests. Pending requests stay open until they expire.
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             ) : null}
