@@ -243,16 +243,9 @@ export function Dashboard({
       )}`
     : "";
   const entryRestriction = responsiblePlay?.entryRestriction ?? null;
-  const publicEntryPolicyPause = getGatePauseMessage(publicPaidActionGates?.entry);
   const publicDepositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
   const publicTicketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
-  const entryPolicyPause =
-    myAccountStatus?.paidActionGates
-      ? getGatePauseMessage(myAccountStatus.paidActionGates.entry)
-      : publicEntryPolicyPause;
-  const publicPaidActionsPaused = Boolean(
-    publicEntryPolicyPause || publicDepositPolicyPause || publicTicketPolicyPause,
-  );
+  const publicPaidActionsPaused = Boolean(publicDepositPolicyPause || publicTicketPolicyPause);
   const ticketsAvailable = myAccountStatus?.ticketsAvailable ?? 0;
   const walletBalance = myAccountStatus?.walletBalance ?? 0;
   const ticketPriceAmount = myAccountStatus?.ticketPriceAmount ?? 0;
@@ -263,7 +256,6 @@ export function Dashboard({
     signedInWithGoogle &&
       publicPaidActionsPaused &&
       myAccountStatus?.paidActionGates &&
-      myAccountStatus.paidActionGates.entry.allowed &&
       myAccountStatus.paidActionGates.deposit.allowed &&
       myAccountStatus.paidActionGates.ticket.allowed,
   );
@@ -899,9 +891,8 @@ export function Dashboard({
               <div>
                 <h1 className="panel-title">Choose 3 Teams</h1>
                 <p className="panel-subtitle">
-                  {entryPolicyPause
-                    ? "You can browse teams now. Entry locking opens after launch approvals are complete."
-                    : "Late entries are open. A team locks 1 minute before its first World Cup 2026 match."}
+                  Late entries are open for assigned tickets. A team locks 1 minute before
+                  its first World Cup 2026 match.
                 </p>
               </div>
               <span className="status-pill">{selectedTeams.length}/3 selected</span>
@@ -1202,22 +1193,26 @@ export function Dashboard({
                       {ticketsAvailable > 0 ? `${ticketsAvailable} available` : "0 available"}
                     </span>
                   </div>
-                  <div className="ticket-option-grid">
-                    <div>
-                      <span>Ticket price</span>
-                      <strong>{formatMoneyAmount(ticketPriceAmount)}</strong>
-                    </div>
-                    <div>
-                      <span>Your balance</span>
-                      <strong>{formatLedgerAmount(walletBalance)} USDT</strong>
-                    </div>
-                  </div>
-                  <div className="ticket-requirement-actions">
-                    <Link className="button" href={{ pathname: "/wallet", hash: "tickets" }}>
-                      <Wallet size={16} />
-                      Buy with USDT
-                    </Link>
-                  </div>
+                  {ticketsAvailable < 1 ? (
+                    <>
+                      <div className="ticket-option-grid">
+                        <div>
+                          <span>Ticket price</span>
+                          <strong>{formatMoneyAmount(ticketPriceAmount)}</strong>
+                        </div>
+                        <div>
+                          <span>Your balance</span>
+                          <strong>{formatLedgerAmount(walletBalance)} USDT</strong>
+                        </div>
+                      </div>
+                      <div className="ticket-requirement-actions">
+                        <Link className="button" href={{ pathname: "/wallet", hash: "tickets" }}>
+                          <Wallet size={16} />
+                          Buy with USDT
+                        </Link>
+                      </div>
+                    </>
+                  ) : null}
                   {ticketsAvailable < 1 ? (
                     <div className="agent-call-box">
                       <div>
@@ -1301,9 +1296,6 @@ export function Dashboard({
               {entryRestriction ? (
                 <div className="message error">{entryRestriction}</div>
               ) : null}
-              {entryPolicyPause ? (
-                <div className="message error">{entryPolicyPause}</div>
-              ) : null}
               <button
                 className="button"
                 disabled={
@@ -1314,7 +1306,6 @@ export function Dashboard({
                   (signedInWithGoogle && consented !== true) ||
                   missingEntryTicket ||
                   Boolean(entryRestriction) ||
-                  Boolean(entryPolicyPause) ||
                   isPending
                 }
                 onClick={submitEntry}

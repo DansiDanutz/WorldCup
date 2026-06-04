@@ -174,6 +174,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   );
   const ticketPrice = Number(status?.ticketPriceAmount ?? 0);
   const walletBalance = Number(status?.walletBalance ?? 0);
+  const userHasEntryTicket = (status?.ticketsAvailable ?? 0) > 0;
   const purchasableTickets = ticketPrice > 0 ? Math.floor(walletBalance / ticketPrice) : 0;
   const remainingAfterNextTicket = ticketPrice > 0 ? Math.max(walletBalance - ticketPrice, 0) : walletBalance;
 
@@ -914,14 +915,18 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <Ticket size={18} aria-hidden="true" />
                   <div>
                     <strong>
-                      {purchasableTickets > 0
+                      {userHasEntryTicket
+                        ? "Your personal entry ticket is ready. Lock your teams from Play."
+                        : purchasableTickets > 0
                         ? `${purchasableTickets} ticket${purchasableTickets === 1 ? "" : "s"} can be made from your current USDT balance.`
                         : "Deposit USDT. Full ticket-price chunks convert into tickets automatically."}
                     </strong>
                     <span>
-                      Example: 100 USDT becomes 2 tickets at 50 USDT each. Use one for your entry and transfer the extra ticket to a friend by email.
+                      {userHasEntryTicket
+                        ? "User Wallet deposits are hidden once your entry ticket is available. Use Agent Wallet for agent inventory deposits."
+                        : "Example: 100 USDT becomes 2 tickets at 50 USDT each. Use one for your entry and transfer the extra ticket to a friend by email."}
                     </span>
-                    {ticketPrice > 0 ? (
+                    {!userHasEntryTicket && ticketPrice > 0 ? (
                       <small>
                         After buying the next ticket, estimated USDT left: {formatLedgerAmount(remainingAfterNextTicket)}.
                       </small>
@@ -931,8 +936,12 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 <div className="wallet-action-list compact wallet-action-list--steps" aria-label="Wallet next actions">
                   <div>
                     <span>Ticket</span>
-                    <strong>Buy or redeem</strong>
-                    <small>Required before locking an entry.</small>
+                    <strong>{userHasEntryTicket ? "Ticket ready" : "Buy or redeem"}</strong>
+                    <small>
+                      {userHasEntryTicket
+                        ? "Use your ticket to lock one entry."
+                        : "Required before locking an entry."}
+                    </small>
                   </div>
                   <div>
                     <span>Friend</span>
@@ -940,15 +949,17 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <small>Email must already have a WorldCup account.</small>
                   </div>
                 </div>
-                <button
-                  className="button"
-                  disabled={Boolean(ticketRestriction || ticketPolicyPause) || isPending}
-                  onClick={buyTicket}
-                  type="button"
-                >
-                  <Lock size={16} />
-                  {isPending ? "Processing..." : "Buy entry ticket"}
-                </button>
+                {!userHasEntryTicket ? (
+                  <button
+                    className="button"
+                    disabled={Boolean(ticketRestriction || ticketPolicyPause) || isPending}
+                    onClick={buyTicket}
+                    type="button"
+                  >
+                    <Lock size={16} />
+                    {isPending ? "Processing..." : "Buy entry ticket"}
+                  </button>
+                ) : null}
                 <div className="redeem-row">
                   <label htmlFor="redeem-code">Have a ticket code?</label>
                   <div className="redeem-input">
@@ -971,8 +982,12 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     </button>
                   </div>
                 </div>
-                {ticketPolicyPause ? <div className="message error">{ticketPolicyPause}</div> : null}
-                {ticketRestriction ? <div className="message error">{ticketRestriction}</div> : null}
+                {!userHasEntryTicket && ticketPolicyPause ? (
+                  <div className="message error">{ticketPolicyPause}</div>
+                ) : null}
+                {!userHasEntryTicket && ticketRestriction ? (
+                  <div className="message error">{ticketRestriction}</div>
+                ) : null}
                 <div className="ticket-transfer-box">
                   <div>
                     <strong>Transfer ticket to a friend</strong>
@@ -1119,6 +1134,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               </div>
             </div>
 
+            {!userHasEntryTicket ? (
             <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
               <div className="panel-header">
                 <div>
@@ -1356,6 +1372,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 </div>
               ) : null}
             </div>
+            ) : null}
 
             <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
               <div className="panel-header">
@@ -1512,6 +1529,134 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       <strong>5% referral upside</strong>
                       <span>If a player has no inviter, the agent ticket makes you their inviter and upgrades their own future referral rate to 5%. Existing inviter referrals are never overwritten.</span>
                     </div>
+                  </div>
+                  <div className="agent-deposit-box">
+                    <div className="panel-header compact">
+                      <div>
+                        <h3 className="panel-title">Deposit USDT for agent tickets</h3>
+                        <p className="panel-subtitle">
+                          Send USDT, submit the proof, then admin assigns paid agent tickets after manual approval.
+                        </p>
+                      </div>
+                      <QrCode size={18} color="var(--gold)" />
+                    </div>
+                    {depositPolicyPause ? (
+                      <div className="message error">{depositPolicyPause}</div>
+                    ) : depositsConfigured === false ? (
+                      <div className="message">USDT deposits are not enabled yet. Check back soon.</div>
+                    ) : addresses.length === 0 ? (
+                      <div className="field-note">Generating your agent deposit address...</div>
+                    ) : (
+                      <>
+                        <div className="deposit-list agent-deposit-list">
+                          {addresses.map((entry) => {
+                            const explorerUrl = getDepositExplorerAddressUrl(entry.network, entry.address);
+
+                            return (
+                              <div className="deposit-row" key={`agent-${entry.network}`}>
+                                {entry.qrCodePath ? (
+                                  <Image
+                                    alt={`${entry.label} agent deposit QR code`}
+                                    className="deposit-qr"
+                                    height={116}
+                                    src={entry.qrCodePath}
+                                    unoptimized
+                                    width={116}
+                                  />
+                                ) : null}
+                                <div className="deposit-meta">
+                                  <span className="pick-slot-label">{entry.label}</span>
+                                  <code className="deposit-address">{entry.address}</code>
+                                  {entry.memo ? <small>Memo: {entry.memo}</small> : null}
+                                  {entry.shared ? <small>Main KuCoin receive wallet</small> : null}
+                                  {explorerUrl ? (
+                                    <a
+                                      className="deposit-explorer-link"
+                                      href={explorerUrl}
+                                      rel="noreferrer"
+                                      target="_blank"
+                                    >
+                                      View receive wallet
+                                    </a>
+                                  ) : null}
+                                </div>
+                                <button
+                                  className="button secondary"
+                                  onClick={() => copyAddress(entry.address)}
+                                  type="button"
+                                >
+                                  <Copy size={16} />
+                                  Copy
+                                </button>
+                              </div>
+                            );
+                          })}
+                        </div>
+                        <div className="deposit-claim-form agent-deposit-form">
+                          <div className="message full-width">
+                            This proof is for agent inventory. Admin uses it before assigning paid agent tickets.
+                          </div>
+                          {depositRestriction ? (
+                            <div className="message error full-width">{depositRestriction}</div>
+                          ) : null}
+                          <div className="field">
+                            <label htmlFor="agent-claim-network">Network</label>
+                            <select
+                              id="agent-claim-network"
+                              value={claimNetwork}
+                              onChange={(event) => setClaimNetwork(event.target.value)}
+                            >
+                              <option value="trc20">TRC20</option>
+                              <option value="erc20">ERC20</option>
+                            </select>
+                          </div>
+                          <div className="field">
+                            <label htmlFor="agent-claim-amount">Amount sent</label>
+                            <input
+                              id="agent-claim-amount"
+                              min="0"
+                              step="0.000001"
+                              type="number"
+                              value={claimAmount}
+                              onChange={(event) => setClaimAmount(event.target.value)}
+                            />
+                          </div>
+                          <div className="field full-width">
+                            <label htmlFor="agent-claim-sender-wallet">Sending wallet address</label>
+                            <input
+                              id="agent-claim-sender-wallet"
+                              value={claimSenderWalletAddress}
+                              onChange={(event) => setClaimSenderWalletAddress(event.target.value)}
+                              placeholder={claimNetwork === "trc20" ? "TRC20 wallet starts with T" : "ERC20 wallet starts with 0x"}
+                            />
+                          </div>
+                          <div className="field full-width">
+                            <label htmlFor="agent-claim-tx">Transaction hash</label>
+                            <input
+                              id="agent-claim-tx"
+                              value={claimTxHash}
+                              onChange={(event) => setClaimTxHash(event.target.value)}
+                              placeholder="Paste tx hash"
+                            />
+                          </div>
+                          <button
+                            className="button secondary"
+                            disabled={
+                              !claimAmount ||
+                              !claimSenderWalletAddress ||
+                              !claimTxHash ||
+                              Boolean(depositRestriction || depositPolicyPause) ||
+                              isPending
+                            }
+                            onClick={submitDepositClaim}
+                            type="button"
+                          >
+                            <Send size={16} />
+                            Submit agent deposit proof
+                          </button>
+                        </div>
+                      </>
+                    )}
                   </div>
                   {!agent?.isAgent ? (
                     <div className="agent-register-box">

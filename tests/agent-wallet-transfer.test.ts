@@ -30,6 +30,13 @@ describe("agent wallet direct transfers", () => {
     assert.match(globalsCss, /\.agent-transfer-box/);
   });
 
+  it("keeps USDT deposit proof available in Agent Wallet", () => {
+    assert.match(walletScreen, /Deposit USDT for agent tickets/);
+    assert.match(walletScreen, /Submit agent deposit proof/);
+    assert.match(walletScreen, /Admin uses it before assigning paid agent tickets/);
+    assert.match(globalsCss, /\.agent-deposit-box/);
+  });
+
   it("adds a server route that verifies an email before consuming agent inventory", () => {
     assert.match(transferRoute, /agent-ticket-transfer/);
     assert.match(transferRoute, /requireString\(body\.email, "User email"/);

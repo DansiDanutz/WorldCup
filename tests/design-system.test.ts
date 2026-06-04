@@ -467,16 +467,15 @@ describe("WorldCup design system integration", () => {
     assert.match(walletPage, /publicPaidActionGates/);
     assert.match(loginPage, /getPublicPaidActionGates/);
     assert.match(loginPage, /publicPaidActionGates/);
-    assert.match(dashboard, /entryPolicyPause/);
     assert.match(dashboard, /launchEvidenceMode/);
     assert.match(dashboard, /<div className="page page--landing">[\s\S]*?<HeroSwiper/);
     assert.doesNotMatch(dashboard, /<strong>Paid actions paused<\/strong>/);
     assert.match(dashboard, /Admin launch evidence mode/);
     assert.match(dashboard, /Your admin account can lock entries/);
-    assert.match(dashboard, /\{entryPolicyPause[\s\S]*?Entry locking opens after launch approvals are complete/);
     assert.match(dashboard, /paidActionGates: result\.paidActionGates/);
     assert.match(dashboard, /myAccountStatus\?\.paidActionGates/);
-    assert.match(dashboard, /Entry locking opens after launch approvals are complete/);
+    assert.match(dashboard, /Late entries are open for assigned tickets/);
+    assert.doesNotMatch(dashboard, /Entry locking opens after launch approvals are complete/);
     assert.doesNotMatch(dashboard, /Operator policy is configured/);
     assert.match(globalsCss, /\.launch-notice/);
     assert.match(globalsCss, /\.launch-evidence-checklist/);
@@ -510,7 +509,7 @@ describe("WorldCup design system integration", () => {
     assert.match(loginRegister, /Account setup is open/);
     assert.match(
       loginRegister,
-      /Tickets, entries, and USDT deposits open after launch approvals are complete\./,
+      /Tickets and USDT deposits open after launch approvals are complete\./,
     );
   });
 });

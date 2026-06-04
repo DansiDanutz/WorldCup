@@ -54,4 +54,11 @@ describe("user ticket transfers", () => {
     assert.match(walletScreen, /Find/);
     assert.match(walletScreen, /Send 1 ticket/);
   });
+
+  it("hides user deposit and ticket purchase prompts after a user ticket is available", () => {
+    assert.match(walletScreen, /const userHasEntryTicket =/);
+    assert.match(walletScreen, /User Wallet deposits are hidden once your entry ticket is available/);
+    assert.match(walletScreen, /!\s*userHasEntryTicket\s*\?\s*\(/);
+    assert.match(walletScreen, /Deposit USDT for agent tickets/);
+  });
 });

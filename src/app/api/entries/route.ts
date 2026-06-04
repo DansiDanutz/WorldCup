@@ -6,7 +6,7 @@ import {
   getPolicyGeoEnv,
   loadOperatorPolicy,
 } from "@/lib/operator-policy";
-import { getUserPaidActionGate, isPaidActionLaunchTestAdmin } from "@/lib/paid-action-gates";
+import { isPaidActionLaunchTestAdmin } from "@/lib/paid-action-gates";
 import { getAuthProvider, normalizeReferralCode } from "@/lib/referrals";
 import { getResponsiblePlayRestriction, loadResponsiblePlayStatus } from "@/lib/responsible-play";
 import { createServiceSupabaseClient } from "@/lib/supabase";
@@ -81,11 +81,6 @@ export async function POST(request: Request) {
     if (geoRestricted) {
       return geoRestricted;
     }
-  }
-
-  const paidActionGate = await getUserPaidActionGate(supabase, "entry", { userEmail: user.email });
-  if (!paidActionGate.allowed) {
-    return jsonError(paidActionGate.message ?? "Entry locking is paused until launch approvals are complete.", 403);
   }
 
   if (referralCode && !referralTermsAccepted) {

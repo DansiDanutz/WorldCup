@@ -97,8 +97,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
   const showGoogleAuth = Boolean(session || canContinue);
   const depositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
   const ticketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
-  const entryPolicyPause = getGatePauseMessage(publicPaidActionGates?.entry);
-  const paidActionsPaused = Boolean(depositPolicyPause || ticketPolicyPause || entryPolicyPause);
+  const paidActionsPaused = Boolean(depositPolicyPause || ticketPolicyPause);
 
   useEffect(() => {
     window.queueMicrotask(() => {
@@ -220,7 +219,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
               <div>
                 <strong>Account setup is open</strong>
                 <span>
-                  Tickets, entries, and USDT deposits open after launch approvals are complete.
+                  Tickets and USDT deposits open after launch approvals are complete.
                 </span>
               </div>
             </div>
