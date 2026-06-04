@@ -433,6 +433,27 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
 
               <details className="auth-info-card">
                 <summary>
+                  <span>Agent Wanted</span>
+                  <ChevronDown size={16} />
+                </summary>
+                <div className="auth-benefits" aria-label="Agent program">
+                  <div>
+                    <CircleDollarSign size={18} />
+                    <span>Pay upfront for ticket codes you can assign to players.</span>
+                  </div>
+                  <div>
+                    <Gift size={18} />
+                    <span>Every 10 paid ticket codes unlock 1 extra free ticket code.</span>
+                  </div>
+                  <div>
+                    <Users size={18} />
+                    <span>Register as an agent in Wallet, then activate after your first ticket deposit.</span>
+                  </div>
+                </div>
+              </details>
+
+              <details className="auth-info-card">
+                <summary>
                   <span>All 48 nations</span>
                   <ChevronDown size={16} />
                 </summary>

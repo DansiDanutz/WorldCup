@@ -85,6 +85,9 @@ describe("WorldCup design system integration", () => {
     assert.match(loginRegister, /auth-info-card/);
     assert.match(loginRegister, /How it works/);
     assert.match(loginRegister, /Referral rates/);
+    assert.match(loginRegister, /Agent Wanted/);
+    assert.match(loginRegister, /Every 10 paid ticket codes unlock 1 extra free ticket code/);
+    assert.match(loginRegister, /Register as an agent in Wallet/);
     assert.match(loginRegister, /All 48 nations/);
     assert.doesNotMatch(loginRegister, /disabled=\{!canContinue\}/);
     assert.match(globalsCss, /\.auth-card\s*{[\s\S]*?linear-gradient\(155deg/);
