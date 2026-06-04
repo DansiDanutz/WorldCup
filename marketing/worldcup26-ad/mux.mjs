@@ -27,13 +27,16 @@ const labels = [];
 for (let i = 0; i < lines.length; i++) {
   const at = lines[i].at;
   const nextAt = i < lines.length - 1 ? lines[i + 1].at : DURATION;
-  const budget = (nextAt - at) - 0.12;
-  let tempo = 1;
-  if (durs[i] > budget && budget > 0.3) tempo = Math.min(1.8, durs[i] / budget);
+  // Time-fit each line to its window so the VO is continuous (no gaps): a line
+  // longer than its slot is sped up, a shorter one is gently slowed — both
+  // clamped to a quality-safe range so Brian still sounds natural.
+  const budget = (nextAt - at) - 0.05;
+  let tempo = budget > 0.3 ? durs[i] / budget : 1;
+  tempo = Math.min(1.5, Math.max(0.9, tempo));
   const ms = Math.round(at * 1000);
   const idx = i + 1; // input 0 = frames
   let c = `[${idx}:a]`;
-  if (tempo > 1.001) c += `atempo=${tempo.toFixed(4)},`;
+  if (Math.abs(tempo - 1) > 0.02) c += `atempo=${tempo.toFixed(4)},`;
   c += `adelay=${ms}:all=1,aresample=44100[a${i}]`;
   chains.push(c);
   labels.push(`[a${i}]`);
