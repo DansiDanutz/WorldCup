@@ -6,6 +6,7 @@ const globalsCss = readFileSync("src/app/globals.css", "utf8");
 const homePage = readFileSync("src/app/page.tsx", "utf8");
 const walletPage = readFileSync("src/app/wallet/page.tsx", "utf8");
 const loginPage = readFileSync("src/app/login/page.tsx", "utf8");
+const loginOgImage = readFileSync("src/app/login/opengraph-image.tsx", "utf8");
 const coefficientsPage = readFileSync("src/app/coefficients/page.tsx", "utf8");
 const schemaPage = readFileSync("src/app/schema/page.tsx", "utf8");
 const previewPage = readFileSync("src/app/preview/page.tsx", "utf8");
@@ -180,6 +181,21 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.hero-card--agent/);
     assert.match(globalsCss, /--hero-photo:\s*url\("\/agent-deal-bg\.png"\)/);
     assert.equal(existsSync("public/agent-deal-bg.png"), true);
+  });
+
+  it("keeps referral invites polished for WhatsApp sharing", () => {
+    assert.match(dashboard, /I invited you to WorldCup26\.[\s\S]*?Pick 3 teams, climb the leaderboard/);
+    assert.match(dashboard, /use my referral code \$\{myReferralCode\}/);
+    assert.match(dashboard, /className="invite-preview-card"/);
+    assert.match(dashboard, /className="invite-link-card"/);
+    assert.match(dashboard, /<MessageCircle size=\{16\} \/>[\s\S]*?Send invite/);
+    assert.match(dashboard, /<ClipboardCopy size=\{16\} \/>[\s\S]*?Copy link/);
+    assert.match(globalsCss, /\.invite-preview-card\s*{[\s\S]*?linear-gradient\(135deg/);
+    assert.match(globalsCss, /\.referral-code-card strong\s*{[\s\S]*?letter-spacing:\s*0\.08em;/);
+    assert.match(loginPage, /title:\s*"Join WorldCup26"/);
+    assert.match(loginPage, /You are invited to WorldCup26/);
+    assert.match(loginOgImage, /Referral invite/);
+    assert.match(loginOgImage, /Pick 3 teams\. Climb the World Cup leaderboard\./);
   });
 
   it("keeps every non-matchup swiper poster image-backed like Agent Deal", () => {
