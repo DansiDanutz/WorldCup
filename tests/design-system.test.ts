@@ -259,6 +259,7 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /one-minute-before-first-match lock time/);
     assert.match(dashboard, /Matchday 1 runs 11-17 June 2026/);
     assert.match(dashboard, /className="team-row-action"/);
+    assert.match(dashboard, /className="team-coef-badge"/);
     assert.match(dashboard, /className="team-deadline"/);
     assert.match(dashboard, /No teams found/);
     assert.match(dashboard, /<div className="panel" id="entry">/);
@@ -268,6 +269,7 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.pick-slot-strip\s*{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\);/);
     assert.match(globalsCss, /\.team-row\s*{[\s\S]*?grid-template-columns:\s*36px minmax\(0,\s*1fr\) 74px 72px 76px;/);
     assert.match(globalsCss, /\.team-row\s*{[\s\S]*?--team-color-one/);
+    assert.match(globalsCss, /\.team-coef-badge\s*{/);
     assert.match(globalsCss, /\.team-deadline\s*{/);
     assert.match(globalsCss, /\.team-deadline\s*{[\s\S]*?color:\s*#ffb44c;/);
     assert.match(globalsCss, /\.team-row-action\s*{/);
