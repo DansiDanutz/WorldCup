@@ -213,6 +213,11 @@ export function Dashboard({
   const selectedTeamRecords = selectedTeams
     .map((teamId) => teamsById.get(teamId))
     .filter((team): team is WorldCupTeam => Boolean(team));
+  const accountEntry = myAccountStatus?.entry ?? null;
+  const accountHasEntry = Boolean(accountEntry);
+  const lockedEntryTeamRecords = (accountEntry?.teamIds ?? [])
+    .map((teamId) => teamsById.get(teamId))
+    .filter((team): team is WorldCupTeam => Boolean(team));
   const remainingPickCount = Math.max(0, 3 - selectedTeams.length);
   const pickInstruction =
     selectedTeams.length === 3
@@ -233,6 +238,8 @@ export function Dashboard({
     [matches, teams],
   );
   const signedInWithGoogle = Boolean(session?.access_token && session.user.email);
+  const waitingForAccountStatus = signedInWithGoogle && myAccountStatus === null;
+  const showPickWorkflow = !accountHasEntry && !waitingForAccountStatus;
   const shareUrl =
     typeof window === "undefined" || !myReferralCode
       ? ""
@@ -427,6 +434,7 @@ export function Dashboard({
           ticketsAssigned?: number;
           ticketsAvailable?: number;
           ticketPriceAmount?: string;
+          entry?: MyAccountStatus["entry"];
           paidActionGates?: MyAccountStatus["paidActionGates"];
         };
         const responsibleResult = (await responsibleResponse.json()) as ResponsiblePlayStatus;
@@ -446,6 +454,7 @@ export function Dashboard({
           ticketsAssigned: result.ticketsAssigned ?? 0,
           ticketsAvailable: result.ticketsAvailable ?? 0,
           ticketPriceAmount: result.ticketPriceAmount ?? "0",
+          entry: result.entry ?? null,
           paidActionGates: result.paidActionGates,
         });
         setResponsiblePlay(responsibleResponse.ok ? responsibleResult : null);
@@ -527,6 +536,10 @@ export function Dashboard({
   }
 
   function toggleTeam(teamId: string) {
+    if (accountHasEntry || waitingForAccountStatus) {
+      return;
+    }
+
     if (teamEligibility.get(teamId)?.available === false) {
       return;
     }
@@ -719,12 +732,31 @@ export function Dashboard({
         return;
       }
 
-      setEntryMessage("Entry locked. You are on the leaderboard.");
-      setDisplayName("");
+      const lockedDisplayName = displayName.trim();
+      const lockedTeamIds = [...selectedTeams];
+
+      setEntryMessage("Entry locked. Your account is now focused on your entry, wallet, and agent deal.");
+      setMyAccountStatus((current) => ({
+        walletBalance: current?.walletBalance ?? "0.00",
+        ticketsAssigned: current?.ticketsAssigned ?? 0,
+        ticketsAvailable: Math.max(0, (current?.ticketsAvailable ?? 1) - 1),
+        ticketPriceAmount: current?.ticketPriceAmount ?? "0",
+        usdtSenderWalletAddress: current?.usdtSenderWalletAddress ?? null,
+        usdtSenderWalletNetwork: current?.usdtSenderWalletNetwork ?? null,
+        usdtSenderWalletUpdatedAt: current?.usdtSenderWalletUpdatedAt ?? null,
+        paidActionGates: current?.paidActionGates,
+        entry: {
+          id: result.entryId ?? "locked-entry",
+          status: "locked",
+          displayName: lockedDisplayName,
+          teamIds: lockedTeamIds,
+          lockedAt: new Date().toISOString(),
+        },
+      }));
       setSelectedTeams([]);
       window.localStorage.removeItem("worldcup_referral_code");
       window.localStorage.removeItem("worldcup_referral_accepted");
-      window.setTimeout(() => window.location.reload(), 900);
+      window.setTimeout(() => document.getElementById("me")?.scrollIntoView({ behavior: "smooth" }), 80);
     });
   }
 
@@ -776,11 +808,11 @@ export function Dashboard({
         </div>
         <SmartMenu>
           <nav className="nav nav--app" aria-label="Primary navigation">
-            <a className="nav-item nav-item--primary" href="#pick">
-              <Users size={16} />
+            <a className="nav-item nav-item--primary" href={showPickWorkflow ? "#pick" : "#me"}>
+              {showPickWorkflow ? <Users size={16} /> : <UserRound size={16} />}
               <span className="nav-item__copy">
-                <strong>Pick Teams</strong>
-                <small>Main task</small>
+                <strong>{showPickWorkflow ? "Pick Teams" : "Account"}</strong>
+                <small>{showPickWorkflow ? "Main task" : "Your entry"}</small>
               </span>
             </a>
             <a className="nav-item" href="#leaderboard">
@@ -858,10 +890,12 @@ export function Dashboard({
       </header>
 
       <div className="page page--landing">
-        <HeroSwiper
-          prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
-          playerCount={participantCount}
-        />
+        {showPickWorkflow ? (
+          <HeroSwiper
+            prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
+            playerCount={participantCount}
+          />
+        ) : null}
 
         <MyStanding />
 
@@ -899,7 +933,81 @@ export function Dashboard({
           </div>
         </section>
 
-        <section className="grid">
+        <section className={`grid ${accountHasEntry ? "grid--entry-complete" : ""}`}>
+          {waitingForAccountStatus ? (
+            <div className="panel pick-panel entry-complete-panel" id="pick">
+              <div className="panel-header">
+                <div>
+                  <h1 className="panel-title">Checking your account</h1>
+                  <p className="panel-subtitle">
+                    We are loading your entry status before showing any game actions.
+                  </p>
+                </div>
+                <span className="status-pill">Loading</span>
+              </div>
+              <div className="entry-complete-card">
+                <div className="ticket-ready-note">
+                  <RefreshCw size={16} />
+                  <span>Account status is loading. Finished entries will open directly to account view.</span>
+                </div>
+              </div>
+            </div>
+          ) : accountHasEntry ? (
+            <div className="panel pick-panel entry-complete-panel" id="pick">
+              <div className="panel-header">
+                <div>
+                  <h1 className="panel-title">Your entry is locked</h1>
+                  <p className="panel-subtitle">
+                    One entry per account. Your final teams are saved and can no longer be changed.
+                  </p>
+                </div>
+                <span className="status-pill">Locked</span>
+              </div>
+              <div className="entry-complete-card">
+                <div className="entry-complete-card__title">
+                  <Check size={18} aria-hidden="true" />
+                  <div>
+                    <strong>{accountEntry?.displayName ?? "Your WorldCup26 entry"}</strong>
+                    <span>
+                      {accountEntry?.lockedAt
+                        ? `Locked ${formatDateTime(accountEntry.lockedAt)}`
+                        : "Entry locked"}
+                    </span>
+                  </div>
+                </div>
+                <div className="selected-card locked-entry-teams" aria-label="Locked teams">
+                  {[0, 1, 2].map((slot) => {
+                    const team = lockedEntryTeamRecords[slot];
+                    const fallbackTeamId = accountEntry?.teamIds[slot];
+
+                    return (
+                      <div
+                        className={`selected-team ${team ? getPickColorClass(slot) : "empty-slot"}`}
+                        key={team?.id ?? fallbackTeamId ?? slot}
+                      >
+                        <span className="pick-slot-label">Team {slot + 1}</span>
+                        <span className="selected-team-name">
+                          {team?.name ?? fallbackTeamId ?? "Saved team"}
+                        </span>
+                        <strong>{team ? formatCoefficient(team.reward_coefficient) : "-"}</strong>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="entry-complete-actions">
+                  <a className="button" href="#me">
+                    <UserRound size={16} />
+                    Open account
+                  </a>
+                  <Link className="button secondary" href={{ pathname: "/wallet" }}>
+                    <Wallet size={16} />
+                    Wallet / Agent
+                  </Link>
+                </div>
+                {entryMessage ? <div className="message">{entryMessage}</div> : null}
+              </div>
+            </div>
+          ) : (
           <div className="panel pick-panel" id="pick">
             <div className="panel-header">
               <div>
@@ -1089,7 +1197,9 @@ export function Dashboard({
               ) : null}
             </div>
           </div>
+          )}
 
+          {showPickWorkflow ? (
           <div className="panel" id="entry">
             <div className="panel-header">
               <div>
@@ -1339,6 +1449,7 @@ export function Dashboard({
               {entryError ? <div className="message error">{entryError}</div> : null}
             </div>
           </div>
+          ) : null}
 
           <div className="panel invite-panel" id="invite">
             <div className="panel-header">

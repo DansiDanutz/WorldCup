@@ -223,7 +223,11 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /setIsAdmin\(false\);/);
     assert.match(dashboard, /<main className="app-shell app-shell--landing">/);
     assert.match(dashboard, /<nav className="nav nav--app" aria-label="Primary navigation">/);
-    assert.match(dashboard, /className="nav-item nav-item--primary" href="#pick"[\s\S]*?Pick Teams[\s\S]*?Main task[\s\S]*?href="#leaderboard"[\s\S]*?Leaderboard[\s\S]*?Ranking[\s\S]*?pathname: "\/wallet"[\s\S]*?Wallet[\s\S]*?Tickets & USDT[\s\S]*?<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw/);
+    assert.match(dashboard, /const showPickWorkflow = !accountHasEntry && !waitingForAccountStatus;/);
+    assert.match(dashboard, /className="nav-item nav-item--primary" href=\{showPickWorkflow \? "#pick" : "#me"\}/);
+    assert.match(dashboard, /showPickWorkflow \? "Pick Teams" : "Account"/);
+    assert.match(dashboard, /showPickWorkflow \? "Main task" : "Your entry"/);
+    assert.match(dashboard, /href="#leaderboard"[\s\S]*?Leaderboard[\s\S]*?Ranking[\s\S]*?pathname: "\/wallet"[\s\S]*?Wallet[\s\S]*?Tickets & USDT[\s\S]*?<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw/);
     assert.match(dashboard, /<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw[\s\S]*?href="#rules"[\s\S]*?pathname: "\/schema"/);
     assert.match(dashboard, /\{isAdmin \? \([\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?\) : null\}/);
     assert.match(dashboard, /<details className="nav-more">[\s\S]*?<\/details>[\s\S]*?\{signedInWithGoogle \? \([\s\S]*?className="nav-item nav-item--identity" href="#me"[\s\S]*?Account[\s\S]*?\) : \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?pathname: "\/login"[\s\S]*?Login/);

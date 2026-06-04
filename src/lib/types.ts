@@ -202,6 +202,13 @@ export type MyAccountStatus = {
   ticketsAssigned: number;
   ticketsAvailable: number;
   ticketPriceAmount: string;
+  entry?: {
+    id: string;
+    status: "draft" | "locked";
+    displayName: string;
+    teamIds: string[];
+    lockedAt: string | null;
+  } | null;
   usdtSenderWalletAddress?: string | null;
   usdtSenderWalletNetwork?: string | null;
   usdtSenderWalletUpdatedAt?: string | null;

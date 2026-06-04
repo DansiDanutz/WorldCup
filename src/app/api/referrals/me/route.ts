@@ -59,7 +59,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Tournament is not available." }, { status: 500 });
   }
 
-  const [tickets, transactions] = await Promise.all([
+  const [tickets, transactions, ownEntry] = await Promise.all([
     supabase
       .from("worldcup_tickets")
       .select("id,consumed_at")
@@ -70,13 +70,39 @@ export async function GET(request: Request) {
       .select("from_user_id,to_user_id,amount")
       .eq("tournament_id", tournament.data.id)
       .or(`from_user_id.eq.${user.id},to_user_id.eq.${user.id}`),
+    supabase
+      .from("worldcup_entries")
+      .select("id,display_name,status,locked_at")
+      .eq("tournament_id", tournament.data.id)
+      .eq("user_id", user.id)
+      .order("locked_at", { ascending: false, nullsFirst: false })
+      .limit(1)
+      .maybeSingle(),
   ]);
 
-  if (tickets.error || transactions.error) {
+  if (tickets.error || transactions.error || ownEntry.error) {
     return NextResponse.json(
-      { error: tickets.error?.message ?? transactions.error?.message ?? "Could not load account status." },
+      {
+        error:
+          tickets.error?.message ??
+          transactions.error?.message ??
+          ownEntry.error?.message ??
+          "Could not load account status.",
+      },
       { status: 500 },
     );
+  }
+
+  const ownEntryTeams = ownEntry.data?.id
+    ? await supabase
+        .from("worldcup_entry_teams")
+        .select("team_id,pick_slot")
+        .eq("entry_id", ownEntry.data.id)
+        .order("pick_slot", { ascending: true })
+    : null;
+
+  if (ownEntryTeams?.error) {
+    return NextResponse.json({ error: "Could not load your locked teams." }, { status: 500 });
   }
 
   const entryIds = (referrals.data ?? [])
@@ -102,6 +128,15 @@ export async function GET(request: Request) {
     ticketsAssigned: tickets.data?.length ?? 0,
     ticketsAvailable: (tickets.data ?? []).filter((ticket) => !ticket.consumed_at).length,
     ticketPriceAmount: tournament.data.ticket_price_amount,
+    entry: ownEntry.data
+      ? {
+          id: ownEntry.data.id,
+          status: ownEntry.data.status,
+          displayName: ownEntry.data.display_name,
+          teamIds: (ownEntryTeams?.data ?? []).map((team) => team.team_id),
+          lockedAt: ownEntry.data.locked_at,
+        }
+      : null,
     usdtSenderWalletAddress: profile.usdt_sender_wallet_address ?? null,
     usdtSenderWalletNetwork: profile.usdt_sender_wallet_network ?? null,
     usdtSenderWalletUpdatedAt: profile.usdt_sender_wallet_updated_at ?? null,
