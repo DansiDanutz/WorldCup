@@ -401,7 +401,8 @@ describe("WorldCup design system integration", () => {
     assert.match(walletScreen, /acceptAgentTicketRequest/);
     assert.match(dashboard, /pathname: "\/wallet", hash: "tickets"/);
     assert.match(dashboard, /missingEntryTicket \|\|/);
-    assert.match(walletScreen, /<div className="panel" id="tickets">/);
+    assert.match(walletScreen, /id="tickets"/);
+    assert.match(walletScreen, /walletView === "agent" \? "wallet-panel-hidden" : ""/);
     assert.match(globalsCss, /\.ticket-requirement-card\s*{/);
     assert.match(globalsCss, /\.ticket-requirement-card\.needs-ticket/);
     assert.match(globalsCss, /\.ticket-requirement-actions\s*{/);

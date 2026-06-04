@@ -6048,6 +6048,83 @@ html {
   margin: 0 auto;
 }
 
+.wallet-workspace {
+  display: grid;
+  gap: 16px;
+  width: min(940px, 100%);
+  margin: 0 auto;
+}
+
+.wallet-view-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgba(238, 177, 61, 0.26);
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(238, 177, 61, 0.18), rgba(6, 55, 42, 0.9)),
+    #06271f;
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.wallet-view-tab {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 4px 10px;
+  align-items: center;
+  min-height: 76px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  background: rgba(0, 18, 14, 0.34);
+  color: rgba(255, 255, 255, 0.84);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.wallet-view-tab svg {
+  grid-row: span 2;
+  color: var(--gold);
+}
+
+.wallet-view-tab span {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.wallet-view-tab small {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.wallet-view-tab.active {
+  border-color: rgba(255, 216, 125, 0.76);
+  background:
+    linear-gradient(135deg, rgba(255, 217, 125, 0.95), rgba(224, 157, 43, 0.96));
+  color: #08251d;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(238, 177, 61, 0.18);
+}
+
+.wallet-view-tab.active svg,
+.wallet-view-tab.active span,
+.wallet-view-tab.active small {
+  color: #08251d;
+}
+
+.wallet-panel-hidden {
+  display: none !important;
+}
+
 .wallet-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -6057,10 +6134,27 @@ html {
   margin: 0 auto;
 }
 
+.wallet-grid--agent {
+  grid-template-columns: 1fr;
+}
+
+.wallet-grid--agent .wallet-wide {
+  margin-top: 0;
+}
+
 @media (max-width: 760px) {
+  .wallet-workspace,
   .wallet-grid {
     grid-template-columns: 1fr;
     width: min(460px, 100%);
+  }
+
+  .wallet-view-switch {
+    grid-template-columns: 1fr;
+  }
+
+  .wallet-view-tab {
+    min-height: 68px;
   }
 
   .wallet-balance-grid,
@@ -6191,6 +6285,13 @@ html {
 .ticket-transfer-box {
   background:
     linear-gradient(135deg, rgba(16, 107, 79, 0.12), rgba(255, 255, 255, 0.78)),
+    var(--paper-soft);
+}
+
+.agent-transfer-box {
+  border-color: rgba(238, 177, 61, 0.42);
+  background:
+    linear-gradient(135deg, rgba(238, 177, 61, 0.24), rgba(5, 49, 37, 0.1)),
     var(--paper-soft);
 }
 

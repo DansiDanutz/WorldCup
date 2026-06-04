@@ -130,6 +130,9 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [redeemCode, setRedeemCode] = useState("");
   const [transferEmail, setTransferEmail] = useState("");
   const [transferRecipient, setTransferRecipient] = useState<TicketTransferRecipient | null>(null);
+  const [walletView, setWalletView] = useState<"user" | "agent">("user");
+  const [agentTransferEmail, setAgentTransferEmail] = useState("");
+  const [agentTransferRecipient, setAgentTransferRecipient] = useState<TicketTransferRecipient | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
@@ -198,6 +201,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         setEntryLimitDraft("");
         setTransferEmail("");
         setTransferRecipient(null);
+        setAgentTransferEmail("");
+        setAgentTransferRecipient(null);
         return;
       }
 
@@ -541,6 +546,51 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
     });
   }
 
+  function transferAgentTicket(confirm: boolean) {
+    const token = session?.access_token;
+    const email = agentTransferEmail.trim().toLowerCase();
+    if (!token || !email) {
+      return;
+    }
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const response = await fetch("/api/agent/tickets/transfer", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, confirm }),
+      });
+      const result = (await response.json()) as {
+        error?: string;
+        ticketId?: string;
+        recipient?: TicketTransferRecipient;
+        requiresConfirmation?: boolean;
+      };
+
+      if (!response.ok) {
+        setError(result.error ?? "Could not transfer agent ticket.");
+        setAgentTransferRecipient(null);
+        await refreshAgent(token);
+        return;
+      }
+
+      if (result.requiresConfirmation && result.recipient) {
+        setAgentTransferRecipient(result.recipient);
+        setMessage(`Account found: ${result.recipient.displayName ?? result.recipient.email}. Confirm to send one agent ticket.`);
+        return;
+      }
+
+      setAgentTransferEmail("");
+      setAgentTransferRecipient(null);
+      setMessage("Agent ticket transferred. The sale is tracked to your agent wallet; existing player referrals are not overwritten.");
+      refreshAgent(token);
+    });
+  }
+
   async function copyAddress(address: string) {
     await navigator.clipboard.writeText(address);
     setMessage("Address copied.");
@@ -806,8 +856,33 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
             </div>
           </section>
         ) : (
-          <section className="wallet-grid">
-            <div className="panel" id="tickets">
+          <section className="wallet-workspace" aria-label="Wallet workspace">
+            <div className="wallet-view-switch" role="tablist" aria-label="Wallet type">
+              <button
+                aria-selected={walletView === "user"}
+                className={`wallet-view-tab ${walletView === "user" ? "active" : ""}`}
+                onClick={() => setWalletView("user")}
+                role="tab"
+                type="button"
+              >
+                <Wallet size={18} />
+                <span>User Wallet</span>
+                <small>USDT, tickets, transfer</small>
+              </button>
+              <button
+                aria-selected={walletView === "agent"}
+                className={`wallet-view-tab ${walletView === "agent" ? "active" : ""}`}
+                onClick={() => setWalletView("agent")}
+                role="tab"
+                type="button"
+              >
+                <Gift size={18} />
+                <span>Agent Wallet</span>
+                <small>Sell tickets, requests</small>
+              </button>
+            </div>
+            <div className={`wallet-grid wallet-grid--${walletView}`}>
+            <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`} id="tickets">
               <div className="panel-header">
                 <div>
                   <h1 className="panel-title">User Wallet</h1>
@@ -961,7 +1036,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               </div>
             </div>
 
-            <div className="panel">
+            <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
               <div className="panel-header">
                 <div>
                   <h2 className="panel-title">Responsible Play</h2>
@@ -1044,7 +1119,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               </div>
             </div>
 
-            <div className="panel">
+            <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
               <div className="panel-header">
                 <div>
                   <h2 className="panel-title">Deposit USDT</h2>
@@ -1282,7 +1357,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               ) : null}
             </div>
 
-            <div className="panel">
+            <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
               <div className="panel-header">
                 <div>
                   <h2 className="panel-title">Withdraw USDT</h2>
@@ -1409,7 +1484,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
             </div>
 
             {signedIn ? (
-              <div className="panel wallet-wide agent-wallet-card">
+              <div className={`panel wallet-wide agent-wallet-card ${walletView === "user" ? "wallet-panel-hidden" : ""}`}>
                 <div className="panel-header">
                   <div>
                     <h2 className="panel-title">Agent Wallet</h2>
@@ -1435,7 +1510,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <div>
                       <UserPlus size={18} aria-hidden="true" />
                       <strong>5% referral upside</strong>
-                      <span>Every player who receives an agent ticket is connected to the agent. If they win, the agent can receive 5% of their prize.</span>
+                      <span>If a player has no inviter, the agent ticket makes you their inviter and upgrades their own future referral rate to 5%. Existing inviter referrals are never overwritten.</span>
                     </div>
                   </div>
                   {!agent?.isAgent ? (
@@ -1523,6 +1598,61 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       >
                         <span style={{ width: `${(agent.progressInCycle / 10) * 100}%` }} />
                       </div>
+                      <div className="ticket-transfer-box agent-transfer-box">
+                        <div>
+                          <strong>Transfer ticket to a user</strong>
+                          <span>
+                            Enter the player email. If they have no inviter, this ticket makes you their inviter and upgrades their own future referral rate to 5%. Existing inviter referrals are not overwritten.
+                          </span>
+                        </div>
+                        <div className="redeem-row">
+                          <label htmlFor="agent-ticket-transfer-email">User email</label>
+                          <div className="redeem-input">
+                            <input
+                              className="search"
+                              id="agent-ticket-transfer-email"
+                              inputMode="email"
+                              placeholder="player@email.com"
+                              value={agentTransferEmail}
+                              onChange={(event) => {
+                                setAgentTransferEmail(event.target.value);
+                                setAgentTransferRecipient(null);
+                              }}
+                            />
+                            <button
+                              className="button secondary"
+                              disabled={isPending || agentTransferEmail.trim().length === 0 || agent.availableCount < 1}
+                              onClick={() => transferAgentTicket(false)}
+                              type="button"
+                            >
+                              Find
+                            </button>
+                          </div>
+                        </div>
+                        {agentTransferRecipient ? (
+                          <div className="transfer-confirm-card">
+                            <div>
+                              <span>Account found</span>
+                              <strong>{agentTransferRecipient.displayName ?? agentTransferRecipient.email}</strong>
+                              <small>{agentTransferRecipient.email}</small>
+                            </div>
+                            <button
+                              className="button"
+                              disabled={isPending || agent.availableCount < 1}
+                              onClick={() => transferAgentTicket(true)}
+                              type="button"
+                            >
+                              <Send size={16} />
+                              Send 1 agent ticket
+                            </button>
+                          </div>
+                        ) : null}
+                        {agent.availableCount < 1 ? (
+                          <div className="message error">
+                            You need available agent tickets before transferring to users.
+                          </div>
+                        ) : null}
+                      </div>
                       {agent.availableCodes.length === 0 ? (
                         <div className="field-note">No available codes assigned right now.</div>
                       ) : (
@@ -1581,9 +1711,12 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       </div>
                     </>
                   )}
+                  {walletView === "agent" && message ? <div className="message">{message}</div> : null}
+                  {walletView === "agent" && error ? <div className="message error">{error}</div> : null}
                 </div>
               </div>
             ) : null}
+            </div>
           </section>
         )}
       </div>
