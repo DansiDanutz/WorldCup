@@ -91,7 +91,7 @@ export function MyStanding() {
   return (
     <section className="my-standing" id="me" aria-label="My account">
       <div className="standing-grid">
-        <div className="panel standing-main">
+        <div className="panel standing-main standing-card standing-card--rank">
           <div className="panel-header">
             <div>
               <h2 className="panel-title">My standing</h2>
@@ -158,7 +158,7 @@ export function MyStanding() {
           </div>
         </div>
 
-        <div className="panel">
+        <div className="panel standing-card standing-card--referrals">
           <div className="panel-header">
             <div>
               <h2 className="panel-title">My referrals</h2>
@@ -212,7 +212,7 @@ export function MyStanding() {
       </div>
 
       {data?.agent ? (
-        <div className="panel standing-agent">
+        <div className="panel standing-agent standing-card standing-card--agent">
           <div className="panel-header">
             <div>
               <h2 className="panel-title">Agent — tickets &amp; commission</h2>
