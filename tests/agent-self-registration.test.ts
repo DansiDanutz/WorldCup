@@ -18,16 +18,19 @@ describe("agent self-registration", () => {
     assert.match(migration, /add column if not exists registered_at timestamptz/);
     assert.match(agentMeRoute, /requireString\(body\.name, "Agent name"/);
     assert.match(agentMeRoute, /requireString\(body\.whatsapp, "WhatsApp number"/);
-    assert.match(agentMeRoute, /created_by: "self-registered"/);
-    assert.match(agentMeRoute, /active: false/);
+    assert.match(agentMeRoute, /created_by: shouldActivate \? "self-registered:ticket_active" : "self-registered"/);
+    assert.match(agentMeRoute, /active: shouldActivate/);
   });
 
-  it("keeps registered agents pending until the first paid ticket assignment", () => {
+  it("activates registered agents after the first personal ticket exists", () => {
     assert.match(migration, /where user_id = p_agent_user_id and tournament_id = p_tournament_id;/);
     assert.doesNotMatch(migration, /and tournament_id = p_tournament_id and active;/);
     assert.match(migration, /active = true/);
     assert.match(migration, /activated_at = coalesce\(activated_at, now\(\)\)/);
     assert.match(adminAgentsRoute, /worldcup_admin_assign_agent_tickets/);
+    assert.match(agentMeRoute, /hasPersonalTicket/);
+    assert.match(agentMeRoute, /active: shouldActivate/);
+    assert.match(agentMeRoute, /self-registered:ticket_active/);
   });
 
   it("shows users registration, pending activation, and active agent tools in the wallet", () => {
@@ -35,7 +38,7 @@ describe("agent self-registration", () => {
     assert.match(walletScreen, /Be an Agent/);
     assert.match(walletScreen, /WhatsApp number/);
     assert.match(walletScreen, /applicationStatus === "pending"/);
-    assert.match(walletScreen, /admin activates your first paid ticket deposit/);
+    assert.match(walletScreen, /first personal ticket is bought or assigned/);
     assert.match(walletScreen, /Transfer ticket to users is locked until admin activates your agent wallet/);
   });
 

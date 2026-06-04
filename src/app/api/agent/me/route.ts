@@ -163,13 +163,43 @@ export async function POST(request: Request) {
   const profile = await getOrCreateReferralProfile(supabase, user);
   const existing = await supabase
     .from("worldcup_agents")
-    .select("active")
+    .select("active,activated_at")
     .eq("tournament_id", tournament.data.id)
     .eq("user_id", user.id)
     .maybeSingle();
   if (existing.error) {
     return jsonError("Could not load agent registration.", 500);
   }
+
+  const [ticket, entry] = await Promise.all([
+    supabase
+      .from("worldcup_tickets")
+      .select("id")
+      .eq("tournament_id", tournament.data.id)
+      .eq("user_id", user.id)
+      .limit(1)
+      .maybeSingle(),
+    supabase
+      .from("worldcup_entries")
+      .select("id")
+      .eq("tournament_id", tournament.data.id)
+      .eq("user_id", user.id)
+      .limit(1)
+      .maybeSingle(),
+  ]);
+  if (ticket.error || entry.error) {
+    return jsonError("Could not verify your personal ticket.", 500);
+  }
+
+  const hasPersonalTicket = Boolean(ticket.data || entry.data);
+  const shouldActivate = Boolean(existing.data?.active || hasPersonalTicket);
+  const activationPayload =
+    shouldActivate && !existing.data?.active
+      ? {
+          active: true,
+          activated_at: new Date().toISOString(),
+        }
+      : {};
 
   const agentPayload = {
     email: profile.email ?? user.email ?? null,
@@ -182,7 +212,7 @@ export async function POST(request: Request) {
   const upsert = existing.data
     ? await supabase
         .from("worldcup_agents")
-        .update(agentPayload)
+        .update({ ...agentPayload, ...activationPayload })
         .eq("tournament_id", tournament.data.id)
         .eq("user_id", user.id)
         .select("active,contact_name,whatsapp_number,created_at,updated_at")
@@ -193,8 +223,9 @@ export async function POST(request: Request) {
           tournament_id: tournament.data.id,
           user_id: user.id,
           ...agentPayload,
-          active: false,
-          created_by: "self-registered",
+          active: shouldActivate,
+          activated_at: shouldActivate ? new Date().toISOString() : null,
+          created_by: shouldActivate ? "self-registered:ticket_active" : "self-registered",
         })
         .select("active,contact_name,whatsapp_number,created_at,updated_at")
         .single();

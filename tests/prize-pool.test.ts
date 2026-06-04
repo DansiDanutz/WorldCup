@@ -9,8 +9,8 @@ import {
 } from "../src/lib/prize-pool.ts";
 
 describe("calculateNetPrizePool", () => {
-  it("subtracts the configured fee percent from the gross amount", () => {
-    assert.equal(calculateNetPrizePool(1000, 20), 800);
+  it("returns the stored prize pool because fees are split before settlement", () => {
+    assert.equal(calculateNetPrizePool(1000, 20), 1000);
   });
 
   it("returns zero when the amount is not set", () => {
@@ -26,16 +26,16 @@ describe("formatPrizeAmount", () => {
 });
 
 describe("calculatePaidPlaces", () => {
-  it("pays top 10 when there are at least 100 participants", () => {
+  it("pays top 10 when there are at least 10 participants", () => {
+    assert.equal(calculatePaidPlaces(10), 10);
     assert.equal(calculatePaidPlaces(100), 10);
     assert.equal(calculatePaidPlaces(250), 10);
   });
 
-  it("pays the top 10 percent rounded up for smaller contests", () => {
+  it("caps paid places at the number of locked entries before ten players join", () => {
     assert.equal(calculatePaidPlaces(1), 1);
-    assert.equal(calculatePaidPlaces(9), 1);
-    assert.equal(calculatePaidPlaces(10), 1);
-    assert.equal(calculatePaidPlaces(11), 2);
+    assert.equal(calculatePaidPlaces(9), 9);
+    assert.equal(calculatePaidPlaces(11), 10);
     assert.equal(calculatePaidPlaces(99), 10);
   });
 

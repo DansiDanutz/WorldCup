@@ -343,7 +343,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       setMessage(
         result.applicationStatus === "active"
           ? "Agent contact details updated."
-          : "Agent registration saved. Your account activates after your first ticket deposit is assigned.",
+          : "Agent registration saved. Your account activates after your first personal ticket is bought or assigned.",
       );
     });
   }
@@ -1491,7 +1491,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <p className="panel-subtitle">
                       {agent?.isAgent
                         ? "Transfer tickets to users, track code inventory, and manage Agent Call requests."
-                        : "Apply to sell tickets. Agent tools unlock only after admin activates your first paid ticket deposit."}
+                        : "Apply to sell tickets. Agent tools unlock after your first personal ticket is bought or assigned."}
                     </p>
                   </div>
                   {agent?.isAgent ? (
@@ -1517,7 +1517,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <div className="agent-register-box">
                       {agent?.applicationStatus === "pending" ? (
                         <div className="message">
-                          Agent registration received. Add your USDT sender wallet below, send the ticket deposit to the WorldCup receive wallet, then admin will activate your account and assign agent tickets.
+                          Agent registration received. Buy one ticket with USDT or receive one from admin or an agent to activate your agent account.
                         </div>
                       ) : null}
                       <div className="deposit-claim-form">
@@ -1558,11 +1558,11 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                         </div>
                         <div>
                           <span>2</span>
-                          <small>Use Deposit USDT to save your sender wallet, amount, and transaction hash.</small>
+                          <small>Buy one ticket with USDT, or receive a ticket from admin or an agent.</small>
                         </div>
                         <div>
                           <span>3</span>
-                          <small>Admin verifies payment and assigns paid tickets. Your Agent Wallet activates after that.</small>
+                          <small>Your first ticket stays in your user account. Any extra admin-assigned agent tickets become sellable inventory.</small>
                         </div>
                       </div>
                       <div className="message error">

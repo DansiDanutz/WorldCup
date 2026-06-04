@@ -1426,7 +1426,7 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Leaderboard</h2>
                 <p className="panel-subtitle">
-                  {participantCount >= 100
+                  {paidPlaces >= 10
                     ? "Top 10 positions share the prize pool."
                     : paidPlaces > 0
                       ? `Top ${paidPlaces} positions share the prize pool.`
