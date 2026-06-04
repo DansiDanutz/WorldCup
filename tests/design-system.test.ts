@@ -264,13 +264,21 @@ describe("WorldCup design system integration", () => {
     assert.match(serviceWorker, /self\.addEventListener\("fetch"/);
     assert.match(serviceWorker, /event\.request\.destination !== "document"/);
     assert.match(heroCard, /beforeinstallprompt/);
+    assert.match(heroCard, /INSTALL_CONFIRMATION_KEY/);
     assert.match(heroCard, /navigator\.serviceWorker\.register\("\/sw\.js"\)/);
-    assert.match(heroCard, /className="hero-cta-row"/);
+    assert.match(heroCard, /installState === "available" \? "hero-cta-row" : "hero-cta-row hero-cta-row--single"/);
     assert.match(heroCard, /Play now/);
     assert.match(heroCard, /Install app/);
+    assert.match(heroCard, /showInstalledConfirmation/);
+    assert.match(heroCard, /window\.localStorage\.setItem\(INSTALL_CONFIRMATION_KEY,\s*"true"\)/);
+    assert.match(heroCard, /App installed\. Open WorldCup26 from your apps to stay signed in\./);
+    assert.doesNotMatch(heroCard, /\{installed \? "App installed" : "Install app"\}/);
     assert.match(heroCard, /Add to Home Screen/);
     assert.match(globalsCss, /\.hero-cta-row\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /\.hero-cta-row--single\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
     assert.match(globalsCss, /\.hero-cta--install\s*{/);
+    assert.match(globalsCss, /\.hero-cta--install\s*{[\s\S]*?linear-gradient\(180deg,\s*#d94a3f,\s*#a92923\)/);
+    assert.match(globalsCss, /\.hero-install-note--success\s*{/);
     assert.match(globalsCss, /\.hero-install-help\s*{/);
     for (const icon of [
       "public/icons/icon-192.png",

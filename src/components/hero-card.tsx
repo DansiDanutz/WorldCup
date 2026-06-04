@@ -8,6 +8,8 @@ type BeforeInstallPromptEvent = Event & {
   userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>;
 };
 
+const INSTALL_CONFIRMATION_KEY = "worldcup26-install-confirmation-shown";
+
 function isStandaloneDisplayMode() {
   if (typeof window === "undefined") {
     return false;
@@ -25,7 +27,8 @@ export function HeroCard() {
   const [installPrompt, setInstallPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [installMessage, setInstallMessage] = useState<string | null>(null);
   const [showInstallHelp, setShowInstallHelp] = useState(false);
-  const [installed, setInstalled] = useState(isStandaloneDisplayMode);
+  const [installState, setInstallState] = useState<"checking" | "available" | "installed">("checking");
+  const [showInstalledConfirmation, setShowInstalledConfirmation] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -38,26 +41,51 @@ export function HeroCard() {
       });
     }
 
+    const installStateFrame = window.requestAnimationFrame(() => {
+      setInstallState(isStandaloneDisplayMode() ? "installed" : "available");
+    });
+
     const onBeforeInstallPrompt = (event: Event) => {
       event.preventDefault();
       setInstallPrompt(event as BeforeInstallPromptEvent);
       setInstallMessage(null);
     };
     const onInstalled = () => {
-      setInstalled(true);
+      const confirmationAlreadyShown =
+        window.localStorage.getItem(INSTALL_CONFIRMATION_KEY) === "true";
+
+      setInstallState("installed");
       setInstallPrompt(null);
       setShowInstallHelp(false);
-      setInstallMessage("Installed. Open WorldCup26 from your apps to stay signed in on this device.");
+      setInstallMessage(null);
+
+      if (!confirmationAlreadyShown) {
+        setShowInstalledConfirmation(true);
+        window.localStorage.setItem(INSTALL_CONFIRMATION_KEY, "true");
+      }
     };
 
     window.addEventListener("beforeinstallprompt", onBeforeInstallPrompt);
     window.addEventListener("appinstalled", onInstalled);
 
     return () => {
+      window.cancelAnimationFrame(installStateFrame);
       window.removeEventListener("beforeinstallprompt", onBeforeInstallPrompt);
       window.removeEventListener("appinstalled", onInstalled);
     };
   }, []);
+
+  useEffect(() => {
+    if (!showInstalledConfirmation) {
+      return;
+    }
+
+    const confirmationTimer = window.setTimeout(() => {
+      setShowInstalledConfirmation(false);
+    }, 7000);
+
+    return () => window.clearTimeout(confirmationTimer);
+  }, [showInstalledConfirmation]);
 
   const installHelp = useMemo(() => {
     if (typeof window === "undefined") {
@@ -81,8 +109,8 @@ export function HeroCard() {
   }, []);
 
   async function installApp() {
-    if (installed) {
-      setInstallMessage("WorldCup26 is already installed on this device.");
+    if (installState === "installed") {
+      setInstallMessage(null);
       return;
     }
 
@@ -135,17 +163,28 @@ export function HeroCard() {
             </span>
           </div>
 
-          <div className="hero-cta-row">
+          <div
+            className={
+              installState === "available" ? "hero-cta-row" : "hero-cta-row hero-cta-row--single"
+            }
+          >
             <a className="hero-cta" href="#pick">
               Play now
               <ArrowRight size={16} aria-hidden="true" />
             </a>
-            <button className="hero-cta hero-cta--install" onClick={installApp} type="button">
-              <Download size={16} aria-hidden="true" />
-              {installed ? "App installed" : "Install app"}
-            </button>
+            {installState === "available" ? (
+              <button className="hero-cta hero-cta--install" onClick={installApp} type="button">
+                <Download size={16} aria-hidden="true" />
+                Install app
+              </button>
+            ) : null}
           </div>
 
+          {showInstalledConfirmation ? (
+            <p className="hero-install-note hero-install-note--success">
+              App installed. Open WorldCup26 from your apps to stay signed in.
+            </p>
+          ) : null}
           {installMessage ? <p className="hero-install-note">{installMessage}</p> : null}
           {showInstallHelp ? (
             <div className="hero-install-help" role="status">
