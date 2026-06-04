@@ -587,18 +587,23 @@ svg {
 
 .auth-page {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(340px, 460px);
+  grid-template-columns: minmax(340px, 460px) minmax(0, 1fr);
   gap: 28px;
   align-items: center;
   width: min(1180px, 100%);
   min-height: 100vh;
   margin: 0 auto;
   padding: 32px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(255, 217, 128, 0.24), transparent 28%),
+    radial-gradient(circle at 86% 18%, rgba(19, 138, 100, 0.24), transparent 32%),
+    linear-gradient(150deg, #06120f 0%, #0d2b22 48%, #06110e 100%);
 }
 
 .auth-hero {
   display: grid;
-  gap: 24px;
+  gap: 14px;
   align-content: center;
 }
 
@@ -608,9 +613,23 @@ svg {
   gap: 12px;
   width: max-content;
   max-width: 100%;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
   color: var(--text);
+  background: rgba(255, 255, 255, 0.9);
   font-weight: 800;
   text-decoration: none;
+}
+
+.auth-brand img {
+  opacity: 1;
+}
+
+.auth-page .status-pill {
+  border-color: rgba(255, 255, 255, 0.26);
+  color: rgba(236, 244, 238, 0.78);
+  background: rgba(8, 20, 17, 0.36);
 }
 
 .auth-copy {
@@ -635,13 +654,13 @@ svg {
 }
 
 .motto-accent {
-  color: var(--green);
+  color: var(--gold);
 }
 
 .auth-copy p {
   width: min(650px, 100%);
   margin: 0;
-  color: var(--muted);
+  color: rgba(236, 244, 238, 0.76);
   font-size: 17px;
   line-height: 1.6;
   overflow-wrap: anywhere;
@@ -652,10 +671,10 @@ svg {
   gap: 10px;
   width: 100%;
   max-width: 720px;
-  padding: 16px;
-  border: 1px solid var(--border);
+  padding: 0;
+  border: 0;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.7);
+  background: transparent;
   overflow: hidden;
 }
 
@@ -694,7 +713,7 @@ svg {
 
 .auth-benefits {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 
@@ -714,15 +733,18 @@ svg {
 
 .auth-steps div,
 .auth-choice-grid div,
+.auth-choice-grid button,
 .wallet-action-list div,
 .deposit-flow-steps div {
   display: grid;
   gap: 4px;
   min-width: 0;
   padding: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.82);
+  color: #ffffff;
+  background: rgba(8, 20, 17, 0.44);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .auth-steps span,
@@ -746,7 +768,7 @@ svg {
 .auth-choice-grid strong,
 .wallet-action-list strong,
 .deposit-flow-steps strong {
-  color: var(--text);
+  color: #ffffff;
   font-size: 14px;
   line-height: 1.2;
 }
@@ -755,7 +777,7 @@ svg {
 .auth-choice-grid span,
 .wallet-action-list small,
 .deposit-flow-steps small {
-  color: var(--muted);
+  color: rgba(236, 244, 238, 0.68);
   font-size: 12px;
   font-weight: 680;
   line-height: 1.35;
@@ -765,26 +787,33 @@ svg {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.auth-choice-grid div {
+.auth-choice-grid div,
+.auth-choice-grid button {
   position: relative;
-  background: var(--paper-soft);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
-.auth-choice-grid div.active {
-  border-color: #9fcab9;
-  background: var(--green-soft);
+.auth-choice-grid div.active,
+.auth-choice-grid button.active {
+  border-color: rgba(255, 217, 128, 0.7);
+  background: rgba(16, 107, 79, 0.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 14px 30px rgba(16, 107, 79, 0.28);
 }
 
 .auth-choice-grid svg {
-  color: var(--green);
+  color: var(--gold);
 }
 
 .auth-next-step {
   padding: 10px 12px;
-  border: 1px dashed var(--border-strong);
+  border: 1px dashed rgba(255, 255, 255, 0.22);
   border-radius: 8px;
-  color: var(--muted);
-  background: #fbfdfc;
+  color: rgba(236, 244, 238, 0.72);
+  background: rgba(8, 20, 17, 0.36);
   font-size: 12px;
   font-weight: 750;
   line-height: 1.4;
@@ -796,31 +825,151 @@ svg {
   align-items: flex-start;
   gap: 9px;
   padding: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(8, 20, 17, 0.38);
 }
 
 .auth-benefits svg,
 .auth-loop svg {
   flex: 0 0 auto;
-  color: var(--green);
+  color: var(--gold);
 }
 
 .auth-benefits span,
 .auth-loop span {
-  color: var(--muted);
+  color: rgba(236, 244, 238, 0.72);
   font-size: 13px;
   font-weight: 680;
   line-height: 1.35;
 }
 
 .auth-card {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255, 217, 128, 0.18), transparent 34%),
+    linear-gradient(155deg, rgba(8, 25, 20, 0.94), rgba(13, 43, 34, 0.96));
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
   overflow: clip;
+}
+
+.auth-card .panel-header {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.auth-card .panel-title,
+.auth-card .field label,
+.auth-card .auth-box strong {
+  color: #ffffff;
+}
+
+.auth-card .panel-subtitle,
+.auth-card .field-note,
+.auth-card .auth-box p,
+.auth-card .check-row span {
+  color: rgba(236, 244, 238, 0.72);
+}
+
+.auth-card input {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  background: rgba(4, 18, 15, 0.42);
+}
+
+.auth-card input::placeholder {
+  color: rgba(236, 244, 238, 0.48);
+}
+
+.auth-card input[type="checkbox"] {
+  accent-color: var(--gold);
+}
+
+.auth-card .button {
+  background: linear-gradient(180deg, #ffe29a, #e6b653);
+  color: #08241a;
+}
+
+.auth-card .button.secondary {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.auth-path-panel {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  background: rgba(4, 18, 15, 0.3);
+}
+
+.auth-path-panel--accepted {
+  display: flex;
+  align-items: flex-start;
+  color: rgba(236, 244, 238, 0.78);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.auth-path-panel--accepted svg {
+  flex: 0 0 auto;
+  color: var(--gold);
+}
+
+.auth-google-button {
+  justify-content: center;
+}
+
+.auth-info-grid {
+  display: grid;
+  gap: 10px;
+  width: min(720px, 100%);
+}
+
+.auth-info-card {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(8, 20, 17, 0.42);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.auth-info-card summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 14px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 820;
+  list-style: none;
+  cursor: pointer;
+}
+
+.auth-info-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.auth-info-card summary svg {
+  flex: 0 0 auto;
+  color: var(--gold);
+  transition: transform 0.18s ease;
+}
+
+.auth-info-card[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.auth-info-card > div {
+  padding: 0 12px 12px;
 }
 
 .auth-loop {
@@ -3474,6 +3623,7 @@ svg {
   .flag-wall,
   .auth-steps,
   .auth-benefits,
+  .auth-info-grid,
   .auth-choice-grid,
   .auth-card {
     width: 100%;
