@@ -9,16 +9,19 @@ const COUNTRY_HEADERS = [
   "x-appengine-country",
 ] as const;
 
-// Comprehensively sanctioned / embargoed territories (ISO 3166-1 alpha-2:
-// Cuba, Iran, North Korea, Syria). These are ALWAYS blocked for paid actions
-// when the country is detected — even if the operator has not configured a
-// country policy — and an allow-list cannot re-enable them; only editing this
-// list can. Operators can block additional territories (e.g. RU, BY) through
-// WORLDCUP_BLOCKED_COUNTRIES or the runtime operator policy.
+// Territories that are ALWAYS blocked for paid actions when the country is
+// detected — even if the operator has not configured a country policy — and an
+// allow-list cannot re-enable them; only editing this list can. Covers the
+// comprehensively sanctioned / embargoed jurisdictions (ISO 3166-1 alpha-2:
+// Cuba, Iran, North Korea, Syria) plus Russia, which FIFA has suspended from all
+// competitions and excluded from the 2026 World Cup. Operators can block
+// further territories (e.g. BY) via WORLDCUP_BLOCKED_COUNTRIES or the runtime
+// operator policy.
 export const DEFAULT_BLOCKED_COUNTRIES: ReadonlySet<string> = new Set([
   "CU",
   "IR",
   "KP",
+  "RU",
   "SY",
 ]);
 

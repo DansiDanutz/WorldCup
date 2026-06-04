@@ -61,7 +61,7 @@ describe("geo eligibility", () => {
   });
 
   it("always blocks comprehensively sanctioned territories, even with no policy", () => {
-    assert.deepEqual([...DEFAULT_BLOCKED_COUNTRIES].sort(), ["CU", "IR", "KP", "SY"]);
+    assert.deepEqual([...DEFAULT_BLOCKED_COUNTRIES].sort(), ["CU", "IR", "KP", "RU", "SY"]);
 
     for (const country of DEFAULT_BLOCKED_COUNTRIES) {
       assert.deepEqual(getGeoEligibility(requestWithCountry(country), {}), {
