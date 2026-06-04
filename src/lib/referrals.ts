@@ -1,7 +1,7 @@
 import type { SupabaseClient, User } from "@supabase/supabase-js";
 import { randomBytes } from "node:crypto";
 
-import { OWNER_ADMIN_EMAIL } from "@/lib/admin-auth";
+import { getOwnerAdminEmail } from "@/lib/admin-auth";
 
 type ReferralProfile = {
   user_id: string;
@@ -39,7 +39,12 @@ export function getUserDisplayName(user: User) {
 }
 
 async function ensureOwnerAgent(supabase: SupabaseClient, profile: ReferralProfile) {
-  if ((profile.email ?? "").trim().toLowerCase() !== OWNER_ADMIN_EMAIL.toLowerCase()) {
+  const ownerAdminEmail = getOwnerAdminEmail();
+
+  if (
+    !ownerAdminEmail ||
+    (profile.email ?? "").trim().toLowerCase() !== ownerAdminEmail
+  ) {
     return;
   }
 
@@ -53,7 +58,7 @@ async function ensureOwnerAgent(supabase: SupabaseClient, profile: ReferralProfi
     return;
   }
 
-  await supabase
+  const agent = await supabase
     .from("worldcup_agents")
     .upsert(
       {
@@ -67,6 +72,16 @@ async function ensureOwnerAgent(supabase: SupabaseClient, profile: ReferralProfi
       },
       { onConflict: "tournament_id,user_id" },
     );
+
+  if (agent.error) {
+    return;
+  }
+
+  await supabase.rpc("worldcup_bootstrap_owner_agent_inventory", {
+    p_owner_email: ownerAdminEmail,
+    p_quantity: 1000,
+    p_created_by: "owner-bootstrap",
+  });
 }
 
 export async function getOrCreateReferralProfile(
