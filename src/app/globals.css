@@ -1399,7 +1399,9 @@ svg {
   padding: 14px 18px 18px;
   max-height: min(650px, 68vh);
   overflow: auto;
+  overscroll-behavior-y: contain;
   overscroll-behavior: contain;
+  touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1409,9 +1411,9 @@ svg {
 }
 
 .team-list--expanded {
-  max-height: none;
-  overflow: visible;
-  overscroll-behavior: auto;
+  max-height: min(760px, 72vh);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
 }
 
 .team-row {
@@ -1426,6 +1428,7 @@ svg {
   border-radius: 10px;
   color: #ffffff;
   text-align: left;
+  touch-action: pan-y;
   background:
     linear-gradient(120deg, color-mix(in srgb, var(--team-color-one) 72%, #071f18), color-mix(in srgb, var(--team-color-two) 62%, #071f18) 48%, color-mix(in srgb, var(--team-color-three) 70%, #071f18)),
     linear-gradient(135deg, rgba(8, 20, 17, 0.92), rgba(8, 20, 17, 0.68));
@@ -2206,7 +2209,10 @@ svg {
   display: grid;
   max-height: min(650px, 68vh);
   overflow: auto;
+  overscroll-behavior-y: contain;
   overscroll-behavior: contain;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .leaderboard-row,
@@ -5673,6 +5679,9 @@ html {
   gap: 8px;
   max-height: 320px;
   overflow: auto;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .code-row {
@@ -5863,6 +5872,9 @@ html {
   gap: 8px;
   max-height: 280px;
   overflow: auto;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ref-row {
