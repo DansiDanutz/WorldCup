@@ -20,7 +20,7 @@ import {
   X,
 } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useMemo, useState, useTransition } from "react";
+import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 
 import { HeroSwiper } from "@/components/hero-swiper";
 import { MyStanding } from "@/components/my-standing";
@@ -57,7 +57,7 @@ import type {
   WorldCupTeam,
 } from "@/lib/types";
 import type { Session } from "@supabase/supabase-js";
-import type { CSSProperties } from "react";
+import type { CSSProperties, KeyboardEvent, PointerEvent, TouchEvent } from "react";
 
 type DashboardProps = {
   tournament: WorldCupTournament;
@@ -188,6 +188,10 @@ export function Dashboard({
   const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const teamListRef = useRef<HTMLDivElement | null>(null);
+  const teamListTouchStart = useRef<{ scrollTop: number; y: number } | null>(null);
+  const teamRowPointerStart = useRef<{ x: number; y: number } | null>(null);
+  const suppressTeamRowClick = useRef(false);
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const teamsById = useMemo(() => groupTeamsById(teams), [teams]);
@@ -196,7 +200,8 @@ export function Dashboard({
   const filteredTeams = useMemo(() => {
     return filterAndSortTeamsBySearch(teams, query);
   }, [query, teams]);
-  const visibleTeams = showAllTeams || query.trim()
+  const teamListExpanded = showAllTeams || Boolean(query.trim());
+  const visibleTeams = teamListExpanded
     ? filteredTeams
     : filteredTeams.slice(0, compactTeamCount);
   const hiddenTeamCount = Math.max(0, filteredTeams.length - visibleTeams.length);
@@ -301,6 +306,27 @@ export function Dashboard({
       window.localStorage.removeItem("worldcup_referral_accepted");
     }
   }, [referralAccepted, referralCode]);
+
+  useEffect(() => {
+    if (!showAllTeams) {
+      return;
+    }
+
+    const list = teamListRef.current;
+    if (!list) {
+      return;
+    }
+
+    list.scrollTop = 0;
+    const frame = window.requestAnimationFrame(() => {
+      const header = document.querySelector(".topbar");
+      const headerBottom = header instanceof HTMLElement ? header.getBoundingClientRect().bottom : 0;
+      const targetTop = window.scrollY + list.getBoundingClientRect().top - headerBottom - 12;
+      window.scrollTo({ top: Math.max(0, targetTop), behavior: "smooth" });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [showAllTeams]);
 
   useEffect(() => {
     const normalized = normalizeReferralCode(referralCode);
@@ -508,6 +534,87 @@ export function Dashboard({
 
       return [...current, teamId];
     });
+  }
+
+  function handleTeamRowPointerDown(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse") {
+      return;
+    }
+
+    teamRowPointerStart.current = { x: event.clientX, y: event.clientY };
+    suppressTeamRowClick.current = false;
+  }
+
+  function handleTeamRowPointerMove(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse" || !teamRowPointerStart.current) {
+      return;
+    }
+
+    const deltaX = Math.abs(event.clientX - teamRowPointerStart.current.x);
+    const deltaY = Math.abs(event.clientY - teamRowPointerStart.current.y);
+    if (deltaY > 8 || deltaX > 14) {
+      suppressTeamRowClick.current = true;
+    }
+  }
+
+  function handleTeamRowPointerUp() {
+    window.setTimeout(() => {
+      teamRowPointerStart.current = null;
+      suppressTeamRowClick.current = false;
+    }, 160);
+  }
+
+  function handleTeamRowClick(teamId: string) {
+    if (suppressTeamRowClick.current) {
+      return;
+    }
+
+    toggleTeam(teamId);
+  }
+
+  function handleTeamRowKeyDown(event: KeyboardEvent<HTMLDivElement>, teamId: string) {
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    event.preventDefault();
+    toggleTeam(teamId);
+  }
+
+  function handleTeamListTouchStart(event: TouchEvent<HTMLDivElement>) {
+    if (!teamListExpanded || event.touches.length !== 1) {
+      return;
+    }
+
+    teamListTouchStart.current = {
+      scrollTop: event.currentTarget.scrollTop,
+      y: event.touches[0].clientY,
+    };
+  }
+
+  function handleTeamListTouchMove(event: TouchEvent<HTMLDivElement>) {
+    const start = teamListTouchStart.current;
+    if (!teamListExpanded || !start || event.touches.length !== 1) {
+      return;
+    }
+
+    const list = event.currentTarget;
+    if (list.scrollHeight <= list.clientHeight) {
+      return;
+    }
+
+    const deltaY = start.y - event.touches[0].clientY;
+    if (Math.abs(deltaY) < 4) {
+      return;
+    }
+
+    suppressTeamRowClick.current = true;
+    list.scrollTop = start.scrollTop + deltaY;
+    event.preventDefault();
+  }
+
+  function handleTeamListTouchEnd() {
+    teamListTouchStart.current = null;
   }
 
   function removeTeam(teamId: string) {
@@ -879,7 +986,14 @@ export function Dashboard({
                 </div>
               </div>
             </div>
-            <div className={`team-list ${showAllTeams || query.trim() ? "team-list--expanded" : "team-list--compact"}`}>
+            <div
+              className={`team-list ${teamListExpanded ? "team-list--expanded" : "team-list--compact"}`}
+              onTouchCancel={handleTeamListTouchEnd}
+              onTouchEnd={handleTeamListTouchEnd}
+              onTouchMove={handleTeamListTouchMove}
+              onTouchStart={handleTeamListTouchStart}
+              ref={teamListRef}
+            >
               {visibleTeams.map((team) => {
                 const selected = selectedTeams.includes(team.id);
                 const selectedIndex = selectedTeams.indexOf(team.id);
@@ -890,16 +1004,22 @@ export function Dashboard({
                 const nextPickNumber = selected ? selectedIndex + 1 : selectedTeams.length + 1;
 
                 return (
-                  <button
+                  <div
                     className={`team-row ${selected ? "selected" : ""} ${getPickColorClass(selectedIndex)} ${
                       unavailable ? "unavailable" : ""
                     } ${atPickLimit ? "at-limit" : ""}`}
                     style={getTeamColorStyle(team.id)}
-                    disabled={unavailable}
+                    aria-disabled={unavailable}
                     aria-pressed={selected}
                     key={team.id}
-                    onClick={() => toggleTeam(team.id)}
-                    type="button"
+                    onClick={() => handleTeamRowClick(team.id)}
+                    onKeyDown={(event) => handleTeamRowKeyDown(event, team.id)}
+                    onPointerCancel={handleTeamRowPointerUp}
+                    onPointerDown={handleTeamRowPointerDown}
+                    onPointerMove={handleTeamRowPointerMove}
+                    onPointerUp={handleTeamRowPointerUp}
+                    role="button"
+                    tabIndex={unavailable ? -1 : 0}
                     title={
                       unavailable
                         ? "This team can no longer be selected because its first match starts in less than one minute or already started."
@@ -936,7 +1056,7 @@ export function Dashboard({
                     <span className="team-row-action">
                       {selected ? `Pick ${nextPickNumber}` : atPickLimit ? "Full" : `Add ${nextPickNumber}`}
                     </span>
-                  </button>
+                  </div>
                 );
               })}
               {hiddenTeamCount > 0 ? (
