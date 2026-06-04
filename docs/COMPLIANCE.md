@@ -10,6 +10,11 @@ before launch.
 
 - [ ] **Legal classification** per target jurisdiction (skill contest vs.
       lottery vs. gambling) and any required licences.
+  - *Operator position (stated in the public Terms):* WorldCup26 is positioned
+    as a single-event, skill-based prediction competition with a fixed-rules
+    entry ticket — not betting, wagering, a lottery, or a game of chance — and
+    is operated without a gambling licence on that basis. Final classification
+    per market remains a legal-counsel decision.
 - [x] **Terms of Use** and **Privacy Policy** published and linked from
       the entry flow, with explicit acceptance recorded per user.
 - [x] **Age gating** enforces self-attested 18+ consent before entry creation,
@@ -21,6 +26,12 @@ before launch.
       `WORLDCUP_ALLOWED_COUNTRIES` / `WORLDCUP_BLOCKED_COUNTRIES`.
 - [ ] **KYC / identity verification** for prize payouts above applicable
       thresholds, and AML monitoring.
+  - *Operator approach:* per-user KYC and sanctions/AML screening are
+    intentionally not implemented. Instead, payouts require document-backed
+    **18+ age verification**, and **prohibited/sanctioned territories are
+    excluded by geo policy** (`WORLDCUP_BLOCKED_COUNTRIES` /
+    `WORLDCUP_ALLOWED_COUNTRIES`) rather than screened per user. Set the
+    blocked-country list to your excluded/sanctioned territories before launch.
 - [x] **Responsible-gaming** controls: configurable deposit claim limits,
       self-exclusion, entry-ticket limits, and support-resource surfacing are
       implemented. Operator policy still needs legal review per market.

@@ -29,6 +29,31 @@ export default function TermsPage() {
               </p>
             </div>
             <div className="rule-block">
+              <h3>Nature of the game — a skill competition, not betting or gambling</h3>
+              <p>
+                WorldCup26 is a single-event, skill-based prediction competition run only for the
+                FIFA World Cup 2026; it ends after the final. Your result depends on the teams you
+                choose and the fixed, published scoring rules, not on a betting market or a wager
+                against the operator or other players. The entry ticket is a fixed fee to take part in
+                the competition; it is not a bet, stake, or wager, and WorldCup26 does not offer
+                betting, wagering, casino, lottery, or games of chance. The in-game wallet holds entry
+                funds and prizes only and is not a bank account, e-money, deposit-taking, or
+                investment service.
+              </p>
+            </div>
+            <div className="rule-block">
+              <h3>Where the game is available</h3>
+              <p>
+                WorldCup26 is offered only to adults taking part from places where a paid skill
+                competition of this kind is lawful. It is not offered to anyone located in, or
+                resident of, a country or territory where such competitions are prohibited or that is
+                subject to comprehensive international sanctions or embargoes. The operator may
+                restrict or block access based on your location and may void entries, withhold prizes,
+                and close accounts that breach this. You are responsible for making sure your
+                participation is lawful where you are.
+              </p>
+            </div>
+            <div className="rule-block">
               <h3>Eligibility and accounts</h3>
               <p>
                 WorldCup26 is for adults only. You must be at least {MINIMUM_AGE} years old, sign in
@@ -75,9 +100,49 @@ export default function TermsPage() {
                 {" "}
                 {MINIMUM_AGE} years old by sending the government photo identification the operator
                 requests. Payouts are held until your age is confirmed; if it cannot be confirmed, the
-                operator may withhold the payout. Settlement may also require eligibility, sanctions,
-                tax, or payment review. The operator may correct obvious errors, void fraudulent
+                operator may withhold the payout. Settlement may also require eligibility, tax, or
+                payment review. The operator may correct obvious errors, void fraudulent
                 entries, suspend accounts, or delay settlement while investigating account activity.
+              </p>
+            </div>
+            <div className="rule-block">
+              <h3>Entry fees and refunds</h3>
+              <p>
+                Entry tickets are a fixed entry fee. Once you lock an entry, the ticket is used and
+                the entry fee is non-refundable, except where the operator cancels the relevant
+                competition or a refund is required by law. Wallet balance that has not been used for
+                an entry may be withdrawn subject to these Terms, age verification, and any published
+                limits.
+              </p>
+            </div>
+            <div className="rule-block">
+              <h3>Fair play and prohibited conduct</h3>
+              <p>
+                To keep the competition fair you must not operate multiple or fake accounts, collude
+                with other players, use bots or automation, exploit bugs, submit fraudulent deposits
+                or chargebacks, or take part on behalf of someone who is ineligible. The operator may
+                investigate, void affected entries, withhold or reclaim prizes, suspend or close
+                accounts, and keep audit records when these rules are broken.
+              </p>
+            </div>
+            <div className="rule-block">
+              <h3>No warranties and limitation of liability</h3>
+              <p>
+                WorldCup26 is provided on an as-available basis without warranties of any kind. To the
+                fullest extent permitted by law, the operator is not liable for indirect, incidental,
+                or consequential losses, and its total liability to you for any claim relating to the
+                game is limited to the entry fees you paid for the affected competition. Nothing here
+                limits any rights you have under mandatory local law. You agree to cover losses the
+                operator reasonably incurs because you broke these Terms or used the game unlawfully.
+              </p>
+            </div>
+            <div className="rule-block">
+              <h3>Governing terms and disputes</h3>
+              <p>
+                These Terms are governed by the laws applicable at the operator&apos;s principal place
+                of business, and any dispute will be handled by the courts there, except where
+                mandatory local law gives you the right to bring a claim elsewhere. If any part of
+                these Terms is found unenforceable, the rest stays in effect.
               </p>
             </div>
             <div className="rule-block">
