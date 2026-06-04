@@ -9,6 +9,19 @@ const COUNTRY_HEADERS = [
   "x-appengine-country",
 ] as const;
 
+// Comprehensively sanctioned / embargoed territories (ISO 3166-1 alpha-2:
+// Cuba, Iran, North Korea, Syria). These are ALWAYS blocked for paid actions
+// when the country is detected — even if the operator has not configured a
+// country policy — and an allow-list cannot re-enable them; only editing this
+// list can. Operators can block additional territories (e.g. RU, BY) through
+// WORLDCUP_BLOCKED_COUNTRIES or the runtime operator policy.
+export const DEFAULT_BLOCKED_COUNTRIES: ReadonlySet<string> = new Set([
+  "CU",
+  "IR",
+  "KP",
+  "SY",
+]);
+
 export function getRequestCountry(request: Request): string | null {
   for (const header of COUNTRY_HEADERS) {
     const country = normalizeCountryCode(request.headers.get(header));
@@ -26,9 +39,19 @@ export function getGeoEligibility(
   env: Record<string, string | undefined> = process.env,
 ): GeoEligibility {
   const allowedCountries = parseCountryList(env.WORLDCUP_ALLOWED_COUNTRIES);
-  const blockedCountries = parseCountryList(env.WORLDCUP_BLOCKED_COUNTRIES);
-  const configured = allowedCountries.size > 0 || blockedCountries.size > 0;
+  const operatorBlockedCountries = parseCountryList(env.WORLDCUP_BLOCKED_COUNTRIES);
+  const blockedCountries = new Set<string>([
+    ...DEFAULT_BLOCKED_COUNTRIES,
+    ...operatorBlockedCountries,
+  ]);
+  const configured = allowedCountries.size > 0 || operatorBlockedCountries.size > 0;
   const country = getRequestCountry(request);
+
+  // Sanctioned/embargoed territories are always blocked when detected, even with
+  // no operator country policy, and an allow-list cannot override this.
+  if (country && blockedCountries.has(country)) {
+    return { allowed: false, country, reason: "blocked" };
+  }
 
   if (!configured) {
     return { allowed: true, country, reason: "not-configured" };
@@ -36,10 +59,6 @@ export function getGeoEligibility(
 
   if (!country) {
     return { allowed: false, country: null, reason: "unknown" };
-  }
-
-  if (blockedCountries.has(country)) {
-    return { allowed: false, country, reason: "blocked" };
   }
 
   if (allowedCountries.size > 0 && !allowedCountries.has(country)) {

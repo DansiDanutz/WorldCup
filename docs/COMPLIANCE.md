@@ -22,16 +22,20 @@ before launch.
       withdrawal/payout (documents reviewed off-platform; an admin records the
       verified/rejected state, which gates the withdrawal request and the admin
       approval).
-- [x] **Configurable geo-restriction** for paid entries and deposits via
-      `WORLDCUP_ALLOWED_COUNTRIES` / `WORLDCUP_BLOCKED_COUNTRIES`.
+- [x] **Geo-restriction** for paid entries and deposits via
+      `WORLDCUP_ALLOWED_COUNTRIES` / `WORLDCUP_BLOCKED_COUNTRIES`, with
+      comprehensively sanctioned/embargoed territories (CU, IR, KP, SY) always
+      blocked in code (`DEFAULT_BLOCKED_COUNTRIES`); an allow-list cannot
+      override them.
 - [ ] **KYC / identity verification** for prize payouts above applicable
       thresholds, and AML monitoring.
   - *Operator approach:* per-user KYC and sanctions/AML screening are
     intentionally not implemented. Instead, payouts require document-backed
     **18+ age verification**, and **prohibited/sanctioned territories are
-    excluded by geo policy** (`WORLDCUP_BLOCKED_COUNTRIES` /
-    `WORLDCUP_ALLOWED_COUNTRIES`) rather than screened per user. Set the
-    blocked-country list to your excluded/sanctioned territories before launch.
+    excluded by geo policy** rather than screened per user: the comprehensively
+    sanctioned/embargoed territories (CU, IR, KP, SY) are blocked in code by
+    default (`DEFAULT_BLOCKED_COUNTRIES`), and operators add any further excluded
+    territories via `WORLDCUP_BLOCKED_COUNTRIES` / the operator policy.
 - [x] **Responsible-gaming** controls: configurable deposit claim limits,
       self-exclusion, entry-ticket limits, and support-resource surfacing are
       implemented. Operator policy still needs legal review per market.

@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 
 import {
+  DEFAULT_BLOCKED_COUNTRIES,
   getGeoEligibility,
   getRequestCountry,
   parseCountryList,
@@ -57,6 +58,33 @@ describe("geo eligibility", () => {
       getGeoEligibility(requestWithCountry(), { WORLDCUP_BLOCKED_COUNTRIES: "GB" }),
       { allowed: false, country: null, reason: "unknown" },
     );
+  });
+
+  it("always blocks comprehensively sanctioned territories, even with no policy", () => {
+    assert.deepEqual([...DEFAULT_BLOCKED_COUNTRIES].sort(), ["CU", "IR", "KP", "SY"]);
+
+    for (const country of DEFAULT_BLOCKED_COUNTRIES) {
+      assert.deepEqual(getGeoEligibility(requestWithCountry(country), {}), {
+        allowed: false,
+        country,
+        reason: "blocked",
+      });
+    }
+  });
+
+  it("does not let an allow-list re-enable a sanctioned territory", () => {
+    assert.deepEqual(
+      getGeoEligibility(requestWithCountry("IR"), { WORLDCUP_ALLOWED_COUNTRIES: "IR,US" }),
+      { allowed: false, country: "IR", reason: "blocked" },
+    );
+  });
+
+  it("still allows non-sanctioned countries when no policy is configured", () => {
+    assert.deepEqual(getGeoEligibility(requestWithCountry("US"), {}), {
+      allowed: true,
+      country: "US",
+      reason: "not-configured",
+    });
   });
 
   it("parses only ISO alpha-2 country codes", () => {
