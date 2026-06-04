@@ -1,0 +1,32 @@
+{
+  "files": [
+    {
+      "path": "docs/AUDIT_2026-06-04.md",
+      "description": "Latest full security, money-integrity, compliance, and UX audit."
+    },
+    {
+      "path": "docs/AUDIT_2026-06-03.md",
+      "description": "Prior audit with original high-risk wallet and no-KYC findings."
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "description": "Application architecture and high-level system model."
+    },
+    {
+      "path": "docs/DATABASE.md",
+      "description": "Database schema, RLS, and Supabase data model context."
+    },
+    {
+      "path": "docs/PAYMENTS.md",
+      "description": "Payment, deposit, wallet, and withdrawal operating notes."
+    },
+    {
+      "path": "docs/COMPLIANCE.md",
+      "description": "Compliance and launch-readiness notes for paid play."
+    },
+    {
+      "path": "README.md",
+      "description": "Project overview and implemented feature summary."
+    }
+  ]
+}

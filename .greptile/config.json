@@ -1,0 +1,102 @@
+{
+  "strictness": 2,
+  "commentTypes": ["logic", "syntax", "style", "info"],
+  "triggerOnUpdates": true,
+  "statusCheck": true,
+  "statusCommentsEnabled": true,
+  "updateExistingSummaryComment": true,
+  "fixWithAI": true,
+  "fileChangeLimit": 120,
+  "includeBranches": ["main"],
+  "excludeAuthors": ["dependabot[bot]", "*-bot"],
+  "ignorePatterns": ".next/**\nnode_modules/**\ncoverage/**\ndist/**\nbuild/**\ntsconfig.tsbuildinfo\npublic/*.png\npublic/*.jpg\npublic/*.jpeg\npublic/*.webp\npublic/*.ico",
+  "summarySection": {
+    "included": true,
+    "collapsible": false,
+    "defaultOpen": true
+  },
+  "issuesTableSection": {
+    "included": true,
+    "collapsible": true,
+    "defaultOpen": true
+  },
+  "confidenceScoreSection": {
+    "included": true,
+    "collapsible": true,
+    "defaultOpen": false
+  },
+  "sequenceDiagramSection": {
+    "included": true,
+    "collapsible": true,
+    "defaultOpen": false
+  },
+  "instructions": "Review this repository as a real-money WorldCup26 prediction game. Prioritize security, money integrity, Supabase/Postgres privilege boundaries, ticket/referral correctness, mobile UX regressions, and test coverage. Prefer high-signal findings with concrete file references over broad style comments.",
+  "rules": [
+    {
+      "id": "service-role-server-only",
+      "severity": "high",
+      "scope": ["src/**/*.ts", "src/**/*.tsx"],
+      "rule": "Supabase service-role access must stay server-only. Client components must not import or indirectly expose createServiceSupabaseClient, service-role keys, admin-only RPCs, or privileged table writes."
+    },
+    {
+      "id": "paid-route-auth-gates",
+      "severity": "high",
+      "scope": ["src/app/api/**/*.ts"],
+      "rule": "Any player-facing route that creates tickets, transfers tickets, claims tickets, buys entries, requests deposits, requests withdrawals, or mutates paid participation must authenticate the bearer token, enforce rate limiting, and pass the relevant launch, geo, responsible-play, and consent gates before mutation."
+    },
+    {
+      "id": "admin-route-auth",
+      "severity": "high",
+      "scope": ["src/app/api/admin/**/*.ts"],
+      "rule": "Admin API routes must call requireAdmin before reading or mutating admin data. They must fail closed, require explicit admin notes for money-risk state transitions, and must never rely on client-supplied admin identity."
+    },
+    {
+      "id": "wallet-ledger-atomicity",
+      "severity": "high",
+      "scope": ["src/**/*.ts", "supabase/migrations/**/*.sql"],
+      "rule": "Wallet balance and ticket inventory changes must be append-only or atomic RPC-backed operations. Do not implement read-then-write balance updates in TypeScript. Debit paths must use the canonical wallet lock/backstop patterns and must not allow negative balances."
+    },
+    {
+      "id": "ticket-transfer-atomicity",
+      "severity": "high",
+      "scope": ["src/**/*.ts", "supabase/migrations/**/*.sql"],
+      "rule": "Ticket transfers, agent ticket accepts, agent code assignments, purchases, and entry creation must prevent double spend, same-account abuse, expired pending requests, and bypass of ticket/responsible-play limits through an atomic database operation."
+    },
+    {
+      "id": "privileged-rpc-lockdown",
+      "severity": "high",
+      "scope": ["supabase/migrations/**/*.sql"],
+      "rule": "SECURITY DEFINER functions and money/ticket/admin RPCs must set a fixed search_path, revoke execution from public/anon/authenticated, grant only service_role where privileged, and avoid dynamic SQL unless strictly necessary and safely parameterized."
+    },
+    {
+      "id": "rls-for-new-tables",
+      "severity": "high",
+      "scope": ["supabase/migrations/**/*.sql"],
+      "rule": "Every new Supabase table containing users, tickets, wallet records, deposits, withdrawals, referrals, agent data, or admin state must enable RLS and include owner/admin/server-safe policies before app code depends on it."
+    },
+    {
+      "id": "withdrawal-payout-gates",
+      "severity": "high",
+      "scope": ["src/app/api/**/*.ts", "supabase/migrations/**/*.sql"],
+      "rule": "Withdrawal and payout flows must enforce age verification, responsible-play limits, balance checks, network/address/tx-hash validation, status-specific transitions, idempotency, and audit notes. Public routes must never approve, debit, or mark payouts paid."
+    },
+    {
+      "id": "raw-error-hygiene",
+      "severity": "medium",
+      "scope": ["src/app/api/**/*.ts"],
+      "rule": "Do not return raw Supabase, Postgres, stack trace, secret, wallet, or provider error messages to clients. Return stable user-safe messages and keep detailed diagnostics server-side."
+    },
+    {
+      "id": "mobile-touch-ux",
+      "severity": "medium",
+      "scope": ["src/**/*.tsx", "src/app/globals.css"],
+      "rule": "Mobile interactions must be usable from the center of the screen, not only margins. Avoid overlays that steal scroll/touch events, horizontal overflow, clipped labels, nested cards, or buttons whose text can overflow on small screens."
+    },
+    {
+      "id": "money-risk-tests",
+      "severity": "high",
+      "scope": ["src/**/*.ts", "src/**/*.tsx", "supabase/migrations/**/*.sql"],
+      "rule": "Changes to auth, admin privileges, wallet, deposits, withdrawals, tickets, agents, referrals, launch gates, or RLS must add or update focused tests. Prefer executable route/helper tests for behavior and migration text tests for SQL privilege/RLS contracts."
+    }
+  ]
+}
