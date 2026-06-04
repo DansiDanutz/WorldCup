@@ -15,6 +15,7 @@ const rootLayout = readFileSync("src/app/layout.tsx", "utf8");
 const heroCard = readFileSync("src/components/hero-card.tsx", "utf8");
 const heroSwiper = readFileSync("src/components/hero-swiper.tsx", "utf8");
 const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
+const myStanding = readFileSync("src/components/my-standing.tsx", "utf8");
 const smartMenu = readFileSync("src/components/smart-menu.tsx", "utf8");
 const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
 const appIcon = readFileSync("src/app/icon.svg", "utf8");
@@ -350,6 +351,17 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.ticket-requirement-card\.needs-ticket/);
     assert.match(globalsCss, /\.ticket-requirement-actions\s*{/);
     assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.ticket-requirement-card\s*{[\s\S]*?grid-template-columns:\s*1fr;/);
+  });
+
+  it("keeps the signed-in account cards in the app's colored card system", () => {
+    assert.match(myStanding, /standing-card standing-card--rank/);
+    assert.match(myStanding, /standing-card standing-card--referrals/);
+    assert.match(myStanding, /standing-card standing-card--agent/);
+    assert.match(globalsCss, /\.standing-card\s*{[\s\S]*?linear-gradient\(145deg/);
+    assert.match(globalsCss, /\.standing-card--rank\s*{[\s\S]*?--standing-accent:\s*#f0c060;/);
+    assert.match(globalsCss, /\.standing-card--referrals\s*{[\s\S]*?--standing-accent:\s*#37d7a3;/);
+    assert.match(globalsCss, /\.standing-card--agent\s*{[\s\S]*?--standing-accent:\s*#f0a13a;/);
+    assert.match(globalsCss, /\.standing-card \.panel-header > svg\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a/);
   });
 
   it("keeps every non-matchup swiper poster image-backed like Agent Deal", () => {
