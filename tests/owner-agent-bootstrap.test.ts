@@ -55,12 +55,15 @@ describe("owner agent bootstrap", () => {
     assert.match(ownerInventoryMigration, /insert into public\.worldcup_agents/);
     assert.match(
       ownerInventoryMigration,
-      /v_target_paid := case\s+when v_has_personal_ticket then p_quantity\s+else greatest\(p_quantity - 1, 0\)\s+end;/,
+      /v_target_paid := case\s+when v_had_personal_ticket then p_quantity\s+else greatest\(p_quantity - 1, 0\)\s+end;/,
     );
     assert.match(
       ownerInventoryMigration,
-      /v_assign_quantity := v_missing_paid;\s+if not v_has_personal_ticket then\s+v_assign_quantity := v_assign_quantity \+ 1;/,
+      /insert into public\.worldcup_tickets \(\s+tournament_id,\s+user_id,\s+price_amount,\s+assigned_by\s+\)/,
     );
+    assert.match(ownerInventoryMigration, /v_personal_ticket_assigned := 1;/);
+    assert.match(ownerInventoryMigration, /if v_existing_paid > v_target_paid then/);
+    assert.match(ownerInventoryMigration, /if v_final_commission > v_target_commission then/);
     assert.match(ownerInventoryMigration, /public\.worldcup_agent_assign_codes/);
     assert.match(
       ownerInventoryMigration,
