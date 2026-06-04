@@ -39,6 +39,8 @@ const voice_settings = { stability: 0.42, similarity_boost: 0.85, style: 0.40, u
 
 for (let i = 0; i < lines.length; i++) {
   const { text } = lines[i];
+  const f = `audio/line_${String(i).padStart(2, '0')}.mp3`;
+  if (fs.existsSync(f)) { console.log(`  line ${i}  skip (already generated)`); continue; }
   const url = `${API}/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`;
   const r = await fetch(url, {
     method: 'POST',
@@ -47,7 +49,6 @@ for (let i = 0; i < lines.length; i++) {
   });
   if (!r.ok) { console.error(`line ${i} failed:`, r.status, await r.text()); process.exit(1); }
   const buf = Buffer.from(await r.arrayBuffer());
-  const f = `audio/line_${String(i).padStart(2,'0')}.mp3`;
   fs.writeFileSync(f, buf);
   console.log(`  line ${i}  ${(buf.length/1024).toFixed(0)}KB  "${text.slice(0,48)}..."`);
 }

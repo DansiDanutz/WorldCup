@@ -21,6 +21,8 @@ The finished render is committed as [`WorldCup26_Ad.mp4`](./WorldCup26_Ad.mp4).
 ```bash
 cd marketing/worldcup26-ad
 npm install                      # playwright + ffmpeg-static
+npx playwright install chromium  # one-time: fetch the headless browser
+                                 # (or set CHROMIUM_PATH to an existing Chrome)
 
 # 1) Serve the ad over HTTP (Babel can't fetch the .jsx over file://)
 npm run serve &                  # http://127.0.0.1:8099/ad.html
@@ -45,4 +47,11 @@ npm run mux
   the next line — currently just the closing CTA, by ~6%.
 - **Even dimensions:** the element capture is 1920×1081 (a 1px sub-pixel row);
   `mux.mjs` crops it to 1920×1080 so libx264 is happy.
+- **Single source of truth:** `narration.json` is the one place the script
+  lives — `render`/`voice`/`mux` and the in-browser preview (`ad.html` fetches
+  it at boot) all read from it, so they can't drift.
+- **Browser:** `render.mjs` uses Playwright's managed Chromium. Set
+  `CHROMIUM_PATH=/path/to/chrome` to point at an existing browser instead.
+- **Resumable VO:** `gen_audio.mjs` skips lines whose `audio/line_NN.mp3`
+  already exists, so a re-run after a failure won't re-bill prior lines.
 - The `ELEVENLABS_API_KEY` is read from the environment only — never commit it.

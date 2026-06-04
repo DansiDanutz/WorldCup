@@ -45,22 +45,10 @@ const SCENES = [
 const DURATION = 90.0;
 
 // ── Voiceover ──────────────────────────────────────────────────────
-const NARRATION = [
-  { at: 0.5,  text: "Football — it was always made for peace, for fun, and for pure, breathless emotion." },
-  { at: 5.0,  text: "And once every four years, the whole planet feels it together. But who will win?" },
-  { at: 9.5,  text: "This time, you don't just wonder — you decide. Pick any three of the forty-eight nations chasing glory." },
-  { at: 15.5, text: "Will you trust the favorites, or gamble on a surprise? Lock them in before kickoff — from the first whistle, they score for you." },
-  { at: 23.0, text: "Because here's the magic: every goal is multiplied — by your team's odds, and by how far they dare to go." },
-  { at: 29.5, text: "So who will be the shock of the tournament? Back a fearless underdog, and watch the points explode — up to three times the glory." },
-  { at: 37.0, text: "Add your three together, and your score comes alive with every shot that finds the net." },
-  { at: 42.0, text: "And as the goals fly in, you rise up the live leaderboard, climbing alongside a whole community of fans, surging past your rivals toward number one, in real time." },
-  { at: 51.0, text: "And waiting at the very top? A prize pool of forty-eight thousand dollars, shared among the top ten." },
-  { at: 57.0, text: "And it only grows bigger and bigger, swelling with every new player who joins the fun this month." },
-  { at: 63.0, text: "But the real magic? It's the people you bring." },
-  { at: 66.0, text: "Bring your friends into the game, build your own little community, and every time they win, five percent drops straight into your pocket." },
-  { at: 74.0, text: "Or become an agent: stock up on tickets, and for every ten you sell, the next one's completely free — plus five percent of everything your players win, again and again." },
-  { at: 84.0, text: "The whole world is already playing. Join the community — let's have some fun, at WorldCup twenty-six dot world." },
-];
+// Single source of truth: the narration is loaded from narration.json at boot
+// (shared with gen_audio.mjs / mux.mjs) so this in-browser voice preview can
+// never drift from the rendered MP4.
+let NARRATION = [];
 
 let _voice = null;
 function loadVoices() {
@@ -176,9 +164,18 @@ function Ad() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.Fragment><Ad /><VoiceToggle /></React.Fragment>
-);
+function bootAd() {
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.Fragment><Ad /><VoiceToggle /></React.Fragment>
+  );
+}
+// Pull the narration script, then mount. The preview voice is best-effort: if
+// the fetch fails the ad still renders (just without the spoken preview).
+fetch('./narration.json')
+  .then((r) => r.json())
+  .then((d) => { NARRATION = Array.isArray(d) ? d : (d.lines || []); })
+  .catch((e) => { console.warn('narration.json load failed; preview voice disabled', e); })
+  .finally(bootAd);
 </script>
 </body>
 </html>

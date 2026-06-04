@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const HTML = process.env.URL || 'http://127.0.0.1:8099/ad.html';
-const EXEC = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+const EXEC = process.env.CHROMIUM_PATH || undefined; // undefined → Playwright's managed browser (run: npx playwright install chromium)
 const FPS = Number(process.env.FPS || 30);
 const DURATION = Number(process.env.DURATION || 90);
 const OUT = process.env.OUT || 'frames';
