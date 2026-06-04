@@ -9,8 +9,8 @@
     "render": "FPS=30 DURATION=90 OUT=frames node render.mjs",
     "voice": "node gen_audio.mjs",
     "mux": "node mux.mjs",
-    "overlay": "node render_overlay.mjs",
-    "tiktok": "node render_overlay.mjs && node make_vertical.mjs"
+    "render:vertical": "URL=http://127.0.0.1:8099/ad-vertical.html VW=1080 VH=1964 FPS=30 DURATION=90 OUT=frames_v node render.mjs",
+    "mux:vertical": "FRAMES=frames_v CROP=1080:1920:0:0 OUTFILE=WorldCup26_Ad_TikTok.mp4 node mux.mjs"
   },
   "dependencies": {
     "ffmpeg-static": "^5.3.0",

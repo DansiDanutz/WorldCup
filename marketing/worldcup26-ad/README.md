@@ -17,8 +17,7 @@ upload the final MP4 as a GitHub release asset or store it in external media sto
 | `render.mjs` | Headless-Chromium (Playwright) frame renderer. Seeks the ad's clock frame-by-frame and screenshots `#stage-canvas`. |
 | `gen_audio.mjs` | Generates one MP3 per narration line via the ElevenLabs API. |
 | `mux.mjs` | Builds the timed VO track (auto-fits any over-long line into its scene gap) and muxes it with the frames into the final H.264/AAC MP4. |
-| `overlay.html` + `render_overlay.mjs` | Renders a transparent 1080×1920 brand overlay (Inter wordmark + CTA + accent lines) to `overlay.png` for the vertical cut. |
-| `make_vertical.mjs` | Reframes the 16:9 MP4 into a 1080×1920 (9:16) TikTok/Reels/Shorts cut: the ad as a centered card over a blurred, brand-tinted backdrop, plus the overlay. Reuses the same audio. |
+| `ad-vertical.html` + `wc-scenes-vertical.jsx` | A **native 1080×1920 (9:16)** build for TikTok/Reels/Shorts. Re-lays-out all 7 scenes for portrait using the same kit components, data, timeline, and narration — not a crop of the landscape video. |
 
 ## Regenerate the video
 
@@ -40,8 +39,9 @@ ELEVENLABS_API_KEY=sk_... VOICE_NAME=Brian npm run voice
 # 4) Mux frames + voice -> WorldCup26_Ad.mp4
 npm run mux
 
-# 5) (optional) Vertical 9:16 cut for TikTok/Reels/Shorts -> WorldCup26_Ad_TikTok.mp4
-npm run tiktok                    # = render_overlay.mjs + make_vertical.mjs
+# 5) (optional) Native vertical 9:16 for TikTok/Reels/Shorts -> WorldCup26_Ad_TikTok.mp4
+npm run render:vertical          # renders ad-vertical.html -> ./frames_v (1080x1920)
+npm run mux:vertical             # muxes frames_v with the same Brian VO
 ```
 
 ### Notes
@@ -61,8 +61,8 @@ npm run tiktok                    # = render_overlay.mjs + make_vertical.mjs
   `CHROMIUM_PATH=/path/to/chrome` to point at an existing browser instead.
 - **Resumable VO:** `gen_audio.mjs` skips lines whose `audio/line_NN.mp3`
   already exists, so a re-run after a failure won't re-bill prior lines.
-- **TikTok cut:** `make_vertical.mjs` keeps the full 90s and the same voiceover;
-  the ad sits in a centered 1080×608 card with the rest of the 9:16 frame filled
-  by a blurred, brand-tinted copy of the video. Like the landscape MP4, the
-  vertical export is gitignored.
+- **Native vertical:** `ad-vertical.html` + `wc-scenes-vertical.jsx` are a true
+  portrait build (not a crop) — every scene re-laid-out for 1080×1920 with the
+  same components, data, and VO. `render.mjs` takes `VW`/`VH` for the viewport
+  and `mux.mjs` takes `FRAMES`/`CROP`. The export is gitignored like the landscape MP4.
 - The `ELEVENLABS_API_KEY` is read from the environment only — never commit it.

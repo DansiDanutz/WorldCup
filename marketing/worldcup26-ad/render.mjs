@@ -12,6 +12,8 @@ const DURATION = Number(process.env.DURATION || 90);
 const OUT = process.env.OUT || 'frames';
 const SHOTS = process.env.SHOTS ? process.env.SHOTS.split(',').map(Number) : null;
 const QUALITY = Number(process.env.QUALITY || 92);
+const VW = Number(process.env.VW || 1920);   // viewport (set 1080 for vertical)
+const VH = Number(process.env.VH || 1124);   // height incl. ~44px playbar room
 
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -21,7 +23,7 @@ const browser = await chromium.launch({
          '--hide-scrollbars', '--disable-dev-shm-usage', '--ignore-certificate-errors'],
 });
 const page = await browser.newPage({
-  viewport: { width: 1920, height: 1124 },
+  viewport: { width: VW, height: VH },
   deviceScaleFactor: 1,
   ignoreHTTPSErrors: true,
 });
