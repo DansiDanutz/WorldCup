@@ -4,7 +4,9 @@ A 90-second, 1920×1080 promo for **WorldCup26.world** rendered from the
 self-contained animated HTML ad and narrated with an [ElevenLabs](https://elevenlabs.io)
 voiceover (voice: **Brian**, model `eleven_multilingual_v2`).
 
-The finished render is committed as [`WorldCup26_Ad.mp4`](./WorldCup26_Ad.mp4).
+The finished render is generated locally as `WorldCup26_Ad.mp4`. It is
+intentionally gitignored so large binary exports stay out of the repository;
+upload the final MP4 as a GitHub release asset or store it in external media storage.
 
 ## What's here
 
