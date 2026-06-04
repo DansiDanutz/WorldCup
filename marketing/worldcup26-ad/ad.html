@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WorldCup26 — Ad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #0a0a0a; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="WorldCup26 ad · t=0s"></div>
+
+<!-- data (sets window.WC_TEAMS, WC_ISO, wcFlag, etc.) -->
+<script src="worldcup-data.js"></script>
+
+<!-- React + Babel (pinned) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="wc-kit.jsx"></script>
+<script type="text/babel" src="wc-scenes.jsx"></script>
+
+<script type="text/babel">
+const { useEffect } = React;
+
+// Scene timeline (global seconds) — ~90s, generous holds for reading
+const SCENES = [
+  { c: SceneHook,  start: 0,    end: 8.0  },
+  { c: ScenePick,  start: 8.0,  end: 22.0 },
+  { c: SceneCoef,  start: 22.0, end: 36.0 },
+  { c: SceneBoard, start: 36.0, end: 50.0 },
+  { c: ScenePrize, start: 50.0, end: 62.0 },
+  { c: SceneRefer, start: 62.0, end: 84.0 },
+  { c: SceneCTA,   start: 84.0, end: 90.0 },
+];
+const DURATION = 90.0;
+
+// ── Voiceover ──────────────────────────────────────────────────────
+const NARRATION = [
+  { at: 1.0,  text: "Every four years, the whole world stops to watch." },
+  { at: 5.0,  text: "But this time, you don't just watch — you play." },
+  { at: 9.5,  text: "Your story starts with one choice: any three of the forty-eight nations." },
+  { at: 15.5, text: "Lock them in before kickoff — and from the first whistle, they score for you, all tournament long." },
+  { at: 23.0, text: "But here's the magic — every goal is multiplied, by the odds and by the stage." },
+  { at: 29.5, text: "Back an underdog, and watch it pay. Up to three times the points." },
+  { at: 37.0, text: "Three teams. One score — climbing with every result." },
+  { at: 42.0, text: "And as the goals fly in, you rise — past your rivals, toward the top, in real time." },
+  { at: 51.0, text: "Waiting at the summit? Forty-eight thousand dollars — and the top ten all share it." },
+  { at: 57.0, text: "And it grows with every new player who joins the chase." },
+  { at: 63.0, text: "But the real story is bigger." },
+  { at: 66.0, text: "Bring your friends along, and when they win, five percent lands right in your pocket." },
+  { at: 74.0, text: "Or rise to agent: stock up on tickets — sell ten, and the next one's free — plus five percent of everything your players win." },
+  { at: 85.0, text: "The whole world is playing. Pick your three — at WorldCup twenty-six dot world." },
+];
+
+let _voice = null;
+function loadVoices() {
+  if (!('speechSynthesis' in window)) return;
+  const pick = () => {
+    const vs = window.speechSynthesis.getVoices();
+    if (!vs || !vs.length) return;
+    _voice = vs.find(v => /en[-_]?(US|GB)/i.test(v.lang) && /google|natural|samantha|daniel|aaron/i.test(v.name))
+      || vs.find(v => /^en/i.test(v.lang)) || vs[0];
+  };
+  pick();
+  window.speechSynthesis.onvoiceschanged = pick;
+}
+loadVoices();
+
+function speakLine(text) {
+  if (!('speechSynthesis' in window)) return;
+  try {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = 0.97; u.pitch = 1.02; u.volume = 1;
+    if (_voice) u.voice = _voice;
+    window.speechSynthesis.speak(u);
+  } catch (e) {}
+}
+
+function Narrator() {
+  const { time, playing } = useTimeline();
+  const prevRef = React.useRef(time);
+  const firedRef = React.useRef(new Set());
+  useEffect(() => {
+    const prev = prevRef.current;
+    if (time < prev - 0.25) { // looped or seeked back
+      firedRef.current.clear();
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    }
+    prevRef.current = time;
+    if (!playing || window.__wcVoiceEnabled === false) return;
+    NARRATION.forEach((line, i) => {
+      if (!firedRef.current.has(i) && prev < line.at && time >= line.at) {
+        firedRef.current.add(i);
+        speakLine(line.text);
+      }
+    });
+  }, [time, playing]);
+  useEffect(() => {
+    if (!playing && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+  }, [playing]);
+  return null;
+}
+
+function VoiceToggle() {
+  const [on, setOn] = React.useState(false);
+  useEffect(() => {
+    window.__wcVoiceEnabled = on;
+    if (!on && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+  }, [on]);
+  const toggle = () => {
+    const next = !on; setOn(next);
+    if (next) { try { const u = new SpeechSynthesisUtterance(' '); u.volume = 0; window.speechSynthesis.speak(u); } catch (e) {} }
+  };
+  return (
+    <button onClick={toggle} title="Toggle voiceover" style={{
+      position: 'fixed', top: 16, right: 16, zIndex: 60,
+      display: 'flex', alignItems: 'center', gap: 8,
+      background: on ? 'rgba(16,107,79,0.92)' : 'rgba(12,29,26,0.7)', color: '#fff',
+      fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 700, fontSize: 14,
+      border: 'none', borderRadius: 999, padding: '9px 16px', cursor: 'pointer',
+      boxShadow: '0 6px 18px rgba(0,0,0,0.35)',
+    }}>
+      {on ? (
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4z" /><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14" /></svg>
+      ) : (
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4z" /><path d="M22 9l-6 6M16 9l6 6" /></svg>
+      )}
+      {on ? 'Voice on' : 'Voice off'}
+    </button>
+  );
+}
+
+// Keeps the root's data-screen-label in sync with the playhead (for comments)
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root) root.dataset.screenLabel = `WorldCup26 ad · t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+
+function Ad() {
+  return (
+    <Stage width={1920} height={1080} duration={DURATION} background={WC.bg} persistKey="wc26ad">
+      <Backdrop />
+      <Watermark />
+      <ScreenLabeler />
+      <SeekBridge />
+      <Narrator />
+      {SCENES.map((s, i) => (
+        <Sprite key={i} start={s.start} end={s.end}>
+          <s.c />
+        </Sprite>
+      ))}
+    </Stage>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.Fragment><Ad /><VoiceToggle /></React.Fragment>
+);
+</script>
+</body>
+</html>

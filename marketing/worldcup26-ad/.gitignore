@@ -1,0 +1,8 @@
+node_modules/
+frames/
+audio/
+smoke/
+*.log
+filter.txt
+_probe.png
+WorldCup26_Ad_silent.mp4
