@@ -66,6 +66,8 @@ describe("admin ticket inventory", () => {
 
   it("shows the admin workflow and financial statement in the console", () => {
     assert.match(adminConsole, /Request Tickets/);
+    assert.match(adminConsole, /Request 2,000/);
+    assert.match(adminConsole, /requestAdminTickets\(2000\)/);
     assert.match(adminConsole, /agentPool\.admin/);
     assert.match(adminConsole, /Assign user ticket/);
     assert.match(adminConsole, /Assign Tickets for Agents/);

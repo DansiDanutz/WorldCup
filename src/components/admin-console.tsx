@@ -322,7 +322,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
     assigned: 0,
     redeemed: 0,
   });
-  const [requestTicketQty, setRequestTicketQty] = useState("10000");
+  const [requestTicketQty, setRequestTicketQty] = useState("2000");
   const [agentEmail, setAgentEmail] = useState("");
   const [assignAgentUserId, setAssignAgentUserId] = useState("");
   const [assignAgentQty, setAssignAgentQty] = useState("10");
@@ -1263,19 +1263,20 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
     });
   }
 
-  function requestAdminTickets() {
+  function requestAdminTickets(quantityOverride?: number) {
     run(async () => {
       try {
+        const quantity = quantityOverride ?? Number(requestTicketQty);
         const response = await fetch("/api/admin/agents", {
           method: "POST",
           headers: authHeaders(),
           body: JSON.stringify({
             action: "request_inventory",
-            quantity: Number(requestTicketQty),
+            quantity,
           }),
         });
         const result = await readResult(response);
-        setMessage(`Admin inventory received: ${result.requested ?? requestTicketQty} tickets.`);
+        setMessage(`Admin inventory received: ${result.requested ?? quantity} tickets.`);
         await loadAgents();
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not request tickets.");
@@ -2931,14 +2932,26 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   <button
                     className="button"
                     disabled={isPending || Number(requestTicketQty) < 1}
-                    onClick={requestAdminTickets}
+                    onClick={() => requestAdminTickets()}
                     type="button"
                   >
                     Request Tickets
                   </button>
+                  <button
+                    className="button secondary"
+                    disabled={isPending || agentPool.available < 2000}
+                    onClick={() => {
+                      setRequestTicketQty("2000");
+                      requestAdminTickets(2000);
+                    }}
+                    type="button"
+                  >
+                    Request 2,000
+                  </button>
                 </div>
                 <span className="field-note">
-                  Moves the next numbered tickets from the generated 10,000 pool into admin inventory.
+                  Moves the next numbered tickets from the generated 10,000 pool into admin inventory. Use Request
+                  2,000 to refill the owner admin account without moving tickets into agent inventory.
                 </span>
               </div>
 
