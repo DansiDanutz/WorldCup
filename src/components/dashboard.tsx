@@ -251,6 +251,16 @@ export function Dashboard({
   const ticketPriceAmount = myAccountStatus?.ticketPriceAmount ?? 0;
   const missingEntryTicket =
     signedInWithGoogle && myAccountStatus !== null && selectedTeams.length === 3 && ticketsAvailable < 1;
+  const entryLockBlocker = getEntryLockBlocker({
+    consented,
+    displayName,
+    entryRestriction,
+    missingEntryTicket,
+    referralAccepted,
+    referralCode,
+    selectedTeamCount: selectedTeams.length,
+    signedInWithGoogle,
+  });
   const pendingAgentTicketRequest = agentTicketRequests.find((request) => request.status === "pending");
   const launchEvidenceMode = Boolean(
     signedInWithGoogle &&
@@ -1193,7 +1203,14 @@ export function Dashboard({
                       {ticketsAvailable > 0 ? `${ticketsAvailable} available` : "0 available"}
                     </span>
                   </div>
-                  {ticketsAvailable < 1 ? (
+                  {ticketsAvailable > 0 ? (
+                    <div className="ticket-ready-note">
+                      <Check size={16} />
+                      <span>
+                        Buy-in is covered. Locking your entry will use 1 ticket from your account.
+                      </span>
+                    </div>
+                  ) : (
                     <>
                       <div className="ticket-option-grid">
                         <div>
@@ -1211,9 +1228,6 @@ export function Dashboard({
                           Buy with USDT
                         </Link>
                       </div>
-                    </>
-                  ) : null}
-                  {ticketsAvailable < 1 ? (
                     <div className="agent-call-box">
                       <div>
                         <strong>Agent Call</strong>
@@ -1252,7 +1266,8 @@ export function Dashboard({
                       {agentRequestMessage ? <div className="message">{agentRequestMessage}</div> : null}
                       {agentRequestError ? <div className="message error">{agentRequestError}</div> : null}
                     </div>
-                  ) : null}
+                    </>
+                  )}
                 </div>
               </div>
               {signedInWithGoogle && consented === false ? (
@@ -1296,18 +1311,12 @@ export function Dashboard({
               {entryRestriction ? (
                 <div className="message error">{entryRestriction}</div>
               ) : null}
+              {entryLockBlocker && !entryRestriction ? (
+                <div className="message entry-lock-hint">{entryLockBlocker}</div>
+              ) : null}
               <button
                 className="button"
-                disabled={
-                  selectedTeams.length !== 3 ||
-                  !displayName.trim() ||
-                  !signedInWithGoogle ||
-                  (Boolean(referralCode) && !referralAccepted) ||
-                  (signedInWithGoogle && consented !== true) ||
-                  missingEntryTicket ||
-                  Boolean(entryRestriction) ||
-                  isPending
-                }
+                disabled={Boolean(entryLockBlocker) || isPending}
                 onClick={submitEntry}
                 type="button"
               >
@@ -1635,6 +1644,60 @@ function getTeamColorStyle(teamId: string) {
 
 function getGatePauseMessage(gate: PaidActionGate | undefined) {
   return gate && !gate.allowed ? "Paid actions open after launch approvals are complete." : null;
+}
+
+function getEntryLockBlocker({
+  consented,
+  displayName,
+  entryRestriction,
+  missingEntryTicket,
+  referralAccepted,
+  referralCode,
+  selectedTeamCount,
+  signedInWithGoogle,
+}: {
+  consented: boolean | null;
+  displayName: string;
+  entryRestriction: string | null;
+  missingEntryTicket: boolean;
+  referralAccepted: boolean;
+  referralCode: string;
+  selectedTeamCount: number;
+  signedInWithGoogle: boolean;
+}) {
+  if (selectedTeamCount !== 3) {
+    return `Pick ${3 - selectedTeamCount} more ${selectedTeamCount === 2 ? "team" : "teams"} before locking.`;
+  }
+
+  if (!displayName.trim()) {
+    return "Add your leaderboard display name before locking.";
+  }
+
+  if (!signedInWithGoogle) {
+    return "Sign in with Google before locking your entry.";
+  }
+
+  if (referralCode && !referralAccepted) {
+    return "Accept the referral agreement before locking with this inviter code.";
+  }
+
+  if (consented === false) {
+    return "Confirm your age and accept the Terms before locking.";
+  }
+
+  if (consented !== true) {
+    return "Checking your age and Terms confirmation. If this does not update, refresh and try again.";
+  }
+
+  if (missingEntryTicket) {
+    return "You need 1 assigned ticket before locking your entry.";
+  }
+
+  if (entryRestriction) {
+    return entryRestriction;
+  }
+
+  return null;
 }
 
 function normalizeReferralCode(value: string) {

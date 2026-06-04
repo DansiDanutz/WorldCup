@@ -386,9 +386,12 @@ describe("WorldCup design system integration", () => {
 
   it("keeps ticket purchase guidance visible before locking an entry", () => {
     assert.match(dashboard, /const missingEntryTicket =/);
+    assert.match(dashboard, /const entryLockBlocker = getEntryLockBlocker/);
     assert.match(dashboard, /ticketsAvailable < 1/);
+    assert.match(dashboard, /ticketsAvailable > 0 \? \(/);
     assert.match(dashboard, /className=\{`ticket-requirement-card/);
     assert.match(dashboard, /You need 1 entry ticket/);
+    assert.match(dashboard, /Buy-in is covered\. Locking your entry will use 1 ticket/);
     assert.match(dashboard, /Pay the buy-in with USDT, or use Agent Call after paying an agent directly\./);
     assert.match(dashboard, /Ticket price/);
     assert.match(dashboard, /Your balance/);
@@ -400,12 +403,16 @@ describe("WorldCup design system integration", () => {
     assert.match(walletScreen, /Agent Call requests/);
     assert.match(walletScreen, /acceptAgentTicketRequest/);
     assert.match(dashboard, /pathname: "\/wallet", hash: "tickets"/);
-    assert.match(dashboard, /missingEntryTicket \|\|/);
+    assert.match(dashboard, /disabled=\{Boolean\(entryLockBlocker\) \|\| isPending\}/);
+    assert.match(dashboard, /function getEntryLockBlocker/);
+    assert.match(dashboard, /Checking your age and Terms confirmation/);
     assert.match(walletScreen, /id="tickets"/);
     assert.match(walletScreen, /walletView === "agent" \? "wallet-panel-hidden" : ""/);
     assert.match(globalsCss, /\.ticket-requirement-card\s*{/);
     assert.match(globalsCss, /\.ticket-requirement-card\.needs-ticket/);
     assert.match(globalsCss, /\.ticket-requirement-actions\s*{/);
+    assert.match(globalsCss, /\.ticket-ready-note\s*{/);
+    assert.match(globalsCss, /\.entry-lock-hint\s*{/);
     assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.ticket-requirement-card\s*{[\s\S]*?grid-template-columns:\s*1fr;/);
   });
 

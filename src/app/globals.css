@@ -2037,6 +2037,24 @@ svg {
   gap: 8px;
 }
 
+.ticket-ready-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid rgba(17, 121, 88, 0.28);
+  border-radius: 8px;
+  color: var(--green);
+  background: rgba(225, 244, 237, 0.72);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.ticket-ready-note svg {
+  flex: 0 0 auto;
+}
+
 .agent-call-box {
   display: grid;
   gap: 10px;
@@ -2213,6 +2231,11 @@ svg {
 .message.error {
   color: var(--red);
   background: #fff0ef;
+}
+
+.entry-lock-hint {
+  color: #81500f;
+  background: #fff8ec;
 }
 
 .invite-panel {
