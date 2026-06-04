@@ -12,6 +12,10 @@ const ownerInventoryMigration = readFileSync(
   "supabase/migrations/20260604203000_worldcup_owner_agent_inventory_bootstrap.sql",
   "utf8",
 );
+const ownerAdminCorrectionMigration = readFileSync(
+  "supabase/migrations/20260605013000_worldcup_owner_admin_agent_inventory_correction.sql",
+  "utf8",
+);
 
 describe("owner agent bootstrap", () => {
   it("keeps semebitcoin@gmail.com as the built-in owner admin", () => {
@@ -29,7 +33,8 @@ describe("owner agent bootstrap", () => {
     assert.match(referralsSource, /onConflict:\s*"tournament_id,user_id"/);
     assert.match(referralsSource, /\.rpc\("worldcup_bootstrap_owner_agent_inventory"/);
     assert.match(referralsSource, /p_owner_email:\s*ownerAdminEmail/);
-    assert.match(referralsSource, /p_quantity:\s*1000/);
+    assert.match(referralsSource, /p_quantity:\s*100/);
+    assert.doesNotMatch(referralsSource, /p_quantity:\s*1000/);
     assert.match(referralsSource, /await ensureOwnerAgent\(supabase, profile\)/);
   });
 
@@ -43,20 +48,18 @@ describe("owner agent bootstrap", () => {
     assert.match(ownerAgentMigration, /active\s*=\s*true/);
   });
 
-  it("bootstraps the owner agent inventory to 999 agent tickets and one user ticket", () => {
+  it("bootstraps the owner agent inventory to 99 agent tickets and one user ticket", () => {
     assert.match(
       ownerInventoryMigration,
       /create or replace function public\.worldcup_bootstrap_owner_agent_inventory/,
     );
     assert.match(ownerInventoryMigration, /p_owner_email text default 'semebitcoin@gmail\.com'/);
+    assert.match(ownerInventoryMigration, /p_quantity integer default 100/);
     assert.match(ownerInventoryMigration, /add column if not exists registered_at timestamptz not null default now\(\)/);
     assert.match(ownerInventoryMigration, /add column if not exists activated_at timestamptz/);
     assert.match(ownerInventoryMigration, /lower\(email\)\s*=\s*lower\(trim\(p_owner_email\)\)/);
     assert.match(ownerInventoryMigration, /insert into public\.worldcup_agents/);
-    assert.match(
-      ownerInventoryMigration,
-      /v_target_paid := case\s+when v_had_personal_ticket then p_quantity\s+else greatest\(p_quantity - 1, 0\)\s+end;/,
-    );
+    assert.match(ownerInventoryMigration, /v_target_paid := greatest\(p_quantity - 1, 0\);/);
     assert.match(
       ownerInventoryMigration,
       /insert into public\.worldcup_tickets \(\s+tournament_id,\s+user_id,\s+price_amount,\s+assigned_by\s+\)/,
@@ -67,8 +70,9 @@ describe("owner agent bootstrap", () => {
     assert.match(ownerInventoryMigration, /public\.worldcup_agent_assign_codes/);
     assert.match(
       ownerInventoryMigration,
-      /select public\.worldcup_bootstrap_owner_agent_inventory\('semebitcoin@gmail\.com', 1000, 'owner-bootstrap'\);/,
+      /select public\.worldcup_bootstrap_owner_agent_inventory\('semebitcoin@gmail\.com', 100, 'owner-bootstrap'\);/,
     );
+    assert.doesNotMatch(ownerInventoryMigration, /1000 paid units/);
     assert.match(
       ownerInventoryMigration,
       /revoke execute on function public\.worldcup_bootstrap_owner_agent_inventory\(text, integer, text\)\s+from public, anon, authenticated;/,
@@ -76,6 +80,28 @@ describe("owner agent bootstrap", () => {
     assert.match(
       ownerInventoryMigration,
       /grant execute on function public\.worldcup_bootstrap_owner_agent_inventory\(text, integer, text\)\s+to service_role;/,
+    );
+  });
+
+  it("corrects existing owner agent excess back to admin inventory", () => {
+    assert.match(
+      ownerAdminCorrectionMigration,
+      /create or replace function public\.worldcup_bootstrap_owner_agent_inventory/,
+    );
+    assert.match(ownerAdminCorrectionMigration, /p_quantity integer default 100/);
+    assert.match(ownerAdminCorrectionMigration, /v_target_paid := greatest\(p_quantity - 1, 0\);/);
+    assert.match(ownerAdminCorrectionMigration, /v_target_commission := floor\(v_target_paid \/ 10\)::integer;/);
+    assert.match(ownerAdminCorrectionMigration, /set status = 'admin'/);
+    assert.match(ownerAdminCorrectionMigration, /admin_user_id = v_user_id/);
+    assert.match(ownerAdminCorrectionMigration, /'Owner correction returned excess agent inventory to admin\.'/);
+    assert.match(ownerAdminCorrectionMigration, /'targetPaidAgentTickets', v_target_paid/);
+    assert.match(ownerAdminCorrectionMigration, /'targetCommissionTickets', v_target_commission/);
+    assert.match(ownerAdminCorrectionMigration, /'commissionAssigned', v_assigned_commission/);
+    assert.match(ownerAdminCorrectionMigration, /'assignedCommissionTickets', v_assigned_commission/);
+    assert.match(ownerAdminCorrectionMigration, /'returnedToAdminInventory'/);
+    assert.match(
+      ownerAdminCorrectionMigration,
+      /select public\.worldcup_bootstrap_owner_agent_inventory\('semebitcoin@gmail\.com', 100, 'owner-admin-normalization'\);/,
     );
   });
 });

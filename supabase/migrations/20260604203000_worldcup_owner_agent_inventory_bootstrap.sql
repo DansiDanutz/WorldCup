@@ -1,10 +1,9 @@
 -- Owner bootstrap inventory -------------------------------------------------
 --
 -- The owner account must always be usable as a normal player and as an active
--- agent. When 1000 paid units are assigned to a new agent account, reserve one
--- normal user ticket first; the remaining 999 become sellable agent codes. If
--- the owner already has a personal ticket or entry, all 1000 paid units stay in
--- the agent account.
+-- agent. The owner is also the admin account, so only 100 paid units are kept in
+-- the owner agent allocation: one normal user ticket plus 99 sellable agent
+-- codes.
 
 alter table public.worldcup_agents
   add column if not exists contact_name text,
@@ -21,7 +20,7 @@ update public.worldcup_agents
 
 create or replace function public.worldcup_bootstrap_owner_agent_inventory(
   p_owner_email text default 'semebitcoin@gmail.com',
-  p_quantity integer default 1000,
+  p_quantity integer default 100,
   p_created_by text default 'owner-bootstrap'
 )
 returns jsonb
@@ -158,10 +157,7 @@ begin
     and agent_user_id = v_user_id
     and kind = 'paid';
 
-  v_target_paid := case
-    when v_had_personal_ticket then p_quantity
-    else greatest(p_quantity - 1, 0)
-  end;
+  v_target_paid := greatest(p_quantity - 1, 0);
 
   if v_existing_paid > v_target_paid then
     with released as (
@@ -301,4 +297,4 @@ revoke execute on function public.worldcup_bootstrap_owner_agent_inventory(text,
 grant execute on function public.worldcup_bootstrap_owner_agent_inventory(text, integer, text)
   to service_role;
 
-select public.worldcup_bootstrap_owner_agent_inventory('semebitcoin@gmail.com', 1000, 'owner-bootstrap');
+select public.worldcup_bootstrap_owner_agent_inventory('semebitcoin@gmail.com', 100, 'owner-bootstrap');
