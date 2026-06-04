@@ -64,7 +64,30 @@ describe("WorldCup design system integration", () => {
     assert.match(loginRegister, /motto-accent/);
     assert.match(globalsCss, /\.flag-wall/);
     assert.match(globalsCss, /\.flag-grid/);
-    assert.match(globalsCss, /\.motto-accent\s*{[\s\S]*?color:\s*var\(--green\);/);
+    assert.match(globalsCss, /\.motto-accent\s*{[\s\S]*?color:\s*var\(--gold\);/);
+  });
+
+  it("keeps registration first with two tappable referral path cards", () => {
+    assert.match(loginRegister, /Register first/);
+    assert.match(loginRegister, /const \[signupPath, setSignupPath\]/);
+    assert.match(loginRegister, /auth-choice-grid auth-choice-grid--buttons/);
+    assert.match(loginRegister, /I have an inviter/);
+    assert.match(loginRegister, /Your own future referrals can earn 5%/);
+    assert.match(loginRegister, /Direct signup/);
+    assert.match(loginRegister, /future referral rate starts at 3%/);
+    assert.match(loginRegister, /showReferralForm/);
+    assert.match(loginRegister, /showGoogleAuth/);
+    assert.match(loginRegister, /Continue with Google/);
+    assert.match(loginRegister, /auth-info-card/);
+    assert.match(loginRegister, /How it works/);
+    assert.match(loginRegister, /Referral rates/);
+    assert.match(loginRegister, /All 48 nations/);
+    assert.doesNotMatch(loginRegister, /disabled=\{!canContinue\}/);
+    assert.match(globalsCss, /\.auth-card\s*{[\s\S]*?linear-gradient\(155deg/);
+    assert.match(globalsCss, /\.auth-choice-grid button\.active/);
+    assert.match(globalsCss, /\.auth-info-card summary/);
+    assert.match(globalsCss, /\.auth-google-button/);
+    assert.match(globalsCss, /auth-info-grid/);
   });
 
   it("keeps mobile navigation inside the viewport instead of widening the page", () => {

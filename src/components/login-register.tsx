@@ -1,9 +1,18 @@
 "use client";
 
-import { Check, CircleDollarSign, Gift, LogIn, MousePointer2, ShieldCheck, Users } from "lucide-react";
+import {
+  Check,
+  ChevronDown,
+  CircleDollarSign,
+  Gift,
+  LogIn,
+  MousePointer2,
+  ShieldCheck,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import type { PaidActionGate, PaidActionGates } from "@/lib/types";
@@ -75,12 +84,17 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
   const [referralChecked, setReferralChecked] = useState(false);
   const [referralAccepted, setReferralAccepted] = useState(false);
   const [noReferral, setNoReferral] = useState(false);
+  const [signupPath, setSignupPath] = useState<"referral" | "direct" | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const referralInputRef = useRef<HTMLInputElement | null>(null);
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const canContinueWithReferral = Boolean(referralCode && referralInviter && referralAccepted);
   const canContinue = canContinueWithReferral || noReferral;
+  const selectedSignupPath = signupPath ?? (referralCode ? "referral" : noReferral ? "direct" : null);
+  const showReferralForm = selectedSignupPath === "referral";
+  const showGoogleAuth = Boolean(session || canContinue);
   const depositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
   const ticketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
   const entryPolicyPause = getGatePauseMessage(publicPaidActionGates?.entry);
@@ -93,6 +107,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
       const nextReferralCode = normalizeReferralCode(initialRef ?? storedRef ?? "");
 
       setReferralCode(nextReferralCode);
+      setSignupPath(nextReferralCode ? "referral" : null);
       setReferralAccepted(
         Boolean(nextReferralCode) &&
           window.localStorage.getItem("worldcup_referral_accepted") === "true",
@@ -183,83 +198,16 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
 
   return (
     <main className="auth-page">
-      <section className="auth-hero" aria-labelledby="auth-title">
-        <Link className="auth-brand" href="/">
-          <Image src="/logo-lockup.svg" alt="WorldCup" width={122} height={30} priority />
-        </Link>
-
-        <div className="auth-copy">
-          <span className="status-pill">FIFA World Cup 2026</span>
-          <h1 className="motto" id="auth-title">
-            Predict the Game <span className="motto-accent">WorldCup26</span>
-          </h1>
-          <p>
-            Create your account and choose three teams. Use Wallet for tickets and USDT after
-            launch approvals open. Referral terms are handled before Google sign-in.
-          </p>
-        </div>
-
-        <div className="auth-steps" aria-label="Signup steps">
-          <div>
-            <span>1</span>
-            <strong>Referral</strong>
-            <small>Enter an inviter code or choose direct signup.</small>
-          </div>
-          <div>
-            <span>2</span>
-            <strong>Google</strong>
-            <small>One account, no password to manage.</small>
-          </div>
-          <div>
-            <span>3</span>
-            <strong>Play</strong>
-            <small>Pick teams, buy tickets, track wallet activity.</small>
-          </div>
-        </div>
-
-        <div className="flag-wall" aria-label="All 48 qualified nations">
-          <div className="flag-wall-head">
-            <span className="ds-label">All 48 Nations</span>
-            <span>Pick 3 to play</span>
-          </div>
-          <div className="flag-grid">
-            {flagTeams.map(([id, name, code]) => (
-              <Image
-                alt={name}
-                className="flag"
-                height={22}
-                key={id}
-                loading="lazy"
-                src={`https://flagcdn.com/w80/${code}.png`}
-                width={32}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="auth-benefits" aria-label="Referral benefits">
-          <div>
-            <Gift size={18} />
-            <span>Referral accepted: your own invites can earn 5%</span>
-          </div>
-          <div>
-            <CircleDollarSign size={18} />
-            <span>Direct signup: your own invites earn 3%</span>
-          </div>
-          <div>
-            <Users size={18} />
-            <span>Track accepted referrals inside the Invite tab</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="auth-card" aria-label="Register or login">
+      <section className="auth-card auth-card--register" aria-label="Register">
         <div className="panel-header">
           <div>
-            <h2 className="panel-title">Login / Register</h2>
-            <p className="panel-subtitle">Choose a signup path, then continue with Google.</p>
+            <span className="ds-label">Register first</span>
+            <h1 className="panel-title">Choose your signup path</h1>
+            <p className="panel-subtitle">
+              Tap one card. Google appears after your referral choice is ready.
+            </p>
           </div>
-          <LogIn size={18} color="var(--green)" />
+          <LogIn size={18} color="var(--gold)" />
         </div>
 
         <div className="entry-form">
@@ -286,118 +234,218 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
             </div>
           ) : null}
 
-          <div className="auth-choice-grid" aria-label="Signup path options">
-            <div className={referralCode ? "active" : ""}>
-              <MousePointer2 size={16} />
-              <strong>Using a referral</strong>
-              <span>Paste the inviter code, then accept the prize-share agreement.</span>
-            </div>
-            <div className={noReferral ? "active" : ""}>
-              <ShieldCheck size={16} />
-              <strong>Direct signup</strong>
-              <span>No inviter code. Your future referral rate starts at 3%.</span>
-            </div>
-          </div>
-
-          <div className="field">
-            <label htmlFor="login-referral-code">Referral code</label>
-            <input
-              id="login-referral-code"
-              value={referralCode}
-              onChange={(event) => {
-                setReferralCode(normalizeReferralCode(event.target.value));
+          <div className="auth-choice-grid auth-choice-grid--buttons" aria-label="Signup path options">
+            <button
+              className={selectedSignupPath === "referral" ? "active" : ""}
+              disabled={Boolean(session)}
+              onClick={() => {
                 setNoReferral(false);
+                setSignupPath("referral");
                 setReferralAccepted(false);
                 setError(null);
+                window.setTimeout(() => referralInputRef.current?.focus(), 0);
               }}
-              placeholder="Enter inviter code"
+              type="button"
+            >
+              <MousePointer2 size={17} />
+              <strong>I have an inviter</strong>
+              <span>Add their code. Your own future referrals can earn 5%.</span>
+            </button>
+            <button
+              className={selectedSignupPath === "direct" ? "active" : ""}
               disabled={Boolean(session)}
-            />
-            {referralCode ? (
-              <div className={`field-note ${referralInviter ? "success-note" : ""}`}>
-                {referralInviter
-                  ? `Referral recognized from ${referralInviter}. You keep the ${referralPercent}% referral deal for your own invites.`
-                  : referralChecked
-                    ? "This referral code was not found."
-                    : "Checking referral code..."}
-              </div>
-            ) : (
-              <div className="field-note">
-                If someone invited you, enter their code before creating your account.
-              </div>
-            )}
-          </div>
-
-          <label className="check-row">
-            <input
-              checked={noReferral}
-              disabled={Boolean(referralCode) || Boolean(session)}
-              onChange={(event) => {
-                setNoReferral(event.target.checked);
+              onClick={() => {
+                setReferralCode("");
+                setSignupPath("direct");
+                setReferralAccepted(false);
+                setReferralInviter(null);
+                setReferralChecked(false);
+                setNoReferral(true);
                 setError(null);
               }}
-              type="checkbox"
-            />
-            <span>
-              I do not have a referral code, and I understand my own referral rate will be 3%
-              instead of 5%.
-            </span>
-          </label>
-
-          {referralCode ? (
-            <label className="check-row referral-consent">
-              <input
-                checked={referralAccepted}
-                disabled={Boolean(session) || !referralInviter}
-                onChange={(event) => setReferralAccepted(event.target.checked)}
-                type="checkbox"
-              />
-              <span>
-                {referralAgreementText.replace("5%", `${referralPercent}%`)}
-              </span>
-            </label>
-          ) : null}
-
-          <div className="auth-loop">
-            <div>
-              <Check size={16} />
-              <span>
-                Your inviter can earn {referralCode ? referralPercent : 3}% if you win.
-              </span>
-            </div>
-            <div>
-              <Check size={16} />
-              <span>
-                You get the same 5% deal when you accept a referral; direct signups get 3%.
-              </span>
-            </div>
+              type="button"
+            >
+              <ShieldCheck size={17} />
+              <strong>Direct signup</strong>
+              <span>No inviter. I accept my own future referral rate starts at 3%.</span>
+            </button>
           </div>
 
-          {session ? (
-            <Link className="button" href="/">
-              Continue to game
-            </Link>
-          ) : (
-            <>
-              {!canContinue ? (
-                <div className="auth-next-step">
-                  Choose one path: enter a valid referral code and accept it, or confirm direct signup.
-                </div>
-              ) : null}
+          {showReferralForm ? (
+            <div className="auth-path-panel">
+              <div className="field">
+                <label htmlFor="login-referral-code">Inviter code</label>
+                <input
+                  id="login-referral-code"
+                  ref={referralInputRef}
+                  value={referralCode}
+                  onChange={(event) => {
+                    setReferralCode(normalizeReferralCode(event.target.value));
+                    setNoReferral(false);
+                    setSignupPath("referral");
+                    setReferralAccepted(false);
+                    setError(null);
+                  }}
+                  placeholder="Enter inviter code"
+                  disabled={Boolean(session)}
+                />
+                {referralCode ? (
+                  <div className={`field-note ${referralInviter ? "success-note" : ""}`}>
+                    {referralInviter
+                      ? `Referral recognized from ${referralInviter}. Your own invites can earn 5%.`
+                      : referralChecked
+                        ? "This referral code was not found."
+                        : "Checking referral code..."}
+                  </div>
+                ) : (
+                  <div className="field-note">
+                    Enter the code from the person who invited you.
+                  </div>
+                )}
+              </div>
+
+              <label className="check-row referral-consent">
+                <input
+                  checked={referralAccepted}
+                  disabled={Boolean(session) || !referralInviter}
+                  onChange={(event) => setReferralAccepted(event.target.checked)}
+                  type="checkbox"
+                />
+                <span>
+                  {referralAgreementText.replace("5%", `${referralPercent}%`)}
+                </span>
+              </label>
+            </div>
+          ) : null}
+
+          {selectedSignupPath === "direct" ? (
+            <div className="auth-path-panel auth-path-panel--accepted">
+              <Check size={16} />
+              <span>
+                Direct signup selected. You can still invite friends, but your own referral rate
+                starts at 3% instead of 5%.
+              </span>
+            </div>
+          ) : null}
+
+          {!selectedSignupPath ? (
+            <div className="auth-next-step">
+              Choose one card above to unlock Google registration.
+            </div>
+          ) : !canContinue && showReferralForm ? (
+            <div className="auth-next-step">
+              Enter a valid inviter code, then accept the referral agreement.
+            </div>
+          ) : null}
+
+          {showGoogleAuth ? (
+            session ? (
+              <Link className="button" href="/">
+                Continue to game
+              </Link>
+            ) : (
               <button
-                className="button"
-                disabled={!canContinue}
+                className="button auth-google-button"
                 onClick={continueWithGoogle}
                 type="button"
               >
                 <LogIn size={16} />
-                Create account with Google
+                Continue with Google
               </button>
-            </>
-          )}
+            )
+          ) : null}
 
           {message ? <div className="message">{message}</div> : null}
           {error ? <div className="message error">{error}</div> : null}
+        </div>
+      </section>
+
+      <section className="auth-hero" aria-labelledby="auth-title">
+        <Link className="auth-brand" href="/">
+          <Image src="/logo-lockup.svg" alt="WorldCup" width={122} height={30} priority />
+        </Link>
+
+        <div className="auth-copy">
+          <span className="status-pill">FIFA World Cup 2026</span>
+          <h1 className="motto" id="auth-title">
+            Predict the Game <span className="motto-accent">WorldCup26</span>
+          </h1>
+          <p>
+            Create your account, pick three teams, then use Wallet for tickets and USDT after
+            launch approvals open.
+          </p>
+        </div>
+
+        <div className="auth-info-grid" aria-label="Signup details">
+          <details className="auth-info-card" open>
+            <summary>
+              <span>How it works</span>
+              <ChevronDown size={16} />
+            </summary>
+            <div className="auth-steps" aria-label="Signup steps">
+              <div>
+                <span>1</span>
+                <strong>Register</strong>
+                <small>Choose referral or direct signup.</small>
+              </div>
+              <div>
+                <span>2</span>
+                <strong>Google</strong>
+                <small>One account, no password to manage.</small>
+              </div>
+              <div>
+                <span>3</span>
+                <strong>Play</strong>
+                <small>Pick teams, buy tickets, track wallet activity.</small>
+              </div>
+            </div>
+          </details>
+
+          <details className="auth-info-card">
+            <summary>
+              <span>Referral rates</span>
+              <ChevronDown size={16} />
+            </summary>
+            <div className="auth-benefits" aria-label="Referral benefits">
+              <div>
+                <Gift size={18} />
+                <span>Referral accepted: your own invites can earn 5%.</span>
+              </div>
+              <div>
+                <CircleDollarSign size={18} />
+                <span>Direct signup: your own invites earn 3%.</span>
+              </div>
+              <div>
+                <Users size={18} />
+                <span>Track accepted referrals inside the Invite tab.</span>
+              </div>
+            </div>
+          </details>
+
+          <details className="auth-info-card">
+            <summary>
+              <span>All 48 nations</span>
+              <ChevronDown size={16} />
+            </summary>
+            <div className="flag-wall" aria-label="All 48 qualified nations">
+              <div className="flag-wall-head">
+                <span className="ds-label">Pick 3 to play</span>
+              </div>
+              <div className="flag-grid">
+                {flagTeams.map(([id, name, code]) => (
+                  <Image
+                    alt={name}
+                    className="flag"
+                    height={22}
+                    key={id}
+                    loading="lazy"
+                    src={`https://flagcdn.com/w80/${code}.png`}
+                    width={32}
+                  />
+                ))}
+              </div>
+            </div>
+          </details>
         </div>
       </section>
     </main>
