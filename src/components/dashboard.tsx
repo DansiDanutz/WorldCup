@@ -919,7 +919,12 @@ export function Dashboard({
                   >
                     <span className="select-dot">{selected ? <Check size={16} /> : null}</span>
                     <span>
-                      <span className="team-name">{team.name}</span>
+                      <span className="team-name-line">
+                        <span className="team-name">{team.name}</span>
+                        <span className="team-coef-badge">
+                          Coef {formatCoefficient(team.reward_coefficient)}
+                        </span>
+                      </span>
                       <span className="team-meta">
                         Group {team.group_code ?? "-"} · {team.confederation}
                         {unavailable ? " · Locked" : ""}
