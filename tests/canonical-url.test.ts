@@ -6,6 +6,7 @@ import { readFileSync } from "node:fs";
 import { CANONICAL_ORIGIN, shouldRedirectToCanonicalHost } from "../src/lib/canonical-url.ts";
 
 const rootLayout = readFileSync("src/app/layout.tsx", "utf8");
+const proxySource = readFileSync("src/proxy.ts", "utf8");
 
 describe("shouldRedirectToCanonicalHost", () => {
   it("redirects Vercel hosts to the canonical domain", () => {
@@ -65,5 +66,11 @@ describe("canonical metadata", () => {
     assert.match(rootLayout, /process\.env\.NEXT_PUBLIC_SITE_URL \|\| CANONICAL_ORIGIN/);
     assert.doesNotMatch(rootLayout, /VERCEL_PROJECT_PRODUCTION_URL/);
     assert.doesNotMatch(rootLayout, /worldcup\.example\.com/);
+  });
+
+  it("keeps PWA install assets outside the canonical proxy matcher", () => {
+    assert.match(proxySource, /manifest\.webmanifest/);
+    assert.match(proxySource, /sw\.js/);
+    assert.match(proxySource, /icons\//);
   });
 });
