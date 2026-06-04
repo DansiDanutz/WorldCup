@@ -9,7 +9,7 @@ type SmartMenuProps = {
   summary?: string;
 };
 
-export function SmartMenu({ children, label = "Menu", summary = "Open tabs" }: SmartMenuProps) {
+export function SmartMenu({ children, label = "Navigation", summary = "Tap for pages" }: SmartMenuProps) {
   const panelId = useId();
   const [expanded, setExpanded] = useState(true);
 

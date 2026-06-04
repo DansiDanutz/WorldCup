@@ -581,7 +581,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         ) : null}
 
         {!signedIn ? (
-          <section className="grid">
+          <section className="wallet-solo">
             <div className="panel">
               <div className="panel-header">
                 <div>
@@ -594,13 +594,32 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 </div>
                 <Lock size={18} color="var(--green)" />
               </div>
-              <Link className="button" href={{ pathname: "/login" }}>
-                Login / Register
-              </Link>
+              <div className="panel-body">
+                <div className="wallet-action-list" aria-label="Wallet setup steps">
+                  <div>
+                    <span>1</span>
+                    <strong>Create account</strong>
+                    <small>Referral is resolved before Google sign-in.</small>
+                  </div>
+                  <div>
+                    <span>2</span>
+                    <strong>Get tickets</strong>
+                    <small>Buy or redeem an entry ticket when paid actions open.</small>
+                  </div>
+                  <div>
+                    <span>3</span>
+                    <strong>Deposit / withdraw</strong>
+                    <small>Use USDT queues with admin review and audit notes.</small>
+                  </div>
+                </div>
+                <Link className="button" href={{ pathname: "/login" }}>
+                  Login / Register
+                </Link>
+              </div>
             </div>
           </section>
         ) : (
-          <section className="grid">
+          <section className="wallet-grid">
             <div className="panel">
               <div className="panel-header">
                 <div>
@@ -609,58 +628,72 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 </div>
                 <CircleDollarSign size={18} color="var(--gold)" />
               </div>
-              <div className="account-status-grid">
-                <div>
-                  <span>Wallet balance</span>
-                  <strong>{formatLedgerAmount(status?.walletBalance ?? 0)}</strong>
-                  <small>USDT</small>
+              <div className="panel-body">
+                <div className="account-status-grid">
+                  <div>
+                    <span>Wallet balance</span>
+                    <strong>{formatLedgerAmount(status?.walletBalance ?? 0)}</strong>
+                    <small>USDT</small>
+                  </div>
+                  <div>
+                    <span>Tickets available</span>
+                    <strong>{status?.ticketsAvailable ?? 0}</strong>
+                    <small>{status?.ticketsAssigned ?? 0} total</small>
+                  </div>
+                  <div>
+                    <span>Ticket price</span>
+                    <strong>{formatMoneyAmount(status?.ticketPriceAmount ?? 0)}</strong>
+                    <small>per entry</small>
+                  </div>
                 </div>
-                <div>
-                  <span>Tickets available</span>
-                  <strong>{status?.ticketsAvailable ?? 0}</strong>
-                  <small>{status?.ticketsAssigned ?? 0} total</small>
+                <div className="wallet-action-list compact" aria-label="Wallet next actions">
+                  <div>
+                    <span>Ticket</span>
+                    <strong>Buy or redeem</strong>
+                    <small>Required before locking an entry.</small>
+                  </div>
+                  <div>
+                    <span>USDT</span>
+                    <strong>Deposit proof</strong>
+                    <small>Keep sender wallet and tx hash ready.</small>
+                  </div>
                 </div>
-                <div>
-                  <span>Ticket price</span>
-                  <strong>{formatMoneyAmount(status?.ticketPriceAmount ?? 0)}</strong>
-                  <small>per entry</small>
+                <button
+                  className="button"
+                  disabled={Boolean(ticketRestriction || ticketPolicyPause) || isPending}
+                  onClick={buyTicket}
+                  type="button"
+                >
+                  <Lock size={16} />
+                  {isPending ? "Processing..." : "Buy entry ticket"}
+                </button>
+                <div className="redeem-row">
+                  <label htmlFor="redeem-code">Have a ticket code?</label>
+                  <div className="redeem-input">
+                    <input
+                      className="search"
+                      id="redeem-code"
+                      maxLength={32}
+                      placeholder="Enter code"
+                      value={redeemCode}
+                      onChange={(event) => setRedeemCode(event.target.value.toUpperCase())}
+                    />
+                    <button
+                      className="button secondary"
+                      disabled={isPending || redeemCode.trim().length === 0}
+                      onClick={redeemTicket}
+                      type="button"
+                    >
+                      <Ticket size={16} />
+                      Redeem
+                    </button>
+                  </div>
                 </div>
+                {ticketPolicyPause ? <div className="message error">{ticketPolicyPause}</div> : null}
+                {ticketRestriction ? <div className="message error">{ticketRestriction}</div> : null}
+                {message ? <div className="message">{message}</div> : null}
+                {error ? <div className="message error">{error}</div> : null}
               </div>
-              <button
-                className="button"
-                disabled={Boolean(ticketRestriction || ticketPolicyPause) || isPending}
-                onClick={buyTicket}
-                type="button"
-              >
-                <Lock size={16} />
-                {isPending ? "Processing..." : "Buy entry ticket"}
-              </button>
-              <div className="redeem-row">
-                <label htmlFor="redeem-code">Have a ticket code?</label>
-                <div className="redeem-input">
-                  <input
-                    className="search"
-                    id="redeem-code"
-                    maxLength={32}
-                    placeholder="Enter code"
-                    value={redeemCode}
-                    onChange={(event) => setRedeemCode(event.target.value.toUpperCase())}
-                  />
-                  <button
-                    className="button secondary"
-                    disabled={isPending || redeemCode.trim().length === 0}
-                    onClick={redeemTicket}
-                    type="button"
-                  >
-                    <Ticket size={16} />
-                    Redeem
-                  </button>
-                </div>
-              </div>
-              {ticketPolicyPause ? <div className="message error">{ticketPolicyPause}</div> : null}
-              {ticketRestriction ? <div className="message error">{ticketRestriction}</div> : null}
-              {message ? <div className="message">{message}</div> : null}
-              {error ? <div className="message error">{error}</div> : null}
             </div>
 
             <div className="panel">
@@ -834,6 +867,23 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       </p>
                     </div>
                     <Send size={18} color="var(--green)" />
+                  </div>
+                  <div className="deposit-flow-steps" aria-label="Deposit claim steps">
+                    <div>
+                      <span>1</span>
+                      <strong>Copy receive wallet</strong>
+                      <small>Use the exact network shown above.</small>
+                    </div>
+                    <div>
+                      <span>2</span>
+                      <strong>Send USDT</strong>
+                      <small>Save the wallet you sent from.</small>
+                    </div>
+                    <div>
+                      <span>3</span>
+                      <strong>Submit proof</strong>
+                      <small>Paste amount, sender wallet, and tx hash.</small>
+                    </div>
                   </div>
                   <div className="deposit-claim-form">
                     {depositPolicyPause ? (
