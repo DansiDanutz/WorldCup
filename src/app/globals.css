@@ -241,6 +241,16 @@ svg {
   text-decoration: none;
 }
 
+.brand:hover,
+.brand:focus-visible {
+  color: #ffffff;
+}
+
+.brand:focus-visible {
+  outline: 2px solid rgba(255, 226, 154, 0.82);
+  outline-offset: 5px;
+}
+
 .brand-mark {
   display: grid;
   place-items: center;

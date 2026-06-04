@@ -171,6 +171,13 @@ describe("WorldCup design system integration", () => {
     }
   });
 
+  it("keeps every topbar brand block clickable back to home", () => {
+    assert.match(dashboard, /<Link className="brand landing-brand-lockup" href="\/" aria-label="Go to WorldCup26\.world home">/);
+    assert.match(walletScreen, /<Link className="brand" href="\/" aria-label="Go to WorldCup26\.world home">/);
+    assert.match(adminConsole, /<Link className="brand" href="\/" aria-label="Go to WorldCup26\.world home">/);
+    assert.match(globalsCss, /\.brand:focus-visible\s*{/);
+  });
+
   it("keeps the smart menu clickable and compact on mobile", () => {
     assert.match(smartMenu, /"use client";/);
     assert.match(smartMenu, /const \[expanded, setExpanded\] = useState\(true\);/);
