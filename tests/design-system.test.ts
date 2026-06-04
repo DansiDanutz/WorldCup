@@ -11,6 +11,8 @@ const schemaPage = readFileSync("src/app/schema/page.tsx", "utf8");
 const previewPage = readFileSync("src/app/preview/page.tsx", "utf8");
 const loginRegister = readFileSync("src/components/login-register.tsx", "utf8");
 const dashboard = readFileSync("src/components/dashboard.tsx", "utf8");
+const rootLayout = readFileSync("src/app/layout.tsx", "utf8");
+const heroCard = readFileSync("src/components/hero-card.tsx", "utf8");
 const heroSwiper = readFileSync("src/components/hero-swiper.tsx", "utf8");
 const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
 const smartMenu = readFileSync("src/components/smart-menu.tsx", "utf8");
@@ -18,6 +20,8 @@ const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
 const appIcon = readFileSync("src/app/icon.svg", "utf8");
 const brandMark = readFileSync("public/brand-mark.svg", "utf8");
 const logoLockup = readFileSync("public/logo-lockup.svg", "utf8");
+const webManifest = readFileSync("public/manifest.webmanifest", "utf8");
+const serviceWorker = readFileSync("public/sw.js", "utf8");
 
 describe("WorldCup design system integration", () => {
   it("keeps the core brand color tokens in the global stylesheet", () => {
@@ -233,13 +237,40 @@ describe("WorldCup design system integration", () => {
   });
 
   it("does not duplicate the brand mini-card inside the first matchup poster", () => {
-    const heroCard = readFileSync("src/components/hero-card.tsx", "utf8");
-
     assert.doesNotMatch(heroCard, /className="hero-mini hero-brand"/);
     assert.doesNotMatch(heroCard, /className="hero-edition"/);
     assert.doesNotMatch(heroCard, /Predict the Game/);
     assert.match(heroCard, /Pick 3 Teams/);
     assert.match(heroCard, /Top 10 Rewarded/);
+  });
+
+  it("keeps the first poster installable as a PWA without hiding Play now", () => {
+    assert.match(rootLayout, /manifest:\s*"\/manifest\.webmanifest"/);
+    assert.match(rootLayout, /appleWebApp:\s*{/);
+    assert.match(rootLayout, /\/icons\/icon-192\.png/);
+    assert.match(rootLayout, /\/icons\/apple-touch-icon\.png/);
+    assert.match(webManifest, /"display":\s*"standalone"/);
+    assert.match(webManifest, /"start_url":\s*"\/\?source=pwa"/);
+    assert.match(webManifest, /"purpose":\s*"maskable"/);
+    assert.match(serviceWorker, /self\.addEventListener\("fetch"/);
+    assert.match(serviceWorker, /event\.request\.destination !== "document"/);
+    assert.match(heroCard, /beforeinstallprompt/);
+    assert.match(heroCard, /navigator\.serviceWorker\.register\("\/sw\.js"\)/);
+    assert.match(heroCard, /className="hero-cta-row"/);
+    assert.match(heroCard, /Play now/);
+    assert.match(heroCard, /Install app/);
+    assert.match(heroCard, /Add to Home Screen/);
+    assert.match(globalsCss, /\.hero-cta-row\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /\.hero-cta--install\s*{/);
+    assert.match(globalsCss, /\.hero-install-help\s*{/);
+    for (const icon of [
+      "public/icons/icon-192.png",
+      "public/icons/icon-512.png",
+      "public/icons/maskable-512.png",
+      "public/icons/apple-touch-icon.png",
+    ]) {
+      assert.equal(existsSync(icon), true);
+    }
   });
 
   it("keeps the three-team pick workflow guided on mobile", () => {
