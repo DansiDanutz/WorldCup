@@ -28,22 +28,23 @@ const groupMatches = [
 ];
 
 describe("team pick eligibility", () => {
-  it("keeps a team available before its second group match starts", () => {
+  it("keeps a team available until one minute before its first group match starts", () => {
     const eligibility = getTeamEligibility(
       ["spain"],
       groupMatches,
-      new Date("2026-06-18T18:59:59.000Z").getTime(),
+      new Date("2026-06-11T18:58:59.000Z").getTime(),
     );
 
     assert.equal(eligibility.get("spain")?.available, true);
-    assert.equal(eligibility.get("spain")?.secondKickoff, new Date(secondKickoff).getTime());
+    assert.equal(eligibility.get("spain")?.firstKickoff, new Date(firstKickoff).getTime());
+    assert.equal(eligibility.get("spain")?.lockAt, new Date(firstKickoff).getTime() - 60_000);
   });
 
-  it("locks a team exactly when its second group match starts", () => {
+  it("locks a team exactly one minute before its first group match starts", () => {
     const lockedTeamIds = getLockedTeamIds(
       ["spain"],
       groupMatches,
-      new Date(secondKickoff).getTime(),
+      new Date(firstKickoff).getTime() - 60_000,
     );
 
     assert.deepEqual(lockedTeamIds, ["spain"]);
@@ -57,16 +58,16 @@ describe("team pick eligibility", () => {
     );
 
     assert.equal(eligibility.get("runner_up")?.available, true);
-    assert.equal(eligibility.get("runner_up")?.secondKickoff, null);
+    assert.equal(eligibility.get("runner_up")?.lockAt, null);
   });
 
   it("can evaluate multiple selected teams together", () => {
     const lockedTeamIds = getLockedTeamIds(
       ["spain", "cabo_verde"],
       groupMatches,
-      new Date("2026-06-18T19:00:01.000Z").getTime(),
+      new Date("2026-06-11T18:59:00.000Z").getTime(),
     );
 
-    assert.deepEqual(lockedTeamIds, ["spain"]);
+    assert.deepEqual(lockedTeamIds, ["spain", "cabo_verde"]);
   });
 });

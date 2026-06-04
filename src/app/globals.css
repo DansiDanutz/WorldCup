@@ -795,6 +795,42 @@ svg {
   cursor: pointer;
 }
 
+.auth-choice-card {
+  isolation: isolate;
+}
+
+.auth-choice-grid button.auth-choice-card--referral {
+  --choice-accent: #f08a24;
+  --choice-glow: rgba(240, 138, 36, 0.34);
+  border-color: rgba(240, 138, 36, 0.5);
+}
+
+.auth-choice-grid button.auth-choice-card--direct {
+  --choice-accent: #f3c858;
+  --choice-glow: rgba(243, 200, 88, 0.34);
+  border-color: rgba(243, 200, 88, 0.58);
+}
+
+.auth-choice-card::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border: 2px solid var(--choice-accent, var(--gold));
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 0 0 var(--choice-glow, rgba(255, 217, 128, 0.28));
+}
+
+.auth-choice-card--referral::after {
+  animation: auth-choice-referral-pulse 5.2s ease-in-out infinite;
+}
+
+.auth-choice-card--direct::after {
+  animation: auth-choice-direct-pulse 5.2s ease-in-out infinite;
+}
+
 .auth-choice-grid div.active,
 .auth-choice-grid button.active {
   border-color: rgba(255, 217, 128, 0.7);
@@ -804,8 +840,44 @@ svg {
     0 14px 30px rgba(16, 107, 79, 0.28);
 }
 
+.auth-choice-card.active::after {
+  animation: none;
+  opacity: 1;
+  box-shadow: 0 0 0 4px var(--choice-glow, rgba(255, 217, 128, 0.28));
+}
+
 .auth-choice-grid svg {
   color: var(--gold);
+}
+
+@keyframes auth-choice-referral-pulse {
+  0%,
+  44%,
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 0 var(--choice-glow);
+  }
+
+  8%,
+  28% {
+    opacity: 1;
+    box-shadow: 0 0 0 4px var(--choice-glow);
+  }
+}
+
+@keyframes auth-choice-direct-pulse {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 0 var(--choice-glow);
+  }
+
+  58%,
+  78% {
+    opacity: 1;
+    box-shadow: 0 0 0 4px var(--choice-glow);
+  }
 }
 
 .auth-next-step {
@@ -924,6 +996,49 @@ svg {
 
 .auth-google-button {
   justify-content: center;
+}
+
+.auth-worldcup-card {
+  width: min(720px, 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  background: rgba(8, 20, 17, 0.38);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.auth-worldcup-card > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 54px;
+  padding: 13px 16px;
+  color: rgba(236, 244, 238, 0.84);
+  font-size: 15px;
+  font-weight: 860;
+  list-style: none;
+  cursor: pointer;
+}
+
+.auth-worldcup-card > summary::-webkit-details-marker {
+  display: none;
+}
+
+.auth-worldcup-card > summary svg {
+  flex: 0 0 auto;
+  color: var(--gold);
+  transition: transform 0.18s ease;
+}
+
+.auth-worldcup-card[open] > summary svg {
+  transform: rotate(180deg);
+}
+
+.auth-worldcup-card__body {
+  display: grid;
+  gap: 14px;
+  padding: 0 14px 14px;
 }
 
 .auth-info-grid {
@@ -1280,6 +1395,20 @@ svg {
   color: var(--muted);
   font-size: 12px;
   overflow-wrap: anywhere;
+}
+
+.team-deadline {
+  display: block;
+  margin-top: 4px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 780;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.team-row.unavailable .team-deadline {
+  color: var(--red);
 }
 
 .coefficient {
@@ -4119,6 +4248,12 @@ html {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .auth-choice-card::after {
+    animation: none;
+    opacity: 0.55;
+    box-shadow: 0 0 0 3px var(--choice-glow, rgba(255, 217, 128, 0.22));
   }
 
   *,

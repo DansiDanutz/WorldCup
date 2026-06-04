@@ -150,7 +150,7 @@ export async function POST(request: Request) {
     const lockedTeamNames = lockedTeamIds.map((teamId) => namesById.get(teamId) ?? teamId);
 
     return jsonError(
-      `${lockedTeamNames.join(", ")} can no longer be selected because the second group match has started.`,
+      `${lockedTeamNames.join(", ")} can no longer be selected because the first match starts in less than one minute or already started.`,
       403,
     );
   }
@@ -196,8 +196,11 @@ export async function POST(request: Request) {
       return jsonError("You already locked an entry for this tournament.", 409);
     }
 
-    if (/second group-stage match/i.test(entryResult.error.message ?? "")) {
-      return jsonError("A selected team can no longer be picked; its second group match has started.", 403);
+    if (/first match|second group-stage match/i.test(entryResult.error.message ?? "")) {
+      return jsonError(
+        "A selected team can no longer be picked; its first match starts in less than one minute or already started.",
+        403,
+      );
     }
 
     return jsonError("Could not create entry.", 500);

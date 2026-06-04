@@ -7,10 +7,13 @@ export type TeamGroupMatch = {
 
 export type TeamEligibility = {
   available: boolean;
-  secondKickoff: number | null;
+  firstKickoff: number | null;
+  lockAt: number | null;
 };
 
-function getSecondGroupKickoff(teamId: string, matches: TeamGroupMatch[]) {
+const TEAM_PICK_LOCK_OFFSET_MS = 60_000;
+
+function getFirstGroupKickoff(teamId: string, matches: TeamGroupMatch[]) {
   const teamMatches = matches
     .filter(
       (match) =>
@@ -22,9 +25,9 @@ function getSecondGroupKickoff(teamId: string, matches: TeamGroupMatch[]) {
         new Date(first.kickoff_at).getTime() - new Date(second.kickoff_at).getTime(),
     );
 
-  const secondGroupMatch = teamMatches[1] ?? null;
+  const firstGroupMatch = teamMatches[0] ?? null;
 
-  return secondGroupMatch ? new Date(secondGroupMatch.kickoff_at).getTime() : null;
+  return firstGroupMatch ? new Date(firstGroupMatch.kickoff_at).getTime() : null;
 }
 
 export function getTeamEligibility(
@@ -34,13 +37,15 @@ export function getTeamEligibility(
 ) {
   return new Map<string, TeamEligibility>(
     teamIds.map((teamId) => {
-      const secondKickoff = getSecondGroupKickoff(teamId, matches);
+      const firstKickoff = getFirstGroupKickoff(teamId, matches);
+      const lockAt = firstKickoff === null ? null : firstKickoff - TEAM_PICK_LOCK_OFFSET_MS;
 
       return [
         teamId,
         {
-          available: secondKickoff === null || now < secondKickoff,
-          secondKickoff,
+          available: lockAt === null || now < lockAt,
+          firstKickoff,
+          lockAt,
         },
       ];
     }),
