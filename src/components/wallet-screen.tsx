@@ -9,7 +9,6 @@ import {
   Phone,
   QrCode,
   Send,
-  ShieldCheck,
   Ticket,
   Trophy,
   UserPlus,
@@ -136,9 +135,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
-  const [entryLimitDraft, setEntryLimitDraft] = useState("");
-  const [selfExclusionDuration, setSelfExclusionDuration] = useState("24h");
-  const [selfExclusionReason, setSelfExclusionReason] = useState("");
   const [isPending, startTransition] = useTransition();
 
   const signedIn = Boolean(session?.access_token && session.user.email);
@@ -180,6 +176,31 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const purchasableTickets = ticketPrice > 0 ? Math.floor(walletBalance / ticketPrice) : 0;
   const remainingAfterNextTicket = ticketPrice > 0 ? Math.max(walletBalance - ticketPrice, 0) : walletBalance;
 
+  function applyAccountStatus(me: Partial<MyAccountStatus>) {
+    setStatus({
+      walletBalance: me.walletBalance ?? "0.00",
+      ticketsAvailable: me.ticketsAvailable ?? 0,
+      ticketsAssigned: me.ticketsAssigned ?? 0,
+      ticketPriceAmount: me.ticketPriceAmount ?? "0",
+      usdtSenderWalletAddress: me.usdtSenderWalletAddress ?? null,
+      usdtSenderWalletNetwork: me.usdtSenderWalletNetwork ?? null,
+      usdtSenderWalletUpdatedAt: me.usdtSenderWalletUpdatedAt ?? null,
+      paidActionGates: me.paidActionGates,
+    });
+
+    if (me.usdtSenderWalletAddress) {
+      setClaimSenderWalletAddress(me.usdtSenderWalletAddress);
+    }
+
+    if (me.usdtSenderWalletNetwork === "trc20" || me.usdtSenderWalletNetwork === "erc20") {
+      setClaimNetwork(me.usdtSenderWalletNetwork);
+    }
+  }
+
+  function applyResponsiblePlay(data: ResponsiblePlayStatus) {
+    setResponsiblePlay(data);
+  }
+
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
     const { data } = supabase.auth.onAuthStateChange((_event, next) => setSession(next));
@@ -201,7 +222,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         setAgeVerification(null);
         setResponsiblePlay(null);
         setAgent(null);
-        setEntryLimitDraft("");
         setTransferEmail("");
         setTransferRecipient(null);
         setAgentTransferEmail("");
@@ -283,27 +303,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       .catch(() => undefined);
   }
 
-  function applyAccountStatus(me: Partial<MyAccountStatus>) {
-    setStatus({
-      walletBalance: me.walletBalance ?? "0.00",
-      ticketsAvailable: me.ticketsAvailable ?? 0,
-      ticketsAssigned: me.ticketsAssigned ?? 0,
-      ticketPriceAmount: me.ticketPriceAmount ?? "0",
-      usdtSenderWalletAddress: me.usdtSenderWalletAddress ?? null,
-      usdtSenderWalletNetwork: me.usdtSenderWalletNetwork ?? null,
-      usdtSenderWalletUpdatedAt: me.usdtSenderWalletUpdatedAt ?? null,
-      paidActionGates: me.paidActionGates,
-    });
-
-    if (me.usdtSenderWalletAddress) {
-      setClaimSenderWalletAddress(me.usdtSenderWalletAddress);
-    }
-
-    if (me.usdtSenderWalletNetwork === "trc20" || me.usdtSenderWalletNetwork === "erc20") {
-      setClaimNetwork(me.usdtSenderWalletNetwork);
-    }
-  }
-
   function refreshAgent(token: string) {
     fetch("/api/agent/me", { headers: { Authorization: `Bearer ${token}` } })
       .then((response) => response.json())
@@ -374,76 +373,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
 
       setMessage("Agent Call accepted. One ticket was assigned to the player.");
       refreshAgent(token);
-    });
-  }
-
-  function applyResponsiblePlay(data: ResponsiblePlayStatus) {
-    setResponsiblePlay(data);
-    setEntryLimitDraft(data.maxEntries === null ? "" : String(data.maxEntries));
-  }
-
-  function saveEntryLimit() {
-    const token = session?.access_token;
-    if (!token) {
-      return;
-    }
-
-    setError(null);
-    setMessage(null);
-    startTransition(async () => {
-      const trimmed = entryLimitDraft.trim();
-      const response = await fetch("/api/responsible-play", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          maxEntries: trimmed === "" ? null : Number(trimmed),
-        }),
-      });
-      const result = await response.json();
-
-      if (!response.ok) {
-        setError(result.error ?? "Could not save responsible play settings.");
-        return;
-      }
-
-      applyResponsiblePlay(result as ResponsiblePlayStatus);
-      setMessage(trimmed === "" ? "Entry limit cleared." : "Entry limit saved.");
-    });
-  }
-
-  function activateSelfExclusion() {
-    const token = session?.access_token;
-    if (!token) {
-      return;
-    }
-
-    setError(null);
-    setMessage(null);
-    startTransition(async () => {
-      const response = await fetch("/api/responsible-play", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          selfExclusion: selfExclusionDuration,
-          reason: selfExclusionReason.trim() || undefined,
-        }),
-      });
-      const result = await response.json();
-
-      if (!response.ok) {
-        setError(result.error ?? "Could not activate self-exclusion.");
-        return;
-      }
-
-      applyResponsiblePlay(result as ResponsiblePlayStatus);
-      setSelfExclusionReason("");
-      setMessage("Self-exclusion is active.");
     });
   }
 
@@ -1070,89 +999,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 </div>
                 {message ? <div className="message">{message}</div> : null}
                 {error ? <div className="message error">{error}</div> : null}
-              </div>
-            </div>
-
-            <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
-              <div className="panel-header">
-                <div>
-                  <h2 className="panel-title">Responsible Play</h2>
-                  <p className="panel-subtitle">Set account limits before buying tickets or depositing.</p>
-                </div>
-                <ShieldCheck size={18} color="var(--green)" />
-              </div>
-              <div className="responsible-play-content">
-                {responsiblePlay?.selfExcluded ? (
-                  <div className="message error">
-                    Self-exclusion is active until{" "}
-                    {responsiblePlay.selfExcludedUntil
-                      ? new Date(responsiblePlay.selfExcludedUntil).toLocaleString()
-                      : "the selected end date"}
-                    .
-                  </div>
-                ) : (
-                  <div className="message">
-                    These settings are enforced on deposits, ticket purchases, admin ticket assignment,
-                    and entry locking.
-                  </div>
-                )}
-                <div className="responsible-play-controls">
-                  <div className="field">
-                    <label htmlFor="entry-limit">Entry-ticket limit</label>
-                    <input
-                      id="entry-limit"
-                      max="10"
-                      min="0"
-                      placeholder="No limit"
-                      type="number"
-                      value={entryLimitDraft}
-                      onChange={(event) => setEntryLimitDraft(event.target.value)}
-                    />
-                    <div className="field-note">
-                      Current tickets: {responsiblePlay?.ticketsReserved ?? 0}. Current entries:{" "}
-                      {responsiblePlay?.entriesUsed ?? 0}.
-                    </div>
-                  </div>
-                  <button className="button secondary" disabled={isPending} onClick={saveEntryLimit} type="button">
-                    Save limit
-                  </button>
-                  <div className="field">
-                    <label htmlFor="self-exclusion-duration">Self-exclusion</label>
-                    <select
-                      id="self-exclusion-duration"
-                      value={selfExclusionDuration}
-                      onChange={(event) => setSelfExclusionDuration(event.target.value)}
-                    >
-                      <option value="24h">24 hours</option>
-                      <option value="7d">7 days</option>
-                      <option value="30d">30 days</option>
-                      <option value="season">Rest of tournament</option>
-                    </select>
-                  </div>
-                  <div className="field">
-                    <label htmlFor="self-exclusion-reason">Note</label>
-                    <input
-                      id="self-exclusion-reason"
-                      maxLength={300}
-                      placeholder="Optional"
-                      value={selfExclusionReason}
-                      onChange={(event) => setSelfExclusionReason(event.target.value)}
-                    />
-                  </div>
-                  <button className="button danger" disabled={isPending} onClick={activateSelfExclusion} type="button">
-                    Activate self-exclusion
-                  </button>
-                </div>
-                <div className="support-links" aria-label="Responsible play support resources">
-                  {(responsiblePlay?.supportResources ?? [
-                    { label: "NCPG help and treatment", url: "https://www.ncpgambling.org/help-treatment/" },
-                    { label: "Gambling Therapy support", url: "https://www.gamblingtherapy.org/" },
-                  ]).map((resource) => (
-                    <a href={resource.url} key={resource.url} rel="noreferrer" target="_blank">
-                      {resource.label}
-                    </a>
-                  ))}
-                </div>
               </div>
             </div>
 

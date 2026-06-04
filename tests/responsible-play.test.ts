@@ -109,11 +109,11 @@ describe("responsible play controls", () => {
     assert.doesNotMatch(withdrawalRoute, /"deposit"/);
   });
 
-  it("surfaces limits, self-exclusion, and support resources in the wallet", () => {
-    assert.match(walletScreen, /Responsible Play/);
-    assert.match(walletScreen, /Entry-ticket limit/);
-    assert.match(walletScreen, /Activate self-exclusion/);
-    assert.match(walletScreen, /NCPG help and treatment/);
-    assert.match(walletScreen, /Gambling Therapy support/);
+  it("does not surface responsible-play gambling copy in the wallet UI", () => {
+    assert.doesNotMatch(walletScreen, /Responsible Play/);
+    assert.doesNotMatch(walletScreen, /Entry-ticket limit/);
+    assert.doesNotMatch(walletScreen, /Activate self-exclusion/);
+    assert.doesNotMatch(walletScreen, /NCPG help and treatment/);
+    assert.doesNotMatch(walletScreen, /Gambling Therapy support/);
   });
 });
