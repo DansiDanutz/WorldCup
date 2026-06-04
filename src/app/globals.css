@@ -1174,6 +1174,36 @@ svg {
   overflow: clip;
 }
 
+.pick-panel {
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 217, 128, 0.22), transparent 34%),
+    linear-gradient(155deg, rgba(5, 18, 14, 0.98), rgba(10, 47, 36, 0.96));
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.36);
+}
+
+.pick-panel .panel-header,
+.pick-panel .panel-tools {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.pick-panel .panel-title,
+.pick-panel .pick-flow__head strong,
+.pick-panel .field label {
+  color: #ffffff;
+}
+
+.pick-panel .panel-subtitle,
+.pick-panel .pick-flow__head span {
+  color: rgba(236, 244, 238, 0.72);
+}
+
+.pick-panel .status-pill {
+  color: #08241a;
+  background: linear-gradient(180deg, #ffe29a, #e6b653);
+}
+
 .panel-header {
   display: flex;
   align-items: center;
@@ -1223,15 +1253,45 @@ svg {
   border-bottom: 1px solid var(--border);
 }
 
+.team-search-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.all-teams-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 217, 128, 0.58);
+  border-radius: 999px;
+  color: #08241a;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #ffe29a, #e6b653);
+  box-shadow: 0 10px 24px rgba(230, 182, 83, 0.22);
+}
+
+.all-teams-toggle.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
 .pick-flow {
   display: grid;
   gap: 12px;
   padding: 14px 18px 16px;
-  border-top: 1px solid rgba(216, 227, 223, 0.72);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   background:
-    linear-gradient(135deg, rgba(229, 243, 238, 0.86), rgba(255, 248, 236, 0.72)),
-    #fbfdfc;
+    radial-gradient(circle at 18% 0%, rgba(255, 217, 128, 0.18), transparent 38%),
+    linear-gradient(145deg, rgba(7, 31, 24, 0.78), rgba(2, 15, 12, 0.36));
 }
 
 .pick-flow__head {
@@ -1289,10 +1349,13 @@ svg {
   gap: 8px;
   min-height: 86px;
   padding: 10px;
-  border: 1px solid var(--pick-border, var(--border));
+  border: 1px solid var(--pick-border, rgba(255, 255, 255, 0.18));
   border-left: 5px solid var(--pick-accent, var(--border-strong));
   border-radius: 8px;
-  background: var(--pick-bg, #ffffff);
+  background:
+    linear-gradient(135deg, var(--slot-bg-one, rgba(255, 255, 255, 0.1)), var(--slot-bg-two, rgba(255, 255, 255, 0.05))),
+    rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .pick-slot-card div {
@@ -1303,14 +1366,14 @@ svg {
 
 .pick-slot-card strong {
   min-width: 0;
-  color: var(--pick-text, var(--text));
+  color: var(--slot-text, #ffffff);
   font-size: 14px;
   line-height: 1.2;
   overflow-wrap: anywhere;
 }
 
 .pick-slot-card span:last-child {
-  color: var(--muted);
+  color: rgba(236, 244, 238, 0.72);
   font-size: 12px;
 }
 
@@ -1331,9 +1394,21 @@ svg {
 }
 
 .team-list {
+  display: grid;
+  gap: 10px;
+  padding: 14px 18px 18px;
   max-height: min(650px, 68vh);
   overflow: auto;
   overscroll-behavior: contain;
+}
+
+.team-list--compact {
+  max-height: none;
+  overflow: visible;
+}
+
+.team-list--expanded {
+  max-height: min(760px, 72vh);
 }
 
 .team-row {
@@ -1343,33 +1418,40 @@ svg {
   align-items: center;
   min-width: 0;
   width: 100%;
-  padding: 12px 18px;
-  border: 0;
-  border-bottom: 1px solid var(--border);
-  color: inherit;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  color: #ffffff;
   text-align: left;
-  background: transparent;
+  background:
+    linear-gradient(120deg, color-mix(in srgb, var(--team-color-one) 72%, #071f18), color-mix(in srgb, var(--team-color-two) 62%, #071f18) 48%, color-mix(in srgb, var(--team-color-three) 70%, #071f18)),
+    linear-gradient(135deg, rgba(8, 20, 17, 0.92), rgba(8, 20, 17, 0.68));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 12px 26px rgba(0, 0, 0, 0.18);
 }
 
 .team-row:hover {
-  background: #f9fcfb;
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 16px 32px rgba(0, 0, 0, 0.24);
 }
 
 .team-row.selected {
   border-left: 4px solid var(--pick-accent, var(--green));
-  background: var(--pick-bg, var(--green-soft));
+  outline: 2px solid var(--pick-accent, var(--green));
 }
 
 .team-row.at-limit:not(.selected) {
-  color: var(--muted);
-  background: #f8faf9;
+  color: rgba(236, 244, 238, 0.72);
 }
 
 .team-row.unavailable {
   cursor: not-allowed;
-  color: var(--muted);
-  background: #f4f7f6;
-  opacity: 0.72;
+  color: rgba(236, 244, 238, 0.58);
+  filter: grayscale(0.72);
+  opacity: 0.64;
 }
 
 .select-dot {
@@ -1377,22 +1459,23 @@ svg {
   place-items: center;
   width: 26px;
   height: 26px;
-  border: 1px solid var(--border-strong);
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 50%;
-  color: var(--pick-accent, var(--green));
-  background: #fff;
+  color: #08241a;
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .team-name {
   display: block;
   min-width: 0;
+  color: #ffffff;
   font-weight: 760;
   overflow-wrap: anywhere;
 }
 
 .team-meta {
   margin-top: 2px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.76);
   font-size: 12px;
   overflow-wrap: anywhere;
 }
@@ -1400,15 +1483,15 @@ svg {
 .team-deadline {
   display: block;
   margin-top: 4px;
-  color: var(--green);
+  color: #ffb44c;
   font-size: 11px;
-  font-weight: 780;
+  font-weight: 880;
   line-height: 1.25;
   overflow-wrap: anywhere;
 }
 
 .team-row.unavailable .team-deadline {
-  color: var(--red);
+  color: #ff7b63;
 }
 
 .coefficient {
@@ -1416,11 +1499,11 @@ svg {
   justify-items: start;
   gap: 1px;
   font-weight: 800;
-  color: var(--green);
+  color: #ffe29a;
 }
 
 .coefficient-label {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 9px;
   font-weight: 850;
   line-height: 1;
@@ -1428,7 +1511,7 @@ svg {
 }
 
 .odds {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 13px;
   text-align: right;
 }
@@ -1444,7 +1527,7 @@ svg {
   font-weight: 850;
   line-height: 1;
   text-align: center;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .team-row.selected .team-row-action {
@@ -1453,8 +1536,23 @@ svg {
 }
 
 .team-row.at-limit:not(.selected) .team-row-action {
-  color: var(--muted);
-  background: #eef3f1;
+  color: rgba(236, 244, 238, 0.7);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.team-list-expand-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  border: 1px solid rgba(255, 217, 128, 0.48);
+  border-radius: 10px;
+  color: #08241a;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  background: linear-gradient(180deg, #ffe29a, #e6b653);
 }
 
 .empty-list-state {
@@ -1778,10 +1876,27 @@ svg {
 }
 
 .empty-slot {
-  color: var(--muted);
+  color: rgba(236, 244, 238, 0.72);
   border-style: dashed;
-  border-left-color: var(--border-strong);
-  background: #fff;
+  border-left-color: var(--slot-accent, rgba(255, 255, 255, 0.32));
+}
+
+.pick-slot-card.empty-slot:nth-child(1) {
+  --slot-accent: #0f7a5a;
+  --slot-bg-one: rgba(15, 122, 90, 0.32);
+  --slot-bg-two: rgba(255, 217, 128, 0.1);
+}
+
+.pick-slot-card.empty-slot:nth-child(2) {
+  --slot-accent: #285fc7;
+  --slot-bg-one: rgba(40, 95, 199, 0.3);
+  --slot-bg-two: rgba(255, 255, 255, 0.08);
+}
+
+.pick-slot-card.empty-slot:nth-child(3) {
+  --slot-accent: #d1791f;
+  --slot-bg-one: rgba(209, 121, 31, 0.3);
+  --slot-bg-two: rgba(255, 217, 128, 0.12);
 }
 
 .pick-color-one {
@@ -1789,6 +1904,9 @@ svg {
   --pick-border: var(--pick-one-border);
   --pick-bg: var(--pick-one-bg);
   --pick-text: var(--pick-one-text);
+  --slot-accent: #0f7a5a;
+  --slot-bg-one: rgba(15, 122, 90, 0.42);
+  --slot-bg-two: rgba(255, 217, 128, 0.12);
 }
 
 .pick-color-two {
@@ -1796,6 +1914,9 @@ svg {
   --pick-border: var(--pick-two-border);
   --pick-bg: var(--pick-two-bg);
   --pick-text: var(--pick-two-text);
+  --slot-accent: #285fc7;
+  --slot-bg-one: rgba(40, 95, 199, 0.4);
+  --slot-bg-two: rgba(255, 255, 255, 0.08);
 }
 
 .pick-color-three {
@@ -1803,6 +1924,9 @@ svg {
   --pick-border: var(--pick-three-border);
   --pick-bg: var(--pick-three-bg);
   --pick-text: var(--pick-three-text);
+  --slot-accent: #d1791f;
+  --slot-bg-one: rgba(209, 121, 31, 0.4);
+  --slot-bg-two: rgba(255, 217, 128, 0.14);
 }
 
 .button {

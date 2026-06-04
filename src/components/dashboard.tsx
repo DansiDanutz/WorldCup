@@ -56,6 +56,7 @@ import type {
   WorldCupTeam,
 } from "@/lib/types";
 import type { Session } from "@supabase/supabase-js";
+import type { CSSProperties } from "react";
 
 type DashboardProps = {
   tournament: WorldCupTournament;
@@ -99,6 +100,58 @@ type ResponsiblePlayStatus = {
 const pickColorClasses = ["pick-color-one", "pick-color-two", "pick-color-three"] as const;
 const referralAgreementText =
   "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
+const compactTeamCount = 8;
+
+const teamFlagColors: Record<string, readonly [string, string, string?]> = {
+  france: ["#0055a4", "#ffffff", "#ef4135"],
+  spain: ["#aa151b", "#f1bf00", "#aa151b"],
+  england: ["#ffffff", "#cf142b", "#00247d"],
+  brazil: ["#009b3a", "#ffdf00", "#002776"],
+  argentina: ["#74acdf", "#ffffff", "#f6b40e"],
+  portugal: ["#006600", "#ff0000", "#ffcc00"],
+  germany: ["#000000", "#dd0000", "#ffce00"],
+  netherlands: ["#ae1c28", "#ffffff", "#21468b"],
+  norway: ["#ba0c2f", "#ffffff", "#00205b"],
+  belgium: ["#000000", "#ffd90c", "#ef3340"],
+  morocco: ["#c1272d", "#006233", "#c1272d"],
+  united_states: ["#3c3b6e", "#ffffff", "#b22234"],
+  colombia: ["#fcd116", "#003893", "#ce1126"],
+  japan: ["#ffffff", "#bc002d", "#ffffff"],
+  uruguay: ["#ffffff", "#0038a8", "#fcd116"],
+  turkiye: ["#e30a17", "#ffffff", "#e30a17"],
+  switzerland: ["#ff0000", "#ffffff", "#ff0000"],
+  sweden: ["#006aa7", "#fecc00", "#006aa7"],
+  mexico: ["#006847", "#ffffff", "#ce1126"],
+  ecuador: ["#ffdd00", "#034ea2", "#ed1c24"],
+  senegal: ["#00853f", "#fdef42", "#e31b23"],
+  croatia: ["#ff0000", "#ffffff", "#171796"],
+  austria: ["#ed2939", "#ffffff", "#ed2939"],
+  paraguay: ["#d52b1e", "#ffffff", "#0038a8"],
+  canada: ["#ff0000", "#ffffff", "#ff0000"],
+  cote_divoire: ["#f77f00", "#ffffff", "#009e60"],
+  czechia: ["#11457e", "#ffffff", "#d7141a"],
+  scotland: ["#0065bd", "#ffffff", "#0065bd"],
+  egypt: ["#ce1126", "#ffffff", "#000000"],
+  ghana: ["#ce1126", "#fcd116", "#006b3f"],
+  algeria: ["#006233", "#ffffff", "#d21034"],
+  korea_republic: ["#ffffff", "#c60c30", "#003478"],
+  bosnia_herzegovina: ["#002f6c", "#fecd00", "#ffffff"],
+  tunisia: ["#e70013", "#ffffff", "#e70013"],
+  australia: ["#00008b", "#ffffff", "#ff0000"],
+  ir_iran: ["#239f40", "#ffffff", "#da0000"],
+  new_zealand: ["#00247d", "#ffffff", "#cc142b"],
+  congo_dr: ["#007fff", "#f7d618", "#ce1021"],
+  saudi_arabia: ["#006c35", "#ffffff", "#006c35"],
+  qatar: ["#8d1b3d", "#ffffff", "#8d1b3d"],
+  south_africa: ["#007a4d", "#ffb612", "#de3831"],
+  curacao: ["#002b7f", "#f9e814", "#ffffff"],
+  jordan: ["#000000", "#ffffff", "#007a3d"],
+  haiti: ["#00209f", "#d21034", "#ffffff"],
+  uzbekistan: ["#0099b5", "#ffffff", "#1eb53a"],
+  cabo_verde: ["#003893", "#ffffff", "#cf2027"],
+  iraq: ["#ce1126", "#ffffff", "#000000"],
+  panama: ["#ffffff", "#005293", "#d21034"],
+};
 
 export function Dashboard({
   tournament,
@@ -110,6 +163,7 @@ export function Dashboard({
   publicPaidActionGates,
 }: DashboardProps) {
   const [query, setQuery] = useState("");
+  const [showAllTeams, setShowAllTeams] = useState(false);
   const [selectedTeams, setSelectedTeams] = useState<string[]>([]);
   const [displayName, setDisplayName] = useState("");
   const [session, setSession] = useState<Session | null>(null);
@@ -151,6 +205,10 @@ export function Dashboard({
         .includes(normalized),
     );
   }, [query, teams]);
+  const visibleTeams = showAllTeams || query.trim()
+    ? filteredTeams
+    : filteredTeams.slice(0, compactTeamCount);
+  const hiddenTeamCount = Math.max(0, filteredTeams.length - visibleTeams.length);
 
   const selectedTeamRecords = selectedTeams
     .map((teamId) => teamsById.get(teamId))
@@ -734,7 +792,7 @@ export function Dashboard({
         </section>
 
         <section className="grid">
-          <div className="panel" id="pick">
+          <div className="panel pick-panel" id="pick">
             <div className="panel-header">
               <div>
                 <h1 className="panel-title">Choose 3 Teams</h1>
@@ -802,8 +860,17 @@ export function Dashboard({
               </div>
             </div>
             <div className="panel-tools">
-              <div className="field">
-                <label htmlFor="team-search">Search teams</label>
+              <div className="field team-search-field">
+                <div className="team-search-head">
+                  <label htmlFor="team-search">Search teams</label>
+                  <button
+                    className={`all-teams-toggle ${showAllTeams ? "active" : ""}`}
+                    onClick={() => setShowAllTeams((current) => !current)}
+                    type="button"
+                  >
+                    {showAllTeams ? "Compact" : `All Teams (${filteredTeams.length})`}
+                  </button>
+                </div>
                 <div style={{ position: "relative" }}>
                   <Search
                     aria-hidden="true"
@@ -821,13 +888,13 @@ export function Dashboard({
                 </div>
               </div>
             </div>
-            <div className="team-list">
-              {filteredTeams.map((team) => {
+            <div className={`team-list ${showAllTeams || query.trim() ? "team-list--expanded" : "team-list--compact"}`}>
+              {visibleTeams.map((team) => {
                 const selected = selectedTeams.includes(team.id);
                 const selectedIndex = selectedTeams.indexOf(team.id);
                 const eligibility = teamEligibility.get(team.id);
                 const unavailable = eligibility?.available === false;
-                const pickDeadline = formatPickDeadline(eligibility?.lockAt ?? null);
+                const firstMatchStart = formatPickDeadline(eligibility?.firstKickoff ?? null);
                 const atPickLimit = selectedTeams.length >= 3 && !selected;
                 const nextPickNumber = selected ? selectedIndex + 1 : selectedTeams.length + 1;
 
@@ -836,6 +903,7 @@ export function Dashboard({
                     className={`team-row ${selected ? "selected" : ""} ${getPickColorClass(selectedIndex)} ${
                       unavailable ? "unavailable" : ""
                     } ${atPickLimit ? "at-limit" : ""}`}
+                    style={getTeamColorStyle(team.id)}
                     disabled={unavailable}
                     aria-pressed={selected}
                     key={team.id}
@@ -857,11 +925,11 @@ export function Dashboard({
                         {unavailable ? " · Locked" : ""}
                       </span>
                       <span className="team-deadline">
-                        {pickDeadline
+                        {firstMatchStart
                           ? unavailable
-                            ? `Locked ${pickDeadline}`
-                            : `Pick until ${pickDeadline}`
-                          : "Pick deadline pending schedule"}
+                            ? `First match started ${firstMatchStart}`
+                            : `Pick before first match: ${firstMatchStart}`
+                          : "First match schedule pending"}
                       </span>
                     </span>
                     <span className="coefficient">
@@ -875,6 +943,16 @@ export function Dashboard({
                   </button>
                 );
               })}
+              {hiddenTeamCount > 0 ? (
+                <button
+                  className="team-list-expand-card"
+                  onClick={() => setShowAllTeams(true)}
+                  type="button"
+                >
+                  Show all {filteredTeams.length} teams
+                  <ArrowRight size={16} />
+                </button>
+              ) : null}
               {filteredTeams.length === 0 ? (
                 <div className="empty-list-state">
                   <strong>No teams found</strong>
@@ -1414,6 +1492,17 @@ export function Dashboard({
 
 function getPickColorClass(index: number) {
   return pickColorClasses[index] ?? "";
+}
+
+function getTeamColorStyle(teamId: string) {
+  const colors = teamFlagColors[teamId] ?? ["#0f6b4f", "#f0c75e", "#ffffff"];
+  const [first, second, third = first] = colors;
+
+  return {
+    "--team-color-one": first,
+    "--team-color-two": second,
+    "--team-color-three": third,
+  } as CSSProperties;
 }
 
 function getGatePauseMessage(gate: PaidActionGate | undefined) {
