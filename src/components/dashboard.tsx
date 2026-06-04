@@ -43,6 +43,7 @@ import {
   groupTeamsById,
 } from "@/lib/scoring";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
+import { filterAndSortTeamsBySearch } from "@/lib/team-search";
 import { getTeamEligibility } from "@/lib/team-eligibility";
 import type {
   DueMatch,
@@ -193,17 +194,7 @@ export function Dashboard({
   const stagesById = useMemo(() => groupStagesById(stages), [stages]);
 
   const filteredTeams = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
-
-    if (!normalized) {
-      return teams;
-    }
-
-    return teams.filter((team) =>
-      `${team.name} ${team.confederation} ${team.group_code ?? ""}`
-        .toLowerCase()
-        .includes(normalized),
-    );
+    return filterAndSortTeamsBySearch(teams, query);
   }, [query, teams]);
   const visibleTeams = showAllTeams || query.trim()
     ? filteredTeams
@@ -882,7 +873,7 @@ export function Dashboard({
                     id="team-search"
                     value={query}
                     onChange={(event) => setQuery(event.target.value)}
-                    placeholder="Search by team, group, confederation"
+                    placeholder="Search team name, group, confederation"
                     style={{ paddingLeft: 36 }}
                   />
                 </div>
@@ -961,7 +952,7 @@ export function Dashboard({
               {filteredTeams.length === 0 ? (
                 <div className="empty-list-state">
                   <strong>No teams found</strong>
-                  <span>Try another team, group, or confederation.</span>
+                  <span>Try a country name, Group A, UEFA, CAF, or another confederation.</span>
                   <button className="button secondary" onClick={() => setQuery("")} type="button">
                     Clear search
                   </button>
