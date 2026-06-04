@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 
 const migration = readFileSync(
-  "supabase/migrations/20260602014000_worldcup_usdt_deposits.sql",
+  "supabase/migrations/20260602014100_worldcup_usdt_deposits.sql",
   "utf8",
 );
 const hardeningMigration = readFileSync(
@@ -43,7 +43,6 @@ describe("money-moving RPC permissions", () => {
 
   it("keeps result and rate-limit RPCs callable only by the service role", () => {
     const signatures = [
-      "public.worldcup_finalize_entry(uuid)",
       "public.worldcup_apply_match_points(uuid)",
       "public.worldcup_apply_completed_match_points()",
       "public.worldcup_mark_match_result_checked(uuid)",
@@ -64,6 +63,11 @@ describe("money-moving RPC permissions", () => {
         new RegExp(`grant execute on function ${escapedSignature}\\s+to service_role;`),
       );
     }
+  });
+
+  it("does not grant the dropped finalize-entry RPC after lockdown", () => {
+    assert.doesNotMatch(hardeningMigration, /grant execute on function public\.worldcup_finalize_entry\(uuid\)/);
+    assert.doesNotMatch(hardeningMigration, /revoke execute on function public\.worldcup_finalize_entry\(uuid\)/);
   });
 
   it("sets stable search paths on trigger functions", () => {

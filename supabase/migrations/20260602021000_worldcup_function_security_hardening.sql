@@ -10,10 +10,10 @@ alter function public.worldcup_prevent_more_than_three_picks()
 alter function public.worldcup_assert_team_pick_is_open()
   set search_path = public;
 
-revoke execute on function public.worldcup_finalize_entry(uuid)
-from public, anon, authenticated;
-grant execute on function public.worldcup_finalize_entry(uuid)
-to service_role;
+-- worldcup_finalize_entry is intentionally omitted here. It was dropped by
+-- 20260602014000_worldcup_function_execution_lockdown.sql because it could lock
+-- any entry by id without an ownership check. Do not grant dropped functions:
+-- fresh migration replay must not fail on grant-after-drop.
 
 revoke execute on function public.worldcup_apply_match_points(uuid)
 from public, anon, authenticated;

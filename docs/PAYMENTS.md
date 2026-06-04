@@ -54,7 +54,7 @@ the submitted transaction hash and admin review provide attribution.
 
 ## Components
 
-- **Migration** `20260602014000_worldcup_usdt_deposits.sql`
+- **Migration** `20260602014100_worldcup_usdt_deposits.sql`
   - `worldcup_deposit_addresses` (per-user, per-network address)
   - `worldcup_deposits` (confirmed deposits, unique on `(provider, external_id)`)
   - `worldcup_credit_deposit(...)` — idempotent wallet credit
