@@ -1181,12 +1181,12 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   return (
     <main className="app-shell">
       <header className="topbar">
-        <div className="brand">
+        <Link className="brand" href="/" aria-label="Go to WorldCup26.world home">
           <span className="brand-mark">
             <ShieldCheck size={20} />
           </span>
           <span>WorldCup Admin</span>
-        </div>
+        </Link>
         <SmartMenu>
           <nav className="nav nav--app" aria-label="Admin navigation">
             <Link className="nav-item nav-item--primary" href={{ pathname: "/" }}>

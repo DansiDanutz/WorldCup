@@ -634,12 +634,12 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   return (
     <main className="app-shell">
       <header className="topbar">
-        <div className="brand">
+        <Link className="brand" href="/" aria-label="Go to WorldCup26.world home">
           <span className="brand-mark">
             <Wallet size={20} />
           </span>
           <span>WorldCup Wallet</span>
-        </div>
+        </Link>
         <SmartMenu>
           <nav className="nav nav--app" aria-label="Wallet navigation">
             <Link className="nav-item nav-item--primary" href={{ pathname: "/", hash: "pick" }}>
