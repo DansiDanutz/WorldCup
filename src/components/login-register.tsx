@@ -201,10 +201,14 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
       <section className="auth-card auth-card--register" aria-label="Register">
         <div className="panel-header">
           <div>
-            <span className="ds-label">Register first</span>
-            <h1 className="panel-title">Choose your signup path</h1>
+            <span className="ds-label">{session ? "Account ready" : "Register first"}</span>
+            <h1 className="panel-title">
+              {session ? "Google account connected" : "Choose your signup path"}
+            </h1>
             <p className="panel-subtitle">
-              Tap one card. Google appears after your referral choice is ready.
+              {session
+                ? "Continue to the game, or sign out if this is not the account you want."
+                : "Tap one card. Google appears after your referral choice is ready."}
             </p>
           </div>
           <LogIn size={18} color="var(--gold)" />
@@ -223,124 +227,126 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
           ) : null}
 
           {session ? (
-            <div className="auth-box">
+            <div className="auth-connected-card">
+              <div className="auth-connected-card__icon" aria-hidden="true">
+                <Check size={18} />
+              </div>
               <div>
                 <strong>Google account connected</strong>
                 <p>{session.user.email}</p>
               </div>
-              <button className="button secondary" onClick={signOut} type="button">
+              <button className="auth-connected-card__button" onClick={signOut} type="button">
                 Sign out
               </button>
             </div>
-          ) : null}
-
-          <div className="auth-choice-grid auth-choice-grid--buttons" aria-label="Signup path options">
-            <button
-              className={`auth-choice-card auth-choice-card--referral ${
-                selectedSignupPath === "referral" ? "active" : ""
-              }`}
-              disabled={Boolean(session)}
-              onClick={() => {
-                setNoReferral(false);
-                setSignupPath("referral");
-                setReferralAccepted(false);
-                setError(null);
-                window.setTimeout(() => referralInputRef.current?.focus(), 0);
-              }}
-              type="button"
-            >
-              <MousePointer2 size={17} />
-              <strong>I have an inviter</strong>
-              <span>Add their code. Your own future referrals can earn 5%.</span>
-            </button>
-            <button
-              className={`auth-choice-card auth-choice-card--direct ${
-                selectedSignupPath === "direct" ? "active" : ""
-              }`}
-              disabled={Boolean(session)}
-              onClick={() => {
-                setReferralCode("");
-                setSignupPath("direct");
-                setReferralAccepted(false);
-                setReferralInviter(null);
-                setReferralChecked(false);
-                setNoReferral(true);
-                setError(null);
-              }}
-              type="button"
-            >
-              <ShieldCheck size={17} />
-              <strong>Direct signup</strong>
-              <span>No inviter. I accept my own future referral rate starts at 3%.</span>
-            </button>
-          </div>
-
-          {showReferralForm ? (
-            <div className="auth-path-panel">
-              <div className="field">
-                <label htmlFor="login-referral-code">Inviter code</label>
-                <input
-                  id="login-referral-code"
-                  ref={referralInputRef}
-                  value={referralCode}
-                  onChange={(event) => {
-                    setReferralCode(normalizeReferralCode(event.target.value));
+          ) : (
+            <>
+              <div className="auth-choice-grid auth-choice-grid--buttons" aria-label="Signup path options">
+                <button
+                  className={`auth-choice-card auth-choice-card--referral ${
+                    selectedSignupPath === "referral" ? "active" : ""
+                  }`}
+                  onClick={() => {
                     setNoReferral(false);
                     setSignupPath("referral");
                     setReferralAccepted(false);
                     setError(null);
+                    window.setTimeout(() => referralInputRef.current?.focus(), 0);
                   }}
-                  placeholder="Enter inviter code"
-                  disabled={Boolean(session)}
-                />
-                {referralCode ? (
-                  <div className={`field-note ${referralInviter ? "success-note" : ""}`}>
-                    {referralInviter
-                      ? `Referral recognized from ${referralInviter}. Your own invites can earn 5%.`
-                      : referralChecked
-                        ? "This referral code was not found."
-                        : "Checking referral code..."}
-                  </div>
-                ) : (
-                  <div className="field-note">
-                    Enter the code from the person who invited you.
-                  </div>
-                )}
+                  type="button"
+                >
+                  <MousePointer2 size={17} />
+                  <strong>I have an inviter</strong>
+                  <span>Add their code. Your own future referrals can earn 5%.</span>
+                </button>
+                <button
+                  className={`auth-choice-card auth-choice-card--direct ${
+                    selectedSignupPath === "direct" ? "active" : ""
+                  }`}
+                  onClick={() => {
+                    setReferralCode("");
+                    setSignupPath("direct");
+                    setReferralAccepted(false);
+                    setReferralInviter(null);
+                    setReferralChecked(false);
+                    setNoReferral(true);
+                    setError(null);
+                  }}
+                  type="button"
+                >
+                  <ShieldCheck size={17} />
+                  <strong>Direct signup</strong>
+                  <span>No inviter. I accept my own future referral rate starts at 3%.</span>
+                </button>
               </div>
 
-              <label className="check-row referral-consent">
-                <input
-                  checked={referralAccepted}
-                  disabled={Boolean(session) || !referralInviter}
-                  onChange={(event) => setReferralAccepted(event.target.checked)}
-                  type="checkbox"
-                />
-                <span>
-                  {referralAgreementText.replace("5%", `${referralPercent}%`)}
-                </span>
-              </label>
-            </div>
-          ) : null}
+              {showReferralForm ? (
+                <div className="auth-path-panel">
+                  <div className="field">
+                    <label htmlFor="login-referral-code">Inviter code</label>
+                    <input
+                      id="login-referral-code"
+                      ref={referralInputRef}
+                      value={referralCode}
+                      onChange={(event) => {
+                        setReferralCode(normalizeReferralCode(event.target.value));
+                        setNoReferral(false);
+                        setSignupPath("referral");
+                        setReferralAccepted(false);
+                        setError(null);
+                      }}
+                      placeholder="Enter inviter code"
+                    />
+                    {referralCode ? (
+                      <div className={`field-note ${referralInviter ? "success-note" : ""}`}>
+                        {referralInviter
+                          ? `Referral recognized from ${referralInviter}. Your own invites can earn 5%.`
+                          : referralChecked
+                            ? "This referral code was not found."
+                            : "Checking referral code..."}
+                      </div>
+                    ) : (
+                      <div className="field-note">
+                        Enter the code from the person who invited you.
+                      </div>
+                    )}
+                  </div>
 
-          {selectedSignupPath === "direct" ? (
-            <div className="auth-path-panel auth-path-panel--accepted">
-              <Check size={16} />
-              <span>
-                Direct signup selected. You can still invite friends, but your own referral rate
-                starts at 3% instead of 5%.
-              </span>
-            </div>
-          ) : null}
+                  <label className="check-row referral-consent">
+                    <input
+                      checked={referralAccepted}
+                      disabled={!referralInviter}
+                      onChange={(event) => setReferralAccepted(event.target.checked)}
+                      type="checkbox"
+                    />
+                    <span>
+                      {referralAgreementText.replace("5%", `${referralPercent}%`)}
+                    </span>
+                  </label>
+                </div>
+              ) : null}
 
-          {!selectedSignupPath ? (
-            <div className="auth-next-step">
-              Choose one card above to unlock Google registration.
-            </div>
-          ) : !canContinue && showReferralForm ? (
-            <div className="auth-next-step">
-              Enter a valid inviter code, then accept the referral agreement.
-            </div>
-          ) : null}
+              {selectedSignupPath === "direct" ? (
+                <div className="auth-path-panel auth-path-panel--accepted">
+                  <Check size={16} />
+                  <span>
+                    Direct signup selected. You can still invite friends, but your own referral rate
+                    starts at 3% instead of 5%.
+                  </span>
+                </div>
+              ) : null}
+
+              {!selectedSignupPath ? (
+                <div className="auth-next-step">
+                  Choose one card above to unlock Google registration.
+                </div>
+              ) : !canContinue && showReferralForm ? (
+                <div className="auth-next-step">
+                  Enter a valid inviter code, then accept the referral agreement.
+                </div>
+              ) : null}
+            </>
+          )}
 
           {showGoogleAuth ? (
             session ? (
