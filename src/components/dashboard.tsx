@@ -585,11 +585,20 @@ export function Dashboard({
   return (
     <main className="app-shell app-shell--landing">
       <header className="topbar">
-        <div className="brand">
+        <div className="brand landing-brand-lockup" aria-label="WorldCup26.world Prediction Game 2026">
           <span className="brand-mark">
-            <Trophy size={20} />
+            <Trophy size={20} aria-hidden="true" />
           </span>
-          <span>WorldCup</span>
+          <span className="landing-brand-copy">
+            <strong>
+              WorldCup26<span className="hero-brand__tld">.world</span>
+            </strong>
+            <small>Prediction Game</small>
+          </span>
+          <span className="landing-brand-year" aria-label="2026 season">
+            <span className="hero-edition__dot" aria-hidden="true" />
+            2026
+          </span>
         </div>
         <div className="prize-pool" aria-label="Prize pool">
           <CircleDollarSign size={18} />

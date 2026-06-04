@@ -182,6 +182,31 @@ describe("WorldCup design system integration", () => {
     assert.equal(existsSync("public/agent-deal-bg.png"), true);
   });
 
+  it("keeps the landing brand lockup in the fixed menu bar", () => {
+    assert.match(dashboard, /className="brand landing-brand-lockup"/);
+    assert.match(dashboard, /WorldCup26<span className="hero-brand__tld">\.world<\/span>/);
+    assert.match(dashboard, /Prediction Game/);
+    assert.match(dashboard, /className="landing-brand-year"/);
+    assert.match(dashboard, /2026/);
+    assert.match(globalsCss, /\.landing-brand-lockup\s*{/);
+    assert.match(globalsCss, /\.landing-brand-copy strong\s*{[\s\S]*?white-space:\s*nowrap;/);
+    assert.match(globalsCss, /\.landing-brand-year\s*{[\s\S]*?border-radius:\s*999px;/);
+    assert.match(globalsCss, /@media \(max-width:\s*420px\)/);
+    assert.match(globalsCss, /\.app-shell--landing \.topbar\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\) auto;/);
+    assert.match(globalsCss, /\.landing-brand-year \.hero-edition__dot\s*{[\s\S]*?width:\s*6px;/);
+    assert.doesNotMatch(dashboard, /<span>WorldCup<\/span>/);
+  });
+
+  it("does not duplicate the brand mini-card inside the first matchup poster", () => {
+    const heroCard = readFileSync("src/components/hero-card.tsx", "utf8");
+
+    assert.doesNotMatch(heroCard, /className="hero-mini hero-brand"/);
+    assert.doesNotMatch(heroCard, /className="hero-edition"/);
+    assert.doesNotMatch(heroCard, /Predict the Game/);
+    assert.match(heroCard, /Pick 3 Teams/);
+    assert.match(heroCard, /Top 10 Rewarded/);
+  });
+
   it("keeps the three-team pick workflow guided on mobile", () => {
     assert.match(dashboard, /const remainingPickCount = Math\.max\(0, 3 - selectedTeams\.length\);/);
     assert.match(dashboard, /const pickInstruction =/);
