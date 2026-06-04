@@ -49,6 +49,8 @@ describe("owner agent bootstrap", () => {
       /create or replace function public\.worldcup_bootstrap_owner_agent_inventory/,
     );
     assert.match(ownerInventoryMigration, /p_owner_email text default 'semebitcoin@gmail\.com'/);
+    assert.match(ownerInventoryMigration, /add column if not exists registered_at timestamptz not null default now\(\)/);
+    assert.match(ownerInventoryMigration, /add column if not exists activated_at timestamptz/);
     assert.match(ownerInventoryMigration, /lower\(email\)\s*=\s*lower\(trim\(p_owner_email\)\)/);
     assert.match(ownerInventoryMigration, /insert into public\.worldcup_agents/);
     assert.match(

@@ -6,6 +6,19 @@
 -- the owner already has a personal ticket or entry, all 1000 paid units stay in
 -- the agent account.
 
+alter table public.worldcup_agents
+  add column if not exists contact_name text,
+  add column if not exists whatsapp_number text,
+  add column if not exists registered_at timestamptz not null default now(),
+  add column if not exists activated_at timestamptz;
+
+update public.worldcup_agents
+   set registered_at = coalesce(registered_at, created_at),
+       activated_at = case
+         when active then coalesce(activated_at, updated_at, created_at, now())
+         else activated_at
+       end;
+
 create or replace function public.worldcup_bootstrap_owner_agent_inventory(
   p_owner_email text default 'semebitcoin@gmail.com',
   p_quantity integer default 1000,
