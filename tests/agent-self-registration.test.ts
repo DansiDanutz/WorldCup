@@ -31,12 +31,12 @@ describe("agent self-registration", () => {
   });
 
   it("shows users registration, pending activation, and active agent tools in the wallet", () => {
-    assert.match(walletScreen, /Become an Agent/);
-    assert.match(walletScreen, /Register as Agent/);
+    assert.match(walletScreen, /Agent Wallet/);
+    assert.match(walletScreen, /Be an Agent/);
     assert.match(walletScreen, /WhatsApp number/);
     assert.match(walletScreen, /applicationStatus === "pending"/);
-    assert.match(walletScreen, /activates after your first ticket deposit is assigned/);
-    assert.match(walletScreen, /Agent Codes/);
+    assert.match(walletScreen, /admin activates your first paid ticket deposit/);
+    assert.match(walletScreen, /Transfer ticket to users is locked until admin activates your agent wallet/);
   });
 
   it("shows pending applicant contact details in the admin agent table", () => {

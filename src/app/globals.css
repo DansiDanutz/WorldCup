@@ -5683,6 +5683,19 @@ html {
     grid-template-columns: 1fr;
     width: min(460px, 100%);
   }
+
+  .wallet-balance-grid,
+  .agent-revenue-box {
+    grid-template-columns: 1fr;
+  }
+
+  .wallet-balance-card {
+    min-height: 94px;
+  }
+
+  .transfer-confirm-card {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Padded body for card content beneath a .panel-header. */
@@ -5690,6 +5703,189 @@ html {
   display: grid;
   gap: 12px;
   padding: 18px;
+}
+
+.wallet-balance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.wallet-balance-card {
+  display: grid;
+  gap: 5px;
+  min-height: 116px;
+  padding: 14px;
+  border: 1px solid rgba(16, 107, 79, 0.22);
+  border-radius: 8px;
+  color: var(--text);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.wallet-balance-card--usdt {
+  background: linear-gradient(135deg, rgba(16, 107, 79, 0.14), rgba(255, 255, 255, 0.94));
+}
+
+.wallet-balance-card--ticket {
+  background: linear-gradient(135deg, rgba(238, 177, 61, 0.22), rgba(255, 255, 255, 0.92));
+}
+
+.wallet-balance-card--price {
+  background: linear-gradient(135deg, rgba(40, 95, 160, 0.14), rgba(255, 255, 255, 0.94));
+}
+
+.wallet-balance-card span,
+.wallet-balance-card small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.wallet-balance-card strong {
+  color: var(--green);
+  font-size: 25px;
+  line-height: 1;
+}
+
+.wallet-ticket-math,
+.ticket-transfer-box,
+.agent-revenue-box,
+.agent-activation-guide {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(238, 177, 61, 0.36);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(238, 177, 61, 0.16), rgba(255, 255, 255, 0.72)),
+    var(--paper-soft);
+}
+
+.wallet-ticket-math {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+}
+
+.wallet-ticket-math svg,
+.agent-revenue-box svg {
+  color: var(--gold);
+}
+
+.wallet-ticket-math div,
+.ticket-transfer-box > div:first-child,
+.agent-revenue-box div,
+.agent-activation-guide {
+  display: grid;
+  gap: 4px;
+}
+
+.wallet-ticket-math span,
+.wallet-ticket-math small,
+.ticket-transfer-box span,
+.agent-revenue-box span,
+.agent-activation-guide small {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.wallet-action-list--steps div {
+  border-color: rgba(16, 107, 79, 0.22);
+  background: linear-gradient(135deg, rgba(16, 107, 79, 0.08), #ffffff);
+}
+
+.panel .wallet-action-list div {
+  border-color: var(--border);
+  color: var(--text);
+  background: linear-gradient(135deg, rgba(16, 107, 79, 0.08), #ffffff);
+}
+
+.panel .wallet-action-list strong {
+  color: var(--text);
+}
+
+.panel .wallet-action-list small {
+  color: var(--muted);
+}
+
+.ticket-transfer-box {
+  background:
+    linear-gradient(135deg, rgba(16, 107, 79, 0.12), rgba(255, 255, 255, 0.78)),
+    var(--paper-soft);
+}
+
+.ticket-transfer-box .redeem-input .search {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.transfer-confirm-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid rgba(16, 107, 79, 0.28);
+  border-left: 4px solid var(--green);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.transfer-confirm-card div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.transfer-confirm-card strong,
+.transfer-confirm-card small {
+  overflow-wrap: anywhere;
+}
+
+.agent-wallet-card {
+  border-color: rgba(238, 177, 61, 0.32);
+  background:
+    linear-gradient(180deg, rgba(5, 49, 37, 0.05), rgba(238, 177, 61, 0.07)),
+    var(--paper);
+}
+
+.agent-revenue-box {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-color: rgba(16, 107, 79, 0.24);
+  background:
+    linear-gradient(135deg, rgba(4, 18, 15, 0.04), rgba(238, 177, 61, 0.14)),
+    var(--paper-soft);
+}
+
+.agent-revenue-box div {
+  padding: 12px;
+  border: 1px solid rgba(16, 107, 79, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.agent-activation-guide {
+  border-color: rgba(16, 107, 79, 0.24);
+}
+
+.agent-activation-guide > div {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.agent-activation-guide span {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #08251d;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 /* Full-width wallet section (agent panel). */

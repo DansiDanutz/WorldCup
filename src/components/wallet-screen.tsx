@@ -96,6 +96,12 @@ type ResponsiblePlayStatus = {
   supportResources?: { label: string; url: string }[];
 };
 
+type TicketTransferRecipient = {
+  userId: string;
+  displayName: string | null;
+  email: string | null;
+};
+
 type WalletScreenProps = {
   publicPaidActionGates?: PaidActionGates;
 };
@@ -120,6 +126,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [agentName, setAgentName] = useState("");
   const [agentWhatsapp, setAgentWhatsapp] = useState("");
   const [redeemCode, setRedeemCode] = useState("");
+  const [transferEmail, setTransferEmail] = useState("");
+  const [transferRecipient, setTransferRecipient] = useState<TicketTransferRecipient | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
@@ -159,6 +167,10 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       status.paidActionGates.ticket.allowed &&
       status.paidActionGates.withdrawal.allowed,
   );
+  const ticketPrice = Number(status?.ticketPriceAmount ?? 0);
+  const walletBalance = Number(status?.walletBalance ?? 0);
+  const purchasableTickets = ticketPrice > 0 ? Math.floor(walletBalance / ticketPrice) : 0;
+  const remainingAfterNextTicket = ticketPrice > 0 ? Math.max(walletBalance - ticketPrice, 0) : walletBalance;
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
@@ -181,6 +193,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         setResponsiblePlay(null);
         setAgent(null);
         setEntryLimitDraft("");
+        setTransferEmail("");
+        setTransferRecipient(null);
         return;
       }
 
@@ -476,6 +490,50 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
     });
   }
 
+  function transferTicket(confirm: boolean) {
+    const token = session?.access_token;
+    const email = transferEmail.trim().toLowerCase();
+    if (!token || !email) {
+      return;
+    }
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const response = await fetch("/api/tickets/transfer", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, confirm }),
+      });
+      const result = (await response.json()) as {
+        error?: string;
+        ticketId?: string;
+        recipient?: TicketTransferRecipient;
+        requiresConfirmation?: boolean;
+      };
+
+      if (!response.ok) {
+        setError(result.error ?? "Could not transfer ticket.");
+        setTransferRecipient(null);
+        return;
+      }
+
+      if (result.requiresConfirmation && result.recipient) {
+        setTransferRecipient(result.recipient);
+        setMessage(`Account found: ${result.recipient.displayName ?? result.recipient.email}. Confirm to send one ticket.`);
+        return;
+      }
+
+      setTransferEmail("");
+      setTransferRecipient(null);
+      setMessage("Ticket transferred. That player becomes your referral when they lock their first entry with this ticket.");
+      refreshStatus(token);
+    });
+  }
+
   async function copyAddress(address: string) {
     await navigator.clipboard.writeText(address);
     setMessage("Address copied.");
@@ -710,39 +768,59 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
             <div className="panel" id="tickets">
               <div className="panel-header">
                 <div>
-                  <h1 className="panel-title">Balance</h1>
-                  <p className="panel-subtitle">Internal USDT balance and entry tickets.</p>
+                  <h1 className="panel-title">User Wallet</h1>
+                  <p className="panel-subtitle">
+                    USDT balance, entry tickets, and ticket transfer to friends.
+                  </p>
                 </div>
                 <CircleDollarSign size={18} color="var(--gold)" />
               </div>
               <div className="panel-body">
-                <div className="account-status-grid">
-                  <div>
+                <div className="wallet-balance-grid">
+                  <div className="wallet-balance-card wallet-balance-card--usdt">
                     <span>Wallet balance</span>
                     <strong>{formatLedgerAmount(status?.walletBalance ?? 0)}</strong>
                     <small>USDT</small>
                   </div>
-                  <div>
+                  <div className="wallet-balance-card wallet-balance-card--ticket">
                     <span>Tickets available</span>
                     <strong>{status?.ticketsAvailable ?? 0}</strong>
                     <small>{status?.ticketsAssigned ?? 0} total</small>
                   </div>
-                  <div>
+                  <div className="wallet-balance-card wallet-balance-card--price">
                     <span>Ticket price</span>
                     <strong>{formatMoneyAmount(status?.ticketPriceAmount ?? 0)}</strong>
                     <small>per entry</small>
                   </div>
                 </div>
-                <div className="wallet-action-list compact" aria-label="Wallet next actions">
+                <div className="wallet-ticket-math">
+                  <Ticket size={18} aria-hidden="true" />
+                  <div>
+                    <strong>
+                      {purchasableTickets > 0
+                        ? `${purchasableTickets} ticket${purchasableTickets === 1 ? "" : "s"} can be made from your current USDT balance.`
+                        : "Deposit USDT. Full ticket-price chunks convert into tickets automatically."}
+                    </strong>
+                    <span>
+                      Example: 100 USDT becomes 2 tickets at 50 USDT each. Use one for your entry and transfer the extra ticket to a friend by email.
+                    </span>
+                    {ticketPrice > 0 ? (
+                      <small>
+                        After buying the next ticket, estimated USDT left: {formatLedgerAmount(remainingAfterNextTicket)}.
+                      </small>
+                    ) : null}
+                  </div>
+                </div>
+                <div className="wallet-action-list compact wallet-action-list--steps" aria-label="Wallet next actions">
                   <div>
                     <span>Ticket</span>
                     <strong>Buy or redeem</strong>
                     <small>Required before locking an entry.</small>
                   </div>
                   <div>
-                    <span>USDT</span>
-                    <strong>Deposit proof</strong>
-                    <small>Keep sender wallet and tx hash ready.</small>
+                    <span>Friend</span>
+                    <strong>Transfer ticket</strong>
+                    <small>Email must already have a WorldCup account.</small>
                   </div>
                 </div>
                 <button
@@ -778,6 +856,64 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 </div>
                 {ticketPolicyPause ? <div className="message error">{ticketPolicyPause}</div> : null}
                 {ticketRestriction ? <div className="message error">{ticketRestriction}</div> : null}
+                <div className="ticket-transfer-box">
+                  <div>
+                    <strong>Transfer ticket to a friend</strong>
+                    <span>
+                      Step 1: enter their account email. Step 2: confirm the transfer. When they use that ticket, they are tracked as your referral.
+                    </span>
+                  </div>
+                  <div className="redeem-row">
+                    <label htmlFor="ticket-transfer-email">Friend email</label>
+                    <div className="redeem-input">
+                      <input
+                        className="search"
+                        id="ticket-transfer-email"
+                        inputMode="email"
+                        placeholder="friend@email.com"
+                        value={transferEmail}
+                        onChange={(event) => {
+                          setTransferEmail(event.target.value);
+                          setTransferRecipient(null);
+                        }}
+                      />
+                      <button
+                        className="button secondary"
+                        disabled={
+                          isPending ||
+                          transferEmail.trim().length === 0 ||
+                          (status?.ticketsAvailable ?? 0) < 1 ||
+                          Boolean(ticketRestriction || ticketPolicyPause)
+                        }
+                        onClick={() => transferTicket(false)}
+                        type="button"
+                      >
+                        Find
+                      </button>
+                    </div>
+                  </div>
+                  {transferRecipient ? (
+                    <div className="transfer-confirm-card">
+                      <div>
+                        <span>Account found</span>
+                        <strong>{transferRecipient.displayName ?? transferRecipient.email}</strong>
+                        <small>{transferRecipient.email}</small>
+                      </div>
+                      <button
+                        className="button"
+                        disabled={isPending || (status?.ticketsAvailable ?? 0) < 1}
+                        onClick={() => transferTicket(true)}
+                        type="button"
+                      >
+                        <Send size={16} />
+                        Send 1 ticket
+                      </button>
+                    </div>
+                  ) : null}
+                  {(status?.ticketsAvailable ?? 0) < 1 ? (
+                    <div className="field-note">You need at least one available ticket before transferring.</div>
+                  ) : null}
+                </div>
                 {message ? <div className="message">{message}</div> : null}
                 {error ? <div className="message error">{error}</div> : null}
               </div>
@@ -1204,14 +1340,14 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
             </div>
 
             {signedIn ? (
-              <div className="panel wallet-wide">
+              <div className="panel wallet-wide agent-wallet-card">
                 <div className="panel-header">
                   <div>
-                    <h2 className="panel-title">{agent?.isAgent ? "Agent Codes" : "Become an Agent"}</h2>
+                    <h2 className="panel-title">Agent Wallet</h2>
                     <p className="panel-subtitle">
                       {agent?.isAgent
-                        ? "Hand a code to a player; they redeem it for one entry ticket."
-                        : "Register with your name and WhatsApp. Your agent account activates after your first ticket deposit is assigned."}
+                        ? "Transfer tickets to users, track code inventory, and manage Agent Call requests."
+                        : "Apply to sell tickets. Agent tools unlock only after admin activates your first paid ticket deposit."}
                     </p>
                   </div>
                   {agent?.isAgent ? (
@@ -1221,11 +1357,23 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   )}
                 </div>
                 <div className="panel-body">
+                  <div className="agent-revenue-box">
+                    <div>
+                      <Gift size={18} aria-hidden="true" />
+                      <strong>10 paid tickets = 1 free ticket</strong>
+                      <span>Pay upfront for tickets, sell them to players, and receive one commission ticket for every ten paid tickets assigned.</span>
+                    </div>
+                    <div>
+                      <UserPlus size={18} aria-hidden="true" />
+                      <strong>5% referral upside</strong>
+                      <span>Every player who receives an agent ticket is connected to the agent. If they win, the agent can receive 5% of their prize.</span>
+                    </div>
+                  </div>
                   {!agent?.isAgent ? (
                     <div className="agent-register-box">
                       {agent?.applicationStatus === "pending" ? (
                         <div className="message">
-                          Registration received. Send your first ticket payment to the operator; once tickets are assigned to you, this panel unlocks automatically.
+                          Agent registration received. Add your USDT sender wallet below, send the ticket deposit to the WorldCup receive wallet, then admin will activate your account and assign agent tickets.
                         </div>
                       ) : null}
                       <div className="deposit-claim-form">
@@ -1255,8 +1403,26 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                           type="button"
                         >
                           <Phone size={16} />
-                          {agent?.applicationStatus === "pending" ? "Update Agent Details" : "Register as Agent"}
+                          {agent?.applicationStatus === "pending" ? "Update Agent Details" : "Be an Agent"}
                         </button>
+                      </div>
+                      <div className="agent-activation-guide">
+                        <strong>Activation steps</strong>
+                        <div>
+                          <span>1</span>
+                          <small>Create your agent username and WhatsApp contact.</small>
+                        </div>
+                        <div>
+                          <span>2</span>
+                          <small>Use Deposit USDT to save your sender wallet, amount, and transaction hash.</small>
+                        </div>
+                        <div>
+                          <span>3</span>
+                          <small>Admin verifies payment and assigns paid tickets. Your Agent Wallet activates after that.</small>
+                        </div>
+                      </div>
+                      <div className="message error">
+                        Transfer ticket to users is locked until admin activates your agent wallet.
                       </div>
                     </div>
                   ) : (
