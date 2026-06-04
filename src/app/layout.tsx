@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
+import { AppLaunchSplash } from "@/components/app-launch-splash";
 import { CANONICAL_ORIGIN } from "@/lib/canonical-url";
 
 import "./globals.css";
@@ -66,7 +67,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AppLaunchSplash />
+        {children}
+      </body>
     </html>
   );
 }

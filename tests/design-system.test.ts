@@ -12,6 +12,7 @@ const previewPage = readFileSync("src/app/preview/page.tsx", "utf8");
 const loginRegister = readFileSync("src/components/login-register.tsx", "utf8");
 const dashboard = readFileSync("src/components/dashboard.tsx", "utf8");
 const rootLayout = readFileSync("src/app/layout.tsx", "utf8");
+const appLaunchSplash = readFileSync("src/components/app-launch-splash.tsx", "utf8");
 const heroCard = readFileSync("src/components/hero-card.tsx", "utf8");
 const heroSwiper = readFileSync("src/components/hero-swiper.tsx", "utf8");
 const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
@@ -279,6 +280,25 @@ describe("WorldCup design system integration", () => {
     ]) {
       assert.equal(existsSync(icon), true);
     }
+  });
+
+  it("keeps installed-app launches branded with stars and best-effort crowd audio", () => {
+    assert.match(rootLayout, /import \{ AppLaunchSplash \}/);
+    assert.match(rootLayout, /<AppLaunchSplash \/>/);
+    assert.match(appLaunchSplash, /"use client";/);
+    assert.match(appLaunchSplash, /display-mode:\s*standalone/);
+    assert.match(appLaunchSplash, /android-app:\/\//);
+    assert.match(appLaunchSplash, /webkitAudioContext/);
+    assert.match(appLaunchSplash, /createBuffer/);
+    assert.match(appLaunchSplash, /pointerdown/);
+    assert.match(appLaunchSplash, /keydown/);
+    assert.match(appLaunchSplash, /\/icons\/maskable-512\.png/);
+    assert.match(globalsCss, /\.app-launch-splash\s*{/);
+    assert.match(globalsCss, /\.app-launch-splash__stars/);
+    assert.match(globalsCss, /\.app-launch-splash__lights/);
+    assert.match(globalsCss, /@keyframes launch-star-twinkle/);
+    assert.match(globalsCss, /@keyframes launch-stadium-sweep/);
+    assert.match(globalsCss, /prefers-reduced-motion:\s*reduce/);
   });
 
   it("keeps the three-team pick workflow guided on mobile", () => {
