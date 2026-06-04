@@ -42,9 +42,10 @@ export default function TermsPage() {
             <div className="rule-block">
               <h3>Team picks and scoring</h3>
               <p>
-                Each valid entry selects three teams. A team remains selectable until its second
-                group match starts, after which it locks. Points and leaderboard positions are
-                calculated from official tournament results and the published coefficient rules.
+                Each valid entry selects three teams. A team remains selectable until one minute
+                before its first World Cup 2026 match starts, after which it locks. Points and
+                leaderboard positions are calculated from official tournament results and the
+                published coefficient rules.
               </p>
             </div>
             <div className="rule-block">

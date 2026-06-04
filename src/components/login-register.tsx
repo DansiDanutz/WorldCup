@@ -236,7 +236,9 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
 
           <div className="auth-choice-grid auth-choice-grid--buttons" aria-label="Signup path options">
             <button
-              className={selectedSignupPath === "referral" ? "active" : ""}
+              className={`auth-choice-card auth-choice-card--referral ${
+                selectedSignupPath === "referral" ? "active" : ""
+              }`}
               disabled={Boolean(session)}
               onClick={() => {
                 setNoReferral(false);
@@ -252,7 +254,9 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
               <span>Add their code. Your own future referrals can earn 5%.</span>
             </button>
             <button
-              className={selectedSignupPath === "direct" ? "active" : ""}
+              className={`auth-choice-card auth-choice-card--direct ${
+                selectedSignupPath === "direct" ? "active" : ""
+              }`}
               disabled={Boolean(session)}
               onClick={() => {
                 setReferralCode("");
@@ -365,88 +369,95 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
           <Image src="/logo-lockup.svg" alt="WorldCup" width={122} height={30} priority />
         </Link>
 
-        <div className="auth-copy">
-          <span className="status-pill">FIFA World Cup 2026</span>
-          <h1 className="motto" id="auth-title">
-            Predict the Game <span className="motto-accent">WorldCup26</span>
-          </h1>
-          <p>
-            Create your account, pick three teams, then use Wallet for tickets and USDT after
-            launch approvals open.
-          </p>
-        </div>
-
-        <div className="auth-info-grid" aria-label="Signup details">
-          <details className="auth-info-card" open>
-            <summary>
-              <span>How it works</span>
-              <ChevronDown size={16} />
-            </summary>
-            <div className="auth-steps" aria-label="Signup steps">
-              <div>
-                <span>1</span>
-                <strong>Register</strong>
-                <small>Choose referral or direct signup.</small>
-              </div>
-              <div>
-                <span>2</span>
-                <strong>Google</strong>
-                <small>One account, no password to manage.</small>
-              </div>
-              <div>
-                <span>3</span>
-                <strong>Play</strong>
-                <small>Pick teams, buy tickets, track wallet activity.</small>
-              </div>
+        <details className="auth-worldcup-card" aria-labelledby="auth-title">
+          <summary>
+            <span>FIFA World Cup 2026</span>
+            <ChevronDown size={16} />
+          </summary>
+          <div className="auth-worldcup-card__body">
+            <div className="auth-copy">
+              <h1 className="motto" id="auth-title">
+                Predict the Game <span className="motto-accent">WorldCup26</span>
+              </h1>
+              <p>
+                Create your account, pick three teams, then use Wallet for tickets and USDT after
+                launch approvals open.
+              </p>
             </div>
-          </details>
 
-          <details className="auth-info-card">
-            <summary>
-              <span>Referral rates</span>
-              <ChevronDown size={16} />
-            </summary>
-            <div className="auth-benefits" aria-label="Referral benefits">
-              <div>
-                <Gift size={18} />
-                <span>Referral accepted: your own invites can earn 5%.</span>
-              </div>
-              <div>
-                <CircleDollarSign size={18} />
-                <span>Direct signup: your own invites earn 3%.</span>
-              </div>
-              <div>
-                <Users size={18} />
-                <span>Track accepted referrals inside the Invite tab.</span>
-              </div>
-            </div>
-          </details>
+            <div className="auth-info-grid" aria-label="Signup details">
+              <details className="auth-info-card" open>
+                <summary>
+                  <span>How it works</span>
+                  <ChevronDown size={16} />
+                </summary>
+                <div className="auth-steps" aria-label="Signup steps">
+                  <div>
+                    <span>1</span>
+                    <strong>Register</strong>
+                    <small>Choose referral or direct signup.</small>
+                  </div>
+                  <div>
+                    <span>2</span>
+                    <strong>Google</strong>
+                    <small>One account, no password to manage.</small>
+                  </div>
+                  <div>
+                    <span>3</span>
+                    <strong>Play</strong>
+                    <small>Pick teams, buy tickets, track wallet activity.</small>
+                  </div>
+                </div>
+              </details>
 
-          <details className="auth-info-card">
-            <summary>
-              <span>All 48 nations</span>
-              <ChevronDown size={16} />
-            </summary>
-            <div className="flag-wall" aria-label="All 48 qualified nations">
-              <div className="flag-wall-head">
-                <span className="ds-label">Pick 3 to play</span>
-              </div>
-              <div className="flag-grid">
-                {flagTeams.map(([id, name, code]) => (
-                  <Image
-                    alt={name}
-                    className="flag"
-                    height={22}
-                    key={id}
-                    loading="lazy"
-                    src={`https://flagcdn.com/w80/${code}.png`}
-                    width={32}
-                  />
-                ))}
-              </div>
+              <details className="auth-info-card">
+                <summary>
+                  <span>Referral rates</span>
+                  <ChevronDown size={16} />
+                </summary>
+                <div className="auth-benefits" aria-label="Referral benefits">
+                  <div>
+                    <Gift size={18} />
+                    <span>Referral accepted: your own invites can earn 5%.</span>
+                  </div>
+                  <div>
+                    <CircleDollarSign size={18} />
+                    <span>Direct signup: your own invites earn 3%.</span>
+                  </div>
+                  <div>
+                    <Users size={18} />
+                    <span>Track accepted referrals inside the Invite tab.</span>
+                  </div>
+                </div>
+              </details>
+
+              <details className="auth-info-card">
+                <summary>
+                  <span>All 48 nations</span>
+                  <ChevronDown size={16} />
+                </summary>
+                <div className="flag-wall" aria-label="All 48 qualified nations">
+                  <div className="flag-wall-head">
+                    <span className="ds-label">Pick 3 to play</span>
+                  </div>
+                  <div className="flag-grid">
+                    {flagTeams.map(([id, name, code]) => (
+                      <Image
+                        alt={name}
+                        className="flag"
+                        height={22}
+                        key={id}
+                        loading="lazy"
+                        src={`https://flagcdn.com/w80/${code}.png`}
+                        width={32}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </details>
             </div>
-          </details>
-        </div>
+          </div>
+        </details>
       </section>
     </main>
   );

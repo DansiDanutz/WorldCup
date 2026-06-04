@@ -741,7 +741,7 @@ export function Dashboard({
                 <p className="panel-subtitle">
                   {entryPolicyPause
                     ? "You can browse teams now. Entry locking opens after launch approvals are complete."
-                    : "Late entries are open, but a team locks when its second group match starts."}
+                    : "Late entries are open. A team locks 1 minute before its first World Cup 2026 match."}
                 </p>
               </div>
               <span className="status-pill">{selectedTeams.length}/3 selected</span>
@@ -827,6 +827,7 @@ export function Dashboard({
                 const selectedIndex = selectedTeams.indexOf(team.id);
                 const eligibility = teamEligibility.get(team.id);
                 const unavailable = eligibility?.available === false;
+                const pickDeadline = formatPickDeadline(eligibility?.lockAt ?? null);
                 const atPickLimit = selectedTeams.length >= 3 && !selected;
                 const nextPickNumber = selected ? selectedIndex + 1 : selectedTeams.length + 1;
 
@@ -842,7 +843,7 @@ export function Dashboard({
                     type="button"
                     title={
                       unavailable
-                        ? "This team can no longer be selected because its second group match has started."
+                        ? "This team can no longer be selected because its first match starts in less than one minute or already started."
                         : atPickLimit
                           ? "You already selected 3 teams. Remove one pick before adding another."
                         : undefined
@@ -854,6 +855,13 @@ export function Dashboard({
                       <span className="team-meta">
                         Group {team.group_code ?? "-"} · {team.confederation}
                         {unavailable ? " · Locked" : ""}
+                      </span>
+                      <span className="team-deadline">
+                        {pickDeadline
+                          ? unavailable
+                            ? `Locked ${pickDeadline}`
+                            : `Pick until ${pickDeadline}`
+                          : "Pick deadline pending schedule"}
                       </span>
                     </span>
                     <span className="coefficient">
@@ -1290,11 +1298,11 @@ export function Dashboard({
                 <h3>How to join</h3>
                 <p>
                   Choose exactly 3 teams. You may join even after the tournament starts, but only
-                  with teams that have not started their second group-stage match.
+                  with teams that have not reached the one-minute-before-first-match lock time.
                 </p>
                 <p>
-                  As soon as one of your chosen teams has started its second group match, that team
-                  is locked for new users and cannot be selected anymore.
+                  Matchday 1 runs 11-17 June 2026. Matchday 2 runs 18-23 June 2026.
+                  Each team row shows the exact last selectable time before its first match.
                 </p>
               </div>
 
@@ -1420,5 +1428,18 @@ function formatDateTime(value: string) {
   return new Intl.DateTimeFormat("en", {
     dateStyle: "medium",
     timeStyle: "short",
+  }).format(new Date(value));
+}
+
+function formatPickDeadline(value: number | null) {
+  if (value === null) {
+    return null;
+  }
+
+  return new Intl.DateTimeFormat("en", {
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
   }).format(new Date(value));
 }
