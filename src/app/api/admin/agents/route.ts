@@ -44,7 +44,7 @@ export async function GET(request: Request) {
   const [agents, codes] = await Promise.all([
     supabase
       .from("worldcup_agents")
-      .select("user_id,email,display_name,paid_tickets,commission_tickets,active,created_at")
+      .select("user_id,email,display_name,contact_name,whatsapp_number,paid_tickets,commission_tickets,active,created_at,activated_at")
       .eq("tournament_id", tournament.data.id)
       .order("created_at", { ascending: false }),
     supabase
@@ -79,11 +79,14 @@ export async function GET(request: Request) {
       userId: agent.user_id,
       email: agent.email,
       displayName: agent.display_name,
+      contactName: agent.contact_name,
+      whatsappNumber: agent.whatsapp_number,
       paidTickets: agent.paid_tickets,
       commissionTickets: agent.commission_tickets,
       availableCodes: perAgent.get(agent.user_id as string)?.available ?? 0,
       redeemedCodes: perAgent.get(agent.user_id as string)?.redeemed ?? 0,
       active: agent.active,
+      activatedAt: agent.activated_at,
     })),
   });
 }
@@ -144,7 +147,9 @@ export async function POST(request: Request) {
           user_id: profile.data.user_id,
           email: profile.data.email ?? email,
           display_name: profile.data.display_name,
+          contact_name: profile.data.display_name,
           active: true,
+          activated_at: new Date().toISOString(),
           created_by: createdBy,
           updated_at: new Date().toISOString(),
         },

@@ -1412,6 +1412,11 @@ svg {
   border-top: 1px solid var(--border);
 }
 
+.agent-register-box {
+  display: grid;
+  gap: 12px;
+}
+
 .agent-request-section > div:first-child {
   display: grid;
   gap: 3px;

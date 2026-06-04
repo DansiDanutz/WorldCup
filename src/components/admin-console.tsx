@@ -208,11 +208,14 @@ type AdminAgentRow = {
   userId: string;
   email: string | null;
   displayName: string | null;
+  contactName: string | null;
+  whatsappNumber: string | null;
   paidTickets: number;
   commissionTickets: number;
   availableCodes: number;
   redeemedCodes: number;
   active: boolean;
+  activatedAt: string | null;
 };
 
 type AgentPool = { total: number; available: number; assigned: number; redeemed: number };
@@ -2710,7 +2713,13 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   </div>
                   {agents.map((agent) => (
                     <div className="coefficient-table-row" key={agent.userId} role="row">
-                      <strong role="cell">{agent.email ?? agent.displayName ?? agent.userId}</strong>
+                      <strong role="cell">
+                        {agent.email ?? agent.displayName ?? agent.userId}
+                        <small>
+                          {agent.active ? "Active" : "Pending"} · {agent.contactName ?? "No name"}
+                          {agent.whatsappNumber ? ` · WhatsApp ${agent.whatsappNumber}` : ""}
+                        </small>
+                      </strong>
                       <span role="cell">{agent.paidTickets}</span>
                       <span role="cell">{agent.commissionTickets}</span>
                       <span role="cell">{agent.availableCodes}</span>
