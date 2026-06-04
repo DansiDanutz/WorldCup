@@ -142,7 +142,7 @@ async function checkPage(path, expectedText) {
 
 async function checkPublicPages() {
   const pages = [
-    ["/login", "Login / Register"],
+    ["/login", "Choose your signup path"],
     ["/schema", "Tournament Schema"],
     ["/coefficients", "Team Coefficients"],
     ["/terms", "WorldCup26 Terms of Use"],
@@ -196,7 +196,7 @@ async function fetchStylesheetsFromHtml(html, contextPath) {
 async function checkPublicUiShell() {
   const routeLandmarks = [
     ["/", ["Choose 3 Teams", "Pick Teams", "Rules", "Schema", "Leaderboard", "Wallet", "Matches"]],
-    ["/login", ["Login / Register", "Predict the Game", "Continue with Google"]],
+    ["/login", ["Choose your signup path", "Predict the Game", "I have an inviter", "Direct signup"]],
     ["/wallet", ["WorldCup Wallet", "Wallet", "Sign in with Google", "USDT"]],
     [
       "/admin",
