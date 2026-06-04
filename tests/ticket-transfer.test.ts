@@ -56,9 +56,14 @@ describe("user ticket transfers", () => {
   });
 
   it("hides user deposit and ticket purchase prompts after a user ticket is available", () => {
+    assert.match(walletScreen, /const accountStatusLoaded = status !== null/);
     assert.match(walletScreen, /const userHasEntryTicket =/);
+    assert.match(walletScreen, /const userNeedsEntryTicket = accountStatusLoaded && !userHasEntryTicket/);
+    assert.match(walletScreen, /User Wallet ticket ready/);
     assert.match(walletScreen, /User Wallet deposits are hidden once your entry ticket is available/);
-    assert.match(walletScreen, /!\s*userHasEntryTicket\s*\?\s*\(/);
+    assert.match(walletScreen, /User Wallet USDT deposit and ticket-buy\s+actions are hidden/);
+    assert.match(walletScreen, /userNeedsEntryTicket\s*\?\s*\(/);
+    assert.match(walletScreen, /Deposit actions stay hidden until your wallet status is loaded/);
     assert.match(walletScreen, /Deposit USDT for agent tickets/);
   });
 });

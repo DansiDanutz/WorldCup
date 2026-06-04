@@ -174,7 +174,9 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   );
   const ticketPrice = Number(status?.ticketPriceAmount ?? 0);
   const walletBalance = Number(status?.walletBalance ?? 0);
+  const accountStatusLoaded = status !== null;
   const userHasEntryTicket = (status?.ticketsAvailable ?? 0) > 0;
+  const userNeedsEntryTicket = accountStatusLoaded && !userHasEntryTicket;
   const purchasableTickets = ticketPrice > 0 ? Math.floor(walletBalance / ticketPrice) : 0;
   const remainingAfterNextTicket = ticketPrice > 0 ? Math.max(walletBalance - ticketPrice, 0) : walletBalance;
 
@@ -803,13 +805,29 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               Open Admin
             </Link>
           </section>
+        ) : publicPaidActionsPaused && signedIn && walletView === "user" && userHasEntryTicket ? (
+          <section className="launch-notice" aria-label="User wallet ticket ready">
+            <div>
+              <strong>User Wallet ticket ready</strong>
+              <span>
+                You already have an entry ticket, so User Wallet USDT deposit and ticket-buy
+                actions are hidden. Use Agent Wallet only for agent inventory deposits.
+              </span>
+            </div>
+            <Link className="button secondary" href={{ pathname: "/", hash: "entry" }}>
+              Lock entry
+            </Link>
+          </section>
         ) : publicPaidActionsPaused ? (
           <section className="launch-notice" aria-label="Wallet launch status">
             <div>
               <strong>Wallet paid actions paused</strong>
               <span>
-                Login, referrals, and account setup are available. Tickets, USDT deposits, and
-                withdrawals open after launch approvals are complete.
+                {signedIn && walletView === "user" && !accountStatusLoaded
+                  ? "Loading your User Wallet ticket status before showing any deposit actions."
+                  : signedIn && walletView === "agent"
+                    ? "Agent USDT deposit proof is available for admin-reviewed agent inventory. Public user ticket purchases remain paused."
+                    : "Login, referrals, and account setup are available. Tickets, USDT deposits, and withdrawals open after launch approvals are complete."}
               </span>
             </div>
             <Link className="button secondary" href={{ pathname: "/" }}>
@@ -915,18 +933,22 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <Ticket size={18} aria-hidden="true" />
                   <div>
                     <strong>
-                      {userHasEntryTicket
+                      {!accountStatusLoaded
+                        ? "Loading your ticket balance..."
+                        : userHasEntryTicket
                         ? "Your personal entry ticket is ready. Lock your teams from Play."
                         : purchasableTickets > 0
                         ? `${purchasableTickets} ticket${purchasableTickets === 1 ? "" : "s"} can be made from your current USDT balance.`
                         : "Deposit USDT. Full ticket-price chunks convert into tickets automatically."}
                     </strong>
                     <span>
-                      {userHasEntryTicket
+                      {!accountStatusLoaded
+                        ? "Deposit actions stay hidden until your wallet status is loaded."
+                        : userHasEntryTicket
                         ? "User Wallet deposits are hidden once your entry ticket is available. Use Agent Wallet for agent inventory deposits."
                         : "Example: 100 USDT becomes 2 tickets at 50 USDT each. Use one for your entry and transfer the extra ticket to a friend by email."}
                     </span>
-                    {!userHasEntryTicket && ticketPrice > 0 ? (
+                    {userNeedsEntryTicket && ticketPrice > 0 ? (
                       <small>
                         After buying the next ticket, estimated USDT left: {formatLedgerAmount(remainingAfterNextTicket)}.
                       </small>
@@ -949,7 +971,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <small>Email must already have a WorldCup account.</small>
                   </div>
                 </div>
-                {!userHasEntryTicket ? (
+                {userNeedsEntryTicket ? (
                   <button
                     className="button"
                     disabled={Boolean(ticketRestriction || ticketPolicyPause) || isPending}
@@ -982,10 +1004,10 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     </button>
                   </div>
                 </div>
-                {!userHasEntryTicket && ticketPolicyPause ? (
+                {userNeedsEntryTicket && ticketPolicyPause ? (
                   <div className="message error">{ticketPolicyPause}</div>
                 ) : null}
-                {!userHasEntryTicket && ticketRestriction ? (
+                {userNeedsEntryTicket && ticketRestriction ? (
                   <div className="message error">{ticketRestriction}</div>
                 ) : null}
                 <div className="ticket-transfer-box">
@@ -1134,7 +1156,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               </div>
             </div>
 
-            {!userHasEntryTicket ? (
+            {userNeedsEntryTicket ? (
             <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
               <div className="panel-header">
                 <div>
