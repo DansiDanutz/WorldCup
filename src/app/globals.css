@@ -1400,6 +1400,7 @@ svg {
   max-height: min(650px, 68vh);
   overflow: auto;
   overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .team-list--compact {
@@ -1408,7 +1409,9 @@ svg {
 }
 
 .team-list--expanded {
-  max-height: min(760px, 72vh);
+  max-height: none;
+  overflow: visible;
+  overscroll-behavior: auto;
 }
 
 .team-row {

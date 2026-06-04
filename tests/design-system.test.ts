@@ -269,6 +269,8 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.pick-slot-strip\s*{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\);/);
     assert.match(globalsCss, /\.team-row\s*{[\s\S]*?grid-template-columns:\s*36px minmax\(0,\s*1fr\) 74px 72px 76px;/);
     assert.match(globalsCss, /\.team-row\s*{[\s\S]*?--team-color-one/);
+    assert.match(globalsCss, /\.team-list\s*{[\s\S]*?-webkit-overflow-scrolling:\s*touch;/);
+    assert.match(globalsCss, /\.team-list--expanded\s*{[\s\S]*?max-height:\s*none;[\s\S]*?overflow:\s*visible;/);
     assert.match(globalsCss, /\.team-coef-badge\s*{/);
     assert.match(globalsCss, /\.team-deadline\s*{/);
     assert.match(globalsCss, /\.team-deadline\s*{[\s\S]*?color:\s*#ffb44c;/);
