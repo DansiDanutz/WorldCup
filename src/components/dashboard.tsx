@@ -5,16 +5,19 @@ import {
   CalendarClock,
   Check,
   CircleDollarSign,
+  ArrowRight,
   GitBranch,
   Lock,
   LogOut,
   RefreshCw,
   Search,
   ShieldCheck,
+  Ticket,
   Trophy,
   UserRound,
   Users,
   Wallet,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
@@ -73,6 +76,17 @@ type MyReferral = {
   acceptedAt: string;
 };
 
+type AgentTicketRequest = {
+  id: string;
+  agentDisplayName: string | null;
+  agentEmail: string | null;
+  status: string;
+  requestedAt: string;
+  expiresAt: string;
+  acceptedAt: string | null;
+  ticketId: string | null;
+};
+
 type ResponsiblePlayStatus = {
   maxEntries: number | null;
   selfExcluded: boolean;
@@ -107,7 +121,11 @@ export function Dashboard({
   const [myReferralCode, setMyReferralCode] = useState<string | null>(null);
   const [myReferrals, setMyReferrals] = useState<MyReferral[]>([]);
   const [myAccountStatus, setMyAccountStatus] = useState<MyAccountStatus | null>(null);
+  const [agentTicketRequests, setAgentTicketRequests] = useState<AgentTicketRequest[]>([]);
+  const [agentId, setAgentId] = useState("");
   const [inviteMessage, setInviteMessage] = useState<string | null>(null);
+  const [agentRequestMessage, setAgentRequestMessage] = useState<string | null>(null);
+  const [agentRequestError, setAgentRequestError] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
   const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
@@ -137,6 +155,11 @@ export function Dashboard({
   const selectedTeamRecords = selectedTeams
     .map((teamId) => teamsById.get(teamId))
     .filter((team): team is WorldCupTeam => Boolean(team));
+  const remainingPickCount = Math.max(0, 3 - selectedTeams.length);
+  const pickInstruction =
+    selectedTeams.length === 3
+      ? "Your 3 teams are ready. Continue to Entry to lock them."
+      : `Choose ${remainingPickCount} more ${remainingPickCount === 1 ? "team" : "teams"}.`;
 
   const visibleMatches = matches.slice(0, 24);
   const completedCount = matches.filter((match) => match.status === "completed").length;
@@ -172,6 +195,12 @@ export function Dashboard({
   const publicPaidActionsPaused = Boolean(
     publicEntryPolicyPause || publicDepositPolicyPause || publicTicketPolicyPause,
   );
+  const ticketsAvailable = myAccountStatus?.ticketsAvailable ?? 0;
+  const walletBalance = myAccountStatus?.walletBalance ?? 0;
+  const ticketPriceAmount = myAccountStatus?.ticketPriceAmount ?? 0;
+  const missingEntryTicket =
+    signedInWithGoogle && myAccountStatus !== null && selectedTeams.length === 3 && ticketsAvailable < 1;
+  const pendingAgentTicketRequest = agentTicketRequests.find((request) => request.status === "pending");
   const launchEvidenceMode = Boolean(
     signedInWithGoogle &&
       publicPaidActionsPaused &&
@@ -289,16 +318,20 @@ export function Dashboard({
         setMyReferralCode(null);
         setMyReferrals([]);
         setMyAccountStatus(null);
+        setAgentTicketRequests([]);
         setResponsiblePlay(null);
         return;
       }
 
       try {
-        const [response, responsibleResponse] = await Promise.all([
+        const [response, responsibleResponse, agentRequestsResponse] = await Promise.all([
           fetch("/api/referrals/me", {
             headers: { Authorization: `Bearer ${token}` },
           }),
           fetch("/api/responsible-play", {
+            headers: { Authorization: `Bearer ${token}` },
+          }),
+          fetch("/api/agent-ticket-requests", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
@@ -315,6 +348,14 @@ export function Dashboard({
 
         setMyReferralCode(result.referralCode ?? null);
         setMyReferrals(result.referrals ?? []);
+        if (agentRequestsResponse.ok) {
+          const agentRequestsResult = (await agentRequestsResponse.json()) as {
+            requests?: AgentTicketRequest[];
+          };
+          setAgentTicketRequests(agentRequestsResult.requests ?? []);
+        } else {
+          setAgentTicketRequests([]);
+        }
         setMyAccountStatus({
           walletBalance: result.walletBalance ?? "0.00",
           ticketsAssigned: result.ticketsAssigned ?? 0,
@@ -327,6 +368,7 @@ export function Dashboard({
         setMyReferralCode(null);
         setMyReferrals([]);
         setMyAccountStatus(null);
+        setAgentTicketRequests([]);
         setResponsiblePlay(null);
       }
     });
@@ -416,6 +458,62 @@ export function Dashboard({
       }
 
       return [...current, teamId];
+    });
+  }
+
+  function removeTeam(teamId: string) {
+    setEntryError(null);
+    setEntryMessage(null);
+    setSelectedTeams((current) => current.filter((id) => id !== teamId));
+  }
+
+  function clearSelectedTeams() {
+    setEntryError(null);
+    setEntryMessage(null);
+    setSelectedTeams([]);
+  }
+
+  function refreshAgentTicketRequests(token: string) {
+    return fetch("/api/agent-ticket-requests", {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => response.json())
+      .then((data: { requests?: AgentTicketRequest[] }) => setAgentTicketRequests(data.requests ?? []))
+      .catch(() => undefined);
+  }
+
+  function submitAgentTicketRequest() {
+    const token = session?.access_token;
+    if (!token || !signedInWithGoogle) {
+      setAgentRequestError("Sign in with Google before requesting an Agent Call ticket.");
+      return;
+    }
+
+    setAgentRequestError(null);
+    setAgentRequestMessage(null);
+    startTransition(async () => {
+      const response = await fetch("/api/agent-ticket-requests", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          agentId,
+          displayName: displayName.trim() || session.user.email || "WorldCup player",
+        }),
+      });
+
+      const result = (await response.json()) as { error?: string; request?: AgentTicketRequest };
+
+      if (!response.ok) {
+        setAgentRequestError(result.error ?? "Could not send Agent Call request.");
+        return;
+      }
+
+      setAgentId("");
+      setAgentRequestMessage("Agent Call request sent. The agent has 24 hours to accept after confirming payment.");
+      await refreshAgentTicketRequests(token);
     });
   }
 
@@ -639,6 +737,61 @@ export function Dashboard({
               </div>
               <span className="status-pill">{selectedTeams.length}/3 selected</span>
             </div>
+            <div className="pick-flow" aria-label="Team pick progress">
+              <div className="pick-flow__head">
+                <div>
+                  <strong>{pickInstruction}</strong>
+                  <span>
+                    Tap a team to add it. Tap a selected team or remove chip to change your picks.
+                  </span>
+                </div>
+                {selectedTeams.length > 0 ? (
+                  <button className="link-button" onClick={clearSelectedTeams} type="button">
+                    Clear all
+                  </button>
+                ) : null}
+              </div>
+              <div className="pick-slot-strip">
+                {[0, 1, 2].map((slot) => {
+                  const team = selectedTeamRecords[slot];
+
+                  return (
+                    <div
+                      className={`pick-slot-card ${team ? getPickColorClass(slot) : "empty-slot"}`}
+                      key={slot}
+                    >
+                      <div>
+                        <span className="pick-slot-label">Pick {slot + 1}</span>
+                        <strong>{team ? team.name : "Open slot"}</strong>
+                        <span>{team ? `Coef ${formatCoefficient(team.reward_coefficient)}` : "Choose from the list"}</span>
+                      </div>
+                      {team ? (
+                        <button
+                          aria-label={`Remove ${team.name}`}
+                          className="icon-button"
+                          onClick={() => removeTeam(team.id)}
+                          type="button"
+                        >
+                          <X size={14} />
+                        </button>
+                      ) : null}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="pick-flow__action">
+                {selectedTeams.length === 3 ? (
+                  <a className="button" href="#entry">
+                    Continue to Entry
+                    <ArrowRight size={16} />
+                  </a>
+                ) : (
+                  <button className="button" disabled type="button">
+                    {remainingPickCount} more to continue
+                  </button>
+                )}
+              </div>
+            </div>
             <div className="panel-tools">
               <div className="field">
                 <label htmlFor="team-search">Search teams</label>
@@ -665,19 +818,24 @@ export function Dashboard({
                 const selectedIndex = selectedTeams.indexOf(team.id);
                 const eligibility = teamEligibility.get(team.id);
                 const unavailable = eligibility?.available === false;
+                const atPickLimit = selectedTeams.length >= 3 && !selected;
+                const nextPickNumber = selected ? selectedIndex + 1 : selectedTeams.length + 1;
 
                 return (
                   <button
                     className={`team-row ${selected ? "selected" : ""} ${getPickColorClass(selectedIndex)} ${
                       unavailable ? "unavailable" : ""
-                    }`}
+                    } ${atPickLimit ? "at-limit" : ""}`}
                     disabled={unavailable}
+                    aria-pressed={selected}
                     key={team.id}
                     onClick={() => toggleTeam(team.id)}
                     type="button"
                     title={
                       unavailable
                         ? "This team can no longer be selected because its second group match has started."
+                        : atPickLimit
+                          ? "You already selected 3 teams. Remove one pick before adding another."
                         : undefined
                     }
                   >
@@ -694,13 +852,25 @@ export function Dashboard({
                       {formatCoefficient(team.reward_coefficient)}
                     </span>
                     <span className="odds">{team.winner_odds}</span>
+                    <span className="team-row-action">
+                      {selected ? `Pick ${nextPickNumber}` : atPickLimit ? "Full" : `Add ${nextPickNumber}`}
+                    </span>
                   </button>
                 );
               })}
+              {filteredTeams.length === 0 ? (
+                <div className="empty-list-state">
+                  <strong>No teams found</strong>
+                  <span>Try another team, group, or confederation.</span>
+                  <button className="button secondary" onClick={() => setQuery("")} type="button">
+                    Clear search
+                  </button>
+                </div>
+              ) : null}
             </div>
           </div>
 
-          <div className="panel">
+          <div className="panel" id="entry">
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Entry</h2>
@@ -790,6 +960,91 @@ export function Dashboard({
                   );
                 })}
               </div>
+              <div
+                className={`ticket-requirement-card ${missingEntryTicket ? "needs-ticket" : ""}`}
+                aria-label="Entry ticket requirement"
+              >
+                <div className="ticket-requirement-card__icon">
+                  <Ticket size={18} />
+                </div>
+                <div className="ticket-requirement-card__content">
+                  <div className="ticket-requirement-card__head">
+                    <div>
+                      <strong>
+                        {ticketsAvailable > 0
+                          ? "Ticket ready"
+                          : signedInWithGoogle
+                            ? "You need 1 entry ticket"
+                            : "Ticket required after sign-in"}
+                      </strong>
+                      <span>
+                        {ticketsAvailable > 0
+                          ? `${ticketsAvailable} ticket${ticketsAvailable === 1 ? "" : "s"} available for locking entries.`
+                          : "Pay the buy-in with USDT, or use Agent Call after paying an agent directly."}
+                      </span>
+                    </div>
+                    <span className="ticket-status-pill">
+                      {ticketsAvailable > 0 ? `${ticketsAvailable} available` : "0 available"}
+                    </span>
+                  </div>
+                  <div className="ticket-option-grid">
+                    <div>
+                      <span>Ticket price</span>
+                      <strong>{formatMoneyAmount(ticketPriceAmount)}</strong>
+                    </div>
+                    <div>
+                      <span>Your balance</span>
+                      <strong>{formatLedgerAmount(walletBalance)} USDT</strong>
+                    </div>
+                  </div>
+                  <div className="ticket-requirement-actions">
+                    <Link className="button" href={{ pathname: "/wallet", hash: "tickets" }}>
+                      <Wallet size={16} />
+                      Buy with USDT
+                    </Link>
+                  </div>
+                  {ticketsAvailable < 1 ? (
+                    <div className="agent-call-box">
+                      <div>
+                        <strong>Agent Call</strong>
+                        <span>
+                          Enter the agent referral code or email. The agent accepts only after receiving your payment.
+                        </span>
+                      </div>
+                      <div className="agent-call-form">
+                        <input
+                          aria-label="Agent ID"
+                          className="search"
+                          disabled={Boolean(pendingAgentTicketRequest) || isPending}
+                          onChange={(event) => setAgentId(event.target.value)}
+                          placeholder="Agent code or email"
+                          value={agentId}
+                        />
+                        <button
+                          className="button secondary"
+                          disabled={Boolean(pendingAgentTicketRequest) || agentId.trim().length < 3 || isPending}
+                          onClick={submitAgentTicketRequest}
+                          type="button"
+                        >
+                          <Ticket size={16} />
+                          Request ticket
+                        </button>
+                      </div>
+                      {pendingAgentTicketRequest ? (
+                        <div className="field-note">
+                          Pending with{" "}
+                          {pendingAgentTicketRequest.agentDisplayName ??
+                            pendingAgentTicketRequest.agentEmail ??
+                            "agent"}{" "}
+                          until {new Date(pendingAgentTicketRequest.expiresAt).toLocaleString()}.
+                        </div>
+                      ) : null}
+                      {agentRequestMessage ? <div className="message">{agentRequestMessage}</div> : null}
+                      {agentRequestError ? <div className="message error">{agentRequestError}</div> : null}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
               {signedInWithGoogle && consented === false ? (
                 <div className="consent-gate" aria-label="Eligibility confirmation">
                   <label className="check-row">
@@ -842,6 +1097,7 @@ export function Dashboard({
                   !signedInWithGoogle ||
                   (Boolean(referralCode) && !referralAccepted) ||
                   (signedInWithGoogle && consented !== true) ||
+                  missingEntryTicket ||
                   Boolean(entryRestriction) ||
                   Boolean(entryPolicyPause) ||
                   isPending

@@ -1,6 +1,8 @@
 import type { SupabaseClient, User } from "@supabase/supabase-js";
 import { randomBytes } from "node:crypto";
 
+import { OWNER_ADMIN_EMAIL } from "@/lib/admin-auth";
+
 type ReferralProfile = {
   user_id: string;
   referral_code: string;
@@ -36,6 +38,37 @@ export function getUserDisplayName(user: User) {
   return user.email ?? "WorldCup player";
 }
 
+async function ensureOwnerAgent(supabase: SupabaseClient, profile: ReferralProfile) {
+  if ((profile.email ?? "").trim().toLowerCase() !== OWNER_ADMIN_EMAIL.toLowerCase()) {
+    return;
+  }
+
+  const tournament = await supabase
+    .from("worldcup_tournaments")
+    .select("id")
+    .eq("slug", "fifa-world-cup-2026")
+    .maybeSingle();
+
+  if (tournament.error || !tournament.data) {
+    return;
+  }
+
+  await supabase
+    .from("worldcup_agents")
+    .upsert(
+      {
+        tournament_id: tournament.data.id,
+        user_id: profile.user_id,
+        email: profile.email,
+        display_name: profile.display_name,
+        active: true,
+        created_by: "owner-bootstrap",
+        updated_at: new Date().toISOString(),
+      },
+      { onConflict: "tournament_id,user_id" },
+    );
+}
+
 export async function getOrCreateReferralProfile(
   supabase: SupabaseClient,
   user: User,
@@ -53,6 +86,11 @@ export async function getOrCreateReferralProfile(
   if (existing.data) {
     const displayName = getUserDisplayName(user);
     const email = user.email ?? null;
+    const profile = {
+      ...(existing.data as ReferralProfile),
+      display_name: displayName,
+      email,
+    };
 
     if (existing.data.display_name !== displayName || existing.data.email !== email) {
       await supabase
@@ -61,7 +99,8 @@ export async function getOrCreateReferralProfile(
         .eq("user_id", user.id);
     }
 
-    return existing.data as ReferralProfile;
+    await ensureOwnerAgent(supabase, profile);
+    return profile;
   }
 
   const displayName = getUserDisplayName(user);
@@ -81,7 +120,9 @@ export async function getOrCreateReferralProfile(
       .single();
 
     if (!created.error && created.data) {
-      return created.data as ReferralProfile;
+      const profile = created.data as ReferralProfile;
+      await ensureOwnerAgent(supabase, profile);
+      return profile;
     }
 
     if (created.error?.code !== "23505") {
