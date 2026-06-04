@@ -4944,6 +4944,66 @@ html {
   background: linear-gradient(180deg, #ffe39a, #efbc5c);
 }
 
+.hero-cta-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 0;
+}
+
+.hero-cta-row .hero-cta {
+  min-height: 50px;
+  margin-top: 2px;
+  padding-inline: 10px;
+}
+
+.hero-cta--install {
+  border: 1px solid rgba(255, 226, 154, 0.68);
+  color: #ffe29a;
+  background: rgba(4, 18, 15, 0.68);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 12px 26px rgba(0, 0, 0, 0.28);
+}
+
+.hero-cta--install:hover {
+  background: rgba(10, 47, 36, 0.82);
+}
+
+.hero-install-note {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 11px;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.hero-install-help {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid rgba(255, 226, 154, 0.36);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 11px;
+  font-weight: 720;
+  line-height: 1.35;
+  background: rgba(4, 18, 15, 0.72);
+}
+
+.hero-install-help button {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
 @media (max-width: 420px) {
   .hero-card {
     border-radius: 16px;
@@ -4969,6 +5029,14 @@ html {
 
   .hero-swiper__slide:not(:first-child) .hero-card__cards {
     gap: 8px;
+  }
+
+  .hero-cta-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cta-row .hero-cta {
+    min-height: 44px;
   }
 
   .hero-poster__lede {
