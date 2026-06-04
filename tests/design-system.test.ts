@@ -249,7 +249,17 @@ describe("WorldCup design system integration", () => {
     assert.match(heroSwiper, /className=\{`hero-swiper__slide\$\{index === active \? " is-active" : ""\}`\}/);
     assert.match(globalsCss, /@keyframes wc-poster-caption/);
     assert.match(globalsCss, /\.hero-swiper__slide\.is-active \.hero-poster__lede/);
-    assert.match(globalsCss, /--poster-lede-y:/);
+    assert.doesNotMatch(globalsCss, /--poster-lede-y:/);
+    assert.match(globalsCss, /\.hero-swiper__controls\s*{[\s\S]*?position:\s*absolute;/);
+    assert.match(globalsCss, /\.hero-swiper__controls\s*{[\s\S]*?bottom:\s*18px;/);
+    assert.match(globalsCss, /\.hero-swiper__slide:not\(:first-child\) \.hero-card__content\s*{[\s\S]*?padding-top:\s*clamp\(62px,\s*10svh,\s*92px\);/);
+    assert.match(globalsCss, /\.hero-swiper__slide:not\(:first-child\) \.hero-card__content\s*{[\s\S]*?padding-bottom:\s*clamp\(74px,\s*10svh,\s*96px\);/);
+    assert.match(globalsCss, /\.hero-list__row span\s*{[\s\S]*?min-width:\s*0;/);
+    assert.match(globalsCss, /\.hero-list__row strong\s*{[\s\S]*?max-width:\s*48%;/);
+    assert.match(globalsCss, /\.hero-list__row strong\s*{[\s\S]*?white-space:\s*normal;/);
+    assert.match(globalsCss, /@media \(max-width:\s*420px\)\s*{[\s\S]*?\.hero-swiper__slide:not\(:first-child\) \.hero-card__content\s*{[\s\S]*?padding-top:\s*86px;/);
+    assert.match(globalsCss, /@media \(max-width:\s*420px\)\s*{[\s\S]*?\.hero-swiper__slide:not\(:first-child\) \.hero-card__content\s*{[\s\S]*?padding-bottom:\s*74px;/);
+    assert.match(globalsCss, /@media \(max-width:\s*420px\)\s*{[\s\S]*?\.hero-swiper__slide:not\(:first-child\) \.hero-card\s*{[\s\S]*?max-height:\s*calc\(100svh - 154px\);/);
     assert.match(globalsCss, /\.hero-swiper\s*{[\s\S]*?width:\s*100vw;/);
     assert.match(globalsCss, /\.hero-swiper__slide:first-child \.hero-card\s*{[\s\S]*?width:\s*100vw;/);
     assert.match(globalsCss, /\.app-shell--landing \.topbar\s*{[\s\S]*?position:\s*fixed;/);

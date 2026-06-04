@@ -4244,6 +4244,14 @@ html {
   padding: clamp(16px, 4vw, 24px);
 }
 
+.hero-swiper__slide:not(:first-child) .hero-card__content {
+  grid-template-rows: minmax(18px, 0.2fr) minmax(120px, 0.9fr) auto;
+  gap: clamp(10px, 2.8vw, 16px);
+  padding: clamp(18px, 4vw, 24px);
+  padding-top: clamp(62px, 10svh, 92px);
+  padding-bottom: clamp(74px, 10svh, 96px);
+}
+
 .hero-card__top {
   display: flex;
   align-items: flex-start;
@@ -4332,6 +4340,7 @@ html {
 .hero-card__center {
   display: grid;
   place-items: center;
+  min-height: 0;
 }
 
 /* Portrait: the three mini-cards stack, with a full-width CTA beneath them. */
@@ -4340,6 +4349,7 @@ html {
   grid-template-columns: 1fr;
   gap: 10px;
   align-content: end;
+  min-width: 0;
 }
 
 .hero-feature {
@@ -4414,6 +4424,132 @@ html {
   .hero-card {
     border-radius: 16px;
   }
+
+  .hero-swiper__slide:not(:first-child) {
+    min-height: calc(100svh - 132px);
+    padding: 0 10px;
+  }
+
+  .hero-swiper__slide:not(:first-child) .hero-card {
+    width: min(390px, calc(100vw - 20px));
+    max-height: calc(100svh - 154px);
+  }
+
+  .hero-swiper__slide:not(:first-child) .hero-card__content {
+    grid-template-rows: minmax(10px, 0.12fr) minmax(96px, 0.72fr) auto;
+    gap: 8px;
+    padding: 14px;
+    padding-top: 86px;
+    padding-bottom: 74px;
+  }
+
+  .hero-swiper__slide:not(:first-child) .hero-card__cards {
+    gap: 8px;
+  }
+
+  .hero-poster__lede {
+    width: min(96%, 320px);
+  }
+
+  .hero-poster__lede::before {
+    inset: -10px -12px;
+    border-radius: 18px;
+  }
+
+  .hero-poster__lede strong {
+    font-size: clamp(28px, 9.4vw, 38px);
+    line-height: 1.04;
+  }
+
+  .hero-feature {
+    gap: 10px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .hero-feature__icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+  }
+
+  .hero-feature__body strong {
+    font-size: 17px;
+    line-height: 1.1;
+  }
+
+  .hero-feature__body small {
+    font-size: 12px;
+  }
+
+  .hero-list {
+    padding: 7px 13px;
+  }
+
+  .hero-list__row {
+    gap: 8px;
+    padding: 7px 0;
+  }
+
+  .hero-list__row span {
+    min-width: 0;
+    font-size: 12.5px;
+  }
+
+  .hero-list__row strong {
+    max-width: 46%;
+    font-size: 15px;
+    line-height: 1.12;
+    text-align: right;
+    white-space: normal;
+  }
+
+  .hero-list__row--stacked b {
+    font-size: 12.5px;
+  }
+
+  .hero-list__row--stacked small {
+    font-size: 10px;
+  }
+
+  .hero-list__row--total strong {
+    font-size: 19px;
+  }
+
+  .hero-formula {
+    font-size: 10.5px;
+    line-height: 1.25;
+  }
+
+  .hero-cta {
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 11px;
+  }
+
+  .hero-swiper__controls {
+    gap: 10px;
+    padding: 6px 9px;
+  }
+
+  .hero-swiper__arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero-swiper__dots {
+    gap: 7px;
+  }
+
+  .hero-swiper__dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .hero-swiper__dot.is-active {
+    width: 24px;
+  }
 }
 
 /* Gentle, on-brand entrance for the hero — disabled under reduced motion. */
@@ -4458,6 +4594,7 @@ html {
   width: 100vw;
   max-width: 100vw;
   margin: 0 calc(50% - 50vw) 32px;
+  padding-bottom: 12px;
 }
 
 .hero-swiper__track {
@@ -4484,7 +4621,7 @@ html {
   scroll-snap-align: center;
   display: grid;
   place-items: center;
-  min-height: min(780px, calc(100svh - 128px));
+  min-height: min(760px, calc(100svh - 148px));
   padding: 0 16px;
 }
 
@@ -4597,7 +4734,6 @@ html {
    an on-brand gradient that stays as the fallback if the image is missing. */
 .hero-card--howto {
   --hero-photo: url("/howto-bg.png");
-  --poster-lede-y: -44px;
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(120, 220, 188, 0.34), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(16, 107, 79, 0.5), transparent 60%),
@@ -4606,7 +4742,6 @@ html {
 
 .hero-card--prize {
   --hero-photo: url("/prize-bg.png");
-  --poster-lede-y: -84px;
   background:
     radial-gradient(120% 70% at 20% 16%, rgba(255, 214, 130, 0.34), transparent 56%),
     radial-gradient(120% 70% at 82% 82%, rgba(201, 148, 46, 0.46), transparent 60%),
@@ -4641,7 +4776,7 @@ html {
   width: min(92%, 360px);
   text-align: center;
   opacity: 0;
-  transform: translateY(var(--poster-lede-y, 0));
+  transform: translateY(0);
   will-change: opacity, transform, filter;
 }
 
@@ -4675,21 +4810,21 @@ html {
   0% {
     opacity: 0;
     filter: blur(5px);
-    transform: translateY(calc(var(--poster-lede-y, 0px) + 16px)) scale(0.985);
+    transform: translateY(16px) scale(0.985);
   }
 
   13%,
   58% {
     opacity: 1;
     filter: blur(0);
-    transform: translateY(var(--poster-lede-y, 0)) scale(1);
+    transform: translateY(0) scale(1);
   }
 
   82%,
   100% {
     opacity: 0;
     filter: blur(4px);
-    transform: translateY(calc(var(--poster-lede-y, 0px) - 10px)) scale(0.99);
+    transform: translateY(-10px) scale(0.99);
   }
 }
 
@@ -4707,7 +4842,6 @@ html {
    image-backed poster language as the Agent Deal card. */
 .hero-card--points {
   --hero-photo: url("/points-bg.png");
-  --poster-lede-y: -104px;
   background:
     radial-gradient(120% 70% at 16% 14%, rgba(120, 220, 188, 0.3), transparent 56%),
     radial-gradient(120% 70% at 86% 84%, rgba(16, 107, 79, 0.5), transparent 60%),
@@ -4716,7 +4850,6 @@ html {
 
 .hero-card--coef {
   --hero-photo: url("/coefficients-bg.png");
-  --poster-lede-y: -82px;
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(150, 170, 180, 0.26), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(58, 96, 88, 0.5), transparent 60%),
@@ -4749,6 +4882,7 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  min-width: 0;
   color: rgba(255, 255, 255, 0.85);
   font-size: 13.5px;
   font-weight: 600;
@@ -4759,10 +4893,13 @@ html {
 }
 
 .hero-list__row strong {
+  max-width: 48%;
   color: var(--gold);
   font-size: 16px;
   font-weight: 820;
-  white-space: nowrap;
+  line-height: 1.12;
+  text-align: right;
+  white-space: normal;
 }
 
 .hero-list__row--head strong {
@@ -4772,7 +4909,6 @@ html {
 /* Worked-example poster. */
 .hero-card--example {
   --hero-photo: url("/example-bg.png");
-  --poster-lede-y: -56px;
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(201, 148, 46, 0.22), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(16, 107, 79, 0.48), transparent 60%),
@@ -4782,7 +4918,6 @@ html {
 /* Invite poster — phone/share photo over an on-brand green-gold gradient. */
 .hero-card--invite {
   --hero-photo: url("/invite-bg.png");
-  --poster-lede-y: -88px;
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(255, 214, 130, 0.24), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(19, 138, 100, 0.5), transparent 60%),
@@ -4792,7 +4927,6 @@ html {
 /* Agent deal poster - ticket-code commission offer for promoted agents. */
 .hero-card--agent {
   --hero-photo: url("/agent-deal-bg.png");
-  --poster-lede-y: -38px;
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(201, 148, 46, 0.34), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(19, 138, 100, 0.52), transparent 60%),
@@ -4802,7 +4936,6 @@ html {
 /* Login / join poster. */
 .hero-card--login {
   --hero-photo: url("/login-bg.png");
-  --poster-lede-y: -94px;
   background:
     radial-gradient(120% 70% at 18% 16%, rgba(120, 220, 188, 0.3), transparent 56%),
     radial-gradient(120% 70% at 84% 82%, rgba(19, 138, 100, 0.55), transparent 60%),
