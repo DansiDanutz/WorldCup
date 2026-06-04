@@ -6,12 +6,16 @@ import {
   Check,
   CircleDollarSign,
   ArrowRight,
+  ClipboardCopy,
   GitBranch,
+  LinkIcon,
   Lock,
   LogOut,
+  MessageCircle,
   RefreshCw,
   Search,
   ShieldCheck,
+  Sparkles,
   Ticket,
   Trophy,
   UserRound,
@@ -235,7 +239,7 @@ export function Dashboard({
       : `${window.location.origin}/login?ref=${encodeURIComponent(myReferralCode)}`;
   const whatsappUrl = myReferralCode
     ? `https://wa.me/?text=${encodeURIComponent(
-        `Join my WorldCup leaderboard. Use my referral link: ${shareUrl}`,
+        `I invited you to WorldCup26.\n\nPick 3 teams, climb the leaderboard, and use my referral code ${myReferralCode} when you join:\n${shareUrl}`,
       )}`
     : "";
   const entryRestriction = responsiblePlay?.entryRestriction ?? null;
@@ -1354,15 +1358,32 @@ export function Dashboard({
                       <small>Set by admin</small>
                     </div>
                   </div>
-                  <div className="referral-code-card">
-                    <span>Your referral code</span>
-                    <strong>{myReferralCode}</strong>
+                  <div className="invite-preview-card" aria-label="Referral invite preview">
+                    <div className="invite-preview-card__top">
+                      <span className="invite-preview-card__icon">
+                        <Sparkles size={18} />
+                      </span>
+                      <div>
+                        <span>WorldCup26 invite</span>
+                        <strong>Pick 3 teams. Climb the leaderboard.</strong>
+                      </div>
+                    </div>
+                    <div className="referral-code-card">
+                      <span>Your code</span>
+                      <strong>{myReferralCode}</strong>
+                    </div>
+                    <div className="invite-link-card">
+                      <LinkIcon size={16} />
+                      <span>{shareUrl}</span>
+                    </div>
                   </div>
                   <div className="invite-actions">
                     <a className="button" href={whatsappUrl} rel="noreferrer" target="_blank">
-                      Send on WhatsApp
+                      <MessageCircle size={16} />
+                      Send invite
                     </a>
                     <button className="button secondary" onClick={copyInviteLink} type="button">
+                      <ClipboardCopy size={16} />
                       Copy link
                     </button>
                   </div>
