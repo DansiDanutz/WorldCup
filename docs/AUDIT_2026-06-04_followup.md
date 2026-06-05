@@ -8,6 +8,8 @@
 
 > This follow-up **supersedes [`AUDIT_2026-06-04.md`](./AUDIT_2026-06-04.md) for the money engine** and carries forward its still-open items. Headline: the new money math (80/20 split, referral tree) is **well-engineered and conserves money**, and the **RPC lockdown holds for all 14 new SECURITY DEFINER functions**. But three things moved the wrong way or stayed open: the **paid-action gate gap widened** (a new ungated ticket path — H-1), a **net/gross contradiction was introduced** around `prize_pool_amount` (NEW H-2), and the **real-money math has zero executing test coverage** (it is asserted only by grepping the SQL text — M-4). Compliance (KYC/AML/legal) remains the dominant launch blocker, unchanged.
 
+> **⚠️ Updated 2026-06-05 — see [§10 Re-audit addendum](#10-re-audit-addendum--2026-06-05-after-12-follow-on-commits-on-main).** Since this report, `main` advanced 12 commits. **M-1 was fixed** (no more phantom prize-pool seeding), but a flow fix **removed the launch-gate and self-exclusion from entry-locking (new High, R-1)**, which **invalidates the H-1 mitigation and the §8 "safe in pre-launch mode" conclusion below.** Read §10 alongside §4/§8.
+
 ---
 
 ## 1. Verification results (objective)
@@ -151,7 +153,7 @@ No test runs real Postgres (no `pg`/`pglite`/testcontainers anywhere). The 80/20
 
 ## 8. Real-money launch readiness (updated)
 
-**Safe in free/pre-launch mode (as today):** yes — paid actions remain gated off behind the operator-policy launch gate, and the money engine is sound and conserves funds.
+**Safe in free/pre-launch mode (as today):** ~~yes~~ — **superseded by [§10/R-1](#-r-1--entry-lock-no-longer-enforces-the-launch-gate-or-self-exclusion-new-high--regression): no longer true as of the 2026-06-05 `main` commits.** Entry-locking dropped its launch-gate and self-exclusion checks, so a ticket-holder can lock a real-money entry pre-launch and a self-excluded user can play. Restore those checks (R-1) before relying on a pre-launch posture. The money engine itself remains sound and conserves funds.
 
 **Before flipping on real money, in priority order:**
 1. **C-1 / H-3** — automated KYC/AML + sanctions screening and verified age at deposit-claim and withdrawal (the manual 18+ doc review is a start, not sufficient).
@@ -169,3 +171,41 @@ No test runs real Postgres (no `pg`/`pglite`/testcontainers anywhere). The 80/20
 ## 9. Methodology & limitations
 
 Full static read of the post-`de0617d` diff plus objective `typecheck`/`lint`/`test`/`build`/`npm audit` on a fresh `npm install`; three parallel breadth passes; every High/Medium re-verified by hand at `file:line`. **No live database** was available, so the RPC-lockdown, money-conservation, and replay conclusions are reasoned from the migrations and the passing (static) regression suite rather than a live PostgREST probe or an actual `supabase db reset` — re-run `money-rpc-permissions` against production after `supabase db push`, and perform a real `supabase db reset` to confirm M-2. The H-2 net/gross overpay is reasoned from source (settlement treats the column as net; the admin UI/docs treat it as gross) and is high-confidence; its realization requires an operator to use the manual prize-pool field, which the UI actively invites.
+
+---
+
+## 10. Re-audit addendum — 2026-06-05 (after 12 follow-on commits on `main`)
+
+After this report, `main` advanced **12 commits** (down to `7320561`, through `34c083a`) — three new SQL migrations plus changes to `entries/route.ts`, `referrals.ts`, and the admin accounting surface. They were merged into the audit branch (`0e896eb`) and re-audited. **Re-verification (merged tree, Node 22.22):** typecheck ✓ · lint ✓ · **345/345 tests** (76 suites) ✓ · `npm audit` **0 vulns** · build ✓ (44 pages). Tests grew **340 → 345**; dependencies unchanged.
+
+**Net delta:** the maintainer **fixed M-1's money side** and improved the contribution ledger — but a flow fix **removed the launch-gate and self-exclusion from entry-locking**, which **invalidates the H-1 "Mitigation (verified)" paragraph and the §8 "safe in pre-launch mode" conclusion**. That regression is now the top code-side item.
+
+### 🔴 R-1 — Entry-lock no longer enforces the launch-gate or self-exclusion *(new, High — regression)*
+`cc5231d` ("Allow assigned tickets to lock entries") deleted `getUserPaidActionGate(…,"entry")` and `9c4db47` ("Fix ticket entry lock flow") deleted `loadResponsiblePlayStatus`/`getResponsiblePlayRestriction` from `src/app/api/entries/route.ts`. The current handler enforces only **rate-limit (L28), Google auth (L73), geo (L79), consent (L99)** — no launch-gate, no responsible-play. The RPC it calls, `worldcup_create_entry` (`20260605023000_worldcup_late_entry_in_progress.sql:6-131`), checks ticket ownership (`NO_TICKET`), the per-team kickoff window, and tournament status ∈ {`setup`,`open`,`in_progress`} — it does **not** compensate.
+
+Consequences:
+1. **Self-exclusion defeated for the play action.** Responsible-play is still enforced on purchase/transfer/deposit/withdraw, but **not** at entry-lock. A self-excluded user who holds a ticket — or acquires one via the still-gate-less `tickets/claim` / `agent/tickets/transfer` / `agent-ticket-requests/accept` paths (H-1, re-confirmed `geo=launch=rp=0`) — can now **lock a real-money entry**.
+2. **Launch-gate bypassed on the core paid action.** `status='setup'`/`'open'` is accepted, so entries can be locked before the operator's launch sign-offs complete; combined with gate-less acquisition, the launch gate is bypassable end-to-end.
+
+This directly contradicts H-1's "a self-excluded user still cannot ultimately **lock** an entry" and §8's "paid actions remain gated off behind the operator-policy launch gate." Likely cause: the launch-gate denied pre-launch, blocking legitimate ticket-holders, so it was removed wholesale instead of scoped. **Remediation:** always re-enforce `getResponsiblePlayRestriction` at entry-lock (self-exclusion must block play unconditionally); re-add the launch-gate scoped so a validly-ticketed user isn't blocked **after** launch (or gate ticket *issuance* and close H-1's gate-less paths). Add an **executing** test asserting a self-excluded user is rejected at `entries` (see M-4 — this regression shipped green).
+
+### H-1 — escalates (its mitigation is gone)
+The four gate-less acquisition paths are unchanged. Previously their residual harm was bounded to "acquiring/holding a ticket while excluded" because entry-lock re-checked the stack. With R-1 that backstop is removed, so the residual harm is now **full real-money participation while self-excluded / pre-launch**. Treat **H-1 + R-1 as one blocker**; the shared `withPaidActionGates(...)` wrapper recommendation stands and is now more urgent.
+
+### H-2 — persists, and is reinforced
+`src/app/api/admin/prize-pool/route.ts` is **unchanged** (still `prize_pool_amount := grossAmount` + `prize_pool_fee_percent := 20`), so the net-vs-gross contradiction and the ~20% overpay risk stand. New migration `20260605030000_worldcup_admin_outgoing_bonus_pool_accounting.sql` **broadens** the automatic split to also credit the pool for **free commission/bonus tickets** — `accountedGrossAmount = paid_gross + ticket_price × commissionAwarded` (`:30-37`, applied at `:70-89`). So `prize_pool_amount` (a payout **liability**) is now credited 80% of the notional value of tickets that were **given away free**, further decoupling it from collected USDT. (The migration is otherwise an improvement: contributions are now reconcilable — `on conflict … do update` replacing `do nothing` — with a delta-based backfill, `:151-285`, floored at `greatest(0, …)`.) **Adds to H-2:** decide whether free commission tickets should fund the prize pool at issuance, before any resale cash exists.
+
+### 🟢 M-1 — money side **fixed** → downgraded to Low
+`20260605013000_worldcup_owner_admin_agent_inventory_correction.sql` reworks the owner bootstrap: quantity **1000 → 100** (default `p_quantity=100`; `referrals.ts:82` now passes `100`), targeting **1 personal + 99 paid + 9 commission**, and it assigns those codes by flipping `admin → assigned` **directly** (`:207-339`). It inserts **no priced `admin_to_agent` movement** — only a **zero-value `admin_request`** movement for any **returned** excess (`:341-373`) — so the 80/20 trigger no longer fires for the owner seed. **The phantom prize-pool injection is eliminated.** Residual (now Low, = L-1/L-2): the bootstrap still runs fire-and-forget on every owner sign-in, and the owner email is still hardcoded in committed SQL that runs on replay (`:14,456`).
+
+### M-2 / M-3 / M-4 — unchanged
+- **M-2 (replay):** `20260605013000:456` still ends with `select worldcup_bootstrap_owner_agent_inventory('semebitcoin@gmail.com',100,…)`; same **silent no-op on a fresh DB** (no owner profile), still no real `supabase db reset` in CI. The three new migrations carry unique, monotonic versions (the `migration-history` guard passes).
+- **M-3 (inviter lookup on non-unique `entry_id`):** `worldcup_settle_payouts` is untouched; persists (low-confidence — `create_entry` keeps one referral row per entry in practice via `on conflict (tournament_id, invited_user_id)`).
+- **M-4 (no executing money-math tests):** now **demonstrated** — the R-1 safety-control removal shipped with **345/345 green**, and `tests/responsible-play.test.ts` was edited to match the new behavior rather than catch it. The 80/20 split, the referral tree, and the new bonus-accounting all remain `.sql`-grep-only.
+
+### Updated launch-readiness (code side)
+1. **R-1 + H-1** — restore self-exclusion (unconditional) and the launch-gate at entry-lock, and gate the four ticket paths / centralize gating.
+2. **H-2** — resolve `prize_pool_amount` net/gross (retire or net-ify the manual setter; decide free-ticket pool crediting; drop vestigial `prize_pool_fee_percent`).
+3. **M-4 / M-2** — executing tests for the money math **and** the entry self-exclusion check; real `supabase db reset` in CI.
+4. **M-5 / L-items** — service-worker `/api` cache exclusion, generic error mapping, money-table FKs.
+   **M-1 drops off** (fixed). Compliance **C-1/C-2** remain the dominant pre-real-money blockers, unchanged.
