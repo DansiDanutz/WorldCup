@@ -4,6 +4,7 @@ import { requireAdmin } from "@/lib/admin-auth";
 import { resolveAdminUserIdentity } from "@/lib/admin-user";
 import { enforceRateLimit, jsonError } from "@/lib/http";
 import { createServiceSupabaseClient } from "@/lib/supabase";
+import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
 import {
   requireEnum,
   requireInteger,
@@ -105,7 +106,7 @@ export async function GET(request: Request) {
   return NextResponse.json({
     pool,
     accounting: {
-      ticketPriceAmount: tournament.data.ticket_price_amount,
+      ticketPriceAmount: normalizeWorldCupTicketPriceAmount(tournament.data.ticket_price_amount),
       prizePoolAmount: tournament.data.prize_pool_amount,
       feePoolAmount: tournament.data.fee_pool_amount ?? "0",
     },

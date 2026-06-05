@@ -8,11 +8,12 @@ import { createServiceSupabaseClient } from "@/lib/supabase";
 import {
   requireEnum,
   requireInteger,
-  requireNonNegativeAmount,
+  requirePositiveAmount,
   requireObject,
   requireString,
   ValidationError,
 } from "@/lib/validation";
+import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
 
 const TICKET_ASSIGN_ERROR_MESSAGES: Record<string, { status: number; message: string }> = {
   ADMIN_ACCOUNT_REQUIRED: { status: 403, message: "Admin account profile was not found." },
@@ -64,7 +65,7 @@ export async function POST(request: Request) {
     let ticketPriceAmount: number;
 
     try {
-      ticketPriceAmount = requireNonNegativeAmount(body.ticketPriceAmount, "Ticket price");
+      ticketPriceAmount = requirePositiveAmount(body.ticketPriceAmount, "Ticket price");
     } catch (error) {
       return jsonError(error instanceof ValidationError ? error.message : "Invalid ticket price.", 400);
     }
@@ -80,7 +81,9 @@ export async function POST(request: Request) {
       return jsonError(updateResult.error?.message ?? "Could not save ticket price.", 500);
     }
 
-    return NextResponse.json({ ticketPriceAmount: updateResult.data.ticket_price_amount });
+    return NextResponse.json({
+      ticketPriceAmount: normalizeWorldCupTicketPriceAmount(updateResult.data.ticket_price_amount),
+    });
   }
 
   let userId: string;

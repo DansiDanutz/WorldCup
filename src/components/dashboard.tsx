@@ -49,6 +49,10 @@ import {
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import { filterAndSortTeamsBySearch } from "@/lib/team-search";
 import { getTeamEligibility } from "@/lib/team-eligibility";
+import {
+  normalizeWorldCupTicketPriceAmount,
+  normalizeWorldCupTicketPriceNumber,
+} from "@/lib/worldcup-ticket-price";
 import type {
   DueMatch,
   LeaderboardRow,
@@ -252,7 +256,7 @@ export function Dashboard({
   const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase;
   const entryTicketPurchasePause = needsEntryTicketPurchase ? publicTicketPolicyPause : null;
   const walletBalance = myAccountStatus?.walletBalance ?? 0;
-  const ticketPriceAmount = myAccountStatus?.ticketPriceAmount ?? 0;
+  const ticketPriceAmount = normalizeWorldCupTicketPriceNumber(myAccountStatus?.ticketPriceAmount);
   const missingEntryTicket =
     signedInWithGoogle && accountStatusLoaded && selectedTeams.length === 3 && !hasEntryTicket;
   const entryLockBlocker = getEntryLockBlocker({
@@ -440,7 +444,7 @@ export function Dashboard({
           walletBalance: result.walletBalance ?? "0.00",
           ticketsAssigned: result.ticketsAssigned ?? 0,
           ticketsAvailable: result.ticketsAvailable ?? 0,
-          ticketPriceAmount: result.ticketPriceAmount ?? "0",
+          ticketPriceAmount: normalizeWorldCupTicketPriceAmount(result.ticketPriceAmount),
           entry: result.entry ?? null,
           paidActionGates: result.paidActionGates,
         });
@@ -725,7 +729,7 @@ export function Dashboard({
         walletBalance: current?.walletBalance ?? "0.00",
         ticketsAssigned: current?.ticketsAssigned ?? 0,
         ticketsAvailable: Math.max(0, (current?.ticketsAvailable ?? 1) - 1),
-        ticketPriceAmount: current?.ticketPriceAmount ?? "0",
+        ticketPriceAmount: normalizeWorldCupTicketPriceAmount(current?.ticketPriceAmount),
         usdtSenderWalletAddress: current?.usdtSenderWalletAddress ?? null,
         usdtSenderWalletNetwork: current?.usdtSenderWalletNetwork ?? null,
         usdtSenderWalletUpdatedAt: current?.usdtSenderWalletUpdatedAt ?? null,
@@ -1467,7 +1471,11 @@ export function Dashboard({
                     </div>
                     <div>
                       <span>Ticket price</span>
-                      <strong>{formatMoneyAmount(myAccountStatus?.ticketPriceAmount ?? 0)}</strong>
+                      <strong>
+                        {formatMoneyAmount(
+                          normalizeWorldCupTicketPriceAmount(myAccountStatus?.ticketPriceAmount),
+                        )}
+                      </strong>
                       <small>Set by admin</small>
                     </div>
                   </div>

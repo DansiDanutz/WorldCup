@@ -36,6 +36,10 @@ import type {
   WithdrawalRequestRow,
 } from "@/lib/types";
 import { getWithdrawalExplorerTxUrl } from "@/lib/withdrawals";
+import {
+  normalizeWorldCupTicketPriceAmount,
+  normalizeWorldCupTicketPriceNumber,
+} from "@/lib/worldcup-ticket-price";
 import type { Session } from "@supabase/supabase-js";
 
 type DepositAddress = {
@@ -174,7 +178,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       status.paidActionGates.ticket.allowed &&
       status.paidActionGates.withdrawal.allowed,
   );
-  const ticketPrice = Number(status?.ticketPriceAmount ?? 0);
+  const ticketPrice = normalizeWorldCupTicketPriceNumber(status?.ticketPriceAmount);
   const walletBalance = Number(status?.walletBalance ?? 0);
   const accountStatusLoaded = status !== null;
   const userHasEntryTicket = (status?.ticketsAvailable ?? 0) > 0;
@@ -187,7 +191,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       walletBalance: me.walletBalance ?? "0.00",
       ticketsAvailable: me.ticketsAvailable ?? 0,
       ticketsAssigned: me.ticketsAssigned ?? 0,
-      ticketPriceAmount: me.ticketPriceAmount ?? "0",
+      ticketPriceAmount: normalizeWorldCupTicketPriceAmount(me.ticketPriceAmount),
       usdtSenderWalletAddress: me.usdtSenderWalletAddress ?? null,
       usdtSenderWalletNetwork: me.usdtSenderWalletNetwork ?? null,
       usdtSenderWalletUpdatedAt: me.usdtSenderWalletUpdatedAt ?? null,
@@ -880,7 +884,11 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   </div>
                   <div className="wallet-balance-card wallet-balance-card--price">
                     <span>Ticket price</span>
-                    <strong>{formatMoneyAmount(status?.ticketPriceAmount ?? 0)}</strong>
+                    <strong>
+                      {formatMoneyAmount(
+                        normalizeWorldCupTicketPriceAmount(status?.ticketPriceAmount),
+                      )}
+                    </strong>
                     <small>per entry</small>
                   </div>
                 </div>

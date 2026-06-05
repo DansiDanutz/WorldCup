@@ -36,6 +36,7 @@ import { formatPrizeAmount } from "@/lib/prize-pool";
 import type { ReadinessActionTarget, ReadinessReport } from "@/lib/production-readiness";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import { getWithdrawalExplorerTxUrl } from "@/lib/withdrawals";
+import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
 import type {
   AdminAccountRow,
   AdminAgeVerificationRow,
@@ -329,7 +330,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [resultForm, setResultForm] = useState<ResultForm>(initialResultForm);
   const [prizePoolAmount, setPrizePoolAmount] = useState(tournament.prize_pool_amount);
   const [feePoolAmount, setFeePoolAmount] = useState(tournament.fee_pool_amount ?? "0");
-  const [ticketPriceAmount, setTicketPriceAmount] = useState(tournament.ticket_price_amount);
+  const [ticketPriceAmount, setTicketPriceAmount] = useState(
+    normalizeWorldCupTicketPriceAmount(tournament.ticket_price_amount),
+  );
   const [accounts, setAccounts] = useState<AdminAccountRow[]>([]);
   const [ticketUserId, setTicketUserId] = useState("");
   const [ticketQuantity, setTicketQuantity] = useState("1");
@@ -536,7 +539,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         });
         const result = await readResult(response);
         setAccounts((result.accounts as AdminAccountRow[]) ?? []);
-        setTicketPriceAmount(String(result.ticketPriceAmount ?? ticketPriceAmount));
+        setTicketPriceAmount(
+          normalizeWorldCupTicketPriceAmount(result.ticketPriceAmount ?? ticketPriceAmount),
+        );
         setMessage(`Accounts loaded. Rows: ${(result.accounts as AdminAccountRow[])?.length ?? 0}.`);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not load accounts.");
@@ -553,7 +558,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
           body: JSON.stringify({ action: "set_price", ticketPriceAmount: Number(ticketPriceAmount) }),
         });
         const result = await readResult(response);
-        setTicketPriceAmount(String(result.ticketPriceAmount ?? ticketPriceAmount));
+        setTicketPriceAmount(
+          normalizeWorldCupTicketPriceAmount(result.ticketPriceAmount ?? ticketPriceAmount),
+        );
         setMessage("Ticket price saved.");
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not save ticket price.");
@@ -1284,7 +1291,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         setAgentPool(result.pool);
       }
       if (result.accounting) {
-        setTicketPriceAmount(String(result.accounting.ticketPriceAmount ?? ticketPriceAmount));
+        setTicketPriceAmount(
+          normalizeWorldCupTicketPriceAmount(result.accounting.ticketPriceAmount ?? ticketPriceAmount),
+        );
         setPrizePoolAmount(String(result.accounting.prizePoolAmount ?? prizePoolAmount));
         setFeePoolAmount(String(result.accounting.feePoolAmount ?? feePoolAmount));
       }
@@ -2347,7 +2356,13 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             </div>
             <div className="admin-form">
               <div className="two-col">
-                <NumberField label="Ticket price" value={ticketPriceAmount} onChange={setTicketPriceAmount} />
+                <NumberField
+                  label="Ticket price USD"
+                  note="Default is 50. Admin can change this before assigning new tickets."
+                  step="0.01"
+                  value={ticketPriceAmount}
+                  onChange={setTicketPriceAmount}
+                />
                 <button className="button secondary" disabled={isPending} onClick={saveTicketPrice} type="button">
                   Save Ticket Price
                 </button>

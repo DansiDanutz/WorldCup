@@ -9,6 +9,7 @@ import {
   getUserDisplayName,
 } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
+import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
 
 export async function GET(request: Request) {
   const limited = await enforceRateLimit(request, "referrals", { limit: 30, windowMs: 60_000 });
@@ -127,7 +128,7 @@ export async function GET(request: Request) {
     walletBalance: calculateWalletBalance(user.id, transactions.data ?? []).toFixed(8),
     ticketsAssigned: tickets.data?.length ?? 0,
     ticketsAvailable: (tickets.data ?? []).filter((ticket) => !ticket.consumed_at).length,
-    ticketPriceAmount: tournament.data.ticket_price_amount,
+    ticketPriceAmount: normalizeWorldCupTicketPriceAmount(tournament.data.ticket_price_amount),
     entry: ownEntry.data
       ? {
           id: ownEntry.data.id,

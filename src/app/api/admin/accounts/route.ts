@@ -4,6 +4,7 @@ import { requireAdmin } from "@/lib/admin-auth";
 import { calculateWalletBalance } from "@/lib/economy";
 import { enforceRateLimit, jsonError } from "@/lib/http";
 import { createServiceSupabaseClient } from "@/lib/supabase";
+import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
 
 type WalletTransaction = {
   from_user_id: string | null;
@@ -70,7 +71,7 @@ export async function POST(request: Request) {
   const agentUserIds = new Set((agents.data ?? []).map((agent) => agent.user_id));
 
   return NextResponse.json({
-    ticketPriceAmount: tournament.data.ticket_price_amount,
+    ticketPriceAmount: normalizeWorldCupTicketPriceAmount(tournament.data.ticket_price_amount),
     accounts: (profiles.data ?? []).map((profile) => {
       const userTickets = (tickets.data ?? []).filter((ticket) => ticket.user_id === profile.user_id);
 
