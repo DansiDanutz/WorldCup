@@ -63,11 +63,18 @@ describe("user ticket transfers", () => {
 
   it("hides user deposit and ticket purchase prompts after a user ticket is available", () => {
     assert.match(walletScreen, /const accountStatusLoaded = status !== null/);
-    assert.match(walletScreen, /const userHasEntryTicket =/);
-    assert.match(walletScreen, /const userNeedsEntryTicket = accountStatusLoaded && !userHasEntryTicket/);
-    assert.match(walletScreen, /User Wallet ticket ready/);
-    assert.match(walletScreen, /User Wallet deposits are hidden once your entry ticket is available/);
-    assert.match(walletScreen, /User Wallet USDT deposit and ticket assignment\s+actions are hidden/);
+    assert.match(walletScreen, /const userTicketsAvailable = status\?\.ticketsAvailable \?\? 0/);
+    assert.match(walletScreen, /const userTicketsAssigned = status\?\.ticketsAssigned \?\? 0/);
+    assert.match(walletScreen, /const userEntryStatus = status\?\.entry\?\.status \?\? null/);
+    assert.match(walletScreen, /const userHasAvailableEntryTicket = userTicketsAvailable > 0/);
+    assert.match(walletScreen, /const userHasPersonalTicketRecord =/);
+    assert.match(walletScreen, /userTicketsAssigned > 0 \|\| userHasAvailableEntryTicket \|\| Boolean\(userEntryStatus\)/);
+    assert.match(walletScreen, /const userNeedsEntryTicket = accountStatusLoaded && !userHasPersonalTicketRecord/);
+    assert.match(walletScreen, /entry: me\.entry \?\? null/);
+    assert.match(walletScreen, /User Wallet ticket covered/);
+    assert.match(walletScreen, /User Wallet deposits are hidden once your entry ticket is assigned or used/);
+    assert.match(walletScreen, /aria-label="User wallet ticket covered"/);
+    assert.match(walletScreen, /User Wallet\s+USDT deposit actions are hidden/);
     assert.match(walletScreen, /userNeedsEntryTicket\s*\?\s*\(/);
     assert.match(walletScreen, /Deposit actions stay hidden until your wallet status is loaded/);
     assert.match(walletScreen, /Deposit USDT for agent tickets/);

@@ -186,8 +186,13 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const ticketPrice = normalizeWorldCupTicketPriceNumber(status?.ticketPriceAmount);
   const walletBalance = Number(status?.walletBalance ?? 0);
   const accountStatusLoaded = status !== null;
-  const userHasEntryTicket = (status?.ticketsAvailable ?? 0) > 0;
-  const userNeedsEntryTicket = accountStatusLoaded && !userHasEntryTicket;
+  const userTicketsAvailable = status?.ticketsAvailable ?? 0;
+  const userTicketsAssigned = status?.ticketsAssigned ?? 0;
+  const userEntryStatus = status?.entry?.status ?? null;
+  const userHasAvailableEntryTicket = userTicketsAvailable > 0;
+  const userHasPersonalTicketRecord =
+    userTicketsAssigned > 0 || userHasAvailableEntryTicket || Boolean(userEntryStatus);
+  const userNeedsEntryTicket = accountStatusLoaded && !userHasPersonalTicketRecord;
   const savedSenderWallets = useMemo(
     () => ({
       trc20:
@@ -219,6 +224,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       usdtSenderWalletTrc20UpdatedAt: me.usdtSenderWalletTrc20UpdatedAt ?? null,
       usdtSenderWalletErc20Address: me.usdtSenderWalletErc20Address ?? null,
       usdtSenderWalletErc20UpdatedAt: me.usdtSenderWalletErc20UpdatedAt ?? null,
+      entry: me.entry ?? null,
       paidActionGates: me.paidActionGates,
     });
 
@@ -879,13 +885,13 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               Open Admin
             </Link>
           </section>
-        ) : publicPaidActionsPaused && signedIn && walletView === "user" && userHasEntryTicket ? (
-          <section className="launch-notice" aria-label="User wallet ticket ready">
+        ) : publicPaidActionsPaused && signedIn && walletView === "user" && userHasPersonalTicketRecord ? (
+          <section className="launch-notice" aria-label="User wallet ticket covered">
             <div>
-              <strong>User Wallet ticket ready</strong>
+              <strong>User Wallet ticket covered</strong>
               <span>
-                You already have an entry ticket, so User Wallet USDT deposit and ticket assignment
-                actions are hidden. Use Agent Wallet only for agent inventory deposits.
+                Your personal ticket is assigned or already used for your entry, so User Wallet
+                USDT deposit actions are hidden. Use Agent Wallet only for agent inventory deposits.
               </span>
             </div>
             <Link className="button secondary" href={{ pathname: "/", hash: "entry" }}>
@@ -1013,15 +1019,17 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <strong>
                       {!accountStatusLoaded
                         ? "Loading your ticket balance..."
-                        : userHasEntryTicket
+                        : userHasAvailableEntryTicket
                         ? "Your personal entry ticket is ready. Lock your teams from Play."
+                        : userHasPersonalTicketRecord
+                        ? "Your personal entry ticket is already assigned or used for your entry."
                         : "Admin assigns entry tickets after verified cash or USDT payment."}
                     </strong>
                     <span>
                       {!accountStatusLoaded
                         ? "Deposit actions stay hidden until your wallet status is loaded."
-                        : userHasEntryTicket
-                        ? "User Wallet deposits are hidden once your entry ticket is available. Use Agent Wallet for agent inventory deposits."
+                        : userHasPersonalTicketRecord
+                        ? "User Wallet deposits are hidden once your entry ticket is assigned or used. Use Agent Wallet for agent inventory deposits."
                         : "Send USDT only from your frozen sender wallet, then Admin verifies it and assigns the exact ticket codes manually."}
                     </span>
                     {userNeedsEntryTicket && ticketPrice > 0 ? <small>Ticket price: {formatMoneyAmount(ticketPrice)}.</small> : null}
@@ -1030,10 +1038,18 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 <div className="wallet-action-list compact wallet-action-list--steps" aria-label="Wallet next actions">
                   <div>
                     <span>Ticket</span>
-                    <strong>{userHasEntryTicket ? "Ticket ready" : "Admin assigned"}</strong>
+                    <strong>
+                      {userHasAvailableEntryTicket
+                        ? "Ticket ready"
+                        : userHasPersonalTicketRecord
+                        ? "Ticket covered"
+                        : "Admin assigned"}
+                    </strong>
                     <small>
-                      {userHasEntryTicket
+                      {userHasAvailableEntryTicket
                         ? "Use your ticket to lock one entry."
+                        : userHasPersonalTicketRecord
+                        ? "Your personal ticket is already assigned or used."
                         : "Cash or USDT payment is confirmed manually."}
                     </small>
                   </div>
