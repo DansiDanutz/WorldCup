@@ -316,6 +316,56 @@ export function Dashboard({
     }
   }, [referralAccepted, referralCode]);
 
+  // Restore an in-progress pick (teams + display name) once, so leaving for the
+  // wallet to buy a ticket and coming back does not wipe the user's selection.
+  const picksRestoredRef = useRef(false);
+  useEffect(() => {
+    if (picksRestoredRef.current) {
+      return;
+    }
+    picksRestoredRef.current = true;
+
+    window.queueMicrotask(() => {
+      const validTeamIds = new Set(teams.map((team) => team.id));
+      try {
+        const storedTeams: unknown = JSON.parse(
+          window.localStorage.getItem("worldcup_selected_teams") ?? "[]",
+        );
+        if (Array.isArray(storedTeams)) {
+          const restored = storedTeams
+            .filter((id): id is string => typeof id === "string" && validTeamIds.has(id))
+            .slice(0, 3);
+          if (restored.length > 0) {
+            setSelectedTeams(restored);
+          }
+        }
+      } catch {
+        window.localStorage.removeItem("worldcup_selected_teams");
+      }
+
+      const storedName = window.localStorage.getItem("worldcup_display_name");
+      if (storedName) {
+        setDisplayName(storedName);
+      }
+    });
+  }, [teams]);
+
+  useEffect(() => {
+    if (selectedTeams.length > 0) {
+      window.localStorage.setItem("worldcup_selected_teams", JSON.stringify(selectedTeams));
+    } else {
+      window.localStorage.removeItem("worldcup_selected_teams");
+    }
+  }, [selectedTeams]);
+
+  useEffect(() => {
+    if (displayName.trim()) {
+      window.localStorage.setItem("worldcup_display_name", displayName);
+    } else {
+      window.localStorage.removeItem("worldcup_display_name");
+    }
+  }, [displayName]);
+
   useEffect(() => {
     if (!showAllTeams) {
       return;
@@ -739,6 +789,7 @@ export function Dashboard({
         },
       }));
       setSelectedTeams([]);
+      window.localStorage.removeItem("worldcup_selected_teams");
       window.localStorage.removeItem("worldcup_referral_code");
       window.localStorage.removeItem("worldcup_referral_accepted");
       window.setTimeout(() => document.getElementById("me")?.scrollIntoView({ behavior: "smooth" }), 80);

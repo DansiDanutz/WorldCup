@@ -8,6 +8,7 @@ import {
   Lock,
   Phone,
   QrCode,
+  RefreshCw,
   Send,
   ShieldCheck,
   Ticket,
@@ -318,6 +319,30 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       .then((response) => response.json())
       .then((me: Partial<MyAccountStatus>) => applyAccountStatus(me))
       .catch(() => undefined);
+  }
+
+  function checkForDeposit() {
+    const token = session?.access_token;
+    if (!token) {
+      return;
+    }
+
+    setError(null);
+    setMessage("Checking for new deposits…");
+    startTransition(async () => {
+      try {
+        const response = await fetch("/api/referrals/me", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const me = (await response.json()) as Partial<MyAccountStatus>;
+        applyAccountStatus(me);
+        setMessage(
+          "Balance updated. USDT deposits appear here automatically once confirmed on-chain (usually a few minutes).",
+        );
+      } catch {
+        setError("Could not refresh your balance just now. Try again in a moment.");
+      }
+    });
   }
 
   function refreshAgent(token: string) {
@@ -1105,6 +1130,21 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               <div className="field-note">
                 Only send USDT on the exact network shown. Sending any other asset or network may
                 result in permanent loss.
+              </div>
+              <div className="deposit-refresh">
+                <p className="field-note">
+                  Deposits credit automatically after on-chain confirmation (usually a few minutes).
+                  Already sent? Check for it now.
+                </p>
+                <button
+                  className="button secondary"
+                  disabled={isPending}
+                  onClick={checkForDeposit}
+                  type="button"
+                >
+                  <RefreshCw size={16} />
+                  {isPending ? "Checking…" : "Check for deposit"}
+                </button>
               </div>
               {sharedDepositAddresses ? (
                 <div className="deposit-claim-box">

@@ -91,9 +91,12 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const canContinueWithReferral = Boolean(referralCode && referralInviter && referralAccepted);
-  const canContinue = canContinueWithReferral || noReferral;
   const selectedSignupPath = signupPath ?? (referralCode ? "referral" : noReferral ? "direct" : null);
   const showReferralForm = selectedSignupPath === "referral";
+  // Google-first onboarding: only gate sign-in while the user is actively
+  // completing the referral path. With no inviter (direct or not-yet-chosen),
+  // "Continue with Google" is available immediately — no extra card tap required.
+  const canContinue = showReferralForm ? canContinueWithReferral : true;
   const showGoogleAuth = Boolean(session || canContinue);
   const depositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
   const ticketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
@@ -202,12 +205,12 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
           <div>
             <span className="ds-label">{session ? "Account ready" : "Register first"}</span>
             <h1 className="panel-title">
-              {session ? "Google account connected" : "Choose your signup path"}
+              {session ? "Google account connected" : "Create your account"}
             </h1>
             <p className="panel-subtitle">
               {session
                 ? "Continue to the game, or sign out if this is not the account you want."
-                : "Tap one card. Google appears after your referral choice is ready."}
+                : "Have an inviter code? Add it below. Otherwise, just continue with Google."}
             </p>
           </div>
           <LogIn size={18} color="var(--gold)" />
@@ -337,7 +340,8 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
 
               {!selectedSignupPath ? (
                 <div className="auth-next-step">
-                  Choose one card above to unlock Google registration.
+                  Have an inviter? Tap “I have an inviter” to add their code. No inviter needed —
+                  continue with Google below.
                 </div>
               ) : !canContinue && showReferralForm ? (
                 <div className="auth-next-step">
