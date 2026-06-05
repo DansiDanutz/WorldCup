@@ -6,6 +6,21 @@ export type DepositNetwork = "trc20" | "erc20";
 
 export const SUPPORTED_NETWORKS: readonly DepositNetwork[] = ["trc20", "erc20"] as const;
 
+export const NETWORK_SHORT_LABELS: Record<DepositNetwork, string> = {
+  trc20: "TRC20",
+  erc20: "ERC20",
+};
+
+export type SenderWalletProfile = {
+  usdt_sender_wallet_address?: string | null;
+  usdt_sender_wallet_network?: string | null;
+  usdt_sender_wallet_updated_at?: string | null;
+  usdt_sender_wallet_trc20_address?: string | null;
+  usdt_sender_wallet_trc20_updated_at?: string | null;
+  usdt_sender_wallet_erc20_address?: string | null;
+  usdt_sender_wallet_erc20_updated_at?: string | null;
+};
+
 export const NETWORK_LABELS: Record<DepositNetwork, string> = {
   trc20: "USDT · TRC-20 (Tron)",
   erc20: "USDT · ERC-20 (Ethereum)",
@@ -214,6 +229,83 @@ export function normalizeDepositAddress(networkValue: unknown, value: string): s
   }
 
   return /^0x[a-fA-F0-9]{40}$/.test(normalized) ? normalized : null;
+}
+
+export function getDepositNetworkShortLabel(network: DepositNetwork) {
+  return NETWORK_SHORT_LABELS[network];
+}
+
+export function getSavedSenderWalletForNetwork(
+  profile: SenderWalletProfile,
+  network: DepositNetwork,
+): string | null {
+  if (network === "trc20") {
+    return (
+      profile.usdt_sender_wallet_trc20_address ??
+      (profile.usdt_sender_wallet_network === "trc20"
+        ? profile.usdt_sender_wallet_address ?? null
+        : null)
+    );
+  }
+
+  return (
+    profile.usdt_sender_wallet_erc20_address ??
+    (profile.usdt_sender_wallet_network === "erc20"
+      ? profile.usdt_sender_wallet_address ?? null
+      : null)
+  );
+}
+
+export function getSavedSenderWalletUpdatedAtForNetwork(
+  profile: SenderWalletProfile,
+  network: DepositNetwork,
+): string | null {
+  if (network === "trc20") {
+    return (
+      profile.usdt_sender_wallet_trc20_updated_at ??
+      (profile.usdt_sender_wallet_network === "trc20"
+        ? profile.usdt_sender_wallet_updated_at ?? null
+        : null)
+    );
+  }
+
+  return (
+    profile.usdt_sender_wallet_erc20_updated_at ??
+    (profile.usdt_sender_wallet_network === "erc20"
+      ? profile.usdt_sender_wallet_updated_at ?? null
+      : null)
+  );
+}
+
+export function getSenderWalletLockMismatchMessage(network: DepositNetwork) {
+  return `Use your saved ${getDepositNetworkShortLabel(network)} sender wallet. Deposits from another wallet cannot be credited and may be lost.`;
+}
+
+export function buildFrozenSenderWalletUpdate(
+  profile: SenderWalletProfile,
+  network: DepositNetwork,
+  senderWalletAddress: string,
+  now: string,
+) {
+  const update: Record<string, string> = { updated_at: now };
+
+  if (network === "trc20" && !profile.usdt_sender_wallet_trc20_address) {
+    update.usdt_sender_wallet_trc20_address = senderWalletAddress;
+    update.usdt_sender_wallet_trc20_updated_at = now;
+  }
+
+  if (network === "erc20" && !profile.usdt_sender_wallet_erc20_address) {
+    update.usdt_sender_wallet_erc20_address = senderWalletAddress;
+    update.usdt_sender_wallet_erc20_updated_at = now;
+  }
+
+  if (!profile.usdt_sender_wallet_address || profile.usdt_sender_wallet_network === network) {
+    update.usdt_sender_wallet_address = senderWalletAddress;
+    update.usdt_sender_wallet_network = network;
+    update.usdt_sender_wallet_updated_at = now;
+  }
+
+  return update;
 }
 
 export function getDepositExplorerTxUrl(networkValue: unknown, value: string): string | null {

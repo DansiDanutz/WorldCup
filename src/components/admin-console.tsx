@@ -9,6 +9,7 @@ import {
   FileJson,
   GitBranch,
   Lock,
+  Phone,
   ShieldCheck,
   Trophy,
   Upload,
@@ -34,8 +35,10 @@ import {
 } from "@/lib/launch-signoffs";
 import { formatPrizeAmount } from "@/lib/prize-pool";
 import type { ReadinessActionTarget, ReadinessReport } from "@/lib/production-readiness";
+import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import { getWithdrawalExplorerTxUrl } from "@/lib/withdrawals";
+import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
 import type {
   AdminAccountRow,
   AdminAgeVerificationRow,
@@ -321,6 +324,51 @@ function getMovementAccounting(movement: TicketFinancialMovement) {
   };
 }
 
+function getFinancialStatementSummary(movements: TicketFinancialMovement[]) {
+  return movements.reduce(
+    (summary, movement) => {
+      const isMoneyMovement =
+        movement.movementType === "admin_to_agent" || movement.movementType === "admin_to_user";
+
+      if (!isMoneyMovement) {
+        return summary;
+      }
+
+      const accounting = getMovementAccounting(movement);
+      summary.movementCount += 1;
+      summary.paidTickets += movement.quantity;
+      summary.freeTickets += accounting.bonusQuantity;
+      summary.accountedTickets += accounting.accountedQuantity;
+      summary.paidGross += accounting.paidGross;
+      summary.bonusGross += accounting.bonusGross;
+      summary.accountedGross += accounting.accountedGross;
+      summary.prizeContribution += accounting.prizeContribution;
+      summary.feeContribution += accounting.feeContribution;
+
+      if (movement.paymentMethod === "cash") {
+        summary.cashGross += accounting.paidGross;
+      } else if (movement.paymentMethod === "usdt") {
+        summary.usdtGross += accounting.paidGross;
+      }
+
+      return summary;
+    },
+    {
+      accountedGross: 0,
+      accountedTickets: 0,
+      bonusGross: 0,
+      cashGross: 0,
+      feeContribution: 0,
+      freeTickets: 0,
+      movementCount: 0,
+      paidGross: 0,
+      paidTickets: 0,
+      prizeContribution: 0,
+      usdtGross: 0,
+    },
+  );
+}
+
 export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminConsoleProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const [session, setSession] = useState<Session | null>(null);
@@ -329,7 +377,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [resultForm, setResultForm] = useState<ResultForm>(initialResultForm);
   const [prizePoolAmount, setPrizePoolAmount] = useState(tournament.prize_pool_amount);
   const [feePoolAmount, setFeePoolAmount] = useState(tournament.fee_pool_amount ?? "0");
-  const [ticketPriceAmount, setTicketPriceAmount] = useState(tournament.ticket_price_amount);
+  const [ticketPriceAmount, setTicketPriceAmount] = useState(
+    normalizeWorldCupTicketPriceAmount(tournament.ticket_price_amount),
+  );
   const [accounts, setAccounts] = useState<AdminAccountRow[]>([]);
   const [ticketUserId, setTicketUserId] = useState("");
   const [ticketQuantity, setTicketQuantity] = useState("1");
@@ -381,6 +431,10 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  const financialStatementSummary = useMemo(
+    () => getFinancialStatementSummary(financialMovements),
+    [financialMovements],
+  );
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
@@ -452,23 +506,6 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
     });
   }
 
-  function savePrizePool() {
-    run(async () => {
-      try {
-        const response = await fetch("/api/admin/prize-pool", {
-          method: "POST",
-          headers: authHeaders(),
-          body: JSON.stringify({ prizePoolAmount: Number(prizePoolAmount) }),
-        });
-        const result = await readResult(response);
-        setPrizePoolAmount(String(result.prizePoolAmount ?? prizePoolAmount));
-        setMessage("Prize pool saved.");
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Could not save prize pool.");
-      }
-    });
-  }
-
   function advanceBracket() {
     run(async () => {
       try {
@@ -536,7 +573,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         });
         const result = await readResult(response);
         setAccounts((result.accounts as AdminAccountRow[]) ?? []);
-        setTicketPriceAmount(String(result.ticketPriceAmount ?? ticketPriceAmount));
+        setTicketPriceAmount(
+          normalizeWorldCupTicketPriceAmount(result.ticketPriceAmount ?? ticketPriceAmount),
+        );
         setMessage(`Accounts loaded. Rows: ${(result.accounts as AdminAccountRow[])?.length ?? 0}.`);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not load accounts.");
@@ -553,7 +592,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
           body: JSON.stringify({ action: "set_price", ticketPriceAmount: Number(ticketPriceAmount) }),
         });
         const result = await readResult(response);
-        setTicketPriceAmount(String(result.ticketPriceAmount ?? ticketPriceAmount));
+        setTicketPriceAmount(
+          normalizeWorldCupTicketPriceAmount(result.ticketPriceAmount ?? ticketPriceAmount),
+        );
         setMessage("Ticket price saved.");
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not save ticket price.");
@@ -1284,7 +1325,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         setAgentPool(result.pool);
       }
       if (result.accounting) {
-        setTicketPriceAmount(String(result.accounting.ticketPriceAmount ?? ticketPriceAmount));
+        setTicketPriceAmount(
+          normalizeWorldCupTicketPriceAmount(result.accounting.ticketPriceAmount ?? ticketPriceAmount),
+        );
         setPrizePoolAmount(String(result.accounting.prizePoolAmount ?? prizePoolAmount));
         setFeePoolAmount(String(result.accounting.feePoolAmount ?? feePoolAmount));
       }
@@ -1418,6 +1461,13 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 <small>Draw view</small>
               </span>
             </Link>
+            <a className="nav-item" href={SUPPORT_WHATSAPP_URL} rel="noreferrer" target="_blank">
+              <Phone size={16} />
+              <span className="nav-item__copy">
+                <strong>Support</strong>
+                <small>WhatsApp</small>
+              </span>
+            </a>
           </nav>
         </SmartMenu>
       </header>
@@ -2315,22 +2365,10 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               >
                 Assign Match Teams
               </button>
-              <div className="field">
-                <label htmlFor="prize-pool">Manual prize pool override (net)</label>
-                <input
-                  id="prize-pool"
-                  min="0"
-                  type="number"
-                  value={prizePoolAmount}
-                  onChange={(event) => setPrizePoolAmount(event.target.value)}
-                />
-              </div>
-              <button className="button secondary" disabled={isPending} onClick={savePrizePool} type="button">
-                Save Override
-              </button>
               <div className="field-note">
-                Normal ticket revenue updates this automatically. Use the override only to correct audited ledger
-                totals.
+                Prize pool is ledger-managed. Assign user or agent tickets from admin inventory; cash and USDT
+                movements add 80% to the prize pool and 20% to the fee pool automatically. No direct override is
+                available.
               </div>
             </div>
           </div>
@@ -2347,7 +2385,13 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             </div>
             <div className="admin-form">
               <div className="two-col">
-                <NumberField label="Ticket price" value={ticketPriceAmount} onChange={setTicketPriceAmount} />
+                <NumberField
+                  label="Ticket price USD"
+                  note="Default is 50. Admin can change this before assigning new tickets."
+                  step="0.01"
+                  value={ticketPriceAmount}
+                  onChange={setTicketPriceAmount}
+                />
                 <button className="button secondary" disabled={isPending} onClick={saveTicketPrice} type="button">
                   Save Ticket Price
                 </button>
@@ -2462,11 +2506,19 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                         <span>
                           Tickets: {account.ticketsAvailable}/{account.ticketsAssigned} available
                         </span>
-                        {account.usdtSenderWalletAddress ? (
-                          <code className="deposit-address">
-                            USDT sender: {account.usdtSenderWalletAddress} (
-                            {account.usdtSenderWalletNetwork?.toUpperCase() ?? "NETWORK UNKNOWN"})
-                          </code>
+                        {account.usdtSenderWalletTrc20Address || account.usdtSenderWalletErc20Address ? (
+                          <div className="account-wallet-locks">
+                            {account.usdtSenderWalletTrc20Address ? (
+                              <code className="deposit-address">
+                                TRC20 sender: {account.usdtSenderWalletTrc20Address}
+                              </code>
+                            ) : null}
+                            {account.usdtSenderWalletErc20Address ? (
+                              <code className="deposit-address">
+                                ERC20 sender: {account.usdtSenderWalletErc20Address}
+                              </code>
+                            ) : null}
+                          </div>
                         ) : (
                           <span>No USDT sender wallet saved yet</span>
                         )}
@@ -3129,6 +3181,36 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
 
               <div className="admin-referral-list" aria-label="Financial statement">
                 <h3 className="section-heading">Financial statement</h3>
+                <div className="financial-statement-summary" aria-label="Financial statement totals">
+                  <div>
+                    <span>Cash received</span>
+                    <strong>{formatLedgerAmount(financialStatementSummary.cashGross)} USDT</strong>
+                  </div>
+                  <div>
+                    <span>USDT received</span>
+                    <strong>{formatLedgerAmount(financialStatementSummary.usdtGross)} USDT</strong>
+                  </div>
+                  <div>
+                    <span>Paid tickets</span>
+                    <strong>{financialStatementSummary.paidTickets.toLocaleString()}</strong>
+                  </div>
+                  <div>
+                    <span>Free tickets</span>
+                    <strong>{financialStatementSummary.freeTickets.toLocaleString()}</strong>
+                  </div>
+                  <div>
+                    <span>Prize contribution</span>
+                    <strong>{formatLedgerAmount(financialStatementSummary.prizeContribution)} USDT</strong>
+                  </div>
+                  <div>
+                    <span>Fee contribution</span>
+                    <strong>{formatLedgerAmount(financialStatementSummary.feeContribution)} USDT</strong>
+                  </div>
+                </div>
+                <div className="field-note">
+                  Money enters the statement only when Admin assigns tickets to users or agents. Agent-to-user
+                  transfers do not change prize pool or fee pool because those tickets were already recorded.
+                </div>
                 {financialMovements.length > 0 ? (
                   financialMovements.map((movement) => {
                     const accounting = getMovementAccounting(movement);

@@ -335,7 +335,7 @@ svg {
   justify-content: space-between;
   flex-wrap: nowrap;
   gap: 14px;
-  width: min(1500px, calc(100% - 24px));
+  width: min(1760px, calc(100% - 24px));
   max-width: calc(100% - 24px);
   min-width: 0;
   min-height: 78px;
@@ -395,33 +395,32 @@ svg {
 }
 
 .landing-brand-lockup {
+  flex: 0 0 auto;
   gap: 10px;
+  max-width: 100%;
 }
 
 .landing-brand-copy {
   display: grid;
+  flex: 0 0 auto;
   min-width: 0;
   gap: 2px;
   line-height: 1.02;
 }
 
 .landing-brand-copy strong {
-  overflow: hidden;
   color: #ffffff;
-  font-size: clamp(17px, 3.6vw, 22px);
+  font-size: clamp(20px, 1.65vw, 24px);
   font-weight: 880;
   letter-spacing: 0;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .landing-brand-copy small {
-  overflow: hidden;
   color: rgba(236, 244, 238, 0.74);
   font-size: 11px;
   font-weight: 720;
   letter-spacing: 0.02em;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -445,6 +444,7 @@ svg {
 .prize-pool {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
   gap: 10px;
   max-width: 100%;
   min-width: 0;
@@ -476,6 +476,10 @@ svg {
   text-transform: uppercase;
 }
 
+.prize-pool span {
+  white-space: nowrap;
+}
+
 .prize-pool strong {
   color: #ffffff;
   font-size: 16px;
@@ -491,8 +495,11 @@ svg {
 .smart-menu {
   display: flex;
   align-items: stretch;
+  justify-content: flex-end;
+  flex: 1 1 auto;
   gap: 6px;
   max-width: 100%;
+  min-width: 0;
 }
 
 .smart-menu__toggle {
@@ -567,7 +574,9 @@ svg {
 }
 
 .smart-menu__panel {
+  flex: 1 1 auto;
   max-width: 100%;
+  min-width: 0;
 }
 
 .smart-menu__panel[hidden] {
@@ -577,7 +586,9 @@ svg {
 .nav {
   display: flex;
   align-items: stretch;
+  justify-content: flex-end;
   gap: 6px;
+  width: 100%;
   max-width: 100%;
   min-width: 0;
   padding: 4px;
@@ -607,7 +618,7 @@ svg {
   background: rgba(255, 255, 255, 0.07);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   cursor: pointer;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
 .nav a:hover,
@@ -651,6 +662,7 @@ svg {
   color: inherit;
   font-size: 13px;
   line-height: 1.05;
+  white-space: nowrap;
 }
 
 .nav-item__copy small {
@@ -660,6 +672,7 @@ svg {
   letter-spacing: 0.04em;
   line-height: 1.1;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .smart-menu.is-closed .smart-menu__chevron {
@@ -734,7 +747,99 @@ svg {
 .app-shell--landing #rules,
 .app-shell--landing #invite,
 .app-shell--landing #me {
-  scroll-margin-top: 118px;
+  scroll-margin-top: 150px;
+}
+
+@media (min-width: 1181px) {
+  .app-shell--landing .topbar {
+    gap: 10px;
+    min-height: 84px;
+    padding: 10px 12px;
+  }
+
+  .app-shell--landing .smart-menu__toggle {
+    display: none;
+  }
+
+  .app-shell--landing .smart-menu__panel[hidden] {
+    display: block;
+  }
+
+  .app-shell--landing .nav {
+    overflow: hidden;
+  }
+
+  .app-shell--landing .nav a,
+  .app-shell--landing .nav button,
+  .app-shell--landing .nav-more summary {
+    flex: 0 1 auto;
+    min-width: 112px;
+    max-width: 156px;
+    padding: 8px 10px;
+  }
+
+  .app-shell--landing .nav-item--primary {
+    min-width: 136px;
+  }
+
+  .app-shell--landing .nav-more summary {
+    min-width: 118px;
+  }
+
+  .app-shell--landing .nav-item__copy {
+    overflow: hidden;
+  }
+
+  .app-shell--landing .nav-item__copy strong,
+  .app-shell--landing .nav-item__copy small {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1440px) {
+  .app-shell--landing .topbar {
+    gap: 8px;
+  }
+
+  .app-shell--landing .landing-brand-copy strong {
+    font-size: 19px;
+  }
+
+  .app-shell--landing .landing-brand-year {
+    padding-inline: 8px;
+  }
+
+  .app-shell--landing .prize-pool {
+    gap: 8px;
+    padding-inline: 10px;
+  }
+
+  .app-shell--landing .prize-pool small {
+    display: none;
+  }
+
+  .app-shell--landing .nav a,
+  .app-shell--landing .nav button,
+  .app-shell--landing .nav-more summary {
+    min-width: 98px;
+    max-width: 128px;
+    gap: 6px;
+    padding-inline: 8px;
+  }
+
+  .app-shell--landing .nav-item--primary {
+    min-width: 112px;
+  }
+
+  .app-shell--landing .nav-item__copy strong {
+    font-size: 12px;
+  }
+
+  .app-shell--landing .nav-item__copy small {
+    font-size: 8.5px;
+  }
 }
 
 .auth-page {
@@ -1148,6 +1253,35 @@ svg {
 
 .auth-google-button {
   justify-content: center;
+}
+
+.auth-support-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 217, 128, 0.34);
+  border-radius: 8px;
+  color: #ffe29a;
+  background: rgba(4, 18, 15, 0.38);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.auth-support-link svg {
+  flex: 0 0 auto;
+}
+
+.auth-support-link:hover,
+.auth-support-link:focus-visible {
+  color: #08241a;
+  background: linear-gradient(180deg, #ffe29a, #e6b653);
 }
 
 .auth-worldcup-card {
@@ -3242,6 +3376,35 @@ svg {
   text-overflow: ellipsis;
 }
 
+.financial-statement-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.financial-statement-summary div {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid rgba(16, 107, 79, 0.22);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(16, 107, 79, 0.08), rgba(255, 226, 154, 0.16));
+}
+
+.financial-statement-summary span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.financial-statement-summary strong {
+  color: var(--green);
+  font-size: 20px;
+  line-height: 1.1;
+}
+
 .account-role-badge {
   display: inline-flex;
   align-items: center;
@@ -3882,6 +4045,11 @@ svg {
     white-space: normal;
   }
 
+  .nav-item__copy strong,
+  .nav-item__copy small {
+    white-space: normal;
+  }
+
   .nav-more {
     grid-column: 1 / -1;
   }
@@ -3928,6 +4096,36 @@ svg {
 
   .page {
     padding: 22px 18px 40px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1180px) {
+  .app-shell--landing .topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: stretch;
+  }
+
+  .app-shell--landing .brand {
+    width: auto;
+    min-width: 0;
+  }
+
+  .app-shell--landing .prize-pool {
+    display: inline-flex;
+    width: auto;
+    min-width: 190px;
+    margin-left: 0;
+  }
+
+  .app-shell--landing .smart-menu {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .app-shell--landing .smart-menu__toggle {
+    align-self: stretch;
+    width: 100%;
   }
 }
 
@@ -4173,6 +4371,7 @@ svg {
   .auth-steps,
   .auth-choice-grid,
   .deposit-flow-steps,
+  .sender-wallet-card-grid,
   .wallet-action-list.compact,
   .account-status-grid,
   .auth-page,
@@ -4928,6 +5127,11 @@ html {
   text-underline-offset: 3px;
 }
 
+.account-wallet-locks {
+  display: grid;
+  gap: 4px;
+}
+
 .panel-header.compact {
   margin-bottom: 10px;
 }
@@ -4944,6 +5148,77 @@ html {
   border: 1px solid var(--border);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.52);
+}
+
+.sender-wallet-lock-box {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 14px;
+  padding: 14px;
+  border: 1px solid rgba(245, 198, 92, 0.34);
+  border-radius: 8px;
+  color: #ffffff;
+  background:
+    linear-gradient(140deg, rgba(10, 48, 35, 0.92), rgba(4, 28, 22, 0.94)),
+    radial-gradient(circle at 18% 0%, rgba(245, 198, 92, 0.18), transparent 34%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.sender-wallet-lock-box .panel-subtitle {
+  color: rgba(241, 247, 241, 0.74);
+}
+
+.sender-wallet-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.sender-wallet-card {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  color: #ffffff;
+  background: rgba(5, 25, 20, 0.78);
+  text-align: left;
+  cursor: pointer;
+}
+
+.sender-wallet-card.active {
+  border-color: rgba(245, 198, 92, 0.72);
+  box-shadow: 0 0 0 2px rgba(245, 198, 92, 0.14);
+}
+
+.sender-wallet-card.locked {
+  background: linear-gradient(135deg, rgba(9, 91, 63, 0.9), rgba(30, 61, 47, 0.88));
+}
+
+.sender-wallet-card.empty {
+  background: linear-gradient(135deg, rgba(96, 45, 20, 0.78), rgba(32, 31, 23, 0.9));
+}
+
+.sender-wallet-card span {
+  color: rgba(241, 247, 241, 0.68);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sender-wallet-card strong {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.sender-wallet-card code,
+.sender-wallet-card small {
+  color: rgba(255, 230, 166, 0.9);
+  font-size: 12px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 .deposit-flow-steps {
@@ -5127,6 +5402,10 @@ html {
   .admin-referral-row > div:last-child {
     justify-items: start;
     width: 100%;
+  }
+
+  .financial-statement-summary {
+    grid-template-columns: 1fr;
   }
 
   .deposit-review {

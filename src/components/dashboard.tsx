@@ -49,6 +49,11 @@ import {
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import { filterAndSortTeamsBySearch } from "@/lib/team-search";
 import { getTeamEligibility } from "@/lib/team-eligibility";
+import {
+  normalizeWorldCupTicketPriceAmount,
+  normalizeWorldCupTicketPriceNumber,
+} from "@/lib/worldcup-ticket-price";
+import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import type {
   DueMatch,
   LeaderboardRow,
@@ -250,9 +255,8 @@ export function Dashboard({
   const hasEntryTicket = ticketsAvailable > 0;
   const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket;
   const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase;
-  const entryTicketPurchasePause = needsEntryTicketPurchase ? publicTicketPolicyPause : null;
   const walletBalance = myAccountStatus?.walletBalance ?? 0;
-  const ticketPriceAmount = myAccountStatus?.ticketPriceAmount ?? 0;
+  const ticketPriceAmount = normalizeWorldCupTicketPriceNumber(myAccountStatus?.ticketPriceAmount);
   const missingEntryTicket =
     signedInWithGoogle && accountStatusLoaded && selectedTeams.length === 3 && !hasEntryTicket;
   const entryLockBlocker = getEntryLockBlocker({
@@ -479,6 +483,13 @@ export function Dashboard({
           ticketsAvailable?: number;
           ticketPriceAmount?: string;
           entry?: MyAccountStatus["entry"];
+          usdtSenderWalletAddress?: string | null;
+          usdtSenderWalletNetwork?: string | null;
+          usdtSenderWalletUpdatedAt?: string | null;
+          usdtSenderWalletTrc20Address?: string | null;
+          usdtSenderWalletTrc20UpdatedAt?: string | null;
+          usdtSenderWalletErc20Address?: string | null;
+          usdtSenderWalletErc20UpdatedAt?: string | null;
           paidActionGates?: MyAccountStatus["paidActionGates"];
         };
 
@@ -496,8 +507,15 @@ export function Dashboard({
           walletBalance: result.walletBalance ?? "0.00",
           ticketsAssigned: result.ticketsAssigned ?? 0,
           ticketsAvailable: result.ticketsAvailable ?? 0,
-          ticketPriceAmount: result.ticketPriceAmount ?? "0",
+          ticketPriceAmount: normalizeWorldCupTicketPriceAmount(result.ticketPriceAmount),
           entry: result.entry ?? null,
+          usdtSenderWalletAddress: result.usdtSenderWalletAddress ?? null,
+          usdtSenderWalletNetwork: result.usdtSenderWalletNetwork ?? null,
+          usdtSenderWalletUpdatedAt: result.usdtSenderWalletUpdatedAt ?? null,
+          usdtSenderWalletTrc20Address: result.usdtSenderWalletTrc20Address ?? null,
+          usdtSenderWalletTrc20UpdatedAt: result.usdtSenderWalletTrc20UpdatedAt ?? null,
+          usdtSenderWalletErc20Address: result.usdtSenderWalletErc20Address ?? null,
+          usdtSenderWalletErc20UpdatedAt: result.usdtSenderWalletErc20UpdatedAt ?? null,
           paidActionGates: result.paidActionGates,
         });
       } catch {
@@ -572,7 +590,7 @@ export function Dashboard({
       }
 
       setConsented(true);
-      setEntryMessage("Thanks — you are verified. You can lock your entry now.");
+      setEntryMessage("Thanks. You are verified and can lock your entry now.");
     });
   }
 
@@ -781,10 +799,14 @@ export function Dashboard({
         walletBalance: current?.walletBalance ?? "0.00",
         ticketsAssigned: current?.ticketsAssigned ?? 0,
         ticketsAvailable: Math.max(0, (current?.ticketsAvailable ?? 1) - 1),
-        ticketPriceAmount: current?.ticketPriceAmount ?? "0",
+        ticketPriceAmount: normalizeWorldCupTicketPriceAmount(current?.ticketPriceAmount),
         usdtSenderWalletAddress: current?.usdtSenderWalletAddress ?? null,
         usdtSenderWalletNetwork: current?.usdtSenderWalletNetwork ?? null,
         usdtSenderWalletUpdatedAt: current?.usdtSenderWalletUpdatedAt ?? null,
+        usdtSenderWalletTrc20Address: current?.usdtSenderWalletTrc20Address ?? null,
+        usdtSenderWalletTrc20UpdatedAt: current?.usdtSenderWalletTrc20UpdatedAt ?? null,
+        usdtSenderWalletErc20Address: current?.usdtSenderWalletErc20Address ?? null,
+        usdtSenderWalletErc20UpdatedAt: current?.usdtSenderWalletErc20UpdatedAt ?? null,
         paidActionGates: current?.paidActionGates,
         entry: {
           id: result.entryId ?? "locked-entry",
@@ -904,6 +926,10 @@ export function Dashboard({
                   <CalendarClock size={16} />
                   Matches
                 </a>
+                <a href={SUPPORT_WHATSAPP_URL} rel="noreferrer" target="_blank">
+                  <MessageCircle size={16} />
+                  WhatsApp support
+                </a>
                 {showAdminNav ? (
                   <Link href={{ pathname: "/admin" }}>
                     <ShieldCheck size={16} />
@@ -918,7 +944,7 @@ export function Dashboard({
                 ) : null}
               </div>
             </details>
-            {signedInWithGoogle ? (
+            {signedInWithGoogle && showPickWorkflow ? (
               <a className="nav-item nav-item--identity" href="#me">
                 <UserRound size={16} />
                 <span className="nav-item__copy">
@@ -926,7 +952,7 @@ export function Dashboard({
                   <small>Your entry</small>
                 </span>
               </a>
-            ) : (
+            ) : !signedInWithGoogle ? (
               <Link className="nav-item nav-item--identity" href={{ pathname: "/login" }}>
                 <Lock size={16} />
                 <span className="nav-item__copy">
@@ -934,7 +960,7 @@ export function Dashboard({
                   <small>Start here</small>
                 </span>
               </Link>
-            )}
+            ) : null}
           </nav>
         </SmartMenu>
       </header>
@@ -954,8 +980,8 @@ export function Dashboard({
             <div>
               <strong>Admin launch evidence mode</strong>
               <span>
-                Public paid actions are still paused. Your admin account can lock entries,
-                buy tickets, and use Wallet to collect real USDT launch evidence.
+                Admin can lock entries, collect USDT evidence, and assign paid ticket codes
+                manually from the Admin panel.
               </span>
             </div>
             <Link className="button secondary" href={{ pathname: "/wallet" }}>
@@ -1393,7 +1419,7 @@ export function Dashboard({
                       <span>
                         {hasEntryTicket
                           ? `${ticketsAvailable} ticket${ticketsAvailable === 1 ? "" : "s"} available for locking entries.`
-                          : "Pay the buy-in with USDT, or use Agent Call after paying an agent directly."}
+                          : "Admin assigns tickets after verified cash or USDT payment, or use Agent Call after paying an agent directly."}
                       </span>
                     </div>
                     <span className="ticket-status-pill">
@@ -1419,15 +1445,12 @@ export function Dashboard({
                           <strong>{formatLedgerAmount(walletBalance)} USDT</strong>
                         </div>
                       </div>
-                      <div className="ticket-requirement-actions">
-                        <Link className="button" href={{ pathname: "/wallet", hash: "tickets" }}>
-                          <Wallet size={16} />
-                          Buy with USDT
-                        </Link>
+                      <div className="ticket-ready-note">
+                        <Wallet size={16} />
+                        <span>
+                          USDT is manual: save your sender wallet, send payment from that wallet, then Admin assigns the ticket.
+                        </span>
                       </div>
-                      {entryTicketPurchasePause ? (
-                        <div className="message error">{entryTicketPurchasePause}</div>
-                      ) : null}
                     <div className="agent-call-box">
                       <div>
                         <strong>Agent Call</strong>
@@ -1475,8 +1498,16 @@ export function Dashboard({
                   )}
                 </div>
               </div>
-              {signedInWithGoogle && consented === false ? (
+              {signedInWithGoogle && consented !== true ? (
                 <div className="consent-gate" aria-label="Eligibility confirmation">
+                  {consented === null ? (
+                    <div className="ticket-ready-note">
+                      <RefreshCw size={16} />
+                      <span>
+                        Confirm once here if your age and Terms status is still loading.
+                      </span>
+                    </div>
+                  ) : null}
                   <label className="check-row">
                     <input
                       checked={ageConfirmed}
@@ -1509,7 +1540,7 @@ export function Dashboard({
                     onClick={submitConsent}
                     type="button"
                   >
-                    Confirm &amp; continue
+                    Confirm &amp; unlock entry
                   </button>
                 </div>
               ) : null}
@@ -1557,7 +1588,11 @@ export function Dashboard({
                     </div>
                     <div>
                       <span>Ticket price</span>
-                      <strong>{formatMoneyAmount(myAccountStatus?.ticketPriceAmount ?? 0)}</strong>
+                      <strong>
+                        {formatMoneyAmount(
+                          normalizeWorldCupTicketPriceAmount(myAccountStatus?.ticketPriceAmount),
+                        )}
+                      </strong>
                       <small>Set by admin</small>
                     </div>
                   </div>
@@ -1846,7 +1881,9 @@ function getTeamColorStyle(teamId: string) {
 }
 
 function getGatePauseMessage(gate: PaidActionGate | undefined) {
-  return gate && !gate.allowed ? "Paid actions open after launch approvals are complete." : null;
+  return gate && !gate.allowed
+    ? "USDT deposits are admin-reviewed and ticket assignments are manual. You can still prepare your locked sender wallet."
+    : null;
 }
 
 function getEntryLockBlocker({
@@ -1887,7 +1924,7 @@ function getEntryLockBlocker({
   }
 
   if (consented !== true) {
-    return "Checking your age and Terms confirmation. If this does not update, refresh and try again.";
+    return "Confirm your age and accept the Terms below before locking.";
   }
 
   if (missingEntryTicket) {

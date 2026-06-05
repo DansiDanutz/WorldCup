@@ -8,6 +8,7 @@ import type {
   WorldCupStage,
   WorldCupTeam,
 } from "@/lib/types";
+import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
 
 export async function getDashboardData() {
   const supabase = createServerReadSupabaseClient();
@@ -63,8 +64,13 @@ export async function getDashboardData() {
     }
   }
 
+  const tournament = tournamentResult.data as WorldCupTournament;
+
   return {
-    tournament: tournamentResult.data as WorldCupTournament,
+    tournament: {
+      ...tournament,
+      ticket_price_amount: normalizeWorldCupTicketPriceAmount(tournament.ticket_price_amount),
+    },
     teams: (teamsResult.data ?? []) as WorldCupTeam[],
     stages: (stagesResult.data ?? []) as WorldCupStage[],
     matches: (matchesResult.data ?? []) as WorldCupMatch[],

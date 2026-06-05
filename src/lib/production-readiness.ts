@@ -57,7 +57,7 @@ const REQUIRED_TABLES: Array<{ table: string; column: string; label: string }> =
   { table: "worldcup_referral_profiles", column: "user_id", label: "Referral profiles table" },
   { table: "worldcup_wallet_transactions", column: "id", label: "Wallet ledger table" },
   { table: "worldcup_deposit_claims", column: "id", label: "Deposit claims table" },
-  { table: "worldcup_responsible_play_settings", column: "user_id", label: "Responsible play table" },
+  { table: "worldcup_responsible_play_settings", column: "user_id", label: "Account limits table" },
   { table: "worldcup_withdrawal_requests", column: "id", label: "Withdrawal requests table" },
   { table: "worldcup_operator_policy", column: "singleton_id", label: "Operator policy table" },
   { table: "worldcup_launch_signoffs", column: "key", label: "Launch sign-offs table" },

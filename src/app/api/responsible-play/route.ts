@@ -97,9 +97,9 @@ export async function POST(request: Request) {
     }
 
     if (body.selfExclusion !== undefined && body.selfExclusion !== null && body.selfExclusion !== "") {
-      const option = requireEnum(body.selfExclusion, "Self-exclusion duration", SELF_EXCLUSION_OPTIONS);
+      const option = requireEnum(body.selfExclusion, "Account pause duration", SELF_EXCLUSION_OPTIONS);
       requestedSelfExclusionUntil = getSelfExclusionUntil(option);
-      reason = optionalString(body.reason, "Self-exclusion note", 300);
+      reason = optionalString(body.reason, "Account pause note", 300);
     }
   } catch (error) {
     if (error instanceof ValidationError) {
@@ -110,7 +110,7 @@ export async function POST(request: Request) {
   }
 
   if (maxEntries === undefined && !requestedSelfExclusionUntil) {
-    return jsonError("Choose an entry limit or a self-exclusion period.", 400);
+    return jsonError("Choose an entry limit or an account pause period.", 400);
   }
 
   const existing = await auth.supabase
@@ -120,7 +120,7 @@ export async function POST(request: Request) {
     .maybeSingle();
 
   if (existing.error) {
-    return jsonError("Could not load responsible play settings.", 500);
+    return jsonError("Could not load account ticket limits.", 500);
   }
 
   const update: Record<string, unknown> = {
@@ -152,7 +152,7 @@ export async function POST(request: Request) {
     .single();
 
   if (saved.error) {
-    return jsonError("Could not save responsible play settings.", 500);
+    return jsonError("Could not save account ticket limits.", 500);
   }
 
   return getStatusResponse(auth.supabase, auth.user.id);
@@ -183,14 +183,7 @@ async function getStatusResponse(supabase: any, userId: string) {
     ticketRestriction: getResponsiblePlayRestriction(loaded.status, "ticket"),
     entryRestriction: getResponsiblePlayRestriction(loaded.status, "entry"),
     supportResources: [
-      {
-        label: "NCPG help and treatment",
-        url: "https://www.ncpgambling.org/help-treatment/",
-      },
-      {
-        label: "Gambling Therapy support",
-        url: "https://www.gamblingtherapy.org/",
-      },
+      { label: "WorldCup support", url: "https://wa.me/40750257337" },
     ],
   });
 }

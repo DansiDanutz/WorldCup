@@ -20,6 +20,7 @@ const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
 const myStanding = readFileSync("src/components/my-standing.tsx", "utf8");
 const smartMenu = readFileSync("src/components/smart-menu.tsx", "utf8");
 const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
+const support = readFileSync("src/lib/support.ts", "utf8");
 const appIcon = readFileSync("src/app/icon.svg", "utf8");
 const brandMark = readFileSync("public/brand-mark.svg", "utf8");
 const logoLockup = readFileSync("public/logo-lockup.svg", "utf8");
@@ -71,6 +72,22 @@ describe("WorldCup design system integration", () => {
     assert.match(loginPage, /You are invited to WorldCup26/);
     assert.match(loginOgImage, /Referral invite/);
     assert.match(loginOgImage, /Pick 3 teams\. Climb the World Cup leaderboard\./);
+  });
+
+  it("keeps WhatsApp support reachable from user-facing app surfaces", () => {
+    assert.match(support, /SUPPORT_WHATSAPP_E164 = "\+40750257337"/);
+    assert.match(support, /SUPPORT_WHATSAPP_URL = `https:\/\/wa\.me\/\$\{SUPPORT_WHATSAPP_NUMBER\}`/);
+    assert.match(dashboard, /SUPPORT_WHATSAPP_URL/);
+    assert.match(dashboard, /WhatsApp support/);
+    assert.match(walletScreen, /SUPPORT_WHATSAPP_URL/);
+    assert.match(walletScreen, /WhatsApp support/);
+    assert.match(loginRegister, /Need help\? WhatsApp/);
+    assert.match(loginRegister, /SUPPORT_WHATSAPP_E164/);
+    assert.match(adminConsole, /SUPPORT_WHATSAPP_URL/);
+    assert.match(globalsCss, /\.auth-support-link\s*{[\s\S]*?display:\s*inline-flex;/);
+    assert.match(globalsCss, /\.auth-support-link\s*{[\s\S]*?text-decoration:\s*none;/);
+    assert.match(globalsCss, /\.auth-connected-card\s*{[\s\S]*?linear-gradient\(135deg,\s*rgba\(17,\s*123,\s*88,\s*0\.64\)/);
+    assert.match(globalsCss, /\.auth-connected-card strong\s*{[\s\S]*?color:\s*#ffffff;/);
   });
 
   it("keeps the root layout from forcing mobile horizontal overflow", () => {
@@ -127,11 +144,19 @@ describe("WorldCup design system integration", () => {
   it("keeps mobile navigation inside the viewport instead of widening the page", () => {
     assert.match(globalsCss, /\.topbar\s*{[\s\S]*?border-radius:\s*20px;/);
     assert.match(globalsCss, /\.topbar\s*{[\s\S]*?linear-gradient\(135deg/);
+    assert.match(globalsCss, /\.landing-brand-lockup\s*{[\s\S]*?flex:\s*0\s+0\s+auto;/);
+    assert.match(globalsCss, /\.landing-brand-copy\s*{[\s\S]*?flex:\s*0\s+0\s+auto;/);
+    assert.doesNotMatch(globalsCss.match(/\.landing-brand-copy strong\s*{[^}]*}/)?.[0] ?? "", /text-overflow/);
     assert.match(globalsCss, /\.nav\s*{[\s\S]*?background:\s*rgba\(4,\s*18,\s*15,\s*0\.34\);/);
     assert.match(globalsCss, /\.nav-item--primary\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#e6b653\)/);
     assert.match(globalsCss, /\.nav-item--admin\s*{[\s\S]*?linear-gradient\(135deg/);
     assert.match(globalsCss, /\.smart-menu\.is-closed \.smart-menu__toggle\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#e6b653\)/);
     assert.match(globalsCss, /\.nav-more__menu\s*{[\s\S]*?position:\s*absolute;/);
+    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--landing \.smart-menu__toggle\s*{[\s\S]*?display:\s*none;/);
+    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--landing \.nav-item__copy strong,[\s\S]*?text-overflow:\s*ellipsis;/);
+    assert.match(globalsCss, /@media \(min-width:\s*761px\) and \(max-width:\s*1180px\)\s*{[\s\S]*?\.app-shell--landing \.topbar\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\) auto;/);
+    assert.match(globalsCss, /@media \(min-width:\s*761px\) and \(max-width:\s*1180px\)\s*{[\s\S]*?\.app-shell--landing \.smart-menu\s*{[\s\S]*?grid-column:\s*1 \/ -1;/);
+    assert.match(globalsCss, /\.nav a,[\s\S]*?\.nav-more summary\s*{[\s\S]*?white-space:\s*nowrap;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.topbar\s*{[\s\S]*?flex-direction:\s*column;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.smart-menu\s*{[\s\S]*?flex-direction:\s*column;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.grid,[\s\S]*?\.auth-page,[\s\S]*?\.coefficients-hero,[\s\S]*?\.schema-hero,[\s\S]*?\.matches-section,[\s\S]*?\.knockout-board,[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
@@ -152,6 +177,7 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /@media \(max-width:\s*420px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
     assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.nav a,\s*\n\s*\.nav button,\s*\n\s*\.nav-more summary\s*{[\s\S]*?width:\s*100%;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav a,\s*\n\s*\.nav button,\s*\n\s*\.nav-more summary\s*{[\s\S]*?height:\s*auto;/);
+    assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav-item__copy strong,[\s\S]*?white-space:\s*normal;/);
     assert.match(globalsCss, /\.admin-referral-row span\s*{[\s\S]*?overflow-wrap:\s*anywhere;/);
     assert.match(
       globalsCss,
@@ -200,7 +226,7 @@ describe("WorldCup design system integration", () => {
   it("keeps the smart menu clickable and compact on mobile", () => {
     assert.match(smartMenu, /"use client";/);
     assert.match(smartMenu, /const \[expanded, setExpanded\] = useState\(true\);/);
-    assert.match(smartMenu, /window\.matchMedia\("\(max-width: 760px\)"\)/);
+    assert.match(smartMenu, /window\.matchMedia\("\(max-width: 1180px\)"\)/);
     assert.match(smartMenu, /const syncExpandedState = \(\) => setExpanded\(!mediaQuery\.matches\);/);
     assert.match(smartMenu, /function closeAfterDestinationClick\(event: MouseEvent<HTMLDivElement>\)/);
     assert.match(smartMenu, /target\.closest\("a, button"\)/);
@@ -238,7 +264,7 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /href="#leaderboard"[\s\S]*?Leaderboard[\s\S]*?Ranking[\s\S]*?pathname: "\/wallet"[\s\S]*?Wallet[\s\S]*?Tickets & USDT[\s\S]*?nav-item--admin[\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?Manage[\s\S]*?<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw/);
     assert.match(dashboard, /<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw[\s\S]*?href="#rules"[\s\S]*?pathname: "\/schema"/);
     assert.match(dashboard, /\{showAdminNav \? \([\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?\) : null\}/);
-    assert.match(dashboard, /<details className="nav-more">[\s\S]*?<\/details>[\s\S]*?\{signedInWithGoogle \? \([\s\S]*?className="nav-item nav-item--identity" href="#me"[\s\S]*?Account[\s\S]*?\) : \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?pathname: "\/login"[\s\S]*?Login/);
+    assert.match(dashboard, /<details className="nav-more">[\s\S]*?<\/details>[\s\S]*?\{signedInWithGoogle && showPickWorkflow \? \([\s\S]*?className="nav-item nav-item--identity" href="#me"[\s\S]*?Account[\s\S]*?\) : !signedInWithGoogle \? \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?pathname: "\/login"[\s\S]*?Login[\s\S]*?\) : null\}/);
     assert.match(walletScreen, /<nav className="nav nav--app" aria-label="Wallet navigation">/);
     assert.match(walletScreen, /className="nav-item nav-item--primary" href=\{\{ pathname: "\/", hash: "pick" \}\}[\s\S]*?Play[\s\S]*?Pick teams/);
     assert.match(walletScreen, /nav-item--admin[\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?Manage/);
@@ -402,7 +428,6 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /const hasEntryTicket = ticketsAvailable > 0/);
     assert.match(dashboard, /const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket/);
     assert.match(dashboard, /const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase/);
-    assert.match(dashboard, /const entryTicketPurchasePause = needsEntryTicketPurchase \? publicTicketPolicyPause : null/);
     assert.match(dashboard, /const missingEntryTicket =/);
     assert.match(dashboard, /const entryLockBlocker = getEntryLockBlocker/);
     assert.match(dashboard, /selectedTeams\.length === 3 && !hasEntryTicket/);
@@ -411,21 +436,22 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /className=\{`ticket-requirement-card/);
     assert.match(dashboard, /You need 1 entry ticket/);
     assert.match(dashboard, /Buy-in is covered\. Locking your entry will use 1 ticket/);
-    assert.match(dashboard, /Pay the buy-in with USDT, or use Agent Call after paying an agent directly\./);
+    assert.match(dashboard, /Admin assigns tickets after verified cash or USDT payment/);
     assert.match(dashboard, /Ticket price/);
     assert.match(dashboard, /Your balance/);
-    assert.match(dashboard, /Buy with USDT/);
-    assert.match(dashboard, /\{entryTicketPurchasePause \? \(/);
+    assert.match(dashboard, /USDT is manual: save your sender wallet/);
+    assert.doesNotMatch(dashboard, /Buy with USDT/);
     assert.match(dashboard, /Agent Call/);
     assert.match(dashboard, /Agent code or email/);
     assert.match(dashboard, /Request ticket/);
     assert.match(dashboard, /\/api\/agent-ticket-requests/);
     assert.match(walletScreen, /Agent Call requests/);
     assert.match(walletScreen, /acceptAgentTicketRequest/);
-    assert.match(dashboard, /pathname: "\/wallet", hash: "tickets"/);
     assert.match(dashboard, /disabled=\{Boolean\(entryLockBlocker\) \|\| isPending\}/);
     assert.match(dashboard, /function getEntryLockBlocker/);
-    assert.match(dashboard, /Checking your age and Terms confirmation/);
+    assert.match(dashboard, /signedInWithGoogle && consented !== true/);
+    assert.match(dashboard, /Confirm once here if your age and Terms status is still loading/);
+    assert.match(dashboard, /Confirm your age and accept the Terms below before locking/);
     assert.match(walletScreen, /id="tickets"/);
     assert.match(walletScreen, /walletView === "agent" \? "wallet-panel-hidden" : ""/);
     assert.match(globalsCss, /\.ticket-requirement-card\s*{/);
@@ -483,7 +509,7 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.hero-swiper__slide:first-child \.hero-card\s*{[\s\S]*?width:\s*100vw;/);
     assert.match(globalsCss, /\.app-shell--landing \.topbar\s*{[\s\S]*?position:\s*fixed;/);
     assert.match(globalsCss, /\.app-shell--landing \.smart-menu__panel\s*{[\s\S]*?position:\s*fixed;/);
-    assert.match(globalsCss, /\.app-shell--landing #pick,[\s\S]*?\.app-shell--landing #leaderboard,[\s\S]*?scroll-margin-top:\s*118px;/);
+    assert.match(globalsCss, /\.app-shell--landing #pick,[\s\S]*?\.app-shell--landing #leaderboard,[\s\S]*?scroll-margin-top:\s*150px;/);
     assert.match(globalsCss, /\.hero-swiper__slide:first-child \.hero-card\s*{[\s\S]*?height:\s*max\(640px,\s*100svh\);/);
   });
 
@@ -498,7 +524,7 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /<div className="page page--landing">[\s\S]*?<HeroSwiper/);
     assert.doesNotMatch(dashboard, /<strong>Paid actions paused<\/strong>/);
     assert.match(dashboard, /Admin launch evidence mode/);
-    assert.match(dashboard, /Your admin account can lock entries/);
+    assert.match(dashboard, /assign paid ticket codes\s+manually from the Admin panel/);
     assert.match(dashboard, /paidActionGates: result\.paidActionGates/);
     assert.match(dashboard, /myAccountStatus\?\.paidActionGates/);
     assert.match(dashboard, /Late entries are open for assigned tickets/);
@@ -512,7 +538,6 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.launch-notice\s*{[\s\S]*?flex-direction:\s*column;/);
 
     assert.match(walletScreen, /depositPolicyPause/);
-    assert.match(walletScreen, /ticketPolicyPause/);
     assert.match(walletScreen, /withdrawalPolicyPause/);
     assert.match(walletScreen, /launchEvidenceMode/);
     assert.match(walletScreen, /Admin launch evidence mode/);
@@ -520,23 +545,24 @@ describe("WorldCup design system integration", () => {
     assert.match(walletScreen, /status\?\.paidActionGates/);
     assert.match(walletScreen, /publicPaidActionsPaused/);
     assert.match(walletScreen, /Wallet paid actions paused/);
-    assert.match(walletScreen, /Sign in with Google to prepare your wallet/);
-    assert.match(walletScreen, /Paid actions open after launch approvals are complete/);
+    assert.match(walletScreen, /Sign in with Google to prepare your locked USDT sender wallet/);
+    assert.match(walletScreen, /USDT deposits are admin-reviewed and ticket assignments are manual/);
     assert.match(walletScreen, /depositClaimAccountLabel/);
     assert.match(walletScreen, /Deposit claims\s+are tied to/);
-    assert.match(walletScreen, /Save the wallet address you send from/);
+    assert.match(walletScreen, /Lock sender wallet/);
     assert.match(walletScreen, /Admins use both before crediting your balance/);
-    assert.match(walletScreen, /Sending wallet address/);
+    assert.match(walletScreen, /sender wallet address/);
+    assert.match(walletScreen, /TRC20 and ERC20 are separate/);
     assert.doesNotMatch(walletScreen, /Operator policy is configured/);
     assert.match(walletScreen, /Boolean\(depositRestriction \|\| depositPolicyPause\)/);
-    assert.match(walletScreen, /Boolean\(ticketRestriction \|\| ticketPolicyPause\)/);
+    assert.doesNotMatch(walletScreen, /Boolean\(ticketRestriction \|\| ticketPolicyPause\)/);
     assert.match(walletScreen, /Boolean\(withdrawalPolicyPause\)/);
 
     assert.match(loginRegister, /paidActionsPaused/);
     assert.match(loginRegister, /Account setup is open/);
     assert.match(
       loginRegister,
-      /Tickets and USDT deposits open after launch approvals are complete\./,
+      /Admin assigns tickets after verified cash or USDT payment\./,
     );
   });
 });

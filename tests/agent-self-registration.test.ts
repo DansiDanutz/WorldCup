@@ -38,7 +38,7 @@ describe("agent self-registration", () => {
     assert.match(walletScreen, /Be an Agent/);
     assert.match(walletScreen, /WhatsApp number/);
     assert.match(walletScreen, /applicationStatus === "pending"/);
-    assert.match(walletScreen, /first personal ticket is bought or assigned/);
+    assert.match(walletScreen, /first personal ticket is assigned/);
     assert.match(walletScreen, /Transfer ticket to users is locked until admin activates your agent wallet/);
   });
 

@@ -24,10 +24,13 @@ import { useEffect, useMemo, useState, useTransition } from "react";
 
 import { SmartMenu } from "@/components/smart-menu";
 import {
+  getDepositNetworkShortLabel,
   getDepositExplorerAddressUrl,
   getDepositExplorerTxUrl,
 } from "@/lib/deposits";
+import type { DepositNetwork } from "@/lib/deposits";
 import { formatLedgerAmount, formatMoneyAmount } from "@/lib/economy";
+import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import type {
   MyAccountStatus,
@@ -37,6 +40,10 @@ import type {
   WithdrawalRequestRow,
 } from "@/lib/types";
 import { getWithdrawalExplorerTxUrl } from "@/lib/withdrawals";
+import {
+  normalizeWorldCupTicketPriceAmount,
+  normalizeWorldCupTicketPriceNumber,
+} from "@/lib/worldcup-ticket-price";
 import type { Session } from "@supabase/supabase-js";
 
 type DepositAddress = {
@@ -109,6 +116,11 @@ type WalletScreenProps = {
 };
 
 const ownerAdminEmail = "semebitcoin@gmail.com";
+const depositNetworkOptions: DepositNetwork[] = ["trc20", "erc20"];
+
+function toDepositNetwork(value: string): DepositNetwork {
+  return value === "erc20" ? "erc20" : "trc20";
+}
 
 export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
@@ -118,7 +130,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [depositsConfigured, setDepositsConfigured] = useState<boolean | null>(null);
   const [sharedDepositAddresses, setSharedDepositAddresses] = useState(false);
   const [depositClaims, setDepositClaims] = useState<DepositClaim[]>([]);
-  const [claimNetwork, setClaimNetwork] = useState("trc20");
+  const [claimNetwork, setClaimNetwork] = useState<DepositNetwork>("trc20");
   const [claimAmount, setClaimAmount] = useState("");
   const [claimSenderWalletAddress, setClaimSenderWalletAddress] = useState("");
   const [claimTxHash, setClaimTxHash] = useState("");
@@ -156,10 +168,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
     status?.paidActionGates
       ? getGatePauseMessage(status.paidActionGates.deposit)
       : publicDepositPolicyPause;
-  const ticketPolicyPause =
-    status?.paidActionGates
-      ? getGatePauseMessage(status.paidActionGates.ticket)
-      : publicTicketPolicyPause;
   const withdrawalPolicyPause =
     status?.paidActionGates
       ? getGatePauseMessage(status.paidActionGates.withdrawal)
@@ -175,32 +183,56 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       status.paidActionGates.ticket.allowed &&
       status.paidActionGates.withdrawal.allowed,
   );
-  const ticketPrice = Number(status?.ticketPriceAmount ?? 0);
+  const ticketPrice = normalizeWorldCupTicketPriceNumber(status?.ticketPriceAmount);
   const walletBalance = Number(status?.walletBalance ?? 0);
   const accountStatusLoaded = status !== null;
   const userHasEntryTicket = (status?.ticketsAvailable ?? 0) > 0;
   const userNeedsEntryTicket = accountStatusLoaded && !userHasEntryTicket;
-  const purchasableTickets = ticketPrice > 0 ? Math.floor(walletBalance / ticketPrice) : 0;
-  const remainingAfterNextTicket = ticketPrice > 0 ? Math.max(walletBalance - ticketPrice, 0) : walletBalance;
+  const savedSenderWallets = useMemo(
+    () => ({
+      trc20:
+        status?.usdtSenderWalletTrc20Address ??
+        (status?.usdtSenderWalletNetwork === "trc20"
+          ? status.usdtSenderWalletAddress ?? null
+          : null),
+      erc20:
+        status?.usdtSenderWalletErc20Address ??
+        (status?.usdtSenderWalletNetwork === "erc20"
+          ? status.usdtSenderWalletAddress ?? null
+          : null),
+    }),
+    [status],
+  );
+  const lockedClaimSenderWallet = savedSenderWallets[claimNetwork];
+  const claimNetworkLabel = getDepositNetworkShortLabel(claimNetwork);
 
   function applyAccountStatus(me: Partial<MyAccountStatus>) {
     setStatus({
       walletBalance: me.walletBalance ?? "0.00",
       ticketsAvailable: me.ticketsAvailable ?? 0,
       ticketsAssigned: me.ticketsAssigned ?? 0,
-      ticketPriceAmount: me.ticketPriceAmount ?? "0",
+      ticketPriceAmount: normalizeWorldCupTicketPriceAmount(me.ticketPriceAmount),
       usdtSenderWalletAddress: me.usdtSenderWalletAddress ?? null,
       usdtSenderWalletNetwork: me.usdtSenderWalletNetwork ?? null,
       usdtSenderWalletUpdatedAt: me.usdtSenderWalletUpdatedAt ?? null,
+      usdtSenderWalletTrc20Address: me.usdtSenderWalletTrc20Address ?? null,
+      usdtSenderWalletTrc20UpdatedAt: me.usdtSenderWalletTrc20UpdatedAt ?? null,
+      usdtSenderWalletErc20Address: me.usdtSenderWalletErc20Address ?? null,
+      usdtSenderWalletErc20UpdatedAt: me.usdtSenderWalletErc20UpdatedAt ?? null,
       paidActionGates: me.paidActionGates,
     });
 
-    if (me.usdtSenderWalletAddress) {
+    if (me.usdtSenderWalletTrc20Address) {
+      setClaimSenderWalletAddress(me.usdtSenderWalletTrc20Address);
+      setClaimNetwork("trc20");
+    } else if (me.usdtSenderWalletErc20Address) {
+      setClaimSenderWalletAddress(me.usdtSenderWalletErc20Address);
+      setClaimNetwork("erc20");
+    } else if (me.usdtSenderWalletAddress) {
       setClaimSenderWalletAddress(me.usdtSenderWalletAddress);
-    }
-
-    if (me.usdtSenderWalletNetwork === "trc20" || me.usdtSenderWalletNetwork === "erc20") {
-      setClaimNetwork(me.usdtSenderWalletNetwork);
+      if (me.usdtSenderWalletNetwork === "trc20" || me.usdtSenderWalletNetwork === "erc20") {
+        setClaimNetwork(me.usdtSenderWalletNetwork);
+      }
     }
   }
 
@@ -387,7 +419,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       setMessage(
         result.applicationStatus === "active"
           ? "Agent contact details updated."
-          : "Agent registration saved. Your account activates after your first personal ticket is bought or assigned.",
+          : "Agent registration saved. Your account activates after your first personal ticket is assigned.",
       );
     });
   }
@@ -414,32 +446,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       }
 
       setMessage("Agent Call accepted. One ticket was assigned to the player.");
-      refreshAgent(token);
-    });
-  }
-
-  function buyTicket() {
-    const token = session?.access_token;
-    if (!token) {
-      return;
-    }
-
-    setError(null);
-    setMessage(null);
-    startTransition(async () => {
-      const response = await fetch("/api/tickets/purchase", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const result = (await response.json()) as { error?: string; ticketId?: string };
-
-      if (!response.ok) {
-        setError(result.error ?? "Could not buy a ticket.");
-        return;
-      }
-
-      setMessage("Ticket purchased. You can lock an entry now.");
-      refreshStatus(token);
       refreshAgent(token);
     });
   }
@@ -622,6 +628,90 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
     });
   }
 
+  function lockSenderWallet() {
+    const token = session?.access_token;
+    if (!token) {
+      return;
+    }
+
+    const senderWalletAddress = claimSenderWalletAddress.trim();
+    if (!senderWalletAddress) {
+      setError(`Enter the ${claimNetworkLabel} sender wallet first.`);
+      return;
+    }
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const response = await fetch("/api/deposits/sender-wallet", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          network: claimNetwork,
+          senderWalletAddress,
+        }),
+      });
+      const result = (await response.json()) as { error?: string; senderWalletAddress?: string };
+
+      if (!response.ok) {
+        setError(result.error ?? `Could not lock your ${claimNetworkLabel} sender wallet.`);
+        return;
+      }
+
+      if (result.senderWalletAddress) {
+        setClaimSenderWalletAddress(result.senderWalletAddress);
+      }
+      setMessage(`${claimNetworkLabel} sender wallet locked. Future deposits and withdrawals for this network must use this wallet.`);
+      refreshStatus(token);
+    });
+  }
+
+  function chooseClaimNetwork(network: DepositNetwork) {
+    setClaimNetwork(network);
+    setClaimSenderWalletAddress(savedSenderWallets[network] ?? "");
+  }
+
+  function renderSenderWalletSetup() {
+    return (
+      <div className="sender-wallet-lock-box">
+        <div className="panel-header compact">
+          <div>
+            <h3 className="panel-title">USDT sender wallets</h3>
+            <p className="panel-subtitle">
+              Before any USDT deposit, lock the wallet you send from. TRC20 and ERC20 are separate.
+              Once a wallet is saved, it cannot be changed. Deposits from another wallet may be lost,
+              and withdrawals go back to the saved wallet.
+            </p>
+          </div>
+          <ShieldCheck size={18} color="var(--gold)" />
+        </div>
+        <div className="sender-wallet-card-grid" aria-label="Locked USDT sender wallets">
+          {depositNetworkOptions.map((network) => {
+            const savedWallet = savedSenderWallets[network];
+            const label = getDepositNetworkShortLabel(network);
+
+            return (
+              <button
+                aria-pressed={claimNetwork === network}
+                className={`sender-wallet-card ${claimNetwork === network ? "active" : ""} ${savedWallet ? "locked" : "empty"}`}
+                key={network}
+                onClick={() => chooseClaimNetwork(network)}
+                type="button"
+              >
+                <span>{label} sender wallet</span>
+                <strong>{savedWallet ? "Locked" : "Not set"}</strong>
+                {savedWallet ? <code>{savedWallet}</code> : <small>Required before deposit</small>}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   function submitWithdrawalRequest() {
     const token = session?.access_token;
     if (!token) {
@@ -748,6 +838,10 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <Trophy size={16} />
                   Game Home
                 </Link>
+                <a href={SUPPORT_WHATSAPP_URL} rel="noreferrer" target="_blank">
+                  <Phone size={16} />
+                  WhatsApp support
+                </a>
               </div>
             </details>
             {signedIn ? (
@@ -790,7 +884,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
             <div>
               <strong>User Wallet ticket ready</strong>
               <span>
-                You already have an entry ticket, so User Wallet USDT deposit and ticket-buy
+                You already have an entry ticket, so User Wallet USDT deposit and ticket assignment
                 actions are hidden. Use Agent Wallet only for agent inventory deposits.
               </span>
             </div>
@@ -806,8 +900,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 {signedIn && walletView === "user" && !accountStatusLoaded
                   ? "Loading your User Wallet ticket status before showing any deposit actions."
                   : signedIn && walletView === "agent"
-                    ? "Agent USDT deposit proof is available for admin-reviewed agent inventory. Public user ticket purchases remain paused."
-                    : "Login, referrals, and account setup are available. Tickets, USDT deposits, and withdrawals open after launch approvals are complete."}
+                    ? "Agent USDT deposit proof is available for admin-reviewed agent inventory. User self-purchase is disabled."
+                    : "Login, referrals, and account setup are available. Admin assigns tickets after verified cash or USDT payment."}
               </span>
             </div>
             <Link className="button secondary" href={{ pathname: "/" }}>
@@ -824,8 +918,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <h1 className="panel-title">Wallet</h1>
                   <p className="panel-subtitle">
                     {publicPaidActionsPaused
-                      ? "Sign in with Google to prepare your wallet. Paid actions open after launch approvals are complete."
-                      : "Sign in with Google to deposit USDT and buy tickets."}
+                      ? "Sign in with Google to prepare your locked USDT sender wallet for manual admin review."
+                      : "Sign in with Google to prepare your wallet and receive manually assigned tickets."}
                   </p>
                 </div>
                 <Lock size={18} color="var(--green)" />
@@ -840,7 +934,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <div>
                     <span>2</span>
                     <strong>Get tickets</strong>
-                    <small>Buy or redeem an entry ticket when paid actions open.</small>
+                    <small>Receive a ticket from Admin or an agent.</small>
                   </div>
                   <div>
                     <span>3</span>
@@ -905,7 +999,11 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   </div>
                   <div className="wallet-balance-card wallet-balance-card--price">
                     <span>Ticket price</span>
-                    <strong>{formatMoneyAmount(status?.ticketPriceAmount ?? 0)}</strong>
+                    <strong>
+                      {formatMoneyAmount(
+                        normalizeWorldCupTicketPriceAmount(status?.ticketPriceAmount),
+                      )}
+                    </strong>
                     <small>per entry</small>
                   </div>
                 </div>
@@ -917,32 +1015,26 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                         ? "Loading your ticket balance..."
                         : userHasEntryTicket
                         ? "Your personal entry ticket is ready. Lock your teams from Play."
-                        : purchasableTickets > 0
-                        ? `${purchasableTickets} ticket${purchasableTickets === 1 ? "" : "s"} can be made from your current USDT balance.`
-                        : "Deposit USDT. Full ticket-price chunks convert into tickets automatically."}
+                        : "Admin assigns entry tickets after verified cash or USDT payment."}
                     </strong>
                     <span>
                       {!accountStatusLoaded
                         ? "Deposit actions stay hidden until your wallet status is loaded."
                         : userHasEntryTicket
                         ? "User Wallet deposits are hidden once your entry ticket is available. Use Agent Wallet for agent inventory deposits."
-                        : "Example: 100 USDT becomes 2 tickets at 50 USDT each. Use one for your entry and transfer the extra ticket to a friend by email."}
+                        : "Send USDT only from your frozen sender wallet, then Admin verifies it and assigns the exact ticket codes manually."}
                     </span>
-                    {userNeedsEntryTicket && ticketPrice > 0 ? (
-                      <small>
-                        After buying the next ticket, estimated USDT left: {formatLedgerAmount(remainingAfterNextTicket)}.
-                      </small>
-                    ) : null}
+                    {userNeedsEntryTicket && ticketPrice > 0 ? <small>Ticket price: {formatMoneyAmount(ticketPrice)}.</small> : null}
                   </div>
                 </div>
                 <div className="wallet-action-list compact wallet-action-list--steps" aria-label="Wallet next actions">
                   <div>
                     <span>Ticket</span>
-                    <strong>{userHasEntryTicket ? "Ticket ready" : "Buy or redeem"}</strong>
+                    <strong>{userHasEntryTicket ? "Ticket ready" : "Admin assigned"}</strong>
                     <small>
                       {userHasEntryTicket
                         ? "Use your ticket to lock one entry."
-                        : "Required before locking an entry."}
+                        : "Cash or USDT payment is confirmed manually."}
                     </small>
                   </div>
                   <div>
@@ -951,17 +1043,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <small>Email must already have a WorldCup account.</small>
                   </div>
                 </div>
-                {userNeedsEntryTicket ? (
-                  <button
-                    className="button"
-                    disabled={Boolean(ticketRestriction || ticketPolicyPause) || isPending}
-                    onClick={buyTicket}
-                    type="button"
-                  >
-                    <Lock size={16} />
-                    {isPending ? "Processing..." : "Buy entry ticket"}
-                  </button>
-                ) : null}
                 <div className="redeem-row">
                   <label htmlFor="redeem-code">Have a ticket code?</label>
                   <div className="redeem-input">
@@ -984,9 +1065,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     </button>
                   </div>
                 </div>
-                {userNeedsEntryTicket && ticketPolicyPause ? (
-                  <div className="message error">{ticketPolicyPause}</div>
-                ) : null}
                 {userNeedsEntryTicket && ticketRestriction ? (
                   <div className="message error">{ticketRestriction}</div>
                 ) : null}
@@ -1017,7 +1095,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                           isPending ||
                           transferEmail.trim().length === 0 ||
                           (status?.ticketsAvailable ?? 0) < 1 ||
-                          Boolean(ticketRestriction || ticketPolicyPause)
+                          Boolean(ticketRestriction)
                         }
                         onClick={() => transferTicket(false)}
                         type="button"
@@ -1066,11 +1144,11 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 </div>
                 <QrCode size={18} color="var(--green)" />
               </div>
+              {renderSenderWalletSetup()}
               {sharedDepositAddresses ? (
                 <div className="message">
-                  Shared receive wallet. Save the wallet address you send from and keep your
-                  transaction hash so the deposit can be matched to your account. Deposit claims
-                  are tied to {depositClaimAccountLabel}.
+                  Shared receive wallet. Your sender wallet must be locked before the claim can
+                  be credited. Deposit claims are tied to {depositClaimAccountLabel}.
                 </div>
               ) : null}
               {depositPolicyPause ? (
@@ -1161,13 +1239,13 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <div className="deposit-flow-steps" aria-label="Deposit claim steps">
                     <div>
                       <span>1</span>
-                      <strong>Copy receive wallet</strong>
-                      <small>Use the exact network shown above.</small>
+                      <strong>Lock sender wallet</strong>
+                      <small>Choose TRC20 or ERC20 and save the wallet you send from.</small>
                     </div>
                     <div>
                       <span>2</span>
                       <strong>Send USDT</strong>
-                      <small>Save the wallet you sent from.</small>
+                      <small>Use only the locked sender wallet for that network.</small>
                     </div>
                     <div>
                       <span>3</span>
@@ -1187,7 +1265,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       <select
                         id="claim-network"
                         value={claimNetwork}
-                        onChange={(event) => setClaimNetwork(event.target.value)}
+                        onChange={(event) => chooseClaimNetwork(toDepositNetwork(event.target.value))}
                       >
                         <option value="trc20">TRC20</option>
                         <option value="erc20">ERC20</option>
@@ -1205,16 +1283,30 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       />
                     </div>
                     <div className="field full-width">
-                      <label htmlFor="claim-sender-wallet">Sending wallet address</label>
+                      <label htmlFor="claim-sender-wallet">{claimNetworkLabel} sender wallet address</label>
                       <input
+                        disabled={Boolean(lockedClaimSenderWallet)}
                         id="claim-sender-wallet"
                         value={claimSenderWalletAddress}
                         onChange={(event) => setClaimSenderWalletAddress(event.target.value)}
                         placeholder={claimNetwork === "trc20" ? "TRC20 wallet starts with T" : "ERC20 wallet starts with 0x"}
                       />
                       <div className="field-note">
-                        Saved to your account for manual ticket/payment matching after USDT is received.
+                        {lockedClaimSenderWallet
+                          ? `${claimNetworkLabel} sender wallet is locked. Deposits from any other wallet cannot be credited and may be lost.`
+                          : `First ${claimNetworkLabel} deposit or manual save locks this sender wallet permanently. Withdrawals return to this wallet.`}
                       </div>
+                      {!lockedClaimSenderWallet ? (
+                        <button
+                          className="button secondary"
+                          disabled={!claimSenderWalletAddress || isPending}
+                          onClick={lockSenderWallet}
+                          type="button"
+                        >
+                          <ShieldCheck size={16} />
+                          Lock {claimNetworkLabel} sender wallet
+                        </button>
+                      ) : null}
                     </div>
                     <div className="field full-width">
                       <label htmlFor="claim-tx">Transaction hash</label>
@@ -1442,7 +1534,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <p className="panel-subtitle">
                       {agent?.isAgent
                         ? "Transfer tickets to users, track code inventory, and manage Agent Call requests."
-                        : "Apply to sell tickets. Agent tools unlock after your first personal ticket is bought or assigned."}
+                        : "Apply to sell tickets. Agent tools unlock after your first personal ticket is assigned."}
                     </p>
                   </div>
                   {agent?.isAgent ? (
@@ -1474,6 +1566,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       </div>
                       <QrCode size={18} color="var(--gold)" />
                     </div>
+                    {renderSenderWalletSetup()}
                     {depositPolicyPause ? (
                       <div className="message error">{depositPolicyPause}</div>
                     ) : depositsConfigured === false ? (
@@ -1538,7 +1631,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                             <select
                               id="agent-claim-network"
                               value={claimNetwork}
-                              onChange={(event) => setClaimNetwork(event.target.value)}
+                              onChange={(event) => chooseClaimNetwork(toDepositNetwork(event.target.value))}
                             >
                               <option value="trc20">TRC20</option>
                               <option value="erc20">ERC20</option>
@@ -1556,13 +1649,30 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                             />
                           </div>
                           <div className="field full-width">
-                            <label htmlFor="agent-claim-sender-wallet">Sending wallet address</label>
+                            <label htmlFor="agent-claim-sender-wallet">{claimNetworkLabel} sender wallet address</label>
                             <input
+                              disabled={Boolean(lockedClaimSenderWallet)}
                               id="agent-claim-sender-wallet"
                               value={claimSenderWalletAddress}
                               onChange={(event) => setClaimSenderWalletAddress(event.target.value)}
                               placeholder={claimNetwork === "trc20" ? "TRC20 wallet starts with T" : "ERC20 wallet starts with 0x"}
                             />
+                            <div className="field-note">
+                              {lockedClaimSenderWallet
+                                ? `${claimNetworkLabel} sender wallet is locked for agent deposits too.`
+                                : `Lock the ${claimNetworkLabel} sender wallet before sending agent inventory funds.`}
+                            </div>
+                            {!lockedClaimSenderWallet ? (
+                              <button
+                                className="button secondary"
+                                disabled={!claimSenderWalletAddress || isPending}
+                                onClick={lockSenderWallet}
+                                type="button"
+                              >
+                                <ShieldCheck size={16} />
+                                Lock {claimNetworkLabel} sender wallet
+                              </button>
+                            ) : null}
                           </div>
                           <div className="field full-width">
                             <label htmlFor="agent-claim-tx">Transaction hash</label>
@@ -1596,7 +1706,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <div className="agent-register-box">
                       {agent?.applicationStatus === "pending" ? (
                         <div className="message">
-                          Agent registration received. Buy one ticket with USDT or receive one from admin or an agent to activate your agent account.
+                          Agent registration received. Receive one personal ticket from Admin or an agent to activate your agent account.
                         </div>
                       ) : null}
                       <div className="deposit-claim-form">
@@ -1637,7 +1747,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                         </div>
                         <div>
                           <span>2</span>
-                          <small>Buy one ticket with USDT, or receive a ticket from admin or an agent.</small>
+                          <small>Receive one personal ticket from admin or an agent.</small>
                         </div>
                         <div>
                           <span>3</span>
@@ -1804,5 +1914,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
 }
 
 function getGatePauseMessage(gate: PaidActionGate | undefined) {
-  return gate && !gate.allowed ? "Paid actions open after launch approvals are complete." : null;
+  return gate && !gate.allowed
+    ? "USDT deposits are admin-reviewed and ticket assignments are manual. You can still prepare your locked sender wallet."
+    : null;
 }

@@ -4,6 +4,7 @@ import { requireAdmin } from "@/lib/admin-auth";
 import { resolveAdminUserIdentity } from "@/lib/admin-user";
 import { enforceRateLimit, jsonError } from "@/lib/http";
 import { createServiceSupabaseClient } from "@/lib/supabase";
+import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
 import {
   requireEnum,
   requireInteger,
@@ -17,6 +18,7 @@ const ASSIGN_ERROR_MESSAGES: Record<string, { status: number; message: string }>
   AGENT_NOT_FOUND: { status: 404, message: "Agent was not found." },
   INVALID_QUANTITY: { status: 400, message: "Quantity must be between 1 and 1000." },
   INVALID_PAYMENT_METHOD: { status: 400, message: "Payment method must be cash or USDT." },
+  INVALID_TICKET_PRICE: { status: 400, message: "Set a ticket price above 0 before assigning tickets." },
   INSUFFICIENT_ADMIN_CODES: { status: 409, message: "Not enough tickets in admin inventory. Request tickets first." },
   INSUFFICIENT_CODES: { status: 409, message: "Not enough unassigned ticket codes left in the pool." },
   TOURNAMENT_NOT_FOUND: { status: 500, message: "Tournament is not available." },
@@ -96,7 +98,7 @@ export async function GET(request: Request) {
     )
     .eq("tournament_id", tournament.data.id)
     .order("created_at", { ascending: false })
-    .limit(25);
+    .limit(1000);
 
   if (movements.error) {
     return jsonError("Could not load financial statement.", 500);
@@ -105,7 +107,7 @@ export async function GET(request: Request) {
   return NextResponse.json({
     pool,
     accounting: {
-      ticketPriceAmount: tournament.data.ticket_price_amount,
+      ticketPriceAmount: normalizeWorldCupTicketPriceAmount(tournament.data.ticket_price_amount),
       prizePoolAmount: tournament.data.prize_pool_amount,
       feePoolAmount: tournament.data.fee_pool_amount ?? "0",
     },

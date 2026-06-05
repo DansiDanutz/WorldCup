@@ -56,8 +56,8 @@ describe("responsible play controls", () => {
       { now: new Date("2026-06-02T00:00:00.000Z") },
     );
 
-    assert.match(getResponsiblePlayRestriction(status, "deposit") ?? "", /self-exclusion is active/i);
-    assert.match(getResponsiblePlayRestriction(status, "ticket") ?? "", /ticket purchases/);
+    assert.match(getResponsiblePlayRestriction(status, "deposit") ?? "", /account ticket actions are paused/i);
+    assert.match(getResponsiblePlayRestriction(status, "ticket") ?? "", /ticket transfers/);
     assert.match(getResponsiblePlayRestriction(status, "entry") ?? "", /entries are paused/);
     assert.equal(getResponsiblePlayRestriction(status, "withdrawal"), null);
   });
@@ -77,7 +77,7 @@ describe("responsible play controls", () => {
     assert.equal(getResponsiblePlayRestriction(status, "ticket", { requestedTickets: 1 }), null);
     assert.match(
       getResponsiblePlayRestriction(status, "ticket", { requestedTickets: 2 }) ?? "",
-      /entry-ticket limit is 2/,
+      /account entry-ticket limit is 2/,
     );
   });
 
@@ -94,7 +94,6 @@ describe("responsible play controls", () => {
   it("routes wallet paid actions through the shared responsible play gate without blocking entries", () => {
     for (const route of [
       userRoute,
-      ticketRoute,
       adminTicketRoute,
       depositAddressRoute,
       depositClaimRoute,
@@ -109,6 +108,9 @@ describe("responsible play controls", () => {
     assert.doesNotMatch(entryRoute, /loadResponsiblePlayStatus/);
     assert.doesNotMatch(entryRoute, /getResponsiblePlayRestriction/);
     assert.match(entryRoute, /worldcup_create_entry/);
+    assert.match(ticketRoute, /Tickets are assigned manually by Admin/);
+    assert.doesNotMatch(ticketRoute, /loadResponsiblePlayStatus/);
+    assert.doesNotMatch(ticketRoute, /getResponsiblePlayRestriction/);
   });
 
   it("does not surface responsible-play gambling copy in the wallet UI", () => {
@@ -117,5 +119,14 @@ describe("responsible play controls", () => {
     assert.doesNotMatch(walletScreen, /Activate self-exclusion/);
     assert.doesNotMatch(walletScreen, /NCPG help and treatment/);
     assert.doesNotMatch(walletScreen, /Gambling Therapy support/);
+  });
+
+  it("keeps gambling support copy out of account-limit responses", () => {
+    const responsiblePlaySource = readFileSync("src/lib/responsible-play.ts", "utf8");
+
+    assert.doesNotMatch(userRoute, /NCPG help and treatment/);
+    assert.doesNotMatch(userRoute, /Gambling Therapy support/);
+    assert.doesNotMatch(adminTicketRoute, /Responsible play blocks this assignment/);
+    assert.doesNotMatch(responsiblePlaySource, /Responsible play self-exclusion|responsible play entry/);
   });
 });

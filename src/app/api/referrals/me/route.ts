@@ -9,6 +9,7 @@ import {
   getUserDisplayName,
 } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
+import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
 
 export async function GET(request: Request) {
   const limited = await enforceRateLimit(request, "referrals", { limit: 30, windowMs: 60_000 });
@@ -127,7 +128,7 @@ export async function GET(request: Request) {
     walletBalance: calculateWalletBalance(user.id, transactions.data ?? []).toFixed(8),
     ticketsAssigned: tickets.data?.length ?? 0,
     ticketsAvailable: (tickets.data ?? []).filter((ticket) => !ticket.consumed_at).length,
-    ticketPriceAmount: tournament.data.ticket_price_amount,
+    ticketPriceAmount: normalizeWorldCupTicketPriceAmount(tournament.data.ticket_price_amount),
     entry: ownEntry.data
       ? {
           id: ownEntry.data.id,
@@ -140,6 +141,10 @@ export async function GET(request: Request) {
     usdtSenderWalletAddress: profile.usdt_sender_wallet_address ?? null,
     usdtSenderWalletNetwork: profile.usdt_sender_wallet_network ?? null,
     usdtSenderWalletUpdatedAt: profile.usdt_sender_wallet_updated_at ?? null,
+    usdtSenderWalletTrc20Address: profile.usdt_sender_wallet_trc20_address ?? null,
+    usdtSenderWalletTrc20UpdatedAt: profile.usdt_sender_wallet_trc20_updated_at ?? null,
+    usdtSenderWalletErc20Address: profile.usdt_sender_wallet_erc20_address ?? null,
+    usdtSenderWalletErc20UpdatedAt: profile.usdt_sender_wallet_erc20_updated_at ?? null,
     paidActionGates,
     referrals: (referrals.data ?? []).map((referral) => ({
       id: referral.id,

@@ -67,7 +67,6 @@ describe("geo eligibility", () => {
     const protectedRoutes = [
       "src/app/api/deposits/address/route.ts",
       "src/app/api/deposits/claims/route.ts",
-      "src/app/api/tickets/purchase/route.ts",
       "src/app/api/entries/route.ts",
       "src/app/api/withdrawals/route.ts",
     ];
@@ -79,5 +78,9 @@ describe("geo eligibility", () => {
       assert.match(source, /loadOperatorPolicy/);
       assert.match(source, /getPolicyGeoEnv\(operatorPolicy\)/);
     }
+
+    const disabledPurchaseRoute = readFileSync("src/app/api/tickets/purchase/route.ts", "utf8");
+    assert.match(disabledPurchaseRoute, /Tickets are assigned manually by Admin/);
+    assert.doesNotMatch(disabledPurchaseRoute, /enforceGeoEligibility/);
   });
 });

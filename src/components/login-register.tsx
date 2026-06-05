@@ -6,6 +6,7 @@ import {
   CircleDollarSign,
   Gift,
   LogIn,
+  MessageCircle,
   MousePointer2,
   ShieldCheck,
   Users,
@@ -15,6 +16,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { createBrowserSupabaseClient } from "@/lib/supabase";
+import { SUPPORT_WHATSAPP_E164, SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import type { PaidActionGate, PaidActionGates } from "@/lib/types";
 import type { Session } from "@supabase/supabase-js";
 
@@ -222,7 +224,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
               <div>
                 <strong>Account setup is open</strong>
                 <span>
-                  Tickets and USDT deposits open after launch approvals are complete.
+                  Admin assigns tickets after verified cash or USDT payment.
                 </span>
               </div>
             </div>
@@ -368,6 +370,11 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
             )
           ) : null}
 
+          <a className="auth-support-link" href={SUPPORT_WHATSAPP_URL} rel="noreferrer" target="_blank">
+            <MessageCircle size={16} />
+            Need help? WhatsApp {SUPPORT_WHATSAPP_E164}
+          </a>
+
           {message ? <div className="message">{message}</div> : null}
           {error ? <div className="message error">{error}</div> : null}
         </div>
@@ -389,8 +396,8 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
                 Predict the Game <span className="motto-accent">WorldCup26</span>
               </h1>
               <p>
-                Create your account, pick three teams, then use Wallet for tickets and USDT after
-                launch approvals open.
+                Create your account, pick three teams, then receive an Admin or Agent assigned
+                ticket to lock the entry.
               </p>
             </div>
 
@@ -414,7 +421,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
                   <div>
                     <span>3</span>
                     <strong>Play</strong>
-                    <small>Pick teams, buy tickets, track wallet activity.</small>
+                    <small>Pick teams, receive tickets, track wallet activity.</small>
                   </div>
                 </div>
               </details>

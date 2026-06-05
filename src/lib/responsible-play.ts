@@ -106,10 +106,10 @@ export function getResponsiblePlayRestriction(
 
   if (status.selfExcluded) {
     return status.selfExcludedUntil
-      ? `Responsible play self-exclusion is active until ${new Date(
+      ? `Account ticket actions are paused until ${new Date(
           status.selfExcludedUntil,
-        ).toLocaleString()}. Deposits, ticket purchases, and entries are paused.`
-      : "Responsible play self-exclusion is active. Deposits, ticket purchases, and entries are paused.";
+        ).toLocaleString()}. Deposits, ticket transfers, and entries are paused.`
+      : "Account ticket actions are paused. Deposits, ticket transfers, and entries are paused.";
   }
 
   if (status.maxEntries === null || action === "deposit") {
@@ -121,12 +121,12 @@ export function getResponsiblePlayRestriction(
     const ticketsReserved = status.ticketsReserved ?? 0;
 
     if (ticketsReserved + requestedTickets > status.maxEntries) {
-      return `Your responsible play entry-ticket limit is ${status.maxEntries}. Lower the ticket quantity or update your limit.`;
+      return `Your account entry-ticket limit is ${status.maxEntries}. Lower the ticket quantity or ask Admin to update the account limit.`;
     }
   }
 
   if (action === "entry" && (status.entriesUsed ?? 0) >= status.maxEntries) {
-    return `Your responsible play entry limit is ${status.maxEntries}.`;
+    return `Your account entry limit is ${status.maxEntries}.`;
   }
 
   return null;
@@ -144,7 +144,7 @@ export async function loadResponsiblePlayStatus(
     .maybeSingle();
 
   if (settings.error) {
-    return { error: "Could not verify responsible play settings." };
+    return { error: "Could not verify account ticket limits." };
   }
 
   let ticketsReserved: number | null = null;
@@ -165,7 +165,7 @@ export async function loadResponsiblePlayStatus(
     ]);
 
     if (tickets.error || entries.error) {
-      return { error: "Could not verify responsible play limits." };
+      return { error: "Could not verify account ticket limits." };
     }
 
     ticketsReserved = tickets.count ?? 0;

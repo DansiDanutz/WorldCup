@@ -8,16 +8,18 @@ import { createServiceSupabaseClient } from "@/lib/supabase";
 import {
   requireEnum,
   requireInteger,
-  requireNonNegativeAmount,
+  requirePositiveAmount,
   requireObject,
   requireString,
   ValidationError,
 } from "@/lib/validation";
+import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
 
 const TICKET_ASSIGN_ERROR_MESSAGES: Record<string, { status: number; message: string }> = {
   ADMIN_ACCOUNT_REQUIRED: { status: 403, message: "Admin account profile was not found." },
   INVALID_PAYMENT_METHOD: { status: 400, message: "Payment method must be cash or USDT." },
   INVALID_QUANTITY: { status: 400, message: "Ticket quantity must be between 1 and 1000." },
+  INVALID_TICKET_PRICE: { status: 400, message: "Set a ticket price above 0 before assigning tickets." },
   INSUFFICIENT_ADMIN_CODES: { status: 409, message: "Not enough tickets in admin inventory. Request tickets first." },
   RECIPIENT_NOT_FOUND: { status: 404, message: "Account was not found." },
   TOURNAMENT_NOT_FOUND: { status: 500, message: "Tournament is not available." },
@@ -64,7 +66,7 @@ export async function POST(request: Request) {
     let ticketPriceAmount: number;
 
     try {
-      ticketPriceAmount = requireNonNegativeAmount(body.ticketPriceAmount, "Ticket price");
+      ticketPriceAmount = requirePositiveAmount(body.ticketPriceAmount, "Ticket price");
     } catch (error) {
       return jsonError(error instanceof ValidationError ? error.message : "Invalid ticket price.", 400);
     }
@@ -80,7 +82,9 @@ export async function POST(request: Request) {
       return jsonError(updateResult.error?.message ?? "Could not save ticket price.", 500);
     }
 
-    return NextResponse.json({ ticketPriceAmount: updateResult.data.ticket_price_amount });
+    return NextResponse.json({
+      ticketPriceAmount: normalizeWorldCupTicketPriceAmount(updateResult.data.ticket_price_amount),
+    });
   }
 
   let userId: string;
@@ -122,7 +126,7 @@ export async function POST(request: Request) {
     requestedTickets: quantity,
   });
   if (responsiblePlayRestriction) {
-    return jsonError(`Responsible play blocks this assignment. ${responsiblePlayRestriction}`, 403);
+    return jsonError(`Account ticket limit blocks this assignment. ${responsiblePlayRestriction}`, 403);
   }
 
   const assignResult = await supabase.rpc("worldcup_admin_assign_user_ticket", {
