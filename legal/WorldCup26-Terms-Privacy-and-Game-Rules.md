@@ -8,17 +8,19 @@
 | --- | --- |
 | <u>Service / Trading name</u> | WorldCup26 |
 | <u>Website</u> | https://worldcup26.world |
-| <u>Operating entity</u> | **Stack Finance LLC** ("the Operator", "we", "us", "our") |
-| <u>Company registration number</u> | **[KRS / NIP — to be inserted from Stack Finance LLC records]** |
-| <u>Registered office</u> | **[Registered office address, Poland — to be inserted]** |
-| <u>Jurisdiction of incorporation</u> | **Poland** |
+| <u>Operating entity</u> | **Stack Finance sp. z o.o.** (Stack Finance Limited Liability Company; "Stack Finance LLC") ("the Operator", "we", "us", "our") |
+| <u>National Court Register (KRS)</u> | **0001077664** |
+| <u>Tax identification number (NIP)</u> | **7011181285** |
+| <u>Virtual-asset service registration (VASP)</u> | **Virtual Currency Business Activity Register No. RDWW-1102** — entered 9 January 2024, maintained by the Director of the Revenue Administration Chamber in Katowice, Poland (certificate 2401-CKRDST.4225.2.2024) |
+| <u>Registered office</u> | **[Registered office address in Poland — per KRS 0001077664; to be inserted]** |
+| <u>Jurisdiction of incorporation</u> | **Poland (European Union)** |
 | <u>Primary contact</u> | support@worldcup26.world |
 | <u>Age-verification contact</u> | age-verification@worldcup26.world |
 | <u>Document version</u> | 1.0 |
 | <u>Effective date</u> | 4 June 2026 |
 | <u>Document prepared</u> | 5 June 2026 |
 
-> **Note to reviewer (Revolut):** This document consolidates, in a single professional pack, the public Game Rules, Terms &amp; Conditions, and Privacy Policy that govern the WorldCup26 service, together with a summary of the responsible-play, anti-money-laundering, and customer due-diligence controls the Operator applies. The two items still shown in **[square brackets]** above — the company registration number and the registered office address — are to be inserted from Stack Finance LLC's official Polish registration records before submission.
+> **Note to reviewer (Revolut):** This document consolidates, in a single professional pack, the public Game Rules, Terms &amp; Conditions, and Privacy Policy that govern the WorldCup26 service, together with a summary of the responsible-play, anti-money-laundering, and customer due-diligence controls the Operator applies. Stack Finance sp. z o.o. is a Polish company and a <u>registered Virtual Asset Service Provider</u> (Virtual Currency Business Activity Register No. RDWW-1102). The single item still shown in **[square brackets]** above — the registered office address — should be inserted from the company's KRS extract before submission.
 
 ---
 
@@ -69,7 +71,7 @@ Player scores are calculated <u>exclusively from official, real-time tournament 
 
 | Term | Meaning |
 | --- | --- |
-| <u>"Operator"</u> | **Stack Finance LLC**, a limited liability company registered in Poland, which owns and operates WorldCup26. |
+| <u>"Operator"</u> | **Stack Finance sp. z o.o.** ("Stack Finance LLC"), a Polish limited liability company (KRS 0001077664, NIP 7011181285) and a registered Virtual Asset Service Provider (Virtual Currency Business Activity Register No. RDWW-1102), which owns and operates WorldCup26. |
 | <u>"Participant" / "you"</u> | A natural person aged 18 or over who holds a WorldCup26 account. |
 | <u>"Account"</u> | The participant's WorldCup26 profile, created via Google sign-in. |
 | <u>"Subscription" / "Entry Ticket"</u> | The fixed, one-time fee that entitles a participant to one single Entry. |
@@ -343,34 +345,38 @@ The Wallet surfaces <u>responsible-play controls and support-resource links</u>.
 
 > This section summarises the controls relevant to a payment or banking partner's onboarding review. It is provided for transparency and does not constitute legal advice.
 
-### 7.1 <u>Nature of funds flow</u>
+### 7.1 <u>Regulatory status — registered Virtual Asset Service Provider (Poland, EU)</u>
+
+The Operator, <u>Stack Finance sp. z o.o.</u>, is a Polish company entered in the national <u>Virtual Currency Business Activity Register</u> (the Polish register of virtual-asset service activity) under number <u>**RDWW-1102**</u>, with effect from <u>9 January 2024</u>. The register is maintained by the Director of the Revenue Administration Chamber in Katowice under the <u>Polish Act of 1 March 2018 on Counteracting Money Laundering and Terrorism Financing</u> (the Polish implementation of the EU AML framework). The Operator therefore acts as a <u>registered Virtual Asset Service Provider (VASP)</u> and is subject to Polish and EU <u>AML/CFT obligations</u> — including customer due diligence, transaction record-keeping, and suspicious-activity reporting. The certificate of entry (no. <u>2401-CKRDST.4225.2.2024</u>, apostilled under the 1961 Hague Convention) is available to the reviewer on request.
+
+### 7.2 <u>Nature of funds flow</u>
 
 Participants fund an <u>internal USDT Wallet</u>; from that balance they pay a <u>fixed subscription for a single Entry</u>. Prizes to top-ranked participants are paid out in USDT <u>after verification and approval</u>. There is <u>no peer-to-peer betting and no house book</u>.
 
-### 7.2 <u>Customer due diligence (KYC)</u>
+### 7.3 <u>Customer due diligence (KYC)</u>
 
 - <u>Identity:</u> Google-authenticated accounts only; <u>one account per person</u>.
 - <u>Age verification:</u> <u>document-backed 18+ verification is mandatory before any withdrawal or payout</u>; payouts are blocked until the account is verified.
 - <u>KYC/AML at payout:</u> identity and source-of-funds review, sanctions screening, and AML monitoring are applied at the <u>payout and withdrawal stage</u> as the natural control point, in line with the Operator's onboarding obligations.
 
-### 7.3 <u>Transaction monitoring and limits</u>
+### 7.4 <u>Transaction monitoring and limits</u>
 
 - <u>Configurable per-claim and daily deposit caps</u> (rolling 24-hour window).
 - <u>Configurable per-request and daily withdrawal caps</u>.
 - <u>Every credited deposit and approved withdrawal requires an admin audit note</u> and records the external transaction reference.
 
-### 7.4 <u>Sanctions and geographic controls</u>
+### 7.5 <u>Sanctions and geographic controls</u>
 
 The Operator applies <u>configurable allow/block country controls</u> to deposits, subscriptions, and entries, and screens payouts for <u>sanctions exposure</u> before release.
 
-### 7.5 <u>Record-keeping and auditability</u>
+### 7.6 <u>Record-keeping and auditability</u>
 
 - A <u>durable wallet ledger</u> is the single source of truth for balances.
 - A <u>per-prize payout ledger</u> and <u>settlement records</u> provide a full audit trail.
 - <u>Admin actions are authenticated, allow-listed, and attributed</u> to the acting operator.
 - <u>Consent and referral-terms acceptance are timestamped per user.</u>
 
-### 7.6 <u>Refunds and chargebacks</u>
+### 7.7 <u>Refunds and chargebacks</u>
 
 Subscriptions purchase a <u>single Entry into a skill contest</u> and are generally <u>non-refundable once the Entry is locked</u>, save where required by law or to correct an Operator error. The Operator may <u>void entries and reverse referral rewards in cases of fraud, abuse, or chargeback</u>.
 
@@ -388,10 +394,9 @@ For account, deposit, payout, referral, or prize questions, or to exercise a pri
 
 ## 9. <u>Document Completion Notes</u> (remove before sending if preferred)
 
-The operator, jurisdiction, governing law, and contact details for <u>Stack Finance LLC (Poland)</u> have been completed. Before submitting this pack to Revolut, insert the following <u>two remaining items</u> from Stack Finance LLC's official Polish registration records (both appear in the Document Information table at the top of this pack):
+The operator name, registration numbers (KRS / NIP), virtual-asset (VASP) registration, jurisdiction, governing law, and contact details for <u>Stack Finance sp. z o.o. ("Stack Finance LLC"), Poland</u> have been completed from the company's VASP certificate of entry. Before submitting this pack to Revolut, insert the <u>one remaining item</u> below from the company's KRS extract (it appears in the Document Information table at the top of this pack):
 
-- **Company registration number** — the company's <u>KRS</u> number (and <u>NIP</u> / <u>REGON</u> as applicable).
-- **Registered office address** — the company's <u>registered office address in Poland</u>.
+- **Registered office address** — the company's <u>registered office address in Poland</u>, as shown on the KRS 0001077664 extract.
 
 > **Disclaimer:** This pack is Stack Finance LLC's own policy documentation prepared for a banking / payment onboarding review. It is <u>not legal advice</u>. Stack Finance LLC should obtain qualified legal counsel for the legal classification (game of skill vs. other) and the licensing position in each market in which it operates before accepting real-money subscriptions.
 

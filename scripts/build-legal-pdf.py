@@ -29,8 +29,12 @@ SRC = REPO_ROOT / "legal" / "WorldCup26-Terms-Privacy-and-Game-Rules.md"
 OUT = REPO_ROOT / "legal" / "WorldCup26-Terms-Privacy-and-Game-Rules.pdf"
 
 # --- Cover metadata -------------------------------------------------------
-OPERATOR = "Stack Finance LLC"
-JURISDICTION = "Poland"
+BRAND = "Stack Finance sp. z o.o."
+OPERATOR = 'Stack Finance sp. z o.o. ("Stack Finance LLC")'
+JURISDICTION = "Poland (European Union)"
+KRS = "0001077664"
+NIP = "7011181285"
+VASP = "Virtual Currency Register No. RDWW-1102 (entered 9 Jan 2024)"
 WEBSITE = "worldcup26.world"
 VERSION = "1.0"
 EFFECTIVE = "4 June 2026"
@@ -196,8 +200,8 @@ def build_html() -> str:
     cover = f"""
     <div class="cover">
       <div class="cover-top">
-        <div class="cover-brand">{OPERATOR.upper()}</div>
-        <div class="cover-brand-sub">OPERATOR OF WORLDCUP26 · {JURISDICTION.upper()}</div>
+        <div class="cover-brand">{BRAND.upper()}</div>
+        <div class="cover-brand-sub">STACK FINANCE LLC · REGISTERED VASP (RDWW-1102) · POLAND, EU</div>
       </div>
       <div class="cover-rule"></div>
       <div class="cover-center">
@@ -207,11 +211,11 @@ def build_html() -> str:
         <div class="cover-tag">Prepared for Revolut — Know-Your-Business / Onboarding Review</div>
         <table class="cover-info">
           <tr><td class="k">Operator</td><td class="v">{OPERATOR}</td></tr>
+          <tr><td class="k">KRS / NIP</td><td class="v">{KRS} &nbsp;·&nbsp; NIP {NIP}</td></tr>
+          <tr><td class="k">VASP registration</td><td class="v">{VASP}</td></tr>
           <tr><td class="k">Jurisdiction</td><td class="v">{JURISDICTION}</td></tr>
           <tr><td class="k">Service / Website</td><td class="v">{WEBSITE}</td></tr>
-          <tr><td class="k">Document version</td><td class="v">{VERSION}</td></tr>
-          <tr><td class="k">Effective date</td><td class="v">{EFFECTIVE}</td></tr>
-          <tr><td class="k">Prepared</td><td class="v">{PREPARED}</td></tr>
+          <tr><td class="k">Version · Effective</td><td class="v">{VERSION} &nbsp;·&nbsp; {EFFECTIVE}</td></tr>
         </table>
       </div>
       <div class="cover-bottom"><div class="cb-inner">
