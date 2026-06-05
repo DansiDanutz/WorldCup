@@ -427,6 +427,13 @@ export function Dashboard({
           ticketsAvailable?: number;
           ticketPriceAmount?: string;
           entry?: MyAccountStatus["entry"];
+          usdtSenderWalletAddress?: string | null;
+          usdtSenderWalletNetwork?: string | null;
+          usdtSenderWalletUpdatedAt?: string | null;
+          usdtSenderWalletTrc20Address?: string | null;
+          usdtSenderWalletTrc20UpdatedAt?: string | null;
+          usdtSenderWalletErc20Address?: string | null;
+          usdtSenderWalletErc20UpdatedAt?: string | null;
           paidActionGates?: MyAccountStatus["paidActionGates"];
         };
 
@@ -446,6 +453,13 @@ export function Dashboard({
           ticketsAvailable: result.ticketsAvailable ?? 0,
           ticketPriceAmount: normalizeWorldCupTicketPriceAmount(result.ticketPriceAmount),
           entry: result.entry ?? null,
+          usdtSenderWalletAddress: result.usdtSenderWalletAddress ?? null,
+          usdtSenderWalletNetwork: result.usdtSenderWalletNetwork ?? null,
+          usdtSenderWalletUpdatedAt: result.usdtSenderWalletUpdatedAt ?? null,
+          usdtSenderWalletTrc20Address: result.usdtSenderWalletTrc20Address ?? null,
+          usdtSenderWalletTrc20UpdatedAt: result.usdtSenderWalletTrc20UpdatedAt ?? null,
+          usdtSenderWalletErc20Address: result.usdtSenderWalletErc20Address ?? null,
+          usdtSenderWalletErc20UpdatedAt: result.usdtSenderWalletErc20UpdatedAt ?? null,
           paidActionGates: result.paidActionGates,
         });
       } catch {
@@ -733,6 +747,10 @@ export function Dashboard({
         usdtSenderWalletAddress: current?.usdtSenderWalletAddress ?? null,
         usdtSenderWalletNetwork: current?.usdtSenderWalletNetwork ?? null,
         usdtSenderWalletUpdatedAt: current?.usdtSenderWalletUpdatedAt ?? null,
+        usdtSenderWalletTrc20Address: current?.usdtSenderWalletTrc20Address ?? null,
+        usdtSenderWalletTrc20UpdatedAt: current?.usdtSenderWalletTrc20UpdatedAt ?? null,
+        usdtSenderWalletErc20Address: current?.usdtSenderWalletErc20Address ?? null,
+        usdtSenderWalletErc20UpdatedAt: current?.usdtSenderWalletErc20UpdatedAt ?? null,
         paidActionGates: current?.paidActionGates,
         entry: {
           id: result.entryId ?? "locked-entry",
@@ -1764,7 +1782,9 @@ function getTeamColorStyle(teamId: string) {
 }
 
 function getGatePauseMessage(gate: PaidActionGate | undefined) {
-  return gate && !gate.allowed ? "Paid actions open after launch approvals are complete." : null;
+  return gate && !gate.allowed
+    ? "USDT deposits and ticket purchases are paused until admin launch approval is complete. You can still prepare your locked sender wallet."
+    : null;
 }
 
 function getEntryLockBlocker({

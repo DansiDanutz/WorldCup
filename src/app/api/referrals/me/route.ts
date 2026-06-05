@@ -141,6 +141,10 @@ export async function GET(request: Request) {
     usdtSenderWalletAddress: profile.usdt_sender_wallet_address ?? null,
     usdtSenderWalletNetwork: profile.usdt_sender_wallet_network ?? null,
     usdtSenderWalletUpdatedAt: profile.usdt_sender_wallet_updated_at ?? null,
+    usdtSenderWalletTrc20Address: profile.usdt_sender_wallet_trc20_address ?? null,
+    usdtSenderWalletTrc20UpdatedAt: profile.usdt_sender_wallet_trc20_updated_at ?? null,
+    usdtSenderWalletErc20Address: profile.usdt_sender_wallet_erc20_address ?? null,
+    usdtSenderWalletErc20UpdatedAt: profile.usdt_sender_wallet_erc20_updated_at ?? null,
     paidActionGates,
     referrals: (referrals.data ?? []).map((referral) => ({
       id: referral.id,

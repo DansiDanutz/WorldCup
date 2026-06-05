@@ -2477,11 +2477,19 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                         <span>
                           Tickets: {account.ticketsAvailable}/{account.ticketsAssigned} available
                         </span>
-                        {account.usdtSenderWalletAddress ? (
-                          <code className="deposit-address">
-                            USDT sender: {account.usdtSenderWalletAddress} (
-                            {account.usdtSenderWalletNetwork?.toUpperCase() ?? "NETWORK UNKNOWN"})
-                          </code>
+                        {account.usdtSenderWalletTrc20Address || account.usdtSenderWalletErc20Address ? (
+                          <div className="account-wallet-locks">
+                            {account.usdtSenderWalletTrc20Address ? (
+                              <code className="deposit-address">
+                                TRC20 sender: {account.usdtSenderWalletTrc20Address}
+                              </code>
+                            ) : null}
+                            {account.usdtSenderWalletErc20Address ? (
+                              <code className="deposit-address">
+                                ERC20 sender: {account.usdtSenderWalletErc20Address}
+                              </code>
+                            ) : null}
+                          </div>
                         ) : (
                           <span>No USDT sender wallet saved yet</span>
                         )}

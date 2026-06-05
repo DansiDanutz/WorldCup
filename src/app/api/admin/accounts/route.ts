@@ -38,7 +38,7 @@ export async function POST(request: Request) {
   const [profiles, transactions, tickets] = await Promise.all([
     supabase
       .from("worldcup_referral_profiles")
-      .select("user_id,display_name,email,referral_code,usdt_sender_wallet_address,usdt_sender_wallet_network,usdt_sender_wallet_updated_at")
+      .select("user_id,display_name,email,referral_code,usdt_sender_wallet_address,usdt_sender_wallet_network,usdt_sender_wallet_updated_at,usdt_sender_wallet_trc20_address,usdt_sender_wallet_trc20_updated_at,usdt_sender_wallet_erc20_address,usdt_sender_wallet_erc20_updated_at")
       .order("display_name", { ascending: true }),
     supabase
       .from("worldcup_wallet_transactions")
@@ -84,6 +84,10 @@ export async function POST(request: Request) {
         usdtSenderWalletAddress: profile.usdt_sender_wallet_address ?? null,
         usdtSenderWalletNetwork: profile.usdt_sender_wallet_network ?? null,
         usdtSenderWalletUpdatedAt: profile.usdt_sender_wallet_updated_at ?? null,
+        usdtSenderWalletTrc20Address: profile.usdt_sender_wallet_trc20_address ?? null,
+        usdtSenderWalletTrc20UpdatedAt: profile.usdt_sender_wallet_trc20_updated_at ?? null,
+        usdtSenderWalletErc20Address: profile.usdt_sender_wallet_erc20_address ?? null,
+        usdtSenderWalletErc20UpdatedAt: profile.usdt_sender_wallet_erc20_updated_at ?? null,
         walletBalance: calculateWalletBalance(profile.user_id, walletTransactions).toFixed(8),
         ticketsAssigned: userTickets.length,
         ticketsAvailable: userTickets.filter((ticket) => !ticket.consumed_at).length,

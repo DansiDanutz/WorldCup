@@ -14,9 +14,14 @@ const senderWalletMigration = readFileSync(
   "supabase/migrations/20260603083000_worldcup_manual_usdt_incoming_transfers.sql",
   "utf8",
 );
-const migrations = `${migration}\n${processingMigration}\n${senderWalletMigration}`;
+const frozenSenderWalletMigration = readFileSync(
+  "supabase/migrations/20260605043000_worldcup_frozen_usdt_sender_wallets.sql",
+  "utf8",
+);
+const migrations = `${migration}\n${processingMigration}\n${senderWalletMigration}\n${frozenSenderWalletMigration}`;
 const adminRoute = readFileSync("src/app/api/admin/deposit-claims/route.ts", "utf8");
 const userClaimRoute = readFileSync("src/app/api/deposits/claims/route.ts", "utf8");
+const senderWalletRoute = readFileSync("src/app/api/deposits/sender-wallet/route.ts", "utf8");
 const depositsHelper = readFileSync("src/lib/deposits.ts", "utf8");
 const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
 const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
@@ -33,6 +38,11 @@ describe("shared deposit claim migration", () => {
     assert.match(senderWalletMigration, /usdt_sender_wallet_address text/);
     assert.match(senderWalletMigration, /usdt_sender_wallet_network text/);
     assert.match(senderWalletMigration, /worldcup_referral_profiles_usdt_sender_wallet_idx/);
+    assert.match(frozenSenderWalletMigration, /usdt_sender_wallet_trc20_address text/);
+    assert.match(frozenSenderWalletMigration, /usdt_sender_wallet_erc20_address text/);
+    assert.match(frozenSenderWalletMigration, /worldcup_prevent_usdt_sender_wallet_change/);
+    assert.match(frozenSenderWalletMigration, /USDT_TRC20_SENDER_WALLET_LOCKED/);
+    assert.match(frozenSenderWalletMigration, /USDT_ERC20_SENDER_WALLET_LOCKED/);
   });
 
   it("shows users the exact receive wallet tied to each submitted claim", () => {
@@ -49,12 +59,21 @@ describe("shared deposit claim migration", () => {
     assert.match(userClaimRoute, /normalizeDepositAddress/);
     assert.match(userClaimRoute, /requireString\(body\.senderWalletAddress, "Sending wallet address"/);
     assert.match(userClaimRoute, /Sending wallet address must match the selected network/);
-    assert.match(userClaimRoute, /usdt_sender_wallet_address: senderWalletAddress/);
-    assert.match(userClaimRoute, /usdt_sender_wallet_network: network/);
+    assert.match(userClaimRoute, /getSavedSenderWalletForNetwork\(profile, network\)/);
+    assert.match(userClaimRoute, /getSenderWalletLockMismatchMessage\(network\)/);
+    assert.match(userClaimRoute, /buildFrozenSenderWalletUpdate/);
     assert.match(userClaimRoute, /sender_wallet_address: senderWalletAddress/);
+    assert.match(senderWalletRoute, /deposit-sender-wallet/);
+    assert.match(senderWalletRoute, /buildFrozenSenderWalletUpdate/);
+    assert.match(senderWalletRoute, /getSavedSenderWalletForNetwork\(profile, network\)/);
+    assert.match(senderWalletRoute, /getSenderWalletLockMismatchMessage\(network\)/);
+    assert.match(depositsHelper, /Deposits from another wallet cannot be credited/);
     assert.match(walletScreen, /const \[claimSenderWalletAddress, setClaimSenderWalletAddress\]/);
-    assert.match(walletScreen, /Sending wallet address/);
-    assert.match(walletScreen, /Saved to your account for manual ticket\/payment matching/);
+    assert.match(walletScreen, /USDT sender wallets/);
+    assert.match(walletScreen, /TRC20 and ERC20 are separate/);
+    assert.match(walletScreen, /Once a wallet is saved, it cannot be changed/);
+    assert.match(walletScreen, /disabled=\{Boolean\(lockedClaimSenderWallet\)\}/);
+    assert.match(walletScreen, /Lock \{claimNetworkLabel\} sender wallet/);
     assert.match(walletScreen, /senderWalletAddress,/);
     assert.match(walletScreen, /!claimSenderWalletAddress/);
     assert.match(walletScreen, /View sending wallet/);

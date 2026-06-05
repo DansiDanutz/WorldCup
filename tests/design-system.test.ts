@@ -520,13 +520,14 @@ describe("WorldCup design system integration", () => {
     assert.match(walletScreen, /status\?\.paidActionGates/);
     assert.match(walletScreen, /publicPaidActionsPaused/);
     assert.match(walletScreen, /Wallet paid actions paused/);
-    assert.match(walletScreen, /Sign in with Google to prepare your wallet/);
-    assert.match(walletScreen, /Paid actions open after launch approvals are complete/);
+    assert.match(walletScreen, /Sign in with Google to prepare your locked USDT sender wallet/);
+    assert.match(walletScreen, /USDT deposits and ticket purchases are paused until admin launch approval is complete/);
     assert.match(walletScreen, /depositClaimAccountLabel/);
     assert.match(walletScreen, /Deposit claims\s+are tied to/);
-    assert.match(walletScreen, /Save the wallet address you send from/);
+    assert.match(walletScreen, /Lock sender wallet/);
     assert.match(walletScreen, /Admins use both before crediting your balance/);
-    assert.match(walletScreen, /Sending wallet address/);
+    assert.match(walletScreen, /sender wallet address/);
+    assert.match(walletScreen, /TRC20 and ERC20 are separate/);
     assert.doesNotMatch(walletScreen, /Operator policy is configured/);
     assert.match(walletScreen, /Boolean\(depositRestriction \|\| depositPolicyPause\)/);
     assert.match(walletScreen, /Boolean\(ticketRestriction \|\| ticketPolicyPause\)/);

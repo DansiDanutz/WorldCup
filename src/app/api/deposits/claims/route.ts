@@ -2,8 +2,12 @@ import { NextResponse } from "next/server";
 
 import {
   DEPOSIT_CLAIM_LIMIT_WINDOW_HOURS,
+  buildFrozenSenderWalletUpdate,
   getConfiguredMainDepositAddress,
   getDepositClaimLimitViolation,
+  getDepositNetworkShortLabel,
+  getSavedSenderWalletForNetwork,
+  getSenderWalletLockMismatchMessage,
   normalizeDepositAddress,
   normalizeDepositTxHash,
   normalizeNetwork,
@@ -226,19 +230,29 @@ export async function POST(request: Request) {
   }
 
   const profile = await getOrCreateReferralProfile(auth.supabase, auth.user);
+  const savedSenderWallet = getSavedSenderWalletForNetwork(profile, network);
+  if (savedSenderWallet && savedSenderWallet !== senderWalletAddress) {
+    return jsonError(getSenderWalletLockMismatchMessage(network), 409);
+  }
+
   const now = new Date().toISOString();
+  const senderWalletUpdateData = buildFrozenSenderWalletUpdate(
+    profile,
+    network,
+    senderWalletAddress,
+    now,
+  );
   const senderWalletUpdate = await auth.supabase
     .from("worldcup_referral_profiles")
-    .update({
-      usdt_sender_wallet_address: senderWalletAddress,
-      usdt_sender_wallet_network: network,
-      usdt_sender_wallet_updated_at: now,
-      updated_at: now,
-    })
+    .update(senderWalletUpdateData)
     .eq("user_id", auth.user.id);
 
   if (senderWalletUpdate.error) {
-    return jsonError("Could not save sending wallet address.", 500);
+    if (senderWalletUpdate.error.message?.includes("SENDER_WALLET_LOCKED")) {
+      return jsonError(getSenderWalletLockMismatchMessage(network), 409);
+    }
+
+    return jsonError(`Could not lock your ${getDepositNetworkShortLabel(network)} sender wallet.`, 500);
   }
 
   const insert = await auth.supabase

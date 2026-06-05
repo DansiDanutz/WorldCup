@@ -117,6 +117,10 @@ export type AdminAccountRow = {
   usdtSenderWalletAddress: string | null;
   usdtSenderWalletNetwork: string | null;
   usdtSenderWalletUpdatedAt: string | null;
+  usdtSenderWalletTrc20Address: string | null;
+  usdtSenderWalletTrc20UpdatedAt: string | null;
+  usdtSenderWalletErc20Address: string | null;
+  usdtSenderWalletErc20UpdatedAt: string | null;
   walletBalance: string;
   ticketsAssigned: number;
   ticketsAvailable: number;
@@ -213,6 +217,10 @@ export type MyAccountStatus = {
   usdtSenderWalletAddress?: string | null;
   usdtSenderWalletNetwork?: string | null;
   usdtSenderWalletUpdatedAt?: string | null;
+  usdtSenderWalletTrc20Address?: string | null;
+  usdtSenderWalletTrc20UpdatedAt?: string | null;
+  usdtSenderWalletErc20Address?: string | null;
+  usdtSenderWalletErc20UpdatedAt?: string | null;
   paidActionGates?: PaidActionGates;
 };
 
