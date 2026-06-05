@@ -1012,7 +1012,7 @@ export function Dashboard({
         </SmartMenu>
       </header>
 
-      <div className="page page--landing">
+      <div className={`page page--landing ${showPickWorkflow ? "" : "page--post-entry"}`}>
         {showPickWorkflow ? (
           <HeroSwiper
             prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}

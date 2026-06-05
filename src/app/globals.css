@@ -741,6 +741,10 @@ svg {
   padding: 0 clamp(12px, 2.2vw, 32px) 48px;
 }
 
+.app-shell--landing .page--post-entry {
+  padding-top: 112px;
+}
+
 .app-shell--landing #pick,
 .app-shell--landing #leaderboard,
 .app-shell--landing #matches,
@@ -4127,6 +4131,10 @@ svg {
     align-self: stretch;
     width: 100%;
   }
+
+  .app-shell--landing .page--post-entry {
+    padding-top: 176px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -4336,6 +4344,10 @@ svg {
 
   .app-shell--landing .smart-menu__panel[hidden] {
     display: none;
+  }
+
+  .app-shell--landing .page--post-entry {
+    padding-top: 132px;
   }
 
   .app-shell--landing .nav {

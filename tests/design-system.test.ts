@@ -428,6 +428,7 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /const hasEntryTicket = ticketsAvailable > 0/);
     assert.match(dashboard, /const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket/);
     assert.match(dashboard, /const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase/);
+    assert.match(dashboard, /page--post-entry/);
     assert.match(dashboard, /const missingEntryTicket =/);
     assert.match(dashboard, /const entryLockBlocker = getEntryLockBlocker/);
     assert.match(dashboard, /const entryLockHint =/);
@@ -465,6 +466,9 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.ticket-requirement-actions\s*{/);
     assert.match(globalsCss, /\.ticket-ready-note\s*{/);
     assert.match(globalsCss, /\.entry-lock-hint\s*{/);
+    assert.match(globalsCss, /\.app-shell--landing \.page--post-entry\s*{[\s\S]*?padding-top:\s*112px;/);
+    assert.match(globalsCss, /@media \(min-width:\s*761px\) and \(max-width:\s*1180px\)\s*{[\s\S]*?\.app-shell--landing \.page--post-entry\s*{[\s\S]*?padding-top:\s*176px;/);
+    assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.app-shell--landing \.page--post-entry\s*{[\s\S]*?padding-top:\s*132px;/);
     assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.ticket-requirement-card\s*{[\s\S]*?grid-template-columns:\s*1fr;/);
   });
 
@@ -527,7 +531,9 @@ describe("WorldCup design system integration", () => {
     assert.match(loginPage, /getPublicPaidActionGates/);
     assert.match(loginPage, /publicPaidActionGates/);
     assert.match(dashboard, /launchEvidenceMode/);
-    assert.match(dashboard, /<div className="page page--landing">[\s\S]*?<HeroSwiper/);
+    assert.match(dashboard, /page page--landing/);
+    assert.match(dashboard, /showPickWorkflow \? "" : "page--post-entry"/);
+    assert.match(dashboard, /<HeroSwiper/);
     assert.doesNotMatch(dashboard, /<strong>Paid actions paused<\/strong>/);
     assert.match(dashboard, /Admin launch evidence mode/);
     assert.match(dashboard, /assign paid ticket codes\s+manually from the Admin panel/);
