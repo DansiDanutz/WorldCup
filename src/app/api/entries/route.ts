@@ -152,6 +152,26 @@ export async function POST(request: Request) {
     }
 
     referrerUserId = referralProfile.data.user_id;
+  } else {
+    const savedSignupReferral = await supabase
+      .from("worldcup_referral_profiles")
+      .select("signup_referral_code,signup_referrer_user_id,signup_referral_accepted_at")
+      .eq("user_id", user.id)
+      .maybeSingle();
+
+    if (savedSignupReferral.error) {
+      return jsonError("Could not load saved signup referral.", 500);
+    }
+
+    const savedReferrerUserId = savedSignupReferral.data?.signup_referrer_user_id ?? null;
+    if (
+      savedReferrerUserId &&
+      savedReferrerUserId !== user.id &&
+      savedSignupReferral.data?.signup_referral_accepted_at
+    ) {
+      referralCode = normalizeReferralCode(savedSignupReferral.data.signup_referral_code ?? "");
+      referrerUserId = savedReferrerUserId;
+    }
   }
 
   const entryResult = await supabase.rpc("worldcup_create_entry", {

@@ -191,6 +191,7 @@ export function Dashboard({
   const teamListRef = useRef<HTMLDivElement | null>(null);
   const teamListTouchStart = useRef<{ scrollTop: number; y: number } | null>(null);
   const teamRowPointerStart = useRef<{ x: number; y: number } | null>(null);
+  const persistedSignupReferralRef = useRef<string | null>(null);
   const suppressTeamRowClick = useRef(false);
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
@@ -274,6 +275,10 @@ export function Dashboard({
     { label: "Lock", done: accountHasEntry },
   ];
   const journeyCurrentStep = journeySteps.findIndex((step) => !step.done);
+  const entryLockHint =
+    entryLockBlocker && hasEntryTicket && !missingEntryTicket
+      ? `Ticket is ready. ${entryLockBlocker}`
+      : entryLockBlocker;
   const pendingAgentTicketRequest = agentTicketRequests.find((request) => request.status === "pending");
   const launchEvidenceMode = Boolean(
     signedInWithGoogle &&
@@ -377,6 +382,35 @@ export function Dashboard({
   }, [displayName]);
 
   useEffect(() => {
+    const token = session?.access_token;
+    const normalizedReferralCode = normalizeReferralCode(referralCode);
+
+    if (!token || !signedInWithGoogle || !referralAccepted || !normalizedReferralCode) {
+      return;
+    }
+
+    const persistKey = `${session.user.id}:${normalizedReferralCode}`;
+    if (persistedSignupReferralRef.current === persistKey) {
+      return;
+    }
+
+    persistedSignupReferralRef.current = persistKey;
+    void fetch("/api/referrals/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        referralCode: normalizedReferralCode,
+        referralTermsAccepted: true,
+      }),
+    }).catch(() => {
+      persistedSignupReferralRef.current = null;
+    });
+  }, [referralAccepted, referralCode, session?.access_token, session?.user.id, signedInWithGoogle]);
+
+  useEffect(() => {
     if (!showAllTeams) {
       return;
     }
@@ -477,6 +511,7 @@ export function Dashboard({
         ]);
         const result = (await response.json()) as {
           referralCode?: string;
+          displayName?: string | null;
           referrals?: MyReferral[];
           walletBalance?: string;
           ticketsAssigned?: number;
@@ -495,6 +530,18 @@ export function Dashboard({
 
         setMyReferralCode(result.referralCode ?? null);
         setMyReferrals(result.referrals ?? []);
+        setDisplayName((current) => {
+          if (current.trim()) {
+            return current;
+          }
+
+          return (
+            result.entry?.displayName?.trim() ||
+            result.displayName?.trim() ||
+            session?.user.email?.split("@")[0] ||
+            current
+          );
+        });
         if (agentRequestsResponse.ok) {
           const agentRequestsResult = (await agentRequestsResponse.json()) as {
             requests?: AgentTicketRequest[];
@@ -525,7 +572,7 @@ export function Dashboard({
         setAgentTicketRequests([]);
       }
     });
-  }, [session?.access_token, signedInWithGoogle]);
+  }, [session?.access_token, session?.user.email, signedInWithGoogle]);
 
   useEffect(() => {
     const token = session?.access_token;
@@ -1544,8 +1591,8 @@ export function Dashboard({
                   </button>
                 </div>
               ) : null}
-              {entryLockBlocker ? (
-                <div className="message entry-lock-hint">{entryLockBlocker}</div>
+              {entryLockHint ? (
+                <div className="message entry-lock-hint">{entryLockHint}</div>
               ) : null}
               <button
                 className={`button entry-lock-cta ${entryLockBlocker ? "" : "is-ready"}`}

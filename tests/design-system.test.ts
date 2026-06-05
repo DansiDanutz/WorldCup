@@ -430,7 +430,13 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase/);
     assert.match(dashboard, /const missingEntryTicket =/);
     assert.match(dashboard, /const entryLockBlocker = getEntryLockBlocker/);
+    assert.match(dashboard, /const entryLockHint =/);
+    assert.match(dashboard, /Ticket is ready\. \$\{entryLockBlocker\}/);
     assert.match(dashboard, /selectedTeams\.length === 3 && !hasEntryTicket/);
+    assert.match(dashboard, /displayName\?: string \| null/);
+    assert.match(dashboard, /setDisplayName\(\(current\) =>/);
+    assert.match(dashboard, /result\.entry\?\.displayName\?\.trim\(\)/);
+    assert.match(dashboard, /result\.displayName\?\.trim\(\)/);
     assert.match(dashboard, /hasEntryTicket \? \(/);
     assert.match(dashboard, /\) : showEntryTicketPurchase \? \(/);
     assert.match(dashboard, /className=\{`ticket-requirement-card/);
