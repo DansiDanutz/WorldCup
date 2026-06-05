@@ -17,7 +17,7 @@ export async function getDashboardData() {
       supabase
         .from("worldcup_tournaments")
         .select(
-          "id,slug,name,season_year,status,prize_pool_amount,prize_pool_fee_percent,ticket_price_amount",
+          "id,slug,name,season_year,status,prize_pool_amount,prize_pool_fee_percent,fee_pool_amount,ticket_price_amount",
         )
         .eq("slug", "fifa-world-cup-2026")
         .single(),

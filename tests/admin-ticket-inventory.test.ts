@@ -58,6 +58,9 @@ describe("admin ticket inventory", () => {
     assert.match(adminAgentsRoute, /worldcup_admin_request_ticket_inventory/);
     assert.match(adminAgentsRoute, /worldcup_admin_assign_agent_tickets/);
     assert.match(adminAgentsRoute, /paymentMethod/);
+    assert.match(adminAgentsRoute, /accounting/);
+    assert.match(adminAgentsRoute, /prizePoolAmount/);
+    assert.match(adminAgentsRoute, /feePoolAmount/);
     assert.match(adminAgentsRoute, /financialMovements/);
     assert.match(adminTicketsRoute, /worldcup_admin_assign_user_ticket/);
     assert.match(adminTicketsRoute, /paymentMethod/);
@@ -73,6 +76,11 @@ describe("admin ticket inventory", () => {
     assert.match(adminConsole, /Assign Tickets for Agents/);
     assert.match(adminConsole, /Payment method/);
     assert.match(adminConsole, /Financial statement/);
+    assert.match(adminConsole, /Prize pool \(net\)/);
+    assert.match(adminConsole, /Fee pool/);
+    assert.match(adminConsole, /Paid value/);
+    assert.match(adminConsole, /bonus value/);
+    assert.match(adminConsole, /accountedGross/);
     assert.match(adminConsole, /getMovementTicketSummary/);
   });
 });

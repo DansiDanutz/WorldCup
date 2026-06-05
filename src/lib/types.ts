@@ -15,6 +15,7 @@ export type WorldCupTournament = {
   status: "setup" | "open" | "locked" | "in_progress" | "completed";
   prize_pool_amount: string;
   prize_pool_fee_percent: string;
+  fee_pool_amount?: string;
   ticket_price_amount: string;
 };
 

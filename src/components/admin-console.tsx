@@ -274,6 +274,53 @@ function getMovementTicketSummary(metadata: TicketFinancialMovement["metadata"])
   return `Tickets ${visible}${uniqueNumbers.length > 12 ? ` +${uniqueNumbers.length - 12} more` : ""}`;
 }
 
+function getMovementMetadataNumber(
+  metadata: TicketFinancialMovement["metadata"],
+  key: string,
+): number | null {
+  const value = metadata?.[key];
+
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return value;
+  }
+
+  if (typeof value === "string" && value.trim() !== "") {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  return null;
+}
+
+function getMovementAccounting(movement: TicketFinancialMovement) {
+  const metadata = movement.metadata;
+  const ticketPrice = Number(movement.ticketPriceAmount ?? 0);
+  const paidGross = getMovementMetadataNumber(metadata, "paidGrossAmount") ?? Number(movement.totalAmount ?? 0);
+  const bonusQuantity =
+    getMovementMetadataNumber(metadata, "bonusQuantity") ??
+    getMovementMetadataNumber(metadata, "commissionAwarded") ??
+    0;
+  const bonusGross = getMovementMetadataNumber(metadata, "bonusGrossAmount") ?? ticketPrice * bonusQuantity;
+  const accountedGross = getMovementMetadataNumber(metadata, "accountedGrossAmount") ?? paidGross + bonusGross;
+  const prizeContribution =
+    getMovementMetadataNumber(metadata, "prizePoolContribution") ?? Math.round(accountedGross * 80) / 100;
+  const feeContribution =
+    getMovementMetadataNumber(metadata, "feePoolContribution") ??
+    Math.round((accountedGross - prizeContribution) * 100) / 100;
+  const accountedQuantity =
+    getMovementMetadataNumber(metadata, "accountedQuantity") ?? movement.quantity + bonusQuantity;
+
+  return {
+    paidGross,
+    bonusGross,
+    accountedGross,
+    prizeContribution,
+    feeContribution,
+    accountedQuantity,
+    bonusQuantity,
+  };
+}
+
 export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminConsoleProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const [session, setSession] = useState<Session | null>(null);
@@ -281,6 +328,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
 
   const [resultForm, setResultForm] = useState<ResultForm>(initialResultForm);
   const [prizePoolAmount, setPrizePoolAmount] = useState(tournament.prize_pool_amount);
+  const [feePoolAmount, setFeePoolAmount] = useState(tournament.fee_pool_amount ?? "0");
   const [ticketPriceAmount, setTicketPriceAmount] = useState(tournament.ticket_price_amount);
   const [accounts, setAccounts] = useState<AdminAccountRow[]>([]);
   const [ticketUserId, setTicketUserId] = useState("");
@@ -1224,11 +1272,21 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
       const result = (await response.json()) as {
         agents?: AdminAgentRow[];
         pool?: AgentPool;
+        accounting?: {
+          ticketPriceAmount?: string;
+          prizePoolAmount?: string;
+          feePoolAmount?: string;
+        };
         financialMovements?: TicketFinancialMovement[];
       };
       setAgents(result.agents ?? []);
       if (result.pool) {
         setAgentPool(result.pool);
+      }
+      if (result.accounting) {
+        setTicketPriceAmount(String(result.accounting.ticketPriceAmount ?? ticketPriceAmount));
+        setPrizePoolAmount(String(result.accounting.prizePoolAmount ?? prizePoolAmount));
+        setFeePoolAmount(String(result.accounting.feePoolAmount ?? feePoolAmount));
       }
       setFinancialMovements(result.financialMovements ?? []);
     }
@@ -1371,8 +1429,12 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             <div className="stat-value">{signedIn ? "Yes" : "No"}</div>
           </div>
           <div className="stat">
-            <div className="stat-label">Prize pool (gross)</div>
-            <div className="stat-value">{formatPrizeAmount(tournament.prize_pool_amount)}</div>
+            <div className="stat-label">Prize pool (net)</div>
+            <div className="stat-value">{formatPrizeAmount(prizePoolAmount)}</div>
+          </div>
+          <div className="stat">
+            <div className="stat-label">Fee pool</div>
+            <div className="stat-value">{formatPrizeAmount(feePoolAmount)}</div>
           </div>
           <div className="stat">
             <div className="stat-label">Due checks</div>
@@ -2254,7 +2316,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 Assign Match Teams
               </button>
               <div className="field">
-                <label htmlFor="prize-pool">Prize pool (gross collected)</label>
+                <label htmlFor="prize-pool">Manual prize pool override (net)</label>
                 <input
                   id="prize-pool"
                   min="0"
@@ -2264,8 +2326,12 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 />
               </div>
               <button className="button secondary" disabled={isPending} onClick={savePrizePool} type="button">
-                Save Prize Pool
+                Save Override
               </button>
+              <div className="field-note">
+                Normal ticket revenue updates this automatically. Use the override only to correct audited ledger
+                totals.
+              </div>
             </div>
           </div>
 
@@ -3064,22 +3130,43 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               <div className="admin-referral-list" aria-label="Financial statement">
                 <h3 className="section-heading">Financial statement</h3>
                 {financialMovements.length > 0 ? (
-                  financialMovements.map((movement) => (
-                    <div className="admin-referral-row" key={movement.id}>
-                      <div>
-                        <strong>
-                          {getMovementLabel(movement.movementType)} - {movement.paymentMethod.toUpperCase()}
-                        </strong>
-                        <span>
-                          Qty {movement.quantity.toLocaleString()} - total{" "}
-                          {formatLedgerAmount(String(movement.totalAmount ?? "0"))} USDT
-                        </span>
-                        <small>{getMovementTicketSummary(movement.metadata)}</small>
-                        {movement.note ? <small>Note: {movement.note}</small> : null}
+                  financialMovements.map((movement) => {
+                    const accounting = getMovementAccounting(movement);
+                    const isMoneyMovement =
+                      movement.movementType === "admin_to_agent" || movement.movementType === "admin_to_user";
+
+                    return (
+                      <div className="admin-referral-row" key={movement.id}>
+                        <div>
+                          <strong>
+                            {getMovementLabel(movement.movementType)} - {movement.paymentMethod.toUpperCase()}
+                          </strong>
+                          {isMoneyMovement ? (
+                            <>
+                              <span>
+                                Accounted tickets {accounting.accountedQuantity.toLocaleString()} - gross{" "}
+                                {formatLedgerAmount(accounting.accountedGross)} USDT
+                              </span>
+                              <small>
+                                Paid value {formatLedgerAmount(accounting.paidGross)} USDT - bonus value{" "}
+                                {formatLedgerAmount(accounting.bonusGross)} USDT - bonuses{" "}
+                                {accounting.bonusQuantity.toLocaleString()}
+                              </small>
+                              <small>
+                                Prize pool +{formatLedgerAmount(accounting.prizeContribution)} USDT - fee pool +
+                                {formatLedgerAmount(accounting.feeContribution)} USDT
+                              </small>
+                            </>
+                          ) : (
+                            <span>Moved {movement.quantity.toLocaleString()} generated tickets into admin inventory.</span>
+                          )}
+                          <small>{getMovementTicketSummary(movement.metadata)}</small>
+                          {movement.note ? <small>Note: {movement.note}</small> : null}
+                        </div>
+                        <span>{new Date(movement.createdAt).toLocaleString()}</span>
                       </div>
-                      <span>{new Date(movement.createdAt).toLocaleString()}</span>
-                    </div>
-                  ))
+                    );
+                  })
                 ) : (
                   <div className="field-note">No ticket financial movements loaded yet.</div>
                 )}
