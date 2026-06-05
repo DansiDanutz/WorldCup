@@ -264,6 +264,12 @@ export function Dashboard({
     selectedTeamCount: selectedTeams.length,
     signedInWithGoogle,
   });
+  const journeySteps = [
+    { label: "Pick", done: selectedTeams.length === 3 },
+    { label: "Ticket", done: hasEntryTicket },
+    { label: "Lock", done: accountHasEntry },
+  ];
+  const journeyCurrentStep = journeySteps.findIndex((step) => !step.done);
   const pendingAgentTicketRequest = agentTicketRequests.find((request) => request.status === "pending");
   const launchEvidenceMode = Boolean(
     signedInWithGoogle &&
@@ -1269,6 +1275,24 @@ export function Dashboard({
               </div>
               <Lock size={18} color="var(--green)" />
             </div>
+            <div className="journey-steps" aria-label="Entry progress">
+              {journeySteps.map((step, index) => {
+                const state =
+                  step.done ? "done" : index === journeyCurrentStep ? "current" : "todo";
+
+                return (
+                  <div className={`journey-step is-${state}`} key={step.label}>
+                    <span className="journey-step__dot">
+                      {step.done ? <Check size={13} /> : index + 1}
+                    </span>
+                    <span className="journey-step__label">{step.label}</span>
+                    {index < journeySteps.length - 1 ? (
+                      <span className="journey-step__bar" aria-hidden="true" />
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
             <div className="entry-form">
               <div className="auth-box">
                 <div>
@@ -1493,7 +1517,7 @@ export function Dashboard({
                 <div className="message entry-lock-hint">{entryLockBlocker}</div>
               ) : null}
               <button
-                className="button"
+                className={`button entry-lock-cta ${entryLockBlocker ? "" : "is-ready"}`}
                 disabled={Boolean(entryLockBlocker) || isPending}
                 onClick={submitEntry}
                 type="button"
