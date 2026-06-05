@@ -14,7 +14,7 @@ export function SmartMenu({ children, label = "Navigation", summary = "Tap for p
   const [expanded, setExpanded] = useState(true);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 760px)");
+    const mediaQuery = window.matchMedia("(max-width: 1180px)");
     const syncExpandedState = () => setExpanded(!mediaQuery.matches);
 
     syncExpandedState();

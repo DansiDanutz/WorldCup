@@ -887,7 +887,7 @@ export function Dashboard({
                 ) : null}
               </div>
             </details>
-            {signedInWithGoogle ? (
+            {signedInWithGoogle && showPickWorkflow ? (
               <a className="nav-item nav-item--identity" href="#me">
                 <UserRound size={16} />
                 <span className="nav-item__copy">
@@ -895,7 +895,7 @@ export function Dashboard({
                   <small>Your entry</small>
                 </span>
               </a>
-            ) : (
+            ) : !signedInWithGoogle ? (
               <Link className="nav-item nav-item--identity" href={{ pathname: "/login" }}>
                 <Lock size={16} />
                 <span className="nav-item__copy">
@@ -903,7 +903,7 @@ export function Dashboard({
                   <small>Start here</small>
                 </span>
               </Link>
-            )}
+            ) : null}
           </nav>
         </SmartMenu>
       </header>

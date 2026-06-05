@@ -152,6 +152,11 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.nav-item--admin\s*{[\s\S]*?linear-gradient\(135deg/);
     assert.match(globalsCss, /\.smart-menu\.is-closed \.smart-menu__toggle\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#e6b653\)/);
     assert.match(globalsCss, /\.nav-more__menu\s*{[\s\S]*?position:\s*absolute;/);
+    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--landing \.smart-menu__toggle\s*{[\s\S]*?display:\s*none;/);
+    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--landing \.nav-item__copy strong,[\s\S]*?text-overflow:\s*ellipsis;/);
+    assert.match(globalsCss, /@media \(min-width:\s*761px\) and \(max-width:\s*1180px\)\s*{[\s\S]*?\.app-shell--landing \.topbar\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\) auto;/);
+    assert.match(globalsCss, /@media \(min-width:\s*761px\) and \(max-width:\s*1180px\)\s*{[\s\S]*?\.app-shell--landing \.smart-menu\s*{[\s\S]*?grid-column:\s*1 \/ -1;/);
+    assert.match(globalsCss, /\.nav a,[\s\S]*?\.nav-more summary\s*{[\s\S]*?white-space:\s*nowrap;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.topbar\s*{[\s\S]*?flex-direction:\s*column;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.smart-menu\s*{[\s\S]*?flex-direction:\s*column;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.grid,[\s\S]*?\.auth-page,[\s\S]*?\.coefficients-hero,[\s\S]*?\.schema-hero,[\s\S]*?\.matches-section,[\s\S]*?\.knockout-board,[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
@@ -172,6 +177,7 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /@media \(max-width:\s*420px\)\s*{[\s\S]*?\.nav\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
     assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.nav a,\s*\n\s*\.nav button,\s*\n\s*\.nav-more summary\s*{[\s\S]*?width:\s*100%;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav a,\s*\n\s*\.nav button,\s*\n\s*\.nav-more summary\s*{[\s\S]*?height:\s*auto;/);
+    assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.nav-item__copy strong,[\s\S]*?white-space:\s*normal;/);
     assert.match(globalsCss, /\.admin-referral-row span\s*{[\s\S]*?overflow-wrap:\s*anywhere;/);
     assert.match(
       globalsCss,
@@ -220,7 +226,7 @@ describe("WorldCup design system integration", () => {
   it("keeps the smart menu clickable and compact on mobile", () => {
     assert.match(smartMenu, /"use client";/);
     assert.match(smartMenu, /const \[expanded, setExpanded\] = useState\(true\);/);
-    assert.match(smartMenu, /window\.matchMedia\("\(max-width: 760px\)"\)/);
+    assert.match(smartMenu, /window\.matchMedia\("\(max-width: 1180px\)"\)/);
     assert.match(smartMenu, /const syncExpandedState = \(\) => setExpanded\(!mediaQuery\.matches\);/);
     assert.match(smartMenu, /function closeAfterDestinationClick\(event: MouseEvent<HTMLDivElement>\)/);
     assert.match(smartMenu, /target\.closest\("a, button"\)/);
@@ -258,7 +264,7 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /href="#leaderboard"[\s\S]*?Leaderboard[\s\S]*?Ranking[\s\S]*?pathname: "\/wallet"[\s\S]*?Wallet[\s\S]*?Tickets & USDT[\s\S]*?nav-item--admin[\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?Manage[\s\S]*?<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw/);
     assert.match(dashboard, /<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw[\s\S]*?href="#rules"[\s\S]*?pathname: "\/schema"/);
     assert.match(dashboard, /\{showAdminNav \? \([\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?\) : null\}/);
-    assert.match(dashboard, /<details className="nav-more">[\s\S]*?<\/details>[\s\S]*?\{signedInWithGoogle \? \([\s\S]*?className="nav-item nav-item--identity" href="#me"[\s\S]*?Account[\s\S]*?\) : \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?pathname: "\/login"[\s\S]*?Login/);
+    assert.match(dashboard, /<details className="nav-more">[\s\S]*?<\/details>[\s\S]*?\{signedInWithGoogle && showPickWorkflow \? \([\s\S]*?className="nav-item nav-item--identity" href="#me"[\s\S]*?Account[\s\S]*?\) : !signedInWithGoogle \? \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?pathname: "\/login"[\s\S]*?Login[\s\S]*?\) : null\}/);
     assert.match(walletScreen, /<nav className="nav nav--app" aria-label="Wallet navigation">/);
     assert.match(walletScreen, /className="nav-item nav-item--primary" href=\{\{ pathname: "\/", hash: "pick" \}\}[\s\S]*?Play[\s\S]*?Pick teams/);
     assert.match(walletScreen, /nav-item--admin[\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?Manage/);
@@ -503,7 +509,7 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.hero-swiper__slide:first-child \.hero-card\s*{[\s\S]*?width:\s*100vw;/);
     assert.match(globalsCss, /\.app-shell--landing \.topbar\s*{[\s\S]*?position:\s*fixed;/);
     assert.match(globalsCss, /\.app-shell--landing \.smart-menu__panel\s*{[\s\S]*?position:\s*fixed;/);
-    assert.match(globalsCss, /\.app-shell--landing #pick,[\s\S]*?\.app-shell--landing #leaderboard,[\s\S]*?scroll-margin-top:\s*118px;/);
+    assert.match(globalsCss, /\.app-shell--landing #pick,[\s\S]*?\.app-shell--landing #leaderboard,[\s\S]*?scroll-margin-top:\s*150px;/);
     assert.match(globalsCss, /\.hero-swiper__slide:first-child \.hero-card\s*{[\s\S]*?height:\s*max\(640px,\s*100svh\);/);
   });
 
