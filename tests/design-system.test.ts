@@ -392,12 +392,13 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /const accountStatusLoaded = myAccountStatus !== null/);
     assert.match(dashboard, /const hasEntryTicket = ticketsAvailable > 0/);
     assert.match(dashboard, /const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket/);
+    assert.match(dashboard, /const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase/);
     assert.match(dashboard, /const entryTicketPurchasePause = needsEntryTicketPurchase \? publicTicketPolicyPause : null/);
     assert.match(dashboard, /const missingEntryTicket =/);
     assert.match(dashboard, /const entryLockBlocker = getEntryLockBlocker/);
     assert.match(dashboard, /selectedTeams\.length === 3 && !hasEntryTicket/);
     assert.match(dashboard, /hasEntryTicket \? \(/);
-    assert.match(dashboard, /\) : needsEntryTicketPurchase \? \(/);
+    assert.match(dashboard, /\) : showEntryTicketPurchase \? \(/);
     assert.match(dashboard, /className=\{`ticket-requirement-card/);
     assert.match(dashboard, /You need 1 entry ticket/);
     assert.match(dashboard, /Buy-in is covered\. Locking your entry will use 1 ticket/);

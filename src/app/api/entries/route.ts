@@ -8,7 +8,6 @@ import {
 } from "@/lib/operator-policy";
 import { isPaidActionLaunchTestAdmin } from "@/lib/paid-action-gates";
 import { getAuthProvider, normalizeReferralCode } from "@/lib/referrals";
-import { getResponsiblePlayRestriction, loadResponsiblePlayStatus } from "@/lib/responsible-play";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import { getLockedTeamIds } from "@/lib/team-eligibility";
 import {
@@ -113,21 +112,6 @@ export async function POST(request: Request) {
 
   if (tournamentResult.error || !tournamentResult.data) {
     return jsonError("Tournament is not available.", 500);
-  }
-
-  const responsiblePlay = await loadResponsiblePlayStatus(supabase, user.id, {
-    tournamentId: tournamentResult.data.id,
-  });
-  if ("error" in responsiblePlay) {
-    return jsonError(responsiblePlay.error, 500);
-  }
-
-  const responsiblePlayRestriction = getResponsiblePlayRestriction(
-    responsiblePlay.status,
-    "entry",
-  );
-  if (responsiblePlayRestriction) {
-    return jsonError(responsiblePlayRestriction, 403);
   }
 
   if (teamsResult.error || !teamsResult.data || teamsResult.data.length !== 3) {

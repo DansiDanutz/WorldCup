@@ -93,15 +93,6 @@ type AgentTicketRequest = {
   ticketId: string | null;
 };
 
-type ResponsiblePlayStatus = {
-  maxEntries: number | null;
-  selfExcluded: boolean;
-  selfExcludedUntil: string | null;
-  ticketsReserved: number | null;
-  entriesUsed: number | null;
-  entryRestriction: string | null;
-};
-
 const pickColorClasses = ["pick-color-one", "pick-color-two", "pick-color-three"] as const;
 const referralAgreementText =
   "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
@@ -187,7 +178,6 @@ export function Dashboard({
   const [agentRequestError, setAgentRequestError] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
-  const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
   const [consented, setConsented] = useState<boolean | null>(null);
   const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -249,7 +239,6 @@ export function Dashboard({
         `I invited you to WorldCup26.\n\nPick 3 teams, climb the leaderboard, and use my referral code ${myReferralCode} when you join:\n${shareUrl}`,
       )}`
     : "";
-  const entryRestriction = responsiblePlay?.entryRestriction ?? null;
   const publicDepositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
   const publicTicketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
   const publicPaidActionsPaused = Boolean(publicDepositPolicyPause || publicTicketPolicyPause);
@@ -257,6 +246,7 @@ export function Dashboard({
   const accountStatusLoaded = myAccountStatus !== null;
   const hasEntryTicket = ticketsAvailable > 0;
   const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket;
+  const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase;
   const entryTicketPurchasePause = needsEntryTicketPurchase ? publicTicketPolicyPause : null;
   const walletBalance = myAccountStatus?.walletBalance ?? 0;
   const ticketPriceAmount = myAccountStatus?.ticketPriceAmount ?? 0;
@@ -265,7 +255,6 @@ export function Dashboard({
   const entryLockBlocker = getEntryLockBlocker({
     consented,
     displayName,
-    entryRestriction,
     missingEntryTicket,
     referralAccepted,
     referralCode,
@@ -411,16 +400,12 @@ export function Dashboard({
         setMyReferrals([]);
         setMyAccountStatus(null);
         setAgentTicketRequests([]);
-        setResponsiblePlay(null);
         return;
       }
 
       try {
-        const [response, responsibleResponse, agentRequestsResponse] = await Promise.all([
+        const [response, agentRequestsResponse] = await Promise.all([
           fetch("/api/referrals/me", {
-            headers: { Authorization: `Bearer ${token}` },
-          }),
-          fetch("/api/responsible-play", {
             headers: { Authorization: `Bearer ${token}` },
           }),
           fetch("/api/agent-ticket-requests", {
@@ -437,7 +422,6 @@ export function Dashboard({
           entry?: MyAccountStatus["entry"];
           paidActionGates?: MyAccountStatus["paidActionGates"];
         };
-        const responsibleResult = (await responsibleResponse.json()) as ResponsiblePlayStatus;
 
         setMyReferralCode(result.referralCode ?? null);
         setMyReferrals(result.referrals ?? []);
@@ -457,13 +441,11 @@ export function Dashboard({
           entry: result.entry ?? null,
           paidActionGates: result.paidActionGates,
         });
-        setResponsiblePlay(responsibleResponse.ok ? responsibleResult : null);
       } catch {
         setMyReferralCode(null);
         setMyReferrals([]);
         setMyAccountStatus(null);
         setAgentTicketRequests([]);
-        setResponsiblePlay(null);
       }
     });
   }, [session?.access_token, signedInWithGoogle]);
@@ -767,7 +749,6 @@ export function Dashboard({
     setMyReferralCode(null);
     setMyReferrals([]);
     setMyAccountStatus(null);
-    setResponsiblePlay(null);
   }
 
   async function copyInviteLink() {
@@ -1324,7 +1305,7 @@ export function Dashboard({
                         Buy-in is covered. Locking your entry will use 1 ticket from your account.
                       </span>
                     </div>
-                  ) : needsEntryTicketPurchase ? (
+                  ) : showEntryTicketPurchase ? (
                     <>
                       <div className="ticket-option-grid">
                         <div>
@@ -1430,10 +1411,7 @@ export function Dashboard({
                   </button>
                 </div>
               ) : null}
-              {entryRestriction ? (
-                <div className="message error">{entryRestriction}</div>
-              ) : null}
-              {entryLockBlocker && !entryRestriction ? (
+              {entryLockBlocker ? (
                 <div className="message entry-lock-hint">{entryLockBlocker}</div>
               ) : null}
               <button
@@ -1772,7 +1750,6 @@ function getGatePauseMessage(gate: PaidActionGate | undefined) {
 function getEntryLockBlocker({
   consented,
   displayName,
-  entryRestriction,
   missingEntryTicket,
   referralAccepted,
   referralCode,
@@ -1781,7 +1758,6 @@ function getEntryLockBlocker({
 }: {
   consented: boolean | null;
   displayName: string;
-  entryRestriction: string | null;
   missingEntryTicket: boolean;
   referralAccepted: boolean;
   referralCode: string;
@@ -1814,10 +1790,6 @@ function getEntryLockBlocker({
 
   if (missingEntryTicket) {
     return "You need 1 assigned ticket before locking your entry.";
-  }
-
-  if (entryRestriction) {
-    return entryRestriction;
   }
 
   return null;
