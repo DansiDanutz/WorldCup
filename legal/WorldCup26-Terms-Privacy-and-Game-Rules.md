@@ -2,21 +2,23 @@
 
 **Operator Policy Pack — Prepared for Revolut (Know-Your-Business / Onboarding Review)**
 
+## 0. <u>Document Information</u>
+
 | Field | Detail |
 | --- | --- |
 | <u>Service / Trading name</u> | WorldCup26 |
 | <u>Website</u> | https://worldcup26.world |
-| <u>Operating entity</u> | **[Legal Entity Name]** ("the Operator", "we", "us", "our") |
-| <u>Company registration number</u> | **[Company Registration Number]** |
-| <u>Registered office</u> | **[Registered Address]** |
-| <u>Jurisdiction of incorporation</u> | **[Country / State]** |
-| <u>Primary contact</u> | **[support@worldcup26.world]** |
+| <u>Operating entity</u> | **Stack Finance LLC** ("the Operator", "we", "us", "our") |
+| <u>Company registration number</u> | **[KRS / NIP — to be inserted from Stack Finance LLC records]** |
+| <u>Registered office</u> | **[Registered office address, Poland — to be inserted]** |
+| <u>Jurisdiction of incorporation</u> | **Poland** |
+| <u>Primary contact</u> | support@worldcup26.world |
 | <u>Age-verification contact</u> | age-verification@worldcup26.world |
 | <u>Document version</u> | 1.0 |
 | <u>Effective date</u> | 4 June 2026 |
 | <u>Document prepared</u> | 5 June 2026 |
 
-> **Note to reviewer (Revolut):** This document consolidates, in a single professional pack, the public Game Rules, Terms &amp; Conditions, and Privacy Policy that govern the WorldCup26 service, together with a summary of the responsible-play, anti-money-laundering, and customer due-diligence controls the Operator applies. Items shown in **[square brackets]** are entity-specific registration details to be confirmed by the Operator's records before submission.
+> **Note to reviewer (Revolut):** This document consolidates, in a single professional pack, the public Game Rules, Terms &amp; Conditions, and Privacy Policy that govern the WorldCup26 service, together with a summary of the responsible-play, anti-money-laundering, and customer due-diligence controls the Operator applies. The two items still shown in **[square brackets]** above — the company registration number and the registered office address — are to be inserted from Stack Finance LLC's official Polish registration records before submission.
 
 ---
 
@@ -67,7 +69,7 @@ Player scores are calculated <u>exclusively from official, real-time tournament 
 
 | Term | Meaning |
 | --- | --- |
-| <u>"Operator"</u> | **[Legal Entity Name]**, the company that owns and operates WorldCup26. |
+| <u>"Operator"</u> | **Stack Finance LLC**, a limited liability company registered in Poland, which owns and operates WorldCup26. |
 | <u>"Participant" / "you"</u> | A natural person aged 18 or over who holds a WorldCup26 account. |
 | <u>"Account"</u> | The participant's WorldCup26 profile, created via Google sign-in. |
 | <u>"Subscription" / "Entry Ticket"</u> | The fixed, one-time fee that entitles a participant to one single Entry. |
@@ -275,7 +277,7 @@ The Operator may amend these Terms. <u>Material changes are versioned and requir
 
 ### 4.14 <u>Governing law and disputes</u>
 
-These Terms are governed by the laws of <u>**[Governing-Law Jurisdiction]**</u>, and the <u>courts of **[Jurisdiction]**</u> have exclusive jurisdiction, subject to any non-waivable consumer-protection rights available to you locally.
+These Terms are governed by the laws of <u>**the Republic of Poland**</u>, and the <u>courts of competent jurisdiction in **Poland**</u> have exclusive jurisdiction, subject to any non-waivable consumer-protection rights available to you locally.
 
 ---
 
@@ -378,7 +380,7 @@ Subscriptions purchase a <u>single Entry into a skill contest</u> and are genera
 
 For account, deposit, payout, referral, or prize questions, or to exercise a privacy request, contact the Operator through the published support channel:
 
-- <u>General support:</u> **[support@worldcup26.world]**
+- <u>General support:</u> support@worldcup26.world
 - <u>Age / identity verification:</u> age-verification@worldcup26.world
 - <u>Website:</u> https://worldcup26.world
 
@@ -386,16 +388,12 @@ For account, deposit, payout, referral, or prize questions, or to exercise a pri
 
 ## 9. <u>Document Completion Notes</u> (remove before sending if preferred)
 
-Before submitting this pack to Revolut, confirm and replace the following <u>entity-specific placeholders</u> from the Operator's official records:
+The operator, jurisdiction, governing law, and contact details for <u>Stack Finance LLC (Poland)</u> have been completed. Before submitting this pack to Revolut, insert the following <u>two remaining items</u> from Stack Finance LLC's official Polish registration records (both appear in the Document Information table at the top of this pack):
 
-- **[Legal Entity Name]** — the registered company name of the Operator.
-- **[Company Registration Number]** — official registration / incorporation number.
-- **[Registered Address]** — registered office address.
-- **[Country / State]** — jurisdiction of incorporation.
-- **[Governing-Law Jurisdiction]** — governing law and competent courts (Section 4.14).
-- **[support@worldcup26.world]** — confirm the live support email address.
+- **Company registration number** — the company's <u>KRS</u> number (and <u>NIP</u> / <u>REGON</u> as applicable).
+- **Registered office address** — the company's <u>registered office address in Poland</u>.
 
-> **Disclaimer:** This pack is the Operator's own policy documentation prepared for a banking/payment onboarding review. It is <u>not legal advice</u>. The Operator should obtain qualified legal counsel for the legal classification (game of skill vs. other) and licensing position in each market in which it operates before accepting real-money subscriptions.
+> **Disclaimer:** This pack is Stack Finance LLC's own policy documentation prepared for a banking / payment onboarding review. It is <u>not legal advice</u>. Stack Finance LLC should obtain qualified legal counsel for the legal classification (game of skill vs. other) and the licensing position in each market in which it operates before accepting real-money subscriptions.
 
 ---
 
