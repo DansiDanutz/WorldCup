@@ -125,7 +125,7 @@ export async function POST(request: Request) {
     requestedTickets: quantity,
   });
   if (responsiblePlayRestriction) {
-    return jsonError(`Responsible play blocks this assignment. ${responsiblePlayRestriction}`, 403);
+    return jsonError(`Account ticket limit blocks this assignment. ${responsiblePlayRestriction}`, 403);
   }
 
   const assignResult = await supabase.rpc("worldcup_admin_assign_user_ticket", {

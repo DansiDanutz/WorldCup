@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 
+import { normalizeWorldCupTicketPriceAmount } from "../src/lib/worldcup-ticket-price.ts";
+
 const migration = readFileSync(
   "supabase/migrations/20260605033000_worldcup_ticket_price_default_50.sql",
   "utf8",
@@ -46,5 +48,8 @@ describe("WorldCup ticket price", () => {
     assert.match(worldcupData, /normalizeWorldCupTicketPriceAmount\(tournament\.ticket_price_amount\)/);
     assert.match(dashboard, /normalizeWorldCupTicketPriceAmount\(result\.ticketPriceAmount\)/);
     assert.match(wallet, /normalizeWorldCupTicketPriceAmount\(me\.ticketPriceAmount\)/);
+    assert.match(dashboard, /const ticketPriceAmount = normalizeWorldCupTicketPriceNumber\(myAccountStatus\?\.ticketPriceAmount\)/);
+    assert.match(wallet, /const ticketPrice = normalizeWorldCupTicketPriceNumber\(status\?\.ticketPriceAmount\)/);
+    assert.equal(normalizeWorldCupTicketPriceAmount("0.00"), "50.00");
   });
 });

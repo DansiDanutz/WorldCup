@@ -534,7 +534,6 @@ export function Dashboard({
       }
 
       setConsented(true);
-      setEntryMessage("Thanks — you are verified. You can lock your entry now.");
       setEntryMessage("Thanks. You are verified and can lock your entry now.");
     });
   }

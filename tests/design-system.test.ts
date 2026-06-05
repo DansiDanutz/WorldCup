@@ -84,6 +84,10 @@ describe("WorldCup design system integration", () => {
     assert.match(loginRegister, /Need help\? WhatsApp/);
     assert.match(loginRegister, /SUPPORT_WHATSAPP_E164/);
     assert.match(adminConsole, /SUPPORT_WHATSAPP_URL/);
+    assert.match(globalsCss, /\.auth-support-link\s*{[\s\S]*?display:\s*inline-flex;/);
+    assert.match(globalsCss, /\.auth-support-link\s*{[\s\S]*?text-decoration:\s*none;/);
+    assert.match(globalsCss, /\.auth-connected-card\s*{[\s\S]*?linear-gradient\(135deg,\s*rgba\(17,\s*123,\s*88,\s*0\.64\)/);
+    assert.match(globalsCss, /\.auth-connected-card strong\s*{[\s\S]*?color:\s*#ffffff;/);
   });
 
   it("keeps the root layout from forcing mobile horizontal overflow", () => {
@@ -140,6 +144,9 @@ describe("WorldCup design system integration", () => {
   it("keeps mobile navigation inside the viewport instead of widening the page", () => {
     assert.match(globalsCss, /\.topbar\s*{[\s\S]*?border-radius:\s*20px;/);
     assert.match(globalsCss, /\.topbar\s*{[\s\S]*?linear-gradient\(135deg/);
+    assert.match(globalsCss, /\.landing-brand-lockup\s*{[\s\S]*?flex:\s*0\s+0\s+auto;/);
+    assert.match(globalsCss, /\.landing-brand-copy\s*{[\s\S]*?flex:\s*0\s+0\s+auto;/);
+    assert.doesNotMatch(globalsCss.match(/\.landing-brand-copy strong\s*{[^}]*}/)?.[0] ?? "", /text-overflow/);
     assert.match(globalsCss, /\.nav\s*{[\s\S]*?background:\s*rgba\(4,\s*18,\s*15,\s*0\.34\);/);
     assert.match(globalsCss, /\.nav-item--primary\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#e6b653\)/);
     assert.match(globalsCss, /\.nav-item--admin\s*{[\s\S]*?linear-gradient\(135deg/);
