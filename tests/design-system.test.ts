@@ -216,6 +216,22 @@ describe("WorldCup design system integration", () => {
     }
   });
 
+  it("keeps admin ticket accounting previews responsive and on-brand", () => {
+    assert.match(adminConsole, /ticket-admin-preview/);
+    assert.match(globalsCss, /\.ticket-admin-preview\s*{[\s\S]*?linear-gradient\(135deg/);
+    assert.match(globalsCss, /\.ticket-admin-preview__grid\s*{[\s\S]*?grid-template-columns:\s*repeat\(4,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /\.ticket-admin-preview__grid strong\s*{[\s\S]*?color:\s*#ffe29a;/);
+    assert.match(globalsCss, /\.ticket-admin-preview--warning\s*{/);
+    assert.match(
+      globalsCss,
+      /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.ticket-admin-preview__grid\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/,
+    );
+    assert.match(
+      globalsCss,
+      /@media \(max-width:\s*700px\)\s*{[\s\S]*?\.ticket-admin-preview__grid\s*{[\s\S]*?grid-template-columns:\s*1fr;/,
+    );
+  });
+
   it("keeps every topbar brand block clickable back to home", () => {
     assert.match(dashboard, /<Link className="brand landing-brand-lockup" href="\/" aria-label="Go to WorldCup26\.world home">/);
     assert.match(walletScreen, /<Link className="brand" href="\/" aria-label="Go to WorldCup26\.world home">/);

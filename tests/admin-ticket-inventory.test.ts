@@ -61,6 +61,9 @@ describe("admin ticket inventory", () => {
     assert.match(adminAgentsRoute, /accounting/);
     assert.match(adminAgentsRoute, /prizePoolAmount/);
     assert.match(adminAgentsRoute, /feePoolAmount/);
+    assert.match(adminAgentsRoute, /worldcup_tickets/);
+    assert.match(adminAgentsRoute, /worldcup_entries/);
+    assert.match(adminAgentsRoute, /hasPersonalTicket/);
     assert.match(adminAgentsRoute, /financialMovements/);
     assert.match(adminAgentsRoute, /\.limit\(1000\)/);
     assert.match(adminTicketsRoute, /worldcup_admin_assign_user_ticket/);
@@ -90,5 +93,21 @@ describe("admin ticket inventory", () => {
     assert.match(adminConsole, /bonus value/);
     assert.match(adminConsole, /accountedGross/);
     assert.match(adminConsole, /getMovementTicketSummary/);
+  });
+
+  it("previews admin-to-user and admin-to-agent accounting before assignment", () => {
+    assert.match(adminConsole, /User ticket assignment preview/);
+    assert.match(adminConsole, /Agent ticket assignment preview/);
+    assert.match(adminConsole, /getAdminTicketAccountingPreview/);
+    assert.match(adminConsole, /parseAdminQuantity/);
+    assert.match(adminConsole, /personalReserve/);
+    assert.match(adminConsole, /paidAgentTickets/);
+    assert.match(adminConsole, /adminInventoryNeeded/);
+    assert.match(adminConsole, /hasEnoughAdminInventory/);
+    assert.match(adminConsole, /Prize pool \+80%/);
+    assert.match(adminConsole, /Fee pool \+20%/);
+    assert.match(adminConsole, /First paid ticket will reserve the agent personal user ticket/);
+    assert.match(adminConsole, /Later agent-to-user transfers do\s+not change the prize pool/);
+    assert.match(adminConsole, /Not enough admin tickets/);
   });
 });

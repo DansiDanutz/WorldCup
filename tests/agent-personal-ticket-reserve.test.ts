@@ -40,7 +40,10 @@ describe("agent personal ticket reserve", () => {
   it("shows admins whether an assignment reserved the personal user ticket", () => {
     assert.match(adminConsole, /agentCodesAssigned\?: number/);
     assert.match(adminConsole, /personalTicketAssigned\?: number/);
+    assert.match(adminConsole, /hasPersonalTicket: boolean/);
     assert.match(adminConsole, /personal user ticket/);
+    assert.match(adminConsole, /Personal ticket ready/);
+    assert.match(adminConsole, /Needs personal ticket/);
     assert.match(adminConsole, /Assigned \$\{agentCodesAssigned\} agent codes/);
   });
 });

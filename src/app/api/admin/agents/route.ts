@@ -74,6 +74,41 @@ export async function GET(request: Request) {
     return jsonError("Could not load agents.", 500);
   }
 
+  const agentIds = (agents.data ?? [])
+    .map((agent) => agent.user_id)
+    .filter((userId): userId is string => typeof userId === "string" && userId.length > 0);
+  const [personalTickets, personalEntries] =
+    agentIds.length > 0
+      ? await Promise.all([
+          supabase
+            .from("worldcup_tickets")
+            .select("user_id")
+            .eq("tournament_id", tournament.data.id)
+            .in("user_id", agentIds),
+          supabase
+            .from("worldcup_entries")
+            .select("user_id")
+            .eq("tournament_id", tournament.data.id)
+            .in("user_id", agentIds),
+        ])
+      : [null, null];
+
+  if (personalTickets?.error || personalEntries?.error) {
+    return jsonError("Could not load agent personal ticket status.", 500);
+  }
+
+  const agentsWithPersonalTicket = new Set<string>();
+  for (const row of personalTickets?.data ?? []) {
+    if (typeof row.user_id === "string") {
+      agentsWithPersonalTicket.add(row.user_id);
+    }
+  }
+  for (const row of personalEntries?.data ?? []) {
+    if (typeof row.user_id === "string") {
+      agentsWithPersonalTicket.add(row.user_id);
+    }
+  }
+
   const pool = { total: 0, available: 0, admin: 0, assigned: 0, redeemed: 0 };
   const perAgent = new Map<string, { available: number; redeemed: number }>();
   for (const entry of codes.data ?? []) {
@@ -123,6 +158,7 @@ export async function GET(request: Request) {
       redeemedCodes: perAgent.get(agent.user_id as string)?.redeemed ?? 0,
       active: agent.active,
       activatedAt: agent.activated_at,
+      hasPersonalTicket: agentsWithPersonalTicket.has(agent.user_id as string),
     })),
     financialMovements: (movements.data ?? []).map((movement) => ({
       id: movement.id,

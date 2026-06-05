@@ -220,6 +220,7 @@ type AdminAgentRow = {
   redeemedCodes: number;
   active: boolean;
   activatedAt: string | null;
+  hasPersonalTicket: boolean;
 };
 
 type AgentPool = { total: number; available: number; admin: number; assigned: number; redeemed: number };
@@ -369,6 +370,34 @@ function getFinancialStatementSummary(movements: TicketFinancialMovement[]) {
   );
 }
 
+function parseAdminQuantity(value: string) {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return 0;
+  return Math.max(0, Math.floor(parsed));
+}
+
+function getAdminTicketAccountingPreview(paidQuantity: number, ticketPrice: number, bonusQuantity = 0) {
+  const normalizedPaidQuantity = Math.max(0, paidQuantity);
+  const normalizedBonusQuantity = Math.max(0, bonusQuantity);
+  const normalizedTicketPrice = Math.max(0, ticketPrice);
+  const paidGross = Math.round(normalizedPaidQuantity * normalizedTicketPrice * 100) / 100;
+  const bonusGross = Math.round(normalizedBonusQuantity * normalizedTicketPrice * 100) / 100;
+  const accountedGross = Math.round((paidGross + bonusGross) * 100) / 100;
+  const prizeContribution = Math.round(accountedGross * 80) / 100;
+  const feeContribution = Math.round((accountedGross - prizeContribution) * 100) / 100;
+
+  return {
+    accountedGross,
+    accountedQuantity: normalizedPaidQuantity + normalizedBonusQuantity,
+    bonusGross,
+    bonusQuantity: normalizedBonusQuantity,
+    feeContribution,
+    paidGross,
+    paidQuantity: normalizedPaidQuantity,
+    prizeContribution,
+  };
+}
+
 export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminConsoleProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const [session, setSession] = useState<Session | null>(null);
@@ -435,6 +464,42 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
     () => getFinancialStatementSummary(financialMovements),
     [financialMovements],
   );
+  const ticketPriceNumber = Number(normalizeWorldCupTicketPriceAmount(ticketPriceAmount));
+  const selectedAgent = agents.find((agent) => agent.userId === assignAgentUserId) ?? null;
+  const userTicketPreview = useMemo(() => {
+    const paidQuantity = parseAdminQuantity(ticketQuantity);
+    const accounting = getAdminTicketAccountingPreview(paidQuantity, ticketPriceNumber);
+
+    return {
+      ...accounting,
+      adminInventoryNeeded: paidQuantity,
+      hasEnoughAdminInventory: agentPool.admin >= paidQuantity,
+    };
+  }, [agentPool.admin, ticketPriceNumber, ticketQuantity]);
+  const agentTicketPreview = useMemo(() => {
+    const paidQuantity = parseAdminQuantity(assignAgentQty);
+    const personalReserve = selectedAgent && !selectedAgent.hasPersonalTicket && paidQuantity > 0 ? 1 : 0;
+    const paidAgentTickets = Math.max(0, paidQuantity - personalReserve);
+    const currentPaidAgentTickets = selectedAgent?.paidTickets ?? 0;
+    const currentCommissionTickets = selectedAgent?.commissionTickets ?? 0;
+    const finalPaidAgentTickets = currentPaidAgentTickets + paidAgentTickets;
+    const targetCommissionTickets = Math.floor(finalPaidAgentTickets / 10);
+    const bonusQuantity = Math.max(0, targetCommissionTickets - currentCommissionTickets);
+    const accounting = getAdminTicketAccountingPreview(paidQuantity, ticketPriceNumber, bonusQuantity);
+    const adminInventoryNeeded = paidQuantity + bonusQuantity;
+
+    return {
+      ...accounting,
+      adminInventoryNeeded,
+      currentCommissionTickets,
+      currentPaidAgentTickets,
+      finalPaidAgentTickets,
+      hasEnoughAdminInventory: agentPool.admin >= adminInventoryNeeded,
+      paidAgentTickets,
+      personalReserve,
+      targetCommissionTickets,
+    };
+  }, [agentPool.admin, assignAgentQty, selectedAgent, ticketPriceNumber]);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
@@ -2452,9 +2517,50 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   />
                 </div>
               </div>
+              <div
+                className={`ticket-admin-preview ${
+                  userTicketPreview.hasEnoughAdminInventory ? "" : "ticket-admin-preview--warning"
+                }`}
+                aria-label="User ticket assignment preview"
+              >
+                <div>
+                  <strong>Assign user ticket preview</strong>
+                  <span>
+                    {userTicketPreview.paidQuantity.toLocaleString()} paid ticket
+                    {userTicketPreview.paidQuantity === 1 ? "" : "s"} at{" "}
+                    {formatLedgerAmount(ticketPriceNumber)} USD each.
+                  </span>
+                </div>
+                <div className="ticket-admin-preview__grid">
+                  <div>
+                    <span>Admin inventory used</span>
+                    <strong>{userTicketPreview.adminInventoryNeeded.toLocaleString()}</strong>
+                  </div>
+                  <div>
+                    <span>Gross received</span>
+                    <strong>{formatLedgerAmount(userTicketPreview.paidGross)} USDT</strong>
+                  </div>
+                  <div>
+                    <span>Prize pool +80%</span>
+                    <strong>{formatLedgerAmount(userTicketPreview.prizeContribution)} USDT</strong>
+                  </div>
+                  <div>
+                    <span>Fee pool +20%</span>
+                    <strong>{formatLedgerAmount(userTicketPreview.feeContribution)} USDT</strong>
+                  </div>
+                </div>
+                {!userTicketPreview.hasEnoughAdminInventory ? (
+                  <small>Not enough admin tickets. Request more tickets before assigning.</small>
+                ) : null}
+              </div>
               <button
                 className="button secondary"
-                disabled={!ticketUserId || isPending}
+                disabled={
+                  !ticketUserId ||
+                  isPending ||
+                  userTicketPreview.paidQuantity < 1 ||
+                  !userTicketPreview.hasEnoughAdminInventory
+                }
                 onClick={assignTickets}
                 type="button"
               >
@@ -3146,7 +3252,12 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   </select>
                   <button
                     className="button"
-                    disabled={isPending || assignAgentUserId.length === 0}
+                    disabled={
+                      isPending ||
+                      assignAgentUserId.length === 0 ||
+                      agentTicketPreview.paidQuantity < 1 ||
+                      !agentTicketPreview.hasEnoughAdminInventory
+                    }
                     onClick={assignAgentCodes}
                     type="button"
                   >
@@ -3163,6 +3274,67 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   Admin inventory goes out in ticket-number order. If the agent has no personal user ticket yet, the
                   first paid ticket is assigned to that agent user account.
                 </span>
+                <div
+                  className={`ticket-admin-preview ${
+                    agentTicketPreview.hasEnoughAdminInventory ? "" : "ticket-admin-preview--warning"
+                  }`}
+                  aria-label="Agent ticket assignment preview"
+                >
+                  <div>
+                    <strong>Assign agent tickets preview</strong>
+                    <span>
+                      {agentTicketPreview.paidQuantity.toLocaleString()} paid ticket
+                      {agentTicketPreview.paidQuantity === 1 ? "" : "s"} at{" "}
+                      {formatLedgerAmount(ticketPriceNumber)} USD each.{" "}
+                      {selectedAgent
+                        ? selectedAgent.hasPersonalTicket
+                          ? "Agent already has a personal user ticket."
+                          : "First paid ticket will reserve the agent personal user ticket."
+                        : "Select an agent to confirm the personal ticket reserve."}
+                    </span>
+                  </div>
+                  <div className="ticket-admin-preview__grid">
+                    <div>
+                      <span>Personal reserve</span>
+                      <strong>{agentTicketPreview.personalReserve.toLocaleString()}</strong>
+                    </div>
+                    <div>
+                      <span>Agent sellable paid</span>
+                      <strong>{agentTicketPreview.paidAgentTickets.toLocaleString()}</strong>
+                    </div>
+                    <div>
+                      <span>Free bonus tickets</span>
+                      <strong>{agentTicketPreview.bonusQuantity.toLocaleString()}</strong>
+                    </div>
+                    <div>
+                      <span>Admin inventory used</span>
+                      <strong>{agentTicketPreview.adminInventoryNeeded.toLocaleString()}</strong>
+                    </div>
+                    <div>
+                      <span>Gross accounted</span>
+                      <strong>{formatLedgerAmount(agentTicketPreview.accountedGross)} USDT</strong>
+                    </div>
+                    <div>
+                      <span>Prize pool +80%</span>
+                      <strong>{formatLedgerAmount(agentTicketPreview.prizeContribution)} USDT</strong>
+                    </div>
+                    <div>
+                      <span>Fee pool +20%</span>
+                      <strong>{formatLedgerAmount(agentTicketPreview.feeContribution)} USDT</strong>
+                    </div>
+                    <div>
+                      <span>Agent paid after</span>
+                      <strong>{agentTicketPreview.finalPaidAgentTickets.toLocaleString()}</strong>
+                    </div>
+                  </div>
+                  <small>
+                    Admin-to-agent sales update the financial statement immediately. Later agent-to-user transfers do
+                    not change the prize pool because those tickets are already paid.
+                  </small>
+                  {!agentTicketPreview.hasEnoughAdminInventory ? (
+                    <small>Not enough admin tickets for paid plus bonus tickets. Request more tickets first.</small>
+                  ) : null}
+                </div>
               </div>
 
               {agents.length > 0 ? (
@@ -3179,8 +3351,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                       <strong role="cell">
                         {agent.email ?? agent.displayName ?? agent.userId}
                         <small>
-                          {agent.active ? "Active" : "Pending"} · {agent.contactName ?? "No name"}
-                          {agent.whatsappNumber ? ` · WhatsApp ${agent.whatsappNumber}` : ""}
+                          {agent.active ? "Active" : "Pending"} - {agent.contactName ?? "No name"}
+                          {agent.whatsappNumber ? ` - WhatsApp ${agent.whatsappNumber}` : ""} -{" "}
+                          {agent.hasPersonalTicket ? "Personal ticket ready" : "Needs personal ticket"}
                         </small>
                       </strong>
                       <span role="cell">{agent.paidTickets}</span>

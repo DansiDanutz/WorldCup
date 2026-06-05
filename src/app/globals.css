@@ -3434,6 +3434,77 @@ svg {
   line-height: 1.1;
 }
 
+.ticket-admin-preview {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255, 217, 128, 0.36);
+  border-radius: 10px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 217, 128, 0.2), transparent 38%),
+    linear-gradient(135deg, rgba(8, 38, 29, 0.96), rgba(16, 107, 79, 0.76));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.ticket-admin-preview > div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.ticket-admin-preview strong {
+  color: #ffffff;
+}
+
+.ticket-admin-preview span,
+.ticket-admin-preview small {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.ticket-admin-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ticket-admin-preview__grid div {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ticket-admin-preview__grid span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.ticket-admin-preview__grid strong {
+  color: #ffe29a;
+  font-size: 18px;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.ticket-admin-preview--warning {
+  border-color: rgba(222, 69, 58, 0.72);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 112, 85, 0.24), transparent 38%),
+    linear-gradient(135deg, rgba(55, 14, 11, 0.96), rgba(16, 107, 79, 0.58));
+}
+
+.ticket-admin-preview--warning small:last-child {
+  color: #ffe3df;
+}
+
 .account-role-badge {
   display: inline-flex;
   align-items: center;
@@ -5416,6 +5487,12 @@ html {
   background: var(--green-soft);
 }
 
+@media (max-width: 980px) {
+  .ticket-admin-preview__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 700px) {
   .deposit-row {
     display: grid;
@@ -5450,6 +5527,14 @@ html {
   }
 
   .financial-statement-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-admin-preview {
+    padding: 12px;
+  }
+
+  .ticket-admin-preview__grid {
     grid-template-columns: 1fr;
   }
 
