@@ -94,6 +94,7 @@ type AgentTicketRequest = {
 };
 
 const pickColorClasses = ["pick-color-one", "pick-color-two", "pick-color-three"] as const;
+const ownerAdminEmail = "semebitcoin@gmail.com";
 const referralAgreementText =
   "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
 const compactTeamCount = 8;
@@ -228,6 +229,8 @@ export function Dashboard({
     [matches, teams],
   );
   const signedInWithGoogle = Boolean(session?.access_token && session.user.email);
+  const showAdminNav =
+    isAdmin || session?.user.email?.trim().toLowerCase() === ownerAdminEmail;
   const waitingForAccountStatus = signedInWithGoogle && myAccountStatus === null;
   const showPickWorkflow = !accountHasEntry && !waitingForAccountStatus;
   const shareUrl =
@@ -810,6 +813,15 @@ export function Dashboard({
                 <small>Tickets & USDT</small>
               </span>
             </Link>
+            {showAdminNav ? (
+              <Link className="nav-item nav-item--admin" href={{ pathname: "/admin" }}>
+                <ShieldCheck size={16} />
+                <span className="nav-item__copy">
+                  <strong>Admin</strong>
+                  <small>Manage</small>
+                </span>
+              </Link>
+            ) : null}
             <details className="nav-more">
               <summary>
                 <GitBranch size={16} />
@@ -835,7 +847,7 @@ export function Dashboard({
                   <CalendarClock size={16} />
                   Matches
                 </a>
-                {isAdmin ? (
+                {showAdminNav ? (
                   <Link href={{ pathname: "/admin" }}>
                     <ShieldCheck size={16} />
                     Admin

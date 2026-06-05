@@ -9,6 +9,7 @@ import {
   Phone,
   QrCode,
   Send,
+  ShieldCheck,
   Ticket,
   Trophy,
   UserPlus,
@@ -106,6 +107,8 @@ type WalletScreenProps = {
   publicPaidActionGates?: PaidActionGates;
 };
 
+const ownerAdminEmail = "semebitcoin@gmail.com";
+
 export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const [session, setSession] = useState<Session | null>(null);
@@ -135,9 +138,12 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const signedIn = Boolean(session?.access_token && session.user.email);
+  const showAdminNav =
+    isAdmin || session?.user.email?.trim().toLowerCase() === ownerAdminEmail;
   const depositClaimAccountLabel =
     session?.user.email ?? session?.user.id ?? "your signed-in account";
   const depositRestriction = responsiblePlay?.depositRestriction ?? null;
@@ -222,6 +228,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         setAgeVerification(null);
         setResponsiblePlay(null);
         setAgent(null);
+        setIsAdmin(false);
         setTransferEmail("");
         setTransferRecipient(null);
         setAgentTransferEmail("");
@@ -237,6 +244,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
           withdrawalResponse,
           responsibleResponse,
           agentResponse,
+          adminResponse,
         ] = await Promise.all([
           fetch("/api/referrals/me", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/deposits/address", { headers: { Authorization: `Bearer ${token}` } }),
@@ -244,6 +252,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
           fetch("/api/withdrawals", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/responsible-play", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/agent/me", { headers: { Authorization: `Bearer ${token}` } }),
+          fetch("/api/admin/me", { headers: { Authorization: `Bearer ${token}` } }),
         ]);
 
         applyAccountStatus((await meResponse.json()) as Partial<MyAccountStatus>);
@@ -290,7 +299,15 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         } else {
           setAgent(null);
         }
+
+        if (adminResponse.ok) {
+          const data = (await adminResponse.json()) as { admin?: boolean };
+          setIsAdmin(Boolean(data.admin));
+        } else {
+          setIsAdmin(false);
+        }
       } catch {
+        setIsAdmin(false);
         setError("Could not load your wallet.");
       }
     });
@@ -680,6 +697,15 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 <small>Ranking</small>
               </span>
             </Link>
+            {showAdminNav ? (
+              <Link className="nav-item nav-item--admin" href={{ pathname: "/admin" }}>
+                <ShieldCheck size={16} />
+                <span className="nav-item__copy">
+                  <strong>Admin</strong>
+                  <small>Manage</small>
+                </span>
+              </Link>
+            ) : null}
             <details className="nav-more">
               <summary>
                 <BookOpen size={16} />
