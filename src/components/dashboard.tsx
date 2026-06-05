@@ -93,16 +93,8 @@ type AgentTicketRequest = {
   ticketId: string | null;
 };
 
-type ResponsiblePlayStatus = {
-  maxEntries: number | null;
-  selfExcluded: boolean;
-  selfExcludedUntil: string | null;
-  ticketsReserved: number | null;
-  entriesUsed: number | null;
-  entryRestriction: string | null;
-};
-
 const pickColorClasses = ["pick-color-one", "pick-color-two", "pick-color-three"] as const;
+const ownerAdminEmail = "semebitcoin@gmail.com";
 const referralAgreementText =
   "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
 const compactTeamCount = 8;
@@ -187,7 +179,6 @@ export function Dashboard({
   const [agentRequestError, setAgentRequestError] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
-  const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
   const [consented, setConsented] = useState<boolean | null>(null);
   const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -213,6 +204,11 @@ export function Dashboard({
   const selectedTeamRecords = selectedTeams
     .map((teamId) => teamsById.get(teamId))
     .filter((team): team is WorldCupTeam => Boolean(team));
+  const accountEntry = myAccountStatus?.entry ?? null;
+  const accountHasEntry = Boolean(accountEntry);
+  const lockedEntryTeamRecords = (accountEntry?.teamIds ?? [])
+    .map((teamId) => teamsById.get(teamId))
+    .filter((team): team is WorldCupTeam => Boolean(team));
   const remainingPickCount = Math.max(0, 3 - selectedTeams.length);
   const pickInstruction =
     selectedTeams.length === 3
@@ -233,6 +229,10 @@ export function Dashboard({
     [matches, teams],
   );
   const signedInWithGoogle = Boolean(session?.access_token && session.user.email);
+  const showAdminNav =
+    isAdmin || session?.user.email?.trim().toLowerCase() === ownerAdminEmail;
+  const waitingForAccountStatus = signedInWithGoogle && myAccountStatus === null;
+  const showPickWorkflow = !accountHasEntry && !waitingForAccountStatus;
   const shareUrl =
     typeof window === "undefined" || !myReferralCode
       ? ""
@@ -242,28 +242,33 @@ export function Dashboard({
         `I invited you to WorldCup26.\n\nPick 3 teams, climb the leaderboard, and use my referral code ${myReferralCode} when you join:\n${shareUrl}`,
       )}`
     : "";
-  const entryRestriction = responsiblePlay?.entryRestriction ?? null;
-  const publicEntryPolicyPause = getGatePauseMessage(publicPaidActionGates?.entry);
   const publicDepositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
   const publicTicketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
-  const entryPolicyPause =
-    myAccountStatus?.paidActionGates
-      ? getGatePauseMessage(myAccountStatus.paidActionGates.entry)
-      : publicEntryPolicyPause;
-  const publicPaidActionsPaused = Boolean(
-    publicEntryPolicyPause || publicDepositPolicyPause || publicTicketPolicyPause,
-  );
+  const publicPaidActionsPaused = Boolean(publicDepositPolicyPause || publicTicketPolicyPause);
   const ticketsAvailable = myAccountStatus?.ticketsAvailable ?? 0;
+  const accountStatusLoaded = myAccountStatus !== null;
+  const hasEntryTicket = ticketsAvailable > 0;
+  const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket;
+  const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase;
+  const entryTicketPurchasePause = needsEntryTicketPurchase ? publicTicketPolicyPause : null;
   const walletBalance = myAccountStatus?.walletBalance ?? 0;
   const ticketPriceAmount = myAccountStatus?.ticketPriceAmount ?? 0;
   const missingEntryTicket =
-    signedInWithGoogle && myAccountStatus !== null && selectedTeams.length === 3 && ticketsAvailable < 1;
+    signedInWithGoogle && accountStatusLoaded && selectedTeams.length === 3 && !hasEntryTicket;
+  const entryLockBlocker = getEntryLockBlocker({
+    consented,
+    displayName,
+    missingEntryTicket,
+    referralAccepted,
+    referralCode,
+    selectedTeamCount: selectedTeams.length,
+    signedInWithGoogle,
+  });
   const pendingAgentTicketRequest = agentTicketRequests.find((request) => request.status === "pending");
   const launchEvidenceMode = Boolean(
     signedInWithGoogle &&
       publicPaidActionsPaused &&
       myAccountStatus?.paidActionGates &&
-      myAccountStatus.paidActionGates.entry.allowed &&
       myAccountStatus.paidActionGates.deposit.allowed &&
       myAccountStatus.paidActionGates.ticket.allowed,
   );
@@ -398,16 +403,12 @@ export function Dashboard({
         setMyReferrals([]);
         setMyAccountStatus(null);
         setAgentTicketRequests([]);
-        setResponsiblePlay(null);
         return;
       }
 
       try {
-        const [response, responsibleResponse, agentRequestsResponse] = await Promise.all([
+        const [response, agentRequestsResponse] = await Promise.all([
           fetch("/api/referrals/me", {
-            headers: { Authorization: `Bearer ${token}` },
-          }),
-          fetch("/api/responsible-play", {
             headers: { Authorization: `Bearer ${token}` },
           }),
           fetch("/api/agent-ticket-requests", {
@@ -421,9 +422,9 @@ export function Dashboard({
           ticketsAssigned?: number;
           ticketsAvailable?: number;
           ticketPriceAmount?: string;
+          entry?: MyAccountStatus["entry"];
           paidActionGates?: MyAccountStatus["paidActionGates"];
         };
-        const responsibleResult = (await responsibleResponse.json()) as ResponsiblePlayStatus;
 
         setMyReferralCode(result.referralCode ?? null);
         setMyReferrals(result.referrals ?? []);
@@ -440,15 +441,14 @@ export function Dashboard({
           ticketsAssigned: result.ticketsAssigned ?? 0,
           ticketsAvailable: result.ticketsAvailable ?? 0,
           ticketPriceAmount: result.ticketPriceAmount ?? "0",
+          entry: result.entry ?? null,
           paidActionGates: result.paidActionGates,
         });
-        setResponsiblePlay(responsibleResponse.ok ? responsibleResult : null);
       } catch {
         setMyReferralCode(null);
         setMyReferrals([]);
         setMyAccountStatus(null);
         setAgentTicketRequests([]);
-        setResponsiblePlay(null);
       }
     });
   }, [session?.access_token, signedInWithGoogle]);
@@ -521,6 +521,10 @@ export function Dashboard({
   }
 
   function toggleTeam(teamId: string) {
+    if (accountHasEntry || waitingForAccountStatus) {
+      return;
+    }
+
     if (teamEligibility.get(teamId)?.available === false) {
       return;
     }
@@ -713,12 +717,31 @@ export function Dashboard({
         return;
       }
 
-      setEntryMessage("Entry locked. You are on the leaderboard.");
-      setDisplayName("");
+      const lockedDisplayName = displayName.trim();
+      const lockedTeamIds = [...selectedTeams];
+
+      setEntryMessage("Entry locked. Your account is now focused on your entry, wallet, and agent deal.");
+      setMyAccountStatus((current) => ({
+        walletBalance: current?.walletBalance ?? "0.00",
+        ticketsAssigned: current?.ticketsAssigned ?? 0,
+        ticketsAvailable: Math.max(0, (current?.ticketsAvailable ?? 1) - 1),
+        ticketPriceAmount: current?.ticketPriceAmount ?? "0",
+        usdtSenderWalletAddress: current?.usdtSenderWalletAddress ?? null,
+        usdtSenderWalletNetwork: current?.usdtSenderWalletNetwork ?? null,
+        usdtSenderWalletUpdatedAt: current?.usdtSenderWalletUpdatedAt ?? null,
+        paidActionGates: current?.paidActionGates,
+        entry: {
+          id: result.entryId ?? "locked-entry",
+          status: "locked",
+          displayName: lockedDisplayName,
+          teamIds: lockedTeamIds,
+          lockedAt: new Date().toISOString(),
+        },
+      }));
       setSelectedTeams([]);
       window.localStorage.removeItem("worldcup_referral_code");
       window.localStorage.removeItem("worldcup_referral_accepted");
-      window.setTimeout(() => window.location.reload(), 900);
+      window.setTimeout(() => document.getElementById("me")?.scrollIntoView({ behavior: "smooth" }), 80);
     });
   }
 
@@ -729,7 +752,6 @@ export function Dashboard({
     setMyReferralCode(null);
     setMyReferrals([]);
     setMyAccountStatus(null);
-    setResponsiblePlay(null);
   }
 
   async function copyInviteLink() {
@@ -770,11 +792,11 @@ export function Dashboard({
         </div>
         <SmartMenu>
           <nav className="nav nav--app" aria-label="Primary navigation">
-            <a className="nav-item nav-item--primary" href="#pick">
-              <Users size={16} />
+            <a className="nav-item nav-item--primary" href={showPickWorkflow ? "#pick" : "#me"}>
+              {showPickWorkflow ? <Users size={16} /> : <UserRound size={16} />}
               <span className="nav-item__copy">
-                <strong>Pick Teams</strong>
-                <small>Main task</small>
+                <strong>{showPickWorkflow ? "Pick Teams" : "Account"}</strong>
+                <small>{showPickWorkflow ? "Main task" : "Your entry"}</small>
               </span>
             </a>
             <a className="nav-item" href="#leaderboard">
@@ -791,6 +813,15 @@ export function Dashboard({
                 <small>Tickets & USDT</small>
               </span>
             </Link>
+            {showAdminNav ? (
+              <Link className="nav-item nav-item--admin" href={{ pathname: "/admin" }}>
+                <ShieldCheck size={16} />
+                <span className="nav-item__copy">
+                  <strong>Admin</strong>
+                  <small>Manage</small>
+                </span>
+              </Link>
+            ) : null}
             <details className="nav-more">
               <summary>
                 <GitBranch size={16} />
@@ -816,7 +847,7 @@ export function Dashboard({
                   <CalendarClock size={16} />
                   Matches
                 </a>
-                {isAdmin ? (
+                {showAdminNav ? (
                   <Link href={{ pathname: "/admin" }}>
                     <ShieldCheck size={16} />
                     Admin
@@ -852,10 +883,12 @@ export function Dashboard({
       </header>
 
       <div className="page page--landing">
-        <HeroSwiper
-          prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
-          playerCount={participantCount}
-        />
+        {showPickWorkflow ? (
+          <HeroSwiper
+            prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
+            playerCount={participantCount}
+          />
+        ) : null}
 
         <MyStanding />
 
@@ -893,15 +926,88 @@ export function Dashboard({
           </div>
         </section>
 
-        <section className="grid">
+        <section className={`grid ${accountHasEntry ? "grid--entry-complete" : ""}`}>
+          {waitingForAccountStatus ? (
+            <div className="panel pick-panel entry-complete-panel" id="pick">
+              <div className="panel-header">
+                <div>
+                  <h1 className="panel-title">Checking your account</h1>
+                  <p className="panel-subtitle">
+                    We are loading your entry status before showing any game actions.
+                  </p>
+                </div>
+                <span className="status-pill">Loading</span>
+              </div>
+              <div className="entry-complete-card">
+                <div className="ticket-ready-note">
+                  <RefreshCw size={16} />
+                  <span>Account status is loading. Finished entries will open directly to account view.</span>
+                </div>
+              </div>
+            </div>
+          ) : accountHasEntry ? (
+            <div className="panel pick-panel entry-complete-panel" id="pick">
+              <div className="panel-header">
+                <div>
+                  <h1 className="panel-title">Your entry is locked</h1>
+                  <p className="panel-subtitle">
+                    One entry per account. Your final teams are saved and can no longer be changed.
+                  </p>
+                </div>
+                <span className="status-pill">Locked</span>
+              </div>
+              <div className="entry-complete-card">
+                <div className="entry-complete-card__title">
+                  <Check size={18} aria-hidden="true" />
+                  <div>
+                    <strong>{accountEntry?.displayName ?? "Your WorldCup26 entry"}</strong>
+                    <span>
+                      {accountEntry?.lockedAt
+                        ? `Locked ${formatDateTime(accountEntry.lockedAt)}`
+                        : "Entry locked"}
+                    </span>
+                  </div>
+                </div>
+                <div className="selected-card locked-entry-teams" aria-label="Locked teams">
+                  {[0, 1, 2].map((slot) => {
+                    const team = lockedEntryTeamRecords[slot];
+                    const fallbackTeamId = accountEntry?.teamIds[slot];
+
+                    return (
+                      <div
+                        className={`selected-team ${team ? getPickColorClass(slot) : "empty-slot"}`}
+                        key={team?.id ?? fallbackTeamId ?? slot}
+                      >
+                        <span className="pick-slot-label">Team {slot + 1}</span>
+                        <span className="selected-team-name">
+                          {team?.name ?? fallbackTeamId ?? "Saved team"}
+                        </span>
+                        <strong>{team ? formatCoefficient(team.reward_coefficient) : "-"}</strong>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="entry-complete-actions">
+                  <a className="button" href="#me">
+                    <UserRound size={16} />
+                    Open account
+                  </a>
+                  <Link className="button secondary" href={{ pathname: "/wallet" }}>
+                    <Wallet size={16} />
+                    Wallet / Agent
+                  </Link>
+                </div>
+                {entryMessage ? <div className="message">{entryMessage}</div> : null}
+              </div>
+            </div>
+          ) : (
           <div className="panel pick-panel" id="pick">
             <div className="panel-header">
               <div>
                 <h1 className="panel-title">Choose 3 Teams</h1>
                 <p className="panel-subtitle">
-                  {entryPolicyPause
-                    ? "You can browse teams now. Entry locking opens after launch approvals are complete."
-                    : "Late entries are open. A team locks 1 minute before its first World Cup 2026 match."}
+                  Late entries are open for assigned tickets. A team locks 1 minute before
+                  its first World Cup 2026 match.
                 </p>
               </div>
               <span className="status-pill">{selectedTeams.length}/3 selected</span>
@@ -1084,7 +1190,9 @@ export function Dashboard({
               ) : null}
             </div>
           </div>
+          )}
 
+          {showPickWorkflow ? (
           <div className="panel" id="entry">
             <div className="panel-header">
               <div>
@@ -1186,39 +1294,50 @@ export function Dashboard({
                   <div className="ticket-requirement-card__head">
                     <div>
                       <strong>
-                        {ticketsAvailable > 0
+                        {hasEntryTicket
                           ? "Ticket ready"
                           : signedInWithGoogle
                             ? "You need 1 entry ticket"
                             : "Ticket required after sign-in"}
                       </strong>
                       <span>
-                        {ticketsAvailable > 0
+                        {hasEntryTicket
                           ? `${ticketsAvailable} ticket${ticketsAvailable === 1 ? "" : "s"} available for locking entries.`
                           : "Pay the buy-in with USDT, or use Agent Call after paying an agent directly."}
                       </span>
                     </div>
                     <span className="ticket-status-pill">
-                      {ticketsAvailable > 0 ? `${ticketsAvailable} available` : "0 available"}
+                      {hasEntryTicket ? `${ticketsAvailable} available` : "0 available"}
                     </span>
                   </div>
-                  <div className="ticket-option-grid">
-                    <div>
-                      <span>Ticket price</span>
-                      <strong>{formatMoneyAmount(ticketPriceAmount)}</strong>
+                  {hasEntryTicket ? (
+                    <div className="ticket-ready-note">
+                      <Check size={16} />
+                      <span>
+                        Buy-in is covered. Locking your entry will use 1 ticket from your account.
+                      </span>
                     </div>
-                    <div>
-                      <span>Your balance</span>
-                      <strong>{formatLedgerAmount(walletBalance)} USDT</strong>
-                    </div>
-                  </div>
-                  <div className="ticket-requirement-actions">
-                    <Link className="button" href={{ pathname: "/wallet", hash: "tickets" }}>
-                      <Wallet size={16} />
-                      Buy with USDT
-                    </Link>
-                  </div>
-                  {ticketsAvailable < 1 ? (
+                  ) : showEntryTicketPurchase ? (
+                    <>
+                      <div className="ticket-option-grid">
+                        <div>
+                          <span>Ticket price</span>
+                          <strong>{formatMoneyAmount(ticketPriceAmount)}</strong>
+                        </div>
+                        <div>
+                          <span>Your balance</span>
+                          <strong>{formatLedgerAmount(walletBalance)} USDT</strong>
+                        </div>
+                      </div>
+                      <div className="ticket-requirement-actions">
+                        <Link className="button" href={{ pathname: "/wallet", hash: "tickets" }}>
+                          <Wallet size={16} />
+                          Buy with USDT
+                        </Link>
+                      </div>
+                      {entryTicketPurchasePause ? (
+                        <div className="message error">{entryTicketPurchasePause}</div>
+                      ) : null}
                     <div className="agent-call-box">
                       <div>
                         <strong>Agent Call</strong>
@@ -1257,7 +1376,13 @@ export function Dashboard({
                       {agentRequestMessage ? <div className="message">{agentRequestMessage}</div> : null}
                       {agentRequestError ? <div className="message error">{agentRequestError}</div> : null}
                     </div>
-                  ) : null}
+                    </>
+                  ) : (
+                    <div className="ticket-ready-note">
+                      <Ticket size={16} />
+                      <span>Sign in first. Your ticket options load only after your account is connected.</span>
+                    </div>
+                  )}
                 </div>
               </div>
               {signedInWithGoogle && consented === false ? (
@@ -1298,25 +1423,12 @@ export function Dashboard({
                   </button>
                 </div>
               ) : null}
-              {entryRestriction ? (
-                <div className="message error">{entryRestriction}</div>
-              ) : null}
-              {entryPolicyPause ? (
-                <div className="message error">{entryPolicyPause}</div>
+              {entryLockBlocker ? (
+                <div className="message entry-lock-hint">{entryLockBlocker}</div>
               ) : null}
               <button
                 className="button"
-                disabled={
-                  selectedTeams.length !== 3 ||
-                  !displayName.trim() ||
-                  !signedInWithGoogle ||
-                  (Boolean(referralCode) && !referralAccepted) ||
-                  (signedInWithGoogle && consented !== true) ||
-                  missingEntryTicket ||
-                  Boolean(entryRestriction) ||
-                  Boolean(entryPolicyPause) ||
-                  isPending
-                }
+                disabled={Boolean(entryLockBlocker) || isPending}
                 onClick={submitEntry}
                 type="button"
               >
@@ -1327,6 +1439,7 @@ export function Dashboard({
               {entryError ? <div className="message error">{entryError}</div> : null}
             </div>
           </div>
+          ) : null}
 
           <div className="panel invite-panel" id="invite">
             <div className="panel-header">
@@ -1644,6 +1757,54 @@ function getTeamColorStyle(teamId: string) {
 
 function getGatePauseMessage(gate: PaidActionGate | undefined) {
   return gate && !gate.allowed ? "Paid actions open after launch approvals are complete." : null;
+}
+
+function getEntryLockBlocker({
+  consented,
+  displayName,
+  missingEntryTicket,
+  referralAccepted,
+  referralCode,
+  selectedTeamCount,
+  signedInWithGoogle,
+}: {
+  consented: boolean | null;
+  displayName: string;
+  missingEntryTicket: boolean;
+  referralAccepted: boolean;
+  referralCode: string;
+  selectedTeamCount: number;
+  signedInWithGoogle: boolean;
+}) {
+  if (selectedTeamCount !== 3) {
+    return `Pick ${3 - selectedTeamCount} more ${selectedTeamCount === 2 ? "team" : "teams"} before locking.`;
+  }
+
+  if (!displayName.trim()) {
+    return "Add your leaderboard display name before locking.";
+  }
+
+  if (!signedInWithGoogle) {
+    return "Sign in with Google before locking your entry.";
+  }
+
+  if (referralCode && !referralAccepted) {
+    return "Accept the referral agreement before locking with this inviter code.";
+  }
+
+  if (consented === false) {
+    return "Confirm your age and accept the Terms before locking.";
+  }
+
+  if (consented !== true) {
+    return "Checking your age and Terms confirmation. If this does not update, refresh and try again.";
+  }
+
+  if (missingEntryTicket) {
+    return "You need 1 assigned ticket before locking your entry.";
+  }
+
+  return null;
 }
 
 function normalizeReferralCode(value: string) {

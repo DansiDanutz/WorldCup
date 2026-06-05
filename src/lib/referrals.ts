@@ -79,7 +79,7 @@ async function ensureOwnerAgent(supabase: SupabaseClient, profile: ReferralProfi
 
   await supabase.rpc("worldcup_bootstrap_owner_agent_inventory", {
     p_owner_email: ownerAdminEmail,
-    p_quantity: 1000,
+    p_quantity: 100,
     p_created_by: "owner-bootstrap",
   });
 }

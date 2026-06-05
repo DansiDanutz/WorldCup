@@ -6,9 +6,8 @@ import {
   getPolicyGeoEnv,
   loadOperatorPolicy,
 } from "@/lib/operator-policy";
-import { getUserPaidActionGate, isPaidActionLaunchTestAdmin } from "@/lib/paid-action-gates";
+import { isPaidActionLaunchTestAdmin } from "@/lib/paid-action-gates";
 import { getAuthProvider, normalizeReferralCode } from "@/lib/referrals";
-import { getResponsiblePlayRestriction, loadResponsiblePlayStatus } from "@/lib/responsible-play";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import { getLockedTeamIds } from "@/lib/team-eligibility";
 import {
@@ -83,11 +82,6 @@ export async function POST(request: Request) {
     }
   }
 
-  const paidActionGate = await getUserPaidActionGate(supabase, "entry", { userEmail: user.email });
-  if (!paidActionGate.allowed) {
-    return jsonError(paidActionGate.message ?? "Entry locking is paused until launch approvals are complete.", 403);
-  }
-
   if (referralCode && !referralTermsAccepted) {
     return jsonError("Accept the referral agreement before joining with a referral code.", 400);
   }
@@ -118,21 +112,6 @@ export async function POST(request: Request) {
 
   if (tournamentResult.error || !tournamentResult.data) {
     return jsonError("Tournament is not available.", 500);
-  }
-
-  const responsiblePlay = await loadResponsiblePlayStatus(supabase, user.id, {
-    tournamentId: tournamentResult.data.id,
-  });
-  if ("error" in responsiblePlay) {
-    return jsonError(responsiblePlay.error, 500);
-  }
-
-  const responsiblePlayRestriction = getResponsiblePlayRestriction(
-    responsiblePlay.status,
-    "entry",
-  );
-  if (responsiblePlayRestriction) {
-    return jsonError(responsiblePlayRestriction, 403);
   }
 
   if (teamsResult.error || !teamsResult.data || teamsResult.data.length !== 3) {

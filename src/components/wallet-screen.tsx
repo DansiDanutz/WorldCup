@@ -107,6 +107,8 @@ type WalletScreenProps = {
   publicPaidActionGates?: PaidActionGates;
 };
 
+const ownerAdminEmail = "semebitcoin@gmail.com";
+
 export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const [session, setSession] = useState<Session | null>(null);
@@ -136,12 +138,12 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
-  const [entryLimitDraft, setEntryLimitDraft] = useState("");
-  const [selfExclusionDuration, setSelfExclusionDuration] = useState("24h");
-  const [selfExclusionReason, setSelfExclusionReason] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const signedIn = Boolean(session?.access_token && session.user.email);
+  const showAdminNav =
+    isAdmin || session?.user.email?.trim().toLowerCase() === ownerAdminEmail;
   const depositClaimAccountLabel =
     session?.user.email ?? session?.user.id ?? "your signed-in account";
   const depositRestriction = responsiblePlay?.depositRestriction ?? null;
@@ -174,8 +176,36 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   );
   const ticketPrice = Number(status?.ticketPriceAmount ?? 0);
   const walletBalance = Number(status?.walletBalance ?? 0);
+  const accountStatusLoaded = status !== null;
+  const userHasEntryTicket = (status?.ticketsAvailable ?? 0) > 0;
+  const userNeedsEntryTicket = accountStatusLoaded && !userHasEntryTicket;
   const purchasableTickets = ticketPrice > 0 ? Math.floor(walletBalance / ticketPrice) : 0;
   const remainingAfterNextTicket = ticketPrice > 0 ? Math.max(walletBalance - ticketPrice, 0) : walletBalance;
+
+  function applyAccountStatus(me: Partial<MyAccountStatus>) {
+    setStatus({
+      walletBalance: me.walletBalance ?? "0.00",
+      ticketsAvailable: me.ticketsAvailable ?? 0,
+      ticketsAssigned: me.ticketsAssigned ?? 0,
+      ticketPriceAmount: me.ticketPriceAmount ?? "0",
+      usdtSenderWalletAddress: me.usdtSenderWalletAddress ?? null,
+      usdtSenderWalletNetwork: me.usdtSenderWalletNetwork ?? null,
+      usdtSenderWalletUpdatedAt: me.usdtSenderWalletUpdatedAt ?? null,
+      paidActionGates: me.paidActionGates,
+    });
+
+    if (me.usdtSenderWalletAddress) {
+      setClaimSenderWalletAddress(me.usdtSenderWalletAddress);
+    }
+
+    if (me.usdtSenderWalletNetwork === "trc20" || me.usdtSenderWalletNetwork === "erc20") {
+      setClaimNetwork(me.usdtSenderWalletNetwork);
+    }
+  }
+
+  function applyResponsiblePlay(data: ResponsiblePlayStatus) {
+    setResponsiblePlay(data);
+  }
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
@@ -198,7 +228,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         setAgeVerification(null);
         setResponsiblePlay(null);
         setAgent(null);
-        setEntryLimitDraft("");
+        setIsAdmin(false);
         setTransferEmail("");
         setTransferRecipient(null);
         setAgentTransferEmail("");
@@ -214,6 +244,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
           withdrawalResponse,
           responsibleResponse,
           agentResponse,
+          adminResponse,
         ] = await Promise.all([
           fetch("/api/referrals/me", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/deposits/address", { headers: { Authorization: `Bearer ${token}` } }),
@@ -221,6 +252,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
           fetch("/api/withdrawals", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/responsible-play", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/agent/me", { headers: { Authorization: `Bearer ${token}` } }),
+          fetch("/api/admin/me", { headers: { Authorization: `Bearer ${token}` } }),
         ]);
 
         applyAccountStatus((await meResponse.json()) as Partial<MyAccountStatus>);
@@ -267,7 +299,15 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         } else {
           setAgent(null);
         }
+
+        if (adminResponse.ok) {
+          const data = (await adminResponse.json()) as { admin?: boolean };
+          setIsAdmin(Boolean(data.admin));
+        } else {
+          setIsAdmin(false);
+        }
       } catch {
+        setIsAdmin(false);
         setError("Could not load your wallet.");
       }
     });
@@ -278,27 +318,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       .then((response) => response.json())
       .then((me: Partial<MyAccountStatus>) => applyAccountStatus(me))
       .catch(() => undefined);
-  }
-
-  function applyAccountStatus(me: Partial<MyAccountStatus>) {
-    setStatus({
-      walletBalance: me.walletBalance ?? "0.00",
-      ticketsAvailable: me.ticketsAvailable ?? 0,
-      ticketsAssigned: me.ticketsAssigned ?? 0,
-      ticketPriceAmount: me.ticketPriceAmount ?? "0",
-      usdtSenderWalletAddress: me.usdtSenderWalletAddress ?? null,
-      usdtSenderWalletNetwork: me.usdtSenderWalletNetwork ?? null,
-      usdtSenderWalletUpdatedAt: me.usdtSenderWalletUpdatedAt ?? null,
-      paidActionGates: me.paidActionGates,
-    });
-
-    if (me.usdtSenderWalletAddress) {
-      setClaimSenderWalletAddress(me.usdtSenderWalletAddress);
-    }
-
-    if (me.usdtSenderWalletNetwork === "trc20" || me.usdtSenderWalletNetwork === "erc20") {
-      setClaimNetwork(me.usdtSenderWalletNetwork);
-    }
   }
 
   function refreshAgent(token: string) {
@@ -371,76 +390,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
 
       setMessage("Agent Call accepted. One ticket was assigned to the player.");
       refreshAgent(token);
-    });
-  }
-
-  function applyResponsiblePlay(data: ResponsiblePlayStatus) {
-    setResponsiblePlay(data);
-    setEntryLimitDraft(data.maxEntries === null ? "" : String(data.maxEntries));
-  }
-
-  function saveEntryLimit() {
-    const token = session?.access_token;
-    if (!token) {
-      return;
-    }
-
-    setError(null);
-    setMessage(null);
-    startTransition(async () => {
-      const trimmed = entryLimitDraft.trim();
-      const response = await fetch("/api/responsible-play", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          maxEntries: trimmed === "" ? null : Number(trimmed),
-        }),
-      });
-      const result = await response.json();
-
-      if (!response.ok) {
-        setError(result.error ?? "Could not save responsible play settings.");
-        return;
-      }
-
-      applyResponsiblePlay(result as ResponsiblePlayStatus);
-      setMessage(trimmed === "" ? "Entry limit cleared." : "Entry limit saved.");
-    });
-  }
-
-  function activateSelfExclusion() {
-    const token = session?.access_token;
-    if (!token) {
-      return;
-    }
-
-    setError(null);
-    setMessage(null);
-    startTransition(async () => {
-      const response = await fetch("/api/responsible-play", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          selfExclusion: selfExclusionDuration,
-          reason: selfExclusionReason.trim() || undefined,
-        }),
-      });
-      const result = await response.json();
-
-      if (!response.ok) {
-        setError(result.error ?? "Could not activate self-exclusion.");
-        return;
-      }
-
-      applyResponsiblePlay(result as ResponsiblePlayStatus);
-      setSelfExclusionReason("");
-      setMessage("Self-exclusion is active.");
     });
   }
 
@@ -748,6 +697,15 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 <small>Ranking</small>
               </span>
             </Link>
+            {showAdminNav ? (
+              <Link className="nav-item nav-item--admin" href={{ pathname: "/admin" }}>
+                <ShieldCheck size={16} />
+                <span className="nav-item__copy">
+                  <strong>Admin</strong>
+                  <small>Manage</small>
+                </span>
+              </Link>
+            ) : null}
             <details className="nav-more">
               <summary>
                 <BookOpen size={16} />
@@ -802,13 +760,29 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               Open Admin
             </Link>
           </section>
+        ) : publicPaidActionsPaused && signedIn && walletView === "user" && userHasEntryTicket ? (
+          <section className="launch-notice" aria-label="User wallet ticket ready">
+            <div>
+              <strong>User Wallet ticket ready</strong>
+              <span>
+                You already have an entry ticket, so User Wallet USDT deposit and ticket-buy
+                actions are hidden. Use Agent Wallet only for agent inventory deposits.
+              </span>
+            </div>
+            <Link className="button secondary" href={{ pathname: "/", hash: "entry" }}>
+              Lock entry
+            </Link>
+          </section>
         ) : publicPaidActionsPaused ? (
           <section className="launch-notice" aria-label="Wallet launch status">
             <div>
               <strong>Wallet paid actions paused</strong>
               <span>
-                Login, referrals, and account setup are available. Tickets, USDT deposits, and
-                withdrawals open after launch approvals are complete.
+                {signedIn && walletView === "user" && !accountStatusLoaded
+                  ? "Loading your User Wallet ticket status before showing any deposit actions."
+                  : signedIn && walletView === "agent"
+                    ? "Agent USDT deposit proof is available for admin-reviewed agent inventory. Public user ticket purchases remain paused."
+                    : "Login, referrals, and account setup are available. Tickets, USDT deposits, and withdrawals open after launch approvals are complete."}
               </span>
             </div>
             <Link className="button secondary" href={{ pathname: "/" }}>
@@ -914,14 +888,22 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <Ticket size={18} aria-hidden="true" />
                   <div>
                     <strong>
-                      {purchasableTickets > 0
+                      {!accountStatusLoaded
+                        ? "Loading your ticket balance..."
+                        : userHasEntryTicket
+                        ? "Your personal entry ticket is ready. Lock your teams from Play."
+                        : purchasableTickets > 0
                         ? `${purchasableTickets} ticket${purchasableTickets === 1 ? "" : "s"} can be made from your current USDT balance.`
                         : "Deposit USDT. Full ticket-price chunks convert into tickets automatically."}
                     </strong>
                     <span>
-                      Example: 100 USDT becomes 2 tickets at 50 USDT each. Use one for your entry and transfer the extra ticket to a friend by email.
+                      {!accountStatusLoaded
+                        ? "Deposit actions stay hidden until your wallet status is loaded."
+                        : userHasEntryTicket
+                        ? "User Wallet deposits are hidden once your entry ticket is available. Use Agent Wallet for agent inventory deposits."
+                        : "Example: 100 USDT becomes 2 tickets at 50 USDT each. Use one for your entry and transfer the extra ticket to a friend by email."}
                     </span>
-                    {ticketPrice > 0 ? (
+                    {userNeedsEntryTicket && ticketPrice > 0 ? (
                       <small>
                         After buying the next ticket, estimated USDT left: {formatLedgerAmount(remainingAfterNextTicket)}.
                       </small>
@@ -931,8 +913,12 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 <div className="wallet-action-list compact wallet-action-list--steps" aria-label="Wallet next actions">
                   <div>
                     <span>Ticket</span>
-                    <strong>Buy or redeem</strong>
-                    <small>Required before locking an entry.</small>
+                    <strong>{userHasEntryTicket ? "Ticket ready" : "Buy or redeem"}</strong>
+                    <small>
+                      {userHasEntryTicket
+                        ? "Use your ticket to lock one entry."
+                        : "Required before locking an entry."}
+                    </small>
                   </div>
                   <div>
                     <span>Friend</span>
@@ -940,15 +926,17 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <small>Email must already have a WorldCup account.</small>
                   </div>
                 </div>
-                <button
-                  className="button"
-                  disabled={Boolean(ticketRestriction || ticketPolicyPause) || isPending}
-                  onClick={buyTicket}
-                  type="button"
-                >
-                  <Lock size={16} />
-                  {isPending ? "Processing..." : "Buy entry ticket"}
-                </button>
+                {userNeedsEntryTicket ? (
+                  <button
+                    className="button"
+                    disabled={Boolean(ticketRestriction || ticketPolicyPause) || isPending}
+                    onClick={buyTicket}
+                    type="button"
+                  >
+                    <Lock size={16} />
+                    {isPending ? "Processing..." : "Buy entry ticket"}
+                  </button>
+                ) : null}
                 <div className="redeem-row">
                   <label htmlFor="redeem-code">Have a ticket code?</label>
                   <div className="redeem-input">
@@ -971,8 +959,12 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     </button>
                   </div>
                 </div>
-                {ticketPolicyPause ? <div className="message error">{ticketPolicyPause}</div> : null}
-                {ticketRestriction ? <div className="message error">{ticketRestriction}</div> : null}
+                {userNeedsEntryTicket && ticketPolicyPause ? (
+                  <div className="message error">{ticketPolicyPause}</div>
+                ) : null}
+                {userNeedsEntryTicket && ticketRestriction ? (
+                  <div className="message error">{ticketRestriction}</div>
+                ) : null}
                 <div className="ticket-transfer-box">
                   <div>
                     <strong>Transfer ticket to a friend</strong>
@@ -1036,89 +1028,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               </div>
             </div>
 
-            <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
-              <div className="panel-header">
-                <div>
-                  <h2 className="panel-title">Responsible Play</h2>
-                  <p className="panel-subtitle">Set account limits before buying tickets or depositing.</p>
-                </div>
-                <ShieldCheck size={18} color="var(--green)" />
-              </div>
-              <div className="responsible-play-content">
-                {responsiblePlay?.selfExcluded ? (
-                  <div className="message error">
-                    Self-exclusion is active until{" "}
-                    {responsiblePlay.selfExcludedUntil
-                      ? new Date(responsiblePlay.selfExcludedUntil).toLocaleString()
-                      : "the selected end date"}
-                    .
-                  </div>
-                ) : (
-                  <div className="message">
-                    These settings are enforced on deposits, ticket purchases, admin ticket assignment,
-                    and entry locking.
-                  </div>
-                )}
-                <div className="responsible-play-controls">
-                  <div className="field">
-                    <label htmlFor="entry-limit">Entry-ticket limit</label>
-                    <input
-                      id="entry-limit"
-                      max="10"
-                      min="0"
-                      placeholder="No limit"
-                      type="number"
-                      value={entryLimitDraft}
-                      onChange={(event) => setEntryLimitDraft(event.target.value)}
-                    />
-                    <div className="field-note">
-                      Current tickets: {responsiblePlay?.ticketsReserved ?? 0}. Current entries:{" "}
-                      {responsiblePlay?.entriesUsed ?? 0}.
-                    </div>
-                  </div>
-                  <button className="button secondary" disabled={isPending} onClick={saveEntryLimit} type="button">
-                    Save limit
-                  </button>
-                  <div className="field">
-                    <label htmlFor="self-exclusion-duration">Self-exclusion</label>
-                    <select
-                      id="self-exclusion-duration"
-                      value={selfExclusionDuration}
-                      onChange={(event) => setSelfExclusionDuration(event.target.value)}
-                    >
-                      <option value="24h">24 hours</option>
-                      <option value="7d">7 days</option>
-                      <option value="30d">30 days</option>
-                      <option value="season">Rest of tournament</option>
-                    </select>
-                  </div>
-                  <div className="field">
-                    <label htmlFor="self-exclusion-reason">Note</label>
-                    <input
-                      id="self-exclusion-reason"
-                      maxLength={300}
-                      placeholder="Optional"
-                      value={selfExclusionReason}
-                      onChange={(event) => setSelfExclusionReason(event.target.value)}
-                    />
-                  </div>
-                  <button className="button danger" disabled={isPending} onClick={activateSelfExclusion} type="button">
-                    Activate self-exclusion
-                  </button>
-                </div>
-                <div className="support-links" aria-label="Responsible play support resources">
-                  {(responsiblePlay?.supportResources ?? [
-                    { label: "NCPG help and treatment", url: "https://www.ncpgambling.org/help-treatment/" },
-                    { label: "Gambling Therapy support", url: "https://www.gamblingtherapy.org/" },
-                  ]).map((resource) => (
-                    <a href={resource.url} key={resource.url} rel="noreferrer" target="_blank">
-                      {resource.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-
+            {userNeedsEntryTicket ? (
             <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
               <div className="panel-header">
                 <div>
@@ -1356,6 +1266,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 </div>
               ) : null}
             </div>
+            ) : null}
 
             <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
               <div className="panel-header">
@@ -1512,6 +1423,134 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                       <strong>5% referral upside</strong>
                       <span>If a player has no inviter, the agent ticket makes you their inviter and upgrades their own future referral rate to 5%. Existing inviter referrals are never overwritten.</span>
                     </div>
+                  </div>
+                  <div className="agent-deposit-box">
+                    <div className="panel-header compact">
+                      <div>
+                        <h3 className="panel-title">Deposit USDT for agent tickets</h3>
+                        <p className="panel-subtitle">
+                          Send USDT, submit the proof, then admin assigns paid agent tickets after manual approval.
+                        </p>
+                      </div>
+                      <QrCode size={18} color="var(--gold)" />
+                    </div>
+                    {depositPolicyPause ? (
+                      <div className="message error">{depositPolicyPause}</div>
+                    ) : depositsConfigured === false ? (
+                      <div className="message">USDT deposits are not enabled yet. Check back soon.</div>
+                    ) : addresses.length === 0 ? (
+                      <div className="field-note">Generating your agent deposit address...</div>
+                    ) : (
+                      <>
+                        <div className="deposit-list agent-deposit-list">
+                          {addresses.map((entry) => {
+                            const explorerUrl = getDepositExplorerAddressUrl(entry.network, entry.address);
+
+                            return (
+                              <div className="deposit-row" key={`agent-${entry.network}`}>
+                                {entry.qrCodePath ? (
+                                  <Image
+                                    alt={`${entry.label} agent deposit QR code`}
+                                    className="deposit-qr"
+                                    height={116}
+                                    src={entry.qrCodePath}
+                                    unoptimized
+                                    width={116}
+                                  />
+                                ) : null}
+                                <div className="deposit-meta">
+                                  <span className="pick-slot-label">{entry.label}</span>
+                                  <code className="deposit-address">{entry.address}</code>
+                                  {entry.memo ? <small>Memo: {entry.memo}</small> : null}
+                                  {entry.shared ? <small>Main KuCoin receive wallet</small> : null}
+                                  {explorerUrl ? (
+                                    <a
+                                      className="deposit-explorer-link"
+                                      href={explorerUrl}
+                                      rel="noreferrer"
+                                      target="_blank"
+                                    >
+                                      View receive wallet
+                                    </a>
+                                  ) : null}
+                                </div>
+                                <button
+                                  className="button secondary"
+                                  onClick={() => copyAddress(entry.address)}
+                                  type="button"
+                                >
+                                  <Copy size={16} />
+                                  Copy
+                                </button>
+                              </div>
+                            );
+                          })}
+                        </div>
+                        <div className="deposit-claim-form agent-deposit-form">
+                          <div className="message full-width">
+                            This proof is for agent inventory. Admin uses it before assigning paid agent tickets.
+                          </div>
+                          {depositRestriction ? (
+                            <div className="message error full-width">{depositRestriction}</div>
+                          ) : null}
+                          <div className="field">
+                            <label htmlFor="agent-claim-network">Network</label>
+                            <select
+                              id="agent-claim-network"
+                              value={claimNetwork}
+                              onChange={(event) => setClaimNetwork(event.target.value)}
+                            >
+                              <option value="trc20">TRC20</option>
+                              <option value="erc20">ERC20</option>
+                            </select>
+                          </div>
+                          <div className="field">
+                            <label htmlFor="agent-claim-amount">Amount sent</label>
+                            <input
+                              id="agent-claim-amount"
+                              min="0"
+                              step="0.000001"
+                              type="number"
+                              value={claimAmount}
+                              onChange={(event) => setClaimAmount(event.target.value)}
+                            />
+                          </div>
+                          <div className="field full-width">
+                            <label htmlFor="agent-claim-sender-wallet">Sending wallet address</label>
+                            <input
+                              id="agent-claim-sender-wallet"
+                              value={claimSenderWalletAddress}
+                              onChange={(event) => setClaimSenderWalletAddress(event.target.value)}
+                              placeholder={claimNetwork === "trc20" ? "TRC20 wallet starts with T" : "ERC20 wallet starts with 0x"}
+                            />
+                          </div>
+                          <div className="field full-width">
+                            <label htmlFor="agent-claim-tx">Transaction hash</label>
+                            <input
+                              id="agent-claim-tx"
+                              value={claimTxHash}
+                              onChange={(event) => setClaimTxHash(event.target.value)}
+                              placeholder="Paste tx hash"
+                            />
+                          </div>
+                          <button
+                            className="button secondary"
+                            disabled={
+                              !claimAmount ||
+                              !claimSenderWalletAddress ||
+                              !claimTxHash ||
+                              Boolean(depositRestriction || depositPolicyPause) ||
+                              isPending
+                            }
+                            onClick={submitDepositClaim}
+                            type="button"
+                          >
+                            <Send size={16} />
+                            Submit agent deposit proof
+                          </button>
+                        </div>
+                      </>
+                    )}
                   </div>
                   {!agent?.isAgent ? (
                     <div className="agent-register-box">

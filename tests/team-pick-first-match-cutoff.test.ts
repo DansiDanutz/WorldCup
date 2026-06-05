@@ -6,6 +6,10 @@ const migration = readFileSync(
   "supabase/migrations/20260604170000_worldcup_team_pick_first_match_cutoff.sql",
   "utf8",
 );
+const lateEntryMigration = readFileSync(
+  "supabase/migrations/20260605023000_worldcup_late_entry_in_progress.sql",
+  "utf8",
+);
 
 describe("team pick first-match cutoff migration", () => {
   it("recreates the pick trigger for the first group match minus one minute", () => {
@@ -21,5 +25,13 @@ describe("team pick first-match cutoff migration", () => {
       migration,
       /alter function public\.worldcup_assert_team_pick_is_open\(\)\s+set search_path = public;/,
     );
+  });
+
+  it("keeps assigned-ticket entries open while the tournament is in progress", () => {
+    assert.match(lateEntryMigration, /create or replace function public\.worldcup_create_entry/);
+    assert.match(lateEntryMigration, /v_status not in \('setup', 'open', 'in_progress'\)/);
+    assert.match(lateEntryMigration, /v_effective_referral_code := nullif\(p_referral_code, ''\)/);
+    assert.match(lateEntryMigration, /source_referrer_user_id/);
+    assert.match(lateEntryMigration, /grant execute on function public\.worldcup_create_entry/);
   });
 });

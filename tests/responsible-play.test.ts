@@ -91,10 +91,9 @@ describe("responsible play controls", () => {
     assert.ok(RESPONSIBLE_PLAY_MAX_ENTRY_LIMIT <= 10);
   });
 
-  it("routes paid actions through the shared responsible play gate", () => {
+  it("routes wallet paid actions through the shared responsible play gate without blocking entries", () => {
     for (const route of [
       userRoute,
-      entryRoute,
       ticketRoute,
       adminTicketRoute,
       depositAddressRoute,
@@ -107,13 +106,16 @@ describe("responsible play controls", () => {
 
     assert.match(withdrawalRoute, /"withdrawal"/);
     assert.doesNotMatch(withdrawalRoute, /"deposit"/);
+    assert.doesNotMatch(entryRoute, /loadResponsiblePlayStatus/);
+    assert.doesNotMatch(entryRoute, /getResponsiblePlayRestriction/);
+    assert.match(entryRoute, /worldcup_create_entry/);
   });
 
-  it("surfaces limits, self-exclusion, and support resources in the wallet", () => {
-    assert.match(walletScreen, /Responsible Play/);
-    assert.match(walletScreen, /Entry-ticket limit/);
-    assert.match(walletScreen, /Activate self-exclusion/);
-    assert.match(walletScreen, /NCPG help and treatment/);
-    assert.match(walletScreen, /Gambling Therapy support/);
+  it("does not surface responsible-play gambling copy in the wallet UI", () => {
+    assert.doesNotMatch(walletScreen, /Responsible Play/);
+    assert.doesNotMatch(walletScreen, /Entry-ticket limit/);
+    assert.doesNotMatch(walletScreen, /Activate self-exclusion/);
+    assert.doesNotMatch(walletScreen, /NCPG help and treatment/);
+    assert.doesNotMatch(walletScreen, /Gambling Therapy support/);
   });
 });

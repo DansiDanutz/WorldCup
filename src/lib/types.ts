@@ -15,6 +15,7 @@ export type WorldCupTournament = {
   status: "setup" | "open" | "locked" | "in_progress" | "completed";
   prize_pool_amount: string;
   prize_pool_fee_percent: string;
+  fee_pool_amount?: string;
   ticket_price_amount: string;
 };
 
@@ -202,6 +203,13 @@ export type MyAccountStatus = {
   ticketsAssigned: number;
   ticketsAvailable: number;
   ticketPriceAmount: string;
+  entry?: {
+    id: string;
+    status: "draft" | "locked";
+    displayName: string;
+    teamIds: string[];
+    lockedAt: string | null;
+  } | null;
   usdtSenderWalletAddress?: string | null;
   usdtSenderWalletNetwork?: string | null;
   usdtSenderWalletUpdatedAt?: string | null;

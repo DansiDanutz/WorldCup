@@ -129,6 +129,7 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.topbar\s*{[\s\S]*?linear-gradient\(135deg/);
     assert.match(globalsCss, /\.nav\s*{[\s\S]*?background:\s*rgba\(4,\s*18,\s*15,\s*0\.34\);/);
     assert.match(globalsCss, /\.nav-item--primary\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#e6b653\)/);
+    assert.match(globalsCss, /\.nav-item--admin\s*{[\s\S]*?linear-gradient\(135deg/);
     assert.match(globalsCss, /\.smart-menu\.is-closed \.smart-menu__toggle\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#e6b653\)/);
     assert.match(globalsCss, /\.nav-more__menu\s*{[\s\S]*?position:\s*absolute;/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.topbar\s*{[\s\S]*?flex-direction:\s*column;/);
@@ -218,17 +219,29 @@ describe("WorldCup design system integration", () => {
   it("uses the active Supabase session for logged-in navigation and wallet state", () => {
     assert.match(dashboard, /const signedInWithGoogle = Boolean\(session\?\.access_token && session\.user\.email\);/);
     assert.match(walletScreen, /const signedIn = Boolean\(session\?\.access_token && session\.user\.email\);/);
+    assert.match(dashboard, /const ownerAdminEmail = "semebitcoin@gmail\.com"/);
+    assert.match(walletScreen, /const ownerAdminEmail = "semebitcoin@gmail\.com"/);
     assert.match(dashboard, /fetch\("\/api\/admin\/me"/);
     assert.match(dashboard, /setIsAdmin\(response\.ok && Boolean\(result\.admin\)\);/);
     assert.match(dashboard, /setIsAdmin\(false\);/);
+    assert.match(walletScreen, /fetch\("\/api\/admin\/me"/);
+    assert.match(walletScreen, /setIsAdmin\(Boolean\(data\.admin\)\);/);
+    assert.match(walletScreen, /setIsAdmin\(false\);/);
+    assert.match(dashboard, /const showAdminNav =[\s\S]*?isAdmin \|\| session\?\.user\.email\?\.trim\(\)\.toLowerCase\(\) === ownerAdminEmail/);
+    assert.match(walletScreen, /const showAdminNav =[\s\S]*?isAdmin \|\| session\?\.user\.email\?\.trim\(\)\.toLowerCase\(\) === ownerAdminEmail/);
     assert.match(dashboard, /<main className="app-shell app-shell--landing">/);
     assert.match(dashboard, /<nav className="nav nav--app" aria-label="Primary navigation">/);
-    assert.match(dashboard, /className="nav-item nav-item--primary" href="#pick"[\s\S]*?Pick Teams[\s\S]*?Main task[\s\S]*?href="#leaderboard"[\s\S]*?Leaderboard[\s\S]*?Ranking[\s\S]*?pathname: "\/wallet"[\s\S]*?Wallet[\s\S]*?Tickets & USDT[\s\S]*?<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw/);
+    assert.match(dashboard, /const showPickWorkflow = !accountHasEntry && !waitingForAccountStatus;/);
+    assert.match(dashboard, /className="nav-item nav-item--primary" href=\{showPickWorkflow \? "#pick" : "#me"\}/);
+    assert.match(dashboard, /showPickWorkflow \? "Pick Teams" : "Account"/);
+    assert.match(dashboard, /showPickWorkflow \? "Main task" : "Your entry"/);
+    assert.match(dashboard, /href="#leaderboard"[\s\S]*?Leaderboard[\s\S]*?Ranking[\s\S]*?pathname: "\/wallet"[\s\S]*?Wallet[\s\S]*?Tickets & USDT[\s\S]*?nav-item--admin[\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?Manage[\s\S]*?<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw/);
     assert.match(dashboard, /<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw[\s\S]*?href="#rules"[\s\S]*?pathname: "\/schema"/);
-    assert.match(dashboard, /\{isAdmin \? \([\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?\) : null\}/);
+    assert.match(dashboard, /\{showAdminNav \? \([\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?\) : null\}/);
     assert.match(dashboard, /<details className="nav-more">[\s\S]*?<\/details>[\s\S]*?\{signedInWithGoogle \? \([\s\S]*?className="nav-item nav-item--identity" href="#me"[\s\S]*?Account[\s\S]*?\) : \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?pathname: "\/login"[\s\S]*?Login/);
     assert.match(walletScreen, /<nav className="nav nav--app" aria-label="Wallet navigation">/);
     assert.match(walletScreen, /className="nav-item nav-item--primary" href=\{\{ pathname: "\/", hash: "pick" \}\}[\s\S]*?Play[\s\S]*?Pick teams/);
+    assert.match(walletScreen, /nav-item--admin[\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?Manage/);
     assert.match(walletScreen, /<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & game/);
     assert.match(walletScreen, /<details className="nav-more">[\s\S]*?<\/details>[\s\S]*?\{signedIn \? \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?Account[\s\S]*?\) : \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?pathname: "\/login"[\s\S]*?Login/);
     assert.doesNotMatch(dashboard, /const signedInWithGoogle = session\?\.user\.app_metadata\.provider === "google";/);
@@ -385,14 +398,24 @@ describe("WorldCup design system integration", () => {
   });
 
   it("keeps ticket purchase guidance visible before locking an entry", () => {
+    assert.match(dashboard, /const accountStatusLoaded = myAccountStatus !== null/);
+    assert.match(dashboard, /const hasEntryTicket = ticketsAvailable > 0/);
+    assert.match(dashboard, /const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket/);
+    assert.match(dashboard, /const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase/);
+    assert.match(dashboard, /const entryTicketPurchasePause = needsEntryTicketPurchase \? publicTicketPolicyPause : null/);
     assert.match(dashboard, /const missingEntryTicket =/);
-    assert.match(dashboard, /ticketsAvailable < 1/);
+    assert.match(dashboard, /const entryLockBlocker = getEntryLockBlocker/);
+    assert.match(dashboard, /selectedTeams\.length === 3 && !hasEntryTicket/);
+    assert.match(dashboard, /hasEntryTicket \? \(/);
+    assert.match(dashboard, /\) : showEntryTicketPurchase \? \(/);
     assert.match(dashboard, /className=\{`ticket-requirement-card/);
     assert.match(dashboard, /You need 1 entry ticket/);
+    assert.match(dashboard, /Buy-in is covered\. Locking your entry will use 1 ticket/);
     assert.match(dashboard, /Pay the buy-in with USDT, or use Agent Call after paying an agent directly\./);
     assert.match(dashboard, /Ticket price/);
     assert.match(dashboard, /Your balance/);
     assert.match(dashboard, /Buy with USDT/);
+    assert.match(dashboard, /\{entryTicketPurchasePause \? \(/);
     assert.match(dashboard, /Agent Call/);
     assert.match(dashboard, /Agent code or email/);
     assert.match(dashboard, /Request ticket/);
@@ -400,12 +423,16 @@ describe("WorldCup design system integration", () => {
     assert.match(walletScreen, /Agent Call requests/);
     assert.match(walletScreen, /acceptAgentTicketRequest/);
     assert.match(dashboard, /pathname: "\/wallet", hash: "tickets"/);
-    assert.match(dashboard, /missingEntryTicket \|\|/);
+    assert.match(dashboard, /disabled=\{Boolean\(entryLockBlocker\) \|\| isPending\}/);
+    assert.match(dashboard, /function getEntryLockBlocker/);
+    assert.match(dashboard, /Checking your age and Terms confirmation/);
     assert.match(walletScreen, /id="tickets"/);
     assert.match(walletScreen, /walletView === "agent" \? "wallet-panel-hidden" : ""/);
     assert.match(globalsCss, /\.ticket-requirement-card\s*{/);
     assert.match(globalsCss, /\.ticket-requirement-card\.needs-ticket/);
     assert.match(globalsCss, /\.ticket-requirement-actions\s*{/);
+    assert.match(globalsCss, /\.ticket-ready-note\s*{/);
+    assert.match(globalsCss, /\.entry-lock-hint\s*{/);
     assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.ticket-requirement-card\s*{[\s\S]*?grid-template-columns:\s*1fr;/);
   });
 
@@ -467,16 +494,15 @@ describe("WorldCup design system integration", () => {
     assert.match(walletPage, /publicPaidActionGates/);
     assert.match(loginPage, /getPublicPaidActionGates/);
     assert.match(loginPage, /publicPaidActionGates/);
-    assert.match(dashboard, /entryPolicyPause/);
     assert.match(dashboard, /launchEvidenceMode/);
     assert.match(dashboard, /<div className="page page--landing">[\s\S]*?<HeroSwiper/);
     assert.doesNotMatch(dashboard, /<strong>Paid actions paused<\/strong>/);
     assert.match(dashboard, /Admin launch evidence mode/);
     assert.match(dashboard, /Your admin account can lock entries/);
-    assert.match(dashboard, /\{entryPolicyPause[\s\S]*?Entry locking opens after launch approvals are complete/);
     assert.match(dashboard, /paidActionGates: result\.paidActionGates/);
     assert.match(dashboard, /myAccountStatus\?\.paidActionGates/);
-    assert.match(dashboard, /Entry locking opens after launch approvals are complete/);
+    assert.match(dashboard, /Late entries are open for assigned tickets/);
+    assert.doesNotMatch(dashboard, /Entry locking opens after launch approvals are complete/);
     assert.doesNotMatch(dashboard, /Operator policy is configured/);
     assert.match(globalsCss, /\.launch-notice/);
     assert.match(globalsCss, /\.launch-evidence-checklist/);
@@ -510,7 +536,7 @@ describe("WorldCup design system integration", () => {
     assert.match(loginRegister, /Account setup is open/);
     assert.match(
       loginRegister,
-      /Tickets, entries, and USDT deposits open after launch approvals are complete\./,
+      /Tickets and USDT deposits open after launch approvals are complete\./,
     );
   });
 });

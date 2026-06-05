@@ -10,6 +10,10 @@ const feePoolMigration = readFileSync(
   "supabase/migrations/20260604224000_worldcup_fee_pool_referral_tree.sql",
   "utf8",
 );
+const adminOutgoingPoolMigration = readFileSync(
+  "supabase/migrations/20260605030000_worldcup_admin_outgoing_bonus_pool_accounting.sql",
+  "utf8",
+);
 const agentRoute = readFileSync("src/app/api/agent/me/route.ts", "utf8");
 const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
 
@@ -31,13 +35,15 @@ describe("agent activation and prize pool funding", () => {
     assert.match(walletScreen, /first personal ticket is bought or assigned/);
   });
 
-  it("adds 80 percent of paid admin-outgoing ticket value to the prize pool", () => {
-    assert.match(migration, /create or replace function public\.worldcup_apply_admin_ticket_prize_pool/);
-    assert.match(migration, /new\.movement_type not in \('admin_to_agent', 'admin_to_user'\)/);
-    assert.match(migration, /coalesce\(new\.total_amount, 0\) \* 0\.80/);
-    assert.match(migration, /prize_pool_amount = prize_pool_amount \+ v_prize_contribution/);
-    assert.match(migration, /'prizePoolContribution', v_prize_contribution/);
-    assert.match(migration, /create trigger worldcup_apply_admin_ticket_prize_pool_trg/);
+  it("adds 80 percent of every admin-outgoing ticket value to the prize pool", () => {
+    assert.match(adminOutgoingPoolMigration, /create or replace function public\.worldcup_admin_ticket_movement_value/);
+    assert.match(adminOutgoingPoolMigration, /v_commission_text text := coalesce\(v_metadata ->> 'commissionAwarded', ''\)/);
+    assert.match(adminOutgoingPoolMigration, /'bonusQuantity', v_bonus_quantity/);
+    assert.match(adminOutgoingPoolMigration, /'accountedQuantity', v_paid_quantity \+ v_bonus_quantity/);
+    assert.match(adminOutgoingPoolMigration, /'accountedGrossAmount', v_accounted_gross_amount/);
+    assert.match(adminOutgoingPoolMigration, /v_gross_amount := \(v_accounting ->> 'accountedGrossAmount'\)::numeric/);
+    assert.match(adminOutgoingPoolMigration, /v_prize_contribution := round\(\(v_gross_amount \* 0\.80\)::numeric, 2\)/);
+    assert.match(adminOutgoingPoolMigration, /'accountingPolicy', 'all_admin_outgoing_codes'/);
   });
 
   it("adds 80 percent of direct wallet ticket purchases to the prize pool", () => {
@@ -54,6 +60,8 @@ describe("agent activation and prize pool funding", () => {
     assert.match(feePoolMigration, /v_fee_contribution := round\(\(v_gross_amount - v_prize_contribution\)::numeric, 2\)/);
     assert.match(feePoolMigration, /fee_pool_amount = fee_pool_amount \+ v_fee_contribution/);
     assert.match(feePoolMigration, /'feePoolContribution', v_fee_contribution/);
+    assert.match(adminOutgoingPoolMigration, /insert into public\.worldcup_fee_pool_contributions/);
+    assert.match(adminOutgoingPoolMigration, /'feePoolContribution', v_fee_contribution/);
   });
 
   it("keeps helper and trigger functions service-role only", () => {
@@ -61,12 +69,16 @@ describe("agent activation and prize pool funding", () => {
       "public.worldcup_ensure_active_agent_for_user(uuid, uuid, text)",
       "public.worldcup_activate_agent_on_personal_ticket()",
       "public.worldcup_apply_admin_ticket_prize_pool()",
+      "public.worldcup_admin_ticket_movement_value(integer, numeric, numeric, jsonb)",
     ];
 
     for (const signature of signatures) {
       const escaped = signature.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      assert.match(migration, new RegExp(`revoke execute on function ${escaped}\\s+from public, anon, authenticated;`));
-      assert.match(migration, new RegExp(`grant execute on function ${escaped}\\s+to service_role;`));
+      const source = signature.includes("worldcup_admin_ticket_movement_value")
+        ? adminOutgoingPoolMigration
+        : `${migration}\n${adminOutgoingPoolMigration}`;
+      assert.match(source, new RegExp(`revoke execute on function ${escaped}\\s+from public, anon, authenticated;`));
+      assert.match(source, new RegExp(`grant execute on function ${escaped}\\s+to service_role;`));
     }
   });
 });

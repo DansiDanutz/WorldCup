@@ -32,7 +32,11 @@ const REQUEST_ERROR_MESSAGES: Record<string, { status: number; message: string }
 type ServiceClient = ReturnType<typeof createServiceSupabaseClient>;
 
 async function getTournament(supabase: ServiceClient) {
-  return supabase.from("worldcup_tournaments").select("id").eq("slug", "fifa-world-cup-2026").single();
+  return supabase
+    .from("worldcup_tournaments")
+    .select("id,ticket_price_amount,prize_pool_amount,fee_pool_amount")
+    .eq("slug", "fifa-world-cup-2026")
+    .single();
 }
 
 export async function GET(request: Request) {
@@ -100,6 +104,11 @@ export async function GET(request: Request) {
 
   return NextResponse.json({
     pool,
+    accounting: {
+      ticketPriceAmount: tournament.data.ticket_price_amount,
+      prizePoolAmount: tournament.data.prize_pool_amount,
+      feePoolAmount: tournament.data.fee_pool_amount ?? "0",
+    },
     agents: (agents.data ?? []).map((agent) => ({
       userId: agent.user_id,
       email: agent.email,

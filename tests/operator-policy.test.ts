@@ -197,7 +197,6 @@ describe("operator policy", () => {
       [depositAddressRoute, "deposit"],
       [depositClaimRoute, "deposit"],
       [ticketPurchaseRoute, "ticket"],
-      [entryRoute, "entry"],
       [withdrawalRoute, "withdrawal"],
     ] as const) {
       assert.match(route, /getUserPaidActionGate/);
@@ -205,6 +204,12 @@ describe("operator policy", () => {
       assert.match(route, new RegExp(`"${action}"`));
       assert.match(route, /launch approvals are complete/);
     }
+  });
+
+  it("lets assigned tickets lock entries without the launch paid-action gate", () => {
+    assert.doesNotMatch(entryRoute, /getUserPaidActionGate/);
+    assert.match(entryRoute, /worldcup_create_entry/);
+    assert.match(entryRoute, /NO_TICKET/);
   });
 
   it("exposes combined paid-action launch gates in authenticated account status", () => {

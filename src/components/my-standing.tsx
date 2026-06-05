@@ -86,7 +86,7 @@ export function MyStanding() {
   }
 
   const me = data?.me;
-  const hasLockedEntry = Boolean(me && me.hasEntry && me.locked && me.rank);
+  const hasLockedEntry = Boolean(me && me.hasEntry && me.locked);
 
   return (
     <section className="my-standing" id="me" aria-label="My account">
@@ -109,8 +109,8 @@ export function MyStanding() {
                 <div className="standing-rank">
                   <div className="standing-rank__big">
                     <span>Rank</span>
-                    <strong>#{me.rank}</strong>
-                    <small>of {data.tournament.participants}</small>
+                    <strong>{me.rank ? `#${me.rank}` : "TBA"}</strong>
+                    <small>{me.rank ? `of ${data.tournament.participants}` : "ranking pending"}</small>
                   </div>
                   <div className="standing-rank__big">
                     <span>Points</span>
@@ -119,14 +119,18 @@ export function MyStanding() {
                   </div>
                 </div>
 
-                <div className="standing-teams">
-                  {me.teams.map((team) => (
-                    <div className="standing-team" key={team.name}>
-                      <span>{team.name}</span>
-                      <strong>{formatPoints(team.points)}</strong>
-                    </div>
-                  ))}
-                </div>
+                {me.teams.length > 0 ? (
+                  <div className="standing-teams">
+                    {me.teams.map((team) => (
+                      <div className="standing-team" key={team.name}>
+                        <span>{team.name}</span>
+                        <strong>{formatPoints(team.points)}</strong>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="field-note">Your entry is locked. Team points appear after leaderboard data updates.</p>
+                )}
 
                 {me.inPaidPlaces && me.share != null ? (
                   <div className="standing-share">
@@ -138,7 +142,9 @@ export function MyStanding() {
                   </div>
                 ) : (
                   <p className="field-note">
-                    Top {data.tournament.paidPlaces} share the prize pool. Keep climbing to break in.
+                    {me.rank
+                      ? `Top ${data.tournament.paidPlaces} share the prize pool. Keep climbing to break in.`
+                      : "Leaderboard ranking appears after the first points refresh."}
                   </p>
                 )}
               </>
