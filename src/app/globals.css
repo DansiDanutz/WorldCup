@@ -745,6 +745,23 @@ svg {
   padding-top: 112px;
 }
 
+.app-shell--landing.app-shell--post-entry .topbar {
+  position: sticky;
+  top: 12px;
+  left: auto;
+  margin: 12px auto 0;
+  transform: none;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 217, 128, 0.18), transparent 30%),
+    radial-gradient(circle at 84% 0%, rgba(38, 150, 109, 0.2), transparent 32%),
+    linear-gradient(135deg, rgba(8, 25, 20, 0.98), rgba(17, 60, 45, 0.97) 52%, rgba(7, 19, 16, 0.99));
+}
+
+.app-shell--landing.app-shell--post-entry .page--post-entry {
+  width: min(1640px, 100%);
+  padding-top: clamp(16px, 1.7vw, 28px);
+}
+
 .app-shell--landing #pick,
 .app-shell--landing #leaderboard,
 .app-shell--landing #matches,
@@ -799,6 +816,14 @@ svg {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .app-shell--landing.app-shell--post-entry .page--post-entry {
+    padding-inline: clamp(18px, 2vw, 40px);
+  }
+
+  .app-shell--post-entry .grid.grid--entry-complete {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -4135,6 +4160,10 @@ svg {
   .app-shell--landing .page--post-entry {
     padding-top: 176px;
   }
+
+  .app-shell--landing.app-shell--post-entry .page--post-entry {
+    padding-top: 20px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -4348,6 +4377,10 @@ svg {
 
   .app-shell--landing .page--post-entry {
     padding-top: 132px;
+  }
+
+  .app-shell--landing.app-shell--post-entry .page--post-entry {
+    padding-top: 16px;
   }
 
   .app-shell--landing .nav {
@@ -6910,6 +6943,36 @@ html {
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 16px;
   align-items: start;
+}
+
+@media (min-width: 1181px) {
+  .app-shell--post-entry .my-standing {
+    width: min(1560px, 100%);
+    margin-bottom: 28px;
+  }
+
+  .app-shell--post-entry .standing-grid {
+    grid-template-columns: minmax(560px, 1.12fr) minmax(420px, 0.88fr);
+    gap: 18px;
+  }
+
+  .app-shell--post-entry .standing-agent {
+    width: 100%;
+  }
+
+  .app-shell--post-entry .standing-agent .account-status-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1180px) {
+  .app-shell--post-entry .my-standing {
+    width: min(900px, 100%);
+  }
+
+  .app-shell--post-entry .standing-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .standing-card {

@@ -891,7 +891,7 @@ export function Dashboard({
   }
 
   return (
-    <main className="app-shell app-shell--landing">
+    <main className={`app-shell app-shell--landing ${showPickWorkflow ? "" : "app-shell--post-entry"}`}>
       <header className="topbar">
         <Link className="brand landing-brand-lockup" href="/" aria-label="Go to WorldCup26.world home">
           <span className="brand-mark">
