@@ -1077,6 +1077,21 @@ export function Dashboard({
                   </button>
                 ) : null}
               </div>
+              <div
+                className="pick-progress"
+                role="progressbar"
+                aria-valuemin={0}
+                aria-valuemax={3}
+                aria-valuenow={selectedTeams.length}
+                aria-label={`${selectedTeams.length} of 3 teams selected`}
+              >
+                {[0, 1, 2].map((segment) => (
+                  <span
+                    className={`pick-progress__seg ${selectedTeams.length > segment ? "is-filled" : ""}`}
+                    key={segment}
+                  />
+                ))}
+              </div>
               <div className="pick-slot-strip">
                 {[0, 1, 2].map((slot) => {
                   const team = selectedTeamRecords[slot];
@@ -1105,14 +1120,14 @@ export function Dashboard({
                   );
                 })}
               </div>
-              <div className="pick-flow__action">
+              <div className={`pick-flow__action ${selectedTeams.length === 3 ? "is-ready" : ""}`}>
                 {selectedTeams.length === 3 ? (
-                  <a className="button" href="#entry">
+                  <a className="button pick-flow__cta" href="#entry">
                     Continue to Entry
                     <ArrowRight size={16} />
                   </a>
                 ) : (
-                  <button className="button" disabled type="button">
+                  <button className="button pick-flow__cta" disabled type="button">
                     {remainingPickCount} more to continue
                   </button>
                 )}

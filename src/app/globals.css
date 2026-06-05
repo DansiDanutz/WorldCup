@@ -6968,3 +6968,51 @@ html {
 .deposit-refresh .button {
   flex: 0 0 auto;
 }
+
+/* Pick-flow polish: 3-segment gold progress, prominent ready CTA, smooth fills */
+.pick-progress {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.pick-progress__seg {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: background 240ms ease, box-shadow 240ms ease;
+}
+
+.pick-progress__seg.is-filled {
+  background: linear-gradient(90deg, #edca66, var(--gold));
+  box-shadow: 0 0 0 1px rgba(201, 148, 46, 0.4), 0 4px 14px rgba(201, 148, 46, 0.3);
+}
+
+.pick-flow__action {
+  justify-content: stretch;
+}
+
+.pick-flow__cta {
+  width: 100%;
+  justify-content: center;
+}
+
+.pick-slot-card {
+  transition: border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+.team-row {
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pick-flow__action.is-ready .pick-flow__cta {
+    animation: pick-cta-pulse 2.2s ease-in-out infinite;
+  }
+
+  @keyframes pick-cta-pulse {
+    0%, 100% { box-shadow: 0 6px 18px rgba(201, 148, 46, 0.26); }
+    50% { box-shadow: 0 9px 26px rgba(201, 148, 46, 0.5); }
+  }
+}
