@@ -14,6 +14,10 @@ const adminOutgoingPoolMigration = readFileSync(
   "supabase/migrations/20260605030000_worldcup_admin_outgoing_bonus_pool_accounting.sql",
   "utf8",
 );
+const salePriceGuardMigration = readFileSync(
+  "supabase/migrations/20260605070000_worldcup_admin_ticket_sale_price_guard.sql",
+  "utf8",
+);
 const adminOnlyTicketingMigration = readFileSync(
   "supabase/migrations/20260605052000_worldcup_admin_only_money_ticketing.sql",
   "utf8",
@@ -76,12 +80,15 @@ describe("agent activation and prize pool funding", () => {
       "public.worldcup_activate_agent_on_personal_ticket()",
       "public.worldcup_apply_admin_ticket_prize_pool()",
       "public.worldcup_admin_ticket_movement_value(integer, numeric, numeric, jsonb)",
+      "public.worldcup_guard_admin_ticket_sale_price()",
     ];
 
     for (const signature of signatures) {
       const escaped = signature.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       const source = signature.includes("worldcup_admin_ticket_movement_value")
         ? adminOutgoingPoolMigration
+        : signature.includes("worldcup_guard_admin_ticket_sale_price")
+          ? salePriceGuardMigration
         : `${migration}\n${adminOutgoingPoolMigration}`;
       assert.match(source, new RegExp(`revoke execute on function ${escaped}\\s+from public, anon, authenticated;`));
       assert.match(source, new RegExp(`grant execute on function ${escaped}\\s+to service_role;`));

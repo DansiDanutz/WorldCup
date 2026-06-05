@@ -506,23 +506,6 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
     });
   }
 
-  function savePrizePool() {
-    run(async () => {
-      try {
-        const response = await fetch("/api/admin/prize-pool", {
-          method: "POST",
-          headers: authHeaders(),
-          body: JSON.stringify({ prizePoolAmount: Number(prizePoolAmount) }),
-        });
-        const result = await readResult(response);
-        setPrizePoolAmount(String(result.prizePoolAmount ?? prizePoolAmount));
-        setMessage("Prize pool saved.");
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Could not save prize pool.");
-      }
-    });
-  }
-
   function advanceBracket() {
     run(async () => {
       try {
@@ -2382,22 +2365,10 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               >
                 Assign Match Teams
               </button>
-              <div className="field">
-                <label htmlFor="prize-pool">Manual prize pool override (net)</label>
-                <input
-                  id="prize-pool"
-                  min="0"
-                  type="number"
-                  value={prizePoolAmount}
-                  onChange={(event) => setPrizePoolAmount(event.target.value)}
-                />
-              </div>
-              <button className="button secondary" disabled={isPending} onClick={savePrizePool} type="button">
-                Save Override
-              </button>
               <div className="field-note">
-                Normal ticket revenue updates this automatically. Use the override only to correct audited ledger
-                totals.
+                Prize pool is ledger-managed. Assign user or agent tickets from admin inventory; cash and USDT
+                movements add 80% to the prize pool and 20% to the fee pool automatically. No direct override is
+                available.
               </div>
             </div>
           </div>

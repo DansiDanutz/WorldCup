@@ -8,7 +8,14 @@ const migration = readFileSync(
   "supabase/migrations/20260605033000_worldcup_ticket_price_default_50.sql",
   "utf8",
 );
+const salePriceGuardMigration = readFileSync(
+  "supabase/migrations/20260605070000_worldcup_admin_ticket_sale_price_guard.sql",
+  "utf8",
+);
+const adminAgentsRoute = readFileSync("src/app/api/admin/agents/route.ts", "utf8");
 const adminTicketsRoute = readFileSync("src/app/api/admin/tickets/route.ts", "utf8");
+const adminPrizePoolRoute = readFileSync("src/app/api/admin/prize-pool/route.ts", "utf8");
+const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
 const worldcupData = readFileSync("src/lib/worldcup-data.ts", "utf8");
 const dashboard = readFileSync("src/components/dashboard.tsx", "utf8");
 const wallet = readFileSync("src/components/wallet-screen.tsx", "utf8");
@@ -51,5 +58,27 @@ describe("WorldCup ticket price", () => {
     assert.match(dashboard, /const ticketPriceAmount = normalizeWorldCupTicketPriceNumber\(myAccountStatus\?\.ticketPriceAmount\)/);
     assert.match(wallet, /const ticketPrice = normalizeWorldCupTicketPriceNumber\(status\?\.ticketPriceAmount\)/);
     assert.equal(normalizeWorldCupTicketPriceAmount("0.00"), "50.00");
+  });
+
+  it("blocks zero-price admin ticket sales before they can skip prize-pool funding", () => {
+    assert.match(salePriceGuardMigration, /worldcup_tournaments_ticket_price_positive/);
+    assert.match(salePriceGuardMigration, /check \(ticket_price_amount > 0\)/);
+    assert.match(salePriceGuardMigration, /create or replace function public\.worldcup_guard_admin_ticket_sale_price/);
+    assert.match(salePriceGuardMigration, /new\.movement_type not in \('admin_to_agent', 'admin_to_user'\)/);
+    assert.match(salePriceGuardMigration, /coalesce\(new\.ticket_price_amount, 0\) <= 0/);
+    assert.match(salePriceGuardMigration, /raise exception 'INVALID_TICKET_PRICE'/);
+    assert.match(salePriceGuardMigration, /before insert or update/);
+    assert.match(adminTicketsRoute, /INVALID_TICKET_PRICE/);
+    assert.match(adminAgentsRoute, /INVALID_TICKET_PRICE/);
+  });
+
+  it("makes prize-pool accounting ledger-managed instead of manually editable", () => {
+    assert.doesNotMatch(adminPrizePoolRoute, /\.update\(\{[\s\S]*?prize_pool_amount/);
+    assert.match(adminPrizePoolRoute, /Prize pool is ledger-managed/);
+    assert.match(adminPrizePoolRoute, /Assign user or agent tickets from admin inventory/);
+    assert.match(adminConsole, /Prize pool is ledger-managed/);
+    assert.match(adminConsole, /No direct override is\s+available/);
+    assert.doesNotMatch(adminConsole, /Save Override/);
+    assert.doesNotMatch(adminConsole, /Manual prize pool override/);
   });
 });

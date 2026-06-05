@@ -18,6 +18,7 @@ const ASSIGN_ERROR_MESSAGES: Record<string, { status: number; message: string }>
   AGENT_NOT_FOUND: { status: 404, message: "Agent was not found." },
   INVALID_QUANTITY: { status: 400, message: "Quantity must be between 1 and 1000." },
   INVALID_PAYMENT_METHOD: { status: 400, message: "Payment method must be cash or USDT." },
+  INVALID_TICKET_PRICE: { status: 400, message: "Set a ticket price above 0 before assigning tickets." },
   INSUFFICIENT_ADMIN_CODES: { status: 409, message: "Not enough tickets in admin inventory. Request tickets first." },
   INSUFFICIENT_CODES: { status: 409, message: "Not enough unassigned ticket codes left in the pool." },
   TOURNAMENT_NOT_FOUND: { status: 500, message: "Tournament is not available." },

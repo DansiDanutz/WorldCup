@@ -19,6 +19,7 @@ const TICKET_ASSIGN_ERROR_MESSAGES: Record<string, { status: number; message: st
   ADMIN_ACCOUNT_REQUIRED: { status: 403, message: "Admin account profile was not found." },
   INVALID_PAYMENT_METHOD: { status: 400, message: "Payment method must be cash or USDT." },
   INVALID_QUANTITY: { status: 400, message: "Ticket quantity must be between 1 and 1000." },
+  INVALID_TICKET_PRICE: { status: 400, message: "Set a ticket price above 0 before assigning tickets." },
   INSUFFICIENT_ADMIN_CODES: { status: 409, message: "Not enough tickets in admin inventory. Request tickets first." },
   RECIPIENT_NOT_FOUND: { status: 404, message: "Account was not found." },
   TOURNAMENT_NOT_FOUND: { status: 500, message: "Tournament is not available." },
