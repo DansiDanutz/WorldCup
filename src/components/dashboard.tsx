@@ -254,7 +254,6 @@ export function Dashboard({
   const hasEntryTicket = ticketsAvailable > 0;
   const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket;
   const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase;
-  const entryTicketPurchasePause = needsEntryTicketPurchase ? publicTicketPolicyPause : null;
   const walletBalance = myAccountStatus?.walletBalance ?? 0;
   const ticketPriceAmount = normalizeWorldCupTicketPriceNumber(myAccountStatus?.ticketPriceAmount);
   const missingEntryTicket =
@@ -919,8 +918,8 @@ export function Dashboard({
             <div>
               <strong>Admin launch evidence mode</strong>
               <span>
-                Public paid actions are still paused. Your admin account can lock entries,
-                buy tickets, and use Wallet to collect real USDT launch evidence.
+                Admin can lock entries, collect USDT evidence, and assign paid ticket codes
+                manually from the Admin panel.
               </span>
             </div>
             <Link className="button secondary" href={{ pathname: "/wallet" }}>
@@ -1325,7 +1324,7 @@ export function Dashboard({
                       <span>
                         {hasEntryTicket
                           ? `${ticketsAvailable} ticket${ticketsAvailable === 1 ? "" : "s"} available for locking entries.`
-                          : "Pay the buy-in with USDT, or use Agent Call after paying an agent directly."}
+                          : "Admin assigns tickets after verified cash or USDT payment, or use Agent Call after paying an agent directly."}
                       </span>
                     </div>
                     <span className="ticket-status-pill">
@@ -1351,15 +1350,12 @@ export function Dashboard({
                           <strong>{formatLedgerAmount(walletBalance)} USDT</strong>
                         </div>
                       </div>
-                      <div className="ticket-requirement-actions">
-                        <Link className="button" href={{ pathname: "/wallet", hash: "tickets" }}>
-                          <Wallet size={16} />
-                          Buy with USDT
-                        </Link>
+                      <div className="ticket-ready-note">
+                        <Wallet size={16} />
+                        <span>
+                          USDT is manual: save your sender wallet, send payment from that wallet, then Admin assigns the ticket.
+                        </span>
                       </div>
-                      {entryTicketPurchasePause ? (
-                        <div className="message error">{entryTicketPurchasePause}</div>
-                      ) : null}
                     <div className="agent-call-box">
                       <div>
                         <strong>Agent Call</strong>
@@ -1783,7 +1779,7 @@ function getTeamColorStyle(teamId: string) {
 
 function getGatePauseMessage(gate: PaidActionGate | undefined) {
   return gate && !gate.allowed
-    ? "USDT deposits and ticket purchases are paused until admin launch approval is complete. You can still prepare your locked sender wallet."
+    ? "USDT deposits are admin-reviewed and ticket assignments are manual. You can still prepare your locked sender wallet."
     : null;
 }
 

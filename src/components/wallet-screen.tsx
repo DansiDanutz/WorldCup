@@ -166,10 +166,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
     status?.paidActionGates
       ? getGatePauseMessage(status.paidActionGates.deposit)
       : publicDepositPolicyPause;
-  const ticketPolicyPause =
-    status?.paidActionGates
-      ? getGatePauseMessage(status.paidActionGates.ticket)
-      : publicTicketPolicyPause;
   const withdrawalPolicyPause =
     status?.paidActionGates
       ? getGatePauseMessage(status.paidActionGates.withdrawal)
@@ -190,8 +186,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const accountStatusLoaded = status !== null;
   const userHasEntryTicket = (status?.ticketsAvailable ?? 0) > 0;
   const userNeedsEntryTicket = accountStatusLoaded && !userHasEntryTicket;
-  const purchasableTickets = ticketPrice > 0 ? Math.floor(walletBalance / ticketPrice) : 0;
-  const remainingAfterNextTicket = ticketPrice > 0 ? Math.max(walletBalance - ticketPrice, 0) : walletBalance;
   const savedSenderWallets = useMemo(
     () => ({
       trc20:
@@ -399,7 +393,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       setMessage(
         result.applicationStatus === "active"
           ? "Agent contact details updated."
-          : "Agent registration saved. Your account activates after your first personal ticket is bought or assigned.",
+          : "Agent registration saved. Your account activates after your first personal ticket is assigned.",
       );
     });
   }
@@ -426,32 +420,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       }
 
       setMessage("Agent Call accepted. One ticket was assigned to the player.");
-      refreshAgent(token);
-    });
-  }
-
-  function buyTicket() {
-    const token = session?.access_token;
-    if (!token) {
-      return;
-    }
-
-    setError(null);
-    setMessage(null);
-    startTransition(async () => {
-      const response = await fetch("/api/tickets/purchase", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const result = (await response.json()) as { error?: string; ticketId?: string };
-
-      if (!response.ok) {
-        setError(result.error ?? "Could not buy a ticket.");
-        return;
-      }
-
-      setMessage("Ticket purchased. You can lock an entry now.");
-      refreshStatus(token);
       refreshAgent(token);
     });
   }
@@ -886,7 +854,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
             <div>
               <strong>User Wallet ticket ready</strong>
               <span>
-                You already have an entry ticket, so User Wallet USDT deposit and ticket-buy
+                You already have an entry ticket, so User Wallet USDT deposit and ticket assignment
                 actions are hidden. Use Agent Wallet only for agent inventory deposits.
               </span>
             </div>
@@ -902,8 +870,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 {signedIn && walletView === "user" && !accountStatusLoaded
                   ? "Loading your User Wallet ticket status before showing any deposit actions."
                   : signedIn && walletView === "agent"
-                    ? "Agent USDT deposit proof is available for admin-reviewed agent inventory. Public user ticket purchases remain paused."
-                    : "Login, referrals, and account setup are available. Tickets, USDT deposits, and withdrawals open after launch approvals are complete."}
+                    ? "Agent USDT deposit proof is available for admin-reviewed agent inventory. User self-purchase is disabled."
+                    : "Login, referrals, and account setup are available. Admin assigns tickets after verified cash or USDT payment."}
               </span>
             </div>
             <Link className="button secondary" href={{ pathname: "/" }}>
@@ -920,8 +888,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <h1 className="panel-title">Wallet</h1>
                   <p className="panel-subtitle">
                     {publicPaidActionsPaused
-                      ? "Sign in with Google to prepare your locked USDT sender wallet. Deposits and ticket purchases open after admin launch approval."
-                      : "Sign in with Google to deposit USDT and buy tickets."}
+                      ? "Sign in with Google to prepare your locked USDT sender wallet for manual admin review."
+                      : "Sign in with Google to prepare your wallet and receive manually assigned tickets."}
                   </p>
                 </div>
                 <Lock size={18} color="var(--green)" />
@@ -936,7 +904,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <div>
                     <span>2</span>
                     <strong>Get tickets</strong>
-                    <small>Buy or redeem an entry ticket when paid actions open.</small>
+                    <small>Receive a ticket from Admin or an agent.</small>
                   </div>
                   <div>
                     <span>3</span>
@@ -1017,32 +985,26 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                         ? "Loading your ticket balance..."
                         : userHasEntryTicket
                         ? "Your personal entry ticket is ready. Lock your teams from Play."
-                        : purchasableTickets > 0
-                        ? `${purchasableTickets} ticket${purchasableTickets === 1 ? "" : "s"} can be made from your current USDT balance.`
-                        : "Deposit USDT. Full ticket-price chunks convert into tickets automatically."}
+                        : "Admin assigns entry tickets after verified cash or USDT payment."}
                     </strong>
                     <span>
                       {!accountStatusLoaded
                         ? "Deposit actions stay hidden until your wallet status is loaded."
                         : userHasEntryTicket
                         ? "User Wallet deposits are hidden once your entry ticket is available. Use Agent Wallet for agent inventory deposits."
-                        : "Example: 100 USDT becomes 2 tickets at 50 USDT each. Use one for your entry and transfer the extra ticket to a friend by email."}
+                        : "Send USDT only from your frozen sender wallet, then Admin verifies it and assigns the exact ticket codes manually."}
                     </span>
-                    {userNeedsEntryTicket && ticketPrice > 0 ? (
-                      <small>
-                        After buying the next ticket, estimated USDT left: {formatLedgerAmount(remainingAfterNextTicket)}.
-                      </small>
-                    ) : null}
+                    {userNeedsEntryTicket && ticketPrice > 0 ? <small>Ticket price: {formatMoneyAmount(ticketPrice)}.</small> : null}
                   </div>
                 </div>
                 <div className="wallet-action-list compact wallet-action-list--steps" aria-label="Wallet next actions">
                   <div>
                     <span>Ticket</span>
-                    <strong>{userHasEntryTicket ? "Ticket ready" : "Buy or redeem"}</strong>
+                    <strong>{userHasEntryTicket ? "Ticket ready" : "Admin assigned"}</strong>
                     <small>
                       {userHasEntryTicket
                         ? "Use your ticket to lock one entry."
-                        : "Required before locking an entry."}
+                        : "Cash or USDT payment is confirmed manually."}
                     </small>
                   </div>
                   <div>
@@ -1051,17 +1013,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <small>Email must already have a WorldCup account.</small>
                   </div>
                 </div>
-                {userNeedsEntryTicket ? (
-                  <button
-                    className="button"
-                    disabled={Boolean(ticketRestriction || ticketPolicyPause) || isPending}
-                    onClick={buyTicket}
-                    type="button"
-                  >
-                    <Lock size={16} />
-                    {isPending ? "Processing..." : "Buy entry ticket"}
-                  </button>
-                ) : null}
                 <div className="redeem-row">
                   <label htmlFor="redeem-code">Have a ticket code?</label>
                   <div className="redeem-input">
@@ -1084,9 +1035,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     </button>
                   </div>
                 </div>
-                {userNeedsEntryTicket && ticketPolicyPause ? (
-                  <div className="message error">{ticketPolicyPause}</div>
-                ) : null}
                 {userNeedsEntryTicket && ticketRestriction ? (
                   <div className="message error">{ticketRestriction}</div>
                 ) : null}
@@ -1117,7 +1065,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                           isPending ||
                           transferEmail.trim().length === 0 ||
                           (status?.ticketsAvailable ?? 0) < 1 ||
-                          Boolean(ticketRestriction || ticketPolicyPause)
+                          Boolean(ticketRestriction)
                         }
                         onClick={() => transferTicket(false)}
                         type="button"
@@ -1541,7 +1489,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <p className="panel-subtitle">
                       {agent?.isAgent
                         ? "Transfer tickets to users, track code inventory, and manage Agent Call requests."
-                        : "Apply to sell tickets. Agent tools unlock after your first personal ticket is bought or assigned."}
+                        : "Apply to sell tickets. Agent tools unlock after your first personal ticket is assigned."}
                     </p>
                   </div>
                   {agent?.isAgent ? (
@@ -1713,7 +1661,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <div className="agent-register-box">
                       {agent?.applicationStatus === "pending" ? (
                         <div className="message">
-                          Agent registration received. Buy one ticket with USDT or receive one from admin or an agent to activate your agent account.
+                          Agent registration received. Receive one personal ticket from Admin or an agent to activate your agent account.
                         </div>
                       ) : null}
                       <div className="deposit-claim-form">
@@ -1754,7 +1702,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                         </div>
                         <div>
                           <span>2</span>
-                          <small>Buy one ticket with USDT, or receive a ticket from admin or an agent.</small>
+                          <small>Receive one personal ticket from admin or an agent.</small>
                         </div>
                         <div>
                           <span>3</span>
@@ -1922,6 +1870,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
 
 function getGatePauseMessage(gate: PaidActionGate | undefined) {
   return gate && !gate.allowed
-    ? "USDT deposits and ticket purchases are paused until admin launch approval is complete. You can still prepare your locked sender wallet."
+    ? "USDT deposits are admin-reviewed and ticket assignments are manual. You can still prepare your locked sender wallet."
     : null;
 }

@@ -94,7 +94,6 @@ describe("responsible play controls", () => {
   it("routes wallet paid actions through the shared responsible play gate without blocking entries", () => {
     for (const route of [
       userRoute,
-      ticketRoute,
       adminTicketRoute,
       depositAddressRoute,
       depositClaimRoute,
@@ -109,6 +108,9 @@ describe("responsible play controls", () => {
     assert.doesNotMatch(entryRoute, /loadResponsiblePlayStatus/);
     assert.doesNotMatch(entryRoute, /getResponsiblePlayRestriction/);
     assert.match(entryRoute, /worldcup_create_entry/);
+    assert.match(ticketRoute, /Tickets are assigned manually by Admin/);
+    assert.doesNotMatch(ticketRoute, /loadResponsiblePlayStatus/);
+    assert.doesNotMatch(ticketRoute, /getResponsiblePlayRestriction/);
   });
 
   it("does not surface responsible-play gambling copy in the wallet UI", () => {

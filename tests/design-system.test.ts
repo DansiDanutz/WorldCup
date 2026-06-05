@@ -402,7 +402,6 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /const hasEntryTicket = ticketsAvailable > 0/);
     assert.match(dashboard, /const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket/);
     assert.match(dashboard, /const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase/);
-    assert.match(dashboard, /const entryTicketPurchasePause = needsEntryTicketPurchase \? publicTicketPolicyPause : null/);
     assert.match(dashboard, /const missingEntryTicket =/);
     assert.match(dashboard, /const entryLockBlocker = getEntryLockBlocker/);
     assert.match(dashboard, /selectedTeams\.length === 3 && !hasEntryTicket/);
@@ -411,18 +410,17 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /className=\{`ticket-requirement-card/);
     assert.match(dashboard, /You need 1 entry ticket/);
     assert.match(dashboard, /Buy-in is covered\. Locking your entry will use 1 ticket/);
-    assert.match(dashboard, /Pay the buy-in with USDT, or use Agent Call after paying an agent directly\./);
+    assert.match(dashboard, /Admin assigns tickets after verified cash or USDT payment/);
     assert.match(dashboard, /Ticket price/);
     assert.match(dashboard, /Your balance/);
-    assert.match(dashboard, /Buy with USDT/);
-    assert.match(dashboard, /\{entryTicketPurchasePause \? \(/);
+    assert.match(dashboard, /USDT is manual: save your sender wallet/);
+    assert.doesNotMatch(dashboard, /Buy with USDT/);
     assert.match(dashboard, /Agent Call/);
     assert.match(dashboard, /Agent code or email/);
     assert.match(dashboard, /Request ticket/);
     assert.match(dashboard, /\/api\/agent-ticket-requests/);
     assert.match(walletScreen, /Agent Call requests/);
     assert.match(walletScreen, /acceptAgentTicketRequest/);
-    assert.match(dashboard, /pathname: "\/wallet", hash: "tickets"/);
     assert.match(dashboard, /disabled=\{Boolean\(entryLockBlocker\) \|\| isPending\}/);
     assert.match(dashboard, /function getEntryLockBlocker/);
     assert.match(dashboard, /Checking your age and Terms confirmation/);
@@ -498,7 +496,7 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /<div className="page page--landing">[\s\S]*?<HeroSwiper/);
     assert.doesNotMatch(dashboard, /<strong>Paid actions paused<\/strong>/);
     assert.match(dashboard, /Admin launch evidence mode/);
-    assert.match(dashboard, /Your admin account can lock entries/);
+    assert.match(dashboard, /assign paid ticket codes\s+manually from the Admin panel/);
     assert.match(dashboard, /paidActionGates: result\.paidActionGates/);
     assert.match(dashboard, /myAccountStatus\?\.paidActionGates/);
     assert.match(dashboard, /Late entries are open for assigned tickets/);
@@ -512,7 +510,6 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.launch-notice\s*{[\s\S]*?flex-direction:\s*column;/);
 
     assert.match(walletScreen, /depositPolicyPause/);
-    assert.match(walletScreen, /ticketPolicyPause/);
     assert.match(walletScreen, /withdrawalPolicyPause/);
     assert.match(walletScreen, /launchEvidenceMode/);
     assert.match(walletScreen, /Admin launch evidence mode/);
@@ -521,7 +518,7 @@ describe("WorldCup design system integration", () => {
     assert.match(walletScreen, /publicPaidActionsPaused/);
     assert.match(walletScreen, /Wallet paid actions paused/);
     assert.match(walletScreen, /Sign in with Google to prepare your locked USDT sender wallet/);
-    assert.match(walletScreen, /USDT deposits and ticket purchases are paused until admin launch approval is complete/);
+    assert.match(walletScreen, /USDT deposits are admin-reviewed and ticket assignments are manual/);
     assert.match(walletScreen, /depositClaimAccountLabel/);
     assert.match(walletScreen, /Deposit claims\s+are tied to/);
     assert.match(walletScreen, /Lock sender wallet/);
@@ -530,14 +527,14 @@ describe("WorldCup design system integration", () => {
     assert.match(walletScreen, /TRC20 and ERC20 are separate/);
     assert.doesNotMatch(walletScreen, /Operator policy is configured/);
     assert.match(walletScreen, /Boolean\(depositRestriction \|\| depositPolicyPause\)/);
-    assert.match(walletScreen, /Boolean\(ticketRestriction \|\| ticketPolicyPause\)/);
+    assert.doesNotMatch(walletScreen, /Boolean\(ticketRestriction \|\| ticketPolicyPause\)/);
     assert.match(walletScreen, /Boolean\(withdrawalPolicyPause\)/);
 
     assert.match(loginRegister, /paidActionsPaused/);
     assert.match(loginRegister, /Account setup is open/);
     assert.match(
       loginRegister,
-      /Tickets and USDT deposits open after launch approvals are complete\./,
+      /Admin assigns tickets after verified cash or USDT payment\./,
     );
   });
 });

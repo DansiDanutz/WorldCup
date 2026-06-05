@@ -219,7 +219,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
               <div>
                 <strong>Account setup is open</strong>
                 <span>
-                  Tickets and USDT deposits open after launch approvals are complete.
+                  Admin assigns tickets after verified cash or USDT payment.
                 </span>
               </div>
             </div>
@@ -385,8 +385,8 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
                 Predict the Game <span className="motto-accent">WorldCup26</span>
               </h1>
               <p>
-                Create your account, pick three teams, then use Wallet for tickets and USDT after
-                launch approvals open.
+                Create your account, pick three teams, then receive an Admin or Agent assigned
+                ticket to lock the entry.
               </p>
             </div>
 
@@ -410,7 +410,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
                   <div>
                     <span>3</span>
                     <strong>Play</strong>
-                    <small>Pick teams, buy tickets, track wallet activity.</small>
+                    <small>Pick teams, receive tickets, track wallet activity.</small>
                   </div>
                 </div>
               </details>

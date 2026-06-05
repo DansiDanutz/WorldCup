@@ -25,7 +25,7 @@ describe("WorldCup ticket price", () => {
     assert.match(migration, /set ticket_price_amount = tour\.ticket_price_amount/);
     assert.match(migration, /total_amount = round\(\(tour\.ticket_price_amount \* m\.quantity\)::numeric, 2\)/);
     assert.match(migration, /ticket_price_default_50_repair/);
-    assert.match(migration, /source_type = 'wallet_ticket'/);
+    assert.match(migration, /source_type = 'admin_ticket_movement'/);
   });
 
   it("uses the current tournament price when agent inventory creates user tickets", () => {

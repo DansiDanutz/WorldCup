@@ -196,7 +196,6 @@ describe("operator policy", () => {
     for (const [route, action] of [
       [depositAddressRoute, "deposit"],
       [depositClaimRoute, "deposit"],
-      [ticketPurchaseRoute, "ticket"],
       [withdrawalRoute, "withdrawal"],
     ] as const) {
       assert.match(route, /getUserPaidActionGate/);
@@ -204,6 +203,10 @@ describe("operator policy", () => {
       assert.match(route, new RegExp(`"${action}"`));
       assert.match(route, /launch approvals are complete/);
     }
+
+    assert.match(ticketPurchaseRoute, /Tickets are assigned manually by Admin/);
+    assert.doesNotMatch(ticketPurchaseRoute, /getUserPaidActionGate/);
+    assert.doesNotMatch(ticketPurchaseRoute, /isPaidActionLaunchTestAdmin/);
   });
 
   it("lets assigned tickets lock entries without the launch paid-action gate", () => {

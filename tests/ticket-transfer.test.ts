@@ -6,6 +6,10 @@ const migration = readFileSync(
   "supabase/migrations/20260604154000_worldcup_user_ticket_transfers.sql",
   "utf8",
 );
+const adminOnlyTicketingMigration = readFileSync(
+  "supabase/migrations/20260605052000_worldcup_admin_only_money_ticketing.sql",
+  "utf8",
+);
 const transferRoute = readFileSync("src/app/api/tickets/transfer/route.ts", "utf8");
 const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
 
@@ -21,13 +25,15 @@ describe("user ticket transfers", () => {
     assert.match(migration, /source_referral_code = v_sender_referral_code/);
   });
 
-  it("auto-converts credited deposits into full tickets and leaves only the USDT remainder", () => {
-    assert.match(migration, /create or replace function public\.worldcup_credit_deposit/);
-    assert.match(migration, /select ticket_price_amount into v_price/);
-    assert.match(migration, /v_tickets_to_purchase := floor\(v_balance \/ v_price\)::integer/);
-    assert.match(migration, /perform public\.worldcup_purchase_ticket\(p_user_id, p_tournament_id\)/);
-    assert.match(walletScreen, /Full ticket-price chunks convert into tickets automatically/);
-    assert.match(walletScreen, /100 USDT becomes 2 tickets at 50 USDT each/);
+  it("keeps credited deposits as manual-admin assignment balance only", () => {
+    assert.match(adminOnlyTicketingMigration, /create or replace function public\.worldcup_credit_deposit/);
+    assert.doesNotMatch(adminOnlyTicketingMigration, /perform public\.worldcup_purchase_ticket/);
+    assert.match(adminOnlyTicketingMigration, /manual admin ticket assignment/);
+    assert.match(adminOnlyTicketingMigration, /ADMIN_TICKET_ASSIGNMENT_REQUIRED/);
+    assert.match(walletScreen, /Admin assigns entry tickets after verified cash or USDT payment/);
+    assert.match(walletScreen, /Admin verifies it and assigns the exact ticket codes manually/);
+    assert.doesNotMatch(walletScreen, /Full ticket-price chunks convert into tickets automatically/);
+    assert.doesNotMatch(walletScreen, /100 USDT becomes 2 tickets at 50 USDT each/);
   });
 
   it("lets transferred tickets create the sender referral when the entry is locked", () => {
@@ -61,7 +67,7 @@ describe("user ticket transfers", () => {
     assert.match(walletScreen, /const userNeedsEntryTicket = accountStatusLoaded && !userHasEntryTicket/);
     assert.match(walletScreen, /User Wallet ticket ready/);
     assert.match(walletScreen, /User Wallet deposits are hidden once your entry ticket is available/);
-    assert.match(walletScreen, /User Wallet USDT deposit and ticket-buy\s+actions are hidden/);
+    assert.match(walletScreen, /User Wallet USDT deposit and ticket assignment\s+actions are hidden/);
     assert.match(walletScreen, /userNeedsEntryTicket\s*\?\s*\(/);
     assert.match(walletScreen, /Deposit actions stay hidden until your wallet status is loaded/);
     assert.match(walletScreen, /Deposit USDT for agent tickets/);
