@@ -53,6 +53,7 @@ import {
   normalizeWorldCupTicketPriceAmount,
   normalizeWorldCupTicketPriceNumber,
 } from "@/lib/worldcup-ticket-price";
+import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import type {
   DueMatch,
   LeaderboardRow,
@@ -867,6 +868,10 @@ export function Dashboard({
                 <a href="#matches">
                   <CalendarClock size={16} />
                   Matches
+                </a>
+                <a href={SUPPORT_WHATSAPP_URL} rel="noreferrer" target="_blank">
+                  <MessageCircle size={16} />
+                  WhatsApp support
                 </a>
                 {showAdminNav ? (
                   <Link href={{ pathname: "/admin" }}>

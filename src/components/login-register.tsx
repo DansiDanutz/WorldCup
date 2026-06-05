@@ -6,6 +6,7 @@ import {
   CircleDollarSign,
   Gift,
   LogIn,
+  MessageCircle,
   MousePointer2,
   ShieldCheck,
   Users,
@@ -15,6 +16,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { createBrowserSupabaseClient } from "@/lib/supabase";
+import { SUPPORT_WHATSAPP_E164, SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import type { PaidActionGate, PaidActionGates } from "@/lib/types";
 import type { Session } from "@supabase/supabase-js";
 
@@ -363,6 +365,11 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
               </button>
             )
           ) : null}
+
+          <a className="auth-support-link" href={SUPPORT_WHATSAPP_URL} rel="noreferrer" target="_blank">
+            <MessageCircle size={16} />
+            Need help? WhatsApp {SUPPORT_WHATSAPP_E164}
+          </a>
 
           {message ? <div className="message">{message}</div> : null}
           {error ? <div className="message error">{error}</div> : null}

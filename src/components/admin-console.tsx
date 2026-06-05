@@ -9,6 +9,7 @@ import {
   FileJson,
   GitBranch,
   Lock,
+  Phone,
   ShieldCheck,
   Trophy,
   Upload,
@@ -34,6 +35,7 @@ import {
 } from "@/lib/launch-signoffs";
 import { formatPrizeAmount } from "@/lib/prize-pool";
 import type { ReadinessActionTarget, ReadinessReport } from "@/lib/production-readiness";
+import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import { getWithdrawalExplorerTxUrl } from "@/lib/withdrawals";
 import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
@@ -322,6 +324,51 @@ function getMovementAccounting(movement: TicketFinancialMovement) {
   };
 }
 
+function getFinancialStatementSummary(movements: TicketFinancialMovement[]) {
+  return movements.reduce(
+    (summary, movement) => {
+      const isMoneyMovement =
+        movement.movementType === "admin_to_agent" || movement.movementType === "admin_to_user";
+
+      if (!isMoneyMovement) {
+        return summary;
+      }
+
+      const accounting = getMovementAccounting(movement);
+      summary.movementCount += 1;
+      summary.paidTickets += movement.quantity;
+      summary.freeTickets += accounting.bonusQuantity;
+      summary.accountedTickets += accounting.accountedQuantity;
+      summary.paidGross += accounting.paidGross;
+      summary.bonusGross += accounting.bonusGross;
+      summary.accountedGross += accounting.accountedGross;
+      summary.prizeContribution += accounting.prizeContribution;
+      summary.feeContribution += accounting.feeContribution;
+
+      if (movement.paymentMethod === "cash") {
+        summary.cashGross += accounting.paidGross;
+      } else if (movement.paymentMethod === "usdt") {
+        summary.usdtGross += accounting.paidGross;
+      }
+
+      return summary;
+    },
+    {
+      accountedGross: 0,
+      accountedTickets: 0,
+      bonusGross: 0,
+      cashGross: 0,
+      feeContribution: 0,
+      freeTickets: 0,
+      movementCount: 0,
+      paidGross: 0,
+      paidTickets: 0,
+      prizeContribution: 0,
+      usdtGross: 0,
+    },
+  );
+}
+
 export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminConsoleProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const [session, setSession] = useState<Session | null>(null);
@@ -384,6 +431,10 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  const financialStatementSummary = useMemo(
+    () => getFinancialStatementSummary(financialMovements),
+    [financialMovements],
+  );
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
@@ -1427,6 +1478,13 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 <small>Draw view</small>
               </span>
             </Link>
+            <a className="nav-item" href={SUPPORT_WHATSAPP_URL} rel="noreferrer" target="_blank">
+              <Phone size={16} />
+              <span className="nav-item__copy">
+                <strong>Support</strong>
+                <small>WhatsApp</small>
+              </span>
+            </a>
           </nav>
         </SmartMenu>
       </header>
@@ -3152,6 +3210,36 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
 
               <div className="admin-referral-list" aria-label="Financial statement">
                 <h3 className="section-heading">Financial statement</h3>
+                <div className="financial-statement-summary" aria-label="Financial statement totals">
+                  <div>
+                    <span>Cash received</span>
+                    <strong>{formatLedgerAmount(financialStatementSummary.cashGross)} USDT</strong>
+                  </div>
+                  <div>
+                    <span>USDT received</span>
+                    <strong>{formatLedgerAmount(financialStatementSummary.usdtGross)} USDT</strong>
+                  </div>
+                  <div>
+                    <span>Paid tickets</span>
+                    <strong>{financialStatementSummary.paidTickets.toLocaleString()}</strong>
+                  </div>
+                  <div>
+                    <span>Free tickets</span>
+                    <strong>{financialStatementSummary.freeTickets.toLocaleString()}</strong>
+                  </div>
+                  <div>
+                    <span>Prize contribution</span>
+                    <strong>{formatLedgerAmount(financialStatementSummary.prizeContribution)} USDT</strong>
+                  </div>
+                  <div>
+                    <span>Fee contribution</span>
+                    <strong>{formatLedgerAmount(financialStatementSummary.feeContribution)} USDT</strong>
+                  </div>
+                </div>
+                <div className="field-note">
+                  Money enters the statement only when Admin assigns tickets to users or agents. Agent-to-user
+                  transfers do not change prize pool or fee pool because those tickets were already recorded.
+                </div>
                 {financialMovements.length > 0 ? (
                   financialMovements.map((movement) => {
                     const accounting = getMovementAccounting(movement);

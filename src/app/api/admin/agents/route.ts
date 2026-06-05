@@ -97,7 +97,7 @@ export async function GET(request: Request) {
     )
     .eq("tournament_id", tournament.data.id)
     .order("created_at", { ascending: false })
-    .limit(25);
+    .limit(1000);
 
   if (movements.error) {
     return jsonError("Could not load financial statement.", 500);

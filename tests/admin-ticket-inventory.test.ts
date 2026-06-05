@@ -62,6 +62,7 @@ describe("admin ticket inventory", () => {
     assert.match(adminAgentsRoute, /prizePoolAmount/);
     assert.match(adminAgentsRoute, /feePoolAmount/);
     assert.match(adminAgentsRoute, /financialMovements/);
+    assert.match(adminAgentsRoute, /\.limit\(1000\)/);
     assert.match(adminTicketsRoute, /worldcup_admin_assign_user_ticket/);
     assert.match(adminTicketsRoute, /paymentMethod/);
     assert.doesNotMatch(adminTicketsRoute, /from\("worldcup_tickets"\)\.insert/);
@@ -78,6 +79,13 @@ describe("admin ticket inventory", () => {
     assert.match(adminConsole, /Financial statement/);
     assert.match(adminConsole, /Prize pool \(net\)/);
     assert.match(adminConsole, /Fee pool/);
+    assert.match(adminConsole, /getFinancialStatementSummary/);
+    assert.match(adminConsole, /Cash received/);
+    assert.match(adminConsole, /USDT received/);
+    assert.match(adminConsole, /Free tickets/);
+    assert.match(adminConsole, /Prize contribution/);
+    assert.match(adminConsole, /Fee contribution/);
+    assert.match(adminConsole, /Agent-to-user\s+transfers do not change prize pool or fee pool/);
     assert.match(adminConsole, /Paid value/);
     assert.match(adminConsole, /bonus value/);
     assert.match(adminConsole, /accountedGross/);

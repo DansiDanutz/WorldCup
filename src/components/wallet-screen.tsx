@@ -29,6 +29,7 @@ import {
 } from "@/lib/deposits";
 import type { DepositNetwork } from "@/lib/deposits";
 import { formatLedgerAmount, formatMoneyAmount } from "@/lib/economy";
+import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import type {
   MyAccountStatus,
@@ -812,6 +813,10 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <Trophy size={16} />
                   Game Home
                 </Link>
+                <a href={SUPPORT_WHATSAPP_URL} rel="noreferrer" target="_blank">
+                  <Phone size={16} />
+                  WhatsApp support
+                </a>
               </div>
             </details>
             {signedIn ? (

@@ -20,6 +20,7 @@ const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
 const myStanding = readFileSync("src/components/my-standing.tsx", "utf8");
 const smartMenu = readFileSync("src/components/smart-menu.tsx", "utf8");
 const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
+const support = readFileSync("src/lib/support.ts", "utf8");
 const appIcon = readFileSync("src/app/icon.svg", "utf8");
 const brandMark = readFileSync("public/brand-mark.svg", "utf8");
 const logoLockup = readFileSync("public/logo-lockup.svg", "utf8");
@@ -71,6 +72,18 @@ describe("WorldCup design system integration", () => {
     assert.match(loginPage, /You are invited to WorldCup26/);
     assert.match(loginOgImage, /Referral invite/);
     assert.match(loginOgImage, /Pick 3 teams\. Climb the World Cup leaderboard\./);
+  });
+
+  it("keeps WhatsApp support reachable from user-facing app surfaces", () => {
+    assert.match(support, /SUPPORT_WHATSAPP_E164 = "\+40750257337"/);
+    assert.match(support, /SUPPORT_WHATSAPP_URL = `https:\/\/wa\.me\/\$\{SUPPORT_WHATSAPP_NUMBER\}`/);
+    assert.match(dashboard, /SUPPORT_WHATSAPP_URL/);
+    assert.match(dashboard, /WhatsApp support/);
+    assert.match(walletScreen, /SUPPORT_WHATSAPP_URL/);
+    assert.match(walletScreen, /WhatsApp support/);
+    assert.match(loginRegister, /Need help\? WhatsApp/);
+    assert.match(loginRegister, /SUPPORT_WHATSAPP_E164/);
+    assert.match(adminConsole, /SUPPORT_WHATSAPP_URL/);
   });
 
   it("keeps the root layout from forcing mobile horizontal overflow", () => {

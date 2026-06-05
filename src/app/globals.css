@@ -3242,6 +3242,35 @@ svg {
   text-overflow: ellipsis;
 }
 
+.financial-statement-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.financial-statement-summary div {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid rgba(16, 107, 79, 0.22);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(16, 107, 79, 0.08), rgba(255, 226, 154, 0.16));
+}
+
+.financial-statement-summary span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.financial-statement-summary strong {
+  color: var(--green);
+  font-size: 20px;
+  line-height: 1.1;
+}
+
 .account-role-badge {
   display: inline-flex;
   align-items: center;
@@ -5204,6 +5233,10 @@ html {
   .admin-referral-row > div:last-child {
     justify-items: start;
     width: 100%;
+  }
+
+  .financial-statement-summary {
+    grid-template-columns: 1fr;
   }
 
   .deposit-review {
