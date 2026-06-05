@@ -268,6 +268,12 @@ export function Dashboard({
     selectedTeamCount: selectedTeams.length,
     signedInWithGoogle,
   });
+  const journeySteps = [
+    { label: "Pick", done: selectedTeams.length === 3 },
+    { label: "Ticket", done: hasEntryTicket },
+    { label: "Lock", done: accountHasEntry },
+  ];
+  const journeyCurrentStep = journeySteps.findIndex((step) => !step.done);
   const pendingAgentTicketRequest = agentTicketRequests.find((request) => request.status === "pending");
   const launchEvidenceMode = Boolean(
     signedInWithGoogle &&
@@ -319,6 +325,56 @@ export function Dashboard({
       window.localStorage.removeItem("worldcup_referral_accepted");
     }
   }, [referralAccepted, referralCode]);
+
+  // Restore an in-progress pick (teams + display name) once, so leaving for the
+  // wallet to buy a ticket and coming back does not wipe the user's selection.
+  const picksRestoredRef = useRef(false);
+  useEffect(() => {
+    if (picksRestoredRef.current) {
+      return;
+    }
+    picksRestoredRef.current = true;
+
+    window.queueMicrotask(() => {
+      const validTeamIds = new Set(teams.map((team) => team.id));
+      try {
+        const storedTeams: unknown = JSON.parse(
+          window.localStorage.getItem("worldcup_selected_teams") ?? "[]",
+        );
+        if (Array.isArray(storedTeams)) {
+          const restored = storedTeams
+            .filter((id): id is string => typeof id === "string" && validTeamIds.has(id))
+            .slice(0, 3);
+          if (restored.length > 0) {
+            setSelectedTeams(restored);
+          }
+        }
+      } catch {
+        window.localStorage.removeItem("worldcup_selected_teams");
+      }
+
+      const storedName = window.localStorage.getItem("worldcup_display_name");
+      if (storedName) {
+        setDisplayName(storedName);
+      }
+    });
+  }, [teams]);
+
+  useEffect(() => {
+    if (selectedTeams.length > 0) {
+      window.localStorage.setItem("worldcup_selected_teams", JSON.stringify(selectedTeams));
+    } else {
+      window.localStorage.removeItem("worldcup_selected_teams");
+    }
+  }, [selectedTeams]);
+
+  useEffect(() => {
+    if (displayName.trim()) {
+      window.localStorage.setItem("worldcup_display_name", displayName);
+    } else {
+      window.localStorage.removeItem("worldcup_display_name");
+    }
+  }, [displayName]);
 
   useEffect(() => {
     if (!showAllTeams) {
@@ -761,6 +817,7 @@ export function Dashboard({
         },
       }));
       setSelectedTeams([]);
+      window.localStorage.removeItem("worldcup_selected_teams");
       window.localStorage.removeItem("worldcup_referral_code");
       window.localStorage.removeItem("worldcup_referral_accepted");
       window.setTimeout(() => document.getElementById("me")?.scrollIntoView({ behavior: "smooth" }), 80);
@@ -1052,6 +1109,21 @@ export function Dashboard({
                   </button>
                 ) : null}
               </div>
+              <div
+                className="pick-progress"
+                role="progressbar"
+                aria-valuemin={0}
+                aria-valuemax={3}
+                aria-valuenow={selectedTeams.length}
+                aria-label={`${selectedTeams.length} of 3 teams selected`}
+              >
+                {[0, 1, 2].map((segment) => (
+                  <span
+                    className={`pick-progress__seg ${selectedTeams.length > segment ? "is-filled" : ""}`}
+                    key={segment}
+                  />
+                ))}
+              </div>
               <div className="pick-slot-strip">
                 {[0, 1, 2].map((slot) => {
                   const team = selectedTeamRecords[slot];
@@ -1080,14 +1152,14 @@ export function Dashboard({
                   );
                 })}
               </div>
-              <div className="pick-flow__action">
+              <div className={`pick-flow__action ${selectedTeams.length === 3 ? "is-ready" : ""}`}>
                 {selectedTeams.length === 3 ? (
-                  <a className="button" href="#entry">
+                  <a className="button pick-flow__cta" href="#entry">
                     Continue to Entry
                     <ArrowRight size={16} />
                   </a>
                 ) : (
-                  <button className="button" disabled type="button">
+                  <button className="button pick-flow__cta" disabled type="button">
                     {remainingPickCount} more to continue
                   </button>
                 )}
@@ -1228,6 +1300,24 @@ export function Dashboard({
                 </p>
               </div>
               <Lock size={18} color="var(--green)" />
+            </div>
+            <div className="journey-steps" aria-label="Entry progress">
+              {journeySteps.map((step, index) => {
+                const state =
+                  step.done ? "done" : index === journeyCurrentStep ? "current" : "todo";
+
+                return (
+                  <div className={`journey-step is-${state}`} key={step.label}>
+                    <span className="journey-step__dot">
+                      {step.done ? <Check size={13} /> : index + 1}
+                    </span>
+                    <span className="journey-step__label">{step.label}</span>
+                    {index < journeySteps.length - 1 ? (
+                      <span className="journey-step__bar" aria-hidden="true" />
+                    ) : null}
+                  </div>
+                );
+              })}
             </div>
             <div className="entry-form">
               <div className="auth-box">
@@ -1458,7 +1548,7 @@ export function Dashboard({
                 <div className="message entry-lock-hint">{entryLockBlocker}</div>
               ) : null}
               <button
-                className="button"
+                className={`button entry-lock-cta ${entryLockBlocker ? "" : "is-ready"}`}
                 disabled={Boolean(entryLockBlocker) || isPending}
                 onClick={submitEntry}
                 type="button"
