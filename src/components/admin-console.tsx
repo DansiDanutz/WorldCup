@@ -1496,6 +1496,21 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
           </div>
         </section>
 
+        <nav className="admin-section-nav" aria-label="Jump to admin section">
+          <a href="#admin-readiness-panel">Access</a>
+          <a href="#admin-production-readiness-panel">Readiness</a>
+          <a href="#admin-operator-policy-panel">Policy</a>
+          <a href="#admin-launch-signoffs-panel">Sign-offs</a>
+          <a href="#admin-result-entry-panel">Results</a>
+          <a href="#admin-bracket-panel">Bracket</a>
+          <a href="#admin-tickets-panel">Tickets</a>
+          <a href="#admin-deposit-claims-panel">Deposits</a>
+          <a href="#admin-withdrawal-requests-panel">Withdrawals</a>
+          <a href="#admin-age-verification-panel">Age 18+</a>
+          <a href="#admin-agents-panel">Agents</a>
+          <a href="#admin-referral-panel">Referrals</a>
+        </nav>
+
         <section className="grid">
           <div className="panel" id="admin-readiness-panel">
             <div className="panel-header">
@@ -1554,7 +1569,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             </form>
           </div>
 
-          <div className="panel">
+          <div className="panel" id="admin-production-readiness-panel">
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Production readiness</h2>
@@ -2175,7 +2190,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             </div>
           </div>
 
-          <div className="panel">
+          <div className="panel" id="admin-result-entry-panel">
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Result entry</h2>
@@ -2279,7 +2294,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             </div>
           </div>
 
-          <div className="panel">
+          <div className="panel" id="admin-bracket-panel">
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Bracket & payouts</h2>
@@ -2373,7 +2388,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             </div>
           </div>
 
-          <div className="panel">
+          <div className="panel" id="admin-tickets-panel">
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Tickets & wallets</h2>
@@ -2993,7 +3008,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             </div>
           </div>
 
-          <div className="panel">
+          <div className="panel" id="admin-agents-panel">
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Agents</h2>
@@ -3256,7 +3271,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             </div>
           </div>
 
-          <div className="panel">
+          <div className="panel" id="admin-referral-panel">
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Referral report</h2>
