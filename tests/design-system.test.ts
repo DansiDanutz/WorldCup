@@ -436,7 +436,9 @@ describe("WorldCup design system integration", () => {
     assert.match(walletScreen, /acceptAgentTicketRequest/);
     assert.match(dashboard, /disabled=\{Boolean\(entryLockBlocker\) \|\| isPending\}/);
     assert.match(dashboard, /function getEntryLockBlocker/);
-    assert.match(dashboard, /Checking your age and Terms confirmation/);
+    assert.match(dashboard, /signedInWithGoogle && consented !== true/);
+    assert.match(dashboard, /Confirm once here if your age and Terms status is still loading/);
+    assert.match(dashboard, /Confirm your age and accept the Terms below before locking/);
     assert.match(walletScreen, /id="tickets"/);
     assert.match(walletScreen, /walletView === "agent" \? "wallet-panel-hidden" : ""/);
     assert.match(globalsCss, /\.ticket-requirement-card\s*{/);

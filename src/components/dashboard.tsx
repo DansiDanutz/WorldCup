@@ -535,6 +535,7 @@ export function Dashboard({
 
       setConsented(true);
       setEntryMessage("Thanks — you are verified. You can lock your entry now.");
+      setEntryMessage("Thanks. You are verified and can lock your entry now.");
     });
   }
 
@@ -1408,8 +1409,16 @@ export function Dashboard({
                   )}
                 </div>
               </div>
-              {signedInWithGoogle && consented === false ? (
+              {signedInWithGoogle && consented !== true ? (
                 <div className="consent-gate" aria-label="Eligibility confirmation">
+                  {consented === null ? (
+                    <div className="ticket-ready-note">
+                      <RefreshCw size={16} />
+                      <span>
+                        Confirm once here if your age and Terms status is still loading.
+                      </span>
+                    </div>
+                  ) : null}
                   <label className="check-row">
                     <input
                       checked={ageConfirmed}
@@ -1442,7 +1451,7 @@ export function Dashboard({
                     onClick={submitConsent}
                     type="button"
                   >
-                    Confirm &amp; continue
+                    Confirm &amp; unlock entry
                   </button>
                 </div>
               ) : null}
@@ -1826,7 +1835,7 @@ function getEntryLockBlocker({
   }
 
   if (consented !== true) {
-    return "Checking your age and Terms confirmation. If this does not update, refresh and try again.";
+    return "Confirm your age and accept the Terms below before locking.";
   }
 
   if (missingEntryTicket) {
