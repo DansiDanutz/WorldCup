@@ -335,7 +335,7 @@ svg {
   justify-content: space-between;
   flex-wrap: nowrap;
   gap: 14px;
-  width: min(1760px, calc(100% - 24px));
+  width: min(1680px, calc(100% - 24px));
   max-width: calc(100% - 24px);
   min-width: 0;
   min-height: 78px;
@@ -758,7 +758,7 @@ svg {
 }
 
 .app-shell--landing.app-shell--post-entry .page--post-entry {
-  width: min(1640px, 100%);
+  width: min(1680px, 100%);
   padding-top: clamp(16px, 1.7vw, 28px);
 }
 
@@ -823,7 +823,11 @@ svg {
   }
 
   .app-shell--post-entry .grid.grid--entry-complete {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(340px, 0.76fr) minmax(520px, 1.24fr);
+  }
+
+  .app-shell--post-entry .grid.grid--entry-complete .rules-panel {
+    grid-column: 1 / -1;
   }
 }
 
@@ -7036,13 +7040,28 @@ html {
     margin-bottom: 28px;
   }
 
+  .app-shell--post-entry .my-standing--agent {
+    grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.82fr);
+    align-items: start;
+    width: min(1680px, 100%);
+  }
+
   .app-shell--post-entry .standing-grid {
     grid-template-columns: minmax(560px, 1.12fr) minmax(420px, 0.88fr);
     gap: 18px;
   }
 
+  .app-shell--post-entry .my-standing--agent .standing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .app-shell--post-entry .standing-agent {
     width: 100%;
+  }
+
+  .app-shell--post-entry .my-standing--agent .standing-agent {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .app-shell--post-entry .standing-agent .account-status-grid {
@@ -7050,9 +7069,19 @@ html {
   }
 }
 
+@media (min-width: 1441px) {
+  .app-shell--post-entry .my-standing--agent {
+    grid-template-columns: minmax(760px, 1.02fr) minmax(520px, 0.78fr);
+  }
+}
+
 @media (min-width: 761px) and (max-width: 1180px) {
   .app-shell--post-entry .my-standing {
     width: min(900px, 100%);
+  }
+
+  .app-shell--post-entry .my-standing--agent {
+    width: min(980px, 100%);
   }
 
   .app-shell--post-entry .standing-grid {

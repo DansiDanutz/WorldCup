@@ -485,9 +485,11 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.app-shell--landing \.page--post-entry\s*{[\s\S]*?padding-top:\s*112px;/);
     assert.match(globalsCss, /\.app-shell--landing\.app-shell--post-entry \.topbar\s*{[\s\S]*?position:\s*sticky;/);
     assert.match(globalsCss, /\.app-shell--landing\.app-shell--post-entry \.topbar\s*{[\s\S]*?transform:\s*none;/);
-    assert.match(globalsCss, /\.app-shell--landing\.app-shell--post-entry \.page--post-entry\s*{[\s\S]*?width:\s*min\(1640px,\s*100%\);/);
+    assert.match(globalsCss, /\.topbar\s*{[\s\S]*?width:\s*min\(1680px,\s*calc\(100% - 24px\)\);/);
+    assert.match(globalsCss, /\.app-shell--landing\.app-shell--post-entry \.page--post-entry\s*{[\s\S]*?width:\s*min\(1680px,\s*100%\);/);
     assert.match(globalsCss, /\.app-shell--landing\.app-shell--post-entry \.page--post-entry\s*{[\s\S]*?padding-top:\s*clamp\(16px,\s*1\.7vw,\s*28px\);/);
-    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--post-entry \.grid\.grid--entry-complete\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
+    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--post-entry \.grid\.grid--entry-complete\s*{[\s\S]*?grid-template-columns:\s*minmax\(340px,\s*0\.76fr\) minmax\(520px,\s*1\.24fr\);/);
+    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--post-entry \.grid\.grid--entry-complete \.rules-panel\s*{[\s\S]*?grid-column:\s*1 \/ -1;/);
     assert.match(globalsCss, /@media \(min-width:\s*761px\) and \(max-width:\s*1180px\)\s*{[\s\S]*?\.app-shell--landing \.page--post-entry\s*{[\s\S]*?padding-top:\s*176px;/);
     assert.match(globalsCss, /@media \(min-width:\s*761px\) and \(max-width:\s*1180px\)\s*{[\s\S]*?\.app-shell--landing\.app-shell--post-entry \.page--post-entry\s*{[\s\S]*?padding-top:\s*20px;/);
     assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.app-shell--landing \.page--post-entry\s*{[\s\S]*?padding-top:\s*132px;/);
@@ -499,14 +501,21 @@ describe("WorldCup design system integration", () => {
     assert.match(myStanding, /standing-card standing-card--rank/);
     assert.match(myStanding, /standing-card standing-card--referrals/);
     assert.match(myStanding, /standing-card standing-card--agent/);
+    assert.match(myStanding, /my-standing--agent/);
     assert.match(globalsCss, /\.standing-card\s*{[\s\S]*?linear-gradient\(145deg/);
     assert.match(globalsCss, /\.standing-card--rank\s*{[\s\S]*?--standing-accent:\s*#f0c060;/);
     assert.match(globalsCss, /\.standing-card--referrals\s*{[\s\S]*?--standing-accent:\s*#37d7a3;/);
     assert.match(globalsCss, /\.standing-card--agent\s*{[\s\S]*?--standing-accent:\s*#f0a13a;/);
     assert.match(globalsCss, /\.standing-card \.panel-header > svg\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a/);
     assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--post-entry \.my-standing\s*{[\s\S]*?width:\s*min\(1560px,\s*100%\);/);
+    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--post-entry \.my-standing--agent\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1\.08fr\) minmax\(420px,\s*0\.82fr\);/);
+    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--post-entry \.my-standing--agent\s*{[\s\S]*?width:\s*min\(1680px,\s*100%\);/);
     assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--post-entry \.standing-grid\s*{[\s\S]*?grid-template-columns:\s*minmax\(560px,\s*1\.12fr\) minmax\(420px,\s*0\.88fr\);/);
+    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--post-entry \.my-standing--agent \.standing-grid\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /@media \(min-width:\s*1181px\)\s*{[\s\S]*?\.app-shell--post-entry \.my-standing--agent \.standing-agent\s*{[\s\S]*?grid-column:\s*2;/);
+    assert.match(globalsCss, /@media \(min-width:\s*1441px\)\s*{[\s\S]*?\.app-shell--post-entry \.my-standing--agent\s*{[\s\S]*?grid-template-columns:\s*minmax\(760px,\s*1\.02fr\) minmax\(520px,\s*0\.78fr\);/);
     assert.match(globalsCss, /@media \(min-width:\s*761px\) and \(max-width:\s*1180px\)\s*{[\s\S]*?\.app-shell--post-entry \.standing-grid\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
+    assert.match(globalsCss, /@media \(min-width:\s*761px\) and \(max-width:\s*1180px\)\s*{[\s\S]*?\.app-shell--post-entry \.my-standing--agent\s*{[\s\S]*?width:\s*min\(980px,\s*100%\);/);
   });
 
   it("keeps every non-matchup swiper poster image-backed like Agent Deal", () => {

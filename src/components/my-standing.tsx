@@ -89,7 +89,11 @@ export function MyStanding() {
   const hasLockedEntry = Boolean(me && me.hasEntry && me.locked);
 
   return (
-    <section className="my-standing" id="me" aria-label="My account">
+    <section
+      className={`my-standing${data?.agent ? " my-standing--agent" : ""}`}
+      id="me"
+      aria-label="My account"
+    >
       <div className="standing-grid">
         <div className="panel standing-main standing-card standing-card--rank">
           <div className="panel-header">
