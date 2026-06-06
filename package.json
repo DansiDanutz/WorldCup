@@ -21,6 +21,7 @@
     "supabase:enable-google-auth": "node scripts/enable-supabase-google-auth.mjs",
     "vercel:domain-guard": "node scripts/vercel-domain-guard.mjs",
     "vercel:domain-guard:fix": "node scripts/vercel-domain-guard.mjs --fix",
+    "vercel:promote": "node scripts/vercel-promote-production.mjs",
     "x:engage": "node scripts/x-engage.mjs"
   },
   "dependencies": {
