@@ -20,7 +20,8 @@
     "smoke:prod:launch": "node scripts/production-smoke.mjs --auth-flow-probe --deposit-credit-probe --kucoin-live-probe",
     "supabase:enable-google-auth": "node scripts/enable-supabase-google-auth.mjs",
     "vercel:domain-guard": "node scripts/vercel-domain-guard.mjs",
-    "vercel:domain-guard:fix": "node scripts/vercel-domain-guard.mjs --fix"
+    "vercel:domain-guard:fix": "node scripts/vercel-domain-guard.mjs --fix",
+    "x:engage": "node scripts/x-engage.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.87.0",
