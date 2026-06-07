@@ -1,0 +1,37 @@
+WorldCup26 top-six mobile 2026-06-07 20:45 +0300
+paid=ok proof=49 urgent=16 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+code=26BC4B90CB
+link=https://worldcup26.world/login?ref=26BC4B90CB
+
+#1 Sienna / WhatsApp Status
+  action=Post story asset with video caption 1
+  asset=media/worldcup26-main-video.mp4
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0
+  proof_template=private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included
+#2 Nano / WhatsApp personal
+  action=Send personal invite to warm contacts
+  asset=media/worldcup26-main-video.mp4
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2
+  proof_template=private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>
+#3 Sienna / Instagram/Facebook story
+  action=Story: Code 26BC4B90CB + link sticker
+  asset=media/worldcup26-referral-story.jpg
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h3
+  proof_template=private-meta-story: story posted from <account> at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included
+#4 Dexter / Football groups
+  action=Ask approved group admin for permission; post group variant only if allowed
+  asset=campaign/first-wave-posts.md
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4
+  proof_template=approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset/copy ready; code 26BC4B90CB and link included; post only after allowed
+#5 Sienna / TikTok/Reels/Shorts
+  action=Upload main video with short caption and code in first line
+  asset=media/worldcup26-main-video.mp4
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h5
+  proof_template=public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included
+#6 Nano / DM follow-up
+  action=Reply to first reactions and send the simple how-it-works answer
+  asset=campaign/copy-bank.md
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h7
+  proof_template=private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up <date/action>
+
+Open runtime/top-six-mobile.html on a phone. Do the real action first, then log proof.

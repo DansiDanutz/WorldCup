@@ -1,0 +1,268 @@
+# WorldCup26 Response Kit
+
+Generated: 07/06/2026 20:45
+
+- State: `ready-for-warm-replies`
+- Code: `26BC4B90CB`
+- Warm attempts: 0
+- Signup saves: 0
+- First action: #warm-1 Nano / WhatsApp personal
+
+Use these only as replies after a real person responds or asks. Log proof only after the reply happened.
+
+## What is this?
+
+Goal: Explain the game in one message.
+
+```text
+You pick 3 World Cup teams for free. They score points from real match results and goals, and you can see your private preview. Use a ticket only if you want the paid leaderboard.
+
+Join with my code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=manual-reply&utm_campaign=worldcup26_referral_72h&utm_content=what_is_it
+```
+
+- WhatsApp: https://wa.me/?text=You%20pick%203%20World%20Cup%20teams%20for%20free.%20They%20score%20points%20from%20real%20match%20results%20and%20goals%2C%20and%20you%20can%20see%20your%20private%20preview.%20Use%20a%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0AJoin%20with%20my%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dwhat_is_it
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=You%20pick%203%20World%20Cup%20teams%20for%20free.%20They%20score%20points%20from%20real%20match%20results%20and%20goals%2C%20and%20you%20can%20see%20your%20private%20preview.%20Use%20a%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0AJoin%20with%20my%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dwhat_is_it
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=what-is-it; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## Is it free?
+
+Goal: Remove signup friction.
+
+```text
+Yes. You can sign in, accept the invite, and pick 3 teams for free. You only need a ticket if you later want to enter the paid leaderboard.
+
+Use my code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=manual-reply&utm_campaign=worldcup26_referral_72h&utm_content=is_it_free
+```
+
+- WhatsApp: https://wa.me/?text=Yes.%20You%20can%20sign%20in%2C%20accept%20the%20invite%2C%20and%20pick%203%20teams%20for%20free.%20You%20only%20need%20a%20ticket%20if%20you%20later%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20code%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dis_it_free
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=Yes.%20You%20can%20sign%20in%2C%20accept%20the%20invite%2C%20and%20pick%203%20teams%20for%20free.%20You%20only%20need%20a%20ticket%20if%20you%20later%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20code%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dis_it_free
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=is-it-free; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## How many teams?
+
+Goal: Get them to the pick step.
+
+```text
+Three teams. The event has not started yet, so all 48 teams are still available right now. Pick the 3 you believe will score best.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=manual-reply&utm_campaign=worldcup26_referral_72h&utm_content=how_many_teams
+```
+
+- WhatsApp: https://wa.me/?text=Three%20teams.%20The%20event%20has%20not%20started%20yet%2C%20so%20all%2048%20teams%20are%20still%20available%20right%20now.%20Pick%20the%203%20you%20believe%20will%20score%20best.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dhow_many_teams
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=Three%20teams.%20The%20event%20has%20not%20started%20yet%2C%20so%20all%2048%20teams%20are%20still%20available%20right%20now.%20Pick%20the%203%20you%20believe%20will%20score%20best.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dhow_many_teams
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=how-many-teams; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## Why use the code?
+
+Goal: Explain referral tracking without overexplaining.
+
+```text
+The code connects your account to my invite so the app knows you joined through me. It should be filled automatically from the link, but the code is 26BC4B90CB if you need it.
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=manual-reply&utm_campaign=worldcup26_referral_72h&utm_content=why_code
+```
+
+- WhatsApp: https://wa.me/?text=The%20code%20connects%20your%20account%20to%20my%20invite%20so%20the%20app%20knows%20you%20joined%20through%20me.%20It%20should%20be%20filled%20automatically%20from%20the%20link%2C%20but%20the%20code%20is%2026BC4B90CB%20if%20you%20need%20it.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dwhy_code
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=The%20code%20connects%20your%20account%20to%20my%20invite%20so%20the%20app%20knows%20you%20joined%20through%20me.%20It%20should%20be%20filled%20automatically%20from%20the%20link%2C%20but%20the%20code%20is%2026BC4B90CB%20if%20you%20need%20it.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dwhy_code
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=why-code; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## Signup stopped or confusing
+
+Goal: Find the exact conversion blocker.
+
+```text
+Can you tell me the exact screen where it stopped? The normal path is: open link, accept invite, continue with Google, then pick 3 teams. Do not pay for this test.
+
+Link:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=manual-reply&utm_campaign=worldcup26_referral_72h&utm_content=signup_stuck
+```
+
+- WhatsApp: https://wa.me/?text=Can%20you%20tell%20me%20the%20exact%20screen%20where%20it%20stopped%3F%20The%20normal%20path%20is%3A%20open%20link%2C%20accept%20invite%2C%20continue%20with%20Google%2C%20then%20pick%203%20teams.%20Do%20not%20pay%20for%20this%20test.%0A%0ALink%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsignup_stuck
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=Can%20you%20tell%20me%20the%20exact%20screen%20where%20it%20stopped%3F%20The%20normal%20path%20is%3A%20open%20link%2C%20accept%20invite%2C%20continue%20with%20Google%2C%20then%20pick%203%20teams.%20Do%20not%20pay%20for%20this%20test.%0A%0ALink%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsignup_stuck
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=signup-stuck; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## They picked teams
+
+Goal: Turn a tester into a referrer.
+
+```text
+Nice. Send me your 3 teams. If you want, invite two football friends too. They can also pick free first with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=manual-reply&utm_campaign=worldcup26_referral_72h&utm_content=after_pick
+```
+
+- WhatsApp: https://wa.me/?text=Nice.%20Send%20me%20your%203%20teams.%20If%20you%20want%2C%20invite%20two%20football%20friends%20too.%20They%20can%20also%20pick%20free%20first%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dafter_pick
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=Nice.%20Send%20me%20your%203%20teams.%20If%20you%20want%2C%20invite%20two%20football%20friends%20too.%20They%20can%20also%20pick%20free%20first%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dafter_pick
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=after-they-pick; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## Can I invite/sell tickets?
+
+Goal: Open the agent path without making payment the first step.
+
+```text
+Yes. First create the account from my link and pick your 3 teams. After that, I can help you use the agent/referral area. The free pick is the first step.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=manual-reply&utm_campaign=worldcup26_referral_72h&utm_content=agent_interest
+```
+
+- WhatsApp: https://wa.me/?text=Yes.%20First%20create%20the%20account%20from%20my%20link%20and%20pick%20your%203%20teams.%20After%20that%2C%20I%20can%20help%20you%20use%20the%20agent%2Freferral%20area.%20The%20free%20pick%20is%20the%20first%20step.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dagent_interest
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=Yes.%20First%20create%20the%20account%20from%20my%20link%20and%20pick%20your%203%20teams.%20After%20that%2C%20I%20can%20help%20you%20use%20the%20agent%2Freferral%20area.%20The%20free%20pick%20is%20the%20first%20step.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dagent_interest
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=agent-interest; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## X thread asks for World Cup picks
+
+Goal: Create a low-friction public reply that feels like a football question first.
+
+```text
+My current challenge: pick only 3 teams, not a full bracket. Who are your 3?
+
+I saved mine here free first, ticket only later if you want the paid board:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=x-reply&utm_campaign=worldcup26_referral_72h&utm_content=x_public_thread
+```
+
+- WhatsApp: https://wa.me/?text=My%20current%20challenge%3A%20pick%20only%203%20teams%2C%20not%20a%20full%20bracket.%20Who%20are%20your%203%3F%0A%0AI%20saved%20mine%20here%20free%20first%2C%20ticket%20only%20later%20if%20you%20want%20the%20paid%20board%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dx-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dx_public_thread
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=My%20current%20challenge%3A%20pick%20only%203%20teams%2C%20not%20a%20full%20bracket.%20Who%20are%20your%203%3F%0A%0AI%20saved%20mine%20here%20free%20first%2C%20ticket%20only%20later%20if%20you%20want%20the%20paid%20board%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dx-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dx_public_thread
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=x-public-thread; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## YouTube video/comment about favorites
+
+Goal: Invite prediction-video viewers without sounding like a spam blast.
+
+```text
+Good picks. I am testing a simple version: choose 3 teams before kickoff and watch the private points preview as the tournament moves.
+
+Free to pick first, code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=youtube-comment&utm_campaign=worldcup26_referral_72h&utm_content=youtube_comment
+```
+
+- WhatsApp: https://wa.me/?text=Good%20picks.%20I%20am%20testing%20a%20simple%20version%3A%20choose%203%20teams%20before%20kickoff%20and%20watch%20the%20private%20points%20preview%20as%20the%20tournament%20moves.%0A%0AFree%20to%20pick%20first%2C%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dyoutube-comment%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dyoutube_comment
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=Good%20picks.%20I%20am%20testing%20a%20simple%20version%3A%20choose%203%20teams%20before%20kickoff%20and%20watch%20the%20private%20points%20preview%20as%20the%20tournament%20moves.%0A%0AFree%20to%20pick%20first%2C%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dyoutube-comment%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dyoutube_comment
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=youtube-comment; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## Reddit/forum prediction discussion
+
+Goal: Use a softer, permission-friendly wording for communities with stricter promo norms.
+
+```text
+Question for the thread: if you had to lock only 3 teams before the World Cup starts, who would you take?
+
+I built a tiny free-pick tracker for this. If links are welcome here, this is mine with invite code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=forum-comment&utm_campaign=worldcup26_referral_72h&utm_content=reddit_forum_soft
+```
+
+- WhatsApp: https://wa.me/?text=Question%20for%20the%20thread%3A%20if%20you%20had%20to%20lock%20only%203%20teams%20before%20the%20World%20Cup%20starts%2C%20who%20would%20you%20take%3F%0A%0AI%20built%20a%20tiny%20free-pick%20tracker%20for%20this.%20If%20links%20are%20welcome%20here%2C%20this%20is%20mine%20with%20invite%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dforum-comment%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dreddit_forum_soft
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=Question%20for%20the%20thread%3A%20if%20you%20had%20to%20lock%20only%203%20teams%20before%20the%20World%20Cup%20starts%2C%20who%20would%20you%20take%3F%0A%0AI%20built%20a%20tiny%20free-pick%20tracker%20for%20this.%20If%20links%20are%20welcome%20here%2C%20this%20is%20mine%20with%20invite%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dforum-comment%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dreddit_forum_soft
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=reddit-forum-soft; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## Romanian football chat/forum
+
+Goal: Give Nano/Memo a natural Romanian-local reply for Softpedia and WhatsApp groups.
+
+```text
+Intrebare simpla: ce 3 echipe ai alege pentru World Cup 2026?
+
+Eu testez aici o varianta rapida: alegi 3 echipe gratis si vezi preview privat de puncte. Cod invitatie 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=romanian-reply&utm_campaign=worldcup26_referral_72h&utm_content=romanian_local
+```
+
+- WhatsApp: https://wa.me/?text=Intrebare%20simpla%3A%20ce%203%20echipe%20ai%20alege%20pentru%20World%20Cup%202026%3F%0A%0AEu%20testez%20aici%20o%20varianta%20rapida%3A%20alegi%203%20echipe%20gratis%20si%20vezi%20preview%20privat%20de%20puncte.%20Cod%20invitatie%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dromanian-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dromanian_local
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=Intrebare%20simpla%3A%20ce%203%20echipe%20ai%20alege%20pentru%20World%20Cup%202026%3F%0A%0AEu%20testez%20aici%20o%20varianta%20rapida%3A%20alegi%203%20echipe%20gratis%20si%20vezi%20preview%20privat%20de%20puncte.%20Cod%20invitatie%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dromanian-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dromanian_local
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=romanian-local; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## Why Google sign-in?
+
+Goal: Reduce auth fear while keeping the answer short.
+
+```text
+Google is only for one-account login, so nobody needs a password and the picks stay attached to the right player. First step is still free: accept invite, Google login, pick 3 teams.
+
+Code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=manual-reply&utm_campaign=worldcup26_referral_72h&utm_content=why_google
+```
+
+- WhatsApp: https://wa.me/?text=Google%20is%20only%20for%20one-account%20login%2C%20so%20nobody%20needs%20a%20password%20and%20the%20picks%20stay%20attached%20to%20the%20right%20player.%20First%20step%20is%20still%20free%3A%20accept%20invite%2C%20Google%20login%2C%20pick%203%20teams.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dwhy_google
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=Google%20is%20only%20for%20one-account%20login%2C%20so%20nobody%20needs%20a%20password%20and%20the%20picks%20stay%20attached%20to%20the%20right%20player.%20First%20step%20is%20still%20free%3A%20accept%20invite%2C%20Google%20login%2C%20pick%203%20teams.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dwhy_google
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=why-google; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```
+
+## Tester says they signed in
+
+Goal: Confirm the exact post-auth save/pick step that campaign metrics are missing.
+
+```text
+Perfect. After Google, did you land in the app and see the team picker? Please pick any 3 teams and tell me if the page shows your account. That is the exact step I am checking now.
+
+Invite link again:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=tester-followup&utm_campaign=worldcup26_referral_72h&utm_content=post_google_check
+```
+
+- WhatsApp: https://wa.me/?text=Perfect.%20After%20Google%2C%20did%20you%20land%20in%20the%20app%20and%20see%20the%20team%20picker%3F%20Please%20pick%20any%203%20teams%20and%20tell%20me%20if%20the%20page%20shows%20your%20account.%20That%20is%20the%20exact%20step%20I%20am%20checking%20now.%0A%0AInvite%20link%20again%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dtester-followup%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dpost_google_check
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB&text=Perfect.%20After%20Google%2C%20did%20you%20land%20in%20the%20app%20and%20see%20the%20team%20picker%3F%20Please%20pick%20any%203%20teams%20and%20tell%20me%20if%20the%20page%20shows%20your%20account.%20That%20is%20the%20exact%20step%20I%20am%20checking%20now.%0A%0AInvite%20link%20again%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreply-bank%26utm_medium%3Dtester-followup%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dpost_google_check
+
+Proof after real reply:
+
+```bash
+node campaign-proof-log.mjs --priority "9" --proof-url "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; reply=post-google-check; next follow-up <date/action>" --status "replied" --next-followup "check signup/referral activity after 15 minutes"
+```

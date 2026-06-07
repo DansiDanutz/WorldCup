@@ -1,0 +1,25 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - generic [ref=e11]:
+              - button [ref=e13]
+              - button "Collapse sidebar" [ref=e18]:
+                - img [ref=e19]
+        - list [ref=e23]:
+          - paragraph [ref=e25]: Campaigns
+          - paragraph [ref=e33]: Creatives
+          - paragraph [ref=e41]: Tools
+        - list [ref=e56]:
+          - listitem [ref=e57]:
+            - button "Report a Bug" [ref=e58] [cursor=pointer]:
+              - img [ref=e59]
+              - generic [ref=e61]: Report a Bug
+      - list [ref=e63]:
+        - listitem [ref=e64]
+      - button "Toggle Sidebar" [ref=e70]
+    - main [ref=e71]
+  - region "Notifications alt+T"
+  - alert [ref=e77]

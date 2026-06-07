@@ -1,0 +1,71 @@
+WorldCup26 zero signup rescue 2026-06-07 20:45 +0300
+state=critical-zero-signups code=26BC4B90CB
+counts accepted=0 signup_saves=0 entries=0
+urgent_external_actions=16
+
+non-negotiable diagnosis:
+- Zero signups means we need real public distribution and warm-contact sends, not more internal proof.
+- Use native short-form hooks: first 1-3 seconds must show the free action and the football challenge.
+- Every post must say free picks first. Do not lead with USDT or ticket mechanics.
+
+post_now_variants:
+#1 Sienna / YouTube Shorts / TikTok / Reels
+hook=Most World Cup predictions are boring. Pick 3 teams free and see your private score.
+caption=Pick 3 teams free. If you want the paid leaderboard later, use a ticket. Code 26BC4B90CB.
+asset=media/worldcup26-main-video-vertical.mp4
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-short&utm_medium=organic-video&utm_campaign=worldcup26_zero_signup_rescue&utm_content=hook_private_score
+proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Sienna" --platform "YouTube Shorts / TikTok / Reels" --channel "zero signup rescue" --status "posted" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-short&utm_medium=organic-video&utm_campaign=worldcup26_zero_signup_rescue&utm_content=hook_private_score" --detail "YouTube Shorts / TikTok / Reels: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video-vertical.mp4; code 26BC4B90CB; link included; observed replies/signups <N>" --next-action "watch replies/signups; follow up with anyone who asks for help"
+
+#2 Dexter / X / football feed
+hook=Name your 3 World Cup teams before the hype starts.
+caption=I picked my WorldCup26 teams. You can pick yours free and track the private points preview. Code 26BC4B90CB
+asset=media/worldcup26-referral-16x9.jpg
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-x&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=three_team_question
+proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Dexter" --platform "X / football feed" --channel "zero signup rescue" --status "posted" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-x&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=three_team_question" --detail "X / football feed: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB; link included; observed replies/signups <N>" --next-action "watch replies/signups; follow up with anyone who asks for help"
+
+#3 Nano / WhatsApp personal
+hook=Quick football game: choose 3 teams now, free.
+caption=I am testing WorldCup26. Pick 3 teams free, no payment needed to preview points. My invite code is 26BC4B90CB.
+asset=media/worldcup26-main-video.mp4
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-whatsapp&utm_medium=personal-message&utm_campaign=worldcup26_zero_signup_rescue&utm_content=warm_contact_free_pick
+proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Nano" --platform "WhatsApp personal" --channel "zero signup rescue" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-whatsapp&utm_medium=personal-message&utm_campaign=worldcup26_zero_signup_rescue&utm_content=warm_contact_free_pick" --detail "WhatsApp personal: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; observed replies/signups <N>" --next-action "watch replies/signups; follow up with anyone who asks for help"
+
+#4 Sienna / WhatsApp Status / Instagram Story
+hook=48 teams are still open. Pick your 3 before everyone copies the favorites.
+caption=Free first step: pick 3 teams and watch your preview. Code 26BC4B90CB.
+asset=media/worldcup26-referral-story.jpg
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-story&utm_medium=story&utm_campaign=worldcup26_zero_signup_rescue&utm_content=forty_eight_teams_open
+proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Sienna" --platform "WhatsApp Status / Instagram Story" --channel "zero signup rescue" --status "posted" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-story&utm_medium=story&utm_campaign=worldcup26_zero_signup_rescue&utm_content=forty_eight_teams_open" --detail "WhatsApp Status / Instagram Story: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; observed replies/signups <N>" --next-action "watch replies/signups; follow up with anyone who asks for help"
+
+#5 Dexter / Facebook profile / football groups
+hook=Who are your 3 teams for World Cup 2026?
+caption=I made my WorldCup26 invite. Pick 3 teams free, compare later, and use a ticket only if you want the paid leaderboard. Code 26BC4B90CB.
+asset=media/worldcup26-referral-square.jpg
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-facebook&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=comment_three_teams
+proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Dexter" --platform "Facebook profile / football groups" --channel "zero signup rescue" --status "requested" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-facebook&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=comment_three_teams" --detail "Facebook profile / football groups: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB; link included; observed replies/signups <N>" --next-action "watch replies/signups; follow up with anyone who asks for help"
+
+#6 Sienna / YouTube Shorts
+hook=I would not pay first. I would pick 3 teams free first.
+caption=WorldCup26 lets you save free picks first. Paid leaderboard comes later only if you want it. Code 26BC4B90CB.
+asset=media/worldcup26-main-video-vertical.mp4
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-youtube&utm_medium=shorts&utm_campaign=worldcup26_zero_signup_rescue&utm_content=free_before_paid
+proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Sienna" --platform "YouTube Shorts" --channel "zero signup rescue" --status "posted" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-youtube&utm_medium=shorts&utm_campaign=worldcup26_zero_signup_rescue&utm_content=free_before_paid" --detail "YouTube Shorts: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video-vertical.mp4; code 26BC4B90CB; link included; observed replies/signups <N>" --next-action "watch replies/signups; follow up with anyone who asks for help"
+
+#7 Nano / Telegram / Discord DM
+hook=Football prediction challenge, free first.
+caption=Pick 3 teams free on WorldCup26. If it looks fun, you can enter the paid leaderboard later. Invite code: 26BC4B90CB.
+asset=media/worldcup26-referral-square.jpg
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-dm&utm_medium=manual-outreach&utm_campaign=worldcup26_zero_signup_rescue&utm_content=try_and_send_picks
+proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Nano" --platform "Telegram / Discord DM" --channel "zero signup rescue" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-dm&utm_medium=manual-outreach&utm_campaign=worldcup26_zero_signup_rescue&utm_content=try_and_send_picks" --detail "Telegram / Discord DM: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB; link included; observed replies/signups <N>" --next-action "watch replies/signups; follow up with anyone who asks for help"
+
+#8 Dexter / X / poll
+hook=Poll: favorite, underdog, or chaos pick?
+caption=I am collecting WorldCup26 picks. Pick 3 teams free here, code 26BC4B90CB.
+asset=media/worldcup26-referral-square.jpg
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-x-poll&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=favorites_underdogs_poll
+proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Dexter" --platform "X / poll" --channel "zero signup rescue" --status "posted" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-x-poll&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=favorites_underdogs_poll" --detail "X / poll: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB; link included; observed replies/signups <N>" --next-action "watch replies/signups; follow up with anyone who asks for help"
+
+current_stale_proof_action=#warm-1 Nano / WhatsApp personal
+action=Send warm-contact invite to 10 football friends.
+
+Rule: This rescue board is for real distribution. Do not mark any variant done until it is actually posted or sent from an owned account.

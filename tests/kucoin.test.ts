@@ -7,6 +7,8 @@ import {
   findMatchingMainDeposit,
   getKucoinConfig,
   getKucoinDepositExternalId,
+  getKucoinMainDepositExternalId,
+  getKucoinMainDepositTxHash,
   getKucoinMainConfig,
   listBrokerDeposits,
   listMainAccountDeposits,
@@ -408,5 +410,26 @@ describe("KuCoin main-account deposits", () => {
     );
 
     assert.equal(match?.amount, "0.01000123");
+  });
+
+  it("uses the main-account wallet transaction id for shared-wallet claim creation", () => {
+    const walletTxId = `0x${"c".repeat(64)}`;
+    const deposit = {
+      id: "deposit-record-id",
+      walletTxId,
+      address: "0xb72b81cae7d1996114ae21b13b245e686b692ea5",
+      amount: "50.00",
+      currency: "USDT",
+      chain: "eth",
+      status: "SUCCESS",
+      createdAt: 1730470760000,
+    };
+
+    assert.equal(getKucoinMainDepositTxHash(deposit, "erc20"), walletTxId);
+    assert.equal(getKucoinMainDepositExternalId(deposit), walletTxId);
+    assert.equal(
+      getKucoinMainDepositExternalId({ ...deposit, walletTxId: null }),
+      "deposit-record-id",
+    );
   });
 });

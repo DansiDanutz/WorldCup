@@ -238,7 +238,9 @@ describe("launch sign-offs", () => {
     assert.match(adminConsole, /launchEvidenceSnapshot \? fetchLaunchEvidenceSnapshot\(\) : Promise\.resolve\(null\)/);
     assert.match(adminConsole, /tryRefreshReadinessReport/);
     assert.match(adminConsole, /Launch sign-off saved\. Production readiness and launch evidence refreshed\./);
-    assert.match(adminConsole, /Deposit claim credited\. Production readiness and launch sign-offs refreshed\./);
+    assert.match(adminConsole, /Deposit claim credited\. Ticket #\$\{autoTicket\.ticketNumber \?\? "new"\} generated automatically\./);
+    assert.match(adminConsole, /Deposit claim credited\. Balance updated; no automatic ticket was needed\./);
+    assert.match(adminConsole, /\$\{creditMessage\} Production readiness and launch sign-offs refreshed\./);
     assert.match(adminConsole, /Withdrawal marked as paid\. Production readiness and launch sign-offs refreshed\./);
     assert.match(adminConsole, /Real USDT deposit launch evidence/);
     assert.match(adminConsole, /server-side KuCoin\s+receive-wallet match/);

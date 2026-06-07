@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-06-07T17:46:16.977Z",
+  "generatedAtEest": "2026-06-07 20:46 +0300",
+  "referralCode": "26BC4B90CB",
+  "ok": true,
+  "checks": [
+    {
+      "name": "base",
+      "url": "https://worldcup26.world/login?ref=26BC4B90CB",
+      "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB",
+      "status": 200,
+      "ok": true,
+      "failures": [],
+      "referralResolver": {
+        "ok": true,
+        "status": 200,
+        "valid": true,
+        "inviterName": "David Ai",
+        "referralPercent": 5,
+        "failures": []
+      },
+      "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+      "bytes": 44975,
+      "elapsedMs": 1086
+    },
+    {
+      "name": "meta-paid",
+      "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+      "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+      "status": 200,
+      "ok": true,
+      "failures": [],
+      "referralResolver": {
+        "ok": true,
+        "status": 200,
+        "valid": true,
+        "inviterName": "David Ai",
+        "referralPercent": 5,
+        "failures": []
+      },
+      "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+      "bytes": 45281,
+      "elapsedMs": 903
+    },
+    {
+      "name": "x-paid",
+      "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+      "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+      "status": 200,
+      "ok": true,
+      "failures": [],
+      "referralResolver": {
+        "ok": true,
+        "status": 200,
+        "valid": true,
+        "inviterName": "David Ai",
+        "referralPercent": 5,
+        "failures": []
+      },
+      "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+      "bytes": 45272,
+      "elapsedMs": 821
+    },
+    {
+      "name": "story",
+      "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h",
+      "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h",
+      "status": 200,
+      "ok": true,
+      "failures": [],
+      "referralResolver": {
+        "ok": true,
+        "status": 200,
+        "valid": true,
+        "inviterName": "David Ai",
+        "referralPercent": 5,
+        "failures": []
+      },
+      "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+      "bytes": 45341,
+      "elapsedMs": 833
+    }
+  ]
+}

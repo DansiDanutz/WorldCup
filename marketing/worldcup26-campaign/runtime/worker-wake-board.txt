@@ -1,0 +1,25 @@
+WorldCup26 worker wake board 2026-06-07 20:45 +0300
+ok=yes state=critical latest_external=3.5h urgent=16
+first_human=needs-first-human-action warm_attempts=0 signup_saves=0 referral_views=171 ad_clicks=227
+first_human_action=Memo/WhatsApp testers/clean-signup-test-batch
+first_human_whatsapp=https://wa.me/?text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test
+open=runtime/posting-cockpit.html
+
+Dexter: wake-now assigned=3 next=#warm-4 WhatsApp admins
+  action=Send warm-contact invite to football group admins.
+  quick_log=node campaign-warm-send-log.mjs --priority warm-4 --count <N> --account "<account>" --replies 0
+  intake=node campaign-public-channel-attempts.mjs --add --owner 'Dexter' --platform 'WhatsApp admins' --channel "warm-contact sprint" --status 'requested' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission' --detail 'WhatsApp admins: requested to <N> football group admins from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action "watch replies/signups; help anyone who asks; run referral activity after 15 minutes"
+Sienna: wake-now assigned=8 next=#warm-3 WhatsApp personal
+  action=Send warm-contact invite to 10 close contacts.
+  quick_log=node campaign-warm-send-log.mjs --priority warm-3 --count <N> --account "<account>" --replies 0
+  intake=node campaign-public-channel-attempts.mjs --add --owner 'Sienna' --platform 'WhatsApp personal' --channel "warm-contact sprint" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch' --detail 'WhatsApp personal: sent to <N> 10 close contacts from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action "watch replies/signups; help anyone who asks; run referral activity after 15 minutes"
+Memo: wake-now assigned=0 next=#warm-5 WhatsApp testers
+  action=Send warm-contact invite to 3 trusted testers.
+  quick_log=node campaign-warm-send-log.mjs --priority warm-5 --count <N> --account "<account>" --replies 0
+  intake=node campaign-public-channel-attempts.mjs --add --owner 'Memo' --platform 'WhatsApp testers' --channel "warm-contact sprint" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup' --detail 'WhatsApp testers: sent to <N> 3 trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asset runtime/signup-conversion-audit.html; code 26BC4B90CB; link included; replies/signups <N>' --next-action "watch replies/signups; help anyone who asks; run referral activity after 15 minutes"
+Nano: wake-now assigned=5 next=#warm-1 WhatsApp personal
+  action=Send warm-contact invite to 10 football friends.
+  quick_log=node campaign-warm-send-log.mjs --priority warm-1 --count <N> --account "<account>" --replies 0
+  intake=node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel "warm-contact sprint" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action "watch replies/signups; help anyone who asks; run referral activity after 15 minutes"
+
+Rule: Wake the worker, do the real action, then log proof with proof intake. Do not claim proof from this board alone.

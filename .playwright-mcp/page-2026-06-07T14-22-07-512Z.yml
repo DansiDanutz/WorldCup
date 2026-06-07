@@ -1,0 +1,227 @@
+- generic [ref=e4]:
+  - generic [ref=e9]:
+    - generic [ref=e12]:
+      - link "Instagram" [ref=e17] [cursor=pointer]:
+        - /url: /
+        - img "Instagram" [ref=e22]
+      - generic [ref=e25]:
+        - link "Home" [ref=e30] [cursor=pointer]:
+          - /url: /
+          - img "Home" [ref=e35]
+        - link "Reels" [ref=e40] [cursor=pointer]:
+          - /url: /reels/
+          - img "Reels" [ref=e45]
+        - link "Messages" [ref=e52] [cursor=pointer]:
+          - /url: /direct/inbox/
+          - img "Messages" [ref=e57]
+        - link "Search" [ref=e63] [cursor=pointer]:
+          - /url: /explore/
+          - img "Search" [ref=e68]
+        - link "Notifications" [ref=e75] [cursor=pointer]:
+          - /url: "#"
+          - img "Notifications" [ref=e80]
+        - link "New post" [ref=e88] [cursor=pointer]:
+          - /url: "#"
+          - img "New post" [ref=e93]
+        - link "Professional dashboard" [ref=e98] [cursor=pointer]:
+          - /url: "#"
+          - img "Professional dashboard" [ref=e103]
+        - link "seme1981's profile picture" [ref=e110] [cursor=pointer]:
+          - /url: /seme1981/
+          - link "seme1981's profile picture" [ref=e116]:
+            - img "seme1981's profile picture" [ref=e117]
+      - generic [ref=e118]:
+        - link "Settings" [ref=e121] [cursor=pointer]:
+          - /url: "#"
+          - img "Settings" [ref=e126]
+        - link "Also from Meta" [ref=e129] [cursor=pointer]:
+          - /url: "#"
+          - img "Also from Meta" [ref=e134]
+    - generic [ref=e137]:
+      - main [ref=e138]:
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - generic [ref=e146]:
+                - button "Note..." [ref=e147] [cursor=pointer]:
+                  - generic [ref=e153]: Note...
+                - button "Change profile photo" [ref=e159] [cursor=pointer]:
+                  - img "Change profile photo" [ref=e160]
+              - generic [ref=e161]:
+                - generic [ref=e162]:
+                  - generic [ref=e163]:
+                    - generic [ref=e164]:
+                      - link "seme1981" [ref=e165] [cursor=pointer]:
+                        - /url: "#"
+                        - heading "seme1981" [level=2] [ref=e166]:
+                          - generic [ref=e167]: seme1981
+                      - img "Verified" [ref=e169]
+                    - button "Options" [ref=e171] [cursor=pointer]:
+                      - img "Options" [ref=e173]
+                  - generic [ref=e177]: Dan Semenescu
+                  - generic [ref=e178]:
+                    - generic [ref=e180]:
+                      - generic [ref=e181]: "87"
+                      - text: posts
+                    - link "266 followers" [ref=e183] [cursor=pointer]:
+                      - /url: "#"
+                      - generic [ref=e184]:
+                        - generic "266" [ref=e185]
+                        - text: followers
+                    - link "175 following" [ref=e187] [cursor=pointer]:
+                      - /url: "#"
+                      - generic [ref=e188]:
+                        - generic [ref=e189]: "175"
+                        - text: following
+                - generic [ref=e191]:
+                  - button "Player's Poker Club & KryptoStack WorldCup26 invite 26BC4B90CB worldcup26.world/login?ref=26BC4B90CB" [ref=e193] [cursor=pointer]:
+                    - generic [ref=e194]:
+                      - text: Player's Poker Club & KryptoStack
+                      - text: WorldCup26 invite 26BC4B90CB
+                      - text: worldcup26.world/login?ref=26BC4B90CB
+                  - heading [level=1]
+            - generic [ref=e199]:
+              - link "Edit profile" [ref=e201] [cursor=pointer]:
+                - /url: /accounts/edit/
+              - link "View archive" [ref=e203] [cursor=pointer]:
+                - /url: /archive/stories/
+            - menu [ref=e205]:
+              - list [ref=e209]:
+                - listitem [ref=e210]
+                - listitem [ref=e211]
+                - listitem [ref=e212]:
+                  - button "Plus icon New" [ref=e215] [cursor=pointer]:
+                    - img "Plus icon" [ref=e219]
+                    - generic [ref=e223]: New
+          - generic [ref=e224]:
+            - tablist [ref=e225]:
+              - link "Posts" [ref=e227] [cursor=pointer]:
+                - /url: /seme1981/
+                - img "Posts" [ref=e229]
+              - link "Reels" [ref=e240] [cursor=pointer]:
+                - /url: /seme1981/reels/
+                - img "Reels" [ref=e242]
+              - link "Saved" [ref=e245] [cursor=pointer]:
+                - /url: /seme1981/saved/
+                - img "Saved" [ref=e247]
+              - link "Reposts" [ref=e250] [cursor=pointer]:
+                - /url: /seme1981/reposts/
+                - img "Reposts" [ref=e252]
+              - link "Tagged" [ref=e255] [cursor=pointer]:
+                - /url: /seme1981/tagged/
+                - img "Tagged" [ref=e257]
+            - tabpanel
+          - progressbar [ref=e261]:
+            - img "Loading..." [ref=e262]
+      - contentinfo [ref=e275]:
+        - generic [ref=e276]:
+          - generic [ref=e278]:
+            - link "Meta" [ref=e280] [cursor=pointer]:
+              - /url: https://about.meta.com/
+              - generic [ref=e281]: Meta
+            - link "About" [ref=e283] [cursor=pointer]:
+              - /url: https://about.instagram.com/
+              - generic [ref=e284]: About
+            - link "Blog" [ref=e286] [cursor=pointer]:
+              - /url: https://about.instagram.com/blog/
+              - generic [ref=e287]: Blog
+            - link "Jobs" [ref=e289] [cursor=pointer]:
+              - /url: https://about.instagram.com/about-us/careers
+              - generic [ref=e290]: Jobs
+            - link "Help" [ref=e292] [cursor=pointer]:
+              - /url: https://help.instagram.com/
+              - generic [ref=e293]: Help
+            - link "API" [ref=e295] [cursor=pointer]:
+              - /url: https://developers.facebook.com/docs/instagram
+              - generic [ref=e296]: API
+            - link "Privacy" [ref=e298] [cursor=pointer]:
+              - /url: /legal/privacy/
+              - generic [ref=e299]: Privacy
+            - link "Terms" [ref=e301] [cursor=pointer]:
+              - /url: /legal/terms/
+              - generic [ref=e302]: Terms
+            - link "Locations" [ref=e304] [cursor=pointer]:
+              - /url: /explore/locations/
+              - generic [ref=e305]: Locations
+            - link "Popular" [ref=e307] [cursor=pointer]:
+              - /url: /popular/
+              - generic [ref=e308]: Popular
+            - link "Instagram Lite" [ref=e310] [cursor=pointer]:
+              - /url: /web/lite/
+              - generic [ref=e311]: Instagram Lite
+            - link "Meta AI" [ref=e313] [cursor=pointer]:
+              - /url: https://www.meta.ai/?utm_source=foa_web_footer
+              - generic [ref=e314]: Meta AI
+            - link "Threads" [ref=e316] [cursor=pointer]:
+              - /url: https://www.threads.com/
+              - generic [ref=e317]: Threads
+            - link "Contact Uploading & Non-Users" [ref=e319] [cursor=pointer]:
+              - /url: https://www.facebook.com/help/instagram/261704639352628
+              - generic [ref=e320]: Contact Uploading & Non-Users
+            - link "Meta Verified" [ref=e322] [cursor=pointer]:
+              - /url: /accounts/meta_verified/?entrypoint=web_footer
+              - generic [ref=e323]: Meta Verified
+          - generic [ref=e324]:
+            - generic [ref=e325] [cursor=pointer]:
+              - generic [ref=e326]:
+                - generic [ref=e327]: English
+                - img "Down chevron icon" [ref=e330]
+              - combobox "Switch Display Language" [ref=e332]:
+                - option "Afrikaans"
+                - option "العربية"
+                - option "Čeština"
+                - option "Dansk"
+                - option "Deutsch"
+                - option "Ελληνικά"
+                - option "English" [selected]
+                - option "English (UK)"
+                - option "Español (España)"
+                - option "Español"
+                - option "فارسی"
+                - option "Suomi"
+                - option "Français"
+                - option "עברית"
+                - option "Bahasa Indonesia"
+                - option "Italiano"
+                - option "日本語"
+                - option "한국어"
+                - option "Bahasa Melayu"
+                - option "Norsk"
+                - option "Nederlands"
+                - option "Polski"
+                - option "Português (Brasil)"
+                - option "Português (Portugal)"
+                - option "Русский"
+                - option "Svenska"
+                - option "ภาษาไทย"
+                - option "Filipino"
+                - option "Türkçe"
+                - option "中文(简体)"
+                - option "中文(台灣)"
+                - option "বাংলা"
+                - option "ગુજરાતી"
+                - option "हिन्दी"
+                - option "Hrvatski"
+                - option "Magyar"
+                - option "ಕನ್ನಡ"
+                - option "മലയാളം"
+                - option "मराठी"
+                - option "नेपाली"
+                - option "ਪੰਜਾਬੀ"
+                - option "සිංහල"
+                - option "Slovenčina"
+                - option "தமிழ்"
+                - option "తెలుగు"
+                - option "اردو"
+                - option "Tiếng Việt"
+                - option "中文(香港)"
+                - option "Български"
+                - option "Français (Canada)"
+                - option "Română"
+                - option "Српски"
+                - option "Українська"
+            - generic [ref=e334]: © 2026 Instagram from Meta
+  - button "Messages Messages" [ref=e336] [cursor=pointer]:
+    - generic [ref=e338]:
+      - img "Messages" [ref=e340]
+      - generic [ref=e343]: Messages

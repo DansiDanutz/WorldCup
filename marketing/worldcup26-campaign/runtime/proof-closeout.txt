@@ -1,0 +1,37 @@
+WorldCup26 proof closeout 2026-06-07 20:45 +0300
+ok=yes state=critical latest_external=3.5h rows=6
+code=26BC4B90CB
+link=https://worldcup26.world/login?ref=26BC4B90CB
+rule=Run one of these commands only after the matching real post, story, message batch, upload, reply, or approval request exists. Edit account/audience if the suggested value is not true.
+
+ready_commands:
+- #1 Sienna / WhatsApp Status status=posted
+  action=Post story asset with video caption 1
+  account=personal phone
+  audience=WhatsApp contacts
+  command=node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:45 +0300' --status posted
+- #2 Nano / WhatsApp personal status=sent
+  action=Send personal invite to warm contacts
+  account=personal phone
+  audience=warm contacts
+  command=node campaign-proof-intake.mjs --priority 2 --account 'personal phone' --audience 'warm contacts' --happened-at '2026-06-07 20:45 +0300' --status sent
+- #3 Sienna / Instagram/Facebook story status=posted
+  action=Story: Code 26BC4B90CB + link sticker
+  account=Meta account
+  audience=story followers
+  command=node campaign-proof-intake.mjs --priority 3 --account 'Meta account' --audience 'story followers' --happened-at '2026-06-07 20:45 +0300' --status posted
+- #4 Dexter / Football groups status=requested
+  action=Ask approved group admin for permission; post group variant only if allowed
+  account=posting account
+  audience=football group admin or approved group
+  command=node campaign-proof-intake.mjs --priority 4 --account 'posting account' --audience 'football group admin or approved group' --happened-at '2026-06-07 20:45 +0300' --status requested
+- #5 Sienna / TikTok/Reels/Shorts status=uploaded
+  action=Upload main video with short caption and code in first line
+  account=TikTok account
+  audience=public TikTok viewers
+  command=node campaign-proof-intake.mjs --priority 5 --account 'TikTok account' --audience 'public TikTok viewers' --happened-at '2026-06-07 20:45 +0300' --status uploaded
+- #6 Nano / DM follow-up status=replied
+  action=Reply to first reactions and send the simple how-it-works answer
+  account=posting account
+  audience=reply thread or contact initials
+  command=node campaign-proof-intake.mjs --priority 6 --account 'posting account' --audience 'reply thread or contact initials' --happened-at '2026-06-07 20:45 +0300' --status replied

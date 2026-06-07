@@ -2,10 +2,12 @@
 
 import {
   Activity,
+  BarChart3,
   CircleDollarSign,
   ClipboardCheck,
   Copy,
   Download,
+  Eye,
   FileJson,
   GitBranch,
   Lock,
@@ -13,6 +15,8 @@ import {
   ShieldCheck,
   Trophy,
   Upload,
+  UserCheck,
+  Users,
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
@@ -43,6 +47,7 @@ import type {
   AdminAccountRow,
   AdminAgeVerificationRow,
   AdminDepositClaimRow,
+  AdminMetrics,
   AdminReferralReportRow,
   AdminWithdrawalRequestRow,
   DueMatch,
@@ -409,6 +414,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [ticketPriceAmount, setTicketPriceAmount] = useState(
     normalizeWorldCupTicketPriceAmount(tournament.ticket_price_amount),
   );
+  const [adminMetrics, setAdminMetrics] = useState<AdminMetrics | null>(null);
   const [accounts, setAccounts] = useState<AdminAccountRow[]>([]);
   const [ticketUserId, setTicketUserId] = useState("");
   const [ticketQuantity, setTicketQuantity] = useState("1");
@@ -502,12 +508,46 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   }, [agentPool.admin, assignAgentQty, selectedAgent, ticketPriceNumber]);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => setSession(data.session));
+    supabase.auth
+      .getSession()
+      .then(({ data }) => setSession(data.session))
+      .catch(() => setSession(null));
     const { data } = supabase.auth.onAuthStateChange((_event, next) => setSession(next));
     return () => data.subscription.unsubscribe();
   }, [supabase]);
 
+  useEffect(() => {
+    if (!session?.access_token) return;
+
+    let cancelled = false;
+    fetch("/api/admin/metrics", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${session.access_token}`,
+      },
+    })
+      .then(async (response) => {
+        const result = (await response.json()) as AdminMetrics;
+        if (!response.ok) {
+          throw new Error("Could not load admin metrics.");
+        }
+        return result;
+      })
+      .then((result) => {
+        if (!cancelled) {
+          setAdminMetrics(result);
+        }
+      })
+      .catch(() => undefined);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [session?.access_token]);
+
   const signedIn = Boolean(session?.user);
+  const topTrafficSource = adminMetrics?.appViews.topSources[0] ?? null;
   const operatorPolicyMissing = getOperatorPolicyDraftMissing(operatorPolicyDraft);
   const operatorPolicyActionGates = getOperatorPolicyDraftActionGates(operatorPolicyDraft);
   const operatorPolicyLaunchChecklist = getOperatorPolicyLaunchChecklist(operatorPolicyDraft);
@@ -644,6 +684,22 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         setMessage(`Accounts loaded. Rows: ${(result.accounts as AdminAccountRow[])?.length ?? 0}.`);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not load accounts.");
+      }
+    });
+  }
+
+  function loadAdminMetrics() {
+    run(async () => {
+      try {
+        const response = await fetch("/api/admin/metrics", {
+          method: "GET",
+          headers: authHeaders(),
+        });
+        const result = (await readResult(response)) as AdminMetrics;
+        setAdminMetrics(result);
+        setMessage("Admin metrics loaded.");
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Could not load admin metrics.");
       }
     });
   }
@@ -1094,16 +1150,22 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               action === "credit" ? draft?.requireKucoinMatch === true : undefined,
           }),
         });
-        await readResult(response);
-        setMessage(action === "credit" ? "Deposit claim credited." : "Deposit claim rejected.");
+        const result = await readResult(response);
+        const autoTicket = result.autoTicket as
+          | { assigned?: boolean; ticketNumber?: number | null; reason?: string | null }
+          | undefined;
+        const creditMessage = autoTicket?.assigned
+          ? `Deposit claim credited. Ticket #${autoTicket.ticketNumber ?? "new"} generated automatically.`
+          : "Deposit claim credited. Balance updated; no automatic ticket was needed.";
+        setMessage(action === "credit" ? creditMessage : "Deposit claim rejected.");
         await reloadDepositClaims();
         await reloadAccounts();
         if (action === "credit") {
           const refreshed = await tryRefreshLaunchEvidenceState();
           setMessage(
             refreshed
-              ? "Deposit claim credited. Production readiness and launch sign-offs refreshed."
-              : "Deposit claim credited. Reload Production readiness and Launch sign-offs to update evidence.",
+              ? `${creditMessage} Production readiness and launch sign-offs refreshed.`
+              : `${creditMessage} Reload Production readiness and Launch sign-offs to update evidence.`,
           );
         }
       } catch (err) {
@@ -1556,6 +1618,18 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             <div className="stat-value">{dueMatches.length}</div>
           </div>
           <div className="stat">
+            <div className="stat-label">Free accounts</div>
+            <div className="stat-value">{adminMetrics ? adminMetrics.freeAccounts : "-"}</div>
+          </div>
+          <div className="stat">
+            <div className="stat-label">Paid accounts</div>
+            <div className="stat-value">{adminMetrics ? adminMetrics.paidAccounts : "-"}</div>
+          </div>
+          <div className="stat">
+            <div className="stat-label">App views</div>
+            <div className="stat-value">{adminMetrics ? adminMetrics.appViews.total : "-"}</div>
+          </div>
+          <div className="stat">
             <div className="stat-label">Accounts loaded</div>
             <div className="stat-value">{accounts.length}</div>
           </div>
@@ -1563,6 +1637,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
 
         <nav className="admin-section-nav" aria-label="Jump to admin section">
           <a href="#admin-readiness-panel">Access</a>
+          <a href="#admin-analytics-panel">Analytics</a>
           <a href="#admin-production-readiness-panel">Readiness</a>
           <a href="#admin-operator-policy-panel">Policy</a>
           <a href="#admin-launch-signoffs-panel">Sign-offs</a>
@@ -1632,6 +1707,125 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               {message ? <div className="message">{message}</div> : null}
               {error ? <div className="message error">{error}</div> : null}
             </form>
+          </div>
+
+          <div className="panel" id="admin-analytics-panel">
+            <div className="panel-header">
+              <div>
+                <h2 className="panel-title">App analytics</h2>
+                <p className="panel-subtitle">
+                  Signups, free-to-paid conversion, and raw app views from the live funnel.
+                </p>
+              </div>
+              <div className="panel-header-actions">
+                <button className="button secondary" disabled={isPending} onClick={loadAdminMetrics} type="button">
+                  <BarChart3 size={16} />
+                  Load Metrics
+                </button>
+              </div>
+            </div>
+            <div className="admin-form">
+              <div className="admin-metric-grid" aria-label="Admin account and app view metrics">
+                <div className="admin-metric-card admin-metric-card--free">
+                  <span>
+                    <Users size={16} />
+                    Free accounts
+                  </span>
+                  <strong>{adminMetrics ? adminMetrics.freeAccounts : "-"}</strong>
+                  <small>Signed up, no assigned ticket yet</small>
+                </div>
+                <div className="admin-metric-card admin-metric-card--paid">
+                  <span>
+                    <UserCheck size={16} />
+                    Paid accounts
+                  </span>
+                  <strong>{adminMetrics ? adminMetrics.paidAccounts : "-"}</strong>
+                  <small>At least 1 ticket assigned</small>
+                </div>
+                <div className="admin-metric-card admin-metric-card--views">
+                  <span>
+                    <Eye size={16} />
+                    App views
+                  </span>
+                  <strong>{adminMetrics ? adminMetrics.appViews.total : "-"}</strong>
+                  <small>
+                    {adminMetrics?.appViews.trackingReady
+                      ? `${adminMetrics.appViews.today} today · ${adminMetrics.appViews.last24Hours} in 24h`
+                      : adminMetrics
+                        ? "Tracking starts after the migration is applied"
+                      : "Tracked after this update"}
+                  </small>
+                </div>
+              </div>
+              <div className="admin-referral-list">
+                <div className="admin-referral-row">
+                  <div>
+                    <strong>Total signup accounts</strong>
+                    <span>Every created referral profile from Google signup.</span>
+                  </div>
+                  <div>
+                    <strong>{adminMetrics ? adminMetrics.accountsTotal : "-"}</strong>
+                    <span>accounts</span>
+                  </div>
+                </div>
+                <div className="admin-referral-row">
+                  <div>
+                    <strong>Locked paid entries</strong>
+                    <span>Players who used a ticket and entered the paid leaderboard.</span>
+                  </div>
+                  <div>
+                    <strong>{adminMetrics ? adminMetrics.lockedPaidEntries : "-"}</strong>
+                    <span>{adminMetrics ? `${adminMetrics.draftEntries} free drafts` : "free drafts pending"}</span>
+                  </div>
+                </div>
+                <div className="admin-referral-row">
+                  <div>
+                    <strong>Tickets assigned</strong>
+                    <span>Admin-issued tickets; available tickets have not been used for a lock yet.</span>
+                  </div>
+                  <div>
+                    <strong>{adminMetrics ? adminMetrics.ticketsAssigned : "-"}</strong>
+                    <span>{adminMetrics ? `${adminMetrics.ticketsAvailable} available` : "available pending"}</span>
+                  </div>
+                </div>
+                <div className="admin-referral-row">
+                  <div>
+                    <strong>Last app view</strong>
+                    <span>Latest tracked visit recorded by the app.</span>
+                  </div>
+                  <div>
+                    <strong>
+                      {adminMetrics?.appViews.lastViewedAt
+                        ? new Date(adminMetrics.appViews.lastViewedAt).toLocaleString()
+                        : "-"}
+                    </strong>
+                    <span>
+                      {adminMetrics?.appViews.trackingReady
+                        ? `Updated ${new Date(adminMetrics.generatedAt).toLocaleString()}`
+                        : adminMetrics
+                          ? "Tracking storage pending"
+                          : "Load metrics"}
+                    </span>
+                  </div>
+                </div>
+                <div className="admin-referral-row">
+                  <div>
+                    <strong>Top traffic source</strong>
+                    <span>Best UTM source in the last 24 hours.</span>
+                  </div>
+                  <div>
+                    <strong>{topTrafficSource ? topTrafficSource.source : "-"}</strong>
+                    <span>
+                      {topTrafficSource
+                        ? `${topTrafficSource.count} views · ${topTrafficSource.medium ?? "manual"}`
+                        : adminMetrics?.appViews.trackingReady
+                          ? "No tagged campaign views yet"
+                          : "Load metrics"}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="panel" id="admin-production-readiness-panel">

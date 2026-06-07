@@ -1,6 +1,10 @@
 .git/
 .next/
+.next*/
 .omx/
+.playwright-mcp/
+marketing/
+supabase/
 .vercel/
 node_modules/
 .env

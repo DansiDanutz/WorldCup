@@ -1,0 +1,6 @@
+[    1630ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[    1633ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[    1791ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://ads-api.x.com/12/measurement/dcm_local_id:0
+[    1856ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/intent/post?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20free%20before%20they%20lock%20and%20track%20your%20private%20points%20preview.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%0A%0AAll%2048%20teams%20are%20still%20available.:0

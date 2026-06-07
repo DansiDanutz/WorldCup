@@ -1,0 +1,54 @@
+- generic [active] [ref=e1]:
+  - status "WorldCup26 loading":
+    - generic:
+      - generic: +
+      - generic: +
+      - generic: +
+      - generic: +
+    - generic:
+      - generic:
+        - strong: WorldCup26.world
+        - generic: Prediction Game
+  - main [ref=e2]:
+    - region "Register" [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - text: Register first
+          - heading "Create your account" [level=1] [ref=e6]
+          - paragraph [ref=e7]: Have an inviter code? Add it below. Otherwise, just continue with Google.
+        - img [ref=e8]
+      - generic [ref=e11]:
+        - generic "Launch status" [ref=e12]:
+          - generic [ref=e13]:
+            - strong [ref=e14]: Account setup is open until June 18, 2026
+            - generic [ref=e15]: Create the free account first. Tickets and payment can be handled later.
+            - generic [ref=e16]: All 48 teams are still available to choose because the event has not started yet.
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - generic [ref=e19]: Inviter code
+            - generic "Applied inviter code" [ref=e20]:
+              - generic [ref=e21]: Code applied
+              - code [ref=e22]: 26BC4B90CB
+            - generic [ref=e23]: Checking referral code...
+          - generic [ref=e24]:
+            - generic [ref=e25]:
+              - strong [ref=e26]: Referral agreement
+              - text: If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.
+            - button "Checking" [disabled] [ref=e27]
+        - generic [ref=e28]: Enter a valid inviter code to continue.
+        - button "Continue with Google" [disabled] [ref=e29]:
+          - img [ref=e30]
+          - text: Continue with Google
+        - link "Need help?" [ref=e33] [cursor=pointer]:
+          - /url: https://wa.me/40750257337
+          - img [ref=e34]
+          - text: Need help?
+    - region "Predict the Game WorldCup26" [ref=e36]:
+      - link "WorldCup" [ref=e37] [cursor=pointer]:
+        - /url: /
+        - img "WorldCup" [ref=e38]
+      - group "Predict the Game WorldCup26" [ref=e39]:
+        - generic "FIFA World Cup 2026" [ref=e40] [cursor=pointer]:
+          - generic [ref=e41]: FIFA World Cup 2026
+          - img [ref=e42]
+  - alert [ref=e44]

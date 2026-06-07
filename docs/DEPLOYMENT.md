@@ -173,7 +173,13 @@ Google login must be enabled in the Supabase **Games** project before users or a
 2. Add this authorized redirect URI:
 
 ```text
-https://lxhjfdxowpxzrybxdasi.supabase.co/auth/v1/callback
+https://your-project-ref.supabase.co/auth/v1/callback
+```
+
+If Supabase Custom Domains are active, also add the branded callback URL:
+
+```text
+https://api.worldcup26.world/auth/v1/callback
 ```
 
 3. Enable Google in Supabase with one of these paths:

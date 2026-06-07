@@ -1,0 +1,46 @@
+- generic [active] [ref=e1]:
+  - status "WorldCup26 loading":
+    - generic:
+      - generic: +
+      - generic: +
+      - generic: +
+      - generic: +
+    - generic:
+      - generic:
+        - strong: WorldCup26.world
+        - generic: Prediction Game
+  - main [ref=e2]:
+    - region "Register" [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - text: Account ready
+          - heading "Google account connected" [level=1] [ref=e6]
+          - paragraph [ref=e7]: Continue to the game, or sign out if this is not the account you want.
+        - img [ref=e8]
+      - generic [ref=e11]:
+        - generic "Launch status" [ref=e12]:
+          - generic [ref=e13]:
+            - strong [ref=e14]: Account setup is open until June 18, 2026
+            - generic [ref=e15]: Create the free account first. Tickets and payment can be handled later.
+            - generic [ref=e16]: All 48 teams are still available to choose because the event has not started yet.
+        - generic [ref=e17]:
+          - img [ref=e19]
+          - generic [ref=e21]:
+            - strong [ref=e22]: Google account connected
+            - paragraph [ref=e23]: seme@kryptostack.com
+          - button "Sign out" [ref=e24] [cursor=pointer]
+        - link "Continue to game" [ref=e25] [cursor=pointer]:
+          - /url: /
+        - link "Need help?" [ref=e26] [cursor=pointer]:
+          - /url: https://wa.me/40750257337
+          - img [ref=e27]
+          - text: Need help?
+    - region "Predict the Game WorldCup26" [ref=e29]:
+      - link "WorldCup" [ref=e30] [cursor=pointer]:
+        - /url: /
+        - img "WorldCup" [ref=e31]
+      - group "Predict the Game WorldCup26" [ref=e32]:
+        - generic "FIFA World Cup 2026" [ref=e33] [cursor=pointer]:
+          - generic [ref=e34]: FIFA World Cup 2026
+          - img [ref=e35]
+  - alert [ref=e37]

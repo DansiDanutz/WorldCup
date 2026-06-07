@@ -1,0 +1,1251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Phone Action Center</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #03140f;
+      --panel: #0a2b21;
+      --panel-2: #11372b;
+      --line: rgba(255, 255, 255, 0.14);
+      --text: #f7fff9;
+      --muted: #b7cbc3;
+      --gold: #ffd974;
+      --mint: #74f0b2;
+      --green: #0b7a59;
+      --danger: #ff9f9f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(116, 240, 178, 0.16), transparent 26rem),
+        radial-gradient(circle at 90% 5%, rgba(255, 217, 116, 0.16), transparent 24rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { width: min(980px, 100%); margin: 0 auto; padding: 14px 10px 48px; }
+    header, section, article {
+      border: 1px solid var(--line);
+      background: rgba(10, 43, 33, 0.9);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 10px;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(30px, 9vw, 56px); line-height: 0.92; letter-spacing: 0; }
+    h2 { font-size: 20px; margin-bottom: 10px; }
+    h3 { font-size: 18px; }
+    .sub { color: var(--muted); margin-top: 8px; line-height: 1.35; }
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+    .metric { background: rgba(255, 255, 255, 0.07); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+    .metric span { display: block; color: var(--muted); font-size: 11px; font-weight: 850; text-transform: uppercase; }
+    .metric strong { display: block; margin-top: 4px; color: var(--gold); font-size: 20px; overflow-wrap: anywhere; }
+    .order { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+    .order li { display: grid; grid-template-columns: 34px 72px 1fr; align-items: center; gap: 8px; padding: 9px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255, 255, 255, 0.055); }
+    .order span { display: grid; place-items: center; width: 28px; height: 28px; color: #052119; background: var(--gold); border-radius: 8px; font-weight: 950; }
+    .order strong { color: var(--text); }
+    .order em { color: var(--muted); font-style: normal; font-size: 13px; }
+    article { background: rgba(17, 55, 43, 0.86); }
+    .row-meta { display: grid; gap: 5px; color: var(--muted); font-size: 13px; margin-top: 8px; }
+    .copy {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      margin-top: 10px;
+      border: 1px solid var(--line);
+      background: #03140f;
+      border-radius: 10px;
+      padding: 11px;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+    .asset-block, .qr-block {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+      border: 1px solid var(--line);
+      background: rgba(3, 20, 15, 0.74);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .asset-block img, .asset-block video {
+      width: 100%;
+      max-height: 260px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #03140f;
+      object-fit: cover;
+    }
+    .asset-block a, .qr-block a {
+      color: var(--gold);
+      font-weight: 850;
+      overflow-wrap: anywhere;
+      text-decoration: none;
+    }
+    .qr-block img {
+      width: min(172px, 100%);
+      border: 7px solid #fff;
+      border-radius: 10px;
+      background: #fff;
+    }
+    .buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+    button, a.button {
+      min-height: 44px;
+      border-radius: 10px;
+      border: 1px solid rgba(116, 240, 178, 0.38);
+      background: rgba(116, 240, 178, 0.13);
+      color: var(--text);
+      padding: 10px;
+      font: inherit;
+      font-weight: 850;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .primary { background: var(--green); border-color: var(--green); }
+    .gold { color: #03140f; background: var(--gold); border-color: var(--gold); }
+    .warn { color: var(--danger); font-weight: 850; }
+    .zero-alert {
+      border-color: rgba(255, 217, 116, 0.52);
+      background:
+        linear-gradient(135deg, rgba(255, 217, 116, 0.18), rgba(116, 240, 178, 0.1)),
+        rgba(10, 43, 33, 0.96);
+    }
+    .zero-alert strong { color: var(--gold); }
+    .zero-alert p { margin-top: 7px; color: var(--text); line-height: 1.4; }
+    .proof-form { display: grid; gap: 9px; }
+    .proof-grid { display: grid; grid-template-columns: 1fr; gap: 9px; }
+    label { display: grid; gap: 5px; color: var(--muted); font-size: 12px; font-weight: 900; text-transform: uppercase; }
+    select, input, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(3, 20, 15, 0.9);
+      color: var(--text);
+      font: inherit;
+      font-size: 14px;
+      padding: 11px;
+    }
+    textarea { min-height: 92px; resize: vertical; line-height: 1.35; }
+    textarea.command-output {
+      min-height: 118px;
+      color: var(--gold);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+    }
+    .proof-template {
+      border: 1px solid rgba(255, 217, 116, 0.32);
+      background: rgba(255, 217, 116, 0.08);
+      border-radius: 10px;
+      padding: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+    @media (min-width: 760px) {
+      .worker-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .metrics { grid-template-columns: repeat(4, 1fr); }
+      .proof-grid { grid-template-columns: 1fr 130px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>WorldCup26 Phone Action Center</h1>
+      <p class="sub">Generated 2026-06-07 20:45 +0300. Post only from owned accounts or approved communities. Log proof only after the real action happened.</p>
+      <div class="metrics">
+        <div class="metric"><span>Code</span><strong>26BC4B90CB</strong></div>
+        <div class="metric"><span>Proof rows</span><strong>49</strong></div>
+        <div class="metric"><span>Need proof</span><strong>16</strong></div>
+        <div class="metric"><span>Actions</span><strong>16</strong></div>
+      </div>
+      <div class="buttons">
+        <button class="primary" data-copy="https://worldcup26.world/login?ref=26BC4B90CB">Copy referral link</button>
+        <button data-copy="Code: 26BC4B90CB&#10;https://worldcup26.world/login?ref=26BC4B90CB">Copy code + link</button>
+        <a class="button gold" href="../media/worldcup26-qr-story.jpg" target="_blank" rel="noreferrer">Open QR story</a>
+        <a class="button" href="../media/worldcup26-qr-square.jpg" target="_blank" rel="noreferrer">Open QR square</a>
+        <a class="button" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open video</a>
+      </div>
+    </header>
+
+    <section class="zero-alert" aria-label="Zero signup rescue">
+      <strong>ZERO SIGNUPS - push free picks first</strong>
+      <p>Accepted 0, signup saves 0, entries 0. Every phone/social action must lead with: pick 3 teams free, track private points, paid leaderboard later only with a ticket.</p>
+      <p><strong>First rescue:</strong> Sienna / YouTube Shorts / TikTok / Reels - Most World Cup predictions are boring. Pick 3 teams free and see your private score.</p>
+    </section>
+
+    <section>
+      <h2>Fast Order</h2>
+      <ol class="order"><li><span>1</span><strong>Sienna</strong><em>WhatsApp Status</em></li><li><span>2</span><strong>Nano</strong><em>WhatsApp personal</em></li><li><span>3</span><strong>Sienna</strong><em>Instagram/Facebook story</em></li><li><span>4</span><strong>Dexter</strong><em>Football groups</em></li><li><span>5</span><strong>Sienna</strong><em>TikTok/Reels/Shorts</em></li><li><span>6</span><strong>Nano</strong><em>DM follow-up</em></li><li><span>7</span><strong>Sienna</strong><em>YouTube Shorts</em></li><li><span>8</span><strong>Dexter</strong><em>Facebook profile/page</em></li><li><span>9</span><strong>Nano</strong><em>Replies</em></li><li><span>10</span><strong>Sienna</strong><em>Instagram Story</em></li><li><span>11</span><strong>Nano</strong><em>WhatsApp personal</em></li><li><span>12</span><strong>Sienna</strong><em>Facebook Reels</em></li><li><span>13</span><strong>Sienna</strong><em>WhatsApp/Telegram groups</em></li><li><span>14</span><strong>Dexter</strong><em>Creator outreach</em></li><li><span>15</span><strong>Nano</strong><em>Direct DMs</em></li><li><span>16</span><strong>Sienna</strong><em>TikTok/Reels/Shorts</em></li></ol>
+    </section>
+
+    <section>
+      <h2>Top 6 First</h2>
+      <p class="sub">Start here when a logged-in phone/social account is available. These are the oldest external actions still missing real proof.</p>
+      <div class="worker-grid top-six-grid">
+        <article>
+    <h3>Priority 1 - WhatsApp Status</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 04:00 +0300</div>
+      <div><strong>Action:</strong> Post story asset with video caption 1</div>
+      <div><strong>Asset:</strong> media/worldcup26-main-video.mp4</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><video controls preload="metadata" src="../media/worldcup26-main-video.mp4"></video><a href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">media/worldcup26-main-video.mp4</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0</a>
+    </div>
+    <div class="copy">I invited you to WorldCup26.
+
+Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0
+
+The event has not started yet, so all teams are still available right now.
+
+Follow-up:
+If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="I invited you to WorldCup26.&#10;&#10;Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Use my referral code 26BC4B90CB when you join:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0&#10;&#10;The event has not started yet, so all teams are still available right now.&#10;&#10;Follow-up:&#10;If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-whatsapp-status: posted status from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0&amp;text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 2 - WhatsApp personal</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 06:00 +0300</div>
+      <div><strong>Action:</strong> Send personal invite to warm contacts</div>
+      <div><strong>Asset:</strong> media/worldcup26-main-video.mp4</div>
+      <div><strong>Proof type:</strong> sent</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><video controls preload="metadata" src="../media/worldcup26-main-video.mp4"></video><a href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">media/worldcup26-main-video.mp4</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2</a>
+    </div>
+    <div class="copy">I invited you to WorldCup26.
+
+Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2
+
+The event has not started yet, so all teams are still available right now.
+
+Follow-up:
+If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="I invited you to WorldCup26.&#10;&#10;Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Use my referral code 26BC4B90CB when you join:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2&#10;&#10;The event has not started yet, so all teams are still available right now.&#10;&#10;Follow-up:&#10;If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2&amp;text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 3 - Instagram/Facebook story</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 07:00 +0300</div>
+      <div><strong>Action:</strong> Story: Code 26BC4B90CB + link sticker</div>
+      <div><strong>Asset:</strong> media/worldcup26-referral-story.jpg</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><img src="../media/worldcup26-referral-story.jpg" alt="media/worldcup26-referral-story.jpg" loading="lazy" /><a href="../media/worldcup26-referral-story.jpg" target="_blank" rel="noreferrer">media/worldcup26-referral-story.jpg</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3</a>
+    </div>
+    <div class="copy">Pick 3 teams before they lock.
+
+Watch your private points preview move with every match.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3
+
+Follow-up:
+Code: 26BC4B90CB
+Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Pick 3 teams before they lock.&#10;&#10;Watch your private points preview move with every match.&#10;&#10;Paid leaderboard entry happens only when you use a ticket.&#10;&#10;Join with code 26BC4B90CB:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3&#10;&#10;Follow-up:&#10;Code: 26BC4B90CB&#10;Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-meta-story: story posted from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-referral-story.jpg" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3&amp;text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 4 - Football groups</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 08:00 +0300</div>
+      <div><strong>Action:</strong> Ask approved group admin for permission; post group variant only if allowed</div>
+      <div><strong>Asset:</strong> campaign/first-wave-posts.md</div>
+      <div><strong>Proof type:</strong> requested</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><a href="../first-wave-posts.md" target="_blank" rel="noreferrer">campaign/first-wave-posts.md</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4</a>
+    </div>
+    <div class="copy">For football fans here:
+
+WorldCup26 is a prediction game where you pick 3 teams free first and see your private points preview.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+My invite code: 26BC4B90CB
+Join here:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4
+
+Follow-up:
+Use only where group rules allow promo links. If unsure, ask the group admin before posting.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="For football fans here:&#10;&#10;WorldCup26 is a prediction game where you pick 3 teams free first and see your private points preview.&#10;&#10;Paid leaderboard entry happens only when you use a ticket.&#10;&#10;My invite code: 26BC4B90CB&#10;Join here:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4&#10;&#10;Follow-up:&#10;Use only where group rules allow promo links. If unsure, ask the group admin before posting.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="approval-request: asked admin &lt;group/channel&gt; at YYYY-MM-DD HH:mm EEST; asset/copy ready; code 26BC4B90CB and link included; post only after allowed">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../first-wave-posts.md" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=For%20football%20fans%20here%3A%0A%0AWorldCup26%20is%20a%20prediction%20game%20where%20you%20pick%203%20teams%20free%20first%20and%20see%20your%20private%20points%20preview.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AMy%20invite%20code%3A%2026BC4B90CB%0AJoin%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4&amp;text=For%20football%20fans%20here%3A%0A%0AWorldCup26%20is%20a%20prediction%20game%20where%20you%20pick%203%20teams%20free%20first%20and%20see%20your%20private%20points%20preview.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AMy%20invite%20code%3A%2026BC4B90CB%0AJoin%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=For%20football%20fans%20here%3A%0A%0AWorldCup26%20is%20a%20prediction%20game%20where%20you%20pick%203%20teams%20free%20first%20and%20see%20your%20private%20points%20preview.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AMy%20invite%20code%3A%2026BC4B90CB%0AJoin%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 5 - TikTok/Reels/Shorts</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 09:00 +0300</div>
+      <div><strong>Action:</strong> Upload main video with short caption and code in first line</div>
+      <div><strong>Asset:</strong> media/worldcup26-main-video.mp4</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><video controls preload="metadata" src="../media/worldcup26-main-video.mp4"></video><a href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">media/worldcup26-main-video.mp4</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5</a>
+    </div>
+    <div class="copy">Pick 3 teams before they lock.
+
+Watch your private points preview move with every match.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5
+
+Follow-up:
+Code: 26BC4B90CB
+Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Pick 3 teams before they lock.&#10;&#10;Watch your private points preview move with every match.&#10;&#10;Paid leaderboard entry happens only when you use a ticket.&#10;&#10;Join with code 26BC4B90CB:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5&#10;&#10;Follow-up:&#10;Code: 26BC4B90CB&#10;Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5&amp;text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 6 - DM follow-up</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 11:00 +0300</div>
+      <div><strong>Action:</strong> Reply to first reactions and send the simple how-it-works answer</div>
+      <div><strong>Asset:</strong> campaign/copy-bank.md</div>
+      <div><strong>Proof type:</strong> replied</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><a href="../copy-bank.md" target="_blank" rel="noreferrer">campaign/copy-bank.md</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7</a>
+    </div>
+    <div class="copy">Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Use code 26BC4B90CB here:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7
+
+Follow-up:
+If they ask why the code matters: it connects the account to the invite. Code 26BC4B90CB.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.&#10;&#10;Use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Use code 26BC4B90CB here:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7&#10;&#10;Follow-up:&#10;If they ask why the code matters: it connects the account to the invite. Code 26BC4B90CB.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-reply-note: replied to &lt;thread/contact initials&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up &lt;date/action&gt;">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../copy-bank.md" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7&amp;text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+      </div>
+    </section>
+
+    <section id="proof-builder">
+      <h2>Proof Builder</h2>
+      <p class="sub">Use after a real post, story, message batch, reply, upload, or permission request happened. Paste the public URL when possible; for private channels paste a clear note.</p>
+      <div class="proof-form" aria-label="Build proof command">
+        <label for="proof-priority">
+          Action
+          <select id="proof-priority">
+            <option value="1">#1 Sienna - WhatsApp Status</option><option value="2">#2 Nano - WhatsApp personal</option><option value="3">#3 Sienna - Instagram/Facebook story</option><option value="4">#4 Dexter - Football groups</option><option value="5">#5 Sienna - TikTok/Reels/Shorts</option><option value="6">#6 Nano - DM follow-up</option><option value="7">#7 Sienna - YouTube Shorts</option><option value="8">#8 Dexter - Facebook profile/page</option><option value="9">#9 Nano - Replies</option><option value="10">#10 Sienna - Instagram Story</option><option value="11">#11 Nano - WhatsApp personal</option><option value="12">#12 Sienna - Facebook Reels</option><option value="13">#13 Sienna - WhatsApp/Telegram groups</option><option value="14">#14 Dexter - Creator outreach</option><option value="15">#15 Nano - Direct DMs</option><option value="16">#16 Sienna - TikTok/Reels/Shorts</option>
+          </select>
+        </label>
+        <div class="proof-template" id="proof-template">Select an action to load the proof-note template.</div>
+        <p class="sub warn" id="proof-warning">Replace the template with real account, audience, and time details before copying a command.</p>
+        <label for="proof-url">
+          Proof URL or private note
+          <textarea id="proof-url" placeholder="Paste public post URL or private proof note"></textarea>
+        </label>
+        <div class="proof-grid">
+          <label for="proof-replies">
+            Replies
+            <input id="proof-replies" inputmode="numeric" placeholder="0" />
+          </label>
+          <label for="proof-status">
+            Status
+            <input id="proof-status" readonly />
+          </label>
+        </div>
+        <label for="proof-signup-notes">
+          Signup / click notes
+          <textarea id="proof-signup-notes" placeholder="Optional: visible clicks, DMs, signup notes, or verification context"></textarea>
+        </label>
+        <label for="proof-next-followup">
+          Next follow-up
+          <textarea id="proof-next-followup" placeholder="Optional: who to reply to next, when to repost, or approval follow-up"></textarea>
+        </label>
+        <label for="proof-command">
+          Command to run from the campaign folder
+          <textarea class="command-output" id="proof-command" readonly></textarea>
+        </label>
+        <div class="buttons">
+          <button class="primary" id="build-proof-command" type="button">Build command</button>
+          <button data-copy-target="#proof-command" id="copy-proof-command" type="button">Copy command</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+    <h2>Sienna</h2>
+    <div class="worker-grid">
+      <article>
+    <h3>Priority 1 - WhatsApp Status</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 04:00 +0300</div>
+      <div><strong>Action:</strong> Post story asset with video caption 1</div>
+      <div><strong>Asset:</strong> media/worldcup26-main-video.mp4</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><video controls preload="metadata" src="../media/worldcup26-main-video.mp4"></video><a href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">media/worldcup26-main-video.mp4</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0</a>
+    </div>
+    <div class="copy">I invited you to WorldCup26.
+
+Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0
+
+The event has not started yet, so all teams are still available right now.
+
+Follow-up:
+If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="I invited you to WorldCup26.&#10;&#10;Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Use my referral code 26BC4B90CB when you join:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0&#10;&#10;The event has not started yet, so all teams are still available right now.&#10;&#10;Follow-up:&#10;If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-whatsapp-status: posted status from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0&amp;text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 3 - Instagram/Facebook story</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 07:00 +0300</div>
+      <div><strong>Action:</strong> Story: Code 26BC4B90CB + link sticker</div>
+      <div><strong>Asset:</strong> media/worldcup26-referral-story.jpg</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><img src="../media/worldcup26-referral-story.jpg" alt="media/worldcup26-referral-story.jpg" loading="lazy" /><a href="../media/worldcup26-referral-story.jpg" target="_blank" rel="noreferrer">media/worldcup26-referral-story.jpg</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3</a>
+    </div>
+    <div class="copy">Pick 3 teams before they lock.
+
+Watch your private points preview move with every match.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3
+
+Follow-up:
+Code: 26BC4B90CB
+Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Pick 3 teams before they lock.&#10;&#10;Watch your private points preview move with every match.&#10;&#10;Paid leaderboard entry happens only when you use a ticket.&#10;&#10;Join with code 26BC4B90CB:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3&#10;&#10;Follow-up:&#10;Code: 26BC4B90CB&#10;Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-meta-story: story posted from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-referral-story.jpg" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3&amp;text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 5 - TikTok/Reels/Shorts</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 09:00 +0300</div>
+      <div><strong>Action:</strong> Upload main video with short caption and code in first line</div>
+      <div><strong>Asset:</strong> media/worldcup26-main-video.mp4</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><video controls preload="metadata" src="../media/worldcup26-main-video.mp4"></video><a href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">media/worldcup26-main-video.mp4</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5</a>
+    </div>
+    <div class="copy">Pick 3 teams before they lock.
+
+Watch your private points preview move with every match.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5
+
+Follow-up:
+Code: 26BC4B90CB
+Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Pick 3 teams before they lock.&#10;&#10;Watch your private points preview move with every match.&#10;&#10;Paid leaderboard entry happens only when you use a ticket.&#10;&#10;Join with code 26BC4B90CB:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5&#10;&#10;Follow-up:&#10;Code: 26BC4B90CB&#10;Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5&amp;text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 7 - YouTube Shorts</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 12:00 +0300</div>
+      <div><strong>Action:</strong> Post main video as Shorts with code and link in description</div>
+      <div><strong>Asset:</strong> media/worldcup26-main-video.mp4</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><video controls preload="metadata" src="../media/worldcup26-main-video.mp4"></video><a href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">media/worldcup26-main-video.mp4</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h8&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h8" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h8" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h8</a>
+    </div>
+    <div class="copy">Pick 3 teams before they lock.
+
+Watch your private points preview move with every match.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h8
+
+Follow-up:
+Code: 26BC4B90CB
+Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h8</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Pick 3 teams before they lock.&#10;&#10;Watch your private points preview move with every match.&#10;&#10;Paid leaderboard entry happens only when you use a ticket.&#10;&#10;Join with code 26BC4B90CB:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h8&#10;&#10;Follow-up:&#10;Code: 26BC4B90CB&#10;Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h8">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h8">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h8&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h8">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h8&amp;text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h8">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h8">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h8">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 10 - Instagram Story</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 15:00 +0300</div>
+      <div><strong>Action:</strong> Post referral story image with link sticker and code overlay</div>
+      <div><strong>Asset:</strong> media/worldcup26-referral-story.jpg</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><img src="../media/worldcup26-referral-story.jpg" alt="media/worldcup26-referral-story.jpg" loading="lazy" /><a href="../media/worldcup26-referral-story.jpg" target="_blank" rel="noreferrer">media/worldcup26-referral-story.jpg</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h11&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h11" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h11" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h11</a>
+    </div>
+    <div class="copy">Pick 3 teams before they lock.
+
+Watch your private points preview move with every match.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h11
+
+Follow-up:
+Code: 26BC4B90CB
+Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h11</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Pick 3 teams before they lock.&#10;&#10;Watch your private points preview move with every match.&#10;&#10;Paid leaderboard entry happens only when you use a ticket.&#10;&#10;Join with code 26BC4B90CB:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h11&#10;&#10;Follow-up:&#10;Code: 26BC4B90CB&#10;Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h11">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h11">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h11&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-meta-story: story posted from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-referral-story.jpg" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h11">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h11&amp;text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h11">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h11">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h11">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 12 - Facebook Reels</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 19:00 +0300</div>
+      <div><strong>Action:</strong> Upload main video as Reel with code in caption</div>
+      <div><strong>Asset:</strong> media/worldcup26-main-video.mp4</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><video controls preload="metadata" src="../media/worldcup26-main-video.mp4"></video><a href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">media/worldcup26-main-video.mp4</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-reels%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h15&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-reels&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h15" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-reels&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h15" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-reels&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h15</a>
+    </div>
+    <div class="copy">Pick 3 teams before they lock.
+
+Watch your private points preview move with every match.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-reels&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h15
+
+Follow-up:
+Code: 26BC4B90CB
+Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-reels&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h15</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Pick 3 teams before they lock.&#10;&#10;Watch your private points preview move with every match.&#10;&#10;Paid leaderboard entry happens only when you use a ticket.&#10;&#10;Join with code 26BC4B90CB:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-reels&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h15&#10;&#10;Follow-up:&#10;Code: 26BC4B90CB&#10;Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-reels&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h15">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-reels&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h15">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-reels%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h15&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-reels%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h15">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-reels%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h15&amp;text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-reels%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h15">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-reels%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h15">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-reels%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h15">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 13 - WhatsApp/Telegram groups</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 20:00 +0300</div>
+      <div><strong>Action:</strong> Community post variant if promo welcome</div>
+      <div><strong>Asset:</strong> media/worldcup26-referral-story.jpg</div>
+      <div><strong>Proof type:</strong> requested</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><img src="../media/worldcup26-referral-story.jpg" alt="media/worldcup26-referral-story.jpg" loading="lazy" /><a href="../media/worldcup26-referral-story.jpg" target="_blank" rel="noreferrer">media/worldcup26-referral-story.jpg</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-telegram-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h16&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-telegram-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h16" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-telegram-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h16" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-telegram-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h16</a>
+    </div>
+    <div class="copy">I invited you to WorldCup26.
+
+Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-telegram-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h16
+
+The event has not started yet, so all teams are still available right now.
+
+Follow-up:
+If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="I invited you to WorldCup26.&#10;&#10;Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Use my referral code 26BC4B90CB when you join:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-telegram-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h16&#10;&#10;The event has not started yet, so all teams are still available right now.&#10;&#10;Follow-up:&#10;If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-telegram-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h16">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-telegram-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h16&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB and link included; replies &lt;N&gt;">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-referral-story.jpg" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-telegram-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h16%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-telegram-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h16&amp;text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-telegram-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h16%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-telegram-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h16%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-telegram-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h16">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 16 - TikTok/Reels/Shorts</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 23:00 +0300</div>
+      <div><strong>Action:</strong> Repost video with favorites-or-underdogs caption</div>
+      <div><strong>Asset:</strong> media/worldcup26-main-video.mp4</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><video controls preload="metadata" src="../media/worldcup26-main-video.mp4"></video><a href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">media/worldcup26-main-video.mp4</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h19&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h19" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h19" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h19</a>
+    </div>
+    <div class="copy">Pick 3 teams before they lock.
+
+Watch your private points preview move with every match.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h19
+
+Follow-up:
+Code: 26BC4B90CB
+Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h19</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Pick 3 teams before they lock.&#10;&#10;Watch your private points preview move with every match.&#10;&#10;Paid leaderboard entry happens only when you use a ticket.&#10;&#10;Join with code 26BC4B90CB:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h19&#10;&#10;Follow-up:&#10;Code: 26BC4B90CB&#10;Join: https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h19">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h19">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h19&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h19">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h19&amp;text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h19">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h19">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h19">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+    </div>
+  </section>
+<section>
+    <h2>Nano</h2>
+    <div class="worker-grid">
+      <article>
+    <h3>Priority 2 - WhatsApp personal</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 06:00 +0300</div>
+      <div><strong>Action:</strong> Send personal invite to warm contacts</div>
+      <div><strong>Asset:</strong> media/worldcup26-main-video.mp4</div>
+      <div><strong>Proof type:</strong> sent</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><video controls preload="metadata" src="../media/worldcup26-main-video.mp4"></video><a href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">media/worldcup26-main-video.mp4</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2</a>
+    </div>
+    <div class="copy">I invited you to WorldCup26.
+
+Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2
+
+The event has not started yet, so all teams are still available right now.
+
+Follow-up:
+If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="I invited you to WorldCup26.&#10;&#10;Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Use my referral code 26BC4B90CB when you join:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2&#10;&#10;The event has not started yet, so all teams are still available right now.&#10;&#10;Follow-up:&#10;If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2&amp;text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 6 - DM follow-up</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 11:00 +0300</div>
+      <div><strong>Action:</strong> Reply to first reactions and send the simple how-it-works answer</div>
+      <div><strong>Asset:</strong> campaign/copy-bank.md</div>
+      <div><strong>Proof type:</strong> replied</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><a href="../copy-bank.md" target="_blank" rel="noreferrer">campaign/copy-bank.md</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7</a>
+    </div>
+    <div class="copy">Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Use code 26BC4B90CB here:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7
+
+Follow-up:
+If they ask why the code matters: it connects the account to the invite. Code 26BC4B90CB.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.&#10;&#10;Use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Use code 26BC4B90CB here:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7&#10;&#10;Follow-up:&#10;If they ask why the code matters: it connects the account to the invite. Code 26BC4B90CB.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-reply-note: replied to &lt;thread/contact initials&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up &lt;date/action&gt;">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../copy-bank.md" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7&amp;text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 9 - Replies</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 14:00 +0300</div>
+      <div><strong>Action:</strong> Answer questions using reply bank; push code/link once per conversation</div>
+      <div><strong>Asset:</strong> campaign/copy-bank.md</div>
+      <div><strong>Proof type:</strong> replied</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><a href="../copy-bank.md" target="_blank" rel="noreferrer">campaign/copy-bank.md</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreplies%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h10&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=replies&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h10" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=replies&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h10" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=replies&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h10</a>
+    </div>
+    <div class="copy">Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Use code 26BC4B90CB here:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=replies&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h10
+
+Follow-up:
+If they ask why the code matters: it connects the account to the invite. Code 26BC4B90CB.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.&#10;&#10;Use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Use code 26BC4B90CB here:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=replies&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h10&#10;&#10;Follow-up:&#10;If they ask why the code matters: it connects the account to the invite. Code 26BC4B90CB.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=replies&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h10">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreplies%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h10&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-reply-note: replied to &lt;thread/contact initials&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up &lt;date/action&gt;">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../copy-bank.md" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreplies%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h10">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreplies%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h10&amp;text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreplies%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h10">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreplies%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h10">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreplies%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h10">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 11 - WhatsApp personal</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 17:00 +0300</div>
+      <div><strong>Action:</strong> Send second warm-contact batch with main invite</div>
+      <div><strong>Asset:</strong> media/worldcup26-main-video.mp4</div>
+      <div><strong>Proof type:</strong> sent</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><video controls preload="metadata" src="../media/worldcup26-main-video.mp4"></video><a href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">media/worldcup26-main-video.mp4</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h13&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h13" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h13" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h13</a>
+    </div>
+    <div class="copy">I invited you to WorldCup26.
+
+Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h13
+
+The event has not started yet, so all teams are still available right now.
+
+Follow-up:
+If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="I invited you to WorldCup26.&#10;&#10;Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Use my referral code 26BC4B90CB when you join:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h13&#10;&#10;The event has not started yet, so all teams are still available right now.&#10;&#10;Follow-up:&#10;If they ask what to do: Sign in, use the code, save 3 picks for free, then use a ticket later only if they want the paid leaderboard.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h13">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h13&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-main-video.mp4" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h13%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h13&amp;text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h13%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h13%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h13">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 15 - Direct DMs</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 22:00 +0300</div>
+      <div><strong>Action:</strong> Send one-to-one invite to people who reacted to stories</div>
+      <div><strong>Asset:</strong> campaign/copy-bank.md</div>
+      <div><strong>Proof type:</strong> sent</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><a href="../copy-bank.md" target="_blank" rel="noreferrer">campaign/copy-bank.md</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddirect-dms%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h18&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=direct-dms&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h18" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=direct-dms&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h18" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=direct-dms&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h18</a>
+    </div>
+    <div class="copy">Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Use code 26BC4B90CB here:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=direct-dms&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h18
+
+Follow-up:
+If they ask why the code matters: it connects the account to the invite. Code 26BC4B90CB.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.&#10;&#10;Use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Use code 26BC4B90CB here:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=direct-dms&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h18&#10;&#10;Follow-up:&#10;If they ask why the code matters: it connects the account to the invite. Code 26BC4B90CB.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=direct-dms&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h18">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddirect-dms%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h18&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="private-reply-note: replied to &lt;thread/contact initials&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up &lt;date/action&gt;">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../copy-bank.md" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddirect-dms%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h18">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddirect-dms%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h18&amp;text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddirect-dms%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h18">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddirect-dms%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h18">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddirect-dms%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h18">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+    </div>
+  </section>
+<section>
+    <h2>Dexter</h2>
+    <div class="worker-grid">
+      <article>
+    <h3>Priority 4 - Football groups</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 08:00 +0300</div>
+      <div><strong>Action:</strong> Ask approved group admin for permission; post group variant only if allowed</div>
+      <div><strong>Asset:</strong> campaign/first-wave-posts.md</div>
+      <div><strong>Proof type:</strong> requested</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><a href="../first-wave-posts.md" target="_blank" rel="noreferrer">campaign/first-wave-posts.md</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4</a>
+    </div>
+    <div class="copy">For football fans here:
+
+WorldCup26 is a prediction game where you pick 3 teams free first and see your private points preview.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+My invite code: 26BC4B90CB
+Join here:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4
+
+Follow-up:
+Use only where group rules allow promo links. If unsure, ask the group admin before posting.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="For football fans here:&#10;&#10;WorldCup26 is a prediction game where you pick 3 teams free first and see your private points preview.&#10;&#10;Paid leaderboard entry happens only when you use a ticket.&#10;&#10;My invite code: 26BC4B90CB&#10;Join here:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4&#10;&#10;Follow-up:&#10;Use only where group rules allow promo links. If unsure, ask the group admin before posting.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="approval-request: asked admin &lt;group/channel&gt; at YYYY-MM-DD HH:mm EEST; asset/copy ready; code 26BC4B90CB and link included; post only after allowed">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../first-wave-posts.md" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=For%20football%20fans%20here%3A%0A%0AWorldCup26%20is%20a%20prediction%20game%20where%20you%20pick%203%20teams%20free%20first%20and%20see%20your%20private%20points%20preview.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AMy%20invite%20code%3A%2026BC4B90CB%0AJoin%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4&amp;text=For%20football%20fans%20here%3A%0A%0AWorldCup26%20is%20a%20prediction%20game%20where%20you%20pick%203%20teams%20free%20first%20and%20see%20your%20private%20points%20preview.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AMy%20invite%20code%3A%2026BC4B90CB%0AJoin%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=For%20football%20fans%20here%3A%0A%0AWorldCup26%20is%20a%20prediction%20game%20where%20you%20pick%203%20teams%20free%20first%20and%20see%20your%20private%20points%20preview.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AMy%20invite%20code%3A%2026BC4B90CB%0AJoin%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 8 - Facebook profile/page</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 13:00 +0300</div>
+      <div><strong>Action:</strong> Publish simple rules feed post for friends and football contacts</div>
+      <div><strong>Asset:</strong> media/worldcup26-referral-square.jpg</div>
+      <div><strong>Proof type:</strong> posted</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><img src="../media/worldcup26-referral-square.jpg" alt="media/worldcup26-referral-square.jpg" loading="lazy" /><a href="../media/worldcup26-referral-square.jpg" target="_blank" rel="noreferrer">media/worldcup26-referral-square.jpg</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile-page%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h9&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-profile-page&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h9" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-profile-page&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h9" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-profile-page&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h9</a>
+    </div>
+    <div class="copy">WorldCup26 is open.
+
+Pick 3 teams for free. See your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Join with my code:
+26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-profile-page&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h9
+
+Follow-up:
+Favorites or underdogs? Pick your 3 and send me your lineup.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="WorldCup26 is open.&#10;&#10;Pick 3 teams for free. See your private points preview.&#10;&#10;Use a ticket only if you want to enter the paid leaderboard.&#10;&#10;Join with my code:&#10;26BC4B90CB&#10;&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-profile-page&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h9&#10;&#10;Follow-up:&#10;Favorites or underdogs? Pick your 3 and send me your lineup.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-profile-page&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h9">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile-page%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h9&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB and link included; replace with public URL when available">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../media/worldcup26-referral-square.jpg" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AJoin%20with%20my%20code%3A%0A26BC4B90CB%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile-page%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h9">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile-page%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h9&amp;text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AJoin%20with%20my%20code%3A%0A26BC4B90CB%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile-page%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h9">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AJoin%20with%20my%20code%3A%0A26BC4B90CB%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile-page%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h9">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile-page%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h9">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+<article>
+    <h3>Priority 14 - Creator outreach</h3>
+    <div class="row-meta">
+      <div><strong>Scheduled:</strong> 2026-06-06 21:00 +0300</div>
+      <div><strong>Action:</strong> Send partner DM to football micro-creators</div>
+      <div><strong>Asset:</strong> campaign/first-wave-posts.md</div>
+      <div><strong>Proof type:</strong> sent</div>
+    </div>
+    <div class="asset-block"><strong>Asset</strong><a href="../first-wave-posts.md" target="_blank" rel="noreferrer">campaign/first-wave-posts.md</a></div>
+    <div class="qr-block">
+      <strong>Scan exact tracked link</strong>
+      <img src="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dcreator-outreach%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h17&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" alt="QR for https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=creator-outreach&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h17" loading="lazy" />
+      <a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=creator-outreach&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h17" target="_blank" rel="noreferrer">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=creator-outreach&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h17</a>
+    </div>
+    <div class="copy">Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+I have a video, captions, and a referral link ready:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=creator-outreach&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h17
+
+Code: 26BC4B90CB
+
+Would you be open to one approved post or story for your football audience?
+
+Follow-up:
+Follow up once after 24 hours if they react but do not answer.</div>
+    <div class="buttons">
+      <button class="primary" data-copy="Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.&#10;&#10;I have a video, captions, and a referral link ready:&#10;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=creator-outreach&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h17&#10;&#10;Code: 26BC4B90CB&#10;&#10;Would you be open to one approved post or story for your football audience?&#10;&#10;Follow-up:&#10;Follow up once after 24 hours if they react but do not answer.">Copy post</button>
+      <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=creator-outreach&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h17">Copy link</button>
+      <a class="button gold" href="https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dcreator-outreach%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h17&amp;size=420&amp;margin=2&amp;ecLevel=M&amp;format=png" target="_blank" rel="noreferrer">Open QR</a>
+      <button data-copy="manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; replace with public URL when available">Copy proof note</button>
+      
+      <a class="button" href="#proof-builder">Proof builder</a>
+      <a class="button gold" href="../first-wave-posts.md" target="_blank" rel="noreferrer">Open asset</a>
+      <a class="button" href="https://wa.me/?text=Hey%20-%20I%20am%20promoting%20WorldCup26%2C%20a%20World%20Cup%20prediction%20game%20where%20users%20pick%203%20teams%20free%20first%2C%20see%20a%20private%20points%20preview%2C%20and%20can%20use%20a%20ticket%20later%20for%20the%20paid%20leaderboard.%0A%0AI%20have%20a%20video%2C%20captions%2C%20and%20a%20referral%20link%20ready%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dcreator-outreach%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h17%0A%0ACode%3A%2026BC4B90CB%0A%0AWould%20you%20be%20open%20to%20one%20approved%20post%20or%20story%20for%20your%20football%20audience%3F">WhatsApp</a>
+<a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dcreator-outreach%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h17&amp;text=Hey%20-%20I%20am%20promoting%20WorldCup26%2C%20a%20World%20Cup%20prediction%20game%20where%20users%20pick%203%20teams%20free%20first%2C%20see%20a%20private%20points%20preview%2C%20and%20can%20use%20a%20ticket%20later%20for%20the%20paid%20leaderboard.%0A%0AI%20have%20a%20video%2C%20captions%2C%20and%20a%20referral%20link%20ready%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dcreator-outreach%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h17%0A%0ACode%3A%2026BC4B90CB%0A%0AWould%20you%20be%20open%20to%20one%20approved%20post%20or%20story%20for%20your%20football%20audience%3F">Telegram</a>
+<a class="button" href="https://twitter.com/intent/tweet?text=Hey%20-%20I%20am%20promoting%20WorldCup26%2C%20a%20World%20Cup%20prediction%20game%20where%20users%20pick%203%20teams%20free%20first%2C%20see%20a%20private%20points%20preview%2C%20and%20can%20use%20a%20ticket%20later%20for%20the%20paid%20leaderboard.%0A%0AI%20have%20a%20video%2C%20captions%2C%20and%20a%20referral%20link%20ready%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dcreator-outreach%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h17%0A%0ACode%3A%2026BC4B90CB%0A%0AWould%20you%20be%20open%20to%20one%20approved%20post%20or%20story%20for%20your%20football%20audience%3F">X</a>
+<a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dcreator-outreach%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h17">Facebook</a>
+    </div>
+    <p class="sub warn">Do not log this until the post/message/reply really happened.</p>
+  </article>
+    </div>
+  </section>
+  </main>
+  <script>
+    const proofRows = [{"priority":"1","owner":"Sienna","channel":"WhatsApp Status","action":"Post story asset with video caption 1","status":"posted","proofNote":"private-whatsapp-status: posted status from \u003cphone/account\u003e at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included","proofCommand":""},{"priority":"2","owner":"Nano","channel":"WhatsApp personal","action":"Send personal invite to warm contacts","status":"sent","proofNote":"private-whatsapp: sent to \u003cN\u003e warm contacts from \u003cphone/account\u003e at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies \u003cN\u003e","proofCommand":""},{"priority":"3","owner":"Sienna","channel":"Instagram/Facebook story","action":"Story: Code 26BC4B90CB + link sticker","status":"posted","proofNote":"private-meta-story: story posted from \u003caccount\u003e at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included","proofCommand":""},{"priority":"4","owner":"Dexter","channel":"Football groups","action":"Ask approved group admin for permission; post group variant only if allowed","status":"requested","proofNote":"approval-request: asked admin \u003cgroup/channel\u003e at YYYY-MM-DD HH:mm EEST; asset/copy ready; code 26BC4B90CB and link included; post only after allowed","proofCommand":""},{"priority":"5","owner":"Sienna","channel":"TikTok/Reels/Shorts","action":"Upload main video with short caption and code in first line","status":"posted","proofNote":"public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from \u003caccount\u003e at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included","proofCommand":""},{"priority":"6","owner":"Nano","channel":"DM follow-up","action":"Reply to first reactions and send the simple how-it-works answer","status":"replied","proofNote":"private-reply-note: replied to \u003cthread/contact initials\u003e at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up \u003cdate/action\u003e","proofCommand":""},{"priority":"7","owner":"Sienna","channel":"YouTube Shorts","action":"Post main video as Shorts with code and link in description","status":"posted","proofNote":"public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from \u003caccount\u003e at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included","proofCommand":""},{"priority":"8","owner":"Dexter","channel":"Facebook profile/page","action":"Publish simple rules feed post for friends and football contacts","status":"posted","proofNote":"manual-post-note: posted from \u003caccount/destination\u003e at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB and link included; replace with public URL when available","proofCommand":""},{"priority":"9","owner":"Nano","channel":"Replies","action":"Answer questions using reply bank; push code/link once per conversation","status":"replied","proofNote":"private-reply-note: replied to \u003cthread/contact initials\u003e at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up \u003cdate/action\u003e","proofCommand":""},{"priority":"10","owner":"Sienna","channel":"Instagram Story","action":"Post referral story image with link sticker and code overlay","status":"posted","proofNote":"private-meta-story: story posted from \u003caccount\u003e at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included","proofCommand":""},{"priority":"11","owner":"Nano","channel":"WhatsApp personal","action":"Send second warm-contact batch with main invite","status":"sent","proofNote":"private-whatsapp: sent to \u003cN\u003e warm contacts from \u003cphone/account\u003e at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies \u003cN\u003e","proofCommand":""},{"priority":"12","owner":"Sienna","channel":"Facebook Reels","action":"Upload main video as Reel with code in caption","status":"posted","proofNote":"public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from \u003caccount\u003e at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included","proofCommand":""},{"priority":"13","owner":"Sienna","channel":"WhatsApp/Telegram groups","action":"Community post variant if promo welcome","status":"requested","proofNote":"private-whatsapp: sent to \u003cN\u003e warm contacts from \u003cphone/account\u003e at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB and link included; replies \u003cN\u003e","proofCommand":""},{"priority":"14","owner":"Dexter","channel":"Creator outreach","action":"Send partner DM to football micro-creators","status":"sent","proofNote":"manual-post-note: posted from \u003caccount/destination\u003e at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; replace with public URL when available","proofCommand":""},{"priority":"15","owner":"Nano","channel":"Direct DMs","action":"Send one-to-one invite to people who reacted to stories","status":"sent","proofNote":"private-reply-note: replied to \u003cthread/contact initials\u003e at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up \u003cdate/action\u003e","proofCommand":""},{"priority":"16","owner":"Sienna","channel":"TikTok/Reels/Shorts","action":"Repost video with favorites-or-underdogs caption","status":"posted","proofNote":"public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from \u003caccount\u003e at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included","proofCommand":""}];
+    const proofRowsByPriority = new Map(proofRows.map((row) => [String(row.priority), row]));
+    const proofSelect = document.querySelector("#proof-priority");
+    const proofTemplate = document.querySelector("#proof-template");
+    const proofUrl = document.querySelector("#proof-url");
+    const proofReplies = document.querySelector("#proof-replies");
+    const proofStatus = document.querySelector("#proof-status");
+    const proofSignupNotes = document.querySelector("#proof-signup-notes");
+    const proofNextFollowup = document.querySelector("#proof-next-followup");
+    const proofCommand = document.querySelector("#proof-command");
+    const proofWarning = document.querySelector("#proof-warning");
+    const copyProofCommand = document.querySelector("#copy-proof-command");
+
+    function proofStillHasPlaceholder(value) {
+      const proof = String(value || "").trim();
+      if (!proof) return true;
+      const upper = proof.toUpperCase();
+      const blocked = [
+        "POST_URL_OR_PRIVATE_NOTE",
+        "YYYY-MM-DD",
+        "HH:MM",
+        "<GROUP/CHANNEL>",
+        "<PHONE/ACCOUNT>",
+        "<ACCOUNT>",
+        "<N>",
+        "HTTPS://...",
+        "HTTP://..."
+      ];
+      return /<[^>]+>/.test(proof) || blocked.some((token) => upper.includes(token));
+    }
+
+    function shellQuoteBrowser(value) {
+      const quote = String.fromCharCode(39);
+      const escapedQuote = quote + String.fromCharCode(92) + quote + quote;
+      return quote + String(value || "").replaceAll(quote, escapedQuote) + quote;
+    }
+
+    function selectedProofRow() {
+      return proofRowsByPriority.get(String(proofSelect?.value || "")) || proofRows[0] || null;
+    }
+
+    function refreshProofTemplate() {
+      const row = selectedProofRow();
+      if (!row) return;
+      proofTemplate.textContent = row.proofNote;
+      proofStatus.value = row.status;
+      proofUrl.value = "";
+      proofUrl.placeholder = row.proofNote;
+      buildProofCommand();
+    }
+
+    function buildProofCommand() {
+      const row = selectedProofRow();
+      if (!row) return;
+      const proofValue = proofUrl.value.trim();
+      if (proofStillHasPlaceholder(proofValue)) {
+        proofCommand.value = "";
+        proofCommand.placeholder = "Add a real public URL or a specific private proof note first.";
+        proofWarning.textContent = "A proof command will appear after you replace placeholders with real account, audience, time, and proof details.";
+        copyProofCommand.disabled = true;
+        return;
+      }
+      if (row.proofCommand && String(row.priority).startsWith("zs-")) {
+        proofCommand.value = row.proofCommand;
+      } else {
+        const parts = [
+          "node campaign-proof-log.mjs",
+          "--priority " + shellQuoteBrowser(row.priority),
+          "--proof-url " + shellQuoteBrowser(proofValue),
+          "--status " + shellQuoteBrowser(proofStatus.value || row.status),
+        ];
+        if (proofReplies.value.trim()) parts.push("--reply-count " + shellQuoteBrowser(proofReplies.value.trim()));
+        if (proofSignupNotes.value.trim()) parts.push("--signup-notes " + shellQuoteBrowser(proofSignupNotes.value.trim()));
+        if (proofNextFollowup.value.trim()) parts.push("--next-followup " + shellQuoteBrowser(proofNextFollowup.value.trim()));
+        proofCommand.value = parts.join(" ");
+      }
+      proofWarning.textContent = "Command ready. Run it only from the campaign folder after the real action happened.";
+      copyProofCommand.disabled = false;
+    }
+
+    proofSelect?.addEventListener("change", refreshProofTemplate);
+    for (const input of [proofUrl, proofReplies, proofStatus, proofSignupNotes, proofNextFollowup]) {
+      input?.addEventListener("input", buildProofCommand);
+    }
+    document.querySelector("#build-proof-command")?.addEventListener("click", buildProofCommand);
+    refreshProofTemplate();
+
+    document.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-copy], [data-copy-target]");
+      if (!button) return;
+      const targetSelector = button.getAttribute("data-copy-target");
+      const target = targetSelector ? document.querySelector(targetSelector) : null;
+      const value = target ? target.value || target.textContent || "" : button.getAttribute("data-copy") || "";
+      if (targetSelector === "#proof-command" && !value.trim()) {
+        const old = button.textContent;
+        button.textContent = "Add proof first";
+        setTimeout(() => { button.textContent = old; }, 1400);
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(value);
+        const old = button.textContent;
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = old; }, 1200);
+      } catch {
+        window.prompt("Copy this text", value);
+      }
+    });
+  </script>
+</body>
+</html>

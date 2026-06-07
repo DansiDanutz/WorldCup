@@ -29,7 +29,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ valid: false }, { status: 500 });
   }
 
-  let referralPercent = 3;
+  let referralPercent = 0;
 
   if (profile.data) {
     const tournament = await supabase

@@ -1,0 +1,122 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - heading "Paid Dashboard Checks" [level=1] [ref=e4]
+    - generic [ref=e5]: needs-dashboard-check
+    - paragraph [ref=e6]: Record only real dashboard observations. Use this to decide whether the paid problem is delivery, creative, tracking, or signup friction.
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: Checks
+        - strong [ref=e10]: 0/2
+      - generic [ref=e11]:
+        - generic [ref=e12]: Spend
+        - strong [ref=e13]: "0"
+      - generic [ref=e14]:
+        - generic [ref=e15]: Impressions
+        - strong [ref=e16]: "0"
+      - generic [ref=e17]:
+        - generic [ref=e18]: Clicks
+        - strong [ref=e19]: "0"
+      - generic [ref=e20]:
+        - generic [ref=e21]: Paid views
+        - strong [ref=e22]: "0"
+  - generic [ref=e23]:
+    - article [ref=e24]:
+      - heading "Meta Ads Manager" [level=2] [ref=e25]
+      - paragraph [ref=e26]:
+        - strong [ref=e27]: "Manager:"
+        - link "https://adsmanager.facebook.com/adsmanager/manage/ads?act=61071192&selected_campaign_ids=6971048256000" [ref=e28] [cursor=pointer]:
+          - /url: https://adsmanager.facebook.com/adsmanager/manage/ads?act=61071192&selected_campaign_ids=6971048256000
+      - paragraph [ref=e29]:
+        - strong [ref=e30]: "Landing:"
+        - link "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h" [ref=e31] [cursor=pointer]:
+          - /url: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h
+      - paragraph [ref=e32]: No dashboard check logged yet.
+      - generic [ref=e33]:
+        - link "Open manager" [ref=e34] [cursor=pointer]:
+          - /url: https://adsmanager.facebook.com/adsmanager/manage/ads?act=61071192&selected_campaign_ids=6971048256000
+        - button "Copy log command" [ref=e35] [cursor=pointer]
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - text: Status
+          - combobox "Status" [ref=e38]:
+            - option "active" [selected]
+            - option "scheduled"
+            - option "paused"
+            - option "rejected"
+            - option "limited"
+            - option "blocked"
+        - generic [ref=e39]:
+          - text: Spend
+          - textbox "Spend" [ref=e40]: "0"
+        - generic [ref=e41]:
+          - text: Impressions
+          - textbox "Impressions" [ref=e42]: "0"
+        - generic [ref=e43]:
+          - text: Clicks
+          - textbox "Clicks" [ref=e44]: "0"
+        - generic [ref=e45]:
+          - text: CTR
+          - textbox "CTR" [ref=e46]:
+            - /placeholder: auto
+        - generic [ref=e47]:
+          - text: Warning
+          - textbox "Warning" [ref=e48]: none
+        - generic [ref=e49]:
+          - text: Screenshot/private note
+          - textbox "Screenshot/private note" [ref=e50]: Meta Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>
+        - generic [ref=e51]:
+          - text: Next action
+          - textbox "Next action" [ref=e52]: keep/change/fix
+      - button "Copy generated command" [ref=e54] [cursor=pointer]
+      - generic [ref=e55]: node campaign-paid-dashboard-intake.mjs --add --platform "meta" --status "active" --spend "0" --impressions "0" --clicks "0" --landing-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h" --warning "none" --screenshot-note "Meta Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>"
+      - generic [ref=e56]: node campaign-paid-dashboard-intake.mjs --add --platform "meta" --status "active" --spend "0" --impressions "0" --clicks "0" --landing-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h" --warning "none" --screenshot-note "Meta Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>"
+    - article [ref=e57]:
+      - heading "X Ads Manager" [level=2] [ref=e58]
+      - paragraph [ref=e59]:
+        - strong [ref=e60]: "Manager:"
+        - link "https://ads.x.com/manager/18ce55rrs16/campaigns" [ref=e61] [cursor=pointer]:
+          - /url: https://ads.x.com/manager/18ce55rrs16/campaigns
+      - paragraph [ref=e62]:
+        - strong [ref=e63]: "Landing:"
+        - link "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h" [ref=e64] [cursor=pointer]:
+          - /url: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h
+      - paragraph [ref=e65]: No dashboard check logged yet.
+      - generic [ref=e66]:
+        - link "Open manager" [ref=e67] [cursor=pointer]:
+          - /url: https://ads.x.com/manager/18ce55rrs16/campaigns
+        - button "Copy log command" [ref=e68] [cursor=pointer]
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - text: Status
+          - combobox "Status" [ref=e71]:
+            - option "active" [selected]
+            - option "scheduled"
+            - option "paused"
+            - option "rejected"
+            - option "limited"
+            - option "blocked"
+        - generic [ref=e72]:
+          - text: Spend
+          - textbox "Spend" [ref=e73]: "0"
+        - generic [ref=e74]:
+          - text: Impressions
+          - textbox "Impressions" [ref=e75]: "0"
+        - generic [ref=e76]:
+          - text: Clicks
+          - textbox "Clicks" [ref=e77]: "0"
+        - generic [ref=e78]:
+          - text: CTR
+          - textbox "CTR" [ref=e79]:
+            - /placeholder: auto
+        - generic [ref=e80]:
+          - text: Warning
+          - textbox "Warning" [ref=e81]: none
+        - generic [ref=e82]:
+          - text: Screenshot/private note
+          - textbox "Screenshot/private note" [ref=e83]: X Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>
+        - generic [ref=e84]:
+          - text: Next action
+          - textbox "Next action" [ref=e85]: keep/change/fix
+      - button "Copy generated command" [ref=e87] [cursor=pointer]
+      - generic [ref=e88]: node campaign-paid-dashboard-intake.mjs --add --platform "x" --status "active" --spend "0" --impressions "0" --clicks "0" --landing-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h" --warning "none" --screenshot-note "X Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>"
+      - generic [ref=e89]: node campaign-paid-dashboard-intake.mjs --add --platform "x" --status "active" --spend "0" --impressions "0" --clicks "0" --landing-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h" --warning "none" --screenshot-note "X Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>"

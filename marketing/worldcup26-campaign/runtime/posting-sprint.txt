@@ -1,0 +1,25 @@
+WorldCup26 posting sprint 2026-06-07 20:45 +0300
+proof=49 urgent=16 link=ok dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+
+Dexter: Priority 4 / Football groups
+  action=Ask approved group admin for permission; post group variant only if allowed
+  asset=campaign/first-wave-posts.md
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4
+  proof_after_action=node campaign-proof-log.mjs --priority "4" --proof-url "approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset/copy ready; code 26BC4B90CB and link included; post only after allowed" --status "requested"
+Sienna: Priority 1 / WhatsApp Status
+  action=Post story asset with video caption 1
+  asset=media/worldcup26-main-video.mp4
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0
+  proof_after_action=node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included" --status "posted"
+Memo: Pulse 147 / Proof audit
+  action=Check proof log, list unproven current rows, and flag blocked channels.
+  asset=runtime/posting-log-live.csv
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147
+  proof_after_action=node campaign-proof-log.mjs --pulse "147" --proof-url "internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included" --status "logged"
+Nano: Priority 2 / WhatsApp personal
+  action=Send personal invite to warm contacts
+  asset=media/worldcup26-main-video.mp4
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2
+  proof_after_action=node campaign-proof-log.mjs --priority "2" --proof-url "private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>" --status "sent"
+
+Do the real post/message/story first. Then log proof with the provided command after replacing placeholders.

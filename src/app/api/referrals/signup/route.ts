@@ -8,6 +8,7 @@ import {
 } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import {
+  optionalString,
   requireObject,
   requireString,
   ValidationError,
@@ -37,11 +38,19 @@ export async function POST(request: Request) {
 
   let referralCode: string;
   let referralTermsAccepted: boolean;
+  let utmSource: string | null;
+  let utmMedium: string | null;
+  let utmCampaign: string | null;
+  let utmContent: string | null;
 
   try {
     const body = requireObject(await request.json());
     referralCode = normalizeReferralCode(requireString(body.referralCode, "Referral code", { max: 12 }));
     referralTermsAccepted = body.referralTermsAccepted === true;
+    utmSource = optionalString(body.utmSource, "UTM source", 80);
+    utmMedium = optionalString(body.utmMedium, "UTM medium", 80);
+    utmCampaign = optionalString(body.utmCampaign, "UTM campaign", 120);
+    utmContent = optionalString(body.utmContent, "UTM content", 160);
   } catch (error) {
     return jsonError(error instanceof ValidationError ? error.message : "Invalid request body.", 400);
   }
@@ -93,6 +102,10 @@ export async function POST(request: Request) {
       signup_referral_code: referralCode,
       signup_referrer_user_id: inviter.data.user_id,
       signup_referral_accepted_at: new Date().toISOString(),
+      signup_utm_source: utmSource,
+      signup_utm_medium: utmMedium,
+      signup_utm_campaign: utmCampaign,
+      signup_utm_content: utmContent,
       updated_at: new Date().toISOString(),
     })
     .eq("user_id", user.id)

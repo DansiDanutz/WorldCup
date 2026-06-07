@@ -1,0 +1,52 @@
+WorldCup26 objective audit 2026-06-07 20:45 +0300
+state=critical audit_ok=yes complete=no proven=10/12 critical_open=1
+code=26BC4B90CB
+link=https://worldcup26.world/login?ref=26BC4B90CB
+
+requirements:
+- PROVEN referral-code-link: Referral code/link are correct
+  evidence=code=26BC4B90CB; link=https://worldcup26.world/login?ref=26BC4B90CB; resolver=ok; percent=5
+  next=Keep every post using code 26BC4B90CB and the worldcup26.world referral link.
+- PROVEN live-platform: Live platform/ad landing URLs are working
+  evidence=live_ad_qa=ok; pages=7/7; auth=ok; health=ok; dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+  next=Fix live ad QA before sending traffic if this ever turns red.
+- PROVEN meta-x-ad-platform-preview: Meta/X ad click and preview paths are working
+  evidence=ad_platform=ok; pages=9/9; social_images=1/1; resolver=ok; health=ok; dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+  next=Fix ad-platform audit before trusting Meta/X previews or paid clicks.
+- PROVEN paid-click-conversion-flow: Paid click conversion flow is ready
+  evidence=conversion_guard=ok; first_paint=4/4; resolver=ok; auth=ok; browser_verified=yes; browser_proof=provided
+  next=Fix the conversion guard before scaling paid traffic if this ever turns red.
+- PROVEN video-design-assets: Video/design assets are available to workers
+  evidence=video=ok; local_assets=5/5; phone_action=ok; video_previews=10; qr=22
+  next=Keep using the main MP4, QR story/square assets, and phone action center.
+- PROVEN workers-awake: Dexter/Sienna/Memo/Nano have current actions
+  evidence=worker_wake=ok; workers=4; state=critical; first=#warm-1 Nano / WhatsApp personal
+  next=Wake the worker shown in the board and execute the real action before logging proof.
+- PROVEN droplets-awake: Four droplets have campaign tooling awake
+  evidence=hosts=4/4; worker_wake=4/4; phone_action=4/4; public_attempts=4/4; unhealthy=dexter,sienna,memo,nano
+  next=Run the remote war-room and repair any infrastructure host failure before relying on the campaign loop.
+- PROVEN nonstop-72h-loop: Nonstop 72h campaign loop/watchdog is running
+  evidence=loops=4/4; watchdogs=4/4; watchdog_cron=4/4
+  next=Restart campaign-loop/watchdog on any host that drops out.
+- PROVEN response-kit-ready: Reply/conversion response kit is ready
+  evidence=response_kit=ok; state=ready-for-warm-replies; replies=13; warm_attempts=0; signup_saves=0
+  next=Use the response kit after a real person replies, then log the reply proof only after it happened.
+- PROVEN first-human-action-gate: First human action gate is explicit
+  evidence=first_human=ok; state=needs-first-human-action; actions=2; warm_attempts=0; signup_saves=0; ad_clicks=227; first=Memo/WhatsApp testers/clean-signup-test-batch
+  next=Send the first real tester or warm-contact batch, then run the logger with the real count/account.
+- INCOMPLETE advertise-everywhere-proof: Real external posting proof is current
+  evidence=proof_state=critical; latest_external=3.5h; external_rows=31; public_rows=29; urgent_open=16; next=#warm-1 Nano / WhatsApp personal
+  next=Do the next real action and log proof with a public URL or precise private-channel note.
+- BLOCKED public-channel-blockers: Public channel blockers are tracked
+  evidence=attempts=9; blocked=7; login_required=6; first_blocked=X / X public fallback
+  next=Use a logged-in owned public account or complete the login manually, then log the public URL.
+
+next_real_action=#clean-signup-test-batch Memo / WhatsApp testers
+action=Send three clean referral signup tests
+asset=media/worldcup26-main-video.mp4
+proof_command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"
+
+public_blocker=X / X public fallback status=login_required
+blocker_next=Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL.
+
+Truth: This objective audit is a completion guard. It proves readiness where evidence exists and keeps the full marketing objective incomplete until real external posting proof exists.

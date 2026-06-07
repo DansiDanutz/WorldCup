@@ -1,0 +1,11 @@
+WorldCup26 proof URL recovery 2026-06-07 20:45 +0300
+ok=yes pending=1 code=26BC4B90CB
+
+pending_public_urls:
+- 2026-06-07 01:40 +0300 Dexter / X / public fallback
+  pulse=dexter_pulse65
+  search=https://x.com/search?q=%22dexter_pulse65%22%20from%3ANervixAi&src=typed_query&f=live
+  profile=https://x.com/NervixAi
+  upgrade_after_verified=node campaign-proof-log.mjs --pulse "dexter_pulse65" --proof-url "PUBLIC_X_STATUS_URL" --status "posted" --force
+
+Rule: Use this board only to replace private proof with a public permalink after the public post URL is visible. Do not invent a URL.

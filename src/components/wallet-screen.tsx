@@ -4,8 +4,10 @@ import {
   BookOpen,
   CircleDollarSign,
   Copy,
+  ClipboardPaste,
   Gift,
   Lock,
+  MessageCircle,
   Phone,
   QrCode,
   RefreshCw,
@@ -15,31 +17,28 @@ import {
   Trophy,
   UserPlus,
   UserRound,
-  Upload,
   Wallet,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState, useTransition } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from "react";
 
 import { SmartMenu } from "@/components/smart-menu";
 import {
+  formatMaskedWalletAddress,
   getDepositNetworkShortLabel,
   getDepositExplorerAddressUrl,
   getDepositExplorerTxUrl,
 } from "@/lib/deposits";
 import type { DepositNetwork } from "@/lib/deposits";
 import { formatLedgerAmount, formatMoneyAmount } from "@/lib/economy";
-import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
+import { buildSupportWhatsAppUrl, SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import type {
   MyAccountStatus,
   PaidActionGate,
   PaidActionGates,
-  WalletAgeVerification,
-  WithdrawalRequestRow,
 } from "@/lib/types";
-import { getWithdrawalExplorerTxUrl } from "@/lib/withdrawals";
 import {
   normalizeWorldCupTicketPriceAmount,
   normalizeWorldCupTicketPriceNumber,
@@ -122,6 +121,11 @@ function toDepositNetwork(value: string): DepositNetwork {
   return value === "erc20" ? "erc20" : "trc20";
 }
 
+function toKnownDepositNetwork(value: string): DepositNetwork | null {
+  if (value === "trc20" || value === "erc20") return value;
+  return null;
+}
+
 export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const [session, setSession] = useState<Session | null>(null);
@@ -133,12 +137,11 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [claimNetwork, setClaimNetwork] = useState<DepositNetwork>("trc20");
   const [claimAmount, setClaimAmount] = useState("");
   const [claimSenderWalletAddress, setClaimSenderWalletAddress] = useState("");
+  const [senderWalletReview, setSenderWalletReview] = useState<{
+    network: DepositNetwork;
+    address: string;
+  } | null>(null);
   const [claimTxHash, setClaimTxHash] = useState("");
-  const [withdrawals, setWithdrawals] = useState<WithdrawalRequestRow[]>([]);
-  const [ageVerification, setAgeVerification] = useState<WalletAgeVerification | null>(null);
-  const [withdrawalNetwork, setWithdrawalNetwork] = useState("trc20");
-  const [withdrawalAddress, setWithdrawalAddress] = useState("");
-  const [withdrawalAmount, setWithdrawalAmount] = useState("");
   const [agent, setAgent] = useState<AgentStatus | null>(null);
   const [agentName, setAgentName] = useState("");
   const [agentWhatsapp, setAgentWhatsapp] = useState("");
@@ -153,10 +156,10 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [responsiblePlay, setResponsiblePlay] = useState<ResponsiblePlayStatus | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const senderWalletSetupRef = useRef<HTMLDivElement | null>(null);
 
   const signedIn = Boolean(session?.access_token && session.user.email);
-  const showAdminNav =
-    isAdmin || session?.user.email?.trim().toLowerCase() === ownerAdminEmail;
+  const showAdminNav = session?.user.email?.trim().toLowerCase() === ownerAdminEmail;
   const depositClaimAccountLabel =
     session?.user.email ?? session?.user.id ?? "your signed-in account";
   const depositRestriction = responsiblePlay?.depositRestriction ?? null;
@@ -168,10 +171,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
     status?.paidActionGates
       ? getGatePauseMessage(status.paidActionGates.deposit)
       : publicDepositPolicyPause;
-  const withdrawalPolicyPause =
-    status?.paidActionGates
-      ? getGatePauseMessage(status.paidActionGates.withdrawal)
-      : publicWithdrawalPolicyPause;
   const publicPaidActionsPaused = Boolean(
     publicDepositPolicyPause || publicTicketPolicyPause || publicWithdrawalPolicyPause,
   );
@@ -209,9 +208,30 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
     [status],
   );
   const lockedClaimSenderWallet = savedSenderWallets[claimNetwork];
+  const hasLockedSenderWallet = depositNetworkOptions.some((network) => Boolean(savedSenderWallets[network]));
+  const lockedDepositAddresses = useMemo(
+    () =>
+      addresses.filter((entry) => {
+        const network = toKnownDepositNetwork(entry.network);
+        return Boolean(network && savedSenderWallets[network]);
+      }),
+    [addresses, savedSenderWallets],
+  );
+  const senderWalletReviewAddress =
+    senderWalletReview?.network === claimNetwork ? senderWalletReview.address : null;
   const claimNetworkLabel = getDepositNetworkShortLabel(claimNetwork);
+  const nextAgentCode = agent?.availableCodes[0] ?? null;
+  const whatsappDepositHelpUrl = buildSupportWhatsAppUrl(
+    "Hi, I need help with my WorldCup26 USDT deposit and ticket assignment.",
+  );
+  const whatsappAgentHelpUrl = buildSupportWhatsAppUrl(
+    "Hi, I want help becoming a WorldCup26 agent and receiving agent ticket codes.",
+  );
+  const whatsappPassiveIncomeHelpUrl = buildSupportWhatsAppUrl(
+    "Hi, I want help understanding WorldCup26 passive income, referrals, and agent commissions.",
+  );
 
-  function applyAccountStatus(me: Partial<MyAccountStatus>) {
+  const applyAccountStatus = useCallback((me: Partial<MyAccountStatus>) => {
     setStatus({
       walletBalance: me.walletBalance ?? "0.00",
       ticketsAvailable: me.ticketsAvailable ?? 0,
@@ -228,7 +248,18 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       paidActionGates: me.paidActionGates,
     });
 
-    if (me.usdtSenderWalletTrc20Address) {
+    const nextSavedSenderWallets = {
+      trc20:
+        me.usdtSenderWalletTrc20Address ??
+        (me.usdtSenderWalletNetwork === "trc20" ? me.usdtSenderWalletAddress ?? null : null),
+      erc20:
+        me.usdtSenderWalletErc20Address ??
+        (me.usdtSenderWalletNetwork === "erc20" ? me.usdtSenderWalletAddress ?? null : null),
+    };
+
+    if (nextSavedSenderWallets[claimNetwork]) {
+      setClaimSenderWalletAddress(nextSavedSenderWallets[claimNetwork] ?? "");
+    } else if (me.usdtSenderWalletTrc20Address) {
       setClaimSenderWalletAddress(me.usdtSenderWalletTrc20Address);
       setClaimNetwork("trc20");
     } else if (me.usdtSenderWalletErc20Address) {
@@ -240,14 +271,17 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         setClaimNetwork(me.usdtSenderWalletNetwork);
       }
     }
-  }
+  }, [claimNetwork]);
 
   function applyResponsiblePlay(data: ResponsiblePlayStatus) {
     setResponsiblePlay(data);
   }
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => setSession(data.session));
+    supabase.auth
+      .getSession()
+      .then(({ data }) => setSession(data.session))
+      .catch(() => setSession(null));
     const { data } = supabase.auth.onAuthStateChange((_event, next) => setSession(next));
     return () => data.subscription.unsubscribe();
   }, [supabase]);
@@ -263,8 +297,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         setSharedDepositAddresses(false);
         setDepositClaims([]);
         setClaimSenderWalletAddress("");
-        setWithdrawals([]);
-        setAgeVerification(null);
+        setSenderWalletReview(null);
         setResponsiblePlay(null);
         setAgent(null);
         setIsAdmin(false);
@@ -280,7 +313,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
           meResponse,
           addressResponse,
           claimsResponse,
-          withdrawalResponse,
           responsibleResponse,
           agentResponse,
           adminResponse,
@@ -288,7 +320,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
           fetch("/api/referrals/me", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/deposits/address", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/deposits/claims", { headers: { Authorization: `Bearer ${token}` } }),
-          fetch("/api/withdrawals", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/responsible-play", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/agent/me", { headers: { Authorization: `Bearer ${token}` } }),
           fetch("/api/admin/me", { headers: { Authorization: `Bearer ${token}` } }),
@@ -313,15 +344,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         if (claimsResponse.ok) {
           const data = (await claimsResponse.json()) as { claims?: DepositClaim[] };
           setDepositClaims(data.claims ?? []);
-        }
-
-        if (withdrawalResponse.ok) {
-          const data = (await withdrawalResponse.json()) as {
-            withdrawals?: WithdrawalRequestRow[];
-            ageVerification?: WalletAgeVerification;
-          };
-          setWithdrawals(data.withdrawals ?? []);
-          setAgeVerification(data.ageVerification ?? null);
         }
 
         if (responsibleResponse.ok) {
@@ -350,10 +372,10 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
         setError("Could not load your wallet.");
       }
     });
-  }, [session?.access_token, signedIn]);
+  }, [applyAccountStatus, session?.access_token, signedIn]);
 
   function refreshStatus(token: string) {
-    fetch("/api/referrals/me", { headers: { Authorization: `Bearer ${token}` } })
+    return fetch("/api/referrals/me", { headers: { Authorization: `Bearer ${token}` } })
       .then((response) => response.json())
       .then((me: Partial<MyAccountStatus>) => applyAccountStatus(me))
       .catch(() => undefined);
@@ -365,22 +387,59 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       return;
     }
 
+    if (!lockedClaimSenderWallet) {
+      setError(`Lock your ${claimNetworkLabel} sender wallet before checking deposits.`);
+      return;
+    }
+
     setError(null);
     setMessage("Checking for new deposits…");
     startTransition(async () => {
       try {
-        const response = await fetch("/api/referrals/me", {
-          headers: { Authorization: `Bearer ${token}` },
+        const response = await fetch("/api/deposits/check", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ network: claimNetwork }),
         });
-        const me = (await response.json()) as Partial<MyAccountStatus>;
-        applyAccountStatus(me);
-        setMessage(
-          "Balance updated. USDT deposits appear here automatically once confirmed on-chain (usually a few minutes).",
-        );
+        const result = (await response.json()) as {
+          error?: string;
+          message?: string;
+          matched?: boolean;
+          claim?: DepositClaim;
+        };
+
+        if (!response.ok) {
+          setError(result.error ?? "Could not check KuCoin deposits just now.");
+          setMessage(null);
+          return;
+        }
+
+        if (result.claim) {
+          setDepositClaims((current) => {
+            if (current.some((claim) => claim.id === result.claim?.id)) {
+              return current;
+            }
+
+            return [result.claim!, ...current];
+          });
+        }
+
+        await Promise.all([refreshStatus(token), refreshDepositClaims(token)]);
+        setMessage(result.message ?? "Deposit check complete.");
       } catch {
-        setError("Could not refresh your balance just now. Try again in a moment.");
+        setError("Could not check KuCoin deposits just now. Try again in a moment.");
       }
     });
+  }
+
+  function refreshDepositClaims(token: string) {
+    return fetch("/api/deposits/claims", { headers: { Authorization: `Bearer ${token}` } })
+      .then((response) => response.json())
+      .then((data: { claims?: DepositClaim[] }) => setDepositClaims(data.claims ?? []))
+      .catch(() => undefined);
   }
 
   function refreshAgent(token: string) {
@@ -393,6 +452,48 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       })
       .catch(() => undefined);
   }
+
+  useEffect(() => {
+    const token = session?.access_token;
+
+    if (!token || !signedIn || walletView !== "agent" || agent?.applicationStatus !== "active") {
+      return;
+    }
+
+    let active = true;
+    const loadAgent = async () => {
+      try {
+        const response = await fetch("/api/agent/me", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (!active || !response.ok) {
+          return;
+        }
+
+        const data = (await response.json()) as AgentStatus;
+        setAgent(data.isAgent || data.applicationStatus === "pending" ? data : null);
+      } catch {
+        // Keep the current code visible if a background refresh fails.
+      }
+    };
+
+    const intervalId = window.setInterval(loadAgent, 15_000);
+    const refreshOnVisible = () => {
+      if (document.visibilityState === "visible") {
+        void loadAgent();
+      }
+    };
+
+    window.addEventListener("focus", loadAgent);
+    document.addEventListener("visibilitychange", refreshOnVisible);
+
+    return () => {
+      active = false;
+      window.clearInterval(intervalId);
+      window.removeEventListener("focus", loadAgent);
+      document.removeEventListener("visibilitychange", refreshOnVisible);
+    };
+  }, [agent?.applicationStatus, session?.access_token, signedIn, walletView]);
 
   function registerAsAgent() {
     const token = session?.access_token;
@@ -640,7 +741,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       return;
     }
 
-    const senderWalletAddress = claimSenderWalletAddress.trim();
+    const senderWalletAddress = (senderWalletReviewAddress ?? claimSenderWalletAddress).trim();
     if (!senderWalletAddress) {
       setError(`Enter the ${claimNetworkLabel} sender wallet first.`);
       return;
@@ -670,7 +771,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       if (result.senderWalletAddress) {
         setClaimSenderWalletAddress(result.senderWalletAddress);
       }
-      setMessage(`${claimNetworkLabel} sender wallet locked. Future deposits and withdrawals for this network must use this wallet.`);
+      setSenderWalletReview(null);
+      setMessage(`${claimNetworkLabel} sender wallet locked. Future deposits and any later USDT payout for this network use this saved sender wallet.`);
       refreshStatus(token);
     });
   }
@@ -678,21 +780,67 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   function chooseClaimNetwork(network: DepositNetwork) {
     setClaimNetwork(network);
     setClaimSenderWalletAddress(savedSenderWallets[network] ?? "");
+    setSenderWalletReview(null);
+  }
+
+  function openSenderWalletSetup(network: DepositNetwork) {
+    chooseClaimNetwork(network);
+    setWalletView("user");
+    setMessage(`Paste your ${getDepositNetworkShortLabel(network)} sender wallet before sending USDT.`);
+    setError(null);
+    window.setTimeout(() => {
+      senderWalletSetupRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      senderWalletSetupRef.current?.querySelector("input")?.focus();
+    }, 80);
+  }
+
+  async function pasteSenderWallet() {
+    try {
+      const text = await navigator.clipboard.readText();
+      setClaimSenderWalletAddress(text.trim());
+      setSenderWalletReview(null);
+      setMessage("Sender wallet pasted. Save it to review before locking.");
+    } catch {
+      setError("Could not read clipboard. Paste the wallet address manually.");
+    }
+  }
+
+  function saveSenderWalletForReview() {
+    const senderWalletAddress = claimSenderWalletAddress.trim();
+    if (!senderWalletAddress) {
+      setError(`Paste your ${claimNetworkLabel} sender wallet first.`);
+      return;
+    }
+
+    setError(null);
+    setSenderWalletReview({ network: claimNetwork, address: senderWalletAddress });
+    setMessage(`Review ${formatMaskedWalletAddress(senderWalletAddress)}. Confirm once more to lock it permanently.`);
   }
 
   function renderSenderWalletSetup() {
     return (
-      <div className="sender-wallet-lock-box">
+      <div className="sender-wallet-lock-box" id="usdt-sender-wallet" ref={senderWalletSetupRef}>
         <div className="panel-header compact">
           <div>
             <h3 className="panel-title">USDT sender wallets</h3>
             <p className="panel-subtitle">
               Before any USDT deposit, lock the wallet you send from. TRC20 and ERC20 are separate.
-              Once a wallet is saved, it cannot be changed. Deposits from another wallet may be lost,
-              and withdrawals go back to the saved wallet.
+              Once a wallet is saved, it cannot be changed. Deposits from another wallet may be lost.
+              If you win and choose USDT after the World Cup, admin uses the saved sender wallet.
             </p>
           </div>
-          <ShieldCheck size={18} color="var(--gold)" />
+          <div className="panel-header-actions">
+            <ShieldCheck size={18} color="var(--gold)" />
+            <a
+              className="button secondary whatsapp-help-link"
+              href={whatsappDepositHelpUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <MessageCircle size={16} />
+              WhatsApp deposit help
+            </a>
+          </div>
         </div>
         <div className="sender-wallet-card-grid" aria-label="Locked USDT sender wallets">
           {depositNetworkOptions.map((network) => {
@@ -709,88 +857,72 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               >
                 <span>{label} sender wallet</span>
                 <strong>{savedWallet ? "Locked" : "Not set"}</strong>
-                {savedWallet ? <code>{savedWallet}</code> : <small>Required before deposit</small>}
+                {savedWallet ? (
+                  <code>{formatMaskedWalletAddress(savedWallet)}</code>
+                ) : (
+                  <small>Required before deposit</small>
+                )}
               </button>
             );
           })}
         </div>
+        <div className={`sender-wallet-entry ${lockedClaimSenderWallet ? "locked" : ""}`}>
+          <div>
+            <span>{claimNetworkLabel} sender wallet</span>
+            <strong>
+              {lockedClaimSenderWallet
+                ? formatMaskedWalletAddress(lockedClaimSenderWallet)
+                : senderWalletReviewAddress
+                  ? formatMaskedWalletAddress(senderWalletReviewAddress)
+                  : "Paste the wallet you will send from"}
+            </strong>
+            <small>
+              {lockedClaimSenderWallet
+                ? "Locked permanently for deposit checks and any later USDT payout on this network."
+                : senderWalletReviewAddress
+                  ? "Confirm once more to lock this wallet permanently."
+                  : "Copy your full wallet address, then use Paste here."}
+            </small>
+          </div>
+          {!lockedClaimSenderWallet && !senderWalletReviewAddress ? (
+            <div className="sender-wallet-entry__form">
+              <input
+                aria-label={`${claimNetworkLabel} sender wallet`}
+                value={claimSenderWalletAddress}
+                onChange={(event) => {
+                  setClaimSenderWalletAddress(event.target.value);
+                  setSenderWalletReview(null);
+                }}
+                placeholder={claimNetwork === "trc20" ? "TRC20 wallet starts with T" : "ERC20 wallet starts with 0x"}
+              />
+              <button className="button secondary" onClick={pasteSenderWallet} type="button">
+                <ClipboardPaste size={16} />
+                Paste
+              </button>
+              <button
+                className="button secondary"
+                disabled={!claimSenderWalletAddress || isPending}
+                onClick={saveSenderWalletForReview}
+                type="button"
+              >
+                Save wallet
+              </button>
+            </div>
+          ) : null}
+          {!lockedClaimSenderWallet && senderWalletReviewAddress ? (
+            <div className="sender-wallet-entry__actions">
+              <button className="button secondary" onClick={() => setSenderWalletReview(null)} type="button">
+                Edit
+              </button>
+              <button className="button secondary" disabled={isPending} onClick={lockSenderWallet} type="button">
+                <ShieldCheck size={16} />
+                Confirm locked wallet
+              </button>
+            </div>
+          ) : null}
+        </div>
       </div>
     );
-  }
-
-  function submitWithdrawalRequest() {
-    const token = session?.access_token;
-    if (!token) {
-      return;
-    }
-
-    const address = withdrawalAddress.trim();
-    const amount = withdrawalAmount.trim();
-
-    setError(null);
-    setMessage(null);
-    startTransition(async () => {
-      const response = await fetch("/api/withdrawals", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          network: withdrawalNetwork,
-          address,
-          amount,
-        }),
-      });
-      const result = (await response.json()) as { error?: string; withdrawal?: WithdrawalRequestRow };
-
-      if (!response.ok) {
-        setError(result.error ?? "Could not submit withdrawal request.");
-        return;
-      }
-
-      if (result.withdrawal) {
-        setWithdrawals((current) => [result.withdrawal!, ...current]);
-      }
-      setWithdrawalAmount("");
-      setWithdrawalAddress("");
-      setMessage("Withdrawal request submitted for admin review.");
-    });
-  }
-
-  function submitAgeDocs() {
-    const token = session?.access_token;
-    if (!token) {
-      return;
-    }
-
-    setError(null);
-    setMessage(null);
-    startTransition(async () => {
-      const response = await fetch("/api/age-verification", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: "{}",
-      });
-      const result = (await response.json()) as WalletAgeVerification & { error?: string };
-
-      if (!response.ok) {
-        setError(result.error ?? "Could not submit your age verification.");
-        return;
-      }
-
-      setAgeVerification({
-        status: result.status,
-        note: result.note ?? null,
-        submittedAt: result.submittedAt ?? null,
-        verifiedAt: result.verifiedAt ?? null,
-        contact: result.contact,
-      });
-      setMessage("Thanks — your documents are marked as sent. Withdrawals open after an admin confirms you are 18 or older.");
-    });
   }
 
   return (
@@ -898,22 +1030,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               Lock entry
             </Link>
           </section>
-        ) : publicPaidActionsPaused ? (
-          <section className="launch-notice" aria-label="Wallet launch status">
-            <div>
-              <strong>Wallet paid actions paused</strong>
-              <span>
-                {signedIn && walletView === "user" && !accountStatusLoaded
-                  ? "Loading your User Wallet ticket status before showing any deposit actions."
-                  : signedIn && walletView === "agent"
-                    ? "Agent USDT deposit proof is available for admin-reviewed agent inventory. User self-purchase is disabled."
-                    : "Login, referrals, and account setup are available. Admin assigns tickets after verified cash or USDT payment."}
-              </span>
-            </div>
-            <Link className="button secondary" href={{ pathname: "/" }}>
-              View teams
-            </Link>
-          </section>
         ) : null}
 
         {!signedIn ? (
@@ -944,8 +1060,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   </div>
                   <div>
                     <span>3</span>
-                    <strong>Deposit / withdraw</strong>
-                    <small>Use USDT queues with admin review and audit notes.</small>
+                    <strong>Deposit USDT</strong>
+                    <small>Buy tickets by locking your sender wallet, then admin verifies the payment.</small>
                   </div>
                 </div>
                 <Link className="button" href={{ pathname: "/login" }}>
@@ -1023,17 +1139,40 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                         ? "Your personal entry ticket is ready. Lock your teams from Play."
                         : userHasPersonalTicketRecord
                         ? "Your personal entry ticket is already assigned or used for your entry."
-                        : "Admin assigns entry tickets after verified cash or USDT payment."}
+                        : "Cash is assigned by Admin. Accepted USDT turns the first 50 USDT into one ticket."}
                     </strong>
                     <span>
                       {!accountStatusLoaded
                         ? "Deposit actions stay hidden until your wallet status is loaded."
                         : userHasPersonalTicketRecord
                         ? "User Wallet deposits are hidden once your entry ticket is assigned or used. Use Agent Wallet for agent inventory deposits."
-                        : "Send USDT only from your frozen sender wallet, then Admin verifies it and assigns the exact ticket codes manually."}
+                        : "Send USDT only from your frozen sender wallet. Admin accepts the matching transfer before balance is credited."}
                     </span>
                     {userNeedsEntryTicket && ticketPrice > 0 ? <small>Ticket price: {formatMoneyAmount(ticketPrice)}.</small> : null}
                   </div>
+                </div>
+                <div className="wallet-usdt-quick-actions" aria-label="Prepare USDT sender wallet">
+                  <div>
+                    <strong>USDT sender wallet</strong>
+                    <span>Add the wallet you will send from before any payment.</span>
+                  </div>
+                  <button className="button secondary" onClick={() => openSenderWalletSetup("trc20")} type="button">
+                    <Wallet size={16} />
+                    TRC20 wallet
+                  </button>
+                  <button className="button secondary" onClick={() => openSenderWalletSetup("erc20")} type="button">
+                    <Wallet size={16} />
+                    ERC20 wallet
+                  </button>
+                  <a
+                    className="button secondary whatsapp-help-link"
+                    href={whatsappDepositHelpUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <MessageCircle size={16} />
+                    WhatsApp deposit help
+                  </a>
                 </div>
                 <div className="wallet-action-list compact wallet-action-list--steps" aria-label="Wallet next actions">
                   <div>
@@ -1147,6 +1286,10 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
               </div>
             </div>
 
+            <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
+              {renderSenderWalletSetup()}
+            </div>
+
             {userNeedsEntryTicket ? (
             <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
               <div className="panel-header">
@@ -1154,17 +1297,27 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <h2 className="panel-title">Deposit USDT</h2>
                   <p className="panel-subtitle">
                     {sharedDepositAddresses
-                      ? "Send only USDT on the matching network and keep the transaction hash."
-                      : "Send only USDT on the matching network. Deposits credit your wallet after on-chain confirmation."}
+                      ? "Lock your sender wallet first. The matching receive QR appears only after that."
+                      : "Send only USDT on the matching network after your sender wallet is locked."}
                   </p>
                 </div>
-                <QrCode size={18} color="var(--green)" />
+                <div className="panel-header-actions">
+                  <QrCode size={18} color="var(--green)" />
+                  <a
+                    className="button secondary whatsapp-help-link"
+                    href={whatsappDepositHelpUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <MessageCircle size={16} />
+                    WhatsApp deposit help
+                  </a>
+                </div>
               </div>
-              {renderSenderWalletSetup()}
               {sharedDepositAddresses ? (
                 <div className="message">
-                  Shared receive wallet. Your sender wallet must be locked before the claim can
-                  be credited. Deposit claims are tied to {depositClaimAccountLabel}.
+                  Shared receive wallet. The matching QR and receive address appear here only
+                  after your sender wallet is locked. Deposit claims are tied to {depositClaimAccountLabel}.
                 </div>
               ) : null}
               {depositPolicyPause ? (
@@ -1173,11 +1326,21 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 <div className="message">
                   USDT deposits are not enabled yet. Check back soon.
                 </div>
+              ) : !hasLockedSenderWallet ? (
+                <div className="message">
+                  Lock your TRC20 or ERC20 sender wallet above before sending USDT. The deposit
+                  QR and receive address stay hidden until your wallet is saved.
+                </div>
               ) : addresses.length === 0 ? (
                 <div className="field-note">Generating your deposit addresses…</div>
+              ) : lockedDepositAddresses.length === 0 ? (
+                <div className="message">
+                  The receive wallet for your locked sender network is not configured yet.
+                  Contact Admin before sending USDT.
+                </div>
               ) : (
                 <div className="deposit-list">
-                  {addresses.map((entry) => {
+                  {lockedDepositAddresses.map((entry) => {
                     const explorerUrl = getDepositExplorerAddressUrl(entry.network, entry.address);
 
                     return (
@@ -1222,132 +1385,45 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                 </div>
               )}
               <div className="field-note">
-                Only send USDT on the exact network shown. Sending any other asset or network may
-                result in permanent loss.
+                {lockedClaimSenderWallet
+                  ? "Only send USDT on the exact network shown from your locked sender wallet. Sending any other asset, network, or sender wallet may result in permanent loss."
+                  : `Select TRC20 or ERC20 above and lock your ${claimNetworkLabel} sender wallet before sending USDT.`}
               </div>
               <div className="deposit-refresh">
                 <p className="field-note">
-                  Deposits credit automatically after on-chain confirmation (usually a few minutes).
-                  Already sent? Check for it now.
+                  Check only after sending from the locked wallet. KuCoin matches the deposit,
+                  then Admin reviews and credits it.
                 </p>
                 <button
                   className="button secondary"
-                  disabled={isPending}
+                  disabled={!lockedClaimSenderWallet || isPending}
                   onClick={checkForDeposit}
                   type="button"
                 >
                   <RefreshCw size={16} />
                   {isPending ? "Checking…" : "Check for deposit"}
                 </button>
+                <a
+                  className="button secondary whatsapp-help-link"
+                  href={whatsappDepositHelpUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <MessageCircle size={16} />
+                  WhatsApp deposit help
+                </a>
               </div>
               {sharedDepositAddresses ? (
                 <div className="deposit-claim-box">
                   <div className="panel-header compact">
                     <div>
-                      <h3 className="panel-title">Submit transaction</h3>
+                      <h3 className="panel-title">Admin review queue</h3>
                       <p className="panel-subtitle">
-                        Paste the wallet you sent from and the transaction hash after sending USDT.
-                        Admins use both before crediting your balance.
+                        After you send USDT, Check for deposit reads KuCoin and creates a review row for Admin.
+                        When Admin accepts it, your wallet is credited and the first 50 USDT becomes a ticket.
                       </p>
                     </div>
-                    <Send size={18} color="var(--green)" />
-                  </div>
-                  <div className="deposit-flow-steps" aria-label="Deposit claim steps">
-                    <div>
-                      <span>1</span>
-                      <strong>Lock sender wallet</strong>
-                      <small>Choose TRC20 or ERC20 and save the wallet you send from.</small>
-                    </div>
-                    <div>
-                      <span>2</span>
-                      <strong>Send USDT</strong>
-                      <small>Use only the locked sender wallet for that network.</small>
-                    </div>
-                    <div>
-                      <span>3</span>
-                      <strong>Submit proof</strong>
-                      <small>Paste amount, sender wallet, and tx hash.</small>
-                    </div>
-                  </div>
-                  <div className="deposit-claim-form">
-                    {depositPolicyPause ? (
-                      <div className="message error full-width">{depositPolicyPause}</div>
-                    ) : null}
-                    {depositRestriction ? (
-                      <div className="message error full-width">{depositRestriction}</div>
-                    ) : null}
-                    <div className="field">
-                      <label htmlFor="claim-network">Network</label>
-                      <select
-                        id="claim-network"
-                        value={claimNetwork}
-                        onChange={(event) => chooseClaimNetwork(toDepositNetwork(event.target.value))}
-                      >
-                        <option value="trc20">TRC20</option>
-                        <option value="erc20">ERC20</option>
-                      </select>
-                    </div>
-                    <div className="field">
-                      <label htmlFor="claim-amount">Amount sent</label>
-                      <input
-                        id="claim-amount"
-                        min="0"
-                        step="0.000001"
-                        type="number"
-                        value={claimAmount}
-                        onChange={(event) => setClaimAmount(event.target.value)}
-                      />
-                    </div>
-                    <div className="field full-width">
-                      <label htmlFor="claim-sender-wallet">{claimNetworkLabel} sender wallet address</label>
-                      <input
-                        disabled={Boolean(lockedClaimSenderWallet)}
-                        id="claim-sender-wallet"
-                        value={claimSenderWalletAddress}
-                        onChange={(event) => setClaimSenderWalletAddress(event.target.value)}
-                        placeholder={claimNetwork === "trc20" ? "TRC20 wallet starts with T" : "ERC20 wallet starts with 0x"}
-                      />
-                      <div className="field-note">
-                        {lockedClaimSenderWallet
-                          ? `${claimNetworkLabel} sender wallet is locked. Deposits from any other wallet cannot be credited and may be lost.`
-                          : `First ${claimNetworkLabel} deposit or manual save locks this sender wallet permanently. Withdrawals return to this wallet.`}
-                      </div>
-                      {!lockedClaimSenderWallet ? (
-                        <button
-                          className="button secondary"
-                          disabled={!claimSenderWalletAddress || isPending}
-                          onClick={lockSenderWallet}
-                          type="button"
-                        >
-                          <ShieldCheck size={16} />
-                          Lock {claimNetworkLabel} sender wallet
-                        </button>
-                      ) : null}
-                    </div>
-                    <div className="field full-width">
-                      <label htmlFor="claim-tx">Transaction hash</label>
-                      <input
-                        id="claim-tx"
-                        value={claimTxHash}
-                        onChange={(event) => setClaimTxHash(event.target.value)}
-                        placeholder="Paste tx hash"
-                      />
-                    </div>
-                    <button
-                      className="button secondary"
-                      disabled={
-                        !claimAmount ||
-                        !claimSenderWalletAddress ||
-                        !claimTxHash ||
-                        Boolean(depositRestriction || depositPolicyPause) ||
-                        isPending
-                      }
-                      onClick={submitDepositClaim}
-                      type="button"
-                    >
-                      <Send size={16} />
-                      Submit Claim
-                    </button>
+                    <CircleDollarSign size={18} color="var(--green)" />
                   </div>
                   {depositClaims.length > 0 ? (
                     <div className="deposit-claim-list">
@@ -1419,126 +1495,59 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
             <div className={`panel ${walletView === "agent" ? "wallet-panel-hidden" : ""}`}>
               <div className="panel-header">
                 <div>
-                  <h2 className="panel-title">Withdraw USDT</h2>
+                  <h2 className="panel-title">Payout after World Cup</h2>
                   <p className="panel-subtitle">
-                    Request a payout after admin KYC/AML and manual transfer review.
+                    No withdrawal request is open during the tournament.
                   </p>
                 </div>
-                <Upload size={18} color="var(--green)" />
+                <Trophy size={18} color="var(--gold)" />
               </div>
               <div className="withdrawal-box">
                 <div className="message">
-                  Withdrawals are not automatic. Admins review the request, record the wallet
-                  debit, then mark the external transfer as paid with its transaction hash.
+                  Winnings are paid manually after all matches are finished and every point is final.
+                  Until then, this wallet only handles tickets, transfers, and USDT deposit proof.
                 </div>
-                {withdrawalPolicyPause ? (
-                  <div className="message error">{withdrawalPolicyPause}</div>
-                ) : null}
-                {ageVerification && ageVerification.status !== "verified" ? (
-                  <div className={`message${ageVerification.status === "rejected" ? " error" : ""}`}>
-                    <strong>Confirm you are 18 or older to withdraw</strong>
-                    <p>
-                      {ageVerification.status === "pending"
-                        ? "Your documents are under review. Withdrawals open once an admin confirms you are 18 or older."
-                        : `Send a government photo ID to ${ageVerification.contact}, then tap the button below so an admin can review it.`}
-                    </p>
-                    {ageVerification.note ? <small>{ageVerification.note}</small> : null}
-                    {ageVerification.status !== "pending" ? (
-                      <button
-                        className="button secondary"
-                        disabled={isPending}
-                        onClick={submitAgeDocs}
-                        type="button"
-                      >
-                        I&apos;ve sent my documents
-                      </button>
-                    ) : null}
+                <div className="wallet-action-list compact wallet-action-list--steps" aria-label="Manual payout options">
+                  <div>
+                    <span>Cash</span>
+                    <strong>Manual payout</strong>
+                    <small>Admin can pay winnings in cash after the tournament is closed.</small>
                   </div>
-                ) : null}
-                <div className="deposit-claim-form">
-                  <div className="field">
-                    <label htmlFor="withdrawal-network">Network</label>
-                    <select
-                      id="withdrawal-network"
-                      value={withdrawalNetwork}
-                      onChange={(event) => setWithdrawalNetwork(event.target.value)}
-                    >
-                      <option value="trc20">TRC20</option>
-                      <option value="erc20">ERC20</option>
-                    </select>
+                  <div>
+                    <span>USDT</span>
+                    <strong>
+                      {savedSenderWallets.trc20 || savedSenderWallets.erc20
+                        ? "Wallet saved"
+                        : "Deposit required"}
+                    </strong>
+                    <small>
+                      USDT payout is available only if this account used USDT deposit at least once,
+                      so the sender wallet is stored.
+                    </small>
                   </div>
-                  <div className="field">
-                    <label htmlFor="withdrawal-amount">Amount</label>
-                    <input
-                      id="withdrawal-amount"
-                      inputMode="decimal"
-                      min="0"
-                      step="0.000001"
-                      type="number"
-                      value={withdrawalAmount}
-                      onChange={(event) => setWithdrawalAmount(event.target.value)}
-                    />
-                  </div>
-                  <div className="field full-width">
-                    <label htmlFor="withdrawal-address">Receive address</label>
-                    <input
-                      id="withdrawal-address"
-                      value={withdrawalAddress}
-                      onChange={(event) => setWithdrawalAddress(event.target.value)}
-                      placeholder={withdrawalNetwork === "trc20" ? "TRC20 address starts with T" : "ERC20 address starts with 0x"}
-                    />
-                  </div>
-                  <button
-                    className="button secondary"
-                    disabled={
-                      !withdrawalAmount ||
-                      !withdrawalAddress ||
-                      Boolean(withdrawalPolicyPause) ||
-                      ageVerification?.status !== "verified" ||
-                      isPending
-                    }
-                    onClick={submitWithdrawalRequest}
-                    type="button"
-                  >
-                    <Upload size={16} />
-                    Request Withdrawal
-                  </button>
                 </div>
-                {withdrawals.length > 0 ? (
+                {savedSenderWallets.trc20 || savedSenderWallets.erc20 ? (
                   <div className="deposit-claim-list">
-                    {withdrawals.map((withdrawal) => {
-                      const explorerUrl =
-                        withdrawal.externalTxHash
-                          ? getWithdrawalExplorerTxUrl(withdrawal.network, withdrawal.externalTxHash)
-                          : null;
+                    {depositNetworkOptions.map((network) => {
+                      const savedWallet = savedSenderWallets[network];
 
-                      return (
-                        <div className="deposit-claim-row" key={withdrawal.id}>
+                      return savedWallet ? (
+                        <div className="deposit-claim-row" key={`payout-${network}`}>
                           <div>
-                            <strong>
-                              {formatLedgerAmount(withdrawal.amount)} {withdrawal.currency} ·{" "}
-                              {withdrawal.network.toUpperCase()}
-                            </strong>
-                            <code>{withdrawal.address}</code>
-                            {withdrawal.externalTxHash ? <code>{withdrawal.externalTxHash}</code> : null}
-                            {explorerUrl ? (
-                              <a
-                                className="deposit-explorer-link"
-                                href={explorerUrl}
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                View payout transaction
-                              </a>
-                            ) : null}
-                            {withdrawal.adminNote ? <small>{withdrawal.adminNote}</small> : null}
+                            <strong>{getDepositNetworkShortLabel(network)} payout wallet saved</strong>
+                            <code>{savedWallet}</code>
                           </div>
-                          <span className={`claim-status ${withdrawal.status}`}>{withdrawal.status}</span>
+                          <span className="claim-status credited">stored</span>
                         </div>
-                      );
+                      ) : null;
                     })}
                   </div>
-                ) : null}
+                ) : (
+                  <div className="field-note">
+                    No USDT sender wallet is saved yet. A verified USDT deposit stores the wallet
+                    if the winner later chooses USDT instead of cash.
+                  </div>
+                )}
               </div>
             </div>
 
@@ -1563,36 +1572,66 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                   <div className="agent-revenue-box">
                     <div>
                       <Gift size={18} aria-hidden="true" />
-                      <strong>10 paid tickets = 1 free ticket</strong>
-                      <span>Pay upfront for tickets, sell them to players, and receive one commission ticket for every ten paid tickets assigned.</span>
+                      <strong>Commission ticket</strong>
+                      <span>Every 10 paid tickets assigned gives the agent 1 free ticket code.</span>
                     </div>
                     <div>
                       <UserPlus size={18} aria-hidden="true" />
-                      <strong>5% referral upside</strong>
-                      <span>If a player has no inviter, the agent ticket makes you their inviter and upgrades their own future referral rate to 5%. Existing inviter referrals are never overwritten.</span>
+                      <strong>Referral credit</strong>
+                      <span>Players without an inviter become your referral. Existing inviter links stay unchanged.</span>
                     </div>
+                    <a
+                      className="button secondary whatsapp-help-link"
+                      href={whatsappPassiveIncomeHelpUrl}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <MessageCircle size={16} />
+                      WhatsApp passive income help
+                    </a>
                   </div>
                   <div className="agent-deposit-box">
                     <div className="panel-header compact">
                       <div>
                         <h3 className="panel-title">Deposit USDT for agent tickets</h3>
                         <p className="panel-subtitle">
-                          Send USDT, submit the proof, then admin assigns paid agent tickets after manual approval.
+                          Lock your sender wallet first. Admin assigns paid agent ticket codes after the USDT payment is verified.
                         </p>
                       </div>
-                      <QrCode size={18} color="var(--gold)" />
+                      <div className="panel-header-actions">
+                        <QrCode size={18} color="var(--gold)" />
+                        <a
+                          className="button secondary whatsapp-help-link"
+                          href={whatsappAgentHelpUrl}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <MessageCircle size={16} />
+                          WhatsApp agent help
+                        </a>
+                      </div>
                     </div>
                     {renderSenderWalletSetup()}
                     {depositPolicyPause ? (
                       <div className="message error">{depositPolicyPause}</div>
                     ) : depositsConfigured === false ? (
                       <div className="message">USDT deposits are not enabled yet. Check back soon.</div>
+                    ) : !hasLockedSenderWallet ? (
+                      <div className="message">
+                        Lock your TRC20 or ERC20 sender wallet first. Agent deposit QR codes and
+                        receive addresses stay hidden until the matching sender wallet is saved.
+                      </div>
                     ) : addresses.length === 0 ? (
                       <div className="field-note">Generating your agent deposit address...</div>
+                    ) : lockedDepositAddresses.length === 0 ? (
+                      <div className="message">
+                        The receive wallet for your locked sender network is not configured yet.
+                        Contact Admin before sending agent inventory funds.
+                      </div>
                     ) : (
                       <>
                         <div className="deposit-list agent-deposit-list">
-                          {addresses.map((entry) => {
+                          {lockedDepositAddresses.map((entry) => {
                             const explorerUrl = getDepositExplorerAddressUrl(entry.network, entry.address);
 
                             return (
@@ -1666,27 +1705,35 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                           </div>
                           <div className="field full-width">
                             <label htmlFor="agent-claim-sender-wallet">{claimNetworkLabel} sender wallet address</label>
-                            <input
-                              disabled={Boolean(lockedClaimSenderWallet)}
-                              id="agent-claim-sender-wallet"
-                              value={claimSenderWalletAddress}
-                              onChange={(event) => setClaimSenderWalletAddress(event.target.value)}
-                              placeholder={claimNetwork === "trc20" ? "TRC20 wallet starts with T" : "ERC20 wallet starts with 0x"}
-                            />
+                            {lockedClaimSenderWallet ? (
+                              <input
+                                disabled
+                                id="agent-claim-sender-wallet"
+                                value={formatMaskedWalletAddress(lockedClaimSenderWallet)}
+                                readOnly
+                              />
+                            ) : (
+                              <div className="sender-wallet-required" id="agent-claim-sender-wallet">
+                                <strong>Not locked yet</strong>
+                                <span>
+                                  Use the USDT sender wallets box above. Paste the full wallet,
+                                  save it for review, then confirm once more before sending funds.
+                                </span>
+                              </div>
+                            )}
                             <div className="field-note">
                               {lockedClaimSenderWallet
                                 ? `${claimNetworkLabel} sender wallet is locked for agent deposits too.`
-                                : `Lock the ${claimNetworkLabel} sender wallet before sending agent inventory funds.`}
+                                : `Lock the ${claimNetworkLabel} sender wallet with the two-step review before sending agent inventory funds.`}
                             </div>
                             {!lockedClaimSenderWallet ? (
                               <button
                                 className="button secondary"
-                                disabled={!claimSenderWalletAddress || isPending}
-                                onClick={lockSenderWallet}
+                                onClick={() => openSenderWalletSetup(claimNetwork)}
                                 type="button"
                               >
                                 <ShieldCheck size={16} />
-                                Lock {claimNetworkLabel} sender wallet
+                                Prepare {claimNetworkLabel} sender wallet
                               </button>
                             ) : null}
                           </div>
@@ -1703,7 +1750,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                             className="button secondary"
                             disabled={
                               !claimAmount ||
-                              !claimSenderWalletAddress ||
+                              !lockedClaimSenderWallet ||
                               !claimTxHash ||
                               Boolean(depositRestriction || depositPolicyPause) ||
                               isPending
@@ -1754,6 +1801,15 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                           <Phone size={16} />
                           {agent?.applicationStatus === "pending" ? "Update Agent Details" : "Be an Agent"}
                         </button>
+                        <a
+                          className="button secondary whatsapp-help-link"
+                          href={whatsappAgentHelpUrl}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <MessageCircle size={16} />
+                          WhatsApp agent help
+                        </a>
                       </div>
                       <div className="agent-activation-guide">
                         <strong>Activation steps</strong>
@@ -1802,6 +1858,39 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                         role="progressbar"
                       >
                         <span style={{ width: `${(agent.progressInCycle / 10) * 100}%` }} />
+                      </div>
+                      <div className="next-agent-code-card" aria-label="Next available agent ticket code">
+                        <div className="next-agent-code-card__header">
+                          <div>
+                            <span>Next code to sell</span>
+                            <strong>
+                              {nextAgentCode ? nextAgentCode.code : "No code available"}
+                            </strong>
+                            <small>
+                              {nextAgentCode
+                                ? `${nextAgentCode.kind} code. Copy it and send it to the player.`
+                                : "Ask admin to assign more paid agent tickets."}
+                            </small>
+                          </div>
+                          <span className="code-tag">
+                            {nextAgentCode?.kind ?? "empty"}
+                          </span>
+                        </div>
+                        <div className="next-agent-code-card__actions">
+                          <button
+                            className="button"
+                            disabled={!nextAgentCode || isPending}
+                            onClick={() => nextAgentCode && copyText(nextAgentCode.code, "Next agent code")}
+                            type="button"
+                          >
+                            <Copy size={16} />
+                            Copy code
+                          </button>
+                        </div>
+                        <p>
+                          This card refreshes while Agent Wallet is open. When the copied code is redeemed,
+                          the next available code moves here and the counters update.
+                        </p>
                       </div>
                       <div className="ticket-transfer-box agent-transfer-box">
                         <div>
@@ -1931,6 +2020,6 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
 
 function getGatePauseMessage(gate: PaidActionGate | undefined) {
   return gate && !gate.allowed
-    ? "USDT deposits are admin-reviewed and ticket assignments are manual. You can still prepare your locked sender wallet."
+    ? "USDT deposits are admin-reviewed. You can still prepare your locked sender wallet; accepted USDT can auto-issue the first ticket."
     : null;
 }

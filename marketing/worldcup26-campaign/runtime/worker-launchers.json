@@ -1,0 +1,171 @@
+{
+  "schema": "worldcup26-worker-launchers-v1",
+  "generatedAt": "2026-06-07T17:45:01.518Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "sourceState": "critical",
+  "ok": true,
+  "workerCount": 4,
+  "activeWorkerCount": 4,
+  "firstSendBridge": {
+    "ok": true,
+    "state": "send-now",
+    "owner": "Memo",
+    "channel": "WhatsApp testers",
+    "title": "Send three clean referral signup tests",
+    "doneWhen": "The tester batch is really sent and logged with count/account, then a real profile plus referral signup-save row appears, or a precise tester screenshot captures the failing step.",
+    "warmAttempts": 0,
+    "signupSaves": 0,
+    "referralViews": 171,
+    "adClicks": 227,
+    "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+    "whatsapp": "https://wa.me/?text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test",
+    "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test&text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test",
+    "sms": "sms:?&body=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test",
+    "copy": "I need 3 clean WorldCup26 signup tests now.\n\nPlease send this to three trusted people with different Google accounts. They should open it on a fresh phone/browser, accept the invite, continue with Google, and pick 3 teams. Do not pay.\n\nAsk each tester to reply with one of these:\n1. \"joined + picked teams\"\n2. screenshot of the exact screen where it stops\n\nCode 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+    "command": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\"",
+    "referralQr": "https://quickchart.io/qr?text=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test&size=420&margin=2&ecLevel=M&format=png",
+    "whatsappQr": "https://quickchart.io/qr?text=https%3A%2F%2Fwa.me%2F%3Ftext%3DI%2520need%25203%2520clean%2520WorldCup26%2520signup%2520tests%2520now.%250A%250APlease%2520send%2520this%2520to%2520three%2520trusted%2520people%2520with%2520different%2520Google%2520accounts.%2520They%2520should%2520open%2520it%2520on%2520a%2520fresh%2520phone%252Fbrowser%252C%2520accept%2520the%2520invite%252C%2520continue%2520with%2520Google%252C%2520and%2520pick%25203%2520teams.%2520Do%2520not%2520pay.%250A%250AAsk%2520each%2520tester%2520to%2520reply%2520with%2520one%2520of%2520these%253A%250A1.%2520%2522joined%2520%252B%2520picked%2520teams%2522%250A2.%2520screenshot%2520of%2520the%2520exact%2520screen%2520where%2520it%2520stops%250A%250ACode%252026BC4B90CB%253A%250Ahttps%253A%252F%252Fworldcup26.world%252Flogin%253Fref%253D26BC4B90CB%2526utm_source%253Dwhatsapp-testers%2526utm_medium%253Dwarm-contact%2526utm_campaign%253Dworldcup26_warm_contact_sprint%2526utm_content%253Dclean_signup_test&size=420&margin=2&ecLevel=M&format=png",
+    "htmlPath": "runtime/first-send-bridge.html"
+  },
+  "workers": [
+    {
+      "worker": "Nano",
+      "slug": "nano",
+      "state": "wake-now",
+      "assignedCount": 5,
+      "ok": true,
+      "action": {
+        "priority": "warm-1",
+        "owner": "Nano",
+        "channel": "WhatsApp personal",
+        "action": "Send warm-contact invite to 10 football friends.",
+        "asset": "media/worldcup26-main-video.mp4",
+        "ageLabel": "",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+        "trackedQr": "",
+        "copy": "Quick football question: pick 3 teams for WorldCup26.\n\nIt is free to choose teams and see your private points preview. Paid leaderboard is optional later.\n\nUse my code 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch\n\nSend me your 3 teams after you join.",
+        "phoneInstruction": "Send warm-contact invite to 10 football friends.",
+        "quickLogCommand": "node campaign-warm-send-log.mjs --priority warm-1 --count <N> --account \"<account>\" --replies 0",
+        "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+        "shareLinks": [
+          {
+            "key": "whatsapp",
+            "label": "WhatsApp",
+            "url": "https://wa.me/?text=Quick%20football%20question%3A%20pick%203%20teams%20for%20WorldCup26.%0A%0AIt%20is%20free%20to%20choose%20teams%20and%20see%20your%20private%20points%20preview.%20Paid%20leaderboard%20is%20optional%20later.%0A%0AUse%20my%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_friends_batch%0A%0ASend%20me%20your%203%20teams%20after%20you%20join."
+          },
+          {
+            "key": "telegram",
+            "label": "Telegram",
+            "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_friends_batch&text=Quick%20football%20question%3A%20pick%203%20teams%20for%20WorldCup26.%0A%0AIt%20is%20free%20to%20choose%20teams%20and%20see%20your%20private%20points%20preview.%20Paid%20leaderboard%20is%20optional%20later.%0A%0AUse%20my%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_friends_batch%0A%0ASend%20me%20your%203%20teams%20after%20you%20join."
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "worker": "Sienna",
+      "slug": "sienna",
+      "state": "wake-now",
+      "assignedCount": 8,
+      "ok": true,
+      "action": {
+        "priority": "warm-3",
+        "owner": "Sienna",
+        "channel": "WhatsApp personal",
+        "action": "Send warm-contact invite to 10 close contacts.",
+        "asset": "media/worldcup26-referral-story.jpg",
+        "ageLabel": "",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch",
+        "trackedQr": "",
+        "copy": "Can you test my WorldCup26 invite?\n\nOpen this, accept the invite, sign in with Google, and pick 3 teams. It is free to preview points.\n\nCode 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch\n\nPlease tell me if anything feels confusing.",
+        "phoneInstruction": "Send warm-contact invite to 10 close contacts.",
+        "quickLogCommand": "node campaign-warm-send-log.mjs --priority warm-3 --count <N> --account \"<account>\" --replies 0",
+        "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Sienna' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch' --detail 'WhatsApp personal: sent to <N> 10 close contacts from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+        "shareLinks": [
+          {
+            "key": "whatsapp",
+            "label": "WhatsApp",
+            "url": "https://wa.me/?text=Can%20you%20test%20my%20WorldCup26%20invite%3F%0A%0AOpen%20this%2C%20accept%20the%20invite%2C%20sign%20in%20with%20Google%2C%20and%20pick%203%20teams.%20It%20is%20free%20to%20preview%20points.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch%0A%0APlease%20tell%20me%20if%20anything%20feels%20confusing."
+          },
+          {
+            "key": "telegram",
+            "label": "Telegram",
+            "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch&text=Can%20you%20test%20my%20WorldCup26%20invite%3F%0A%0AOpen%20this%2C%20accept%20the%20invite%2C%20sign%20in%20with%20Google%2C%20and%20pick%203%20teams.%20It%20is%20free%20to%20preview%20points.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch%0A%0APlease%20tell%20me%20if%20anything%20feels%20confusing."
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "worker": "Dexter",
+      "slug": "dexter",
+      "state": "wake-now",
+      "assignedCount": 3,
+      "ok": true,
+      "action": {
+        "priority": "warm-4",
+        "owner": "Dexter",
+        "channel": "WhatsApp admins",
+        "action": "Send warm-contact invite to football group admins.",
+        "asset": "media/worldcup26-referral-16x9.jpg",
+        "ageLabel": "",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission",
+        "trackedQr": "",
+        "copy": "Can I share a small World Cup prediction game in the group?\n\nIt lets people pick 3 teams free and see a private score preview. If allowed, I will post this invite code: 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission",
+        "phoneInstruction": "Send warm-contact invite to football group admins.",
+        "quickLogCommand": "node campaign-warm-send-log.mjs --priority warm-4 --count <N> --account \"<account>\" --replies 0",
+        "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Dexter' --platform 'WhatsApp admins' --channel \"warm-contact sprint\" --status 'requested' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission' --detail 'WhatsApp admins: requested to <N> football group admins from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+        "shareLinks": [
+          {
+            "key": "whatsapp",
+            "label": "WhatsApp",
+            "url": "https://wa.me/?text=Can%20I%20share%20a%20small%20World%20Cup%20prediction%20game%20in%20the%20group%3F%0A%0AIt%20lets%20people%20pick%203%20teams%20free%20and%20see%20a%20private%20score%20preview.%20If%20allowed%2C%20I%20will%20post%20this%20invite%20code%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-admins%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_admin_permission"
+          },
+          {
+            "key": "telegram",
+            "label": "Telegram",
+            "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-admins%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_admin_permission&text=Can%20I%20share%20a%20small%20World%20Cup%20prediction%20game%20in%20the%20group%3F%0A%0AIt%20lets%20people%20pick%203%20teams%20free%20and%20see%20a%20private%20score%20preview.%20If%20allowed%2C%20I%20will%20post%20this%20invite%20code%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-admins%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_admin_permission"
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "worker": "Memo",
+      "slug": "memo",
+      "state": "wake-now",
+      "assignedCount": 0,
+      "ok": true,
+      "action": {
+        "priority": "warm-5",
+        "owner": "Memo",
+        "channel": "WhatsApp testers",
+        "action": "Send warm-contact invite to 3 trusted testers.",
+        "asset": "runtime/signup-conversion-audit.html",
+        "ageLabel": "",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup",
+        "trackedQr": "",
+        "copy": "I need one clean signup test for WorldCup26.\n\nPlease open this link, accept the invite, continue with Google, and pick 3 teams. Do not pay. Tell me the exact step where it stops if anything breaks.\n\nCode 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup",
+        "phoneInstruction": "Send warm-contact invite to 3 trusted testers.",
+        "quickLogCommand": "node campaign-warm-send-log.mjs --priority warm-5 --count <N> --account \"<account>\" --replies 0",
+        "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Memo' --platform 'WhatsApp testers' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup' --detail 'WhatsApp testers: sent to <N> 3 trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asset runtime/signup-conversion-audit.html; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+        "shareLinks": [
+          {
+            "key": "whatsapp",
+            "label": "WhatsApp",
+            "url": "https://wa.me/?text=I%20need%20one%20clean%20signup%20test%20for%20WorldCup26.%0A%0APlease%20open%20this%20link%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%20Tell%20me%20the%20exact%20step%20where%20it%20stops%20if%20anything%20breaks.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dtrusted_tester_signup"
+          },
+          {
+            "key": "telegram",
+            "label": "Telegram",
+            "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dtrusted_tester_signup&text=I%20need%20one%20clean%20signup%20test%20for%20WorldCup26.%0A%0APlease%20open%20this%20link%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%20Tell%20me%20the%20exact%20step%20where%20it%20stops%20if%20anything%20breaks.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dtrusted_tester_signup"
+          }
+        ]
+      },
+      "note": ""
+    }
+  ],
+  "proofRule": "These launchers prepare worker actions only. Log proof only after the real post, story, message batch, upload, reply, or approval request exists."
+}

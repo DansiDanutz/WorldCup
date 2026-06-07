@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Signup Conversion Audit</title>
+  <style>
+    body{margin:0;background:#06140f;color:#edf8f1;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{max-width:980px;margin:0 auto;padding:24px}
+    header,.card{border:1px solid rgba(255,220,124,.28);background:linear-gradient(135deg,rgba(9,74,53,.94),rgba(19,31,26,.96));border-radius:14px;padding:18px;margin-bottom:16px;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+    h1{margin:0 0 6px;font-size:28px} h2{margin:0 0 10px;font-size:18px}
+    p{color:#c9d8d0;line-height:1.45}.state{display:inline-block;padding:6px 10px;border-radius:999px;background:#ffd66d;color:#092016;font-weight:900}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.metric{border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px;background:rgba(255,255,255,.06)}
+    .metric span{display:block;color:#b8c8c0;font-size:12px;text-transform:uppercase;font-weight:800}.metric strong{font-size:25px;color:#ffdc7c}
+    code{background:rgba(255,255,255,.08);padding:2px 6px;border-radius:6px} a{color:#79edbe}
+    ul{padding-left:20px}.danger{border-color:rgba(255,112,112,.45);background:linear-gradient(135deg,rgba(89,24,24,.72),rgba(23,33,29,.95))}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="state">critical-auth-to-signup-save-unproven</span>
+      <h1>Signup Conversion Audit</h1>
+      <p>Do not claim signup conversion proof until there is a real new user/profile plus referral signup save row, or a clear private-channel tester note with account, timestamp, and screenshot.</p>
+    </header>
+    <section class="card">
+      <h2>Traffic And Signup Counts</h2>
+      <div class="grid">
+        <div class="metric"><span>App views</span><strong>509</strong></div>
+        <div class="metric"><span>Referral views</span><strong>171</strong></div>
+        <div class="metric"><span>Paid views</span><strong>244</strong></div>
+        <div class="metric"><span>Dashboard clicks</span><strong>227</strong></div>
+        <div class="metric"><span>Signup saves</span><strong>0</strong></div>
+        <div class="metric"><span>Accepted</span><strong>0</strong></div>
+        <div class="metric"><span>Signup returned</span><strong>0</strong></div>
+        <div class="metric"><span>Save attempts</span><strong>0</strong></div>
+        <div class="metric"><span>Saved events</span><strong>0</strong></div>
+        <div class="metric"><span>Failed/errors</span><strong>0</strong></div>
+        <div class="metric"><span>Save endpoint</span><strong>401</strong></div>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Verified Path</h2>
+      <p>First paint: <strong>yes</strong>. Browser proof: <strong>yes</strong>. Inviter: <strong>David Ai</strong>. Referral percent: <strong>5%</strong>.</p>
+      <p>Post-auth save endpoint: <strong>ok</strong>. Unauthenticated probe returned HTTP <strong>401</strong>, expected 401 until Google bearer token is present.</p>
+      <p>Screenshot: <code>runtime/proofs/referral-mobile-accepted-google-enabled-20260607-1754.png</code></p>
+    </section>
+    <section class="card danger">
+      <h2>Blockers</h2>
+      <ul><li>No saved referral signup exists after Google auth.</li><li>No logged-in dashboard return event exists for the referral code yet.</li><li>No accepted referral agreement row is visible in the campaign counts.</li><li>Paid clicks are present, but none reached a completed signup-save event.</li></ul>
+      <p><strong>First action:</strong> Send the clean signup test to 3 trusted people with different Google accounts using https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-testers&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=clean_signup_test. Ask each to accept the invite, continue with Google, pick 3 teams, and reply with either &quot;joined + picked teams&quot; or a screenshot of the exact blocking screen. After the real send is logged, rerun this audit and verify the dashboard POSTs /api/referrals/signup with a bearer token and that worldcup_referral_profiles stores signup_referral_code=26BC4B90CB.</p>
+      <p>Do not change paid creative again until the full Google-auth-to-referral-save path is proven or a concrete failing step is captured.</p>
+    </section>
+  </main>
+</body>
+</html>

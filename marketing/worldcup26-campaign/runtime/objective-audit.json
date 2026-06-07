@@ -1,0 +1,205 @@
+{
+  "schema": "worldcup26-objective-audit-v1",
+  "generatedAt": "2026-06-07T17:45:01.297Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "ok": true,
+  "complete": false,
+  "state": "critical",
+  "requirements": [
+    {
+      "id": "referral-code-link",
+      "label": "Referral code/link are correct",
+      "status": "proven",
+      "severity": "critical",
+      "evidence": [
+        "code=26BC4B90CB",
+        "link=https://worldcup26.world/login?ref=26BC4B90CB",
+        "resolver=ok",
+        "percent=5"
+      ],
+      "next": "Keep every post using code 26BC4B90CB and the worldcup26.world referral link."
+    },
+    {
+      "id": "live-platform",
+      "label": "Live platform/ad landing URLs are working",
+      "status": "proven",
+      "severity": "critical",
+      "evidence": [
+        "live_ad_qa=ok",
+        "pages=7/7",
+        "auth=ok",
+        "health=ok",
+        "dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+      ],
+      "next": "Fix live ad QA before sending traffic if this ever turns red."
+    },
+    {
+      "id": "meta-x-ad-platform-preview",
+      "label": "Meta/X ad click and preview paths are working",
+      "status": "proven",
+      "severity": "critical",
+      "evidence": [
+        "ad_platform=ok",
+        "pages=9/9",
+        "social_images=1/1",
+        "resolver=ok",
+        "health=ok",
+        "dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+      ],
+      "next": "Fix ad-platform audit before trusting Meta/X previews or paid clicks."
+    },
+    {
+      "id": "paid-click-conversion-flow",
+      "label": "Paid click conversion flow is ready",
+      "status": "proven",
+      "severity": "critical",
+      "evidence": [
+        "conversion_guard=ok",
+        "first_paint=4/4",
+        "resolver=ok",
+        "auth=ok",
+        "browser_verified=yes",
+        "browser_proof=provided"
+      ],
+      "next": "Fix the conversion guard before scaling paid traffic if this ever turns red."
+    },
+    {
+      "id": "video-design-assets",
+      "label": "Video/design assets are available to workers",
+      "status": "proven",
+      "severity": "critical",
+      "evidence": [
+        "video=ok",
+        "local_assets=5/5",
+        "phone_action=ok",
+        "video_previews=10",
+        "qr=22"
+      ],
+      "next": "Keep using the main MP4, QR story/square assets, and phone action center."
+    },
+    {
+      "id": "workers-awake",
+      "label": "Dexter/Sienna/Memo/Nano have current actions",
+      "status": "proven",
+      "severity": "critical",
+      "evidence": [
+        "worker_wake=ok",
+        "workers=4",
+        "state=critical",
+        "first=#warm-1 Nano / WhatsApp personal"
+      ],
+      "next": "Wake the worker shown in the board and execute the real action before logging proof."
+    },
+    {
+      "id": "droplets-awake",
+      "label": "Four droplets have campaign tooling awake",
+      "status": "proven",
+      "severity": "critical",
+      "evidence": [
+        "hosts=4/4",
+        "worker_wake=4/4",
+        "phone_action=4/4",
+        "public_attempts=4/4",
+        "unhealthy=dexter,sienna,memo,nano"
+      ],
+      "next": "Run the remote war-room and repair any infrastructure host failure before relying on the campaign loop."
+    },
+    {
+      "id": "nonstop-72h-loop",
+      "label": "Nonstop 72h campaign loop/watchdog is running",
+      "status": "proven",
+      "severity": "critical",
+      "evidence": [
+        "loops=4/4",
+        "watchdogs=4/4",
+        "watchdog_cron=4/4"
+      ],
+      "next": "Restart campaign-loop/watchdog on any host that drops out."
+    },
+    {
+      "id": "response-kit-ready",
+      "label": "Reply/conversion response kit is ready",
+      "status": "proven",
+      "severity": "critical",
+      "evidence": [
+        "response_kit=ok",
+        "state=ready-for-warm-replies",
+        "replies=13",
+        "warm_attempts=0",
+        "signup_saves=0"
+      ],
+      "next": "Use the response kit after a real person replies, then log the reply proof only after it happened."
+    },
+    {
+      "id": "first-human-action-gate",
+      "label": "First human action gate is explicit",
+      "status": "proven",
+      "severity": "critical",
+      "evidence": [
+        "first_human=ok",
+        "state=needs-first-human-action",
+        "actions=2",
+        "warm_attempts=0",
+        "signup_saves=0",
+        "ad_clicks=227",
+        "first=Memo/WhatsApp testers/clean-signup-test-batch"
+      ],
+      "next": "Send the first real tester or warm-contact batch, then run the logger with the real count/account."
+    },
+    {
+      "id": "advertise-everywhere-proof",
+      "label": "Real external posting proof is current",
+      "status": "incomplete",
+      "severity": "critical",
+      "evidence": [
+        "proof_state=critical",
+        "latest_external=3.5h",
+        "external_rows=31",
+        "public_rows=29",
+        "urgent_open=16",
+        "next=#warm-1 Nano / WhatsApp personal"
+      ],
+      "next": "Do the next real action and log proof with a public URL or precise private-channel note."
+    },
+    {
+      "id": "public-channel-blockers",
+      "label": "Public channel blockers are tracked",
+      "status": "blocked",
+      "severity": "warning",
+      "evidence": [
+        "attempts=9",
+        "blocked=7",
+        "login_required=6",
+        "first_blocked=X / X public fallback"
+      ],
+      "next": "Use a logged-in owned public account or complete the login manually, then log the public URL."
+    }
+  ],
+  "counts": {
+    "total": 12,
+    "proven": 10,
+    "incomplete": 1,
+    "blocked": 1,
+    "unknown": 0,
+    "critical": 1
+  },
+  "nextAction": {
+    "primary": {
+      "owner": "Memo",
+      "channel": "WhatsApp testers",
+      "priority": "clean-signup-test-batch",
+      "action": "Send three clean referral signup tests",
+      "asset": "media/worldcup26-main-video.mp4",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+    },
+    "blocker": {
+      "platform": "X",
+      "channel": "X public fallback",
+      "status": "login_required",
+      "nextAction": "Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL."
+    }
+  },
+  "truth": "This objective audit is a completion guard. It proves readiness where evidence exists and keeps the full marketing objective incomplete until real external posting proof exists."
+}

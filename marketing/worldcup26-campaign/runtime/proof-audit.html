@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Proof Audit</title>
+  <style>
+    :root { color-scheme: dark; --bg: #03140f; --panel: #09291f; --line: rgba(255,255,255,.16); --text: #f8fff9; --muted: #bfd4ca; --gold: #ffd974; --mint: #74f0b2; --green: #0b7a59; --danger: #ff9f9f; --warn: #ffcc6a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: radial-gradient(circle at 10% 0%, rgba(255,217,116,.18), transparent 24rem), radial-gradient(circle at 90% 4%, rgba(116,240,178,.16), transparent 24rem), var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(980px, 100%); margin: 0 auto; padding: 12px 10px 48px; }
+    header, section, article { border: 1px solid var(--line); border-radius: 8px; background: rgba(9,41,31,.94); }
+    header, section { padding: 14px; margin-bottom: 10px; }
+    h1 { margin: 0 0 8px; font-size: clamp(34px, 9vw, 64px); line-height: .92; letter-spacing: 0; }
+    h2 { margin: 0 0 8px; font-size: 22px; }
+    h3 { margin: 0 0 6px; font-size: 18px; }
+    p { margin: 0; color: var(--muted); line-height: 1.42; }
+    .state { display: inline-flex; margin: 4px 0 12px; padding: 7px 10px; border-radius: 999px; color: #03140f; background: var(--mint); font-weight: 950; text-transform: uppercase; }
+    .state.warning { background: var(--warn); }
+    .state.critical { background: var(--danger); }
+    .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+    .stat { border: 1px solid var(--line); border-radius: 8px; padding: 10px; background: rgba(255,255,255,.06); }
+    .stat span { display: block; color: var(--muted); font-size: 11px; font-weight: 900; text-transform: uppercase; }
+    .stat strong { display: block; color: var(--gold); font-size: 22px; overflow-wrap: anywhere; }
+    .cards { display: grid; gap: 10px; }
+    article { padding: 12px; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 10px 0 0; border: 1px solid var(--line); border-radius: 8px; background: rgba(0,0,0,.24); padding: 10px; line-height: 1.35; }
+    .buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+    button, a.button { min-height: 44px; border: 1px solid rgba(116,240,178,.42); border-radius: 8px; color: #fff; background: var(--green); display: inline-flex; align-items: center; justify-content: center; padding: 9px; font: inherit; font-weight: 900; text-align: center; text-decoration: none; cursor: pointer; }
+    .gold { color: #03140f; background: var(--gold); border-color: var(--gold); }
+    .danger { color: #03140f; background: var(--danger); border-color: var(--danger); }
+    .muted { color: var(--muted); }
+    .url { overflow-wrap: anywhere; }
+    @media (min-width: 780px) { .stats { grid-template-columns: repeat(6, minmax(0, 1fr)); } .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Proof Audit</h1>
+      <span class="state critical">critical</span>
+      <p>This audit proves campaign proof bookkeeping only. It does not prove a new external post unless a public URL or specific private-channel note is present in the proof log.</p>
+      <div class="stats">
+        <div class="stat"><span>Fresh</span><strong>no</strong></div>
+        <div class="stat"><span>Latest external</span><strong>3.5h</strong></div>
+        <div class="stat"><span>External</span><strong>31</strong></div>
+        <div class="stat"><span>Public URLs</span><strong>29</strong></div>
+        <div class="stat"><span>Private notes</span><strong>2</strong></div>
+        <div class="stat"><span>Invalid</span><strong>0</strong></div>
+      </div>
+      <div class="buttons">
+        <button class="gold" data-copy="https://worldcup26.world/login?ref=26BC4B90CB">Copy referral link</button>
+        <button data-copy="Priority #warm-1: Nano / WhatsApp personal&#10;Do first: Send warm-contact invite to 10 football friends.&#10;Asset: media/worldcup26-main-video.mp4&#10;After it exists, replace every placeholder in this command:&#10;node campaign-public-channel-attempts.mjs --add --owner &#39;Nano&#39; --platform &#39;WhatsApp personal&#39; --channel &quot;warm-contact sprint&quot; --status &#39;sent&#39; --attempt-url &#39;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=football_friends_batch&#39; --detail &#39;WhatsApp personal: sent to &lt;N&gt; 10 football friends from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups &lt;N&gt;&#39; --next-action &quot;watch replies/signups; help anyone who asks; run referral activity after 15 minutes&quot;">Copy next proof template</button>
+      </div>
+    </header>
+    <section>
+      <h2>Latest External Proof</h2>
+      <article>
+    <h3>Sienna / Instagram</h3>
+    <p class="muted">2026-06-07 17:12 +0300 / 3.5h / public-url</p>
+    <pre>https://www.instagram.com/p/DZSZwTrF8nX/</pre>
+  </article>
+    </section>
+    <section>
+      <h2>Next Real Action</h2>
+      <article>
+    <h3>#warm-1 Nano / WhatsApp personal</h3>
+    <p class="muted">now / media/worldcup26-main-video.mp4</p>
+    <p>Send warm-contact invite to 10 football friends.</p>
+    <pre>Priority #warm-1: Nano / WhatsApp personal
+Do first: Send warm-contact invite to 10 football friends.
+Asset: media/worldcup26-main-video.mp4
+After it exists, replace every placeholder in this command:
+node campaign-public-channel-attempts.mjs --add --owner &#39;Nano&#39; --platform &#39;WhatsApp personal&#39; --channel &quot;warm-contact sprint&quot; --status &#39;sent&#39; --attempt-url &#39;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=football_friends_batch&#39; --detail &#39;WhatsApp personal: sent to &lt;N&gt; 10 football friends from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups &lt;N&gt;&#39; --next-action &quot;watch replies/signups; help anyone who asks; run referral activity after 15 minutes&quot;</pre>
+    <div class="buttons">
+      <a class="button gold" href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=football_friends_batch" target="_blank" rel="noreferrer">Open tracked link</a>
+      <button data-copy="Priority #warm-1: Nano / WhatsApp personal&#10;Do first: Send warm-contact invite to 10 football friends.&#10;Asset: media/worldcup26-main-video.mp4&#10;After it exists, replace every placeholder in this command:&#10;node campaign-public-channel-attempts.mjs --add --owner &#39;Nano&#39; --platform &#39;WhatsApp personal&#39; --channel &quot;warm-contact sprint&quot; --status &#39;sent&#39; --attempt-url &#39;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=football_friends_batch&#39; --detail &#39;WhatsApp personal: sent to &lt;N&gt; 10 football friends from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups &lt;N&gt;&#39; --next-action &quot;watch replies/signups; help anyone who asks; run referral activity after 15 minutes&quot;">Copy template</button>
+    </div>
+  </article>
+    </section>
+    <section>
+      <h2>Latest Public URLs</h2>
+      <div class="cards"><article>
+    <h3>Sienna / Instagram</h3>
+    <p class="muted">2026-06-07 17:12 +0300</p>
+    <p class="url">https://www.instagram.com/p/DZSZwTrF8nX/</p>
+    <div class="buttons">
+      <a class="button gold" href="https://www.instagram.com/p/DZSZwTrF8nX/" target="_blank" rel="noreferrer">Open</a>
+      <button data-copy="https://www.instagram.com/p/DZSZwTrF8nX/">Copy</button>
+    </div>
+  </article><article>
+    <h3>Dexter / X / public all-teams reminder</h3>
+    <p class="muted">2026-06-06 13:23 +0300</p>
+    <p class="url">https://x.com/NervixAi/status/2063204959869411451</p>
+    <div class="buttons">
+      <a class="button gold" href="https://x.com/NervixAi/status/2063204959869411451" target="_blank" rel="noreferrer">Open</a>
+      <button data-copy="https://x.com/NervixAi/status/2063204959869411451">Copy</button>
+    </div>
+  </article><article>
+    <h3>Nano / YouTube / community all-teams comment</h3>
+    <p class="muted">2026-06-06 12:53 +0300</p>
+    <p class="url">https://www.youtube.com/post/Ugkx4o_Rj57BZA02MOYMmmjrzgDCiFOs_-jk?lc=UgxTcwdCUrtmR2hg-6x4AaABAg</p>
+    <div class="buttons">
+      <a class="button gold" href="https://www.youtube.com/post/Ugkx4o_Rj57BZA02MOYMmmjrzgDCiFOs_-jk?lc=UgxTcwdCUrtmR2hg-6x4AaABAg" target="_blank" rel="noreferrer">Open</a>
+      <button data-copy="https://www.youtube.com/post/Ugkx4o_Rj57BZA02MOYMmmjrzgDCiFOs_-jk?lc=UgxTcwdCUrtmR2hg-6x4AaABAg">Copy</button>
+    </div>
+  </article><article>
+    <h3>Memo / YouTube / community quick-pick comment</h3>
+    <p class="muted">2026-06-06 12:29 +0300</p>
+    <p class="url">https://www.youtube.com/post/Ugkx4o_Rj57BZA02MOYMmmjrzgDCiFOs_-jk?lc=Ugz0uJxnj4BLah8yuaV4AaABAg</p>
+    <div class="buttons">
+      <a class="button gold" href="https://www.youtube.com/post/Ugkx4o_Rj57BZA02MOYMmmjrzgDCiFOs_-jk?lc=Ugz0uJxnj4BLah8yuaV4AaABAg" target="_blank" rel="noreferrer">Open</a>
+      <button data-copy="https://www.youtube.com/post/Ugkx4o_Rj57BZA02MOYMmmjrzgDCiFOs_-jk?lc=Ugz0uJxnj4BLah8yuaV4AaABAg">Copy</button>
+    </div>
+  </article><article>
+    <h3>Dexter / YouTube / community engagement comment</h3>
+    <p class="muted">2026-06-06 12:26 +0300</p>
+    <p class="url">https://www.youtube.com/post/Ugkx-cDl1Snb-cKi0hmgXsj4GVoeCOXvQ3xd?lc=UgzkYWnsfFRhvjo7GTJ4AaABAg</p>
+    <div class="buttons">
+      <a class="button gold" href="https://www.youtube.com/post/Ugkx-cDl1Snb-cKi0hmgXsj4GVoeCOXvQ3xd?lc=UgzkYWnsfFRhvjo7GTJ4AaABAg" target="_blank" rel="noreferrer">Open</a>
+      <button data-copy="https://www.youtube.com/post/Ugkx-cDl1Snb-cKi0hmgXsj4GVoeCOXvQ3xd?lc=UgzkYWnsfFRhvjo7GTJ4AaABAg">Copy</button>
+    </div>
+  </article><article>
+    <h3>Nano / YouTube / community poll comment</h3>
+    <p class="muted">2026-06-06 12:22 +0300</p>
+    <p class="url">https://www.youtube.com/post/UgkxhAdc1f752vOSesylaNwfAytM9_YvOMNN?lc=UgzOyApHZvPtp7qMDaN4AaABAg</p>
+    <div class="buttons">
+      <a class="button gold" href="https://www.youtube.com/post/UgkxhAdc1f752vOSesylaNwfAytM9_YvOMNN?lc=UgzOyApHZvPtp7qMDaN4AaABAg" target="_blank" rel="noreferrer">Open</a>
+      <button data-copy="https://www.youtube.com/post/UgkxhAdc1f752vOSesylaNwfAytM9_YvOMNN?lc=UgzOyApHZvPtp7qMDaN4AaABAg">Copy</button>
+    </div>
+  </article><article>
+    <h3>Sienna / YouTube / community strategy comment</h3>
+    <p class="muted">2026-06-06 12:17 +0300</p>
+    <p class="url">https://www.youtube.com/post/Ugkx8RFSQAWNd3ulJ7S447YE-CmKXGX1WxVE?lc=UgyJ-woX2hCYrxGt9Ix4AaABAg</p>
+    <div class="buttons">
+      <a class="button gold" href="https://www.youtube.com/post/Ugkx8RFSQAWNd3ulJ7S447YE-CmKXGX1WxVE?lc=UgyJ-woX2hCYrxGt9Ix4AaABAg" target="_blank" rel="noreferrer">Open</a>
+      <button data-copy="https://www.youtube.com/post/Ugkx8RFSQAWNd3ulJ7S447YE-CmKXGX1WxVE?lc=UgyJ-woX2hCYrxGt9Ix4AaABAg">Copy</button>
+    </div>
+  </article><article>
+    <h3>Memo / YouTube / community comment noon follow-up</h3>
+    <p class="muted">2026-06-06 12:13 +0300</p>
+    <p class="url">https://www.youtube.com/post/UgkxH4qA8ouyg-lsJZjq6ZLVgR2gCSmJPRCY?lc=UgznafNVOjqAZCkR9-94AaABAg</p>
+    <div class="buttons">
+      <a class="button gold" href="https://www.youtube.com/post/UgkxH4qA8ouyg-lsJZjq6ZLVgR2gCSmJPRCY?lc=UgznafNVOjqAZCkR9-94AaABAg" target="_blank" rel="noreferrer">Open</a>
+      <button data-copy="https://www.youtube.com/post/UgkxH4qA8ouyg-lsJZjq6ZLVgR2gCSmJPRCY?lc=UgznafNVOjqAZCkR9-94AaABAg">Copy</button>
+    </div>
+  </article></div>
+    </section>
+    <section>
+      <h2>Invalid Proof Rows</h2>
+      <div class="cards"><article><p>No placeholder or missing proof rows found in the live log.</p></article></div>
+    </section>
+    <section><p><strong>Required proof:</strong> Only log after a real post, story, message, upload, reply, or approval request exists. Public URL is best; private proof must include account/channel, audience/count, and exact time.</p></section>
+  </main>
+  <script>
+    document.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-copy]");
+      if (!button) return;
+      event.preventDefault();
+      const value = button.dataset.copy || "";
+      try {
+        await navigator.clipboard.writeText(value);
+        const old = button.textContent;
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = old; }, 1200);
+      } catch {
+        window.prompt("Copy this text", value);
+      }
+    });
+  </script>
+</body>
+</html>

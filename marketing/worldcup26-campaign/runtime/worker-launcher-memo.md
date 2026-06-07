@@ -1,0 +1,47 @@
+# WorldCup26 Memo Launcher
+
+Generated: 2026-06-07 20:45 +0300
+
+## First Send Bridge
+
+- Open: runtime/first-send-bridge.html
+- WhatsApp: https://wa.me/?text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test
+- Log after send: `node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"`
+
+
+- Action: #warm-5 WhatsApp testers
+- Task: Send warm-contact invite to 3 trusted testers.
+- Asset: `runtime/signup-conversion-audit.html`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup
+- QR: -
+
+These launchers prepare worker actions only. Log proof only after the real post, story, message batch, upload, reply, or approval request exists.
+
+## Instruction
+
+Send warm-contact invite to 3 trusted testers.
+
+## Copy
+
+```text
+I need one clean signup test for WorldCup26.
+
+Please open this link, accept the invite, continue with Google, and pick 3 teams. Do not pay. Tell me the exact step where it stops if anything breaks.
+
+Code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup
+```
+
+## Proof Command
+
+```bash
+node campaign-warm-send-log.mjs --priority warm-5 --count <N> --account "<account>" --replies 0
+```
+
+Full audit command:
+
+
+
+```bash
+node campaign-public-channel-attempts.mjs --add --owner 'Memo' --platform 'WhatsApp testers' --channel "warm-contact sprint" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup' --detail 'WhatsApp testers: sent to <N> 3 trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asset runtime/signup-conversion-audit.html; code 26BC4B90CB; link included; replies/signups <N>' --next-action "watch replies/signups; help anyone who asks; run referral activity after 15 minutes"
+```

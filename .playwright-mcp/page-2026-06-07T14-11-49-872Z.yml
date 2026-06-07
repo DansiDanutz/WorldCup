@@ -1,0 +1,325 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic [ref=e9]:
+          - generic [ref=e12]:
+            - link [ref=e473] [cursor=pointer]:
+              - /url: /
+              - img [ref=e474]
+            - generic [ref=e25]:
+              - link [ref=e475] [cursor=pointer]:
+                - /url: /
+                - img [ref=e476]
+              - link [ref=e477] [cursor=pointer]:
+                - /url: /reels/
+                - img [ref=e478]
+              - link [ref=e479] [cursor=pointer]:
+                - /url: /direct/inbox/
+                - generic [ref=e55]:
+                  - img [ref=e480]
+                  - generic [ref=e62]: 9+
+              - link [ref=e482] [cursor=pointer]:
+                - /url: /explore/
+                - img [ref=e483]
+              - link [ref=e484] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e485]
+              - link [ref=e486] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e487]
+              - link [ref=e488] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e489]
+              - link [ref=e490] [cursor=pointer]:
+                - /url: /seme1981/
+                - link [ref=e491]:
+                  - img [ref=e492]
+            - generic [ref=e122]:
+              - link [ref=e493] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e494]
+              - link [ref=e495] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e496]
+          - generic [ref=e141]:
+            - main [ref=e142]:
+              - generic [ref=e144]:
+                - generic [ref=e145]:
+                  - generic [ref=e146]:
+                    - generic [ref=e150]:
+                      - button [ref=e497] [cursor=pointer]:
+                        - generic [ref=e157]: Note...
+                      - button [ref=e498] [cursor=pointer]:
+                        - img [ref=e499]
+                    - generic [ref=e165]:
+                      - generic [ref=e166]:
+                        - generic [ref=e167]:
+                          - generic [ref=e168]:
+                            - link [ref=e500] [cursor=pointer]:
+                              - /url: "#"
+                              - heading [level=2] [ref=e501]:
+                                - generic [ref=e171]: seme1981
+                            - img [ref=e502]
+                          - button [ref=e503] [cursor=pointer]:
+                            - img [ref=e504]
+                        - generic [ref=e181]: Dan Semenescu
+                        - generic [ref=e182]:
+                          - generic [ref=e184]:
+                            - generic [ref=e185]: "87"
+                            - text: posts
+                          - link [ref=e505] [cursor=pointer]:
+                            - /url: "#"
+                            - generic [ref=e188]:
+                              - generic [ref=e506]: "266"
+                              - text: followers
+                          - link [ref=e507] [cursor=pointer]:
+                            - /url: "#"
+                            - generic [ref=e192]:
+                              - generic [ref=e193]: "175"
+                              - text: following
+                      - button [ref=e508] [cursor=pointer]: Player's Poker Club & KryptoStack
+                  - generic [ref=e202]:
+                    - link [ref=e509] [cursor=pointer]:
+                      - /url: /accounts/edit/
+                      - text: Edit profile
+                    - link [ref=e510] [cursor=pointer]:
+                      - /url: /archive/stories/
+                      - text: View archive
+                  - menu [ref=e208]:
+                    - list [ref=e212]:
+                      - listitem [ref=e213]
+                      - listitem [ref=e214]
+                      - listitem [ref=e215]:
+                        - button [ref=e511] [cursor=pointer]:
+                          - img [ref=e512]
+                          - generic [ref=e226]: New
+                - tablist [ref=e228]:
+                  - link [ref=e513] [cursor=pointer]:
+                    - /url: /seme1981/
+                    - img [ref=e514]
+                  - link [ref=e515] [cursor=pointer]:
+                    - /url: /seme1981/reels/
+                    - img [ref=e516]
+                  - link [ref=e517] [cursor=pointer]:
+                    - /url: /seme1981/saved/
+                    - img [ref=e518]
+                  - link [ref=e519] [cursor=pointer]:
+                    - /url: /seme1981/reposts/
+                    - img [ref=e520]
+                  - link [ref=e521] [cursor=pointer]:
+                    - /url: /seme1981/tagged/
+                    - img [ref=e522]
+                - generic [ref=e351]:
+                  - generic [ref=e352]:
+                    - link [ref=e523] [cursor=pointer]:
+                      - /url: /seme1981/p/DZSZwTrF8nX/
+                      - img [ref=e524]
+                    - link [ref=e525] [cursor=pointer]:
+                      - /url: /playerspokercluj/p/DW4FlQ8iMLv/
+                      - img [ref=e526]
+                      - generic:
+                        - generic:
+                          - img
+                    - link [ref=e527] [cursor=pointer]:
+                      - /url: /playerspokercluj/p/DWESd2fCCnE/
+                      - img [ref=e528]
+                      - generic:
+                        - generic:
+                          - img
+                    - link [ref=e529] [cursor=pointer]:
+                      - /url: /seme1981/p/DS2MnyCikzL/
+                      - img [ref=e530]
+                    - link [ref=e531] [cursor=pointer]:
+                      - /url: /playerspokercluj/p/DS12x5NCBK-/
+                      - img [ref=e532]
+                      - generic:
+                        - generic:
+                          - img
+                  - generic [ref=e383]:
+                    - link [ref=e533] [cursor=pointer]:
+                      - /url: /seme1981/p/DSN8a6zCuIC/
+                      - img [ref=e534]
+                    - link [ref=e535] [cursor=pointer]:
+                      - /url: /seme1981/p/DSKKd4iig35/
+                      - img [ref=e536]
+                    - link [ref=e537] [cursor=pointer]:
+                      - /url: /seme1981/p/DR-wS15CsWy/
+                      - img [ref=e538]
+                    - link [ref=e539] [cursor=pointer]:
+                      - /url: /seme1981/p/DLrs0g1Kv2j/
+                      - img [ref=e540]
+                    - link [ref=e541] [cursor=pointer]:
+                      - /url: /seme1981/p/DKE5xdbKvm3/
+                      - img [ref=e542]
+                  - generic [ref=e414]:
+                    - link [ref=e543] [cursor=pointer]:
+                      - /url: /seme1981/reel/DFacoZYtarp/
+                      - img [ref=e419]
+                      - generic:
+                        - generic:
+                          - img
+                    - link [ref=e544] [cursor=pointer]:
+                      - /url: /seme1981/reel/DECoCBSt2vT/
+                      - img [ref=e545]
+                      - generic:
+                        - generic:
+                          - img
+            - contentinfo [ref=e278]:
+              - generic [ref=e279]:
+                - generic [ref=e281]:
+                  - link [ref=e546] [cursor=pointer]:
+                    - /url: https://about.meta.com/
+                    - generic [ref=e284]: Meta
+                  - link [ref=e547] [cursor=pointer]:
+                    - /url: https://about.instagram.com/
+                    - generic [ref=e287]: About
+                  - link [ref=e548] [cursor=pointer]:
+                    - /url: https://about.instagram.com/blog/
+                    - generic [ref=e290]: Blog
+                  - link [ref=e549] [cursor=pointer]:
+                    - /url: https://about.instagram.com/about-us/careers
+                    - generic [ref=e293]: Jobs
+                  - link [ref=e550] [cursor=pointer]:
+                    - /url: https://help.instagram.com/
+                    - generic [ref=e296]: Help
+                  - link [ref=e551] [cursor=pointer]:
+                    - /url: https://developers.facebook.com/docs/instagram
+                    - generic [ref=e299]: API
+                  - link [ref=e552] [cursor=pointer]:
+                    - /url: /legal/privacy/
+                    - generic [ref=e302]: Privacy
+                  - link [ref=e553] [cursor=pointer]:
+                    - /url: /legal/terms/
+                    - generic [ref=e305]: Terms
+                  - link [ref=e554] [cursor=pointer]:
+                    - /url: /explore/locations/
+                    - generic [ref=e308]: Locations
+                  - link [ref=e555] [cursor=pointer]:
+                    - /url: /popular/
+                    - generic [ref=e311]: Popular
+                  - link [ref=e556] [cursor=pointer]:
+                    - /url: /web/lite/
+                    - generic [ref=e314]: Instagram Lite
+                  - link [ref=e557] [cursor=pointer]:
+                    - /url: https://www.meta.ai/?utm_source=foa_web_footer
+                    - generic [ref=e317]: Meta AI
+                  - link [ref=e558] [cursor=pointer]:
+                    - /url: https://www.threads.com/
+                    - generic [ref=e320]: Threads
+                  - link [ref=e559] [cursor=pointer]:
+                    - /url: https://www.facebook.com/help/instagram/261704639352628
+                    - generic [ref=e323]: Contact Uploading & Non-Users
+                  - link [ref=e560] [cursor=pointer]:
+                    - /url: /accounts/meta_verified/?entrypoint=web_footer
+                    - generic [ref=e326]: Meta Verified
+                - generic [ref=e327]:
+                  - generic [ref=e328] [cursor=pointer]:
+                    - generic [ref=e329]:
+                      - generic [ref=e330]: English
+                      - img [ref=e561]
+                    - combobox [ref=e562]
+                  - generic [ref=e337]: © 2026 Instagram from Meta
+        - button "Messages - 9 new notifications" [ref=e439] [cursor=pointer]:
+          - generic "Messages - 9 new notifications" [ref=e440]:
+            - generic [ref=e441]:
+              - generic [ref=e443]:
+                - img "Messages" [ref=e444]
+                - generic "Direct messaging - 9 new notifications link" [ref=e447]:
+                  - generic [ref=e449]: 9+
+              - generic [ref=e450]: Messages
+            - generic [ref=e451]:
+              - button "9 unread chats" [ref=e452]:
+                - img "9 unread chats" [ref=e454]
+              - button "User avatar Kerem Kalender, Ali Yanar, Ersin Akkaya, Bugra musaoglu, Kurtuluş İzgü, Oleg Se, Yaşar Üregen, others" [ref=e459]:
+                - img "User avatar" [ref=e462]
+              - button "User avatar Laurentiu Avram ♠️" [ref=e464]:
+                - img "User avatar" [ref=e467]
+              - button "User avatar Player's Poker Cluj" [ref=e469]:
+                - img "User avatar" [ref=e472]
+  - generic [ref=e565]:
+    - button "Close" [ref=e568] [cursor=pointer]:
+      - img "Close" [ref=e570]
+    - generic [ref=e574]:
+      - generic:
+        - dialog:
+          - generic:
+            - button "Next" [ref=e576] [cursor=pointer]:
+              - img "Next" [ref=e579]
+            - generic:
+              - generic:
+                - article:
+                  - generic:
+                    - button "Photo by Dan Semenescu on June 07, 2026. May be an image of football and text that says 'WORLDCUP26 INVITE Pick 3 teams free first. Create your private points Createyourprivatepointspreview preview before kickoff. USE REFERRAL CODE 26BC4B90B All 48 teams are still available before kickoff. wordup2.wordloirg-2684BC 26490'." [ref=e583]:
+                      - img "Photo by Dan Semenescu on June 07, 2026. May be an image of football and text that says 'WORLDCUP26 INVITE Pick 3 teams free first. Create your private points Createyourprivatepointspreview preview before kickoff. USE REFERRAL CODE 26BC4B90B All 48 teams are still available before kickoff. wordup2.wordloirg-2684BC 26490'." [ref=e587]
+                    - generic [ref=e589]:
+                      - generic [ref=e591]:
+                        - banner [ref=e592]:
+                          - button "seme1981's profile picture" [disabled] [ref=e597]:
+                            - link "seme1981's profile picture" [disabled] [ref=e599] [cursor=pointer]:
+                              - /url: /seme1981/
+                              - img "seme1981's profile picture" [ref=e600]
+                          - generic [ref=e605]:
+                            - link "seme1981" [ref=e611] [cursor=pointer]:
+                              - /url: /seme1981/
+                              - generic [ref=e613]: seme1981
+                            - img "Verified" [ref=e615]
+                        - button "More options" [ref=e620] [cursor=pointer]:
+                          - img "More options" [ref=e623]
+                      - generic [ref=e627]:
+                        - generic [ref=e629]:
+                          - button "View insights" [ref=e631] [cursor=pointer]
+                          - button "Boost post" [ref=e633] [cursor=pointer]
+                        - generic [ref=e634]:
+                          - button "Like" [ref=e637] [cursor=pointer]:
+                            - img "Like" [ref=e640]
+                          - button "Comment" [ref=e643] [cursor=pointer]:
+                            - img "Comment" [ref=e645]
+                          - button "Repost" [ref=e647] [cursor=pointer]:
+                            - img "Repost" [ref=e648]
+                          - button "Share Post" [ref=e651] [cursor=pointer]:
+                            - img "Share Post" [ref=e653]
+                          - button "Save" [ref=e658] [cursor=pointer]:
+                            - button "Save" [ref=e659]:
+                              - img "Save" [ref=e661]
+                        - generic [ref=e666]:
+                          - text: Be the first to
+                          - button "like this" [ref=e667] [cursor=pointer]
+                        - list [ref=e669]:
+                          - 'button "seme1981''s profile picture seme1981 Verified Most World Cup predictions are boring. Pick 3 teams free and see your private score. Pick 3 teams free. If you want the paid leaderboard later, use a ticket. Invite code: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=free_first_image #WorldCup2026 #FIFAWorldCup #football #predictions #WorldCup26 51s" [ref=e670]':
+                            - listitem [ref=e671]:
+                              - generic [ref=e673]:
+                                - button "seme1981's profile picture" [disabled] [ref=e677]:
+                                  - link "seme1981's profile picture" [disabled] [ref=e679] [cursor=pointer]:
+                                    - /url: /seme1981/
+                                    - img "seme1981's profile picture" [ref=e680]
+                                - generic [ref=e681]:
+                                  - heading "seme1981 Verified" [active] [level=2] [ref=e682]:
+                                    - link "seme1981" [ref=e687] [cursor=pointer]:
+                                      - /url: /seme1981/
+                                    - img "Verified" [ref=e689]
+                                  - 'heading "Most World Cup predictions are boring. Pick 3 teams free and see your private score. Pick 3 teams free. If you want the paid leaderboard later, use a ticket. Invite code: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=free_first_image #WorldCup2026 #FIFAWorldCup #football #predictions #WorldCup26" [level=1] [ref=e692]':
+                                    - text: Most World Cup predictions are boring. Pick 3 teams free and see your private score.
+                                    - text: Pick 3 teams free. If you want the paid leaderboard later, use a ticket.
+                                    - text: "Invite code: 26BC4B90CB"
+                                    - text: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=free_first_image
+                                    - link "#WorldCup2026" [ref=e693] [cursor=pointer]:
+                                      - /url: /explore/tags/worldcup2026/
+                                    - link "#FIFAWorldCup" [ref=e694] [cursor=pointer]:
+                                      - /url: /explore/tags/fifaworldcup/
+                                    - link "#football" [ref=e695] [cursor=pointer]:
+                                      - /url: /explore/tags/football/
+                                    - link "#predictions" [ref=e696] [cursor=pointer]:
+                                      - /url: /explore/tags/predictions/
+                                    - link "#WorldCup26" [ref=e697] [cursor=pointer]:
+                                      - /url: /explore/tags/worldcup26/
+                                  - time [ref=e700]: 51s
+                        - link "51 seconds ago" [ref=e704] [cursor=pointer]:
+                          - /url: /seme1981/p/DZSZwTrF8nX/
+                          - time [ref=e706]: 51 seconds ago
+                        - generic [ref=e710]:
+                          - button "Emoji" [ref=e712] [cursor=pointer]:
+                            - img "Emoji" [ref=e714]
+                          - textbox "Add a comment…" [ref=e716]
+                          - generic [ref=e717]:
+                            - button "Post" [disabled]

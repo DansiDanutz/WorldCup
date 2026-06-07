@@ -1,0 +1,38 @@
+# WorldCup26 Ad Ops Links
+
+Generated: 2026-06-07 20:44 +0300
+
+- Referral code: `26BC4B90CB`
+- Referral link: https://worldcup26.world/login?ref=26BC4B90CB
+
+This page tracks paid-channel control links only. It proves nothing about spend or delivery until an operator records real status, spend, clicks, and screenshot/note details.
+
+## Meta Ads Manager
+
+- Manager: https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown
+- Landing URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h
+
+- Confirm campaign/ad set/ad is active or scheduled.
+- Confirm landing URL includes ref=26BC4B90CB.
+- Confirm first text angle is free picks first, ticket only for paid leaderboard.
+- Check impressions, clicks, CTR, spend, and rejected/ad-limited warnings.
+- Save a screenshot or note with time, campaign id, spend, clicks, and status.
+
+```bash
+node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "Meta Ads Manager" --channel "paid campaign ops" --status "ready" --attempt-url "https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown" --detail "Meta Ads Manager checked at YYYY-MM-DD HH:mm EEST; status <active/scheduled/blocked>; spend <amount>; clicks <N>; landing https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h"
+```
+
+## X Ads Manager
+
+- Manager: https://ads.x.com/manager/18ce55rrs16/campaigns
+- Landing URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h
+
+- Confirm the X campaign exists in account 18ce55rrs16.
+- Confirm campaign/ad group/ad is active or scheduled.
+- Confirm landing URL includes ref=26BC4B90CB.
+- Confirm copy leads with free 3-team picks and private score preview.
+- Save a screenshot or note with time, campaign id, spend, clicks, and status.
+
+```bash
+node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "X Ads Manager" --channel "paid campaign ops" --status "ready" --attempt-url "https://ads.x.com/manager/18ce55rrs16/campaigns" --detail "X Ads Manager checked at YYYY-MM-DD HH:mm EEST; status <active/scheduled/blocked>; spend <amount>; clicks <N>; landing https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h"
+```

@@ -3,12 +3,12 @@ import type { NextConfig } from "next";
 // Content-Security-Policy. The app loads no external scripts, fonts, or
 // analytics; the only embedded cross-origin resources are flag images
 // (flagcdn.com) and the browser Supabase client (REST over https + realtime
-// over wss, on *.supabase.co). 'unsafe-inline' is required for Next's inline
-// bootstrap/streaming scripts and React inline styles; the app has no XSS sink
-// (no dangerouslySetInnerHTML/eval), so object-src/base-uri/frame-ancestors/
-// form-action locks still make this a meaningful hardening. Applied in
-// production only so it does not interfere with the eval + websocket HMR the
-// Next dev server relies on.
+// over wss, on Supabase or the branded Supabase custom domain).
+// 'unsafe-inline' is required for Next's inline bootstrap/streaming scripts and
+// React inline styles; the app has no XSS sink (no dangerouslySetInnerHTML/eval),
+// so object-src/base-uri/frame-ancestors/form-action locks still make this a
+// meaningful hardening. Applied in production only so it does not interfere with
+// the eval + websocket HMR the Next dev server relies on.
 const contentSecurityPolicy = [
   "default-src 'self'",
   "base-uri 'self'",
@@ -19,7 +19,7 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://flagcdn.com",
   "font-src 'self' data:",
-  "connect-src 'self' https://*.supabase.co wss://*.supabase.co",
+  "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.worldcup26.world wss://api.worldcup26.world",
   "frame-src 'self'",
   "worker-src 'self' blob:",
   "manifest-src 'self'",
@@ -41,6 +41,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
   turbopack: {
     root: process.cwd(),
   },

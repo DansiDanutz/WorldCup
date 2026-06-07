@@ -1,0 +1,78 @@
+- generic [ref=e2]:
+  - generic:
+    - generic:
+      - heading "Pentru a vedea comenzile rapide de la tastatură, apasă semnul de întrebare Vezi comenzile rapide de tastatură" [level=2] [ref=e3]:
+        - generic [ref=e4]: Pentru a vedea comenzile rapide de la tastatură, apasă semnul de întrebare
+        - link "Vezi comenzile rapide de tastatură" [ref=e5] [cursor=pointer]:
+          - /url: /i/keyboard_shortcuts
+      - main [ref=e7]:
+        - generic [ref=e9]:
+          - progressbar [ref=e10]
+          - generic [ref=e15]:
+            - button "Înapoi" [ref=e17] [cursor=pointer]:
+              - img [ref=e19]
+            - generic [ref=e24]:
+              - button "Schițe" [ref=e25] [cursor=pointer]:
+                - generic [ref=e28]: Schițe
+              - button "Postează" [ref=e29] [cursor=pointer]:
+                - generic [ref=e32]: Postează
+          - generic [ref=e39]:
+            - generic [ref=e40]:
+              - generic [ref=e48]:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic "Semenescu Dan":
+                        - img "Semenescu Dan"
+              - generic [ref=e57]:
+                - button "Alege publicul" [ref=e60] [cursor=pointer]:
+                  - generic [ref=e63]:
+                    - text: Toți
+                    - img [ref=e64]
+                - textbox "Text postare" [active] [ref=e80]:
+                  - generic [ref=e81]:
+                    - generic [ref=e84]: WorldCup26 is open.
+                    - generic [ref=e89]: Pick 3 teams for free. See your private points preview.
+                    - generic [ref=e94]: Use a ticket only when you want to enter the paid leaderboard.
+                    - generic [ref=e99]: "Code: 26BC4B90CB"
+                    - generic [ref=e103]: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse65
+            - generic [ref=e105]:
+              - button "Toți pot răspunde" [ref=e109] [cursor=pointer]:
+                - generic [ref=e110]:
+                  - img [ref=e111]
+                  - generic [ref=e115]: Toți pot răspunde
+              - generic [ref=e118]:
+                - navigation [ref=e119]:
+                  - generic [ref=e120]:
+                    - generic:
+                      - button "Anteriorul" [disabled]:
+                        - generic:
+                          - img
+                    - tablist [ref=e122]:
+                      - generic [ref=e125]:
+                        - button "Adaugă fotografii sau un videoclip" [ref=e126] [cursor=pointer]:
+                          - img [ref=e128]
+                        - button "Choose File" [ref=e132]
+                      - button "Adaugă un GIF" [ref=e135] [cursor=pointer]:
+                        - img [ref=e137]
+                      - button "Generează imagine" [ref=e143] [cursor=pointer]:
+                        - img [ref=e145]
+                      - button "Adaugă sondajul" [ref=e150] [cursor=pointer]:
+                        - img [ref=e152]
+                      - button "Adaugă emoji" [ref=e158] [cursor=pointer]:
+                        - img [ref=e160]
+                      - button "Planifică postarea" [ref=e166] [cursor=pointer]:
+                        - img [ref=e168]
+                      - button "Etichetează locația" [ref=e173] [cursor=pointer]:
+                        - img [ref=e175]
+                      - button "Informații privind conținutul publicitar" [ref=e180] [cursor=pointer]:
+                        - img [ref=e182]
+                    - generic:
+                      - button "Înainte" [disabled]:
+                        - generic:
+                          - img
+                - generic [ref=e185]:
+                  - progressbar [ref=e189]:
+                    - img [ref=e191]
+                  - button "Adaugă o postare" [ref=e199] [cursor=pointer]:
+                    - img [ref=e201]

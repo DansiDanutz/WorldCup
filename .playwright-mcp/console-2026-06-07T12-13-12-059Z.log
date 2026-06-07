@@ -1,0 +1,18 @@
+[     189ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.facebook.com/login/?next=https%3A%2F%2Fbusiness.facebook.com%2Fbusiness%2Funifiedfblogin%2Fcallback%2F%3Fnext%3Dhttps%253A%252F%252Fbusiness.facebook.com%252Fadsmanager%252Fmanage%252Fads%252Fedit%252Fstandalone%253Fact%253D61071192%2526ads_manager_write_regions%253Dtrue%2526nav_entry_point%253Dlep_176%2526selected_ad_ids%253D6971048413400%2526nav_source%253Dunknown%2526biz_login_source%253Dbiz_unified_f3_fb_login_button%2526join_id%253Dd581f405-c145-4468-bb9a-f19c18402755%26f3_request_id%3Dbccihkkmnolcejllcljdgcnkgchpplecdklkgppf%26full_page_redirect%3D0&request_id=bccihkkmnolcejllcljdgcnkgchpplecdklkgppf:0
+[     401ms] [LOG] 
+%cStop! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.xx.fbcdn.net/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[     401ms] [LOG] 
+%cThis is a browser feature intended for developers. If someone told you to copy-paste something here to enable a Facebook feature or "hack" someone's account, it's a scam and will give them access to your Facebook account. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[     401ms] [LOG] 
+%cSee https://www.facebook.com/selfxss for more information. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[     401ms] [LOG] 
+%c  @ https://static.xx.fbcdn.net/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[  349520ms] [ERROR] Permissions policy violation: unload is not allowed in this document. @ https://static.xx.fbcdn.net/rsrc.php/v4/ys/r/wPrfXEAC8ZC.js:321
+[  352345ms] [LOG] 
+%cStai! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.xx.fbcdn.net/rsrc.php/v4i_Ck4/yn/l/ro_RO-j/PMxYTQ1zerFhM9YCzsuX3eLKkEjjLCoIClJlx4XBqvc3UiJHx9vxGUeFbrZ-OzE10oXcgcWUruCBXc8YoyHMTeb24ljWOLz41HP5lRB1uIhTzOm1W0f-A0dIfO8wBlQtiBysKXTUqcK0zLs-CoiMH3HZCOjbQQbzRJRC5FK_tU0vXIGh9USAbvAcgAZLi05LdeVqfAOm99s8I2rnu.js:1677
+[  352345ms] [LOG] 
+%cAceasta este o funcţie de browser destinată dezvoltatorilor. Dacă cineva ţi-a spus să copiezi ceva aici pentru a activa o altă funcţie Facebook sau pentru a „sparge” contul cuiva, este o înşelătorie şi îi vei oferi acces la contul tău de Facebook. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4i_Ck4/yn/l/ro_RO-j/PMxYTQ1zerFhM9YCzsuX3eLKkEjjLCoIClJlx4XBqvc3UiJHx9vxGUeFbrZ-OzE10oXcgcWUruCBXc8YoyHMTeb24ljWOLz41HP5lRB1uIhTzOm1W0f-A0dIfO8wBlQtiBysKXTUqcK0zLs-CoiMH3HZCOjbQQbzRJRC5FK_tU0vXIGh9USAbvAcgAZLi05LdeVqfAOm99s8I2rnu.js:1677
+[  352345ms] [LOG] 
+%cPentru mai multe informaţii, vezi https://www.facebook.com/selfxss. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4i_Ck4/yn/l/ro_RO-j/PMxYTQ1zerFhM9YCzsuX3eLKkEjjLCoIClJlx4XBqvc3UiJHx9vxGUeFbrZ-OzE10oXcgcWUruCBXc8YoyHMTeb24ljWOLz41HP5lRB1uIhTzOm1W0f-A0dIfO8wBlQtiBysKXTUqcK0zLs-CoiMH3HZCOjbQQbzRJRC5FK_tU0vXIGh9USAbvAcgAZLi05LdeVqfAOm99s8I2rnu.js:1677
+[  352345ms] [LOG] 
+%c  @ https://static.xx.fbcdn.net/rsrc.php/v4i_Ck4/yn/l/ro_RO-j/PMxYTQ1zerFhM9YCzsuX3eLKkEjjLCoIClJlx4XBqvc3UiJHx9vxGUeFbrZ-OzE10oXcgcWUruCBXc8YoyHMTeb24ljWOLz41HP5lRB1uIhTzOm1W0f-A0dIfO8wBlQtiBysKXTUqcK0zLs-CoiMH3HZCOjbQQbzRJRC5FK_tU0vXIGh9USAbvAcgAZLi05LdeVqfAOm99s8I2rnu.js:1677

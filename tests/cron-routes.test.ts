@@ -12,6 +12,7 @@ describe("cron routes", () => {
   it("keeps Vercel scheduled cron endpoints present in source", () => {
     assert.match(vercelConfig, /"path": "\/api\/cron\/results"/);
     assert.match(vercelConfig, /"path": "\/api\/cron\/apply"/);
+    assert.doesNotMatch(vercelConfig, /\/api\/deposits\/reconcile/);
     assert.match(deploymentDocs, /\/api\/cron\/results/);
     assert.match(deploymentDocs, /\/api\/cron\/apply/);
     assert.match(cronDocs, /GET \/api\/cron\/results/);

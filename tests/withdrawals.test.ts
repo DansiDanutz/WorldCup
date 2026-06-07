@@ -120,7 +120,7 @@ describe("withdrawal workflow contract", () => {
     assert.match(userRoute, /loadOperatorPolicy/);
     assert.match(userRoute, /isPaidActionLaunchTestAdmin\(auth\.user\.email\)/);
     assert.match(userRoute, /getUserPaidActionGate\(auth\.supabase, "withdrawal"/);
-    assert.match(userRoute, /launch approvals are complete/);
+    assert.match(userRoute, /after the World Cup ends and prizes are settled manually/);
     assert.match(userRoute, /getWithdrawalLimitConfigFromPolicy\(operatorPolicy\)/);
     assert.match(userRoute, /sumActiveWithdrawalRequestAmounts/);
     assert.match(userRoute, /getResponsiblePlayRestriction/);
@@ -150,14 +150,18 @@ describe("withdrawal workflow contract", () => {
     assert.match(adminRoute, /payoutEvidenceReady/);
   });
 
-  it("surfaces withdrawal requests in the wallet and admin console", () => {
-    assert.match(walletScreen, /Withdraw USDT/);
-    assert.match(walletScreen, /\/api\/withdrawals/);
-    assert.match(walletScreen, /Request Withdrawal/);
-    assert.match(walletScreen, /View payout transaction/);
+  it("keeps player payouts deferred while admin withdrawal review remains available", () => {
+    assert.match(walletScreen, /Payout after World Cup/);
+    assert.match(walletScreen, /No withdrawal request is open during the tournament/);
+    assert.match(walletScreen, /USDT payout is available only if this account used USDT deposit at least once/);
+    assert.doesNotMatch(walletScreen, /Withdraw USDT/);
+    assert.doesNotMatch(walletScreen, /fetch\("\/api\/withdrawals"/);
+    assert.doesNotMatch(walletScreen, /Request Withdrawal/);
+    assert.doesNotMatch(walletScreen, /View payout transaction/);
     assert.match(adminConsole, /Withdrawal requests/);
     assert.match(adminConsole, /Load Withdrawals/);
     assert.match(adminConsole, /Mark Paid/);
+    assert.match(userRoute, /worldcup_withdrawal_requests/);
     assert.match(adminConsole, /\/api\/admin\/withdrawals/);
   });
 });

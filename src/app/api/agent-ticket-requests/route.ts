@@ -115,7 +115,7 @@ export async function POST(request: Request) {
   let requesterDisplayName: string;
   try {
     const body = requireObject(await request.json());
-    agentId = requireString(body.agentId, "Agent ID", { min: 3, max: 120 });
+    agentId = requireString(body.agentId, "Agent code", { min: 3, max: 12 });
     requesterDisplayName = requireString(body.displayName, "Display name", { min: 2, max: 80 });
   } catch (error) {
     return jsonError(error instanceof ValidationError ? error.message : "Invalid request body.", 400);
@@ -132,7 +132,9 @@ export async function POST(request: Request) {
 
   const requesterProfile = await getOrCreateReferralProfile(auth.supabase, auth.user);
   const normalizedAgentCode = agentId.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
-  const normalizedAgentEmail = agentId.trim().toLowerCase();
+  if (normalizedAgentCode !== agentId.trim().toUpperCase()) {
+    return jsonError("Use the agent referral code.", 400);
+  }
 
   const agentByCode = normalizedAgentCode
     ? await auth.supabase
@@ -146,22 +148,10 @@ export async function POST(request: Request) {
     return jsonError("Could not resolve agent.", 500);
   }
 
-  const agentByEmail = agentByCode.data
-    ? { data: null, error: null }
-    : await auth.supabase
-        .from("worldcup_referral_profiles")
-        .select("user_id,display_name,email,referral_code")
-        .eq("email", normalizedAgentEmail)
-        .maybeSingle();
-
-  if (agentByEmail.error) {
-    return jsonError("Could not resolve agent.", 500);
-  }
-
-  const agentProfile = agentByCode.data ?? agentByEmail.data;
+  const agentProfile = agentByCode.data;
 
   if (!agentProfile) {
-    return jsonError("Agent was not found. Use the agent referral code or email.", 404);
+    return jsonError("Agent was not found. Use the agent referral code.", 404);
   }
 
   if (agentProfile.user_id === auth.user.id) {

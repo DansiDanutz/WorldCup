@@ -1,0 +1,17 @@
+[     617ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[     619ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[     706ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/NervixAi:0
+[     915ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://ads-api.x.com/12/measurement/dcm_local_id:0
+[ 2703051ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[ 5404442ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[ 6413541ms] [ERROR] Failed to load resource: net::ERR_HTTP2_PROTOCOL_ERROR @ https://api.x.com/live_pipeline/events?topic=%2Ftweet_engagement%2F2063204959869411451,%2Ftweet_engagement%2F2063158284031291630,%2Ftweet_engagement%2F2063158959809192385,%2Ftweet_engagement%2F2063150920959918315,%2Ftweet_engagement%2F2063152697960804690,%2Ftweet_engagement%2F2063145753627779088:0
+[ 7405805ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[ 9219243ms] [ERROR] Failed to load resource: net::ERR_HTTP2_PROTOCOL_ERROR @ https://api.x.com/live_pipeline/events?topic=%2Ftweet_engagement%2F2063204959869411451,%2Ftweet_engagement%2F2063158284031291630,%2Ftweet_engagement%2F2063158959809192385,%2Ftweet_engagement%2F2063150920959918315,%2Ftweet_engagement%2F2063152697960804690,%2Ftweet_engagement%2F2063145753627779088:0
+[ 9307153ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[12008492ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[13218769ms] [ERROR] Failed to load resource: net::ERR_HTTP2_PROTOCOL_ERROR @ https://api.x.com/live_pipeline/events?topic=%2Ftweet_engagement%2F2063204959869411451,%2Ftweet_engagement%2F2063158284031291630,%2Ftweet_engagement%2F2063158959809192385,%2Ftweet_engagement%2F2063150920959918315,%2Ftweet_engagement%2F2063152697960804690,%2Ftweet_engagement%2F2063145753627779088:0
+[13309907ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[16011518ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[18712867ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0

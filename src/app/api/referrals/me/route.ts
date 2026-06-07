@@ -4,12 +4,25 @@ import { calculateWalletBalance } from "@/lib/economy";
 import { enforceRateLimit } from "@/lib/http";
 import { getUserPaidActionGates } from "@/lib/paid-action-gates";
 import {
+  calculateNetPrizePool,
+  calculatePaidPlaces,
+  calculatePayoutPlan,
+} from "@/lib/prize-pool";
+import {
   getAuthProvider,
   getOrCreateReferralProfile,
   getUserDisplayName,
 } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price";
+
+type EntryTeamTotalRow = {
+  total_points: string | number;
+};
+
+function round2(value: number) {
+  return Math.round(value * 100) / 100;
+}
 
 export async function GET(request: Request) {
   const limited = await enforceRateLimit(request, "referrals", { limit: 30, windowMs: 60_000 });
@@ -52,7 +65,7 @@ export async function GET(request: Request) {
 
   const tournament = await supabase
     .from("worldcup_tournaments")
-    .select("id,ticket_price_amount")
+    .select("id,ticket_price_amount,prize_pool_amount,prize_pool_fee_percent")
     .eq("slug", "fifa-world-cup-2026")
     .single();
 
@@ -106,6 +119,64 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Could not load your locked teams." }, { status: 500 });
   }
 
+  let entryPreview: {
+    totalPoints: number;
+    rank: number | null;
+    paidPlaces: number;
+    projectedShare: number | null;
+  } | null = null;
+
+  if (ownEntry.data?.id && ownEntry.data.status === "draft") {
+    const teamTotals = await supabase
+      .from("worldcup_entry_team_totals")
+      .select("total_points")
+      .eq("tournament_id", tournament.data.id)
+      .eq("entry_id", ownEntry.data.id);
+
+    if (teamTotals.error) {
+      return NextResponse.json({ error: "Could not load your free preview points." }, { status: 500 });
+    }
+
+    const totalPoints = round2(
+      ((teamTotals.data ?? []) as EntryTeamTotalRow[]).reduce(
+        (sum, team) => sum + Number(team.total_points ?? 0),
+        0,
+      ),
+    );
+
+    const [participantHead, rankHead] = await Promise.all([
+      supabase
+        .from("worldcup_awarded_leaderboard")
+        .select("entry_id", { count: "exact", head: true })
+        .eq("tournament_id", tournament.data.id),
+      supabase
+        .from("worldcup_awarded_leaderboard")
+        .select("entry_id", { count: "exact", head: true })
+        .eq("tournament_id", tournament.data.id)
+        .gt("total_points", totalPoints),
+    ]);
+
+    if (participantHead.error || rankHead.error) {
+      return NextResponse.json({ error: "Could not load your free preview rank." }, { status: 500 });
+    }
+
+    const previewRank = (rankHead.count ?? 0) + 1;
+    const paidPlaces = calculatePaidPlaces((participantHead.count ?? 0) + 1);
+    const payoutPlan = calculatePayoutPlan(
+      calculateNetPrizePool(tournament.data.prize_pool_amount, tournament.data.prize_pool_fee_percent),
+      paidPlaces,
+    );
+    const projectedShare =
+      previewRank <= paidPlaces ? round2(payoutPlan[previewRank - 1]?.amount ?? 0) : null;
+
+    entryPreview = {
+      totalPoints,
+      rank: previewRank,
+      paidPlaces,
+      projectedShare,
+    };
+  }
+
   const entryIds = (referrals.data ?? [])
     .map((referral) => referral.entry_id)
     .filter((entryId): entryId is string => Boolean(entryId));
@@ -138,6 +209,7 @@ export async function GET(request: Request) {
           lockedAt: ownEntry.data.locked_at,
         }
       : null,
+    entryPreview,
     usdtSenderWalletAddress: profile.usdt_sender_wallet_address ?? null,
     usdtSenderWalletNetwork: profile.usdt_sender_wallet_network ?? null,
     usdtSenderWalletUpdatedAt: profile.usdt_sender_wallet_updated_at ?? null,

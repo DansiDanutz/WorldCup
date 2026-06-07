@@ -80,9 +80,9 @@ the submitted transaction hash and admin review provide attribution.
   - `POST /api/admin/deposit-claims` — lets admins list, credit, or reject submitted claims
   - `POST /api/admin/withdrawals` — lets admins list, approve, reject, or mark withdrawal requests paid
   - `POST /api/tickets/purchase` — buys a ticket from the wallet balance
-  - `GET|POST /api/deposits/reconcile` — cron; credits confirmed deposits
+  - `POST /api/deposits/check` — signed-in user check after locking their sender wallet; creates an admin-reviewed claim when KuCoin has a matching confirmed transfer
 - **`/wallet`** page — balance, responsible-play controls, QR-coded deposit addresses, claim form/history, withdrawal request form/history, buy ticket.
-- **Cron** — `/api/deposits/reconcile` every 10 minutes (`vercel.json`).
+- **Deposit check** — signed-in users trigger `/api/deposits/check` after locking their sender wallet. Admin still reviews and accepts matched deposits before crediting the player wallet.
 
 ## Environment
 

@@ -10,6 +10,14 @@ type BeforeInstallPromptEvent = Event & {
 
 const INSTALL_CONFIRMATION_KEY = "worldcup26-install-confirmation-shown";
 
+function isLocalDevelopmentHost() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  return ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname);
+}
+
 function isStandaloneDisplayMode() {
   if (typeof window === "undefined") {
     return false;
@@ -36,9 +44,29 @@ export function HeroCard() {
     }
 
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(() => {
-        // Installation help can still be shown if registration is blocked.
-      });
+      if (isLocalDevelopmentHost()) {
+        // Local dev must always serve the current source, not an old PWA shell.
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          registrations.forEach((registration) => {
+            if (registration.scope.startsWith(window.location.origin)) {
+              void registration.unregister();
+            }
+          });
+        });
+        if ("caches" in window) {
+          window.caches.keys().then((keys) => {
+            keys
+              .filter((key) => key.startsWith("worldcup26-shell"))
+              .forEach((key) => {
+                void window.caches.delete(key);
+              });
+          });
+        }
+      } else {
+        navigator.serviceWorker.register("/sw.js").catch(() => {
+          // Installation help can still be shown if registration is blocked.
+        });
+      }
     }
 
     const installStateFrame = window.requestAnimationFrame(() => {
@@ -147,7 +175,7 @@ export function HeroCard() {
             </span>
             <span className="hero-feature__body">
               <strong>Pick 3 Teams</strong>
-              <small>Climb the leaderboard.</small>
+              <small>Free preview first.</small>
             </span>
           </div>
 

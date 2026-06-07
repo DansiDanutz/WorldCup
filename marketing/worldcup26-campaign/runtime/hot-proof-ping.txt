@@ -1,0 +1,24 @@
+WorldCup26 hot proof ping 2026-06-07 20:45 +0300
+proof=49 urgent=16 hot_workers=3
+code=26BC4B90CB
+link=https://worldcup26.world/login?ref=26BC4B90CB
+first_human=needs-first-human-action warm_attempts=0 signup_saves=0 referral_views=171 ad_clicks=227
+first_human_action=Memo/WhatsApp testers/clean-signup-test-batch
+first_human_command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"
+first_human_whatsapp=https://wa.me/?text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test
+
+Dexter: hot open=3 next=4 channel=Football groups
+  action=Ask approved group admin for permission; post group variant only if allowed
+  asset=campaign/first-wave-posts.md
+  command=node campaign-proof-log.mjs --priority "4" --proof-url "approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed" --status "requested"
+Sienna: hot open=8 next=1 channel=WhatsApp Status
+  action=Post story asset with video caption 1
+  asset=media/worldcup26-main-video.mp4
+  command=node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included" --status "posted"
+Memo: clear open=0 next=- channel=-
+Nano: hot open=5 next=2 channel=WhatsApp personal
+  action=Send personal invite to warm contacts
+  asset=media/worldcup26-main-video.mp4
+  command=node campaign-proof-log.mjs --priority "2" --proof-url "private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>" --status "sent"
+
+Proof rule: log proof only after the real action happened.

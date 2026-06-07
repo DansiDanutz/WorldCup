@@ -1,0 +1,1523 @@
+{
+  "schema": "worldcup26-public-outreach-targets-v1",
+  "generatedAt": "2026-06-07T17:45:01.480Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "ok": true,
+  "failures": [],
+  "state": "critical-zero-signups",
+  "targetCount": 41,
+  "workerCoverage": {
+    "required": [
+      "Dexter",
+      "Sienna",
+      "Memo",
+      "Nano"
+    ],
+    "owners": [
+      "Sienna",
+      "Nano",
+      "Dexter",
+      "Memo"
+    ],
+    "missing": []
+  },
+  "targets": [
+    {
+      "priority": "A1",
+      "queuePriority": "1",
+      "owner": "Sienna",
+      "platform": "WhatsApp Status",
+      "target": "Owned WhatsApp status audience",
+      "action": "Post the campaign video as a status with the free-picks caption.",
+      "asset": "media/worldcup26-main-video.mp4",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1",
+      "proof": "private-whatsapp-status: posted status from <phone/account>; visible to contacts; code/link included",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dstatus_a1"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dstatus_a1&text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dstatus_a1"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dstatus_a1"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dstatus_a1"
+        }
+      ],
+      "proofCommand": "node campaign-proof-log.mjs --priority \"1\" --proof-url \"private-whatsapp-status: posted status from <phone/account>; visible to contacts; code/link included at YYYY-MM-DD HH:mm EEST\" --status \"posted\""
+    },
+    {
+      "priority": "A2",
+      "queuePriority": "2",
+      "owner": "Nano",
+      "platform": "WhatsApp Personal",
+      "target": "Warm football contacts",
+      "action": "Send the invite to 20 warm contacts, then follow up with anyone who replies.",
+      "asset": "media/worldcup26-main-video.mp4",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_public_outreach&utm_content=warm_a2",
+      "proof": "private-whatsapp: sent to <N> warm contacts; replies <N>; code/link included",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_public_outreach&utm_content=warm_a2",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_public_outreach&utm_content=warm_a2"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dwarm_a2"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dwarm_a2&text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dwarm_a2"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dwarm_a2"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dwarm_a2"
+        }
+      ],
+      "proofCommand": "node campaign-proof-log.mjs --priority \"2\" --proof-url \"private-whatsapp: sent to <N> warm contacts; replies <N>; code/link included at YYYY-MM-DD HH:mm EEST\" --status \"posted\""
+    },
+    {
+      "priority": "A3",
+      "queuePriority": "3",
+      "owner": "Sienna",
+      "platform": "Instagram/Facebook Story",
+      "target": "Owned Instagram/Facebook story audience",
+      "action": "Post the story card with a link sticker and referral code.",
+      "asset": "media/worldcup26-referral-story.jpg",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=story_a3",
+      "proof": "private-meta-story: story posted from <account>; screenshot saved; code/link sticker included",
+      "copy": "48 teams are still open. Pick your 3 before everyone copies the favorites. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=story_a3",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=story_a3"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=48%20teams%20are%20still%20open.%20Pick%20your%203%20before%20everyone%20copies%20the%20favorites.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dstory_a3"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dstory_a3&text=48%20teams%20are%20still%20open.%20Pick%20your%203%20before%20everyone%20copies%20the%20favorites.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dstory_a3"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=48%20teams%20are%20still%20open.%20Pick%20your%203%20before%20everyone%20copies%20the%20favorites.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dstory_a3"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dstory_a3"
+        }
+      ],
+      "proofCommand": "node campaign-proof-log.mjs --priority \"3\" --proof-url \"private-meta-story: story posted from <account>; screenshot saved; code/link sticker included at YYYY-MM-DD HH:mm EEST\" --status \"posted\""
+    },
+    {
+      "priority": "B1",
+      "owner": "Dexter",
+      "platform": "X Search",
+      "target": "World Cup 2026 prediction conversations",
+      "action": "Reply only where useful: ask people their 3 teams and include the free-picks link once.",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "searchUrl": "https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1",
+      "proof": "public-url: X reply/post URL with code/link included",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X Search\" --channel \"World Cup 2026 prediction conversations\" --status \"posted\" --attempt-url \"https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live\" --detail \"public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "B2",
+      "owner": "Dexter",
+      "platform": "X Search",
+      "target": "Football prediction posts",
+      "action": "Post or reply with the 3-team challenge; avoid duplicate replies.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "searchUrl": "https://twitter.com/search?q=football%20predictions%20World%20Cup&src=typed_query&f=live",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=football_b2",
+      "proof": "public-url: X reply/post URL with code/link included",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=football_b2",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://twitter.com/search?q=football%20predictions%20World%20Cup&src=typed_query&f=live"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfootball_b2"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfootball_b2&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfootball_b2"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfootball_b2"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfootball_b2"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X Search\" --channel \"Football prediction posts\" --status \"posted\" --attempt-url \"https://twitter.com/search?q=football%20predictions%20World%20Cup&src=typed_query&f=live\" --detail \"public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "B3",
+      "owner": "Sienna",
+      "platform": "YouTube Search",
+      "target": "World Cup 2026 prediction videos",
+      "action": "Comment naturally on fresh prediction videos: invite viewers to pick 3 teams free.",
+      "asset": "media/worldcup26-main-video.mp4",
+      "searchUrl": "https://www.youtube.com/results?search_query=World+Cup+2026+predictions",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b3",
+      "proof": "public-url-or-screenshot-note: YouTube comment URL/screenshot note with code/link included",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b3",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.youtube.com/results?search_query=World+Cup+2026+predictions"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b3"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b3&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b3"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b3"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b3"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"YouTube Search\" --channel \"World Cup 2026 prediction videos\" --status \"posted\" --attempt-url \"https://www.youtube.com/results?search_query=World+Cup+2026+predictions\" --detail \"public-url-or-screenshot-note: YouTube comment URL/screenshot note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "B4",
+      "owner": "Nano",
+      "platform": "YouTube Search",
+      "target": "Football fans choosing favorites",
+      "action": "Reply to comments asking favorites/underdogs; use the free private-score angle.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "searchUrl": "https://www.youtube.com/results?search_query=World+Cup+2026+favorites",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=favorites_b4",
+      "proof": "public-url-or-screenshot-note: YouTube reply URL/screenshot note with code/link included",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=favorites_b4",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.youtube.com/results?search_query=World+Cup+2026+favorites"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfavorites_b4"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfavorites_b4&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfavorites_b4"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfavorites_b4"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfavorites_b4"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"YouTube Search\" --channel \"Football fans choosing favorites\" --status \"posted\" --attempt-url \"https://www.youtube.com/results?search_query=World+Cup+2026+favorites\" --detail \"public-url-or-screenshot-note: YouTube reply URL/screenshot note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "C1",
+      "owner": "Sienna",
+      "platform": "TikTok/Reels",
+      "target": "#worldcup2026 and football prediction clips",
+      "action": "Upload/repost the campaign video with the free-picks hook and code in first line.",
+      "asset": "media/worldcup26-main-video.mp4",
+      "searchUrl": "https://www.tiktok.com/search?q=worldcup2026%20predictions",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-search&utm_medium=manual-video&utm_campaign=worldcup26_public_outreach&utm_content=video_c1",
+      "proof": "public-url: TikTok/Reels URL with code/link included",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-search&utm_medium=manual-video&utm_campaign=worldcup26_public_outreach&utm_content=video_c1",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.tiktok.com/search?q=worldcup2026%20predictions"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-search%26utm_medium%3Dmanual-video%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dvideo_c1"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-search%26utm_medium%3Dmanual-video%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dvideo_c1&text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-search%26utm_medium%3Dmanual-video%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dvideo_c1"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-search%26utm_medium%3Dmanual-video%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dvideo_c1"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-search%26utm_medium%3Dmanual-video%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dvideo_c1"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"TikTok/Reels\" --channel \"#worldcup2026 and football prediction clips\" --status \"posted\" --attempt-url \"https://www.tiktok.com/search?q=worldcup2026%20predictions\" --detail \"public-url: TikTok/Reels URL with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "C2",
+      "owner": "Sienna",
+      "platform": "Instagram Hashtags",
+      "target": "#worldcup2026 #footballpredictions",
+      "action": "Post story/reel from owned account; ask followers for their 3 teams.",
+      "asset": "media/worldcup26-referral-story.jpg",
+      "searchUrl": "https://www.instagram.com/explore/tags/worldcup2026/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-hashtag&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=hashtag_c2",
+      "proof": "public-url-or-private-story-note: Instagram URL/screenshot note with code/link included",
+      "copy": "48 teams are still open. Pick your 3 before everyone copies the favorites. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-hashtag&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=hashtag_c2",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.instagram.com/explore/tags/worldcup2026/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=48%20teams%20are%20still%20open.%20Pick%20your%203%20before%20everyone%20copies%20the%20favorites.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-hashtag%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dhashtag_c2"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-hashtag%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dhashtag_c2&text=48%20teams%20are%20still%20open.%20Pick%20your%203%20before%20everyone%20copies%20the%20favorites.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-hashtag%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dhashtag_c2"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=48%20teams%20are%20still%20open.%20Pick%20your%203%20before%20everyone%20copies%20the%20favorites.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-hashtag%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dhashtag_c2"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-hashtag%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dhashtag_c2"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"Instagram Hashtags\" --channel \"#worldcup2026 #footballpredictions\" --status \"posted\" --attempt-url \"https://www.instagram.com/explore/tags/worldcup2026/\" --detail \"public-url-or-private-story-note: Instagram URL/screenshot note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "D1",
+      "queuePriority": "4",
+      "owner": "Dexter",
+      "platform": "Facebook Groups",
+      "target": "Football and World Cup discussion groups",
+      "action": "Ask admin/moderator permission first; post only where promo links are welcome.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://www.facebook.com/search/groups/?q=World%20Cup%202026%20football",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-groups&utm_medium=approval-first&utm_campaign=worldcup26_public_outreach&utm_content=groups_d1",
+      "proof": "approval-request-or-public-url: admin asked or approved post URL with code/link included",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-groups&utm_medium=approval-first&utm_campaign=worldcup26_public_outreach&utm_content=groups_d1",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.facebook.com/search/groups/?q=World%20Cup%202026%20football"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dgroups_d1"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dgroups_d1&text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dgroups_d1"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dgroups_d1"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dgroups_d1"
+        }
+      ],
+      "proofCommand": "node campaign-proof-log.mjs --priority \"4\" --proof-url \"approval-request-or-public-url: admin asked or approved post URL with code/link included at YYYY-MM-DD HH:mm EEST\" --status \"posted\""
+    },
+    {
+      "priority": "D2",
+      "owner": "Dexter",
+      "platform": "Reddit Search",
+      "target": "Football prediction discussion threads",
+      "action": "Use only relevant discussion or self-promo-friendly threads; ask a 3-team question first.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://www.reddit.com/search/?q=World%20Cup%202026%20predictions",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=threads_d2",
+      "proof": "public-url-or-approval-note: Reddit comment/post URL or moderator approval note",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=threads_d2",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/search/?q=World%20Cup%202026%20predictions"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dthreads_d2"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dthreads_d2&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dthreads_d2"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dthreads_d2"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dthreads_d2"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"Reddit Search\" --channel \"Football prediction discussion threads\" --status \"posted\" --attempt-url \"https://www.reddit.com/search/?q=World%20Cup%202026%20predictions\" --detail \"public-url-or-approval-note: Reddit comment/post URL or moderator approval note at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "E1",
+      "owner": "Nano",
+      "platform": "Telegram/Discord",
+      "target": "Football chats where you already participate",
+      "action": "Send the free-picks challenge as a normal conversation prompt, not a cold blast.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-discord&utm_medium=manual-chat&utm_campaign=worldcup26_public_outreach&utm_content=chat_e1",
+      "proof": "private-chat-note: posted in <chat/server/channel>; visible to <N>; code/link included",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-discord&utm_medium=manual-chat&utm_campaign=worldcup26_public_outreach&utm_content=chat_e1",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-discord&utm_medium=manual-chat&utm_campaign=worldcup26_public_outreach&utm_content=chat_e1"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtelegram-discord%26utm_medium%3Dmanual-chat%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dchat_e1"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtelegram-discord%26utm_medium%3Dmanual-chat%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dchat_e1&text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtelegram-discord%26utm_medium%3Dmanual-chat%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dchat_e1"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtelegram-discord%26utm_medium%3Dmanual-chat%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dchat_e1"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtelegram-discord%26utm_medium%3Dmanual-chat%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dchat_e1"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"Telegram/Discord\" --channel \"Football chats where you already participate\" --status \"posted\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-discord&utm_medium=manual-chat&utm_campaign=worldcup26_public_outreach&utm_content=chat_e1\" --detail \"private-chat-note: posted in <chat/server/channel>; visible to <N>; code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "M1",
+      "owner": "Memo",
+      "platform": "YouTube Search",
+      "target": "Fresh World Cup 2026 news and fixture videos",
+      "action": "Comment on fresh relevant videos with the 3-team question and free private-score angle.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "searchUrl": "https://www.youtube.com/results?search_query=World+Cup+2026+teams+predictions",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=memo_news_m1",
+      "proof": "public-url-or-screenshot-note: Memo YouTube comment URL/screenshot note with code/link included",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=memo_news_m1",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.youtube.com/results?search_query=World+Cup+2026+teams+predictions"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_news_m1"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_news_m1&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_news_m1"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_news_m1"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_news_m1"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"YouTube Search\" --channel \"Fresh World Cup 2026 news and fixture videos\" --status \"posted\" --attempt-url \"https://www.youtube.com/results?search_query=World+Cup+2026+teams+predictions\" --detail \"public-url-or-screenshot-note: Memo YouTube comment URL/screenshot note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "M2",
+      "owner": "Memo",
+      "platform": "Facebook Profile/Page",
+      "target": "Owned Facebook profile or page",
+      "action": "Post the free-picks CTA from an owned profile/page and pin or reshare it if possible.",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-profile&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=memo_profile_m2",
+      "proof": "public-url-or-private-note: Memo Facebook post URL or private post note with code/link included",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-profile&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=memo_profile_m2",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-profile&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=memo_profile_m2"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_profile_m2"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_profile_m2&text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_profile_m2"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_profile_m2"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-profile%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_profile_m2"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"Facebook Profile/Page\" --channel \"Owned Facebook profile or page\" --status \"posted\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-profile&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=memo_profile_m2\" --detail \"public-url-or-private-note: Memo Facebook post URL or private post note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "M3",
+      "owner": "Memo",
+      "platform": "Football Forums",
+      "target": "World Cup 2026 prediction forum threads",
+      "action": "Find forum threads where prediction games are welcome; ask the 3-team question before sharing the link.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://www.google.com/search?q=World+Cup+2026+predictions+forum",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-forums&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=memo_forums_m3",
+      "proof": "public-url-or-approval-note: Memo forum post URL or moderator approval note with code/link included",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-forums&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=memo_forums_m3",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.google.com/search?q=World+Cup+2026+predictions+forum"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-forums%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_forums_m3"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-forums%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_forums_m3&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-forums%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_forums_m3"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-forums%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_forums_m3"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-forums%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_forums_m3"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"Football Forums\" --channel \"World Cup 2026 prediction forum threads\" --status \"posted\" --attempt-url \"https://www.google.com/search?q=World+Cup+2026+predictions+forum\" --detail \"public-url-or-approval-note: Memo forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "M4",
+      "owner": "Memo",
+      "platform": "X Search",
+      "target": "Live posts asking who will win World Cup 2026",
+      "action": "Reply to live winner/favorites posts with the 3-team challenge and the free preview link.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "searchUrl": "https://twitter.com/search?q=%22win%20World%20Cup%202026%22&src=typed_query&f=live",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=memo_winner_m4",
+      "proof": "public-url: Memo X reply/post URL with code/link included",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=memo_winner_m4",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://twitter.com/search?q=%22win%20World%20Cup%202026%22&src=typed_query&f=live"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_winner_m4"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_winner_m4&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_winner_m4"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_winner_m4"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dmemo_winner_m4"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"X Search\" --channel \"Live posts asking who will win World Cup 2026\" --status \"posted\" --attempt-url \"https://twitter.com/search?q=%22win%20World%20Cup%202026%22&src=typed_query&f=live\" --detail \"public-url: Memo X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F1",
+      "owner": "Dexter",
+      "platform": "Reddit",
+      "target": "r/worldcup official predictions thread",
+      "action": "Join the prediction conversation with a 3-team question. Share the link only if the thread rules allow it or someone asks for the game.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "searchUrl": "https://www.reddit.com/r/worldcup/comments/1tut1oq/official_world_cup_predictions_thread/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-thread&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_worldcup_f1",
+      "proof": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: active official World Cup predictions thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-thread&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_worldcup_f1",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/r/worldcup/comments/1tut1oq/official_world_cup_predictions_thread/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-thread%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_worldcup_f1"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-thread%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_worldcup_f1&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-thread%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_worldcup_f1"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-thread%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_worldcup_f1"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-thread%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_worldcup_f1"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"Reddit\" --channel \"r/worldcup official predictions thread\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/worldcup/comments/1tut1oq/official_world_cup_predictions_thread/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F2",
+      "owner": "Memo",
+      "platform": "Reddit",
+      "target": "r/SportsProjections group-stage predictions",
+      "action": "Reply with a useful angle: ask people to save their 3-team picks before comparing model projections.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://www.reddit.com/r/SportsProjections/comments/1tz5hh8/world_cup_2026_group_stage_1_predictions/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsprojections&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_group_stage_f2",
+      "proof": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: World Cup group-stage predictions thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsprojections&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_group_stage_f2",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/r/SportsProjections/comments/1tz5hh8/world_cup_2026_group_stage_1_predictions/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsprojections%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_group_stage_f2"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsprojections%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_group_stage_f2&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsprojections%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_group_stage_f2"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsprojections%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_group_stage_f2"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsprojections%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_group_stage_f2"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"Reddit\" --channel \"r/SportsProjections group-stage predictions\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/SportsProjections/comments/1tz5hh8/world_cup_2026_group_stage_1_predictions/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F3",
+      "owner": "Memo",
+      "platform": "Reddit",
+      "target": "r/dataisbeautiful 10,000 simulation discussion",
+      "action": "Comment only if useful: ask readers which 3 teams they would personally pick against the simulation.",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "searchUrl": "https://www.reddit.com/r/dataisbeautiful/comments/1tycucy/oc_i_simulated_the_2026_world_cup_10000_times_no/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-dataisbeautiful&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_simulation_f3",
+      "proof": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: high-interest simulation discussion.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-dataisbeautiful&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_simulation_f3",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/r/dataisbeautiful/comments/1tycucy/oc_i_simulated_the_2026_world_cup_10000_times_no/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-dataisbeautiful%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_simulation_f3"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-dataisbeautiful%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_simulation_f3&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-dataisbeautiful%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_simulation_f3"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-dataisbeautiful%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_simulation_f3"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-dataisbeautiful%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_simulation_f3"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"Reddit\" --channel \"r/dataisbeautiful 10,000 simulation discussion\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/dataisbeautiful/comments/1tycucy/oc_i_simulated_the_2026_world_cup_10000_times_no/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F4",
+      "owner": "Nano",
+      "platform": "Reddit",
+      "target": "r/sportsanalytics prediction-game discussion",
+      "action": "Use the builder-to-builder angle: simple 3-team picks, free preview first, ticket only later.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://www.reddit.com/r/sportsanalytics/comments/1tjn679/world_cup_2026_prediction_game/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsanalytics&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_prediction_game_f4",
+      "proof": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: prediction-game conversation.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsanalytics&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_prediction_game_f4",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/r/sportsanalytics/comments/1tjn679/world_cup_2026_prediction_game/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_game_f4"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_game_f4&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_game_f4"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_game_f4"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_game_f4"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"Reddit\" --channel \"r/sportsanalytics prediction-game discussion\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/sportsanalytics/comments/1tjn679/world_cup_2026_prediction_game/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F5",
+      "owner": "Dexter",
+      "platform": "Reddit",
+      "target": "r/soccer model prediction thread",
+      "action": "High-volume but strict community. Do not drop a promo link unless rules and context allow it; ask the 3-team question first.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "searchUrl": "https://www.reddit.com/r/soccer/comments/1tx8wuy/world_cup_predictions_based_on_the_model_that/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-soccer&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_model_thread_f5",
+      "proof": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: high-traffic World Cup model thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-soccer&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_model_thread_f5",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/r/soccer/comments/1tx8wuy/world_cup_predictions_based_on_the_model_that/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-soccer%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_model_thread_f5"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-soccer%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_model_thread_f5&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-soccer%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_model_thread_f5"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-soccer%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_model_thread_f5"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-soccer%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_model_thread_f5"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"Reddit\" --channel \"r/soccer model prediction thread\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/soccer/comments/1tx8wuy/world_cup_predictions_based_on_the_model_that/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F6",
+      "owner": "Memo",
+      "platform": "Digital Spy Forum",
+      "target": "World Cup predictions thread",
+      "action": "Post only if forum rules allow links. Lead with the 3-team question and free private-score preview.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://forums.digitalspy.com/discussion/2492990/world-cup-predictions-thread",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=digitalspy-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_digitalspy_f6",
+      "proof": "public-url-or-approval-note: forum post URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: active World Cup predictions forum thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=digitalspy-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_digitalspy_f6",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://forums.digitalspy.com/discussion/2492990/world-cup-predictions-thread"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddigitalspy-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_digitalspy_f6"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddigitalspy-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_digitalspy_f6&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddigitalspy-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_digitalspy_f6"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddigitalspy-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_digitalspy_f6"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddigitalspy-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_digitalspy_f6"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"Digital Spy Forum\" --channel \"World Cup predictions thread\" --status \"posted\" --attempt-url \"https://forums.digitalspy.com/discussion/2492990/world-cup-predictions-thread\" --detail \"public-url-or-approval-note: forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F7",
+      "owner": "Dexter",
+      "platform": "RedCafe Forum",
+      "target": "World Cup 2026 forum",
+      "action": "Find the live prediction/chat thread inside the forum, ask the 3-team challenge, and share link only when welcome.",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "searchUrl": "https://www.redcafe.net/forums/world-cup-2026-forum.76/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=redcafe-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_redcafe_f7",
+      "proof": "public-url-or-approval-note: forum post URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: dedicated World Cup 2026 forum.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=redcafe-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_redcafe_f7",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.redcafe.net/forums/world-cup-2026-forum.76/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dredcafe-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_redcafe_f7"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dredcafe-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_redcafe_f7&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dredcafe-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_redcafe_f7"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dredcafe-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_redcafe_f7"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dredcafe-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_redcafe_f7"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"RedCafe Forum\" --channel \"World Cup 2026 forum\" --status \"posted\" --attempt-url \"https://www.redcafe.net/forums/world-cup-2026-forum.76/\" --detail \"public-url-or-approval-note: forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F8",
+      "owner": "Nano",
+      "platform": "National Teams Forum",
+      "target": "Prediction for World Cup 2026 thread",
+      "action": "Ask for three team picks, then invite them to compare in WorldCup26 if links are allowed.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://www.national-teams.com/forum/index.php?action=lastPost&thread%2F51461-prediction-for-world-cup-2026%2F=",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=national-teams-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_national_teams_f8",
+      "proof": "public-url-or-approval-note: forum post URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: national-team prediction thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=national-teams-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_national_teams_f8",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.national-teams.com/forum/index.php?action=lastPost&thread%2F51461-prediction-for-world-cup-2026%2F="
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dnational-teams-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_national_teams_f8"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dnational-teams-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_national_teams_f8&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dnational-teams-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_national_teams_f8"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dnational-teams-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_national_teams_f8"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dnational-teams-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_national_teams_f8"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"National Teams Forum\" --channel \"Prediction for World Cup 2026 thread\" --status \"posted\" --attempt-url \"https://www.national-teams.com/forum/index.php?action=lastPost&thread%2F51461-prediction-for-world-cup-2026%2F=\" --detail \"public-url-or-approval-note: forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F9",
+      "owner": "Nano",
+      "platform": "Softpedia Forum",
+      "target": "Romanian World Cup 2026 predictions discussion",
+      "action": "Romanian-local angle: ask users for their 3 teams, then share the free-picks invite if forum rules allow it.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "searchUrl": "https://forum.softpedia.com/topic/1254623-world-cup-2026-pronosticuri-si-discutii/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=softpedia-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_softpedia_f9",
+      "proof": "public-url-or-approval-note: Softpedia post URL or moderator approval note with code/link included",
+      "copy": "Care sunt cele 3 echipe ale tale pentru World Cup 2026? Eu le-am ales aici: poti alege gratis la inceput si vezi preview-ul privat de puncte.\n\nCod invitatie: 26BC4B90CB\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=softpedia-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_softpedia_f9",
+      "sourceNote": "Fresh search result: Romanian World Cup predictions discussion.",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://forum.softpedia.com/topic/1254623-world-cup-2026-pronosticuri-si-discutii/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=Care%20sunt%20cele%203%20echipe%20ale%20tale%20pentru%20World%20Cup%202026%3F%20Eu%20le-am%20ales%20aici%3A%20poti%20alege%20gratis%20la%20inceput%20si%20vezi%20preview-ul%20privat%20de%20puncte.%0A%0ACod%20invitatie%3A%2026BC4B90CB%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dsoftpedia-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_softpedia_f9"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dsoftpedia-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_softpedia_f9&text=Care%20sunt%20cele%203%20echipe%20ale%20tale%20pentru%20World%20Cup%202026%3F%20Eu%20le-am%20ales%20aici%3A%20poti%20alege%20gratis%20la%20inceput%20si%20vezi%20preview-ul%20privat%20de%20puncte.%0A%0ACod%20invitatie%3A%2026BC4B90CB%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dsoftpedia-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_softpedia_f9"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Care%20sunt%20cele%203%20echipe%20ale%20tale%20pentru%20World%20Cup%202026%3F%20Eu%20le-am%20ales%20aici%3A%20poti%20alege%20gratis%20la%20inceput%20si%20vezi%20preview-ul%20privat%20de%20puncte.%0A%0ACod%20invitatie%3A%2026BC4B90CB%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dsoftpedia-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_softpedia_f9"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dsoftpedia-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_softpedia_f9"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"Softpedia Forum\" --channel \"Romanian World Cup 2026 predictions discussion\" --status \"posted\" --attempt-url \"https://forum.softpedia.com/topic/1254623-world-cup-2026-pronosticuri-si-discutii/\" --detail \"public-url-or-approval-note: Softpedia post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F10",
+      "owner": "Memo",
+      "platform": "Operation Sports Forum",
+      "target": "FIFA World Cup USA/Canada/Mexico 2026 thread",
+      "action": "Use a football-fan tone and ask for three picks; post the link only if discussion rules allow it.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://forums.operationsports.com/forums/forum/soccer/pro-soccer-and-fantasy-talk/26918375-fifa-world-cup-usa-canada-mexico-2026",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=operationsports-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_operationsports_f10",
+      "proof": "public-url-or-approval-note: forum post URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: World Cup 2026 forum thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=operationsports-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_operationsports_f10",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://forums.operationsports.com/forums/forum/soccer/pro-soccer-and-fantasy-talk/26918375-fifa-world-cup-usa-canada-mexico-2026"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Doperationsports-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_operationsports_f10"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Doperationsports-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_operationsports_f10&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Doperationsports-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_operationsports_f10"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Doperationsports-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_operationsports_f10"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Doperationsports-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_operationsports_f10"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"Operation Sports Forum\" --channel \"FIFA World Cup USA/Canada/Mexico 2026 thread\" --status \"posted\" --attempt-url \"https://forums.operationsports.com/forums/forum/soccer/pro-soccer-and-fantasy-talk/26918375-fifa-world-cup-usa-canada-mexico-2026\" --detail \"public-url-or-approval-note: forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F11",
+      "owner": "Sienna",
+      "platform": "YouTube Search",
+      "target": "Fresh World Cup 2026 prediction videos",
+      "action": "Open newest relevant videos and comment naturally with the 3-team question from a logged-in owned YouTube account.",
+      "asset": "media/worldcup26-main-video-vertical.mp4",
+      "searchUrl": "https://www.youtube.com/results?search_query=World+Cup+2026+predictions&sp=CAI%253D",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-fresh&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_youtube_f11",
+      "proof": "public-url-or-screenshot-note: YouTube comment URL/screenshot note with code/link included",
+      "sourceNote": "Fresh search path: newest YouTube prediction videos.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-fresh&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_youtube_f11",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.youtube.com/results?search_query=World+Cup+2026+predictions&sp=CAI%253D"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-fresh%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_youtube_f11"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-fresh%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_youtube_f11&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-fresh%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_youtube_f11"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-fresh%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_youtube_f11"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dyoutube-fresh%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_youtube_f11"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"YouTube Search\" --channel \"Fresh World Cup 2026 prediction videos\" --status \"posted\" --attempt-url \"https://www.youtube.com/results?search_query=World+Cup+2026+predictions&sp=CAI%253D\" --detail \"public-url-or-screenshot-note: YouTube comment URL/screenshot note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F12",
+      "owner": "Dexter",
+      "platform": "Lichess Forum",
+      "target": "Football World Cup discussion forum",
+      "action": "Only post if off-topic forum rules allow it. Ask the 3-team question first, then share invite if relevant.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://lichess.org/forum/off-topic-discussion/football-world-cup2026-discussion-forum",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=lichess-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_lichess_f12",
+      "proof": "public-url-or-approval-note: forum post URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: general World Cup discussion thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=lichess-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_lichess_f12",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://lichess.org/forum/off-topic-discussion/football-world-cup2026-discussion-forum"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dlichess-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_lichess_f12"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dlichess-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_lichess_f12&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dlichess-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_lichess_f12"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dlichess-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_lichess_f12"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dlichess-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_lichess_f12"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"Lichess Forum\" --channel \"Football World Cup discussion forum\" --status \"posted\" --attempt-url \"https://lichess.org/forum/off-topic-discussion/football-world-cup2026-discussion-forum\" --detail \"public-url-or-approval-note: forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F13",
+      "owner": "Nano",
+      "platform": "Reddit",
+      "target": "r/sportsanalytics systematic prediction framework",
+      "action": "Reply only if it adds value: compare the 3-team free-pick mechanic with their prediction framework and ask which 3 teams their model would choose.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://www.reddit.com/r/sportsanalytics/comments/1tuu84m/i_built_a_world_cup_2026_prediction_framework_to/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsanalytics&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_framework_f13",
+      "proof": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: sportsanalytics World Cup prediction framework thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsanalytics&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_framework_f13",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/r/sportsanalytics/comments/1tuu84m/i_built_a_world_cup_2026_prediction_framework_to/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_framework_f13"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_framework_f13&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_framework_f13"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_framework_f13"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_framework_f13"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"Reddit\" --channel \"r/sportsanalytics systematic prediction framework\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/sportsanalytics/comments/1tuu84m/i_built_a_world_cup_2026_prediction_framework_to/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F14",
+      "owner": "Memo",
+      "platform": "Reddit",
+      "target": "r/sportsanalytics printable prediction kit update",
+      "action": "Use the prediction-tracking angle: ask users to save their 3 picks free and compare how they age during the tournament.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "searchUrl": "https://www.reddit.com/r/sportsanalytics/comments/1tx0gm4/free_world_cup_2026_prediction_kit_updated/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsanalytics&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_prediction_kit_f14",
+      "proof": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: updated free World Cup prediction kit thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsanalytics&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_prediction_kit_f14",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/r/sportsanalytics/comments/1tx0gm4/free_world_cup_2026_prediction_kit_updated/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_kit_f14"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_kit_f14&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_kit_f14"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_kit_f14"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sportsanalytics%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_kit_f14"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"Reddit\" --channel \"r/sportsanalytics printable prediction kit update\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/sportsanalytics/comments/1tx0gm4/free_world_cup_2026_prediction_kit_updated/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F15",
+      "owner": "Dexter",
+      "platform": "Reddit",
+      "target": "r/WorldCup2026Tickets prediction pool thread",
+      "action": "Audience is already prediction-pool aware. Ask for their 3 strongest teams and mention free picks before any paid leaderboard decision.",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "searchUrl": "https://www.reddit.com/r/WorldCup2026Tickets/comments/1tvwqjm/i_built_a_world_cup_2026_prediction_pool_early/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-worldcup2026tickets&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_prediction_pool_f15",
+      "proof": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: World Cup prediction pool discussion.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-worldcup2026tickets&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_prediction_pool_f15",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/r/WorldCup2026Tickets/comments/1tvwqjm/i_built_a_world_cup_2026_prediction_pool_early/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-worldcup2026tickets%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_pool_f15"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-worldcup2026tickets%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_pool_f15&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-worldcup2026tickets%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_pool_f15"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-worldcup2026tickets%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_pool_f15"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-worldcup2026tickets%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_prediction_pool_f15"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"Reddit\" --channel \"r/WorldCup2026Tickets prediction pool thread\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/WorldCup2026Tickets/comments/1tvwqjm/i_built_a_world_cup_2026_prediction_pool_early/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F16",
+      "owner": "Nano",
+      "platform": "Reddit",
+      "target": "r/SideProject printable pool kit thread",
+      "action": "Builder-friendly lane: explain WorldCup26 as the fast mobile version of a pool where users pick only 3 teams first.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://www.reddit.com/r/SideProject/comments/1tu0lfg/i_built_a_printable_world_cup_2026_pool_kit_after/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sideproject&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_pool_kit_f16",
+      "proof": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: SideProject World Cup pool kit thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sideproject&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_pool_kit_f16",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/r/SideProject/comments/1tu0lfg/i_built_a_printable_world_cup_2026_pool_kit_after/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sideproject%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_pool_kit_f16"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sideproject%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_pool_kit_f16&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sideproject%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_pool_kit_f16"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sideproject%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_pool_kit_f16"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sideproject%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_pool_kit_f16"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"Reddit\" --channel \"r/SideProject printable pool kit thread\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/SideProject/comments/1tu0lfg/i_built_a_printable_world_cup_2026_pool_kit_after/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F17",
+      "owner": "Sienna",
+      "platform": "Reddit",
+      "target": "r/SideProject bracket-builder thread",
+      "action": "Do not compete head-on with their product. Comment as a lighter alternative: pick 3 teams in under a minute and follow a private score.",
+      "asset": "media/worldcup26-main-video-vertical.mp4",
+      "searchUrl": "https://www.reddit.com/r/SideProject/comments/1t7jb9v/free_world_cup_2026_bracket_builder_predict_every/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sideproject&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_bracket_builder_f17",
+      "proof": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: SideProject bracket-builder leaderboard thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sideproject&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_bracket_builder_f17",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.reddit.com/r/SideProject/comments/1t7jb9v/free_world_cup_2026_bracket_builder_predict_every/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sideproject%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_bracket_builder_f17"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sideproject%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_bracket_builder_f17&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sideproject%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_bracket_builder_f17"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sideproject%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_bracket_builder_f17"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dreddit-sideproject%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_bracket_builder_f17"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"Reddit\" --channel \"r/SideProject bracket-builder thread\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/SideProject/comments/1t7jb9v/free_world_cup_2026_bracket_builder_predict_every/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F18",
+      "owner": "Memo",
+      "platform": "FollowFollow Forum",
+      "target": "The World Cup 2026 & Predictions thread",
+      "action": "Forum tone should be conversational and not salesy. Ask the 3-team question first; share the invite only if links are accepted.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://www.followfollow.com/forum/threads/the-world-cup-2026-predictions.325670/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=followfollow-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_followfollow_predictions_f18",
+      "proof": "public-url-or-approval-note: forum post URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: FollowFollow World Cup predictions thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=followfollow-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_followfollow_predictions_f18",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.followfollow.com/forum/threads/the-world-cup-2026-predictions.325670/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfollowfollow-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_followfollow_predictions_f18"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfollowfollow-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_followfollow_predictions_f18&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfollowfollow-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_followfollow_predictions_f18"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfollowfollow-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_followfollow_predictions_f18"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfollowfollow-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_followfollow_predictions_f18"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"FollowFollow Forum\" --channel \"The World Cup 2026 & Predictions thread\" --status \"posted\" --attempt-url \"https://www.followfollow.com/forum/threads/the-world-cup-2026-predictions.325670/\" --detail \"public-url-or-approval-note: forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F19",
+      "owner": "Dexter",
+      "platform": "FollowFollow Forum",
+      "target": "World Cup 2026 general discussion thread",
+      "action": "Use this only if the forum permits outside links. Lead with a simple question: which 3 teams would you take before kickoff?",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "searchUrl": "https://www.followfollow.com/forum/threads/world-cup-2026.320937/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=followfollow-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_followfollow_general_f19",
+      "proof": "public-url-or-approval-note: forum post URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: FollowFollow World Cup 2026 discussion.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=followfollow-forum&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_followfollow_general_f19",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.followfollow.com/forum/threads/world-cup-2026.320937/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfollowfollow-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_followfollow_general_f19"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfollowfollow-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_followfollow_general_f19&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfollowfollow-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_followfollow_general_f19"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfollowfollow-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_followfollow_general_f19"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfollowfollow-forum%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_followfollow_general_f19"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"FollowFollow Forum\" --channel \"World Cup 2026 general discussion thread\" --status \"posted\" --attempt-url \"https://www.followfollow.com/forum/threads/world-cup-2026.320937/\" --detail \"public-url-or-approval-note: forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F20",
+      "owner": "Nano",
+      "platform": "Arizona Sports Fans Forum",
+      "target": "2026 World Cup predictions fan thread",
+      "action": "Fan-board lane: ask for 3 teams and offer the free private preview link if the thread welcomes prediction-game links.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://www.arizonasportsfans.com/forum/threads/2026-world-cup-predictions-with-one-year-to-go-here-are-some-very-early-predictions.717141/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=arizona-sports-fans&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_arizona_f20",
+      "proof": "public-url-or-approval-note: forum post URL or moderator approval note with code/link included",
+      "sourceNote": "Fresh search result: Arizona Sports Fans World Cup predictions thread.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=arizona-sports-fans&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_arizona_f20",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.arizonasportsfans.com/forum/threads/2026-world-cup-predictions-with-one-year-to-go-here-are-some-very-early-predictions.717141/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Darizona-sports-fans%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_arizona_f20"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Darizona-sports-fans%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_arizona_f20&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Darizona-sports-fans%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_arizona_f20"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Darizona-sports-fans%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_arizona_f20"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Darizona-sports-fans%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_arizona_f20"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"Arizona Sports Fans Forum\" --channel \"2026 World Cup predictions fan thread\" --status \"posted\" --attempt-url \"https://www.arizonasportsfans.com/forum/threads/2026-world-cup-predictions-with-one-year-to-go-here-are-some-very-early-predictions.717141/\" --detail \"public-url-or-approval-note: forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F21",
+      "owner": "Sienna",
+      "platform": "FourFourTwo",
+      "target": "World Cup 2026 sweepstake kit article",
+      "action": "Use this as a timely social-reply angle: office sweepstake readers can also pick 3 teams free on mobile. Post only on allowed comments or social shares.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "searchUrl": "https://www.fourfourtwo.com/competition/world-cup-2026-sweepstakes-kit-download-and-print-our-sweepstake-template",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_sweepstake_f21",
+      "proof": "public-url-or-screenshot-note: FourFourTwo/social comment URL or screenshot note with code/link included",
+      "sourceNote": "Fresh search result: FourFourTwo World Cup 2026 sweepstake kit article.",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_sweepstake_f21",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.fourfourtwo.com/competition/world-cup-2026-sweepstakes-kit-download-and-print-our-sweepstake-template"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfourfourtwo%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_sweepstake_f21"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfourfourtwo%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_sweepstake_f21&text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfourfourtwo%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_sweepstake_f21"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfourfourtwo%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_sweepstake_f21"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfourfourtwo%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_sweepstake_f21"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"FourFourTwo\" --channel \"World Cup 2026 sweepstake kit article\" --status \"posted\" --attempt-url \"https://www.fourfourtwo.com/competition/world-cup-2026-sweepstakes-kit-download-and-print-our-sweepstake-template\" --detail \"public-url-or-screenshot-note: FourFourTwo/social comment URL or screenshot note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F22",
+      "owner": "Sienna",
+      "platform": "FourFourTwo",
+      "target": "World Cup 2026 kit picker article",
+      "action": "Visual hook: reply from the kit/favorites angle and ask which 3 national teams they would take before kickoff.",
+      "asset": "media/worldcup26-main-video-vertical.mp4",
+      "searchUrl": "https://www.fourfourtwo.com/competition/pick-your-perfect-world-cup-2026-look-with-fourfourtwos-kit-picker",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_kit_picker_f22",
+      "proof": "public-url-or-screenshot-note: FourFourTwo/social comment URL or screenshot note with code/link included",
+      "sourceNote": "Fresh search result: FourFourTwo World Cup 2026 kit picker article.",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_kit_picker_f22",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://www.fourfourtwo.com/competition/pick-your-perfect-world-cup-2026-look-with-fourfourtwos-kit-picker"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfourfourtwo%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_kit_picker_f22"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfourfourtwo%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_kit_picker_f22&text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfourfourtwo%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_kit_picker_f22"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfourfourtwo%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_kit_picker_f22"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfourfourtwo%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_kit_picker_f22"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"FourFourTwo\" --channel \"World Cup 2026 kit picker article\" --status \"posted\" --attempt-url \"https://www.fourfourtwo.com/competition/pick-your-perfect-world-cup-2026-look-with-fourfourtwos-kit-picker\" --detail \"public-url-or-screenshot-note: FourFourTwo/social comment URL or screenshot note with code/link included at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F23",
+      "owner": "Memo",
+      "platform": "World Cup Predictor Search",
+      "target": "WorldCupPredictor.org predictor audience",
+      "action": "Research the predictor audience and look for public share/comment paths. Position WorldCup26 as the 60-second 3-team version with private score preview.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://worldcuppredictor.org/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=worldcuppredictor-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_predictor_f23",
+      "proof": "public-url-or-research-note: public discussion URL or precise no-post research note with next allowed channel",
+      "sourceNote": "Fresh search result: World Cup 2026 predictor tool audience.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=worldcuppredictor-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_predictor_f23",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://worldcuppredictor.org/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dworldcuppredictor-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_predictor_f23"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dworldcuppredictor-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_predictor_f23&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dworldcuppredictor-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_predictor_f23"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dworldcuppredictor-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_predictor_f23"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dworldcuppredictor-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_predictor_f23"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"World Cup Predictor Search\" --channel \"WorldCupPredictor.org predictor audience\" --status \"posted\" --attempt-url \"https://worldcuppredictor.org/\" --detail \"public-url-or-research-note: public discussion URL or precise no-post research note with next allowed channel at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F24",
+      "owner": "Dexter",
+      "platform": "Bracket Predictor Search",
+      "target": "Bracket2026 bracket predictor audience",
+      "action": "Use the bracket angle in public replies where allowed: no full bracket needed, just lock 3 teams and compare points.",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "searchUrl": "https://bracket2026.com/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=bracket2026-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_bracket2026_f24",
+      "proof": "public-url-or-research-note: public discussion URL or precise no-post research note with next allowed channel",
+      "sourceNote": "Fresh search result: interactive 48-team World Cup bracket predictor.",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=bracket2026-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_bracket2026_f24",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://bracket2026.com/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dbracket2026-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_bracket2026_f24"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dbracket2026-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_bracket2026_f24&text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dbracket2026-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_bracket2026_f24"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dbracket2026-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_bracket2026_f24"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dbracket2026-search%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_bracket2026_f24"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"Bracket Predictor Search\" --channel \"Bracket2026 bracket predictor audience\" --status \"posted\" --attempt-url \"https://bracket2026.com/\" --detail \"public-url-or-research-note: public discussion URL or precise no-post research note with next allowed channel at YYYY-MM-DD HH:mm EEST\""
+    },
+    {
+      "priority": "F25",
+      "owner": "Nano",
+      "platform": "My World Cup Guide",
+      "target": "World Cup 2026 predictor page audience",
+      "action": "Find shareable discussion paths around their predictor. Ask users to choose only 3 teams first, then compare private points over the tournament.",
+      "asset": "campaign/first-wave-posts.md",
+      "searchUrl": "https://myworldcupguide.com/predictor/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=myworldcupguide&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_predictor_f25",
+      "proof": "public-url-or-research-note: public discussion URL or precise no-post research note with next allowed channel",
+      "sourceNote": "Fresh search result: World Cup 2026 predictor page.",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=myworldcupguide&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_predictor_f25",
+      "shareLinks": [
+        {
+          "label": "Open target",
+          "url": "https://myworldcupguide.com/predictor/"
+        },
+        {
+          "label": "WhatsApp",
+          "url": "https://wa.me/?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dmyworldcupguide%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_predictor_f25"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dmyworldcupguide%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_predictor_f25&text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dmyworldcupguide%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_predictor_f25"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20free%20for%20WorldCup26%20and%20watch%20your%20private%20points%20preview.%20Paid%20leaderboard%20entry%20only%20needs%20a%20ticket%20later.%20Code%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dmyworldcupguide%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_predictor_f25"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dmyworldcupguide%26utm_medium%3Dmanual-comment%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dfresh_predictor_f25"
+        }
+      ],
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"My World Cup Guide\" --channel \"World Cup 2026 predictor page audience\" --status \"posted\" --attempt-url \"https://myworldcupguide.com/predictor/\" --detail \"public-url-or-research-note: public discussion URL or precise no-post research note with next allowed channel at YYYY-MM-DD HH:mm EEST\""
+    }
+  ],
+  "copyBank": {
+    "short": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB",
+    "question": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.",
+    "story": "48 teams are still open. Pick your 3 before everyone copies the favorites. Code 26BC4B90CB"
+  },
+  "rule": "This is a target map, not proof. Use owned accounts or approved communities, then log a real URL or private-channel note.",
+  "workerPages": [
+    {
+      "owner": "Dexter",
+      "fileName": "public-outreach-dexter.html",
+      "markdownFileName": "public-outreach-dexter.md",
+      "textFileName": "public-outreach-dexter.txt",
+      "targetCount": 11
+    },
+    {
+      "owner": "Sienna",
+      "fileName": "public-outreach-sienna.html",
+      "markdownFileName": "public-outreach-sienna.md",
+      "textFileName": "public-outreach-sienna.txt",
+      "targetCount": 9
+    },
+    {
+      "owner": "Memo",
+      "fileName": "public-outreach-memo.html",
+      "markdownFileName": "public-outreach-memo.md",
+      "textFileName": "public-outreach-memo.txt",
+      "targetCount": 11
+    },
+    {
+      "owner": "Nano",
+      "fileName": "public-outreach-nano.html",
+      "markdownFileName": "public-outreach-nano.md",
+      "textFileName": "public-outreach-nano.txt",
+      "targetCount": 10
+    }
+  ]
+}

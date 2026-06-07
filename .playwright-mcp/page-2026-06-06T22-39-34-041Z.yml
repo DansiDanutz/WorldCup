@@ -1,0 +1,451 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic:
+      - generic:
+        - heading "Pentru a vedea comenzile rapide de la tastatură, apasă semnul de întrebare Vezi comenzile rapide de tastatură" [level=2] [ref=e3]:
+          - generic [ref=e4]: Pentru a vedea comenzile rapide de la tastatură, apasă semnul de întrebare
+          - link "Vezi comenzile rapide de tastatură" [ref=e5] [cursor=pointer]:
+            - /url: /i/keyboard_shortcuts
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - complementary "Compune o postare":
+                  - link "Compune o postare" [ref=e205] [cursor=pointer]:
+                    - /url: /compose/post
+                    - img [ref=e207]
+            - navigation "Principal" [ref=e213]:
+              - link "Pagina principală" [ref=e214] [cursor=pointer]:
+                - /url: /home
+                - img [ref=e217]
+              - link "Caută și explorează" [ref=e220] [cursor=pointer]:
+                - /url: /explore
+                - img [ref=e223]
+              - link "Grok" [ref=e226] [cursor=pointer]:
+                - /url: /i/grok
+                - img [ref=e229]
+              - link "Notificări" [ref=e232] [cursor=pointer]:
+                - /url: /notifications
+                - img [ref=e235]
+              - link "Mesaje directe" [ref=e238] [cursor=pointer]:
+                - /url: /i/chat
+                - img [ref=e241]
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic [ref=e245]:
+                    - generic [ref=e250]:
+                      - button "Meniul profilului Semenescu Dan" [ref=e253] [cursor=pointer]:
+                        - generic "undefined elemente necitite" [ref=e265]
+                      - img [ref=e267]
+                    - generic [ref=e272]:
+                      - navigation [ref=e274]:
+                        - generic [ref=e275]:
+                          - generic:
+                            - button "Anteriorul" [disabled]:
+                              - generic:
+                                - img
+                          - tablist [ref=e277]:
+                            - tab "Pentru tine" [selected] [ref=e278] [cursor=pointer]:
+                              - generic [ref=e280]:
+                                - text: Pentru tine
+                                - img [ref=e281]
+                            - tab "Urmărești" [ref=e285] [cursor=pointer]:
+                              - generic [ref=e288]: Urmărești
+                            - tab "OpenClaw" [ref=e289] [cursor=pointer]:
+                              - generic [ref=e292]: OpenClaw
+                          - generic:
+                            - button "Înainte" [disabled]:
+                              - generic:
+                                - img
+                      - button "Gestionează cronologiile" [ref=e294] [cursor=pointer]:
+                        - img [ref=e296]
+                  - generic:
+                    - generic:
+                      - grid:
+                        - generic:
+                          - button [disabled]:
+                            - generic:
+                              - img
+                        - generic:
+                          - button [disabled]:
+                            - generic:
+                              - img
+                  - generic:
+                    - generic:
+                      - generic:
+                        - status:
+                          - button:
+                            - generic:
+                              - img
+                              - generic: Vezi postări noi
+        - generic [ref=e6]:
+          - button "Sari la cronologia principală" [ref=e299] [cursor=pointer]
+          - button "Sari la populare" [ref=e301] [cursor=pointer]
+          - banner [ref=e303]
+          - main [ref=e7]:
+            - generic "Cronologia principală" [ref=e307]:
+              - region "Cronologia ta principală" [ref=e309]:
+                - heading "Cronologia ta principală" [level=1] [ref=e310]
+                - 'generic "Cronologie: Cronologia ta principală" [ref=e311]':
+                  - generic [ref=e312]:
+                    - article "Harmless Cont verificat @HarmlessHQ Cu 59 de minute în urmă From a Nigerian academy to Sweden and now to EPL. This story of Zadok Yohanna has to be the most insane success story of recent times. No Nigerian star has ever made such progression within 10 months. Imagine 7 răspunsuri, 5 repostări, 36 de aprecieri, 2 marcaje, 619 vizualizări" [ref=e316] [cursor=pointer]:
+                      - generic [ref=e322]:
+                        - link [ref=e334]:
+                          - /url: /HarmlessHQ
+                        - generic [ref=e337]:
+                          - generic [ref=e339]:
+                            - generic [ref=e342]:
+                              - link "Harmless Cont verificat" [ref=e345]:
+                                - /url: /HarmlessHQ
+                                - generic [ref=e346]:
+                                  - generic [ref=e348]: Harmless
+                                  - img "Cont verificat" [ref=e351]
+                              - generic [ref=e355]:
+                                - link "@HarmlessHQ" [ref=e357]:
+                                  - /url: /HarmlessHQ
+                                  - generic [ref=e358]: "@HarmlessHQ"
+                                - generic [ref=e359]: ·
+                                - link "Cu 59 de minute în urmă" [ref=e361]:
+                                  - /url: /HarmlessHQ/status/2063375363133046868
+                                  - time [ref=e362]: 59 m
+                            - generic [ref=e364]:
+                              - button "Acțiuni Grok" [ref=e366]:
+                                - img [ref=e371]
+                              - button "Mai multe" [ref=e376]:
+                                - img [ref=e380]
+                          - generic [ref=e384]: From a Nigerian academy to Sweden and now to EPL. This story of Zadok Yohanna has to be the most insane success story of recent times. No Nigerian star has ever made such progression within 10 months.
+                          - link "Imagine" [ref=e392]:
+                            - /url: /HarmlessHQ/status/2063375363133046868/photo/1
+                            - generic "Imagine" [ref=e396]:
+                              - img "Imagine" [ref=e398]
+                          - group "7 răspunsuri, 5 repostări, 36 de aprecieri, 2 marcaje, 619 vizualizări" [ref=e401]:
+                            - button "7 Răspunsuri. Răspuns" [ref=e403]:
+                              - generic [ref=e404]:
+                                - img [ref=e407]
+                                - generic [ref=e412]: "7"
+                            - button "5 repostări. Repostare" [ref=e414]:
+                              - generic [ref=e415]:
+                                - img [ref=e418]
+                                - generic [ref=e423]: "5"
+                            - button "36 Aprecieri. Apreciere" [ref=e425]:
+                              - generic [ref=e426]:
+                                - img [ref=e429]
+                                - generic [ref=e434]: "36"
+                            - link "619 vizualizări. Analiza vizualizării postării" [ref=e436]:
+                              - /url: /HarmlessHQ/status/2063375363133046868/analytics
+                              - generic [ref=e437]:
+                                - img [ref=e440]
+                                - generic [ref=e445]: "619"
+                            - button "Marcaj" [ref=e447]:
+                              - img [ref=e451]
+                            - button "Distribuie postarea" [ref=e456]:
+                              - img [ref=e460]
+                    - article "vast.ai Cont verificat @vast_ai RTX 4090 from $0.14/hr. Spot instances for batch inference, evals, fine-tuning. Pay per second. vast.ai Spot GPU Pricing De la vast.ai 1433 de răspunsuri, 2747 repostări, 28494 de aprecieri, 3789 marcaje, 154859508 vizualizări" [ref=e475] [cursor=pointer]:
+                      - generic [ref=e481]:
+                        - link "Imagine de profil pătrată" [ref=e493]:
+                          - /url: /vast_ai
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic "Imagine de profil pătrată":
+                                  - img "Imagine de profil pătrată"
+                        - generic [ref=e496]:
+                          - generic [ref=e498]:
+                            - generic [ref=e501]:
+                              - link "vast.ai Cont verificat" [ref=e504]:
+                                - /url: /vast_ai
+                                - generic [ref=e505]:
+                                  - generic [ref=e507]: vast.ai
+                                  - img "Cont verificat" [ref=e510]
+                              - link "@vast_ai" [ref=e519]:
+                                - /url: /vast_ai
+                                - generic [ref=e520]: "@vast_ai"
+                            - generic [ref=e522]:
+                              - generic [ref=e523]: Reclamă
+                              - button "Mai multe" [ref=e526]:
+                                - img [ref=e530]
+                          - generic [ref=e534]: RTX 4090 from $0.14/hr. Spot instances for batch inference, evals, fine-tuning. Pay per second.
+                          - generic "vast.ai Spot GPU Pricing" [ref=e535]:
+                            - generic "vast.ai Spot GPU Pricing" [ref=e536]:
+                              - link "vast.ai Spot GPU Pricing" [ref=e538]:
+                                - /url: https://vast.ai/developers/cli?utm_source=x&utm_medium=paid&utm_campaign=cloud_agents&twclid=29pbq44bh7gzkal4oajd52qepe
+                                - generic [ref=e544]:
+                                  - generic:
+                                    - generic: Spot GPU Pricing
+                            - link "De la vast.ai" [ref=e547]:
+                              - /url: https://vast.ai/developers/cli?utm_source=x&utm_medium=paid&utm_campaign=cloud_agents&twclid=29pbq44bh7gzkal4oajd52qepe
+                          - group "1433 de răspunsuri, 2747 repostări, 28494 de aprecieri, 3789 marcaje, 154859508 vizualizări" [ref=e550]:
+                            - button "1433 Răspunsuri. Răspuns" [ref=e552]:
+                              - generic [ref=e553]:
+                                - img [ref=e556]
+                                - generic [ref=e561]: 1 K
+                            - button "2747 repostări. Repostare" [ref=e563]:
+                              - generic [ref=e564]:
+                                - img [ref=e567]
+                                - generic [ref=e572]: 2 K
+                            - button "28494 Aprecieri. Apreciere" [ref=e574]:
+                              - generic [ref=e575]:
+                                - img [ref=e578]
+                                - generic [ref=e583]: 28 K
+                            - link "154859508 vizualizări. Analiza vizualizării postării" [ref=e585]:
+                              - /url: /vast_ai/status/2043151697837457829/analytics
+                              - generic [ref=e586]:
+                                - img [ref=e589]
+                                - generic [ref=e594]: 154 mil.
+                            - button "Marcaj" [ref=e596]:
+                              - img [ref=e600]
+                            - button "Distribuie postarea" [ref=e605]:
+                              - img [ref=e609]
+                    - article "Elon Musk Cont verificat @elonmusk Cu 24 de minute în urmă Join Tesla if you want to solve real-world AI Citat Imagine de profil pătrată Tesla AI Cont verificat @Tesla_AI Cu 26 de minute în urmă Real-world AI is about solving for the edge case, not the average case Videoclip încorporat Redă Videoclip 931 de răspunsuri, 527 repostări, 3691 de aprecieri, 156 marcaje, 367955 de vizualizări" [ref=e615] [cursor=pointer]:
+                      - generic [ref=e621]:
+                        - link [ref=e633]:
+                          - /url: /elonmusk
+                        - generic [ref=e636]:
+                          - generic [ref=e638]:
+                            - generic [ref=e641]:
+                              - link "Elon Musk Cont verificat" [ref=e644]:
+                                - /url: /elonmusk
+                                - generic [ref=e645]:
+                                  - generic [ref=e647]: Elon Musk
+                                  - generic [ref=e649]:
+                                    - img "Cont verificat" [ref=e650]
+                                    - link [ref=e653]
+                              - generic [ref=e661]:
+                                - link "@elonmusk" [ref=e663]:
+                                  - /url: /elonmusk
+                                  - generic [ref=e664]: "@elonmusk"
+                                - generic [ref=e665]: ·
+                                - link "Cu 24 de minute în urmă" [ref=e667]:
+                                  - /url: /elonmusk/status/2063384141182144700
+                                  - time [ref=e668]: 24 m
+                            - generic [ref=e670]:
+                              - button "Acțiuni Grok" [ref=e672]:
+                                - img [ref=e677]
+                              - button "Mai multe" [ref=e682]:
+                                - img [ref=e686]
+                          - generic [ref=e690]: Join Tesla if you want to solve real-world AI
+                          - generic "Citat Imagine de profil pătrată Tesla AI Cont verificat @Tesla_AI Cu 26 de minute în urmă Real-world AI is about solving for the edge case, not the average case Videoclip încorporat Redă Videoclip" [ref=e691]:
+                            - generic [ref=e692]:
+                              - generic [ref=e693]: Citat
+                              - link "Imagine de profil pătrată Tesla AI Cont verificat @Tesla_AI Cu 26 de minute în urmă Real-world AI is about solving for the edge case, not the average case Videoclip încorporat Redă Videoclip" [ref=e694]:
+                                - generic [ref=e695]:
+                                  - generic [ref=e699]:
+                                    - generic [ref=e708]:
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic "Imagine de profil pătrată":
+                                              - img "Imagine de profil pătrată"
+                                    - generic [ref=e712]:
+                                      - generic [ref=e716]:
+                                        - generic [ref=e718]: Tesla AI
+                                        - generic [ref=e720]:
+                                          - img "Cont verificat" [ref=e721]
+                                          - link [ref=e727]
+                                      - generic [ref=e735]:
+                                        - generic [ref=e738]: "@Tesla_AI"
+                                        - generic [ref=e739]: ·
+                                        - generic "Cu 26 de minute în urmă" [ref=e742]:
+                                          - time [ref=e743]: 26 m
+                                  - generic [ref=e745]: Real-world AI is about solving for the edge case, not the average case
+                                  - generic [ref=e760]:
+                                    - generic "Videoclip încorporat" [ref=e763]
+                                    - button "Redă Videoclip" [ref=e770]:
+                                      - img [ref=e771]
+                          - group "931 de răspunsuri, 527 repostări, 3691 de aprecieri, 156 marcaje, 367955 de vizualizări" [ref=e777]:
+                            - button "931 Răspunsuri. Răspuns" [ref=e779]:
+                              - generic [ref=e780]:
+                                - img [ref=e783]
+                                - generic [ref=e788]: "931"
+                            - button "527 repostări. Repostare" [ref=e790]:
+                              - generic [ref=e791]:
+                                - img [ref=e794]
+                                - generic [ref=e799]: "527"
+                            - button "3691 Aprecieri. Apreciere" [ref=e801]:
+                              - generic [ref=e802]:
+                                - img [ref=e805]
+                                - generic [ref=e810]: 3 K
+                            - link "367955 vizualizări. Analiza vizualizării postării" [ref=e812]:
+                              - /url: /elonmusk/status/2063384141182144700/analytics
+                              - generic [ref=e813]:
+                                - img [ref=e816]
+                                - generic [ref=e821]: 367 K
+                            - button "Marcaj" [ref=e823]:
+                              - img [ref=e827]
+                            - button "Distribuie postarea" [ref=e832]:
+                              - img [ref=e836]
+                    - article "All football Cont verificat @Allfoot474 Cu 36 de minute în urmă Zadok Yohanna's scout who discovered him before his move to Sweden 🗣 \" I called the AIK CEO and said, 'You need to close this deal immediately. If he doesn't turn out well, fire me. Fire me without any compensation.\" Less than a year after his discovery he's moved to EPL ❤️ Imagine 1 repostare, 3 aprecieri, 39 de vizualizări" [ref=e842] [cursor=pointer]:
+                      - generic [ref=e848]:
+                        - link [ref=e860]:
+                          - /url: /Allfoot474
+                        - generic [ref=e863]:
+                          - generic [ref=e865]:
+                            - generic [ref=e868]:
+                              - link "All football Cont verificat" [ref=e871]:
+                                - /url: /Allfoot474
+                                - generic [ref=e872]:
+                                  - generic [ref=e874]: All football
+                                  - img "Cont verificat" [ref=e877]
+                              - generic [ref=e881]:
+                                - link "@Allfoot474" [ref=e883]:
+                                  - /url: /Allfoot474
+                                  - generic [ref=e884]: "@Allfoot474"
+                                - generic [ref=e885]: ·
+                                - link "Cu 36 de minute în urmă" [ref=e887]:
+                                  - /url: /Allfoot474/status/2063381184516673560
+                                  - time [ref=e888]: 36 m
+                            - generic [ref=e890]:
+                              - button "Acțiuni Grok" [ref=e892]:
+                                - img [ref=e897]
+                              - button "Mai multe" [ref=e902]:
+                                - img [ref=e906]
+                          - generic [ref=e910]:
+                            - text: Zadok Yohanna's scout who discovered him before his move to Sweden
+                            - img "🗣" [ref=e911]
+                            - text: "\" I called the AIK CEO and said, 'You need to close this deal immediately. If he doesn't turn out well, fire me. Fire me without any compensation.\" Less than a year after his discovery he's moved to EPL"
+                            - img "❤️" [ref=e912]
+                          - link "Imagine" [ref=e920]:
+                            - /url: /Allfoot474/status/2063381184516673560/photo/1
+                            - generic "Imagine" [ref=e924]:
+                              - img "Imagine" [ref=e926]
+                          - group "1 repostare, 3 aprecieri, 39 de vizualizări" [ref=e929]:
+                            - button "0 Răspunsuri. Răspuns" [ref=e931]:
+                              - img [ref=e935]
+                            - button "1 repostare. Repostare" [ref=e942]:
+                              - generic [ref=e943]:
+                                - img [ref=e946]
+                                - generic [ref=e951]: "1"
+                            - button "3 Aprecieri. Apreciere" [ref=e953]:
+                              - generic [ref=e954]:
+                                - img [ref=e957]
+                                - generic [ref=e962]: "3"
+                            - link "39 vizualizări. Analiza vizualizării postării" [ref=e964]:
+                              - /url: /Allfoot474/status/2063381184516673560/analytics
+                              - generic [ref=e965]:
+                                - img [ref=e968]
+                                - generic [ref=e973]: "39"
+                            - button "Marcaj" [ref=e975]:
+                              - img [ref=e979]
+                            - button "Distribuie postarea" [ref=e984]:
+                              - img [ref=e988]
+                    - article "Mr Linah Cont verificat @Mrlinah20 Cu 1 oră în urmă Fire Me If He’s Not Good Enough!” 🔥 The Bold Scout Who Discovered Nigerian Wonderkid Zadok Yohanna in Bauchi… Now Signed by Brighton for £21M! 😱 💰 Videoclip încorporat Redă Videoclip 18 răspunsuri, 11 repostări, 60 de aprecieri, 2 marcaje, 889 de vizualizări" [ref=e994] [cursor=pointer]:
+                      - generic [ref=e1000]:
+                        - link [ref=e1012]:
+                          - /url: /Mrlinah20
+                        - generic [ref=e1015]:
+                          - generic [ref=e1017]:
+                            - generic [ref=e1020]:
+                              - link "Mr Linah Cont verificat" [ref=e1023]:
+                                - /url: /Mrlinah20
+                                - generic [ref=e1024]:
+                                  - generic [ref=e1026]: Mr Linah
+                                  - img "Cont verificat" [ref=e1029]
+                              - generic [ref=e1033]:
+                                - link "@Mrlinah20" [ref=e1035]:
+                                  - /url: /Mrlinah20
+                                  - generic [ref=e1036]: "@Mrlinah20"
+                                - generic [ref=e1037]: ·
+                                - link "Cu 1 oră în urmă" [ref=e1039]:
+                                  - /url: /Mrlinah20/status/2063372975357763637
+                                  - time [ref=e1040]: 1 h
+                            - generic [ref=e1042]:
+                              - button "Acțiuni Grok" [ref=e1044]:
+                                - img [ref=e1049]
+                              - button "Mai multe" [ref=e1054]:
+                                - img [ref=e1058]
+                          - generic [ref=e1062]:
+                            - text: Fire Me If He’s Not Good Enough!”
+                            - img "🔥" [ref=e1063]
+                            - text: The Bold Scout Who Discovered Nigerian Wonderkid Zadok Yohanna in Bauchi… Now Signed by Brighton for £21M!
+                            - img "😱" [ref=e1064]
+                            - img "💰" [ref=e1065]
+                          - generic [ref=e1082]:
+                            - generic "Videoclip încorporat" [ref=e1085]
+                            - button "Redă Videoclip" [ref=e1092]:
+                              - img [ref=e1093]
+                          - group "18 răspunsuri, 11 repostări, 60 de aprecieri, 2 marcaje, 889 de vizualizări" [ref=e1099]:
+                            - button "18 Răspunsuri. Răspuns" [ref=e1101]:
+                              - generic [ref=e1102]:
+                                - img [ref=e1105]
+                                - generic [ref=e1110]: "18"
+                            - button "11 repostări. Repostare" [ref=e1112]:
+                              - generic [ref=e1113]:
+                                - img [ref=e1116]
+                                - generic [ref=e1121]: "11"
+                            - button "60 Aprecieri. Apreciere" [ref=e1123]:
+                              - generic [ref=e1124]:
+                                - img [ref=e1127]
+                                - generic [ref=e1132]: "60"
+                            - link "889 vizualizări. Analiza vizualizării postării" [ref=e1134]:
+                              - /url: /Mrlinah20/status/2063372975357763637/analytics
+                              - generic [ref=e1135]:
+                                - img [ref=e1138]
+                                - generic [ref=e1143]: "889"
+                            - button "Marcaj" [ref=e1145]:
+                              - img [ref=e1149]
+                            - button "Distribuie postarea" [ref=e1154]:
+                              - img [ref=e1158]
+                    - 'article "Pro Future Stars Cont verificat @ProFutureStars1 Cu 3 ore în urmă ▪️ 2025: AIK brings 18 years old Zadok Yohanna from Ikon Allah FA for €750K. ▪️ 2026: AIK sell 18 years old Zadok Yohanna to Brighton for €28M. Jackpot. 🃏 🤑 Imagine 26 de răspunsuri, 271 repostări, 2885 de aprecieri, 56 marcaje, 50590 de vizualizări" [ref=e1164] [cursor=pointer]':
+                      - generic [ref=e1170]:
+                        - link [ref=e1182]:
+                          - /url: /ProFutureStars1
+                        - generic [ref=e1185]:
+                          - generic [ref=e1187]:
+                            - generic [ref=e1190]:
+                              - link "Pro Future Stars Cont verificat" [ref=e1193]:
+                                - /url: /ProFutureStars1
+                                - generic [ref=e1194]:
+                                  - generic [ref=e1196]: Pro Future Stars
+                                  - img "Cont verificat" [ref=e1199]
+                              - generic [ref=e1203]:
+                                - link "@ProFutureStars1" [ref=e1205]:
+                                  - /url: /ProFutureStars1
+                                  - generic [ref=e1206]: "@ProFutureStars1"
+                                - generic [ref=e1207]: ·
+                                - link "Cu 3 ore în urmă" [ref=e1209]:
+                                  - /url: /ProFutureStars1/status/2063339366110392479
+                                  - time [ref=e1210]: 3 h
+                            - generic [ref=e1212]:
+                              - button "Acțiuni Grok" [ref=e1214]:
+                                - img [ref=e1219]
+                              - button "Mai multe" [ref=e1224]:
+                                - img [ref=e1228]
+                          - generic [ref=e1232]:
+                            - img "▪️" [ref=e1233]
+                            - text: "2025: AIK brings 18 years old Zadok Yohanna from Ikon Allah FA for €750K."
+                            - img "▪️" [ref=e1234]
+                            - text: "2026: AIK sell 18 years old Zadok Yohanna to Brighton for €28M. Jackpot."
+                            - img "🃏" [ref=e1235]
+                            - img "🤑" [ref=e1236]
+                          - link "Imagine" [ref=e1244]:
+                            - /url: /ProFutureStars1/status/2063339366110392479/photo/1
+                            - generic "Imagine" [ref=e1248]:
+                              - img "Imagine" [ref=e1250]
+                          - group "26 de răspunsuri, 271 repostări, 2885 de aprecieri, 56 marcaje, 50590 de vizualizări" [ref=e1253]:
+                            - button "26 Răspunsuri. Răspuns" [ref=e1255]:
+                              - generic [ref=e1256]:
+                                - img [ref=e1259]
+                                - generic [ref=e1264]: "26"
+                            - button "271 repostări. Repostare" [ref=e1266]:
+                              - generic [ref=e1267]:
+                                - img [ref=e1270]
+                                - generic [ref=e1275]: "271"
+                            - button "2885 Aprecieri. Apreciere" [ref=e1277]:
+                              - generic [ref=e1278]:
+                                - img [ref=e1281]
+                                - generic [ref=e1286]: 2 K
+                            - link "50590 vizualizări. Analiza vizualizării postării" [ref=e1288]:
+                              - /url: /ProFutureStars1/status/2063339366110392479/analytics
+                              - generic [ref=e1289]:
+                                - img [ref=e1292]
+                                - generic [ref=e1297]: 50 K
+                            - button "Marcaj" [ref=e1299]:
+                              - img [ref=e1303]
+                            - button "Distribuie postarea" [ref=e1308]:
+                              - img [ref=e1312]
+  - generic:
+    - img
+  - generic:
+    - img

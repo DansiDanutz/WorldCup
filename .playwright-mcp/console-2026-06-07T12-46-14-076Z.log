@@ -1,0 +1,69 @@
+[     155ms] [ERROR] Access to fetch at 'https://edge-chat.instagram.com/mqtt/pull?sid=3812429674840063&chunked=true' from origin 'https://www.instagram.com' has been blocked by CORS policy: The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'. @ https://www.instagram.com/accounts/edit/:0
+[     155ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://edge-chat.instagram.com/mqtt/pull?sid=3812429674840063&chunked=true:0
+[    2362ms] [LOG] 
+%cStop! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.cdninstagram.com/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:245
+[    2362ms] [LOG] 
+%cThis is a browser feature intended for developers. If someone told you to copy-paste something here to enable an Instagram feature or "hack" someone's account, it is a scam and will give them access to your Instagram account. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:245
+[    2362ms] [LOG] 
+%cSee https://www.facebook.com/selfxss for more information. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:245
+[    2362ms] [LOG] 
+%c  @ https://static.cdninstagram.com/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:245
+[    2496ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://www.instagram.com/:0
+[    5739ms] [ERROR] Permissions policy violation: unload is not allowed in this document. @ https://static.xx.fbcdn.net/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:241
+[    8770ms] [ERROR] Access to fetch at 'https://edge-chat.instagram.com/mqtt/pull?sid=27594175021055&chunked=true' from origin 'https://www.instagram.com' has been blocked by CORS policy: The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'. @ https://www.instagram.com/:0
+[    8770ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://edge-chat.instagram.com/mqtt/pull?sid=27594175021055&chunked=true:0
+[    8837ms] [ERROR] Access to fetch at 'https://edge-chat.instagram.com/mqtt/pull?sid=6872258691727359&chunked=true' from origin 'https://www.instagram.com' has been blocked by CORS policy: The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'. @ https://www.instagram.com/:0
+[    8837ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://edge-chat.instagram.com/mqtt/pull?sid=6872258691727359&chunked=true:0
+[    8991ms] [ERROR] Access to fetch at 'https://edge-chat.instagram.com/mqtt/pull?sid=4876528525508607&chunked=true' from origin 'https://www.instagram.com' has been blocked by CORS policy: The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'. @ https://www.instagram.com/:0
+[    8992ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://edge-chat.instagram.com/mqtt/pull?sid=4876528525508607&chunked=true:0
+[   10911ms] [LOG] 
+%cStop! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.cdninstagram.com/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[   10911ms] [LOG] 
+%cThis is a browser feature intended for developers. If someone told you to copy-paste something here to enable an Instagram feature or "hack" someone's account, it is a scam and will give them access to your Instagram account. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[   10911ms] [LOG] 
+%cSee https://www.facebook.com/selfxss for more information. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[   10911ms] [LOG] 
+%c  @ https://static.cdninstagram.com/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[   10958ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://www.instagram.com/?flo=true:0
+[   17715ms] [LOG] 
+%cStop! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.cdninstagram.com/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[   17716ms] [LOG] 
+%cThis is a browser feature intended for developers. If someone told you to copy-paste something here to enable an Instagram feature or "hack" someone's account, it is a scam and will give them access to your Instagram account. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[   17716ms] [LOG] 
+%cSee https://www.facebook.com/selfxss for more information. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[   17716ms] [LOG] 
+%c  @ https://static.cdninstagram.com/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:245
+[   17721ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://www.instagram.com/accounts/two_factor_login/?username=seme1981&identifier=AWRN5KtFdbHkDYxvg-w3IIbqV4Lv7fbBC-QMJwhOHM36h-n6dpusj2JagegEeOzE7NEpT-wmJw8SG5cg_CjSJjyVg6q17NUC_KFIhgSdIrzp4NVi8bp27Q0e4tiVmzwcBJjKnfHPTZKe28NU&last_four_digits=2272&sms_two_factor_on=True&totp_two_factor_on=False:0
+[   41164ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://www.instagram.com/api/v1/web/accounts/login/ajax/two_factor/:0
+[   67293ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://www.instagram.com/api/v1/web/accounts/send_two_factor_login_sms/:0
+[  107404ms] [LOG] 
+%cStop! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.cdninstagram.com/rsrc.php/v4im0V4/yL/l/en_US-j/v7WOcl_GyRy9JQCs2bBdpN51qibAUABY_oYfDQnsESIGTsaa6c_y1Ov0FbROOjSCWMC4fHGZPlv6rcBg9OemlgFH9aUyD2ha4Ta0MgvGFgTubtGa_18N7y_wflTU6h_74-8uMXEOkztNZ5ZrrCxjEFdRGjiFGHh9ozlMI64oxaJD-bMV1zrNvhsc-ja18neY9AQkz5IKxAiusmbNi3TUQsNR28gcolQ_GXCJLbUoLqllHVDFQqdlaQbsrrDsOoHyzVzN2il_4xxgLhQ9MuGphhshD5-sc1yxdkJx4O5NrtpLZhztd_wRpKzMGU-W7GsTMMsiJC02ez.js:190
+[  107404ms] [LOG] 
+%cThis is a browser feature intended for developers. If someone told you to copy-paste something here to enable an Instagram feature or "hack" someone's account, it is a scam and will give them access to your Instagram account. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4im0V4/yL/l/en_US-j/v7WOcl_GyRy9JQCs2bBdpN51qibAUABY_oYfDQnsESIGTsaa6c_y1Ov0FbROOjSCWMC4fHGZPlv6rcBg9OemlgFH9aUyD2ha4Ta0MgvGFgTubtGa_18N7y_wflTU6h_74-8uMXEOkztNZ5ZrrCxjEFdRGjiFGHh9ozlMI64oxaJD-bMV1zrNvhsc-ja18neY9AQkz5IKxAiusmbNi3TUQsNR28gcolQ_GXCJLbUoLqllHVDFQqdlaQbsrrDsOoHyzVzN2il_4xxgLhQ9MuGphhshD5-sc1yxdkJx4O5NrtpLZhztd_wRpKzMGU-W7GsTMMsiJC02ez.js:190
+[  107404ms] [LOG] 
+%cSee https://www.facebook.com/selfxss for more information. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4im0V4/yL/l/en_US-j/v7WOcl_GyRy9JQCs2bBdpN51qibAUABY_oYfDQnsESIGTsaa6c_y1Ov0FbROOjSCWMC4fHGZPlv6rcBg9OemlgFH9aUyD2ha4Ta0MgvGFgTubtGa_18N7y_wflTU6h_74-8uMXEOkztNZ5ZrrCxjEFdRGjiFGHh9ozlMI64oxaJD-bMV1zrNvhsc-ja18neY9AQkz5IKxAiusmbNi3TUQsNR28gcolQ_GXCJLbUoLqllHVDFQqdlaQbsrrDsOoHyzVzN2il_4xxgLhQ9MuGphhshD5-sc1yxdkJx4O5NrtpLZhztd_wRpKzMGU-W7GsTMMsiJC02ez.js:190
+[  107405ms] [LOG] 
+%c  @ https://static.cdninstagram.com/rsrc.php/v4im0V4/yL/l/en_US-j/v7WOcl_GyRy9JQCs2bBdpN51qibAUABY_oYfDQnsESIGTsaa6c_y1Ov0FbROOjSCWMC4fHGZPlv6rcBg9OemlgFH9aUyD2ha4Ta0MgvGFgTubtGa_18N7y_wflTU6h_74-8uMXEOkztNZ5ZrrCxjEFdRGjiFGHh9ozlMI64oxaJD-bMV1zrNvhsc-ja18neY9AQkz5IKxAiusmbNi3TUQsNR28gcolQ_GXCJLbUoLqllHVDFQqdlaQbsrrDsOoHyzVzN2il_4xxgLhQ9MuGphhshD5-sc1yxdkJx4O5NrtpLZhztd_wRpKzMGU-W7GsTMMsiJC02ez.js:190
+[  107600ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://www.instagram.com/accounts/onetap/?next=%2F:0
+[  110928ms] [ERROR] Permissions policy violation: unload is not allowed in this document. @ https://static.xx.fbcdn.net/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:241
+[  115776ms] [LOG] 
+%cStop! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.cdninstagram.com/rsrc.php/v4iJju4/yq/l/en_US-j/51qibAUABY_oYfDQnsESIG2JkkXTyKPMRTsaa6c_y1OvMHgcVJ4CCWKC4fHGZPlv6r9aUyD2ha4TaGa_18N7y_wflTU6h_74-8uMXEOkztNZ5ZrrCxjEFdRGj64oxaJD-bMV1zrNvhsc-ja18neY9AQkz5IKxAiusmbNiolQ_GXCJLbUZakI0r4aghtTxTvep2LFN5RKF_1AXP12lphhshD5-sc1tpLZhztd_wRpKzMGU-W7Gs.js:8
+[  115776ms] [LOG] 
+%cThis is a browser feature intended for developers. If someone told you to copy-paste something here to enable an Instagram feature or "hack" someone's account, it is a scam and will give them access to your Instagram account. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4iJju4/yq/l/en_US-j/51qibAUABY_oYfDQnsESIG2JkkXTyKPMRTsaa6c_y1OvMHgcVJ4CCWKC4fHGZPlv6r9aUyD2ha4TaGa_18N7y_wflTU6h_74-8uMXEOkztNZ5ZrrCxjEFdRGj64oxaJD-bMV1zrNvhsc-ja18neY9AQkz5IKxAiusmbNiolQ_GXCJLbUZakI0r4aghtTxTvep2LFN5RKF_1AXP12lphhshD5-sc1tpLZhztd_wRpKzMGU-W7Gs.js:8
+[  115776ms] [LOG] 
+%cSee https://www.facebook.com/selfxss for more information. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4iJju4/yq/l/en_US-j/51qibAUABY_oYfDQnsESIG2JkkXTyKPMRTsaa6c_y1OvMHgcVJ4CCWKC4fHGZPlv6r9aUyD2ha4TaGa_18N7y_wflTU6h_74-8uMXEOkztNZ5ZrrCxjEFdRGj64oxaJD-bMV1zrNvhsc-ja18neY9AQkz5IKxAiusmbNiolQ_GXCJLbUZakI0r4aghtTxTvep2LFN5RKF_1AXP12lphhshD5-sc1tpLZhztd_wRpKzMGU-W7Gs.js:8
+[  115776ms] [LOG] 
+%c  @ https://static.cdninstagram.com/rsrc.php/v4iJju4/yq/l/en_US-j/51qibAUABY_oYfDQnsESIG2JkkXTyKPMRTsaa6c_y1OvMHgcVJ4CCWKC4fHGZPlv6r9aUyD2ha4TaGa_18N7y_wflTU6h_74-8uMXEOkztNZ5ZrrCxjEFdRGj64oxaJD-bMV1zrNvhsc-ja18neY9AQkz5IKxAiusmbNiolQ_GXCJLbUZakI0r4aghtTxTvep2LFN5RKF_1AXP12lphhshD5-sc1tpLZhztd_wRpKzMGU-W7Gs.js:8
+[  116343ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://www.instagram.com/:0
+[  119631ms] [ERROR] Permissions policy violation: unload is not allowed in this document. @ https://static.xx.fbcdn.net/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:241
+[ 4938601ms] [WARNING] react-spring: Directly calling start instead of using the api object is deprecated in v9 (use ".start" instead), this will be removed in later 0.X.0 versions @ https://static.cdninstagram.com/rsrc.php/v4iblQ4/ys/l/en_US-j/pUD_Tsd03aVHaxi9ZBb6vLyk85u7LwXbDTGCPw6a8bDu3DdUx1I4brKP-vvtA9pEFuKIePmBmhKlSKXRMh5tKjqZoGoq6-5t6nCBpsUJsby2TW0XTAU9wFjm7oFHPytQD3b0J1eLu9jmJ6KEUPGipAbc9ZBmUFkN4UgBJB5mt_xZU03wdmLm_SWEcG5_bHOR0ActhfRNaFkNqV8N60_uye9hpj8kn_MCMdp_xdwbDxAlx5K8cq3NKc4TnX8knA2WOaL8mPRAwB7Fj5kd3Rg3TUQsNR28gcgXdYivvCwsHrhZHYurqAvmGEQU7zfdBVPEYWk2C0NCjh.js:1127
+[ 5119132ms] [LOG] 
+%cStop! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.cdninstagram.com/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:245
+[ 5119132ms] [LOG] 
+%cThis is a browser feature intended for developers. If someone told you to copy-paste something here to enable an Instagram feature or "hack" someone's account, it is a scam and will give them access to your Instagram account. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:245
+[ 5119132ms] [LOG] 
+%cSee https://www.facebook.com/selfxss for more information. font-family:helvetica; font-size:20px;  @ https://static.cdninstagram.com/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:245
+[ 5119132ms] [LOG] 
+%c  @ https://static.cdninstagram.com/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:245
+[ 5119352ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://www.instagram.com/seme1981/:0
+[ 5122686ms] [ERROR] Permissions policy violation: unload is not allowed in this document. @ https://static.xx.fbcdn.net/rsrc.php/v4/y8/r/3h4YqOhE0YZ.js:241

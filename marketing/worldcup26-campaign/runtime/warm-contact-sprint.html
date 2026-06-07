@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Warm Contact Sprint</title>
+  <style>
+    body{margin:0;background:#06120e;color:#edf8f1;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{max-width:1040px;margin:0 auto;padding:24px}
+    header,.card{border:1px solid rgba(255,215,112,.28);background:linear-gradient(135deg,rgba(5,74,51,.95),rgba(20,32,27,.96));border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 16px 48px rgba(0,0,0,.28)}
+    h1{margin:0 0 8px;font-size:28px} h2{margin:0 0 8px;font-size:18px}
+    p{color:#ccdad3;line-height:1.45}.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+    .metric{border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px;background:rgba(255,255,255,.06)}
+    .metric span{display:block;color:#b9c8c0;font-size:12px;text-transform:uppercase;font-weight:800}.metric strong{font-size:25px;color:#ffdc7c}
+    .links{display:flex;flex-wrap:wrap;gap:8px}.button{display:inline-block;padding:10px 12px;border-radius:8px;background:#0f7f5c;color:#fff;text-decoration:none;font-weight:850}
+    .button.alt{background:#f7c75b;color:#102218} pre{white-space:pre-wrap;background:rgba(0,0,0,.24);padding:12px;border-radius:10px;overflow:auto} code{color:#ffdc7c}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Warm Contact Sprint</h1>
+      <p>Public channels are blocked by login/verification gates, so warm private contacts are the fastest proof-safe path to real signups.</p>
+      <p>Do not log these as proof until the exact private message/status/admin request was actually sent. Use recipient count or initials, never raw phone numbers.</p>
+      <div class="metrics">
+        <div class="metric"><span>Batches</span><strong>5</strong></div>
+        <div class="metric"><span>Blocked public</span><strong>7</strong></div>
+        <div class="metric"><span>Signup saves</span><strong>0</strong></div>
+        <div class="metric"><span>Code</span><strong>26BC4B90CB</strong></div>
+      </div>
+    </header>
+    <section class="card">
+    <h2>warm-1 Nano / WhatsApp personal</h2>
+    <p><strong>Audience:</strong> 10 football friends<br><strong>Asset:</strong> <code>media/worldcup26-main-video.mp4</code></p>
+    <div class="links">
+      <a class="button alt" href="https://wa.me/?text=Quick%20football%20question%3A%20pick%203%20teams%20for%20WorldCup26.%0A%0AIt%20is%20free%20to%20choose%20teams%20and%20see%20your%20private%20points%20preview.%20Paid%20leaderboard%20is%20optional%20later.%0A%0AUse%20my%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_friends_batch%0A%0ASend%20me%20your%203%20teams%20after%20you%20join.">WhatsApp</a>
+      <a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_friends_batch&amp;text=Quick%20football%20question%3A%20pick%203%20teams%20for%20WorldCup26.%0A%0AIt%20is%20free%20to%20choose%20teams%20and%20see%20your%20private%20points%20preview.%20Paid%20leaderboard%20is%20optional%20later.%0A%0AUse%20my%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_friends_batch%0A%0ASend%20me%20your%203%20teams%20after%20you%20join.">Telegram</a>
+      <a class="button" href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=football_friends_batch">Open link</a>
+    </div>
+    <pre>Quick football question: pick 3 teams for WorldCup26.
+
+It is free to choose teams and see your private points preview. Paid leaderboard is optional later.
+
+Use my code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=football_friends_batch
+
+Send me your 3 teams after you join.</pre>
+    <pre>node campaign-warm-send-log.mjs --priority warm-1 --count &lt;N&gt; --account &quot;&lt;account&gt;&quot; --replies 0</pre>
+    <pre>node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel &quot;warm-contact sprint&quot; --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to &lt;N&gt; 10 football friends from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups &lt;N&gt;' --next-action &quot;watch replies/signups; help anyone who asks; run referral activity after 15 minutes&quot;</pre>
+  </section><section class="card">
+    <h2>warm-2 Nano / WhatsApp group</h2>
+    <p><strong>Audience:</strong> Player/Poker Club warm group<br><strong>Asset:</strong> <code>media/worldcup26-referral-square.jpg</code></p>
+    <div class="links">
+      <a class="button alt" href="https://wa.me/?text=Football%20side%20game%20for%20the%20group%3A%20pick%203%20teams%20for%20WorldCup26.%0A%0AFree%20first%20step%3A%20choose%20teams%20and%20watch%20your%20private%20points%20preview.%20Ticket%20only%20matters%20if%20you%20want%20paid%20leaderboard%20entry.%0A%0AInvite%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-group%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dpoker_club_batch">WhatsApp</a>
+      <a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-group%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dpoker_club_batch&amp;text=Football%20side%20game%20for%20the%20group%3A%20pick%203%20teams%20for%20WorldCup26.%0A%0AFree%20first%20step%3A%20choose%20teams%20and%20watch%20your%20private%20points%20preview.%20Ticket%20only%20matters%20if%20you%20want%20paid%20leaderboard%20entry.%0A%0AInvite%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-group%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dpoker_club_batch">Telegram</a>
+      <a class="button" href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-group&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=poker_club_batch">Open link</a>
+    </div>
+    <pre>Football side game for the group: pick 3 teams for WorldCup26.
+
+Free first step: choose teams and watch your private points preview. Ticket only matters if you want paid leaderboard entry.
+
+Invite code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-group&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=poker_club_batch</pre>
+    <pre>node campaign-warm-send-log.mjs --priority warm-2 --count &lt;N&gt; --account &quot;&lt;account&gt;&quot; --replies 0</pre>
+    <pre>node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp group' --channel &quot;warm-contact sprint&quot; --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-group&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=poker_club_batch' --detail 'WhatsApp group: sent to &lt;N&gt; Player/Poker Club warm group from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB; link included; replies/signups &lt;N&gt;' --next-action &quot;watch replies/signups; help anyone who asks; run referral activity after 15 minutes&quot;</pre>
+  </section><section class="card">
+    <h2>warm-3 Sienna / WhatsApp personal</h2>
+    <p><strong>Audience:</strong> 10 close contacts<br><strong>Asset:</strong> <code>media/worldcup26-referral-story.jpg</code></p>
+    <div class="links">
+      <a class="button alt" href="https://wa.me/?text=Can%20you%20test%20my%20WorldCup26%20invite%3F%0A%0AOpen%20this%2C%20accept%20the%20invite%2C%20sign%20in%20with%20Google%2C%20and%20pick%203%20teams.%20It%20is%20free%20to%20preview%20points.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch%0A%0APlease%20tell%20me%20if%20anything%20feels%20confusing.">WhatsApp</a>
+      <a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch&amp;text=Can%20you%20test%20my%20WorldCup26%20invite%3F%0A%0AOpen%20this%2C%20accept%20the%20invite%2C%20sign%20in%20with%20Google%2C%20and%20pick%203%20teams.%20It%20is%20free%20to%20preview%20points.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch%0A%0APlease%20tell%20me%20if%20anything%20feels%20confusing.">Telegram</a>
+      <a class="button" href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=close_contacts_batch">Open link</a>
+    </div>
+    <pre>Can you test my WorldCup26 invite?
+
+Open this, accept the invite, sign in with Google, and pick 3 teams. It is free to preview points.
+
+Code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=close_contacts_batch
+
+Please tell me if anything feels confusing.</pre>
+    <pre>node campaign-warm-send-log.mjs --priority warm-3 --count &lt;N&gt; --account &quot;&lt;account&gt;&quot; --replies 0</pre>
+    <pre>node campaign-public-channel-attempts.mjs --add --owner 'Sienna' --platform 'WhatsApp personal' --channel &quot;warm-contact sprint&quot; --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=close_contacts_batch' --detail 'WhatsApp personal: sent to &lt;N&gt; 10 close contacts from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; replies/signups &lt;N&gt;' --next-action &quot;watch replies/signups; help anyone who asks; run referral activity after 15 minutes&quot;</pre>
+  </section><section class="card">
+    <h2>warm-4 Dexter / WhatsApp admins</h2>
+    <p><strong>Audience:</strong> football group admins<br><strong>Asset:</strong> <code>media/worldcup26-referral-16x9.jpg</code></p>
+    <div class="links">
+      <a class="button alt" href="https://wa.me/?text=Can%20I%20share%20a%20small%20World%20Cup%20prediction%20game%20in%20the%20group%3F%0A%0AIt%20lets%20people%20pick%203%20teams%20free%20and%20see%20a%20private%20score%20preview.%20If%20allowed%2C%20I%20will%20post%20this%20invite%20code%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-admins%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_admin_permission">WhatsApp</a>
+      <a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-admins%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_admin_permission&amp;text=Can%20I%20share%20a%20small%20World%20Cup%20prediction%20game%20in%20the%20group%3F%0A%0AIt%20lets%20people%20pick%203%20teams%20free%20and%20see%20a%20private%20score%20preview.%20If%20allowed%2C%20I%20will%20post%20this%20invite%20code%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-admins%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_admin_permission">Telegram</a>
+      <a class="button" href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-admins&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=football_admin_permission">Open link</a>
+    </div>
+    <pre>Can I share a small World Cup prediction game in the group?
+
+It lets people pick 3 teams free and see a private score preview. If allowed, I will post this invite code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-admins&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=football_admin_permission</pre>
+    <pre>node campaign-warm-send-log.mjs --priority warm-4 --count &lt;N&gt; --account &quot;&lt;account&gt;&quot; --replies 0</pre>
+    <pre>node campaign-public-channel-attempts.mjs --add --owner 'Dexter' --platform 'WhatsApp admins' --channel &quot;warm-contact sprint&quot; --status 'requested' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-admins&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=football_admin_permission' --detail 'WhatsApp admins: requested to &lt;N&gt; football group admins from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB; link included; replies/signups &lt;N&gt;' --next-action &quot;watch replies/signups; help anyone who asks; run referral activity after 15 minutes&quot;</pre>
+  </section><section class="card">
+    <h2>warm-5 Memo / WhatsApp testers</h2>
+    <p><strong>Audience:</strong> 3 trusted testers<br><strong>Asset:</strong> <code>runtime/signup-conversion-audit.html</code></p>
+    <div class="links">
+      <a class="button alt" href="https://wa.me/?text=I%20need%20one%20clean%20signup%20test%20for%20WorldCup26.%0A%0APlease%20open%20this%20link%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%20Tell%20me%20the%20exact%20step%20where%20it%20stops%20if%20anything%20breaks.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dtrusted_tester_signup">WhatsApp</a>
+      <a class="button" href="https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dtrusted_tester_signup&amp;text=I%20need%20one%20clean%20signup%20test%20for%20WorldCup26.%0A%0APlease%20open%20this%20link%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%20Tell%20me%20the%20exact%20step%20where%20it%20stops%20if%20anything%20breaks.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dtrusted_tester_signup">Telegram</a>
+      <a class="button" href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-testers&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=trusted_tester_signup">Open link</a>
+    </div>
+    <pre>I need one clean signup test for WorldCup26.
+
+Please open this link, accept the invite, continue with Google, and pick 3 teams. Do not pay. Tell me the exact step where it stops if anything breaks.
+
+Code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-testers&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=trusted_tester_signup</pre>
+    <pre>node campaign-warm-send-log.mjs --priority warm-5 --count &lt;N&gt; --account &quot;&lt;account&gt;&quot; --replies 0</pre>
+    <pre>node campaign-public-channel-attempts.mjs --add --owner 'Memo' --platform 'WhatsApp testers' --channel &quot;warm-contact sprint&quot; --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-testers&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=trusted_tester_signup' --detail 'WhatsApp testers: sent to &lt;N&gt; 3 trusted testers from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset runtime/signup-conversion-audit.html; code 26BC4B90CB; link included; replies/signups &lt;N&gt;' --next-action &quot;watch replies/signups; help anyone who asks; run referral activity after 15 minutes&quot;</pre>
+  </section>
+  </main>
+</body>
+</html>

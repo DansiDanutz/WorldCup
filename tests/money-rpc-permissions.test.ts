@@ -14,6 +14,10 @@ const precisionMigration = readFileSync(
   "supabase/migrations/20260602022000_worldcup_wallet_precision.sql",
   "utf8",
 );
+const freeTierMigration = readFileSync(
+  "supabase/migrations/20260606143000_worldcup_free_draft_entries.sql",
+  "utf8",
+);
 
 describe("money-moving RPC permissions", () => {
   it("keeps wallet and entry RPCs callable only by the service role", () => {
@@ -60,6 +64,28 @@ describe("money-moving RPC permissions", () => {
       );
       assert.match(
         hardeningMigration,
+        new RegExp(`grant execute on function ${escapedSignature}\\s+to service_role;`),
+      );
+    }
+  });
+
+  it("keeps free-tier draft RPCs callable only by the service role", () => {
+    const signatures = [
+      "public.worldcup_save_draft_entry(uuid, uuid, text, text[], text, uuid)",
+      "public.worldcup_lock_draft_entry(uuid, uuid)",
+    ];
+
+    for (const signature of signatures) {
+      const escapedSignature = escapeRegExp(signature);
+
+      assert.match(
+        freeTierMigration,
+        new RegExp(
+          `revoke execute on function ${escapedSignature}\\s+from public, anon, authenticated;`,
+        ),
+      );
+      assert.match(
+        freeTierMigration,
         new RegExp(`grant execute on function ${escapedSignature}\\s+to service_role;`),
       );
     }

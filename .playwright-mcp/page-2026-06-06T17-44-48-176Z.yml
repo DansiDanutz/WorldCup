@@ -1,0 +1,63 @@
+- generic [active] [ref=e1]:
+  - status "WorldCup26 loading":
+    - generic:
+      - generic: +
+      - generic: +
+      - generic: +
+      - generic: +
+    - generic:
+      - generic:
+        - strong: WorldCup26.world
+        - generic: Prediction Game
+  - main [ref=e2]:
+    - region "Register" [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - text: Register first
+          - heading "Create your account" [level=1] [ref=e6]
+          - paragraph [ref=e7]: Have an inviter code? Add it below. Otherwise, just continue with Google.
+        - img [ref=e8]
+      - generic [ref=e11]:
+        - generic "Launch status" [ref=e12]:
+          - generic [ref=e13]:
+            - strong [ref=e14]: Account setup is open until June 18, 2026
+            - generic [ref=e15]: Admin assigns tickets after verified cash or USDT payment.
+            - generic [ref=e16]: All 48 teams are still available to choose because the event has not started yet.
+        - generic "Signup path options" [ref=e17]:
+          - button "I have an inviter Add their code. Your own future referrals can earn 5%." [ref=e18] [cursor=pointer]:
+            - img [ref=e19]
+            - strong [ref=e21]: I have an inviter
+            - generic [ref=e22]: Add their code. Your own future referrals can earn 5%.
+          - button "Direct signup No inviter. I accept my own future referral rate starts at 3%." [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+            - strong [ref=e27]: Direct signup
+            - generic [ref=e28]: No inviter. I accept my own future referral rate starts at 3%.
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - generic [ref=e31]: Inviter code
+            - generic "Applied inviter code" [ref=e32]:
+              - generic [ref=e33]: Code applied
+              - code [ref=e34]: 26BC4B90CB
+            - generic [ref=e35]: Checking referral code...
+          - generic [ref=e36]:
+            - generic [ref=e37]:
+              - strong [ref=e38]: Referral agreement
+              - text: If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.
+            - button "I accept" [disabled] [ref=e39]
+        - generic [ref=e40]: Enter a valid inviter code to continue.
+        - button "Continue with Google" [disabled] [ref=e41]:
+          - img [ref=e42]
+          - text: Continue with Google
+        - link "Need help?" [ref=e45] [cursor=pointer]:
+          - /url: https://wa.me/40750257337
+          - img [ref=e46]
+          - text: Need help?
+    - region "Predict the Game WorldCup26" [ref=e48]:
+      - link "WorldCup" [ref=e49] [cursor=pointer]:
+        - /url: /
+        - img "WorldCup" [ref=e50]
+      - group "Predict the Game WorldCup26" [ref=e51]:
+        - generic "FIFA World Cup 2026" [ref=e52] [cursor=pointer]:
+          - generic [ref=e53]: FIFA World Cup 2026
+          - img [ref=e54]
+  - alert [ref=e56]

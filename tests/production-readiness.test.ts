@@ -14,7 +14,7 @@ const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
 const readinessHelper = readFileSync("src/lib/production-readiness.ts", "utf8");
 
 const completeEnv = {
-  NEXT_PUBLIC_SUPABASE_URL: "https://lxhjfdxowpxzrybxdasi.supabase.co",
+  NEXT_PUBLIC_SUPABASE_URL: "https://your-project-ref.supabase.co",
   NEXT_PUBLIC_SUPABASE_ANON_KEY: "anon-key",
   SUPABASE_SERVICE_ROLE_KEY: "service-role-key",
   ADMIN_EMAILS: "semebitcoin@gmail.com,seme@kryptostack.com",
@@ -46,7 +46,7 @@ describe("production readiness checks", () => {
 
   it("marks missing launch blockers as failures and policy gaps as warnings", () => {
     const checks = buildEnvironmentReadinessChecks({
-      NEXT_PUBLIC_SUPABASE_URL: "https://lxhjfdxowpxzrybxdasi.supabase.co",
+      NEXT_PUBLIC_SUPABASE_URL: "https://your-project-ref.supabase.co",
       NEXT_PUBLIC_SUPABASE_ANON_KEY: "anon-key",
     });
 

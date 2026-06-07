@@ -1,0 +1,6 @@
+priority,partner_type,name_or_handle,platform,contact_url,status,last_contacted,next_follow_up,assigned_to,notes
+1,football_micro_creator,,,new,,,Dexter,
+1,telegram_admin,,,new,,,Sienna,
+1,whatsapp_group_admin,,,new,,,Nano,
+2,facebook_group_admin,,,new,,,Dexter,
+2,affiliate_agent,,,new,,,Memo,

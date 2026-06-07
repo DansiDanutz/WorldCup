@@ -1,4 +1,4 @@
-const CACHE_NAME = "worldcup26-shell-v1";
+const CACHE_NAME = "worldcup26-shell-v3";
 const SHELL_ASSETS = [
   "/manifest.webmanifest",
   "/brand-mark.svg",

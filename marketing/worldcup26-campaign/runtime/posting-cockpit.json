@@ -1,0 +1,325 @@
+{
+  "schema": "worldcup26-posting-cockpit-v1",
+  "generatedAt": "2026-06-07T17:45:01.200Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "trackedFallbackLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=posting-cockpit&utm_medium=operator-copy&utm_campaign=worldcup26_referral_72h&utm_content=fallback",
+  "ok": true,
+  "proofState": "critical",
+  "latestExternalProofAgeLabel": "3.5h",
+  "urgentOpenRows": 16,
+  "paidTrafficOk": true,
+  "deployment": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+  "pages": [
+    {
+      "label": "Proof SLA",
+      "href": "proof-sla.html",
+      "description": "Freshness, oldest actions, proof commands"
+    },
+    {
+      "label": "Proof Audit",
+      "href": "proof-audit.html",
+      "description": "Truth report for latest real external proof and invalid proof rows"
+    },
+    {
+      "label": "Proof URL Recovery",
+      "href": "proof-url-recovery.html",
+      "description": "Recover public permalinks for private X proof notes"
+    },
+    {
+      "label": "Proof Rescue",
+      "href": "proof-rescue.html",
+      "description": "One-screen phone checklist for the oldest real-world proof gaps"
+    },
+    {
+      "label": "Social Rescue",
+      "href": "social-rescue-pack.html",
+      "description": "One-tap social/share buttons for the oldest proof gaps"
+    },
+    {
+      "label": "One-Click Share",
+      "href": "one-click-share.html",
+      "description": "Fastest owned-account share actions with copy and proof buttons"
+    },
+    {
+      "label": "Public Outreach Targets",
+      "href": "public-outreach-targets.html",
+      "description": "Search/social/community targets across all four workers"
+    },
+    {
+      "label": "Login Unlock Board",
+      "href": "login-unlock-board.html",
+      "description": "Login and verification blockers that must be cleared before public posting"
+    },
+    {
+      "label": "Proof Intake",
+      "href": "proof-intake.html",
+      "description": "Fast proof logging after a real action exists"
+    },
+    {
+      "label": "Top Six Mobile",
+      "href": "top-six-mobile.html",
+      "description": "Fastest phone-first six actions"
+    },
+    {
+      "label": "Phone Action Center",
+      "href": "phone-action-center.html",
+      "description": "Full urgent queue with copy buttons"
+    },
+    {
+      "label": "Share Command Center",
+      "href": "share-command-center.html",
+      "description": "All tracked share links"
+    },
+    {
+      "label": "Paid Traffic Guard",
+      "href": "paid-traffic-guard.html",
+      "description": "Ad landing click safety"
+    },
+    {
+      "label": "Paid Dashboard Checks",
+      "href": "paid-dashboard-checks.html",
+      "description": "Structured Meta and X delivery numbers"
+    },
+    {
+      "label": "Paid Ad Triage",
+      "href": "paid-ad-triage.html",
+      "description": "Meta and X dashboard proof plus zero-click decision rules"
+    },
+    {
+      "label": "Paid No-Click Rescue",
+      "href": "paid-no-click-rescue.html",
+      "description": "Compliant free-first creative variants for zero-click ads"
+    },
+    {
+      "label": "Ad Ops Links",
+      "href": "ad-ops-links.html",
+      "description": "Meta and X Ads Manager links plus dashboard check commands"
+    },
+    {
+      "label": "Escalation Board",
+      "href": "escalation-board.html",
+      "description": "Stale-worker pressure board"
+    }
+  ],
+  "doNow": [
+    {
+      "priority": "warm-1",
+      "owner": "Nano",
+      "channel": "WhatsApp personal",
+      "action": "Send warm-contact invite to 10 football friends.",
+      "asset": "media/worldcup26-main-video.mp4",
+      "ageLabel": "now",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+      "copy": "Quick football question: pick 3 teams for WorldCup26.\n\nIt is free to choose teams and see your private points preview. Paid leaderboard is optional later.\n\nUse my code 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch\n\nSend me your 3 teams after you join.",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+      "proofNote": "After sending, watch replies and run referral activity after 15 minutes. Use recipient counts or initials only.",
+      "share": {
+        "whatsapp": "https://wa.me/?text=Quick%20football%20question%3A%20pick%203%20teams%20for%20WorldCup26.%0A%0AIt%20is%20free%20to%20choose%20teams%20and%20see%20your%20private%20points%20preview.%20Paid%20leaderboard%20is%20optional%20later.%0A%0AUse%20my%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_friends_batch%0A%0ASend%20me%20your%203%20teams%20after%20you%20join.",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_friends_batch&text=Quick%20football%20question%3A%20pick%203%20teams%20for%20WorldCup26.%0A%0AIt%20is%20free%20to%20choose%20teams%20and%20see%20your%20private%20points%20preview.%20Paid%20leaderboard%20is%20optional%20later.%0A%0AUse%20my%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_friends_batch%0A%0ASend%20me%20your%203%20teams%20after%20you%20join.",
+        "x": "",
+        "facebook": ""
+      }
+    },
+    {
+      "priority": "warm-3",
+      "owner": "Sienna",
+      "channel": "WhatsApp personal",
+      "action": "Send warm-contact invite to 10 close contacts.",
+      "asset": "media/worldcup26-referral-story.jpg",
+      "ageLabel": "now",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch",
+      "copy": "Can you test my WorldCup26 invite?\n\nOpen this, accept the invite, sign in with Google, and pick 3 teams. It is free to preview points.\n\nCode 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch\n\nPlease tell me if anything feels confusing.",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Sienna' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch' --detail 'WhatsApp personal: sent to <N> 10 close contacts from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+      "proofNote": "After sending, watch replies and run referral activity after 15 minutes. Use recipient counts or initials only.",
+      "share": {
+        "whatsapp": "https://wa.me/?text=Can%20you%20test%20my%20WorldCup26%20invite%3F%0A%0AOpen%20this%2C%20accept%20the%20invite%2C%20sign%20in%20with%20Google%2C%20and%20pick%203%20teams.%20It%20is%20free%20to%20preview%20points.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch%0A%0APlease%20tell%20me%20if%20anything%20feels%20confusing.",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch&text=Can%20you%20test%20my%20WorldCup26%20invite%3F%0A%0AOpen%20this%2C%20accept%20the%20invite%2C%20sign%20in%20with%20Google%2C%20and%20pick%203%20teams.%20It%20is%20free%20to%20preview%20points.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch%0A%0APlease%20tell%20me%20if%20anything%20feels%20confusing.",
+        "x": "",
+        "facebook": ""
+      }
+    },
+    {
+      "priority": "warm-4",
+      "owner": "Dexter",
+      "channel": "WhatsApp admins",
+      "action": "Send warm-contact invite to football group admins.",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "ageLabel": "now",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission",
+      "copy": "Can I share a small World Cup prediction game in the group?\n\nIt lets people pick 3 teams free and see a private score preview. If allowed, I will post this invite code: 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Dexter' --platform 'WhatsApp admins' --channel \"warm-contact sprint\" --status 'requested' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission' --detail 'WhatsApp admins: requested to <N> football group admins from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+      "proofNote": "After sending, watch replies and run referral activity after 15 minutes. Use recipient counts or initials only.",
+      "share": {
+        "whatsapp": "https://wa.me/?text=Can%20I%20share%20a%20small%20World%20Cup%20prediction%20game%20in%20the%20group%3F%0A%0AIt%20lets%20people%20pick%203%20teams%20free%20and%20see%20a%20private%20score%20preview.%20If%20allowed%2C%20I%20will%20post%20this%20invite%20code%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-admins%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_admin_permission",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-admins%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_admin_permission&text=Can%20I%20share%20a%20small%20World%20Cup%20prediction%20game%20in%20the%20group%3F%0A%0AIt%20lets%20people%20pick%203%20teams%20free%20and%20see%20a%20private%20score%20preview.%20If%20allowed%2C%20I%20will%20post%20this%20invite%20code%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-admins%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dfootball_admin_permission",
+        "x": "",
+        "facebook": ""
+      }
+    },
+    {
+      "priority": "warm-5",
+      "owner": "Memo",
+      "channel": "WhatsApp testers",
+      "action": "Send warm-contact invite to 3 trusted testers.",
+      "asset": "runtime/signup-conversion-audit.html",
+      "ageLabel": "now",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup",
+      "copy": "I need one clean signup test for WorldCup26.\n\nPlease open this link, accept the invite, continue with Google, and pick 3 teams. Do not pay. Tell me the exact step where it stops if anything breaks.\n\nCode 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Memo' --platform 'WhatsApp testers' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup' --detail 'WhatsApp testers: sent to <N> 3 trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asset runtime/signup-conversion-audit.html; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+      "proofNote": "After sending, watch replies and run referral activity after 15 minutes. Use recipient counts or initials only.",
+      "share": {
+        "whatsapp": "https://wa.me/?text=I%20need%20one%20clean%20signup%20test%20for%20WorldCup26.%0A%0APlease%20open%20this%20link%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%20Tell%20me%20the%20exact%20step%20where%20it%20stops%20if%20anything%20breaks.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dtrusted_tester_signup",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dtrusted_tester_signup&text=I%20need%20one%20clean%20signup%20test%20for%20WorldCup26.%0A%0APlease%20open%20this%20link%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%20Tell%20me%20the%20exact%20step%20where%20it%20stops%20if%20anything%20breaks.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dtrusted_tester_signup",
+        "x": "",
+        "facebook": ""
+      }
+    }
+  ],
+  "topSixActions": [
+    {
+      "priority": "1",
+      "owner": "Sienna",
+      "channel": "WhatsApp Status",
+      "action": "Post story asset with video caption 1",
+      "asset": "media/worldcup26-main-video.mp4",
+      "ageLabel": "",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
+      "copy": "I invited you to WorldCup26.\n\nPick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.\n\nUse my referral code 26BC4B90CB when you join:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0\n\nThe event has not started yet, so all teams are still available right now.",
+      "proofCommand": "node campaign-proof-log.mjs --priority \"1\" --proof-url \"private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included\" --status \"posted\"",
+      "proofNote": "private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included",
+      "share": {
+        "whatsapp": "https://wa.me/?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0&text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.",
+        "x": "https://twitter.com/intent/tweet?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.",
+        "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h0"
+      }
+    },
+    {
+      "priority": "2",
+      "owner": "Nano",
+      "channel": "WhatsApp personal",
+      "action": "Send personal invite to warm contacts",
+      "asset": "media/worldcup26-main-video.mp4",
+      "ageLabel": "",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2",
+      "copy": "I invited you to WorldCup26.\n\nPick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.\n\nUse my referral code 26BC4B90CB when you join:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2\n\nThe event has not started yet, so all teams are still available right now.",
+      "proofCommand": "node campaign-proof-log.mjs --priority \"2\" --proof-url \"private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>\" --status \"sent\"",
+      "proofNote": "private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>",
+      "share": {
+        "whatsapp": "https://wa.me/?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2&text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.",
+        "x": "https://twitter.com/intent/tweet?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%2C%20see%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2%0A%0AThe%20event%20has%20not%20started%20yet%2C%20so%20all%20teams%20are%20still%20available%20right%20now.",
+        "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h2"
+      }
+    },
+    {
+      "priority": "3",
+      "owner": "Sienna",
+      "channel": "Instagram/Facebook story",
+      "action": "Story: Code 26BC4B90CB + link sticker",
+      "asset": "media/worldcup26-referral-story.jpg",
+      "ageLabel": "",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h3",
+      "copy": "Pick 3 teams before they lock.\n\nWatch your private points preview move with every match.\n\nPaid leaderboard entry happens only when you use a ticket.\n\nJoin with code 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h3",
+      "proofCommand": "node campaign-proof-log.mjs --priority \"3\" --proof-url \"private-meta-story: story posted from <account> at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included\" --status \"posted\"",
+      "proofNote": "private-meta-story: story posted from <account> at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included",
+      "share": {
+        "whatsapp": "https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3&text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3",
+        "x": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3",
+        "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h3"
+      }
+    },
+    {
+      "priority": "4",
+      "owner": "Dexter",
+      "channel": "Football groups",
+      "action": "Ask approved group admin for permission; post group variant only if allowed",
+      "asset": "campaign/first-wave-posts.md",
+      "ageLabel": "",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+      "copy": "For football fans here:\n\nWorldCup26 is a prediction game where you pick 3 teams free first and see your private points preview.\n\nPaid leaderboard entry happens only when you use a ticket.\n\nMy invite code: 26BC4B90CB\nJoin here:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+      "proofCommand": "node campaign-proof-log.mjs --priority \"4\" --proof-url \"approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset/copy ready; code 26BC4B90CB and link included; post only after allowed\" --status \"requested\"",
+      "proofNote": "approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset/copy ready; code 26BC4B90CB and link included; post only after allowed",
+      "share": {
+        "whatsapp": "https://wa.me/?text=For%20football%20fans%20here%3A%0A%0AWorldCup26%20is%20a%20prediction%20game%20where%20you%20pick%203%20teams%20free%20first%20and%20see%20your%20private%20points%20preview.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AMy%20invite%20code%3A%2026BC4B90CB%0AJoin%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4&text=For%20football%20fans%20here%3A%0A%0AWorldCup26%20is%20a%20prediction%20game%20where%20you%20pick%203%20teams%20free%20first%20and%20see%20your%20private%20points%20preview.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AMy%20invite%20code%3A%2026BC4B90CB%0AJoin%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4",
+        "x": "https://twitter.com/intent/tweet?text=For%20football%20fans%20here%3A%0A%0AWorldCup26%20is%20a%20prediction%20game%20where%20you%20pick%203%20teams%20free%20first%20and%20see%20your%20private%20points%20preview.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AMy%20invite%20code%3A%2026BC4B90CB%0AJoin%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4",
+        "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfootball-groups%26utm_medium%3Dapproval-first%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_h4"
+      }
+    },
+    {
+      "priority": "5",
+      "owner": "Sienna",
+      "channel": "TikTok/Reels/Shorts",
+      "action": "Upload main video with short caption and code in first line",
+      "asset": "media/worldcup26-main-video.mp4",
+      "ageLabel": "",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h5",
+      "copy": "Pick 3 teams before they lock.\n\nWatch your private points preview move with every match.\n\nPaid leaderboard entry happens only when you use a ticket.\n\nJoin with code 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h5",
+      "proofCommand": "node campaign-proof-log.mjs --priority \"5\" --proof-url \"public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included\" --status \"posted\"",
+      "proofNote": "public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if processing use private-video-note: uploaded from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included",
+      "share": {
+        "whatsapp": "https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5&text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5",
+        "x": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AWatch%20your%20private%20points%20preview%20move%20with%20every%20match.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5",
+        "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtiktok-reels-shorts%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_h5"
+      }
+    },
+    {
+      "priority": "6",
+      "owner": "Nano",
+      "channel": "DM follow-up",
+      "action": "Reply to first reactions and send the simple how-it-works answer",
+      "asset": "campaign/copy-bank.md",
+      "ageLabel": "",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h7",
+      "copy": "Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.\n\nUse a ticket only if you want to enter the paid leaderboard.\n\nUse code 26BC4B90CB here:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h7",
+      "proofCommand": "node campaign-proof-log.mjs --priority \"6\" --proof-url \"private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up <date/action>\" --status \"replied\"",
+      "proofNote": "private-reply-note: replied to <thread/contact initials> at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up <date/action>",
+      "share": {
+        "whatsapp": "https://wa.me/?text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7&text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7",
+        "x": "https://twitter.com/intent/tweet?text=Quick%20version%3A%20you%20pick%203%20World%20Cup%20teams%20for%20free%20first.%20They%20score%20from%20real%20results%20and%20you%20can%20see%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20code%2026BC4B90CB%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7",
+        "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Ddm-follow-up%26utm_medium%3Dmanual-replies%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_h7"
+      }
+    }
+  ],
+  "fallbackActions": [
+    {
+      "key": "x",
+      "label": "X public fallback",
+      "loginUrl": "https://x.com/i/flow/login",
+      "shareUrl": "https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB",
+      "proofCommand": "node campaign-proof-log.mjs --pulse \"145\" --proof-url \"PUBLIC_X_POST_URL\" --status \"posted\""
+    },
+    {
+      "key": "facebook",
+      "label": "Facebook feed fallback",
+      "loginUrl": "https://www.facebook.com/login/",
+      "shareUrl": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137",
+      "proofCommand": "node campaign-proof-log.mjs --pulse \"137\" --proof-url \"PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE\" --status \"posted\""
+    }
+  ],
+  "assets": [
+    {
+      "label": "Main video",
+      "href": "../media/worldcup26-main-video.mp4"
+    },
+    {
+      "label": "QR story",
+      "href": "../media/worldcup26-qr-story.jpg"
+    },
+    {
+      "label": "QR square",
+      "href": "../media/worldcup26-qr-square.jpg"
+    },
+    {
+      "label": "Referral QR",
+      "href": "../media/worldcup26-referral-qr.png"
+    }
+  ],
+  "proofRule": "Open the share/action link, do the real post/message/story/upload/reply/request, then log proof with the matching command."
+}

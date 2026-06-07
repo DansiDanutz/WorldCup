@@ -1,0 +1,524 @@
+- generic [ref=e12]:
+  - generic [ref=e18]:
+    - generic [ref=e20]:
+      - link "Administrare reclame Meta" [ref=e22] [cursor=pointer]:
+        - /url: /adsmanager/?act=61071192
+        - generic [ref=e24]:
+          - generic [ref=e25]: Administrare reclame
+          - img "Meta" [ref=e28]
+      - generic [ref=e29]:
+        - generic [ref=e32]:
+          - button "Pressable" [ref=e33] [cursor=pointer]
+          - generic:
+            - generic:
+              - generic:
+                - button:
+                  - generic:
+                    - generic: "4"
+        - separator [ref=e38]
+    - generic [ref=e41]:
+      - navigation "instrumente" [ref=e42]:
+        - list [ref=e43]:
+          - listitem [ref=e45]:
+            - button "Prezentare cont" [ref=e47] [cursor=pointer]
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Prezentare cont
+          - listitem [ref=e54]:
+            - button "Campanii" [ref=e56] [cursor=pointer]
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Campanii
+          - listitem [ref=e62]:
+            - link "Rapoarte despre reclame" [ref=e64] [cursor=pointer]:
+              - /url: /adsreporting/?act=61071192&nav_entry_point=ads_ecosystem_navigation_menu
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Rapoarte despre reclame
+          - listitem [ref=e70]:
+            - link "Audienţe" [ref=e72] [cursor=pointer]:
+              - /url: /adsmanager/?act=61071192&tool=AUDIENCES&nav_entry_point=ads_ecosystem_navigation_menu&nav_source=ads_manager
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Audienţe
+          - listitem [ref=e78]:
+            - button "Setări de publicitate" [ref=e80] [cursor=pointer]
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Setări de publicitate
+          - listitem [ref=e86]:
+            - link "Facturare şi plăţi" [ref=e88] [cursor=pointer]:
+              - /url: /billing_hub/payment_settings/?placement=ads_manager&asset_id=61071192&payment_account_id_from_jsmodule=61071192&entrypoint=ads_ecosystem_navigation_ads_billing_tool_plugin
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Facturare şi plăţi
+          - listitem [ref=e94]:
+            - link "Events Manager" [ref=e96] [cursor=pointer]:
+              - /url: /events_manager2/?act=61071192&nav_source=ads_ecosystem_nav
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Events Manager
+          - listitem [ref=e101]:
+            - button "Toate instrumentele" [ref=e103] [cursor=pointer]
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Toate instrumentele
+      - navigation "Folosite frecvent" [ref=e109]:
+        - generic [ref=e114]: Folosite frecvent
+        - list
+    - generic [ref=e117]:
+      - separator [ref=e118]
+      - list [ref=e121]:
+        - listitem [ref=e122]:
+          - button "Asistent de afaceri Meta AI" [ref=e124] [cursor=pointer]
+          - generic:
+            - listitem:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Asistent de afaceri Meta AI
+      - generic [ref=e134]:
+        - button "Ajutor" [ref=e140] [cursor=pointer]:
+          - generic [ref=e143]: Ajutor
+        - button "Actualizări privind contul de publicitate" [ref=e148] [cursor=pointer]:
+          - generic [ref=e151]: Actualizări privind contul de publicitate
+        - button "Setările contului de publicitate" [ref=e155] [cursor=pointer]:
+          - generic [ref=e158]: Setările contului de publicitate
+        - button "Caută" [ref=e162] [cursor=pointer]:
+          - generic [ref=e165]: Caută
+        - button "Raportează o problemă" [ref=e168] [cursor=pointer]:
+          - generic [ref=e171]: Raportează o problemă
+  - generic [ref=e1743]:
+    - generic [ref=e1744]:
+      - button "Închide" [ref=e1745] [cursor=pointer]
+      - button "Vezi diagramele (Ctrl+Y)" [ref=e1753] [cursor=pointer]
+      - button "Editează (Ctrl+U)" [ref=e1759] [cursor=pointer]
+      - button "Vezi istoricul (Ctrl+I)" [ref=e1765] [cursor=pointer]
+      - button "Restrânge vizualizarea" [ref=e1771] [cursor=pointer]
+    - generic [ref=e1773]:
+      - generic [ref=e1775]:
+        - generic [ref=e1778]:
+          - generic [ref=e1784]: Caută
+          - combobox "Caută" [ref=e1795]
+        - grid "grid" [ref=e1801]:
+          - generic [ref=e1802]:
+            - row "Campanie" [ref=e1803]:
+              - rowheader "Campanie" [ref=e1806] [cursor=pointer]:
+                - generic [ref=e1807]:
+                  - img [ref=e1809]
+                  - generic [ref=e1814]: WorldCup26 - Predict the Game · Win $4,360 USDT
+                  - button "implicit" [ref=e1817]:
+                    - generic [ref=e1820]: implicit
+            - row "Set de reclame" [ref=e1823]:
+              - rowheader "Set de reclame" [ref=e1826] [cursor=pointer]:
+                - generic [ref=e1827]:
+                  - img [ref=e1829]
+                  - generic [ref=e1839]: WorldCup26 - Football Fans - Website Traffic
+                  - button "implicit" [ref=e1842]:
+                    - generic [ref=e1845]: implicit
+            - row "Reclamă" [ref=e1848]:
+              - rowheader "Reclamă" [ref=e1851] [cursor=pointer]:
+                - generic [ref=e1852]:
+                  - img [ref=e1854]
+                  - generic [ref=e1859]: WorldCup26 - Pick 3 Teams Free First - Image
+                  - button "implicit" [ref=e1862]:
+                    - generic [ref=e1865]: implicit
+      - generic [ref=e1869]:
+        - generic [ref=e1871]:
+          - generic [ref=e1872]:
+            - button "Deschide" [ref=e1874] [cursor=pointer]:
+              - generic [ref=e1877]: Deschide
+            - generic [ref=e1880]:
+              - generic [ref=e1882]:
+                - link "WorldCup26 - Predict the Game · Win $4,360 USDT" [ref=e1887] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e1888]:
+                    - img [ref=e1890]
+                    - heading "WorldCup26 - Predict the Game · Win $4,360 USDT" [level=4] [ref=e1893]
+                - link "WorldCup26 - Football Fans - Website Traffic" [ref=e1900] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e1901]:
+                    - img [ref=e1903]
+                    - heading "WorldCup26 - Football Fans - Website Traffic" [level=4] [ref=e1911]
+                - generic [ref=e1918]:
+                  - img [ref=e1920]
+                  - heading "WorldCup26 - Pick 3 Teams Free First - Image" [level=4] [ref=e1923]
+              - generic [ref=e1924]:
+                - generic [ref=e1925]:
+                  - generic [ref=e3540]:
+                    - generic [ref=e3542]: Editări nepublicate
+                    - status [ref=e3543]: Editări nepublicate
+                  - generic [ref=e1926]:
+                    - generic [ref=e1932]: Activă
+                    - switch "Activează/Dezactivează" [checked] [ref=e1938] [cursor=pointer]
+                - button "Meniul de acţiuni" [ref=e1944] [cursor=pointer]:
+                  - generic [ref=e1947]: Meniul de acţiuni
+          - tablist [ref=e1954]:
+            - tab "Editează" [selected] [ref=e1955] [cursor=pointer]:
+              - generic [ref=e1959]: Editează
+            - tab "Revizuieşte" [ref=e1960] [cursor=pointer]:
+              - generic [ref=e1964]: Revizuieşte
+        - generic [ref=e1971]:
+          - generic [ref=e1979]:
+            - generic [ref=e1982]:
+              - generic [ref=e2110]:
+                - heading "Configurarea reclamelor" [level=3] [ref=e2123]
+                - generic [ref=e2254]:
+                  - generic [ref=e2257]:
+                    - heading "Destinaţie" [level=3] [ref=e2263]
+                    - generic [ref=e2265]:
+                      - text: Spune-ne unde doreşti să fie direcţionaţi utilizatorii imediat după ce apasă pe reclama ta.
+                      - link "Află mai multe" [ref=e2267] [cursor=pointer]:
+                        - /url: https://www.facebook.com/business/help/1174990279685960
+                  - generic [ref=e2272]:
+                    - generic [ref=e2276] [cursor=pointer]:
+                      - radio "Experienţă instant" [ref=e2281]
+                      - generic [ref=e2284]:
+                        - generic [ref=e2286]: Experienţă instant
+                        - generic [ref=e2287]: Trimite-i pe utilizatori către o experienţă optimizată pentru mobil, care se încarcă rapid.
+                    - generic [ref=e2288]:
+                      - generic [ref=e2291] [cursor=pointer]:
+                        - radio "Site web" [checked] [ref=e2296]
+                        - generic [ref=e2301]:
+                          - generic [ref=e2303]: Site web
+                          - generic [ref=e2304]: Trimite-i pe utilizatori către site-ul tău web.
+                      - generic [ref=e2305]:
+                        - generic [ref=e2311]:
+                          - generic [ref=e2312]:
+                            - generic [ref=e2320]:
+                              - generic [ref=e2321]: "*"
+                              - text: URL site web
+                            - generic [ref=e2328]:
+                              - generic [ref=e2330]:
+                                - generic [ref=e2336]: URL site web
+                                - textbox "URL site web" [ref=e2345]:
+                                  - /placeholder: http://www.example.com/page
+                                  - text: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h&utm_content=three-team-question
+                              - link "Previzualizare URL" [ref=e2347] [cursor=pointer]:
+                                - /url: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h&utm_content=three-team-question&fbclid=fbclid
+                                - generic [ref=e2352]: Previzualizare URL
+                          - generic [ref=e2364]:
+                            - generic [ref=e2365]:
+                              - text: Parametrii URL au fost mutaţi în
+                              - strong [ref=e2366]: Urmărire
+                              - text: ", astfel încât să îi poţi administra într-un singur loc."
+                            - link "Mergi la Urmărire" [ref=e2367] [cursor=pointer]:
+                              - /url: "#"
+                        - generic [ref=e2375]:
+                          - generic [ref=e2381]: Link de afişat
+                          - textbox "Link de afişat" [ref=e2390]:
+                            - /placeholder: Introdu linkul care doreşti să apară în reclamă
+                            - text: worldcup26.world
+                        - generic [ref=e2393]:
+                          - heading "Add-onuri pentru browser" [level=4] [ref=e2396]
+                          - generic [ref=e2399]:
+                            - generic [ref=e2404] [cursor=pointer]:
+                              - radio "Niciuna" [checked] [ref=e2409]
+                              - generic [ref=e2414]:
+                                - generic [ref=e2416]: Niciuna
+                                - generic [ref=e2417]: Nu adăuga un buton.
+                            - generic [ref=e2422] [cursor=pointer]:
+                              - radio "Sună" [ref=e2427]
+                              - generic [ref=e2430]:
+                                - generic [ref=e2432]: Sună
+                                - generic [ref=e2433]: Adaugă un buton Sună pe site-ul web.
+                            - generic [ref=e2444] [cursor=pointer]:
+                              - radio "WhatsApp" [ref=e2449]
+                              - generic [ref=e2452]:
+                                - generic [ref=e2454]: WhatsApp
+                                - generic [ref=e2455]: Adaugă un buton WhatsApp pe site-ul web.
+                            - generic [ref=e2460] [cursor=pointer]:
+                              - radio "Formular instant (sugerat)" [ref=e2465]
+                              - generic [ref=e2468]:
+                                - generic [ref=e2470]: Formular instant (sugerat)
+                                - generic [ref=e2471]: Colectează datele de contact ale utilizatorilor.
+                    - generic [ref=e2481] [cursor=pointer]:
+                      - radio "Eveniment Facebook" [ref=e2486]
+                      - generic [ref=e2489]:
+                        - generic [ref=e2491]: Eveniment Facebook
+                        - generic [ref=e2492]: Trimite-i pe utilizatori către un eveniment de pe Pagina ta de Facebook.
+                    - generic [ref=e2496] [cursor=pointer]:
+                      - radio "Apel telefonic" [ref=e2501]
+                      - generic [ref=e2504]:
+                        - generic [ref=e2506]: Apel telefonic
+                        - generic [ref=e2507]: Permite-le utilizatorilor să te sune direct.
+                - generic [ref=e2512]:
+                  - generic [ref=e2514]:
+                    - heading "Componenta creativă a reclamei" [level=3] [ref=e2520]
+                    - generic [ref=e2522]: Selectează şi optimizează textul, elementul media şi îmbunătăţirile reclamei.
+                  - generic [ref=e2525]:
+                    - generic [ref=e2728]:
+                      - generic [ref=e2729]: Opţiuni privind formatul de afişare
+                      - generic [ref=e2732]: Afişează elementele media în mai multe moduri, pentru a rezona mai bine cu persoanele care văd reclama ta.
+                      - generic [ref=e2735]:
+                        - generic [ref=e2736]:
+                          - heading "Adaugă produse sau linkuri către site" [level=4] [ref=e2743]
+                          - button "Închide" [ref=e2744] [cursor=pointer]:
+                            - generic [ref=e2747]: Închide
+                        - generic [ref=e2752]:
+                          - generic [ref=e2753]:
+                            - text: Activează opţiuni pentru formatul de afişare, adăugând linkuri către site în
+                            - strong [ref=e2754]: Configurarea componentelor creative
+                            - text: .
+                          - button "Mergi la configurarea componentei creative" [ref=e2755] [cursor=pointer]:
+                            - generic [ref=e2759]: Mergi la configurarea componentei creative
+                      - generic [ref=e2760]:
+                        - generic [ref=e2762]: "Activate: Element media unic"
+                        - button "Editează" [ref=e2763] [cursor=pointer]:
+                          - generic [ref=e2767]: Editează
+                    - generic [ref=e2774]:
+                      - generic [ref=e2778]:
+                        - generic [ref=e2781]:
+                          - generic [ref=e2782]:
+                            - generic [ref=e3699]: Text principal (1 din 5)
+                            - generic [ref=e3702]:
+                              - generic [ref=e3706]: Neoptimizat
+                              - status [ref=e3707]: "\"Informaţii (implicit)\""
+                          - generic [ref=e2794]:
+                            - combobox [active] [ref=e3708]
+                            - link "Inserează un emoji" [ref=e3712] [cursor=pointer]:
+                              - /url: "#"
+                        - button "Adaugă o opţiune de text" [disabled] [ref=e2809]:
+                          - generic [ref=e2814]: Adaugă o opţiune de text
+                      - generic [ref=e2817]:
+                        - generic [ref=e2820]:
+                          - generic [ref=e2822]:
+                            - generic [ref=e2826]: Titlu
+                            - text: 1 din 5
+                          - generic [ref=e2832]:
+                            - generic [ref=e2838]: Titlu
+                            - textbox "Titlu" [ref=e2847]:
+                              - /placeholder: Scrie un titlu scurt
+                              - text: Which 3 teams would you take?
+                        - button "Adaugă o opţiune de titlu" [ref=e2853] [cursor=pointer]:
+                          - generic [ref=e2858]: Adaugă o opţiune de titlu
+                      - generic [ref=e2861]:
+                        - generic [ref=e2868]:
+                          - generic [ref=e2870]:
+                            - generic [ref=e2874]: Descriere
+                            - text: 1 din 5
+                          - generic [ref=e2882]:
+                            - textbox [ref=e2885]: Use invite code 26BC4B90CB.
+                            - generic [ref=e3714]: Use invite code 26BC4B90CB.
+                        - button "Adaugă o opţiune de descriere" [ref=e3671] [cursor=pointer]:
+                          - generic [ref=e3676]: Adaugă o opţiune de descriere
+                      - generic [ref=e2890]:
+                        - heading "Optimizează textul în funcţie de persoană" [level=4] [ref=e2892]:
+                          - text: Optimizează textul în funcţie de
+                          - link "persoană" [ref=e2893] [cursor=pointer]:
+                            - /url: https://www.facebook.com/business/help/283579896000936
+                        - generic [ref=e2899]: Activată
+                      - generic [ref=e2903]:
+                        - generic [ref=e2909]: Apel la acţiune
+                        - generic [ref=e2921]:
+                          - generic [ref=e2927]: Selectează un element
+                          - combobox "Selectează un element Vezi detalii" [ref=e2932] [cursor=pointer]:
+                            - generic [ref=e2939]: Vezi detalii
+                    - generic [ref=e2951]:
+                      - generic [ref=e2959]: Îmbunătăţiri componentă creativă Advantage+ (5/6)
+                      - generic [ref=e2965]:
+                        - generic [ref=e2966]:
+                          - generic [ref=e2968]:
+                            - generic [ref=e2970]: "Dezactivată: Îmbunătăţeşte textul din elementul media"
+                            - generic [ref=e2972]:
+                              - text: "Activată:"
+                              - generic [ref=e2973]: Adaugă suprapuneri, Retuşuri vizuale, Adaugă muzică şi încă 2
+                          - generic [ref=e2974]:
+                            - generic [ref=e2977]: Îmbunătăţiri esenţiale (3/6)
+                            - generic [ref=e2983]:
+                              - generic [ref=e2985]:
+                                - text: "Dezactivată:"
+                                - generic [ref=e2986]: Afişează rezumatele, Dezvăluie detaliile în timp, Afişează repere
+                              - generic [ref=e2988]:
+                                - text: "Activată:"
+                                - generic [ref=e2989]: Comentarii relevante, Îmbunătăţeşte apelul la acţiune, Ajustează luminozitatea şi contrastul
+                        - button "Editează" [ref=e2990] [cursor=pointer]:
+                          - generic [ref=e2994]: Editează
+                    - generic [ref=e3681]:
+                      - separator [ref=e3682]
+                      - text: Traducerea componentei creative Advantage+
+                      - generic [ref=e3683]:
+                        - generic [ref=e3685]:
+                          - generic [ref=e3686]: "Dezactivate:"
+                          - generic [ref=e3687]: Text
+                        - button "Editează" [ref=e3688] [cursor=pointer]:
+                          - generic [ref=e3692]: Editează
+              - generic [ref=e3021]:
+                - text: Adaugă propriile traduceri sau tradu automat reclama pentru a te adresa utilizatorilor în mai multe limbi.
+                - link "Află mai multe" [ref=e3022] [cursor=pointer]:
+                  - /url: "#"
+              - generic [ref=e3027]:
+                - generic [ref=e3029]:
+                  - heading "Urmărire" [level=3] [ref=e3035]
+                  - generic [ref=e3037]: Alege evenimentele de conversie pentru urmărire. Setul de date de conversie selectat pentru acest cont de publicitate va fi urmărit în mod implicit.
+                - generic [ref=e3046]:
+                  - generic [ref=e3051]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - heading [level=4]
+                    - generic [ref=e3054]:
+                      - generic [ref=e3062]:
+                        - heading "Evenimente de pe site-ul web" [level=4] [ref=e3064]
+                        - button "Află mai multe" [ref=e3065]
+                      - generic [ref=e3075] [cursor=pointer]:
+                        - generic [ref=e3079]:
+                          - checkbox "Evenimente din aplicaţie" [ref=e3080]
+                          - generic:
+                            - img
+                        - generic [ref=e3083]: Evenimente din aplicaţie
+                      - generic [ref=e3090]:
+                        - heading "Evenimente offline" [level=4] [ref=e3092]
+                        - button "Află mai multe" [ref=e3093]
+                  - generic [ref=e3095]:
+                    - generic [ref=e3097]:
+                      - generic [ref=e3103]: Parametri URL
+                      - textbox "Parametri URL" [ref=e3114]:
+                        - /placeholder: key1=value1&key2=value2
+                    - link "Creează un parametru URL" [ref=e3117] [cursor=pointer]:
+                      - /url: "#"
+                  - generic [ref=e3119]:
+                    - generic [ref=e3125]: Instrumente de raportare terţe
+                    - generic [ref=e3126]:
+                      - generic [ref=e3127]:
+                        - text: S-ar putea ca achiziţiile de pe Meta să nu fie incluse în raportarea Google. Conectează contul pentru a măsura acţiunile asupra reclamelor care trimit utilizatorii către site-ul web sau magazinul tău.
+                        - link "Află mai multe" [ref=e3129] [cursor=pointer]:
+                          - /url: https://www.facebook.com/business/help/140637645369656
+                      - link "Conectează" [ref=e3130] [cursor=pointer]:
+                        - /url: /adsmanager/manage/advertising_settings/third_party_marketing_tags?act=61071192
+                        - generic [ref=e3134]: Conectează
+            - generic [ref=e3153]:
+              - generic [ref=e3155]:
+                - generic [ref=e3156]:
+                  - generic [ref=e3158]:
+                    - switch "Previzualizarea reclamei" [checked] [ref=e3160] [cursor=pointer]
+                    - generic [ref=e3166] [cursor=pointer]: Previzualizarea reclamei
+                  - generic [ref=e3167]:
+                    - button "Previzualizare avansată" [ref=e3169] [cursor=pointer]:
+                      - generic [ref=e3174]: Previzualizare avansată
+                    - button "Distribuie" [ref=e3649] [cursor=pointer]:
+                      - generic [ref=e3652]: Distribuie
+                - separator [ref=e3182]
+                - generic [ref=e3185]:
+                  - tablist [ref=e3188]:
+                    - tab "Toate" [selected] [ref=e3189] [cursor=pointer]
+                    - tab "Fluxuri, Reclame in-stream pentru reel-uri" [ref=e3193] [cursor=pointer]
+                    - tab "Stories, Stare, Reels, Rezultatele căutării, Aplicaţii şi site-uri" [ref=e3197] [cursor=pointer]
+                    - tab "Coloana din dreapta, Rezultatele căutării" [ref=e3201] [cursor=pointer]
+                  - tablist [ref=e3206]:
+                    - tab "Reclama nu se va livra în 1 poziţionare" [ref=e3207] [cursor=pointer]:
+                      - generic [ref=e3211]:
+                        - generic [ref=e3213]: "1"
+                        - status [ref=e3214]: Reclama nu se va livra în 1 poziţionare
+              - generic [ref=e3215]:
+                - generic [ref=e3223]:
+                  - generic [ref=e3226]:
+                    - heading "Acum poţi vedea mai multe variante ale reclamei tale în previzualizări" [level=4] [ref=e3233]
+                    - button "Deschide" [ref=e3234] [cursor=pointer]:
+                      - generic [ref=e3237]: Deschide
+                  - generic [ref=e3241]:
+                    - generic [ref=e3266]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: Meet My Idol
+                              - generic: Reclamă ·
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic: worldcup26.world
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: Which 3 teams would you take?
+                                - generic:
+                                  - generic: Use invite code 26BC4B90CB.
+                              - generic:
+                                - generic:
+                                  - button "Vezi detalii":
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic: Vezi detalii
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: Îmi place
+                              - generic:
+                                - generic:
+                                  - generic: Comentează
+                              - generic:
+                                - generic:
+                                  - generic: Distribuie
+                    - generic [ref=e3458]:
+                      - generic [ref=e3464]:
+                        - generic [ref=e3467]: meetmyidol_io
+                        - generic [ref=e3468]: Reclamă
+                      - generic [ref=e3479]: Vezi detalii
+                      - generic [ref=e3483]:
+                        - generic [ref=e3485]:
+                          - button "Îmi place" [ref=e3487]
+                          - button "Comentează" [ref=e3489]
+                          - button "Repostează" [ref=e3715]
+                          - button "Distribuie" [ref=e3493]
+                        - button "Salvează" [ref=e3496]
+                    - generic [ref=e3353]:
+                      - generic [ref=e3357]: Ajustează raportul de aspect
+                      - status [ref=e3358]: Ajustează raportul de aspect
+                    - generic [ref=e3529]:
+                      - generic [ref=e3533]: Ajustează raportul de aspect
+                      - status [ref=e3534]: Ajustează raportul de aspect
+                  - button "Vezi mai multe variante" [ref=e3397] [cursor=pointer]:
+                    - generic [ref=e3402]: Vezi mai multe variante
+                - generic [ref=e3404]: Redarea reclamelor şi modul de a interacţiona cu acestea pot varia în funcţie de dispozitiv, de format şi de alţi factori.
+          - generic [ref=e3414]:
+            - generic [ref=e3417]:
+              - text: Făcând clic pe Publică, confirmi că utilizarea de către tine a instrumentelor de publicitate ale Meta face obiectul
+              - link "Termeni şi condiţii" [ref=e3418] [cursor=pointer]:
+                - /url: "#"
+              - text: .
+            - generic [ref=e3419]:
+              - generic [ref=e3420]:
+                - button "Închide" [ref=e3421] [cursor=pointer]:
+                  - generic [ref=e3425]: Închide
+                - generic [ref=e3720]: Toate modificările au fost salvate
+              - generic [ref=e3431]:
+                - button "Renunţă la schiţă" [ref=e3433] [cursor=pointer]:
+                  - generic [ref=e3437]: Renunţă la schiţă
+                - button "Publică" [ref=e3439] [cursor=pointer]:
+                  - generic [ref=e3443]: Publică

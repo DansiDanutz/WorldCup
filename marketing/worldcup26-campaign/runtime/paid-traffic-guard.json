@@ -1,0 +1,112 @@
+{
+  "generatedAt": "2026-06-07T17:46:20.687Z",
+  "generatedAtEest": "2026-06-07 20:46 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "expectedInviter": "David Ai",
+  "expectedPercent": 5,
+  "ok": true,
+  "deploymentIds": [
+    "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+  ],
+  "checks": {
+    "pages": [
+      {
+        "name": "meta-campaign",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45281,
+        "elapsedMs": 296
+      },
+      {
+        "name": "facebook-feed",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45293,
+        "elapsedMs": 182
+      },
+      {
+        "name": "instagram-story",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45278,
+        "elapsedMs": 184
+      },
+      {
+        "name": "x-campaign",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45272,
+        "elapsedMs": 178
+      },
+      {
+        "name": "tiktok-video",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok&utm_medium=video&utm_campaign=worldcup26_referral_72h",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok&utm_medium=video&utm_campaign=worldcup26_referral_72h",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45269,
+        "elapsedMs": 188
+      },
+      {
+        "name": "youtube-shorts",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube&utm_medium=shorts&utm_campaign=worldcup26_referral_72h",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube&utm_medium=shorts&utm_campaign=worldcup26_referral_72h",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45275,
+        "elapsedMs": 198
+      },
+      {
+        "name": "whatsapp-status",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp&utm_medium=status&utm_campaign=worldcup26_referral_72h",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp&utm_medium=status&utm_campaign=worldcup26_referral_72h",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45278,
+        "elapsedMs": 190
+      }
+    ],
+    "resolver": {
+      "ok": true,
+      "status": 200,
+      "valid": true,
+      "referralCode": "26BC4B90CB",
+      "inviterName": "David Ai",
+      "referralPercent": 5,
+      "failures": [],
+      "elapsedMs": 624
+    },
+    "health": {
+      "ok": true,
+      "status": 200,
+      "service": "worldcup",
+      "database": "available",
+      "tournamentStatus": "open",
+      "failures": [],
+      "elapsedMs": 279
+    }
+  }
+}

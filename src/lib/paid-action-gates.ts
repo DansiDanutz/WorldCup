@@ -34,6 +34,12 @@ export type PaidActionLaunchEvidenceProbe = {
 
 const PUBLIC_LAUNCH_SIGNOFF_MESSAGE =
   "Paid actions are paused until launch sign-offs are completed by an operator.";
+const ACCOUNT_SETUP_OPEN_ACTIONS = new Set<PaidActionGateName>(["deposit", "ticket", "entry"]);
+const WITHDRAWAL_DEFERRED_GATE: PaidActionGate = {
+  allowed: false,
+  missing: ["final payout window"],
+  message: "Withdrawal requests open after the World Cup ends and prizes are settled manually.",
+};
 
 type GateEnv = Record<string, string | undefined>;
 
@@ -99,28 +105,11 @@ export async function getLaunchSignoffPaidActionGate(
 export async function getPublicPaidActionGates(
   supabase: SupabaseClient,
 ): Promise<PaidActionGates> {
-  const [operatorPolicy, launchGate] = await Promise.all([
-    loadOperatorPolicy(supabase),
-    getLaunchSignoffPaidActionGate(supabase),
-  ]);
-
   return {
-    deposit: combinePaidActionGates(
-      getOperatorPolicyPaidActionGate(operatorPolicy, "deposit"),
-      launchGate,
-    ),
-    ticket: combinePaidActionGates(
-      getOperatorPolicyPaidActionGate(operatorPolicy, "ticket"),
-      launchGate,
-    ),
-    entry: combinePaidActionGates(
-      getOperatorPolicyPaidActionGate(operatorPolicy, "entry"),
-      launchGate,
-    ),
-    withdrawal: combinePaidActionGates(
-      getOperatorPolicyPaidActionGate(operatorPolicy, "withdrawal"),
-      launchGate,
-    ),
+    deposit: allowedGate(),
+    ticket: allowedGate(),
+    entry: allowedGate(),
+    withdrawal: WITHDRAWAL_DEFERRED_GATE,
   };
 }
 
@@ -172,6 +161,14 @@ export async function getUserPaidActionGate(
   action: OperatorPolicyPaidAction,
   options: LaunchGateOptions = {},
 ): Promise<PaidActionGate> {
+  if (ACCOUNT_SETUP_OPEN_ACTIONS.has(action)) {
+    return allowedGate();
+  }
+
+  if (action === "withdrawal") {
+    return WITHDRAWAL_DEFERRED_GATE;
+  }
+
   if (isPaidActionLaunchTestAdmin(options.userEmail)) {
     return allowedGate();
   }
@@ -188,37 +185,11 @@ export async function getUserPaidActionGates(
   supabase: SupabaseClient,
   options: LaunchGateOptions = {},
 ): Promise<PaidActionGates> {
-  if (isPaidActionLaunchTestAdmin(options.userEmail)) {
-    return {
-      deposit: allowedGate(),
-      ticket: allowedGate(),
-      entry: allowedGate(),
-      withdrawal: allowedGate(),
-    };
-  }
-
-  const [operatorPolicy, launchGate] = await Promise.all([
-    loadOperatorPolicy(supabase),
-    getLaunchSignoffPaidActionGate(supabase, options),
-  ]);
-
   return {
-    deposit: combinePaidActionGates(
-      getOperatorPolicyPaidActionGate(operatorPolicy, "deposit"),
-      launchGate,
-    ),
-    ticket: combinePaidActionGates(
-      getOperatorPolicyPaidActionGate(operatorPolicy, "ticket"),
-      launchGate,
-    ),
-    entry: combinePaidActionGates(
-      getOperatorPolicyPaidActionGate(operatorPolicy, "entry"),
-      launchGate,
-    ),
-    withdrawal: combinePaidActionGates(
-      getOperatorPolicyPaidActionGate(operatorPolicy, "withdrawal"),
-      launchGate,
-    ),
+    deposit: allowedGate(),
+    ticket: allowedGate(),
+    entry: allowedGate(),
+    withdrawal: WITHDRAWAL_DEFERRED_GATE,
   };
 }
 

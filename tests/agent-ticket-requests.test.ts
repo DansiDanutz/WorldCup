@@ -35,10 +35,11 @@ describe("agent ticket requests", () => {
     assert.match(migration, /grant execute on function public\.worldcup_accept_agent_ticket_request\(uuid, uuid\)\s+to service_role/);
   });
 
-  it("lets players create requests by agent code or email", () => {
-    assert.match(requestRoute, /requireString\(body\.agentId, "Agent ID"/);
+  it("lets players create requests by agent code only", () => {
+    assert.match(requestRoute, /requireString\(body\.agentId, "Agent code"/);
     assert.match(requestRoute, /\.eq\("referral_code", normalizedAgentCode\)/);
-    assert.match(requestRoute, /\.eq\("email", normalizedAgentEmail\)/);
+    assert.doesNotMatch(requestRoute, /\.eq\("email", normalizedAgentEmail\)/);
+    assert.match(requestRoute, /Use the agent referral code/);
     assert.match(requestRoute, /That account is not an active agent/);
     assert.match(requestRoute, /You already have a pending Agent Call request/);
     assert.match(requestRoute, /worldcup_agent_ticket_requests/);

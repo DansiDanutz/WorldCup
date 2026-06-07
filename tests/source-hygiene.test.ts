@@ -6,6 +6,13 @@ import { describe, it } from "node:test";
 const scannedRoots = ["src", "tests", "scripts", "docs"];
 const duplicateArtifactPattern = /(?:^|[/\\])[^/\\]*(?: copy| \d+)\.(?:css|js|mjs|ts|tsx|md)$/i;
 const temporaryArtifactPattern = /\.(?:bak|orig|tmp)$/i;
+const sessionClientComponents = [
+  "src/components/admin-console.tsx",
+  "src/components/dashboard.tsx",
+  "src/components/login-register.tsx",
+  "src/components/my-standing.tsx",
+  "src/components/wallet-screen.tsx",
+];
 
 describe("source hygiene", () => {
   it("keeps production source folders free of duplicate editor artifacts", () => {
@@ -28,6 +35,17 @@ describe("source hygiene", () => {
       assert.match(ignoreFile, /\/\*\.jpg/);
       assert.match(ignoreFile, /\/\*\.jpeg/);
       assert.match(ignoreFile, /\/\*\.zip/);
+    }
+
+    assert.match(vercelignore, /^supabase\/$/m);
+  });
+
+  it("keeps client auth session reads tolerant of stale browser tokens", () => {
+    for (const path of sessionClientComponents) {
+      const source = readFileSync(path, "utf8");
+
+      assert.match(source, /\.getSession\(\)/, `${path} should read the Supabase session`);
+      assert.match(source, /\.catch\(\(\) => setSession\(null\)\)/, `${path} should fail closed on stale tokens`);
     }
   });
 });

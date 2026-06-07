@@ -1,0 +1,129 @@
+{
+  "schema": "worldcup26-evidence-board-v1",
+  "generatedAt": "2026-06-07T17:45:01.335Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "ok": true,
+  "complete": false,
+  "state": "critical",
+  "readiness": [
+    {
+      "id": "referral",
+      "ok": true,
+      "label": "Referral code resolves to David Ai at 5%",
+      "severity": "critical"
+    },
+    {
+      "id": "platform",
+      "ok": true,
+      "label": "Production landing/auth/health checks pass",
+      "severity": "critical"
+    },
+    {
+      "id": "ad-preview",
+      "ok": true,
+      "label": "Meta/X click and social preview paths pass",
+      "severity": "critical"
+    },
+    {
+      "id": "conversion",
+      "ok": true,
+      "label": "Paid-click referral agreement and Google auth path pass",
+      "severity": "critical"
+    },
+    {
+      "id": "assets",
+      "ok": true,
+      "label": "Video, QR, and phone action assets exist",
+      "severity": "critical"
+    },
+    {
+      "id": "workers",
+      "ok": true,
+      "label": "Dexter/Sienna/Memo/Nano have current actions",
+      "severity": "critical"
+    },
+    {
+      "id": "response-kit",
+      "ok": true,
+      "label": "Reply templates ready: 13",
+      "severity": "critical"
+    },
+    {
+      "id": "fleet",
+      "ok": true,
+      "label": "Fleet 4/4, loops 4/4, closeout 4/4",
+      "severity": "critical"
+    },
+    {
+      "id": "proof-closeout",
+      "ok": true,
+      "label": "Closeout commands ready: 6",
+      "severity": "critical"
+    },
+    {
+      "id": "referral-activity",
+      "ok": true,
+      "label": "Accepted 0, signup saves 0, entries 0",
+      "severity": "critical"
+    }
+  ],
+  "proofStatus": {
+    "state": "critical",
+    "latestExternalProofAgeLabel": "3.5h",
+    "urgentOpenRows": 16,
+    "publicUrlProofRows": 0,
+    "externalProofRows": 31,
+    "proofRequirementStatus": "incomplete",
+    "blockerStatus": "blocked"
+  },
+  "openRequirements": [
+    {
+      "id": "advertise-everywhere-proof",
+      "status": "incomplete",
+      "severity": "critical",
+      "label": "Real external posting proof is current",
+      "next": "Do the next real action and log proof with a public URL or precise private-channel note."
+    },
+    {
+      "id": "public-channel-blockers",
+      "status": "blocked",
+      "severity": "warning",
+      "label": "Public channel blockers are tracked",
+      "next": "Use a logged-in owned public account or complete the login manually, then log the public URL."
+    }
+  ],
+  "nextRealAction": {
+    "priority": "clean-signup-test-batch",
+    "owner": "Memo",
+    "channel": "WhatsApp testers",
+    "action": "Send three clean referral signup tests",
+    "asset": "media/worldcup26-main-video.mp4"
+  },
+  "closeoutCommand": {
+    "priority": "1",
+    "status": "posted",
+    "account": "personal phone",
+    "audience": "WhatsApp contacts",
+    "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:45 +0300' --status posted"
+  },
+  "publicBlocker": {
+    "platform": "X",
+    "channel": "X public fallback",
+    "status": "login_required",
+    "nextAction": "Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL."
+  },
+  "rule": "This board separates readiness evidence from real external posting proof. Do not mark the campaign complete until the external proof requirement is proven.",
+  "referralActivity": {
+    "available": true,
+    "status": "ok",
+    "acceptedReferrals": 0,
+    "acceptedReferrals24h": 0,
+    "signupReferralSaves": 0,
+    "signupReferralSaves24h": 0,
+    "referredEntries": 0,
+    "latestAcceptedReferralAt": null,
+    "latestSignupReferralSavedAt": null
+  }
+}

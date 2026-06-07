@@ -1,0 +1,45 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: Loading
+        - progressbar [ref=e8]
+      - main [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e19]:
+            - img [ref=e21]
+            - generic [ref=e26]: Sign in with Google
+          - generic [ref=e27]:
+            - heading "Choose an account" [level=1] [ref=e28]
+            - generic [ref=e30]:
+              - text: to continue to
+              - button "worldcup26.world" [ref=e31] [cursor=pointer]
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - link "Dan Semenescu seme@kryptostack.com" [ref=e44] [cursor=pointer]:
+              - generic [ref=e48]:
+                - generic [ref=e49]: Dan Semenescu
+                - generic [ref=e50]: seme@kryptostack.com
+          - listitem [ref=e51]:
+            - link "Use another account" [ref=e52] [cursor=pointer]:
+              - generic [ref=e53]:
+                - img [ref=e55]
+                - generic [ref=e58]: Use another account
+    - contentinfo [ref=e62]:
+      - combobox "Change language English (United States)" [ref=e66] [cursor=pointer]:
+        - generic:
+          - generic: English (United States)
+        - generic:
+          - img
+      - list [ref=e68]:
+        - listitem [ref=e69]:
+          - link "Help" [ref=e70] [cursor=pointer]:
+            - /url: https://support.google.com/accounts?hl=en&p=account_iph
+        - listitem [ref=e71]:
+          - link "Privacy" [ref=e72] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS?loc=RO&hl=en&privacy=true
+        - listitem [ref=e73]:
+          - link "Terms" [ref=e74] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS?loc=RO&hl=en
+  - iframe [ref=e75]:
+    

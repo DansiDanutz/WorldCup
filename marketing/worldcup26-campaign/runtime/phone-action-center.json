@@ -1,0 +1,45 @@
+{
+  "schema": "worldcup26-phone-action-center-v1",
+  "generatedAt": "2026-06-07T17:45:00.435Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "ok": true,
+  "failures": [],
+  "proofRows": 49,
+  "urgentRows": 16,
+  "zeroSignupState": "critical-zero-signups",
+  "zeroSignup": true,
+  "zeroSignupCounts": {
+    "acceptedReferrals": 0,
+    "signupSaves": 0,
+    "entries": 0
+  },
+  "zeroSignupVariants": 8,
+  "actionCount": 16,
+  "ownerCount": 3,
+  "owners": [
+    "Sienna",
+    "Nano",
+    "Dexter"
+  ],
+  "qrBlockCount": 22,
+  "trackedQrCount": 44,
+  "assetBlockCount": 22,
+  "videoPreviewCount": 10,
+  "imagePreviewCount": 27,
+  "shareButtonCount": 44,
+  "sheetBytes": 67563,
+  "briefBytes": 22289,
+  "htmlBytes": 157753,
+  "firstAction": {
+    "priority": "1",
+    "owner": "Sienna",
+    "channel": "WhatsApp Status",
+    "action": "Post story asset with video caption 1",
+    "asset": "media/worldcup26-main-video.mp4",
+    "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
+    "proofCommand": ""
+  },
+  "rule": "This validates the phone handoff artifact only. It does not prove a post, story, message, or reply happened."
+}

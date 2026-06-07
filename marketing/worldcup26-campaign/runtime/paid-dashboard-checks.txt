@@ -1,0 +1,24 @@
+WorldCup26 paid dashboard checks 2026-06-07 20:44 +0300
+ok=yes state=paid-clicks-no-signups rows=7 latest=2 spend=31.78 impressions=12 clicks=227
+paid_views=230 app_views=493 referral_views=157 signup_saves=0 accepted=0
+code=26BC4B90CB
+link=https://worldcup26.world/login?ref=26BC4B90CB
+rule=Record only real dashboard observations. Use this to decide whether the paid problem is delivery, creative, tracking, or signup friction.
+
+latest_checks:
+- Meta Ads Manager status=active spend=31.78 impressions=0 clicks=227 ctr=0
+  landing=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h&utm_content=three-team-question
+  warning=partial: Today range shows 227 link clicks and 0.14 lei per link click; spend inferred as 31.78 lei; impressions not visible in current table view
+  screenshot=Meta Ads Manager checked 2026-06-07 17:43 EEST; selected ad WorldCup26 - Pick 3 Teams Free First - Image active; date Astazi: 7 iun. 2026; 227 link clicks visible at 0.14 lei/click; budget 200 lei/day; proof screenshot runtime/proofs/meta-ads-today-227-clicks-20260607.png
+  next=paid clicks are arriving; inspect app referral landing and signup friction before changing creative
+- X Ads Manager status=appeal_requested spend=0 impressions=12 clicks=0 ctr=0
+  landing=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h
+  warning=X delivery is review-blocked: top ad halted after 12 impressions and appeal was requested; second ad is pending with appeal requested; link clicks remain zero.
+  screenshot=X Ads Manager checked 2026-06-07 15:52 EEST; selected campaign 41558061; ads table shows summary impressions=12 spend=€0.00 link_clicks=0; ad 2063599593947009378 Halted -> Appeal requested; ad 2063318732923949092 Pending / Appeal requested; proof screenshot runtime/proofs/x-adsmanager-appeal-requested-20260607-1552.png
+  next=Wait for X appeal/review or create a fresh compliant free-first campaign variant; do not rely on the halted/pending ads for signup volume.
+
+log_commands:
+- Meta Ads Manager
+  node campaign-paid-dashboard-intake.mjs --add --platform "meta" --status "active" --spend "0" --impressions "0" --clicks "0" --landing-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h" --warning "none" --screenshot-note "Meta Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>" --next-action "keep/change/fix"
+- X Ads Manager
+  node campaign-paid-dashboard-intake.mjs --add --platform "x" --status "active" --spend "0" --impressions "0" --clicks "0" --landing-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h" --warning "none" --screenshot-note "X Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>" --next-action "keep/change/fix"

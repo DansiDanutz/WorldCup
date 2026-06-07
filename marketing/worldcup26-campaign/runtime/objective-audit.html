@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Objective Audit</title>
+  <style>
+    :root { color-scheme: dark; --bg: #03140f; --panel: #0b2a20; --line: rgba(255,255,255,.16); --text: #f8fff9; --muted: #bad0c6; --gold: #ffd974; --mint: #74f0b2; --danger: #ff9f9f; --warn: #ffd08a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: radial-gradient(circle at 8% 0%, rgba(255,217,116,.18), transparent 24rem), radial-gradient(circle at 92% 4%, rgba(116,240,178,.14), transparent 24rem), var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(1080px, 100%); margin: 0 auto; padding: 14px 10px 48px; }
+    header, article { border: 1px solid var(--line); border-radius: 10px; background: rgba(11,42,32,.92); padding: 14px; margin-bottom: 10px; }
+    h1 { margin: 0 0 8px; font-size: clamp(34px, 8vw, 68px); line-height: .92; }
+    h2 { margin: 0 0 8px; font-size: 20px; }
+    p { color: var(--muted); line-height: 1.4; margin: 0 0 8px; }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+    .stat { border: 1px solid var(--line); border-radius: 8px; padding: 10px; background: rgba(255,255,255,.06); }
+    .stat span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 900; }
+    .stat strong { display: block; color: var(--gold); font-size: 22px; }
+    .grid { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pill { display: inline-flex; margin-bottom: 8px; padding: 6px 9px; border-radius: 999px; color: #03140f; background: var(--mint); font-weight: 950; text-transform: uppercase; }
+    .pill.incomplete { background: var(--danger); }
+    .pill.blocked { background: var(--warn); }
+    .pill.unknown { background: #ccd5d2; }
+    code, pre { overflow-wrap: anywhere; }
+    pre { white-space: pre-wrap; border: 1px solid var(--line); border-radius: 8px; background: rgba(0,0,0,.22); padding: 10px; }
+    @media (max-width: 760px) { .stats, .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Objective Audit</h1>
+      <p>This objective audit is a completion guard. It proves readiness where evidence exists and keeps the full marketing objective incomplete until real external posting proof exists.</p>
+      <div class="stats">
+        <div class="stat"><span>State</span><strong>critical</strong></div>
+        <div class="stat"><span>Proven</span><strong>10/12</strong></div>
+        <div class="stat"><span>Critical Open</span><strong>1</strong></div>
+        <div class="stat"><span>Code</span><strong>26BC4B90CB</strong></div>
+      </div>
+    </header>
+    <section class="grid">
+      <article>
+    <span class="pill proven">proven</span>
+    <h2>Referral code/link are correct</h2>
+    <p>code=26BC4B90CB; link=https://worldcup26.world/login?ref=26BC4B90CB; resolver=ok; percent=5</p>
+    <p><strong>Next:</strong> Keep every post using code 26BC4B90CB and the worldcup26.world referral link.</p>
+  </article><article>
+    <span class="pill proven">proven</span>
+    <h2>Live platform/ad landing URLs are working</h2>
+    <p>live_ad_qa=ok; pages=7/7; auth=ok; health=ok; dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD</p>
+    <p><strong>Next:</strong> Fix live ad QA before sending traffic if this ever turns red.</p>
+  </article><article>
+    <span class="pill proven">proven</span>
+    <h2>Meta/X ad click and preview paths are working</h2>
+    <p>ad_platform=ok; pages=9/9; social_images=1/1; resolver=ok; health=ok; dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD</p>
+    <p><strong>Next:</strong> Fix ad-platform audit before trusting Meta/X previews or paid clicks.</p>
+  </article><article>
+    <span class="pill proven">proven</span>
+    <h2>Paid click conversion flow is ready</h2>
+    <p>conversion_guard=ok; first_paint=4/4; resolver=ok; auth=ok; browser_verified=yes; browser_proof=provided</p>
+    <p><strong>Next:</strong> Fix the conversion guard before scaling paid traffic if this ever turns red.</p>
+  </article><article>
+    <span class="pill proven">proven</span>
+    <h2>Video/design assets are available to workers</h2>
+    <p>video=ok; local_assets=5/5; phone_action=ok; video_previews=10; qr=22</p>
+    <p><strong>Next:</strong> Keep using the main MP4, QR story/square assets, and phone action center.</p>
+  </article><article>
+    <span class="pill proven">proven</span>
+    <h2>Dexter/Sienna/Memo/Nano have current actions</h2>
+    <p>worker_wake=ok; workers=4; state=critical; first=#warm-1 Nano / WhatsApp personal</p>
+    <p><strong>Next:</strong> Wake the worker shown in the board and execute the real action before logging proof.</p>
+  </article><article>
+    <span class="pill proven">proven</span>
+    <h2>Four droplets have campaign tooling awake</h2>
+    <p>hosts=4/4; worker_wake=4/4; phone_action=4/4; public_attempts=4/4; unhealthy=dexter,sienna,memo,nano</p>
+    <p><strong>Next:</strong> Run the remote war-room and repair any infrastructure host failure before relying on the campaign loop.</p>
+  </article><article>
+    <span class="pill proven">proven</span>
+    <h2>Nonstop 72h campaign loop/watchdog is running</h2>
+    <p>loops=4/4; watchdogs=4/4; watchdog_cron=4/4</p>
+    <p><strong>Next:</strong> Restart campaign-loop/watchdog on any host that drops out.</p>
+  </article><article>
+    <span class="pill proven">proven</span>
+    <h2>Reply/conversion response kit is ready</h2>
+    <p>response_kit=ok; state=ready-for-warm-replies; replies=13; warm_attempts=0; signup_saves=0</p>
+    <p><strong>Next:</strong> Use the response kit after a real person replies, then log the reply proof only after it happened.</p>
+  </article><article>
+    <span class="pill proven">proven</span>
+    <h2>First human action gate is explicit</h2>
+    <p>first_human=ok; state=needs-first-human-action; actions=2; warm_attempts=0; signup_saves=0; ad_clicks=227; first=Memo/WhatsApp testers/clean-signup-test-batch</p>
+    <p><strong>Next:</strong> Send the first real tester or warm-contact batch, then run the logger with the real count/account.</p>
+  </article><article>
+    <span class="pill incomplete">incomplete</span>
+    <h2>Real external posting proof is current</h2>
+    <p>proof_state=critical; latest_external=3.5h; external_rows=31; public_rows=29; urgent_open=16; next=#warm-1 Nano / WhatsApp personal</p>
+    <p><strong>Next:</strong> Do the next real action and log proof with a public URL or precise private-channel note.</p>
+  </article><article>
+    <span class="pill blocked">blocked</span>
+    <h2>Public channel blockers are tracked</h2>
+    <p>attempts=9; blocked=7; login_required=6; first_blocked=X / X public fallback</p>
+    <p><strong>Next:</strong> Use a logged-in owned public account or complete the login manually, then log the public URL.</p>
+  </article>
+    </section>
+  </main>
+</body>
+</html>

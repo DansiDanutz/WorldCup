@@ -10,6 +10,10 @@ const adminOnlyTicketingMigration = readFileSync(
   "supabase/migrations/20260605052000_worldcup_admin_only_money_ticketing.sql",
   "utf8",
 );
+const autoTicketMigration = readFileSync(
+  "supabase/migrations/20260606003000_worldcup_auto_ticket_from_accepted_usdt.sql",
+  "utf8",
+);
 const transferRoute = readFileSync("src/app/api/tickets/transfer/route.ts", "utf8");
 const walletScreen = readFileSync("src/components/wallet-screen.tsx", "utf8");
 
@@ -25,15 +29,16 @@ describe("user ticket transfers", () => {
     assert.match(migration, /source_referral_code = v_sender_referral_code/);
   });
 
-  it("keeps credited deposits as manual-admin assignment balance only", () => {
+  it("keeps public wallet buying disabled while accepted USDT can issue the first ticket", () => {
     assert.match(adminOnlyTicketingMigration, /create or replace function public\.worldcup_credit_deposit/);
     assert.doesNotMatch(adminOnlyTicketingMigration, /perform public\.worldcup_purchase_ticket/);
     assert.match(adminOnlyTicketingMigration, /manual admin ticket assignment/);
     assert.match(adminOnlyTicketingMigration, /ADMIN_TICKET_ASSIGNMENT_REQUIRED/);
-    assert.match(walletScreen, /Admin assigns entry tickets after verified cash or USDT payment/);
-    assert.match(walletScreen, /Admin verifies it and assigns the exact ticket codes manually/);
-    assert.doesNotMatch(walletScreen, /Full ticket-price chunks convert into tickets automatically/);
-    assert.doesNotMatch(walletScreen, /100 USDT becomes 2 tickets at 50 USDT each/);
+    assert.match(autoTicketMigration, /worldcup_credit_deposit_and_auto_ticket/);
+    assert.match(autoTicketMigration, /Entry ticket automatically issued from accepted USDT deposit/);
+    assert.match(autoTicketMigration, /status = 'admin'/);
+    assert.match(walletScreen, /Accepted USDT turns the first 50 USDT into one ticket/);
+    assert.match(walletScreen, /Admin accepts the matching transfer before balance is credited/);
   });
 
   it("lets transferred tickets create the sender referral when the entry is locked", () => {

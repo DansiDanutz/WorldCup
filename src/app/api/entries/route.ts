@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-import { isConsentCurrent } from "@/lib/consent";
 import { enforceGeoEligibility, enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import {
   getPolicyGeoEnv,
@@ -19,10 +18,14 @@ import {
 
 const ENTRY_ERROR_MESSAGES: Record<string, { status: number; message: string }> = {
   NO_TICKET: { status: 403, message: "You need an assigned ticket before entering the game." },
+  NO_DRAFT: { status: 400, message: "Save your 3 free picks before locking a paid entry." },
+  ENTRY_ALREADY_LOCKED: { status: 409, message: "You already locked an entry for this tournament." },
   TEAM_SELECTION_CLOSED: { status: 403, message: "Team selection is closed." },
   TOURNAMENT_NOT_FOUND: { status: 500, message: "Tournament is not available." },
   INVALID_TEAM_COUNT: { status: 400, message: "Choose exactly 3 different teams." },
 };
+
+type EntryAction = "save-draft" | "lock";
 
 export async function POST(request: Request) {
   const limited = await enforceRateLimit(request, "entries", { limit: 10, windowMs: 60_000 });
@@ -36,9 +39,11 @@ export async function POST(request: Request) {
   let teamIds: string[];
   let referralCode: string;
   let referralTermsAccepted: boolean;
+  let action: EntryAction;
 
   try {
     const body = requireObject(await request.json());
+    action = body.action === "save-draft" ? "save-draft" : "lock";
     displayName = requireString(body.displayName, "Display name", { max: 60 });
     teamIds = requireStringArray(body.teamIds, "teamIds");
     // Team ids are slug identifiers; restrict the charset before they are
@@ -74,8 +79,8 @@ export async function POST(request: Request) {
     return jsonError("Only Google sign-in is allowed.", 403);
   }
 
-  const operatorPolicy = await loadOperatorPolicy(supabase);
-  if (!isPaidActionLaunchTestAdmin(user.email)) {
+  if (action === "lock" && !isPaidActionLaunchTestAdmin(user.email)) {
+    const operatorPolicy = await loadOperatorPolicy(supabase);
     const geoRestricted = enforceGeoEligibility(request, getPolicyGeoEnv(operatorPolicy));
     if (geoRestricted) {
       return geoRestricted;
@@ -84,20 +89,6 @@ export async function POST(request: Request) {
 
   if (referralCode && !referralTermsAccepted) {
     return jsonError("Accept the referral agreement before joining with a referral code.", 400);
-  }
-
-  const consentResult = await supabase
-    .from("worldcup_consent")
-    .select("age_confirmed,terms_version")
-    .eq("user_id", user.id)
-    .maybeSingle();
-
-  if (consentResult.error) {
-    return jsonError("Could not verify consent.", 500);
-  }
-
-  if (!isConsentCurrent(consentResult.data)) {
-    return jsonError("Confirm your age and accept the Terms before entering.", 403);
   }
 
   const [tournamentResult, teamsResult, groupMatchesResult] = await Promise.all([
@@ -174,13 +165,44 @@ export async function POST(request: Request) {
     }
   }
 
-  const entryResult = await supabase.rpc("worldcup_create_entry", {
+  const draftResult = await supabase.rpc("worldcup_save_draft_entry", {
     p_user_id: user.id,
     p_tournament_id: tournamentResult.data.id,
     p_display_name: displayName,
     p_team_ids: teamIds,
     p_referral_code: referralCode || null,
     p_referrer_user_id: referrerUserId,
+  });
+
+  if (draftResult.error) {
+    const code = draftResult.error.message?.match(/[A-Z_]{4,}/)?.[0] ?? "";
+    const mapped = ENTRY_ERROR_MESSAGES[code];
+
+    if (mapped) {
+      return jsonError(mapped.message, mapped.status);
+    }
+
+    if (draftResult.error.code === "23505") {
+      return jsonError("You already locked an entry for this tournament.", 409);
+    }
+
+    if (/first match|second group-stage match/i.test(draftResult.error.message ?? "")) {
+      return jsonError(
+        "A selected team can no longer be picked; its first match starts in less than one minute or already started.",
+        403,
+      );
+    }
+
+    return jsonError("Could not create entry.", 500);
+  }
+
+  if (action === "save-draft") {
+    return NextResponse.json({ entryId: draftResult.data, status: "draft" });
+  }
+
+  const entryResult = await supabase.rpc("worldcup_lock_draft_entry", {
+    p_user_id: user.id,
+    p_tournament_id: tournamentResult.data.id,
   });
 
   if (entryResult.error) {
@@ -202,8 +224,8 @@ export async function POST(request: Request) {
       );
     }
 
-    return jsonError("Could not create entry.", 500);
+    return jsonError("Could not lock entry.", 500);
   }
 
-  return NextResponse.json({ entryId: entryResult.data });
+  return NextResponse.json({ entryId: entryResult.data, status: "locked" });
 }

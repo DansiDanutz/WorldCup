@@ -279,10 +279,11 @@ describe("age-verification wiring", () => {
     assert.match(adminAgeRoute, /age_verification_status: status/);
   });
 
-  it("surfaces the gate in the wallet and a review panel in the admin console", () => {
-    assert.match(walletScreen, /\/api\/age-verification/);
-    assert.match(walletScreen, /I&apos;ve sent my documents/);
-    assert.match(walletScreen, /ageVerification\?\.status !== "verified"/);
+  it("keeps final-payout age review in admin while the player wallet defers withdrawals", () => {
+    assert.doesNotMatch(walletScreen, /\/api\/age-verification/);
+    assert.doesNotMatch(walletScreen, /I&apos;ve sent my documents/);
+    assert.doesNotMatch(walletScreen, /ageVerification\?\.status !== "verified"/);
+    assert.match(walletScreen, /No withdrawal request is open during the tournament/);
     assert.match(adminConsole, /Age verification/);
     assert.match(adminConsole, /Load Age Verifications/);
     assert.match(adminConsole, /\/api\/admin\/age-verifications/);

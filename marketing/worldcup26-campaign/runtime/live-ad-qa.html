@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Live Ad QA</title>
+  <style>
+    :root { color-scheme: dark; --bg: #03140f; --panel: #0b2a20; --line: rgba(255,255,255,.16); --text: #f8fff9; --muted: #bad0c6; --gold: #ffd974; --mint: #74f0b2; --danger: #ff9f9f; --green: #0b7a59; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: radial-gradient(circle at 8% 0%, rgba(255,217,116,.18), transparent 24rem), radial-gradient(circle at 92% 4%, rgba(116,240,178,.16), transparent 24rem), var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(1120px, 100%); margin: 0 auto; padding: 14px 10px 48px; }
+    header, article { border: 1px solid var(--line); border-radius: 8px; background: rgba(11,42,32,.92); padding: 14px; margin-bottom: 10px; }
+    h1 { margin: 0 0 8px; font-size: clamp(34px, 9vw, 68px); line-height: .9; letter-spacing: 0; }
+    h2 { margin: 0 0 8px; font-size: 21px; }
+    p { margin: 0 0 8px; color: var(--muted); line-height: 1.4; }
+    .status { display: inline-flex; padding: 7px 10px; border-radius: 999px; background: var(--mint); color: #03140f; font-weight: 950; text-transform: uppercase; }
+    .status.fail { background: var(--danger); }
+    .grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .meta { color: var(--gold); font-weight: 900; overflow-wrap: anywhere; }
+    ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Live Ad QA</h1>
+      <span class="status ">ok</span>
+      <p class="meta">https://worldcup26.world/login?ref=26BC4B90CB</p>
+      <p>This proves ad clicks can land, render, resolve the inviter, and start Google auth from the custom domain. It does not prove ads or social posts are live.</p>
+    </header>
+    <section class="grid"><article>
+    <h2>meta-campaign</h2>
+    <span class="status ">ok</span>
+    <ul><li>HTTP 200</li><li>dpl dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD</li><li>283 ms</li></ul>
+  </article><article>
+    <h2>facebook-feed</h2>
+    <span class="status ">ok</span>
+    <ul><li>HTTP 200</li><li>dpl dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD</li><li>177 ms</li></ul>
+  </article><article>
+    <h2>instagram-story</h2>
+    <span class="status ">ok</span>
+    <ul><li>HTTP 200</li><li>dpl dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD</li><li>224 ms</li></ul>
+  </article><article>
+    <h2>x-campaign</h2>
+    <span class="status ">ok</span>
+    <ul><li>HTTP 200</li><li>dpl dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD</li><li>210 ms</li></ul>
+  </article><article>
+    <h2>tiktok-video</h2>
+    <span class="status ">ok</span>
+    <ul><li>HTTP 200</li><li>dpl dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD</li><li>206 ms</li></ul>
+  </article><article>
+    <h2>youtube-shorts</h2>
+    <span class="status ">ok</span>
+    <ul><li>HTTP 200</li><li>dpl dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD</li><li>186 ms</li></ul>
+  </article><article>
+    <h2>whatsapp-status</h2>
+    <span class="status ">ok</span>
+    <ul><li>HTTP 200</li><li>dpl dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD</li><li>183 ms</li></ul>
+  </article><article>
+    <h2>Resolver</h2>
+    <span class="status ">ok</span>
+    <ul><li>David Ai</li><li>5%</li></ul>
+  </article><article>
+    <h2>Health</h2>
+    <span class="status ">ok</span>
+    <ul><li>available</li><li>open</li></ul>
+  </article><article>
+    <h2>Custom Auth</h2>
+    <span class="status ">ok</span>
+    <ul><li>HTTP 302</li></ul>
+  </article><article>
+    <h2>Social Metadata</h2>
+    <span class="status ">ok</span>
+    <ul><li>2/2</li></ul>
+  </article><article>
+    <h2>Local Assets</h2>
+    <span class="status ">ok</span>
+    <ul><li>5/5</li></ul>
+  </article></section>
+  </main>
+</body>
+</html>

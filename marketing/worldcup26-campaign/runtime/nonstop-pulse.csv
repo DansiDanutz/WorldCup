@@ -1,0 +1,1595 @@
+pulse,scheduled_at_eest,owner,lane,channel,mode,action,asset,tracked_link,primary_copy,proof_hint
+1,2026-06-06 08:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse1,"WorldCup26 is open.
+
+Pick 3 teams for free. See your private points preview.
+
+Use a ticket only when you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse1",public-post-url
+2,2026-06-06 09:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse2,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse2
+
+All teams are still available right now.",private-whatsapp-status-note
+3,2026-06-06 09:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse3,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse3
+Code: 26BC4B90CB",internal-log-note
+4,2026-06-06 09:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse4,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse4",private-whatsapp-note
+5,2026-06-06 09:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse5,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse5",admin-approved-url-or-note
+6,2026-06-06 10:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse6,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse6",story-url-or-account-note
+7,2026-06-06 10:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse7,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+8,2026-06-06 10:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse8,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse8",private-telegram-note
+9,2026-06-06 10:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse9,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse9",public-post-url
+10,2026-06-06 11:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse10,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse10",video-url
+11,2026-06-06 11:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse11,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse11.",internal-log-note
+12,2026-06-06 11:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse12,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse12",reply-url-or-private-note
+13,2026-06-06 11:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse13,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse13
+
+Would one story or post fit your football audience?",private-dm-note
+14,2026-06-06 12:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse14,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse14",public-post-url-or-private-note
+15,2026-06-06 12:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse15,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+16,2026-06-06 12:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse16,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse16",private-dm-note
+17,2026-06-06 12:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse17,"If you already have strong World Cup takes, make your 3 picks.
+
+WorldCup26 now lets you save the picks first and decide later if you want the paid leaderboard:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse17
+
+Code: 26BC4B90CB",public-post-url
+18,2026-06-06 13:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse18,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse18
+
+All teams are still available right now.",private-whatsapp-status-note
+19,2026-06-06 13:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse19,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse19
+Code: 26BC4B90CB",internal-log-note
+20,2026-06-06 13:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse20,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse20",private-whatsapp-note
+21,2026-06-06 13:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse21,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse21",admin-approved-url-or-note
+22,2026-06-06 14:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse22,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse22",story-url-or-account-note
+23,2026-06-06 14:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse23,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+24,2026-06-06 14:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse24,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse24",private-telegram-note
+25,2026-06-06 14:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse25,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse25",public-post-url
+26,2026-06-06 15:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse26,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse26",video-url
+27,2026-06-06 15:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse27,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse27.",internal-log-note
+28,2026-06-06 15:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse28,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse28",reply-url-or-private-note
+29,2026-06-06 15:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse29,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse29
+
+Would one story or post fit your football audience?",private-dm-note
+30,2026-06-06 16:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse30,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse30",public-post-url-or-private-note
+31,2026-06-06 16:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse31,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+32,2026-06-06 16:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse32,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse32",private-dm-note
+33,2026-06-06 16:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse33,"Favorites or underdogs?
+
+Pick 3 teams free first. Watch what your score would be.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse33",public-post-url
+34,2026-06-06 17:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse34,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse34
+
+All teams are still available right now.",private-whatsapp-status-note
+35,2026-06-06 17:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse35,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse35
+Code: 26BC4B90CB",internal-log-note
+36,2026-06-06 17:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse36,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse36",private-whatsapp-note
+37,2026-06-06 17:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse37,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse37",admin-approved-url-or-note
+38,2026-06-06 18:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse38,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse38",story-url-or-account-note
+39,2026-06-06 18:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse39,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+40,2026-06-06 18:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse40,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse40",private-telegram-note
+41,2026-06-06 18:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse41,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse41",public-post-url
+42,2026-06-06 19:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse42,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse42",video-url
+43,2026-06-06 19:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse43,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse43.",internal-log-note
+44,2026-06-06 19:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse44,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse44",reply-url-or-private-note
+45,2026-06-06 19:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse45,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse45
+
+Would one story or post fit your football audience?",private-dm-note
+46,2026-06-06 20:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse46,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse46",public-post-url-or-private-note
+47,2026-06-06 20:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse47,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+48,2026-06-06 20:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse48,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse48",private-dm-note
+49,2026-06-06 20:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse49,"One month of football. Three picks. Free preview first.
+
+Join WorldCup26 with my code:
+26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse49",public-post-url
+50,2026-06-06 21:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse50,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse50
+
+All teams are still available right now.",private-whatsapp-status-note
+51,2026-06-06 21:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse51,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse51
+Code: 26BC4B90CB",internal-log-note
+52,2026-06-06 21:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse52,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse52",private-whatsapp-note
+53,2026-06-06 21:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse53,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse53",admin-approved-url-or-note
+54,2026-06-06 22:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse54,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse54",story-url-or-account-note
+55,2026-06-06 22:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse55,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+56,2026-06-06 22:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse56,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse56",private-telegram-note
+57,2026-06-06 22:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse57,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse57",public-post-url
+58,2026-06-06 23:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse58,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse58",video-url
+59,2026-06-06 23:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse59,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse59.",internal-log-note
+60,2026-06-06 23:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse60,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse60",reply-url-or-private-note
+61,2026-06-06 23:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse61,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse61
+
+Would one story or post fit your football audience?",private-dm-note
+62,2026-06-07 00:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse62,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse62",public-post-url-or-private-note
+63,2026-06-07 00:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse63,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+64,2026-06-07 00:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse64,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse64",private-dm-note
+65,2026-06-07 00:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse65,"WorldCup26 is open.
+
+Pick 3 teams for free. See your private points preview.
+
+Use a ticket only when you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse65",public-post-url
+66,2026-06-07 01:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse66,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse66
+
+All teams are still available right now.",private-whatsapp-status-note
+67,2026-06-07 01:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse67,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse67
+Code: 26BC4B90CB",internal-log-note
+68,2026-06-07 01:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse68,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse68",private-whatsapp-note
+69,2026-06-07 01:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse69,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse69",admin-approved-url-or-note
+70,2026-06-07 02:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse70,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse70",story-url-or-account-note
+71,2026-06-07 02:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse71,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+72,2026-06-07 02:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse72,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse72",private-telegram-note
+73,2026-06-07 02:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse73,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse73",public-post-url
+74,2026-06-07 03:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse74,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse74",video-url
+75,2026-06-07 03:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse75,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse75.",internal-log-note
+76,2026-06-07 03:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse76,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse76",reply-url-or-private-note
+77,2026-06-07 03:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse77,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse77
+
+Would one story or post fit your football audience?",private-dm-note
+78,2026-06-07 04:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse78,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse78",public-post-url-or-private-note
+79,2026-06-07 04:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse79,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+80,2026-06-07 04:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse80,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse80",private-dm-note
+81,2026-06-07 04:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse81,"If you already have strong World Cup takes, make your 3 picks.
+
+WorldCup26 now lets you save the picks first and decide later if you want the paid leaderboard:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse81
+
+Code: 26BC4B90CB",public-post-url
+82,2026-06-07 05:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse82,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse82
+
+All teams are still available right now.",private-whatsapp-status-note
+83,2026-06-07 05:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse83,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse83
+Code: 26BC4B90CB",internal-log-note
+84,2026-06-07 05:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse84,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse84",private-whatsapp-note
+85,2026-06-07 05:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse85,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse85",admin-approved-url-or-note
+86,2026-06-07 06:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse86,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse86",story-url-or-account-note
+87,2026-06-07 06:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse87,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+88,2026-06-07 06:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse88,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse88",private-telegram-note
+89,2026-06-07 06:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse89,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse89",public-post-url
+90,2026-06-07 07:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse90,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse90",video-url
+91,2026-06-07 07:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse91,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse91.",internal-log-note
+92,2026-06-07 07:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse92,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse92",reply-url-or-private-note
+93,2026-06-07 07:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse93,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse93
+
+Would one story or post fit your football audience?",private-dm-note
+94,2026-06-07 08:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse94,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse94",public-post-url-or-private-note
+95,2026-06-07 08:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse95,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+96,2026-06-07 08:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse96,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse96",private-dm-note
+97,2026-06-07 08:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse97,"Favorites or underdogs?
+
+Pick 3 teams free first. Watch what your score would be.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse97",public-post-url
+98,2026-06-07 09:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse98,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse98
+
+All teams are still available right now.",private-whatsapp-status-note
+99,2026-06-07 09:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse99,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse99
+Code: 26BC4B90CB",internal-log-note
+100,2026-06-07 09:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse100,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse100",private-whatsapp-note
+101,2026-06-07 09:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse101,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse101",admin-approved-url-or-note
+102,2026-06-07 10:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse102,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse102",story-url-or-account-note
+103,2026-06-07 10:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse103,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+104,2026-06-07 10:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse104,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse104",private-telegram-note
+105,2026-06-07 10:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse105,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse105",public-post-url
+106,2026-06-07 11:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse106,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse106",video-url
+107,2026-06-07 11:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse107,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse107.",internal-log-note
+108,2026-06-07 11:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse108,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse108",reply-url-or-private-note
+109,2026-06-07 11:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse109,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse109
+
+Would one story or post fit your football audience?",private-dm-note
+110,2026-06-07 12:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse110,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse110",public-post-url-or-private-note
+111,2026-06-07 12:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse111,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+112,2026-06-07 12:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse112,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse112",private-dm-note
+113,2026-06-07 12:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse113,"One month of football. Three picks. Free preview first.
+
+Join WorldCup26 with my code:
+26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse113",public-post-url
+114,2026-06-07 13:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse114,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse114
+
+All teams are still available right now.",private-whatsapp-status-note
+115,2026-06-07 13:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse115,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse115
+Code: 26BC4B90CB",internal-log-note
+116,2026-06-07 13:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse116,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse116",private-whatsapp-note
+117,2026-06-07 13:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse117,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse117",admin-approved-url-or-note
+118,2026-06-07 14:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse118,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse118",story-url-or-account-note
+119,2026-06-07 14:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse119,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+120,2026-06-07 14:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse120,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse120",private-telegram-note
+121,2026-06-07 14:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse121,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse121",public-post-url
+122,2026-06-07 15:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse122,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse122",video-url
+123,2026-06-07 15:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse123,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse123.",internal-log-note
+124,2026-06-07 15:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse124,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse124",reply-url-or-private-note
+125,2026-06-07 15:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse125,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse125
+
+Would one story or post fit your football audience?",private-dm-note
+126,2026-06-07 16:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse126,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse126",public-post-url-or-private-note
+127,2026-06-07 16:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse127,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+128,2026-06-07 16:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse128,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse128",private-dm-note
+129,2026-06-07 16:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse129,"WorldCup26 is open.
+
+Pick 3 teams for free. See your private points preview.
+
+Use a ticket only when you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse129",public-post-url
+130,2026-06-07 17:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse130,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse130
+
+All teams are still available right now.",private-whatsapp-status-note
+131,2026-06-07 17:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse131,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse131
+Code: 26BC4B90CB",internal-log-note
+132,2026-06-07 17:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse132,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse132",private-whatsapp-note
+133,2026-06-07 17:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse133,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse133",admin-approved-url-or-note
+134,2026-06-07 18:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse134,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse134",story-url-or-account-note
+135,2026-06-07 18:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse135,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+136,2026-06-07 18:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse136,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse136",private-telegram-note
+137,2026-06-07 18:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse137,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse137",public-post-url
+138,2026-06-07 19:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse138,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse138",video-url
+139,2026-06-07 19:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse139,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse139.",internal-log-note
+140,2026-06-07 19:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse140,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse140",reply-url-or-private-note
+141,2026-06-07 19:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse141,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse141
+
+Would one story or post fit your football audience?",private-dm-note
+142,2026-06-07 20:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse142,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse142",public-post-url-or-private-note
+143,2026-06-07 20:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse143,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+144,2026-06-07 20:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse144,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse144",private-dm-note
+145,2026-06-07 20:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse145,"If you already have strong World Cup takes, make your 3 picks.
+
+WorldCup26 now lets you save the picks first and decide later if you want the paid leaderboard:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse145
+
+Code: 26BC4B90CB",public-post-url
+146,2026-06-07 21:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse146,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse146
+
+All teams are still available right now.",private-whatsapp-status-note
+147,2026-06-07 21:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147
+Code: 26BC4B90CB",internal-log-note
+148,2026-06-07 21:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse148,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse148",private-whatsapp-note
+149,2026-06-07 21:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse149,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse149",admin-approved-url-or-note
+150,2026-06-07 22:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse150,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse150",story-url-or-account-note
+151,2026-06-07 22:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse151,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+152,2026-06-07 22:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse152,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse152",private-telegram-note
+153,2026-06-07 22:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse153,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse153",public-post-url
+154,2026-06-07 23:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse154,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse154",video-url
+155,2026-06-07 23:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse155,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse155.",internal-log-note
+156,2026-06-07 23:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse156,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse156",reply-url-or-private-note
+157,2026-06-07 23:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse157,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse157
+
+Would one story or post fit your football audience?",private-dm-note
+158,2026-06-08 00:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse158,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse158",public-post-url-or-private-note
+159,2026-06-08 00:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse159,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+160,2026-06-08 00:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse160,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse160",private-dm-note
+161,2026-06-08 00:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse161,"Favorites or underdogs?
+
+Pick 3 teams free first. Watch what your score would be.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse161",public-post-url
+162,2026-06-08 01:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse162,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse162
+
+All teams are still available right now.",private-whatsapp-status-note
+163,2026-06-08 01:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse163,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse163
+Code: 26BC4B90CB",internal-log-note
+164,2026-06-08 01:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse164,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse164",private-whatsapp-note
+165,2026-06-08 01:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse165,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse165",admin-approved-url-or-note
+166,2026-06-08 02:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse166,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse166",story-url-or-account-note
+167,2026-06-08 02:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse167,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+168,2026-06-08 02:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse168,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse168",private-telegram-note
+169,2026-06-08 02:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse169,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse169",public-post-url
+170,2026-06-08 03:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse170,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse170",video-url
+171,2026-06-08 03:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse171,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse171.",internal-log-note
+172,2026-06-08 03:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse172,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse172",reply-url-or-private-note
+173,2026-06-08 03:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse173,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse173
+
+Would one story or post fit your football audience?",private-dm-note
+174,2026-06-08 04:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse174,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse174",public-post-url-or-private-note
+175,2026-06-08 04:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse175,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+176,2026-06-08 04:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse176,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse176",private-dm-note
+177,2026-06-08 04:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse177,"One month of football. Three picks. Free preview first.
+
+Join WorldCup26 with my code:
+26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse177",public-post-url
+178,2026-06-08 05:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse178,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse178
+
+All teams are still available right now.",private-whatsapp-status-note
+179,2026-06-08 05:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse179,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse179
+Code: 26BC4B90CB",internal-log-note
+180,2026-06-08 05:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse180,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse180",private-whatsapp-note
+181,2026-06-08 05:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse181,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse181",admin-approved-url-or-note
+182,2026-06-08 06:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse182,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse182",story-url-or-account-note
+183,2026-06-08 06:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse183,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+184,2026-06-08 06:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse184,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse184",private-telegram-note
+185,2026-06-08 06:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse185,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse185",public-post-url
+186,2026-06-08 07:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse186,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse186",video-url
+187,2026-06-08 07:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse187,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse187.",internal-log-note
+188,2026-06-08 07:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse188,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse188",reply-url-or-private-note
+189,2026-06-08 07:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse189,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse189
+
+Would one story or post fit your football audience?",private-dm-note
+190,2026-06-08 08:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse190,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse190",public-post-url-or-private-note
+191,2026-06-08 08:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse191,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+192,2026-06-08 08:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse192,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse192",private-dm-note
+193,2026-06-08 08:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse193,"WorldCup26 is open.
+
+Pick 3 teams for free. See your private points preview.
+
+Use a ticket only when you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse193",public-post-url
+194,2026-06-08 09:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse194,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse194
+
+All teams are still available right now.",private-whatsapp-status-note
+195,2026-06-08 09:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse195,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse195
+Code: 26BC4B90CB",internal-log-note
+196,2026-06-08 09:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse196,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse196",private-whatsapp-note
+197,2026-06-08 09:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse197,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse197",admin-approved-url-or-note
+198,2026-06-08 10:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse198,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse198",story-url-or-account-note
+199,2026-06-08 10:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse199,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+200,2026-06-08 10:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse200,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse200",private-telegram-note
+201,2026-06-08 10:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse201,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse201",public-post-url
+202,2026-06-08 11:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse202,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse202",video-url
+203,2026-06-08 11:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse203,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse203.",internal-log-note
+204,2026-06-08 11:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse204,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse204",reply-url-or-private-note
+205,2026-06-08 11:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse205,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse205
+
+Would one story or post fit your football audience?",private-dm-note
+206,2026-06-08 12:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse206,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse206",public-post-url-or-private-note
+207,2026-06-08 12:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse207,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+208,2026-06-08 12:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse208,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse208",private-dm-note
+209,2026-06-08 12:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse209,"If you already have strong World Cup takes, make your 3 picks.
+
+WorldCup26 now lets you save the picks first and decide later if you want the paid leaderboard:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse209
+
+Code: 26BC4B90CB",public-post-url
+210,2026-06-08 13:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse210,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse210
+
+All teams are still available right now.",private-whatsapp-status-note
+211,2026-06-08 13:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse211,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse211
+Code: 26BC4B90CB",internal-log-note
+212,2026-06-08 13:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse212,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse212",private-whatsapp-note
+213,2026-06-08 13:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse213,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse213",admin-approved-url-or-note
+214,2026-06-08 14:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse214,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse214",story-url-or-account-note
+215,2026-06-08 14:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse215,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+216,2026-06-08 14:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse216,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse216",private-telegram-note
+217,2026-06-08 14:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse217,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse217",public-post-url
+218,2026-06-08 15:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse218,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse218",video-url
+219,2026-06-08 15:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse219,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse219.",internal-log-note
+220,2026-06-08 15:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse220,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse220",reply-url-or-private-note
+221,2026-06-08 15:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse221,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse221
+
+Would one story or post fit your football audience?",private-dm-note
+222,2026-06-08 16:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse222,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse222",public-post-url-or-private-note
+223,2026-06-08 16:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse223,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+224,2026-06-08 16:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse224,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse224",private-dm-note
+225,2026-06-08 16:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse225,"Favorites or underdogs?
+
+Pick 3 teams free first. Watch what your score would be.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse225",public-post-url
+226,2026-06-08 17:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse226,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse226
+
+All teams are still available right now.",private-whatsapp-status-note
+227,2026-06-08 17:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse227,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse227
+Code: 26BC4B90CB",internal-log-note
+228,2026-06-08 17:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse228,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse228",private-whatsapp-note
+229,2026-06-08 17:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse229,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse229",admin-approved-url-or-note
+230,2026-06-08 18:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse230,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse230",story-url-or-account-note
+231,2026-06-08 18:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse231,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+232,2026-06-08 18:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse232,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse232",private-telegram-note
+233,2026-06-08 18:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse233,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse233",public-post-url
+234,2026-06-08 19:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse234,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse234",video-url
+235,2026-06-08 19:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse235,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse235.",internal-log-note
+236,2026-06-08 19:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse236,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse236",reply-url-or-private-note
+237,2026-06-08 19:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse237,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse237
+
+Would one story or post fit your football audience?",private-dm-note
+238,2026-06-08 20:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse238,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse238",public-post-url-or-private-note
+239,2026-06-08 20:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse239,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+240,2026-06-08 20:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse240,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse240",private-dm-note
+241,2026-06-08 20:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse241,"One month of football. Three picks. Free preview first.
+
+Join WorldCup26 with my code:
+26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse241",public-post-url
+242,2026-06-08 21:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse242,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse242
+
+All teams are still available right now.",private-whatsapp-status-note
+243,2026-06-08 21:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse243,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse243
+Code: 26BC4B90CB",internal-log-note
+244,2026-06-08 21:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse244,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse244",private-whatsapp-note
+245,2026-06-08 21:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse245,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse245",admin-approved-url-or-note
+246,2026-06-08 22:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse246,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse246",story-url-or-account-note
+247,2026-06-08 22:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse247,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+248,2026-06-08 22:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse248,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse248",private-telegram-note
+249,2026-06-08 22:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse249,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse249",public-post-url
+250,2026-06-08 23:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse250,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse250",video-url
+251,2026-06-08 23:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse251,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse251.",internal-log-note
+252,2026-06-08 23:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse252,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse252",reply-url-or-private-note
+253,2026-06-08 23:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse253,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse253
+
+Would one story or post fit your football audience?",private-dm-note
+254,2026-06-09 00:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse254,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse254",public-post-url-or-private-note
+255,2026-06-09 00:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse255,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+256,2026-06-09 00:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse256,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse256",private-dm-note
+257,2026-06-09 00:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse257,"WorldCup26 is open.
+
+Pick 3 teams for free. See your private points preview.
+
+Use a ticket only when you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse257",public-post-url
+258,2026-06-09 01:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse258,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse258
+
+All teams are still available right now.",private-whatsapp-status-note
+259,2026-06-09 01:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse259,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse259
+Code: 26BC4B90CB",internal-log-note
+260,2026-06-09 01:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse260,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse260",private-whatsapp-note
+261,2026-06-09 01:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse261,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse261",admin-approved-url-or-note
+262,2026-06-09 02:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse262,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse262",story-url-or-account-note
+263,2026-06-09 02:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse263,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+264,2026-06-09 02:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse264,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse264",private-telegram-note
+265,2026-06-09 02:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse265,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse265",public-post-url
+266,2026-06-09 03:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse266,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse266",video-url
+267,2026-06-09 03:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse267,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse267.",internal-log-note
+268,2026-06-09 03:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse268,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse268",reply-url-or-private-note
+269,2026-06-09 03:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse269,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse269
+
+Would one story or post fit your football audience?",private-dm-note
+270,2026-06-09 04:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse270,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse270",public-post-url-or-private-note
+271,2026-06-09 04:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse271,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+272,2026-06-09 04:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse272,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse272",private-dm-note
+273,2026-06-09 04:45 +0300,Dexter,Short feed,X / public fallback,manual post,Publish or prepare a short public CTA if X is logged in.,media/worldcup26-referral-16x9.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse273,"If you already have strong World Cup takes, make your 3 picks.
+
+WorldCup26 now lets you save the picks first and decide later if you want the paid leaderboard:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse273
+
+Code: 26BC4B90CB",public-post-url
+274,2026-06-09 05:00 +0300,Sienna,Status/story,WhatsApp Status,manual post,Post the video/status copy if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse274,"I invited you to WorldCup26.
+
+Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+
+Use my referral code 26BC4B90CB when you join:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse274
+
+All teams are still available right now.",private-whatsapp-status-note
+275,2026-06-09 05:15 +0300,Memo,Ops,Proof audit,internal,"Check proof log, list unproven current rows, and flag blocked channels.",runtime/posting-log-live.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse275,"Ops pulse: verify proof rows, urgent rows, and blocked channels.
+
+Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse275
+Code: 26BC4B90CB",internal-log-note
+276,2026-06-09 05:30 +0300,Nano,Warm contacts,WhatsApp personal,manual outreach,Send one warm-contact batch if WhatsApp is available.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse276,"I am inviting friends to WorldCup26.
+
+You can pick 3 teams for free and see your private points preview during the tournament.
+Use a ticket only if you want to enter the paid leaderboard.
+Use my code when you join: 26BC4B90CB
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse276",private-whatsapp-note
+277,2026-06-09 05:45 +0300,Dexter,Permission first,Football groups,approval first,Ask one football group admin for approval; post only if welcome.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse277,"For football fans here:
+
+WorldCup26 lets you pick 3 teams free first and see what your points would do.
+
+If you want the real paid leaderboard, use a ticket after.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse277",admin-approved-url-or-note
+278,2026-06-09 06:00 +0300,Sienna,Story,Instagram/Facebook Story,manual post,Post story image with code and link sticker if logged in.,media/worldcup26-referral-story.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse278,"Pick 3 teams before they lock.
+
+Free preview first. Paid leaderboard only when you use a ticket.
+
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse278",story-url-or-account-note
+279,2026-06-09 06:15 +0300,Memo,Ops,Asset audit,internal,Confirm video and image assets are present on this worker.,promo-kit-manifest.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse279,"Ops pulse: verify MP4, story image, square image, and command center are present.",internal-log-note
+280,2026-06-09 06:30 +0300,Nano,Warm contacts,Telegram personal,manual outreach,Send the invite to one approved Telegram contact or group where welcome.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse280,"WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
+
+Paid leaderboard entry happens only when you use a ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse280",private-telegram-note
+281,2026-06-09 06:45 +0300,Dexter,Friends feed,Facebook/feed fallback,manual post,Post a friendly feed variant if Facebook is logged in.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse281,"WorldCup26 is live for signups.
+
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse281",public-post-url
+282,2026-06-09 07:00 +0300,Sienna,Video,Shorts/Reels/TikTok,manual post,Upload the main video with code in the first line.,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse282,"Pick 3 teams before they lock. Free preview first, paid leaderboard after ticket.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=shorts-reels-tiktok&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse282",video-url
+283,2026-06-09 07:15 +0300,Memo,Ops,Copy rotation,internal,Prepare one fresh short hook and one reply answer for the next worker.,copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse283,"Ops pulse: rotate copy without fixed prize claims.
+
+Keep the free-picks hook visible: users save 3 picks first, watch a private points preview, and use a ticket only for paid leaderboard entry.
+
+Use code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse283.",internal-log-note
+284,2026-06-09 07:30 +0300,Nano,Objections,Replies,manual replies,Answer one pending question and return to the code/link CTA.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse284,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse284",reply-url-or-private-note
+285,2026-06-09 07:45 +0300,Dexter,Partner DM,Creator outreach,manual outreach,Send one approved partner DM to a football micro-creator.,campaign/first-wave-posts.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse285,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse285
+
+Would one story or post fit your football audience?",private-dm-note
+286,2026-06-09 08:00 +0300,Sienna,Friendly caption,Community caption,manual post,Post a friendly invite where promo links are welcome.,media/worldcup26-referral-square.jpg,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse286,"I want a small football group inside WorldCup26.
+
+Pick your 3 teams free first and compare what your points would be.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-caption&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse286",public-post-url-or-private-note
+287,2026-06-09 08:15 +0300,Memo,Ops,Next best channel,internal,Choose the next unblocked public or private channel and keep the board moving.,runtime/dispatch-board.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse287,"Ops pulse: if a channel is logged out, pick the next owned channel. Do not log proof until real posting happens.",internal-log-note
+288,2026-06-09 08:30 +0300,Nano,Follow-up,DM follow-up,manual outreach,Follow up once with someone who reacted but did not join.,campaign/copy-bank.md,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse288,"Still want the WorldCup26 invite?
+
+You can save your 3 picks free first and decide about the paid leaderboard later.
+
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse288",private-dm-note

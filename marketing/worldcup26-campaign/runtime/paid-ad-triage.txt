@@ -1,0 +1,43 @@
+WorldCup26 paid ad triage 2026-06-07 20:44 +0300
+ok=yes state=critical-paid-signup-friction code=26BC4B90CB
+app_views=509 referral_views=171 paid_views=244 signup_saves=0 accepted=0
+paid_sources=an:84,meta:70,fb:48,fb:22,ig:19,browser-probe:1
+dashboard_state=paid-clicks-no-signups dashboard_checks=2 dashboard_impressions=12 dashboard_clicks=227 dashboard_spend=31.78
+top_source=- top_signup_source=-
+rule=This is an operator triage page. It proves paid delivery only after Memo records real dashboard status, spend, impressions, clicks, landing URL, and screenshot/note details.
+
+Meta Ads Manager
+manager=https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown
+landing=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h
+guard=unknown
+checklist:
+- Campaign, ad set, and ad are active or scheduled.
+- Landing URL includes ref=26BC4B90CB and utm_source=meta.
+- Creative text leads with free 3-team picks and private points preview.
+- Dashboard shows impressions, clicks, spend, CTR, delivery status, and rejection warnings.
+decision_rules:
+- No impressions: check budget, schedule, audience, approval status, and whether Meta Ads Manager is paused.
+- Impressions but zero clicks: change hook/creative toward 'Pick 3 teams free first' and try a stronger football question.
+- Clicks but no app views with this UTM source: landing URL is wrong, redirecting, blocked, or ad link tracking stripped.
+- Clicks and app views but no signup saves: signup screen or Google auth friction is the next conversion problem.
+- Rejected or limited delivery: fix the dashboard warning before adding more creative variants.
+log_after_dashboard_check:
+node campaign-paid-dashboard-intake.mjs --add --platform "meta" --status "active" --spend "0" --impressions "0" --clicks "0" --landing-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h" --warning "none" --screenshot-note "Meta Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>" --next-action "keep/change/fix"
+
+X Ads Manager
+manager=https://ads.x.com/manager/18ce55rrs16/campaigns
+landing=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h
+guard=unknown
+checklist:
+- Campaign exists inside account 18ce55rrs16.
+- Campaign, ad group, and ad are active or scheduled.
+- Landing URL includes ref=26BC4B90CB and utm_source=x.
+- Dashboard shows impressions, clicks, spend, CTR, delivery status, and rejection warnings.
+decision_rules:
+- No impressions: check budget, schedule, audience, approval status, and whether X Ads Manager is paused.
+- Impressions but zero clicks: change hook/creative toward 'Pick 3 teams free first' and try a stronger football question.
+- Clicks but no app views with this UTM source: landing URL is wrong, redirecting, blocked, or ad link tracking stripped.
+- Clicks and app views but no signup saves: signup screen or Google auth friction is the next conversion problem.
+- Rejected or limited delivery: fix the dashboard warning before adding more creative variants.
+log_after_dashboard_check:
+node campaign-paid-dashboard-intake.mjs --add --platform "x" --status "active" --spend "0" --impressions "0" --clicks "0" --landing-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h" --warning "none" --screenshot-note "X Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>" --next-action "keep/change/fix"

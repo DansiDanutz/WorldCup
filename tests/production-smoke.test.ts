@@ -45,6 +45,8 @@ describe("production smoke coverage", () => {
   it("keeps scheduled cron endpoints present and protected in production smoke", () => {
     assert.match(productionSmoke, /\/api\/cron\/results/);
     assert.match(productionSmoke, /\/api\/cron\/apply/);
+    assert.doesNotMatch(productionSmoke, /\/api\/deposits\/reconcile/);
+    assert.match(productionSmoke, /\/api\/deposits\/check/);
     assert.match(productionSmoke, /Unauthorized\./);
   });
 
@@ -85,13 +87,16 @@ describe("production smoke coverage", () => {
   });
 
   it("keeps paid-action launch gates covered in production smoke", () => {
-    assert.match(productionSmoke, /loadPaidActionGateState/);
+    assert.match(productionSmoke, /getAllowedProfileGates/);
     assert.match(productionSmoke, /assertPaidActionPaused/);
-    assert.match(productionSmoke, /launchSignoffsReady/);
     assert.match(productionSmoke, /depositAllowed/);
     assert.match(productionSmoke, /withdrawalAllowed/);
     assert.match(productionSmoke, /entryAllowed/);
     assert.match(productionSmoke, /assertPaidActionGates/);
+    assert.match(productionSmoke, /\/api\/deposits\/sender-wallet/);
+    assert.match(productionSmoke, /usdt_sender_wallet_trc20_address/);
+    assert.match(productionSmoke, /action: "save-draft"/);
+    assert.match(productionSmoke, /status === "draft"/);
     assert.match(productionSmoke, /Operator policy/);
     assert.match(productionSmoke, /launch sign-offs/);
   });
@@ -101,7 +106,17 @@ describe("production smoke coverage", () => {
     assert.match(productionSmoke, /\/api\/referrals\/resolve/);
     assert.match(productionSmoke, /zz-zz zz/);
     assert.match(productionSmoke, /referralCode === "ZZZZZZ"/);
-    assert.match(productionSmoke, /referralPercent === 3/);
+    assert.match(productionSmoke, /referralPercent === 0/);
+  });
+
+  it("keeps app-view analytics covered in production smoke", () => {
+    assert.match(productionSmoke, /checkAnalyticsViewRoute/);
+    assert.match(productionSmoke, /\/api\/analytics\/view/);
+    assert.match(productionSmoke, /stored=true/);
+    assert.match(productionSmoke, /WorldCup26-production-smoke/);
+    assert.match(productionSmoke, /worldcup_app_views/);
+    assert.match(productionSmoke, /utmSource:\s*"production-smoke"/);
+    assert.match(productionSmoke, /utmCampaign:\s*"worldcup26_referral_72h"/);
   });
 
   it("keeps production readiness covered under admin auth", () => {
@@ -109,9 +124,11 @@ describe("production smoke coverage", () => {
     assert.match(productionSmoke, /\/api\/admin\/launch-signoffs/);
     assert.match(productionSmoke, /\/api\/admin\/launch-evidence/);
     assert.match(productionSmoke, /paidActionEvidence/);
-    assert.match(productionSmoke, /public paid actions are paused/);
+    assert.match(productionSmoke, /USDT deposits are open during account setup/);
+    assert.match(productionSmoke, /ticket assignment actions are open during account setup/);
+    assert.match(productionSmoke, /entry actions are open during account setup/);
+    assert.match(productionSmoke, /withdrawals remain deferred until final settlement/);
     assert.match(productionSmoke, /admin evidence email/);
-    assert.match(productionSmoke, /admin evidence lane is open/);
     assert.match(productionSmoke, /launchEvidenceData\.deployment\?\.canonicalOrigin === "https:\/\/worldcup26\.world"/);
     assert.match(productionSmoke, /deployment URL/);
     assert.match(productionSmoke, /\/api\/admin\/operator-policy/);
@@ -150,6 +167,9 @@ describe("production smoke coverage", () => {
     assert.match(vercelDomainGuard, /autoAssignCustomDomains/);
     assert.match(vercelDomainGuard, /worldcup26\.world/);
     assert.match(vercelDomainGuard, /www\.worldcup26\.world/);
+    assert.match(vercelDomainGuard, /loadServedDeploymentId/);
+    assert.match(vercelDomainGuard, /servedDeploymentId/);
+    assert.match(vercelDomainGuard, /servesAliasDeployment/);
     assert.match(vercelDomainGuard, /missingAliases/);
     assert.match(vercelDomainGuard, /--fix/);
     assert.match(deploymentDocs, /Custom-domain assignment guard/);
@@ -172,7 +192,11 @@ describe("production smoke coverage", () => {
     assert.match(productionSmoke, /WorldCup Wallet/);
     assert.match(productionSmoke, /Sign in with Google/);
     assert.match(productionSmoke, /launch approvals are complete/);
-    assert.match(productionSmoke, /public launch copy did not mention launch approvals/);
+    assert.match(productionSmoke, /leaked internal launch approval copy to public users/);
+    assert.match(productionSmoke, /Choose 3 Teams/);
+    assert.match(productionSmoke, /Agent Deal/);
+    assert.match(productionSmoke, /public launch copy did not include the campaign CTA/);
+    assert.match(productionSmoke, /public launch copy did not include the agent offer/);
     assert.match(productionSmoke, /leaked internal Operator policy setup copy to public users/);
     assert.match(productionSmoke, /Production readiness/);
     assert.match(productionSmoke, /Operator policy/);

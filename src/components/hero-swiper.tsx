@@ -7,6 +7,7 @@ import {
   Crown,
   Gift,
   Medal,
+  MessageCircle,
   Percent,
   Scale,
   Target,
@@ -18,6 +19,7 @@ import Link from "next/link";
 import { type KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { HeroCard } from "@/components/hero-card";
+import { buildSupportWhatsAppUrl } from "@/lib/support";
 
 // "The Matchup" landing swiper — a touch-native carousel of 9:16 posters.
 // Slide 1 is the live face-off hero; the rest are on-brand poster slides.
@@ -34,6 +36,11 @@ const SLIDE_LABELS = [
   "Agent Deal",
   "Login or register",
 ] as const;
+
+const pickHelpUrl = buildSupportWhatsAppUrl("Hi, I need help choosing my 3 WorldCup26 teams.");
+const agentHelpUrl = buildSupportWhatsAppUrl(
+  "Hi, I want help becoming a WorldCup26 agent and earning from ticket codes.",
+);
 
 export function HeroSwiper({
   prizePool,
@@ -188,8 +195,8 @@ function HowToPoster() {
               <Ticket size={20} aria-hidden="true" />
             </span>
             <span className="hero-feature__body">
-              <strong>1 · Buy-in 50 USD</strong>
-              <small>Unlocks one entry ticket.</small>
+              <strong>1 · Save free picks</strong>
+              <small>Choose 3 teams before kickoff.</small>
             </span>
           </div>
 
@@ -198,8 +205,8 @@ function HowToPoster() {
               <Target size={20} aria-hidden="true" />
             </span>
             <span className="hero-feature__body">
-              <strong>2 · Pick 3 teams</strong>
-              <small>Lock your entry before kickoff.</small>
+              <strong>2 · Track preview</strong>
+              <small>Watch private points update.</small>
             </span>
           </div>
 
@@ -213,10 +220,16 @@ function HowToPoster() {
             </span>
           </div>
 
-          <a className="hero-cta" href="#pick">
-            Start picking
-            <ArrowRight size={16} aria-hidden="true" />
-          </a>
+          <div className="hero-cta-row">
+            <a className="hero-cta" href="#pick">
+              Start picking
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="hero-cta hero-cta--whatsapp" href={pickHelpUrl} rel="noreferrer" target="_blank">
+              WhatsApp help
+              <MessageCircle size={16} aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -477,7 +490,7 @@ function InvitePoster() {
             <span className="hero-feature__body">
               <strong>Earn 5%</strong>
               <small>
-                If you were invited, keep the <b>5%</b> cut on friends you invite.
+                Keep the <b>5%</b> cut on friends you invite.
               </small>
             </span>
           </div>
@@ -487,9 +500,9 @@ function InvitePoster() {
               <Percent size={20} aria-hidden="true" />
             </span>
             <span className="hero-feature__body">
-              <strong>Earn 3%</strong>
+              <strong>Flat rate</strong>
               <small>
-                Signed up direct? Still earn <b>3%</b> of your invites&#39; winnings.
+                The inviter rate stays <b>5%</b> for accepted referrals.
               </small>
             </span>
           </div>
@@ -566,10 +579,16 @@ function AgentDealPoster() {
             </span>
           </div>
 
-          <Link className="hero-cta" href={{ pathname: "/wallet" }}>
-            Open Agent Codes
-            <ArrowRight size={16} aria-hidden="true" />
-          </Link>
+          <div className="hero-cta-row">
+            <Link className="hero-cta" href={{ pathname: "/wallet" }}>
+              Open Agent Codes
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+            <a className="hero-cta hero-cta--whatsapp" href={agentHelpUrl} rel="noreferrer" target="_blank">
+              WhatsApp agent help
+              <MessageCircle size={16} aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

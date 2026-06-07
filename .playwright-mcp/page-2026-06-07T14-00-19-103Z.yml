@@ -1,0 +1,626 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e12]:
+    - generic [ref=e18]:
+      - generic [ref=e20]:
+        - link "Administrare reclame Meta" [ref=e22] [cursor=pointer]:
+          - /url: /adsmanager/?act=61071192
+          - generic [ref=e24]:
+            - generic [ref=e25]: Administrare reclame
+            - img "Meta" [ref=e28]
+        - generic [ref=e29]:
+          - generic [ref=e32]:
+            - button "Pressable" [ref=e33] [cursor=pointer]
+            - generic:
+              - generic:
+                - generic:
+                  - button:
+                    - generic:
+                      - generic: "4"
+          - separator [ref=e38]
+      - generic [ref=e41]:
+        - navigation "instrumente" [ref=e42]:
+          - list [ref=e43]:
+            - listitem [ref=e45]:
+              - button "Prezentare cont" [ref=e47] [cursor=pointer]
+              - generic:
+                - listitem:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Prezentare cont
+            - listitem [ref=e54]:
+              - button "Campanii" [ref=e56] [cursor=pointer]
+              - generic:
+                - listitem:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Campanii
+            - listitem [ref=e62]:
+              - link "Rapoarte despre reclame" [ref=e64] [cursor=pointer]:
+                - /url: /adsreporting/?act=61071192&nav_entry_point=ads_ecosystem_navigation_menu
+              - generic:
+                - listitem:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Rapoarte despre reclame
+            - listitem [ref=e70]:
+              - link "Audienţe" [ref=e72] [cursor=pointer]:
+                - /url: /adsmanager/?act=61071192&tool=AUDIENCES&nav_entry_point=ads_ecosystem_navigation_menu&nav_source=ads_manager
+              - generic:
+                - listitem:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Audienţe
+            - listitem [ref=e78]:
+              - button "Setări de publicitate" [ref=e80] [cursor=pointer]
+              - generic:
+                - listitem:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Setări de publicitate
+            - listitem [ref=e86]:
+              - link "Facturare şi plăţi" [ref=e88] [cursor=pointer]:
+                - /url: /billing_hub/payment_settings/?placement=ads_manager&asset_id=61071192&payment_account_id_from_jsmodule=61071192&entrypoint=ads_ecosystem_navigation_ads_billing_tool_plugin
+              - generic:
+                - listitem:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Facturare şi plăţi
+            - listitem [ref=e94]:
+              - link "Events Manager" [ref=e96] [cursor=pointer]:
+                - /url: /events_manager2/?act=61071192&nav_source=ads_ecosystem_nav
+              - generic:
+                - listitem:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Events Manager
+            - listitem [ref=e101]:
+              - button "Toate instrumentele" [ref=e103] [cursor=pointer]
+              - generic:
+                - listitem:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Toate instrumentele
+        - navigation "Folosite frecvent" [ref=e109]:
+          - generic [ref=e114]: Folosite frecvent
+          - list
+      - generic [ref=e117]:
+        - separator [ref=e118]
+        - list [ref=e121]:
+          - listitem [ref=e122]:
+            - button "Asistent de afaceri Meta AI" [ref=e124] [cursor=pointer]
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Asistent de afaceri Meta AI
+        - generic [ref=e134]:
+          - button "Ajutor" [ref=e140] [cursor=pointer]:
+            - generic [ref=e143]: Ajutor
+          - button "Actualizări privind contul de publicitate" [ref=e148] [cursor=pointer]:
+            - generic [ref=e151]: Actualizări privind contul de publicitate
+          - button "Setările contului de publicitate" [ref=e155] [cursor=pointer]:
+            - generic [ref=e158]: Setările contului de publicitate
+          - button "Caută" [ref=e162] [cursor=pointer]:
+            - generic [ref=e165]: Caută
+          - button "Raportează o problemă" [ref=e168] [cursor=pointer]:
+            - generic [ref=e171]: Raportează o problemă
+    - generic [ref=e4302]:
+      - generic [ref=e4304]:
+        - generic [ref=e4308]:
+          - generic [ref=e4310]:
+            - generic [ref=e4311]: Adaugă numărul tău de telefon WhatsApp ca să primeşti alerte importante
+            - generic [ref=e4312]: Fii la curent cu informaţiile despre reclamele şi plăţile tale adăugând numărul de telefon WhatsApp.
+          - button "Adaugă numărul de telefon WhatsApp" [ref=e4313] [cursor=pointer]:
+            - generic [ref=e4317]: Adaugă numărul de telefon WhatsApp
+          - button "Închide" [ref=e4318] [cursor=pointer]:
+            - generic [ref=e4321]: Închide
+        - generic [ref=e4326]:
+          - generic [ref=e4329]:
+            - heading "Reclame" [level=2] [ref=e4331]
+            - combobox "Semenescu Dan (61071192)" [ref=e4344] [cursor=pointer]:
+              - generic [ref=e4356]: Semenescu Dan (61071192)
+          - button "Scor de oportunitate" [ref=e4370] [cursor=pointer]:
+            - generic [ref=e4372]:
+              - img "Opportunity Score Progress Ring" [ref=e4374]:
+                - generic [ref=e4378]: "96"
+              - generic [ref=e4380]: Scor de oportunitate
+          - generic [ref=e4383]:
+            - generic [ref=e4386]:
+              - toolbar [ref=e4388]:
+                - generic [ref=e4390]:
+                  - generic [ref=e4391]:
+                    - progressbar [ref=e4393]
+                    - generic [ref=e4397]: Se publică 1 din 1
+                  - button "Verifică şi publică (2)" [ref=e4401] [cursor=pointer]:
+                    - generic [ref=e4405]: Verifică şi publică (2)
+              - button "Meniu" [ref=e4407] [cursor=pointer]:
+                - generic [ref=e4410]: Meniu
+            - button "Facebook" [ref=e4416] [cursor=pointer]:
+              - generic [ref=e4422]:
+                - generic:
+                  - img
+                - img "Facebook" [ref=e4424]
+      - generic [ref=e4425]:
+        - generic [ref=e4426]:
+          - button "Vezi diagramele (Ctrl+Y)" [ref=e4431] [cursor=pointer]
+          - button "Editează (Ctrl+U)" [ref=e4437] [cursor=pointer]
+          - button "Vezi istoricul (Ctrl+I)" [ref=e4443] [cursor=pointer]
+        - generic [ref=e4448]:
+          - generic [ref=e4451]:
+            - generic [ref=e4452]:
+              - toolbar [ref=e4455]:
+                - generic [ref=e4457]:
+                  - link "Toate reclamele status_before_click:selected" [ref=e4462] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=e4469]: Toate reclamele
+                  - link "Acţiuni status_before_click:unselected" [ref=e4474] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=e4479]:
+                      - img [ref=e4480]
+                      - generic [ref=e4483]: Acţiuni
+                  - link "Reclame active status_before_click:unselected" [ref=e4488] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=e4495]: Reclame active
+                  - link "Livrate status_before_click:unselected" [ref=e4500] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=e4507]: Livrate
+                - button "Vezi mai mult" [ref=e4509] [cursor=pointer]:
+                  - generic [ref=e4514]: Vezi mai mult
+              - generic [ref=e4515]:
+                - button "Creează o vizualizare" [ref=e4516] [cursor=pointer]:
+                  - generic [ref=e4520]: Creează o vizualizare
+                - button "Setări" [ref=e4521] [cursor=pointer]:
+                  - generic [ref=e4524]: Setări
+            - generic [ref=e4540]: Caută cu filtrare după nume, ID sau indicatori
+          - generic [ref=e4542]:
+            - tablist [ref=e4544]:
+              - tab "Campanii" [ref=e4546] [cursor=pointer]:
+                - generic [ref=e4552]:
+                  - img [ref=e4553]
+                  - heading "Campanii" [level=3] [ref=e4557]
+              - tab "Seturi de reclame" [ref=e4559] [cursor=pointer]:
+                - generic [ref=e4565]:
+                  - img [ref=e4566]
+                  - heading "Seturi de reclame" [level=3] [ref=e4576]
+              - tab "Reclame 1 reclamă selectată Şterge 1 selecţii din Reclame" [selected] [ref=e4578] [cursor=pointer]:
+                - generic [ref=e4581]:
+                  - generic [ref=e4584]:
+                    - img [ref=e4585]
+                    - heading "Reclame" [level=3] [ref=e4589]
+                  - generic [ref=e4591]:
+                    - generic [ref=e4592]: 1 reclamă selectată
+                    - button "Şterge 1 selecţii din Reclame" [ref=e4593]
+            - 'button "Astăzi: 7 iun. 2026" [ref=e4599] [cursor=pointer]':
+              - generic [ref=e4604]: "Astăzi: 7 iun. 2026"
+          - generic [ref=e4610]:
+            - toolbar [ref=e4617]:
+              - generic [ref=e4619]:
+                - button "Creează" [ref=e4622] [cursor=pointer]:
+                  - generic [ref=e4628]: Creează
+                - button "Publică" [ref=e4629] [cursor=pointer]:
+                  - generic [ref=e4634]: Publică
+                - group [ref=e4637]:
+                  - button "Creează dublură" [disabled] [ref=e4638]:
+                    - generic [ref=e4641]: Creează dublură
+                  - button "Deschide meniul vertical" [disabled] [ref=e4645]:
+                    - generic [ref=e4648]: Deschide meniul vertical
+                - group [ref=e4653]:
+                  - button "Editează" [disabled] [ref=e4654]:
+                    - generic [ref=e4659]: Editează
+                  - button "Editează" [disabled] [ref=e4661]:
+                    - generic [ref=e4664]: Editează
+                - button "Şterge (Ctrl+Backspace)" [ref=e4667] [cursor=pointer]:
+                  - generic [ref=e4670]: Şterge (Ctrl+Backspace)
+                - button "Previzualizează" [ref=e4674] [cursor=pointer]:
+                  - generic [ref=e4679]: Previzualizează
+                - button "Mai multe" [ref=e4680] [cursor=pointer]:
+                  - generic [ref=e4684]: Mai multe
+              - generic [ref=e4687]:
+                - 'button "Coloane: Performanţe" [ref=e4692] [cursor=pointer]':
+                  - generic [ref=e4697]: "Coloane: Performanţe"
+                - button "Defalcare" [ref=e4703] [cursor=pointer]:
+                  - generic [ref=e4708]: Defalcare
+                - button "Rapoarte" [ref=e4711] [cursor=pointer]:
+                  - generic [ref=e4714]: Rapoarte
+                - group [ref=e4718]:
+                  - button "Exportă" [ref=e4720] [cursor=pointer]:
+                    - generic [ref=e4723]: Exportă
+                  - button "Deschide meniul vertical" [ref=e4726] [cursor=pointer]:
+                    - generic [ref=e4729]: Deschide meniul vertical
+                - button "Compară" [ref=e4733] [cursor=pointer]:
+                  - generic [ref=e4736]: Compară
+            - table [ref=e4747]:
+              - generic [ref=e4748]:
+                - row [ref=e4749]:
+                  - generic [ref=e4751]:
+                    - generic [ref=e4763]:
+                      - checkbox "Casetă de selectare pentru a bifa toate reclamele" [ref=e4764] [cursor=pointer]
+                      - generic:
+                        - img
+                    - generic [ref=e4769]:
+                      - separator [ref=e4770]
+                      - columnheader "Dezactivat / Activat" [ref=e4775] [cursor=pointer]:
+                        - heading "Dezactivat / Activat" [level=4] [ref=e4779]:
+                          - generic [ref=e4781]: Dezactivat / Activat
+                    - generic [ref=e4788]:
+                      - separator [ref=e4789]
+                      - columnheader "Reclamă deschide meniul vertical cu opţiuni de sortare" [ref=e4794] [cursor=pointer]:
+                        - heading "Reclamă" [level=4] [ref=e4798]:
+                          - generic [ref=e4800]: Reclamă
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e4804]
+                  - generic [ref=e4808]:
+                    - generic [ref=e4813]:
+                      - separator [ref=e4814]
+                      - columnheader "Livrare deschide meniul vertical cu opţiuni de sortare" [ref=e4819] [cursor=pointer]:
+                        - heading "Livrare" [level=4] [ref=e4823]:
+                          - generic [ref=e4825]: Livrare
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e4829]
+                    - generic [ref=e4836]:
+                      - separator [ref=e4837]
+                      - columnheader "Acţiuni deschide meniul vertical cu opţiuni de sortare" [ref=e4842] [cursor=pointer]:
+                        - heading "Acţiuni" [level=4] [ref=e4846]:
+                          - generic [ref=e4848]: Acţiuni
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e4850]
+                    - generic [ref=e4857]:
+                      - separator [ref=e4858]
+                      - columnheader "information symbol, button, tap for more information Rezultate deschide meniul vertical cu opţiuni de sortare" [ref=e4863] [cursor=pointer]:
+                        - generic [ref=e4866]:
+                          - generic "information symbol, button, tap for more information"
+                          - heading "Rezultate" [level=4] [ref=e4867]:
+                            - generic [ref=e4869]: Rezultate
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e4873]
+                    - generic [ref=e4880]:
+                      - separator [ref=e4881]
+                      - columnheader "Cost per rezultat deschide meniul vertical cu opţiuni de sortare" [ref=e4886] [cursor=pointer]:
+                        - heading "Cost per rezultat" [level=4] [ref=e4890]:
+                          - generic [ref=e4892]: Cost per rezultat
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e4896]
+                    - generic [ref=e4903]:
+                      - separator [ref=e4904]
+                      - columnheader "Buget Set de reclame deschide meniul vertical cu opţiuni de sortare" [ref=e4909] [cursor=pointer]:
+                        - generic [ref=e4911]:
+                          - heading "Buget" [level=4] [ref=e4913]:
+                            - generic [ref=e4915]: Buget
+                          - generic [ref=e4917]: Set de reclame
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e4919]
+                    - generic [ref=e4926]:
+                      - separator [ref=e4927]
+                      - columnheader "Suma cheltuită deschide meniul vertical cu opţiuni de sortare" [ref=e4932] [cursor=pointer]:
+                        - heading "Suma cheltuită" [level=4] [ref=e4936]:
+                          - generic [ref=e4938]: Suma cheltuită
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e4942]
+                    - generic [ref=e4949]:
+                      - separator [ref=e4950]
+                      - columnheader "Afişări deschide meniul vertical cu opţiuni de sortare" [ref=e4955] [cursor=pointer]:
+                        - heading "Afişări" [level=4] [ref=e4959]:
+                          - generic [ref=e4961]: Afişări
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e4965]
+                    - generic [ref=e4972]:
+                      - separator [ref=e4973]
+                      - columnheader "Impact deschide meniul vertical cu opţiuni de sortare" [ref=e4978] [cursor=pointer]:
+                        - heading "Impact" [level=4] [ref=e4982]:
+                          - generic [ref=e4984]: Impact
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e4988]
+                    - generic [ref=e4995]:
+                      - separator [ref=e4996]
+                      - columnheader "Se termină deschide meniul vertical cu opţiuni de sortare" [ref=e5001] [cursor=pointer]:
+                        - heading "Se termină" [level=4] [ref=e5005]:
+                          - generic [ref=e5007]: Se termină
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e5011]
+                    - generic [ref=e5018]:
+                      - separator [ref=e5019]
+                      - columnheader "Setare de atribuire deschide meniul vertical cu opţiuni de sortare" [ref=e5024] [cursor=pointer]:
+                        - heading "Setare de atribuire" [level=4] [ref=e5028]:
+                          - generic [ref=e5030]: Setare de atribuire
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e5032]
+                    - generic [ref=e5039]:
+                      - separator [ref=e5040]
+                      - columnheader "Strategie de licitare Set de reclame deschide meniul vertical cu opţiuni de sortare" [ref=e5045] [cursor=pointer]:
+                        - generic [ref=e5047]:
+                          - heading "Strategie de licitare" [level=4] [ref=e5049]:
+                            - generic [ref=e5051]: Strategie de licitare
+                          - generic [ref=e5053]: Set de reclame
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e5055]
+                    - generic [ref=e5062]:
+                      - separator [ref=e5063]
+                      - columnheader "Ultima modificare semnificativă deschide meniul vertical cu opţiuni de sortare" [ref=e5068] [cursor=pointer]:
+                        - heading "Ultima modificare semnificativă" [level=4] [ref=e5072]:
+                          - generic [ref=e5074]: Ultima modificare semnificativă
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e5076]
+                    - generic [ref=e5083]:
+                      - separator [ref=e5084]
+                      - columnheader "Ranking calitate deschide meniul vertical cu opţiuni de sortare" [ref=e5089] [cursor=pointer]:
+                        - heading "Ranking calitate" [level=4] [ref=e5093]:
+                          - generic [ref=e5095]: Ranking calitate
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e5099]
+                    - generic [ref=e5106]:
+                      - separator [ref=e5107]
+                      - columnheader "Ranking rată de interacţiuni deschide meniul vertical cu opţiuni de sortare" [ref=e5112] [cursor=pointer]:
+                        - heading "Ranking rată de interacţiuni" [level=4] [ref=e5116]:
+                          - generic [ref=e5118]: Ranking rată de interacţiuni
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e5122]
+                    - generic [ref=e5129]:
+                      - separator [ref=e5130]
+                      - columnheader "Ranking rată de conversie deschide meniul vertical cu opţiuni de sortare" [ref=e5135] [cursor=pointer]:
+                        - heading "Ranking rată de conversie" [level=4] [ref=e5139]:
+                          - generic [ref=e5141]: Ranking rată de conversie
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e5145]
+                    - generic [ref=e5152]:
+                      - separator [ref=e5153]
+                      - columnheader "Nume set de reclame deschide meniul vertical cu opţiuni de sortare" [ref=e5158] [cursor=pointer]:
+                        - heading "Nume set de reclame" [level=4] [ref=e5162]:
+                          - generic [ref=e5164]: Nume set de reclame
+                        - button "deschide meniul vertical cu opţiuni de sortare" [ref=e5168]
+                    - link "Personalizează coloanele..." [ref=e5181] [cursor=pointer]:
+                      - /url: "#"
+                      - generic "Personalizează coloanele..." [ref=e5183]:
+                        - generic [ref=e5184]: Personalizează coloanele...
+                - generic:
+                  - generic [ref=e5187]:
+                    - generic:
+                      - generic [ref=e5188]:
+                        - generic [ref=e5197]:
+                          - checkbox [ref=e5198] [cursor=pointer]
+                          - generic:
+                            - img
+                        - switch "Activează/Dezactivează" [checked] [ref=e5207] [cursor=pointer]
+                        - generic [ref=e5218]:
+                          - generic [ref=e5220]: Reclamă nouă pentru Promovarea aplicaţiei
+                          - generic:
+                            - link "Editează coloana":
+                              - /url: "#"
+                      - generic [ref=e5221]:
+                        - generic [ref=e5229]: Schiţă
+                        - generic [ref=e5236]: —
+                        - generic [ref=e5240]: —
+                        - generic [ref=e5243]:
+                          - generic [ref=e5245]:
+                            - generic:
+                              - link "Editează coloana":
+                                - /url: "#"
+                            - text: 80,00 lei
+                          - generic [ref=e5246]: Zilnic
+                        - generic [ref=e5250]: —
+                        - generic [ref=e5254]: —
+                        - generic [ref=e5258]: —
+                  - generic [ref=e5261]:
+                    - generic:
+                      - generic [ref=e5262]:
+                        - generic [ref=e5271]:
+                          - checkbox [ref=e5272] [cursor=pointer]
+                          - generic:
+                            - img
+                        - switch "Activează/Dezactivează" [checked] [ref=e5281] [cursor=pointer]
+                        - generic [ref=e5292]:
+                          - generic [ref=e5294]: Reclamă nouă pentru Trafic
+                          - generic:
+                            - link "Editează coloana":
+                              - /url: "#"
+                      - generic [ref=e5295]:
+                        - generic [ref=e5303]: Schiţă
+                        - generic [ref=e5310]: —
+                        - generic [ref=e5314]: —
+                        - generic [ref=e5317]:
+                          - generic [ref=e5319]:
+                            - generic:
+                              - link "Editează coloana":
+                                - /url: "#"
+                            - text: 40,00 lei
+                          - generic [ref=e5320]: Zilnic
+                        - generic [ref=e5324]: —
+                        - generic [ref=e5328]: —
+                        - generic [ref=e5332]: —
+                  - generic [ref=e5335]:
+                    - generic:
+                      - generic [ref=e5336]:
+                        - generic [ref=e5345]:
+                          - checkbox [checked] [ref=e5346] [cursor=pointer]
+                          - img [ref=e5348]
+                        - generic [ref=e5351]:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - switch "Activează/Dezactivează" [checked] [disabled]
+                        - generic [ref=e5358]:
+                          - generic [ref=e5360]: WorldCup26 - Pick 3 Teams Free First - Image
+                          - generic [ref=e5367]:
+                            - generic [ref=e5369]: Editări nepublicate
+                            - status [ref=e5370]: Editări nepublicate
+                      - generic [ref=e5371]:
+                        - generic [ref=e5373]:
+                          - generic:
+                            - generic:
+                              - generic: Activă
+                        - generic [ref=e5376] [cursor=pointer]:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic:
+                                                  - generic:
+                                                    - generic:
+                                                      - img
+                                                    - generic: 1 recomandare
+                                                  - status
+                        - generic [ref=e5378]:
+                          - generic:
+                            - generic: "207"
+                            - generic:
+                              - generic: Clicuri pe link
+                        - generic [ref=e5380]:
+                          - generic:
+                            - generic:
+                              - generic: 0,14 lei
+                            - generic: Per clic pe link
+                        - generic [ref=e5382]:
+                          - generic:
+                            - generic:
+                              - generic: 200,00 lei
+                            - generic: Zilnic
+                        - generic [ref=e5385]:
+                          - generic:
+                            - generic:
+                              - generic: 28,54 lei
+                        - generic [ref=e5387]:
+                          - generic:
+                            - generic: "5.776"
+                        - generic [ref=e5390]:
+                          - generic:
+                            - generic: "4.999"
+                  - generic [ref=e5393]:
+                    - generic:
+                      - generic [ref=e5394]:
+                        - generic [ref=e5403]:
+                          - checkbox [ref=e5404] [cursor=pointer]
+                          - generic:
+                            - img
+                        - switch "Activează/Dezactivează" [checked] [ref=e5413] [cursor=pointer]
+                        - generic [ref=e5419]:
+                          - img [ref=e5421]
+                          - generic [ref=e5424]:
+                            - generic [ref=e5426]: WorldCup26 - Pick 3 Teams · Win $4,360 USDT Prize Pool
+                            - generic:
+                              - link "Editează coloana":
+                                - /url: "#"
+                      - generic [ref=e5427]:
+                        - generic [ref=e5435]: Campanie dezactivată
+                        - generic [ref=e5442]:
+                          - generic [ref=e5444]: —
+                          - generic [ref=e5445]: Instalarea aplicaţiei de mobil
+                        - generic [ref=e5448]:
+                          - generic [ref=e5451]: —
+                          - generic [ref=e5452]: Per instalare de aplicaţie de mobil
+                        - generic [ref=e5455]:
+                          - generic [ref=e5457]:
+                            - generic:
+                              - link "Editează coloana":
+                                - /url: "#"
+                            - text: 80,00 lei
+                          - generic [ref=e5458]: Zilnic
+                        - generic [ref=e5464]: 0,00 lei
+                        - generic [ref=e5470]: —
+                        - generic [ref=e5477]: —
+                  - generic [ref=e5480]:
+                    - generic:
+                      - generic [ref=e5481]:
+                        - generic [ref=e5490]:
+                          - checkbox [ref=e5491] [cursor=pointer]
+                          - generic:
+                            - img
+                        - switch "Activează/Dezactivează" [ref=e5500] [cursor=pointer]
+                        - generic [ref=e5506]:
+                          - img [ref=e5508]
+                          - generic [ref=e5511]:
+                            - generic [ref=e5513]: Royal Poker Club - Page Likes - Ad - Image 1
+                            - generic:
+                              - link "Editează coloana":
+                                - /url: "#"
+                      - generic [ref=e5514]:
+                        - generic [ref=e5522]: Dezactivat
+                        - generic [ref=e5528]:
+                          - generic [ref=e5531]: —
+                          - generic [ref=e5533]: Urmărire sau apreciere
+                        - generic [ref=e5536]:
+                          - generic [ref=e5539]: —
+                          - generic [ref=e5540]: Per urmărire sau apreciere
+                        - generic [ref=e5543]:
+                          - generic [ref=e5545]:
+                            - generic:
+                              - link "Editează coloana":
+                                - /url: "#"
+                            - text: 50,00 lei
+                          - generic [ref=e5546]: Zilnic
+                        - generic [ref=e5552]: 0,00 lei
+                        - generic [ref=e5558]: —
+                        - generic [ref=e5565]: —
+                  - generic [ref=e5568]:
+                    - generic:
+                      - generic [ref=e5569]:
+                        - generic [ref=e5578]:
+                          - checkbox [ref=e5579] [cursor=pointer]
+                          - generic:
+                            - img
+                        - switch "Activează/Dezactivează" [ref=e5588] [cursor=pointer]
+                        - generic [ref=e5594]:
+                          - img [ref=e5596]
+                          - generic [ref=e5599]:
+                            - generic [ref=e5601]: Royal Poker Club - Page Likes - Ad - Image 3
+                            - generic:
+                              - link "Editează coloana":
+                                - /url: "#"
+                      - generic [ref=e5602]:
+                        - generic [ref=e5610]: Dezactivat
+                        - generic [ref=e5616]:
+                          - generic [ref=e5619]: —
+                          - generic [ref=e5621]: Urmărire sau apreciere
+                        - generic [ref=e5624]:
+                          - generic [ref=e5627]: —
+                          - generic [ref=e5628]: Per urmărire sau apreciere
+                        - generic [ref=e5631]:
+                          - generic [ref=e5633]:
+                            - generic:
+                              - link "Editează coloana":
+                                - /url: "#"
+                            - text: 50,00 lei
+                          - generic [ref=e5634]: Zilnic
+                        - generic [ref=e5640]: 0,00 lei
+                        - generic [ref=e5646]: —
+                        - generic [ref=e5653]: —
+                  - generic [ref=e5656]:
+                    - generic:
+                      - generic [ref=e5657]:
+                        - generic [ref=e5666]:
+                          - checkbox [ref=e5667] [cursor=pointer]
+                          - generic:
+                            - img
+                        - switch "Activează/Dezactivează" [ref=e5676] [cursor=pointer]
+                        - generic [ref=e5682]:
+                          - img [ref=e5684]
+                          - generic [ref=e5687]:
+                            - generic [ref=e5689]: Royal Poker Club - Page Likes - Ad - Image 2
+                            - generic:
+                              - link "Editează coloana":
+                                - /url: "#"
+                      - generic [ref=e5690]:
+                        - generic [ref=e5698]: Dezactivat
+                        - generic [ref=e5704]:
+                          - generic [ref=e5707]: —
+                          - generic [ref=e5709]: Urmărire sau apreciere
+                        - generic [ref=e5712]:
+                          - generic [ref=e5715]: —
+                          - generic [ref=e5716]: Per urmărire sau apreciere
+                        - generic [ref=e5719]:
+                          - generic [ref=e5721]:
+                            - generic:
+                              - link "Editează coloana":
+                                - /url: "#"
+                            - text: 50,00 lei
+                          - generic [ref=e5722]: Zilnic
+                        - generic [ref=e5728]: 0,00 lei
+                        - generic [ref=e5734]: —
+                        - generic [ref=e5741]: —
+                - generic [ref=e5762]:
+                  - text: Rezultate din 11 reclame
+                  - button "information symbol, button, tap for more information" [ref=e5763]
+  - generic [ref=e5808]:
+    - progressbar [ref=e5809]
+    - heading "SE PUBLICĂ 1 DIN 1" [level=4] [ref=e5811]

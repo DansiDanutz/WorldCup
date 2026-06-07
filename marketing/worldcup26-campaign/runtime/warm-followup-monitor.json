@@ -1,0 +1,26 @@
+{
+  "schema": "worldcup26-warm-followup-monitor-v1",
+  "generatedAt": "2026-06-07T17:45:00.551Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "ok": true,
+  "state": "awaiting-first-human-send",
+  "followupMinutes": 15,
+  "counts": {
+    "warmAttempts": 0,
+    "testerAttempts": 0,
+    "followupAttempts": 0,
+    "appViews": 509,
+    "referralViews": 171,
+    "signupSaves": 0,
+    "accepted": 0,
+    "profiles": 5,
+    "entries": 0
+  },
+  "latestFollowupAttempt": null,
+  "latestWarmAttempt": null,
+  "nextAction": "Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.",
+  "checkCommand": "node campaign-referral-activity.mjs && node campaign-signup-conversion-audit.mjs && node campaign-warm-followup-monitor.mjs && sed -n '1,100p' runtime/warm-followup-monitor.txt",
+  "proofRule": "This monitor does not prove a send. It only reacts after a real warm-contact or clean tester-batch attempt has been logged."
+}

@@ -1,0 +1,575 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic:
+      - generic:
+        - heading "Pentru a vedea comenzile rapide de la tastatură, apasă semnul de întrebare Vezi comenzile rapide de tastatură" [level=2] [ref=e28]:
+          - generic [ref=e29]: Pentru a vedea comenzile rapide de la tastatură, apasă semnul de întrebare
+          - link "Vezi comenzile rapide de tastatură" [ref=e30] [cursor=pointer]:
+            - /url: /i/keyboard_shortcuts
+        - generic:
+          - generic:
+            - button "Grok" [ref=e3] [cursor=pointer]:
+              - img [ref=e4]
+            - button "Chat" [ref=e7] [cursor=pointer]:
+              - img [ref=e8]
+        - generic [ref=e18]:
+          - button "Sari la cronologia principală" [ref=e2968] [cursor=pointer]
+          - button "Sari la populare" [ref=e2970] [cursor=pointer]
+          - banner [ref=e19]:
+            - generic [ref=e253]:
+              - generic [ref=e254]:
+                - heading "X" [level=1] [ref=e1661] [cursor=pointer]:
+                  - link "X" [ref=e1662]:
+                    - /url: /home
+                    - img [ref=e259]
+                - navigation "Principal" [ref=e1663]:
+                  - link "Pagina principală (noi postări necitite)" [ref=e1664] [cursor=pointer]:
+                    - /url: /home
+                    - generic [ref=e265]:
+                      - generic [ref=e266]:
+                        - img [ref=e2972]
+                        - generic "undefined elemente necitite" [ref=e1668]
+                      - generic [ref=e270]: Pagina principală
+                  - link "Caută și explorează" [ref=e1669] [cursor=pointer]:
+                    - /url: /explore
+                    - generic [ref=e272]:
+                      - img [ref=e274]
+                      - generic [ref=e277]: Explorează
+                  - link "Notificări" [ref=e1670] [cursor=pointer]:
+                    - /url: /notifications
+                    - generic [ref=e279]:
+                      - img [ref=e281]
+                      - generic [ref=e284]: Notificări
+                  - link "Mesaje directe" [ref=e1671] [cursor=pointer]:
+                    - /url: /i/chat
+                    - generic [ref=e286]:
+                      - img [ref=e288]
+                      - generic [ref=e291]: Chat
+                  - link "Grok" [ref=e1672] [cursor=pointer]:
+                    - /url: /i/grok
+                    - generic [ref=e293]:
+                      - img [ref=e295]
+                      - generic [ref=e298]: Grok
+                  - link "Premium" [ref=e1673] [cursor=pointer]:
+                    - /url: /i/premium
+                    - generic [ref=e300]:
+                      - img [ref=e302]
+                      - generic [ref=e305]: Premium
+                  - link "Marcaje" [ref=e1674] [cursor=pointer]:
+                    - /url: /i/bookmarks
+                    - generic [ref=e307]:
+                      - img [ref=e309]
+                      - generic [ref=e312]: Marcaje
+                  - link "Studio pentru creatori" [ref=e1675] [cursor=pointer]:
+                    - /url: /i/jf/creators/studio
+                    - generic [ref=e314]:
+                      - img [ref=e316]
+                      - generic [ref=e320]: Studio pentru creatori
+                  - link "Articole" [ref=e1676] [cursor=pointer]:
+                    - /url: /compose/articles
+                    - generic [ref=e322]:
+                      - img [ref=e324]
+                      - generic [ref=e329]: Articole
+                  - link "Profil" [active] [ref=e1677] [cursor=pointer]:
+                    - /url: /DansiDanutz
+                    - generic [ref=e331]:
+                      - img [ref=e2975]
+                      - generic [ref=e336]: Profil
+                  - button "Mai multe elemente de meniu" [ref=e1678] [cursor=pointer]:
+                    - generic [ref=e338]:
+                      - img [ref=e340]
+                      - generic [ref=e343]: Mai multe
+                - link "Postează" [ref=e1679] [cursor=pointer]:
+                  - /url: /compose/post
+                  - generic [ref=e351]: Postează
+              - button "Meniu cont" [ref=e1680] [cursor=pointer]:
+                - generic [ref=e362]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic "Semenescu Dan":
+                          - img "Semenescu Dan"
+                - generic [ref=e366]:
+                  - generic [ref=e368]:
+                    - generic [ref=e370]: Semenescu Dan
+                    - img "Cont verificat" [ref=e1681]
+                  - generic [ref=e379]: "@DansiDanutz"
+                - generic [ref=e380]:
+                  - img [ref=e381]
+                  - generic "undefined elemente necitite" [ref=e1682]
+          - main [ref=e20]:
+            - generic [ref=e2979]:
+              - generic "Cronologia principală" [ref=e2981]:
+                - generic [ref=e2982]:
+                  - generic [ref=e2988] [cursor=pointer]:
+                    - button "Înapoi" [ref=e2990]:
+                      - img [ref=e2992]
+                    - generic [ref=e2996]:
+                      - heading "Semenescu Dan Cont verificat" [level=2] [ref=e2997]:
+                        - generic [ref=e3001]:
+                          - generic [ref=e3003]: Semenescu Dan
+                          - img "Cont verificat" [ref=e3006]
+                      - generic [ref=e3009]: 185 postări
+                    - generic [ref=e3011]:
+                      - button "Sumarul profilului" [ref=e3012]:
+                        - img [ref=e3014]
+                      - button "Caută" [ref=e3017]:
+                        - img [ref=e3019]
+                  - generic:
+                    - generic:
+                      - status:
+                        - button:
+                          - generic:
+                            - img
+                            - generic: Vezi postări noi
+                - generic [ref=e3024]:
+                  - generic [ref=e3025]:
+                    - link [ref=e3026] [cursor=pointer]:
+                      - /url: /DansiDanutz/header_photo
+                    - generic [ref=e3032]:
+                      - generic [ref=e3033]:
+                        - link "Deschide fotografia de profil" [ref=e3041] [cursor=pointer]:
+                          - /url: /DansiDanutz/photo
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic "Deschide fotografia de profil":
+                                  - img "Deschide fotografia de profil"
+                        - link "Editează profilul" [ref=e3045] [cursor=pointer]:
+                          - /url: /settings/profile
+                          - generic [ref=e3048]: Editează profilul
+                      - generic [ref=e3052]:
+                        - generic [ref=e3056]:
+                          - text: Semenescu Dan
+                          - button "Oferă detalii despre conturile verificate." [ref=e3061] [cursor=pointer]:
+                            - img "Cont verificat" [ref=e3062]
+                        - generic [ref=e3068]: "@DansiDanutz"
+                      - generic [ref=e3071]:
+                        - text: KryptoStack is here to stay !
+                        - link "Meetmyidol.io" [ref=e3072] [cursor=pointer]:
+                          - /url: https://t.co/Kdb6fLHS1j
+                        - text: is here forever!
+                        - link "IdolRise.com" [ref=e3073] [cursor=pointer]:
+                          - /url: https://t.co/GWGnnEiDjF
+                        - text: "- iRISE - starting from Zero !"
+                      - generic [ref=e3075]:
+                        - img [ref=e3076] [cursor=pointer]
+                        - button "Antreprenor" [ref=e3079]
+                        - img [ref=e3080]
+                        - generic [ref=e3083]: Cluj Napoca
+                        - link "IdolRise.com" [ref=e3084] [cursor=pointer]:
+                          - /url: https://t.co/GWGnnEiDjF
+                          - img [ref=e3085]
+                          - text: IdolRise.com
+                        - img [ref=e3088]
+                        - text: S-a născut în data de 5 aprilie 1981
+                        - link "S-a alăturat în decembrie 2017" [ref=e3092] [cursor=pointer]:
+                          - /url: /DansiDanutz/about
+                          - img [ref=e3093]
+                          - text: S-a alăturat în decembrie 2017
+                          - img [ref=e3096]
+                      - generic [ref=e3099]:
+                        - link "512 Urmăriți" [ref=e3101] [cursor=pointer]:
+                          - /url: /DansiDanutz/following
+                          - generic [ref=e3102]: "512"
+                          - generic [ref=e3103]: Urmăriți
+                        - link "89 Urmăritori" [ref=e3105] [cursor=pointer]:
+                          - /url: /DansiDanutz/verified_followers
+                          - generic [ref=e3106]: "89"
+                          - generic [ref=e3107]: Urmăritori
+                  - navigation "Cronologii de profil" [ref=e3109]:
+                    - generic [ref=e3110]:
+                      - generic:
+                        - button "Anteriorul" [disabled]:
+                          - generic:
+                            - img
+                      - tablist [ref=e3112]:
+                        - tab "Postări" [selected] [ref=e3113] [cursor=pointer]:
+                          - generic [ref=e3116]: Postări
+                        - tab "Răspunsuri" [ref=e3118] [cursor=pointer]:
+                          - generic [ref=e3121]: Răspunsuri
+                        - tab "Evidențieri" [ref=e3122] [cursor=pointer]:
+                          - generic [ref=e3125]: Evidențieri
+                        - tab "Articole" [ref=e3126] [cursor=pointer]:
+                          - generic [ref=e3129]: Articole
+                        - tab "Conținut media" [ref=e3130] [cursor=pointer]:
+                          - generic [ref=e3133]: Conținut media
+                        - tab "Aprecieri" [ref=e3134] [cursor=pointer]:
+                          - generic [ref=e3137]: Aprecieri
+                      - generic:
+                        - button "Înainte" [disabled]:
+                          - generic:
+                            - img
+                  - region "postările utilizatorului Semenescu Dan" [ref=e3138]:
+                    - heading "postările utilizatorului Semenescu Dan" [level=1] [ref=e3139]
+                    - 'generic "Cronologie: postările utilizatorului Semenescu Dan" [ref=e3140]':
+                      - generic [ref=e3141]:
+                        - 'article "Semenescu Dan Cont verificat @DansiDanutz Cu 37 de secunde în urmă WorldCup26 is open. Pick 3 teams free before they lock and track your private points preview. Use my referral code 26BC4B90CB when you join: worldcup26.world/login?ref=26BC All 48 teams are still available. worldcup26.world You are invited to WorldCup26 De la worldcup26.world" [ref=e3145] [cursor=pointer]':
+                          - generic [ref=e3151]:
+                            - link [ref=e3163]:
+                              - /url: /DansiDanutz
+                            - generic [ref=e3166]:
+                              - generic [ref=e3168]:
+                                - generic [ref=e3171]:
+                                  - link "Semenescu Dan Cont verificat" [ref=e3174]:
+                                    - /url: /DansiDanutz
+                                    - generic [ref=e3175]:
+                                      - generic [ref=e3177]: Semenescu Dan
+                                      - img "Cont verificat" [ref=e3180]
+                                  - generic [ref=e3184]:
+                                    - link "@DansiDanutz" [ref=e3186]:
+                                      - /url: /DansiDanutz
+                                      - generic [ref=e3187]: "@DansiDanutz"
+                                    - generic [ref=e3188]: ·
+                                    - link "Cu 37 de secunde în urmă" [ref=e3190]:
+                                      - /url: /DansiDanutz/status/2063349046945677383
+                                      - time [ref=e3191]: 37 s
+                                - generic [ref=e3193]:
+                                  - button "Acțiuni Grok" [ref=e3195]:
+                                    - img [ref=e3200]
+                                  - button "Mai multe" [ref=e3206]:
+                                    - img [ref=e3210]
+                              - generic [ref=e3214]:
+                                - text: "WorldCup26 is open. Pick 3 teams free before they lock and track your private points preview. Use my referral code 26BC4B90CB when you join:"
+                                - link "worldcup26.world/login?ref=26BC" [ref=e3215]:
+                                  - /url: https://t.co/YmzoyPkE5O
+                                  - text: worldcup26.world/login?ref=26BC …
+                                - text: All 48 teams are still available.
+                              - generic "worldcup26.world You are invited to WorldCup26" [ref=e3216]:
+                                - generic "worldcup26.world You are invited to WorldCup26" [ref=e3217]:
+                                  - link "worldcup26.world You are invited to WorldCup26" [ref=e3219]:
+                                    - /url: https://t.co/YmzoyPkE5O
+                                    - generic "WorldCup26 referral invite" [ref=e3223]:
+                                      - img "WorldCup26 referral invite" [ref=e3225]
+                                    - generic [ref=e3226]:
+                                      - generic:
+                                        - generic: You are invited to WorldCup26
+                                - link "De la worldcup26.world" [ref=e3229]:
+                                  - /url: https://t.co/YmzoyPkE5O
+                              - group "1 vizualizare" [ref=e3232]:
+                                - button "0 Răspunsuri. Răspuns" [ref=e3234]:
+                                  - img [ref=e3238]
+                                - button "0 repostări. Repostare" [ref=e3245]:
+                                  - img [ref=e3249]
+                                - button "0 Aprecieri. Apreciere" [ref=e3256]:
+                                  - img [ref=e3260]
+                                - link "1 vizualizare. Analiza vizualizării postării" [ref=e3267]:
+                                  - /url: /DansiDanutz/status/2063349046945677383/analytics
+                                  - generic [ref=e3268]:
+                                    - img [ref=e3271]
+                                    - generic [ref=e3276]: "1"
+                                - button "Marcaj" [ref=e3278]:
+                                  - img [ref=e3282]
+                                - button "Distribuie postarea" [ref=e3287]:
+                                  - img [ref=e3291]
+                        - 'article "Semenescu Dan Cont verificat @DansiDanutz Cu 5 minute în urmă 🏆 World Cup 2026 is coming... Who will win? Human pundits or AI agents? At NERVIX, we''re creating prediction markets where specialized AI agents compete on forecasting accuracy Better predictions through competition 🎯 nervix.ai #WorldCup2026 #AI nervix.ai Nervix — Where AI Agents Earn Real Money De la nervix.ai" [ref=e3297] [cursor=pointer]':
+                          - generic [ref=e3303]:
+                            - link [ref=e3315]:
+                              - /url: /DansiDanutz
+                            - generic [ref=e3318]:
+                              - generic [ref=e3320]:
+                                - generic [ref=e3323]:
+                                  - link "Semenescu Dan Cont verificat" [ref=e3326]:
+                                    - /url: /DansiDanutz
+                                    - generic [ref=e3327]:
+                                      - generic [ref=e3329]: Semenescu Dan
+                                      - img "Cont verificat" [ref=e3332]
+                                  - generic [ref=e3336]:
+                                    - link "@DansiDanutz" [ref=e3338]:
+                                      - /url: /DansiDanutz
+                                      - generic [ref=e3339]: "@DansiDanutz"
+                                    - generic [ref=e3340]: ·
+                                    - link "Cu 5 minute în urmă" [ref=e3342]:
+                                      - /url: /DansiDanutz/status/2063347895735123982
+                                      - time [ref=e3343]: 5 m
+                                - generic [ref=e3345]:
+                                  - button "Acțiuni Grok" [ref=e3347]:
+                                    - img [ref=e3352]
+                                  - button "Mai multe" [ref=e3358]:
+                                    - img [ref=e3362]
+                              - generic [ref=e3366]:
+                                - img "🏆" [ref=e3367]
+                                - text: World Cup 2026 is coming... Who will win? Human pundits or AI agents? At NERVIX, we're creating prediction markets where specialized AI agents compete on forecasting accuracy Better predictions through competition
+                                - img "🎯" [ref=e3368]
+                                - link "nervix.ai" [ref=e3369]:
+                                  - /url: https://t.co/3kBnYkBzqp
+                                - link "#WorldCup2026" [ref=e3371]:
+                                  - /url: /hashtag/WorldCup2026?src=hashtag_click
+                                - link "#AI" [ref=e3373]:
+                                  - /url: /hashtag/AI?src=hashtag_click
+                              - generic "nervix.ai Nervix — Where AI Agents Earn Real Money" [ref=e3374]:
+                                - generic "nervix.ai Nervix — Where AI Agents Earn Real Money" [ref=e3375]:
+                                  - link "nervix.ai Nervix — Where AI Agents Earn Real Money" [ref=e3377]:
+                                    - /url: https://t.co/3kBnYkBzqp
+                                    - generic [ref=e3383]:
+                                      - generic:
+                                        - generic: Nervix — Where AI Agents Earn Real Money
+                                - link "De la nervix.ai" [ref=e3386]:
+                                  - /url: https://t.co/3kBnYkBzqp
+                              - group "2 vizualizări" [ref=e3389]:
+                                - button "0 Răspunsuri. Răspuns" [ref=e3391]:
+                                  - img [ref=e3395]
+                                - button "0 repostări. Repostare" [ref=e3402]:
+                                  - img [ref=e3406]
+                                - button "0 Aprecieri. Apreciere" [ref=e3413]:
+                                  - img [ref=e3417]
+                                - link "2 vizualizări. Analiza vizualizării postării" [ref=e3424]:
+                                  - /url: /DansiDanutz/status/2063347895735123982/analytics
+                                  - generic [ref=e3425]:
+                                    - img [ref=e3428]
+                                    - generic [ref=e3433]: "2"
+                                - button "Marcaj" [ref=e3435]:
+                                  - img [ref=e3439]
+                                - button "Distribuie postarea" [ref=e3444]:
+                                  - img [ref=e3448]
+                        - 'article "Semenescu Dan Cont verificat @DansiDanutz Cu 5 minute în urmă ⚽ Football predictions are about to change forever Imagine AI agents that: ✓ Analyze team stats 24/7 ✓ Process injury reports instantly ✓ Learn from every match ✓ Compete for accuracy rewards NERVIX = where AI agents earn real money for being right Join the federation → nervix.ai Nervix — Where AI Agents Earn Real Money De la nervix.ai" [ref=e3454] [cursor=pointer]':
+                          - generic [ref=e3460]:
+                            - link [ref=e3472]:
+                              - /url: /DansiDanutz
+                            - generic [ref=e3475]:
+                              - generic [ref=e3477]:
+                                - generic [ref=e3480]:
+                                  - link "Semenescu Dan Cont verificat" [ref=e3483]:
+                                    - /url: /DansiDanutz
+                                    - generic [ref=e3484]:
+                                      - generic [ref=e3486]: Semenescu Dan
+                                      - img "Cont verificat" [ref=e3489]
+                                  - generic [ref=e3493]:
+                                    - link "@DansiDanutz" [ref=e3495]:
+                                      - /url: /DansiDanutz
+                                      - generic [ref=e3496]: "@DansiDanutz"
+                                    - generic [ref=e3497]: ·
+                                    - link "Cu 5 minute în urmă" [ref=e3499]:
+                                      - /url: /DansiDanutz/status/2063347882678268407
+                                      - time [ref=e3500]: 5 m
+                                - generic [ref=e3502]:
+                                  - button "Acțiuni Grok" [ref=e3504]:
+                                    - img [ref=e3509]
+                                  - button "Mai multe" [ref=e3515]:
+                                    - img [ref=e3519]
+                              - generic [ref=e3522]:
+                                - generic [ref=e3523]:
+                                  - img "⚽" [ref=e3524]
+                                  - text: "Football predictions are about to change forever Imagine AI agents that: ✓ Analyze team stats 24/7 ✓ Process injury reports instantly ✓ Learn from every match ✓ Compete for accuracy rewards NERVIX = where AI agents earn real money for being right Join the federation →"
+                                - button "Arată mai multe" [ref=e3525]
+                              - generic "nervix.ai Nervix — Where AI Agents Earn Real Money" [ref=e3526]:
+                                - generic "nervix.ai Nervix — Where AI Agents Earn Real Money" [ref=e3527]:
+                                  - link "nervix.ai Nervix — Where AI Agents Earn Real Money" [ref=e3529]:
+                                    - /url: https://t.co/LetXfxxBc0
+                                    - generic [ref=e3535]:
+                                      - generic:
+                                        - generic: Nervix — Where AI Agents Earn Real Money
+                                - link "De la nervix.ai" [ref=e3538]:
+                                  - /url: https://t.co/LetXfxxBc0
+                              - group "1 vizualizare" [ref=e3541]:
+                                - button "0 Răspunsuri. Răspuns" [ref=e3543]:
+                                  - img [ref=e3547]
+                                - button "0 repostări. Repostare" [ref=e3554]:
+                                  - img [ref=e3558]
+                                - button "0 Aprecieri. Apreciere" [ref=e3565]:
+                                  - img [ref=e3569]
+                                - link "1 vizualizare. Analiza vizualizării postării" [ref=e3576]:
+                                  - /url: /DansiDanutz/status/2063347882678268407/analytics
+                                  - generic [ref=e3577]:
+                                    - img [ref=e3580]
+                                    - generic [ref=e3585]: "1"
+                                - button "Marcaj" [ref=e3587]:
+                                  - img [ref=e3591]
+                                - button "Distribuie postarea" [ref=e3596]:
+                                  - img [ref=e3600]
+                        - 'article "Semenescu Dan Cont verificat @DansiDanutz Cu 5 minute în urmă 🎯 World Cup 2026 Predictions - AI Agent Edition What if AI agents could predict match outcomes better than humans? At NERVIX, we''re building agent prediction markets where: • Agents specialize in sports analytics • They compete on accuracy • Winners earn real rewards on TON nervix.ai Nervix — Where AI Agents Earn Real Money De la nervix.ai" [ref=e3606] [cursor=pointer]':
+                          - generic [ref=e3612]:
+                            - link [ref=e3624]:
+                              - /url: /DansiDanutz
+                            - generic [ref=e3627]:
+                              - generic [ref=e3629]:
+                                - generic [ref=e3632]:
+                                  - link "Semenescu Dan Cont verificat" [ref=e3635]:
+                                    - /url: /DansiDanutz
+                                    - generic [ref=e3636]:
+                                      - generic [ref=e3638]: Semenescu Dan
+                                      - img "Cont verificat" [ref=e3641]
+                                  - generic [ref=e3645]:
+                                    - link "@DansiDanutz" [ref=e3647]:
+                                      - /url: /DansiDanutz
+                                      - generic [ref=e3648]: "@DansiDanutz"
+                                    - generic [ref=e3649]: ·
+                                    - link "Cu 5 minute în urmă" [ref=e3651]:
+                                      - /url: /DansiDanutz/status/2063347816991277413
+                                      - time [ref=e3652]: 5 m
+                                - generic [ref=e3654]:
+                                  - button "Acțiuni Grok" [ref=e3656]:
+                                    - img [ref=e3661]
+                                  - button "Mai multe" [ref=e3667]:
+                                    - img [ref=e3671]
+                              - generic [ref=e3674]:
+                                - generic [ref=e3675]:
+                                  - img "🎯" [ref=e3676]
+                                  - text: "World Cup 2026 Predictions - AI Agent Edition What if AI agents could predict match outcomes better than humans? At NERVIX, we're building agent prediction markets where: • Agents specialize in sports analytics • They compete on accuracy • Winners earn real rewards on TON"
+                                - button "Arată mai multe" [ref=e3677]
+                              - generic "nervix.ai Nervix — Where AI Agents Earn Real Money" [ref=e3678]:
+                                - generic "nervix.ai Nervix — Where AI Agents Earn Real Money" [ref=e3679]:
+                                  - link "nervix.ai Nervix — Where AI Agents Earn Real Money" [ref=e3681]:
+                                    - /url: https://t.co/LetXfxxBc0
+                                    - generic [ref=e3687]:
+                                      - generic:
+                                        - generic: Nervix — Where AI Agents Earn Real Money
+                                - link "De la nervix.ai" [ref=e3690]:
+                                  - /url: https://t.co/LetXfxxBc0
+                              - group "6 vizualizări" [ref=e3693]:
+                                - button "0 Răspunsuri. Răspuns" [ref=e3695]:
+                                  - img [ref=e3699]
+                                - button "0 repostări. Repostare" [ref=e3706]:
+                                  - img [ref=e3710]
+                                - button "0 Aprecieri. Apreciere" [ref=e3717]:
+                                  - img [ref=e3721]
+                                - link "6 vizualizări. Analiza vizualizării postării" [ref=e3728]:
+                                  - /url: /DansiDanutz/status/2063347816991277413/analytics
+                                  - generic [ref=e3729]:
+                                    - img [ref=e3732]
+                                    - generic [ref=e3737]: "6"
+                                - button "Marcaj" [ref=e3739]:
+                                  - img [ref=e3743]
+                                - button "Distribuie postarea" [ref=e3748]:
+                                  - img [ref=e3752]
+              - generic "Populare" [ref=e3759]:
+                - generic [ref=e3760]:
+                  - search "Caută" [ref=e3765]:
+                    - generic [ref=e3770]:
+                      - img [ref=e3772]
+                      - combobox "Interogare de căutare" [ref=e3777]
+                  - generic [ref=e3779]:
+                    - heading "În direct pe X" [level=2] [ref=e3781]:
+                      - generic [ref=e3782]: În direct pe X
+                    - button "Transmisiune, Eric ⚡️ Building... găzduiește, Găzduit de Eric ⚡️ Building..., Building... HermesWorld AI MMORPG -> hermes-world.ai, Eric ⚡️ Building... s-a alăturat" [ref=e3784] [cursor=pointer]:
+                      - generic [ref=e3785]:
+                        - generic [ref=e3789]:
+                          - generic [ref=e3801]:
+                            - text: Eric
+                            - img "⚡️" [ref=e3802]
+                            - text: Building...
+                          - img "Cont verificat" [ref=e3805]
+                        - text: găzduiește
+                      - generic [ref=e3808]:
+                        - generic [ref=e3810]: Building... HermesWorld AI MMORPG -> hermes-world.ai
+                        - generic [ref=e3819]: "+472"
+                  - complementary "Pe cine să urmărești" [ref=e3822]:
+                    - heading "S-ar putea să-ți placă" [level=2] [ref=e3824]:
+                      - generic [ref=e3825]: S-ar putea să-ți placă
+                    - list [ref=e3826]:
+                      - listitem [ref=e3827] [cursor=pointer]:
+                        - generic [ref=e3828]:
+                          - link [ref=e3838]:
+                            - /url: /vgr
+                          - generic [ref=e3842]:
+                            - generic [ref=e3844]:
+                              - link "Venkatesh Rao ☀️ Cont verificat" [ref=e3846]:
+                                - /url: /vgr
+                                - generic [ref=e3847]:
+                                  - generic [ref=e3849]:
+                                    - text: Venkatesh Rao
+                                    - img "☀️" [ref=e3850]
+                                  - img "Cont verificat" [ref=e3853]
+                              - link "@vgr" [ref=e3858]:
+                                - /url: /vgr
+                                - generic [ref=e3860]: "@vgr"
+                            - button "Urmărește @vgr" [ref=e3862]:
+                              - generic [ref=e3865]: Urmărește
+                      - listitem [ref=e3866] [cursor=pointer]:
+                        - generic [ref=e3867]:
+                          - link [ref=e3877]:
+                            - /url: /Hadley
+                          - generic [ref=e3881]:
+                            - generic [ref=e3883]:
+                              - link "Hadley Harris Cont verificat" [ref=e3885]:
+                                - /url: /Hadley
+                                - generic [ref=e3886]:
+                                  - generic [ref=e3888]: Hadley Harris
+                                  - img "Cont verificat" [ref=e3891]
+                              - link "@Hadley" [ref=e3896]:
+                                - /url: /Hadley
+                                - generic [ref=e3898]: "@Hadley"
+                            - button "Urmărește @Hadley" [ref=e3900]:
+                              - generic [ref=e3903]: Urmărește
+                      - listitem [ref=e3904] [cursor=pointer]:
+                        - generic [ref=e3905]:
+                          - link [ref=e3915]:
+                            - /url: /BullinBill
+                          - generic [ref=e3919]:
+                            - generic [ref=e3921]:
+                              - link "Bill" [ref=e3923]:
+                                - /url: /BullinBill
+                                - generic [ref=e3926]: Bill
+                              - link "@BullinBill" [ref=e3929]:
+                                - /url: /BullinBill
+                                - generic [ref=e3931]: "@BullinBill"
+                            - button "Urmărește @BullinBill" [ref=e3933]:
+                              - generic [ref=e3936]: Urmărește
+                    - link "Arată mai multe" [ref=e3937] [cursor=pointer]:
+                      - /url: /i/connect_people?user_id=944052353216413701
+                      - generic [ref=e3938]: Arată mai multe
+                  - region "Popular acum" [ref=e3940]:
+                    - heading "Popular acum" [level=1] [ref=e3941]
+                    - 'generic "Cronologie: Popular acum" [ref=e3942]':
+                      - generic [ref=e3943]:
+                        - heading "Ce se întâmplă" [level=2] [ref=e3947]:
+                          - generic [ref=e3948]: Ce se întâmplă
+                        - link "Populare în România North America Mai multe" [ref=e3951] [cursor=pointer]:
+                          - generic [ref=e3952]:
+                            - generic [ref=e3954]: Populare în România
+                            - generic [ref=e3955]: North America
+                            - button "Mai multe" [ref=e3958]:
+                              - img [ref=e3962]
+                        - link "Popular România Mai multe" [ref=e3967] [cursor=pointer]:
+                          - generic [ref=e3968]:
+                            - generic [ref=e3970]: Popular
+                            - generic [ref=e3971]: România
+                            - button "Mai multe" [ref=e3974]:
+                              - img [ref=e3978]
+                        - link "Populare în România $https Mai multe" [ref=e3983] [cursor=pointer]:
+                          - generic [ref=e3984]:
+                            - generic [ref=e3986]: Populare în România
+                            - generic [ref=e3987]: $https
+                            - button "Mai multe" [ref=e3990]:
+                              - img [ref=e3994]
+                        - link "Populare în România Moldova Mai multe" [ref=e3999] [cursor=pointer]:
+                          - generic [ref=e4000]:
+                            - generic [ref=e4002]: Populare în România
+                            - generic [ref=e4003]: Moldova
+                            - button "Mai multe" [ref=e4006]:
+                              - img [ref=e4010]
+                        - link "Afișează mai multe" [ref=e4015] [cursor=pointer]:
+                          - /url: /explore/tabs/for-you
+                          - generic [ref=e4016]: Afișează mai multe
+                  - navigation "Subsol" [ref=e4020]:
+                    - generic [ref=e4021]:
+                      - link "Condiții de utilizare" [ref=e4022] [cursor=pointer]:
+                        - /url: https://x.com/tos
+                      - generic [ref=e4023]: "|"
+                    - generic [ref=e4024]:
+                      - link "Politica de confidențialitate" [ref=e4025] [cursor=pointer]:
+                        - /url: https://x.com/privacy
+                      - generic [ref=e4026]: "|"
+                    - generic [ref=e4027]:
+                      - link "Politica privind modulele cookie" [ref=e4028] [cursor=pointer]:
+                        - /url: https://support.x.com/articles/20170514
+                      - generic [ref=e4029]: "|"
+                    - generic [ref=e4030]:
+                      - link "Accesibilitate" [ref=e4031] [cursor=pointer]:
+                        - /url: https://help.x.com/resources/accessibility
+                      - generic [ref=e4032]: "|"
+                    - generic [ref=e4033]:
+                      - link "Informații despre reclame" [ref=e4034] [cursor=pointer]:
+                        - /url: https://business.x.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&utm_source=twc&utm_medium=web&utm_campaign=ao&utm_content=adsinfo
+                      - generic [ref=e4035]: "|"
+                    - button "Mai multe" [ref=e4036] [cursor=pointer]:
+                      - generic [ref=e4037]:
+                        - text: Mai multe
+                        - img [ref=e4038]
+                    - generic [ref=e4041]: © 2026 X Corp.
+  - generic:
+    - img
+  - generic:
+    - img
+  - generic:
+    - img

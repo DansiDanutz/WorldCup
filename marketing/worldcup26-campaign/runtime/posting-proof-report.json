@@ -1,0 +1,258 @@
+{
+  "generatedAt": "2026-06-07T17:46:16.753Z",
+  "liveLogPath": "/Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime/posting-log-live.csv",
+  "loggedCount": 49,
+  "proofedActiveCount": 6,
+  "proofedDueCount": 6,
+  "unloggedDueCount": 37,
+  "recentLogs": [
+    {
+      "timestamp": "2026-06-06 16:22 +0300",
+      "scheduledLabel": "2026-06-06 16:22 +0300",
+      "owner": "Memo",
+      "channel": "Watchdog cron",
+      "asset": "campaign/campaign-watchdog.sh",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=watchdog-cron&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_watchdog_cron_1620",
+      "status": "logged",
+      "proofUrl": "internal-log: watchdog cron normalized on all four droplets 2026-06-06 16:20 +0300; Dexter, Sienna, Memo, and Nano each have one crontab line and a running campaign-loop; no external post claimed.",
+      "signupNotes": "Four-droplet 72-hour campaign loop is now self-healing every 5 minutes."
+    },
+    {
+      "timestamp": "2026-06-06 16:46 +0300",
+      "scheduledLabel": "2026-06-06 17:15 +0300",
+      "owner": "Memo",
+      "channel": "Proof audit",
+      "asset": "campaign/runtime/posting-log-live.csv",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse35",
+      "status": "logged",
+      "proofUrl": "internal-log: generated mobile phone action center HTML from current urgent queue and synced to Dexter, Sienna, Memo, and Nano on 2026-06-06 around 16:45 EEST; page includes copy buttons, proof commands, proof notes, and WhatsApp/Telegram/X/Facebook share links for the 10 urgent actions; no external post claimed.",
+      "signupNotes": "Phone action center added to reduce friction for real private/social posting while preserving proof honesty; urgent external/private rows still need real action."
+    },
+    {
+      "timestamp": "2026-06-06 17:04 +0300",
+      "scheduledLabel": "2026-06-06 18:15 +0300",
+      "owner": "Memo",
+      "channel": "Asset audit",
+      "asset": "campaign/promo-kit-manifest.md",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse39",
+      "status": "logged",
+      "proofUrl": "internal-log: generated branded WorldCup26 QR share assets on 2026-06-06 around 17:04 EEST; outputs media/worldcup26-referral-qr.png, media/worldcup26-qr-square.jpg, media/worldcup26-qr-story.jpg plus matching assets/ copies; visual inspection passed for square and story cards; no external post claimed.",
+      "signupNotes": "QR assets added for WhatsApp Status, Instagram/Facebook Story, feed screenshots, direct messages, and in-person sharing; referral link/code remain 26BC4B90CB."
+    },
+    {
+      "timestamp": "2026-06-06 18:25 +0300",
+      "scheduledLabel": "2026-06-06 18:00 +0300",
+      "owner": "Memo",
+      "channel": "Ops check",
+      "asset": "campaign/posting-log-template.csv",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h14",
+      "status": "logged",
+      "proofUrl": "internal-log: proof escalation board added to campaign-dispatch and synced to Dexter, Sienna, Memo, and Nano at 2026-06-06 18:23 +0300; each droplet regenerated proof-sprint.json with escalationBoard=true; no external post claimed",
+      "signupNotes": "ops sync only; external proof gaps remain for Sienna, Nano, and Dexter"
+    },
+    {
+      "timestamp": "2026-06-06 23:17 +0300",
+      "scheduledLabel": "2026-06-06 20:45 +0300",
+      "owner": "Dexter",
+      "channel": "X / public fallback",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse49",
+      "status": "posted",
+      "proofUrl": "public-x-note: additional X post from @DansiDanutz at 2026-06-06 22:55 EEST; screenshot /Users/davidai/Documents/WorldCup/worldcup26-x-after-post.png shows X postat confirmation and WorldCup26 link preview; code 26BC4B90CB and https://worldcup26.world/login?ref=26BC4B90CB included; public URL not captured yet",
+      "signupNotes": "supplemental pulse 49; Short feed; Publish or prepare a short public CTA if X is logged in."
+    },
+    {
+      "timestamp": "2026-06-06 23:20 +0300",
+      "scheduledLabel": "2026-06-06 21:15 +0300",
+      "owner": "Memo",
+      "channel": "Proof audit",
+      "asset": "campaign/runtime/posting-log-live.csv",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse51",
+      "status": "logged",
+      "proofUrl": "internal-log: Memo proof audit completed at 2026-06-06 23:20 EEST; live link sentinel ok for 4 variants on dpl_EFjFUKihgS6Ce4tDiBJ2HZmpCCup; remote war room aligned yes with 4/4 loops and unhealthy none; proof rows 42, external proof fresh from 23:17 EEST, urgent rows 16; next external blockers are WhatsApp Status, WhatsApp personal, Meta stories/Reels, football group approval, creator outreach; no external post claimed",
+      "signupNotes": "Campaign signup path checked: ref 26BC4B90CB resolves to David Ai at 5 percent and Google auth uses api.worldcup26.world."
+    },
+    {
+      "timestamp": "2026-06-06 23:24 +0300",
+      "scheduledLabel": "2026-06-06 22:15 +0300",
+      "owner": "Memo",
+      "channel": "Asset audit",
+      "asset": "campaign/promo-kit-manifest.md",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse55",
+      "status": "logged",
+      "proofUrl": "internal-log: asset audit completed at 2026-06-06 23:25 EEST; Dexter, Sienna, Memo, and Nano all have media/worldcup26-main-video.mp4 size 38430149, media/worldcup26-referral-story.jpg size 147990, media/worldcup26-referral-16x9.jpg size 135145, runtime/dispatch-board.md, and runtime/posting-sprint.txt; Facebook and X fresh browser sessions checked but not logged in, so no external post claimed",
+      "signupNotes": "Assets and live referral URL are present on all four workers for code 26BC4B90CB."
+    },
+    {
+      "timestamp": "2026-06-06 23:25 +0300",
+      "scheduledLabel": "2026-06-06 23:15 +0300",
+      "owner": "Memo",
+      "channel": "Copy rotation",
+      "asset": "campaign/copy-bank.md",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-rotation&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse59",
+      "status": "logged",
+      "proofUrl": "internal-log: Memo copy rotation completed at 2026-06-06 23:26 EEST; fresh hook: Pick 3 teams free first, see your private points move with real World Cup results, and use a ticket only if you want the paid leaderboard. Reply answer: The code 26BC4B90CB connects your signup to the invite; sign in, save 3 picks free, then decide later about entering the paid leaderboard. Link included: https://worldcup26.world/login?ref=26BC4B90CB; no external post claimed",
+      "signupNotes": "Fresh copy keeps free-picks-first and ticket-later workflow visible."
+    },
+    {
+      "timestamp": "2026-06-06 23:30 +0300",
+      "scheduledLabel": "2026-06-07 00:15 +0300",
+      "owner": "Memo",
+      "channel": "Next best channel",
+      "asset": "campaign/runtime/dispatch-board.md",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=next-best-channel&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse63",
+      "status": "logged",
+      "proofUrl": "internal-log: session recovery board added at 2026-06-06 23:30 EEST; board generates runtime/session-recovery.{txt,md,html,json} with X pulse 65 login/share/proof command, Facebook pulse 57 login/share/proof command, and phone-first proof commands for urgent priorities 1-6; synced to Dexter, Sienna, Memo, and Nano; no external post claimed",
+      "signupNotes": "Public browser blockers are explicit: Facebook and X fresh sessions require login before proof can be claimed."
+    },
+    {
+      "timestamp": "2026-06-06 23:55 +0300",
+      "scheduledLabel": "2026-06-07 01:00 +0300",
+      "owner": "Sienna",
+      "channel": "WhatsApp Status",
+      "asset": "media/worldcup26-main-video.mp4",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse66",
+      "status": "logged",
+      "proofUrl": "internal-log: escalation board added at 2026-06-06 23:55 EEST; generates runtime/escalation-board.{txt,md,html,json}; highlights stale external actions with critical/hot counts and worker-specific do-now queues; synced to Dexter, Sienna, Memo, and Nano; no external post claimed",
+      "signupNotes": "Critical stale real-world actions remain: WhatsApp Status, WhatsApp personal batch, Instagram/Facebook story, football group approval, TikTok/Reels/Shorts, DM replies."
+    },
+    {
+      "timestamp": "2026-06-07 01:40 +0300",
+      "scheduledLabel": "2026-06-07 00:45 +0300",
+      "owner": "Dexter",
+      "channel": "X / public fallback",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse65",
+      "status": "posted",
+      "proofUrl": "private-x-note: posted from logged-in Semenescu Dan / @NervixAi X compose at 2026-06-07 01:39 EEST; browser returned to https://x.com/home after clicking Postează; text included code 26BC4B90CB and https://worldcup26.world/login?ref=26BC4B90CB with x-public-fallback utm_content=dexter_pulse65; public permalink pending because X profile timeline kept loading",
+      "signupNotes": "supplemental pulse 65; Short feed; Publish or prepare a short public CTA if X is logged in."
+    },
+    {
+      "timestamp": "2026-06-07 17:12 +0300",
+      "scheduledLabel": "2026-06-07 17:11 +0300",
+      "owner": "Sienna",
+      "channel": "Instagram",
+      "asset": "media/assets/worldcup26-meta-free-first.png",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=free_first_image",
+      "status": "posted",
+      "proofUrl": "https://www.instagram.com/p/DZSZwTrF8nX/",
+      "signupNotes": "public Instagram free-first post from @seme1981; screenshot instagram-worldcup26-post-2026-06-07.png"
+    }
+  ],
+  "proofedDueRows": [
+    {
+      "scheduledLabel": "2026-06-06 04:00 +0300",
+      "owner": "Memo",
+      "channel": "Campaign ops",
+      "action": "Open posting log; confirm video + referral images from promo kit",
+      "asset": "campaign/promo-kit-manifest.md",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=campaign-ops&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h0",
+      "proof": {
+        "timestamp": "2026-06-06 06:49 +0300",
+        "scheduledLabel": "2026-06-06 04:00 +0300",
+        "owner": "Memo",
+        "channel": "Campaign ops",
+        "asset": "campaign/promo-kit-manifest.md",
+        "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=campaign-ops&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h0",
+        "status": "logged",
+        "proofUrl": "internal-log: verified promo kit assets on all four droplets; MP4 38430149 bytes; story JPG 212367 bytes; 16x9 JPG 221990 bytes; outbox and Memo inbox present",
+        "signupNotes": ""
+      }
+    },
+    {
+      "scheduledLabel": "2026-06-06 05:00 +0300",
+      "owner": "Dexter",
+      "channel": "X / short feed",
+      "action": "Post football hook: pick 3 teams free first, then paid leaderboard with ticket.",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h1",
+      "proof": {
+        "timestamp": "2026-06-06 06:59 +0300",
+        "scheduledLabel": "2026-06-06 05:00 +0300",
+        "owner": "Dexter",
+        "channel": "X / short feed",
+        "asset": "media/worldcup26-referral-16x9.jpg",
+        "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h1",
+        "status": "posted",
+        "proofUrl": "https://x.com/NervixAi/status/2063108294865007049",
+        "signupNotes": ""
+      }
+    },
+    {
+      "scheduledLabel": "2026-06-06 07:20 +0300",
+      "owner": "Dexter",
+      "channel": "X / live fallback",
+      "action": "Publish public fallback while WhatsApp and Meta need manual proof",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-live-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_hlive1",
+      "proof": {
+        "timestamp": "2026-06-06 07:55 +0300",
+        "scheduledLabel": "2026-06-06 07:20 +0300",
+        "owner": "Dexter",
+        "channel": "X / live fallback",
+        "asset": "media/worldcup26-referral-16x9.jpg",
+        "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-live-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_hlive1",
+        "status": "posted",
+        "proofUrl": "https://x.com/NervixAi/status/2063122455758086460",
+        "signupNotes": ""
+      }
+    },
+    {
+      "scheduledLabel": "2026-06-06 10:00 +0300",
+      "owner": "Memo",
+      "channel": "Ops check",
+      "action": "Log posts, replies, click/sign-up notes; identify best first channel",
+      "asset": "campaign/posting-log-template.csv",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h6",
+      "proof": {
+        "timestamp": "2026-06-06 10:42 +0300",
+        "scheduledLabel": "2026-06-06 10:00 +0300",
+        "owner": "Memo",
+        "channel": "Ops check",
+        "asset": "campaign/posting-log-template.csv",
+        "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h6",
+        "status": "logged",
+        "proofUrl": "internal-log: 2026-06-06 10:43 +0300 ops check; production referral link returned HTTP 200 with title Join WorldCup26 and contains code 26BC4B90CB plus Pick 3 teams copy; homepage returned HTTP 200; all four worker loops were alive with 17 proof rows before this log; browser X intent is currently logged out, so no new X post was claimed; remaining public/private channels still need login or private-channel proof.",
+        "signupNotes": "Next best channel: if browser login is restored, use Facebook/feed fallback pulse 9 or Shorts/Reels/TikTok pulse 10; otherwise keep WhatsApp, Telegram, Meta, TikTok, and group rows unposted until real proof exists."
+      }
+    },
+    {
+      "scheduledLabel": "2026-06-06 16:00 +0300",
+      "owner": "Dexter",
+      "channel": "X / short feed",
+      "action": "Favorites vs underdogs debate post",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h12",
+      "proof": {
+        "timestamp": "2026-06-06 07:10 +0300",
+        "scheduledLabel": "2026-06-06 16:00 +0300",
+        "owner": "Dexter",
+        "channel": "X / short feed",
+        "asset": "media/worldcup26-referral-square.jpg",
+        "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h12",
+        "status": "posted",
+        "proofUrl": "https://x.com/NervixAi/status/2063111082068136404",
+        "signupNotes": ""
+      }
+    },
+    {
+      "scheduledLabel": "2026-06-06 18:00 +0300",
+      "owner": "Memo",
+      "channel": "Ops check",
+      "action": "Check posting log completeness and list top three replies to answer",
+      "asset": "campaign/posting-log-template.csv",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h14",
+      "proof": {
+        "timestamp": "2026-06-06 18:25 +0300",
+        "scheduledLabel": "2026-06-06 18:00 +0300",
+        "owner": "Memo",
+        "channel": "Ops check",
+        "asset": "campaign/posting-log-template.csv",
+        "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h14",
+        "status": "logged",
+        "proofUrl": "internal-log: proof escalation board added to campaign-dispatch and synced to Dexter, Sienna, Memo, and Nano at 2026-06-06 18:23 +0300; each droplet regenerated proof-sprint.json with escalationBoard=true; no external post claimed",
+        "signupNotes": "ops sync only; external proof gaps remain for Sienna, Nano, and Dexter"
+      }
+    }
+  ]
+}

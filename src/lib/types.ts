@@ -102,6 +102,7 @@ export type MatchTeamPoints = {
 };
 
 export type EntryPayload = {
+  action?: "save-draft" | "lock";
   displayName: string;
   teamIds: string[];
   referralCode?: string;
@@ -124,6 +125,32 @@ export type AdminAccountRow = {
   walletBalance: string;
   ticketsAssigned: number;
   ticketsAvailable: number;
+};
+
+export type AdminMetrics = {
+  generatedAt: string;
+  accountsTotal: number;
+  freeAccounts: number;
+  paidAccounts: number;
+  lockedPaidEntries: number;
+  draftEntries: number;
+  ticketsAssigned: number;
+  ticketsAvailable: number;
+  appViews: {
+    total: number;
+    today: number;
+    last24Hours: number;
+    lastViewedAt: string | null;
+    topSources: Array<{
+      source: string;
+      medium: string | null;
+      campaign: string | null;
+      content: string | null;
+      count: number;
+      lastViewedAt: string | null;
+    }>;
+    trackingReady: boolean;
+  };
 };
 
 export type AdminDepositClaimRow = {
@@ -213,6 +240,12 @@ export type MyAccountStatus = {
     displayName: string;
     teamIds: string[];
     lockedAt: string | null;
+  } | null;
+  entryPreview?: {
+    totalPoints: number;
+    rank: number | null;
+    paidPlaces: number;
+    projectedShare: number | null;
   } | null;
   usdtSenderWalletAddress?: string | null;
   usdtSenderWalletNetwork?: string | null;

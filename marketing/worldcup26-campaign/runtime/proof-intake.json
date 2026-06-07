@@ -1,0 +1,172 @@
+{
+  "schema": "worldcup26-proof-intake-v1",
+  "generatedAt": "2026-06-07T17:45:01.134Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "referralCode": "26BC4B90CB",
+  "proofState": "critical",
+  "latestExternalProofAgeLabel": "3.5h",
+  "intakeMode": "warm-contact-sprint",
+  "rows": [
+    {
+      "priority": "1",
+      "scheduledAtEest": "2026-06-06 04:00 +0300",
+      "owner": "Sienna",
+      "channel": "WhatsApp Status",
+      "mode": "manual post",
+      "action": "Post story asset with video caption 1",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
+      "copy": "I invited you to WorldCup26.\n\nPick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.\n\nUse my referral code 26BC4B90CB when you join:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0\n\nThe event has not started yet, so all teams are still available right now.",
+      "proofStatus": "posted"
+    },
+    {
+      "priority": "2",
+      "scheduledAtEest": "2026-06-06 06:00 +0300",
+      "owner": "Nano",
+      "channel": "WhatsApp personal",
+      "mode": "manual outreach",
+      "action": "Send personal invite to warm contacts",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2",
+      "copy": "I invited you to WorldCup26.\n\nPick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.\n\nUse my referral code 26BC4B90CB when you join:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2\n\nThe event has not started yet, so all teams are still available right now.",
+      "proofStatus": "sent"
+    },
+    {
+      "priority": "3",
+      "scheduledAtEest": "2026-06-06 07:00 +0300",
+      "owner": "Sienna",
+      "channel": "Instagram/Facebook story",
+      "mode": "manual post",
+      "action": "Story: Code 26BC4B90CB + link sticker",
+      "asset": "media/worldcup26-referral-story.jpg",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h3",
+      "copy": "Pick 3 teams before they lock.\n\nWatch your private points preview move with every match.\n\nPaid leaderboard entry happens only when you use a ticket.\n\nJoin with code 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h3",
+      "proofStatus": "posted"
+    },
+    {
+      "priority": "4",
+      "scheduledAtEest": "2026-06-06 08:00 +0300",
+      "owner": "Dexter",
+      "channel": "Football groups",
+      "mode": "approval first",
+      "action": "Ask approved group admin for permission; post group variant only if allowed",
+      "asset": "campaign/first-wave-posts.md",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+      "copy": "For football fans here:\n\nWorldCup26 is a prediction game where you pick 3 teams free first and see your private points preview.\n\nPaid leaderboard entry happens only when you use a ticket.\n\nMy invite code: 26BC4B90CB\nJoin here:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+      "proofStatus": "requested"
+    },
+    {
+      "priority": "5",
+      "scheduledAtEest": "2026-06-06 09:00 +0300",
+      "owner": "Sienna",
+      "channel": "TikTok/Reels/Shorts",
+      "mode": "manual post",
+      "action": "Upload main video with short caption and code in first line",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h5",
+      "copy": "Pick 3 teams before they lock.\n\nWatch your private points preview move with every match.\n\nPaid leaderboard entry happens only when you use a ticket.\n\nJoin with code 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h5",
+      "proofStatus": "posted"
+    },
+    {
+      "priority": "6",
+      "scheduledAtEest": "2026-06-06 11:00 +0300",
+      "owner": "Nano",
+      "channel": "DM follow-up",
+      "mode": "manual replies",
+      "action": "Reply to first reactions and send the simple how-it-works answer",
+      "asset": "campaign/copy-bank.md",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h7",
+      "copy": "Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.\n\nUse a ticket only if you want to enter the paid leaderboard.\n\nUse code 26BC4B90CB here:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h7",
+      "proofStatus": "replied"
+    },
+    {
+      "priority": "7",
+      "scheduledAtEest": "2026-06-06 12:00 +0300",
+      "owner": "Sienna",
+      "channel": "YouTube Shorts",
+      "mode": "manual post",
+      "action": "Post main video as Shorts with code and link in description",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h8",
+      "copy": "Pick 3 teams before they lock.\n\nWatch your private points preview move with every match.\n\nPaid leaderboard entry happens only when you use a ticket.\n\nJoin with code 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h8",
+      "proofStatus": "posted"
+    },
+    {
+      "priority": "8",
+      "scheduledAtEest": "2026-06-06 13:00 +0300",
+      "owner": "Dexter",
+      "channel": "Facebook profile/page",
+      "mode": "manual post",
+      "action": "Publish simple rules feed post for friends and football contacts",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-profile-page&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h9",
+      "copy": "WorldCup26 is open.\n\nPick 3 teams for free. See your private points preview.\n\nUse a ticket only if you want to enter the paid leaderboard.\n\nJoin with my code:\n26BC4B90CB\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-profile-page&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h9",
+      "proofStatus": "posted"
+    }
+  ],
+  "warmRows": [
+    {
+      "priority": "warm-1",
+      "owner": "Nano",
+      "channel": "WhatsApp personal",
+      "action": "Send warm-contact invite to 10 football friends.",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+    },
+    {
+      "priority": "warm-3",
+      "owner": "Sienna",
+      "channel": "WhatsApp personal",
+      "action": "Send warm-contact invite to 10 close contacts.",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Sienna' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch' --detail 'WhatsApp personal: sent to <N> 10 close contacts from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+    },
+    {
+      "priority": "warm-4",
+      "owner": "Dexter",
+      "channel": "WhatsApp admins",
+      "action": "Send warm-contact invite to football group admins.",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Dexter' --platform 'WhatsApp admins' --channel \"warm-contact sprint\" --status 'requested' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission' --detail 'WhatsApp admins: requested to <N> football group admins from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+    },
+    {
+      "priority": "warm-5",
+      "owner": "Memo",
+      "channel": "WhatsApp testers",
+      "action": "Send warm-contact invite to 3 trusted testers.",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Memo' --platform 'WhatsApp testers' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup' --detail 'WhatsApp testers: sent to <N> 3 trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asset runtime/signup-conversion-audit.html; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+    }
+  ],
+  "examples": [
+    {
+      "priority": "warm-1",
+      "owner": "Nano",
+      "channel": "WhatsApp personal",
+      "action": "Send warm-contact invite to 10 football friends.",
+      "privateCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+      "publicCommand": "Use the private warm-contact command after the real send/request exists. Do not log a public URL for private WhatsApp messages."
+    },
+    {
+      "priority": "warm-3",
+      "owner": "Sienna",
+      "channel": "WhatsApp personal",
+      "action": "Send warm-contact invite to 10 close contacts.",
+      "privateCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Sienna' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch' --detail 'WhatsApp personal: sent to <N> 10 close contacts from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+      "publicCommand": "Use the private warm-contact command after the real send/request exists. Do not log a public URL for private WhatsApp messages."
+    },
+    {
+      "priority": "warm-4",
+      "owner": "Dexter",
+      "channel": "WhatsApp admins",
+      "action": "Send warm-contact invite to football group admins.",
+      "privateCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Dexter' --platform 'WhatsApp admins' --channel \"warm-contact sprint\" --status 'requested' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission' --detail 'WhatsApp admins: requested to <N> football group admins from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+      "publicCommand": "Use the private warm-contact command after the real send/request exists. Do not log a public URL for private WhatsApp messages."
+    },
+    {
+      "priority": "warm-5",
+      "owner": "Memo",
+      "channel": "WhatsApp testers",
+      "action": "Send warm-contact invite to 3 trusted testers.",
+      "privateCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Memo' --platform 'WhatsApp testers' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup' --detail 'WhatsApp testers: sent to <N> 3 trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asset runtime/signup-conversion-audit.html; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\"",
+      "publicCommand": "Use the private warm-contact command after the real send/request exists. Do not log a public URL for private WhatsApp messages."
+    }
+  ],
+  "proofRule": "Use this only after the real post, story, message, upload, reply, or approval request exists."
+}

@@ -1,0 +1,307 @@
+{
+  "schema": "worldcup26-zero-signup-rescue-v1",
+  "generatedAt": "2026-06-07T17:45:01.025Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "ok": true,
+  "state": "critical-zero-signups",
+  "counts": {
+    "acceptedReferrals": 0,
+    "signupSaves": 0,
+    "entries": 0
+  },
+  "zeroSignup": true,
+  "staleExternalProof": true,
+  "urgentOpenRows": 16,
+  "nextProofAction": {
+    "priority": "warm-1",
+    "owner": "Nano",
+    "channel": "WhatsApp personal",
+    "action": "Send warm-contact invite to 10 football friends.",
+    "asset": "media/worldcup26-main-video.mp4"
+  },
+  "creativeVariants": [
+    {
+      "priority": 1,
+      "owner": "Sienna",
+      "channel": "YouTube Shorts / TikTok / Reels",
+      "hook": "Most World Cup predictions are boring. Pick 3 teams free and see your private score.",
+      "beat": "Screen record: landing page opens with invite code applied, then three team cards selected fast.",
+      "caption": "Pick 3 teams free. If you want the paid leaderboard later, use a ticket. Code 26BC4B90CB.",
+      "cta": "Tap the link, Google signup, choose your three teams.",
+      "asset": "media/worldcup26-main-video-vertical.mp4",
+      "utmSource": "zero-signup-short",
+      "utmMedium": "organic-video",
+      "utmContent": "hook_private_score",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-short&utm_medium=organic-video&utm_campaign=worldcup26_zero_signup_rescue&utm_content=hook_private_score",
+      "copy": "Most World Cup predictions are boring. Pick 3 teams free and see your private score.\n\nPick 3 teams free. If you want the paid leaderboard later, use a ticket. Code 26BC4B90CB.\n\nTap the link, Google signup, choose your three teams.\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-short&utm_medium=organic-video&utm_campaign=worldcup26_zero_signup_rescue&utm_content=hook_private_score",
+      "proofNote": "YouTube Shorts / TikTok / Reels: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video-vertical.mp4; code 26BC4B90CB; link included; observed replies/signups <N>",
+      "shareLinks": [
+        {
+          "label": "WhatsApp",
+          "url": "whatsapp://send?text=Most%20World%20Cup%20predictions%20are%20boring.%20Pick%203%20teams%20free%20and%20see%20your%20private%20score.%0A%0APick%203%20teams%20free.%20If%20you%20want%20the%20paid%20leaderboard%20later%2C%20use%20a%20ticket.%20Code%2026BC4B90CB.%0A%0ATap%20the%20link%2C%20Google%20signup%2C%20choose%20your%20three%20teams.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-short%26utm_medium%3Dorganic-video%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dhook_private_score"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-short%26utm_medium%3Dorganic-video%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dhook_private_score&text=Most%20World%20Cup%20predictions%20are%20boring.%20Pick%203%20teams%20free%20and%20see%20your%20private%20score.%0A%0APick%203%20teams%20free.%20If%20you%20want%20the%20paid%20leaderboard%20later%2C%20use%20a%20ticket.%20Code%2026BC4B90CB.%0A%0ATap%20the%20link%2C%20Google%20signup%2C%20choose%20your%20three%20teams.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-short%26utm_medium%3Dorganic-video%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dhook_private_score"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Most%20World%20Cup%20predictions%20are%20boring.%20Pick%203%20teams%20free%20and%20see%20your%20private%20score.%0A%0APick%203%20teams%20free.%20If%20you%20want%20the%20paid%20leaderboard%20later%2C%20use%20a%20ticket.%20Code%2026BC4B90CB.%0A%0ATap%20the%20link%2C%20Google%20signup%2C%20choose%20your%20three%20teams.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-short%26utm_medium%3Dorganic-video%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dhook_private_score"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-short%26utm_medium%3Dorganic-video%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dhook_private_score"
+        }
+      ],
+      "attemptCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"YouTube Shorts / TikTok / Reels\" --channel \"zero signup rescue\" --status \"posted\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-short&utm_medium=organic-video&utm_campaign=worldcup26_zero_signup_rescue&utm_content=hook_private_score\" --detail \"YouTube Shorts / TikTok / Reels: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video-vertical.mp4; code 26BC4B90CB; link included; observed replies/signups <N>\" --next-action \"watch replies/signups; follow up with anyone who asks for help\""
+    },
+    {
+      "priority": 2,
+      "owner": "Dexter",
+      "channel": "X / football feed",
+      "hook": "Name your 3 World Cup teams before the hype starts.",
+      "beat": "Post a direct question, then add the link and referral code in the first reply.",
+      "caption": "I picked my WorldCup26 teams. You can pick yours free and track the private points preview. Code 26BC4B90CB",
+      "cta": "Reply with your three teams after joining.",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "utmSource": "zero-signup-x",
+      "utmMedium": "organic-post",
+      "utmContent": "three_team_question",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-x&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=three_team_question",
+      "copy": "Name your 3 World Cup teams before the hype starts.\n\nI picked my WorldCup26 teams. You can pick yours free and track the private points preview. Code 26BC4B90CB\n\nReply with your three teams after joining.\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-x&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=three_team_question",
+      "proofNote": "X / football feed: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB; link included; observed replies/signups <N>",
+      "shareLinks": [
+        {
+          "label": "WhatsApp",
+          "url": "whatsapp://send?text=Name%20your%203%20World%20Cup%20teams%20before%20the%20hype%20starts.%0A%0AI%20picked%20my%20WorldCup26%20teams.%20You%20can%20pick%20yours%20free%20and%20track%20the%20private%20points%20preview.%20Code%2026BC4B90CB%0A%0AReply%20with%20your%20three%20teams%20after%20joining.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-x%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dthree_team_question"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-x%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dthree_team_question&text=Name%20your%203%20World%20Cup%20teams%20before%20the%20hype%20starts.%0A%0AI%20picked%20my%20WorldCup26%20teams.%20You%20can%20pick%20yours%20free%20and%20track%20the%20private%20points%20preview.%20Code%2026BC4B90CB%0A%0AReply%20with%20your%20three%20teams%20after%20joining.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-x%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dthree_team_question"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Name%20your%203%20World%20Cup%20teams%20before%20the%20hype%20starts.%0A%0AI%20picked%20my%20WorldCup26%20teams.%20You%20can%20pick%20yours%20free%20and%20track%20the%20private%20points%20preview.%20Code%2026BC4B90CB%0A%0AReply%20with%20your%20three%20teams%20after%20joining.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-x%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dthree_team_question"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-x%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dthree_team_question"
+        }
+      ],
+      "attemptCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X / football feed\" --channel \"zero signup rescue\" --status \"posted\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-x&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=three_team_question\" --detail \"X / football feed: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB; link included; observed replies/signups <N>\" --next-action \"watch replies/signups; follow up with anyone who asks for help\""
+    },
+    {
+      "priority": 3,
+      "owner": "Nano",
+      "channel": "WhatsApp personal",
+      "hook": "Quick football game: choose 3 teams now, free.",
+      "beat": "Send as a personal note, not a broadcast. Ask for their picks back.",
+      "caption": "I am testing WorldCup26. Pick 3 teams free, no payment needed to preview points. My invite code is 26BC4B90CB.",
+      "cta": "Send me your three teams after you join.",
+      "asset": "media/worldcup26-main-video.mp4",
+      "utmSource": "zero-signup-whatsapp",
+      "utmMedium": "personal-message",
+      "utmContent": "warm_contact_free_pick",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-whatsapp&utm_medium=personal-message&utm_campaign=worldcup26_zero_signup_rescue&utm_content=warm_contact_free_pick",
+      "copy": "Quick football game: choose 3 teams now, free.\n\nI am testing WorldCup26. Pick 3 teams free, no payment needed to preview points. My invite code is 26BC4B90CB.\n\nSend me your three teams after you join.\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-whatsapp&utm_medium=personal-message&utm_campaign=worldcup26_zero_signup_rescue&utm_content=warm_contact_free_pick",
+      "proofNote": "WhatsApp personal: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; observed replies/signups <N>",
+      "shareLinks": [
+        {
+          "label": "WhatsApp",
+          "url": "whatsapp://send?text=Quick%20football%20game%3A%20choose%203%20teams%20now%2C%20free.%0A%0AI%20am%20testing%20WorldCup26.%20Pick%203%20teams%20free%2C%20no%20payment%20needed%20to%20preview%20points.%20My%20invite%20code%20is%2026BC4B90CB.%0A%0ASend%20me%20your%20three%20teams%20after%20you%20join.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-whatsapp%26utm_medium%3Dpersonal-message%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dwarm_contact_free_pick"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-whatsapp%26utm_medium%3Dpersonal-message%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dwarm_contact_free_pick&text=Quick%20football%20game%3A%20choose%203%20teams%20now%2C%20free.%0A%0AI%20am%20testing%20WorldCup26.%20Pick%203%20teams%20free%2C%20no%20payment%20needed%20to%20preview%20points.%20My%20invite%20code%20is%2026BC4B90CB.%0A%0ASend%20me%20your%20three%20teams%20after%20you%20join.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-whatsapp%26utm_medium%3Dpersonal-message%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dwarm_contact_free_pick"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Quick%20football%20game%3A%20choose%203%20teams%20now%2C%20free.%0A%0AI%20am%20testing%20WorldCup26.%20Pick%203%20teams%20free%2C%20no%20payment%20needed%20to%20preview%20points.%20My%20invite%20code%20is%2026BC4B90CB.%0A%0ASend%20me%20your%20three%20teams%20after%20you%20join.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-whatsapp%26utm_medium%3Dpersonal-message%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dwarm_contact_free_pick"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-whatsapp%26utm_medium%3Dpersonal-message%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dwarm_contact_free_pick"
+        }
+      ],
+      "attemptCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"WhatsApp personal\" --channel \"zero signup rescue\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-whatsapp&utm_medium=personal-message&utm_campaign=worldcup26_zero_signup_rescue&utm_content=warm_contact_free_pick\" --detail \"WhatsApp personal: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; observed replies/signups <N>\" --next-action \"watch replies/signups; follow up with anyone who asks for help\""
+    },
+    {
+      "priority": 4,
+      "owner": "Sienna",
+      "channel": "WhatsApp Status / Instagram Story",
+      "hook": "48 teams are still open. Pick your 3 before everyone copies the favorites.",
+      "beat": "Story frame: code large, link sticker, short caption. No long rules.",
+      "caption": "Free first step: pick 3 teams and watch your preview. Code 26BC4B90CB.",
+      "cta": "Use the invite link today.",
+      "asset": "media/worldcup26-referral-story.jpg",
+      "utmSource": "zero-signup-story",
+      "utmMedium": "story",
+      "utmContent": "forty_eight_teams_open",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-story&utm_medium=story&utm_campaign=worldcup26_zero_signup_rescue&utm_content=forty_eight_teams_open",
+      "copy": "48 teams are still open. Pick your 3 before everyone copies the favorites.\n\nFree first step: pick 3 teams and watch your preview. Code 26BC4B90CB.\n\nUse the invite link today.\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-story&utm_medium=story&utm_campaign=worldcup26_zero_signup_rescue&utm_content=forty_eight_teams_open",
+      "proofNote": "WhatsApp Status / Instagram Story: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; observed replies/signups <N>",
+      "shareLinks": [
+        {
+          "label": "WhatsApp",
+          "url": "whatsapp://send?text=48%20teams%20are%20still%20open.%20Pick%20your%203%20before%20everyone%20copies%20the%20favorites.%0A%0AFree%20first%20step%3A%20pick%203%20teams%20and%20watch%20your%20preview.%20Code%2026BC4B90CB.%0A%0AUse%20the%20invite%20link%20today.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-story%26utm_medium%3Dstory%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dforty_eight_teams_open"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-story%26utm_medium%3Dstory%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dforty_eight_teams_open&text=48%20teams%20are%20still%20open.%20Pick%20your%203%20before%20everyone%20copies%20the%20favorites.%0A%0AFree%20first%20step%3A%20pick%203%20teams%20and%20watch%20your%20preview.%20Code%2026BC4B90CB.%0A%0AUse%20the%20invite%20link%20today.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-story%26utm_medium%3Dstory%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dforty_eight_teams_open"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=48%20teams%20are%20still%20open.%20Pick%20your%203%20before%20everyone%20copies%20the%20favorites.%0A%0AFree%20first%20step%3A%20pick%203%20teams%20and%20watch%20your%20preview.%20Code%2026BC4B90CB.%0A%0AUse%20the%20invite%20link%20today.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-story%26utm_medium%3Dstory%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dforty_eight_teams_open"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-story%26utm_medium%3Dstory%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dforty_eight_teams_open"
+        }
+      ],
+      "attemptCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"WhatsApp Status / Instagram Story\" --channel \"zero signup rescue\" --status \"posted\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-story&utm_medium=story&utm_campaign=worldcup26_zero_signup_rescue&utm_content=forty_eight_teams_open\" --detail \"WhatsApp Status / Instagram Story: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; observed replies/signups <N>\" --next-action \"watch replies/signups; follow up with anyone who asks for help\""
+    },
+    {
+      "priority": 5,
+      "owner": "Dexter",
+      "channel": "Facebook profile / football groups",
+      "hook": "Who are your 3 teams for World Cup 2026?",
+      "beat": "Ask permission in groups first. In profile posts, lead with the question before the link.",
+      "caption": "I made my WorldCup26 invite. Pick 3 teams free, compare later, and use a ticket only if you want the paid leaderboard. Code 26BC4B90CB.",
+      "cta": "Comment your three teams or join from the link.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "utmSource": "zero-signup-facebook",
+      "utmMedium": "organic-post",
+      "utmContent": "comment_three_teams",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-facebook&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=comment_three_teams",
+      "copy": "Who are your 3 teams for World Cup 2026?\n\nI made my WorldCup26 invite. Pick 3 teams free, compare later, and use a ticket only if you want the paid leaderboard. Code 26BC4B90CB.\n\nComment your three teams or join from the link.\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-facebook&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=comment_three_teams",
+      "proofNote": "Facebook profile / football groups: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB; link included; observed replies/signups <N>",
+      "shareLinks": [
+        {
+          "label": "WhatsApp",
+          "url": "whatsapp://send?text=Who%20are%20your%203%20teams%20for%20World%20Cup%202026%3F%0A%0AI%20made%20my%20WorldCup26%20invite.%20Pick%203%20teams%20free%2C%20compare%20later%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%20Code%2026BC4B90CB.%0A%0AComment%20your%20three%20teams%20or%20join%20from%20the%20link.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-facebook%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dcomment_three_teams"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-facebook%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dcomment_three_teams&text=Who%20are%20your%203%20teams%20for%20World%20Cup%202026%3F%0A%0AI%20made%20my%20WorldCup26%20invite.%20Pick%203%20teams%20free%2C%20compare%20later%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%20Code%2026BC4B90CB.%0A%0AComment%20your%20three%20teams%20or%20join%20from%20the%20link.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-facebook%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dcomment_three_teams"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Who%20are%20your%203%20teams%20for%20World%20Cup%202026%3F%0A%0AI%20made%20my%20WorldCup26%20invite.%20Pick%203%20teams%20free%2C%20compare%20later%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%20Code%2026BC4B90CB.%0A%0AComment%20your%20three%20teams%20or%20join%20from%20the%20link.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-facebook%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dcomment_three_teams"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-facebook%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dcomment_three_teams"
+        }
+      ],
+      "attemptCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"Facebook profile / football groups\" --channel \"zero signup rescue\" --status \"requested\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-facebook&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=comment_three_teams\" --detail \"Facebook profile / football groups: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB; link included; observed replies/signups <N>\" --next-action \"watch replies/signups; follow up with anyone who asks for help\""
+    },
+    {
+      "priority": 6,
+      "owner": "Sienna",
+      "channel": "YouTube Shorts",
+      "hook": "I would not pay first. I would pick 3 teams free first.",
+      "beat": "First 2 seconds show the free-team selection, then code applied, then Google button.",
+      "caption": "WorldCup26 lets you save free picks first. Paid leaderboard comes later only if you want it. Code 26BC4B90CB.",
+      "cta": "Open the link and pick before June 18.",
+      "asset": "media/worldcup26-main-video-vertical.mp4",
+      "utmSource": "zero-signup-youtube",
+      "utmMedium": "shorts",
+      "utmContent": "free_before_paid",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-youtube&utm_medium=shorts&utm_campaign=worldcup26_zero_signup_rescue&utm_content=free_before_paid",
+      "copy": "I would not pay first. I would pick 3 teams free first.\n\nWorldCup26 lets you save free picks first. Paid leaderboard comes later only if you want it. Code 26BC4B90CB.\n\nOpen the link and pick before June 18.\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-youtube&utm_medium=shorts&utm_campaign=worldcup26_zero_signup_rescue&utm_content=free_before_paid",
+      "proofNote": "YouTube Shorts: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video-vertical.mp4; code 26BC4B90CB; link included; observed replies/signups <N>",
+      "shareLinks": [
+        {
+          "label": "WhatsApp",
+          "url": "whatsapp://send?text=I%20would%20not%20pay%20first.%20I%20would%20pick%203%20teams%20free%20first.%0A%0AWorldCup26%20lets%20you%20save%20free%20picks%20first.%20Paid%20leaderboard%20comes%20later%20only%20if%20you%20want%20it.%20Code%2026BC4B90CB.%0A%0AOpen%20the%20link%20and%20pick%20before%20June%2018.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-youtube%26utm_medium%3Dshorts%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfree_before_paid"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-youtube%26utm_medium%3Dshorts%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfree_before_paid&text=I%20would%20not%20pay%20first.%20I%20would%20pick%203%20teams%20free%20first.%0A%0AWorldCup26%20lets%20you%20save%20free%20picks%20first.%20Paid%20leaderboard%20comes%20later%20only%20if%20you%20want%20it.%20Code%2026BC4B90CB.%0A%0AOpen%20the%20link%20and%20pick%20before%20June%2018.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-youtube%26utm_medium%3Dshorts%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfree_before_paid"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=I%20would%20not%20pay%20first.%20I%20would%20pick%203%20teams%20free%20first.%0A%0AWorldCup26%20lets%20you%20save%20free%20picks%20first.%20Paid%20leaderboard%20comes%20later%20only%20if%20you%20want%20it.%20Code%2026BC4B90CB.%0A%0AOpen%20the%20link%20and%20pick%20before%20June%2018.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-youtube%26utm_medium%3Dshorts%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfree_before_paid"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-youtube%26utm_medium%3Dshorts%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfree_before_paid"
+        }
+      ],
+      "attemptCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"YouTube Shorts\" --channel \"zero signup rescue\" --status \"posted\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-youtube&utm_medium=shorts&utm_campaign=worldcup26_zero_signup_rescue&utm_content=free_before_paid\" --detail \"YouTube Shorts: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video-vertical.mp4; code 26BC4B90CB; link included; observed replies/signups <N>\" --next-action \"watch replies/signups; follow up with anyone who asks for help\""
+    },
+    {
+      "priority": 7,
+      "owner": "Nano",
+      "channel": "Telegram / Discord DM",
+      "hook": "Football prediction challenge, free first.",
+      "beat": "Short DM with no hard sell. Ask them to send screenshots of picks.",
+      "caption": "Pick 3 teams free on WorldCup26. If it looks fun, you can enter the paid leaderboard later. Invite code: 26BC4B90CB.",
+      "cta": "Try it and send me your picks.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "utmSource": "zero-signup-dm",
+      "utmMedium": "manual-outreach",
+      "utmContent": "try_and_send_picks",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-dm&utm_medium=manual-outreach&utm_campaign=worldcup26_zero_signup_rescue&utm_content=try_and_send_picks",
+      "copy": "Football prediction challenge, free first.\n\nPick 3 teams free on WorldCup26. If it looks fun, you can enter the paid leaderboard later. Invite code: 26BC4B90CB.\n\nTry it and send me your picks.\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-dm&utm_medium=manual-outreach&utm_campaign=worldcup26_zero_signup_rescue&utm_content=try_and_send_picks",
+      "proofNote": "Telegram / Discord DM: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB; link included; observed replies/signups <N>",
+      "shareLinks": [
+        {
+          "label": "WhatsApp",
+          "url": "whatsapp://send?text=Football%20prediction%20challenge%2C%20free%20first.%0A%0APick%203%20teams%20free%20on%20WorldCup26.%20If%20it%20looks%20fun%2C%20you%20can%20enter%20the%20paid%20leaderboard%20later.%20Invite%20code%3A%2026BC4B90CB.%0A%0ATry%20it%20and%20send%20me%20your%20picks.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-dm%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dtry_and_send_picks"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-dm%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dtry_and_send_picks&text=Football%20prediction%20challenge%2C%20free%20first.%0A%0APick%203%20teams%20free%20on%20WorldCup26.%20If%20it%20looks%20fun%2C%20you%20can%20enter%20the%20paid%20leaderboard%20later.%20Invite%20code%3A%2026BC4B90CB.%0A%0ATry%20it%20and%20send%20me%20your%20picks.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-dm%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dtry_and_send_picks"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Football%20prediction%20challenge%2C%20free%20first.%0A%0APick%203%20teams%20free%20on%20WorldCup26.%20If%20it%20looks%20fun%2C%20you%20can%20enter%20the%20paid%20leaderboard%20later.%20Invite%20code%3A%2026BC4B90CB.%0A%0ATry%20it%20and%20send%20me%20your%20picks.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-dm%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dtry_and_send_picks"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-dm%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dtry_and_send_picks"
+        }
+      ],
+      "attemptCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"Telegram / Discord DM\" --channel \"zero signup rescue\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-dm&utm_medium=manual-outreach&utm_campaign=worldcup26_zero_signup_rescue&utm_content=try_and_send_picks\" --detail \"Telegram / Discord DM: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB; link included; observed replies/signups <N>\" --next-action \"watch replies/signups; follow up with anyone who asks for help\""
+    },
+    {
+      "priority": 8,
+      "owner": "Dexter",
+      "channel": "X / poll",
+      "hook": "Poll: favorite, underdog, or chaos pick?",
+      "beat": "Poll first, link second. Make the post about football opinions, not the product.",
+      "caption": "I am collecting WorldCup26 picks. Pick 3 teams free here, code 26BC4B90CB.",
+      "cta": "Vote, then join and send your picks.",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "utmSource": "zero-signup-x-poll",
+      "utmMedium": "organic-post",
+      "utmContent": "favorites_underdogs_poll",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-x-poll&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=favorites_underdogs_poll",
+      "copy": "Poll: favorite, underdog, or chaos pick?\n\nI am collecting WorldCup26 picks. Pick 3 teams free here, code 26BC4B90CB.\n\nVote, then join and send your picks.\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-x-poll&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=favorites_underdogs_poll",
+      "proofNote": "X / poll: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB; link included; observed replies/signups <N>",
+      "shareLinks": [
+        {
+          "label": "WhatsApp",
+          "url": "whatsapp://send?text=Poll%3A%20favorite%2C%20underdog%2C%20or%20chaos%20pick%3F%0A%0AI%20am%20collecting%20WorldCup26%20picks.%20Pick%203%20teams%20free%20here%2C%20code%2026BC4B90CB.%0A%0AVote%2C%20then%20join%20and%20send%20your%20picks.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-x-poll%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfavorites_underdogs_poll"
+        },
+        {
+          "label": "Telegram",
+          "url": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-x-poll%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfavorites_underdogs_poll&text=Poll%3A%20favorite%2C%20underdog%2C%20or%20chaos%20pick%3F%0A%0AI%20am%20collecting%20WorldCup26%20picks.%20Pick%203%20teams%20free%20here%2C%20code%2026BC4B90CB.%0A%0AVote%2C%20then%20join%20and%20send%20your%20picks.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-x-poll%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfavorites_underdogs_poll"
+        },
+        {
+          "label": "X",
+          "url": "https://twitter.com/intent/tweet?text=Poll%3A%20favorite%2C%20underdog%2C%20or%20chaos%20pick%3F%0A%0AI%20am%20collecting%20WorldCup26%20picks.%20Pick%203%20teams%20free%20here%2C%20code%2026BC4B90CB.%0A%0AVote%2C%20then%20join%20and%20send%20your%20picks.%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-x-poll%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfavorites_underdogs_poll"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-x-poll%26utm_medium%3Dorganic-post%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfavorites_underdogs_poll"
+        }
+      ],
+      "attemptCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X / poll\" --channel \"zero signup rescue\" --status \"posted\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-x-poll&utm_medium=organic-post&utm_campaign=worldcup26_zero_signup_rescue&utm_content=favorites_underdogs_poll\" --detail \"X / poll: posted/sent from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB; link included; observed replies/signups <N>\" --next-action \"watch replies/signups; follow up with anyone who asks for help\""
+    }
+  ],
+  "rule": "This rescue board is for real distribution. Do not mark any variant done until it is actually posted or sent from an owned account."
+}

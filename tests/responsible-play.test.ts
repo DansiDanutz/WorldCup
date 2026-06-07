@@ -107,7 +107,8 @@ describe("responsible play controls", () => {
     assert.doesNotMatch(withdrawalRoute, /"deposit"/);
     assert.doesNotMatch(entryRoute, /loadResponsiblePlayStatus/);
     assert.doesNotMatch(entryRoute, /getResponsiblePlayRestriction/);
-    assert.match(entryRoute, /worldcup_create_entry/);
+    assert.match(entryRoute, /worldcup_save_draft_entry/);
+    assert.match(entryRoute, /worldcup_lock_draft_entry/);
     assert.match(ticketRoute, /Tickets are assigned manually by Admin/);
     assert.doesNotMatch(ticketRoute, /loadResponsiblePlayStatus/);
     assert.doesNotMatch(ticketRoute, /getResponsiblePlayRestriction/);

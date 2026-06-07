@@ -1,0 +1,34 @@
+WorldCup26 proof SLA 2026-06-07 20:45 +0300
+ok=yes state=critical latest_external=3.5h urgent=16 do_now=4 paid=ok dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+code=26BC4B90CB
+link=https://worldcup26.world/login?ref=26BC4B90CB
+
+do_now:
+- #warm-1 Nano / WhatsApp personal age=now
+  action=Send warm-contact invite to 10 football friends.
+  asset=media/worldcup26-main-video.mp4
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch
+  proof_after_action=node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel "warm-contact sprint" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action "watch replies/signups; help anyone who asks; run referral activity after 15 minutes"
+- #warm-3 Sienna / WhatsApp personal age=now
+  action=Send warm-contact invite to 10 close contacts.
+  asset=media/worldcup26-referral-story.jpg
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch
+  proof_after_action=node campaign-public-channel-attempts.mjs --add --owner 'Sienna' --platform 'WhatsApp personal' --channel "warm-contact sprint" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch' --detail 'WhatsApp personal: sent to <N> 10 close contacts from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action "watch replies/signups; help anyone who asks; run referral activity after 15 minutes"
+- #warm-4 Dexter / WhatsApp admins age=now
+  action=Send warm-contact invite to football group admins.
+  asset=media/worldcup26-referral-16x9.jpg
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission
+  proof_after_action=node campaign-public-channel-attempts.mjs --add --owner 'Dexter' --platform 'WhatsApp admins' --channel "warm-contact sprint" --status 'requested' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission' --detail 'WhatsApp admins: requested to <N> football group admins from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action "watch replies/signups; help anyone who asks; run referral activity after 15 minutes"
+- #warm-5 Memo / WhatsApp testers age=now
+  action=Send warm-contact invite to 3 trusted testers.
+  asset=runtime/signup-conversion-audit.html
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup
+  proof_after_action=node campaign-public-channel-attempts.mjs --add --owner 'Memo' --platform 'WhatsApp testers' --channel "warm-contact sprint" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup' --detail 'WhatsApp testers: sent to <N> 3 trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asset runtime/signup-conversion-audit.html; code 26BC4B90CB; link included; replies/signups <N>' --next-action "watch replies/signups; help anyone who asks; run referral activity after 15 minutes"
+
+public_fallbacks:
+- X public fallback: https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB
+  proof_after_action=node campaign-proof-log.mjs --pulse "145" --proof-url "PUBLIC_X_POST_URL" --status "posted"
+- Facebook feed fallback: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137
+  proof_after_action=node campaign-proof-log.mjs --pulse "137" --proof-url "PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE" --status "posted"
+
+Rule: Do the real post, story, message, upload, reply, or approval request first. Log proof only after it exists.

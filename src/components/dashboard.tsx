@@ -29,7 +29,6 @@ import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { HeroSwiper } from "@/components/hero-swiper";
 import { MyStanding } from "@/components/my-standing";
 import { SmartMenu } from "@/components/smart-menu";
-import { MINIMUM_AGE } from "@/lib/consent";
 import { formatLedgerAmount, formatMoneyAmount } from "@/lib/economy";
 import {
   calculatePaidPlaces,
@@ -37,6 +36,7 @@ import {
   calculateNetPrizePool,
   formatPrizeAmount,
 } from "@/lib/prize-pool";
+import { getCampaignReferralCode, normalizeCampaignReferralCode } from "@/lib/campaign-attribution";
 import {
   formatCoefficient,
   formatKickoff,
@@ -53,7 +53,7 @@ import {
   normalizeWorldCupTicketPriceAmount,
   normalizeWorldCupTicketPriceNumber,
 } from "@/lib/worldcup-ticket-price";
-import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
+import { buildSupportWhatsAppUrl, SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import type {
   DueMatch,
   LeaderboardRow,
@@ -103,6 +103,7 @@ const ownerAdminEmail = "semebitcoin@gmail.com";
 const referralAgreementText =
   "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
 const compactTeamCount = 8;
+const SIGNUP_ATTRIBUTION_KEY = "worldcup_signup_attribution";
 
 const teamFlagColors: Record<string, readonly [string, string, string?]> = {
   france: ["#0055a4", "#ffffff", "#ef4135"],
@@ -172,7 +173,6 @@ export function Dashboard({
   const [isAdmin, setIsAdmin] = useState(false);
   const [referralCode, setReferralCode] = useState("");
   const [referralInviter, setReferralInviter] = useState<string | null>(null);
-  const [referralPercent, setReferralPercent] = useState(3);
   const [referralAccepted, setReferralAccepted] = useState(false);
   const [myReferralCode, setMyReferralCode] = useState<string | null>(null);
   const [myReferrals, setMyReferrals] = useState<MyReferral[]>([]);
@@ -184,14 +184,12 @@ export function Dashboard({
   const [agentRequestError, setAgentRequestError] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
-  const [consented, setConsented] = useState<boolean | null>(null);
-  const [ageConfirmed, setAgeConfirmed] = useState(false);
-  const [termsAccepted, setTermsAccepted] = useState(false);
   const [isPending, startTransition] = useTransition();
   const teamListRef = useRef<HTMLDivElement | null>(null);
   const teamListTouchStart = useRef<{ scrollTop: number; y: number } | null>(null);
   const teamRowPointerStart = useRef<{ x: number; y: number } | null>(null);
   const persistedSignupReferralRef = useRef<string | null>(null);
+  const signupFunnelEventRef = useRef<Set<string>>(new Set());
   const suppressTeamRowClick = useRef(false);
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
@@ -211,14 +209,17 @@ export function Dashboard({
     .map((teamId) => teamsById.get(teamId))
     .filter((team): team is WorldCupTeam => Boolean(team));
   const accountEntry = myAccountStatus?.entry ?? null;
-  const accountHasEntry = Boolean(accountEntry);
+  const accountHasDraftEntry = accountEntry?.status === "draft";
+  const accountHasEntry = accountEntry?.status === "locked";
   const lockedEntryTeamRecords = (accountEntry?.teamIds ?? [])
     .map((teamId) => teamsById.get(teamId))
     .filter((team): team is WorldCupTeam => Boolean(team));
   const remainingPickCount = Math.max(0, 3 - selectedTeams.length);
   const pickInstruction =
     selectedTeams.length === 3
-      ? "Your 3 teams are ready. Continue to Entry to lock them."
+      ? accountHasDraftEntry
+        ? "Your free picks are saved. Update them here or lock them after you get a ticket."
+        : "Your 3 teams are ready. Save them free now and watch the private points preview."
       : `Choose ${remainingPickCount} more ${remainingPickCount === 1 ? "team" : "teams"}.`;
 
   const visibleMatches = matches.slice(0, 24);
@@ -230,13 +231,27 @@ export function Dashboard({
   const participantCount = leaderboard.length;
   const paidPlaces = calculatePaidPlaces(participantCount);
   const payoutPlan = calculatePayoutPlan(netPrizePool, paidPlaces);
+  const draftPreview = accountHasDraftEntry ? (myAccountStatus?.entryPreview ?? null) : null;
+  const draftFallbackRank =
+    leaderboard.filter((row) => Number(row.total_points ?? 0) > 0).length + 1;
+  const draftFallbackPaidPlaces = calculatePaidPlaces(participantCount + 1);
+  const draftFallbackPayoutPlan = calculatePayoutPlan(netPrizePool, draftFallbackPaidPlaces);
+  const draftPreviewFallback = {
+    totalPoints: 0,
+    rank: draftFallbackRank,
+    paidPlaces: draftFallbackPaidPlaces,
+    projectedShare:
+      draftFallbackRank <= draftFallbackPaidPlaces
+        ? (draftFallbackPayoutPlan[draftFallbackRank - 1]?.amount ?? null)
+        : null,
+  };
+  const draftPreviewDisplay = accountHasDraftEntry ? (draftPreview ?? draftPreviewFallback) : null;
   const teamEligibility = useMemo(
     () => getTeamEligibility(teams.map((team) => team.id), matches),
     [matches, teams],
   );
   const signedInWithGoogle = Boolean(session?.access_token && session.user.email);
-  const showAdminNav =
-    isAdmin || session?.user.email?.trim().toLowerCase() === ownerAdminEmail;
+  const showAdminNav = session?.user.email?.trim().toLowerCase() === ownerAdminEmail;
   const waitingForAccountStatus = signedInWithGoogle && myAccountStatus === null;
   const showPickWorkflow = !accountHasEntry && !waitingForAccountStatus;
   const shareUrl =
@@ -245,9 +260,21 @@ export function Dashboard({
       : `${window.location.origin}/login?ref=${encodeURIComponent(myReferralCode)}`;
   const whatsappUrl = myReferralCode
     ? `https://wa.me/?text=${encodeURIComponent(
-        `I invited you to WorldCup26.\n\nPick 3 teams, climb the leaderboard, and use my referral code ${myReferralCode} when you join:\n${shareUrl}`,
+        `I invited you to WorldCup26.\n\nPick 3 teams free, track your private points preview, and use a ticket only if you want the paid leaderboard.\n\nUse my referral code ${myReferralCode} when you join:\n${shareUrl}`,
       )}`
     : "";
+  const whatsappPickHelpUrl = buildSupportWhatsAppUrl(
+    "Hi, I need help choosing my 3 WorldCup26 teams.",
+  );
+  const whatsappDepositHelpUrl = buildSupportWhatsAppUrl(
+    "Hi, I need help depositing USDT and getting my WorldCup26 ticket assigned.",
+  );
+  const whatsappAgentCodeHelpUrl = buildSupportWhatsAppUrl(
+    "Hi, I have an agent code or need help getting a WorldCup26 ticket from an agent.",
+  );
+  const whatsappPassiveIncomeHelpUrl = buildSupportWhatsAppUrl(
+    "Hi, I want help with WorldCup26 referrals, agent tickets, and passive income.",
+  );
   const publicDepositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
   const publicTicketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
   const publicPaidActionsPaused = Boolean(publicDepositPolicyPause || publicTicketPolicyPause);
@@ -256,12 +283,22 @@ export function Dashboard({
   const hasEntryTicket = ticketsAvailable > 0;
   const needsEntryTicketPurchase = signedInWithGoogle && accountStatusLoaded && !hasEntryTicket;
   const showEntryTicketPurchase = !hasEntryTicket && needsEntryTicketPurchase;
+  const selectedDraftReadyWithoutTicket = selectedTeams.length === 3 && !hasEntryTicket;
   const walletBalance = myAccountStatus?.walletBalance ?? 0;
   const ticketPriceAmount = normalizeWorldCupTicketPriceNumber(myAccountStatus?.ticketPriceAmount);
   const missingEntryTicket =
-    signedInWithGoogle && accountStatusLoaded && selectedTeams.length === 3 && !hasEntryTicket;
+    signedInWithGoogle &&
+    accountStatusLoaded &&
+    accountHasDraftEntry &&
+    selectedDraftReadyWithoutTicket;
+  const entryDraftBlocker = getEntryDraftBlocker({
+    displayName,
+    referralAccepted,
+    referralCode,
+    selectedTeamCount: selectedTeams.length,
+    signedInWithGoogle,
+  });
   const entryLockBlocker = getEntryLockBlocker({
-    consented,
     displayName,
     missingEntryTicket,
     referralAccepted,
@@ -271,14 +308,22 @@ export function Dashboard({
   });
   const journeySteps = [
     { label: "Pick", done: selectedTeams.length === 3 },
+    { label: "Save", done: accountHasDraftEntry || accountHasEntry },
     { label: "Ticket", done: hasEntryTicket },
     { label: "Lock", done: accountHasEntry },
   ];
   const journeyCurrentStep = journeySteps.findIndex((step) => !step.done);
-  const entryLockHint =
-    entryLockBlocker && hasEntryTicket && !missingEntryTicket
+  const entryActionBlocker = hasEntryTicket ? entryLockBlocker : entryDraftBlocker;
+  const entryActionLabel = hasEntryTicket
+    ? "Lock paid entry"
+    : accountHasDraftEntry
+      ? "Update free picks"
+      : "Save free picks";
+  const entryLockHint = hasEntryTicket
+    ? entryLockBlocker && !missingEntryTicket
       ? `Ticket is ready. ${entryLockBlocker}`
-      : entryLockBlocker;
+      : entryLockBlocker
+    : entryDraftBlocker;
   const pendingAgentTicketRequest = agentTicketRequests.find((request) => request.status === "pending");
   const launchEvidenceMode = Boolean(
     signedInWithGoogle &&
@@ -290,9 +335,15 @@ export function Dashboard({
 
   useEffect(() => {
     window.queueMicrotask(() => {
-      const initialRef = new URLSearchParams(window.location.search).get("ref");
+      const params = new URLSearchParams(window.location.search);
+      const initialRef = getCampaignReferralCode(params);
       const storedRef = window.localStorage.getItem("worldcup_referral_code");
       const nextReferralCode = normalizeReferralCode(initialRef ?? storedRef ?? "");
+
+      if (nextReferralCode && initialRef) {
+        window.localStorage.setItem("worldcup_referral_code", nextReferralCode);
+        persistSignupAttributionFromUrl(nextReferralCode);
+      }
 
       setReferralCode(nextReferralCode);
       setReferralAccepted(
@@ -303,9 +354,20 @@ export function Dashboard({
   }, []);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
-    });
+    supabase.auth
+      .getSession()
+      .then(({ data }) => {
+        const nextSession = data.session;
+        setSession(nextSession);
+
+        if (!nextSession) {
+          const campaignLoginHref = getCampaignLoginRedirectHref();
+          if (campaignLoginHref) {
+            window.location.replace(campaignLoginHref);
+          }
+        }
+      })
+      .catch(() => setSession(null));
 
     const { data } = supabase.auth.onAuthStateChange((_event, nextSession) => {
       setSession(nextSession);
@@ -385,7 +447,29 @@ export function Dashboard({
     const token = session?.access_token;
     const normalizedReferralCode = normalizeReferralCode(referralCode);
 
-    if (!token || !signedInWithGoogle || !referralAccepted || !normalizedReferralCode) {
+    if (!token || !signedInWithGoogle || !normalizedReferralCode) {
+      return;
+    }
+
+    const signupAttribution = getStoredSignupAttribution(normalizedReferralCode);
+    sendSignupFunnelEventOnce({
+      eventKey: `${session.user.id}:${normalizedReferralCode}:returned`,
+      sentRef: signupFunnelEventRef,
+      event: "returned",
+      referralCode: normalizedReferralCode,
+      token,
+      attribution: signupAttribution,
+    });
+
+    if (!referralAccepted) {
+      sendSignupFunnelEventOnce({
+        eventKey: `${session.user.id}:${normalizedReferralCode}:missing-acceptance`,
+        sentRef: signupFunnelEventRef,
+        event: "missing-acceptance",
+        referralCode: normalizedReferralCode,
+        token,
+        attribution: signupAttribution,
+      });
       return;
     }
 
@@ -395,6 +479,15 @@ export function Dashboard({
     }
 
     persistedSignupReferralRef.current = persistKey;
+    sendSignupFunnelEventOnce({
+      eventKey: `${persistKey}:attempt`,
+      sentRef: signupFunnelEventRef,
+      event: "attempt",
+      referralCode: normalizedReferralCode,
+      token,
+      attribution: signupAttribution,
+    });
+
     void fetch("/api/referrals/signup", {
       method: "POST",
       headers: {
@@ -404,10 +497,43 @@ export function Dashboard({
       body: JSON.stringify({
         referralCode: normalizedReferralCode,
         referralTermsAccepted: true,
+        ...signupAttribution,
       }),
-    }).catch(() => {
-      persistedSignupReferralRef.current = null;
-    });
+    })
+      .then((response) => {
+        if (response.ok) {
+          sendSignupFunnelEventOnce({
+            eventKey: `${persistKey}:saved`,
+            sentRef: signupFunnelEventRef,
+            event: "saved",
+            referralCode: normalizedReferralCode,
+            token,
+            attribution: signupAttribution,
+          });
+          window.localStorage.removeItem(SIGNUP_ATTRIBUTION_KEY);
+        } else {
+          sendSignupFunnelEventOnce({
+            eventKey: `${persistKey}:save-failed`,
+            sentRef: signupFunnelEventRef,
+            event: "save-failed",
+            referralCode: normalizedReferralCode,
+            token,
+            attribution: signupAttribution,
+          });
+          persistedSignupReferralRef.current = null;
+        }
+      })
+      .catch(() => {
+        sendSignupFunnelEventOnce({
+          eventKey: `${persistKey}:save-error`,
+          sentRef: signupFunnelEventRef,
+          event: "save-error",
+          referralCode: normalizedReferralCode,
+          token,
+          attribution: signupAttribution,
+        });
+        persistedSignupReferralRef.current = null;
+      });
   }, [referralAccepted, referralCode, session?.access_token, session?.user.id, signedInWithGoogle]);
 
   useEffect(() => {
@@ -437,19 +563,20 @@ export function Dashboard({
     const timeout = window.setTimeout(async () => {
       if (!normalized) {
         setReferralInviter(null);
-        setReferralPercent(3);
         return;
       }
 
-      const response = await fetch(`/api/referrals/resolve?code=${encodeURIComponent(normalized)}`);
-      const result = (await response.json()) as {
-        valid?: boolean;
-        inviterName?: string | null;
-        referralPercent?: number;
-      };
+      try {
+        const response = await fetch(`/api/referrals/resolve?code=${encodeURIComponent(normalized)}`);
+        const result = (await response.json()) as {
+          valid?: boolean;
+          inviterName?: string | null;
+        };
 
-      setReferralInviter(result.valid ? result.inviterName ?? "another player" : null);
-      setReferralPercent(result.valid ? result.referralPercent ?? 3 : 3);
+        setReferralInviter(response.ok && result.valid ? result.inviterName ?? "another player" : null);
+      } catch {
+        setReferralInviter(null);
+      }
     }, 250);
 
     return () => window.clearTimeout(timeout);
@@ -526,6 +653,7 @@ export function Dashboard({
           usdtSenderWalletErc20Address?: string | null;
           usdtSenderWalletErc20UpdatedAt?: string | null;
           paidActionGates?: MyAccountStatus["paidActionGates"];
+          entryPreview?: MyAccountStatus["entryPreview"];
         };
 
         setMyReferralCode(result.referralCode ?? null);
@@ -564,7 +692,11 @@ export function Dashboard({
           usdtSenderWalletErc20Address: result.usdtSenderWalletErc20Address ?? null,
           usdtSenderWalletErc20UpdatedAt: result.usdtSenderWalletErc20UpdatedAt ?? null,
           paidActionGates: result.paidActionGates,
+          entryPreview: result.entryPreview ?? null,
         });
+        if (result.entry?.status === "draft" && result.entry.teamIds.length > 0) {
+          setSelectedTeams(result.entry.teamIds.slice(0, 3));
+        }
       } catch {
         setMyReferralCode(null);
         setMyReferrals([]);
@@ -573,73 +705,6 @@ export function Dashboard({
       }
     });
   }, [session?.access_token, session?.user.email, signedInWithGoogle]);
-
-  useEffect(() => {
-    const token = session?.access_token;
-    let active = true;
-
-    Promise.resolve().then(async () => {
-      if (!token || !signedInWithGoogle) {
-        if (active) {
-          setConsented(null);
-        }
-        return;
-      }
-
-      try {
-        const response = await fetch("/api/consent", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        const data = (await response.json()) as { consented?: boolean };
-        if (active) {
-          setConsented(Boolean(data.consented));
-        }
-      } catch {
-        if (active) {
-          setConsented(null);
-        }
-      }
-    });
-
-    return () => {
-      active = false;
-    };
-  }, [session?.access_token, signedInWithGoogle]);
-
-  function submitConsent() {
-    setEntryError(null);
-    setEntryMessage(null);
-
-    if (!session?.access_token) {
-      return;
-    }
-
-    if (!ageConfirmed || !termsAccepted) {
-      setEntryError("Confirm your age and accept the Terms to continue.");
-      return;
-    }
-
-    startTransition(async () => {
-      const response = await fetch("/api/consent", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${session.access_token}`,
-        },
-        body: JSON.stringify({ ageConfirmed, termsAccepted }),
-      });
-
-      const result = (await response.json()) as { error?: string; consented?: boolean };
-
-      if (!response.ok) {
-        setEntryError(result.error ?? "Could not save consent.");
-        return;
-      }
-
-      setConsented(true);
-      setEntryMessage("Thanks. You are verified and can lock your entry now.");
-    });
-  }
 
   function toggleTeam(teamId: string) {
     if (accountHasEntry || waitingForAccountStatus) {
@@ -797,17 +862,17 @@ export function Dashboard({
       }
 
       setAgentId("");
-      setAgentRequestMessage("Agent Call request sent. The agent has 24 hours to accept after confirming payment.");
+      setAgentRequestMessage("Agent code submitted. The agent can now assign your ticket.");
       await refreshAgentTicketRequests(token);
     });
   }
 
-  function submitEntry() {
+  function submitEntry(action: "save-draft" | "lock") {
     setEntryError(null);
     setEntryMessage(null);
 
     if (!session?.access_token || !signedInWithGoogle) {
-      setEntryError("Sign in with Google before locking your entry.");
+      setEntryError("Sign in with Google before saving your picks.");
       return;
     }
 
@@ -824,6 +889,7 @@ export function Dashboard({
           Authorization: `Bearer ${session.access_token}`,
         },
         body: JSON.stringify({
+          action,
           displayName,
           teamIds: selectedTeams,
           referralCode,
@@ -831,21 +897,33 @@ export function Dashboard({
         }),
       });
 
-      const result = (await response.json()) as { error?: string; entryId?: string };
+      const result = (await response.json()) as {
+        error?: string;
+        entryId?: string;
+        status?: "draft" | "locked";
+      };
 
       if (!response.ok) {
         setEntryError(result.error ?? "Could not save entry.");
         return;
       }
 
-      const lockedDisplayName = displayName.trim();
-      const lockedTeamIds = [...selectedTeams];
+      const savedDisplayName = displayName.trim();
+      const savedTeamIds = [...selectedTeams];
+      const savedStatus = result.status ?? (action === "save-draft" ? "draft" : "locked");
 
-      setEntryMessage("Entry locked. Your account is now focused on your entry, wallet, and agent deal.");
+      setEntryMessage(
+        savedStatus === "draft"
+          ? "Free picks saved. Your points and preview rank stay visible here; a ticket only upgrades this draft into the paid leaderboard."
+          : "Entry locked. Your account is now focused on your entry, wallet, and agent deal.",
+      );
       setMyAccountStatus((current) => ({
         walletBalance: current?.walletBalance ?? "0.00",
         ticketsAssigned: current?.ticketsAssigned ?? 0,
-        ticketsAvailable: Math.max(0, (current?.ticketsAvailable ?? 1) - 1),
+        ticketsAvailable:
+          savedStatus === "locked"
+            ? Math.max(0, (current?.ticketsAvailable ?? 1) - 1)
+            : (current?.ticketsAvailable ?? 0),
         ticketPriceAmount: normalizeWorldCupTicketPriceAmount(current?.ticketPriceAmount),
         usdtSenderWalletAddress: current?.usdtSenderWalletAddress ?? null,
         usdtSenderWalletNetwork: current?.usdtSenderWalletNetwork ?? null,
@@ -855,18 +933,25 @@ export function Dashboard({
         usdtSenderWalletErc20Address: current?.usdtSenderWalletErc20Address ?? null,
         usdtSenderWalletErc20UpdatedAt: current?.usdtSenderWalletErc20UpdatedAt ?? null,
         paidActionGates: current?.paidActionGates,
+        entryPreview:
+          savedStatus === "draft"
+            ? current?.entryPreview ?? draftPreviewFallback
+            : null,
         entry: {
-          id: result.entryId ?? "locked-entry",
-          status: "locked",
-          displayName: lockedDisplayName,
-          teamIds: lockedTeamIds,
-          lockedAt: new Date().toISOString(),
+          id: result.entryId ?? (savedStatus === "draft" ? "draft-entry" : "locked-entry"),
+          status: savedStatus,
+          displayName: savedDisplayName,
+          teamIds: savedTeamIds,
+          lockedAt: savedStatus === "locked" ? new Date().toISOString() : null,
         },
       }));
-      setSelectedTeams([]);
-      window.localStorage.removeItem("worldcup_selected_teams");
-      window.localStorage.removeItem("worldcup_referral_code");
-      window.localStorage.removeItem("worldcup_referral_accepted");
+      if (savedStatus === "locked") {
+        setSelectedTeams([]);
+        window.localStorage.removeItem("worldcup_selected_teams");
+        window.localStorage.removeItem("worldcup_referral_code");
+        window.localStorage.removeItem("worldcup_referral_accepted");
+      }
+      window.dispatchEvent(new Event("worldcup-account-updated"));
       window.setTimeout(() => document.getElementById("me")?.scrollIntoView({ behavior: "smooth" }), 80);
     });
   }
@@ -939,6 +1024,15 @@ export function Dashboard({
                 <small>Tickets & USDT</small>
               </span>
             </Link>
+            {signedInWithGoogle ? (
+              <button className="nav-item nav-item--logout" onClick={signOut} type="button">
+                <LogOut size={16} />
+                <span className="nav-item__copy">
+                  <strong>Logout</strong>
+                  <small>End session</small>
+                </span>
+              </button>
+            ) : null}
             {showAdminNav ? (
               <Link className="nav-item nav-item--admin" href={{ pathname: "/admin" }}>
                 <ShieldCheck size={16} />
@@ -1107,6 +1201,7 @@ export function Dashboard({
                       <div
                         className={`selected-team ${team ? getPickColorClass(slot) : "empty-slot"}`}
                         key={team?.id ?? fallbackTeamId ?? slot}
+                        style={team ? getTeamColorStyle(team.id) : undefined}
                       >
                         <span className="pick-slot-label">Team {slot + 1}</span>
                         <span className="selected-team-name">
@@ -1136,8 +1231,8 @@ export function Dashboard({
               <div>
                 <h1 className="panel-title">Choose 3 Teams</h1>
                 <p className="panel-subtitle">
-                  Late entries are open for assigned tickets. A team locks 1 minute before
-                  its first World Cup 2026 match.
+                  The event has not started yet, so all 48 teams are still available. A team locks
+                  1 minute before its first World Cup 2026 match.
                 </p>
               </div>
               <span className="status-pill">{selectedTeams.length}/3 selected</span>
@@ -1150,11 +1245,22 @@ export function Dashboard({
                     Tap a team to add it. Tap a selected team or remove chip to change your picks.
                   </span>
                 </div>
-                {selectedTeams.length > 0 ? (
-                  <button className="link-button" onClick={clearSelectedTeams} type="button">
-                    Clear all
-                  </button>
-                ) : null}
+                <div className="pick-flow__head-actions">
+                  <a
+                    className="button secondary whatsapp-help-link"
+                    href={whatsappPickHelpUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <MessageCircle size={16} />
+                    WhatsApp pick help
+                  </a>
+                  {selectedTeams.length > 0 ? (
+                    <button className="link-button" onClick={clearSelectedTeams} type="button">
+                      Clear all
+                    </button>
+                  ) : null}
+                </div>
               </div>
               <div
                 className="pick-progress"
@@ -1179,6 +1285,7 @@ export function Dashboard({
                     <div
                       className={`pick-slot-card ${team ? getPickColorClass(slot) : "empty-slot"}`}
                       key={slot}
+                      style={team ? getTeamColorStyle(team.id) : undefined}
                     >
                       <div>
                         <span className="pick-slot-label">Pick {slot + 1}</span>
@@ -1343,7 +1450,8 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Entry</h2>
                 <p className="panel-subtitle">
-                  You need an assigned ticket, then you can join if all 3 teams are still selectable.
+                  Save your 3 picks free. Even without paying, you can follow your points and
+                  see what would happen if this draft entered the paid leaderboard.
                 </p>
               </div>
               <Lock size={18} color="var(--green)" />
@@ -1402,7 +1510,7 @@ export function Dashboard({
                   />
                   <div className="field-note">
                     {referralInviter
-                      ? `Referral recognized from ${referralInviter}. Inviter rate: ${referralPercent}%.`
+                      ? `Referral recognized from ${referralInviter}. Referral agreement: 5%.`
                       : "This referral code will be checked before your entry is locked."}
                   </div>
                 </div>
@@ -1415,7 +1523,7 @@ export function Dashboard({
                     onChange={(event) => setReferralAccepted(event.target.checked)}
                     type="checkbox"
                   />
-                  <span>{referralAgreementText.replace("5%", `${referralPercent}%`)}</span>
+                  <span>{referralAgreementText}</span>
                 </label>
               ) : null}
 
@@ -1436,6 +1544,7 @@ export function Dashboard({
                     <div
                       className={`selected-team ${team ? getPickColorClass(slot) : "empty-slot"}`}
                       key={slot}
+                      style={team ? getTeamColorStyle(team.id) : undefined}
                     >
                       <span className="pick-slot-label">Pick {slot + 1}</span>
                       <span className="selected-team-name">
@@ -1459,29 +1568,59 @@ export function Dashboard({
                       <strong>
                         {hasEntryTicket
                           ? "Ticket ready"
-                          : signedInWithGoogle
-                            ? "You need 1 entry ticket"
-                            : "Ticket required after sign-in"}
+                          : accountHasDraftEntry
+                          ? "Free preview is live"
+                        : signedInWithGoogle
+                          ? "Free picks first"
+                            : "Free picks after sign-in"}
                       </strong>
                       <span>
                         {hasEntryTicket
                           ? `${ticketsAvailable} ticket${ticketsAvailable === 1 ? "" : "s"} available for locking entries.`
-                          : "Admin assigns tickets after verified cash or USDT payment, or use Agent Call after paying an agent directly."}
+                          : accountHasDraftEntry
+                            ? "Your points, preview rank, and what-if payout stay visible. To go paid, 1 ticket must be assigned first."
+                          : "Pick 3 teams and save a free draft. Paid leaderboard lock is mandatory ticket-based and requires 1 assigned ticket."}
                       </span>
                     </div>
                     <span className="ticket-status-pill">
-                      {hasEntryTicket ? `${ticketsAvailable} available` : "0 available"}
+                      {hasEntryTicket
+                        ? `${ticketsAvailable} available`
+                        : accountHasDraftEntry
+                          ? "free preview"
+                          : "no ticket needed"}
                     </span>
                   </div>
                   {hasEntryTicket ? (
                     <div className="ticket-ready-note">
+                        <Check size={16} />
+                        <span>
+                          Buy-in is covered. Locking your saved picks will use 1 assigned ticket from your account.
+                        </span>
+                      </div>
+                  ) : !signedInWithGoogle ? (
+                    <div className="ticket-ready-note">
+                      <Ticket size={16} />
+                      <span>
+                        Sign in first. Your free picks and preview points are saved to your account; paid lock still needs 1 assigned ticket.
+                      </span>
+                    </div>
+                  ) : !accountHasDraftEntry ? (
+                    <div className="ticket-ready-note ticket-ready-note--free">
                       <Check size={16} />
                       <span>
-                        Buy-in is covered. Locking your entry will use 1 ticket from your account.
+                        Save a free draft now. The paid leaderboard is mandatory ticket-based: Admin, an agent, or accepted USDT must assign 1 ticket first.
+                        Your private points show what would happen if the draft were paid.
                       </span>
                     </div>
                   ) : showEntryTicketPurchase ? (
                     <>
+                      <div className="ticket-ready-note">
+                        <Check size={16} />
+                        <span>
+                          Free preview is already active. To move it into the paid leaderboard,
+                          Admin or an agent must assign 1 ticket to this account.
+                        </span>
+                      </div>
                       <div className="ticket-option-grid">
                         <div>
                           <span>Ticket price</span>
@@ -1498,22 +1637,53 @@ export function Dashboard({
                           USDT is manual: save your sender wallet, send payment from that wallet, then Admin assigns the ticket.
                         </span>
                       </div>
+                      <div className="ticket-requirement-actions">
+                        <a
+                          className="button secondary whatsapp-help-link"
+                          href={whatsappDepositHelpUrl}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <MessageCircle size={16} />
+                          WhatsApp deposit help
+                        </a>
+                        <a
+                          className="button secondary whatsapp-help-link"
+                          href={whatsappAgentCodeHelpUrl}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <MessageCircle size={16} />
+                          WhatsApp agent help
+                        </a>
+                      </div>
                     <div className="agent-call-box">
                       <div>
                         <strong>Agent Call</strong>
-                        <span>
-                          Enter the agent referral code or email. The agent accepts only after receiving your payment.
-                        </span>
+                        <span>Enter only the agent code you received.</span>
                       </div>
                       <div className="agent-call-form">
-                        <input
-                          aria-label="Agent ID"
-                          className="search"
-                          disabled={Boolean(pendingAgentTicketRequest) || isPending}
-                          onChange={(event) => setAgentId(event.target.value)}
-                          placeholder="Agent code or email"
-                          value={agentId}
-                        />
+                        <label className="agent-call-code-field" htmlFor="agent-call-code">
+                          <span>Agent code</span>
+                          <input
+                            aria-label="Agent code"
+                            autoCapitalize="characters"
+                            autoComplete="off"
+                            autoCorrect="off"
+                            className="search"
+                            data-testid="agent-call-code"
+                            disabled={Boolean(pendingAgentTicketRequest) || isPending}
+                            id="agent-call-code"
+                            inputMode="text"
+                            maxLength={12}
+                            name="agent-code"
+                            onChange={(event) => setAgentId(normalizeReferralCode(event.target.value))}
+                            placeholder="Paste agent code"
+                            spellCheck={false}
+                            type="text"
+                            value={agentId}
+                          />
+                        </label>
                         <button
                           className="button secondary"
                           disabled={Boolean(pendingAgentTicketRequest) || agentId.trim().length < 3 || isPending}
@@ -1524,84 +1694,42 @@ export function Dashboard({
                           Request ticket
                         </button>
                       </div>
+                      <a
+                        className="button secondary whatsapp-help-link"
+                        href={whatsappAgentCodeHelpUrl}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <MessageCircle size={16} />
+                        WhatsApp agent-code help
+                      </a>
                       {pendingAgentTicketRequest ? (
                         <div className="field-note">
                           Pending with{" "}
                           {pendingAgentTicketRequest.agentDisplayName ??
                             pendingAgentTicketRequest.agentEmail ??
                             "agent"}{" "}
-                          until {new Date(pendingAgentTicketRequest.expiresAt).toLocaleString()}.
+                          until {formatDateTime(pendingAgentTicketRequest.expiresAt)}.
                         </div>
                       ) : null}
                       {agentRequestMessage ? <div className="message">{agentRequestMessage}</div> : null}
                       {agentRequestError ? <div className="message error">{agentRequestError}</div> : null}
                     </div>
                     </>
-                  ) : (
-                    <div className="ticket-ready-note">
-                      <Ticket size={16} />
-                      <span>Sign in first. Your ticket options load only after your account is connected.</span>
-                    </div>
-                  )}
+                  ) : null}
                 </div>
               </div>
-              {signedInWithGoogle && consented !== true ? (
-                <div className="consent-gate" aria-label="Eligibility confirmation">
-                  {consented === null ? (
-                    <div className="ticket-ready-note">
-                      <RefreshCw size={16} />
-                      <span>
-                        Confirm once here if your age and Terms status is still loading.
-                      </span>
-                    </div>
-                  ) : null}
-                  <label className="check-row">
-                    <input
-                      checked={ageConfirmed}
-                      onChange={(event) => setAgeConfirmed(event.target.checked)}
-                      type="checkbox"
-                    />
-                    <span>I confirm I am at least {MINIMUM_AGE} years old.</span>
-                  </label>
-                  <label className="check-row">
-                    <input
-                      checked={termsAccepted}
-                      onChange={(event) => setTermsAccepted(event.target.checked)}
-                      type="checkbox"
-                    />
-                    <span>
-                      I accept the{" "}
-                      <Link className="inline-link" href={{ pathname: "/terms" }} target="_blank">
-                        Terms
-                      </Link>{" "}
-                      and{" "}
-                      <Link className="inline-link" href={{ pathname: "/privacy" }} target="_blank">
-                        Privacy Policy
-                      </Link>
-                      .
-                    </span>
-                  </label>
-                  <button
-                    className="button secondary"
-                    disabled={!ageConfirmed || !termsAccepted || isPending}
-                    onClick={submitConsent}
-                    type="button"
-                  >
-                    Confirm &amp; unlock entry
-                  </button>
-                </div>
-              ) : null}
               {entryLockHint ? (
                 <div className="message entry-lock-hint">{entryLockHint}</div>
               ) : null}
               <button
-                className={`button entry-lock-cta ${entryLockBlocker ? "" : "is-ready"}`}
-                disabled={Boolean(entryLockBlocker) || isPending}
-                onClick={submitEntry}
+                className={`button entry-lock-cta ${entryActionBlocker ? "" : "is-ready"}`}
+                disabled={Boolean(entryActionBlocker) || isPending}
+                onClick={() => submitEntry(hasEntryTicket ? "lock" : "save-draft")}
                 type="button"
               >
-                <Lock size={16} />
-                {isPending ? "Locking..." : "Lock Entry"}
+                {hasEntryTicket ? <Lock size={16} /> : <Check size={16} />}
+                {isPending ? "Saving..." : entryActionLabel}
               </button>
               {entryMessage ? <div className="message">{entryMessage}</div> : null}
               {entryError ? <div className="message error">{entryError}</div> : null}
@@ -1614,10 +1742,21 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Invite Friend</h2>
                 <p className="panel-subtitle">
-                  Share your referral link. Referral-chain inviters earn 5%; direct inviters earn 3%.
+                  Share your referral link. Every accepted inviter earns 5%.
                 </p>
               </div>
-              <Users size={18} color="var(--green)" />
+              <div className="panel-header-actions">
+                <Users size={18} color="var(--green)" />
+                <a
+                  className="button secondary whatsapp-help-link"
+                  href={whatsappPassiveIncomeHelpUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <MessageCircle size={16} />
+                  WhatsApp passive income help
+                </a>
+              </div>
             </div>
             <div className="invite-content">
               {signedInWithGoogle && myReferralCode ? (
@@ -1650,7 +1789,7 @@ export function Dashboard({
                       </span>
                       <div>
                         <span>WorldCup26 invite</span>
-                        <strong>Pick 3 teams. Climb the leaderboard.</strong>
+                        <strong>Pick 3 teams free first.</strong>
                       </div>
                     </div>
                     <div className="referral-code-card">
@@ -1737,6 +1876,41 @@ export function Dashboard({
                 </div>
               </div>
             ) : null}
+            {accountHasDraftEntry ? (
+              <div className="leaderboard-private-preview" aria-label="Private points preview">
+                <div>
+                  <strong>Your free picks are scoring privately.</strong>
+                  <p>
+                    This is the free tier: your points keep updating, and this card shows what
+                    would happen if your draft entered the paid leaderboard.
+                  </p>
+                </div>
+                <div className="leaderboard-preview-stats" aria-label="What-if paid entry preview">
+                  <div>
+                    <span>Points</span>
+                    <strong>{formatPoints(draftPreviewDisplay?.totalPoints ?? 0)}</strong>
+                  </div>
+                  <div>
+                    <span>If paid now</span>
+                    <strong>{draftPreviewDisplay?.rank ? `#${draftPreviewDisplay.rank}` : "TBA"}</strong>
+                  </div>
+                  <div>
+                    <span>What-if share</span>
+                    <strong>
+                      {draftPreviewDisplay?.projectedShare != null
+                        ? `${formatMoneyAmount(draftPreviewDisplay.projectedShare)} USDT`
+                        : draftPreviewDisplay?.paidPlaces
+                          ? `Top ${draftPreviewDisplay.paidPlaces}`
+                          : "TBA"}
+                    </strong>
+                  </div>
+                </div>
+                <a className="button secondary" href="#me">
+                  View my preview
+                  <ArrowRight size={16} />
+                </a>
+              </div>
+            ) : null}
             <div className="leaderboard-list">
               {leaderboard.length === 0 ? (
                 <div className="leaderboard-empty">
@@ -1745,7 +1919,10 @@ export function Dashboard({
                   </div>
                   <div>
                     <div className="leaderboard-name">No locked entries yet.</div>
-                    <p>Be the first on the board by choosing 3 teams and locking your entry.</p>
+                    <p>
+                      Free picks still keep a private score preview; the public board starts when a
+                      ticket locks an entry.
+                    </p>
                   </div>
                   <a className="button secondary" href="#pick">
                     <Users size={16} />
@@ -1929,12 +2106,43 @@ function getTeamColorStyle(teamId: string) {
 
 function getGatePauseMessage(gate: PaidActionGate | undefined) {
   return gate && !gate.allowed
-    ? "USDT deposits are admin-reviewed and ticket assignments are manual. You can still prepare your locked sender wallet."
+    ? "USDT deposits are admin-reviewed. You can still prepare your locked sender wallet; accepted USDT can auto-issue the first ticket."
     : null;
 }
 
+function getEntryDraftBlocker({
+  displayName,
+  referralAccepted,
+  referralCode,
+  selectedTeamCount,
+  signedInWithGoogle,
+}: {
+  displayName: string;
+  referralAccepted: boolean;
+  referralCode: string;
+  selectedTeamCount: number;
+  signedInWithGoogle: boolean;
+}) {
+  if (selectedTeamCount !== 3) {
+    return `Pick ${3 - selectedTeamCount} more ${selectedTeamCount === 2 ? "team" : "teams"} before saving.`;
+  }
+
+  if (!displayName.trim()) {
+    return "Add your display name before saving.";
+  }
+
+  if (!signedInWithGoogle) {
+    return "Sign in with Google before saving your picks.";
+  }
+
+  if (referralCode && !referralAccepted) {
+    return "Accept the referral agreement before saving with this inviter code.";
+  }
+
+  return null;
+}
+
 function getEntryLockBlocker({
-  consented,
   displayName,
   missingEntryTicket,
   referralAccepted,
@@ -1942,7 +2150,6 @@ function getEntryLockBlocker({
   selectedTeamCount,
   signedInWithGoogle,
 }: {
-  consented: boolean | null;
   displayName: string;
   missingEntryTicket: boolean;
   referralAccepted: boolean;
@@ -1966,14 +2173,6 @@ function getEntryLockBlocker({
     return "Accept the referral agreement before locking with this inviter code.";
   }
 
-  if (consented === false) {
-    return "Confirm your age and accept the Terms before locking.";
-  }
-
-  if (consented !== true) {
-    return "Confirm your age and accept the Terms below before locking.";
-  }
-
   if (missingEntryTicket) {
     return "You need 1 assigned ticket before locking your entry.";
   }
@@ -1982,13 +2181,122 @@ function getEntryLockBlocker({
 }
 
 function normalizeReferralCode(value: string) {
-  return value.trim().toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 12);
+  return normalizeCampaignReferralCode(value);
+}
+
+function persistSignupAttributionFromUrl(referralCode: string) {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const effectiveReferralCode = normalizeReferralCode(referralCode || getCampaignReferralCode(params));
+    const attribution = {
+      referralCode: effectiveReferralCode,
+      utmSource: params.get("utm_source") ?? "",
+      utmMedium: params.get("utm_medium") ?? "",
+      utmCampaign: params.get("utm_campaign") ?? "",
+      utmContent: params.get("utm_content") ?? "",
+    };
+    const hasAttribution = [
+      attribution.utmSource,
+      attribution.utmMedium,
+      attribution.utmCampaign,
+      attribution.utmContent,
+    ].some(Boolean);
+
+    if (effectiveReferralCode && hasAttribution) {
+      window.localStorage.setItem(SIGNUP_ATTRIBUTION_KEY, JSON.stringify(attribution));
+    }
+  } catch {
+    // Attribution improves reporting; picks and signup must still work without storage.
+  }
+}
+
+function getStoredSignupAttribution(referralCode: string) {
+  try {
+    const parsed = JSON.parse(window.localStorage.getItem(SIGNUP_ATTRIBUTION_KEY) ?? "{}") as Record<
+      string,
+      unknown
+    >;
+    if (normalizeReferralCode(typeof parsed.referralCode === "string" ? parsed.referralCode : "") !== referralCode) {
+      return {};
+    }
+
+    const attribution = {
+      utmSource: typeof parsed.utmSource === "string" ? parsed.utmSource : "",
+      utmMedium: typeof parsed.utmMedium === "string" ? parsed.utmMedium : "",
+      utmCampaign: typeof parsed.utmCampaign === "string" ? parsed.utmCampaign : "",
+      utmContent: typeof parsed.utmContent === "string" ? parsed.utmContent : "",
+    };
+
+    return Object.fromEntries(
+      Object.entries(attribution).filter(([, value]) => value.trim()),
+    ) as Partial<typeof attribution>;
+  } catch {
+    return {};
+  }
+}
+
+function sendSignupFunnelEventOnce({
+  eventKey,
+  sentRef,
+  event,
+  referralCode,
+  token,
+  attribution,
+}: {
+  eventKey: string;
+  sentRef: { current: Set<string> };
+  event: "returned" | "missing-acceptance" | "attempt" | "saved" | "save-failed" | "save-error";
+  referralCode: string;
+  token: string;
+  attribution: Partial<{
+    utmSource: string;
+    utmMedium: string;
+    utmCampaign: string;
+    utmContent: string;
+  }>;
+}) {
+  if (sentRef.current.has(eventKey)) {
+    return;
+  }
+  sentRef.current.add(eventKey);
+
+  void fetch("/api/analytics/view", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    keepalive: true,
+    body: JSON.stringify({
+      path: `/#signup-referral-${event}`,
+      referrer: typeof document === "undefined" ? null : document.referrer || null,
+      referralCode,
+      sessionId: `signup-referral-${eventKey}`,
+      ...attribution,
+    }),
+  }).catch(() => undefined);
+}
+
+function getCampaignLoginRedirectHref() {
+  if (typeof window === "undefined" || window.location.pathname !== "/") {
+    return "";
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const referralCode = getCampaignReferralCode(params);
+  if (!referralCode) {
+    return "";
+  }
+
+  params.set("ref", referralCode);
+  return `/login?${params.toString()}`;
 }
 
 function formatDateTime(value: string) {
   return new Intl.DateTimeFormat("en", {
     dateStyle: "medium",
     timeStyle: "short",
+    timeZone: "UTC",
   }).format(new Date(value));
 }
 
@@ -2002,5 +2310,6 @@ function formatPickDeadline(value: number | null) {
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "UTC",
   }).format(new Date(value));
 }

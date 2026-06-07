@@ -1,0 +1,640 @@
+# WorldCup26 Remote War Room
+
+Generated: 2026-06-07 20:44 +0300
+
+- Hosts OK: 4/4
+- Loops running: 4/4
+- Hot ping hooks OK: 4/4
+- Hot pings fresh: 4/4
+- Link sentinels OK: 4/4
+- Link sentinels fresh: 4/4
+- Paid traffic guards OK: 4/4
+- Paid traffic guards fresh: 4/4
+- Live ad QA OK: 4/4
+- Live ad QA fresh: 4/4
+- Posting sprints OK: 4/4
+- Posting sprints fresh: 4/4
+- Session recovery OK: 4/4
+- Session recovery fresh: 4/4
+- Escalation boards OK: 4/4
+- Escalation boards fresh: 4/4
+- Escalation counts: critical 16, hot 0
+- Proof activity OK: 0/4
+- Proof stall reports fresh: 4/4
+- Proof SLA reports OK: 4/4
+- Proof SLA reports fresh: 4/4
+- Proof SLA states: critical
+- Proof rescue reports OK: 4/4
+- Proof rescue reports fresh: 4/4
+- Proof URL recovery reports OK: 4/4
+- Proof URL recovery reports fresh: 4/4
+- Pending public URL recoveries: 1
+- Social rescue reports OK: 4/4
+- Social rescue reports fresh: 4/4
+- Zero signup rescue reports OK: 4/4
+- Zero signup rescue reports fresh: 4/4
+- Zero signup rescue states: critical-zero-signups
+- Real action bridges OK: 4/4
+- Real action bridges fresh: 4/4
+- Real action bridge states: critical-zero-signups
+- Real action do-now count: 4
+- One-click share kits OK: 4/4
+- One-click share kits fresh: 4/4
+- One-click share actions: 4
+- Public outreach target maps OK: 4/4
+- Public outreach target maps fresh: 4/4
+- Public outreach target count: 41
+- Public outreach owners: Sienna, Nano, Dexter, Memo
+- Public outreach missing owners: none
+- Ad ops links OK: 4/4
+- Ad ops links fresh: 4/4
+- Ad ops platforms: Meta Ads Manager, X Ads Manager
+- Paid ad triage OK: 4/4
+- Paid ad triage fresh: 4/4
+- Paid ad triage states: critical-paid-signup-friction
+- Paid-source views: 219
+- Paid triage app views: 478
+- Paid triage referral-code views: 146
+- Paid triage signup saves: 0
+- Paid dashboard states: paid-clicks-no-signups
+- Paid dashboard checks: 2
+- Paid dashboard impressions: 12
+- Paid dashboard clicks: 227
+- Paid no-click rescue OK: 4/4
+- Paid no-click rescue fresh: 4/4
+- Paid no-click rescue states: clicks-no-signups
+- Paid no-click rescue variants: 8
+- Direct paid dashboard OK: 4/4
+- Direct paid dashboard fresh: 4/4
+- Direct paid dashboard states: paid-clicks-no-signups
+- Funnel monitors OK: 4/4
+- Funnel monitors fresh: 4/4
+- Funnel monitors available: 4/4
+- App views: 478
+- App views 24h: 478
+- Referral-code views: 146
+- Referral-code views 24h: 146
+- Free accounts: 4
+- Paid accounts: 1
+- Referral accepted: 0
+- Referral signup saves: 0
+- Local trusted funnel: ok
+- Local trusted funnel fresh: yes
+- Local trusted funnel available: yes
+- Local trusted app views: 509
+- Local trusted app views 24h: 509
+- Local trusted referral-code views: 171
+- Local trusted free accounts: 4
+- Local trusted paid accounts: 1
+- Local trusted referral accepted: 0
+- Warm contact follow-up OK: 4/4
+- Warm contact follow-up fresh: 4/4
+- Warm contact follow-up states: awaiting-first-human-send
+- Warm contact attempts: 0
+- Warm contact follow-up due: 0
+- Warm contact follow-up signup saves: 0
+- Response kits OK: 4/4
+- Response kits fresh: 4/4
+- Response kit states: ready-for-warm-replies
+- Response kit replies: 13
+- Response kit signup saves: 0
+- First-human actions OK: 4/4
+- First-human actions fresh: 4/4
+- First-human action states: needs-first-human-action
+- First-human warm attempts: 0
+- First-human signup saves: 0
+- First-human first action: Memo/WhatsApp testers/clean-signup-test-batch
+- First-send bridge OK: 4/4
+- First-send bridge fresh: 4/4
+- First-send bridge states: send-now
+- First-send bridge warm attempts: 0
+- First-send bridge signup saves: 0
+- Posting cockpit reports OK: 4/4
+- Posting cockpit reports fresh: 4/4
+- Phone action centers OK: 4/4
+- Phone action centers fresh: 4/4
+- Public channel attempts OK: 4/4
+- Public channel attempts fresh: 4/4
+- Public channel blockers: 7
+- Public channel login required: 6
+- Login unlock boards OK: 4/4
+- Login unlock boards fresh: 4/4
+- Login unlock cards: 6
+- Login unlock platforms: X, YouTube Shorts, Facebook, LinkedIn
+- Objective audits OK: 4/4
+- Objective audits fresh: 4/4
+- Objective audit states: critical
+- Objective audits complete: 0/4
+- Objective critical open: 1
+- Operator push packets OK: 4/4
+- Operator push packets fresh: 4/4
+- Operator push states: critical
+- Operator push actions: 4
+- Operator public blockers: 7
+- Operator login required: 6
+- Worker wake boards OK: 4/4
+- Worker wake boards fresh: 4/4
+- Watchdog loops running: 4/4
+- Watchdog cron installed: 4/4
+- Proof counts: 49
+- Urgent counts: 16
+- Aligned: no
+- Unhealthy hosts: dexter, sienna, memo, nano
+
+## Hosts
+
+### dexter
+
+- Status: ok
+- Generated: 2026-06-07 20:41 +0300
+- Proof rows: 49
+- Urgent proof gaps: 16
+- Loop running: yes
+- Hot ping hook: yes
+- Hot ping fresh: yes
+- Link sentinel: yes (2026-06-07 20:41 +0300)
+- Link sentinel fresh: yes
+- Paid traffic guard: yes (2026-06-07 20:41 +0300)
+- Paid traffic guard fresh: yes
+- Paid traffic deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- Live ad QA: yes (2026-06-07 20:41 +0300)
+- Live ad QA fresh: yes
+- Live ad QA details: pages 7, assets 14, auth yes, social 2/2, local assets 5/5
+- Posting sprint: yes (2026-06-07 20:41 +0300)
+- Posting sprint fresh: yes
+- Session recovery: yes (2026-06-07 20:41 +0300)
+- Session recovery fresh: yes
+- Escalation board: yes (2026-06-07 20:41 +0300)
+- Escalation board fresh: yes
+- Escalation counts: critical 16, hot 0, stale workers 3
+- Proof activity: no (2026-06-07 20:41 +0300)
+- Proof stall fresh: yes
+- Proof SLA: critical (2026-06-07 20:41 +0300)
+- Proof SLA fresh: yes
+- Proof SLA first action: #warm-1 Nano / WhatsApp personal (now)
+- Proof rescue: critical (2026-06-07 20:41 +0300)
+- Proof rescue fresh: yes
+- Proof rescue first action: #warm-1 Nano / WhatsApp personal
+- Proof URL recovery: 1 pending (2026-06-07 20:41 +0300)
+- Proof URL recovery fresh: yes
+- Proof URL recovery first: dexter_pulse65 Dexter / X / public fallback
+- Social rescue: critical (2026-06-07 20:41 +0300)
+- Social rescue fresh: yes
+- Social rescue first action: #warm-1 Nano / WhatsApp personal (2 share links)
+- Social rescue worker pages: 4 (Nano:1, Sienna:1, Dexter:1, Memo:1)
+- Zero signup rescue: critical-zero-signups (2026-06-07 20:41 +0300)
+- Zero signup rescue fresh: yes
+- Zero signup counts: accepted 0, signup saves 0, entries 0
+- Zero signup first variant: #1 Sienna / YouTube Shorts / TikTok / Reels
+- Real action bridge: critical-zero-signups (2026-06-07 20:41 +0300)
+- Real action bridge fresh: yes
+- Real action bridge details: actions 4, rescue variants 4, entries 0
+- Real action first: #warm-1 Nano / WhatsApp personal
+- One-click share kit: yes (2026-06-07 20:41 +0300)
+- One-click share fresh: yes
+- One-click share details: actions 4, share links 8, owners Nano, Sienna, Dexter, Memo
+- Public outreach targets: yes (2026-06-07 20:41 +0300)
+- Public outreach targets fresh: yes
+- Public outreach details: targets 41, platforms 25, owners Sienna, Nano, Dexter, Memo, missing none
+- Ad ops links: yes (2026-06-07 20:41 +0300)
+- Ad ops links fresh: yes
+- Ad ops details: channels 2, platforms Meta Ads Manager, X Ads Manager
+- Paid ad triage: critical-paid-signup-friction (2026-06-07 20:41 +0300)
+- Paid ad triage fresh: yes
+- Paid ad details: paid views 219, app views 478, referral views 146, signup saves 0, platforms Meta Ads Manager, X Ads Manager
+- Paid dashboard details: state paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78
+- Paid no-click rescue: clicks-no-signups (2026-06-07 20:41 +0300)
+- Paid no-click rescue fresh: yes
+- Paid no-click rescue details: variants 8, impressions 12, clicks 227, first META-1 Meta Ads Manager / Free private score preview
+- Direct paid dashboard: paid-clicks-no-signups (2026-06-07 20:41 +0300)
+- Direct paid dashboard fresh: yes
+- Direct paid dashboard details: checks 2, impressions 12, clicks 227, spend 31.78
+- Funnel monitor: ok (2026-06-07 20:41 +0300)
+- Funnel monitor fresh: yes
+- Funnel monitor available: yes
+- Funnel accounts: profiles 5, free 4, paid 1
+- Funnel views: app 478, app 24h 478, referral 146, referral 24h 146
+- Funnel referrals: accepted 0, signup saves 0, entries 0
+- Warm follow-up: awaiting-first-human-send (2026-06-07 20:41 +0300)
+- Warm follow-up fresh: yes
+- Warm follow-up details: attempts 0, due no, referral views 152, signup saves 0
+- Warm follow-up next: Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.
+- Response kit: ready-for-warm-replies (07/06/2026 20:41)
+- Response kit fresh: yes
+- Response kit details: replies 13, warm attempts 0, signup saves 0, first reply what-is-it / What is this?
+- Posting cockpit: yes (2026-06-07 20:41 +0300)
+- Posting cockpit fresh: yes
+- Posting cockpit first action: #warm-1 Nano / WhatsApp personal
+- Phone action center: yes (2026-06-07 20:41 +0300)
+- Phone action center fresh: yes
+- Phone action center details: actions 16, QR 22, assets 22, video 10
+- Phone action center first action: #1 Sienna / WhatsApp Status
+- Public channel attempts: yes (2026-06-07 20:41 +0300)
+- Public channel attempts fresh: yes
+- Public channel attempt details: attempts 9, blocked 7, login required 6, social actions 4
+- Public channel first blocker: X / X public fallback - login_required
+- Login unlock board: yes (2026-06-07 20:41 +0300)
+- Login unlock fresh: yes
+- Login unlock details: cards 6, blocked 6, login required 5, platforms X, YouTube Shorts, Facebook, LinkedIn
+- Login unlock first: X / X public fallback - login_required
+- Objective audit: critical (2026-06-07 20:41 +0300)
+- Objective audit fresh: yes
+- Objective audit details: complete no, proven 10/12, critical open 1
+- Objective first open: incomplete advertise-everywhere-proof - Do the next real action and log proof with a public URL or precise private-channel note.
+- Objective next action: #clean-signup-test-batch Memo / WhatsApp testers
+- Operator push packet: critical (2026-06-07 20:41 +0300)
+- Operator push fresh: yes
+- Operator push details: actions 4, blocked 7, login required 6
+- Operator first action: #warm-1 Nano / WhatsApp personal
+- Worker wake board: yes (2026-06-07 20:41 +0300)
+- Worker wake fresh: yes
+- Worker wake first action: #warm-1 Nano / WhatsApp personal
+- Worker wake next actions: Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal
+- Watchdog loop: yes
+- Watchdog cron: yes
+- First action: Dexter #4 / Football groups
+- Action: Ask approved group admin for permission; post group variant only if allowed
+- Asset: `campaign/first-wave-posts.md`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4
+- Proof command:
+
+```bash
+node campaign-proof-log.mjs --priority "4" --proof-url "approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed" --status "requested"
+```
+
+Workers:
+  - Dexter: hot, open 3, next 4 Football groups
+  - Sienna: hot, open 8, next 1 WhatsApp Status
+  - Memo: clear, open 0, next -
+  - Nano: hot, open 5, next 2 WhatsApp personal
+
+### sienna
+
+- Status: ok
+- Generated: 2026-06-07 20:41 +0300
+- Proof rows: 49
+- Urgent proof gaps: 16
+- Loop running: yes
+- Hot ping hook: yes
+- Hot ping fresh: yes
+- Link sentinel: yes (2026-06-07 20:41 +0300)
+- Link sentinel fresh: yes
+- Paid traffic guard: yes (2026-06-07 20:41 +0300)
+- Paid traffic guard fresh: yes
+- Paid traffic deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- Live ad QA: yes (2026-06-07 20:41 +0300)
+- Live ad QA fresh: yes
+- Live ad QA details: pages 7, assets 14, auth yes, social 2/2, local assets 5/5
+- Posting sprint: yes (2026-06-07 20:41 +0300)
+- Posting sprint fresh: yes
+- Session recovery: yes (2026-06-07 20:41 +0300)
+- Session recovery fresh: yes
+- Escalation board: yes (2026-06-07 20:41 +0300)
+- Escalation board fresh: yes
+- Escalation counts: critical 16, hot 0, stale workers 3
+- Proof activity: no (2026-06-07 20:41 +0300)
+- Proof stall fresh: yes
+- Proof SLA: critical (2026-06-07 20:41 +0300)
+- Proof SLA fresh: yes
+- Proof SLA first action: #warm-1 Nano / WhatsApp personal (now)
+- Proof rescue: critical (2026-06-07 20:41 +0300)
+- Proof rescue fresh: yes
+- Proof rescue first action: #warm-1 Nano / WhatsApp personal
+- Proof URL recovery: 1 pending (2026-06-07 20:41 +0300)
+- Proof URL recovery fresh: yes
+- Proof URL recovery first: dexter_pulse65 Dexter / X / public fallback
+- Social rescue: critical (2026-06-07 20:41 +0300)
+- Social rescue fresh: yes
+- Social rescue first action: #warm-1 Nano / WhatsApp personal (2 share links)
+- Social rescue worker pages: 4 (Nano:1, Sienna:1, Dexter:1, Memo:1)
+- Zero signup rescue: critical-zero-signups (2026-06-07 20:41 +0300)
+- Zero signup rescue fresh: yes
+- Zero signup counts: accepted 0, signup saves 0, entries 0
+- Zero signup first variant: #1 Sienna / YouTube Shorts / TikTok / Reels
+- Real action bridge: critical-zero-signups (2026-06-07 20:41 +0300)
+- Real action bridge fresh: yes
+- Real action bridge details: actions 4, rescue variants 4, entries 0
+- Real action first: #warm-1 Nano / WhatsApp personal
+- One-click share kit: yes (2026-06-07 20:41 +0300)
+- One-click share fresh: yes
+- One-click share details: actions 4, share links 8, owners Nano, Sienna, Dexter, Memo
+- Public outreach targets: yes (2026-06-07 20:41 +0300)
+- Public outreach targets fresh: yes
+- Public outreach details: targets 41, platforms 25, owners Sienna, Nano, Dexter, Memo, missing none
+- Ad ops links: yes (2026-06-07 20:41 +0300)
+- Ad ops links fresh: yes
+- Ad ops details: channels 2, platforms Meta Ads Manager, X Ads Manager
+- Paid ad triage: critical-paid-signup-friction (2026-06-07 20:41 +0300)
+- Paid ad triage fresh: yes
+- Paid ad details: paid views 219, app views 478, referral views 146, signup saves 0, platforms Meta Ads Manager, X Ads Manager
+- Paid dashboard details: state paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78
+- Paid no-click rescue: clicks-no-signups (2026-06-07 20:41 +0300)
+- Paid no-click rescue fresh: yes
+- Paid no-click rescue details: variants 8, impressions 12, clicks 227, first META-1 Meta Ads Manager / Free private score preview
+- Direct paid dashboard: paid-clicks-no-signups (2026-06-07 20:41 +0300)
+- Direct paid dashboard fresh: yes
+- Direct paid dashboard details: checks 2, impressions 12, clicks 227, spend 31.78
+- Funnel monitor: ok (2026-06-07 20:41 +0300)
+- Funnel monitor fresh: yes
+- Funnel monitor available: yes
+- Funnel accounts: profiles 5, free 4, paid 1
+- Funnel views: app 478, app 24h 478, referral 146, referral 24h 146
+- Funnel referrals: accepted 0, signup saves 0, entries 0
+- Warm follow-up: awaiting-first-human-send (2026-06-07 20:41 +0300)
+- Warm follow-up fresh: yes
+- Warm follow-up details: attempts 0, due no, referral views 152, signup saves 0
+- Warm follow-up next: Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.
+- Response kit: ready-for-warm-replies (07/06/2026 20:41)
+- Response kit fresh: yes
+- Response kit details: replies 13, warm attempts 0, signup saves 0, first reply what-is-it / What is this?
+- Posting cockpit: yes (2026-06-07 20:41 +0300)
+- Posting cockpit fresh: yes
+- Posting cockpit first action: #warm-1 Nano / WhatsApp personal
+- Phone action center: yes (2026-06-07 20:41 +0300)
+- Phone action center fresh: yes
+- Phone action center details: actions 16, QR 22, assets 22, video 10
+- Phone action center first action: #1 Sienna / WhatsApp Status
+- Public channel attempts: yes (2026-06-07 20:41 +0300)
+- Public channel attempts fresh: yes
+- Public channel attempt details: attempts 9, blocked 7, login required 6, social actions 4
+- Public channel first blocker: X / X public fallback - login_required
+- Login unlock board: yes (2026-06-07 20:41 +0300)
+- Login unlock fresh: yes
+- Login unlock details: cards 6, blocked 6, login required 5, platforms X, YouTube Shorts, Facebook, LinkedIn
+- Login unlock first: X / X public fallback - login_required
+- Objective audit: critical (2026-06-07 20:41 +0300)
+- Objective audit fresh: yes
+- Objective audit details: complete no, proven 10/12, critical open 1
+- Objective first open: incomplete advertise-everywhere-proof - Do the next real action and log proof with a public URL or precise private-channel note.
+- Objective next action: #clean-signup-test-batch Memo / WhatsApp testers
+- Operator push packet: critical (2026-06-07 20:41 +0300)
+- Operator push fresh: yes
+- Operator push details: actions 4, blocked 7, login required 6
+- Operator first action: #warm-1 Nano / WhatsApp personal
+- Worker wake board: yes (2026-06-07 20:41 +0300)
+- Worker wake fresh: yes
+- Worker wake first action: #warm-1 Nano / WhatsApp personal
+- Worker wake next actions: Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal
+- Watchdog loop: yes
+- Watchdog cron: yes
+- First action: Sienna #1 / WhatsApp Status
+- Action: Post story asset with video caption 1
+- Asset: `media/worldcup26-main-video.mp4`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0
+- Proof command:
+
+```bash
+node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included" --status "posted"
+```
+
+Workers:
+  - Dexter: hot, open 3, next 4 Football groups
+  - Sienna: hot, open 8, next 1 WhatsApp Status
+  - Memo: clear, open 0, next -
+  - Nano: hot, open 5, next 2 WhatsApp personal
+
+### memo
+
+- Status: ok
+- Generated: 2026-06-07 20:41 +0300
+- Proof rows: 49
+- Urgent proof gaps: 16
+- Loop running: yes
+- Hot ping hook: yes
+- Hot ping fresh: yes
+- Link sentinel: yes (2026-06-07 20:40 +0300)
+- Link sentinel fresh: yes
+- Paid traffic guard: yes (2026-06-07 20:41 +0300)
+- Paid traffic guard fresh: yes
+- Paid traffic deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- Live ad QA: yes (2026-06-07 20:41 +0300)
+- Live ad QA fresh: yes
+- Live ad QA details: pages 7, assets 14, auth yes, social 2/2, local assets 5/5
+- Posting sprint: yes (2026-06-07 20:41 +0300)
+- Posting sprint fresh: yes
+- Session recovery: yes (2026-06-07 20:41 +0300)
+- Session recovery fresh: yes
+- Escalation board: yes (2026-06-07 20:41 +0300)
+- Escalation board fresh: yes
+- Escalation counts: critical 16, hot 0, stale workers 3
+- Proof activity: no (2026-06-07 20:41 +0300)
+- Proof stall fresh: yes
+- Proof SLA: critical (2026-06-07 20:41 +0300)
+- Proof SLA fresh: yes
+- Proof SLA first action: #warm-1 Nano / WhatsApp personal (now)
+- Proof rescue: critical (2026-06-07 20:41 +0300)
+- Proof rescue fresh: yes
+- Proof rescue first action: #warm-1 Nano / WhatsApp personal
+- Proof URL recovery: 1 pending (2026-06-07 20:41 +0300)
+- Proof URL recovery fresh: yes
+- Proof URL recovery first: dexter_pulse65 Dexter / X / public fallback
+- Social rescue: critical (2026-06-07 20:41 +0300)
+- Social rescue fresh: yes
+- Social rescue first action: #warm-1 Nano / WhatsApp personal (2 share links)
+- Social rescue worker pages: 4 (Nano:1, Sienna:1, Dexter:1, Memo:1)
+- Zero signup rescue: critical-zero-signups (2026-06-07 20:41 +0300)
+- Zero signup rescue fresh: yes
+- Zero signup counts: accepted 0, signup saves 0, entries 0
+- Zero signup first variant: #1 Sienna / YouTube Shorts / TikTok / Reels
+- Real action bridge: critical-zero-signups (2026-06-07 20:41 +0300)
+- Real action bridge fresh: yes
+- Real action bridge details: actions 4, rescue variants 4, entries 0
+- Real action first: #warm-1 Nano / WhatsApp personal
+- One-click share kit: yes (2026-06-07 20:41 +0300)
+- One-click share fresh: yes
+- One-click share details: actions 4, share links 8, owners Nano, Sienna, Dexter, Memo
+- Public outreach targets: yes (2026-06-07 20:41 +0300)
+- Public outreach targets fresh: yes
+- Public outreach details: targets 41, platforms 25, owners Sienna, Nano, Dexter, Memo, missing none
+- Ad ops links: yes (2026-06-07 20:41 +0300)
+- Ad ops links fresh: yes
+- Ad ops details: channels 2, platforms Meta Ads Manager, X Ads Manager
+- Paid ad triage: critical-paid-signup-friction (2026-06-07 20:41 +0300)
+- Paid ad triage fresh: yes
+- Paid ad details: paid views 219, app views 478, referral views 146, signup saves 0, platforms Meta Ads Manager, X Ads Manager
+- Paid dashboard details: state paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78
+- Paid no-click rescue: clicks-no-signups (2026-06-07 20:41 +0300)
+- Paid no-click rescue fresh: yes
+- Paid no-click rescue details: variants 8, impressions 12, clicks 227, first META-1 Meta Ads Manager / Free private score preview
+- Direct paid dashboard: paid-clicks-no-signups (2026-06-07 20:41 +0300)
+- Direct paid dashboard fresh: yes
+- Direct paid dashboard details: checks 2, impressions 12, clicks 227, spend 31.78
+- Funnel monitor: ok (2026-06-07 20:41 +0300)
+- Funnel monitor fresh: yes
+- Funnel monitor available: yes
+- Funnel accounts: profiles 5, free 4, paid 1
+- Funnel views: app 478, app 24h 478, referral 146, referral 24h 146
+- Funnel referrals: accepted 0, signup saves 0, entries 0
+- Warm follow-up: awaiting-first-human-send (2026-06-07 20:41 +0300)
+- Warm follow-up fresh: yes
+- Warm follow-up details: attempts 0, due no, referral views 152, signup saves 0
+- Warm follow-up next: Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.
+- Response kit: ready-for-warm-replies (07/06/2026 20:41)
+- Response kit fresh: yes
+- Response kit details: replies 13, warm attempts 0, signup saves 0, first reply what-is-it / What is this?
+- Posting cockpit: yes (2026-06-07 20:41 +0300)
+- Posting cockpit fresh: yes
+- Posting cockpit first action: #warm-1 Nano / WhatsApp personal
+- Phone action center: yes (2026-06-07 20:41 +0300)
+- Phone action center fresh: yes
+- Phone action center details: actions 16, QR 22, assets 22, video 10
+- Phone action center first action: #1 Sienna / WhatsApp Status
+- Public channel attempts: yes (2026-06-07 20:41 +0300)
+- Public channel attempts fresh: yes
+- Public channel attempt details: attempts 9, blocked 7, login required 6, social actions 4
+- Public channel first blocker: X / X public fallback - login_required
+- Login unlock board: yes (2026-06-07 20:41 +0300)
+- Login unlock fresh: yes
+- Login unlock details: cards 6, blocked 6, login required 5, platforms X, YouTube Shorts, Facebook, LinkedIn
+- Login unlock first: X / X public fallback - login_required
+- Objective audit: critical (2026-06-07 20:41 +0300)
+- Objective audit fresh: yes
+- Objective audit details: complete no, proven 10/12, critical open 1
+- Objective first open: incomplete advertise-everywhere-proof - Do the next real action and log proof with a public URL or precise private-channel note.
+- Objective next action: #clean-signup-test-batch Memo / WhatsApp testers
+- Operator push packet: critical (2026-06-07 20:41 +0300)
+- Operator push fresh: yes
+- Operator push details: actions 4, blocked 7, login required 6
+- Operator first action: #warm-1 Nano / WhatsApp personal
+- Worker wake board: yes (2026-06-07 20:41 +0300)
+- Worker wake fresh: yes
+- Worker wake first action: #warm-1 Nano / WhatsApp personal
+- Worker wake next actions: Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal
+- Watchdog loop: yes
+- Watchdog cron: yes
+- First action: none
+
+Workers:
+  - Dexter: hot, open 3, next 4 Football groups
+  - Sienna: hot, open 8, next 1 WhatsApp Status
+  - Memo: clear, open 0, next -
+  - Nano: hot, open 5, next 2 WhatsApp personal
+
+### nano
+
+- Status: ok
+- Generated: 2026-06-07 20:41 +0300
+- Proof rows: 49
+- Urgent proof gaps: 16
+- Loop running: yes
+- Hot ping hook: yes
+- Hot ping fresh: yes
+- Link sentinel: yes (2026-06-07 20:41 +0300)
+- Link sentinel fresh: yes
+- Paid traffic guard: yes (2026-06-07 20:41 +0300)
+- Paid traffic guard fresh: yes
+- Paid traffic deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- Live ad QA: yes (2026-06-07 20:41 +0300)
+- Live ad QA fresh: yes
+- Live ad QA details: pages 7, assets 14, auth yes, social 2/2, local assets 5/5
+- Posting sprint: yes (2026-06-07 20:41 +0300)
+- Posting sprint fresh: yes
+- Session recovery: yes (2026-06-07 20:41 +0300)
+- Session recovery fresh: yes
+- Escalation board: yes (2026-06-07 20:41 +0300)
+- Escalation board fresh: yes
+- Escalation counts: critical 16, hot 0, stale workers 3
+- Proof activity: no (2026-06-07 20:41 +0300)
+- Proof stall fresh: yes
+- Proof SLA: critical (2026-06-07 20:41 +0300)
+- Proof SLA fresh: yes
+- Proof SLA first action: #warm-1 Nano / WhatsApp personal (now)
+- Proof rescue: critical (2026-06-07 20:41 +0300)
+- Proof rescue fresh: yes
+- Proof rescue first action: #warm-1 Nano / WhatsApp personal
+- Proof URL recovery: 1 pending (2026-06-07 20:41 +0300)
+- Proof URL recovery fresh: yes
+- Proof URL recovery first: dexter_pulse65 Dexter / X / public fallback
+- Social rescue: critical (2026-06-07 20:41 +0300)
+- Social rescue fresh: yes
+- Social rescue first action: #warm-1 Nano / WhatsApp personal (2 share links)
+- Social rescue worker pages: 4 (Nano:1, Sienna:1, Dexter:1, Memo:1)
+- Zero signup rescue: critical-zero-signups (2026-06-07 20:41 +0300)
+- Zero signup rescue fresh: yes
+- Zero signup counts: accepted 0, signup saves 0, entries 0
+- Zero signup first variant: #1 Sienna / YouTube Shorts / TikTok / Reels
+- Real action bridge: critical-zero-signups (2026-06-07 20:41 +0300)
+- Real action bridge fresh: yes
+- Real action bridge details: actions 4, rescue variants 4, entries 0
+- Real action first: #warm-1 Nano / WhatsApp personal
+- One-click share kit: yes (2026-06-07 20:41 +0300)
+- One-click share fresh: yes
+- One-click share details: actions 4, share links 8, owners Nano, Sienna, Dexter, Memo
+- Public outreach targets: yes (2026-06-07 20:41 +0300)
+- Public outreach targets fresh: yes
+- Public outreach details: targets 41, platforms 25, owners Sienna, Nano, Dexter, Memo, missing none
+- Ad ops links: yes (2026-06-07 20:41 +0300)
+- Ad ops links fresh: yes
+- Ad ops details: channels 2, platforms Meta Ads Manager, X Ads Manager
+- Paid ad triage: critical-paid-signup-friction (2026-06-07 20:41 +0300)
+- Paid ad triage fresh: yes
+- Paid ad details: paid views 219, app views 478, referral views 146, signup saves 0, platforms Meta Ads Manager, X Ads Manager
+- Paid dashboard details: state paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78
+- Paid no-click rescue: clicks-no-signups (2026-06-07 20:41 +0300)
+- Paid no-click rescue fresh: yes
+- Paid no-click rescue details: variants 8, impressions 12, clicks 227, first META-1 Meta Ads Manager / Free private score preview
+- Direct paid dashboard: paid-clicks-no-signups (2026-06-07 20:41 +0300)
+- Direct paid dashboard fresh: yes
+- Direct paid dashboard details: checks 2, impressions 12, clicks 227, spend 31.78
+- Funnel monitor: ok (2026-06-07 20:41 +0300)
+- Funnel monitor fresh: yes
+- Funnel monitor available: yes
+- Funnel accounts: profiles 5, free 4, paid 1
+- Funnel views: app 478, app 24h 478, referral 146, referral 24h 146
+- Funnel referrals: accepted 0, signup saves 0, entries 0
+- Warm follow-up: awaiting-first-human-send (2026-06-07 20:41 +0300)
+- Warm follow-up fresh: yes
+- Warm follow-up details: attempts 0, due no, referral views 152, signup saves 0
+- Warm follow-up next: Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.
+- Response kit: ready-for-warm-replies (07/06/2026 20:41)
+- Response kit fresh: yes
+- Response kit details: replies 13, warm attempts 0, signup saves 0, first reply what-is-it / What is this?
+- Posting cockpit: yes (2026-06-07 20:41 +0300)
+- Posting cockpit fresh: yes
+- Posting cockpit first action: #warm-1 Nano / WhatsApp personal
+- Phone action center: yes (2026-06-07 20:41 +0300)
+- Phone action center fresh: yes
+- Phone action center details: actions 16, QR 22, assets 22, video 10
+- Phone action center first action: #1 Sienna / WhatsApp Status
+- Public channel attempts: yes (2026-06-07 20:41 +0300)
+- Public channel attempts fresh: yes
+- Public channel attempt details: attempts 9, blocked 7, login required 6, social actions 4
+- Public channel first blocker: X / X public fallback - login_required
+- Login unlock board: yes (2026-06-07 20:41 +0300)
+- Login unlock fresh: yes
+- Login unlock details: cards 6, blocked 6, login required 5, platforms X, YouTube Shorts, Facebook, LinkedIn
+- Login unlock first: X / X public fallback - login_required
+- Objective audit: critical (2026-06-07 20:41 +0300)
+- Objective audit fresh: yes
+- Objective audit details: complete no, proven 10/12, critical open 1
+- Objective first open: incomplete advertise-everywhere-proof - Do the next real action and log proof with a public URL or precise private-channel note.
+- Objective next action: #clean-signup-test-batch Memo / WhatsApp testers
+- Operator push packet: critical (2026-06-07 20:41 +0300)
+- Operator push fresh: yes
+- Operator push details: actions 4, blocked 7, login required 6
+- Operator first action: #warm-1 Nano / WhatsApp personal
+- Worker wake board: yes (2026-06-07 20:41 +0300)
+- Worker wake fresh: yes
+- Worker wake first action: #warm-1 Nano / WhatsApp personal
+- Worker wake next actions: Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal
+- Watchdog loop: yes
+- Watchdog cron: yes
+- First action: Nano #2 / WhatsApp personal
+- Action: Send personal invite to warm contacts
+- Asset: `media/worldcup26-main-video.mp4`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2
+- Proof command:
+
+```bash
+node campaign-proof-log.mjs --priority "2" --proof-url "private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>" --status "sent"
+```
+
+Workers:
+  - Dexter: hot, open 3, next 4 Football groups
+  - Sienna: hot, open 8, next 1 WhatsApp Status
+  - Memo: clear, open 0, next -
+  - Nano: hot, open 5, next 2 WhatsApp personal
+
+## Proof Rule
+
+This report proves droplet readiness only. Do not mark social proof done from this report. External posts, stories, messages, replies, uploads, or approval requests need a real URL or clear private-channel note before proof logging.

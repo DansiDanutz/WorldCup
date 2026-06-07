@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Login Unlock Board</title>
+  <style>
+    :root { color-scheme: dark; --bg: #03140f; --panel: #0b2c22; --line: rgba(255,255,255,.16); --text: #f8fff9; --muted: #bed3ca; --gold: #ffd974; --mint: #74f0b2; --red: #ffb4a8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--text); background: radial-gradient(circle at 10% 0%, rgba(255,217,116,.2), transparent 22rem), radial-gradient(circle at 100% 0%, rgba(116,240,178,.16), transparent 24rem), var(--bg); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(980px, 100%); margin: 0 auto; padding: 14px 10px 48px; }
+    header, article { border: 1px solid var(--line); border-radius: 10px; background: rgba(11,44,34,.92); padding: 14px; margin-bottom: 10px; }
+    h1 { margin: 0 0 8px; font-size: clamp(34px, 8vw, 66px); line-height: .92; }
+    h2 { margin: 0 0 6px; font-size: 21px; }
+    p, li { color: var(--muted); line-height: 1.4; }
+    a { color: var(--gold); overflow-wrap: anywhere; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid var(--line); border-radius: 8px; background: rgba(0,0,0,.28); padding: 10px; }
+    button, .button { border: 1px solid var(--line); border-radius: 8px; color: #03140f; background: linear-gradient(135deg, var(--gold), var(--mint)); font-weight: 950; padding: 10px 12px; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; min-height: 42px; }
+    .danger { color: #03140f; background: linear-gradient(135deg, var(--red), var(--gold)); }
+    .actions, .meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { border-radius: 999px; padding: 6px 9px; background: rgba(255,255,255,.08); color: var(--muted); font-weight: 800; }
+    .grid { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .copy-state { color: var(--mint); font-size: 13px; min-height: 18px; margin-top: 6px; }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Login Unlock</h1>
+      <p>This unlock board does not prove posting. Complete login/verification in the owned account, publish/send the action, then log proof only after a real public URL or precise private-channel note exists.</p>
+      <div class="meta">
+        <span class="pill danger">6 blocked</span>
+        <span class="pill">5 login required</span>
+        <span class="pill">code 26BC4B90CB</span>
+      </div>
+    </header>
+    <section class="grid">
+      <article>
+    <h2>Dexter / X</h2>
+    <p><strong>X public fallback</strong> - login required</p>
+    <p>X intent opened in browser at 2026-06-07 03:09 EEST, redirected to login/onboarding, and showed Continue as Dan semebitcoin@gmail.com before compose; no post was submitted; code 26BC4B90CB and worldcup26.world link were in the attempted post copy.</p>
+    <ol><li>Log into the owned X account, then open the compose link.</li><li>If X strips the media, post the text first and attach the image/video manually.</li><li>Publish, then copy the post URL.</li><li>Log the public X URL with the copied proof command.</li></ol>
+    <div class="actions">
+      <a class="button danger" href="https://x.com/i/flow/login" target="_blank" rel="noreferrer">Login</a>
+      
+      <a class="button" href="https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1" target="_blank" rel="noreferrer">Publish</a>
+      <button type="button" data-copy="#copy-dexter-x-x-public-fallback">Copy caption</button>
+      <button type="button" data-copy="#proof-dexter-x-x-public-fallback">Copy proof</button>
+    </div>
+    <div class="copy-state"></div>
+    <p>Asset: media/worldcup26-referral-16x9.jpg</p>
+    <pre id="copy-dexter-x-x-public-fallback">What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.
+
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x-search&amp;utm_medium=manual-reply&amp;utm_campaign=worldcup26_public_outreach&amp;utm_content=predictions_b1</pre>
+    <pre id="proof-dexter-x-x-public-fallback">node campaign-public-channel-attempts.mjs --add --owner &quot;Dexter&quot; --platform &quot;X Search&quot; --channel &quot;World Cup 2026 prediction conversations&quot; --status &quot;posted&quot; --attempt-url &quot;https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&amp;src=typed_query&amp;f=live&quot; --detail &quot;public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST&quot;</pre>
+  </article>
+<article>
+    <h2>Dexter / X</h2>
+    <p><strong>X public permalink recovery</strong> - blocked</p>
+    <p>Read-only proof recovery attempted at 2026-06-07 03:32 EEST: X search redirected to login, x.com/NervixAi profile showed login/signup gate, and xcancel mirror showed anti-bot verification. No public permalink recovered. Code 26BC4B90CB and https://worldcup26.world/login?ref=26BC4B90CB remain the target proof content.</p>
+    <ol><li>Log into the owned X account, then open the compose link.</li><li>If X strips the media, post the text first and attach the image/video manually.</li><li>Publish, then copy the post URL.</li><li>Log the public X URL with the copied proof command.</li></ol>
+    <div class="actions">
+      <a class="button danger" href="https://x.com/i/flow/login" target="_blank" rel="noreferrer">Login</a>
+      
+      <a class="button" href="https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1" target="_blank" rel="noreferrer">Publish</a>
+      <button type="button" data-copy="#copy-dexter-x-x-public-permalink-recovery">Copy caption</button>
+      <button type="button" data-copy="#proof-dexter-x-x-public-permalink-recovery">Copy proof</button>
+    </div>
+    <div class="copy-state"></div>
+    <p>Asset: media/worldcup26-referral-16x9.jpg</p>
+    <pre id="copy-dexter-x-x-public-permalink-recovery">What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.
+
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x-search&amp;utm_medium=manual-reply&amp;utm_campaign=worldcup26_public_outreach&amp;utm_content=predictions_b1</pre>
+    <pre id="proof-dexter-x-x-public-permalink-recovery">node campaign-public-channel-attempts.mjs --add --owner &quot;Dexter&quot; --platform &quot;X Search&quot; --channel &quot;World Cup 2026 prediction conversations&quot; --status &quot;posted&quot; --attempt-url &quot;https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&amp;src=typed_query&amp;f=live&quot; --detail &quot;public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST&quot;</pre>
+  </article>
+<article>
+    <h2>Dexter / X</h2>
+    <p><strong>organic compose free-first</strong> - login required</p>
+    <p>X organic compose attempt at 2026-06-07 15:54 EEST: opened compose in browser to post free-first WorldCup26 invite with code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB, but x.com showed login/signup dialog; no public post submitted. Ads Manager remains authenticated separately, but organic X session is not.</p>
+    <ol><li>Log into the owned X account, then open the compose link.</li><li>If X strips the media, post the text first and attach the image/video manually.</li><li>Publish, then copy the post URL.</li><li>Log the public X URL with the copied proof command.</li></ol>
+    <div class="actions">
+      <a class="button danger" href="https://x.com/i/flow/login" target="_blank" rel="noreferrer">Login</a>
+      
+      <a class="button" href="https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1" target="_blank" rel="noreferrer">Publish</a>
+      <button type="button" data-copy="#copy-dexter-x-organic-compose-free-first">Copy caption</button>
+      <button type="button" data-copy="#proof-dexter-x-organic-compose-free-first">Copy proof</button>
+    </div>
+    <div class="copy-state"></div>
+    <p>Asset: media/worldcup26-referral-16x9.jpg</p>
+    <pre id="copy-dexter-x-organic-compose-free-first">What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.
+
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x-search&amp;utm_medium=manual-reply&amp;utm_campaign=worldcup26_public_outreach&amp;utm_content=predictions_b1</pre>
+    <pre id="proof-dexter-x-organic-compose-free-first">node campaign-public-channel-attempts.mjs --add --owner &quot;Dexter&quot; --platform &quot;X Search&quot; --channel &quot;World Cup 2026 prediction conversations&quot; --status &quot;posted&quot; --attempt-url &quot;https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&amp;src=typed_query&amp;f=live&quot; --detail &quot;public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST&quot;</pre>
+  </article>
+<article>
+    <h2>Sienna / YouTube Shorts</h2>
+    <p><strong>zero signup rescue upload</strong> - login required</p>
+    <p>YouTube Studio upload attempt at 2026-06-07 16:00 EEST: channel Dan Semenescu opened authenticated, vertical short asset prepared at media/worldcup26-main-video-vertical.mp4 (1080x1920, 69s, 9.9MB), intended free-first caption included code 26BC4B90CB and link https://worldcup26.world/login?ref=26BC4B90CB, but YouTube showed 'Verify it’s you' security modal before upload; no video posted. Proof screenshot runtime/proofs/youtube-studio-verify-its-you-20260607-1600.png.</p>
+    <ol><li>Complete Google / YouTube Studio 'Verify it is you'.</li><li>Upload media/worldcup26-main-video.mp4 as a Short.</li><li>Paste the caption, include code 26BC4B90CB and the invite link.</li><li>Publish, then log the public YouTube URL.</li></ol>
+    <div class="actions">
+      <a class="button danger" href="https://accounts.google.com/" target="_blank" rel="noreferrer">Login</a>
+      <a class="button danger" href="https://myaccount.google.com/security-checkup" target="_blank" rel="noreferrer">Verify</a>
+      <a class="button" href="https://studio.youtube.com/channel/UC7j29XhArv5tlRqQj2qAb4Q/videos/upload" target="_blank" rel="noreferrer">Publish</a>
+      <button type="button" data-copy="#copy-sienna-youtube-shorts-zero-signup-rescue-upload">Copy caption</button>
+      <button type="button" data-copy="#proof-sienna-youtube-shorts-zero-signup-rescue-upload">Copy proof</button>
+    </div>
+    <div class="copy-state"></div>
+    <p>Asset: media/worldcup26-main-video.mp4</p>
+    <pre id="copy-sienna-youtube-shorts-zero-signup-rescue-upload">What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.
+
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-search&amp;utm_medium=manual-comment&amp;utm_campaign=worldcup26_public_outreach&amp;utm_content=predictions_b3</pre>
+    <pre id="proof-sienna-youtube-shorts-zero-signup-rescue-upload">node campaign-public-channel-attempts.mjs --add --owner &quot;Sienna&quot; --platform &quot;YouTube Search&quot; --channel &quot;World Cup 2026 prediction videos&quot; --status &quot;posted&quot; --attempt-url &quot;https://www.youtube.com/results?search_query=World+Cup+2026+predictions&quot; --detail &quot;public-url-or-screenshot-note: YouTube comment URL/screenshot note with code/link included at YYYY-MM-DD HH:mm EEST&quot;</pre>
+  </article>
+<article>
+    <h2>Dexter / Facebook</h2>
+    <p><strong>share dialog free-first</strong> - login required</p>
+    <p>Facebook share attempt at 2026-06-07 16:10 EEST: opened prepared free-first share dialog for https://worldcup26.world/login?ref=26BC4B90CB with zero-signup short UTMs, but facebook.com showed 'Not Logged In' and login form; no public share submitted. Proof screenshot runtime/proofs/facebook-share-not-logged-in-20260607-1610.png.</p>
+    <ol><li>Log into Facebook in this browser or another owned session.</li><li>Open the share/publish link and paste the caption.</li><li>Publish to profile/page/story or request group approval first.</li><li>Log the public URL or exact private/group approval proof note.</li></ol>
+    <div class="actions">
+      <a class="button danger" href="https://www.facebook.com/login/" target="_blank" rel="noreferrer">Login</a>
+      
+      <a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dzero-signup-short%26utm_medium%3Dorganic-video%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dhook_private_score" target="_blank" rel="noreferrer">Publish</a>
+      <button type="button" data-copy="#copy-dexter-facebook-share-dialog-free-first">Copy caption</button>
+      <button type="button" data-copy="#proof-dexter-facebook-share-dialog-free-first">Copy proof</button>
+    </div>
+    <div class="copy-state"></div>
+    <p>Asset: media/worldcup26-referral-story.jpg</p>
+    <pre id="copy-dexter-facebook-share-dialog-free-first">48 teams are still open. Pick your 3 before everyone copies the favorites. Code 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_public_outreach&amp;utm_content=story_a3</pre>
+    <pre id="proof-dexter-facebook-share-dialog-free-first">node campaign-proof-log.mjs --priority &quot;3&quot; --proof-url &quot;private-meta-story: story posted from &lt;account&gt;; screenshot saved; code/link sticker included at YYYY-MM-DD HH:mm EEST&quot; --status &quot;posted&quot;</pre>
+  </article>
+<article>
+    <h2>Memo / LinkedIn</h2>
+    <p><strong>share dialog free-first</strong> - login required</p>
+    <p>LinkedIn share attempt at 2026-06-07 16:13 EEST: opened share-offsite flow for https://worldcup26.world/login?ref=26BC4B90CB with free-first copy and code 26BC4B90CB, but linkedin.com redirected to login; no public share submitted. Proof screenshot runtime/proofs/linkedin-share-login-required-20260607-1613.png.</p>
+    <ol><li>Log into LinkedIn in this browser or another owned session.</li><li>Open the share link and paste the free-picks copy.</li><li>Publish from the owned profile/page.</li><li>Log the public LinkedIn URL.</li></ol>
+    <div class="actions">
+      <a class="button danger" href="https://www.linkedin.com/login" target="_blank" rel="noreferrer">Login</a>
+      
+      <a class="button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dlinkedin%26utm_medium%3Dorganic-share%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfree_first_share" target="_blank" rel="noreferrer">Publish</a>
+      <button type="button" data-copy="#copy-memo-linkedin-share-dialog-free-first">Copy caption</button>
+      <button type="button" data-copy="#proof-memo-linkedin-share-dialog-free-first">Copy proof</button>
+    </div>
+    <div class="copy-state"></div>
+    <p>Asset: media/worldcup26-referral-16x9.jpg</p>
+    <pre id="copy-memo-linkedin-share-dialog-free-first">Pick 3 teams free for WorldCup26 and watch your private points preview.
+
+Code 26BC4B90CB
+https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dlinkedin%26utm_medium%3Dorganic-share%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfree_first_share</pre>
+    <pre id="proof-memo-linkedin-share-dialog-free-first">node campaign-public-channel-attempts.mjs --add --owner &quot;Memo&quot; --platform &quot;LinkedIn&quot; --channel &quot;share dialog free-first&quot; --status &quot;posted&quot; --attempt-url &quot;https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dlinkedin%26utm_medium%3Dorganic-share%26utm_campaign%3Dworldcup26_zero_signup_rescue%26utm_content%3Dfree_first_share&quot; --detail &quot;LinkedIn: posted from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB; link included; public URL/private note &lt;paste here&gt;&quot; --next-action &quot;watch replies/signups; follow up with anyone who asks for help&quot;</pre>
+  </article>
+    </section>
+  </main>
+  <script>
+    document.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-copy]");
+      if (!button) return;
+      const target = document.querySelector(button.getAttribute("data-copy"));
+      if (!target) return;
+      await navigator.clipboard.writeText(target.textContent.trim());
+      const state = button.parentElement.querySelector(".copy-state");
+      if (state) state.textContent = "Copied";
+      setTimeout(() => { if (state) state.textContent = ""; }, 1400);
+    });
+  </script>
+</body>
+</html>

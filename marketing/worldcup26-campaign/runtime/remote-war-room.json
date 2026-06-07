@@ -1,0 +1,4755 @@
+{
+  "generatedAt": "2026-06-07T17:44:13.983Z",
+  "generatedAtEest": "2026-06-07 20:44 +0300",
+  "localFunnel": {
+    "ok": true,
+    "available": true,
+    "status": "ok",
+    "reason": "",
+    "inviterFound": true,
+    "inviterName": "David Ai",
+    "acceptedReferrals": 0,
+    "acceptedReferrals24h": 0,
+    "acceptedReferrals72h": 0,
+    "signupReferralSaves": 0,
+    "signupReferralSaves24h": 0,
+    "signupReferralSaves72h": 0,
+    "referredEntries": 0,
+    "referredDraftEntries": 0,
+    "referredLockedEntries": 0,
+    "profiles": 5,
+    "profiles24h": 3,
+    "profiles72h": 4,
+    "freeAccounts": 4,
+    "paidAccounts": 1,
+    "draftAccounts": 3,
+    "totalEntries": 4,
+    "draftEntries": 3,
+    "lockedEntries": 1,
+    "lockedEntries24h": 0,
+    "lockedEntries72h": 1,
+    "viewCountsAvailable": true,
+    "appViews": 509,
+    "appViews24h": 509,
+    "appViews72h": 509,
+    "referralViews": 171,
+    "referralViews24h": 171,
+    "referralViews72h": 171,
+    "signupReturned": 0,
+    "signupMissingAcceptance": 0,
+    "signupAttempts": 0,
+    "signupSavedEvents": 0,
+    "signupFailedEvents": 0,
+    "signupErrorEvents": 0,
+    "sourceBreakdown": [
+      {
+        "source": "meta",
+        "medium": "paid-social",
+        "campaign": "worldcup26_referral_72h",
+        "content": "three-team-question",
+        "count": 70,
+        "lastViewedAt": "2026-06-07T17:44:09.214627+00:00"
+      },
+      {
+        "source": "an",
+        "medium": "paid",
+        "campaign": "6971048256000",
+        "content": "6971048413400",
+        "count": 50,
+        "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+      },
+      {
+        "source": "fb",
+        "medium": "paid",
+        "campaign": "6971048256000",
+        "content": "6971048413400_free_first",
+        "count": 22,
+        "lastViewedAt": "2026-06-07T14:16:35.772463+00:00"
+      },
+      {
+        "source": "fb",
+        "medium": "paid",
+        "campaign": "6971048256000",
+        "content": "6971048413400",
+        "count": 19,
+        "lastViewedAt": "2026-06-07T11:58:21.035812+00:00"
+      },
+      {
+        "source": "ig",
+        "medium": "paid",
+        "campaign": "6971048256000",
+        "content": "6971048413400",
+        "count": 4,
+        "lastViewedAt": "2026-06-07T11:47:26.443609+00:00"
+      },
+      {
+        "source": "codex_probe",
+        "medium": "qa",
+        "campaign": "signup_friction_probe",
+        "content": "",
+        "count": 2,
+        "lastViewedAt": "2026-06-07T16:51:52.940108+00:00"
+      },
+      {
+        "source": "browser-probe",
+        "medium": "automation",
+        "campaign": "worldcup26_referral_72h",
+        "content": "conversion_browser",
+        "count": 1,
+        "lastViewedAt": "2026-06-07T11:09:11.510868+00:00"
+      }
+    ],
+    "topSource": {
+      "source": "meta",
+      "medium": "paid-social",
+      "campaign": "worldcup26_referral_72h",
+      "content": "three-team-question",
+      "count": 70,
+      "lastViewedAt": "2026-06-07T17:44:09.214627+00:00"
+    },
+    "signupSourceBreakdown": [],
+    "topSignupSource": null,
+    "latestAcceptedReferralAt": "",
+    "latestSignupReferralSavedAt": "",
+    "latestEntryCreatedAt": "",
+    "latestEntryLockedAt": "",
+    "fresh": true,
+    "generatedAtEest": "2026-06-07 20:44 +0300"
+  },
+  "hosts": [
+    {
+      "host": "dexter",
+      "ok": true,
+      "generatedAtEest": "2026-06-07 20:41 +0300",
+      "hotPingFresh": true,
+      "proof": 49,
+      "urgent": 16,
+      "hotWorkers": 3,
+      "first": {
+        "worker": "Dexter",
+        "nextPriority": "4",
+        "nextChannel": "Football groups",
+        "nextCommand": "node campaign-proof-log.mjs --priority \"4\" --proof-url \"approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed\" --status \"requested\"",
+        "action": "Ask approved group admin for permission; post group variant only if allowed",
+        "asset": "campaign/first-wave-posts.md",
+        "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4"
+      },
+      "workers": [
+        {
+          "worker": "Dexter",
+          "openRows": 3,
+          "escalation": "hot",
+          "nextPriority": "4",
+          "nextChannel": "Football groups",
+          "oldestAgeLabel": "36.7h open"
+        },
+        {
+          "worker": "Sienna",
+          "openRows": 8,
+          "escalation": "hot",
+          "nextPriority": "1",
+          "nextChannel": "WhatsApp Status",
+          "oldestAgeLabel": "40.7h open"
+        },
+        {
+          "worker": "Memo",
+          "openRows": 0,
+          "escalation": "clear",
+          "nextPriority": null,
+          "nextChannel": null,
+          "oldestAgeLabel": null
+        },
+        {
+          "worker": "Nano",
+          "openRows": 5,
+          "escalation": "hot",
+          "nextPriority": "2",
+          "nextChannel": "WhatsApp personal",
+          "oldestAgeLabel": "38.7h open"
+        }
+      ],
+      "loopRows": [
+        "3570007       1 S       01:04:23 bash ./campaign-loop.sh run"
+      ],
+      "loopRunning": true,
+      "watchdogRows": [
+        "2550465       1 S       22:54:21 bash ./campaign-watchdog-loop.sh run"
+      ],
+      "watchdogRunning": true,
+      "watchdogCronInstalled": true,
+      "hotPingHookOk": true,
+      "linkSentinelOk": true,
+      "linkSentinelFresh": true,
+      "linkGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "linkChecks": [
+        {
+          "name": "base",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "meta-paid",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "x-paid",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "story",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        }
+      ],
+      "paidTrafficOk": true,
+      "paidTrafficFresh": true,
+      "paidTrafficGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidTraffic": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 7,
+        "failedPages": [],
+        "resolverOk": true,
+        "healthOk": true
+      },
+      "liveAdQaOk": true,
+      "liveAdQaFresh": true,
+      "liveAdQaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "liveAdQa": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 7,
+        "renderedAssetCount": 14,
+        "socialOk": 2,
+        "socialCount": 2,
+        "localAssetOk": 5,
+        "localAssetCount": 5,
+        "resolverOk": true,
+        "healthOk": true,
+        "authOk": true,
+        "failedPages": [],
+        "failedRenderedAssets": [],
+        "failedLocalAssets": []
+      },
+      "adPlatformAuditOk": true,
+      "adPlatformAuditFresh": true,
+      "adPlatformAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adPlatformAudit": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 9,
+        "socialImageCount": 1,
+        "resolverOk": true,
+        "healthOk": true,
+        "failedPages": [],
+        "failedSocialImages": []
+      },
+      "conversionGuardOk": true,
+      "conversionGuardFresh": true,
+      "conversionGuardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "conversionGuard": {
+        "ok": true,
+        "browserVerified": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 4,
+        "resolverOk": true,
+        "authOk": true,
+        "browserProofStatus": "provided",
+        "failedPages": []
+      },
+      "postingSprintOk": true,
+      "postingSprintFresh": true,
+      "postingSprintGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingSprintCards": [
+        {
+          "worker": "Dexter",
+          "source": "urgent",
+          "label": "Priority 4",
+          "channel": "Football groups",
+          "asset": "campaign/first-wave-posts.md",
+          "action": "Ask approved group admin for permission; post group variant only if allowed"
+        },
+        {
+          "worker": "Sienna",
+          "source": "urgent",
+          "label": "Priority 1",
+          "channel": "WhatsApp Status",
+          "asset": "media/worldcup26-main-video.mp4",
+          "action": "Post story asset with video caption 1"
+        },
+        {
+          "worker": "Memo",
+          "source": "pulse",
+          "label": "Pulse 147",
+          "channel": "Proof audit",
+          "asset": "runtime/posting-log-live.csv",
+          "action": "Check proof log, list unproven current rows, and flag blocked channels."
+        },
+        {
+          "worker": "Nano",
+          "source": "urgent",
+          "label": "Priority 2",
+          "channel": "WhatsApp personal",
+          "asset": "media/worldcup26-main-video.mp4",
+          "action": "Send personal invite to warm contacts"
+        }
+      ],
+      "proofActivityOk": false,
+      "proofStallFresh": true,
+      "proofStallGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofStall": {
+        "ok": false,
+        "externalStalled": true,
+        "proofStalled": true,
+        "latestExternalProofAgeMinutes": 209,
+        "latestAnyProofAgeMinutes": 209,
+        "oldestOpenPriority": "1",
+        "oldestOpenOwner": "Sienna",
+        "oldestOpenChannel": "WhatsApp Status"
+      },
+      "proofSlaOk": true,
+      "proofSlaFresh": true,
+      "proofSlaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofSla": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeMinutes": 209,
+        "urgentOpenRows": 16,
+        "doNowRows": 4,
+        "paidTrafficOk": true,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "ageLabel": "now",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+        }
+      },
+      "proofRescueOk": true,
+      "proofRescueFresh": true,
+      "proofRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofRescue": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeLabel": "3.2h",
+        "urgentOpenRows": 16,
+        "liveAdQaOk": true,
+        "actionCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "phoneInstruction": "Open WhatsApp, send the invite to warm contacts, count how many people received it, then log that count."
+        }
+      },
+      "proofUrlRecoveryOk": true,
+      "proofUrlRecoveryFresh": true,
+      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofUrlRecovery": {
+        "ok": true,
+        "pendingCount": 1,
+        "first": {
+          "timestampEest": "2026-06-07 01:40 +0300",
+          "owner": "Dexter",
+          "channel": "X / public fallback",
+          "pulse": "dexter_pulse65",
+          "searchUrl": "https://x.com/search?q=%22dexter_pulse65%22%20from%3ANervixAi&src=typed_query&f=live",
+          "upgradeCommand": "node campaign-proof-log.mjs --pulse \"dexter_pulse65\" --proof-url \"PUBLIC_X_STATUS_URL\" --status \"posted\" --force"
+        }
+      },
+      "socialRescueOk": true,
+      "socialRescueFresh": true,
+      "socialRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "socialRescue": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeLabel": "3.2h",
+        "liveAdQaOk": true,
+        "actionCount": 4,
+        "workerPageCount": 4,
+        "workerPages": [
+          {
+            "owner": "Nano",
+            "fileName": "social-rescue-nano.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Sienna",
+            "fileName": "social-rescue-sienna.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Dexter",
+            "fileName": "social-rescue-dexter.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Memo",
+            "fileName": "social-rescue-memo.html",
+            "actionCount": 1
+          }
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "shareLinks": 2
+        }
+      },
+      "zeroSignupRescueOk": true,
+      "zeroSignupRescueFresh": true,
+      "zeroSignupRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "zeroSignupRescue": {
+        "ok": true,
+        "state": "critical-zero-signups",
+        "acceptedReferrals": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "urgentOpenRows": 16,
+        "variantCount": 8,
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "YouTube Shorts / TikTok / Reels",
+          "hook": "Most World Cup predictions are boring. Pick 3 teams free and see your private score.",
+          "asset": "media/worldcup26-main-video-vertical.mp4",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-short&utm_medium=organic-video&utm_campaign=worldcup26_zero_signup_rescue&utm_content=hook_private_score"
+        }
+      },
+      "realActionBridgeOk": true,
+      "realActionBridgeFresh": true,
+      "realActionBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "realActionBridge": {
+        "ok": true,
+        "state": "critical-zero-signups",
+        "acceptedReferrals": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "actionCount": 4,
+        "rescueVariantCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch"
+        }
+      },
+      "oneClickShareOk": true,
+      "oneClickShareFresh": true,
+      "oneClickShareGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "oneClickShare": {
+        "ok": true,
+        "actionCount": 4,
+        "shareLinkCount": 8,
+        "owners": [
+          "Nano",
+          "Sienna",
+          "Dexter",
+          "Memo"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+          "shareLinks": 2
+        }
+      },
+      "publicOutreachTargetsOk": true,
+      "publicOutreachTargetsFresh": true,
+      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicOutreachTargets": {
+        "ok": true,
+        "targetCount": 41,
+        "failures": [],
+        "workerCoverage": {
+          "required": [
+            "Dexter",
+            "Sienna",
+            "Memo",
+            "Nano"
+          ],
+          "owners": [
+            "Sienna",
+            "Nano",
+            "Dexter",
+            "Memo"
+          ],
+          "missing": []
+        },
+        "platformCount": 25,
+        "first": {
+          "priority": "A1",
+          "owner": "Sienna",
+          "platform": "WhatsApp Status",
+          "target": "Owned WhatsApp status audience",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1"
+        }
+      },
+      "adOpsLinksOk": true,
+      "adOpsLinksFresh": true,
+      "adOpsLinksGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adOpsLinks": {
+        "ok": true,
+        "channelCount": 2,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "channels": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "managerUrl": "https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown",
+            "campaignUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "checklistCount": 5,
+            "hasAttemptCommand": true
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "managerUrl": "https://ads.x.com/manager/18ce55rrs16/campaigns",
+            "campaignUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "checklistCount": 5,
+            "hasAttemptCommand": true
+          }
+        ]
+      },
+      "paidAdTriageOk": true,
+      "paidAdTriageFresh": true,
+      "paidAdTriageGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidAdTriage": {
+        "ok": true,
+        "state": "critical-paid-signup-friction",
+        "paidViews": 219,
+        "appViews": 478,
+        "referralViews": 146,
+        "signupSaves": 0,
+        "accepted": 0,
+        "dashboardState": "paid-clicks-no-signups",
+        "dashboardChecks": 2,
+        "dashboardImpressions": 12,
+        "dashboardClicks": 227,
+        "dashboardSpend": 31.78,
+        "topSource": "-",
+        "topSignupSource": "-",
+        "channelCount": 2,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "channels": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "managerUrl": "https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown",
+            "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "guardStatus": false,
+            "hasDashboardProofCommand": true
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "managerUrl": "https://ads.x.com/manager/18ce55rrs16/campaigns",
+            "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "guardStatus": false,
+            "hasDashboardProofCommand": true
+          }
+        ]
+      },
+      "paidNoClickRescueOk": true,
+      "paidNoClickRescueFresh": true,
+      "paidNoClickRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidNoClickRescue": {
+        "ok": true,
+        "state": "clicks-no-signups",
+        "dashboardState": "paid-clicks-no-signups",
+        "triageState": "critical-paid-signup-friction",
+        "dashboardChecks": 2,
+        "impressions": 12,
+        "clicks": 227,
+        "paidViews": 215,
+        "appViews": 471,
+        "signupSaves": 0,
+        "variantCount": 8,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "first": {
+          "priority": "META-1",
+          "platform": "Meta Ads Manager",
+          "angle": "Free private score preview",
+          "headline": "Pick 3 teams free",
+          "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h&utm_content=free-private-score"
+        }
+      },
+      "paidDashboardOk": true,
+      "paidDashboardFresh": true,
+      "paidDashboardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidDashboard": {
+        "ok": true,
+        "state": "paid-clicks-no-signups",
+        "latestChecks": 2,
+        "totalSpend": 31.78,
+        "totalImpressions": 12,
+        "totalClicks": 227,
+        "paidViews": 215,
+        "signupSaves": 0,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "checks": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "status": "active",
+            "impressions": 0,
+            "clicks": 227,
+            "spend": 31.78,
+            "warning": "partial: Today range shows 227 link clicks and 0.14 lei per link click; spend inferred as 31.78 lei; impressions not visible in current table view"
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "status": "appeal_requested",
+            "impressions": 12,
+            "clicks": 0,
+            "spend": 0,
+            "warning": "X delivery is review-blocked: top ad halted after 12 impressions and appeal was requested; second ad is pending with appeal requested; link clicks remain zero."
+          }
+        ]
+      },
+      "referralActivityOk": true,
+      "referralActivityFresh": true,
+      "referralActivityAvailable": true,
+      "referralActivityGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "referralActivity": {
+        "ok": true,
+        "available": true,
+        "status": "ok",
+        "reason": "",
+        "inviterFound": true,
+        "inviterName": "David Ai",
+        "acceptedReferrals": 0,
+        "acceptedReferrals24h": 0,
+        "acceptedReferrals72h": 0,
+        "signupReferralSaves": 0,
+        "signupReferralSaves24h": 0,
+        "signupReferralSaves72h": 0,
+        "referredEntries": 0,
+        "referredDraftEntries": 0,
+        "referredLockedEntries": 0,
+        "profiles": 5,
+        "profiles24h": 3,
+        "profiles72h": 4,
+        "freeAccounts": 4,
+        "paidAccounts": 1,
+        "draftAccounts": 3,
+        "totalEntries": 4,
+        "draftEntries": 3,
+        "lockedEntries": 1,
+        "lockedEntries24h": 0,
+        "lockedEntries72h": 1,
+        "viewCountsAvailable": true,
+        "appViews": 478,
+        "appViews24h": 478,
+        "appViews72h": 478,
+        "referralViews": 146,
+        "referralViews24h": 146,
+        "referralViews72h": 146,
+        "signupReturned": 0,
+        "signupMissingAcceptance": 0,
+        "signupAttempts": 0,
+        "signupSavedEvents": 0,
+        "signupFailedEvents": 0,
+        "signupErrorEvents": 0,
+        "sourceBreakdown": [
+          {
+            "source": "an",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 50,
+            "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+          },
+          {
+            "source": "meta",
+            "medium": "paid-social",
+            "campaign": "worldcup26_referral_72h",
+            "content": "three-team-question",
+            "count": 45,
+            "lastViewedAt": "2026-06-07T17:32:35.286197+00:00"
+          },
+          {
+            "source": "fb",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400_free_first",
+            "count": 22,
+            "lastViewedAt": "2026-06-07T14:16:35.772463+00:00"
+          },
+          {
+            "source": "fb",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 19,
+            "lastViewedAt": "2026-06-07T11:58:21.035812+00:00"
+          },
+          {
+            "source": "ig",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 4,
+            "lastViewedAt": "2026-06-07T11:47:26.443609+00:00"
+          },
+          {
+            "source": "codex_probe",
+            "medium": "qa",
+            "campaign": "signup_friction_probe",
+            "content": "",
+            "count": 2,
+            "lastViewedAt": "2026-06-07T16:51:52.940108+00:00"
+          },
+          {
+            "source": "browser-probe",
+            "medium": "automation",
+            "campaign": "worldcup26_referral_72h",
+            "content": "conversion_browser",
+            "count": 1,
+            "lastViewedAt": "2026-06-07T11:09:11.510868+00:00"
+          }
+        ],
+        "topSource": {
+          "source": "an",
+          "medium": "paid",
+          "campaign": "6971048256000",
+          "content": "6971048413400",
+          "count": 50,
+          "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+        },
+        "signupSourceBreakdown": [],
+        "topSignupSource": null,
+        "latestAcceptedReferralAt": "",
+        "latestSignupReferralSavedAt": "",
+        "latestEntryCreatedAt": "",
+        "latestEntryLockedAt": ""
+      },
+      "signupConversionOk": true,
+      "signupConversionFresh": true,
+      "signupConversionGeneratedAtEest": "07/06/2026 20:41",
+      "signupConversion": {
+        "ok": false,
+        "state": "critical-auth-to-signup-save-unproven",
+        "appViews": 478,
+        "referralViews": 146,
+        "paidViews": 219,
+        "accepted": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "profiles": 5,
+        "free": 4,
+        "paid": 1,
+        "signupReturned": 0,
+        "signupMissingAcceptance": 0,
+        "signupAttempts": 0,
+        "signupSavedEvents": 0,
+        "signupFailedEvents": 0,
+        "signupErrorEvents": 0,
+        "dashboardState": "paid-clicks-no-signups",
+        "dashboardClicks": 227,
+        "dashboardSpend": 31.78,
+        "firstPaint": true,
+        "browserVerified": true,
+        "inviterFound": true,
+        "inviterName": "David Ai",
+        "referralPercent": 5,
+        "blockerCount": 4,
+        "blockers": [
+          "No saved referral signup exists after Google auth.",
+          "No logged-in dashboard return event exists for the referral code yet.",
+          "No accepted referral agreement row is visible in the campaign counts.",
+          "Paid clicks are present, but none reached a completed signup-save event."
+        ],
+        "firstAction": "Send the clean signup test to 3 trusted people with different Google accounts using https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test. Ask each to accept the invite, continue with Google, pick 3 teams, and reply with either \"joined + picked teams\" or a screenshot of the exact blocking screen. After the real send is logged, rerun this audit and verify the dashboard POSTs /api/referrals/signup with a bearer token and that worldcup_referral_profiles stores signup_referral_code=26BC4B90CB.",
+        "proofRule": "Do not claim signup conversion proof until there is a real new user/profile plus referral signup save row, or a clear private-channel tester note with account, timestamp, and screenshot."
+      },
+      "warmContactOk": true,
+      "warmContactFresh": true,
+      "warmContactGeneratedAtEest": "07/06/2026 20:41",
+      "warmContact": {
+        "ok": true,
+        "state": "warm-contact-sprint-needed",
+        "batches": 5,
+        "postedAttempts": 2,
+        "blockedPublic": 7,
+        "signupSaves": 0,
+        "firstAction": "Nano/WhatsApp personal/10 football friends",
+        "firstLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+        "proofRule": "Do not log these as proof until the exact private message/status/admin request was actually sent. Use recipient count or initials, never raw phone numbers."
+      },
+      "warmFollowupOk": true,
+      "warmFollowupFresh": true,
+      "warmFollowupGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "warmFollowup": {
+        "ok": true,
+        "state": "awaiting-first-human-send",
+        "warmAttempts": 0,
+        "testerAttempts": 0,
+        "followupAttempts": 0,
+        "followupMinutes": 15,
+        "signupSaves": 0,
+        "referralViews": 152,
+        "profiles": 5,
+        "due": false,
+        "latest": null,
+        "nextAction": "Send the first clean tester batch or warm-contact batch, then log it with the real count/account note."
+      },
+      "responseKitOk": true,
+      "responseKitFresh": true,
+      "responseKitGeneratedAtEest": "07/06/2026 20:41",
+      "responseKit": {
+        "ok": true,
+        "state": "ready-for-warm-replies",
+        "replies": 13,
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 0,
+        "firstAction": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "task": "Send warm-contact invite to 10 football friends."
+        },
+        "firstReply": {
+          "id": "what-is-it",
+          "trigger": "What is this?"
+        }
+      },
+      "firstHumanActionsOk": true,
+      "firstHumanActionsFresh": true,
+      "firstHumanActionsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstHumanActions": {
+        "ok": true,
+        "state": "needs-first-human-action",
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 146,
+        "dashboardClicks": 227,
+        "actionCount": 2,
+        "firstAction": {
+          "id": "clean-signup-test-batch",
+          "owner": "Memo",
+          "channel": "WhatsApp testers",
+          "title": "Send three clean referral signup tests",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+          "command": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\"",
+          "doneWhen": "The tester batch is really sent and logged with count/account, then a real profile plus referral signup-save row appears, or a precise tester screenshot captures the failing step."
+        }
+      },
+      "firstSendBridgeOk": true,
+      "firstSendBridgeFresh": true,
+      "firstSendBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstSendBridge": {
+        "ok": true,
+        "state": "send-now",
+        "owner": "Memo",
+        "channel": "WhatsApp testers",
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 146,
+        "adClicks": 227,
+        "whatsappReady": true,
+        "referralQrReady": true,
+        "whatsappQrReady": true,
+        "command": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+      },
+      "postingCockpitOk": true,
+      "postingCockpitFresh": true,
+      "postingCockpitGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingCockpit": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "urgentOpenRows": 16,
+        "paidTrafficOk": true,
+        "pageCount": 18,
+        "pages": [
+          "proof-sla.html",
+          "proof-audit.html",
+          "proof-url-recovery.html",
+          "proof-rescue.html",
+          "social-rescue-pack.html",
+          "one-click-share.html",
+          "public-outreach-targets.html",
+          "login-unlock-board.html",
+          "proof-intake.html",
+          "top-six-mobile.html",
+          "phone-action-center.html",
+          "share-command-center.html",
+          "paid-traffic-guard.html",
+          "paid-dashboard-checks.html",
+          "paid-ad-triage.html",
+          "paid-no-click-rescue.html",
+          "ad-ops-links.html",
+          "escalation-board.html"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "phoneActionCenterOk": true,
+      "phoneActionCenterFresh": true,
+      "phoneActionCenterGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "phoneActionCenter": {
+        "ok": true,
+        "referralCode": "26BC4B90CB",
+        "actionCount": 16,
+        "urgentRows": 16,
+        "ownerCount": 3,
+        "qrBlockCount": 22,
+        "trackedQrCount": 44,
+        "assetBlockCount": 22,
+        "videoPreviewCount": 10,
+        "imagePreviewCount": 27,
+        "shareButtonCount": 44,
+        "htmlBytes": 157753,
+        "failures": [],
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "WhatsApp Status",
+          "action": "Post story asset with video caption 1",
+          "asset": "media/worldcup26-main-video.mp4"
+        }
+      },
+      "proofCloseoutOk": true,
+      "proofCloseoutFresh": true,
+      "proofCloseoutGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofCloseout": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "commandCount": 6,
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "WhatsApp Status",
+          "status": "posted",
+          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:41 +0300' --status posted"
+        },
+        "failures": []
+      },
+      "workerWakeOk": true,
+      "workerWakeFresh": true,
+      "workerWakeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "workerWake": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "urgentOpenRows": 16,
+        "workerCount": 4,
+        "workers": [
+          {
+            "worker": "Dexter",
+            "state": "wake-now",
+            "assignedCount": 3,
+            "nextPriority": "warm-4",
+            "nextChannel": "WhatsApp admins",
+            "action": "Send warm-contact invite to football group admins."
+          },
+          {
+            "worker": "Sienna",
+            "state": "wake-now",
+            "assignedCount": 8,
+            "nextPriority": "warm-3",
+            "nextChannel": "WhatsApp personal",
+            "action": "Send warm-contact invite to 10 close contacts."
+          },
+          {
+            "worker": "Memo",
+            "state": "wake-now",
+            "assignedCount": 0,
+            "nextPriority": "warm-5",
+            "nextChannel": "WhatsApp testers",
+            "action": "Send warm-contact invite to 3 trusted testers."
+          },
+          {
+            "worker": "Nano",
+            "state": "wake-now",
+            "assignedCount": 5,
+            "nextPriority": "warm-1",
+            "nextChannel": "WhatsApp personal",
+            "action": "Send warm-contact invite to 10 football friends."
+          }
+        ],
+        "nextActions": [
+          "Dexter:#warm-4/WhatsApp admins",
+          "Sienna:#warm-3/WhatsApp personal",
+          "Memo:#warm-5/WhatsApp testers",
+          "Nano:#warm-1/WhatsApp personal"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "sessionRecoveryOk": true,
+      "sessionRecoveryFresh": true,
+      "sessionRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "sessionRecovery": {
+        "proofRows": 49,
+        "urgentRows": 16,
+        "blockerCount": 1,
+        "recoveryActions": [
+          {
+            "key": "x",
+            "label": "X public fallback",
+            "scheduledAtEest": "2026-06-07 16:45 +0300",
+            "shareUrl": "https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse129"
+          },
+          {
+            "key": "facebook",
+            "label": "Facebook feed fallback",
+            "scheduledAtEest": "2026-06-07 18:45 +0300",
+            "shareUrl": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137"
+          }
+        ]
+      },
+      "escalationOk": true,
+      "escalationFresh": true,
+      "escalationGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "escalation": {
+        "linkOk": true,
+        "externalOpen": 16,
+        "critical": 16,
+        "hot": 0,
+        "workersWithStale": 3,
+        "latestExternalProofAgeMinutes": 209
+      },
+      "publicAttemptsOk": true,
+      "publicAttemptsFresh": true,
+      "publicAttemptsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicAttempts": {
+        "ok": true,
+        "attempts": 9,
+        "blocked": 7,
+        "loginRequired": 6,
+        "approvalRequired": 0,
+        "socialActions": 4,
+        "failures": [],
+        "firstBlocked": {
+          "owner": "Dexter",
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required",
+          "detail": "X intent opened in browser at 2026-06-07 03:09 EEST, redirected to login/onboarding, and showed Continue as Dan semebitcoin@gmail.com before compose; no post was submitted; code 26BC4B90CB and worldcup26.world link were in the attempted post copy.",
+          "nextAction": "Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL."
+        },
+        "firstAction": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "loginUnlockOk": true,
+      "loginUnlockFresh": true,
+      "loginUnlockGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "loginUnlock": {
+        "ok": true,
+        "cards": 6,
+        "blocked": 6,
+        "loginRequired": 5,
+        "approvalRequired": 0,
+        "platforms": [
+          "X",
+          "YouTube Shorts",
+          "Facebook",
+          "LinkedIn"
+        ],
+        "failures": [],
+        "first": {
+          "owner": "Dexter",
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required",
+          "authUrl": "https://x.com/i/flow/login",
+          "publishUrl": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1",
+          "verifyUrl": "",
+          "asset": "media/worldcup26-referral-16x9.jpg",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X Search\" --channel \"World Cup 2026 prediction conversations\" --status \"posted\" --attempt-url \"https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live\" --detail \"public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST\""
+        }
+      },
+      "objectiveAuditOk": true,
+      "objectiveAuditFresh": true,
+      "objectiveAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "objectiveAudit": {
+        "ok": true,
+        "complete": false,
+        "state": "critical",
+        "proven": 10,
+        "total": 12,
+        "criticalOpen": 1,
+        "firstOpen": {
+          "id": "advertise-everywhere-proof",
+          "status": "incomplete",
+          "label": "Real external posting proof is current",
+          "next": "Do the next real action and log proof with a public URL or precise private-channel note."
+        },
+        "primaryAction": {
+          "priority": "clean-signup-test-batch",
+          "owner": "Memo",
+          "channel": "WhatsApp testers",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+        },
+        "blocker": {
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required"
+        }
+      },
+      "operatorPushOk": true,
+      "operatorPushFresh": true,
+      "operatorPushGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "operatorPush": {
+        "ok": true,
+        "complete": false,
+        "state": "critical",
+        "proofRows": 49,
+        "urgentOpenRows": 16,
+        "publicBlocked": 7,
+        "publicLoginRequired": 6,
+        "actionCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+        },
+        "blockers": [
+          {
+            "status": "login_required",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "X public fallback",
+            "nextAction": "Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL."
+          },
+          {
+            "status": "blocked",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "X public permalink recovery",
+            "nextAction": "Owner must open logged-in X account @NervixAi, copy the public post URL if the compose published, then log it with campaign-proof-log.mjs."
+          },
+          {
+            "status": "login_required",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "organic compose free-first",
+            "nextAction": "Owner must log into x.com for @DansiDanutz or another owned X account, then post https://worldcup26.world/login?ref=26BC4B90CB with the free-first invite and log the public status URL."
+          },
+          {
+            "status": "login_required",
+            "owner": "Sienna",
+            "platform": "YouTube Shorts",
+            "channel": "zero signup rescue upload",
+            "nextAction": "Owner must complete YouTube/Google 'Verify it’s you' on this browser, then upload media/worldcup26-main-video-vertical.mp4 as a Short with https://worldcup26.world/login?ref=26BC4B90CB and log the public YouTube URL."
+          }
+        ]
+      },
+      "lastLogLines": [
+        "2026-06-07T17:41:19Z escalation-board ok",
+        "2026-06-07T17:41:19Z objective-audit ok",
+        "2026-06-07T17:41:19Z evidence-board ok",
+        "2026-06-07T17:41:19Z operator-push ok",
+        "2026-06-07T17:41:20Z real-action-bridge ok",
+        "2026-06-07T17:41:20Z one-click-share ok",
+        "2026-06-07T17:41:20Z public-outreach-targets ok",
+        "2026-06-07T17:41:20Z worker-launchers ok"
+      ]
+    },
+    {
+      "host": "sienna",
+      "ok": true,
+      "generatedAtEest": "2026-06-07 20:41 +0300",
+      "hotPingFresh": true,
+      "proof": 49,
+      "urgent": 16,
+      "hotWorkers": 3,
+      "first": {
+        "worker": "Sienna",
+        "nextPriority": "1",
+        "nextChannel": "WhatsApp Status",
+        "nextCommand": "node campaign-proof-log.mjs --priority \"1\" --proof-url \"private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included\" --status \"posted\"",
+        "action": "Post story asset with video caption 1",
+        "asset": "media/worldcup26-main-video.mp4",
+        "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0"
+      },
+      "workers": [
+        {
+          "worker": "Dexter",
+          "openRows": 3,
+          "escalation": "hot",
+          "nextPriority": "4",
+          "nextChannel": "Football groups",
+          "oldestAgeLabel": "36.7h open"
+        },
+        {
+          "worker": "Sienna",
+          "openRows": 8,
+          "escalation": "hot",
+          "nextPriority": "1",
+          "nextChannel": "WhatsApp Status",
+          "oldestAgeLabel": "40.7h open"
+        },
+        {
+          "worker": "Memo",
+          "openRows": 0,
+          "escalation": "clear",
+          "nextPriority": null,
+          "nextChannel": null,
+          "oldestAgeLabel": null
+        },
+        {
+          "worker": "Nano",
+          "openRows": 5,
+          "escalation": "hot",
+          "nextPriority": "2",
+          "nextChannel": "WhatsApp personal",
+          "oldestAgeLabel": "38.7h open"
+        }
+      ],
+      "loopRows": [
+        "2593917       1 S       01:04:23 bash ./campaign-loop.sh run"
+      ],
+      "loopRunning": true,
+      "watchdogRows": [
+        "1709998       1 S       22:54:21 bash ./campaign-watchdog-loop.sh run"
+      ],
+      "watchdogRunning": true,
+      "watchdogCronInstalled": true,
+      "hotPingHookOk": true,
+      "linkSentinelOk": true,
+      "linkSentinelFresh": true,
+      "linkGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "linkChecks": [
+        {
+          "name": "base",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "meta-paid",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "x-paid",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "story",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        }
+      ],
+      "paidTrafficOk": true,
+      "paidTrafficFresh": true,
+      "paidTrafficGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidTraffic": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 7,
+        "failedPages": [],
+        "resolverOk": true,
+        "healthOk": true
+      },
+      "liveAdQaOk": true,
+      "liveAdQaFresh": true,
+      "liveAdQaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "liveAdQa": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 7,
+        "renderedAssetCount": 14,
+        "socialOk": 2,
+        "socialCount": 2,
+        "localAssetOk": 5,
+        "localAssetCount": 5,
+        "resolverOk": true,
+        "healthOk": true,
+        "authOk": true,
+        "failedPages": [],
+        "failedRenderedAssets": [],
+        "failedLocalAssets": []
+      },
+      "adPlatformAuditOk": true,
+      "adPlatformAuditFresh": true,
+      "adPlatformAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adPlatformAudit": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 9,
+        "socialImageCount": 1,
+        "resolverOk": true,
+        "healthOk": true,
+        "failedPages": [],
+        "failedSocialImages": []
+      },
+      "conversionGuardOk": true,
+      "conversionGuardFresh": true,
+      "conversionGuardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "conversionGuard": {
+        "ok": true,
+        "browserVerified": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 4,
+        "resolverOk": true,
+        "authOk": true,
+        "browserProofStatus": "provided",
+        "failedPages": []
+      },
+      "postingSprintOk": true,
+      "postingSprintFresh": true,
+      "postingSprintGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingSprintCards": [
+        {
+          "worker": "Dexter",
+          "source": "urgent",
+          "label": "Priority 4",
+          "channel": "Football groups",
+          "asset": "campaign/first-wave-posts.md",
+          "action": "Ask approved group admin for permission; post group variant only if allowed"
+        },
+        {
+          "worker": "Sienna",
+          "source": "urgent",
+          "label": "Priority 1",
+          "channel": "WhatsApp Status",
+          "asset": "media/worldcup26-main-video.mp4",
+          "action": "Post story asset with video caption 1"
+        },
+        {
+          "worker": "Memo",
+          "source": "pulse",
+          "label": "Pulse 147",
+          "channel": "Proof audit",
+          "asset": "runtime/posting-log-live.csv",
+          "action": "Check proof log, list unproven current rows, and flag blocked channels."
+        },
+        {
+          "worker": "Nano",
+          "source": "urgent",
+          "label": "Priority 2",
+          "channel": "WhatsApp personal",
+          "asset": "media/worldcup26-main-video.mp4",
+          "action": "Send personal invite to warm contacts"
+        }
+      ],
+      "proofActivityOk": false,
+      "proofStallFresh": true,
+      "proofStallGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofStall": {
+        "ok": false,
+        "externalStalled": true,
+        "proofStalled": true,
+        "latestExternalProofAgeMinutes": 209,
+        "latestAnyProofAgeMinutes": 209,
+        "oldestOpenPriority": "1",
+        "oldestOpenOwner": "Sienna",
+        "oldestOpenChannel": "WhatsApp Status"
+      },
+      "proofSlaOk": true,
+      "proofSlaFresh": true,
+      "proofSlaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofSla": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeMinutes": 209,
+        "urgentOpenRows": 16,
+        "doNowRows": 4,
+        "paidTrafficOk": true,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "ageLabel": "now",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+        }
+      },
+      "proofRescueOk": true,
+      "proofRescueFresh": true,
+      "proofRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofRescue": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeLabel": "3.2h",
+        "urgentOpenRows": 16,
+        "liveAdQaOk": true,
+        "actionCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "phoneInstruction": "Open WhatsApp, send the invite to warm contacts, count how many people received it, then log that count."
+        }
+      },
+      "proofUrlRecoveryOk": true,
+      "proofUrlRecoveryFresh": true,
+      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofUrlRecovery": {
+        "ok": true,
+        "pendingCount": 1,
+        "first": {
+          "timestampEest": "2026-06-07 01:40 +0300",
+          "owner": "Dexter",
+          "channel": "X / public fallback",
+          "pulse": "dexter_pulse65",
+          "searchUrl": "https://x.com/search?q=%22dexter_pulse65%22%20from%3ANervixAi&src=typed_query&f=live",
+          "upgradeCommand": "node campaign-proof-log.mjs --pulse \"dexter_pulse65\" --proof-url \"PUBLIC_X_STATUS_URL\" --status \"posted\" --force"
+        }
+      },
+      "socialRescueOk": true,
+      "socialRescueFresh": true,
+      "socialRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "socialRescue": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeLabel": "3.2h",
+        "liveAdQaOk": true,
+        "actionCount": 4,
+        "workerPageCount": 4,
+        "workerPages": [
+          {
+            "owner": "Nano",
+            "fileName": "social-rescue-nano.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Sienna",
+            "fileName": "social-rescue-sienna.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Dexter",
+            "fileName": "social-rescue-dexter.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Memo",
+            "fileName": "social-rescue-memo.html",
+            "actionCount": 1
+          }
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "shareLinks": 2
+        }
+      },
+      "zeroSignupRescueOk": true,
+      "zeroSignupRescueFresh": true,
+      "zeroSignupRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "zeroSignupRescue": {
+        "ok": true,
+        "state": "critical-zero-signups",
+        "acceptedReferrals": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "urgentOpenRows": 16,
+        "variantCount": 8,
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "YouTube Shorts / TikTok / Reels",
+          "hook": "Most World Cup predictions are boring. Pick 3 teams free and see your private score.",
+          "asset": "media/worldcup26-main-video-vertical.mp4",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-short&utm_medium=organic-video&utm_campaign=worldcup26_zero_signup_rescue&utm_content=hook_private_score"
+        }
+      },
+      "realActionBridgeOk": true,
+      "realActionBridgeFresh": true,
+      "realActionBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "realActionBridge": {
+        "ok": true,
+        "state": "critical-zero-signups",
+        "acceptedReferrals": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "actionCount": 4,
+        "rescueVariantCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch"
+        }
+      },
+      "oneClickShareOk": true,
+      "oneClickShareFresh": true,
+      "oneClickShareGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "oneClickShare": {
+        "ok": true,
+        "actionCount": 4,
+        "shareLinkCount": 8,
+        "owners": [
+          "Nano",
+          "Sienna",
+          "Dexter",
+          "Memo"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+          "shareLinks": 2
+        }
+      },
+      "publicOutreachTargetsOk": true,
+      "publicOutreachTargetsFresh": true,
+      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicOutreachTargets": {
+        "ok": true,
+        "targetCount": 41,
+        "failures": [],
+        "workerCoverage": {
+          "required": [
+            "Dexter",
+            "Sienna",
+            "Memo",
+            "Nano"
+          ],
+          "owners": [
+            "Sienna",
+            "Nano",
+            "Dexter",
+            "Memo"
+          ],
+          "missing": []
+        },
+        "platformCount": 25,
+        "first": {
+          "priority": "A1",
+          "owner": "Sienna",
+          "platform": "WhatsApp Status",
+          "target": "Owned WhatsApp status audience",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1"
+        }
+      },
+      "adOpsLinksOk": true,
+      "adOpsLinksFresh": true,
+      "adOpsLinksGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adOpsLinks": {
+        "ok": true,
+        "channelCount": 2,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "channels": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "managerUrl": "https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown",
+            "campaignUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "checklistCount": 5,
+            "hasAttemptCommand": true
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "managerUrl": "https://ads.x.com/manager/18ce55rrs16/campaigns",
+            "campaignUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "checklistCount": 5,
+            "hasAttemptCommand": true
+          }
+        ]
+      },
+      "paidAdTriageOk": true,
+      "paidAdTriageFresh": true,
+      "paidAdTriageGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidAdTriage": {
+        "ok": true,
+        "state": "critical-paid-signup-friction",
+        "paidViews": 219,
+        "appViews": 478,
+        "referralViews": 146,
+        "signupSaves": 0,
+        "accepted": 0,
+        "dashboardState": "paid-clicks-no-signups",
+        "dashboardChecks": 2,
+        "dashboardImpressions": 12,
+        "dashboardClicks": 227,
+        "dashboardSpend": 31.78,
+        "topSource": "-",
+        "topSignupSource": "-",
+        "channelCount": 2,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "channels": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "managerUrl": "https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown",
+            "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "guardStatus": false,
+            "hasDashboardProofCommand": true
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "managerUrl": "https://ads.x.com/manager/18ce55rrs16/campaigns",
+            "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "guardStatus": false,
+            "hasDashboardProofCommand": true
+          }
+        ]
+      },
+      "paidNoClickRescueOk": true,
+      "paidNoClickRescueFresh": true,
+      "paidNoClickRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidNoClickRescue": {
+        "ok": true,
+        "state": "clicks-no-signups",
+        "dashboardState": "paid-clicks-no-signups",
+        "triageState": "critical-paid-signup-friction",
+        "dashboardChecks": 2,
+        "impressions": 12,
+        "clicks": 227,
+        "paidViews": 215,
+        "appViews": 471,
+        "signupSaves": 0,
+        "variantCount": 8,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "first": {
+          "priority": "META-1",
+          "platform": "Meta Ads Manager",
+          "angle": "Free private score preview",
+          "headline": "Pick 3 teams free",
+          "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h&utm_content=free-private-score"
+        }
+      },
+      "paidDashboardOk": true,
+      "paidDashboardFresh": true,
+      "paidDashboardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidDashboard": {
+        "ok": true,
+        "state": "paid-clicks-no-signups",
+        "latestChecks": 2,
+        "totalSpend": 31.78,
+        "totalImpressions": 12,
+        "totalClicks": 227,
+        "paidViews": 215,
+        "signupSaves": 0,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "checks": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "status": "active",
+            "impressions": 0,
+            "clicks": 227,
+            "spend": 31.78,
+            "warning": "partial: Today range shows 227 link clicks and 0.14 lei per link click; spend inferred as 31.78 lei; impressions not visible in current table view"
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "status": "appeal_requested",
+            "impressions": 12,
+            "clicks": 0,
+            "spend": 0,
+            "warning": "X delivery is review-blocked: top ad halted after 12 impressions and appeal was requested; second ad is pending with appeal requested; link clicks remain zero."
+          }
+        ]
+      },
+      "referralActivityOk": true,
+      "referralActivityFresh": true,
+      "referralActivityAvailable": true,
+      "referralActivityGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "referralActivity": {
+        "ok": true,
+        "available": true,
+        "status": "ok",
+        "reason": "",
+        "inviterFound": true,
+        "inviterName": "David Ai",
+        "acceptedReferrals": 0,
+        "acceptedReferrals24h": 0,
+        "acceptedReferrals72h": 0,
+        "signupReferralSaves": 0,
+        "signupReferralSaves24h": 0,
+        "signupReferralSaves72h": 0,
+        "referredEntries": 0,
+        "referredDraftEntries": 0,
+        "referredLockedEntries": 0,
+        "profiles": 5,
+        "profiles24h": 3,
+        "profiles72h": 4,
+        "freeAccounts": 4,
+        "paidAccounts": 1,
+        "draftAccounts": 3,
+        "totalEntries": 4,
+        "draftEntries": 3,
+        "lockedEntries": 1,
+        "lockedEntries24h": 0,
+        "lockedEntries72h": 1,
+        "viewCountsAvailable": true,
+        "appViews": 478,
+        "appViews24h": 478,
+        "appViews72h": 478,
+        "referralViews": 146,
+        "referralViews24h": 146,
+        "referralViews72h": 146,
+        "signupReturned": 0,
+        "signupMissingAcceptance": 0,
+        "signupAttempts": 0,
+        "signupSavedEvents": 0,
+        "signupFailedEvents": 0,
+        "signupErrorEvents": 0,
+        "sourceBreakdown": [
+          {
+            "source": "an",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 50,
+            "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+          },
+          {
+            "source": "meta",
+            "medium": "paid-social",
+            "campaign": "worldcup26_referral_72h",
+            "content": "three-team-question",
+            "count": 45,
+            "lastViewedAt": "2026-06-07T17:32:35.286197+00:00"
+          },
+          {
+            "source": "fb",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400_free_first",
+            "count": 22,
+            "lastViewedAt": "2026-06-07T14:16:35.772463+00:00"
+          },
+          {
+            "source": "fb",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 19,
+            "lastViewedAt": "2026-06-07T11:58:21.035812+00:00"
+          },
+          {
+            "source": "ig",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 4,
+            "lastViewedAt": "2026-06-07T11:47:26.443609+00:00"
+          },
+          {
+            "source": "codex_probe",
+            "medium": "qa",
+            "campaign": "signup_friction_probe",
+            "content": "",
+            "count": 2,
+            "lastViewedAt": "2026-06-07T16:51:52.940108+00:00"
+          },
+          {
+            "source": "browser-probe",
+            "medium": "automation",
+            "campaign": "worldcup26_referral_72h",
+            "content": "conversion_browser",
+            "count": 1,
+            "lastViewedAt": "2026-06-07T11:09:11.510868+00:00"
+          }
+        ],
+        "topSource": {
+          "source": "an",
+          "medium": "paid",
+          "campaign": "6971048256000",
+          "content": "6971048413400",
+          "count": 50,
+          "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+        },
+        "signupSourceBreakdown": [],
+        "topSignupSource": null,
+        "latestAcceptedReferralAt": "",
+        "latestSignupReferralSavedAt": "",
+        "latestEntryCreatedAt": "",
+        "latestEntryLockedAt": ""
+      },
+      "signupConversionOk": true,
+      "signupConversionFresh": true,
+      "signupConversionGeneratedAtEest": "07/06/2026 20:41",
+      "signupConversion": {
+        "ok": false,
+        "state": "critical-auth-to-signup-save-unproven",
+        "appViews": 478,
+        "referralViews": 146,
+        "paidViews": 219,
+        "accepted": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "profiles": 5,
+        "free": 4,
+        "paid": 1,
+        "signupReturned": 0,
+        "signupMissingAcceptance": 0,
+        "signupAttempts": 0,
+        "signupSavedEvents": 0,
+        "signupFailedEvents": 0,
+        "signupErrorEvents": 0,
+        "dashboardState": "paid-clicks-no-signups",
+        "dashboardClicks": 227,
+        "dashboardSpend": 31.78,
+        "firstPaint": true,
+        "browserVerified": true,
+        "inviterFound": true,
+        "inviterName": "David Ai",
+        "referralPercent": 5,
+        "blockerCount": 4,
+        "blockers": [
+          "No saved referral signup exists after Google auth.",
+          "No logged-in dashboard return event exists for the referral code yet.",
+          "No accepted referral agreement row is visible in the campaign counts.",
+          "Paid clicks are present, but none reached a completed signup-save event."
+        ],
+        "firstAction": "Send the clean signup test to 3 trusted people with different Google accounts using https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test. Ask each to accept the invite, continue with Google, pick 3 teams, and reply with either \"joined + picked teams\" or a screenshot of the exact blocking screen. After the real send is logged, rerun this audit and verify the dashboard POSTs /api/referrals/signup with a bearer token and that worldcup_referral_profiles stores signup_referral_code=26BC4B90CB.",
+        "proofRule": "Do not claim signup conversion proof until there is a real new user/profile plus referral signup save row, or a clear private-channel tester note with account, timestamp, and screenshot."
+      },
+      "warmContactOk": true,
+      "warmContactFresh": true,
+      "warmContactGeneratedAtEest": "07/06/2026 20:41",
+      "warmContact": {
+        "ok": true,
+        "state": "warm-contact-sprint-needed",
+        "batches": 5,
+        "postedAttempts": 2,
+        "blockedPublic": 7,
+        "signupSaves": 0,
+        "firstAction": "Nano/WhatsApp personal/10 football friends",
+        "firstLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+        "proofRule": "Do not log these as proof until the exact private message/status/admin request was actually sent. Use recipient count or initials, never raw phone numbers."
+      },
+      "warmFollowupOk": true,
+      "warmFollowupFresh": true,
+      "warmFollowupGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "warmFollowup": {
+        "ok": true,
+        "state": "awaiting-first-human-send",
+        "warmAttempts": 0,
+        "testerAttempts": 0,
+        "followupAttempts": 0,
+        "followupMinutes": 15,
+        "signupSaves": 0,
+        "referralViews": 152,
+        "profiles": 5,
+        "due": false,
+        "latest": null,
+        "nextAction": "Send the first clean tester batch or warm-contact batch, then log it with the real count/account note."
+      },
+      "responseKitOk": true,
+      "responseKitFresh": true,
+      "responseKitGeneratedAtEest": "07/06/2026 20:41",
+      "responseKit": {
+        "ok": true,
+        "state": "ready-for-warm-replies",
+        "replies": 13,
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 0,
+        "firstAction": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "task": "Send warm-contact invite to 10 football friends."
+        },
+        "firstReply": {
+          "id": "what-is-it",
+          "trigger": "What is this?"
+        }
+      },
+      "firstHumanActionsOk": true,
+      "firstHumanActionsFresh": true,
+      "firstHumanActionsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstHumanActions": {
+        "ok": true,
+        "state": "needs-first-human-action",
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 146,
+        "dashboardClicks": 227,
+        "actionCount": 2,
+        "firstAction": {
+          "id": "clean-signup-test-batch",
+          "owner": "Memo",
+          "channel": "WhatsApp testers",
+          "title": "Send three clean referral signup tests",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+          "command": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\"",
+          "doneWhen": "The tester batch is really sent and logged with count/account, then a real profile plus referral signup-save row appears, or a precise tester screenshot captures the failing step."
+        }
+      },
+      "firstSendBridgeOk": true,
+      "firstSendBridgeFresh": true,
+      "firstSendBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstSendBridge": {
+        "ok": true,
+        "state": "send-now",
+        "owner": "Memo",
+        "channel": "WhatsApp testers",
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 146,
+        "adClicks": 227,
+        "whatsappReady": true,
+        "referralQrReady": true,
+        "whatsappQrReady": true,
+        "command": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+      },
+      "postingCockpitOk": true,
+      "postingCockpitFresh": true,
+      "postingCockpitGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingCockpit": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "urgentOpenRows": 16,
+        "paidTrafficOk": true,
+        "pageCount": 18,
+        "pages": [
+          "proof-sla.html",
+          "proof-audit.html",
+          "proof-url-recovery.html",
+          "proof-rescue.html",
+          "social-rescue-pack.html",
+          "one-click-share.html",
+          "public-outreach-targets.html",
+          "login-unlock-board.html",
+          "proof-intake.html",
+          "top-six-mobile.html",
+          "phone-action-center.html",
+          "share-command-center.html",
+          "paid-traffic-guard.html",
+          "paid-dashboard-checks.html",
+          "paid-ad-triage.html",
+          "paid-no-click-rescue.html",
+          "ad-ops-links.html",
+          "escalation-board.html"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "phoneActionCenterOk": true,
+      "phoneActionCenterFresh": true,
+      "phoneActionCenterGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "phoneActionCenter": {
+        "ok": true,
+        "referralCode": "26BC4B90CB",
+        "actionCount": 16,
+        "urgentRows": 16,
+        "ownerCount": 3,
+        "qrBlockCount": 22,
+        "trackedQrCount": 44,
+        "assetBlockCount": 22,
+        "videoPreviewCount": 10,
+        "imagePreviewCount": 27,
+        "shareButtonCount": 44,
+        "htmlBytes": 157753,
+        "failures": [],
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "WhatsApp Status",
+          "action": "Post story asset with video caption 1",
+          "asset": "media/worldcup26-main-video.mp4"
+        }
+      },
+      "proofCloseoutOk": true,
+      "proofCloseoutFresh": true,
+      "proofCloseoutGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofCloseout": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "commandCount": 6,
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "WhatsApp Status",
+          "status": "posted",
+          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:41 +0300' --status posted"
+        },
+        "failures": []
+      },
+      "workerWakeOk": true,
+      "workerWakeFresh": true,
+      "workerWakeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "workerWake": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "urgentOpenRows": 16,
+        "workerCount": 4,
+        "workers": [
+          {
+            "worker": "Dexter",
+            "state": "wake-now",
+            "assignedCount": 3,
+            "nextPriority": "warm-4",
+            "nextChannel": "WhatsApp admins",
+            "action": "Send warm-contact invite to football group admins."
+          },
+          {
+            "worker": "Sienna",
+            "state": "wake-now",
+            "assignedCount": 8,
+            "nextPriority": "warm-3",
+            "nextChannel": "WhatsApp personal",
+            "action": "Send warm-contact invite to 10 close contacts."
+          },
+          {
+            "worker": "Memo",
+            "state": "wake-now",
+            "assignedCount": 0,
+            "nextPriority": "warm-5",
+            "nextChannel": "WhatsApp testers",
+            "action": "Send warm-contact invite to 3 trusted testers."
+          },
+          {
+            "worker": "Nano",
+            "state": "wake-now",
+            "assignedCount": 5,
+            "nextPriority": "warm-1",
+            "nextChannel": "WhatsApp personal",
+            "action": "Send warm-contact invite to 10 football friends."
+          }
+        ],
+        "nextActions": [
+          "Dexter:#warm-4/WhatsApp admins",
+          "Sienna:#warm-3/WhatsApp personal",
+          "Memo:#warm-5/WhatsApp testers",
+          "Nano:#warm-1/WhatsApp personal"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "sessionRecoveryOk": true,
+      "sessionRecoveryFresh": true,
+      "sessionRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "sessionRecovery": {
+        "proofRows": 49,
+        "urgentRows": 16,
+        "blockerCount": 1,
+        "recoveryActions": [
+          {
+            "key": "x",
+            "label": "X public fallback",
+            "scheduledAtEest": "2026-06-07 16:45 +0300",
+            "shareUrl": "https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse129"
+          },
+          {
+            "key": "facebook",
+            "label": "Facebook feed fallback",
+            "scheduledAtEest": "2026-06-07 18:45 +0300",
+            "shareUrl": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137"
+          }
+        ]
+      },
+      "escalationOk": true,
+      "escalationFresh": true,
+      "escalationGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "escalation": {
+        "linkOk": true,
+        "externalOpen": 16,
+        "critical": 16,
+        "hot": 0,
+        "workersWithStale": 3,
+        "latestExternalProofAgeMinutes": 209
+      },
+      "publicAttemptsOk": true,
+      "publicAttemptsFresh": true,
+      "publicAttemptsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicAttempts": {
+        "ok": true,
+        "attempts": 9,
+        "blocked": 7,
+        "loginRequired": 6,
+        "approvalRequired": 0,
+        "socialActions": 4,
+        "failures": [],
+        "firstBlocked": {
+          "owner": "Dexter",
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required",
+          "detail": "X intent opened in browser at 2026-06-07 03:09 EEST, redirected to login/onboarding, and showed Continue as Dan semebitcoin@gmail.com before compose; no post was submitted; code 26BC4B90CB and worldcup26.world link were in the attempted post copy.",
+          "nextAction": "Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL."
+        },
+        "firstAction": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "loginUnlockOk": true,
+      "loginUnlockFresh": true,
+      "loginUnlockGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "loginUnlock": {
+        "ok": true,
+        "cards": 6,
+        "blocked": 6,
+        "loginRequired": 5,
+        "approvalRequired": 0,
+        "platforms": [
+          "X",
+          "YouTube Shorts",
+          "Facebook",
+          "LinkedIn"
+        ],
+        "failures": [],
+        "first": {
+          "owner": "Dexter",
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required",
+          "authUrl": "https://x.com/i/flow/login",
+          "publishUrl": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1",
+          "verifyUrl": "",
+          "asset": "media/worldcup26-referral-16x9.jpg",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X Search\" --channel \"World Cup 2026 prediction conversations\" --status \"posted\" --attempt-url \"https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live\" --detail \"public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST\""
+        }
+      },
+      "objectiveAuditOk": true,
+      "objectiveAuditFresh": true,
+      "objectiveAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "objectiveAudit": {
+        "ok": true,
+        "complete": false,
+        "state": "critical",
+        "proven": 10,
+        "total": 12,
+        "criticalOpen": 1,
+        "firstOpen": {
+          "id": "advertise-everywhere-proof",
+          "status": "incomplete",
+          "label": "Real external posting proof is current",
+          "next": "Do the next real action and log proof with a public URL or precise private-channel note."
+        },
+        "primaryAction": {
+          "priority": "clean-signup-test-batch",
+          "owner": "Memo",
+          "channel": "WhatsApp testers",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+        },
+        "blocker": {
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required"
+        }
+      },
+      "operatorPushOk": true,
+      "operatorPushFresh": true,
+      "operatorPushGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "operatorPush": {
+        "ok": true,
+        "complete": false,
+        "state": "critical",
+        "proofRows": 49,
+        "urgentOpenRows": 16,
+        "publicBlocked": 7,
+        "publicLoginRequired": 6,
+        "actionCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+        },
+        "blockers": [
+          {
+            "status": "login_required",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "X public fallback",
+            "nextAction": "Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL."
+          },
+          {
+            "status": "blocked",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "X public permalink recovery",
+            "nextAction": "Owner must open logged-in X account @NervixAi, copy the public post URL if the compose published, then log it with campaign-proof-log.mjs."
+          },
+          {
+            "status": "login_required",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "organic compose free-first",
+            "nextAction": "Owner must log into x.com for @DansiDanutz or another owned X account, then post https://worldcup26.world/login?ref=26BC4B90CB with the free-first invite and log the public status URL."
+          },
+          {
+            "status": "login_required",
+            "owner": "Sienna",
+            "platform": "YouTube Shorts",
+            "channel": "zero signup rescue upload",
+            "nextAction": "Owner must complete YouTube/Google 'Verify it’s you' on this browser, then upload media/worldcup26-main-video-vertical.mp4 as a Short with https://worldcup26.world/login?ref=26BC4B90CB and log the public YouTube URL."
+          }
+        ]
+      },
+      "lastLogLines": [
+        "2026-06-07T17:41:21Z escalation-board ok",
+        "2026-06-07T17:41:21Z objective-audit ok",
+        "2026-06-07T17:41:22Z evidence-board ok",
+        "2026-06-07T17:41:22Z operator-push ok",
+        "2026-06-07T17:41:22Z real-action-bridge ok",
+        "2026-06-07T17:41:22Z one-click-share ok",
+        "2026-06-07T17:41:22Z public-outreach-targets ok",
+        "2026-06-07T17:41:22Z worker-launchers ok"
+      ]
+    },
+    {
+      "host": "memo",
+      "ok": true,
+      "generatedAtEest": "2026-06-07 20:41 +0300",
+      "hotPingFresh": true,
+      "proof": 49,
+      "urgent": 16,
+      "hotWorkers": 3,
+      "first": null,
+      "workers": [
+        {
+          "worker": "Dexter",
+          "openRows": 3,
+          "escalation": "hot",
+          "nextPriority": "4",
+          "nextChannel": "Football groups",
+          "oldestAgeLabel": "36.7h open"
+        },
+        {
+          "worker": "Sienna",
+          "openRows": 8,
+          "escalation": "hot",
+          "nextPriority": "1",
+          "nextChannel": "WhatsApp Status",
+          "oldestAgeLabel": "40.7h open"
+        },
+        {
+          "worker": "Memo",
+          "openRows": 0,
+          "escalation": "clear",
+          "nextPriority": null,
+          "nextChannel": null,
+          "oldestAgeLabel": null
+        },
+        {
+          "worker": "Nano",
+          "openRows": 5,
+          "escalation": "hot",
+          "nextPriority": "2",
+          "nextChannel": "WhatsApp personal",
+          "oldestAgeLabel": "38.7h open"
+        }
+      ],
+      "loopRows": [
+        "3721231       1 S       01:04:24 bash ./campaign-loop.sh run"
+      ],
+      "loopRunning": true,
+      "watchdogRows": [
+        "2458122       1 S       22:54:22 bash ./campaign-watchdog-loop.sh run"
+      ],
+      "watchdogRunning": true,
+      "watchdogCronInstalled": true,
+      "hotPingHookOk": true,
+      "linkSentinelOk": true,
+      "linkSentinelFresh": true,
+      "linkGeneratedAtEest": "2026-06-07 20:40 +0300",
+      "linkChecks": [
+        {
+          "name": "base",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "meta-paid",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "x-paid",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "story",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        }
+      ],
+      "paidTrafficOk": true,
+      "paidTrafficFresh": true,
+      "paidTrafficGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidTraffic": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 7,
+        "failedPages": [],
+        "resolverOk": true,
+        "healthOk": true
+      },
+      "liveAdQaOk": true,
+      "liveAdQaFresh": true,
+      "liveAdQaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "liveAdQa": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 7,
+        "renderedAssetCount": 14,
+        "socialOk": 2,
+        "socialCount": 2,
+        "localAssetOk": 5,
+        "localAssetCount": 5,
+        "resolverOk": true,
+        "healthOk": true,
+        "authOk": true,
+        "failedPages": [],
+        "failedRenderedAssets": [],
+        "failedLocalAssets": []
+      },
+      "adPlatformAuditOk": true,
+      "adPlatformAuditFresh": true,
+      "adPlatformAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adPlatformAudit": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 9,
+        "socialImageCount": 1,
+        "resolverOk": true,
+        "healthOk": true,
+        "failedPages": [],
+        "failedSocialImages": []
+      },
+      "conversionGuardOk": true,
+      "conversionGuardFresh": true,
+      "conversionGuardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "conversionGuard": {
+        "ok": true,
+        "browserVerified": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 4,
+        "resolverOk": true,
+        "authOk": true,
+        "browserProofStatus": "provided",
+        "failedPages": []
+      },
+      "postingSprintOk": true,
+      "postingSprintFresh": true,
+      "postingSprintGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingSprintCards": [
+        {
+          "worker": "Dexter",
+          "source": "urgent",
+          "label": "Priority 4",
+          "channel": "Football groups",
+          "asset": "campaign/first-wave-posts.md",
+          "action": "Ask approved group admin for permission; post group variant only if allowed"
+        },
+        {
+          "worker": "Sienna",
+          "source": "urgent",
+          "label": "Priority 1",
+          "channel": "WhatsApp Status",
+          "asset": "media/worldcup26-main-video.mp4",
+          "action": "Post story asset with video caption 1"
+        },
+        {
+          "worker": "Memo",
+          "source": "pulse",
+          "label": "Pulse 147",
+          "channel": "Proof audit",
+          "asset": "runtime/posting-log-live.csv",
+          "action": "Check proof log, list unproven current rows, and flag blocked channels."
+        },
+        {
+          "worker": "Nano",
+          "source": "urgent",
+          "label": "Priority 2",
+          "channel": "WhatsApp personal",
+          "asset": "media/worldcup26-main-video.mp4",
+          "action": "Send personal invite to warm contacts"
+        }
+      ],
+      "proofActivityOk": false,
+      "proofStallFresh": true,
+      "proofStallGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofStall": {
+        "ok": false,
+        "externalStalled": true,
+        "proofStalled": true,
+        "latestExternalProofAgeMinutes": 209,
+        "latestAnyProofAgeMinutes": 209,
+        "oldestOpenPriority": "1",
+        "oldestOpenOwner": "Sienna",
+        "oldestOpenChannel": "WhatsApp Status"
+      },
+      "proofSlaOk": true,
+      "proofSlaFresh": true,
+      "proofSlaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofSla": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeMinutes": 209,
+        "urgentOpenRows": 16,
+        "doNowRows": 4,
+        "paidTrafficOk": true,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "ageLabel": "now",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+        }
+      },
+      "proofRescueOk": true,
+      "proofRescueFresh": true,
+      "proofRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofRescue": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeLabel": "3.2h",
+        "urgentOpenRows": 16,
+        "liveAdQaOk": true,
+        "actionCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "phoneInstruction": "Open WhatsApp, send the invite to warm contacts, count how many people received it, then log that count."
+        }
+      },
+      "proofUrlRecoveryOk": true,
+      "proofUrlRecoveryFresh": true,
+      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofUrlRecovery": {
+        "ok": true,
+        "pendingCount": 1,
+        "first": {
+          "timestampEest": "2026-06-07 01:40 +0300",
+          "owner": "Dexter",
+          "channel": "X / public fallback",
+          "pulse": "dexter_pulse65",
+          "searchUrl": "https://x.com/search?q=%22dexter_pulse65%22%20from%3ANervixAi&src=typed_query&f=live",
+          "upgradeCommand": "node campaign-proof-log.mjs --pulse \"dexter_pulse65\" --proof-url \"PUBLIC_X_STATUS_URL\" --status \"posted\" --force"
+        }
+      },
+      "socialRescueOk": true,
+      "socialRescueFresh": true,
+      "socialRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "socialRescue": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeLabel": "3.2h",
+        "liveAdQaOk": true,
+        "actionCount": 4,
+        "workerPageCount": 4,
+        "workerPages": [
+          {
+            "owner": "Nano",
+            "fileName": "social-rescue-nano.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Sienna",
+            "fileName": "social-rescue-sienna.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Dexter",
+            "fileName": "social-rescue-dexter.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Memo",
+            "fileName": "social-rescue-memo.html",
+            "actionCount": 1
+          }
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "shareLinks": 2
+        }
+      },
+      "zeroSignupRescueOk": true,
+      "zeroSignupRescueFresh": true,
+      "zeroSignupRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "zeroSignupRescue": {
+        "ok": true,
+        "state": "critical-zero-signups",
+        "acceptedReferrals": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "urgentOpenRows": 16,
+        "variantCount": 8,
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "YouTube Shorts / TikTok / Reels",
+          "hook": "Most World Cup predictions are boring. Pick 3 teams free and see your private score.",
+          "asset": "media/worldcup26-main-video-vertical.mp4",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-short&utm_medium=organic-video&utm_campaign=worldcup26_zero_signup_rescue&utm_content=hook_private_score"
+        }
+      },
+      "realActionBridgeOk": true,
+      "realActionBridgeFresh": true,
+      "realActionBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "realActionBridge": {
+        "ok": true,
+        "state": "critical-zero-signups",
+        "acceptedReferrals": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "actionCount": 4,
+        "rescueVariantCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch"
+        }
+      },
+      "oneClickShareOk": true,
+      "oneClickShareFresh": true,
+      "oneClickShareGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "oneClickShare": {
+        "ok": true,
+        "actionCount": 4,
+        "shareLinkCount": 8,
+        "owners": [
+          "Nano",
+          "Sienna",
+          "Dexter",
+          "Memo"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+          "shareLinks": 2
+        }
+      },
+      "publicOutreachTargetsOk": true,
+      "publicOutreachTargetsFresh": true,
+      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicOutreachTargets": {
+        "ok": true,
+        "targetCount": 41,
+        "failures": [],
+        "workerCoverage": {
+          "required": [
+            "Dexter",
+            "Sienna",
+            "Memo",
+            "Nano"
+          ],
+          "owners": [
+            "Sienna",
+            "Nano",
+            "Dexter",
+            "Memo"
+          ],
+          "missing": []
+        },
+        "platformCount": 25,
+        "first": {
+          "priority": "A1",
+          "owner": "Sienna",
+          "platform": "WhatsApp Status",
+          "target": "Owned WhatsApp status audience",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1"
+        }
+      },
+      "adOpsLinksOk": true,
+      "adOpsLinksFresh": true,
+      "adOpsLinksGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adOpsLinks": {
+        "ok": true,
+        "channelCount": 2,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "channels": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "managerUrl": "https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown",
+            "campaignUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "checklistCount": 5,
+            "hasAttemptCommand": true
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "managerUrl": "https://ads.x.com/manager/18ce55rrs16/campaigns",
+            "campaignUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "checklistCount": 5,
+            "hasAttemptCommand": true
+          }
+        ]
+      },
+      "paidAdTriageOk": true,
+      "paidAdTriageFresh": true,
+      "paidAdTriageGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidAdTriage": {
+        "ok": true,
+        "state": "critical-paid-signup-friction",
+        "paidViews": 219,
+        "appViews": 478,
+        "referralViews": 146,
+        "signupSaves": 0,
+        "accepted": 0,
+        "dashboardState": "paid-clicks-no-signups",
+        "dashboardChecks": 2,
+        "dashboardImpressions": 12,
+        "dashboardClicks": 227,
+        "dashboardSpend": 31.78,
+        "topSource": "-",
+        "topSignupSource": "-",
+        "channelCount": 2,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "channels": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "managerUrl": "https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown",
+            "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "guardStatus": false,
+            "hasDashboardProofCommand": true
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "managerUrl": "https://ads.x.com/manager/18ce55rrs16/campaigns",
+            "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "guardStatus": false,
+            "hasDashboardProofCommand": true
+          }
+        ]
+      },
+      "paidNoClickRescueOk": true,
+      "paidNoClickRescueFresh": true,
+      "paidNoClickRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidNoClickRescue": {
+        "ok": true,
+        "state": "clicks-no-signups",
+        "dashboardState": "paid-clicks-no-signups",
+        "triageState": "critical-paid-signup-friction",
+        "dashboardChecks": 2,
+        "impressions": 12,
+        "clicks": 227,
+        "paidViews": 215,
+        "appViews": 471,
+        "signupSaves": 0,
+        "variantCount": 8,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "first": {
+          "priority": "META-1",
+          "platform": "Meta Ads Manager",
+          "angle": "Free private score preview",
+          "headline": "Pick 3 teams free",
+          "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h&utm_content=free-private-score"
+        }
+      },
+      "paidDashboardOk": true,
+      "paidDashboardFresh": true,
+      "paidDashboardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidDashboard": {
+        "ok": true,
+        "state": "paid-clicks-no-signups",
+        "latestChecks": 2,
+        "totalSpend": 31.78,
+        "totalImpressions": 12,
+        "totalClicks": 227,
+        "paidViews": 215,
+        "signupSaves": 0,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "checks": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "status": "active",
+            "impressions": 0,
+            "clicks": 227,
+            "spend": 31.78,
+            "warning": "partial: Today range shows 227 link clicks and 0.14 lei per link click; spend inferred as 31.78 lei; impressions not visible in current table view"
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "status": "appeal_requested",
+            "impressions": 12,
+            "clicks": 0,
+            "spend": 0,
+            "warning": "X delivery is review-blocked: top ad halted after 12 impressions and appeal was requested; second ad is pending with appeal requested; link clicks remain zero."
+          }
+        ]
+      },
+      "referralActivityOk": true,
+      "referralActivityFresh": true,
+      "referralActivityAvailable": true,
+      "referralActivityGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "referralActivity": {
+        "ok": true,
+        "available": true,
+        "status": "ok",
+        "reason": "",
+        "inviterFound": true,
+        "inviterName": "David Ai",
+        "acceptedReferrals": 0,
+        "acceptedReferrals24h": 0,
+        "acceptedReferrals72h": 0,
+        "signupReferralSaves": 0,
+        "signupReferralSaves24h": 0,
+        "signupReferralSaves72h": 0,
+        "referredEntries": 0,
+        "referredDraftEntries": 0,
+        "referredLockedEntries": 0,
+        "profiles": 5,
+        "profiles24h": 3,
+        "profiles72h": 4,
+        "freeAccounts": 4,
+        "paidAccounts": 1,
+        "draftAccounts": 3,
+        "totalEntries": 4,
+        "draftEntries": 3,
+        "lockedEntries": 1,
+        "lockedEntries24h": 0,
+        "lockedEntries72h": 1,
+        "viewCountsAvailable": true,
+        "appViews": 478,
+        "appViews24h": 478,
+        "appViews72h": 478,
+        "referralViews": 146,
+        "referralViews24h": 146,
+        "referralViews72h": 146,
+        "signupReturned": 0,
+        "signupMissingAcceptance": 0,
+        "signupAttempts": 0,
+        "signupSavedEvents": 0,
+        "signupFailedEvents": 0,
+        "signupErrorEvents": 0,
+        "sourceBreakdown": [
+          {
+            "source": "an",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 50,
+            "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+          },
+          {
+            "source": "meta",
+            "medium": "paid-social",
+            "campaign": "worldcup26_referral_72h",
+            "content": "three-team-question",
+            "count": 45,
+            "lastViewedAt": "2026-06-07T17:32:35.286197+00:00"
+          },
+          {
+            "source": "fb",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400_free_first",
+            "count": 22,
+            "lastViewedAt": "2026-06-07T14:16:35.772463+00:00"
+          },
+          {
+            "source": "fb",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 19,
+            "lastViewedAt": "2026-06-07T11:58:21.035812+00:00"
+          },
+          {
+            "source": "ig",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 4,
+            "lastViewedAt": "2026-06-07T11:47:26.443609+00:00"
+          },
+          {
+            "source": "codex_probe",
+            "medium": "qa",
+            "campaign": "signup_friction_probe",
+            "content": "",
+            "count": 2,
+            "lastViewedAt": "2026-06-07T16:51:52.940108+00:00"
+          },
+          {
+            "source": "browser-probe",
+            "medium": "automation",
+            "campaign": "worldcup26_referral_72h",
+            "content": "conversion_browser",
+            "count": 1,
+            "lastViewedAt": "2026-06-07T11:09:11.510868+00:00"
+          }
+        ],
+        "topSource": {
+          "source": "an",
+          "medium": "paid",
+          "campaign": "6971048256000",
+          "content": "6971048413400",
+          "count": 50,
+          "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+        },
+        "signupSourceBreakdown": [],
+        "topSignupSource": null,
+        "latestAcceptedReferralAt": "",
+        "latestSignupReferralSavedAt": "",
+        "latestEntryCreatedAt": "",
+        "latestEntryLockedAt": ""
+      },
+      "signupConversionOk": true,
+      "signupConversionFresh": true,
+      "signupConversionGeneratedAtEest": "07/06/2026 20:41",
+      "signupConversion": {
+        "ok": false,
+        "state": "critical-auth-to-signup-save-unproven",
+        "appViews": 478,
+        "referralViews": 146,
+        "paidViews": 219,
+        "accepted": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "profiles": 5,
+        "free": 4,
+        "paid": 1,
+        "signupReturned": 0,
+        "signupMissingAcceptance": 0,
+        "signupAttempts": 0,
+        "signupSavedEvents": 0,
+        "signupFailedEvents": 0,
+        "signupErrorEvents": 0,
+        "dashboardState": "paid-clicks-no-signups",
+        "dashboardClicks": 227,
+        "dashboardSpend": 31.78,
+        "firstPaint": true,
+        "browserVerified": true,
+        "inviterFound": true,
+        "inviterName": "David Ai",
+        "referralPercent": 5,
+        "blockerCount": 4,
+        "blockers": [
+          "No saved referral signup exists after Google auth.",
+          "No logged-in dashboard return event exists for the referral code yet.",
+          "No accepted referral agreement row is visible in the campaign counts.",
+          "Paid clicks are present, but none reached a completed signup-save event."
+        ],
+        "firstAction": "Send the clean signup test to 3 trusted people with different Google accounts using https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test. Ask each to accept the invite, continue with Google, pick 3 teams, and reply with either \"joined + picked teams\" or a screenshot of the exact blocking screen. After the real send is logged, rerun this audit and verify the dashboard POSTs /api/referrals/signup with a bearer token and that worldcup_referral_profiles stores signup_referral_code=26BC4B90CB.",
+        "proofRule": "Do not claim signup conversion proof until there is a real new user/profile plus referral signup save row, or a clear private-channel tester note with account, timestamp, and screenshot."
+      },
+      "warmContactOk": true,
+      "warmContactFresh": true,
+      "warmContactGeneratedAtEest": "07/06/2026 20:41",
+      "warmContact": {
+        "ok": true,
+        "state": "warm-contact-sprint-needed",
+        "batches": 5,
+        "postedAttempts": 2,
+        "blockedPublic": 7,
+        "signupSaves": 0,
+        "firstAction": "Nano/WhatsApp personal/10 football friends",
+        "firstLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+        "proofRule": "Do not log these as proof until the exact private message/status/admin request was actually sent. Use recipient count or initials, never raw phone numbers."
+      },
+      "warmFollowupOk": true,
+      "warmFollowupFresh": true,
+      "warmFollowupGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "warmFollowup": {
+        "ok": true,
+        "state": "awaiting-first-human-send",
+        "warmAttempts": 0,
+        "testerAttempts": 0,
+        "followupAttempts": 0,
+        "followupMinutes": 15,
+        "signupSaves": 0,
+        "referralViews": 152,
+        "profiles": 5,
+        "due": false,
+        "latest": null,
+        "nextAction": "Send the first clean tester batch or warm-contact batch, then log it with the real count/account note."
+      },
+      "responseKitOk": true,
+      "responseKitFresh": true,
+      "responseKitGeneratedAtEest": "07/06/2026 20:41",
+      "responseKit": {
+        "ok": true,
+        "state": "ready-for-warm-replies",
+        "replies": 13,
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 0,
+        "firstAction": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "task": "Send warm-contact invite to 10 football friends."
+        },
+        "firstReply": {
+          "id": "what-is-it",
+          "trigger": "What is this?"
+        }
+      },
+      "firstHumanActionsOk": true,
+      "firstHumanActionsFresh": true,
+      "firstHumanActionsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstHumanActions": {
+        "ok": true,
+        "state": "needs-first-human-action",
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 146,
+        "dashboardClicks": 227,
+        "actionCount": 2,
+        "firstAction": {
+          "id": "clean-signup-test-batch",
+          "owner": "Memo",
+          "channel": "WhatsApp testers",
+          "title": "Send three clean referral signup tests",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+          "command": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\"",
+          "doneWhen": "The tester batch is really sent and logged with count/account, then a real profile plus referral signup-save row appears, or a precise tester screenshot captures the failing step."
+        }
+      },
+      "firstSendBridgeOk": true,
+      "firstSendBridgeFresh": true,
+      "firstSendBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstSendBridge": {
+        "ok": true,
+        "state": "send-now",
+        "owner": "Memo",
+        "channel": "WhatsApp testers",
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 146,
+        "adClicks": 227,
+        "whatsappReady": true,
+        "referralQrReady": true,
+        "whatsappQrReady": true,
+        "command": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+      },
+      "postingCockpitOk": true,
+      "postingCockpitFresh": true,
+      "postingCockpitGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingCockpit": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "urgentOpenRows": 16,
+        "paidTrafficOk": true,
+        "pageCount": 18,
+        "pages": [
+          "proof-sla.html",
+          "proof-audit.html",
+          "proof-url-recovery.html",
+          "proof-rescue.html",
+          "social-rescue-pack.html",
+          "one-click-share.html",
+          "public-outreach-targets.html",
+          "login-unlock-board.html",
+          "proof-intake.html",
+          "top-six-mobile.html",
+          "phone-action-center.html",
+          "share-command-center.html",
+          "paid-traffic-guard.html",
+          "paid-dashboard-checks.html",
+          "paid-ad-triage.html",
+          "paid-no-click-rescue.html",
+          "ad-ops-links.html",
+          "escalation-board.html"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "phoneActionCenterOk": true,
+      "phoneActionCenterFresh": true,
+      "phoneActionCenterGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "phoneActionCenter": {
+        "ok": true,
+        "referralCode": "26BC4B90CB",
+        "actionCount": 16,
+        "urgentRows": 16,
+        "ownerCount": 3,
+        "qrBlockCount": 22,
+        "trackedQrCount": 44,
+        "assetBlockCount": 22,
+        "videoPreviewCount": 10,
+        "imagePreviewCount": 27,
+        "shareButtonCount": 44,
+        "htmlBytes": 157753,
+        "failures": [],
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "WhatsApp Status",
+          "action": "Post story asset with video caption 1",
+          "asset": "media/worldcup26-main-video.mp4"
+        }
+      },
+      "proofCloseoutOk": true,
+      "proofCloseoutFresh": true,
+      "proofCloseoutGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofCloseout": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "commandCount": 6,
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "WhatsApp Status",
+          "status": "posted",
+          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:41 +0300' --status posted"
+        },
+        "failures": []
+      },
+      "workerWakeOk": true,
+      "workerWakeFresh": true,
+      "workerWakeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "workerWake": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "urgentOpenRows": 16,
+        "workerCount": 4,
+        "workers": [
+          {
+            "worker": "Dexter",
+            "state": "wake-now",
+            "assignedCount": 3,
+            "nextPriority": "warm-4",
+            "nextChannel": "WhatsApp admins",
+            "action": "Send warm-contact invite to football group admins."
+          },
+          {
+            "worker": "Sienna",
+            "state": "wake-now",
+            "assignedCount": 8,
+            "nextPriority": "warm-3",
+            "nextChannel": "WhatsApp personal",
+            "action": "Send warm-contact invite to 10 close contacts."
+          },
+          {
+            "worker": "Memo",
+            "state": "wake-now",
+            "assignedCount": 0,
+            "nextPriority": "warm-5",
+            "nextChannel": "WhatsApp testers",
+            "action": "Send warm-contact invite to 3 trusted testers."
+          },
+          {
+            "worker": "Nano",
+            "state": "wake-now",
+            "assignedCount": 5,
+            "nextPriority": "warm-1",
+            "nextChannel": "WhatsApp personal",
+            "action": "Send warm-contact invite to 10 football friends."
+          }
+        ],
+        "nextActions": [
+          "Dexter:#warm-4/WhatsApp admins",
+          "Sienna:#warm-3/WhatsApp personal",
+          "Memo:#warm-5/WhatsApp testers",
+          "Nano:#warm-1/WhatsApp personal"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "sessionRecoveryOk": true,
+      "sessionRecoveryFresh": true,
+      "sessionRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "sessionRecovery": {
+        "proofRows": 49,
+        "urgentRows": 16,
+        "blockerCount": 1,
+        "recoveryActions": [
+          {
+            "key": "x",
+            "label": "X public fallback",
+            "scheduledAtEest": "2026-06-07 16:45 +0300",
+            "shareUrl": "https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse129"
+          },
+          {
+            "key": "facebook",
+            "label": "Facebook feed fallback",
+            "scheduledAtEest": "2026-06-07 18:45 +0300",
+            "shareUrl": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137"
+          }
+        ]
+      },
+      "escalationOk": true,
+      "escalationFresh": true,
+      "escalationGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "escalation": {
+        "linkOk": true,
+        "externalOpen": 16,
+        "critical": 16,
+        "hot": 0,
+        "workersWithStale": 3,
+        "latestExternalProofAgeMinutes": 209
+      },
+      "publicAttemptsOk": true,
+      "publicAttemptsFresh": true,
+      "publicAttemptsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicAttempts": {
+        "ok": true,
+        "attempts": 9,
+        "blocked": 7,
+        "loginRequired": 6,
+        "approvalRequired": 0,
+        "socialActions": 4,
+        "failures": [],
+        "firstBlocked": {
+          "owner": "Dexter",
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required",
+          "detail": "X intent opened in browser at 2026-06-07 03:09 EEST, redirected to login/onboarding, and showed Continue as Dan semebitcoin@gmail.com before compose; no post was submitted; code 26BC4B90CB and worldcup26.world link were in the attempted post copy.",
+          "nextAction": "Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL."
+        },
+        "firstAction": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "loginUnlockOk": true,
+      "loginUnlockFresh": true,
+      "loginUnlockGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "loginUnlock": {
+        "ok": true,
+        "cards": 6,
+        "blocked": 6,
+        "loginRequired": 5,
+        "approvalRequired": 0,
+        "platforms": [
+          "X",
+          "YouTube Shorts",
+          "Facebook",
+          "LinkedIn"
+        ],
+        "failures": [],
+        "first": {
+          "owner": "Dexter",
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required",
+          "authUrl": "https://x.com/i/flow/login",
+          "publishUrl": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1",
+          "verifyUrl": "",
+          "asset": "media/worldcup26-referral-16x9.jpg",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X Search\" --channel \"World Cup 2026 prediction conversations\" --status \"posted\" --attempt-url \"https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live\" --detail \"public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST\""
+        }
+      },
+      "objectiveAuditOk": true,
+      "objectiveAuditFresh": true,
+      "objectiveAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "objectiveAudit": {
+        "ok": true,
+        "complete": false,
+        "state": "critical",
+        "proven": 10,
+        "total": 12,
+        "criticalOpen": 1,
+        "firstOpen": {
+          "id": "advertise-everywhere-proof",
+          "status": "incomplete",
+          "label": "Real external posting proof is current",
+          "next": "Do the next real action and log proof with a public URL or precise private-channel note."
+        },
+        "primaryAction": {
+          "priority": "clean-signup-test-batch",
+          "owner": "Memo",
+          "channel": "WhatsApp testers",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+        },
+        "blocker": {
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required"
+        }
+      },
+      "operatorPushOk": true,
+      "operatorPushFresh": true,
+      "operatorPushGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "operatorPush": {
+        "ok": true,
+        "complete": false,
+        "state": "critical",
+        "proofRows": 49,
+        "urgentOpenRows": 16,
+        "publicBlocked": 7,
+        "publicLoginRequired": 6,
+        "actionCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+        },
+        "blockers": [
+          {
+            "status": "login_required",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "X public fallback",
+            "nextAction": "Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL."
+          },
+          {
+            "status": "blocked",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "X public permalink recovery",
+            "nextAction": "Owner must open logged-in X account @NervixAi, copy the public post URL if the compose published, then log it with campaign-proof-log.mjs."
+          },
+          {
+            "status": "login_required",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "organic compose free-first",
+            "nextAction": "Owner must log into x.com for @DansiDanutz or another owned X account, then post https://worldcup26.world/login?ref=26BC4B90CB with the free-first invite and log the public status URL."
+          },
+          {
+            "status": "login_required",
+            "owner": "Sienna",
+            "platform": "YouTube Shorts",
+            "channel": "zero signup rescue upload",
+            "nextAction": "Owner must complete YouTube/Google 'Verify it’s you' on this browser, then upload media/worldcup26-main-video-vertical.mp4 as a Short with https://worldcup26.world/login?ref=26BC4B90CB and log the public YouTube URL."
+          }
+        ]
+      },
+      "lastLogLines": [
+        "2026-06-07T17:41:12Z escalation-board ok",
+        "2026-06-07T17:41:12Z objective-audit ok",
+        "2026-06-07T17:41:13Z evidence-board ok",
+        "2026-06-07T17:41:13Z operator-push ok",
+        "2026-06-07T17:41:13Z real-action-bridge ok",
+        "2026-06-07T17:41:13Z one-click-share ok",
+        "2026-06-07T17:41:13Z public-outreach-targets ok",
+        "2026-06-07T17:41:13Z worker-launchers ok"
+      ]
+    },
+    {
+      "host": "nano",
+      "ok": true,
+      "generatedAtEest": "2026-06-07 20:41 +0300",
+      "hotPingFresh": true,
+      "proof": 49,
+      "urgent": 16,
+      "hotWorkers": 3,
+      "first": {
+        "worker": "Nano",
+        "nextPriority": "2",
+        "nextChannel": "WhatsApp personal",
+        "nextCommand": "node campaign-proof-log.mjs --priority \"2\" --proof-url \"private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>\" --status \"sent\"",
+        "action": "Send personal invite to warm contacts",
+        "asset": "media/worldcup26-main-video.mp4",
+        "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2"
+      },
+      "workers": [
+        {
+          "worker": "Dexter",
+          "openRows": 3,
+          "escalation": "hot",
+          "nextPriority": "4",
+          "nextChannel": "Football groups",
+          "oldestAgeLabel": "36.7h open"
+        },
+        {
+          "worker": "Sienna",
+          "openRows": 8,
+          "escalation": "hot",
+          "nextPriority": "1",
+          "nextChannel": "WhatsApp Status",
+          "oldestAgeLabel": "40.7h open"
+        },
+        {
+          "worker": "Memo",
+          "openRows": 0,
+          "escalation": "clear",
+          "nextPriority": null,
+          "nextChannel": null,
+          "oldestAgeLabel": null
+        },
+        {
+          "worker": "Nano",
+          "openRows": 5,
+          "escalation": "hot",
+          "nextPriority": "2",
+          "nextChannel": "WhatsApp personal",
+          "oldestAgeLabel": "38.7h open"
+        }
+      ],
+      "loopRows": [
+        "2905724       1 S       01:04:20 bash ./campaign-loop.sh run"
+      ],
+      "loopRunning": true,
+      "watchdogRows": [
+        "1996386       1 S       22:54:23 bash ./campaign-watchdog-loop.sh run"
+      ],
+      "watchdogRunning": true,
+      "watchdogCronInstalled": true,
+      "hotPingHookOk": true,
+      "linkSentinelOk": true,
+      "linkSentinelFresh": true,
+      "linkGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "linkChecks": [
+        {
+          "name": "base",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "meta-paid",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "x-paid",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        },
+        {
+          "name": "story",
+          "ok": true,
+          "status": 200,
+          "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+          "failures": []
+        }
+      ],
+      "paidTrafficOk": true,
+      "paidTrafficFresh": true,
+      "paidTrafficGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidTraffic": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 7,
+        "failedPages": [],
+        "resolverOk": true,
+        "healthOk": true
+      },
+      "liveAdQaOk": true,
+      "liveAdQaFresh": true,
+      "liveAdQaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "liveAdQa": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 7,
+        "renderedAssetCount": 14,
+        "socialOk": 2,
+        "socialCount": 2,
+        "localAssetOk": 5,
+        "localAssetCount": 5,
+        "resolverOk": true,
+        "healthOk": true,
+        "authOk": true,
+        "failedPages": [],
+        "failedRenderedAssets": [],
+        "failedLocalAssets": []
+      },
+      "adPlatformAuditOk": true,
+      "adPlatformAuditFresh": true,
+      "adPlatformAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adPlatformAudit": {
+        "ok": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 9,
+        "socialImageCount": 1,
+        "resolverOk": true,
+        "healthOk": true,
+        "failedPages": [],
+        "failedSocialImages": []
+      },
+      "conversionGuardOk": true,
+      "conversionGuardFresh": true,
+      "conversionGuardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "conversionGuard": {
+        "ok": true,
+        "browserVerified": true,
+        "deploymentIds": [
+          "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+        ],
+        "pageCount": 4,
+        "resolverOk": true,
+        "authOk": true,
+        "browserProofStatus": "provided",
+        "failedPages": []
+      },
+      "postingSprintOk": true,
+      "postingSprintFresh": true,
+      "postingSprintGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingSprintCards": [
+        {
+          "worker": "Dexter",
+          "source": "urgent",
+          "label": "Priority 4",
+          "channel": "Football groups",
+          "asset": "campaign/first-wave-posts.md",
+          "action": "Ask approved group admin for permission; post group variant only if allowed"
+        },
+        {
+          "worker": "Sienna",
+          "source": "urgent",
+          "label": "Priority 1",
+          "channel": "WhatsApp Status",
+          "asset": "media/worldcup26-main-video.mp4",
+          "action": "Post story asset with video caption 1"
+        },
+        {
+          "worker": "Memo",
+          "source": "pulse",
+          "label": "Pulse 147",
+          "channel": "Proof audit",
+          "asset": "runtime/posting-log-live.csv",
+          "action": "Check proof log, list unproven current rows, and flag blocked channels."
+        },
+        {
+          "worker": "Nano",
+          "source": "urgent",
+          "label": "Priority 2",
+          "channel": "WhatsApp personal",
+          "asset": "media/worldcup26-main-video.mp4",
+          "action": "Send personal invite to warm contacts"
+        }
+      ],
+      "proofActivityOk": false,
+      "proofStallFresh": true,
+      "proofStallGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofStall": {
+        "ok": false,
+        "externalStalled": true,
+        "proofStalled": true,
+        "latestExternalProofAgeMinutes": 209,
+        "latestAnyProofAgeMinutes": 209,
+        "oldestOpenPriority": "1",
+        "oldestOpenOwner": "Sienna",
+        "oldestOpenChannel": "WhatsApp Status"
+      },
+      "proofSlaOk": true,
+      "proofSlaFresh": true,
+      "proofSlaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofSla": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeMinutes": 209,
+        "urgentOpenRows": 16,
+        "doNowRows": 4,
+        "paidTrafficOk": true,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "ageLabel": "now",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+        }
+      },
+      "proofRescueOk": true,
+      "proofRescueFresh": true,
+      "proofRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofRescue": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeLabel": "3.2h",
+        "urgentOpenRows": 16,
+        "liveAdQaOk": true,
+        "actionCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "phoneInstruction": "Open WhatsApp, send the invite to warm contacts, count how many people received it, then log that count."
+        }
+      },
+      "proofUrlRecoveryOk": true,
+      "proofUrlRecoveryFresh": true,
+      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofUrlRecovery": {
+        "ok": true,
+        "pendingCount": 1,
+        "first": {
+          "timestampEest": "2026-06-07 01:40 +0300",
+          "owner": "Dexter",
+          "channel": "X / public fallback",
+          "pulse": "dexter_pulse65",
+          "searchUrl": "https://x.com/search?q=%22dexter_pulse65%22%20from%3ANervixAi&src=typed_query&f=live",
+          "upgradeCommand": "node campaign-proof-log.mjs --pulse \"dexter_pulse65\" --proof-url \"PUBLIC_X_STATUS_URL\" --status \"posted\" --force"
+        }
+      },
+      "socialRescueOk": true,
+      "socialRescueFresh": true,
+      "socialRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "socialRescue": {
+        "ok": true,
+        "state": "critical",
+        "latestExternalProofAgeLabel": "3.2h",
+        "liveAdQaOk": true,
+        "actionCount": 4,
+        "workerPageCount": 4,
+        "workerPages": [
+          {
+            "owner": "Nano",
+            "fileName": "social-rescue-nano.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Sienna",
+            "fileName": "social-rescue-sienna.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Dexter",
+            "fileName": "social-rescue-dexter.html",
+            "actionCount": 1
+          },
+          {
+            "owner": "Memo",
+            "fileName": "social-rescue-memo.html",
+            "actionCount": 1
+          }
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "shareLinks": 2
+        }
+      },
+      "zeroSignupRescueOk": true,
+      "zeroSignupRescueFresh": true,
+      "zeroSignupRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "zeroSignupRescue": {
+        "ok": true,
+        "state": "critical-zero-signups",
+        "acceptedReferrals": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "urgentOpenRows": 16,
+        "variantCount": 8,
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "YouTube Shorts / TikTok / Reels",
+          "hook": "Most World Cup predictions are boring. Pick 3 teams free and see your private score.",
+          "asset": "media/worldcup26-main-video-vertical.mp4",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=zero-signup-short&utm_medium=organic-video&utm_campaign=worldcup26_zero_signup_rescue&utm_content=hook_private_score"
+        }
+      },
+      "realActionBridgeOk": true,
+      "realActionBridgeFresh": true,
+      "realActionBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "realActionBridge": {
+        "ok": true,
+        "state": "critical-zero-signups",
+        "acceptedReferrals": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "actionCount": 4,
+        "rescueVariantCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch"
+        }
+      },
+      "oneClickShareOk": true,
+      "oneClickShareFresh": true,
+      "oneClickShareGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "oneClickShare": {
+        "ok": true,
+        "actionCount": 4,
+        "shareLinkCount": 8,
+        "owners": [
+          "Nano",
+          "Sienna",
+          "Dexter",
+          "Memo"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+          "shareLinks": 2
+        }
+      },
+      "publicOutreachTargetsOk": true,
+      "publicOutreachTargetsFresh": true,
+      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicOutreachTargets": {
+        "ok": true,
+        "targetCount": 41,
+        "failures": [],
+        "workerCoverage": {
+          "required": [
+            "Dexter",
+            "Sienna",
+            "Memo",
+            "Nano"
+          ],
+          "owners": [
+            "Sienna",
+            "Nano",
+            "Dexter",
+            "Memo"
+          ],
+          "missing": []
+        },
+        "platformCount": 25,
+        "first": {
+          "priority": "A1",
+          "owner": "Sienna",
+          "platform": "WhatsApp Status",
+          "target": "Owned WhatsApp status audience",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1"
+        }
+      },
+      "adOpsLinksOk": true,
+      "adOpsLinksFresh": true,
+      "adOpsLinksGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adOpsLinks": {
+        "ok": true,
+        "channelCount": 2,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "channels": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "managerUrl": "https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown",
+            "campaignUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "checklistCount": 5,
+            "hasAttemptCommand": true
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "managerUrl": "https://ads.x.com/manager/18ce55rrs16/campaigns",
+            "campaignUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "checklistCount": 5,
+            "hasAttemptCommand": true
+          }
+        ]
+      },
+      "paidAdTriageOk": true,
+      "paidAdTriageFresh": true,
+      "paidAdTriageGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidAdTriage": {
+        "ok": true,
+        "state": "critical-paid-signup-friction",
+        "paidViews": 219,
+        "appViews": 478,
+        "referralViews": 146,
+        "signupSaves": 0,
+        "accepted": 0,
+        "dashboardState": "paid-clicks-no-signups",
+        "dashboardChecks": 2,
+        "dashboardImpressions": 12,
+        "dashboardClicks": 227,
+        "dashboardSpend": 31.78,
+        "topSource": "-",
+        "topSignupSource": "-",
+        "channelCount": 2,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "channels": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "managerUrl": "https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown",
+            "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "guardStatus": false,
+            "hasDashboardProofCommand": true
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "managerUrl": "https://ads.x.com/manager/18ce55rrs16/campaigns",
+            "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+            "guardStatus": false,
+            "hasDashboardProofCommand": true
+          }
+        ]
+      },
+      "paidNoClickRescueOk": true,
+      "paidNoClickRescueFresh": true,
+      "paidNoClickRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidNoClickRescue": {
+        "ok": true,
+        "state": "clicks-no-signups",
+        "dashboardState": "paid-clicks-no-signups",
+        "triageState": "critical-paid-signup-friction",
+        "dashboardChecks": 2,
+        "impressions": 12,
+        "clicks": 227,
+        "paidViews": 215,
+        "appViews": 471,
+        "signupSaves": 0,
+        "variantCount": 8,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "first": {
+          "priority": "META-1",
+          "platform": "Meta Ads Manager",
+          "angle": "Free private score preview",
+          "headline": "Pick 3 teams free",
+          "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h&utm_content=free-private-score"
+        }
+      },
+      "paidDashboardOk": true,
+      "paidDashboardFresh": true,
+      "paidDashboardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidDashboard": {
+        "ok": true,
+        "state": "paid-clicks-no-signups",
+        "latestChecks": 2,
+        "totalSpend": 31.78,
+        "totalImpressions": 12,
+        "totalClicks": 227,
+        "paidViews": 215,
+        "signupSaves": 0,
+        "platforms": [
+          "Meta Ads Manager",
+          "X Ads Manager"
+        ],
+        "checks": [
+          {
+            "key": "meta",
+            "platform": "Meta Ads Manager",
+            "status": "active",
+            "impressions": 0,
+            "clicks": 227,
+            "spend": 31.78,
+            "warning": "partial: Today range shows 227 link clicks and 0.14 lei per link click; spend inferred as 31.78 lei; impressions not visible in current table view"
+          },
+          {
+            "key": "x",
+            "platform": "X Ads Manager",
+            "status": "appeal_requested",
+            "impressions": 12,
+            "clicks": 0,
+            "spend": 0,
+            "warning": "X delivery is review-blocked: top ad halted after 12 impressions and appeal was requested; second ad is pending with appeal requested; link clicks remain zero."
+          }
+        ]
+      },
+      "referralActivityOk": true,
+      "referralActivityFresh": true,
+      "referralActivityAvailable": true,
+      "referralActivityGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "referralActivity": {
+        "ok": true,
+        "available": true,
+        "status": "ok",
+        "reason": "",
+        "inviterFound": true,
+        "inviterName": "David Ai",
+        "acceptedReferrals": 0,
+        "acceptedReferrals24h": 0,
+        "acceptedReferrals72h": 0,
+        "signupReferralSaves": 0,
+        "signupReferralSaves24h": 0,
+        "signupReferralSaves72h": 0,
+        "referredEntries": 0,
+        "referredDraftEntries": 0,
+        "referredLockedEntries": 0,
+        "profiles": 5,
+        "profiles24h": 3,
+        "profiles72h": 4,
+        "freeAccounts": 4,
+        "paidAccounts": 1,
+        "draftAccounts": 3,
+        "totalEntries": 4,
+        "draftEntries": 3,
+        "lockedEntries": 1,
+        "lockedEntries24h": 0,
+        "lockedEntries72h": 1,
+        "viewCountsAvailable": true,
+        "appViews": 478,
+        "appViews24h": 478,
+        "appViews72h": 478,
+        "referralViews": 146,
+        "referralViews24h": 146,
+        "referralViews72h": 146,
+        "signupReturned": 0,
+        "signupMissingAcceptance": 0,
+        "signupAttempts": 0,
+        "signupSavedEvents": 0,
+        "signupFailedEvents": 0,
+        "signupErrorEvents": 0,
+        "sourceBreakdown": [
+          {
+            "source": "an",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 50,
+            "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+          },
+          {
+            "source": "meta",
+            "medium": "paid-social",
+            "campaign": "worldcup26_referral_72h",
+            "content": "three-team-question",
+            "count": 45,
+            "lastViewedAt": "2026-06-07T17:32:35.286197+00:00"
+          },
+          {
+            "source": "fb",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400_free_first",
+            "count": 22,
+            "lastViewedAt": "2026-06-07T14:16:35.772463+00:00"
+          },
+          {
+            "source": "fb",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 19,
+            "lastViewedAt": "2026-06-07T11:58:21.035812+00:00"
+          },
+          {
+            "source": "ig",
+            "medium": "paid",
+            "campaign": "6971048256000",
+            "content": "6971048413400",
+            "count": 4,
+            "lastViewedAt": "2026-06-07T11:47:26.443609+00:00"
+          },
+          {
+            "source": "codex_probe",
+            "medium": "qa",
+            "campaign": "signup_friction_probe",
+            "content": "",
+            "count": 2,
+            "lastViewedAt": "2026-06-07T16:51:52.940108+00:00"
+          },
+          {
+            "source": "browser-probe",
+            "medium": "automation",
+            "campaign": "worldcup26_referral_72h",
+            "content": "conversion_browser",
+            "count": 1,
+            "lastViewedAt": "2026-06-07T11:09:11.510868+00:00"
+          }
+        ],
+        "topSource": {
+          "source": "an",
+          "medium": "paid",
+          "campaign": "6971048256000",
+          "content": "6971048413400",
+          "count": 50,
+          "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+        },
+        "signupSourceBreakdown": [],
+        "topSignupSource": null,
+        "latestAcceptedReferralAt": "",
+        "latestSignupReferralSavedAt": "",
+        "latestEntryCreatedAt": "",
+        "latestEntryLockedAt": ""
+      },
+      "signupConversionOk": true,
+      "signupConversionFresh": true,
+      "signupConversionGeneratedAtEest": "07/06/2026 20:41",
+      "signupConversion": {
+        "ok": false,
+        "state": "critical-auth-to-signup-save-unproven",
+        "appViews": 478,
+        "referralViews": 146,
+        "paidViews": 219,
+        "accepted": 0,
+        "signupSaves": 0,
+        "entries": 0,
+        "profiles": 5,
+        "free": 4,
+        "paid": 1,
+        "signupReturned": 0,
+        "signupMissingAcceptance": 0,
+        "signupAttempts": 0,
+        "signupSavedEvents": 0,
+        "signupFailedEvents": 0,
+        "signupErrorEvents": 0,
+        "dashboardState": "paid-clicks-no-signups",
+        "dashboardClicks": 227,
+        "dashboardSpend": 31.78,
+        "firstPaint": true,
+        "browserVerified": true,
+        "inviterFound": true,
+        "inviterName": "David Ai",
+        "referralPercent": 5,
+        "blockerCount": 4,
+        "blockers": [
+          "No saved referral signup exists after Google auth.",
+          "No logged-in dashboard return event exists for the referral code yet.",
+          "No accepted referral agreement row is visible in the campaign counts.",
+          "Paid clicks are present, but none reached a completed signup-save event."
+        ],
+        "firstAction": "Send the clean signup test to 3 trusted people with different Google accounts using https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test. Ask each to accept the invite, continue with Google, pick 3 teams, and reply with either \"joined + picked teams\" or a screenshot of the exact blocking screen. After the real send is logged, rerun this audit and verify the dashboard POSTs /api/referrals/signup with a bearer token and that worldcup_referral_profiles stores signup_referral_code=26BC4B90CB.",
+        "proofRule": "Do not claim signup conversion proof until there is a real new user/profile plus referral signup save row, or a clear private-channel tester note with account, timestamp, and screenshot."
+      },
+      "warmContactOk": true,
+      "warmContactFresh": true,
+      "warmContactGeneratedAtEest": "07/06/2026 20:41",
+      "warmContact": {
+        "ok": true,
+        "state": "warm-contact-sprint-needed",
+        "batches": 5,
+        "postedAttempts": 2,
+        "blockedPublic": 7,
+        "signupSaves": 0,
+        "firstAction": "Nano/WhatsApp personal/10 football friends",
+        "firstLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+        "proofRule": "Do not log these as proof until the exact private message/status/admin request was actually sent. Use recipient count or initials, never raw phone numbers."
+      },
+      "warmFollowupOk": true,
+      "warmFollowupFresh": true,
+      "warmFollowupGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "warmFollowup": {
+        "ok": true,
+        "state": "awaiting-first-human-send",
+        "warmAttempts": 0,
+        "testerAttempts": 0,
+        "followupAttempts": 0,
+        "followupMinutes": 15,
+        "signupSaves": 0,
+        "referralViews": 152,
+        "profiles": 5,
+        "due": false,
+        "latest": null,
+        "nextAction": "Send the first clean tester batch or warm-contact batch, then log it with the real count/account note."
+      },
+      "responseKitOk": true,
+      "responseKitFresh": true,
+      "responseKitGeneratedAtEest": "07/06/2026 20:41",
+      "responseKit": {
+        "ok": true,
+        "state": "ready-for-warm-replies",
+        "replies": 13,
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 0,
+        "firstAction": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "task": "Send warm-contact invite to 10 football friends."
+        },
+        "firstReply": {
+          "id": "what-is-it",
+          "trigger": "What is this?"
+        }
+      },
+      "firstHumanActionsOk": true,
+      "firstHumanActionsFresh": true,
+      "firstHumanActionsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstHumanActions": {
+        "ok": true,
+        "state": "needs-first-human-action",
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 146,
+        "dashboardClicks": 227,
+        "actionCount": 2,
+        "firstAction": {
+          "id": "clean-signup-test-batch",
+          "owner": "Memo",
+          "channel": "WhatsApp testers",
+          "title": "Send three clean referral signup tests",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+          "command": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\"",
+          "doneWhen": "The tester batch is really sent and logged with count/account, then a real profile plus referral signup-save row appears, or a precise tester screenshot captures the failing step."
+        }
+      },
+      "firstSendBridgeOk": true,
+      "firstSendBridgeFresh": true,
+      "firstSendBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstSendBridge": {
+        "ok": true,
+        "state": "send-now",
+        "owner": "Memo",
+        "channel": "WhatsApp testers",
+        "warmAttempts": 0,
+        "signupSaves": 0,
+        "referralViews": 146,
+        "adClicks": 227,
+        "whatsappReady": true,
+        "referralQrReady": true,
+        "whatsappQrReady": true,
+        "command": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+      },
+      "postingCockpitOk": true,
+      "postingCockpitFresh": true,
+      "postingCockpitGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingCockpit": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "urgentOpenRows": 16,
+        "paidTrafficOk": true,
+        "pageCount": 18,
+        "pages": [
+          "proof-sla.html",
+          "proof-audit.html",
+          "proof-url-recovery.html",
+          "proof-rescue.html",
+          "social-rescue-pack.html",
+          "one-click-share.html",
+          "public-outreach-targets.html",
+          "login-unlock-board.html",
+          "proof-intake.html",
+          "top-six-mobile.html",
+          "phone-action-center.html",
+          "share-command-center.html",
+          "paid-traffic-guard.html",
+          "paid-dashboard-checks.html",
+          "paid-ad-triage.html",
+          "paid-no-click-rescue.html",
+          "ad-ops-links.html",
+          "escalation-board.html"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "phoneActionCenterOk": true,
+      "phoneActionCenterFresh": true,
+      "phoneActionCenterGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "phoneActionCenter": {
+        "ok": true,
+        "referralCode": "26BC4B90CB",
+        "actionCount": 16,
+        "urgentRows": 16,
+        "ownerCount": 3,
+        "qrBlockCount": 22,
+        "trackedQrCount": 44,
+        "assetBlockCount": 22,
+        "videoPreviewCount": 10,
+        "imagePreviewCount": 27,
+        "shareButtonCount": 44,
+        "htmlBytes": 157753,
+        "failures": [],
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "WhatsApp Status",
+          "action": "Post story asset with video caption 1",
+          "asset": "media/worldcup26-main-video.mp4"
+        }
+      },
+      "proofCloseoutOk": true,
+      "proofCloseoutFresh": true,
+      "proofCloseoutGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofCloseout": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "commandCount": 6,
+        "first": {
+          "priority": "1",
+          "owner": "Sienna",
+          "channel": "WhatsApp Status",
+          "status": "posted",
+          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:41 +0300' --status posted"
+        },
+        "failures": []
+      },
+      "workerWakeOk": true,
+      "workerWakeFresh": true,
+      "workerWakeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "workerWake": {
+        "ok": true,
+        "proofState": "critical",
+        "latestExternalProofAgeLabel": "3.5h",
+        "urgentOpenRows": 16,
+        "workerCount": 4,
+        "workers": [
+          {
+            "worker": "Dexter",
+            "state": "wake-now",
+            "assignedCount": 3,
+            "nextPriority": "warm-4",
+            "nextChannel": "WhatsApp admins",
+            "action": "Send warm-contact invite to football group admins."
+          },
+          {
+            "worker": "Sienna",
+            "state": "wake-now",
+            "assignedCount": 8,
+            "nextPriority": "warm-3",
+            "nextChannel": "WhatsApp personal",
+            "action": "Send warm-contact invite to 10 close contacts."
+          },
+          {
+            "worker": "Memo",
+            "state": "wake-now",
+            "assignedCount": 0,
+            "nextPriority": "warm-5",
+            "nextChannel": "WhatsApp testers",
+            "action": "Send warm-contact invite to 3 trusted testers."
+          },
+          {
+            "worker": "Nano",
+            "state": "wake-now",
+            "assignedCount": 5,
+            "nextPriority": "warm-1",
+            "nextChannel": "WhatsApp personal",
+            "action": "Send warm-contact invite to 10 football friends."
+          }
+        ],
+        "nextActions": [
+          "Dexter:#warm-4/WhatsApp admins",
+          "Sienna:#warm-3/WhatsApp personal",
+          "Memo:#warm-5/WhatsApp testers",
+          "Nano:#warm-1/WhatsApp personal"
+        ],
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "sessionRecoveryOk": true,
+      "sessionRecoveryFresh": true,
+      "sessionRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "sessionRecovery": {
+        "proofRows": 49,
+        "urgentRows": 16,
+        "blockerCount": 1,
+        "recoveryActions": [
+          {
+            "key": "x",
+            "label": "X public fallback",
+            "scheduledAtEest": "2026-06-07 16:45 +0300",
+            "shareUrl": "https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse129"
+          },
+          {
+            "key": "facebook",
+            "label": "Facebook feed fallback",
+            "scheduledAtEest": "2026-06-07 18:45 +0300",
+            "shareUrl": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137"
+          }
+        ]
+      },
+      "escalationOk": true,
+      "escalationFresh": true,
+      "escalationGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "escalation": {
+        "linkOk": true,
+        "externalOpen": 16,
+        "critical": 16,
+        "hot": 0,
+        "workersWithStale": 3,
+        "latestExternalProofAgeMinutes": 209
+      },
+      "publicAttemptsOk": true,
+      "publicAttemptsFresh": true,
+      "publicAttemptsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicAttempts": {
+        "ok": true,
+        "attempts": 9,
+        "blocked": 7,
+        "loginRequired": 6,
+        "approvalRequired": 0,
+        "socialActions": 4,
+        "failures": [],
+        "firstBlocked": {
+          "owner": "Dexter",
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required",
+          "detail": "X intent opened in browser at 2026-06-07 03:09 EEST, redirected to login/onboarding, and showed Continue as Dan semebitcoin@gmail.com before compose; no post was submitted; code 26BC4B90CB and worldcup26.world link were in the attempted post copy.",
+          "nextAction": "Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL."
+        },
+        "firstAction": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends."
+        }
+      },
+      "loginUnlockOk": true,
+      "loginUnlockFresh": true,
+      "loginUnlockGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "loginUnlock": {
+        "ok": true,
+        "cards": 6,
+        "blocked": 6,
+        "loginRequired": 5,
+        "approvalRequired": 0,
+        "platforms": [
+          "X",
+          "YouTube Shorts",
+          "Facebook",
+          "LinkedIn"
+        ],
+        "failures": [],
+        "first": {
+          "owner": "Dexter",
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required",
+          "authUrl": "https://x.com/i/flow/login",
+          "publishUrl": "https://twitter.com/intent/tweet?text=What%20are%20your%203%20World%20Cup%20teams%20right%20now%3F%20I%20made%20mine%20here.%20Pick%20free%20first%2C%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-search%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_public_outreach%26utm_content%3Dpredictions_b1",
+          "verifyUrl": "",
+          "asset": "media/worldcup26-referral-16x9.jpg",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X Search\" --channel \"World Cup 2026 prediction conversations\" --status \"posted\" --attempt-url \"https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live\" --detail \"public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST\""
+        }
+      },
+      "objectiveAuditOk": true,
+      "objectiveAuditFresh": true,
+      "objectiveAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "objectiveAudit": {
+        "ok": true,
+        "complete": false,
+        "state": "critical",
+        "proven": 10,
+        "total": 12,
+        "criticalOpen": 1,
+        "firstOpen": {
+          "id": "advertise-everywhere-proof",
+          "status": "incomplete",
+          "label": "Real external posting proof is current",
+          "next": "Do the next real action and log proof with a public URL or precise private-channel note."
+        },
+        "primaryAction": {
+          "priority": "clean-signup-test-batch",
+          "owner": "Memo",
+          "channel": "WhatsApp testers",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+        },
+        "blocker": {
+          "platform": "X",
+          "channel": "X public fallback",
+          "status": "login_required"
+        }
+      },
+      "operatorPushOk": true,
+      "operatorPushFresh": true,
+      "operatorPushGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "operatorPush": {
+        "ok": true,
+        "complete": false,
+        "state": "critical",
+        "proofRows": 49,
+        "urgentOpenRows": 16,
+        "publicBlocked": 7,
+        "publicLoginRequired": 6,
+        "actionCount": 4,
+        "first": {
+          "priority": "warm-1",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Send warm-contact invite to 10 football friends.",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'WhatsApp personal' --channel \"warm-contact sprint\" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch' --detail 'WhatsApp personal: sent to <N> 10 football friends from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB; link included; replies/signups <N>' --next-action \"watch replies/signups; help anyone who asks; run referral activity after 15 minutes\""
+        },
+        "blockers": [
+          {
+            "status": "login_required",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "X public fallback",
+            "nextAction": "Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL."
+          },
+          {
+            "status": "blocked",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "X public permalink recovery",
+            "nextAction": "Owner must open logged-in X account @NervixAi, copy the public post URL if the compose published, then log it with campaign-proof-log.mjs."
+          },
+          {
+            "status": "login_required",
+            "owner": "Dexter",
+            "platform": "X",
+            "channel": "organic compose free-first",
+            "nextAction": "Owner must log into x.com for @DansiDanutz or another owned X account, then post https://worldcup26.world/login?ref=26BC4B90CB with the free-first invite and log the public status URL."
+          },
+          {
+            "status": "login_required",
+            "owner": "Sienna",
+            "platform": "YouTube Shorts",
+            "channel": "zero signup rescue upload",
+            "nextAction": "Owner must complete YouTube/Google 'Verify it’s you' on this browser, then upload media/worldcup26-main-video-vertical.mp4 as a Short with https://worldcup26.world/login?ref=26BC4B90CB and log the public YouTube URL."
+          }
+        ]
+      },
+      "lastLogLines": [
+        "2026-06-07T17:41:24Z escalation-board ok",
+        "2026-06-07T17:41:24Z objective-audit ok",
+        "2026-06-07T17:41:24Z evidence-board ok",
+        "2026-06-07T17:41:25Z operator-push ok",
+        "2026-06-07T17:41:25Z real-action-bridge ok",
+        "2026-06-07T17:41:25Z one-click-share ok",
+        "2026-06-07T17:41:25Z public-outreach-targets ok",
+        "2026-06-07T17:41:25Z worker-launchers ok"
+      ]
+    }
+  ],
+  "summary": {
+    "totalHosts": 4,
+    "okHosts": 4,
+    "loopsRunning": 4,
+    "hotPingHooksOk": 4,
+    "hotPingsFresh": 4,
+    "linkSentinelsOk": 4,
+    "linkSentinelsFresh": 4,
+    "paidTrafficGuardsOk": 4,
+    "paidTrafficGuardsFresh": 4,
+    "liveAdQasOk": 4,
+    "liveAdQasFresh": 4,
+    "adPlatformAuditsOk": 4,
+    "adPlatformAuditsFresh": 4,
+    "conversionGuardsOk": 4,
+    "conversionGuardsFresh": 4,
+    "conversionGuardsBrowserVerified": 4,
+    "postingSprintsOk": 4,
+    "postingSprintsFresh": 4,
+    "proofActivitiesOk": 0,
+    "proofStallsFresh": 4,
+    "proofSlasOk": 4,
+    "proofSlasFresh": 4,
+    "proofSlaStates": [
+      "critical"
+    ],
+    "proofRescuesOk": 4,
+    "proofRescuesFresh": 4,
+    "proofUrlRecoveriesOk": 4,
+    "proofUrlRecoveriesFresh": 4,
+    "proofUrlRecoveryPending": 1,
+    "socialRescuesOk": 4,
+    "socialRescuesFresh": 4,
+    "zeroSignupRescuesOk": 4,
+    "zeroSignupRescuesFresh": 4,
+    "zeroSignupStates": [
+      "critical-zero-signups"
+    ],
+    "zeroSignupCounts": [
+      0
+    ],
+    "realActionBridgesOk": 4,
+    "realActionBridgesFresh": 4,
+    "realActionStates": [
+      "critical-zero-signups"
+    ],
+    "realActionCounts": 4,
+    "realActionVariants": 4,
+    "oneClickSharesOk": 4,
+    "oneClickSharesFresh": 4,
+    "oneClickShareActions": 4,
+    "oneClickShareLinks": 8,
+    "publicOutreachTargetsOk": 4,
+    "publicOutreachTargetsFresh": 4,
+    "publicOutreachTargetCount": 41,
+    "publicOutreachOwners": [
+      "Sienna",
+      "Nano",
+      "Dexter",
+      "Memo"
+    ],
+    "publicOutreachMissingOwners": [],
+    "adOpsLinksOk": 4,
+    "adOpsLinksFresh": 4,
+    "adOpsChannels": 2,
+    "adOpsPlatforms": [
+      "Meta Ads Manager",
+      "X Ads Manager"
+    ],
+    "paidAdTriagesOk": 4,
+    "paidAdTriagesFresh": 4,
+    "paidAdTriageStates": [
+      "critical-paid-signup-friction"
+    ],
+    "paidAdTriagePaidViews": 219,
+    "paidAdTriageAppViews": 478,
+    "paidAdTriageReferralViews": 146,
+    "paidAdTriageSignupSaves": 0,
+    "paidAdDashboardStates": [
+      "paid-clicks-no-signups"
+    ],
+    "paidAdDashboardChecks": 2,
+    "paidAdDashboardImpressions": 12,
+    "paidAdDashboardClicks": 227,
+    "paidNoClickRescuesOk": 4,
+    "paidNoClickRescuesFresh": 4,
+    "paidNoClickStates": [
+      "clicks-no-signups"
+    ],
+    "paidNoClickVariants": 8,
+    "paidDashboardsOk": 4,
+    "paidDashboardsFresh": 4,
+    "paidDashboardDirectStates": [
+      "paid-clicks-no-signups"
+    ],
+    "paidDashboardDirectChecks": 2,
+    "paidDashboardDirectImpressions": 12,
+    "paidDashboardDirectClicks": 227,
+    "referralActivitiesOk": 4,
+    "referralActivitiesFresh": 4,
+    "referralActivitiesAvailable": 4,
+    "funnelAcceptedReferrals": 0,
+    "funnelSignupSaves": 0,
+    "funnelReferredEntries": 0,
+    "funnelProfiles": 5,
+    "funnelFreeAccounts": 4,
+    "funnelPaidAccounts": 1,
+    "funnelAppViews": 478,
+    "funnelAppViews24h": 478,
+    "funnelReferralViews": 146,
+    "funnelReferralViews24h": 146,
+    "funnelSignupReturned": 0,
+    "funnelSignupMissingAcceptance": 0,
+    "funnelSignupAttempts": 0,
+    "funnelSignupSavedEvents": 0,
+    "funnelSignupFailedEvents": 0,
+    "funnelSignupErrorEvents": 0,
+    "signupConversionsOk": 4,
+    "signupConversionsFresh": 4,
+    "signupConversionStates": [
+      "critical-auth-to-signup-save-unproven"
+    ],
+    "signupConversionSignupSaves": 0,
+    "signupConversionAccepted": 0,
+    "signupConversionProfiles": 5,
+    "signupConversionPaidViews": 219,
+    "signupConversionReferralViews": 146,
+    "signupConversionDashboardClicks": 227,
+    "signupConversionReturned": 0,
+    "signupConversionMissingAcceptance": 0,
+    "signupConversionAttempts": 0,
+    "signupConversionSavedEvents": 0,
+    "signupConversionFailedEvents": 0,
+    "signupConversionErrorEvents": 0,
+    "warmContactsOk": 4,
+    "warmContactsFresh": 4,
+    "warmContactStates": [
+      "warm-contact-sprint-needed"
+    ],
+    "warmContactBatches": 5,
+    "warmContactBlockedPublic": 7,
+    "warmContactSignupSaves": 0,
+    "warmContactFirstActions": [
+      "Nano/WhatsApp personal/10 football friends"
+    ],
+    "warmFollowupsOk": 4,
+    "warmFollowupsFresh": 4,
+    "warmFollowupStates": [
+      "awaiting-first-human-send"
+    ],
+    "warmFollowupAttempts": 0,
+    "warmFollowupTesterAttempts": 0,
+    "warmFollowupTotalAttempts": 0,
+    "warmFollowupSignupSaves": 0,
+    "warmFollowupReferralViews": 152,
+    "warmFollowupDue": 0,
+    "responseKitsOk": 4,
+    "responseKitsFresh": 4,
+    "responseKitStates": [
+      "ready-for-warm-replies"
+    ],
+    "responseKitReplies": 13,
+    "responseKitWarmAttempts": 0,
+    "responseKitSignupSaves": 0,
+    "firstHumanActionsOk": 4,
+    "firstHumanActionsFresh": 4,
+    "firstHumanActionStates": [
+      "needs-first-human-action"
+    ],
+    "firstHumanWarmAttempts": 0,
+    "firstHumanSignupSaves": 0,
+    "firstHumanReferralViews": 146,
+    "firstHumanDashboardClicks": 227,
+    "firstHumanActionCount": 2,
+    "firstHumanFirstActions": [
+      "Memo/WhatsApp testers/clean-signup-test-batch"
+    ],
+    "firstSendBridgesOk": 4,
+    "firstSendBridgesFresh": 4,
+    "firstSendBridgeStates": [
+      "send-now"
+    ],
+    "firstSendBridgeWarmAttempts": 0,
+    "firstSendBridgeSignupSaves": 0,
+    "firstSendBridgeAdClicks": 227,
+    "firstSendBridgeOwners": [
+      "Memo"
+    ],
+    "localFunnelOk": true,
+    "localFunnelFresh": true,
+    "localFunnelAvailable": true,
+    "localFunnelStatus": "ok",
+    "localFunnelGeneratedAtEest": "2026-06-07 20:44 +0300",
+    "localFunnelProfiles": 5,
+    "localFunnelFreeAccounts": 4,
+    "localFunnelPaidAccounts": 1,
+    "localFunnelAppViews": 509,
+    "localFunnelAppViews24h": 509,
+    "localFunnelReferralViews": 171,
+    "localFunnelReferralViews24h": 171,
+    "localFunnelSignupReturned": 0,
+    "localFunnelSignupMissingAcceptance": 0,
+    "localFunnelSignupAttempts": 0,
+    "localFunnelSignupSavedEvents": 0,
+    "localFunnelSignupFailedEvents": 0,
+    "localFunnelSignupErrorEvents": 0,
+    "localFunnelTopSource": {
+      "source": "meta",
+      "medium": "paid-social",
+      "campaign": "worldcup26_referral_72h",
+      "content": "three-team-question",
+      "count": 70,
+      "lastViewedAt": "2026-06-07T17:44:09.214627+00:00"
+    },
+    "localFunnelTopSignupSource": null,
+    "localFunnelAcceptedReferrals": 0,
+    "localFunnelSignupSaves": 0,
+    "localFunnelReferredEntries": 0,
+    "postingCockpitsOk": 4,
+    "postingCockpitsFresh": 4,
+    "phoneActionCentersOk": 4,
+    "phoneActionCentersFresh": 4,
+    "proofCloseoutsOk": 4,
+    "proofCloseoutsFresh": 4,
+    "proofCloseoutCommands": 6,
+    "publicAttemptsOk": 4,
+    "publicAttemptsFresh": 4,
+    "publicAttemptsBlocked": 7,
+    "publicAttemptsLoginRequired": 6,
+    "loginUnlocksOk": 4,
+    "loginUnlocksFresh": 4,
+    "loginUnlockCards": 6,
+    "loginUnlockBlocked": 6,
+    "loginUnlockLoginRequired": 5,
+    "loginUnlockPlatforms": [
+      "X",
+      "YouTube Shorts",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "objectiveAuditsOk": 4,
+    "objectiveAuditsFresh": 4,
+    "objectiveAuditStates": [
+      "critical"
+    ],
+    "objectiveAuditCriticalOpen": 1,
+    "objectiveAuditComplete": 0,
+    "operatorPushesOk": 4,
+    "operatorPushesFresh": 4,
+    "operatorPushStates": [
+      "critical"
+    ],
+    "operatorPushActions": 4,
+    "operatorPushBlocked": 7,
+    "operatorPushLoginRequired": 6,
+    "workerWakesOk": 4,
+    "workerWakesFresh": 4,
+    "sessionRecoveriesOk": 4,
+    "sessionRecoveriesFresh": 4,
+    "escalationsOk": 4,
+    "escalationsFresh": 4,
+    "criticalEscalations": 16,
+    "hotEscalations": 0,
+    "watchdogLoopsRunning": 4,
+    "watchdogCronInstalled": 4,
+    "maxUrgent": 16,
+    "proofCounts": [
+      49
+    ],
+    "urgentCounts": [
+      16
+    ],
+    "firstActions": [
+      {
+        "action": "Dexter #4 Football groups",
+        "count": 1
+      },
+      {
+        "action": "Sienna #1 WhatsApp Status",
+        "count": 1
+      },
+      {
+        "action": "none",
+        "count": 1
+      },
+      {
+        "action": "Nano #2 WhatsApp personal",
+        "count": 1
+      }
+    ],
+    "unhealthyHosts": [
+      "dexter",
+      "sienna",
+      "memo",
+      "nano"
+    ],
+    "aligned": false
+  }
+}

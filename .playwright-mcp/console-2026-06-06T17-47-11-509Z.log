@@ -1,0 +1,95 @@
+[     124ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[     145ms] [LOG] [HMR] connected @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   26959ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   27037ms] [LOG] [Fast Refresh] done in 77ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   27158ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   27178ms] [LOG] [Fast Refresh] done in 75ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   27340ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   27876ms] [LOG] [Fast Refresh] done in 636ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   27980ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   28399ms] [LOG] [Fast Refresh] done in 519ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   28412ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   31336ms] [LOG] [Fast Refresh] done in 12ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   31443ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   34921ms] [LOG] [Fast Refresh] done in 3578ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   42870ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   43064ms] [LOG] [Fast Refresh] done in 204ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   43070ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   43074ms] [LOG] [Fast Refresh] done in 5ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   43076ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   43376ms] [LOG] [Fast Refresh] done in 45ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   43524ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   45601ms] [LOG] [Fast Refresh] done in 2177ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   45712ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   49935ms] [LOG] [Fast Refresh] done in 4323ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   50039ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[   50677ms] [LOG] [Fast Refresh] done in 739ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  213567ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  213835ms] [LOG] [Fast Refresh] done in 52ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  408238ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  408257ms] [LOG] [Fast Refresh] done in 46ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  570199ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  570287ms] [LOG] [Fast Refresh] done in 109ms @ http://localhost:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  660965ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://ads.x.com/manager/18ce55rrs16/campaigns:0
+[  977747ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://ads-api.x.com/11/accounts/18ce55rrs16/promotable_users:0
+[  977749ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://ads-api.x.com/11/accounts/18ce55rrs16:0
+[  977754ms] [WARNING] [AdsPerspective] Failed to fetch notifications: Error: Account 18ce55rrs16 was not found
+    at ed (https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/c81fac275e402604.js:1:32523)
+    at async Promise.all (index 1) @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  977756ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://ads-api.x.com/11/accounts/18ce55rrs16/perspective:0
+[  977927ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://ads-api.x.com/11/accounts/18ce55rrs16/promotable_users:0
+[  978937ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://ads-api.x.com/11/accounts/18ce55rrs16/promotable_users:0
+[  979318ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://ads-api.x.com/11/accounts/18ce55rrs16/ad-query/api/v1/4503599743485354/campaigns/daily-trend:0
+[  979318ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://ads-api.x.com/11/accounts/18ce55rrs16/ad-export/api/v1/exports:0
+[  979319ms] [ERROR] [Trend] Daily trend fetch failed: Error: HTTP 403
+    at eo (https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/c81fac275e402604.js:1:28943)
+    at async Promise.all (index 1)
+    at async https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/00e3e426da1b1813.js:74:74114 @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  979325ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://ads-api.x.com/11/accounts/18ce55rrs16/billing/spending-summary:0
+[  979325ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://ads-api.x.com/11/accounts/18ce55rrs16/ad-query/api/v1/4503599743485354/campaigns:0
+[  979326ms] [WARNING] [billing] spending-summary failed: 403  {"errors":[{"code":"NOT_FOUND","message":"Account 18ce55rrs16 was not found"}],"request":{"params":{}}} @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  979330ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  982868ms] [ERROR] Failed to load resource: the server responded with a status of 429 () @ https://o30969.ingest.us.sentry.io/api/4510761750364160/envelope/?sentry_version=7&sentry_key=5488c61fc276971bf2424e0386c5d27a&sentry_client=sentry.javascript.nextjs%2F10.19.0:0
+[  985085ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[  985087ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[  985294ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://ads-api.x.com/12/measurement/dcm_local_id:0
+[  985298ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/logout:0
+[  987804ms] [WARNING] [GSI_LOGGER]: google.accounts.id.initialize() is called multiple times. This could cause unexpected behavior and only the last initialized instance will be used. @ https://accounts.google.com/gsi/client:86
+[  987914ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://x.com/?logout=1780769018896:0
+[  987951ms] [ERROR] The request has been aborted. @ https://x.com/?logout=1780769018896:0
+[  987951ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with AbortError: signal is aborted without reason @ https://accounts.google.com/gsi/client:87
+[  991479ms] [ERROR] Cross-Origin-Opener-Policy policy would block the window.postMessage call. @ https://accounts.google.com/gsi/client:376
+[  991479ms] [ERROR] Cross-Origin-Opener-Policy policy would block the window.postMessage call. @ https://accounts.google.com/gsi/client:376
+[  992589ms] [ERROR] Error retrieving a token. @ https://x.com/home:0
+[  992643ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[  992645ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[  992889ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://ads-api.x.com/12/measurement/dcm_local_id:0
+[  992941ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/home:0
+[ 1000000ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://x.com/i/jf/onboarding/web?mode=login:0
+[ 1055883ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[ 1055884ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[ 1055889ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/home:0
+[ 1056188ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://ads-api.x.com/12/measurement/dcm_local_id:0
+[ 1141560ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[ 1141562ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[ 1141766ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://ads-api.x.com/12/measurement/dcm_local_id:0
+[ 1142121ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/home:0
+[ 1157582ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[ 1157584ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[ 1157843ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://ads-api.x.com/12/measurement/dcm_local_id:0
+[ 1157857ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/home:0
+[ 3859559ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[ 6560959ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0

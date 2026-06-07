@@ -192,7 +192,30 @@ describe("operator policy", () => {
     assert.equal(getOperatorPolicyPaidActionGate(launchPolicy, "withdrawal").allowed, true);
   });
 
-  it("enforces the operator launch gate on new paid-action routes", () => {
+  it("keeps account setup actions open while deferring withdrawals", async () => {
+    const supabase = {} as Parameters<typeof getUserPaidActionGate>[0];
+    const [depositGate, ticketGate, entryGate, withdrawalGate] = await Promise.all([
+      getUserPaidActionGate(supabase, "deposit"),
+      getUserPaidActionGate(supabase, "ticket"),
+      getUserPaidActionGate(supabase, "entry"),
+      getUserPaidActionGate(supabase, "withdrawal"),
+    ]);
+
+    assert.equal(depositGate.allowed, true);
+    assert.equal(ticketGate.allowed, true);
+    assert.equal(entryGate.allowed, true);
+    assert.equal(withdrawalGate.allowed, false);
+    assert.match(withdrawalGate.message ?? "", /after the World Cup ends/);
+
+    for (const gates of [await getUserPaidActionGates(supabase), await getPublicPaidActionGates(supabase)]) {
+      assert.equal(gates.deposit.allowed, true);
+      assert.equal(gates.ticket.allowed, true);
+      assert.equal(gates.entry.allowed, true);
+      assert.equal(gates.withdrawal.allowed, false);
+    }
+  });
+
+  it("keeps paid-action routes wired to the shared account setup gate", () => {
     for (const [route, action] of [
       [depositAddressRoute, "deposit"],
       [depositClaimRoute, "deposit"],
@@ -201,9 +224,9 @@ describe("operator policy", () => {
       assert.match(route, /getUserPaidActionGate/);
       assert.match(route, /isPaidActionLaunchTestAdmin/);
       assert.match(route, new RegExp(`"${action}"`));
-      assert.match(route, /launch approvals are complete/);
     }
 
+    assert.match(withdrawalRoute, /after the World Cup ends and prizes are settled manually/);
     assert.match(ticketPurchaseRoute, /Tickets are assigned manually by Admin/);
     assert.doesNotMatch(ticketPurchaseRoute, /getUserPaidActionGate/);
     assert.doesNotMatch(ticketPurchaseRoute, /isPaidActionLaunchTestAdmin/);
@@ -211,7 +234,8 @@ describe("operator policy", () => {
 
   it("lets assigned tickets lock entries without the launch paid-action gate", () => {
     assert.doesNotMatch(entryRoute, /getUserPaidActionGate/);
-    assert.match(entryRoute, /worldcup_create_entry/);
+    assert.match(entryRoute, /worldcup_save_draft_entry/);
+    assert.match(entryRoute, /worldcup_lock_draft_entry/);
     assert.match(entryRoute, /NO_TICKET/);
   });
 
@@ -249,7 +273,11 @@ describe("operator policy", () => {
       deposit: { allowed: true, missing: [], message: null },
       ticket: { allowed: true, missing: [], message: null },
       entry: { allowed: true, missing: [], message: null },
-      withdrawal: { allowed: true, missing: [], message: null },
+      withdrawal: {
+        allowed: false,
+        missing: ["final payout window"],
+        message: "Withdrawal requests open after the World Cup ends and prizes are settled manually.",
+      },
     });
 
     const unavailableGate = await getLaunchSignoffPaidActionGate({

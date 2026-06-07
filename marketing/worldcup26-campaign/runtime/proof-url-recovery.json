@@ -1,0 +1,28 @@
+{
+  "schema": "worldcup26-proof-url-recovery-v1",
+  "generatedAt": "2026-06-07T17:45:00.924Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "ok": true,
+  "referralCode": "26BC4B90CB",
+  "pendingCount": 1,
+  "rows": [
+    {
+      "timestampEest": "2026-06-07 01:40 +0300",
+      "scheduledAtEest": "2026-06-07 00:45 +0300",
+      "owner": "Dexter",
+      "channel": "X / public fallback",
+      "asset": "media/worldcup26-referral-16x9.jpg",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse65",
+      "status": "posted",
+      "proofUrl": "private-x-note: posted from logged-in Semenescu Dan / @NervixAi X compose at 2026-06-07 01:39 EEST; browser returned to https://x.com/home after clicking Postează; text included code 26BC4B90CB and https://worldcup26.world/login?ref=26BC4B90CB with x-public-fallback utm_content=dexter_pulse65; public permalink pending because X profile timeline kept loading",
+      "copy": "WorldCup26 is open.\n\nPick 3 teams for free. See your private points preview.\n\nUse a ticket only when you want to enter the paid leaderboard.\n\nCode: 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse65",
+      "pulse": "dexter_pulse65",
+      "searchNeedle": "dexter_pulse65",
+      "xProfileUrl": "https://x.com/NervixAi",
+      "xLiveSearchUrl": "https://x.com/search?q=%22dexter_pulse65%22%20from%3ANervixAi&src=typed_query&f=live",
+      "webSearchUrl": "https://www.google.com/search?q=site%3Ax.com%2FNervixAi%2Fstatus%20%22dexter_pulse65%22",
+      "upgradeCommand": "node campaign-proof-log.mjs --pulse \"dexter_pulse65\" --proof-url \"PUBLIC_X_STATUS_URL\" --status \"posted\" --force"
+    }
+  ],
+  "rule": "Use this board only to replace private proof with a public permalink after the public post URL is visible. Do not invent a URL."
+}

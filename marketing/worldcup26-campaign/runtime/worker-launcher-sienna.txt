@@ -1,0 +1,32 @@
+WorldCup26 Sienna launcher 2026-06-07 20:45 +0300
+state=wake-now ok=yes assigned=8
+code=26BC4B90CB
+link=https://worldcup26.world/login?ref=26BC4B90CB
+rule=These launchers prepare worker actions only. Log proof only after the real post, story, message batch, upload, reply, or approval request exists.
+
+#warm-3 Sienna / WhatsApp personal
+action=Send warm-contact invite to 10 close contacts.
+asset=media/worldcup26-referral-story.jpg
+tracked_link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch
+tracked_qr=-
+instruction=Send warm-contact invite to 10 close contacts.
+
+share_links:
+- WhatsApp: https://wa.me/?text=Can%20you%20test%20my%20WorldCup26%20invite%3F%0A%0AOpen%20this%2C%20accept%20the%20invite%2C%20sign%20in%20with%20Google%2C%20and%20pick%203%20teams.%20It%20is%20free%20to%20preview%20points.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch%0A%0APlease%20tell%20me%20if%20anything%20feels%20confusing.
+- Telegram: https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch&text=Can%20you%20test%20my%20WorldCup26%20invite%3F%0A%0AOpen%20this%2C%20accept%20the%20invite%2C%20sign%20in%20with%20Google%2C%20and%20pick%203%20teams.%20It%20is%20free%20to%20preview%20points.%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclose_contacts_batch%0A%0APlease%20tell%20me%20if%20anything%20feels%20confusing.
+
+copy:
+  Can you test my WorldCup26 invite?
+  
+  Open this, accept the invite, sign in with Google, and pick 3 teams. It is free to preview points.
+  
+  Code 26BC4B90CB:
+  https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch
+  
+  Please tell me if anything feels confusing.
+
+proof_after_real_action:
+node campaign-warm-send-log.mjs --priority warm-3 --count <N> --account "<account>" --replies 0
+
+full_audit_command:
+node campaign-public-channel-attempts.mjs --add --owner 'Sienna' --platform 'WhatsApp personal' --channel "warm-contact sprint" --status 'sent' --attempt-url 'https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch' --detail 'WhatsApp personal: sent to <N> 10 close contacts from <account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB; link included; replies/signups <N>' --next-action "watch replies/signups; help anyone who asks; run referral activity after 15 minutes"

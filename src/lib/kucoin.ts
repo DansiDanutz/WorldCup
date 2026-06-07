@@ -377,6 +377,21 @@ export type KucoinMainDeposit = {
   remark?: string | null;
 };
 
+export function getKucoinMainDepositExternalId(deposit: KucoinMainDeposit): string {
+  return (
+    deposit.walletTxId ||
+    deposit.id ||
+    `${deposit.chain}:${deposit.address}:${deposit.createdAt}`
+  );
+}
+
+export function getKucoinMainDepositTxHash(
+  deposit: KucoinMainDeposit,
+  network: DepositNetwork,
+): string | null {
+  return normalizeDepositTxHash(network, deposit.walletTxId ?? deposit.id ?? "");
+}
+
 export async function listMainAccountDeposits(
   config: KucoinMainConfig,
   params: {

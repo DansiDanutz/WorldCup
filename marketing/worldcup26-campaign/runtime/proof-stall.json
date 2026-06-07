@@ -1,0 +1,108 @@
+{
+  "generatedAt": "2026-06-07T17:45:00.833Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "ok": false,
+  "externalStalled": true,
+  "proofStalled": true,
+  "thresholds": {
+    "externalStallMinutes": 90,
+    "anyProofStallMinutes": 180
+  },
+  "counts": {
+    "proofRows": 49,
+    "externalProofRows": 31,
+    "urgentOpenRows": 16
+  },
+  "latestAnyProof": {
+    "timestampEest": "2026-06-07 17:12 +0300",
+    "ageLabel": "3.5h",
+    "owner": "Sienna",
+    "channel": "Instagram",
+    "status": "posted",
+    "asset": "assets/worldcup26-meta-free-first.png",
+    "proofUrl": "https://www.instagram.com/p/DZSZwTrF8nX/"
+  },
+  "latestExternalProof": {
+    "timestampEest": "2026-06-07 17:12 +0300",
+    "ageLabel": "3.5h",
+    "owner": "Sienna",
+    "channel": "Instagram",
+    "status": "posted",
+    "asset": "assets/worldcup26-meta-free-first.png",
+    "proofUrl": "https://www.instagram.com/p/DZSZwTrF8nX/"
+  },
+  "latestAnyProofAgeMinutes": 213,
+  "latestExternalProofAgeMinutes": 213,
+  "oldestOpenRow": {
+    "priority": "1",
+    "owner": "Sienna",
+    "channel": "WhatsApp Status",
+    "action": "Post story asset with video caption 1",
+    "asset": "media/worldcup26-main-video.mp4",
+    "scheduledAtEest": "2026-06-06 04:00 +0300",
+    "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
+    "ageMinutes": 2445
+  },
+  "nextExternalActions": [
+    {
+      "priority": "1",
+      "owner": "Sienna",
+      "channel": "WhatsApp Status",
+      "action": "Post story asset with video caption 1",
+      "asset": "media/worldcup26-main-video.mp4",
+      "scheduledAtEest": "2026-06-06 04:00 +0300",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
+      "ageMinutes": 2445
+    },
+    {
+      "priority": "2",
+      "owner": "Nano",
+      "channel": "WhatsApp personal",
+      "action": "Send personal invite to warm contacts",
+      "asset": "media/worldcup26-main-video.mp4",
+      "scheduledAtEest": "2026-06-06 06:00 +0300",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2",
+      "ageMinutes": 2325
+    },
+    {
+      "priority": "3",
+      "owner": "Sienna",
+      "channel": "Instagram/Facebook story",
+      "action": "Story: Code 26BC4B90CB + link sticker",
+      "asset": "media/worldcup26-referral-story.jpg",
+      "scheduledAtEest": "2026-06-06 07:00 +0300",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h3",
+      "ageMinutes": 2265
+    },
+    {
+      "priority": "4",
+      "owner": "Dexter",
+      "channel": "Football groups",
+      "action": "Ask approved group admin for permission; post group variant only if allowed",
+      "asset": "campaign/first-wave-posts.md",
+      "scheduledAtEest": "2026-06-06 08:00 +0300",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+      "ageMinutes": 2205
+    },
+    {
+      "priority": "5",
+      "owner": "Sienna",
+      "channel": "TikTok/Reels/Shorts",
+      "action": "Upload main video with short caption and code in first line",
+      "asset": "media/worldcup26-main-video.mp4",
+      "scheduledAtEest": "2026-06-06 09:00 +0300",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h5",
+      "ageMinutes": 2145
+    },
+    {
+      "priority": "6",
+      "owner": "Nano",
+      "channel": "DM follow-up",
+      "action": "Reply to first reactions and send the simple how-it-works answer",
+      "asset": "campaign/copy-bank.md",
+      "scheduledAtEest": "2026-06-06 11:00 +0300",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h7",
+      "ageMinutes": 2025
+    }
+  ]
+}

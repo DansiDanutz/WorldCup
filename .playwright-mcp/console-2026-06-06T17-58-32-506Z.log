@@ -1,0 +1,57 @@
+[    5099ms] [ERROR] Not signed in with the identity provider. @ https://x.com/:0
+[    5178ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://x.com/:0
+[    5182ms] [WARNING] [GSI_LOGGER]: google.accounts.id.initialize() is called multiple times. This could cause unexpected behavior and only the last initialized instance will be used. @ https://accounts.google.com/gsi/client:86
+[   23774ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token. @ https://accounts.google.com/gsi/client:87
+[   28495ms] [ERROR] Cross-Origin-Opener-Policy policy would block the window.postMessage call. @ https://accounts.google.com/gsi/client:376
+[   28495ms] [ERROR] Cross-Origin-Opener-Policy policy would block the window.postMessage call. @ https://accounts.google.com/gsi/client:376
+[   29849ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[   29854ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[   30336ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/home:0
+[   30717ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[   31343ms] [INFO] Powered by AMP ⚡ HTML – Version 2605071401000 https://4a5daf412bec5e51f6da2f9ce3817e50.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html @ https://cdn.ampproject.org/rtv/012605071401000/amp4ads-v0.mjs:1
+[   48713ms] [WARNING] <link rel=preload> uses an unsupported `as` value @ https://checkout.stripe.com/c/pay/cs_live_a1as9LO1g3VL3ozKTO1c7tf1ruhpEraJjgb14AkqRyDxiiiB8cymwwSNAh#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSd2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FY2RpdmApJ2JwZGZkaGppYFNkd2xka3EnPydmamtxd2ppJyknZHVsTmB8Jz8ndW5aaWxzYFowNExuZDBPRDZOXzY3YVVqNFB9cjFkdFM1X0hpTzNEUX9rZEZ2N1U2a09GcUFEcm8zdHI1REZoamRnNlV3RzxgQmN3Umh9TVNxd2ZSX2ZWam1ucUlSNzNPbDU1Ymt3NTxxTXQnKSdjd2poVmB3c2B3Jz9xd3BgKSdnZGZuYndqcGthRmppancnPycmNTU1NTU1JyknaWR8anBxUXx1YCc%2FJ3Zsa2JpYFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl:0
+[   48713ms] [WARNING] <link rel=preload> uses an unsupported `as` value @ https://checkout.stripe.com/c/pay/cs_live_a1as9LO1g3VL3ozKTO1c7tf1ruhpEraJjgb14AkqRyDxiiiB8cymwwSNAh#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSd2cGd2ZndsdXFsamtQa2x0cGBrYHZ2QGtkZ2lgYSc%2FY2RpdmApJ2JwZGZkaGppYFNkd2xka3EnPydmamtxd2ppJyknZHVsTmB8Jz8ndW5aaWxzYFowNExuZDBPRDZOXzY3YVVqNFB9cjFkdFM1X0hpTzNEUX9rZEZ2N1U2a09GcUFEcm8zdHI1REZoamRnNlV3RzxgQmN3Umh9TVNxd2ZSX2ZWam1ucUlSNzNPbDU1Ymt3NTxxTXQnKSdjd2poVmB3c2B3Jz9xd3BgKSdnZGZuYndqcGthRmppancnPycmNTU1NTU1JyknaWR8anBxUXx1YCc%2FJ3Zsa2JpYFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl:0
+[   50113ms] [LOG] %c EvalError
+    at oZ (https://client.px-cloud.net/PXVl48pWoc/main.min.js:2:65143)
+    at qX (https://client.px-cloud.net/PXVl48pWoc/main.min.js:3:164)
+    at HL (https://client.px-cloud.net/PXVl48pWoc/main.min.js:3:137528)
+    at HJ (https://client.px-cloud.net/PXVl48pWoc/main.min.js:3:137156)
+    at https://client.px-cloud.net/PXVl48pWoc/main.min.js:3:138880
+    at https://client.px-cloud.net/PXVl48pWoc/main.min.js:3:138886
+    at https://client.px-cloud.net/PXVl48pWoc/main.min.js:3:139351 @ https://client.px-cloud.net/PXVl48pWoc/main.min.js:1
+[   50617ms] [ERROR] Framing 'https://client.wra-api.net/' violates the following Content Security Policy directive: "frame-src 'self' https://*.px-cloud.net https://*.px-cdn.net https://crcldu.com". The request has been blocked.
+ @ https://client.px-cloud.net/:0
+[   50624ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://client.wra-api.net') does not match the recipient window's origin ('null'). @ https://client.px-cloud.net/PXVl48pWoc/main.min.js:2
+[   50617ms] [ERROR] Framing 'https://client.wra-api.net/' violates the following Content Security Policy directive: "frame-src 'self' https://*.px-cloud.net https://*.px-cdn.net https://crcldu.com". The request has been blocked.
+ @ https://client.px-cloud.net/:0
+[   50624ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://client.wra-api.net') does not match the recipient window's origin ('null'). @ https://client.px-cloud.net/PXVl48pWoc/main.min.js:2
+[  251096ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[  251099ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[  251466ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/i/premium_sign_up/successful?selectedProduct=BlueVerified&selectedInterval=Month&referring_page=web_app_load:0
+[  251834ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/onboarding/referrer.json:0
+[  263880ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[  263882ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[  263966ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/i/premium:0
+[  275373ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://x.com/i/jf/onboarding/web?mode=login:0
+[  279898ms] [ERROR] Cross-Origin-Opener-Policy policy would block the window.postMessage call. @ https://accounts.google.com/gsi/client:376
+[  279898ms] [ERROR] Cross-Origin-Opener-Policy policy would block the window.postMessage call. @ https://accounts.google.com/gsi/client:376
+[  281270ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[  281272ms] [WARNING] [GPT] This ad request is subject to Google's EU User Consent Policy. An IAB TCF signal was not received. This ad request will not be eligible for personalized ads.
+https://goo.gle/gpt-message#175 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606040101/pubads_impl.js?cb=31098983:18
+[  281346ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://x.com/home:0
+[  281773ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://ads-api.x.com/12/measurement/dcm_local_id:0
+[  311735ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://api.x.com/2/badge_count/badge_count.json?supports_ntab_urt=1&include_xchat_count=1:0
+[  383239ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[  443414ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[ 3149348ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[ 4106762ms] [ERROR] Failed to load resource: net::ERR_HTTP2_PROTOCOL_ERROR @ https://api.x.com/live_pipeline/events?topic=%2Flive_content%2F1767654651027963904,%2Ftweet_engagement%2F2062747836928954771,%2Ftweet_engagement%2F2062754828720480534,%2Ftweet_engagement%2F2041303947017904610,%2Ftweet_engagement%2F2063137563129344444,%2Ftweet_engagement%2F2063138428989116422,%2Ftweet_engagement%2F2063260887222284435,%2Ftweet_engagement%2F2063136156452257854,%2Ftweet_engagement%2F2063259970137948402,%2Ftweet_engagement%2F2063307468197732596:0
+[ 4150738ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0
+[ 6852125ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.x.com/1.1/live_pipeline/update_subscriptions:0

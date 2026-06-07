@@ -15,13 +15,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
+import { getCampaignReferralCode, normalizeCampaignReferralCode } from "@/lib/campaign-attribution";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
-import { SUPPORT_WHATSAPP_E164, SUPPORT_WHATSAPP_URL } from "@/lib/support";
+import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import type { PaidActionGate, PaidActionGates } from "@/lib/types";
 import type { Session } from "@supabase/supabase-js";
 
 const referralAgreementText =
   "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
+const SIGNUP_ATTRIBUTION_KEY = "worldcup_signup_attribution";
 
 const flagTeams = [
   ["france", "France", "fr"],
@@ -75,18 +77,21 @@ const flagTeams = [
 ] as const;
 
 type LoginRegisterProps = {
+  initialReferralCode?: string | null;
   publicPaidActionGates?: PaidActionGates;
 };
 
-export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
+export function LoginRegister({ initialReferralCode, publicPaidActionGates }: LoginRegisterProps) {
+  const normalizedInitialReferralCode = normalizeReferralCode(initialReferralCode ?? "");
   const [session, setSession] = useState<Session | null>(null);
-  const [referralCode, setReferralCode] = useState("");
+  const [referralCode, setReferralCode] = useState(normalizedInitialReferralCode);
   const [referralInviter, setReferralInviter] = useState<string | null>(null);
-  const [referralPercent, setReferralPercent] = useState(3);
   const [referralChecked, setReferralChecked] = useState(false);
   const [referralAccepted, setReferralAccepted] = useState(false);
   const [noReferral, setNoReferral] = useState(false);
-  const [signupPath, setSignupPath] = useState<"referral" | "direct" | null>(null);
+  const [signupPath, setSignupPath] = useState<"referral" | "direct" | null>(
+    normalizedInitialReferralCode ? "referral" : null,
+  );
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const referralInputRef = useRef<HTMLInputElement | null>(null);
@@ -95,32 +100,46 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
   const canContinueWithReferral = Boolean(referralCode && referralInviter && referralAccepted);
   const selectedSignupPath = signupPath ?? (referralCode ? "referral" : noReferral ? "direct" : null);
   const showReferralForm = selectedSignupPath === "referral";
+  const referralCodeAppliedFromLink = Boolean(
+    normalizedInitialReferralCode && referralCode === normalizedInitialReferralCode,
+  );
+  const showSignupPathOptions = !referralCodeAppliedFromLink;
   // Google-first onboarding: only gate sign-in while the user is actively
   // completing the referral path. With no inviter (direct or not-yet-chosen),
   // "Continue with Google" is available immediately — no extra card tap required.
   const canContinue = showReferralForm ? canContinueWithReferral : true;
-  const showGoogleAuth = Boolean(session || canContinue);
+  const showGoogleAuth = Boolean(session || !showReferralForm || referralCode || referralInviter || referralAccepted);
   const depositPolicyPause = getGatePauseMessage(publicPaidActionGates?.deposit);
   const ticketPolicyPause = getGatePauseMessage(publicPaidActionGates?.ticket);
   const paidActionsPaused = Boolean(depositPolicyPause || ticketPolicyPause);
 
   useEffect(() => {
     window.queueMicrotask(() => {
-      const initialRef = new URLSearchParams(window.location.search).get("ref");
-      const storedRef = window.localStorage.getItem("worldcup_referral_code");
-      const nextReferralCode = normalizeReferralCode(initialRef ?? storedRef ?? "");
+      const params = new URLSearchParams(window.location.search);
+      const initialRef =
+        normalizedInitialReferralCode ||
+        getCampaignReferralCode(params);
+      const storedRef = normalizeReferralCode(window.localStorage.getItem("worldcup_referral_code") ?? "");
+      const nextReferralCode = initialRef || storedRef;
+      const storedAcceptanceMatches =
+        Boolean(storedRef) &&
+        storedRef === nextReferralCode &&
+        window.localStorage.getItem("worldcup_referral_accepted") === "true";
 
       setReferralCode(nextReferralCode);
       setSignupPath(nextReferralCode ? "referral" : null);
-      setReferralAccepted(
-        Boolean(nextReferralCode) &&
-          window.localStorage.getItem("worldcup_referral_accepted") === "true",
-      );
+      setReferralAccepted(Boolean(nextReferralCode) && !initialRef && storedAcceptanceMatches);
+      if (nextReferralCode) {
+        persistSignupAttributionFromUrl(nextReferralCode);
+      }
     });
-  }, []);
+  }, [normalizedInitialReferralCode]);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => setSession(data.session));
+    supabase.auth
+      .getSession()
+      .then(({ data }) => setSession(data.session))
+      .catch(() => setSession(null));
 
     const { data } = supabase.auth.onAuthStateChange((_event, nextSession) => {
       setSession(nextSession);
@@ -140,16 +159,19 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
         return;
       }
 
-      const response = await fetch(`/api/referrals/resolve?code=${encodeURIComponent(normalized)}`);
-      const result = (await response.json()) as {
-        valid?: boolean;
-        inviterName?: string | null;
-        referralPercent?: number;
-      };
+      try {
+        const response = await fetch(`/api/referrals/resolve?code=${encodeURIComponent(normalized)}`);
+        const result = (await response.json()) as {
+          valid?: boolean;
+          inviterName?: string | null;
+        };
 
-      setReferralChecked(true);
-      setReferralInviter(result.valid ? result.inviterName ?? "another player" : null);
-      setReferralPercent(result.valid ? result.referralPercent ?? 3 : 3);
+        setReferralChecked(true);
+        setReferralInviter(response.ok && result.valid ? result.inviterName ?? "another player" : null);
+      } catch {
+        setReferralChecked(true);
+        setReferralInviter(null);
+      }
     }, 250);
 
     return () => window.clearTimeout(timeout);
@@ -170,21 +192,21 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
         return;
       }
 
-      if (!referralAccepted) {
-        setError("Accept the referral agreement before creating your account.");
-        return;
-      }
-
       window.localStorage.setItem("worldcup_referral_code", referralCode);
       window.localStorage.setItem("worldcup_referral_accepted", "true");
+      persistSignupAttributionFromUrl(referralCode);
     } else {
       window.localStorage.removeItem("worldcup_referral_code");
       window.localStorage.removeItem("worldcup_referral_accepted");
+      window.localStorage.removeItem(SIGNUP_ATTRIBUTION_KEY);
     }
 
     const { error: authError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
+        queryParams: {
+          prompt: "select_account",
+        },
         redirectTo: window.location.origin,
       },
     });
@@ -222,9 +244,12 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
           {paidActionsPaused ? (
             <div className="launch-notice" aria-label="Launch status">
               <div>
-                <strong>Account setup is open</strong>
+                <strong>Account setup is open until June 18, 2026</strong>
                 <span>
-                  Admin assigns tickets after verified cash or USDT payment.
+                  Create the free account first. Tickets and payment can be handled later.
+                </span>
+                <span>
+                  All 48 teams are still available to choose because the event has not started yet.
                 </span>
               </div>
             </div>
@@ -245,62 +270,77 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
             </div>
           ) : (
             <>
-              <div className="auth-choice-grid auth-choice-grid--buttons" aria-label="Signup path options">
-                <button
-                  className={`auth-choice-card auth-choice-card--referral ${
-                    selectedSignupPath === "referral" ? "active" : ""
-                  }`}
-                  onClick={() => {
-                    setNoReferral(false);
-                    setSignupPath("referral");
-                    setReferralAccepted(false);
-                    setError(null);
-                    window.setTimeout(() => referralInputRef.current?.focus(), 0);
-                  }}
-                  type="button"
-                >
-                  <MousePointer2 size={17} />
-                  <strong>I have an inviter</strong>
-                  <span>Add their code. Your own future referrals can earn 5%.</span>
-                </button>
-                <button
-                  className={`auth-choice-card auth-choice-card--direct ${
-                    selectedSignupPath === "direct" ? "active" : ""
-                  }`}
-                  onClick={() => {
-                    setReferralCode("");
-                    setSignupPath("direct");
-                    setReferralAccepted(false);
-                    setReferralInviter(null);
-                    setReferralChecked(false);
-                    setNoReferral(true);
-                    setError(null);
-                  }}
-                  type="button"
-                >
-                  <ShieldCheck size={17} />
-                  <strong>Direct signup</strong>
-                  <span>No inviter. I accept my own future referral rate starts at 3%.</span>
-                </button>
-              </div>
+              {showSignupPathOptions ? (
+                <div className="auth-choice-grid auth-choice-grid--buttons" aria-label="Signup path options">
+                  <button
+                    className={`auth-choice-card auth-choice-card--referral ${
+                      selectedSignupPath === "referral" ? "active" : ""
+                    }`}
+                    onClick={() => {
+                      setNoReferral(false);
+                      setSignupPath("referral");
+                      setReferralAccepted(false);
+                      setError(null);
+                      window.setTimeout(() => referralInputRef.current?.focus(), 0);
+                    }}
+                    type="button"
+                  >
+                    <MousePointer2 size={17} />
+                    <strong>I have an inviter</strong>
+                    <span>Add their code. Your own future referrals can earn 5%.</span>
+                  </button>
+                  <button
+                    className={`auth-choice-card auth-choice-card--direct ${
+                      selectedSignupPath === "direct" ? "active" : ""
+                    }`}
+                    onClick={() => {
+                      setReferralCode("");
+                      setSignupPath("direct");
+                      setReferralAccepted(false);
+                      setReferralInviter(null);
+                      setReferralChecked(false);
+                      setNoReferral(true);
+                      setError(null);
+                    }}
+                    type="button"
+                  >
+                    <ShieldCheck size={17} />
+                    <strong>Direct signup</strong>
+                    <span>No inviter. You can still invite friends and earn 5%.</span>
+                  </button>
+                </div>
+              ) : null}
 
               {showReferralForm ? (
                 <div className="auth-path-panel">
                   <div className="field">
-                    <label htmlFor="login-referral-code">Inviter code</label>
-                    <input
-                      id="login-referral-code"
-                      ref={referralInputRef}
-                      value={referralCode}
-                      onChange={(event) => {
-                        setReferralCode(normalizeReferralCode(event.target.value));
-                        setNoReferral(false);
-                        setSignupPath("referral");
-                        setReferralAccepted(false);
-                        setError(null);
-                      }}
-                      placeholder="Enter inviter code"
-                    />
+                    {referralCodeAppliedFromLink ? (
+                      <span className="field-label">Inviter code</span>
+                    ) : (
+                      <>
+                        <label htmlFor="login-referral-code">Inviter code</label>
+                        <input
+                          autoComplete="off"
+                          id="login-referral-code"
+                          ref={referralInputRef}
+                          value={referralCode}
+                          onChange={(event) => {
+                            setReferralCode(normalizeReferralCode(event.target.value));
+                            setNoReferral(false);
+                            setSignupPath("referral");
+                            setReferralAccepted(false);
+                            setError(null);
+                          }}
+                          placeholder="Enter inviter code"
+                        />
+                      </>
+                    )}
+                    {referralCode ? (
+                      <div className="applied-referral-code" aria-label="Applied inviter code">
+                        <span>Code applied</span>
+                        <code>{referralCode}</code>
+                      </div>
+                    ) : null}
                     {referralCode ? (
                       <div className={`field-note ${referralInviter ? "success-note" : ""}`}>
                         {referralInviter
@@ -316,17 +356,23 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
                     )}
                   </div>
 
-                  <label className="check-row referral-consent">
-                    <input
-                      checked={referralAccepted}
-                      disabled={!referralInviter}
-                      onChange={(event) => setReferralAccepted(event.target.checked)}
-                      type="checkbox"
-                    />
-                    <span>
-                      {referralAgreementText.replace("5%", `${referralPercent}%`)}
-                    </span>
-                  </label>
+                  <div className={`referral-acceptance ${referralInviter ? "accepted" : ""}`}>
+                    <div>
+                      <strong>{referralAccepted ? "Referral accepted" : "Referral agreement"}</strong>
+                      <span>{referralAgreementText}</span>
+                    </div>
+                    <button
+                      className="button secondary"
+                      disabled={!referralInviter || referralAccepted}
+                      onClick={() => {
+                        setReferralAccepted(true);
+                        setError(null);
+                      }}
+                      type="button"
+                    >
+                      {referralAccepted ? "Accepted" : referralInviter ? "I accept" : "Checking"}
+                    </button>
+                  </div>
                 </div>
               ) : null}
 
@@ -334,8 +380,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
                 <div className="auth-path-panel auth-path-panel--accepted">
                   <Check size={16} />
                   <span>
-                    Direct signup selected. You can still invite friends, but your own referral rate
-                    starts at 3% instead of 5%.
+                    Direct signup selected. You can still invite friends and earn 5%.
                   </span>
                 </div>
               ) : null}
@@ -347,7 +392,9 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
                 </div>
               ) : !canContinue && showReferralForm ? (
                 <div className="auth-next-step">
-                  Enter a valid inviter code, then accept the referral agreement.
+                  {referralInviter
+                    ? "Accept the referral agreement to continue with Google."
+                    : "Enter a valid inviter code to continue."}
                 </div>
               ) : null}
             </>
@@ -361,6 +408,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
             ) : (
               <button
                 className="button auth-google-button"
+                disabled={!canContinue}
                 onClick={continueWithGoogle}
                 type="button"
               >
@@ -372,7 +420,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
 
           <a className="auth-support-link" href={SUPPORT_WHATSAPP_URL} rel="noreferrer" target="_blank">
             <MessageCircle size={16} />
-            Need help? WhatsApp {SUPPORT_WHATSAPP_E164}
+            Need help?
           </a>
 
           {message ? <div className="message">{message}</div> : null}
@@ -438,7 +486,7 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
                   </div>
                   <div>
                     <CircleDollarSign size={18} />
-                    <span>Direct signup: your own invites earn 3%.</span>
+                    <span>Direct signup: your own invites can also earn 5%.</span>
                   </div>
                   <div>
                     <Users size={18} />
@@ -470,13 +518,16 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
 
               <details className="auth-info-card">
                 <summary>
-                  <span>All 48 nations</span>
+                  <span>All 48 teams</span>
                   <ChevronDown size={16} />
                 </summary>
                 <div className="flag-wall" aria-label="All 48 qualified nations">
                   <div className="flag-wall-head">
-                    <span className="ds-label">Pick 3 to play</span>
+                    <span className="ds-label">All 48 teams can still be chosen</span>
                   </div>
+                  <p className="flag-wall-note">
+                    The event has not started yet, so every team is still available for new entries.
+                  </p>
                   <div className="flag-grid">
                     {flagTeams.map(([id, name, code]) => (
                       <Image
@@ -501,7 +552,35 @@ export function LoginRegister({ publicPaidActionGates }: LoginRegisterProps) {
 }
 
 function normalizeReferralCode(value: string) {
-  return value.trim().toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 12);
+  return normalizeCampaignReferralCode(value);
+}
+
+function persistSignupAttributionFromUrl(referralCode: string) {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const effectiveReferralCode = normalizeReferralCode(referralCode || getCampaignReferralCode(params));
+    const attribution = {
+      referralCode: effectiveReferralCode,
+      utmSource: params.get("utm_source") ?? "",
+      utmMedium: params.get("utm_medium") ?? "",
+      utmCampaign: params.get("utm_campaign") ?? "",
+      utmContent: params.get("utm_content") ?? "",
+    };
+    const hasAttribution = [
+      attribution.utmSource,
+      attribution.utmMedium,
+      attribution.utmCampaign,
+      attribution.utmContent,
+    ].some(Boolean);
+
+    if (effectiveReferralCode && hasAttribution) {
+      window.localStorage.setItem(SIGNUP_ATTRIBUTION_KEY, JSON.stringify(attribution));
+    } else if (params.has("ref")) {
+      window.localStorage.removeItem(SIGNUP_ATTRIBUTION_KEY);
+    }
+  } catch {
+    // Attribution is helpful, but signup must never depend on browser storage.
+  }
 }
 
 function getOAuthErrorMessage(message: string) {

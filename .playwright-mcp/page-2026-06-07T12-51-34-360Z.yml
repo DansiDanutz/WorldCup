@@ -1,0 +1,291 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - generic [ref=e11]:
+              - button "Semenescu Dan 18ce55rrs16" [ref=e13]:
+                - img [ref=e15]
+                - generic [ref=e16]:
+                  - generic [ref=e17]: Semenescu Dan
+                  - generic [ref=e18]: 18ce55rrs16
+                - img [ref=e19]
+              - button "Collapse sidebar" [ref=e22]:
+                - img [ref=e23]
+        - list [ref=e27]:
+          - generic [ref=e28]:
+            - paragraph [ref=e29]: Campaigns
+            - listitem [ref=e30]:
+              - link "Analytics" [ref=e31] [cursor=pointer]:
+                - /url: /manager/18ce55rrs16/campaigns
+                - img [ref=e32]
+                - generic [ref=e34]: Analytics
+            - listitem [ref=e35]:
+              - link "Campaign form" [ref=e36] [cursor=pointer]:
+                - /url: /manager/18ce55rrs16/campaigns/new
+                - img [ref=e37]
+                - generic [ref=e39]: Campaign form
+          - generic [ref=e40]:
+            - paragraph [ref=e41]: Creatives
+            - listitem [ref=e42]:
+              - link "Composer" [ref=e43] [cursor=pointer]:
+                - /url: /manager/18ce55rrs16/composer
+                - img [ref=e44]
+                - generic [ref=e47]: Composer
+            - listitem [ref=e48]:
+              - link "Posts" [ref=e49] [cursor=pointer]:
+                - /url: /manager/18ce55rrs16/posts
+                - img [ref=e50]
+                - generic [ref=e53]: Posts
+          - generic [ref=e54]:
+            - paragraph [ref=e55]: Tools
+            - listitem [ref=e56]:
+              - link "Bulk editor" [ref=e57] [cursor=pointer]:
+                - /url: /manager/18ce55rrs16/ads-editor
+                - img [ref=e58]
+                - generic [ref=e61]: Bulk editor
+            - listitem [ref=e62]:
+              - link "Audiences" [ref=e63] [cursor=pointer]:
+                - /url: /manager/18ce55rrs16/audiences
+                - img [ref=e64]
+                - generic [ref=e69]: Audiences
+            - listitem [ref=e70]:
+              - link "App manager" [ref=e71] [cursor=pointer]:
+                - /url: /manager/18ce55rrs16/apps
+                - img [ref=e72]
+                - generic [ref=e74]: App manager
+            - listitem [ref=e75]:
+              - link "Events manager" [ref=e76] [cursor=pointer]:
+                - /url: /manager/18ce55rrs16/events-manager
+                - img [ref=e77]
+                - generic [ref=e79]: Events manager
+            - listitem [ref=e80]:
+              - link "Conversion Diagnostics" [ref=e81] [cursor=pointer]:
+                - /url: /manager/18ce55rrs16/conversion-diagnostics
+                - img [ref=e82]
+                - generic [ref=e84]: Conversion Diagnostics
+        - list [ref=e87]:
+          - listitem [ref=e88]:
+            - link "Billing" [ref=e89] [cursor=pointer]:
+              - /url: /manager/18ce55rrs16/billing
+              - img [ref=e90]
+              - generic [ref=e92]: Billing
+          - listitem [ref=e93]:
+            - link "Account settings" [ref=e94] [cursor=pointer]:
+              - /url: /manager/18ce55rrs16/account-settings
+              - img [ref=e95]
+              - generic [ref=e98]: Account settings
+          - listitem [ref=e99]:
+            - button "Report a Bug" [ref=e100] [cursor=pointer]:
+              - img [ref=e101]
+              - generic [ref=e103]: Report a Bug
+      - list [ref=e105]:
+        - listitem [ref=e106]:
+          - button "DansiDanutz DansiDanutz @DansiDanutz" [ref=e107]:
+            - img "DansiDanutz" [ref=e109]
+            - generic [ref=e110]:
+              - generic [ref=e111]: DansiDanutz
+              - generic [ref=e112]: "@DansiDanutz"
+            - img [ref=e113]
+      - button "Toggle Sidebar" [ref=e116]
+    - main [ref=e117]:
+      - generic [ref=e118]:
+        - generic [ref=e120]:
+          - combobox [ref=e121]:
+            - generic [ref=e122]: "Ad type:"
+            - generic: Post
+            - img
+          - generic [ref=e123]:
+            - img [ref=e124]
+            - textbox "Search by ad name or ID" [ref=e127]
+          - button "Filters" [ref=e129]:
+            - img [ref=e130]
+            - text: Filters
+          - button [ref=e132]:
+            - img [ref=e133]
+          - generic [ref=e135]:
+            - button "Last 7 days" [ref=e136]:
+              - img [ref=e137]
+              - text: Last 7 days
+            - link "Create campaign" [ref=e139] [cursor=pointer]:
+              - /url: /manager/18ce55rrs16/campaigns/new/campaign
+        - generic [ref=e140]:
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - generic [ref=e144]:
+                - button "Impressions 12" [ref=e145]:
+                  - generic [ref=e146]: Impressions
+                  - generic [ref=e147]: "12"
+                - button "Spend €0.00" [ref=e149]:
+                  - generic [ref=e150]: Spend
+                  - generic [ref=e151]: €0.00
+                - button "Link clicks 0" [ref=e152]:
+                  - generic [ref=e153]: Link clicks
+                  - generic [ref=e154]: "0"
+                - button "Purchases 0" [ref=e155]:
+                  - generic [ref=e156]: Purchases
+                  - generic [ref=e157]: "0"
+                - button "Cost per purchase €0.00" [ref=e158]:
+                  - generic [ref=e159]: Cost per purchase
+                  - generic [ref=e160]: €0.00
+              - generic [ref=e161]:
+                - button "Compare" [ref=e162]:
+                  - img [ref=e163]
+                  - text: Compare
+                - generic [ref=e170]:
+                  - button "Line chart" [ref=e171]:
+                    - img [ref=e172]
+                  - button "Bar chart" [ref=e175]:
+                    - img [ref=e176]
+            - application [ref=e181]:
+              - generic [ref=e192]:
+                - generic [ref=e195]: Jun 7
+                - generic [ref=e196]:
+                  - generic [ref=e198]: "0"
+                  - generic [ref=e200]: "5"
+                  - generic [ref=e202]: "10"
+          - button "Audience Insights" [ref=e206]:
+            - img [ref=e207]
+            - text: Audience Insights
+          - generic [ref=e210]:
+            - generic [ref=e213]:
+              - generic [ref=e214]:
+                - button "Funding instruments" [ref=e215]
+                - button "Campaigns 1" [ref=e216]:
+                  - text: Campaigns
+                  - generic [ref=e217]: "1"
+                - button "Ad groups" [ref=e218]
+                - button "Ads" [ref=e219]: Ads
+              - generic [ref=e221]:
+                - 'button "Metrics: Summary" [ref=e222]':
+                  - generic [ref=e223]: "Metrics:"
+                  - text: Summary
+                  - img [ref=e224]
+                - button "Export" [ref=e226]:
+                  - img [ref=e227]
+            - table [ref=e233]:
+              - rowgroup [ref=e234]:
+                - row "Select all On/Off Ad preview Delivery status Spend Impressions CPM Link clicks CTR Cost per link click Post ID Ad name" [ref=e235]:
+                  - columnheader "Select all" [ref=e236]:
+                    - button "Select all" [ref=e237]:
+                      - img [ref=e238]
+                  - columnheader "On/Off" [ref=e240]: On/Off
+                  - columnheader "Ad preview" [ref=e242] [cursor=pointer]: Ad preview
+                  - columnheader "Delivery status" [ref=e244]: Delivery status
+                  - columnheader "Spend" [ref=e246] [cursor=pointer]: Spend
+                  - columnheader "Impressions" [ref=e248] [cursor=pointer]: Impressions
+                  - columnheader "CPM" [ref=e250]: CPM
+                  - columnheader "Link clicks" [ref=e252] [cursor=pointer]: Link clicks
+                  - columnheader "CTR" [ref=e254]: CTR
+                  - columnheader "Cost per link click" [ref=e256]: Cost per link click
+                  - columnheader "Post ID" [ref=e258]: Post ID
+                  - columnheader "Ad name" [ref=e260] [cursor=pointer]: Ad name
+              - rowgroup [ref=e262]:
+                - row "Summary for 2 ads €0.00 12 €0.0489 — — — — —" [ref=e263]:
+                  - cell [ref=e264]
+                  - cell [ref=e265]
+                  - cell "Summary for 2 ads" [ref=e266]:
+                    - generic [ref=e267]: Summary for 2 ads
+                  - cell [ref=e268]
+                  - cell "€0.00" [ref=e269]
+                  - cell "12" [ref=e270]
+                  - cell "€0.0489" [ref=e271]
+                  - cell "—" [ref=e272]
+                  - cell "—" [ref=e273]
+                  - cell "—" [ref=e274]
+                  - cell "—" [ref=e275]
+                  - cell "—" [ref=e276]
+                - row "Select user avatar Semenescu Dan @DansiDanutz · Jun 7 Halted Appeal requested €0.00 12 €0.0489 — — — 2063599593947009378 WorldCup26 - Prediction Game - Ad 2" [ref=e410] [cursor=pointer]:
+                  - cell "Select" [ref=e278]:
+                    - button "Select" [ref=e279]:
+                      - img [ref=e280]
+                  - cell [ref=e282]
+                  - cell "user avatar Semenescu Dan @DansiDanutz · Jun 7" [ref=e283]:
+                    - generic [ref=e287]:
+                      - img "user avatar" [ref=e290]
+                      - generic [ref=e292]:
+                        - generic [ref=e293]: Semenescu Dan
+                        - link "@DansiDanutz" [ref=e294]:
+                          - /url: https://x.com/DansiDanutz
+                        - generic [ref=e295]: ·
+                        - link "Jun 7" [ref=e296]:
+                          - /url: https://x.com/DansiDanutz/status/2063599593947009378
+                          - text: Jun 7
+                          - img [ref=e297]
+                  - cell "Halted Appeal requested" [ref=e411]:
+                    - generic [ref=e306]:
+                      - generic [ref=e307]: Halted
+                      - button "Appeal requested" [disabled] [ref=e412]
+                  - cell "€0.00" [ref=e310]:
+                    - generic [ref=e312]: €0.00
+                  - cell "12" [ref=e313]:
+                    - generic [ref=e315]: "12"
+                  - cell "€0.0489" [ref=e316]:
+                    - generic [ref=e318]: €0.0489
+                  - cell "—" [ref=e319]:
+                    - generic [ref=e322]: —
+                  - cell "—" [ref=e323]:
+                    - generic [ref=e326]: —
+                  - cell "—" [ref=e327]:
+                    - generic [ref=e330]: —
+                  - cell "2063599593947009378" [ref=e331]:
+                    - generic [ref=e333]: "2063599593947009378"
+                  - cell "WorldCup26 - Prediction Game - Ad 2" [ref=e334]:
+                    - generic [ref=e337]: WorldCup26 - Prediction Game - Ad 2
+                - row "Select user avatar Semenescu Dan @DansiDanutz · Jun 6 Pending Appeal requested — — — — — — 2063318732923949092 Ad 1" [ref=e338] [cursor=pointer]:
+                  - cell "Select" [ref=e339]:
+                    - button "Select" [ref=e340]:
+                      - img [ref=e341]
+                  - cell [ref=e343]
+                  - cell "user avatar Semenescu Dan @DansiDanutz · Jun 6" [ref=e344]:
+                    - generic [ref=e348]:
+                      - img "user avatar" [ref=e351]
+                      - generic [ref=e352]:
+                        - generic [ref=e353]:
+                          - generic [ref=e354]: Semenescu Dan
+                          - link "@DansiDanutz" [ref=e355]:
+                            - /url: https://x.com/DansiDanutz
+                          - generic [ref=e356]: ·
+                          - link "Jun 6" [ref=e357]:
+                            - /url: https://x.com/DansiDanutz/status/2063318732923949092
+                            - text: Jun 6
+                            - img [ref=e358]
+                        - generic [ref=e364]:
+                          - generic:
+                            - generic:
+                              - img
+                  - cell "Pending Appeal requested" [ref=e365]:
+                    - generic [ref=e368]:
+                      - generic [ref=e369]: Pending
+                      - button "Appeal requested" [disabled] [ref=e371]
+                  - cell "—" [ref=e372]:
+                    - generic [ref=e375]: —
+                  - cell "—" [ref=e376]:
+                    - generic [ref=e379]: —
+                  - cell "—" [ref=e380]:
+                    - generic [ref=e383]: —
+                  - cell "—" [ref=e384]:
+                    - generic [ref=e387]: —
+                  - cell "—" [ref=e388]:
+                    - generic [ref=e391]: —
+                  - cell "—" [ref=e392]:
+                    - generic [ref=e395]: —
+                  - cell "2063318732923949092" [ref=e396]:
+                    - generic [ref=e398]: "2063318732923949092"
+                  - cell "Ad 1" [ref=e399]:
+                    - generic [ref=e402]: Ad 1
+            - generic [ref=e404]:
+              - generic [ref=e405]: Showing 1–2 of 2
+              - generic [ref=e407]: Page 1 of 1
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e413]:
+        - button "Close toast" [ref=e414] [cursor=pointer]:
+          - img [ref=e415]
+        - img [ref=e419]
+        - generic [ref=e421]:
+          - generic [ref=e422]: Thank you for the appeal
+          - generic [ref=e423]: If your appeal is accepted, your ad will resume automatically.
+  - alert [ref=e408]
+  - generic [ref=e409]: "0"

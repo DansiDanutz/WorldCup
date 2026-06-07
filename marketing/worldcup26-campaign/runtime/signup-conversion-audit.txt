@@ -1,0 +1,20 @@
+WorldCup26 signup conversion audit 07/06/2026 20:44
+ok=no state=critical-auth-to-signup-save-unproven code=26BC4B90CB
+app_views=509 referral_views=171 paid_views=244
+dashboard_state=paid-clicks-no-signups dashboard_clicks=227 dashboard_spend=31.78
+profiles=5 free=4 paid=1 accepted=0 signup_saves=0 entries=0
+signup_funnel=returned:0 missing_acceptance:0 attempts:0 saved_events:0 failed:0 errors:0
+path_first_paint=yes browser_verified=yes inviter_found=yes inviter="David Ai" percent=5
+post_auth_save_endpoint=ok unauth_status=401 expected="401 until Google bearer token is present" elapsed_ms=418
+browser_proof=runtime/proofs/referral-mobile-accepted-google-enabled-20260607-1754.png
+
+blockers:
+- No saved referral signup exists after Google auth.
+- No logged-in dashboard return event exists for the referral code yet.
+- No accepted referral agreement row is visible in the campaign counts.
+- Paid clicks are present, but none reached a completed signup-save event.
+
+first_action=Send the clean signup test to 3 trusted people with different Google accounts using https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test. Ask each to accept the invite, continue with Google, pick 3 teams, and reply with either "joined + picked teams" or a screenshot of the exact blocking screen. After the real send is logged, rerun this audit and verify the dashboard POSTs /api/referrals/signup with a bearer token and that worldcup_referral_profiles stores signup_referral_code=26BC4B90CB.
+proof_rule=Do not claim signup conversion proof until there is a real new user/profile plus referral signup save row, or a clear private-channel tester note with account, timestamp, and screenshot.
+no_ad_change_rule=Do not change paid creative again until the full Google-auth-to-referral-save path is proven or a concrete failing step is captured.
+memo_command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"

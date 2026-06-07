@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Proof Sprint</title>
+  <style>
+    :root { color-scheme: dark; --bg:#03140f; --panel:#0b2b21; --line:rgba(255,255,255,.14); --text:#f7fff9; --muted:#b8cec5; --gold:#ffd974; --mint:#74f0b2; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: radial-gradient(circle at 0 0, rgba(255,217,116,.16), transparent 24rem), var(--bg); color:var(--text); }
+    main { width:min(900px,100%); margin:0 auto; padding:14px 10px 44px; }
+    header, section, article { border:1px solid var(--line); border-radius:10px; background:rgba(11,43,33,.94); padding:14px; margin-bottom:10px; }
+    h1,h2,h3,p { margin:0; }
+    h1 { font-size:clamp(30px,9vw,54px); line-height:.96; letter-spacing:0; }
+    h2 { font-size:20px; margin-bottom:10px; }
+    h3 { font-size:17px; margin-bottom:8px; }
+    p, li { color:var(--muted); line-height:1.4; }
+    .metrics,.focus { display:grid; gap:8px; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); margin-top:12px; }
+    .metric,.focus-card { border:1px solid var(--line); border-radius:8px; padding:10px; background:rgba(255,255,255,.055); }
+    .metric span,.focus-card span,.label { display:block; color:var(--muted); font-size:11px; font-weight:900; text-transform:uppercase; }
+    .metric strong,.focus-card strong { display:block; color:var(--gold); margin-top:4px; overflow-wrap:anywhere; }
+    .rows { display:grid; gap:10px; }
+    .row-head { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+    .tag { background:var(--gold); color:#03140f; border-radius:999px; padding:5px 8px; font-weight:950; font-size:12px; white-space:nowrap; }
+    .command { white-space:pre-wrap; overflow-wrap:anywhere; margin-top:10px; border:1px solid var(--line); border-radius:8px; background:#02110d; color:var(--gold); padding:10px; font:12px/1.45 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    button { min-height:42px; margin-top:8px; border:1px solid rgba(116,240,178,.42); border-radius:8px; background:#0f7657; color:white; padding:9px 11px; font:inherit; font-weight:900; cursor:pointer; }
+    a { color:var(--mint); overflow-wrap:anywhere; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Proof Sprint</h1>
+      <p>Do the real action first. Then copy the matching proof command with a public URL or precise private note.</p>
+      <div class="metrics">
+        <div class="metric"><span>Generated</span><strong>2026-06-07 01:08:26Z</strong></div>
+        <div class="metric"><span>Proof rows</span><strong>48</strong></div>
+        <div class="metric"><span>Open gaps</span><strong>16</strong></div>
+        <div class="metric"><span>Code</span><strong>26BC4B90CB</strong></div>
+      </div>
+    </header>
+    <section>
+      <h2>Escalation Board</h2>
+      <div class="focus"><div class="focus-card">
+    <span>Dexter / hot</span>
+    <strong>3 open</strong>
+    <p>Oldest 20.1h open / next #4 Football groups</p>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;4&quot; --proof-url &quot;approval-request: asked admin &lt;group/channel&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed&quot; --status &quot;requested&quot;">Copy next command</button>
+  </div><div class="focus-card">
+    <span>Sienna / hot</span>
+    <strong>8 open</strong>
+    <p>Oldest 24.1h open / next #1 WhatsApp Status</p>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;1&quot; --proof-url &quot;private-whatsapp-status: posted status from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;">Copy next command</button>
+  </div><div class="focus-card">
+    <span>Memo / clear</span>
+    <strong>Clear</strong>
+    <p>Keep pulse and reply monitoring moving.</p>
+    
+  </div><div class="focus-card">
+    <span>Nano / hot</span>
+    <strong>5 open</strong>
+    <p>Oldest 22.1h open / next #2 WhatsApp personal</p>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;2&quot; --proof-url &quot;private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;&quot; --status &quot;sent&quot;">Copy next command</button>
+  </div></div>
+    </section>
+    <section>
+      <h2>Worker Focus</h2>
+      <div class="focus"><div class="focus-card"><span>Dexter</span><strong>#4 Football groups</strong><p>requested / oldest 20.1h open</p></div><div class="focus-card"><span>Sienna</span><strong>#1 WhatsApp Status</strong><p>posted / oldest 24.1h open</p></div><div class="focus-card"><span>Memo</span><strong>Pulse / audit</strong><p>monitor</p></div><div class="focus-card"><span>Nano</span><strong>#2 WhatsApp personal</strong><p>sent / oldest 22.1h open</p></div></div>
+    </section>
+    <section>
+      <h2>All Open Proof Gaps</h2>
+      <div class="rows"><article>
+    <div class="row-head">
+      <div>
+        <h3>1. Sienna - WhatsApp Status</h3>
+        <p>Post story asset with video caption 1</p>
+      </div>
+      <span class="tag">posted</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-main-video.mp4</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-status&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h0</a></p>
+    <p><span class="label">Proof note</span>private-whatsapp-status: posted status from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;1&quot; --proof-url &quot;private-whatsapp-status: posted status from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;1&quot; --proof-url &quot;private-whatsapp-status: posted status from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>2. Nano - WhatsApp personal</h3>
+        <p>Send personal invite to warm contacts</p>
+      </div>
+      <span class="tag">sent</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-main-video.mp4</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h2</a></p>
+    <p><span class="label">Proof note</span>private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;2&quot; --proof-url &quot;private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;&quot; --status &quot;sent&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;2&quot; --proof-url &quot;private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;&quot; --status &quot;sent&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>3. Sienna - Instagram/Facebook story</h3>
+        <p>Story: Code 26BC4B90CB + link sticker</p>
+      </div>
+      <span class="tag">posted</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-referral-story.jpg</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-facebook-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h3</a></p>
+    <p><span class="label">Proof note</span>private-meta-story: story posted from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;3&quot; --proof-url &quot;private-meta-story: story posted from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included&quot; --status &quot;posted&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;3&quot; --proof-url &quot;private-meta-story: story posted from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included&quot; --status &quot;posted&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>4. Dexter - Football groups</h3>
+        <p>Ask approved group admin for permission; post group variant only if allowed</p>
+      </div>
+      <span class="tag">requested</span>
+    </div>
+    <p><span class="label">Asset</span>campaign/first-wave-posts.md</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=football-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h4</a></p>
+    <p><span class="label">Proof note</span>approval-request: asked admin &lt;group/channel&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;4&quot; --proof-url &quot;approval-request: asked admin &lt;group/channel&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed&quot; --status &quot;requested&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;4&quot; --proof-url &quot;approval-request: asked admin &lt;group/channel&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed&quot; --status &quot;requested&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>5. Sienna - TikTok/Reels/Shorts</h3>
+        <p>Upload main video with short caption and code in first line</p>
+      </div>
+      <span class="tag">posted</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-main-video.mp4</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h5</a></p>
+    <p><span class="label">Proof note</span>public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;5&quot; --proof-url &quot;public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;5&quot; --proof-url &quot;public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>6. Nano - DM follow-up</h3>
+        <p>Reply to first reactions and send the simple how-it-works answer</p>
+      </div>
+      <span class="tag">replied</span>
+    </div>
+    <p><span class="label">Asset</span>campaign/copy-bank.md</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=dm-follow-up&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h7</a></p>
+    <p><span class="label">Proof note</span>private-reply-note: replied to &lt;thread/contact initials&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up &lt;date/action&gt;</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;6&quot; --proof-url &quot;private-reply-note: replied to &lt;thread/contact initials&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up &lt;date/action&gt;&quot; --status &quot;replied&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;6&quot; --proof-url &quot;private-reply-note: replied to &lt;thread/contact initials&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up &lt;date/action&gt;&quot; --status &quot;replied&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>7. Sienna - YouTube Shorts</h3>
+        <p>Post main video as Shorts with code and link in description</p>
+      </div>
+      <span class="tag">posted</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-main-video.mp4</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h8">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=youtube-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h8</a></p>
+    <p><span class="label">Proof note</span>public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;7&quot; --proof-url &quot;public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;7&quot; --proof-url &quot;public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>8. Dexter - Facebook profile/page</h3>
+        <p>Publish simple rules feed post for friends and football contacts</p>
+      </div>
+      <span class="tag">posted</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-referral-square.jpg</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-profile-page&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h9">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-profile-page&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h9</a></p>
+    <p><span class="label">Proof note</span>manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB and link included; replace with public URL when available</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;8&quot; --proof-url &quot;manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB and link included; replace with public URL when available&quot; --status &quot;posted&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;8&quot; --proof-url &quot;manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB and link included; replace with public URL when available&quot; --status &quot;posted&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>9. Nano - Replies</h3>
+        <p>Answer questions using reply bank; push code/link once per conversation</p>
+      </div>
+      <span class="tag">replied</span>
+    </div>
+    <p><span class="label">Asset</span>campaign/copy-bank.md</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=replies&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h10">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=replies&amp;utm_medium=manual-replies&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h10</a></p>
+    <p><span class="label">Proof note</span>private-reply-note: replied to &lt;thread/contact initials&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up &lt;date/action&gt;</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;9&quot; --proof-url &quot;private-reply-note: replied to &lt;thread/contact initials&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up &lt;date/action&gt;&quot; --status &quot;replied&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;9&quot; --proof-url &quot;private-reply-note: replied to &lt;thread/contact initials&gt; at YYYY-MM-DD HH:mm EEST; code 26BC4B90CB and link included; next follow-up &lt;date/action&gt;&quot; --status &quot;replied&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>10. Sienna - Instagram Story</h3>
+        <p>Post referral story image with link sticker and code overlay</p>
+      </div>
+      <span class="tag">posted</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-referral-story.jpg</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h11">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=instagram-story&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h11</a></p>
+    <p><span class="label">Proof note</span>private-meta-story: story posted from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;10&quot; --proof-url &quot;private-meta-story: story posted from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included&quot; --status &quot;posted&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;10&quot; --proof-url &quot;private-meta-story: story posted from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included&quot; --status &quot;posted&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>11. Nano - WhatsApp personal</h3>
+        <p>Send second warm-contact batch with main invite</p>
+      </div>
+      <span class="tag">sent</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-main-video.mp4</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h13">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-personal&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h13</a></p>
+    <p><span class="label">Proof note</span>private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;11&quot; --proof-url &quot;private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;&quot; --status &quot;sent&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;11&quot; --proof-url &quot;private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;&quot; --status &quot;sent&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>12. Sienna - Facebook Reels</h3>
+        <p>Upload main video as Reel with code in caption</p>
+      </div>
+      <span class="tag">posted</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-main-video.mp4</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-reels&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h15">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=facebook-reels&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h15</a></p>
+    <p><span class="label">Proof note</span>public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;12&quot; --proof-url &quot;public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;12&quot; --proof-url &quot;public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>13. Sienna - WhatsApp/Telegram groups</h3>
+        <p>Community post variant if promo welcome</p>
+      </div>
+      <span class="tag">requested</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-referral-story.jpg</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-telegram-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h16">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-telegram-groups&amp;utm_medium=approval-first&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h16</a></p>
+    <p><span class="label">Proof note</span>approval-request: asked admin &lt;group/channel&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB and link included; post only after allowed</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;13&quot; --proof-url &quot;approval-request: asked admin &lt;group/channel&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB and link included; post only after allowed&quot; --status &quot;requested&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;13&quot; --proof-url &quot;approval-request: asked admin &lt;group/channel&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-story.jpg; code 26BC4B90CB and link included; post only after allowed&quot; --status &quot;requested&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>14. Dexter - Creator outreach</h3>
+        <p>Send partner DM to football micro-creators</p>
+      </div>
+      <span class="tag">sent</span>
+    </div>
+    <p><span class="label">Asset</span>campaign/first-wave-posts.md</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=creator-outreach&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h17">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=creator-outreach&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=dexter_h17</a></p>
+    <p><span class="label">Proof note</span>manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; replace with public URL when available</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;14&quot; --proof-url &quot;manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; replace with public URL when available&quot; --status &quot;sent&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;14&quot; --proof-url &quot;manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; replace with public URL when available&quot; --status &quot;sent&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>15. Nano - Direct DMs</h3>
+        <p>Send one-to-one invite to people who reacted to stories</p>
+      </div>
+      <span class="tag">sent</span>
+    </div>
+    <p><span class="label">Asset</span>campaign/copy-bank.md</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=direct-dms&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h18">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=direct-dms&amp;utm_medium=manual-outreach&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=nano_h18</a></p>
+    <p><span class="label">Proof note</span>manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/copy-bank.md; code 26BC4B90CB and link included; replace with public URL when available</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;15&quot; --proof-url &quot;manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/copy-bank.md; code 26BC4B90CB and link included; replace with public URL when available&quot; --status &quot;sent&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;15&quot; --proof-url &quot;manual-post-note: posted from &lt;account/destination&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/copy-bank.md; code 26BC4B90CB and link included; replace with public URL when available&quot; --status &quot;sent&quot;">Copy proof command</button>
+  </article><article>
+    <div class="row-head">
+      <div>
+        <h3>16. Sienna - TikTok/Reels/Shorts</h3>
+        <p>Repost video with favorites-or-underdogs caption</p>
+      </div>
+      <span class="tag">posted</span>
+    </div>
+    <p><span class="label">Asset</span>media/worldcup26-main-video.mp4</p>
+    <p><span class="label">Link</span><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h19">https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=tiktok-reels-shorts&amp;utm_medium=manual-post&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=sienna_h19</a></p>
+    <p><span class="label">Proof note</span>public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included</p>
+    <div class="command">node campaign-proof-log.mjs --priority &quot;16&quot; --proof-url &quot;public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;</div>
+    <button data-copy="node campaign-proof-log.mjs --priority &quot;16&quot; --proof-url &quot;public-video-url-preferred: paste Shorts/Reels/TikTok/YouTube URL; if still processing use private-video-note: uploaded from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;">Copy proof command</button>
+  </article></div>
+    </section>
+  </main>
+  <script>
+    document.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-copy]");
+      if (!button) return;
+      const value = button.getAttribute("data-copy") || "";
+      try {
+        await navigator.clipboard.writeText(value);
+        const previous = button.textContent;
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = previous; }, 1200);
+      } catch {
+        window.prompt("Copy this text", value);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+- generic [ref=e2]:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - button "Grok" [ref=e3] [cursor=pointer]:
+            - img [ref=e4]
+          - button "Chat" [ref=e7] [cursor=pointer]:
+            - img [ref=e8]
+        - generic:
+          - generic:
+            - generic:
+              - dialog:
+                - group [active] [ref=e11]:
+                  - dialog:
+                    - progressbar "Se încarcă" [ref=e13]:
+                      - img [ref=e15]
+      - generic [ref=e18]:
+        - banner [ref=e19]
+        - main [ref=e20]:
+          - progressbar [ref=e23]:
+            - img [ref=e25]

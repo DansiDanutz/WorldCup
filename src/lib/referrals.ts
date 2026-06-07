@@ -18,10 +18,14 @@ type ReferralProfile = {
   signup_referral_code?: string | null;
   signup_referrer_user_id?: string | null;
   signup_referral_accepted_at?: string | null;
+  signup_utm_source?: string | null;
+  signup_utm_medium?: string | null;
+  signup_utm_campaign?: string | null;
+  signup_utm_content?: string | null;
 };
 
 const referralProfileSelect =
-  "user_id,referral_code,display_name,email,usdt_sender_wallet_address,usdt_sender_wallet_network,usdt_sender_wallet_updated_at,usdt_sender_wallet_trc20_address,usdt_sender_wallet_trc20_updated_at,usdt_sender_wallet_erc20_address,usdt_sender_wallet_erc20_updated_at,signup_referral_code,signup_referrer_user_id,signup_referral_accepted_at";
+  "user_id,referral_code,display_name,email,usdt_sender_wallet_address,usdt_sender_wallet_network,usdt_sender_wallet_updated_at,usdt_sender_wallet_trc20_address,usdt_sender_wallet_trc20_updated_at,usdt_sender_wallet_erc20_address,usdt_sender_wallet_erc20_updated_at,signup_referral_code,signup_referrer_user_id,signup_referral_accepted_at,signup_utm_source,signup_utm_medium,signup_utm_campaign,signup_utm_content";
 
 export function normalizeReferralCode(value: string | null | undefined) {
   return (value ?? "").trim().toUpperCase().replace(/[^A-Z0-9]/g, "");

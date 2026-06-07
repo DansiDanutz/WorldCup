@@ -1,0 +1,14 @@
+WorldCup26 conversion guard 2026-06-07 20:44 +0300
+ok=yes browser_verified=yes pages=4 code=26BC4B90CB inviter="David Ai" percent=5 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+resolver=ok auth=ok browser_proof=provided
+
+first_paint:
+- meta-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=340
+- facebook-feed: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=202
+- instagram-story: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=212
+- x-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=223
+
+browser_snapshot:
+- ok status=provided /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime/conversion-browser-snapshot.yml
+
+Rule: This proves paid-ad referral pages render a safe first paint, resolve the inviter, and can start Google auth. Browser proof is included only when a Playwright MCP snapshot is provided.

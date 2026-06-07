@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Tester Batch Operator</title>
+  <style>
+    :root{color-scheme:dark;--bg:#03140f;--panel:#0b2a20;--panel2:#143626;--line:rgba(255,255,255,.16);--text:#f8fff9;--muted:#bad0c6;--gold:#ffd974;--mint:#74f0b2;--danger:#ff7d6e;--green:#0f7b5d}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 0%,rgba(255,217,116,.22),transparent 24rem),radial-gradient(circle at 92% 4%,rgba(116,240,178,.18),transparent 24rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{width:min(820px,100%);margin:0 auto;padding:12px 10px 42px}section{border:1px solid var(--line);border-radius:10px;background:rgba(11,42,32,.94);padding:14px;margin-bottom:10px}
+    .hero{border-color:rgba(255,217,116,.72);background:linear-gradient(135deg,rgba(255,217,116,.2),rgba(11,42,32,.96))}
+    .pill{display:inline-flex;margin-bottom:10px;padding:7px 10px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--mint));color:#03140f;font-weight:950;text-transform:uppercase;font-size:12px}
+    h1{margin:0 0 8px;font-size:clamp(38px,11vw,74px);line-height:.88}h2{margin:0 0 10px;font-size:22px}p{margin:0 0 8px;color:var(--muted);line-height:1.35}
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}.stats div{border:1px solid var(--line);border-radius:8px;padding:10px;background:rgba(255,255,255,.06)}.stats span{display:block;color:var(--muted);font-size:11px;font-weight:900;text-transform:uppercase}.stats strong{font-size:22px;color:var(--gold)}
+    .buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.button,button{min-height:48px;border:1px solid rgba(116,240,178,.42);border-radius:8px;background:var(--green);color:#fff;font:inherit;font-weight:950;display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;padding:10px;cursor:pointer}.gold{background:var(--gold);color:#03140f;border-color:var(--gold)}
+    .qr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.qr img{width:100%;border-radius:8px;background:#fff;padding:8px}.qr label{display:block;margin:0 0 6px;color:var(--gold);font-weight:900}
+    .warning{border-color:rgba(255,125,110,.55);background:rgba(255,125,110,.11);color:#ffe5df}
+    pre{white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid var(--line);border-radius:8px;background:rgba(0,0,0,.25);padding:10px;line-height:1.35}code{overflow-wrap:anywhere}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace}
+    @media(max-width:680px){.stats,.buttons,.qr{grid-template-columns:1fr}h1{font-size:42px}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <span class="pill">send-tester-batch-now</span>
+      <h1>Send 3 Clean Tests</h1>
+      <p>Paid clicks exist, but signup save proof is still missing. This is the action that tells us whether Google signup works or where it stops.</p>
+      <div class="stats">
+        <div><span>Paid views</span><strong>244</strong></div>
+        <div><span>Ref views</span><strong>171</strong></div>
+        <div><span>Google returns</span><strong>0</strong></div>
+        <div><span>Signup saves</span><strong>0</strong></div>
+      </div>
+    </section>
+    <section>
+      <h2>Send Now</h2>
+      <div class="buttons">
+        <a class="button gold" href="https://wa.me/?text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test">Open WhatsApp</a>
+        <button data-copy="I need 3 clean WorldCup26 signup tests now.
+
+Please send this to three trusted people with different Google accounts. They should open it on a fresh phone/browser, accept the invite, continue with Google, and pick 3 teams. Do not pay.
+
+Ask each tester to reply with one of these:
+1. &quot;joined + picked teams&quot;
+2. screenshot of the exact screen where it stops
+
+Code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-testers&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=clean_signup_test">Copy tester text</button>
+        <button data-copy="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-testers&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=clean_signup_test">Copy tester link</button>
+        <button data-copy="node campaign-public-channel-attempts.mjs --add --owner &quot;Memo&quot; --platform &quot;WhatsApp testers&quot; --channel &quot;clean signup test batch&quot; --status &quot;sent&quot; --attempt-url &quot;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-testers&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=clean_signup_test&quot; --detail &quot;Sent clean signup test to &lt;N&gt; trusted testers from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included&quot; --next-action &quot;run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes&quot;">Copy log command</button>
+      </div>
+      <div class="qr">
+        <div><label>Tester link QR</label><img alt="Tester link QR" src="https://api.qrserver.com/v1/create-qr-code/?size=360x360&amp;data=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test" /></div>
+        <div><label>WhatsApp QR</label><img alt="WhatsApp QR" src="https://api.qrserver.com/v1/create-qr-code/?size=360x360&amp;data=https%3A%2F%2Fwa.me%2F%3Ftext%3DI%2520need%25203%2520clean%2520WorldCup26%2520signup%2520tests%2520now.%250A%250APlease%2520send%2520this%2520to%2520three%2520trusted%2520people%2520with%2520different%2520Google%2520accounts.%2520They%2520should%2520open%2520it%2520on%2520a%2520fresh%2520phone%252Fbrowser%252C%2520accept%2520the%2520invite%252C%2520continue%2520with%2520Google%252C%2520and%2520pick%25203%2520teams.%2520Do%2520not%2520pay.%250A%250AAsk%2520each%2520tester%2520to%2520reply%2520with%2520one%2520of%2520these%253A%250A1.%2520%2522joined%2520%252B%2520picked%2520teams%2522%250A2.%2520screenshot%2520of%2520the%2520exact%2520screen%2520where%2520it%2520stops%250A%250ACode%252026BC4B90CB%253A%250Ahttps%253A%252F%252Fworldcup26.world%252Flogin%253Fref%253D26BC4B90CB%2526utm_source%253Dwhatsapp-testers%2526utm_medium%253Dwarm-contact%2526utm_campaign%253Dworldcup26_warm_contact_sprint%2526utm_content%253Dclean_signup_test" /></div>
+      </div>
+    </section>
+    <section>
+      <h2>Message</h2>
+      <pre>I need 3 clean WorldCup26 signup tests now.
+
+Please send this to three trusted people with different Google accounts. They should open it on a fresh phone/browser, accept the invite, continue with Google, and pick 3 teams. Do not pay.
+
+Ask each tester to reply with one of these:
+1. &quot;joined + picked teams&quot;
+2. screenshot of the exact screen where it stops
+
+Code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-testers&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=clean_signup_test</pre>
+      <h2>Log Only After Real Send</h2>
+      <pre class="mono">node campaign-public-channel-attempts.mjs --add --owner &quot;Memo&quot; --platform &quot;WhatsApp testers&quot; --channel &quot;clean signup test batch&quot; --status &quot;sent&quot; --attempt-url &quot;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=whatsapp-testers&amp;utm_medium=warm-contact&amp;utm_campaign=worldcup26_warm_contact_sprint&amp;utm_content=clean_signup_test&quot; --detail &quot;Sent clean signup test to &lt;N&gt; trusted testers from &lt;account&gt; at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included&quot; --next-action &quot;run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes&quot;</pre>
+    </section>
+    <section class="warning">
+      <h2>Proof Rule</h2>
+      <p>Only run the log command after the tester batch was really sent. Replace &lt;N&gt;, &lt;account&gt;, and timestamp with the real private-channel note.</p>
+      <p>A real tester reply proves joined + picked teams, or a screenshot captures the exact blocking screen, and signup-conversion-audit is rerun.</p>
+    </section>
+  </main>
+  <script>
+    document.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-copy]");
+      if (!button) return;
+      const value = button.dataset.copy || "";
+      try {
+        await navigator.clipboard.writeText(value);
+        const old = button.textContent;
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = old; }, 1200);
+      } catch {
+        window.prompt("Copy this", value);
+      }
+    });
+  </script>
+</body>
+</html>

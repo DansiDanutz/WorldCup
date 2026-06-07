@@ -1,0 +1,601 @@
+- generic [ref=e12]:
+  - generic [ref=e34]:
+    - generic [ref=e36]:
+      - link "Administrare reclame Meta" [ref=e38] [cursor=pointer]:
+        - /url: /adsmanager/?act=61071192
+        - generic [ref=e40]:
+          - generic [ref=e41]: Administrare reclame
+          - img "Meta" [ref=e44]
+      - generic [ref=e45]:
+        - generic [ref=e48]:
+          - button "Pressable" [ref=e49] [cursor=pointer]
+          - generic:
+            - generic:
+              - generic:
+                - button:
+                  - generic:
+                    - generic: "0"
+        - separator [ref=e54]
+    - generic [ref=e57]:
+      - navigation "instrumente" [ref=e58]:
+        - list [ref=e59]:
+          - listitem [ref=e61]:
+            - button "Prezentare cont" [ref=e63] [cursor=pointer]
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Prezentare cont
+          - listitem [ref=e70]:
+            - button "Campanii" [ref=e72] [cursor=pointer]
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Campanii
+          - listitem [ref=e78]:
+            - link "Rapoarte despre reclame" [ref=e80] [cursor=pointer]:
+              - /url: /adsreporting/?act=61071192&nav_entry_point=ads_ecosystem_navigation_menu
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Rapoarte despre reclame
+          - listitem [ref=e86]:
+            - link "Audienţe" [ref=e88] [cursor=pointer]:
+              - /url: /adsmanager/?act=61071192&tool=AUDIENCES&nav_entry_point=ads_ecosystem_navigation_menu&nav_source=ads_manager
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Audienţe
+          - listitem [ref=e94]:
+            - button "Setări de publicitate" [ref=e96] [cursor=pointer]
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Setări de publicitate
+          - listitem [ref=e102]:
+            - link "Facturare şi plăţi" [ref=e104] [cursor=pointer]:
+              - /url: /billing_hub/payment_settings/?placement=ads_manager&asset_id=61071192&payment_account_id_from_jsmodule=61071192&entrypoint=ads_ecosystem_navigation_ads_billing_tool_plugin
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Facturare şi plăţi
+          - listitem [ref=e110]:
+            - link "Events Manager" [ref=e112] [cursor=pointer]:
+              - /url: /events_manager2/?act=61071192&nav_source=ads_ecosystem_nav
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Events Manager
+          - listitem [ref=e117]:
+            - button "Toate instrumentele" [ref=e119] [cursor=pointer]
+            - generic:
+              - listitem:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Toate instrumentele
+      - navigation "Folosite frecvent" [ref=e125]:
+        - generic [ref=e130]: Folosite frecvent
+        - list
+    - generic [ref=e133]:
+      - separator [ref=e134]
+      - list [ref=e137]:
+        - listitem [ref=e138]:
+          - button "Asistent de afaceri Meta AI" [ref=e140] [cursor=pointer]
+          - generic:
+            - listitem:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Asistent de afaceri Meta AI
+      - generic [ref=e150]:
+        - button "Ajutor" [ref=e156] [cursor=pointer]:
+          - generic [ref=e159]: Ajutor
+        - button "Actualizări privind contul de publicitate" [ref=e164] [cursor=pointer]:
+          - generic [ref=e167]: Actualizări privind contul de publicitate
+        - button "Setările contului de publicitate" [ref=e171] [cursor=pointer]:
+          - generic [ref=e174]: Setările contului de publicitate
+        - button "Caută" [ref=e178] [cursor=pointer]:
+          - generic [ref=e181]: Caută
+        - button "Raportează o problemă" [ref=e184] [cursor=pointer]:
+          - generic [ref=e187]: Raportează o problemă
+  - generic [ref=e191]:
+    - generic [ref=e192]:
+      - button "Închide" [ref=e193] [cursor=pointer]
+      - button "Vezi diagramele (Ctrl+Y)" [ref=e201] [cursor=pointer]
+      - button "Editează (Ctrl+U)" [ref=e207] [cursor=pointer]
+      - button "Vezi istoricul (Ctrl+I)" [ref=e213] [cursor=pointer]
+      - button "Restrânge vizualizarea" [ref=e219] [cursor=pointer]
+    - generic [ref=e221]:
+      - generic [ref=e223]:
+        - generic [ref=e226]:
+          - generic [ref=e232]: Caută
+          - combobox "Caută" [ref=e243]
+        - grid "grid" [ref=e249]:
+          - generic [ref=e250]:
+            - row "Campanie" [ref=e251]:
+              - rowheader "Campanie" [ref=e254] [cursor=pointer]:
+                - generic [ref=e255]:
+                  - img [ref=e257]
+                  - generic [ref=e262]: WorldCup26 - Predict the Game · Win $4,360 USDT
+                  - button "implicit" [ref=e265]:
+                    - generic [ref=e268]: implicit
+            - row "Set de reclame" [ref=e271]:
+              - rowheader "Set de reclame" [ref=e274] [cursor=pointer]:
+                - generic [ref=e275]:
+                  - img [ref=e277]
+                  - generic [ref=e287]: WorldCup26 - Football Fans - Website Traffic
+                  - button "implicit" [ref=e290]:
+                    - generic [ref=e293]: implicit
+            - row "Reclamă" [ref=e296]:
+              - rowheader "Reclamă" [ref=e299] [cursor=pointer]:
+                - generic [ref=e300]:
+                  - img [ref=e302]
+                  - generic [ref=e307]: WorldCup26 - Pick 3 Teams · Win $4,360 USDT - Video
+                  - button "implicit" [ref=e310]:
+                    - generic [ref=e313]: implicit
+      - generic [ref=e317]:
+        - generic [ref=e319]:
+          - generic [ref=e320]:
+            - button "Deschide" [ref=e322] [cursor=pointer]:
+              - generic [ref=e325]: Deschide
+            - generic [ref=e328]:
+              - generic [ref=e330]:
+                - link "WorldCup26 - Predict the Game · Win $4,360 USDT" [ref=e335] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e336]:
+                    - img [ref=e338]
+                    - heading "WorldCup26 - Predict the Game · Win $4,360 USDT" [level=4] [ref=e341]
+                - link "WorldCup26 - Football Fans - Website Traffic" [ref=e348] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e349]:
+                    - img [ref=e351]
+                    - heading "WorldCup26 - Football Fans - Website Traffic" [level=4] [ref=e359]
+                - generic [ref=e366]:
+                  - img [ref=e368]
+                  - heading "WorldCup26 - Pick 3 Teams · Win $4,360 USDT - Video" [level=4] [ref=e371]
+              - generic [ref=e372]:
+                - generic [ref=e374]:
+                  - generic [ref=e380]: Activă
+                  - switch "Activează/Dezactivează" [checked] [ref=e386] [cursor=pointer]
+                - button "Meniul de acţiuni" [ref=e392] [cursor=pointer]:
+                  - generic [ref=e395]: Meniul de acţiuni
+          - tablist [ref=e402]:
+            - tab "Editează" [selected] [ref=e403] [cursor=pointer]:
+              - generic [ref=e407]: Editează
+            - tab "Revizuieşte" [ref=e408] [cursor=pointer]:
+              - generic [ref=e412]: Revizuieşte
+        - generic [ref=e419]:
+          - generic [ref=e427]:
+            - generic [ref=e430]:
+              - generic [ref=e440]:
+                - heading "Numele reclamei" [level=3] [ref=e448]
+                - generic [ref=e453]:
+                  - combobox [ref=e465]: WorldCup26 - Pick 3 Teams · Win $4,360 USDT - Video
+                  - button "Creează un model" [ref=e468] [cursor=pointer]:
+                    - generic [ref=e472]: Creează un model
+              - generic [ref=e483]:
+                - generic [ref=e486]:
+                  - heading "Reclamă în parteneriat" [level=3] [ref=e487]
+                  - generic [ref=e489]:
+                    - generic [ref=e492] [cursor=pointer]: Dezactivat
+                    - switch "Dezactivat" [ref=e494] [cursor=pointer]
+                - generic [ref=e499]:
+                  - text: Difuzează reclame împreună cu creatori, mărci şi alte afaceri. Aceste reclame valorifică semnale de la ambele profiluri pentru a îmbunătăţi performanţele campaniilor.
+                  - link "Despre reclamele în parteneriat" [ref=e501] [cursor=pointer]:
+                    - /url: https://www.facebook.com/business/help/292748974937716
+              - generic [ref=e514]:
+                - heading "Identitate" [level=3] [ref=e527]
+                - generic [ref=e537]:
+                  - generic [ref=e538]: Profilurile care vor fi folosite în reclama ta.
+                  - generic [ref=e541]:
+                    - generic [ref=e542]:
+                      - generic [ref=e543]:
+                        - img "Facebook" [ref=e544]
+                        - generic [ref=e545]: Meet My Idol
+                      - generic [ref=e547]:
+                        - img "Instagram" [ref=e548]
+                        - generic [ref=e549]: meetmyidol_io
+                      - generic [ref=e551]:
+                        - img "WhatsApp" [ref=e552]
+                        - generic [ref=e553]: Meet My Idol
+                    - link "Editează" [ref=e556] [cursor=pointer]:
+                      - /url: "#"
+              - generic [ref=e558]:
+                - generic [ref=e563]:
+                  - heading "Configurarea reclamelor" [level=3] [ref=e571]
+                  - generic [ref=e575]:
+                    - generic [ref=e583]:
+                      - generic [ref=e589]: Selectează o postare existentă sau creează una nouă
+                      - combobox "Selectează o postare existentă sau creează una nouă Foloseşte o postare existentă" [expanded] [ref=e594] [cursor=pointer]:
+                        - generic [ref=e601]: Foloseşte o postare existentă
+                        - listbox "Selectează o postare existentă sau creează una nouă" [ref=e2019]:
+                          - option "Creează o reclamă" [ref=e2020]:
+                            - generic [ref=e2028]: Creează o reclamă
+                          - option "Foloseşte o postare existentă" [active] [selected] [ref=e2029]:
+                            - generic [ref=e2039]: Foloseşte o postare existentă
+                          - option "Foloseşte o machetă din Hubul de creaţie" [ref=e2040]:
+                            - generic [ref=e2048]: Foloseşte o machetă din Hubul de creaţie
+                    - generic [ref=e615] [cursor=pointer]:
+                      - generic [ref=e619]:
+                        - checkbox "Reclame de la mai mulţi advertiseri" [ref=e620]
+                        - generic:
+                          - img
+                      - generic [ref=e621]:
+                        - generic [ref=e623]: Reclame de la mai mulţi advertiseri
+                        - generic [ref=e625]:
+                          - text: Reclama ta poate apărea împreună cu alte reclame în aceeaşi unitate de publicitate, pentru a creşte vizibilitatea. Componenta creativă a reclamei poate fi redimensionată sau decupată.
+                          - link "Despre reclamele de la mai mulţi advertiseri" [ref=e627]:
+                            - /url: https://www.facebook.com/business/help/1024826868233885
+                - generic [ref=e632]:
+                  - heading "Surse de reclame" [level=3] [ref=e640]
+                  - generic [ref=e1567]:
+                    - generic [ref=e1569]:
+                      - text: Conectează surse de reclame pentru a include în reclamă mai multe informaţii care să inspire utilizatorii să realizeze acţiuni.
+                      - link "Despre sursele de reclame" [ref=e1570] [cursor=pointer]:
+                        - /url: https://www.facebook.com/business/help/3787607341463348
+                    - generic [ref=e1574]:
+                      - generic [ref=e1581]: URL sursă
+                      - generic [ref=e1588]: Introdu un URL pentru a găsi automat linkuri către site-uri pe care poţi alege să le adaugi. În mod implicit, vom folosi URL-ul site-ului tău web de destinaţie.
+                      - generic [ref=e1589]:
+                        - generic [ref=e1591]:
+                          - generic [ref=e1597]: URL sursă
+                          - textbox "URL sursă" [ref=e1606]:
+                            - /placeholder: http://www.example.com/page
+                            - text: www.WorldCup26.world
+                        - link "Previzualizare URL" [ref=e1608] [cursor=pointer]:
+                          - /url: http://www.WorldCup26.world/?fbclid=fbclid
+                          - generic [ref=e1613]: Previzualizare URL
+                    - generic [ref=e1615]:
+                      - generic [ref=e1622]: Surse de reclame (0/2)
+                      - generic [ref=e1623]:
+                        - generic [ref=e1626]:
+                          - text: "Dezactivată:"
+                          - generic [ref=e1627]: Linkuri către site, Repere de pe site-ul web
+                        - button "Editează" [ref=e1628] [cursor=pointer]:
+                          - generic [ref=e1632]: Editează
+                - generic [ref=e650]:
+                  - generic [ref=e652]:
+                    - heading "Componenta creativă a reclamei" [level=3] [ref=e658]
+                    - generic [ref=e660]: Selectează şi optimizează textul, elementul media şi îmbunătăţirile reclamei.
+                  - generic [ref=e890]:
+                    - generic [ref=e898]: Îmbunătăţiri componentă creativă Advantage+ (2/4)
+                    - generic [ref=e904]:
+                      - generic [ref=e905]:
+                        - generic [ref=e907]:
+                          - generic [ref=e909]:
+                            - text: "Dezactivată:"
+                            - generic [ref=e910]: Adaugă subtitrări, Adaugă detalii la aspectul reclamei
+                          - generic [ref=e912]:
+                            - text: "Activată:"
+                            - generic [ref=e913]: Retuşuri video, Îmbunătăţiri de text
+                        - generic [ref=e914]:
+                          - generic [ref=e917]: Îmbunătăţiri esenţiale (3/3)
+                          - generic [ref=e925]:
+                            - text: "Activată:"
+                            - generic [ref=e926]: Comentarii relevante, Îmbunătăţeşte apelul la acţiune, Adaugă efecte video
+                      - button "Editează" [ref=e927] [cursor=pointer]:
+                        - generic [ref=e931]: Editează
+              - generic [ref=e945]:
+                - generic [ref=e947]:
+                  - heading "Urmărire" [level=3] [ref=e953]
+                  - generic [ref=e955]: Alege evenimentele de conversie pentru urmărire. Setul de date de conversie selectat pentru acest cont de publicitate va fi urmărit în mod implicit.
+                - generic [ref=e964]:
+                  - generic [ref=e969]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - heading [level=4]
+                    - generic [ref=e972]:
+                      - generic [ref=e980]:
+                        - heading "Evenimente de pe site-ul web" [level=4] [ref=e982]
+                        - button "Află mai multe" [ref=e983]
+                      - generic [ref=e993] [cursor=pointer]:
+                        - generic [ref=e997]:
+                          - checkbox "Evenimente din aplicaţie" [ref=e998]
+                          - generic:
+                            - img
+                        - generic [ref=e1001]: Evenimente din aplicaţie
+                      - generic [ref=e1008]:
+                        - heading "Evenimente offline" [level=4] [ref=e1010]
+                        - button "Află mai multe" [ref=e1011]
+                  - generic [ref=e1013]:
+                    - generic [ref=e1015]:
+                      - generic [ref=e1021]: Parametri URL
+                      - textbox "Parametri URL" [ref=e1032]:
+                        - /placeholder: key1=value1&key2=value2
+                    - link "Creează un parametru URL" [ref=e1035] [cursor=pointer]:
+                      - /url: "#"
+                  - generic [ref=e1037]:
+                    - generic [ref=e1043]: Instrumente de raportare terţe
+                    - generic [ref=e1044]:
+                      - generic [ref=e1045]:
+                        - text: S-ar putea ca achiziţiile de pe Meta să nu fie incluse în raportarea Google. Conectează contul pentru a măsura acţiunile asupra reclamelor care trimit utilizatorii către site-ul web sau magazinul tău.
+                        - link "Află mai multe" [ref=e1047] [cursor=pointer]:
+                          - /url: https://www.facebook.com/business/help/140637645369656
+                      - link "Conectează" [ref=e1048] [cursor=pointer]:
+                        - /url: /adsmanager/manage/advertising_settings/third_party_marketing_tags?act=61071192
+                        - generic [ref=e1052]: Conectează
+            - generic [ref=e1054]:
+              - generic [ref=e1071]:
+                - heading "Recomandări privind campaniile" [level=3] [ref=e1072]
+                - generic [ref=e1073]: Toate setările recomandate aplicate.
+              - generic [ref=e1092]:
+                - generic [ref=e1094]:
+                  - generic [ref=e1095]:
+                    - generic [ref=e1097]:
+                      - switch "Previzualizarea reclamei" [checked] [ref=e1099] [cursor=pointer]
+                      - generic [ref=e1105] [cursor=pointer]: Previzualizarea reclamei
+                    - generic [ref=e1106]:
+                      - button "Previzualizare avansată" [ref=e1108] [cursor=pointer]:
+                        - generic [ref=e1113]: Previzualizare avansată
+                      - button "Distribuie" [ref=e1114] [cursor=pointer]:
+                        - generic [ref=e1117]: Distribuie
+                  - separator [ref=e1121]
+                  - generic [ref=e1124]:
+                    - tablist [ref=e1127]:
+                      - tab "Toate" [selected] [ref=e1128] [cursor=pointer]
+                      - tab "Fluxuri, Reclame in-stream pentru reel-uri" [ref=e1132] [cursor=pointer]
+                      - tab "Stories, Stare, Reels, Rezultatele căutării, Aplicaţii şi site-uri" [ref=e1136] [cursor=pointer]
+                      - tab "Coloana din dreapta, Rezultatele căutării" [ref=e1140] [cursor=pointer]
+                    - tablist [ref=e1145]:
+                      - tab "Reclama nu se va livra în 2 poziţionări" [ref=e1146] [cursor=pointer]:
+                        - generic [ref=e1150]:
+                          - generic [ref=e1152]: "2"
+                          - status [ref=e1153]: Reclama nu se va livra în 2 poziţionări
+                - generic [ref=e1154]:
+                  - generic [ref=e1162]:
+                    - generic [ref=e1165]:
+                      - heading "Acum poţi vedea mai multe variante ale reclamei tale în previzualizări" [level=4] [ref=e1172]
+                      - button "Deschide" [ref=e1173] [cursor=pointer]:
+                        - generic [ref=e1176]: Deschide
+                    - generic [ref=e1180]:
+                      - generic [ref=e1207]:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: Meet My Idol
+                                - generic: Reclamă ·
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: ...Vezi mai multe
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic: ⚽
+                                            - text: World Cup 2026 is HERE — Pick 3 teams, climb the leaderboard & win from a $4,360 USDT prize pool!
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic: ✅
+                                            - text: "Entry: $50 USD"
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic: 🏆
+                                            - text: Top 10 players win
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic: 💰
+                                            - text: Refer friends & earn 5% of their winnings
+                                      - generic:
+                                        - generic: Play now at worldcup26.world
+                                    - text: ","
+                          - generic:
+                            - generic:
+                              - group "Video player" [ref=e1214]:
+                                - button [ref=e1215]
+                                - button "Redă" [ref=e1217] [cursor=pointer]
+                                - generic [ref=e1219]:
+                                  - generic [ref=e1221]:
+                                    - button "Redare" [ref=e1225] [cursor=pointer]
+                                    - generic [ref=e1227]: 0:00 / 1:30
+                                  - slider "Change Position" [ref=e1230] [cursor=pointer]
+                                  - generic [ref=e1234] [cursor=pointer]:
+                                    - generic [ref=e1236]:
+                                      - slider "Schimbă volumul"
+                                    - button "Reporneşte sunetul" [ref=e1240]:
+                                      - img [ref=e1241]
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic: WORLDCUP26.WORLD
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Pick 3 Teams. Win $4,360 USDT.
+                                - generic:
+                                  - generic:
+                                    - button "Află mai multe":
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic: Află mai multe
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: "2"
+                                - generic:
+                                  - generic:
+                                    - generic: 1 distribuire
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic: Îmi place
+                                - generic:
+                                  - generic:
+                                    - generic: Comentează
+                                - generic:
+                                  - generic:
+                                    - generic: Distribuie
+                      - generic [ref=e1246]:
+                        - generic [ref=e1257]:
+                          - generic [ref=e1261]: Ajustează raportul de aspect
+                          - status [ref=e1262]: Ajustează raportul de aspect
+                        - generic [ref=e1289]:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic: Meet My Idol
+                                  - generic: Reclamă ·
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic: ...Vezi mai multe
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic: ⚽
+                                              - text: World Cup 2026 is HERE — Pick 3 teams, climb the leaderboard & win from a $4,360 USDT prize pool!
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic: ✅
+                                              - text: "Entry: $50 USD"
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic: 🏆
+                                              - text: Top 10 players win
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic: 💰
+                                              - text: Refer friends & earn 5% of their winnings
+                                        - generic:
+                                          - generic: Play now at worldcup26.world
+                                      - text: ","
+                            - generic:
+                              - generic:
+                                - group "Video player" [ref=e1296]:
+                                  - button [ref=e1297]
+                                  - button "Redă" [ref=e1299] [cursor=pointer]
+                                  - generic [ref=e1301]:
+                                    - generic [ref=e1303]:
+                                      - button "Redare" [ref=e1307] [cursor=pointer]
+                                      - generic [ref=e1309]: 0:00 / 1:30
+                                    - slider "Change Position" [ref=e1312] [cursor=pointer]
+                                    - generic [ref=e1316] [cursor=pointer]:
+                                      - generic [ref=e1318]:
+                                        - slider "Schimbă volumul"
+                                      - button "Reporneşte sunetul" [ref=e1322]:
+                                        - img [ref=e1323]
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic: WORLDCUP26.WORLD
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic: Pick 3 Teams. Win $4,360 USDT.
+                                  - generic:
+                                    - generic:
+                                      - button "Află mai multe":
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic: Află mai multe
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic: "2"
+                                  - generic:
+                                    - generic:
+                                      - generic: 1 distribuire
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic: Îmi place
+                                  - generic:
+                                    - generic:
+                                      - generic: Comentează
+                                  - generic:
+                                    - generic:
+                                      - generic: Distribuie
+                      - generic [ref=e1354]:
+                        - generic [ref=e1360]:
+                          - generic [ref=e1363]: meetmyidol_io
+                          - generic [ref=e1364]: Reclamă
+                        - group "Video player" [ref=e1379]
+                        - generic [ref=e1383]: Află mai multe
+                        - generic [ref=e1387]:
+                          - generic [ref=e1389]:
+                            - button "Îmi place" [ref=e1391]
+                            - button "Comentează" [ref=e1393]
+                            - button "Repostează" [ref=e1395]
+                            - button "Distribuie" [ref=e1397]
+                          - button "Salvează" [ref=e1400]
+                        - generic [ref=e1403]:
+                          - text: meetmyidol_io
+                          - generic [ref=e1405]:
+                            - generic [ref=e1406]: ⚽ World Cup 2026 is HERE —
+                            - generic [ref=e1407]:
+                              - text: Pick 3 teams, climb the leaderboard & win fr...
+                              - button "more" [ref=e1408]
+                      - generic [ref=e1418]:
+                        - generic [ref=e1422]: Ajustează raportul de aspect
+                        - status [ref=e1423]: Ajustează raportul de aspect
+                      - generic [ref=e1447]:
+                        - generic [ref=e1451]: Ajustează raportul de aspect
+                        - status [ref=e1452]: Ajustează raportul de aspect
+                    - button "Vezi mai multe variante" [ref=e1502] [cursor=pointer]:
+                      - generic [ref=e1507]: Vezi mai multe variante
+                  - generic [ref=e1509]: Redarea reclamelor şi modul de a interacţiona cu acestea pot varia în funcţie de dispozitiv, de format şi de alţi factori.
+          - generic [ref=e1519]:
+            - generic [ref=e1522]:
+              - text: Făcând clic pe Publică, confirmi că utilizarea de către tine a instrumentelor de publicitate ale Meta face obiectul
+              - link "Termeni şi condiţii" [ref=e1523] [cursor=pointer]:
+                - /url: "#"
+              - text: .
+            - generic [ref=e1524]:
+              - button "Închide" [ref=e1526] [cursor=pointer]:
+                - generic [ref=e1530]: Închide
+              - generic [ref=e1536]:
+                - button "Renunţă la schiţă" [disabled] [ref=e1538]:
+                  - generic [ref=e1542]: Renunţă la schiţă
+                - button "Publică" [disabled] [ref=e1544]:
+                  - generic [ref=e1548]: Publică

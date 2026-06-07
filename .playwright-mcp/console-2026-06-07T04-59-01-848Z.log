@@ -1,0 +1,33 @@
+[    1191ms] [INFO] [AuthChecker] login shouldBlock: false @ https://files.manuscdn.com/webapp/_next/static/chunks/99163-f4f2d053dcd2693d.js:0
+[    1191ms] [INFO] [AuthChecker] smsVerify shouldBlock: false @ https://files.manuscdn.com/webapp/_next/static/chunks/99163-f4f2d053dcd2693d.js:0
+[    1191ms] [INFO] [AuthChecker] invitationVerify shouldBlock: false @ https://files.manuscdn.com/webapp/_next/static/chunks/99163-f4f2d053dcd2693d.js:0
+[   29050ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://api.manus.im/session.v1.VideoEditingService/GetVideoEditing:0
+[  195821ms] [LOG] %c
+▲
+
+__  __                                     _            __
+\ \/ /___  __  __   _________ _____       (_)_  _______/ /_
+ \  / __ \/ / / /  / ___/ __ `/ __ \     / / / / / ___/ __/
+ / / /_/ / /_/ /  / /__/ /_/ / / / /    / / /_/ (__  ) /_
+/_/\____/\__,_/   \___/\__,_/_/ /_/  __/ /\__,_/____/\__/
+         __    _          __  __    /___/
+   _____/ /_  (_)___     / /_/ /_  (_)___  ____ ______
+  / ___/ __ \/ / __ \   / __/ __ \/ / __ \/ __ `/ ___/
+ (__  ) / / / / /_/ /  / /_/ / / / / / / / /_/ (__  )
+/____/_/ /_/_/ .___/   \__/_/ /_/_/_/ /_/\__, /____/
+            /_/                         /____/
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/immutable/chunks/0-ks46k3iq52l.js:78
+[  196158ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/immutable/chunks/2tnbrlqru_fp5.js:18
+[  196290ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/jwt:0
+[  214263ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://github.com/sessions/two-factor/webauthn:0
+[  217699ms] [WARNING] The resource https://github.githubassets.com/assets/global-banner-disable-7d723d7ca7c7142f.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/sessions/two-factor/webauthn:0
+[  222678ms] [WARNING] The resource https://github.githubassets.com/assets/global-banner-disable-7d723d7ca7c7142f.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://github.com/sessions/two-factor/webauthn:0
+[  244040ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://github.com/sessions/two-factor/webauthn:0

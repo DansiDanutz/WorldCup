@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Remote War Room</title>
+  <style>
+    :root { color-scheme: dark; --bg: #03140f; --panel: #0b2a20; --line: rgba(255,255,255,.16); --text: #f7fff9; --muted: #b8c9c2; --gold: #ffd974; --mint: #78f0b5; --danger: #ff9f9f; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: radial-gradient(circle at 8% 0%, rgba(120,240,181,.16), transparent 26rem), radial-gradient(circle at 90% 6%, rgba(255,217,116,.18), transparent 24rem), var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(1120px, 100%); margin: 0 auto; padding: 14px 10px 48px; }
+    header, article, section { border: 1px solid var(--line); background: rgba(11,42,32,.92); border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+    header { padding: 18px; margin-bottom: 12px; }
+    h1 { margin: 4px 0 8px; font-size: clamp(30px, 6vw, 52px); line-height: .95; }
+    .eyebrow { margin: 0; color: var(--gold); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 900; }
+    .stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-top: 14px; }
+    .stat { border: 1px solid var(--line); border-radius: 12px; padding: 10px; background: rgba(255,255,255,.06); }
+    .stat span { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; font-weight: 800; }
+    .stat strong { font-size: 22px; color: var(--gold); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    article { padding: 14px; }
+    article.is-bad { border-color: rgba(255,159,159,.55); }
+    article h2 { margin: 0; font-size: 24px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 7px 9px; color: var(--text); background: rgba(255,255,255,.06); font-weight: 800; }
+    .pill.hot { color: #062016; background: linear-gradient(135deg, var(--gold), var(--mint)); }
+    pre { white-space: pre-wrap; word-break: break-word; border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: rgba(0,0,0,.24); max-height: 180px; overflow: auto; }
+    .rule { margin-top: 12px; padding: 14px; color: var(--muted); }
+    @media (max-width: 760px) { .stats, .grid { grid-template-columns: 1fr; } h1 { font-size: 34px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Generated 2026-06-07 20:44 +0300</p>
+      <h1>Remote War Room</h1>
+      <p>Droplet readiness, hot action alignment, and proof-gap status. This is not proof of external posting.</p>
+      <div class="stats">
+        <div class="stat"><span>Hosts OK</span><strong>4/4</strong></div>
+        <div class="stat"><span>Loops</span><strong>4/4</strong></div>
+        <div class="stat"><span>Hooks</span><strong>4/4</strong></div>
+        <div class="stat"><span>Links</span><strong>4/4</strong></div>
+        <div class="stat"><span>Paid</span><strong>4/4</strong></div>
+        <div class="stat"><span>Live Ad QA</span><strong>4/4</strong></div>
+        <div class="stat"><span>Sprints</span><strong>4/4</strong></div>
+        <div class="stat"><span>Recovery</span><strong>4/4</strong></div>
+        <div class="stat"><span>Escalation</span><strong>4/4</strong></div>
+        <div class="stat"><span>Proof Activity</span><strong>0/4</strong></div>
+        <div class="stat"><span>Proof SLA</span><strong>4/4</strong></div>
+        <div class="stat"><span>Proof Rescue</span><strong>4/4</strong></div>
+        <div class="stat"><span>URL Recovery</span><strong>1</strong></div>
+        <div class="stat"><span>Social Rescue</span><strong>4/4</strong></div>
+        <div class="stat"><span>Real Action</span><strong>4/4</strong></div>
+        <div class="stat"><span>One-Click</span><strong>4/4</strong></div>
+        <div class="stat"><span>Public Targets</span><strong>4/4</strong></div>
+        <div class="stat"><span>Ad Ops</span><strong>4/4</strong></div>
+        <div class="stat"><span>Paid Ad</span><strong>4/4</strong></div>
+        <div class="stat"><span>No-Click Rescue</span><strong>8</strong></div>
+        <div class="stat"><span>Ad Dash</span><strong>4/4</strong></div>
+        <div class="stat"><span>Paid Views</span><strong>219</strong></div>
+        <div class="stat"><span>Ad Clicks</span><strong>227</strong></div>
+        <div class="stat"><span>Funnel</span><strong>4/4</strong></div>
+        <div class="stat"><span>App Views</span><strong>478</strong></div>
+        <div class="stat"><span>Free/Paid</span><strong>4/1</strong></div>
+        <div class="stat"><span>Local Views</span><strong>509</strong></div>
+        <div class="stat"><span>Local Free/Paid</span><strong>4/1</strong></div>
+        <div class="stat"><span>Local Referral</span><strong>0</strong></div>
+        <div class="stat"><span>Warm Follow-up</span><strong>4/4</strong></div>
+        <div class="stat"><span>Warm Attempts</span><strong>0</strong></div>
+        <div class="stat"><span>Warm Signups</span><strong>0</strong></div>
+        <div class="stat"><span>Response Kit</span><strong>4/4</strong></div>
+        <div class="stat"><span>Replies</span><strong>13</strong></div>
+        <div class="stat"><span>First Human</span><strong>4/4</strong></div>
+        <div class="stat"><span>First State</span><strong>needs-first-human-action</strong></div>
+        <div class="stat"><span>First Signups</span><strong>0</strong></div>
+        <div class="stat"><span>First Send</span><strong>4/4</strong></div>
+        <div class="stat"><span>Send State</span><strong>send-now</strong></div>
+        <div class="stat"><span>Send Attempts</span><strong>0</strong></div>
+        <div class="stat"><span>Cockpit</span><strong>4/4</strong></div>
+        <div class="stat"><span>Phone Action</span><strong>4/4</strong></div>
+        <div class="stat"><span>Public Attempts</span><strong>4/4</strong></div>
+        <div class="stat"><span>Login Required</span><strong>6</strong></div>
+        <div class="stat"><span>Unlock Cards</span><strong>6</strong></div>
+        <div class="stat"><span>Wake Board</span><strong>4/4</strong></div>
+        <div class="stat"><span>Cron</span><strong>4/4</strong></div>
+        <div class="stat"><span>Urgent</span><strong>16</strong></div>
+      </div>
+    </header>
+    <div class="grid"><article class="is-bad">
+    <p class="eyebrow">2026-06-07 20:41 +0300</p>
+    <h2>dexter</h2>
+    <div class="pill-row">
+      <span class="pill">proof 49</span>
+      <span class="pill">urgent 16</span>
+      <span class="pill">loop yes</span>
+      <span class="pill">hook yes</span>
+      <span class="pill">hot fresh yes</span>
+      <span class="pill">link yes</span>
+      <span class="pill">paid yes</span>
+      <span class="pill">live ad yes</span>
+      <span class="pill">sprint yes</span>
+      <span class="pill">recovery yes</span>
+      <span class="pill">escalation yes</span>
+      <span class="pill">critical 16</span>
+      <span class="pill">hot 0</span>
+      <span class="pill">proof activity no</span>
+      <span class="pill">proof sla critical</span>
+      <span class="pill">rescue critical</span>
+      <span class="pill">url recovery 1</span>
+      <span class="pill">social critical</span>
+      <span class="pill">one-click 4</span>
+      <span class="pill">targets 41</span>
+      <span class="pill">ad ops 2</span>
+      <span class="pill">paid ad critical-paid-signup-friction</span>
+      <span class="pill">funnel ok</span>
+      <span class="pill">warm follow awaiting-first-human-send</span>
+      <span class="pill">responses 13</span>
+      <span class="pill">cockpit yes</span>
+      <span class="pill">phone yes</span>
+      <span class="pill">public yes</span>
+      <span class="pill">login 6</span>
+      <span class="pill">wake yes</span>
+      <span class="pill">watch yes</span>
+      <span class="pill">cron yes</span>
+    </div>
+    <div class="pill-row"><span class="pill hot">Dexter 3</span><span class="pill hot">Sienna 8</span><span class="pill ">Memo 0</span><span class="pill hot">Nano 5</span></div>
+    <p><strong>First:</strong> Dexter #4 / Football groups</p><p>Ask approved group admin for permission; post group variant only if allowed</p><pre>node campaign-proof-log.mjs --priority &quot;4&quot; --proof-url &quot;approval-request: asked admin &lt;group/channel&gt; at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed&quot; --status &quot;requested&quot;</pre>
+    <p><strong>Live ad QA:</strong> pages 7, assets 14, auth ok, social 2/2, local assets 5/5.</p>
+    <p><strong>One-click share:</strong> actions 4, share links 8, owners Nano, Sienna, Dexter, Memo.</p>
+    <p><strong>Public targets:</strong> 41 targets, owners Sienna, Nano, Dexter, Memo, missing none.</p>
+    <p><strong>Ad ops:</strong> 2 channels, platforms Meta Ads Manager, X Ads Manager.</p>
+    <p><strong>Paid ad triage:</strong> critical-paid-signup-friction, paid views 219, app views 478, referral views 146, signup saves 0, platforms Meta Ads Manager, X Ads Manager.</p>
+    <p><strong>Paid dashboard:</strong> paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78.</p>
+    <p><strong>No-click rescue:</strong> clicks-no-signups, variants 8, first META-1 Free private score preview.</p>
+    <p><strong>Direct paid dashboard:</strong> paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78.</p>
+    <p><strong>Funnel:</strong> profiles 5, free 4, paid 1, app views 478, referral views 146, accepted 0.</p>
+    <p><strong>Warm follow-up:</strong> awaiting-first-human-send, attempts 0, due no, referral views 152, signup saves 0. Next: Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.</p>
+    <p><strong>Response kit:</strong> ready-for-warm-replies, replies 13, first reply what-is-it / What is this?.</p>
+    <p><strong>Phone action center:</strong> actions 16, QR 22, assets 22, video 10.</p>
+    <p><strong>Public attempts:</strong> attempts 9, blocked 7, login required 6.</p>
+    <p><strong>Login unlock:</strong> cards 6, platforms X, YouTube Shorts, Facebook, LinkedIn, first X / X public fallback.</p>
+    <p><strong>SLA first:</strong> #warm-1 Nano / WhatsApp personal (now)</p>
+    <p><strong>Rescue first:</strong> #warm-1 Nano / WhatsApp personal</p>
+    <p><strong>URL recovery:</strong> dexter_pulse65 Dexter / X / public fallback</p>
+    <p><strong>Social first:</strong> #warm-1 Nano / WhatsApp personal (2 links, 4 worker pages)</p>
+    <p><strong>Wake first:</strong> #warm-1 Nano / WhatsApp personal</p>
+    <p><strong>Wake next:</strong> Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal.</p>
+    <p><strong>Proof stall:</strong> external stalled, latest external age 3.5h.</p>
+  </article>
+<article class="is-bad">
+    <p class="eyebrow">2026-06-07 20:41 +0300</p>
+    <h2>sienna</h2>
+    <div class="pill-row">
+      <span class="pill">proof 49</span>
+      <span class="pill">urgent 16</span>
+      <span class="pill">loop yes</span>
+      <span class="pill">hook yes</span>
+      <span class="pill">hot fresh yes</span>
+      <span class="pill">link yes</span>
+      <span class="pill">paid yes</span>
+      <span class="pill">live ad yes</span>
+      <span class="pill">sprint yes</span>
+      <span class="pill">recovery yes</span>
+      <span class="pill">escalation yes</span>
+      <span class="pill">critical 16</span>
+      <span class="pill">hot 0</span>
+      <span class="pill">proof activity no</span>
+      <span class="pill">proof sla critical</span>
+      <span class="pill">rescue critical</span>
+      <span class="pill">url recovery 1</span>
+      <span class="pill">social critical</span>
+      <span class="pill">one-click 4</span>
+      <span class="pill">targets 41</span>
+      <span class="pill">ad ops 2</span>
+      <span class="pill">paid ad critical-paid-signup-friction</span>
+      <span class="pill">funnel ok</span>
+      <span class="pill">warm follow awaiting-first-human-send</span>
+      <span class="pill">responses 13</span>
+      <span class="pill">cockpit yes</span>
+      <span class="pill">phone yes</span>
+      <span class="pill">public yes</span>
+      <span class="pill">login 6</span>
+      <span class="pill">wake yes</span>
+      <span class="pill">watch yes</span>
+      <span class="pill">cron yes</span>
+    </div>
+    <div class="pill-row"><span class="pill hot">Dexter 3</span><span class="pill hot">Sienna 8</span><span class="pill ">Memo 0</span><span class="pill hot">Nano 5</span></div>
+    <p><strong>First:</strong> Sienna #1 / WhatsApp Status</p><p>Post story asset with video caption 1</p><pre>node campaign-proof-log.mjs --priority &quot;1&quot; --proof-url &quot;private-whatsapp-status: posted status from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included&quot; --status &quot;posted&quot;</pre>
+    <p><strong>Live ad QA:</strong> pages 7, assets 14, auth ok, social 2/2, local assets 5/5.</p>
+    <p><strong>One-click share:</strong> actions 4, share links 8, owners Nano, Sienna, Dexter, Memo.</p>
+    <p><strong>Public targets:</strong> 41 targets, owners Sienna, Nano, Dexter, Memo, missing none.</p>
+    <p><strong>Ad ops:</strong> 2 channels, platforms Meta Ads Manager, X Ads Manager.</p>
+    <p><strong>Paid ad triage:</strong> critical-paid-signup-friction, paid views 219, app views 478, referral views 146, signup saves 0, platforms Meta Ads Manager, X Ads Manager.</p>
+    <p><strong>Paid dashboard:</strong> paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78.</p>
+    <p><strong>No-click rescue:</strong> clicks-no-signups, variants 8, first META-1 Free private score preview.</p>
+    <p><strong>Direct paid dashboard:</strong> paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78.</p>
+    <p><strong>Funnel:</strong> profiles 5, free 4, paid 1, app views 478, referral views 146, accepted 0.</p>
+    <p><strong>Warm follow-up:</strong> awaiting-first-human-send, attempts 0, due no, referral views 152, signup saves 0. Next: Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.</p>
+    <p><strong>Response kit:</strong> ready-for-warm-replies, replies 13, first reply what-is-it / What is this?.</p>
+    <p><strong>Phone action center:</strong> actions 16, QR 22, assets 22, video 10.</p>
+    <p><strong>Public attempts:</strong> attempts 9, blocked 7, login required 6.</p>
+    <p><strong>Login unlock:</strong> cards 6, platforms X, YouTube Shorts, Facebook, LinkedIn, first X / X public fallback.</p>
+    <p><strong>SLA first:</strong> #warm-1 Nano / WhatsApp personal (now)</p>
+    <p><strong>Rescue first:</strong> #warm-1 Nano / WhatsApp personal</p>
+    <p><strong>URL recovery:</strong> dexter_pulse65 Dexter / X / public fallback</p>
+    <p><strong>Social first:</strong> #warm-1 Nano / WhatsApp personal (2 links, 4 worker pages)</p>
+    <p><strong>Wake first:</strong> #warm-1 Nano / WhatsApp personal</p>
+    <p><strong>Wake next:</strong> Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal.</p>
+    <p><strong>Proof stall:</strong> external stalled, latest external age 3.5h.</p>
+  </article>
+<article class="is-bad">
+    <p class="eyebrow">2026-06-07 20:41 +0300</p>
+    <h2>memo</h2>
+    <div class="pill-row">
+      <span class="pill">proof 49</span>
+      <span class="pill">urgent 16</span>
+      <span class="pill">loop yes</span>
+      <span class="pill">hook yes</span>
+      <span class="pill">hot fresh yes</span>
+      <span class="pill">link yes</span>
+      <span class="pill">paid yes</span>
+      <span class="pill">live ad yes</span>
+      <span class="pill">sprint yes</span>
+      <span class="pill">recovery yes</span>
+      <span class="pill">escalation yes</span>
+      <span class="pill">critical 16</span>
+      <span class="pill">hot 0</span>
+      <span class="pill">proof activity no</span>
+      <span class="pill">proof sla critical</span>
+      <span class="pill">rescue critical</span>
+      <span class="pill">url recovery 1</span>
+      <span class="pill">social critical</span>
+      <span class="pill">one-click 4</span>
+      <span class="pill">targets 41</span>
+      <span class="pill">ad ops 2</span>
+      <span class="pill">paid ad critical-paid-signup-friction</span>
+      <span class="pill">funnel ok</span>
+      <span class="pill">warm follow awaiting-first-human-send</span>
+      <span class="pill">responses 13</span>
+      <span class="pill">cockpit yes</span>
+      <span class="pill">phone yes</span>
+      <span class="pill">public yes</span>
+      <span class="pill">login 6</span>
+      <span class="pill">wake yes</span>
+      <span class="pill">watch yes</span>
+      <span class="pill">cron yes</span>
+    </div>
+    <div class="pill-row"><span class="pill hot">Dexter 3</span><span class="pill hot">Sienna 8</span><span class="pill ">Memo 0</span><span class="pill hot">Nano 5</span></div>
+    <p>No first action.</p>
+    <p><strong>Live ad QA:</strong> pages 7, assets 14, auth ok, social 2/2, local assets 5/5.</p>
+    <p><strong>One-click share:</strong> actions 4, share links 8, owners Nano, Sienna, Dexter, Memo.</p>
+    <p><strong>Public targets:</strong> 41 targets, owners Sienna, Nano, Dexter, Memo, missing none.</p>
+    <p><strong>Ad ops:</strong> 2 channels, platforms Meta Ads Manager, X Ads Manager.</p>
+    <p><strong>Paid ad triage:</strong> critical-paid-signup-friction, paid views 219, app views 478, referral views 146, signup saves 0, platforms Meta Ads Manager, X Ads Manager.</p>
+    <p><strong>Paid dashboard:</strong> paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78.</p>
+    <p><strong>No-click rescue:</strong> clicks-no-signups, variants 8, first META-1 Free private score preview.</p>
+    <p><strong>Direct paid dashboard:</strong> paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78.</p>
+    <p><strong>Funnel:</strong> profiles 5, free 4, paid 1, app views 478, referral views 146, accepted 0.</p>
+    <p><strong>Warm follow-up:</strong> awaiting-first-human-send, attempts 0, due no, referral views 152, signup saves 0. Next: Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.</p>
+    <p><strong>Response kit:</strong> ready-for-warm-replies, replies 13, first reply what-is-it / What is this?.</p>
+    <p><strong>Phone action center:</strong> actions 16, QR 22, assets 22, video 10.</p>
+    <p><strong>Public attempts:</strong> attempts 9, blocked 7, login required 6.</p>
+    <p><strong>Login unlock:</strong> cards 6, platforms X, YouTube Shorts, Facebook, LinkedIn, first X / X public fallback.</p>
+    <p><strong>SLA first:</strong> #warm-1 Nano / WhatsApp personal (now)</p>
+    <p><strong>Rescue first:</strong> #warm-1 Nano / WhatsApp personal</p>
+    <p><strong>URL recovery:</strong> dexter_pulse65 Dexter / X / public fallback</p>
+    <p><strong>Social first:</strong> #warm-1 Nano / WhatsApp personal (2 links, 4 worker pages)</p>
+    <p><strong>Wake first:</strong> #warm-1 Nano / WhatsApp personal</p>
+    <p><strong>Wake next:</strong> Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal.</p>
+    <p><strong>Proof stall:</strong> external stalled, latest external age 3.5h.</p>
+  </article>
+<article class="is-bad">
+    <p class="eyebrow">2026-06-07 20:41 +0300</p>
+    <h2>nano</h2>
+    <div class="pill-row">
+      <span class="pill">proof 49</span>
+      <span class="pill">urgent 16</span>
+      <span class="pill">loop yes</span>
+      <span class="pill">hook yes</span>
+      <span class="pill">hot fresh yes</span>
+      <span class="pill">link yes</span>
+      <span class="pill">paid yes</span>
+      <span class="pill">live ad yes</span>
+      <span class="pill">sprint yes</span>
+      <span class="pill">recovery yes</span>
+      <span class="pill">escalation yes</span>
+      <span class="pill">critical 16</span>
+      <span class="pill">hot 0</span>
+      <span class="pill">proof activity no</span>
+      <span class="pill">proof sla critical</span>
+      <span class="pill">rescue critical</span>
+      <span class="pill">url recovery 1</span>
+      <span class="pill">social critical</span>
+      <span class="pill">one-click 4</span>
+      <span class="pill">targets 41</span>
+      <span class="pill">ad ops 2</span>
+      <span class="pill">paid ad critical-paid-signup-friction</span>
+      <span class="pill">funnel ok</span>
+      <span class="pill">warm follow awaiting-first-human-send</span>
+      <span class="pill">responses 13</span>
+      <span class="pill">cockpit yes</span>
+      <span class="pill">phone yes</span>
+      <span class="pill">public yes</span>
+      <span class="pill">login 6</span>
+      <span class="pill">wake yes</span>
+      <span class="pill">watch yes</span>
+      <span class="pill">cron yes</span>
+    </div>
+    <div class="pill-row"><span class="pill hot">Dexter 3</span><span class="pill hot">Sienna 8</span><span class="pill ">Memo 0</span><span class="pill hot">Nano 5</span></div>
+    <p><strong>First:</strong> Nano #2 / WhatsApp personal</p><p>Send personal invite to warm contacts</p><pre>node campaign-proof-log.mjs --priority &quot;2&quot; --proof-url &quot;private-whatsapp: sent to &lt;N&gt; warm contacts from &lt;phone/account&gt; at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies &lt;N&gt;&quot; --status &quot;sent&quot;</pre>
+    <p><strong>Live ad QA:</strong> pages 7, assets 14, auth ok, social 2/2, local assets 5/5.</p>
+    <p><strong>One-click share:</strong> actions 4, share links 8, owners Nano, Sienna, Dexter, Memo.</p>
+    <p><strong>Public targets:</strong> 41 targets, owners Sienna, Nano, Dexter, Memo, missing none.</p>
+    <p><strong>Ad ops:</strong> 2 channels, platforms Meta Ads Manager, X Ads Manager.</p>
+    <p><strong>Paid ad triage:</strong> critical-paid-signup-friction, paid views 219, app views 478, referral views 146, signup saves 0, platforms Meta Ads Manager, X Ads Manager.</p>
+    <p><strong>Paid dashboard:</strong> paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78.</p>
+    <p><strong>No-click rescue:</strong> clicks-no-signups, variants 8, first META-1 Free private score preview.</p>
+    <p><strong>Direct paid dashboard:</strong> paid-clicks-no-signups, checks 2, impressions 12, clicks 227, spend 31.78.</p>
+    <p><strong>Funnel:</strong> profiles 5, free 4, paid 1, app views 478, referral views 146, accepted 0.</p>
+    <p><strong>Warm follow-up:</strong> awaiting-first-human-send, attempts 0, due no, referral views 152, signup saves 0. Next: Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.</p>
+    <p><strong>Response kit:</strong> ready-for-warm-replies, replies 13, first reply what-is-it / What is this?.</p>
+    <p><strong>Phone action center:</strong> actions 16, QR 22, assets 22, video 10.</p>
+    <p><strong>Public attempts:</strong> attempts 9, blocked 7, login required 6.</p>
+    <p><strong>Login unlock:</strong> cards 6, platforms X, YouTube Shorts, Facebook, LinkedIn, first X / X public fallback.</p>
+    <p><strong>SLA first:</strong> #warm-1 Nano / WhatsApp personal (now)</p>
+    <p><strong>Rescue first:</strong> #warm-1 Nano / WhatsApp personal</p>
+    <p><strong>URL recovery:</strong> dexter_pulse65 Dexter / X / public fallback</p>
+    <p><strong>Social first:</strong> #warm-1 Nano / WhatsApp personal (2 links, 4 worker pages)</p>
+    <p><strong>Wake first:</strong> #warm-1 Nano / WhatsApp personal</p>
+    <p><strong>Wake next:</strong> Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal.</p>
+    <p><strong>Proof stall:</strong> external stalled, latest external age 3.5h.</p>
+  </article></div>
+    <section class="rule"><strong>Proof rule:</strong> This report proves droplet readiness only. Log proof only after real posts/messages/actions happen.</section>
+  </main>
+</body>
+</html>

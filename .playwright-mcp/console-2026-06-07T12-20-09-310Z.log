@@ -1,0 +1,63 @@
+[    2132ms] [ERROR] Permissions policy violation: unload is not allowed in this document. @ https://static.xx.fbcdn.net/rsrc.php/v4/ys/r/wPrfXEAC8ZC.js:321
+[    4381ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[    4385ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[    4387ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[    4396ms] [LOG] 
+%cStai! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.xx.fbcdn.net/rsrc.php/v4i_Ck4/yn/l/ro_RO-j/PMxYTQ1zerFhM9YCzsuX3eLKkEjjLCoIClJlx4XBqvc3UiJHx9vxGUeFbrZ-OzE10oXcgcWUruCBXc8YoyHMTeb24ljWOLz41HP5lRB1uIhTzOm1W0f-A0dIfO8wBlQtiBysKXTUqcK0zLs-CoiMH3HZCOjbQQbzRJRC5FK_tU0vXIGh9USAbvAcgAZLi05LdeVqfAOm99s8I2rnu.js:1677
+[    4396ms] [LOG] 
+%cAceasta este o funcţie de browser destinată dezvoltatorilor. Dacă cineva ţi-a spus să copiezi ceva aici pentru a activa o altă funcţie Facebook sau pentru a „sparge” contul cuiva, este o înşelătorie şi îi vei oferi acces la contul tău de Facebook. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4i_Ck4/yn/l/ro_RO-j/PMxYTQ1zerFhM9YCzsuX3eLKkEjjLCoIClJlx4XBqvc3UiJHx9vxGUeFbrZ-OzE10oXcgcWUruCBXc8YoyHMTeb24ljWOLz41HP5lRB1uIhTzOm1W0f-A0dIfO8wBlQtiBysKXTUqcK0zLs-CoiMH3HZCOjbQQbzRJRC5FK_tU0vXIGh9USAbvAcgAZLi05LdeVqfAOm99s8I2rnu.js:1677
+[    4396ms] [LOG] 
+%cPentru mai multe informaţii, vezi https://www.facebook.com/selfxss. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4i_Ck4/yn/l/ro_RO-j/PMxYTQ1zerFhM9YCzsuX3eLKkEjjLCoIClJlx4XBqvc3UiJHx9vxGUeFbrZ-OzE10oXcgcWUruCBXc8YoyHMTeb24ljWOLz41HP5lRB1uIhTzOm1W0f-A0dIfO8wBlQtiBysKXTUqcK0zLs-CoiMH3HZCOjbQQbzRJRC5FK_tU0vXIGh9USAbvAcgAZLi05LdeVqfAOm99s8I2rnu.js:1677
+[    4396ms] [LOG] 
+%c  @ https://static.xx.fbcdn.net/rsrc.php/v4i_Ck4/yn/l/ro_RO-j/PMxYTQ1zerFhM9YCzsuX3eLKkEjjLCoIClJlx4XBqvc3UiJHx9vxGUeFbrZ-OzE10oXcgcWUruCBXc8YoyHMTeb24ljWOLz41HP5lRB1uIhTzOm1W0f-A0dIfO8wBlQtiBysKXTUqcK0zLs-CoiMH3HZCOjbQQbzRJRC5FK_tU0vXIGh9USAbvAcgAZLi05LdeVqfAOm99s8I2rnu.js:1677
+[    4415ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   26198ms] [LOG] 
+%cStai! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.xx.fbcdn.net/rsrc.php/v4i5IE4/yL/l/ro_RO-j/DyKhI9RxyQ1.js:6
+[   26198ms] [LOG] 
+%cAceasta este o funcţie de browser destinată dezvoltatorilor. Dacă cineva ţi-a spus să copiezi ceva aici pentru a activa o altă funcţie Facebook sau pentru a „sparge” contul cuiva, este o înşelătorie şi îi vei oferi acces la contul tău de Facebook. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4i5IE4/yL/l/ro_RO-j/DyKhI9RxyQ1.js:6
+[   26198ms] [LOG] 
+%cPentru mai multe informaţii, vezi https://www.facebook.com/selfxss. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4i5IE4/yL/l/ro_RO-j/DyKhI9RxyQ1.js:6
+[   26198ms] [LOG] 
+%c  @ https://static.xx.fbcdn.net/rsrc.php/v4i5IE4/yL/l/ro_RO-j/DyKhI9RxyQ1.js:6
+[  409215ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  413706ms] [ERROR] Failed to load resource: the server responded with a status of 429 () @ https://o30969.ingest.us.sentry.io/api/4510761750364160/envelope/?sentry_version=7&sentry_key=5488c61fc276971bf2424e0386c5d27a&sentry_client=sentry.javascript.nextjs%2F10.19.0:0
+[  421878ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  426579ms] [ERROR] Failed to load resource: the server responded with a status of 429 () @ https://o30969.ingest.us.sentry.io/api/4510761750364160/envelope/?sentry_version=7&sentry_key=5488c61fc276971bf2424e0386c5d27a&sentry_client=sentry.javascript.nextjs%2F10.19.0:0
+[  437184ms] [ERROR] [Trend] Daily trend fetch failed: stale @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  442203ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://imagine-public.x.ai/x-ads/posts/2063318732923949092/1.png:0
+[  485385ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://ads.x.com/manager/18ce55rrs16/campaign-form:0
+[  495002ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  499738ms] [ERROR] Failed to load resource: the server responded with a status of 429 () @ https://o30969.ingest.us.sentry.io/api/4510761750364160/envelope/?sentry_version=7&sentry_key=5488c61fc276971bf2424e0386c5d27a&sentry_client=sentry.javascript.nextjs%2F10.19.0:0
+[  502671ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://imagine-public.x.ai/x-ads/posts/2063318732923949092/1.png:0
+[  505062ms] [ERROR] [Trend] Daily trend fetch failed: stale @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  526081ms] [ERROR] Failed to load resource: the server responded with a status of 429 () @ https://o30969.ingest.us.sentry.io/api/4510761750364160/envelope/?sentry_version=7&sentry_key=5488c61fc276971bf2424e0386c5d27a&sentry_client=sentry.javascript.nextjs%2F10.19.0:0
+[  662645ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  662902ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://imagine-public.x.ai/x-ads/posts/2063318732923949092/1.png:0
+[  667110ms] [ERROR] Failed to load resource: the server responded with a status of 429 () @ https://o30969.ingest.us.sentry.io/api/4510761750364160/envelope/?sentry_version=7&sentry_key=5488c61fc276971bf2424e0386c5d27a&sentry_client=sentry.javascript.nextjs%2F10.19.0:0
+[  679161ms] [ERROR] [Trend] Daily trend fetch failed: stale @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  679163ms] [ERROR] [Trend] Daily trend fetch failed: stale @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  687228ms] [ERROR] [Trend] Daily trend fetch failed: stale @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  687229ms] [ERROR] [Trend] Daily trend fetch failed: stale @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  695408ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://ads.x.com/manager/18ce55rrs16/ad-groups/55135915/edit:0
+[  705665ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  710347ms] [ERROR] Failed to load resource: the server responded with a status of 429 () @ https://o30969.ingest.us.sentry.io/api/4510761750364160/envelope/?sentry_version=7&sentry_key=5488c61fc276971bf2424e0386c5d27a&sentry_client=sentry.javascript.nextjs%2F10.19.0:0
+[  823995ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://ton.twimg.com/web-app-framework/x-web/xam/_next/static/chunks/700408e168e6ccc5.js:17
+[  824299ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://imagine-public.x.ai/x-ads/posts/2063599593947009378/1.png:0

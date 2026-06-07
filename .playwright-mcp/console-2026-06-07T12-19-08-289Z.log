@@ -1,0 +1,17 @@
+[    3263ms] [LOG] 
+%cStai! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.xx.fbcdn.net/rsrc.php/v4i5IE4/yL/l/ro_RO-j/DyKhI9RxyQ1.js:6
+[    3263ms] [LOG] 
+%cAceasta este o funcţie de browser destinată dezvoltatorilor. Dacă cineva ţi-a spus să copiezi ceva aici pentru a activa o altă funcţie Facebook sau pentru a „sparge” contul cuiva, este o înşelătorie şi îi vei oferi acces la contul tău de Facebook. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4i5IE4/yL/l/ro_RO-j/DyKhI9RxyQ1.js:6
+[    3263ms] [LOG] 
+%cPentru mai multe informaţii, vezi https://www.facebook.com/selfxss. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4i5IE4/yL/l/ro_RO-j/DyKhI9RxyQ1.js:6
+[    3263ms] [LOG] 
+%c  @ https://static.xx.fbcdn.net/rsrc.php/v4i5IE4/yL/l/ro_RO-j/DyKhI9RxyQ1.js:6
+[  375319ms] [WARNING] Blocked aria-hidden on an element because its descendant retained focus. The focus must not be hidden from assistive technology users. Avoid using aria-hidden on a focused element or its ancestor. Consider using the inert attribute instead, which will also prevent focus. For more details, see the aria-hidden section of the WAI-ARIA specification at https://w3c.github.io/aria/#aria-hidden.
+Element with focus: <button._5f0v>
+Ancestor with aria-hidden: <button._5f0v> @ https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown:0
+[  375574ms] [ERROR] Broken trigger flowlet chain! @ https://static.xx.fbcdn.net/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:280
+[  827716ms] [ERROR] ErrorUtils caught an error:
+
+Triggered an unintended ad object spec mutation! Action: ADS_ADGROUP_EDITOR_SET_WEBSITE_URL, browser event type: undefined
+
+Subsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {blameModule: AdsUEditorAdgroupWebsiteURLFieldContainer.react, column: 17870, clientTime: 1780835576, extra: Object, guardList: Array(3)} @ https://static.xx.fbcdn.net/rsrc.php/v4/yA/r/llpHPzBZ1ZW.js:79

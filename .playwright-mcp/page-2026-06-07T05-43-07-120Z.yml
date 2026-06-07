@@ -1,0 +1,919 @@
+- generic [active] [ref=e1]:
+  - status "WorldCup26 loading":
+    - generic:
+      - generic: +
+      - generic: +
+      - generic: +
+      - generic: +
+    - generic:
+      - generic:
+        - strong: WorldCup26.world
+        - generic: Prediction Game
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - link "Go to WorldCup26.world home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e9]: WorldCup Admin
+      - generic [ref=e10]:
+        - navigation "Admin navigation" [ref=e12]:
+          - link "Game Player view" [ref=e13] [cursor=pointer]:
+            - /url: /
+            - img [ref=e14]
+            - generic [ref=e20]:
+              - strong [ref=e21]: Game
+              - generic [ref=e22]: Player view
+          - link "Schema Draw view" [ref=e23] [cursor=pointer]:
+            - /url: /schema
+            - img [ref=e24]
+            - generic [ref=e28]:
+              - strong [ref=e29]: Schema
+              - generic [ref=e30]: Draw view
+          - link "Support WhatsApp" [ref=e31] [cursor=pointer]:
+            - /url: https://wa.me/40750257337
+            - img [ref=e32]
+            - generic [ref=e34]:
+              - strong [ref=e35]: Support
+              - generic [ref=e36]: WhatsApp
+        - button "Hide navigation cards" [expanded] [ref=e37] [cursor=pointer]:
+          - generic [ref=e42]:
+            - strong [ref=e43]: Navigation
+            - generic [ref=e44]: Tabs open
+          - img [ref=e45]
+    - generic [ref=e47]:
+      - region "Admin status" [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]: Signed in
+          - generic [ref=e51]: "No"
+        - generic [ref=e52]:
+          - generic [ref=e53]: Prize pool (net)
+          - generic [ref=e54]: 5,000
+        - generic [ref=e55]:
+          - generic [ref=e56]: Fee pool
+          - generic [ref=e57]: 1,250
+        - generic [ref=e58]:
+          - generic [ref=e59]: Due checks
+          - generic [ref=e60]: "0"
+        - generic [ref=e61]:
+          - generic [ref=e62]: Free accounts
+          - generic [ref=e63]: "-"
+        - generic [ref=e64]:
+          - generic [ref=e65]: Paid accounts
+          - generic [ref=e66]: "-"
+        - generic [ref=e67]:
+          - generic [ref=e68]: App views
+          - generic [ref=e69]: "-"
+        - generic [ref=e70]:
+          - generic [ref=e71]: Accounts loaded
+          - generic [ref=e72]: "0"
+      - navigation "Jump to admin section" [ref=e73]:
+        - link "Access" [ref=e74] [cursor=pointer]:
+          - /url: "#admin-readiness-panel"
+        - link "Analytics" [ref=e75] [cursor=pointer]:
+          - /url: "#admin-analytics-panel"
+        - link "Readiness" [ref=e76] [cursor=pointer]:
+          - /url: "#admin-production-readiness-panel"
+        - link "Policy" [ref=e77] [cursor=pointer]:
+          - /url: "#admin-operator-policy-panel"
+        - link "Sign-offs" [ref=e78] [cursor=pointer]:
+          - /url: "#admin-launch-signoffs-panel"
+        - link "Results" [ref=e79] [cursor=pointer]:
+          - /url: "#admin-result-entry-panel"
+        - link "Bracket" [ref=e80] [cursor=pointer]:
+          - /url: "#admin-bracket-panel"
+        - link "Tickets" [ref=e81] [cursor=pointer]:
+          - /url: "#admin-tickets-panel"
+        - link "Deposits" [ref=e82] [cursor=pointer]:
+          - /url: "#admin-deposit-claims-panel"
+        - link "Withdrawals" [ref=e83] [cursor=pointer]:
+          - /url: "#admin-withdrawal-requests-panel"
+        - link "Age 18+" [ref=e84] [cursor=pointer]:
+          - /url: "#admin-age-verification-panel"
+        - link "Agents" [ref=e85] [cursor=pointer]:
+          - /url: "#admin-agents-panel"
+        - link "Referrals" [ref=e86] [cursor=pointer]:
+          - /url: "#admin-referral-panel"
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]:
+              - heading "Admin access" [level=1] [ref=e91]
+              - paragraph [ref=e92]: Sign in with an allowlisted Google account. The break-glass secret is only for emergencies when email auth is unavailable.
+            - img [ref=e93]
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - generic [ref=e98]:
+                - strong [ref=e99]: Not signed in
+                - paragraph [ref=e100]: Use an allowlisted admin email.
+              - button "Sign in with Google" [ref=e101] [cursor=pointer]
+            - generic [ref=e102]:
+              - generic [ref=e103]: Break-glass secret (optional)
+              - textbox: worldcup-admin
+              - textbox "Break-glass secret (optional)" [ref=e104]:
+                - /placeholder: x-admin-secret header
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - generic [ref=e107]:
+              - heading "App analytics" [level=2] [ref=e108]
+              - paragraph [ref=e109]: Signups, free-to-paid conversion, and raw app views from the live funnel.
+            - button "Load Metrics" [ref=e111] [cursor=pointer]:
+              - img [ref=e112]
+              - text: Load Metrics
+          - generic [ref=e114]:
+            - generic "Admin account and app view metrics" [ref=e115]:
+              - generic [ref=e116]:
+                - generic [ref=e117]: Free accounts
+                - strong [ref=e122]: "-"
+                - generic [ref=e123]: Signed up, no assigned ticket yet
+              - generic [ref=e124]:
+                - generic [ref=e125]: Paid accounts
+                - strong [ref=e129]: "-"
+                - generic [ref=e130]: At least 1 ticket assigned
+              - generic [ref=e131]:
+                - generic [ref=e132]:
+                  - img [ref=e133]
+                  - text: App views
+                - strong [ref=e136]: "-"
+                - generic [ref=e137]: Tracked after this update
+            - generic [ref=e138]:
+              - generic [ref=e139]:
+                - generic [ref=e140]:
+                  - strong [ref=e141]: Total signup accounts
+                  - generic [ref=e142]: Every created referral profile from Google signup.
+                - generic [ref=e143]:
+                  - strong [ref=e144]: "-"
+                  - generic [ref=e145]: accounts
+              - generic [ref=e146]:
+                - generic [ref=e147]:
+                  - strong [ref=e148]: Locked paid entries
+                  - generic [ref=e149]: Players who used a ticket and entered the paid leaderboard.
+                - generic [ref=e150]:
+                  - strong [ref=e151]: "-"
+                  - generic [ref=e152]: free drafts pending
+              - generic [ref=e153]:
+                - generic [ref=e154]:
+                  - strong [ref=e155]: Tickets assigned
+                  - generic [ref=e156]: Admin-issued tickets; available tickets have not been used for a lock yet.
+                - generic [ref=e157]:
+                  - strong [ref=e158]: "-"
+                  - generic [ref=e159]: available pending
+              - generic [ref=e160]:
+                - generic [ref=e161]:
+                  - strong [ref=e162]: Last app view
+                  - generic [ref=e163]: Latest tracked visit recorded by the app.
+                - generic [ref=e164]:
+                  - strong [ref=e165]: "-"
+                  - generic [ref=e166]: Load metrics
+        - generic [ref=e167]:
+          - generic [ref=e168]:
+            - generic [ref=e169]:
+              - heading "Production readiness" [level=2] [ref=e170]
+              - paragraph [ref=e171]: Check launch-critical auth, database, payment, and policy wiring.
+            - button "Check" [ref=e172] [cursor=pointer]: Check
+          - generic [ref=e175]: Run this before launch and after any Vercel or Supabase configuration change.
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - generic [ref=e178]:
+              - heading "Operator policy" [level=2] [ref=e179]
+              - paragraph [ref=e180]: Set paid-action countries and USDT guardrails without redeploying.
+            - button "Load Policy" [ref=e181] [cursor=pointer]
+          - generic [ref=e182]:
+            - generic "Operator policy presets" [ref=e183]:
+              - generic [ref=e184]:
+                - strong [ref=e185]: Policy presets
+                - generic [ref=e186]: Fill the draft only. Review jurisdictions and caps before saving.
+              - generic [ref=e187]:
+                - button "Caps only Adds conservative USDT guardrails while leaving country policy for legal review." [ref=e188] [cursor=pointer]:
+                  - strong [ref=e189]: Caps only
+                  - generic [ref=e190]: Adds conservative USDT guardrails while leaving country policy for legal review.
+                - button "RO pilot draft Pilot paid actions for Romania with conservative USDT deposit and withdrawal caps." [ref=e191] [cursor=pointer]:
+                  - strong [ref=e192]: RO pilot draft
+                  - generic [ref=e193]: Pilot paid actions for Romania with conservative USDT deposit and withdrawal caps.
+                - button "RO + US pilot draft Pilot paid actions for Romania and the United States after operator/legal review." [ref=e194] [cursor=pointer]:
+                  - strong [ref=e195]: RO + US pilot draft
+                  - generic [ref=e196]: Pilot paid actions for Romania and the United States after operator/legal review.
+            - generic [ref=e197]:
+              - generic [ref=e198]:
+                - generic [ref=e199]: Allowed countries
+                - textbox "Allowed countries" [ref=e200]:
+                  - /placeholder: US, RO
+                - generic [ref=e201]: Use ISO alpha-2 country codes such as US or RO. Set this or blocked countries before launch. Leave empty only if blocked countries define the policy.
+              - generic [ref=e202]:
+                - generic [ref=e203]: Blocked countries
+                - textbox "Blocked countries" [ref=e204]:
+                  - /placeholder: GB, CA
+                - generic [ref=e205]: Comma-separated ISO alpha-2 country codes such as GB or CA. Blocked countries always win, and cannot overlap allowed countries.
+            - generic [ref=e206]:
+              - generic [ref=e207]:
+                - generic [ref=e208]: Max deposit claim
+                - spinbutton "Max deposit claim" [ref=e209]
+                - generic [ref=e210]: Optional per-claim cap in USDT. Blocks any single submitted deposit claim above this amount.
+              - generic [ref=e211]:
+                - generic [ref=e212]: Daily deposit cap
+                - spinbutton "Daily deposit cap" [ref=e213]
+                - generic [ref=e214]: Optional rolling 24-hour cap in USDT. Set this or Max deposit claim before launch.
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - generic [ref=e217]: Max withdrawal request
+                - spinbutton "Max withdrawal request" [ref=e218]
+                - generic [ref=e219]: Optional per-request cap in USDT. Blocks any single payout request above this amount.
+              - generic [ref=e220]:
+                - generic [ref=e221]: Daily withdrawal cap
+                - spinbutton "Daily withdrawal cap" [ref=e222]
+                - generic [ref=e223]: Optional rolling 24-hour cap in USDT. Set this or Max withdrawal request before launch.
+            - generic [ref=e224]:
+              - generic [ref=e225]: Review
+              - generic [ref=e226]: Operator policy launch gate needs country policy, deposit cap, withdrawal cap before the operator sign-off can be completed.
+            - generic "Paid-action gates" [ref=e227]:
+              - generic [ref=e228]:
+                - strong [ref=e229]: Paid-action gates
+                - generic [ref=e230]: Load policy or type values to preview.
+              - generic [ref=e231]:
+                - generic [ref=e232]:
+                  - generic [ref=e233]:
+                    - strong [ref=e234]: USDT deposits
+                    - generic [ref=e235]: Paused until country policy and deposit cap are configured.
+                  - generic [ref=e236]: Paused
+                - generic [ref=e237]:
+                  - generic [ref=e238]:
+                    - strong [ref=e239]: Ticket purchases
+                    - generic [ref=e240]: Paused until country policy is configured.
+                  - generic [ref=e241]: Paused
+                - generic [ref=e242]:
+                  - generic [ref=e243]:
+                    - strong [ref=e244]: Entry locking
+                    - generic [ref=e245]: Paused until country policy is configured.
+                  - generic [ref=e246]: Paused
+                - generic [ref=e247]:
+                  - generic [ref=e248]:
+                    - strong [ref=e249]: Withdrawal requests
+                    - generic [ref=e250]: Paused until country policy and withdrawal cap are configured.
+                  - generic [ref=e251]: Paused
+            - generic "Operator policy launch checklist" [ref=e252]:
+              - generic [ref=e253]:
+                - strong [ref=e254]: Launch policy checklist
+                - generic [ref=e255]: Required before operator sign-off.
+              - generic [ref=e256]:
+                - generic [ref=e257]:
+                  - generic [ref=e258]:
+                    - strong [ref=e259]: Country policy
+                    - generic [ref=e260]: Add allowed or blocked ISO country codes before launch.
+                  - generic [ref=e261]: Review
+                - generic [ref=e262]:
+                  - generic [ref=e263]:
+                    - strong [ref=e264]: Deposit cap
+                    - generic [ref=e265]: Set a per-claim or rolling 24-hour deposit cap.
+                  - generic [ref=e266]: Review
+                - generic [ref=e267]:
+                  - generic [ref=e268]:
+                    - strong [ref=e269]: Withdrawal cap
+                    - generic [ref=e270]: Set a per-request or rolling 24-hour withdrawal cap.
+                  - generic [ref=e271]: Review
+            - button "Save Operator Policy" [ref=e272] [cursor=pointer]
+            - generic [ref=e273]: "Source: not loaded"
+        - generic [ref=e274]:
+          - generic [ref=e275]:
+            - generic:
+              - heading "Launch sign-offs" [level=2]
+              - paragraph: Record the real-world payment tests and operator approvals needed before launch.
+            - generic [ref=e276]:
+              - button "Evidence Snapshot" [ref=e277] [cursor=pointer]:
+                - img [ref=e278]
+                - text: Evidence Snapshot
+              - button "Load Sign-offs" [ref=e283] [cursor=pointer]
+          - generic [ref=e285]: Load sign-offs to mark real USDT deposit tests, withdrawal payout tests, and compliance approvals.
+        - generic [ref=e286]:
+          - generic [ref=e287]:
+            - generic [ref=e288]:
+              - heading "Result entry" [level=2] [ref=e289]
+              - paragraph [ref=e290]: Manual fallback; also progresses the bracket.
+            - img [ref=e291]
+          - generic [ref=e295]:
+            - generic [ref=e296]:
+              - generic [ref=e297]: Match
+              - combobox "Match" [ref=e298]:
+                - option "Select match" [selected]
+                - option "#1 Mexico vs South Africa"
+                - option "#2 Korea Republic vs Czechia"
+                - option "#3 Canada vs Bosnia and Herzegovina"
+                - option "#4 United States vs Paraguay"
+                - option "#5 Haiti vs Scotland"
+                - option "#6 Australia vs Türkiye"
+                - option "#7 Brazil vs Morocco"
+                - option "#8 Qatar vs Switzerland"
+                - option "#9 Côte d'Ivoire vs Ecuador"
+                - option "#10 Germany vs Curaçao"
+                - option "#11 Netherlands vs Japan"
+                - option "#12 Sweden vs Tunisia"
+                - option "#13 Saudi Arabia vs Uruguay"
+                - option "#14 Spain vs Cabo Verde"
+                - option "#15 IR Iran vs New Zealand"
+                - option "#16 Belgium vs Egypt"
+                - option "#17 France vs Senegal"
+                - option "#18 Iraq vs Norway"
+                - option "#19 Argentina vs Algeria"
+                - option "#20 Austria vs Jordan"
+                - option "#21 Ghana vs Panama"
+                - option "#22 England vs Croatia"
+                - option "#23 Portugal vs Congo DR"
+                - option "#24 Uzbekistan vs Colombia"
+                - option "#25 Czechia vs South Africa"
+                - option "#26 Switzerland vs Bosnia and Herzegovina"
+                - option "#27 Canada vs Qatar"
+                - option "#28 Mexico vs Korea Republic"
+                - option "#29 Brazil vs Haiti"
+                - option "#30 Scotland vs Morocco"
+                - option "#31 Türkiye vs Paraguay"
+                - option "#32 United States vs Australia"
+                - option "#33 Germany vs Côte d'Ivoire"
+                - option "#34 Ecuador vs Curaçao"
+                - option "#35 Netherlands vs Sweden"
+                - option "#36 Tunisia vs Japan"
+                - option "#37 Uruguay vs Cabo Verde"
+                - option "#38 Spain vs Saudi Arabia"
+                - option "#39 Belgium vs IR Iran"
+                - option "#40 New Zealand vs Egypt"
+                - option "#41 Norway vs Senegal"
+                - option "#42 France vs Iraq"
+                - option "#43 Argentina vs Austria"
+                - option "#44 Jordan vs Algeria"
+                - option "#45 England vs Ghana"
+                - option "#46 Panama vs Croatia"
+                - option "#47 Portugal vs Uzbekistan"
+                - option "#48 Colombia vs Congo DR"
+                - option "#49 Scotland vs Brazil"
+                - option "#50 Morocco vs Haiti"
+                - option "#51 Switzerland vs Canada"
+                - option "#52 Bosnia and Herzegovina vs Qatar"
+                - option "#53 Czechia vs Mexico"
+                - option "#54 South Africa vs Korea Republic"
+                - option "#55 Curaçao vs Côte d'Ivoire"
+                - option "#56 Ecuador vs Germany"
+                - option "#57 Japan vs Sweden"
+                - option "#58 Tunisia vs Netherlands"
+                - option "#59 Türkiye vs United States"
+                - option "#60 Paraguay vs Australia"
+                - option "#61 Norway vs France"
+                - option "#62 Senegal vs Iraq"
+                - option "#63 Egypt vs IR Iran"
+                - option "#64 New Zealand vs Belgium"
+                - option "#65 Cabo Verde vs Saudi Arabia"
+                - option "#66 Uruguay vs Spain"
+                - option "#67 Panama vs England"
+                - option "#68 Croatia vs Ghana"
+                - option "#69 Algeria vs Austria"
+                - option "#70 Jordan vs Argentina"
+                - option "#71 Colombia vs Portugal"
+                - option "#72 Congo DR vs Uzbekistan"
+                - option "#73 Group A runners-up vs Group B runners-up"
+                - option "#74 Group E winners vs Group A/B/C/D/F third place"
+                - option "#75 Group F winners vs Group C runners-up"
+                - option "#76 Group C winners vs Group F runners-up"
+                - option "#77 Group I winners vs Group C/D/F/G/H third place"
+                - option "#78 Group E runners-up vs Group I runners-up"
+                - option "#79 Group A winners vs Group C/E/F/H/I third place"
+                - option "#80 Group L winners vs Group E/H/I/J/K third place"
+                - option "#81 Group D winners vs Group B/E/F/I/J third place"
+                - option "#82 Group G winners vs Group A/E/H/I/J third place"
+                - option "#83 Group K runners-up vs Group L runners-up"
+                - option "#84 Group H winners vs Group J runners-up"
+                - option "#85 Group B winners vs Group E/F/G/I/J third place"
+                - option "#86 Group J winners vs Group H runners-up"
+                - option "#87 Group K winners vs Group D/E/I/J/L third place"
+                - option "#88 Group D runners-up vs Group G runners-up"
+                - option "#89 Winner Match 74 vs Winner Match 77"
+                - option "#90 Winner Match 73 vs Winner Match 75"
+                - option "#91 Winner Match 76 vs Winner Match 78"
+                - option "#92 Winner Match 79 vs Winner Match 80"
+                - option "#93 Winner Match 83 vs Winner Match 84"
+                - option "#94 Winner Match 81 vs Winner Match 82"
+                - option "#95 Winner Match 86 vs Winner Match 88"
+                - option "#96 Winner Match 85 vs Winner Match 87"
+                - option "#97 Winner Match 89 vs Winner Match 90"
+                - option "#98 Winner Match 93 vs Winner Match 94"
+                - option "#99 Winner Match 91 vs Winner Match 92"
+                - option "#100 Winner Match 95 vs Winner Match 96"
+                - option "#101 Winner Match 97 vs Winner Match 98"
+                - option "#102 Winner Match 99 vs Winner Match 100"
+                - option "#103 Loser Match 101 vs Loser Match 102"
+                - option "#104 Winner Match 101 vs Winner Match 102"
+            - generic [ref=e299]:
+              - generic [ref=e300]: Finish method
+              - combobox "Finish method" [ref=e301]:
+                - option "90 minutes" [selected]
+                - option "Extra time"
+                - option "Penalties"
+            - generic [ref=e302]:
+              - generic [ref=e303]:
+                - generic [ref=e304]: Home 90
+                - spinbutton "Home 90" [ref=e305]: "0"
+              - generic [ref=e306]:
+                - generic [ref=e307]: Away 90
+                - spinbutton "Away 90" [ref=e308]: "0"
+            - generic [ref=e309]:
+              - generic [ref=e310]:
+                - generic [ref=e311]: Home total
+                - spinbutton "Home total" [ref=e312]: "0"
+              - generic [ref=e313]:
+                - generic [ref=e314]: Away total
+                - spinbutton "Away total" [ref=e315]: "0"
+            - generic [ref=e316]:
+              - generic [ref=e317]:
+                - generic [ref=e318]: Home pens
+                - spinbutton "Home pens" [ref=e319]
+              - generic [ref=e320]:
+                - generic [ref=e321]: Away pens
+                - spinbutton "Away pens" [ref=e322]
+            - generic [ref=e323]:
+              - generic [ref=e324]: Winner
+              - combobox "Winner" [ref=e325]:
+                - option "No winner / group draw" [selected]
+                - option "France"
+                - option "Spain"
+                - option "England"
+                - option "Argentina"
+                - option "Brazil"
+                - option "Portugal"
+                - option "Germany"
+                - option "Netherlands"
+                - option "Norway"
+                - option "Belgium"
+                - option "Colombia"
+                - option "Morocco"
+                - option "United States"
+                - option "Japan"
+                - option "Uruguay"
+                - option "Croatia"
+                - option "Ecuador"
+                - option "Mexico"
+                - option "Senegal"
+                - option "Sweden"
+                - option "Switzerland"
+                - option "Türkiye"
+                - option "Austria"
+                - option "Canada"
+                - option "Paraguay"
+                - option "Côte d'Ivoire"
+                - option "Czechia"
+                - option "Algeria"
+                - option "Bosnia and Herzegovina"
+                - option "Egypt"
+                - option "Ghana"
+                - option "Korea Republic"
+                - option "Scotland"
+                - option "Australia"
+                - option "IR Iran"
+                - option "Tunisia"
+                - option "Congo DR"
+                - option "New Zealand"
+                - option "Qatar"
+                - option "Saudi Arabia"
+                - option "South Africa"
+                - option "Cabo Verde"
+                - option "Curaçao"
+                - option "Haiti"
+                - option "Iraq"
+                - option "Jordan"
+                - option "Panama"
+                - option "Uzbekistan"
+            - button "Save Result & Apply Points" [disabled] [ref=e326]:
+              - img [ref=e327]
+              - text: Save Result & Apply Points
+        - generic [ref=e331]:
+          - generic [ref=e332]:
+            - generic [ref=e333]:
+              - heading "Bracket & payouts" [level=2] [ref=e334]
+              - paragraph [ref=e335]: Advance knockouts, override pairings, settle prizes.
+            - img [ref=e336]
+          - generic [ref=e340]:
+            - generic [ref=e341]:
+              - button "Advance Bracket" [ref=e342] [cursor=pointer]
+              - button "Settle Payouts" [ref=e343] [cursor=pointer]
+            - generic [ref=e344]:
+              - generic [ref=e345]: Override match teams
+              - combobox "Override match teams" [ref=e346]:
+                - option "Select match" [selected]
+                - option "#1 Mexico vs South Africa"
+                - option "#2 Korea Republic vs Czechia"
+                - option "#3 Canada vs Bosnia and Herzegovina"
+                - option "#4 United States vs Paraguay"
+                - option "#5 Haiti vs Scotland"
+                - option "#6 Australia vs Türkiye"
+                - option "#7 Brazil vs Morocco"
+                - option "#8 Qatar vs Switzerland"
+                - option "#9 Côte d'Ivoire vs Ecuador"
+                - option "#10 Germany vs Curaçao"
+                - option "#11 Netherlands vs Japan"
+                - option "#12 Sweden vs Tunisia"
+                - option "#13 Saudi Arabia vs Uruguay"
+                - option "#14 Spain vs Cabo Verde"
+                - option "#15 IR Iran vs New Zealand"
+                - option "#16 Belgium vs Egypt"
+                - option "#17 France vs Senegal"
+                - option "#18 Iraq vs Norway"
+                - option "#19 Argentina vs Algeria"
+                - option "#20 Austria vs Jordan"
+                - option "#21 Ghana vs Panama"
+                - option "#22 England vs Croatia"
+                - option "#23 Portugal vs Congo DR"
+                - option "#24 Uzbekistan vs Colombia"
+                - option "#25 Czechia vs South Africa"
+                - option "#26 Switzerland vs Bosnia and Herzegovina"
+                - option "#27 Canada vs Qatar"
+                - option "#28 Mexico vs Korea Republic"
+                - option "#29 Brazil vs Haiti"
+                - option "#30 Scotland vs Morocco"
+                - option "#31 Türkiye vs Paraguay"
+                - option "#32 United States vs Australia"
+                - option "#33 Germany vs Côte d'Ivoire"
+                - option "#34 Ecuador vs Curaçao"
+                - option "#35 Netherlands vs Sweden"
+                - option "#36 Tunisia vs Japan"
+                - option "#37 Uruguay vs Cabo Verde"
+                - option "#38 Spain vs Saudi Arabia"
+                - option "#39 Belgium vs IR Iran"
+                - option "#40 New Zealand vs Egypt"
+                - option "#41 Norway vs Senegal"
+                - option "#42 France vs Iraq"
+                - option "#43 Argentina vs Austria"
+                - option "#44 Jordan vs Algeria"
+                - option "#45 England vs Ghana"
+                - option "#46 Panama vs Croatia"
+                - option "#47 Portugal vs Uzbekistan"
+                - option "#48 Colombia vs Congo DR"
+                - option "#49 Scotland vs Brazil"
+                - option "#50 Morocco vs Haiti"
+                - option "#51 Switzerland vs Canada"
+                - option "#52 Bosnia and Herzegovina vs Qatar"
+                - option "#53 Czechia vs Mexico"
+                - option "#54 South Africa vs Korea Republic"
+                - option "#55 Curaçao vs Côte d'Ivoire"
+                - option "#56 Ecuador vs Germany"
+                - option "#57 Japan vs Sweden"
+                - option "#58 Tunisia vs Netherlands"
+                - option "#59 Türkiye vs United States"
+                - option "#60 Paraguay vs Australia"
+                - option "#61 Norway vs France"
+                - option "#62 Senegal vs Iraq"
+                - option "#63 Egypt vs IR Iran"
+                - option "#64 New Zealand vs Belgium"
+                - option "#65 Cabo Verde vs Saudi Arabia"
+                - option "#66 Uruguay vs Spain"
+                - option "#67 Panama vs England"
+                - option "#68 Croatia vs Ghana"
+                - option "#69 Algeria vs Austria"
+                - option "#70 Jordan vs Argentina"
+                - option "#71 Colombia vs Portugal"
+                - option "#72 Congo DR vs Uzbekistan"
+                - option "#73 Group A runners-up vs Group B runners-up"
+                - option "#74 Group E winners vs Group A/B/C/D/F third place"
+                - option "#75 Group F winners vs Group C runners-up"
+                - option "#76 Group C winners vs Group F runners-up"
+                - option "#77 Group I winners vs Group C/D/F/G/H third place"
+                - option "#78 Group E runners-up vs Group I runners-up"
+                - option "#79 Group A winners vs Group C/E/F/H/I third place"
+                - option "#80 Group L winners vs Group E/H/I/J/K third place"
+                - option "#81 Group D winners vs Group B/E/F/I/J third place"
+                - option "#82 Group G winners vs Group A/E/H/I/J third place"
+                - option "#83 Group K runners-up vs Group L runners-up"
+                - option "#84 Group H winners vs Group J runners-up"
+                - option "#85 Group B winners vs Group E/F/G/I/J third place"
+                - option "#86 Group J winners vs Group H runners-up"
+                - option "#87 Group K winners vs Group D/E/I/J/L third place"
+                - option "#88 Group D runners-up vs Group G runners-up"
+                - option "#89 Winner Match 74 vs Winner Match 77"
+                - option "#90 Winner Match 73 vs Winner Match 75"
+                - option "#91 Winner Match 76 vs Winner Match 78"
+                - option "#92 Winner Match 79 vs Winner Match 80"
+                - option "#93 Winner Match 83 vs Winner Match 84"
+                - option "#94 Winner Match 81 vs Winner Match 82"
+                - option "#95 Winner Match 86 vs Winner Match 88"
+                - option "#96 Winner Match 85 vs Winner Match 87"
+                - option "#97 Winner Match 89 vs Winner Match 90"
+                - option "#98 Winner Match 93 vs Winner Match 94"
+                - option "#99 Winner Match 91 vs Winner Match 92"
+                - option "#100 Winner Match 95 vs Winner Match 96"
+                - option "#101 Winner Match 97 vs Winner Match 98"
+                - option "#102 Winner Match 99 vs Winner Match 100"
+                - option "#103 Loser Match 101 vs Loser Match 102"
+                - option "#104 Winner Match 101 vs Winner Match 102"
+            - generic [ref=e347]:
+              - generic [ref=e348]:
+                - generic [ref=e349]: Home team
+                - combobox "Home team" [ref=e350]:
+                  - option "Unchanged" [selected]
+                  - option "France"
+                  - option "Spain"
+                  - option "England"
+                  - option "Argentina"
+                  - option "Brazil"
+                  - option "Portugal"
+                  - option "Germany"
+                  - option "Netherlands"
+                  - option "Norway"
+                  - option "Belgium"
+                  - option "Colombia"
+                  - option "Morocco"
+                  - option "United States"
+                  - option "Japan"
+                  - option "Uruguay"
+                  - option "Croatia"
+                  - option "Ecuador"
+                  - option "Mexico"
+                  - option "Senegal"
+                  - option "Sweden"
+                  - option "Switzerland"
+                  - option "Türkiye"
+                  - option "Austria"
+                  - option "Canada"
+                  - option "Paraguay"
+                  - option "Côte d'Ivoire"
+                  - option "Czechia"
+                  - option "Algeria"
+                  - option "Bosnia and Herzegovina"
+                  - option "Egypt"
+                  - option "Ghana"
+                  - option "Korea Republic"
+                  - option "Scotland"
+                  - option "Australia"
+                  - option "IR Iran"
+                  - option "Tunisia"
+                  - option "Congo DR"
+                  - option "New Zealand"
+                  - option "Qatar"
+                  - option "Saudi Arabia"
+                  - option "South Africa"
+                  - option "Cabo Verde"
+                  - option "Curaçao"
+                  - option "Haiti"
+                  - option "Iraq"
+                  - option "Jordan"
+                  - option "Panama"
+                  - option "Uzbekistan"
+              - generic [ref=e351]:
+                - generic [ref=e352]: Away team
+                - combobox "Away team" [ref=e353]:
+                  - option "Unchanged" [selected]
+                  - option "France"
+                  - option "Spain"
+                  - option "England"
+                  - option "Argentina"
+                  - option "Brazil"
+                  - option "Portugal"
+                  - option "Germany"
+                  - option "Netherlands"
+                  - option "Norway"
+                  - option "Belgium"
+                  - option "Colombia"
+                  - option "Morocco"
+                  - option "United States"
+                  - option "Japan"
+                  - option "Uruguay"
+                  - option "Croatia"
+                  - option "Ecuador"
+                  - option "Mexico"
+                  - option "Senegal"
+                  - option "Sweden"
+                  - option "Switzerland"
+                  - option "Türkiye"
+                  - option "Austria"
+                  - option "Canada"
+                  - option "Paraguay"
+                  - option "Côte d'Ivoire"
+                  - option "Czechia"
+                  - option "Algeria"
+                  - option "Bosnia and Herzegovina"
+                  - option "Egypt"
+                  - option "Ghana"
+                  - option "Korea Republic"
+                  - option "Scotland"
+                  - option "Australia"
+                  - option "IR Iran"
+                  - option "Tunisia"
+                  - option "Congo DR"
+                  - option "New Zealand"
+                  - option "Qatar"
+                  - option "Saudi Arabia"
+                  - option "South Africa"
+                  - option "Cabo Verde"
+                  - option "Curaçao"
+                  - option "Haiti"
+                  - option "Iraq"
+                  - option "Jordan"
+                  - option "Panama"
+                  - option "Uzbekistan"
+            - button "Assign Match Teams" [disabled] [ref=e354]
+            - generic [ref=e355]: Prize pool is ledger-managed. Assign user or agent tickets from admin inventory; cash and USDT movements add 80% to the prize pool and 20% to the fee pool automatically. No direct override is available.
+        - generic [ref=e356]:
+          - generic [ref=e357]:
+            - generic [ref=e358]:
+              - heading "Tickets & wallets" [level=2] [ref=e359]
+              - paragraph [ref=e360]: Assign user tickets from admin inventory and record internal transfers.
+            - button "Load Accounts" [ref=e361] [cursor=pointer]
+          - generic [ref=e362]:
+            - generic [ref=e363]:
+              - generic [ref=e364]:
+                - generic [ref=e365]: Ticket price USD
+                - spinbutton "Ticket price USD" [ref=e366]: "50.00"
+                - generic [ref=e367]: Default is 50. Admin can change this before assigning new tickets.
+              - button "Save Ticket Price" [ref=e368] [cursor=pointer]
+            - generic [ref=e369]: User ticket assignments are manual admin approvals. The selected payment method is stored in the financial statement.
+            - generic [ref=e370]:
+              - generic [ref=e371]:
+                - generic [ref=e372]: Assign ticket for user
+                - combobox "Assign ticket for user" [ref=e373]:
+                  - option "Select account" [selected]
+              - generic [ref=e374]:
+                - generic [ref=e375]: Quantity
+                - spinbutton "Quantity" [ref=e376]: "1"
+            - generic [ref=e377]:
+              - generic [ref=e378]:
+                - generic [ref=e379]: Payment method
+                - combobox "Payment method" [ref=e380]:
+                  - option "Cash" [selected]
+                  - option "USDT"
+              - generic [ref=e381]:
+                - generic [ref=e382]: Approval note
+                - textbox "Approval note" [ref=e383]:
+                  - /placeholder: Receipt, sender wallet, or manual note
+            - generic "User ticket assignment preview" [ref=e384]:
+              - generic [ref=e385]:
+                - strong [ref=e386]: Assign user ticket preview
+                - generic [ref=e387]: 1 paid ticket at 50.00 USD each.
+              - generic [ref=e388]:
+                - generic [ref=e389]:
+                  - generic [ref=e390]: Admin inventory used
+                  - strong [ref=e391]: "1"
+                - generic [ref=e392]:
+                  - generic [ref=e393]: Gross received
+                  - strong [ref=e394]: 50.00 USDT
+                - generic [ref=e395]:
+                  - generic [ref=e396]: Prize pool +80%
+                  - strong [ref=e397]: 40.00 USDT
+                - generic [ref=e398]:
+                  - generic [ref=e399]: Fee pool +20%
+                  - strong [ref=e400]: 10.00 USDT
+              - generic [ref=e401]: Not enough admin tickets. Request more tickets before assigning.
+            - button "Assign user ticket" [disabled] [ref=e402]
+            - generic [ref=e403]:
+              - generic [ref=e404]:
+                - generic [ref=e405]: Transfer from
+                - combobox "Transfer from" [ref=e406]:
+                  - option "Select account" [selected]
+              - generic [ref=e407]:
+                - generic [ref=e408]: Transfer to
+                - combobox "Transfer to" [ref=e409]:
+                  - option "Select account" [selected]
+            - generic [ref=e410]:
+              - generic [ref=e411]:
+                - generic [ref=e412]: Amount
+                - spinbutton "Amount" [ref=e413]
+              - generic [ref=e414]:
+                - generic [ref=e415]: Note
+                - textbox "Note" [ref=e416]:
+                  - /placeholder: Reason for transfer
+            - button "Transfer Funds" [disabled] [ref=e417]
+            - generic [ref=e418]: Load accounts to assign tickets or transfer funds.
+        - generic [ref=e419]:
+          - generic [ref=e420]:
+            - generic [ref=e421]:
+              - heading "Incoming transfers" [level=2] [ref=e422]
+              - paragraph [ref=e423]: Manual USDT payment history with sender wallet, amount, and agent/user status.
+            - button "Load Transfers" [ref=e424] [cursor=pointer]
+          - generic [ref=e425]:
+            - generic "Real USDT deposit launch checklist" [ref=e426]:
+              - strong [ref=e427]: Real USDT deposit launch evidence
+              - generic [ref=e428]: TRC20 and ERC20 each need one credited USDT claim linked to a server-side KuCoin receive-wallet match.
+              - generic [ref=e429]: Keep Require KuCoin match checked, run Verify KuCoin, cross-check the self-reported sender wallet on-chain, then Credit. Manual non-launch credit will not complete these sign-offs.
+            - generic [ref=e430]: Load claims after a player submits a transaction hash.
+        - generic [ref=e431]:
+          - generic [ref=e432]:
+            - generic [ref=e433]:
+              - heading "Withdrawal requests" [level=2] [ref=e434]
+              - paragraph [ref=e435]: Review wallet debits and record manual USDT payouts.
+            - button "Load Withdrawals" [ref=e436] [cursor=pointer]
+          - generic [ref=e437]:
+            - generic "Real USDT withdrawal launch checklist" [ref=e438]:
+              - strong [ref=e439]: Real USDT withdrawal launch evidence
+              - generic [ref=e440]: Approve one submitted withdrawal, send the USDT payout manually on the requested network, then paste the payout tx hash.
+              - generic [ref=e441]: Keep Count this paid payout as real launch evidence checked before Mark paid.
+            - generic [ref=e442]: Load withdrawals after a player submits a payout request.
+        - generic [ref=e443]:
+          - generic [ref=e444]:
+            - generic [ref=e445]:
+              - heading "Age verification" [level=2] [ref=e446]
+              - paragraph [ref=e447]: Confirm players are 18 or older from their submitted ID before approving any payout.
+            - button "Load Age Verifications" [ref=e448] [cursor=pointer]
+          - generic [ref=e450]: Load age verifications after a player marks their documents as sent.
+        - generic [ref=e451]:
+          - generic [ref=e452]:
+            - generic [ref=e453]:
+              - heading "Agents" [level=2] [ref=e454]
+              - paragraph [ref=e455]: Request numbered tickets into admin inventory, then sell them to agents after manual payment. Every 10 paid agent tickets auto-awards 1 free.
+            - button "Refresh" [ref=e456] [cursor=pointer]
+          - generic [ref=e457]:
+            - generic "Ticket code pool" [ref=e458]:
+              - generic [ref=e459]:
+                - generic [ref=e460]: Pool total
+                - generic [ref=e461]: "0"
+              - generic [ref=e462]:
+                - generic [ref=e463]: Available
+                - generic [ref=e464]: "0"
+              - generic [ref=e465]:
+                - generic [ref=e466]: Admin
+                - generic [ref=e467]: "0"
+              - generic [ref=e468]:
+                - generic [ref=e469]: Assigned
+                - generic [ref=e470]: "0"
+              - generic [ref=e471]:
+                - generic [ref=e472]: Redeemed
+                - generic [ref=e473]: "0"
+            - generic [ref=e474]:
+              - generic [ref=e475]: Request Tickets
+              - generic [ref=e476]:
+                - spinbutton "Request ticket quantity" [ref=e477]: "2000"
+                - button "Request Tickets" [ref=e478] [cursor=pointer]
+                - button "Request 2,000" [disabled] [ref=e479]
+              - generic [ref=e480]: Moves the next numbered tickets from the generated 10,000 pool into admin inventory. Use Request 2,000 to refill the owner admin account without moving tickets into agent inventory.
+            - generic [ref=e481]:
+              - generic [ref=e482]: Promote a player to agent (email)
+              - generic [ref=e483]:
+                - textbox "Promote a player to agent (email)" [ref=e484]:
+                  - /placeholder: player@email.com
+                - button "Add agent" [disabled] [ref=e485]
+            - generic [ref=e486]:
+              - generic [ref=e487]: Assign Tickets for Agents
+              - generic [ref=e488]:
+                - combobox "Assign Tickets for Agents" [ref=e489]:
+                  - option "Select agent…" [selected]
+                - spinbutton "Quantity" [ref=e490]: "10"
+                - combobox "Agent payment method" [ref=e491]:
+                  - option "Cash" [selected]
+                  - option "USDT"
+                - button "Assign agent tickets" [disabled] [ref=e492]
+              - textbox "Approval note, receipt, wallet, or cash collector" [ref=e493]
+              - generic [ref=e494]: Admin inventory goes out in ticket-number order. If the agent has no personal user ticket yet, the first paid ticket is assigned to that agent user account.
+              - generic "Agent ticket assignment preview" [ref=e495]:
+                - generic [ref=e496]:
+                  - strong [ref=e497]: Assign agent tickets preview
+                  - generic [ref=e498]: 10 paid tickets at 50.00 USD each. Select an agent to confirm the personal ticket reserve.
+                - generic [ref=e499]:
+                  - generic [ref=e500]:
+                    - generic [ref=e501]: Personal reserve
+                    - strong [ref=e502]: "0"
+                  - generic [ref=e503]:
+                    - generic [ref=e504]: Agent sellable paid
+                    - strong [ref=e505]: "10"
+                  - generic [ref=e506]:
+                    - generic [ref=e507]: Free bonus tickets
+                    - strong [ref=e508]: "1"
+                  - generic [ref=e509]:
+                    - generic [ref=e510]: Admin inventory used
+                    - strong [ref=e511]: "11"
+                  - generic [ref=e512]:
+                    - generic [ref=e513]: Gross accounted
+                    - strong [ref=e514]: 550.00 USDT
+                  - generic [ref=e515]:
+                    - generic [ref=e516]: Prize pool +80%
+                    - strong [ref=e517]: 440.00 USDT
+                  - generic [ref=e518]:
+                    - generic [ref=e519]: Fee pool +20%
+                    - strong [ref=e520]: 110.00 USDT
+                  - generic [ref=e521]:
+                    - generic [ref=e522]: Agent paid after
+                    - strong [ref=e523]: "10"
+                - generic [ref=e524]: Admin-to-agent sales update the financial statement immediately. Later agent-to-user transfers do not change the prize pool because those tickets are already paid.
+                - generic [ref=e525]: Not enough admin tickets for paid plus bonus tickets. Request more tickets first.
+            - generic [ref=e526]: No agents loaded. Refresh, or add one by email above.
+            - generic "Financial statement" [ref=e527]:
+              - heading "Financial statement" [level=3] [ref=e528]
+              - generic "Financial statement totals" [ref=e529]:
+                - generic [ref=e530]:
+                  - generic [ref=e531]: Cash received
+                  - strong [ref=e532]: 0.00 USDT
+                - generic [ref=e533]:
+                  - generic [ref=e534]: USDT received
+                  - strong [ref=e535]: 0.00 USDT
+                - generic [ref=e536]:
+                  - generic [ref=e537]: Paid tickets
+                  - strong [ref=e538]: "0"
+                - generic [ref=e539]:
+                  - generic [ref=e540]: Free tickets
+                  - strong [ref=e541]: "0"
+                - generic [ref=e542]:
+                  - generic [ref=e543]: Prize contribution
+                  - strong [ref=e544]: 0.00 USDT
+                - generic [ref=e545]:
+                  - generic [ref=e546]: Fee contribution
+                  - strong [ref=e547]: 0.00 USDT
+              - generic [ref=e548]: Money enters the statement only when Admin assigns tickets to users or agents. Agent-to-user transfers do not change prize pool or fee pool because those tickets were already recorded.
+              - generic [ref=e549]: No ticket financial movements loaded yet.
+        - generic [ref=e550]:
+          - generic [ref=e551]:
+            - generic [ref=e552]:
+              - heading "Referral report" [level=2] [ref=e553]
+              - paragraph [ref=e554]: Accepted referral agreements for payout auditing.
+            - button "Load Report" [ref=e555] [cursor=pointer]
+          - generic [ref=e557]: Load the report to see accepted referral agreements.
+  - button "Open Next.js Dev Tools" [ref=e563] [cursor=pointer]:
+    - img [ref=e564]

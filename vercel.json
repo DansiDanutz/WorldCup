@@ -7,10 +7,6 @@
     {
       "path": "/api/cron/apply",
       "schedule": "30 * * * *"
-    },
-    {
-      "path": "/api/deposits/reconcile",
-      "schedule": "*/10 * * * *"
     }
   ]
 }

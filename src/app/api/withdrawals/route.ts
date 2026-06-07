@@ -150,7 +150,11 @@ export async function POST(request: Request) {
     userEmail: auth.user.email,
   });
   if (!paidActionGate.allowed) {
-    return jsonError(paidActionGate.message ?? "Withdrawal requests are paused until launch approvals are complete.", 403);
+    return jsonError(
+      paidActionGate.message ??
+        "Withdrawal requests open after the World Cup ends and prizes are settled manually.",
+      403,
+    );
   }
 
   // Winners must prove they are 18+ before any payout. Documents are reviewed

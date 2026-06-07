@@ -1,0 +1,9 @@
+WorldCup26 warm follow-up monitor 2026-06-07 20:45 +0300
+ok=yes state=awaiting-first-human-send warm_attempts=0 tester_attempts=0 followup_attempts=0 followup_minutes=15
+views=509 referral_views=171 profiles=5 accepted=0 signup_saves=0 entries=0
+code=26BC4B90CB
+link=https://worldcup26.world/login?ref=26BC4B90CB
+
+next=Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.
+check=node campaign-referral-activity.mjs && node campaign-signup-conversion-audit.mjs && node campaign-warm-followup-monitor.mjs && sed -n '1,100p' runtime/warm-followup-monitor.txt
+rule=This monitor does not prove a send. It only reacts after a real warm-contact or clean tester-batch attempt has been logged.

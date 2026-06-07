@@ -1,8 +1,5 @@
-const DEFAULT_PROJECT_REF = "lxhjfdxowpxzrybxdasi";
-const DEFAULT_SUPABASE_URL = `https://${DEFAULT_PROJECT_REF}.supabase.co`;
-
-const projectRef = process.env.SUPABASE_PROJECT_REF ?? DEFAULT_PROJECT_REF;
-const supabaseUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? DEFAULT_SUPABASE_URL).replace(/\/$/, "");
+const projectRef = requireEnv("SUPABASE_PROJECT_REF", process.env.SUPABASE_PROJECT_REF);
+const supabaseUrl = requireEnv("NEXT_PUBLIC_SUPABASE_URL", process.env.NEXT_PUBLIC_SUPABASE_URL).replace(/\/$/, "");
 const accessToken = process.env.SUPABASE_ACCESS_TOKEN;
 const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const googleClientId = process.env.GOOGLE_CLIENT_ID;
@@ -60,7 +57,7 @@ async function verifyGoogleProvider() {
 }
 
 async function main() {
-  console.log(`Enabling Google Auth for Supabase project ${projectRef}`);
+  console.log("Enabling Google Auth for the configured Supabase project.");
   await patchGoogleProvider();
   await verifyGoogleProvider();
   console.log("Google Auth is enabled in Supabase.");

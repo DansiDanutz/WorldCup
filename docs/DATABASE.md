@@ -5,7 +5,7 @@ The database is implemented in Supabase project **Games**.
 Project ref:
 
 ```text
-lxhjfdxowpxzrybxdasi
+your-project-ref
 ```
 
 ## Migrations
@@ -136,14 +136,13 @@ routes use the service role for account management.
 ### `worldcup_referrals`
 
 Stores accepted referral relationships for the tournament. When a referred user locks an entry, the
-row records the inviter, invited Google user, referral code, accepted timestamp, and the tiered referred
+row records the inviter, invited Google user, referral code, accepted timestamp, and the referred
 winner agreement.
 Referral rows are private and are exposed only through authenticated user/admin server routes.
 
-Referral payout tiers:
+Referral payout rate:
 
-- 5% when the inviter joined through a referral
-- 3% when the inviter joined without a referral
+- 5% for every accepted inviter relationship
 
 ### `worldcup_entry_match_points`
 

@@ -133,7 +133,7 @@ export async function POST(request: Request) {
     userEmail: auth.user.email,
   });
   if (!paidActionGate.allowed) {
-    return jsonError(paidActionGate.message ?? "USDT deposits are paused until launch approvals are complete.", 403);
+    return jsonError(paidActionGate.message ?? "USDT deposits are unavailable right now.", 403);
   }
 
   const responsiblePlay = await loadResponsiblePlayStatus(auth.supabase, auth.user.id);

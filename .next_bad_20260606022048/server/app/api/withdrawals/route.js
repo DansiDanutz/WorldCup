@@ -1,0 +1,10 @@
+var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/api/withdrawals/route.js")
+R.c("server/chunks/[root-of-the-server]__07o2cm~._.js")
+R.c("server/chunks/src_lib_0m5-kvz._.js")
+R.c("server/chunks/src_lib_0z4z~ld._.js")
+R.c("server/chunks/[root-of-the-server]__0j8-xkl._.js")
+R.c("server/chunks/node_modules_next_dist_esm_build_templates_app-route_0x~wuxc.js")
+R.c("server/chunks/_0558vrh._.js")
+R.c("server/chunks/_next-internal_server_app_api_withdrawals_route_actions_0v9879f.js")
+R.m(83989)
+module.exports=R.m(83989).exports

@@ -1,0 +1,24 @@
+WorldCup26 session recovery 2026-06-07 20:45 +0300
+proof=49 urgent=16 blockers=1
+code=26BC4B90CB
+link=https://worldcup26.world/login?ref=26BC4B90CB
+
+public_recovery:
+- X public fallback: login=https://x.com/i/flow/login
+  share=https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB
+  proof_after_action=node campaign-proof-log.mjs --pulse "145" --proof-url "PUBLIC_X_POST_URL" --status "posted"
+- Facebook feed fallback: login=https://www.facebook.com/login/
+  share=https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137
+  proof_after_action=node campaign-proof-log.mjs --pulse "137" --proof-url "PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE" --status "posted"
+
+phone_first:
+- #1 Sienna / WhatsApp Status: Post story asset with video caption 1
+  proof_after_action=node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included" --status "posted"
+- #2 Nano / WhatsApp personal: Send personal invite to warm contacts
+  proof_after_action=node campaign-proof-log.mjs --priority "2" --proof-url "private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>" --status "sent"
+- #3 Sienna / Instagram/Facebook story: Story: Code 26BC4B90CB + link sticker
+  proof_after_action=node campaign-proof-log.mjs --priority "3" --proof-url "private-meta-story: story posted from <account> at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included" --status "posted"
+- #4 Dexter / Football groups: Ask approved group admin for permission; post group variant only if allowed
+  proof_after_action=node campaign-proof-log.mjs --priority "4" --proof-url "approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed" --status "requested"
+
+Proof rule: use these links to perform the real action first; log proof only after the post/message/story/request exists.

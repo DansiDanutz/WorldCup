@@ -1,0 +1,815 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - link "Go to WorldCup26.world home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e12]:
+          - strong [ref=e13]: WorldCup26.world
+          - generic [ref=e14]: Prediction Game
+        - generic "2026 season" [ref=e15]: "2026"
+      - generic "Prize pool" [ref=e17]:
+        - img [ref=e18]
+        - generic [ref=e21]:
+          - generic [ref=e22]: Prize Pool
+          - strong [ref=e23]: 4,360
+        - generic [ref=e24]: Top 1 paid
+      - navigation "Primary navigation" [ref=e27]:
+        - link "Pick Teams Main task" [ref=e28] [cursor=pointer]:
+          - /url: "#pick"
+          - img [ref=e773]
+          - generic [ref=e34]:
+            - strong [ref=e35]: Pick Teams
+            - generic [ref=e36]: Main task
+        - link "Leaderboard Ranking" [ref=e37] [cursor=pointer]:
+          - /url: "#leaderboard"
+          - img [ref=e38]
+          - generic [ref=e44]:
+            - strong [ref=e45]: Leaderboard
+            - generic [ref=e46]: Ranking
+        - link "Wallet Tickets & USDT" [ref=e47] [cursor=pointer]:
+          - /url: /wallet
+          - img [ref=e48]
+          - generic [ref=e51]:
+            - strong [ref=e52]: Wallet
+            - generic [ref=e53]: Tickets & USDT
+        - button "Logout End session" [ref=e778] [cursor=pointer]:
+          - img [ref=e779]
+          - generic [ref=e782]:
+            - strong [ref=e783]: Logout
+            - generic [ref=e784]: End session
+        - group [ref=e54]:
+          - generic "Explore Rules & draw" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+            - generic [ref=e60]:
+              - strong [ref=e61]: Explore
+              - generic [ref=e62]: Rules & draw
+        - link "Account Your entry" [ref=e785] [cursor=pointer]:
+          - /url: "#me"
+          - img [ref=e786]
+          - generic [ref=e789]:
+            - strong [ref=e790]: Account
+            - generic [ref=e791]: Your entry
+    - generic [ref=e70]:
+      - region "WorldCup26 highlights" [ref=e792]:
+        - generic [ref=e793]:
+          - 'group "1 of 9: The Matchup" [ref=e794]':
+            - region "WorldCup26.world - Prediction Game" [ref=e795]:
+              - generic [ref=e799]:
+                - generic [ref=e800]:
+                  - img [ref=e802]
+                  - generic [ref=e807]:
+                    - strong [ref=e808]: Pick 3 Teams
+                    - generic [ref=e809]: Free preview first.
+                - generic [ref=e810]:
+                  - img [ref=e812]
+                  - generic [ref=e815]:
+                    - strong [ref=e816]: Top 10 Rewarded
+                    - generic [ref=e817]: The top 10 share the prize pool.
+                - generic [ref=e818]:
+                  - link "Play now" [ref=e819] [cursor=pointer]:
+                    - /url: "#pick"
+                    - text: Play now
+                    - img [ref=e820]
+                  - button "Install app" [ref=e822] [cursor=pointer]:
+                    - img [ref=e823]
+                    - text: Install app
+          - 'group "2 of 9: How to play" [ref=e826]':
+            - region "How to play" [ref=e827]:
+              - generic [ref=e830]:
+                - generic [ref=e832]: HOW TO PLAY
+                - strong [ref=e835]:
+                  - text: Three picks.
+                  - text: One climb.
+                - generic [ref=e836]:
+                  - generic [ref=e837]:
+                    - img [ref=e839]
+                    - generic [ref=e841]:
+                      - strong [ref=e842]: 1 · Save free picks
+                      - generic [ref=e843]: Choose 3 teams before kickoff.
+                  - generic [ref=e844]:
+                    - img [ref=e846]
+                    - generic [ref=e850]:
+                      - strong [ref=e851]: 2 · Track preview
+                      - generic [ref=e852]: Watch private points update.
+                  - generic [ref=e853]:
+                    - img [ref=e855]
+                    - generic [ref=e860]:
+                      - strong [ref=e861]: 3 · Earn as they win
+                      - generic [ref=e862]: Points stack through the tournament.
+                  - link "Start picking" [ref=e863] [cursor=pointer]:
+                    - /url: "#pick"
+                    - text: Start picking
+                    - img [ref=e864]
+          - 'group "3 of 9: Prize pool" [ref=e866]':
+            - region "Prize pool" [ref=e867]:
+              - generic [ref=e870]:
+                - generic [ref=e872]: PRIZE POOL
+                - strong [ref=e875]:
+                  - text: Top 10
+                  - text: share the pool.
+                - generic [ref=e876]:
+                  - generic [ref=e877]:
+                    - img [ref=e879]
+                    - generic [ref=e881]:
+                      - strong [ref=e882]: Winner takes the crown
+                      - generic [ref=e883]: The biggest slice of the pool.
+                  - generic [ref=e884]:
+                    - img [ref=e886]
+                    - generic [ref=e892]:
+                      - strong [ref=e893]: Top 10 all paid
+                      - generic [ref=e894]: Every finisher in the top 10 earns.
+                  - link "See payouts" [ref=e895] [cursor=pointer]:
+                    - /url: "#leaderboard"
+                    - text: See payouts
+                    - img [ref=e896]
+          - 'group "4 of 9: Scoring" [ref=e898]':
+            - region "Points awarded" [ref=e899]:
+              - generic [ref=e902]:
+                - generic [ref=e904]: POINTS AWARDED
+                - strong [ref=e907]:
+                  - text: Every result
+                  - text: can score.
+                - generic [ref=e908]:
+                  - generic [ref=e909]:
+                    - generic [ref=e910]:
+                      - generic [ref=e911]: Win or qualify in 90′
+                      - strong [ref=e912]: "5"
+                    - generic [ref=e913]:
+                      - generic [ref=e914]: Group-stage draw
+                      - strong [ref=e915]: "2"
+                    - generic [ref=e916]:
+                      - generic [ref=e917]: Goal scored
+                      - strong [ref=e918]: "+0.5"
+                    - generic [ref=e919]:
+                      - generic [ref=e920]: Clean sheet in 90′
+                      - strong [ref=e921]: "+1"
+                  - paragraph [ref=e922]: (base + goals + clean sheet) × team × stage
+                  - button "See example" [ref=e923] [cursor=pointer]:
+                    - text: See example
+                    - img [ref=e924]
+          - 'group "5 of 9: Example" [ref=e926]':
+            - region "Scoring example" [ref=e927]:
+              - generic [ref=e930]:
+                - generic [ref=e932]: EXAMPLE · NORWAY
+                - strong [ref=e935]:
+                  - text: One run.
+                  - text: 38.08 pts.
+                - generic [ref=e936]:
+                  - generic [ref=e937]:
+                    - generic [ref=e938]:
+                      - generic [ref=e939]:
+                        - generic [ref=e940]: Group wins
+                        - generic [ref=e941]: Iraq 3-0 · Senegal 2-1
+                      - strong [ref=e942]: "21.60"
+                    - generic [ref=e943]:
+                      - generic [ref=e944]:
+                        - generic [ref=e945]: Group draw
+                        - generic [ref=e946]: France 1-1
+                      - strong [ref=e947]: "4.00"
+                    - generic [ref=e948]:
+                      - generic [ref=e949]:
+                        - generic [ref=e950]: Round of 32
+                        - generic [ref=e951]: won 1-0
+                      - strong [ref=e952]: "12.48"
+                    - generic [ref=e953]:
+                      - generic [ref=e954]: Total points
+                      - strong [ref=e955]: "38.08"
+                  - paragraph [ref=e956]: 3 group games + 1 knockout · Norway ×1.6
+                  - link "Start picking" [ref=e957] [cursor=pointer]:
+                    - /url: "#pick"
+                    - text: Start picking
+                    - img [ref=e958]
+          - 'group "6 of 9: Coefficients" [ref=e960]':
+            - region "Coefficients" [ref=e961]:
+              - generic [ref=e964]:
+                - generic [ref=e966]: COEFFICIENTS
+                - strong [ref=e969]:
+                  - text: Risk can
+                  - text: multiply.
+                - generic [ref=e970]:
+                  - generic [ref=e971]:
+                    - generic [ref=e972]:
+                      - generic [ref=e973]:
+                        - img [ref=e974]
+                        - text: Team multiplier
+                      - strong [ref=e978]: 1.00 → 3.00
+                    - generic [ref=e979]:
+                      - generic [ref=e980]: Group stage
+                      - strong [ref=e981]: ×1.0
+                    - generic [ref=e982]:
+                      - generic [ref=e983]: Knockouts rise
+                      - strong [ref=e984]: ×1.2 → ×1.75
+                    - generic [ref=e985]:
+                      - generic [ref=e986]: Final
+                      - strong [ref=e987]: ×2.0
+                  - paragraph [ref=e988]: Favourites low · underdogs high · fixed all tournament
+                  - link "Full team list" [ref=e989] [cursor=pointer]:
+                    - /url: /coefficients
+                    - text: Full team list
+                    - img [ref=e990]
+          - 'group "7 of 9: Invite a friend" [ref=e992]':
+            - region "Invite a friend" [ref=e993]:
+              - generic [ref=e996]:
+                - generic [ref=e998]: INVITE A FRIEND
+                - strong [ref=e1001]:
+                  - text: Invite.
+                  - text: Earn a cut.
+                - generic [ref=e1002]:
+                  - generic [ref=e1003]:
+                    - img [ref=e1005]
+                    - generic [ref=e1009]:
+                      - strong [ref=e1010]: Earn 5%
+                      - generic [ref=e1011]: If you were invited, keep the 5% cut on friends you invite.
+                  - generic [ref=e1012]:
+                    - img [ref=e1014]
+                    - generic [ref=e1018]:
+                      - strong [ref=e1019]: Earn 3%
+                      - generic [ref=e1020]: Signed up direct? Still earn 3%of your invites' winnings.
+                  - generic [ref=e1021]:
+                    - img [ref=e1023]
+                    - generic [ref=e1026]:
+                      - strong [ref=e1027]: Track them
+                      - generic [ref=e1028]: Follow your invited friends' spots on the leaderboard.
+                  - link "Invite a friend" [ref=e1029] [cursor=pointer]:
+                    - /url: "#invite"
+                    - text: Invite a friend
+                    - img [ref=e1030]
+          - 'group "8 of 9: Agent Deal" [ref=e1032]':
+            - region "Agent Deal" [ref=e1033]:
+              - generic [ref=e1036]:
+                - generic [ref=e1038]: AGENT DEAL
+                - strong [ref=e1041]:
+                  - text: 10 paid.
+                  - text: 1 free.
+                - generic [ref=e1042]:
+                  - generic [ref=e1043]:
+                    - img [ref=e1045]
+                    - generic [ref=e1047]:
+                      - strong [ref=e1048]: Sell ticket codes
+                      - generic [ref=e1049]: Players redeem a code for one entry ticket.
+                  - generic [ref=e1050]:
+                    - img [ref=e1052]
+                    - generic [ref=e1056]:
+                      - strong [ref=e1057]: Free commission code
+                      - generic [ref=e1058]: Every 10 paid codes earns 1 extra ticket code.
+                  - generic [ref=e1059]:
+                    - img [ref=e1061]
+                    - generic [ref=e1066]:
+                      - strong [ref=e1067]: Track in Wallet
+                      - generic [ref=e1068]: See available, redeemed, and commission codes.
+                  - link "Open Agent Codes" [ref=e1069] [cursor=pointer]:
+                    - /url: /wallet
+                    - text: Open Agent Codes
+                    - img [ref=e1070]
+          - 'group "9 of 9: Login or register" [ref=e1072]':
+            - region "Login or register" [ref=e1073]:
+              - generic [ref=e1076]:
+                - generic [ref=e1078]: GET STARTED
+                - strong [ref=e1081]:
+                  - text: Join the
+                  - text: game.
+                - generic [ref=e1082]:
+                  - generic [ref=e1083]:
+                    - generic [ref=e1084]:
+                      - generic [ref=e1085]: Prize pool
+                      - strong [ref=e1086]: 4,360
+                    - generic [ref=e1087]:
+                      - generic [ref=e1088]: Players
+                      - strong [ref=e1089]: "1"
+                  - paragraph [ref=e1090]: Sign in with Google — one tap, no password
+                  - link "Login / Register" [ref=e1091] [cursor=pointer]:
+                    - /url: /login
+                    - text: Login / Register
+                    - img [ref=e1092]
+        - generic [ref=e1094]:
+          - button "Previous slide" [disabled] [ref=e1095]:
+            - img [ref=e1096]
+          - tablist "Choose slide" [ref=e1098]:
+            - button "Go to The Matchup" [ref=e1099] [cursor=pointer]
+            - button "Go to How to play" [ref=e1100] [cursor=pointer]
+            - button "Go to Prize pool" [ref=e1101] [cursor=pointer]
+            - button "Go to Scoring" [ref=e1102] [cursor=pointer]
+            - button "Go to Example" [ref=e1103] [cursor=pointer]
+            - button "Go to Coefficients" [ref=e1104] [cursor=pointer]
+            - button "Go to Invite a friend" [ref=e1105] [cursor=pointer]
+            - button "Go to Agent Deal" [ref=e1106] [cursor=pointer]
+            - button "Go to Login or register" [ref=e1107] [cursor=pointer]
+          - button "Next slide" [ref=e1108] [cursor=pointer]:
+            - img [ref=e1109]
+        - paragraph [ref=e1111]: "Slide 1 of 9: The Matchup"
+      - region "My account" [ref=e1112]:
+        - generic [ref=e1113]:
+          - generic [ref=e1114]:
+            - generic [ref=e1115]:
+              - generic [ref=e1116]:
+                - heading "My standing" [level=2] [ref=e1117]
+                - paragraph [ref=e1118]: Your team, points and rank
+              - generic [ref=e1119]:
+                - button "Open standing leaderboard popup" [ref=e1120] [cursor=pointer]:
+                  - img [ref=e1121]
+                - button "Sign out" [ref=e1127] [cursor=pointer]:
+                  - img [ref=e1128]
+                  - text: Sign out
+            - generic [ref=e1132]:
+              - paragraph [ref=e1133]: You haven't joined yet. Pick 3 teams for a free points preview.
+              - link "Pick 3 teams" [ref=e1134] [cursor=pointer]:
+                - /url: "#pick"
+                - text: Pick 3 teams
+                - img [ref=e1135]
+          - generic [ref=e1137]:
+            - generic [ref=e1138]:
+              - generic [ref=e1139]:
+                - heading "My referrals" [level=2] [ref=e1140]
+                - paragraph [ref=e1141]: Earn a cut of everyone you invite
+              - button "No referrals yet" [disabled] [ref=e1142]:
+                - img [ref=e1143]
+            - generic [ref=e1149]:
+              - paragraph [ref=e1150]: Invite friends — earn 5% (if you were invited) or 3% of their winnings.
+              - link "Invite a friend" [ref=e1151] [cursor=pointer]:
+                - /url: "#invite"
+                - text: Invite a friend
+                - img [ref=e1152]
+      - region "Tournament summary" [ref=e387]:
+        - generic [ref=e388]:
+          - generic [ref=e389]: Teams
+          - generic [ref=e390]: "48"
+        - generic [ref=e391]:
+          - generic [ref=e392]: Matches
+          - generic [ref=e393]: "104"
+        - generic [ref=e394]:
+          - generic [ref=e395]: Completed
+          - generic [ref=e396]: "0"
+        - generic [ref=e397]:
+          - generic [ref=e398]: Due Checks
+          - generic [ref=e399]: "0"
+      - generic [ref=e400]:
+        - generic [ref=e401]:
+          - generic [ref=e402]:
+            - generic [ref=e403]:
+              - heading "Choose 3 Teams" [level=1] [ref=e404]
+              - paragraph [ref=e405]: The event has not started yet, so all 48 teams are still available. A team locks 1 minute before its first World Cup 2026 match.
+            - generic [ref=e406]: 0/3 selected
+          - generic "Team pick progress" [ref=e407]:
+            - generic [ref=e1154]:
+              - strong [ref=e1155]: Choose 3 more teams.
+              - generic [ref=e1156]: Tap a team to add it. Tap a selected team or remove chip to change your picks.
+            - progressbar "0 of 3 teams selected" [ref=e1157]
+            - generic [ref=e1161]:
+              - generic [ref=e1163]:
+                - generic [ref=e1164]: Pick 1
+                - strong [ref=e1165]: Open slot
+                - generic [ref=e1166]: Choose from the list
+              - generic [ref=e1168]:
+                - generic [ref=e1169]: Pick 2
+                - strong [ref=e1170]: Open slot
+                - generic [ref=e1171]: Choose from the list
+              - generic [ref=e1173]:
+                - generic [ref=e1174]: Pick 3
+                - strong [ref=e1175]: Open slot
+                - generic [ref=e1176]: Choose from the list
+            - button "3 more to continue" [disabled] [ref=e1178]
+          - generic [ref=e1180]:
+            - generic [ref=e1181]:
+              - generic [ref=e1182]: Search teams
+              - button "All Teams (48)" [ref=e1183] [cursor=pointer]
+            - generic [ref=e1184]:
+              - img [ref=e1185]
+              - textbox "Search teams" [ref=e1188]:
+                - /placeholder: Search team name, group, confederation
+          - generic [ref=e1189]:
+            - 'button "France Coef 1.00 Group I · UEFA Pick before first match: Jun 16, 07:00 PM Coef 1.00 9/2 Add 1" [ref=e1190] [cursor=pointer]':
+              - generic:
+                - generic:
+                  - generic: France
+                  - generic: Coef 1.00
+                - generic: Group I · UEFA
+                - generic: "Pick before first match: Jun 16, 07:00 PM"
+              - generic:
+                - generic: Coef
+                - text: "1.00"
+              - generic: 9/2
+              - generic: Add 1
+            - 'button "Spain Coef 1.00 Group H · UEFA Pick before first match: Jun 15, 04:00 PM Coef 1.00 9/2 Add 1" [ref=e1191] [cursor=pointer]':
+              - generic:
+                - generic:
+                  - generic: Spain
+                  - generic: Coef 1.00
+                - generic: Group H · UEFA
+                - generic: "Pick before first match: Jun 15, 04:00 PM"
+              - generic:
+                - generic: Coef
+                - text: "1.00"
+              - generic: 9/2
+              - generic: Add 1
+            - 'button "England Coef 1.12 Group L · UEFA Pick before first match: Jun 17, 08:00 PM Coef 1.12 13/2 Add 1" [ref=e1192] [cursor=pointer]':
+              - generic:
+                - generic:
+                  - generic: England
+                  - generic: Coef 1.12
+                - generic: Group L · UEFA
+                - generic: "Pick before first match: Jun 17, 08:00 PM"
+              - generic:
+                - generic: Coef
+                - text: "1.12"
+              - generic: 13/2
+              - generic: Add 1
+            - 'button "Argentina Coef 1.19 Group J · CONMEBOL Pick before first match: Jun 17, 01:00 AM Coef 1.19 8/1 Add 1" [ref=e1193] [cursor=pointer]':
+              - generic:
+                - generic:
+                  - generic: Argentina
+                  - generic: Coef 1.19
+                - generic: Group J · CONMEBOL
+                - generic: "Pick before first match: Jun 17, 01:00 AM"
+              - generic:
+                - generic: Coef
+                - text: "1.19"
+              - generic: 8/1
+              - generic: Add 1
+            - 'button "Brazil Coef 1.19 Group C · CONMEBOL Pick before first match: Jun 13, 10:00 PM Coef 1.19 8/1 Add 1" [ref=e1194] [cursor=pointer]':
+              - generic:
+                - generic:
+                  - generic: Brazil
+                  - generic: Coef 1.19
+                - generic: Group C · CONMEBOL
+                - generic: "Pick before first match: Jun 13, 10:00 PM"
+              - generic:
+                - generic: Coef
+                - text: "1.19"
+              - generic: 8/1
+              - generic: Add 1
+            - 'button "Portugal Coef 1.27 Group K · UEFA Pick before first match: Jun 17, 05:00 PM Coef 1.27 10/1 Add 1" [ref=e1195] [cursor=pointer]':
+              - generic:
+                - generic:
+                  - generic: Portugal
+                  - generic: Coef 1.27
+                - generic: Group K · UEFA
+                - generic: "Pick before first match: Jun 17, 05:00 PM"
+              - generic:
+                - generic: Coef
+                - text: "1.27"
+              - generic: 10/1
+              - generic: Add 1
+            - 'button "Germany Coef 1.39 Group E · UEFA Pick before first match: Jun 14, 05:00 PM Coef 1.39 14/1 Add 1" [ref=e1196] [cursor=pointer]':
+              - generic:
+                - generic:
+                  - generic: Germany
+                  - generic: Coef 1.39
+                - generic: Group E · UEFA
+                - generic: "Pick before first match: Jun 14, 05:00 PM"
+              - generic:
+                - generic: Coef
+                - text: "1.39"
+              - generic: 14/1
+              - generic: Add 1
+            - 'button "Netherlands Coef 1.51 Group F · UEFA Pick before first match: Jun 14, 08:00 PM Coef 1.51 20/1 Add 1" [ref=e1197] [cursor=pointer]':
+              - generic:
+                - generic:
+                  - generic: Netherlands
+                  - generic: Coef 1.51
+                - generic: Group F · UEFA
+                - generic: "Pick before first match: Jun 14, 08:00 PM"
+              - generic:
+                - generic: Coef
+                - text: "1.51"
+              - generic: 20/1
+              - generic: Add 1
+            - button "Show all 48 teams" [ref=e1198] [cursor=pointer]:
+              - text: Show all 48 teams
+              - img [ref=e1199]
+        - generic [ref=e1201]:
+          - generic [ref=e1202]:
+            - generic [ref=e1203]:
+              - heading "Entry" [level=2] [ref=e1204]
+              - paragraph [ref=e1205]: Save your 3 picks free and follow the points. A paid ticket only moves the draft into the public leaderboard.
+            - img [ref=e1206]
+          - generic "Entry progress" [ref=e1209]:
+            - generic [ref=e1210]:
+              - generic [ref=e1211]: "1"
+              - generic [ref=e1212]: Pick
+            - generic [ref=e1214]:
+              - generic [ref=e1215]: "2"
+              - generic [ref=e1216]: Save
+            - generic [ref=e1218]:
+              - generic [ref=e1219]: "3"
+              - generic [ref=e1220]: Ticket
+            - generic [ref=e1222]:
+              - generic [ref=e1223]: "4"
+              - generic [ref=e1224]: Lock
+          - generic [ref=e1225]:
+            - generic [ref=e1226]:
+              - generic [ref=e1227]:
+                - strong [ref=e1228]: Google account connected
+                - paragraph [ref=e1229]: david2015bestai@gmail.com
+              - button "Sign out" [ref=e1230] [cursor=pointer]
+            - generic [ref=e1231]:
+              - generic [ref=e1232]: Display name
+              - textbox "Display name" [ref=e1233]:
+                - /placeholder: Your leaderboard name
+                - text: David Ai
+            - generic [ref=e1234]:
+              - generic [ref=e1235]:
+                - generic [ref=e1236]: Pick 1
+                - generic [ref=e1237]: Team slot 1
+                - strong [ref=e1238]: "-"
+              - generic [ref=e1239]:
+                - generic [ref=e1240]: Pick 2
+                - generic [ref=e1241]: Team slot 2
+                - strong [ref=e1242]: "-"
+              - generic [ref=e1243]:
+                - generic [ref=e1244]: Pick 3
+                - generic [ref=e1245]: Team slot 3
+                - strong [ref=e1246]: "-"
+            - generic "Entry ticket requirement" [ref=e1247]:
+              - img [ref=e1249]
+              - generic [ref=e1251]:
+                - generic [ref=e1252]:
+                  - generic [ref=e1253]:
+                    - strong [ref=e1254]: Free picks first
+                    - generic [ref=e1255]: Pick 3 teams and save a free draft. Payment is only needed to enter the public leaderboard.
+                  - generic [ref=e1256]: no ticket needed
+                - generic [ref=e1257]:
+                  - img [ref=e1258]
+                  - generic [ref=e1260]: Save a free draft now. Use an agent code or USDT only when you want the paid leaderboard. Your private points show what would happen if the draft were paid.
+            - generic [ref=e1261]: Pick 3 more teams before saving.
+            - button "Save free picks" [disabled] [ref=e1262]:
+              - img [ref=e1263]
+              - text: Save free picks
+        - generic [ref=e520]:
+          - generic [ref=e521]:
+            - generic [ref=e522]:
+              - heading "Invite Friend" [level=2] [ref=e523]
+              - paragraph [ref=e524]: Share your referral link. Referral-chain inviters earn 5%; direct inviters earn 3%.
+            - img [ref=e525]
+          - generic [ref=e530]:
+            - generic [ref=e531]:
+              - generic [ref=e1265]:
+                - generic [ref=e1266]: Tickets available
+                - strong [ref=e1267]: "0"
+                - generic [ref=e1268]: 0 assigned
+              - generic [ref=e1269]:
+                - generic [ref=e1270]: Wallet balance
+                - strong [ref=e1271]: "0.00"
+                - generic [ref=e1272]: Internal funds
+              - generic [ref=e1273]:
+                - generic [ref=e1274]: Ticket price
+                - strong [ref=e1275]: "50.00"
+                - generic [ref=e1276]: Set by admin
+            - generic "Referral invite preview" [ref=e1277]:
+              - generic [ref=e1278]:
+                - img [ref=e1280]
+                - generic [ref=e1283]:
+                  - text: WorldCup26 invite
+                  - strong [ref=e1284]: Pick 3 teams free first.
+              - generic [ref=e1285]:
+                - generic [ref=e1286]: Your code
+                - strong [ref=e1287]: 26BC4B90CB
+              - generic [ref=e1288]:
+                - img [ref=e1289]
+                - generic [ref=e1292]: http://127.0.0.1:3001/login?ref=26BC4B90CB
+            - generic [ref=e1293]:
+              - link "Send invite" [ref=e1294] [cursor=pointer]:
+                - /url: https://wa.me/?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20free%2C%20track%20your%20private%20points%20preview%2C%20and%20use%20a%20ticket%20only%20if%20you%20want%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttp%3A%2F%2F127.0.0.1%3A3001%2Flogin%3Fref%3D26BC4B90CB
+                - img [ref=e1295]
+                - text: Send invite
+              - button "Copy link" [ref=e1297] [cursor=pointer]:
+                - img [ref=e1298]
+                - text: Copy link
+            - generic [ref=e1303]:
+              - generic [ref=e1304]:
+                - generic [ref=e1305]: Referred players
+                - strong [ref=e1306]: "0"
+              - generic [ref=e1307]: No accepted referrals yet. When a friend joins through your link, they will appear here.
+        - generic [ref=e532]:
+          - generic [ref=e533]:
+            - generic [ref=e534]:
+              - heading "Leaderboard" [level=2] [ref=e535]
+              - paragraph [ref=e536]: Top 1 positions share the prize pool.
+            - img [ref=e537]
+          - generic "Prize payout preview" [ref=e540]:
+            - generic [ref=e541]:
+              - strong [ref=e542]: Payout Preview
+              - generic [ref=e543]: Weighted split from the current prize pool.
+            - generic [ref=e545]:
+              - generic [ref=e546]: "#1"
+              - strong [ref=e547]: 4,360.00
+              - generic [ref=e548]: 100.00%
+          - generic [ref=e550]:
+            - generic [ref=e551]:
+              - generic [ref=e552]:
+                - generic [ref=e553]: "1"
+                - generic [ref=e554]: Seme
+              - generic [ref=e555]: "0.00"
+            - generic [ref=e556]:
+              - generic "0.00 points, coefficient 1.60" [ref=e557]:
+                - generic [ref=e559]: Pick 1
+                - generic [ref=e560]: Norway
+                - strong [ref=e561]: 0.00 pts
+                - generic [ref=e562]: x1.60
+              - generic "0.00 points, coefficient 1.39" [ref=e563]:
+                - generic [ref=e565]: Pick 2
+                - generic [ref=e566]: Germany
+                - strong [ref=e567]: 0.00 pts
+                - generic [ref=e568]: x1.39
+              - generic "0.00 points, coefficient 1.27" [ref=e569]:
+                - generic [ref=e571]: Pick 3
+                - generic [ref=e572]: Portugal
+                - strong [ref=e573]: 0.00 pts
+                - generic [ref=e574]: x1.27
+        - generic [ref=e575]:
+          - generic [ref=e576]:
+            - generic [ref=e577]:
+              - heading "Rules" [level=2] [ref=e578]
+              - paragraph [ref=e579]: How picks, coefficients, and points work.
+            - img [ref=e580]
+          - generic [ref=e582]:
+            - generic [ref=e583]:
+              - heading "How to join" [level=3] [ref=e584]
+              - paragraph [ref=e585]: Choose exactly 3 teams. You may join even after the tournament starts, but only with teams that have not reached the one-minute-before-first-match lock time.
+              - paragraph [ref=e586]: Matchday 1 runs 11-17 June 2026. Matchday 2 runs 18-23 June 2026. Each team row shows the exact last selectable time before its first match.
+            - generic [ref=e587]:
+              - heading "Points formula" [level=3] [ref=e588]
+              - generic [ref=e589]: (base points + goal bonus + clean sheet bonus) x team coefficient x stage coefficient
+            - generic [ref=e590]:
+              - generic [ref=e591]:
+                - generic [ref=e592]: Win / qualify in 90 min
+                - strong [ref=e593]: 5 pts
+              - generic [ref=e594]:
+                - generic [ref=e595]: Qualify after extra time
+                - strong [ref=e596]: 4 pts
+              - generic [ref=e597]:
+                - generic [ref=e598]: Qualify after penalties
+                - strong [ref=e599]: 3 pts
+              - generic [ref=e600]:
+                - generic [ref=e601]: Group draw
+                - strong [ref=e602]: 2 pts
+              - generic [ref=e603]:
+                - generic [ref=e604]: Lose after penalties
+                - strong [ref=e605]: 1.5 pts
+              - generic [ref=e606]:
+                - generic [ref=e607]: Lose after extra time
+                - strong [ref=e608]: 1 pt
+              - generic [ref=e609]:
+                - generic [ref=e610]: Goal scored
+                - strong [ref=e611]: "+0.5"
+              - generic [ref=e612]:
+                - generic [ref=e613]: Clean sheet in 90 min
+                - strong [ref=e614]: "+1"
+            - generic [ref=e615]:
+              - heading "Team coefficient" [level=3] [ref=e616]
+              - paragraph [ref=e617]:
+                - text: Favorites carry a lower multiplier. The most favored teams start at 1.00, while the biggest underdogs can reach 3.00. The team coefficient stays fixed for the whole competition.
+                - link "Click here for the full list." [ref=e618] [cursor=pointer]:
+                  - /url: /coefficients
+            - generic [ref=e619]:
+              - generic [ref=e620]:
+                - generic [ref=e621]: Group Stage
+                - strong [ref=e622]: "1.00"
+              - generic [ref=e623]:
+                - generic [ref=e624]: Round of 32
+                - strong [ref=e625]: "1.20"
+              - generic [ref=e626]:
+                - generic [ref=e627]: Round of 16
+                - strong [ref=e628]: "1.35"
+              - generic [ref=e629]:
+                - generic [ref=e630]: Quarter-final
+                - strong [ref=e631]: "1.50"
+              - generic [ref=e632]:
+                - generic [ref=e633]: Semi-final
+                - strong [ref=e634]: "1.75"
+              - generic [ref=e635]:
+                - generic [ref=e636]: Third-place Match
+                - strong [ref=e637]: "1.25"
+              - generic [ref=e638]:
+                - generic [ref=e639]: Final
+                - strong [ref=e640]: "2.00"
+      - generic [ref=e642]:
+        - generic [ref=e643]:
+          - generic [ref=e644]:
+            - heading "Match Schedule" [level=2] [ref=e645]
+            - paragraph [ref=e646]: First 24 matches shown for fast operations.
+          - img [ref=e647]
+        - generic [ref=e652]:
+          - generic [ref=e653]:
+            - generic [ref=e654]:
+              - strong [ref=e655]: "#1 · Mexico vs South Africa"
+              - generic [ref=e656]: Scheduled
+            - generic [ref=e657]: Group Stage · Jun 11, 2026, 7:00 PM · Estadio Azteca
+          - generic [ref=e658]:
+            - generic [ref=e659]:
+              - strong [ref=e660]: "#2 · Korea Republic vs Czechia"
+              - generic [ref=e661]: Scheduled
+            - generic [ref=e662]: Group Stage · Jun 12, 2026, 2:00 AM · Estadio Akron
+          - generic [ref=e663]:
+            - generic [ref=e664]:
+              - strong [ref=e665]: "#3 · Canada vs Bosnia and Herzegovina"
+              - generic [ref=e666]: Scheduled
+            - generic [ref=e667]: Group Stage · Jun 12, 2026, 7:00 PM · BMO Field
+          - generic [ref=e668]:
+            - generic [ref=e669]:
+              - strong [ref=e670]: "#4 · United States vs Paraguay"
+              - generic [ref=e671]: Scheduled
+            - generic [ref=e672]: Group Stage · Jun 13, 2026, 1:00 AM · SoFi Stadium
+          - generic [ref=e673]:
+            - generic [ref=e674]:
+              - strong [ref=e675]: "#5 · Haiti vs Scotland"
+              - generic [ref=e676]: Scheduled
+            - generic [ref=e677]: Group Stage · Jun 14, 2026, 1:00 AM · Gillette Stadium
+          - generic [ref=e678]:
+            - generic [ref=e679]:
+              - strong [ref=e680]: "#6 · Australia vs Türkiye"
+              - generic [ref=e681]: Scheduled
+            - generic [ref=e682]: Group Stage · Jun 14, 2026, 4:00 AM · BC Place
+          - generic [ref=e683]:
+            - generic [ref=e684]:
+              - strong [ref=e685]: "#7 · Brazil vs Morocco"
+              - generic [ref=e686]: Scheduled
+            - generic [ref=e687]: Group Stage · Jun 13, 2026, 10:00 PM · MetLife Stadium
+          - generic [ref=e688]:
+            - generic [ref=e689]:
+              - strong [ref=e690]: "#8 · Qatar vs Switzerland"
+              - generic [ref=e691]: Scheduled
+            - generic [ref=e692]: Group Stage · Jun 13, 2026, 7:00 PM · Levi's Stadium
+          - generic [ref=e693]:
+            - generic [ref=e694]:
+              - strong [ref=e695]: "#9 · Côte d'Ivoire vs Ecuador"
+              - generic [ref=e696]: Scheduled
+            - generic [ref=e697]: Group Stage · Jun 14, 2026, 11:00 PM · Lincoln Financial Field
+          - generic [ref=e698]:
+            - generic [ref=e699]:
+              - strong [ref=e700]: "#10 · Germany vs Curaçao"
+              - generic [ref=e701]: Scheduled
+            - generic [ref=e702]: Group Stage · Jun 14, 2026, 5:00 PM · NRG Stadium
+          - generic [ref=e703]:
+            - generic [ref=e704]:
+              - strong [ref=e705]: "#11 · Netherlands vs Japan"
+              - generic [ref=e706]: Scheduled
+            - generic [ref=e707]: Group Stage · Jun 14, 2026, 8:00 PM · AT&T Stadium
+          - generic [ref=e708]:
+            - generic [ref=e709]:
+              - strong [ref=e710]: "#12 · Sweden vs Tunisia"
+              - generic [ref=e711]: Scheduled
+            - generic [ref=e712]: Group Stage · Jun 15, 2026, 2:00 AM · Estadio BBVA
+          - generic [ref=e713]:
+            - generic [ref=e714]:
+              - strong [ref=e715]: "#13 · Saudi Arabia vs Uruguay"
+              - generic [ref=e716]: Scheduled
+            - generic [ref=e717]: Group Stage · Jun 15, 2026, 10:00 PM · Hard Rock Stadium
+          - generic [ref=e718]:
+            - generic [ref=e719]:
+              - strong [ref=e720]: "#14 · Spain vs Cabo Verde"
+              - generic [ref=e721]: Scheduled
+            - generic [ref=e722]: Group Stage · Jun 15, 2026, 4:00 PM · Mercedes-Benz Stadium
+          - generic [ref=e723]:
+            - generic [ref=e724]:
+              - strong [ref=e725]: "#15 · IR Iran vs New Zealand"
+              - generic [ref=e726]: Scheduled
+            - generic [ref=e727]: Group Stage · Jun 16, 2026, 1:00 AM · SoFi Stadium
+          - generic [ref=e728]:
+            - generic [ref=e729]:
+              - strong [ref=e730]: "#16 · Belgium vs Egypt"
+              - generic [ref=e731]: Scheduled
+            - generic [ref=e732]: Group Stage · Jun 15, 2026, 7:00 PM · Lumen Field
+          - generic [ref=e733]:
+            - generic [ref=e734]:
+              - strong [ref=e735]: "#17 · France vs Senegal"
+              - generic [ref=e736]: Scheduled
+            - generic [ref=e737]: Group Stage · Jun 16, 2026, 7:00 PM · MetLife Stadium
+          - generic [ref=e738]:
+            - generic [ref=e739]:
+              - strong [ref=e740]: "#18 · Iraq vs Norway"
+              - generic [ref=e741]: Scheduled
+            - generic [ref=e742]: Group Stage · Jun 16, 2026, 10:00 PM · Gillette Stadium
+          - generic [ref=e743]:
+            - generic [ref=e744]:
+              - strong [ref=e745]: "#19 · Argentina vs Algeria"
+              - generic [ref=e746]: Scheduled
+            - generic [ref=e747]: Group Stage · Jun 17, 2026, 1:00 AM · Arrowhead Stadium
+          - generic [ref=e748]:
+            - generic [ref=e749]:
+              - strong [ref=e750]: "#20 · Austria vs Jordan"
+              - generic [ref=e751]: Scheduled
+            - generic [ref=e752]: Group Stage · Jun 17, 2026, 4:00 AM · Levi's Stadium
+          - generic [ref=e753]:
+            - generic [ref=e754]:
+              - strong [ref=e755]: "#21 · Ghana vs Panama"
+              - generic [ref=e756]: Scheduled
+            - generic [ref=e757]: Group Stage · Jun 17, 2026, 11:00 PM · BMO Field
+          - generic [ref=e758]:
+            - generic [ref=e759]:
+              - strong [ref=e760]: "#22 · England vs Croatia"
+              - generic [ref=e761]: Scheduled
+            - generic [ref=e762]: Group Stage · Jun 17, 2026, 8:00 PM · AT&T Stadium
+          - generic [ref=e763]:
+            - generic [ref=e764]:
+              - strong [ref=e765]: "#23 · Portugal vs Congo DR"
+              - generic [ref=e766]: Scheduled
+            - generic [ref=e767]: Group Stage · Jun 17, 2026, 5:00 PM · NRG Stadium
+          - generic [ref=e768]:
+            - generic [ref=e769]:
+              - strong [ref=e770]: "#24 · Uzbekistan vs Colombia"
+              - generic [ref=e771]: Scheduled
+            - generic [ref=e772]: Group Stage · Jun 18, 2026, 2:00 AM · Estadio Azteca
+  - button "Open Next.js Dev Tools" [ref=e1313] [cursor=pointer]:
+    - img [ref=e1314]
+  - alert [ref=e1317]

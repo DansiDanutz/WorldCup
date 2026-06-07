@@ -1,0 +1,135 @@
+{
+  "generatedAt": "2026-06-07T17:45:00.726Z",
+  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "liveProofRows": 49,
+  "urgentProofGaps": 16,
+  "hotWorkers": 3,
+  "firstHotWorker": {
+    "worker": "Dexter",
+    "openRows": 3,
+    "escalation": "hot",
+    "oldestScheduledAtEest": "2026-06-06 08:00 +0300",
+    "oldestAgeLabel": "36.7h open",
+    "nextPriority": "4",
+    "nextChannel": "Football groups",
+    "nextCommand": "node campaign-proof-log.mjs --priority \"4\" --proof-url \"approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed\" --status \"requested\"",
+    "nextAction": {
+      "priority": "4",
+      "channel": "Football groups",
+      "mode": "approval first",
+      "action": "Ask approved group admin for permission; post group variant only if allowed",
+      "asset": "campaign/first-wave-posts.md",
+      "scheduledAtEest": "2026-06-06 08:00 +0300",
+      "ageLabel": "36.7h open",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+      "copy": "",
+      "firstComment": "",
+      "proofCommand": "node campaign-proof-log.mjs --priority \"4\" --proof-url \"approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed\" --status \"requested\""
+    }
+  },
+  "firstHuman": {
+    "ok": true,
+    "state": "needs-first-human-action",
+    "warmAttempts": 0,
+    "signupSaves": 0,
+    "referralViews": 171,
+    "dashboardClicks": 227,
+    "firstAction": {
+      "id": "clean-signup-test-batch",
+      "owner": "Memo",
+      "channel": "WhatsApp testers",
+      "title": "Send three clean referral signup tests",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+      "whatsapp": "https://wa.me/?text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test",
+      "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test&text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test",
+      "sms": "sms:?&body=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test",
+      "command": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\"",
+      "copy": "I need 3 clean WorldCup26 signup tests now.\n\nPlease send this to three trusted people with different Google accounts. They should open it on a fresh phone/browser, accept the invite, continue with Google, and pick 3 teams. Do not pay.\n\nAsk each tester to reply with one of these:\n1. \"joined + picked teams\"\n2. screenshot of the exact screen where it stops\n\nCode 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+      "doneWhen": "The tester batch is really sent and logged with count/account, then a real profile plus referral signup-save row appears, or a precise tester screenshot captures the failing step."
+    }
+  },
+  "workers": [
+    {
+      "worker": "Dexter",
+      "openRows": 3,
+      "escalation": "hot",
+      "oldestScheduledAtEest": "2026-06-06 08:00 +0300",
+      "oldestAgeLabel": "36.7h open",
+      "nextPriority": "4",
+      "nextChannel": "Football groups",
+      "nextCommand": "node campaign-proof-log.mjs --priority \"4\" --proof-url \"approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed\" --status \"requested\"",
+      "nextAction": {
+        "priority": "4",
+        "channel": "Football groups",
+        "mode": "approval first",
+        "action": "Ask approved group admin for permission; post group variant only if allowed",
+        "asset": "campaign/first-wave-posts.md",
+        "scheduledAtEest": "2026-06-06 08:00 +0300",
+        "ageLabel": "36.7h open",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+        "copy": "",
+        "firstComment": "",
+        "proofCommand": "node campaign-proof-log.mjs --priority \"4\" --proof-url \"approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed\" --status \"requested\""
+      }
+    },
+    {
+      "worker": "Sienna",
+      "openRows": 8,
+      "escalation": "hot",
+      "oldestScheduledAtEest": "2026-06-06 04:00 +0300",
+      "oldestAgeLabel": "40.7h open",
+      "nextPriority": "1",
+      "nextChannel": "WhatsApp Status",
+      "nextCommand": "node campaign-proof-log.mjs --priority \"1\" --proof-url \"private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included\" --status \"posted\"",
+      "nextAction": {
+        "priority": "1",
+        "channel": "WhatsApp Status",
+        "mode": "manual post",
+        "action": "Post story asset with video caption 1",
+        "asset": "media/worldcup26-main-video.mp4",
+        "scheduledAtEest": "2026-06-06 04:00 +0300",
+        "ageLabel": "40.7h open",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
+        "copy": "",
+        "firstComment": "",
+        "proofCommand": "node campaign-proof-log.mjs --priority \"1\" --proof-url \"private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included\" --status \"posted\""
+      }
+    },
+    {
+      "worker": "Memo",
+      "openRows": 0,
+      "escalation": "clear",
+      "oldestScheduledAtEest": null,
+      "oldestAgeLabel": null,
+      "nextPriority": null,
+      "nextChannel": null,
+      "nextCommand": null,
+      "nextAction": null
+    },
+    {
+      "worker": "Nano",
+      "openRows": 5,
+      "escalation": "hot",
+      "oldestScheduledAtEest": "2026-06-06 06:00 +0300",
+      "oldestAgeLabel": "38.7h open",
+      "nextPriority": "2",
+      "nextChannel": "WhatsApp personal",
+      "nextCommand": "node campaign-proof-log.mjs --priority \"2\" --proof-url \"private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>\" --status \"sent\"",
+      "nextAction": {
+        "priority": "2",
+        "channel": "WhatsApp personal",
+        "mode": "manual outreach",
+        "action": "Send personal invite to warm contacts",
+        "asset": "media/worldcup26-main-video.mp4",
+        "scheduledAtEest": "2026-06-06 06:00 +0300",
+        "ageLabel": "38.7h open",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2",
+        "copy": "",
+        "firstComment": "",
+        "proofCommand": "node campaign-proof-log.mjs --priority \"2\" --proof-url \"private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>\" --status \"sent\""
+      }
+    }
+  ]
+}

@@ -37,7 +37,7 @@ Implemented in the Supabase **Games** project:
 - Google-only sign-in for locked entries
 - Admin-assigned entry tickets with configurable ticket price
 - Internal wallet transfer ledger between accounts
-- Referral invite links with tiered referred-winner agreement tracking: 5% for referral-chain inviters, 3% for direct inviters
+- Referral invite links with accepted referred-winner agreement tracking at a flat 5% inviter share
 - Player-facing prize pool with paid places and weighted payout preview calculated from participation
 - Admin settlement report with gross prize, referral obligation, and winner net amounts
 - Hardened RLS for private entry, referral, wallet, ticket, and profile tables
@@ -81,7 +81,7 @@ The local workspace is linked to the Supabase project named **Games**.
 Project ref:
 
 ```text
-lxhjfdxowpxzrybxdasi
+your-project-ref
 ```
 
 ## Main Database Objects

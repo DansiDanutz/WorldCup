@@ -98,7 +98,7 @@ export async function POST(request: Request) {
 
   const paidActionGate = await getUserPaidActionGate(supabase, "ticket", { userEmail: user.email });
   if (!paidActionGate.allowed) {
-    return jsonError(paidActionGate.message ?? "Ticket transfers are paused until launch approvals are complete.", 403);
+    return jsonError(paidActionGate.message ?? "Ticket transfers are unavailable right now.", 403);
   }
 
   const responsiblePlay = await loadResponsiblePlayStatus(supabase, user.id, {

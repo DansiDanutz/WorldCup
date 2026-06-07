@@ -235,6 +235,16 @@ export function getDepositNetworkShortLabel(network: DepositNetwork) {
   return NETWORK_SHORT_LABELS[network];
 }
 
+export function formatMaskedWalletAddress(value: string | null | undefined) {
+  const trimmed = value?.trim() ?? "";
+
+  if (trimmed.length <= 10) {
+    return trimmed;
+  }
+
+  return `${trimmed.slice(0, 4)}...${trimmed.slice(-4)}`;
+}
+
 export function getSavedSenderWalletForNetwork(
   profile: SenderWalletProfile,
   network: DepositNetwork,

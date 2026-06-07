@@ -1,0 +1,176 @@
+{
+  "schema": "worldcup26-referral-activity-v1",
+  "generatedAt": "2026-06-07T17:44:59.458Z",
+  "generatedAtEest": "2026-06-07 20:44 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "ok": true,
+  "available": true,
+  "status": "ok",
+  "inviterFound": true,
+  "inviterName": "David Ai",
+  "counts": {
+    "acceptedReferrals": 0,
+    "acceptedReferrals24h": 0,
+    "acceptedReferrals72h": 0,
+    "signupReferralSaves": 0,
+    "signupReferralSaves24h": 0,
+    "signupReferralSaves72h": 0,
+    "referredEntries": 0,
+    "draftEntries": 0,
+    "lockedEntries": 0
+  },
+  "accountCounts": {
+    "profiles": 5,
+    "profiles24h": 3,
+    "profiles72h": 4,
+    "freeAccounts": 4,
+    "paidAccounts": 1,
+    "draftAccounts": 3,
+    "totalEntries": 4,
+    "draftEntries": 3,
+    "lockedEntries": 1,
+    "lockedEntries24h": 0,
+    "lockedEntries72h": 1
+  },
+  "viewCounts": {
+    "available": true,
+    "reason": "",
+    "appViews": 514,
+    "appViews24h": 514,
+    "appViews72h": 514,
+    "referralViews": 175,
+    "referralViews24h": 175,
+    "referralViews72h": 175,
+    "signupReturned": 0,
+    "signupMissingAcceptance": 0,
+    "signupAttempts": 0,
+    "signupSavedEvents": 0,
+    "signupFailedEvents": 0,
+    "signupErrorEvents": 0
+  },
+  "sourceBreakdown": [
+    {
+      "source": "meta",
+      "medium": "paid-social",
+      "campaign": "worldcup26_referral_72h",
+      "content": "three-team-question",
+      "count": 74,
+      "lastViewedAt": "2026-06-07T17:44:57.453166+00:00"
+    },
+    {
+      "source": "an",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400",
+      "count": 50,
+      "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+    },
+    {
+      "source": "fb",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400_free_first",
+      "count": 22,
+      "lastViewedAt": "2026-06-07T14:16:35.772463+00:00"
+    },
+    {
+      "source": "fb",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400",
+      "count": 19,
+      "lastViewedAt": "2026-06-07T11:58:21.035812+00:00"
+    },
+    {
+      "source": "ig",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400",
+      "count": 4,
+      "lastViewedAt": "2026-06-07T11:47:26.443609+00:00"
+    },
+    {
+      "source": "codex_probe",
+      "medium": "qa",
+      "campaign": "signup_friction_probe",
+      "content": null,
+      "count": 2,
+      "lastViewedAt": "2026-06-07T16:51:52.940108+00:00"
+    },
+    {
+      "source": "browser-probe",
+      "medium": "automation",
+      "campaign": "worldcup26_referral_72h",
+      "content": "conversion_browser",
+      "count": 1,
+      "lastViewedAt": "2026-06-07T11:09:11.510868+00:00"
+    }
+  ],
+  "allSourceBreakdown": [
+    {
+      "source": "an",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400",
+      "count": 84,
+      "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+    },
+    {
+      "source": "meta",
+      "medium": "paid-social",
+      "campaign": "worldcup26_referral_72h",
+      "content": "three-team-question",
+      "count": 74,
+      "lastViewedAt": "2026-06-07T17:44:57.453166+00:00"
+    },
+    {
+      "source": "fb",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400",
+      "count": 48,
+      "lastViewedAt": "2026-06-07T11:58:21.035812+00:00"
+    },
+    {
+      "source": "fb",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400_free_first",
+      "count": 22,
+      "lastViewedAt": "2026-06-07T14:16:35.772463+00:00"
+    },
+    {
+      "source": "ig",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400",
+      "count": 19,
+      "lastViewedAt": "2026-06-07T11:47:26.443609+00:00"
+    },
+    {
+      "source": "codex_probe",
+      "medium": "qa",
+      "campaign": "signup_friction_probe",
+      "content": null,
+      "count": 2,
+      "lastViewedAt": "2026-06-07T16:51:52.940108+00:00"
+    },
+    {
+      "source": "browser-probe",
+      "medium": "automation",
+      "campaign": "worldcup26_referral_72h",
+      "content": "conversion_browser",
+      "count": 1,
+      "lastViewedAt": "2026-06-07T11:09:11.510868+00:00"
+    }
+  ],
+  "signupSourceBreakdown": [],
+  "latest": {
+    "acceptedReferralAt": null,
+    "signupReferralSavedAt": null,
+    "entryCreatedAt": null,
+    "entryLockedAt": null
+  },
+  "rule": "Counts are no-PII attribution evidence for the campaign referral code. This does not prove an external post happened by itself."
+}

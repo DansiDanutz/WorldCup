@@ -90,7 +90,7 @@ Main dashboard:
 
 ### `/login`
 
-Dedicated login/register gate. Users enter a referral code or confirm that they do not have one before creating an account with Google. Referral codes are resolved on this page, the referred player accepts the referred-winner agreement, and then OAuth redirects back to the dashboard. Users who join through a referral can earn 5% from their own referred winners; users who join without a referral can still invite, but earn 3%.
+Dedicated login/register gate. Users enter a referral code or confirm that they do not have one before creating an account with Google. Referral codes are resolved on this page, the referred player accepts the referred-winner agreement, and then OAuth redirects back to the dashboard. Accepted inviters earn 5% from referred winners.
 
 ### `/schema`
 

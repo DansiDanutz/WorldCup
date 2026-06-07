@@ -1,0 +1,105 @@
+WorldCup26 public outreach sprint 2026-06-07 20:45 +0300
+worker=Sienna targets=9 code=26BC4B90CB
+rule=This is a target map, not proof. Use owned accounts or approved communities, then log a real URL or private-channel note.
+
+A1 WhatsApp Status
+target=Owned WhatsApp status audience
+action=Post the campaign video as a status with the free-picks caption.
+asset=media/worldcup26-main-video.mp4
+open=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1
+
+copy=Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1
+proof=node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status: posted status from <phone/account>; visible to contacts; code/link included at YYYY-MM-DD HH:mm EEST" --status "posted"
+
+A3 Instagram/Facebook Story
+target=Owned Instagram/Facebook story audience
+action=Post the story card with a link sticker and referral code.
+asset=media/worldcup26-referral-story.jpg
+open=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=story_a3
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=story_a3
+
+copy=48 teams are still open. Pick your 3 before everyone copies the favorites. Code 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=story_a3
+proof=node campaign-proof-log.mjs --priority "3" --proof-url "private-meta-story: story posted from <account>; screenshot saved; code/link sticker included at YYYY-MM-DD HH:mm EEST" --status "posted"
+
+B3 YouTube Search
+target=World Cup 2026 prediction videos
+action=Comment naturally on fresh prediction videos: invite viewers to pick 3 teams free.
+asset=media/worldcup26-main-video.mp4
+open=https://www.youtube.com/results?search_query=World+Cup+2026+predictions
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b3
+
+copy=What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-search&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b3
+proof=node campaign-public-channel-attempts.mjs --add --owner "Sienna" --platform "YouTube Search" --channel "World Cup 2026 prediction videos" --status "posted" --attempt-url "https://www.youtube.com/results?search_query=World+Cup+2026+predictions" --detail "public-url-or-screenshot-note: YouTube comment URL/screenshot note with code/link included at YYYY-MM-DD HH:mm EEST"
+
+C1 TikTok/Reels
+target=#worldcup2026 and football prediction clips
+action=Upload/repost the campaign video with the free-picks hook and code in first line.
+asset=media/worldcup26-main-video.mp4
+open=https://www.tiktok.com/search?q=worldcup2026%20predictions
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-search&utm_medium=manual-video&utm_campaign=worldcup26_public_outreach&utm_content=video_c1
+
+copy=Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-search&utm_medium=manual-video&utm_campaign=worldcup26_public_outreach&utm_content=video_c1
+proof=node campaign-public-channel-attempts.mjs --add --owner "Sienna" --platform "TikTok/Reels" --channel "#worldcup2026 and football prediction clips" --status "posted" --attempt-url "https://www.tiktok.com/search?q=worldcup2026%20predictions" --detail "public-url: TikTok/Reels URL with code/link included at YYYY-MM-DD HH:mm EEST"
+
+C2 Instagram Hashtags
+target=#worldcup2026 #footballpredictions
+action=Post story/reel from owned account; ask followers for their 3 teams.
+asset=media/worldcup26-referral-story.jpg
+open=https://www.instagram.com/explore/tags/worldcup2026/
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-hashtag&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=hashtag_c2
+
+copy=48 teams are still open. Pick your 3 before everyone copies the favorites. Code 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-hashtag&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=hashtag_c2
+proof=node campaign-public-channel-attempts.mjs --add --owner "Sienna" --platform "Instagram Hashtags" --channel "#worldcup2026 #footballpredictions" --status "posted" --attempt-url "https://www.instagram.com/explore/tags/worldcup2026/" --detail "public-url-or-private-story-note: Instagram URL/screenshot note with code/link included at YYYY-MM-DD HH:mm EEST"
+
+F11 YouTube Search
+target=Fresh World Cup 2026 prediction videos
+action=Open newest relevant videos and comment naturally with the 3-team question from a logged-in owned YouTube account.
+asset=media/worldcup26-main-video-vertical.mp4
+open=https://www.youtube.com/results?search_query=World+Cup+2026+predictions&sp=CAI%253D
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-fresh&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_youtube_f11
+source=Fresh search path: newest YouTube prediction videos.
+copy=What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-fresh&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_youtube_f11
+proof=node campaign-public-channel-attempts.mjs --add --owner "Sienna" --platform "YouTube Search" --channel "Fresh World Cup 2026 prediction videos" --status "posted" --attempt-url "https://www.youtube.com/results?search_query=World+Cup+2026+predictions&sp=CAI%253D" --detail "public-url-or-screenshot-note: YouTube comment URL/screenshot note with code/link included at YYYY-MM-DD HH:mm EEST"
+
+F17 Reddit
+target=r/SideProject bracket-builder thread
+action=Do not compete head-on with their product. Comment as a lighter alternative: pick 3 teams in under a minute and follow a private score.
+asset=media/worldcup26-main-video-vertical.mp4
+open=https://www.reddit.com/r/SideProject/comments/1t7jb9v/free_world_cup_2026_bracket_builder_predict_every/
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sideproject&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_bracket_builder_f17
+source=Fresh search result: SideProject bracket-builder leaderboard thread.
+copy=What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.
+
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sideproject&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_bracket_builder_f17
+proof=node campaign-public-channel-attempts.mjs --add --owner "Sienna" --platform "Reddit" --channel "r/SideProject bracket-builder thread" --status "posted" --attempt-url "https://www.reddit.com/r/SideProject/comments/1t7jb9v/free_world_cup_2026_bracket_builder_predict_every/" --detail "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST"
+
+F21 FourFourTwo
+target=World Cup 2026 sweepstake kit article
+action=Use this as a timely social-reply angle: office sweepstake readers can also pick 3 teams free on mobile. Post only on allowed comments or social shares.
+asset=media/worldcup26-referral-square.jpg
+open=https://www.fourfourtwo.com/competition/world-cup-2026-sweepstakes-kit-download-and-print-our-sweepstake-template
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_sweepstake_f21
+source=Fresh search result: FourFourTwo World Cup 2026 sweepstake kit article.
+copy=Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_sweepstake_f21
+proof=node campaign-public-channel-attempts.mjs --add --owner "Sienna" --platform "FourFourTwo" --channel "World Cup 2026 sweepstake kit article" --status "posted" --attempt-url "https://www.fourfourtwo.com/competition/world-cup-2026-sweepstakes-kit-download-and-print-our-sweepstake-template" --detail "public-url-or-screenshot-note: FourFourTwo/social comment URL or screenshot note with code/link included at YYYY-MM-DD HH:mm EEST"
+
+F22 FourFourTwo
+target=World Cup 2026 kit picker article
+action=Visual hook: reply from the kit/favorites angle and ask which 3 national teams they would take before kickoff.
+asset=media/worldcup26-main-video-vertical.mp4
+open=https://www.fourfourtwo.com/competition/pick-your-perfect-world-cup-2026-look-with-fourfourtwos-kit-picker
+link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_kit_picker_f22
+source=Fresh search result: FourFourTwo World Cup 2026 kit picker article.
+copy=Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_kit_picker_f22
+proof=node campaign-public-channel-attempts.mjs --add --owner "Sienna" --platform "FourFourTwo" --channel "World Cup 2026 kit picker article" --status "posted" --attempt-url "https://www.fourfourtwo.com/competition/pick-your-perfect-world-cup-2026-look-with-fourfourtwos-kit-picker" --detail "public-url-or-screenshot-note: FourFourTwo/social comment URL or screenshot note with code/link included at YYYY-MM-DD HH:mm EEST"

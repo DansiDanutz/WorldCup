@@ -1,0 +1,1 @@
+globalThis.__RSC_MANIFEST=(globalThis.__RSC_MANIFEST||{});globalThis.__RSC_MANIFEST["/api/referrals/resolve/route"]={"moduleLoading":{"prefix":"/_next/"},"ssrModuleMapping":{},"edgeSSRModuleMapping":{},"clientModules":{},"entryCSSFiles":{"/Users/davidai/Documents/WorldCup/src/app/api/referrals/resolve/route":[]},"rscModuleMapping":{},"edgeRscModuleMapping":{}};

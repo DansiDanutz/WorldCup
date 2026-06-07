@@ -1,0 +1,162 @@
+WorldCup26 remote war room 2026-06-07 20:44 +0300
+hosts=4/4 loops=4/4 hot_hooks=4/4 hot_fresh=4/4 link_sentinels=4/4 link_fresh=4/4 paid_traffic=4/4 paid_fresh=4/4 live_ad_qa=4/4 live_ad_fresh=4/4 ad_platform=4/4 ad_platform_fresh=4/4 conversion=4/4 conversion_fresh=4/4 conversion_browser=4/4 posting_sprints=4/4 sprint_fresh=4/4 session_recovery=4/4 recovery_fresh=4/4 escalations=4/4 escalation_fresh=4/4 proof_activity=0/4 proof_stall_fresh=4/4 proof_sla=4/4 sla_fresh=4/4 proof_rescue=4/4 rescue_fresh=4/4 proof_url_recovery=4/4 url_recovery_fresh=4/4 social_rescue=4/4 social_fresh=4/4 cockpit=4/4 cockpit_fresh=4/4 phone_action=4/4 phone_fresh=4/4 proof_closeout=4/4 closeout_fresh=4/4 closeout_commands=6 public_attempts=4/4 attempts_fresh=4/4 login_unlock=4/4 unlock_fresh=4/4 worker_wake=4/4 wake_fresh=4/4 watchdogs=4/4 watchdog_cron=4/4
+proof_counts=49 urgent_counts=16
+proof_sla_states=critical
+zero_signup=4/4 zero_fresh=4/4 zero_states=critical-zero-signups zero_entries=0
+real_action=4/4 real_fresh=4/4 real_states=critical-zero-signups real_actions=4 real_variants=4
+proof_url_recovery_pending=1
+escalation_counts=critical:16 hot:0
+public_attempts=blocked:7 login_required:6
+login_unlock=cards:6 blocked:6 login_required:5 platforms=X,YouTube Shorts,Facebook,LinkedIn
+objective_audit=4/4 objective_fresh=4/4 objective_states=critical objective_complete=0/4 objective_critical_open=1
+operator_push=4/4 operator_fresh=4/4 operator_states=critical operator_actions=4 operator_blocked=7 operator_login_required=6
+one_click=4/4 one_click_fresh=4/4 one_click_actions=4 one_click_share_links=8
+public_targets=4/4 public_targets_fresh=4/4 target_count=41 owners=Sienna,Nano,Dexter,Memo missing=none
+ad_ops_links=4/4 ad_ops_fresh=4/4 ad_ops_channels=2 platforms=Meta Ads Manager,X Ads Manager
+paid_ad_triage=4/4 paid_ad_fresh=4/4 paid_ad_states=critical-paid-signup-friction paid_views=219 paid_app_views=478 paid_referral_views=146 paid_signup_saves=0 dashboard_states=paid-clicks-no-signups dashboard_checks=2 dashboard_impressions=12 dashboard_clicks=227
+signup_conversion=4/4 signup_fresh=4/4 signup_states=critical-auth-to-signup-save-unproven signup_paid_views=219 signup_referral_views=146 signup_dashboard_clicks=227 signup_accepted=0 signup_saves=0 signup_profiles=5
+signup_funnel=returned:0 missing_acceptance:0 attempts:0 saved_events:0 failed:0 errors:0
+warm_contact=4/4 warm_fresh=4/4 warm_states=warm-contact-sprint-needed warm_batches=5 warm_blocked_public=7 warm_signup_saves=0 warm_first=Nano/WhatsApp personal/10 football friends
+warm_followup=4/4 warm_followup_fresh=4/4 warm_followup_states=awaiting-first-human-send warm_attempts=0 tester_attempts=0 followup_attempts=0 warm_followup_due=0 warm_followup_referral_views=152 warm_followup_signup_saves=0
+response_kit=4/4 response_fresh=4/4 response_states=ready-for-warm-replies response_replies=13 response_warm_attempts=0 response_signup_saves=0
+first_human=4/4 first_human_fresh=4/4 first_human_states=needs-first-human-action first_human_actions=2 first_human_warm_attempts=0 first_human_signup_saves=0 first_human_referral_views=146 first_human_ad_clicks=227 first_human_first=Memo/WhatsApp testers/clean-signup-test-batch
+first_send_bridge=4/4 first_send_fresh=4/4 first_send_states=send-now first_send_warm_attempts=0 first_send_signup_saves=0 first_send_ad_clicks=227 first_send_owners=Memo
+paid_no_click=4/4 paid_no_click_fresh=4/4 paid_no_click_states=clicks-no-signups paid_no_click_variants=8
+paid_dashboard=4/4 paid_dashboard_fresh=4/4 paid_dashboard_states=paid-clicks-no-signups paid_dashboard_checks=2 paid_dashboard_impressions=12 paid_dashboard_clicks=227
+funnel_monitor=4/4 funnel_fresh=4/4 funnel_available=4/4
+funnel_counts=views:478 views_24h:478 referral_views:146 referral_views_24h:146 profiles:5 free:4 paid:1 accepted:0 signup_saves:0 entries:0
+funnel_signup_events=returned:0 missing_acceptance:0 attempts:0 saved_events:0 failed:0 errors:0
+local_funnel=ok local_fresh=yes local_available=yes local_generated=2026-06-07 20:44 +0300
+local_counts=views:509 views_24h:509 referral_views:171 referral_views_24h:171 profiles:5 free:4 paid:1 accepted:0 signup_saves:0 entries:0
+local_signup_events=returned:0 missing_acceptance:0 attempts:0 saved_events:0 failed:0 errors:0
+local_top_source=meta medium=paid-social campaign=worldcup26_referral_72h content=three-team-question views=70
+local_top_signup_source=-
+aligned=no unhealthy=dexter,sienna,memo,nano
+
+dexter: ok proof=49 urgent=16 loop=yes hook=yes hot_fresh=yes link=yes link_fresh=yes paid=yes paid_fresh=yes live_ad=yes live_ad_fresh=yes ad_platform=yes ad_platform_fresh=yes conversion=yes conversion_fresh=yes conversion_browser=yes sprint=yes sprint_fresh=yes recovery=yes recovery_fresh=yes escalation=yes escalation_fresh=yes proof_activity=no proof_stall_fresh=yes proof_sla=critical sla_fresh=yes proof_rescue=yes rescue_fresh=yes proof_url_recovery=1 url_recovery_fresh=yes social_rescue=yes social_fresh=yes zero_signup=critical-zero-signups zero_fresh=yes real_action=critical-zero-signups real_fresh=yes cockpit=yes cockpit_fresh=yes phone_action=yes phone_fresh=yes proof_closeout=6 closeout_fresh=yes public_attempts=yes attempts_fresh=yes worker_wake=yes wake_fresh=yes watchdog=yes cron=yes
+  objective_audit=critical objective_fresh=yes complete=no proven=10/12 critical_open=1
+  operator_push=critical operator_fresh=yes actions=4 blocked=7 login_required=6 first=#warm-1 Nano / WhatsApp personal
+  one_click=yes one_click_fresh=yes actions=4 share_links=8 first=#warm-1 Nano / WhatsApp personal
+  public_targets=yes public_targets_fresh=yes targets=41 owners=Sienna,Nano,Dexter,Memo missing=none first=Sienna / WhatsApp Status
+  ad_ops=yes ad_ops_fresh=yes channels=2 platforms=Meta Ads Manager,X Ads Manager
+  paid_ad_triage=critical-paid-signup-friction paid_ad_fresh=yes paid_views=219 app_views=478 referral_views=146 signup_saves=0 dashboard=paid-clicks-no-signups dashboard_checks=2 dashboard_impressions=12 dashboard_clicks=227 platforms=Meta Ads Manager,X Ads Manager
+  signup_conversion=critical-auth-to-signup-save-unproven signup_fresh=yes paid_views=219 referral_views=146 dashboard_clicks=227 accepted=0 signup_saves=0 returned=0 attempts=0 saved_events=0 failed=0 errors=0 blockers=4 first_action=Send the clean signup test to 3 trusted people with different Google accounts using https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test. Ask each to accept the invite, continue with Google, pick 3 teams, and reply with either "joined + picked teams" or a screenshot of the exact blocking screen. After the real send is logged, rerun this audit and verify the dashboard POSTs /api/referrals/signup with a bearer token and that worldcup_referral_profiles stores signup_referral_code=26BC4B90CB.
+  warm_contact=warm-contact-sprint-needed warm_fresh=yes batches=5 blocked_public=7 signup_saves=0 first=Nano/WhatsApp personal/10 football friends link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch
+  warm_followup=awaiting-first-human-send warm_followup_fresh=yes warm_attempts=0 tester_attempts=0 followup_attempts=0 due=no referral_views=152 signup_saves=0 latest=- next=Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.
+  response_kit=ready-for-warm-replies response_fresh=yes replies=13 warm_attempts=0 signup_saves=0 first_reply=what-is-it/What is this? first_action=#warm-1 Nano / WhatsApp personal
+  first_human=needs-first-human-action first_human_fresh=yes actions=2 warm_attempts=0 signup_saves=0 referral_views=146 ad_clicks=227 first=Memo/WhatsApp testers/clean-signup-test-batch command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"
+  first_send_bridge=send-now first_send_fresh=yes owner=Memo channel=WhatsApp testers warm_attempts=0 signup_saves=0 whatsapp=yes qr=yes command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"
+  paid_no_click=clicks-no-signups paid_no_click_fresh=yes variants=8 impressions=12 clicks=227 first=META-1 Meta Ads Manager / Free private score preview
+  paid_dashboard=paid-clicks-no-signups paid_dashboard_fresh=yes checks=2 impressions=12 clicks=227 spend=31.78 platforms=Meta Ads Manager,X Ads Manager
+  funnel=ok funnel_fresh=yes available=yes profiles=5 free=4 paid=1 views=478 referral_views=146 accepted=0 signup_saves=0 entries=0 returned=0 attempts=0 saved_events=0 failed=0 errors=0
+  proof_sla=state:critical latest_external:3.5h do_now:#warm-1 Nano / WhatsApp personal age=now
+  proof_rescue=state:critical actions:4 first:#warm-1 Nano / WhatsApp personal
+  social_rescue=state:critical actions:4 worker_pages:4 first:#warm-1 Nano / WhatsApp personal share_links=2
+  proof_url_recovery=pending:1 first:dexter_pulse65 Dexter / X / public fallback
+  escalation=open:16 critical:16 hot:0 workers_stale:3
+  worker_wake=state:critical workers:4 first:#warm-1 Nano / WhatsApp personal
+  worker_wake_next=Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal
+  phone_action=actions:16 qr:22 assets:22 video:10 first:#1 Sienna / WhatsApp Status
+  public_attempts=attempts:9 blocked:7 login_required:6 social_actions:4 first_blocked:X / X public fallback
+  login_unlock=cards:6 blocked:6 login_required:5 platforms:X,YouTube Shorts,Facebook,LinkedIn first:X / X public fallback
+  objective_open=incomplete:advertise-everywhere-proof next=Do the next real action and log proof with a public URL or precise private-channel note.
+  objective_next=#clean-signup-test-batch Memo / WhatsApp testers
+  proof_stall=external:yes any:yes latest_external_age=3.5h oldest_open=#1 Sienna / WhatsApp Status
+  first=Dexter #4 Football groups
+  action=Ask approved group admin for permission; post group variant only if allowed
+  command=node campaign-proof-log.mjs --priority "4" --proof-url "approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed" --status "requested"
+sienna: ok proof=49 urgent=16 loop=yes hook=yes hot_fresh=yes link=yes link_fresh=yes paid=yes paid_fresh=yes live_ad=yes live_ad_fresh=yes ad_platform=yes ad_platform_fresh=yes conversion=yes conversion_fresh=yes conversion_browser=yes sprint=yes sprint_fresh=yes recovery=yes recovery_fresh=yes escalation=yes escalation_fresh=yes proof_activity=no proof_stall_fresh=yes proof_sla=critical sla_fresh=yes proof_rescue=yes rescue_fresh=yes proof_url_recovery=1 url_recovery_fresh=yes social_rescue=yes social_fresh=yes zero_signup=critical-zero-signups zero_fresh=yes real_action=critical-zero-signups real_fresh=yes cockpit=yes cockpit_fresh=yes phone_action=yes phone_fresh=yes proof_closeout=6 closeout_fresh=yes public_attempts=yes attempts_fresh=yes worker_wake=yes wake_fresh=yes watchdog=yes cron=yes
+  objective_audit=critical objective_fresh=yes complete=no proven=10/12 critical_open=1
+  operator_push=critical operator_fresh=yes actions=4 blocked=7 login_required=6 first=#warm-1 Nano / WhatsApp personal
+  one_click=yes one_click_fresh=yes actions=4 share_links=8 first=#warm-1 Nano / WhatsApp personal
+  public_targets=yes public_targets_fresh=yes targets=41 owners=Sienna,Nano,Dexter,Memo missing=none first=Sienna / WhatsApp Status
+  ad_ops=yes ad_ops_fresh=yes channels=2 platforms=Meta Ads Manager,X Ads Manager
+  paid_ad_triage=critical-paid-signup-friction paid_ad_fresh=yes paid_views=219 app_views=478 referral_views=146 signup_saves=0 dashboard=paid-clicks-no-signups dashboard_checks=2 dashboard_impressions=12 dashboard_clicks=227 platforms=Meta Ads Manager,X Ads Manager
+  signup_conversion=critical-auth-to-signup-save-unproven signup_fresh=yes paid_views=219 referral_views=146 dashboard_clicks=227 accepted=0 signup_saves=0 returned=0 attempts=0 saved_events=0 failed=0 errors=0 blockers=4 first_action=Send the clean signup test to 3 trusted people with different Google accounts using https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test. Ask each to accept the invite, continue with Google, pick 3 teams, and reply with either "joined + picked teams" or a screenshot of the exact blocking screen. After the real send is logged, rerun this audit and verify the dashboard POSTs /api/referrals/signup with a bearer token and that worldcup_referral_profiles stores signup_referral_code=26BC4B90CB.
+  warm_contact=warm-contact-sprint-needed warm_fresh=yes batches=5 blocked_public=7 signup_saves=0 first=Nano/WhatsApp personal/10 football friends link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch
+  warm_followup=awaiting-first-human-send warm_followup_fresh=yes warm_attempts=0 tester_attempts=0 followup_attempts=0 due=no referral_views=152 signup_saves=0 latest=- next=Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.
+  response_kit=ready-for-warm-replies response_fresh=yes replies=13 warm_attempts=0 signup_saves=0 first_reply=what-is-it/What is this? first_action=#warm-1 Nano / WhatsApp personal
+  first_human=needs-first-human-action first_human_fresh=yes actions=2 warm_attempts=0 signup_saves=0 referral_views=146 ad_clicks=227 first=Memo/WhatsApp testers/clean-signup-test-batch command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"
+  first_send_bridge=send-now first_send_fresh=yes owner=Memo channel=WhatsApp testers warm_attempts=0 signup_saves=0 whatsapp=yes qr=yes command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"
+  paid_no_click=clicks-no-signups paid_no_click_fresh=yes variants=8 impressions=12 clicks=227 first=META-1 Meta Ads Manager / Free private score preview
+  paid_dashboard=paid-clicks-no-signups paid_dashboard_fresh=yes checks=2 impressions=12 clicks=227 spend=31.78 platforms=Meta Ads Manager,X Ads Manager
+  funnel=ok funnel_fresh=yes available=yes profiles=5 free=4 paid=1 views=478 referral_views=146 accepted=0 signup_saves=0 entries=0 returned=0 attempts=0 saved_events=0 failed=0 errors=0
+  proof_sla=state:critical latest_external:3.5h do_now:#warm-1 Nano / WhatsApp personal age=now
+  proof_rescue=state:critical actions:4 first:#warm-1 Nano / WhatsApp personal
+  social_rescue=state:critical actions:4 worker_pages:4 first:#warm-1 Nano / WhatsApp personal share_links=2
+  proof_url_recovery=pending:1 first:dexter_pulse65 Dexter / X / public fallback
+  escalation=open:16 critical:16 hot:0 workers_stale:3
+  worker_wake=state:critical workers:4 first:#warm-1 Nano / WhatsApp personal
+  worker_wake_next=Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal
+  phone_action=actions:16 qr:22 assets:22 video:10 first:#1 Sienna / WhatsApp Status
+  public_attempts=attempts:9 blocked:7 login_required:6 social_actions:4 first_blocked:X / X public fallback
+  login_unlock=cards:6 blocked:6 login_required:5 platforms:X,YouTube Shorts,Facebook,LinkedIn first:X / X public fallback
+  objective_open=incomplete:advertise-everywhere-proof next=Do the next real action and log proof with a public URL or precise private-channel note.
+  objective_next=#clean-signup-test-batch Memo / WhatsApp testers
+  proof_stall=external:yes any:yes latest_external_age=3.5h oldest_open=#1 Sienna / WhatsApp Status
+  first=Sienna #1 WhatsApp Status
+  action=Post story asset with video caption 1
+  command=node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included" --status "posted"
+memo: ok proof=49 urgent=16 loop=yes hook=yes hot_fresh=yes link=yes link_fresh=yes paid=yes paid_fresh=yes live_ad=yes live_ad_fresh=yes ad_platform=yes ad_platform_fresh=yes conversion=yes conversion_fresh=yes conversion_browser=yes sprint=yes sprint_fresh=yes recovery=yes recovery_fresh=yes escalation=yes escalation_fresh=yes proof_activity=no proof_stall_fresh=yes proof_sla=critical sla_fresh=yes proof_rescue=yes rescue_fresh=yes proof_url_recovery=1 url_recovery_fresh=yes social_rescue=yes social_fresh=yes zero_signup=critical-zero-signups zero_fresh=yes real_action=critical-zero-signups real_fresh=yes cockpit=yes cockpit_fresh=yes phone_action=yes phone_fresh=yes proof_closeout=6 closeout_fresh=yes public_attempts=yes attempts_fresh=yes worker_wake=yes wake_fresh=yes watchdog=yes cron=yes
+  objective_audit=critical objective_fresh=yes complete=no proven=10/12 critical_open=1
+  operator_push=critical operator_fresh=yes actions=4 blocked=7 login_required=6 first=#warm-1 Nano / WhatsApp personal
+  one_click=yes one_click_fresh=yes actions=4 share_links=8 first=#warm-1 Nano / WhatsApp personal
+  public_targets=yes public_targets_fresh=yes targets=41 owners=Sienna,Nano,Dexter,Memo missing=none first=Sienna / WhatsApp Status
+  ad_ops=yes ad_ops_fresh=yes channels=2 platforms=Meta Ads Manager,X Ads Manager
+  paid_ad_triage=critical-paid-signup-friction paid_ad_fresh=yes paid_views=219 app_views=478 referral_views=146 signup_saves=0 dashboard=paid-clicks-no-signups dashboard_checks=2 dashboard_impressions=12 dashboard_clicks=227 platforms=Meta Ads Manager,X Ads Manager
+  signup_conversion=critical-auth-to-signup-save-unproven signup_fresh=yes paid_views=219 referral_views=146 dashboard_clicks=227 accepted=0 signup_saves=0 returned=0 attempts=0 saved_events=0 failed=0 errors=0 blockers=4 first_action=Send the clean signup test to 3 trusted people with different Google accounts using https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test. Ask each to accept the invite, continue with Google, pick 3 teams, and reply with either "joined + picked teams" or a screenshot of the exact blocking screen. After the real send is logged, rerun this audit and verify the dashboard POSTs /api/referrals/signup with a bearer token and that worldcup_referral_profiles stores signup_referral_code=26BC4B90CB.
+  warm_contact=warm-contact-sprint-needed warm_fresh=yes batches=5 blocked_public=7 signup_saves=0 first=Nano/WhatsApp personal/10 football friends link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch
+  warm_followup=awaiting-first-human-send warm_followup_fresh=yes warm_attempts=0 tester_attempts=0 followup_attempts=0 due=no referral_views=152 signup_saves=0 latest=- next=Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.
+  response_kit=ready-for-warm-replies response_fresh=yes replies=13 warm_attempts=0 signup_saves=0 first_reply=what-is-it/What is this? first_action=#warm-1 Nano / WhatsApp personal
+  first_human=needs-first-human-action first_human_fresh=yes actions=2 warm_attempts=0 signup_saves=0 referral_views=146 ad_clicks=227 first=Memo/WhatsApp testers/clean-signup-test-batch command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"
+  first_send_bridge=send-now first_send_fresh=yes owner=Memo channel=WhatsApp testers warm_attempts=0 signup_saves=0 whatsapp=yes qr=yes command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"
+  paid_no_click=clicks-no-signups paid_no_click_fresh=yes variants=8 impressions=12 clicks=227 first=META-1 Meta Ads Manager / Free private score preview
+  paid_dashboard=paid-clicks-no-signups paid_dashboard_fresh=yes checks=2 impressions=12 clicks=227 spend=31.78 platforms=Meta Ads Manager,X Ads Manager
+  funnel=ok funnel_fresh=yes available=yes profiles=5 free=4 paid=1 views=478 referral_views=146 accepted=0 signup_saves=0 entries=0 returned=0 attempts=0 saved_events=0 failed=0 errors=0
+  proof_sla=state:critical latest_external:3.5h do_now:#warm-1 Nano / WhatsApp personal age=now
+  proof_rescue=state:critical actions:4 first:#warm-1 Nano / WhatsApp personal
+  social_rescue=state:critical actions:4 worker_pages:4 first:#warm-1 Nano / WhatsApp personal share_links=2
+  proof_url_recovery=pending:1 first:dexter_pulse65 Dexter / X / public fallback
+  escalation=open:16 critical:16 hot:0 workers_stale:3
+  worker_wake=state:critical workers:4 first:#warm-1 Nano / WhatsApp personal
+  worker_wake_next=Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal
+  phone_action=actions:16 qr:22 assets:22 video:10 first:#1 Sienna / WhatsApp Status
+  public_attempts=attempts:9 blocked:7 login_required:6 social_actions:4 first_blocked:X / X public fallback
+  login_unlock=cards:6 blocked:6 login_required:5 platforms:X,YouTube Shorts,Facebook,LinkedIn first:X / X public fallback
+  objective_open=incomplete:advertise-everywhere-proof next=Do the next real action and log proof with a public URL or precise private-channel note.
+  objective_next=#clean-signup-test-batch Memo / WhatsApp testers
+  proof_stall=external:yes any:yes latest_external_age=3.5h oldest_open=#1 Sienna / WhatsApp Status
+nano: ok proof=49 urgent=16 loop=yes hook=yes hot_fresh=yes link=yes link_fresh=yes paid=yes paid_fresh=yes live_ad=yes live_ad_fresh=yes ad_platform=yes ad_platform_fresh=yes conversion=yes conversion_fresh=yes conversion_browser=yes sprint=yes sprint_fresh=yes recovery=yes recovery_fresh=yes escalation=yes escalation_fresh=yes proof_activity=no proof_stall_fresh=yes proof_sla=critical sla_fresh=yes proof_rescue=yes rescue_fresh=yes proof_url_recovery=1 url_recovery_fresh=yes social_rescue=yes social_fresh=yes zero_signup=critical-zero-signups zero_fresh=yes real_action=critical-zero-signups real_fresh=yes cockpit=yes cockpit_fresh=yes phone_action=yes phone_fresh=yes proof_closeout=6 closeout_fresh=yes public_attempts=yes attempts_fresh=yes worker_wake=yes wake_fresh=yes watchdog=yes cron=yes
+  objective_audit=critical objective_fresh=yes complete=no proven=10/12 critical_open=1
+  operator_push=critical operator_fresh=yes actions=4 blocked=7 login_required=6 first=#warm-1 Nano / WhatsApp personal
+  one_click=yes one_click_fresh=yes actions=4 share_links=8 first=#warm-1 Nano / WhatsApp personal
+  public_targets=yes public_targets_fresh=yes targets=41 owners=Sienna,Nano,Dexter,Memo missing=none first=Sienna / WhatsApp Status
+  ad_ops=yes ad_ops_fresh=yes channels=2 platforms=Meta Ads Manager,X Ads Manager
+  paid_ad_triage=critical-paid-signup-friction paid_ad_fresh=yes paid_views=219 app_views=478 referral_views=146 signup_saves=0 dashboard=paid-clicks-no-signups dashboard_checks=2 dashboard_impressions=12 dashboard_clicks=227 platforms=Meta Ads Manager,X Ads Manager
+  signup_conversion=critical-auth-to-signup-save-unproven signup_fresh=yes paid_views=219 referral_views=146 dashboard_clicks=227 accepted=0 signup_saves=0 returned=0 attempts=0 saved_events=0 failed=0 errors=0 blockers=4 first_action=Send the clean signup test to 3 trusted people with different Google accounts using https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test. Ask each to accept the invite, continue with Google, pick 3 teams, and reply with either "joined + picked teams" or a screenshot of the exact blocking screen. After the real send is logged, rerun this audit and verify the dashboard POSTs /api/referrals/signup with a bearer token and that worldcup_referral_profiles stores signup_referral_code=26BC4B90CB.
+  warm_contact=warm-contact-sprint-needed warm_fresh=yes batches=5 blocked_public=7 signup_saves=0 first=Nano/WhatsApp personal/10 football friends link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch
+  warm_followup=awaiting-first-human-send warm_followup_fresh=yes warm_attempts=0 tester_attempts=0 followup_attempts=0 due=no referral_views=152 signup_saves=0 latest=- next=Send the first clean tester batch or warm-contact batch, then log it with the real count/account note.
+  response_kit=ready-for-warm-replies response_fresh=yes replies=13 warm_attempts=0 signup_saves=0 first_reply=what-is-it/What is this? first_action=#warm-1 Nano / WhatsApp personal
+  first_human=needs-first-human-action first_human_fresh=yes actions=2 warm_attempts=0 signup_saves=0 referral_views=146 ad_clicks=227 first=Memo/WhatsApp testers/clean-signup-test-batch command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"
+  first_send_bridge=send-now first_send_fresh=yes owner=Memo channel=WhatsApp testers warm_attempts=0 signup_saves=0 whatsapp=yes qr=yes command=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "WhatsApp testers" --channel "clean signup test batch" --status "sent" --attempt-url "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test" --detail "Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included" --next-action "run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes"
+  paid_no_click=clicks-no-signups paid_no_click_fresh=yes variants=8 impressions=12 clicks=227 first=META-1 Meta Ads Manager / Free private score preview
+  paid_dashboard=paid-clicks-no-signups paid_dashboard_fresh=yes checks=2 impressions=12 clicks=227 spend=31.78 platforms=Meta Ads Manager,X Ads Manager
+  funnel=ok funnel_fresh=yes available=yes profiles=5 free=4 paid=1 views=478 referral_views=146 accepted=0 signup_saves=0 entries=0 returned=0 attempts=0 saved_events=0 failed=0 errors=0
+  proof_sla=state:critical latest_external:3.5h do_now:#warm-1 Nano / WhatsApp personal age=now
+  proof_rescue=state:critical actions:4 first:#warm-1 Nano / WhatsApp personal
+  social_rescue=state:critical actions:4 worker_pages:4 first:#warm-1 Nano / WhatsApp personal share_links=2
+  proof_url_recovery=pending:1 first:dexter_pulse65 Dexter / X / public fallback
+  escalation=open:16 critical:16 hot:0 workers_stale:3
+  worker_wake=state:critical workers:4 first:#warm-1 Nano / WhatsApp personal
+  worker_wake_next=Dexter:#warm-4/WhatsApp admins; Sienna:#warm-3/WhatsApp personal; Memo:#warm-5/WhatsApp testers; Nano:#warm-1/WhatsApp personal
+  phone_action=actions:16 qr:22 assets:22 video:10 first:#1 Sienna / WhatsApp Status
+  public_attempts=attempts:9 blocked:7 login_required:6 social_actions:4 first_blocked:X / X public fallback
+  login_unlock=cards:6 blocked:6 login_required:5 platforms:X,YouTube Shorts,Facebook,LinkedIn first:X / X public fallback
+  objective_open=incomplete:advertise-everywhere-proof next=Do the next real action and log proof with a public URL or precise private-channel note.
+  objective_next=#clean-signup-test-batch Memo / WhatsApp testers
+  proof_stall=external:yes any:yes latest_external_age=3.5h oldest_open=#1 Sienna / WhatsApp Status
+  first=Nano #2 WhatsApp personal
+  action=Send personal invite to warm contacts
+  command=node campaign-proof-log.mjs --priority "2" --proof-url "private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>" --status "sent"
+
+Proof rule: this report proves droplet readiness only. External posts/messages need real proof before logging.

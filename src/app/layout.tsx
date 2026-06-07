@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
 import { AppLaunchSplash } from "@/components/app-launch-splash";
+import { AppViewTracker } from "@/components/app-view-tracker";
 import { CANONICAL_ORIGIN } from "@/lib/canonical-url";
 
 import "./globals.css";
@@ -21,8 +22,11 @@ export const metadata: Metadata = {
     template: "%s · WorldCup",
   },
   description:
-    "Pick 3 teams before the FIFA World Cup 2026 and climb the leaderboard as they earn points.",
+    "Pick 3 teams free before the FIFA World Cup 2026, track your private points preview, and use a ticket for paid leaderboard entry.",
   applicationName: "WorldCup",
+  alternates: {
+    canonical: "/",
+  },
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
@@ -40,15 +44,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "WorldCup — Predict the Game · WorldCup26",
     description:
-      "Pick 3 teams before the FIFA World Cup 2026 and climb the leaderboard as they earn points.",
+      "Pick 3 teams free before the FIFA World Cup 2026, track your private points preview, and use a ticket for paid leaderboard entry.",
     siteName: "WorldCup",
     type: "website",
+    url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
     title: "WorldCup — Predict the Game · WorldCup26",
     description:
-      "Pick 3 teams before the FIFA World Cup 2026 and climb the leaderboard as they earn points.",
+      "Pick 3 teams free before the FIFA World Cup 2026, track your private points preview, and use a ticket for paid leaderboard entry.",
   },
 };
 
@@ -69,6 +74,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AppLaunchSplash />
+        <AppViewTracker />
         {children}
       </body>
     </html>

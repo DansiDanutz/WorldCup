@@ -1,0 +1,173 @@
+{
+  "schema": "worldcup26-paid-ad-triage-v1",
+  "generatedAt": "2026-06-07T17:44:57.604Z",
+  "generatedAtEest": "2026-06-07 20:44 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "ok": true,
+  "failures": [],
+  "state": "critical-paid-signup-friction",
+  "counts": {
+    "available": true,
+    "appViews": 509,
+    "referralViews": 171,
+    "signupSaves": 0,
+    "accepted": 0,
+    "entries": 0
+  },
+  "paidViews": 244,
+  "paidSources": [
+    {
+      "source": "an",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400",
+      "views": 84
+    },
+    {
+      "source": "meta",
+      "medium": "paid-social",
+      "campaign": "worldcup26_referral_72h",
+      "content": "three-team-question",
+      "views": 70
+    },
+    {
+      "source": "fb",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400",
+      "views": 48
+    },
+    {
+      "source": "fb",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400_free_first",
+      "views": 22
+    },
+    {
+      "source": "ig",
+      "medium": "paid",
+      "campaign": "6971048256000",
+      "content": "6971048413400",
+      "views": 19
+    },
+    {
+      "source": "browser-probe",
+      "medium": "automation",
+      "campaign": "worldcup26_referral_72h",
+      "content": "conversion_browser",
+      "views": 1
+    }
+  ],
+  "dashboard": {
+    "ok": true,
+    "state": "paid-clicks-no-signups",
+    "latestChecks": [
+      {
+        "key": "meta",
+        "platform": "Meta Ads Manager",
+        "status": "active",
+        "spend": 31.78,
+        "impressions": 0,
+        "clicks": 227,
+        "ctr": 0,
+        "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h&utm_content=three-team-question",
+        "warning": "partial: Today range shows 227 link clicks and 0.14 lei per link click; spend inferred as 31.78 lei; impressions not visible in current table view",
+        "screenshotNote": "Meta Ads Manager checked 2026-06-07 17:43 EEST; selected ad WorldCup26 - Pick 3 Teams Free First - Image active; date Astazi: 7 iun. 2026; 227 link clicks visible at 0.14 lei/click; budget 200 lei/day; proof screenshot runtime/proofs/meta-ads-today-227-clicks-20260607.png",
+        "nextAction": "paid clicks are arriving; inspect app referral landing and signup friction before changing creative"
+      },
+      {
+        "key": "x",
+        "platform": "X Ads Manager",
+        "status": "appeal_requested",
+        "spend": 0,
+        "impressions": 12,
+        "clicks": 0,
+        "ctr": 0,
+        "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+        "warning": "X delivery is review-blocked: top ad halted after 12 impressions and appeal was requested; second ad is pending with appeal requested; link clicks remain zero.",
+        "screenshotNote": "X Ads Manager checked 2026-06-07 15:52 EEST; selected campaign 41558061; ads table shows summary impressions=12 spend=€0.00 link_clicks=0; ad 2063599593947009378 Halted -> Appeal requested; ad 2063318732923949092 Pending / Appeal requested; proof screenshot runtime/proofs/x-adsmanager-appeal-requested-20260607-1552.png",
+        "nextAction": "Wait for X appeal/review or create a fresh compliant free-first campaign variant; do not rely on the halted/pending ads for signup volume."
+      }
+    ],
+    "totalSpend": 31.78,
+    "totalImpressions": 12,
+    "totalClicks": 227
+  },
+  "topSource": "-",
+  "topSignupSource": "-",
+  "channels": [
+    {
+      "key": "meta",
+      "owner": "Memo",
+      "platform": "Meta Ads Manager",
+      "managerUrl": "https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&ads_manager_write_regions=true&nav_entry_point=lep_176&selected_ad_ids=6971048413400&nav_source=unknown",
+      "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+      "checks": [
+        "Campaign, ad set, and ad are active or scheduled.",
+        "Landing URL includes ref=26BC4B90CB and utm_source=meta.",
+        "Creative text leads with free 3-team picks and private points preview.",
+        "Dashboard shows impressions, clicks, spend, CTR, delivery status, and rejection warnings."
+      ],
+      "guardStatus": false,
+      "dashboardProofCommand": "node campaign-paid-dashboard-intake.mjs --add --platform \"meta\" --status \"active\" --spend \"0\" --impressions \"0\" --clicks \"0\" --landing-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h\" --warning \"none\" --screenshot-note \"Meta Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>\" --next-action \"keep/change/fix\"",
+      "decisionRules": [
+        "No impressions: check budget, schedule, audience, approval status, and whether Meta Ads Manager is paused.",
+        "Impressions but zero clicks: change hook/creative toward 'Pick 3 teams free first' and try a stronger football question.",
+        "Clicks but no app views with this UTM source: landing URL is wrong, redirecting, blocked, or ad link tracking stripped.",
+        "Clicks and app views but no signup saves: signup screen or Google auth friction is the next conversion problem.",
+        "Rejected or limited delivery: fix the dashboard warning before adding more creative variants."
+      ],
+      "latestDashboardCheck": {
+        "key": "meta",
+        "platform": "Meta Ads Manager",
+        "status": "active",
+        "spend": 31.78,
+        "impressions": 0,
+        "clicks": 227,
+        "ctr": 0,
+        "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h&utm_content=three-team-question",
+        "warning": "partial: Today range shows 227 link clicks and 0.14 lei per link click; spend inferred as 31.78 lei; impressions not visible in current table view",
+        "screenshotNote": "Meta Ads Manager checked 2026-06-07 17:43 EEST; selected ad WorldCup26 - Pick 3 Teams Free First - Image active; date Astazi: 7 iun. 2026; 227 link clicks visible at 0.14 lei/click; budget 200 lei/day; proof screenshot runtime/proofs/meta-ads-today-227-clicks-20260607.png",
+        "nextAction": "paid clicks are arriving; inspect app referral landing and signup friction before changing creative"
+      }
+    },
+    {
+      "key": "x",
+      "owner": "Memo",
+      "platform": "X Ads Manager",
+      "managerUrl": "https://ads.x.com/manager/18ce55rrs16/campaigns",
+      "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+      "checks": [
+        "Campaign exists inside account 18ce55rrs16.",
+        "Campaign, ad group, and ad are active or scheduled.",
+        "Landing URL includes ref=26BC4B90CB and utm_source=x.",
+        "Dashboard shows impressions, clicks, spend, CTR, delivery status, and rejection warnings."
+      ],
+      "guardStatus": false,
+      "dashboardProofCommand": "node campaign-paid-dashboard-intake.mjs --add --platform \"x\" --status \"active\" --spend \"0\" --impressions \"0\" --clicks \"0\" --landing-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h\" --warning \"none\" --screenshot-note \"X Ads Manager checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved; campaign/ad ids=<ids>\" --next-action \"keep/change/fix\"",
+      "decisionRules": [
+        "No impressions: check budget, schedule, audience, approval status, and whether X Ads Manager is paused.",
+        "Impressions but zero clicks: change hook/creative toward 'Pick 3 teams free first' and try a stronger football question.",
+        "Clicks but no app views with this UTM source: landing URL is wrong, redirecting, blocked, or ad link tracking stripped.",
+        "Clicks and app views but no signup saves: signup screen or Google auth friction is the next conversion problem.",
+        "Rejected or limited delivery: fix the dashboard warning before adding more creative variants."
+      ],
+      "latestDashboardCheck": {
+        "key": "x",
+        "platform": "X Ads Manager",
+        "status": "appeal_requested",
+        "spend": 0,
+        "impressions": 12,
+        "clicks": 0,
+        "ctr": 0,
+        "landingUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h",
+        "warning": "X delivery is review-blocked: top ad halted after 12 impressions and appeal was requested; second ad is pending with appeal requested; link clicks remain zero.",
+        "screenshotNote": "X Ads Manager checked 2026-06-07 15:52 EEST; selected campaign 41558061; ads table shows summary impressions=12 spend=€0.00 link_clicks=0; ad 2063599593947009378 Halted -> Appeal requested; ad 2063318732923949092 Pending / Appeal requested; proof screenshot runtime/proofs/x-adsmanager-appeal-requested-20260607-1552.png",
+        "nextAction": "Wait for X appeal/review or create a fresh compliant free-first campaign variant; do not rely on the halted/pending ads for signup volume."
+      }
+    }
+  ],
+  "rule": "This is an operator triage page. It proves paid delivery only after Memo records real dashboard status, spend, impressions, clicks, landing URL, and screenshot/note details."
+}

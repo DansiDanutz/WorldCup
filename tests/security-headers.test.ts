@@ -35,7 +35,7 @@ describe("security headers", () => {
       "base-uri 'self'",
       "frame-ancestors 'none'",
       "form-action 'self'",
-      "connect-src 'self' https://*.supabase.co wss://*.supabase.co",
+      "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.worldcup26.world wss://api.worldcup26.world",
       "img-src 'self' data: blob: https://flagcdn.com",
       "upgrade-insecure-requests",
     ]) {

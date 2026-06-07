@@ -87,10 +87,10 @@ export default function LoginOpengraphImage() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
             <div style={{ display: "flex", maxWidth: 850, fontSize: 76, lineHeight: 0.95, fontWeight: 950 }}>
-              Pick 3 teams. Climb the World Cup leaderboard.
+              Pick 3 teams free before kickoff.
             </div>
             <div style={{ display: "flex", maxWidth: 760, fontSize: 30, color: "rgba(255,255,255,0.82)" }}>
-              Join with your invite link before FIFA World Cup 2026.
+              Track your private points preview, then use a ticket for the paid leaderboard.
             </div>
           </div>
 

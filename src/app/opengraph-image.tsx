@@ -64,7 +64,7 @@ export default function OpengraphImage() {
             <span style={{ display: "flex", color: "#f0c060" }}>WorldCup26</span>
           </div>
           <div style={{ display: "flex", fontSize: 30, color: "rgba(255,255,255,0.85)" }}>
-            Pick 3 teams. Earn points every match. Climb the leaderboard.
+            Pick 3 teams free. Track your private points preview.
           </div>
         </div>
 

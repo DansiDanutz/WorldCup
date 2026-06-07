@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { requireAdmin } from "@/lib/admin-auth";
+import { resolveAdminUserIdentity } from "@/lib/admin-user";
 import { normalizeNetwork, parseDepositAmount } from "@/lib/deposits";
 import { normalizeLedgerAmount } from "@/lib/economy";
 import { enforceRateLimit, jsonError } from "@/lib/http";
@@ -117,7 +118,23 @@ export async function POST(request: Request) {
   }
 
   if (action === "credit") {
-    return creditClaim(supabase, claimId, amountOverride, adminNote, actor, requireKucoinMatch);
+    const adminIdentity = await resolveAdminUserIdentity(
+      supabase,
+      auth.via === "email" ? auth.adminEmail : null,
+    );
+    if (!adminIdentity) {
+      return jsonError("Admin account profile was not found. Sign in once with the owner Google account.", 403);
+    }
+
+    return creditClaim(
+      supabase,
+      claimId,
+      amountOverride,
+      adminNote,
+      actor,
+      requireKucoinMatch,
+      adminIdentity.userId,
+    );
   }
 
   return jsonError("Unsupported deposit claim action.", 400);
@@ -299,6 +316,7 @@ async function creditClaim(
   adminNote: string | null,
   actor: string,
   requireKucoinMatch: boolean,
+  adminUserId: string,
 ) {
   const loaded = await loadClaim(supabase, claimId);
   if (!loaded.ok) {
@@ -348,7 +366,7 @@ async function creditClaim(
   }
 
   const reservedRow = reserved.data as DepositClaimRow;
-  const credit = await supabase.rpc("worldcup_credit_deposit", {
+  const credit = await supabase.rpc("worldcup_credit_deposit_and_auto_ticket", {
     p_user_id: reservedRow.user_id,
     p_tournament_id: reservedRow.tournament_id,
     p_network: reservedRow.network,
@@ -373,14 +391,37 @@ async function creditClaim(
       creditedBy: actor,
       kucoinMainVerification: kucoinVerification,
     },
+    p_admin_user_id: adminUserId,
+    p_created_by: actor,
+    p_auto_ticket: true,
   });
 
   if (credit.error) {
     await releaseProcessingClaim(supabase, reservedRow.id);
+    const errorCode = credit.error.message?.match(/[A-Z_]{4,}/)?.[0] ?? "";
+    if (errorCode === "INSUFFICIENT_ADMIN_CODES") {
+      return jsonError(
+        "Deposit was not credited because this admin has no available ticket in inventory for the automatic first ticket. Request admin tickets first.",
+        409,
+      );
+    }
+    if (errorCode === "INVALID_TICKET_PRICE") {
+      return jsonError("Set a ticket price above 0 before crediting deposits.", 400);
+    }
     return jsonError("Could not credit deposit claim.", 500);
   }
 
-  if (!credit.data) {
+  const creditResult = (credit.data ?? null) as {
+    credited?: boolean;
+    depositId?: string | null;
+    ticketAssigned?: boolean;
+    ticketId?: string;
+    ticketNumber?: number;
+    ticketPriceAmount?: string | number;
+    reason?: string;
+  } | null;
+
+  if (!creditResult?.credited || !creditResult.depositId) {
     await releaseProcessingClaim(supabase, reservedRow.id);
     return jsonError("That transaction hash was already credited.", 409);
   }
@@ -393,7 +434,7 @@ async function creditClaim(
       credited_by: actor,
       credited_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
-      worldcup_deposit_id: credit.data,
+      worldcup_deposit_id: creditResult.depositId,
     })
     .eq("id", reservedRow.id)
     .eq("status", "processing")
@@ -411,7 +452,16 @@ async function creditClaim(
     );
   }
 
-  return NextResponse.json({ claim: await formatClaimWithRole(supabase, update.data as DepositClaimRow) });
+  return NextResponse.json({
+    claim: await formatClaimWithRole(supabase, update.data as DepositClaimRow),
+    autoTicket: {
+      assigned: creditResult.ticketAssigned === true,
+      ticketId: creditResult.ticketId ?? null,
+      ticketNumber: creditResult.ticketNumber ?? null,
+      ticketPriceAmount: creditResult.ticketPriceAmount ?? null,
+      reason: creditResult.reason ?? null,
+    },
+  });
 }
 
 async function releaseProcessingClaim(supabase: any, claimId: string) {

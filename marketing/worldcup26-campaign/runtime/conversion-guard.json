@@ -1,0 +1,87 @@
+{
+  "schema": "worldcup26-conversion-guard-v1",
+  "generatedAt": "2026-06-07T17:44:57.675Z",
+  "generatedAtEest": "2026-06-07 20:44 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "expectedInviter": "David Ai",
+  "expectedPercent": 5,
+  "ok": true,
+  "browserVerified": true,
+  "deploymentIds": [
+    "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+  ],
+  "checks": {
+    "firstPaint": [
+      {
+        "name": "meta-campaign",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=conversion_guard",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=conversion_guard",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45394,
+        "elapsedMs": 340
+      },
+      {
+        "name": "facebook-feed",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=conversion_guard",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=conversion_guard",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45406,
+        "elapsedMs": 202
+      },
+      {
+        "name": "instagram-story",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h&utm_content=conversion_guard",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h&utm_content=conversion_guard",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45391,
+        "elapsedMs": 212
+      },
+      {
+        "name": "x-campaign",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=conversion_guard",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=conversion_guard",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45385,
+        "elapsedMs": 223
+      }
+    ],
+    "resolver": {
+      "ok": true,
+      "status": 200,
+      "valid": true,
+      "referralCode": "26BC4B90CB",
+      "inviterName": "David Ai",
+      "referralPercent": 5,
+      "failures": [],
+      "elapsedMs": 625
+    },
+    "auth": {
+      "ok": true,
+      "status": 302,
+      "location": "https://accounts.google.com/o/oauth2/v2/auth?client_id=293611580417-tsu81oqicpoce0348mfte86pnvhrq6q4.apps.googleusercontent.com&redirect_to=https%3A%2F%2Fworldcup26.world&redirect_uri=https%3A%2F%2Fapi.worldcup26.world%2Fauth%2Fv1%2Fcallback&response_type=code&scope=email+profile&state=a4750571-2341-458e-be3d-c1ccb95af429",
+      "failures": [],
+      "elapsedMs": 134
+    },
+    "browserProof": {
+      "status": "provided",
+      "ok": true,
+      "path": "/Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime/conversion-browser-snapshot.yml",
+      "failures": [],
+      "bytes": 1068
+    }
+  },
+  "rule": "This proves paid-ad referral pages render a safe first paint, resolve the inviter, and can start Google auth. Browser proof is included only when a Playwright MCP snapshot is provided."
+}

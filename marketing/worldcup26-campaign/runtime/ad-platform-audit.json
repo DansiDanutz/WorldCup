@@ -1,0 +1,255 @@
+{
+  "schema": "worldcup26-ad-platform-audit-v1",
+  "generatedAt": "2026-06-07T17:46:26.816Z",
+  "generatedAtEest": "2026-06-07 20:46 +0300",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "expectedInviter": "David Ai",
+  "expectedPercent": 5,
+  "ok": true,
+  "deploymentIds": [
+    "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD"
+  ],
+  "checks": {
+    "pages": [
+      {
+        "name": "meta-campaign",
+        "profile": "browser",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=meta_campaign",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=meta_campaign",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45385,
+        "metadata": {
+          "title": "Join WorldCup26 · WorldCup",
+          "description": "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+          "ogTitle": "You are invited to WorldCup26",
+          "ogDescription": "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+          "ogImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03",
+          "ogUrl": "https://worldcup26.world/login",
+          "twitterCard": "summary_large_image",
+          "twitterTitle": "You are invited to WorldCup26",
+          "twitterImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03"
+        },
+        "elapsedMs": 366
+      },
+      {
+        "name": "meta-campaign",
+        "profile": "meta",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=meta_campaign",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=meta_campaign",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45122,
+        "metadata": {
+          "title": "Join WorldCup26 · WorldCup",
+          "description": "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+          "ogTitle": "You are invited to WorldCup26",
+          "ogDescription": "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+          "ogImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03",
+          "ogUrl": "https://worldcup26.world/login",
+          "twitterCard": "summary_large_image",
+          "twitterTitle": "You are invited to WorldCup26",
+          "twitterImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03"
+        },
+        "elapsedMs": 196
+      },
+      {
+        "name": "meta-campaign",
+        "profile": "whatsapp",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=meta_campaign",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=meta_campaign",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45122,
+        "metadata": {
+          "title": "Join WorldCup26 · WorldCup",
+          "description": "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+          "ogTitle": "You are invited to WorldCup26",
+          "ogDescription": "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+          "ogImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03",
+          "ogUrl": "https://worldcup26.world/login",
+          "twitterCard": "summary_large_image",
+          "twitterTitle": "You are invited to WorldCup26",
+          "twitterImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03"
+        },
+        "elapsedMs": 205
+      },
+      {
+        "name": "facebook-feed",
+        "profile": "browser",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=facebook_feed",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=facebook_feed",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45397,
+        "metadata": {
+          "title": "Join WorldCup26 · WorldCup",
+          "description": "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+          "ogTitle": "You are invited to WorldCup26",
+          "ogDescription": "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+          "ogImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03",
+          "ogUrl": "https://worldcup26.world/login",
+          "twitterCard": "summary_large_image",
+          "twitterTitle": "You are invited to WorldCup26",
+          "twitterImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03"
+        },
+        "elapsedMs": 243
+      },
+      {
+        "name": "facebook-feed",
+        "profile": "meta",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=facebook_feed",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=facebook_feed",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45134,
+        "metadata": {
+          "title": "Join WorldCup26 · WorldCup",
+          "description": "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+          "ogTitle": "You are invited to WorldCup26",
+          "ogDescription": "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+          "ogImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03",
+          "ogUrl": "https://worldcup26.world/login",
+          "twitterCard": "summary_large_image",
+          "twitterTitle": "You are invited to WorldCup26",
+          "twitterImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03"
+        },
+        "elapsedMs": 192
+      },
+      {
+        "name": "instagram-story",
+        "profile": "browser",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h&utm_content=instagram_story",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h&utm_content=instagram_story",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45388,
+        "metadata": {
+          "title": "Join WorldCup26 · WorldCup",
+          "description": "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+          "ogTitle": "You are invited to WorldCup26",
+          "ogDescription": "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+          "ogImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03",
+          "ogUrl": "https://worldcup26.world/login",
+          "twitterCard": "summary_large_image",
+          "twitterTitle": "You are invited to WorldCup26",
+          "twitterImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03"
+        },
+        "elapsedMs": 194
+      },
+      {
+        "name": "instagram-story",
+        "profile": "meta",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h&utm_content=instagram_story",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h&utm_content=instagram_story",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45125,
+        "metadata": {
+          "title": "Join WorldCup26 · WorldCup",
+          "description": "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+          "ogTitle": "You are invited to WorldCup26",
+          "ogDescription": "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+          "ogImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03",
+          "ogUrl": "https://worldcup26.world/login",
+          "twitterCard": "summary_large_image",
+          "twitterTitle": "You are invited to WorldCup26",
+          "twitterImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03"
+        },
+        "elapsedMs": 196
+      },
+      {
+        "name": "x-campaign",
+        "profile": "browser",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=x_campaign",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=x_campaign",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45367,
+        "metadata": {
+          "title": "Join WorldCup26 · WorldCup",
+          "description": "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+          "ogTitle": "You are invited to WorldCup26",
+          "ogDescription": "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+          "ogImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03",
+          "ogUrl": "https://worldcup26.world/login",
+          "twitterCard": "summary_large_image",
+          "twitterTitle": "You are invited to WorldCup26",
+          "twitterImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03"
+        },
+        "elapsedMs": 195
+      },
+      {
+        "name": "x-campaign",
+        "profile": "x",
+        "url": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=x_campaign",
+        "finalUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=x_campaign",
+        "status": 200,
+        "ok": true,
+        "failures": [],
+        "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
+        "bytes": 45104,
+        "metadata": {
+          "title": "Join WorldCup26 · WorldCup",
+          "description": "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+          "ogTitle": "You are invited to WorldCup26",
+          "ogDescription": "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+          "ogImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03",
+          "ogUrl": "https://worldcup26.world/login",
+          "twitterCard": "summary_large_image",
+          "twitterTitle": "You are invited to WorldCup26",
+          "twitterImage": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03"
+        },
+        "elapsedMs": 195
+      }
+    ],
+    "socialImages": [
+      {
+        "url": "https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 206851,
+        "ok": true,
+        "failures": [],
+        "elapsedMs": 738
+      }
+    ],
+    "resolver": {
+      "ok": true,
+      "status": 200,
+      "valid": true,
+      "referralCode": "26BC4B90CB",
+      "inviterName": "David Ai",
+      "referralPercent": 5,
+      "failures": [],
+      "elapsedMs": 677
+    },
+    "health": {
+      "ok": true,
+      "status": 200,
+      "service": "worldcup",
+      "database": "available",
+      "tournamentStatus": "open",
+      "failures": [],
+      "elapsedMs": 293
+    }
+  },
+  "rule": "This proves Meta/X ad URLs, crawler previews, referral resolver, social images, and production health are safe. It does not prove the ads are approved or spending inside Meta/X."
+}

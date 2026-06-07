@@ -50,12 +50,19 @@ function loadSmokeEnv() {
   }
 }
 
+function requireEnv(name, value) {
+  if (!value) {
+    throw new Error(`Missing required environment variable: ${name}`);
+  }
+
+  return value;
+}
+
 loadSmokeEnv();
 
 const DEFAULT_BASE_URL = "https://worldcup26.world";
-const DEFAULT_SUPABASE_URL = "https://lxhjfdxowpxzrybxdasi.supabase.co";
 const baseUrl = (process.env.SMOKE_BASE_URL ?? DEFAULT_BASE_URL).replace(/\/$/, "");
-const supabaseUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? DEFAULT_SUPABASE_URL).replace(/\/$/, "");
+const supabaseUrl = requireEnv("NEXT_PUBLIC_SUPABASE_URL", process.env.NEXT_PUBLIC_SUPABASE_URL).replace(/\/$/, "");
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const adminResultSecret = process.env.ADMIN_RESULT_SECRET;
@@ -78,6 +85,10 @@ function assert(condition, message) {
   if (!condition) {
     throw new Error(message);
   }
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function fetchText(path, init) {
@@ -142,7 +153,7 @@ async function checkPage(path, expectedText) {
 
 async function checkPublicPages() {
   const pages = [
-    ["/login", "Choose your signup path"],
+    ["/login", "Register first"],
     ["/schema", "Tournament Schema"],
     ["/coefficients", "Team Coefficients"],
     ["/terms", "WorldCup26 Terms of Use"],
@@ -196,7 +207,7 @@ async function fetchStylesheetsFromHtml(html, contextPath) {
 async function checkPublicUiShell() {
   const routeLandmarks = [
     ["/", ["Choose 3 Teams", "Pick Teams", "Rules", "Schema", "Leaderboard", "Wallet", "Matches"]],
-    ["/login", ["Choose your signup path", "Predict the Game", "I have an inviter", "Direct signup"]],
+    ["/login", ["Register first", "Continue with Google", "I have an inviter", "Direct signup"]],
     ["/wallet", ["WorldCup Wallet", "Wallet", "Sign in with Google", "USDT"]],
     [
       "/admin",
@@ -235,8 +246,8 @@ async function checkPublicUiShell() {
 
     if (path === "/" || path === "/wallet") {
       assert(
-        text.includes("launch approvals are complete"),
-        `${path} public launch copy did not mention launch approvals`,
+        !text.includes("launch approvals are complete"),
+        `${path} leaked internal launch approval copy to public users`,
       );
       assert(
         !text.includes("Operator policy is configured"),
@@ -245,11 +256,17 @@ async function checkPublicUiShell() {
     }
 
     if (path === "/") {
+      assert(text.includes("Choose 3 Teams"), `${path} public launch copy did not include the campaign CTA`);
+      assert(text.includes("Agent Deal"), `${path} public launch copy did not include the agent offer`);
+    }
+
+    if (path === "/") {
       homeHtml = text;
     }
   }
 
   const css = await fetchStylesheetsFromHtml(homeHtml, "/");
+  const compactCss = css.replace(/\s+/g, "");
   const requiredCssTokens = [
     "--green:#106b4f",
     "--green-soft:#e5f3ee",
@@ -273,7 +290,7 @@ async function checkPublicUiShell() {
   ];
 
   for (const token of requiredCssTokens) {
-    assert(css.includes(token), `Production stylesheet is missing "${token}"`);
+    assert(compactCss.includes(token.replace(/\s+/g, "")), `Production stylesheet is missing "${token}"`);
   }
 
   for (const asset of ["/brand-mark.svg", "/logo-lockup.svg"]) {
@@ -398,17 +415,26 @@ async function checkAdminAuthorized() {
     `/api/admin/launch-evidence reported ${launchEvidenceData.readiness?.summary?.fail ?? "unknown"} launch blockers`,
   );
   assert(launchEvidenceData.operatorPolicy, "/api/admin/launch-evidence did not return operator policy");
+  const paidActionEvidence = launchEvidenceData.paidActionEvidence;
   assert(
-    launchEvidenceData.paidActionEvidence?.publicPaidActionsPaused === true,
-    "/api/admin/launch-evidence did not prove public paid actions are paused",
+    paidActionEvidence?.actions?.deposit?.publicAllowed === true,
+    "/api/admin/launch-evidence did not prove USDT deposits are open during account setup",
   );
   assert(
-    launchEvidenceData.paidActionEvidence?.adminEvidenceEmailConfigured === true,
+    paidActionEvidence?.actions?.ticket?.publicAllowed === true,
+    "/api/admin/launch-evidence did not prove ticket assignment actions are open during account setup",
+  );
+  assert(
+    paidActionEvidence?.actions?.entry?.publicAllowed === true,
+    "/api/admin/launch-evidence did not prove entry actions are open during account setup",
+  );
+  assert(
+    paidActionEvidence?.actions?.withdrawal?.publicAllowed === false,
+    "/api/admin/launch-evidence did not prove withdrawals remain deferred until final settlement",
+  );
+  assert(
+    paidActionEvidence?.adminEvidenceEmailConfigured === true,
     "/api/admin/launch-evidence did not detect an admin evidence email",
-  );
-  assert(
-    launchEvidenceData.paidActionEvidence?.adminEvidenceActionsAllowed === true,
-    "/api/admin/launch-evidence did not prove the admin evidence lane is open",
   );
   assert(
     launchEvidenceData.deployment?.canonicalOrigin === "https://worldcup26.world",
@@ -581,9 +607,13 @@ async function checkDepositReadiness() {
   await checkApiRejection("/api/deposits/claims", undefined, "Sign in with Google first.");
   await checkApiRejection("/api/withdrawals", undefined, "Sign in with Google first.");
   await checkApiRejection(
-    "/api/deposits/reconcile",
-    undefined,
-    "Unauthorized.",
+    "/api/deposits/check",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ network: "trc20" }),
+    },
+    "Sign in with Google first.",
   );
   await checkApiRejection(
     "/api/cron/results",
@@ -648,9 +678,55 @@ async function checkPublicReferralResolve() {
     invalid.response.status === 200 &&
       invalid.data?.valid === false &&
       invalid.data?.referralCode === "ZZZZZZ" &&
-      invalid.data?.referralPercent === 3,
+      invalid.data?.referralPercent === 0,
     `Referral resolve invalid-code check changed unexpectedly: ${invalid.response.status}`,
   );
+}
+
+async function checkAnalyticsViewRoute() {
+  const sessionId = `production-smoke-${Date.now()}`;
+  const body = {
+    path: "/login",
+    referrer: "production-smoke",
+    referralCode: "26BC4B90CB",
+    sessionId,
+    utmSource: "production-smoke",
+    utmMedium: "automated-smoke",
+    utmCampaign: "worldcup26_referral_72h",
+    utmContent: "analytics_view_route",
+  };
+
+  try {
+    const result = await fetchJson(
+      `${baseUrl}/api/analytics/view`,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "user-agent": "WorldCup26-production-smoke/1.0",
+        },
+        body: JSON.stringify(body),
+      },
+      10_000,
+    );
+
+    assert(
+      result.response.status === 200,
+      `/api/analytics/view expected 200 with stored=true, got ${result.response.status}`,
+    );
+    assert(result.data?.ok === true, "/api/analytics/view did not return ok=true");
+    assert(result.data?.stored === true, "/api/analytics/view did not store the smoke event");
+  } finally {
+    if (supabaseServiceRoleKey) {
+      await fetch(
+        `${supabaseUrl}/rest/v1/worldcup_app_views?session_id=eq.${encodeURIComponent(sessionId)}`,
+        {
+          method: "DELETE",
+          headers: serviceHeaders(),
+        },
+      ).catch(() => undefined);
+    }
+  }
 }
 
 async function checkRateLimit() {
@@ -1038,6 +1114,25 @@ async function fetchUserJson(path, token, init = {}, timeoutMs = 15_000) {
 async function adminPost(path, body, timeoutMs = 15_000) {
   assert(adminResultSecret, `Missing ADMIN_RESULT_SECRET for ${path}`);
 
+  const result = await fetchJson(
+    `${baseUrl}${path}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-admin-secret": adminResultSecret,
+      },
+      body: JSON.stringify(body),
+    },
+    timeoutMs,
+  );
+
+  if (result.response.status !== 429) {
+    return result;
+  }
+
+  await sleep(65_000);
+
   return fetchJson(
     `${baseUrl}${path}`,
     {
@@ -1052,38 +1147,12 @@ async function adminPost(path, body, timeoutMs = 15_000) {
   );
 }
 
-async function loadPaidActionGateState() {
-  assert(adminResultSecret, "Missing ADMIN_RESULT_SECRET for paid action gate check");
-
-  const readiness = await fetchJson(`${baseUrl}/api/admin/readiness`, {
-    headers: { "x-admin-secret": adminResultSecret },
-  });
-  assert(
-    readiness.response.status === 200 && Array.isArray(readiness.data?.checks),
-    `Paid action gate check could not load readiness: ${readiness.response.status}`,
-  );
-
-  const checksById = new Map(readiness.data.checks.map((check) => [check.id, check]));
-  const countryReady = checksById.get("geo-policy")?.status === "pass";
-  const depositReady = checksById.get("deposit-limits")?.status === "pass";
-  const withdrawalReady = checksById.get("withdrawal-limits")?.status === "pass";
-  const launchSignoffsReady = readiness.data.checks
-    .filter((check) => String(check.id).startsWith("launch-signoff-"))
-    .every((check) => check.status === "pass");
-
-  return {
-    depositAllowed: countryReady && depositReady && launchSignoffsReady,
-    withdrawalAllowed: countryReady && withdrawalReady && launchSignoffsReady,
-    ticketAllowed: countryReady && launchSignoffsReady,
-    entryAllowed: countryReady && launchSignoffsReady,
-  };
-}
-
 function assertPaidActionPaused(result, label) {
+  const error = result.data?.error ?? "";
   assert(
     result.response.status === 403 &&
-      /(Operator policy|launch sign-offs)/.test(result.data?.error ?? ""),
-    `${label} expected paid-action launch pause, got ${result.response.status}: ${result.data?.error ?? ""}`,
+      /(Operator policy|launch sign-offs|paused|unavailable|after the World Cup)/i.test(error),
+    `${label} expected paid-action pause, got ${result.response.status}: ${error}`,
   );
 }
 
@@ -1101,6 +1170,18 @@ function assertPaidActionGates(profile, label) {
       `${label} missing ${action} paid action gate`,
     );
   }
+}
+
+function getAllowedProfileGates(profile, label) {
+  assertPaidActionGates(profile, label);
+  const gates = profile.data.paidActionGates;
+
+  return {
+    depositAllowed: gates.deposit.allowed,
+    withdrawalAllowed: gates.withdrawal.allowed,
+    ticketAllowed: gates.ticket.allowed,
+    entryAllowed: gates.entry.allowed,
+  };
 }
 
 async function loadProbeTeamIds() {
@@ -1197,7 +1278,7 @@ async function checkAuthenticatedUserFlowProbe() {
       playerProfile.response.status === 200 && playerProfile.data?.referralCode,
       `Auth flow probe could not load player referral profile: ${playerProfile.response.status}`,
     );
-    assertPaidActionGates(playerProfile, "Auth flow player profile");
+    const paidActionGate = getAllowedProfileGates(playerProfile, "Auth flow player profile");
 
     const tournament = await restGet(
       "worldcup_tournaments",
@@ -1208,7 +1289,6 @@ async function checkAuthenticatedUserFlowProbe() {
       `Auth flow probe could not load tournament: ${tournament.response.status}`,
     );
     const tournamentId = tournament.data[0].id;
-    const paidActionGate = await loadPaidActionGateState();
 
     const playerAdminStatus = await fetchUserJson("/api/admin/me", player.accessToken);
     assert(
@@ -1261,6 +1341,28 @@ async function checkAuthenticatedUserFlowProbe() {
         `Auth flow probe could not load deposit addresses: ${addresses.response.status}`,
       );
 
+      for (const config of networks) {
+        const senderWalletAddress = buildProbeWithdrawalAddress(config.network);
+        const savedSenderWallet = await fetchUserJson(
+          "/api/deposits/sender-wallet",
+          player.accessToken,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              network: config.network,
+              senderWalletAddress,
+            }),
+          },
+        );
+        assert(
+          savedSenderWallet.response.status === 200 &&
+            savedSenderWallet.data?.locked === true &&
+            savedSenderWallet.data?.senderWalletAddress === senderWalletAddress,
+          `Auth flow probe could not lock ${config.network} sender wallet: ${savedSenderWallet.response.status}`,
+        );
+      }
+
       const claimStamp = Date.now();
       for (const [index, config] of networks.entries()) {
         const txHash = buildProbeTxHash(config.network, claimStamp + index, "b");
@@ -1300,14 +1402,14 @@ async function checkAuthenticatedUserFlowProbe() {
 
       const savedSenderWalletProfile = await restGet(
         "worldcup_referral_profiles",
-        `select=user_id,usdt_sender_wallet_address,usdt_sender_wallet_network&user_id=eq.${player.userId}&limit=1`,
+        `select=user_id,usdt_sender_wallet_trc20_address,usdt_sender_wallet_erc20_address&user_id=eq.${player.userId}&limit=1`,
       );
-      const latestNetwork = networks[networks.length - 1].network;
       assert(
         savedSenderWalletProfile.response.ok &&
-          savedSenderWalletProfile.data?.[0]?.usdt_sender_wallet_address ===
-            buildProbeWithdrawalAddress(latestNetwork) &&
-          savedSenderWalletProfile.data?.[0]?.usdt_sender_wallet_network === latestNetwork,
+          savedSenderWalletProfile.data?.[0]?.usdt_sender_wallet_trc20_address ===
+            buildProbeWithdrawalAddress("trc20") &&
+          savedSenderWalletProfile.data?.[0]?.usdt_sender_wallet_erc20_address ===
+            buildProbeWithdrawalAddress("erc20"),
         `Auth flow probe could not verify saved USDT sender wallet profile: ${savedSenderWalletProfile.response.status}`,
       );
     } else {
@@ -1339,7 +1441,7 @@ async function checkAuthenticatedUserFlowProbe() {
               row.id === expected.id &&
               row.network === expected.network &&
               row.address === expected.address &&
-              row.amount === expected.amount &&
+              Number(row.amount) === Number(expected.amount) &&
               row.senderWalletAddress === expected.senderWalletAddress &&
               row.txHash === expected.txHash,
           ),
@@ -1507,21 +1609,66 @@ async function checkAuthenticatedUserFlowProbe() {
       `Auth flow probe could not read consent: ${consentGet.response.status}`,
     );
 
+    const requestedInventory = await adminPost(
+      "/api/admin/agents",
+      {
+        action: "request_inventory",
+        quantity: 1,
+      },
+      20_000,
+    );
+    assert(
+      requestedInventory.response.status === 200 &&
+        requestedInventory.data?.ok === true &&
+        requestedInventory.data?.requested === 1,
+      `Auth flow probe could not request admin ticket inventory: ${requestedInventory.response.status} ${
+        requestedInventory.data?.error ?? ""
+      }`,
+    );
+
     const assignTicket = await adminPost(
       "/api/admin/tickets",
       {
         action: "assign",
         userId: player.userId,
         quantity: 1,
+        paymentMethod: "cash",
+        note: "Codex production auth-flow probe - manual cash assignment, no external funds",
       },
       20_000,
     );
     assert(
       assignTicket.response.status === 200 && assignTicket.data?.assignedTickets === 1,
-      `Auth flow probe could not assign ticket: ${assignTicket.response.status}`,
+      `Auth flow probe could not assign ticket: ${assignTicket.response.status} ${
+        assignTicket.data?.error ?? ""
+      }`,
     );
 
     const teamIds = await loadProbeTeamIds();
+    const draftEntry = await fetchUserJson(
+      "/api/entries",
+      player.accessToken,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "save-draft",
+          displayName: "Codex Player Probe",
+          teamIds,
+          referralCode,
+          referralTermsAccepted: true,
+        }),
+      },
+      20_000,
+    );
+    assert(
+      draftEntry.response.status === 200 &&
+        draftEntry.data?.entryId &&
+        draftEntry.data?.status === "draft",
+      `Auth flow probe could not save free referred draft entry: ${draftEntry.response.status}`,
+    );
+    state.entryId = draftEntry.data.entryId;
+
     const entry = await fetchUserJson(
       "/api/entries",
       player.accessToken,
@@ -1529,6 +1676,7 @@ async function checkAuthenticatedUserFlowProbe() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          action: "lock",
           displayName: "Codex Player Probe",
           teamIds,
           referralCode,
@@ -1539,8 +1687,8 @@ async function checkAuthenticatedUserFlowProbe() {
     );
     if (paidActionGate.entryAllowed) {
       assert(
-        entry.response.status === 200 && entry.data?.entryId,
-        `Auth flow probe could not create referred entry: ${entry.response.status}`,
+        entry.response.status === 200 && entry.data?.entryId && entry.data?.status === "locked",
+        `Auth flow probe could not lock referred entry: ${entry.response.status}`,
       );
       state.entryId = entry.data.entryId;
 
@@ -1732,6 +1880,7 @@ async function main() {
   await checkSecurityHeaders(homeResponse);
   await checkSupabaseAuth();
   await checkPublicReferralResolve();
+  await checkAnalyticsViewRoute();
   await checkDepositReadiness();
 
   if (runRateLimitProbe) {

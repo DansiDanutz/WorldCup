@@ -1,0 +1,88 @@
+[     506ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[     530ms] [LOG] [HMR] connected @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  352319ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3001/_next/webpack-hmr?id=5zCFYgA-Ic62j-SbhNeaI' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  353321ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3001/_next/webpack-hmr?id=5zCFYgA-Ic62j-SbhNeaI' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  354322ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3001/_next/webpack-hmr?id=5zCFYgA-Ic62j-SbhNeaI' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  355330ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3001/_next/webpack-hmr?id=5zCFYgA-Ic62j-SbhNeaI' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  356332ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3001/_next/webpack-hmr?id=5zCFYgA-Ic62j-SbhNeaI' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13322
+[  361343ms] [LOG] [HMR] connected @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  362034ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  362106ms] [LOG] [HMR] connected @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  458158ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  458348ms] [LOG] [Fast Refresh] done in 220ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  592730ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  638329ms] [LOG] [Fast Refresh] done in 45699ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  638430ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  640148ms] [LOG] [Fast Refresh] done in 1818ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  669432ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  751329ms] [LOG] [Fast Refresh] done in 81998ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1059806ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1178898ms] [LOG] [Fast Refresh] done in 119195ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1179000ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1288932ms] [LOG] [Fast Refresh] done in 110033ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1336089ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1402878ms] [LOG] [Fast Refresh] done in 66891ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1402982ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1410097ms] [LOG] [Fast Refresh] done in 7216ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1410197ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1411953ms] [LOG] [Fast Refresh] done in 1855ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1725104ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1728969ms] [LOG] [Fast Refresh] done in 3966ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1729069ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1740084ms] [LOG] [Fast Refresh] done in 11115ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1740186ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1745043ms] [LOG] [Fast Refresh] done in 4959ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1756734ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1763322ms] [LOG] [Fast Refresh] done in 6689ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1763423ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1772888ms] [LOG] [Fast Refresh] done in 9565ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2037283ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2162479ms] [LOG] [Fast Refresh] done in 125292ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2162504ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2162893ms] [LOG] [Fast Refresh] done in 342ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2163118ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2163156ms] [LOG] [Fast Refresh] done in 139ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2163932ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2163986ms] [LOG] [HMR] connected @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2164287ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://127.0.0.1:3001/#pick:0
+[ 2164342ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2164445ms] [LOG] [Fast Refresh] done in 203ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2164617ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:3001/api/analytics/view:0
+[ 2164638ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2164648ms] [LOG] [Fast Refresh] done in 112ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2164772ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2164868ms] [LOG] [Fast Refresh] done in 197ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2164970ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2165071ms] [LOG] [Fast Refresh] done in 200ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2165198ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2166111ms] [LOG] [Fast Refresh] done in 1015ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2166233ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2166567ms] [LOG] [Fast Refresh] done in 435ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2166668ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2167106ms] [LOG] [Fast Refresh] done in 539ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2167266ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2167321ms] [LOG] [Fast Refresh] done in 157ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2167422ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2167507ms] [LOG] [Fast Refresh] done in 185ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2167691ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2167731ms] [LOG] [Fast Refresh] done in 142ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2300090ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2300862ms] [LOG] [Fast Refresh] done in 871ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2302026ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ http://127.0.0.1:3001/#pick:0
+[ 2320954ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2321010ms] [LOG] [Fast Refresh] done in 53ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2324925ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2359424ms] [LOG] [Fast Refresh] done in 34599ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2359539ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2361617ms] [LOG] [Fast Refresh] done in 2140ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2452438ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2452545ms] [LOG] [Fast Refresh] done in 209ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2497394ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2497420ms] [LOG] [Fast Refresh] done in 120ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2530196ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2557903ms] [LOG] [Fast Refresh] done in 27809ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2558006ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2560744ms] [LOG] [Fast Refresh] done in 2839ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2705244ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2731141ms] [LOG] [Fast Refresh] done in 25998ms @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 2731242ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3001/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477

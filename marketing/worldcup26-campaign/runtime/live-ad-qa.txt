@@ -1,0 +1,35 @@
+WorldCup26 live ad QA 2026-06-07 20:46 +0300
+ok=yes pages=7 assets=14 code=26BC4B90CB inviter="David Ai" percent=5 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+resolver=ok health=ok auth=ok social=2/2 local_assets=5/5
+
+landing_pages:
+- meta-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=283
+- facebook-feed: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=177
+- instagram-story: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=224
+- x-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=210
+- tiktok-video: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=206
+- youtube-shorts: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=186
+- whatsapp-status: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=183
+
+rendered_assets:
+- ok 200 https://worldcup26.world/_next/static/chunks/0dgq26a5_oy.a.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/0307a-r-4hb3i.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/10u3y4bw1ayzs.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/turbopack-04~unr0vns_b9.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/15lvn.u6g559..js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/0.4e1wu8znb0x.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/01xlw8hd842-c.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/00-csyj9a6t-x.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/0cdzq69u44xu6.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/03~yq9q893hmn.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/0bj39187d3s9z.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+- ok 200 https://worldcup26.world/_next/static/chunks/0083r6gqu1g2v.css?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
+
+local_assets:
+- ok media/worldcup26-main-video.mp4 bytes=38430149
+- ok media/worldcup26-referral-story.jpg bytes=147990
+- ok media/worldcup26-referral-square.jpg bytes=105462
+- ok media/worldcup26-qr-story.jpg bytes=195088
+- ok media/worldcup26-referral-qr.png bytes=4910
+
+Rule: This proves ad clicks can land, render, resolve the inviter, and start Google auth from the custom domain. It does not prove ads or social posts are live.

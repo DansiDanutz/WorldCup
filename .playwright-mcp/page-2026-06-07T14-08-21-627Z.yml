@@ -1,0 +1,607 @@
+- generic [ref=e4]:
+  - generic [ref=e9]:
+    - generic [ref=e12]:
+      - link "Instagram" [ref=e17] [cursor=pointer]:
+        - /url: /
+        - img "Instagram" [ref=e22]
+      - generic [ref=e25]:
+        - link "Home Home" [ref=e1057] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e31]:
+            - img "Home" [ref=e35]
+            - generic [ref=e1062]: Home
+        - link "Reels Reels" [ref=e1063] [cursor=pointer]:
+          - /url: /reels/
+          - generic [ref=e41]:
+            - img "Reels" [ref=e45]
+            - generic [ref=e1068]: Reels
+        - link "Messages Direct messaging - 10 new notifications link Messages" [ref=e1069] [cursor=pointer]:
+          - /url: /direct/inbox/
+          - generic [ref=e53]:
+            - generic [ref=e55]:
+              - img "Messages" [ref=e57]
+              - generic "Direct messaging - 10 new notifications link" [ref=e60]:
+                - generic [ref=e62]: 9+
+            - generic [ref=e1074]: Messages
+        - link "Search Search" [ref=e1075] [cursor=pointer]:
+          - /url: /explore/
+          - generic [ref=e67]:
+            - img "Search" [ref=e71]
+            - generic [ref=e1080]: Search
+        - link "Notifications Notifications" [ref=e1082] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e1083]:
+            - img "Notifications" [ref=e1087]
+            - generic [ref=e1095]: Notifications
+        - generic [ref=e90]:
+          - link "New post Create" [active] [ref=e1096] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e92]:
+              - img "New post" [ref=e96]
+              - generic [ref=e1101]: Create
+          - generic [ref=e1103]:
+            - link "Post Post" [ref=e1104] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1107]:
+                - generic [ref=e1112]: Post
+                - img "Post" [ref=e1115]
+            - link "Live video Live video" [ref=e1117] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1120]:
+                - generic [ref=e1125]: Live video
+                - img "Live video" [ref=e1128]
+            - link "Ad Ad" [ref=e1130] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1133]:
+                - generic [ref=e1138]: Ad
+                - img "Ad" [ref=e1141]
+            - link "AI AI" [ref=e1144] [cursor=pointer]:
+              - /url: https://aistudio.instagram.com/create/?utm_source=ig_web_nav_create
+              - generic [ref=e1147]:
+                - generic [ref=e1152]: AI
+                - img "AI" [ref=e1155]
+        - link "Professional dashboard Dashboard" [ref=e1159] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e102]:
+            - img "Professional dashboard" [ref=e106]
+            - generic [ref=e1164]: Dashboard
+        - link "seme1981's profile picture Profile" [ref=e1165] [cursor=pointer]:
+          - /url: /seme1981/
+          - generic [ref=e114]:
+            - link "seme1981's profile picture" [ref=e118]:
+              - img "seme1981's profile picture" [ref=e119]
+            - generic [ref=e1170]: Profile
+      - generic [ref=e120]:
+        - link "Settings More" [ref=e1171] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e124]:
+            - img "Settings" [ref=e128]
+            - generic [ref=e1176]: More
+        - link "Also from Meta Also from Meta" [ref=e1177] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e132]:
+            - img "Also from Meta" [ref=e136]
+            - generic [ref=e1182]: Also from Meta
+    - generic [ref=e139]:
+      - main [ref=e140]:
+        - generic [ref=e141]:
+          - generic [ref=e143]:
+            - generic [ref=e146]:
+              - tablist [ref=e147]:
+                - tab "For you" [selected] [ref=e149] [cursor=pointer]:
+                  - generic [ref=e151]: For you
+                - tab "Following" [ref=e153] [cursor=pointer]:
+                  - generic [ref=e155]: Following
+              - tabpanel
+            - generic [ref=e160]:
+              - list [ref=e162]:
+                - listitem [ref=e163]
+                - listitem [ref=e164]:
+                  - button "Story by robertaralucaa, not seen" [ref=e165] [cursor=pointer]:
+                    - link "robertaralucaa's profile picture" [ref=e170]:
+                      - img "robertaralucaa's profile picture" [ref=e171]
+                    - generic [ref=e174]: robertaralucaa
+                - listitem [ref=e175]:
+                  - button "Story by playerspokercluj, not seen" [ref=e176] [cursor=pointer]:
+                    - link "playerspokercluj's profile picture" [ref=e181]:
+                      - img "playerspokercluj's profile picture" [ref=e182]
+                    - generic [ref=e185]: playerspokercluj
+                - listitem [ref=e186]:
+                  - button "Story by ralucanna, not seen" [ref=e187] [cursor=pointer]:
+                    - link "ralucanna's profile picture" [ref=e192]:
+                      - img "ralucanna's profile picture" [ref=e193]
+                    - generic [ref=e196]: ralucanna
+                - listitem [ref=e197]:
+                  - button "Story by mayaliva, not seen" [ref=e198] [cursor=pointer]:
+                    - link "mayaliva's profile picture" [ref=e203]:
+                      - img "mayaliva's profile picture" [ref=e204]
+                    - generic [ref=e207]: mayaliva
+                - listitem [ref=e208]:
+                  - button "Story by aliyanartexas, not seen" [ref=e209] [cursor=pointer]:
+                    - link "aliyanartexas's profile picture" [ref=e214]:
+                      - img "aliyanartexas's profile picture" [ref=e215]
+                    - generic [ref=e218]: aliyanartexas
+                - listitem [ref=e219]:
+                  - button "Story by aniutka_92, not seen" [ref=e220] [cursor=pointer]:
+                    - link "aniutka_92's profile picture" [ref=e225]:
+                      - img "aniutka_92's profile picture" [ref=e226]
+                    - generic [ref=e229]: aniutka_92
+                - listitem [ref=e230]:
+                  - button "Story by flamingocasinoke, not seen" [ref=e231] [cursor=pointer]:
+                    - link "flamingocasinoke's profile picture" [ref=e236]:
+                      - img "flamingocasinoke's profile picture" [ref=e237]
+                    - generic [ref=e240]: flamingocasinoke
+                - listitem [ref=e241]:
+                  - button "Story by alyz_poker, not seen" [ref=e242] [cursor=pointer]:
+                    - link "alyz_poker's profile picture" [ref=e247]:
+                      - img "alyz_poker's profile picture" [ref=e248]
+                    - generic [ref=e251]: alyz_poker
+                - listitem [ref=e252]:
+                  - button "Story by ana_stasiia_1307, not seen" [ref=e253] [cursor=pointer]:
+                    - link "ana_stasiia_1307's profile picture" [ref=e258]:
+                      - img "ana_stasiia_1307's profile picture" [ref=e259]
+                    - generic [ref=e262]: ana_stasiia_1307
+                - listitem [ref=e263]:
+                  - button "Story by gklpesraa, not seen" [ref=e264] [cursor=pointer]:
+                    - link "gklpesraa's profile picture" [ref=e269]:
+                      - img "gklpesraa's profile picture" [ref=e270]
+                    - generic [ref=e273]: gklpesraa
+                - listitem [ref=e274]:
+                  - button "Story by bogdan.berinde6, not seen" [ref=e275] [cursor=pointer]:
+                    - link "bogdan.berinde6's profile picture" [ref=e280]:
+                      - img "bogdan.berinde6's profile picture" [ref=e281]
+                    - generic [ref=e284]: bogdan.berinde6
+                - listitem [ref=e285]:
+                  - button "Story by catalina.tinescu, not seen" [ref=e286] [cursor=pointer]:
+                    - link "catalina.tinescu's profile picture" [ref=e291]:
+                      - img "catalina.tinescu's profile picture" [ref=e292]
+                    - generic [ref=e295]: catalina.tinescu
+              - button "Next" [ref=e296] [cursor=pointer]
+            - generic [ref=e299]:
+              - generic [ref=e301]:
+                - article [ref=e302]:
+                  - generic [ref=e303]:
+                    - generic [ref=e305]:
+                      - button "zoyarusalka's profile picture" [disabled] [ref=e310]:
+                        - link "zoyarusalka's profile picture" [disabled] [ref=e312] [cursor=pointer]:
+                          - img "zoyarusalka's profile picture" [ref=e313]
+                      - generic [ref=e317]:
+                        - generic [ref=e318]:
+                          - link "zoyarusalka" [ref=e326] [cursor=pointer]:
+                            - /url: /zoyarusalka/
+                            - generic [ref=e329]: zoyarusalka
+                          - generic [ref=e330]:
+                            - generic [ref=e332]: •
+                            - link "1w" [ref=e334] [cursor=pointer]:
+                              - /url: /p/DY96i0gCGYnUfLKgRPyOwXxI8v14rolzu-FW_k0/
+                              - time [ref=e336]: 1w
+                        - link "Limassol Marina" [ref=e340] [cursor=pointer]:
+                          - /url: /explore/locations/5110195/limassol-marina/
+                      - button "More options" [ref=e343] [cursor=pointer]:
+                        - img "More options" [ref=e346]
+                    - generic [ref=e360]:
+                      - list [ref=e362]:
+                        - listitem [ref=e363]
+                        - listitem [ref=e364]:
+                          - generic [ref=e369] [cursor=pointer]:
+                            - button "Photo shared by Зоя Кушнир on May 30, 2026 tagging @ann_18_06. May be an image of Santorini and text." [ref=e370]:
+                              - img "Photo shared by Зоя Кушнир on May 30, 2026 tagging @ann_18_06. May be an image of Santorini and text." [ref=e372]
+                            - button "Tags" [ref=e375]:
+                              - img "Tags" [ref=e377]
+                            - generic:
+                              - link "ann_18_06":
+                                - /url: /ann_18_06/
+                                - generic:
+                                  - generic: ann_18_06
+                        - listitem [ref=e379]:
+                          - img "Photo by Зоя Кушнир on May 30, 2026. May be an image of yacht and text." [ref=e386]
+                      - button "Next" [ref=e388] [cursor=pointer]
+                    - generic [ref=e390]:
+                      - generic [ref=e393]:
+                        - button "Go to slide 1" [ref=e394] [cursor=pointer]
+                        - button "Go to slide 2" [ref=e395] [cursor=pointer]
+                        - button "Go to slide 3" [ref=e396] [cursor=pointer]
+                      - generic [ref=e399]:
+                        - generic [ref=e400]:
+                          - button "Like" [ref=e403] [cursor=pointer]:
+                            - img "Like" [ref=e406]
+                          - button "124" [ref=e408] [cursor=pointer]
+                          - button "Comment" [ref=e410] [cursor=pointer]:
+                            - img "Comment" [ref=e412]
+                          - button "10" [ref=e414] [cursor=pointer]
+                        - button "Save" [ref=e417] [cursor=pointer]:
+                          - button "Save" [ref=e418]:
+                            - img "Save" [ref=e420]
+                - article [ref=e422]:
+                  - generic [ref=e423]:
+                    - generic [ref=e425]:
+                      - generic [ref=e429]:
+                        - button "evanrosenman's profile picture" [ref=e434] [cursor=pointer]:
+                          - link "evanrosenman's profile picture" [ref=e436]:
+                            - img "evanrosenman's profile picture" [ref=e437]
+                        - generic [ref=e440]:
+                          - generic [ref=e441]:
+                            - generic [ref=e442]:
+                              - generic [ref=e444]:
+                                - link "evanrosenman" [ref=e450] [cursor=pointer]:
+                                  - /url: /evanrosenman/
+                                  - generic [ref=e453]: evanrosenman
+                                - img "Verified" [ref=e455]
+                              - generic [ref=e457]:
+                                - generic [ref=e459]: •
+                                - link "15h" [ref=e461] [cursor=pointer]:
+                                  - /url: /p/DZQmUkEhBK1/
+                                  - time [ref=e463]: 15h
+                            - link "Original audio" [ref=e1183] [cursor=pointer]:
+                              - /url: /reels/audio/27092847670396309/
+                              - generic [ref=e1186]: Original audio
+                          - button "Follow" [ref=e473] [cursor=pointer]
+                        - button "More options" [ref=e476] [cursor=pointer]:
+                          - img "More options" [ref=e479]
+                      - link "Video player" [ref=e483] [cursor=pointer]:
+                        - /url: /reels/DZQmUkEhBK1/
+                        - group "Video player" [ref=e500]:
+                          - generic:
+                            - generic "Play"
+                          - slider "Adjust volume" [ref=e502]:
+                            - button "Audio is muted" [ref=e506]:
+                              - img "Audio is muted" [ref=e507]
+                    - generic [ref=e511]:
+                      - generic [ref=e512]:
+                        - generic [ref=e513]:
+                          - button "Like" [ref=e516] [cursor=pointer]:
+                            - img "Like" [ref=e519]
+                          - button "482.2K" [ref=e521] [cursor=pointer]
+                          - button "Comment" [ref=e523] [cursor=pointer]:
+                            - img "Comment" [ref=e525]
+                          - button "2.2K" [ref=e527] [cursor=pointer]
+                          - button "Repost" [ref=e528] [cursor=pointer]:
+                            - img "Repost" [ref=e529]
+                          - button "13.9K" [ref=e531] [cursor=pointer]
+                          - button "Share" [ref=e532] [cursor=pointer]:
+                            - img "Share" [ref=e533]
+                        - button "Save" [ref=e538] [cursor=pointer]:
+                          - button "Save" [ref=e539]:
+                            - img "Save" [ref=e541]
+                      - generic [ref=e543]:
+                        - link "evanrosenman Verified" [ref=e548] [cursor=pointer]:
+                          - /url: /evanrosenman/
+                          - generic [ref=e550]:
+                            - generic [ref=e551]: evanrosenman
+                            - img "Verified" [ref=e553]
+                        - generic [ref=e556]: Inflatable Mega-Mansion Bounce House! 😮
+                      - button "See translation" [ref=e558] [cursor=pointer]:
+                        - generic [ref=e559]: See translation
+                - article [ref=e560]:
+                  - generic [ref=e561]:
+                    - generic [ref=e563]:
+                      - generic [ref=e567]:
+                        - button "survivalvaults's profile picture" [disabled] [ref=e572]:
+                          - link "survivalvaults's profile picture" [disabled] [ref=e574] [cursor=pointer]:
+                            - img "survivalvaults's profile picture" [ref=e575]
+                        - generic [ref=e578]:
+                          - generic [ref=e579]:
+                            - generic [ref=e580]:
+                              - link "survivalvaults" [ref=e588] [cursor=pointer]:
+                                - /url: /survivalvaults/
+                                - generic [ref=e591]: survivalvaults
+                              - generic [ref=e592]:
+                                - generic [ref=e594]: •
+                                - link "1d" [ref=e596] [cursor=pointer]:
+                                  - /url: /p/DZOSmBAI8T-/
+                                  - time [ref=e598]: 1d
+                            - generic [ref=e602]: Suggested for you
+                          - button "Follow" [ref=e608] [cursor=pointer]
+                        - button "More options" [ref=e611] [cursor=pointer]:
+                          - img "More options" [ref=e614]
+                      - link "Video player" [ref=e618] [cursor=pointer]:
+                        - /url: /reels/DZOSmBAI8T-/
+                        - group "Video player" [ref=e635]:
+                          - generic:
+                            - generic "Play"
+                          - slider "Adjust volume" [ref=e637]:
+                            - button "Audio is muted" [ref=e641]:
+                              - img "Audio is muted" [ref=e642]
+                    - generic [ref=e646]:
+                      - generic [ref=e647]:
+                        - generic [ref=e648]:
+                          - button "Like" [ref=e651] [cursor=pointer]:
+                            - img "Like" [ref=e654]
+                          - button "73.2K" [ref=e656] [cursor=pointer]
+                          - button "Comment" [ref=e658] [cursor=pointer]:
+                            - img "Comment" [ref=e660]
+                          - button "826" [ref=e662] [cursor=pointer]
+                          - button "Repost" [ref=e663] [cursor=pointer]:
+                            - img "Repost" [ref=e664]
+                          - button "2.2K" [ref=e666] [cursor=pointer]
+                          - button "Share" [ref=e667] [cursor=pointer]:
+                            - img "Share" [ref=e668]
+                        - button "Save" [ref=e673] [cursor=pointer]:
+                          - button "Save" [ref=e674]:
+                            - img "Save" [ref=e676]
+                      - generic [ref=e678]:
+                        - link "survivalvaults" [ref=e683] [cursor=pointer]:
+                          - /url: /survivalvaults/
+                          - generic [ref=e686]: survivalvaults
+                        - generic [ref=e687]:
+                          - generic [ref=e689]: They blew up the gate but he escaped through a secret vault 🔥
+                          - generic [ref=e690]:
+                            - text: ...
+                            - button "more" [ref=e691] [cursor=pointer]:
+                              - generic [ref=e692]: more
+                      - button "See translation" [ref=e694] [cursor=pointer]:
+                        - generic [ref=e695]: See translation
+              - progressbar [ref=e697]:
+                - img "Loading..." [ref=e698]
+          - generic [ref=e712]:
+            - generic [ref=e718]:
+              - button "seme1981's profile picture" [disabled] [ref=e721]:
+                - link "seme1981's profile picture" [disabled] [ref=e723] [cursor=pointer]:
+                  - /url: /seme1981/
+                  - img "seme1981's profile picture" [ref=e724]
+              - generic [ref=e727]:
+                - link "seme1981" [ref=e729] [cursor=pointer]:
+                  - /url: /seme1981/
+                - generic [ref=e733]: Dan Semenescu
+              - button "Switch" [ref=e736] [cursor=pointer]
+            - generic [ref=e739]:
+              - generic [ref=e740]:
+                - generic [ref=e742]: Suggested for you
+                - link "See all" [ref=e743] [cursor=pointer]:
+                  - /url: /explore/people/
+                  - generic [ref=e744]: See all
+              - generic [ref=e748]:
+                - generic [ref=e752]:
+                  - link "petrusebastianpoiana's profile picture" [ref=e759] [cursor=pointer]:
+                    - /url: /petrusebastianpoiana/
+                    - img "petrusebastianpoiana's profile picture" [ref=e760]
+                  - generic [ref=e763]:
+                    - link "Petru Sebastian P..." [ref=e768] [cursor=pointer]:
+                      - /url: /petrusebastianpoiana/
+                      - generic [ref=e771]: Petru Sebastian P...
+                    - generic [ref=e773]: Suggested for you
+                  - button "Follow" [ref=e776] [cursor=pointer]:
+                    - generic [ref=e778]: Follow
+                - generic [ref=e782]:
+                  - link "nandorsolyom's profile picture" [ref=e789] [cursor=pointer]:
+                    - /url: /nandorsolyom/
+                    - img "nandorsolyom's profile picture" [ref=e790]
+                  - generic [ref=e793]:
+                    - link "Solyom Nandor" [ref=e798] [cursor=pointer]:
+                      - /url: /nandorsolyom/
+                      - generic [ref=e801]: Solyom Nandor
+                    - generic [ref=e804]:
+                      - generic [ref=e805]:
+                        - button [ref=e806] [cursor=pointer]:
+                          - link [ref=e807]
+                        - button [ref=e808] [cursor=pointer]:
+                          - link [ref=e809]
+                      - generic [ref=e810]: Followed by vanessacarinab + 12 more
+                  - button "Follow" [ref=e813] [cursor=pointer]:
+                    - generic [ref=e815]: Follow
+                - generic [ref=e819]:
+                  - link "ilona.bondar.2025's profile picture" [ref=e826] [cursor=pointer]:
+                    - /url: /ilona.bondar.2025/
+                    - img "ilona.bondar.2025's profile picture" [ref=e827]
+                  - generic [ref=e830]:
+                    - link "Ilona Bondar" [ref=e835] [cursor=pointer]:
+                      - /url: /ilona.bondar.2025/
+                      - generic [ref=e838]: Ilona Bondar
+                    - generic [ref=e841]:
+                      - button [ref=e843] [cursor=pointer]:
+                        - link [ref=e844]
+                      - generic [ref=e845]: Followed by ana_stasiia_1307
+                  - button "Follow" [ref=e848] [cursor=pointer]:
+                    - generic [ref=e850]: Follow
+                - generic [ref=e854]:
+                  - link "hair_by_feheradina's profile picture" [ref=e861] [cursor=pointer]:
+                    - /url: /hair_by_feheradina/
+                    - img "hair_by_feheradina's profile picture" [ref=e862]
+                  - generic [ref=e865]:
+                    - link "Feher Adina" [ref=e870] [cursor=pointer]:
+                      - /url: /hair_by_feheradina/
+                      - generic [ref=e873]: Feher Adina
+                    - generic [ref=e876]:
+                      - generic [ref=e877]:
+                        - button [ref=e878] [cursor=pointer]:
+                          - link [ref=e879]
+                        - button [ref=e880] [cursor=pointer]:
+                          - link [ref=e881]
+                      - generic [ref=e882]: Followed by biancabaroti + 3 more
+                  - button "Follow" [ref=e885] [cursor=pointer]:
+                    - generic [ref=e887]: Follow
+                - generic [ref=e891]:
+                  - link "fflorea's profile picture" [ref=e898] [cursor=pointer]:
+                    - /url: /fflorea/
+                    - img "fflorea's profile picture" [ref=e899]
+                  - generic [ref=e902]:
+                    - link "Florin-Ioan Florea" [ref=e907] [cursor=pointer]:
+                      - /url: /fflorea/
+                      - generic [ref=e910]: Florin-Ioan Florea
+                    - generic [ref=e913]:
+                      - generic [ref=e914]:
+                        - button [ref=e915] [cursor=pointer]:
+                          - link [ref=e916]
+                        - button [ref=e917] [cursor=pointer]:
+                          - link [ref=e918]
+                      - generic [ref=e919]: Followed by gyorgiana_jo + 2 more
+                  - button "Follow" [ref=e922] [cursor=pointer]:
+                    - generic [ref=e924]: Follow
+            - generic [ref=e926]:
+              - navigation [ref=e927]:
+                - list [ref=e928]:
+                  - listitem [ref=e929]:
+                    - link "About" [ref=e930] [cursor=pointer]:
+                      - /url: https://about.instagram.com/
+                      - generic [ref=e931]: About
+                    - text: ·
+                  - listitem [ref=e932]:
+                    - link "Help" [ref=e933] [cursor=pointer]:
+                      - /url: https://help.instagram.com/
+                      - generic [ref=e934]: Help
+                    - text: ·
+                  - listitem [ref=e935]:
+                    - link "Press" [ref=e936] [cursor=pointer]:
+                      - /url: https://about.instagram.com/blog/
+                      - generic [ref=e937]: Press
+                    - text: ·
+                  - listitem [ref=e938]:
+                    - link "API" [ref=e939] [cursor=pointer]:
+                      - /url: https://developers.facebook.com/docs/instagram
+                      - generic [ref=e940]: API
+                    - text: ·
+                  - listitem [ref=e941]:
+                    - link "Jobs" [ref=e942] [cursor=pointer]:
+                      - /url: https://about.instagram.com/about-us/careers
+                      - generic [ref=e943]: Jobs
+                    - text: ·
+                  - listitem [ref=e944]:
+                    - link "Privacy" [ref=e945] [cursor=pointer]:
+                      - /url: /legal/privacy/
+                      - generic [ref=e946]: Privacy
+                    - text: ·
+                  - listitem [ref=e947]:
+                    - link "Terms" [ref=e948] [cursor=pointer]:
+                      - /url: /legal/terms/
+                      - generic [ref=e949]: Terms
+                    - text: ·
+                  - listitem [ref=e950]:
+                    - link "Locations" [ref=e951] [cursor=pointer]:
+                      - /url: /explore/locations/
+                      - generic [ref=e952]: Locations
+                    - text: ·
+                  - listitem [ref=e953]:
+                    - link "Language" [ref=e954] [cursor=pointer]:
+                      - /url: /language/preferences/
+                      - generic [ref=e955]: Language
+                    - text: ·
+                  - listitem [ref=e956]:
+                    - link "Meta Verified" [ref=e957] [cursor=pointer]:
+                      - /url: /accounts/meta_verified/?entrypoint=web_footer
+                      - generic [ref=e958]: Meta Verified
+              - generic [ref=e960]: © 2026 Instagram from Meta
+      - contentinfo [ref=e961]:
+        - generic [ref=e962]:
+          - generic [ref=e964]:
+            - link "Meta" [ref=e966] [cursor=pointer]:
+              - /url: https://about.meta.com/
+              - generic [ref=e967]: Meta
+            - link "About" [ref=e969] [cursor=pointer]:
+              - /url: https://about.instagram.com/
+              - generic [ref=e970]: About
+            - link "Blog" [ref=e972] [cursor=pointer]:
+              - /url: https://about.instagram.com/blog/
+              - generic [ref=e973]: Blog
+            - link "Jobs" [ref=e975] [cursor=pointer]:
+              - /url: https://about.instagram.com/about-us/careers
+              - generic [ref=e976]: Jobs
+            - link "Help" [ref=e978] [cursor=pointer]:
+              - /url: https://help.instagram.com/
+              - generic [ref=e979]: Help
+            - link "API" [ref=e981] [cursor=pointer]:
+              - /url: https://developers.facebook.com/docs/instagram
+              - generic [ref=e982]: API
+            - link "Privacy" [ref=e984] [cursor=pointer]:
+              - /url: /legal/privacy/
+              - generic [ref=e985]: Privacy
+            - link "Terms" [ref=e987] [cursor=pointer]:
+              - /url: /legal/terms/
+              - generic [ref=e988]: Terms
+            - link "Locations" [ref=e990] [cursor=pointer]:
+              - /url: /explore/locations/
+              - generic [ref=e991]: Locations
+            - link "Popular" [ref=e993] [cursor=pointer]:
+              - /url: /popular/
+              - generic [ref=e994]: Popular
+            - link "Instagram Lite" [ref=e996] [cursor=pointer]:
+              - /url: /web/lite/
+              - generic [ref=e997]: Instagram Lite
+            - link "Meta AI" [ref=e999] [cursor=pointer]:
+              - /url: https://www.meta.ai/?utm_source=foa_web_footer
+              - generic [ref=e1000]: Meta AI
+            - link "Threads" [ref=e1002] [cursor=pointer]:
+              - /url: https://www.threads.com/
+              - generic [ref=e1003]: Threads
+            - link "Contact Uploading & Non-Users" [ref=e1005] [cursor=pointer]:
+              - /url: https://www.facebook.com/help/instagram/261704639352628
+              - generic [ref=e1006]: Contact Uploading & Non-Users
+            - link "Meta Verified" [ref=e1008] [cursor=pointer]:
+              - /url: /accounts/meta_verified/?entrypoint=web_footer
+              - generic [ref=e1009]: Meta Verified
+          - generic [ref=e1010]:
+            - generic [ref=e1011] [cursor=pointer]:
+              - generic [ref=e1012]:
+                - generic [ref=e1013]: English
+                - img "Down chevron icon" [ref=e1016]
+              - combobox "Switch Display Language" [ref=e1018]:
+                - option "Afrikaans"
+                - option "العربية"
+                - option "Čeština"
+                - option "Dansk"
+                - option "Deutsch"
+                - option "Ελληνικά"
+                - option "English" [selected]
+                - option "English (UK)"
+                - option "Español (España)"
+                - option "Español"
+                - option "فارسی"
+                - option "Suomi"
+                - option "Français"
+                - option "עברית"
+                - option "Bahasa Indonesia"
+                - option "Italiano"
+                - option "日本語"
+                - option "한국어"
+                - option "Bahasa Melayu"
+                - option "Norsk"
+                - option "Nederlands"
+                - option "Polski"
+                - option "Português (Brasil)"
+                - option "Português (Portugal)"
+                - option "Русский"
+                - option "Svenska"
+                - option "ภาษาไทย"
+                - option "Filipino"
+                - option "Türkçe"
+                - option "中文(简体)"
+                - option "中文(台灣)"
+                - option "বাংলা"
+                - option "ગુજરાતી"
+                - option "हिन्दी"
+                - option "Hrvatski"
+                - option "Magyar"
+                - option "ಕನ್ನಡ"
+                - option "മലയാളം"
+                - option "मराठी"
+                - option "नेपाली"
+                - option "ਪੰਜਾਬੀ"
+                - option "සිංහල"
+                - option "Slovenčina"
+                - option "தமிழ்"
+                - option "తెలుగు"
+                - option "اردو"
+                - option "Tiếng Việt"
+                - option "中文(香港)"
+                - option "Български"
+                - option "Français (Canada)"
+                - option "Română"
+                - option "Српски"
+                - option "Українська"
+            - generic [ref=e1020]: © 2026 Instagram from Meta
+  - button "Messages - 9 new notifications" [ref=e1022] [cursor=pointer]:
+    - generic "Messages - 9 new notifications" [ref=e1023]:
+      - generic [ref=e1024]:
+        - generic [ref=e1026]:
+          - img "Messages" [ref=e1027]
+          - generic "Direct messaging - 9 new notifications link" [ref=e1030]:
+            - generic [ref=e1032]: 9+
+        - generic [ref=e1033]: Messages
+      - generic [ref=e1034]:
+        - button "9 unread chats" [ref=e1035]:
+          - img "9 unread chats" [ref=e1037]
+        - button "User avatar Kerem Kalender, Ali Yanar, Ersin Akkaya, Bugra musaoglu, Kurtuluş İzgü, Oleg Se, Yaşar Üregen, others" [ref=e1042]:
+          - img "User avatar" [ref=e1045]
+        - button "User avatar Laurentiu Avram ♠️" [ref=e1047]:
+          - img "User avatar" [ref=e1050]
+        - button "User avatar Player's Poker Cluj" [ref=e1052]:
+          - img "User avatar" [ref=e1055]

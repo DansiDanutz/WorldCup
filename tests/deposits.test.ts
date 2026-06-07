@@ -5,6 +5,7 @@ import {
   getDepositClaimLimitConfig,
   getDepositClaimLimitViolation,
   getConfiguredMainDepositAddresses,
+  formatMaskedWalletAddress,
   normalizeDepositAddress,
   getDepositExplorerAddressUrl,
   getDepositExplorerTxUrl,
@@ -30,6 +31,14 @@ describe("deposit helpers", () => {
     assert.equal(normalizeNetwork("ethereum"), "erc20");
     assert.equal(normalizeNetwork("eth"), "erc20");
     assert.equal(normalizeNetwork("solana"), null);
+  });
+
+  it("masks saved sender wallets to the first and last four characters", () => {
+    assert.equal(
+      formatMaskedWalletAddress("0xb72b81cae7d1996114ae21b13b245e686b692ea5"),
+      "0xb7...2ea5",
+    );
+    assert.equal(formatMaskedWalletAddress("T123456789ABCDEFGHJKLMNPQRSTUVWX"), "T123...UVWX");
   });
 
   it("parses positive USDT amounts to 8 decimals", () => {

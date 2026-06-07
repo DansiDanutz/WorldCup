@@ -1,0 +1,720 @@
+{
+  "generatedAt": "2026-06-07T17:46:16.753Z",
+  "windowEnd": "2026-06-08T05:46:16.753Z",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "summary": {
+    "overdueMinutes": 60,
+    "overdueCount": 36,
+    "dueNowCount": 1,
+    "dueCount": 37,
+    "upcomingCount": 12,
+    "readyOutboxCount": 29,
+    "loggedProofCount": 49,
+    "proofedActiveCount": 6,
+    "proofedDueCount": 6,
+    "unloggedDueCount": 37,
+    "workerCount": 4
+  },
+  "owners": [
+    {
+      "owner": "Dexter",
+      "lane": "Football hooks and short feed posts",
+      "overdueCount": 9,
+      "dueNowCount": 0,
+      "dueCount": 9,
+      "upcomingCount": 3,
+      "readyCount": 8,
+      "next": {
+        "scheduledAt": "2026-06-06T05:00:00.000Z",
+        "scheduledLabel": "2026-06-06 08:00 +0300",
+        "owner": "Dexter",
+        "channel": "Football groups",
+        "mode": "approval first",
+        "action": "Ask approved group admin for permission; post group variant only if allowed",
+        "asset": "campaign/first-wave-posts.md",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+        "status": "queued"
+      },
+      "overdue": [
+        {
+          "scheduledAt": "2026-06-06T05:00:00.000Z",
+          "scheduledLabel": "2026-06-06 08:00 +0300",
+          "owner": "Dexter",
+          "channel": "Football groups",
+          "mode": "approval first",
+          "action": "Ask approved group admin for permission; post group variant only if allowed",
+          "asset": "campaign/first-wave-posts.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T10:00:00.000Z",
+          "scheduledLabel": "2026-06-06 13:00 +0300",
+          "owner": "Dexter",
+          "channel": "Facebook profile/page",
+          "mode": "manual post",
+          "action": "Publish simple rules feed post for friends and football contacts",
+          "asset": "media/worldcup26-referral-square.jpg",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-profile-page&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h9",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T18:00:00.000Z",
+          "scheduledLabel": "2026-06-06 21:00 +0300",
+          "owner": "Dexter",
+          "channel": "Creator outreach",
+          "mode": "manual outreach",
+          "action": "Send partner DM to football micro-creators",
+          "asset": "campaign/first-wave-posts.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h17",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T22:00:00.000Z",
+          "scheduledLabel": "2026-06-07 01:00 +0300",
+          "owner": "Dexter",
+          "channel": "X / short feed",
+          "mode": "manual post",
+          "action": "Post one-month free-preview then paid-leaderboard hook",
+          "asset": "media/worldcup26-referral-16x9.jpg",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h21",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-07T01:00:00.000Z",
+          "scheduledLabel": "2026-06-07 04:00 +0300",
+          "owner": "Dexter",
+          "channel": "Feed post",
+          "mode": "manual post",
+          "action": "Social proof post: ask what 3 teams friends picked",
+          "asset": "media/worldcup26-referral-16x9.jpg",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=feed-post&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h24",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-07T05:00:00.000Z",
+          "scheduledLabel": "2026-06-07 08:00 +0300",
+          "owner": "Dexter",
+          "channel": "Football groups",
+          "mode": "approval first",
+          "action": "Ask group admin for approved reminder slot",
+          "asset": "campaign/first-wave-posts.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h28",
+          "status": "queued"
+        }
+      ],
+      "dueNow": [],
+      "upcoming": [
+        {
+          "scheduledAt": "2026-06-07T18:00:00.000Z",
+          "scheduledLabel": "2026-06-07 21:00 +0300",
+          "owner": "Dexter",
+          "channel": "Discord/community",
+          "mode": "approval first",
+          "action": "Ask moderator first; post only in promo-friendly channel",
+          "asset": "campaign/first-wave-posts.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=discord-community&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h41",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-07T23:00:00.000Z",
+          "scheduledLabel": "2026-06-08 02:00 +0300",
+          "owner": "Dexter",
+          "channel": "X / short feed",
+          "mode": "manual post",
+          "action": "Post direct CTA with ask to quote reply three teams",
+          "asset": "media/worldcup26-referral-16x9.jpg",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h46",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-08T01:00:00.000Z",
+          "scheduledLabel": "2026-06-08 04:00 +0300",
+          "owner": "Dexter",
+          "channel": "Feed post",
+          "mode": "manual post",
+          "action": "Direct CTA: Join with code 26BC4B90CB",
+          "asset": "media/worldcup26-referral-square.jpg",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=feed-post&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h48",
+          "status": "queued"
+        }
+      ]
+    },
+    {
+      "owner": "Sienna",
+      "lane": "Visual captions, stories, reels, and community posts",
+      "overdueCount": 14,
+      "dueNowCount": 1,
+      "dueCount": 15,
+      "upcomingCount": 4,
+      "readyCount": 8,
+      "next": {
+        "scheduledAt": "2026-06-06T01:00:00.000Z",
+        "scheduledLabel": "2026-06-06 04:00 +0300",
+        "owner": "Sienna",
+        "channel": "WhatsApp Status",
+        "mode": "manual post",
+        "action": "Post story asset with video caption 1",
+        "asset": "media/worldcup26-main-video.mp4",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
+        "status": "queued"
+      },
+      "overdue": [
+        {
+          "scheduledAt": "2026-06-06T01:00:00.000Z",
+          "scheduledLabel": "2026-06-06 04:00 +0300",
+          "owner": "Sienna",
+          "channel": "WhatsApp Status",
+          "mode": "manual post",
+          "action": "Post story asset with video caption 1",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T04:00:00.000Z",
+          "scheduledLabel": "2026-06-06 07:00 +0300",
+          "owner": "Sienna",
+          "channel": "Instagram/Facebook story",
+          "mode": "manual post",
+          "action": "Story: Code 26BC4B90CB + link sticker",
+          "asset": "media/worldcup26-referral-story.jpg",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h3",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T06:00:00.000Z",
+          "scheduledLabel": "2026-06-06 09:00 +0300",
+          "owner": "Sienna",
+          "channel": "TikTok/Reels/Shorts",
+          "mode": "manual post",
+          "action": "Upload main video with short caption and code in first line",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h5",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T09:00:00.000Z",
+          "scheduledLabel": "2026-06-06 12:00 +0300",
+          "owner": "Sienna",
+          "channel": "YouTube Shorts",
+          "mode": "manual post",
+          "action": "Post main video as Shorts with code and link in description",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h8",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T12:00:00.000Z",
+          "scheduledLabel": "2026-06-06 15:00 +0300",
+          "owner": "Sienna",
+          "channel": "Instagram Story",
+          "mode": "manual post",
+          "action": "Post referral story image with link sticker and code overlay",
+          "asset": "media/worldcup26-referral-story.jpg",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h11",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T16:00:00.000Z",
+          "scheduledLabel": "2026-06-06 19:00 +0300",
+          "owner": "Sienna",
+          "channel": "Facebook Reels",
+          "mode": "manual post",
+          "action": "Upload main video as Reel with code in caption",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-reels&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h15",
+          "status": "queued"
+        }
+      ],
+      "dueNow": [
+        {
+          "scheduledAt": "2026-06-07T17:00:00.000Z",
+          "scheduledLabel": "2026-06-07 20:00 +0300",
+          "owner": "Sienna",
+          "channel": "Video repost",
+          "mode": "manual post",
+          "action": "Repost video with new caption and first comment link/code",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=video-repost&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h40",
+          "status": "queued"
+        }
+      ],
+      "upcoming": [
+        {
+          "scheduledAt": "2026-06-07T22:00:00.000Z",
+          "scheduledLabel": "2026-06-08 01:00 +0300",
+          "owner": "Sienna",
+          "channel": "WhatsApp Status",
+          "mode": "manual post",
+          "action": "Status: friends football group angle",
+          "asset": "media/worldcup26-referral-story.jpg",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h45",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-08T00:00:00.000Z",
+          "scheduledLabel": "2026-06-08 03:00 +0300",
+          "owner": "Sienna",
+          "channel": "TikTok/Reels/Shorts",
+          "mode": "manual post",
+          "action": "Post video with football-friends caption",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h47",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-08T03:00:00.000Z",
+          "scheduledLabel": "2026-06-08 06:00 +0300",
+          "owner": "Sienna",
+          "channel": "Instagram/Facebook story",
+          "mode": "manual post",
+          "action": "Story poll: favorites or underdogs + link sticker",
+          "asset": "media/worldcup26-referral-story.jpg",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h50",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-08T05:00:00.000Z",
+          "scheduledLabel": "2026-06-08 08:00 +0300",
+          "owner": "Sienna",
+          "channel": "Story/status",
+          "mode": "manual post",
+          "action": "All teams still available / pick before locks, verify before posting",
+          "asset": "media/worldcup26-referral-story.jpg",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=story-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h52",
+          "status": "queued"
+        }
+      ]
+    },
+    {
+      "owner": "Memo",
+      "lane": "Ops tracker and campaign log",
+      "overdueCount": 3,
+      "dueNowCount": 0,
+      "dueCount": 3,
+      "upcomingCount": 2,
+      "readyCount": 5,
+      "next": {
+        "scheduledAt": "2026-06-06T21:00:00.000Z",
+        "scheduledLabel": "2026-06-07 00:00 +0300",
+        "owner": "Memo",
+        "channel": "Ops check",
+        "mode": "internal",
+        "action": "Summarize Day 1: posts, replies, joins observed, next 5 actions",
+        "asset": "campaign/posting-log-template.csv",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h20",
+        "status": "queued"
+      },
+      "overdue": [
+        {
+          "scheduledAt": "2026-06-06T21:00:00.000Z",
+          "scheduledLabel": "2026-06-07 00:00 +0300",
+          "owner": "Memo",
+          "channel": "Ops check",
+          "mode": "internal",
+          "action": "Summarize Day 1: posts, replies, joins observed, next 5 actions",
+          "asset": "campaign/posting-log-template.csv",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h20",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-07T06:00:00.000Z",
+          "scheduledLabel": "2026-06-07 09:00 +0300",
+          "owner": "Memo",
+          "channel": "Ops check",
+          "mode": "internal",
+          "action": "Audit completed posts and add missing links to log",
+          "asset": "campaign/posting-log-template.csv",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h29",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-07T13:00:00.000Z",
+          "scheduledLabel": "2026-06-07 16:00 +0300",
+          "owner": "Memo",
+          "channel": "Ops check",
+          "mode": "internal",
+          "action": "Update channel performance and pending replies",
+          "asset": "campaign/posting-log-template.csv",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h36",
+          "status": "queued"
+        }
+      ],
+      "dueNow": [],
+      "upcoming": [
+        {
+          "scheduledAt": "2026-06-07T20:00:00.000Z",
+          "scheduledLabel": "2026-06-07 23:00 +0300",
+          "owner": "Memo",
+          "channel": "Ops check",
+          "mode": "internal",
+          "action": "List channels with permission granted and blocked channels to avoid",
+          "asset": "campaign/partner-targets-template.csv",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h43",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-08T04:00:00.000Z",
+          "scheduledLabel": "2026-06-08 07:00 +0300",
+          "owner": "Memo",
+          "channel": "Ops check",
+          "mode": "internal",
+          "action": "Check if any copy claims a fixed prize; remove fixed amount before posting",
+          "asset": "campaign/copy-bank.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h51",
+          "status": "queued"
+        }
+      ]
+    },
+    {
+      "owner": "Nano",
+      "lane": "Replies, DMs, objections, and micro-posts",
+      "overdueCount": 10,
+      "dueNowCount": 0,
+      "dueCount": 10,
+      "upcomingCount": 3,
+      "readyCount": 8,
+      "next": {
+        "scheduledAt": "2026-06-06T03:00:00.000Z",
+        "scheduledLabel": "2026-06-06 06:00 +0300",
+        "owner": "Nano",
+        "channel": "WhatsApp personal",
+        "mode": "manual outreach",
+        "action": "Send personal invite to warm contacts",
+        "asset": "media/worldcup26-main-video.mp4",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2",
+        "status": "queued"
+      },
+      "overdue": [
+        {
+          "scheduledAt": "2026-06-06T03:00:00.000Z",
+          "scheduledLabel": "2026-06-06 06:00 +0300",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "mode": "manual outreach",
+          "action": "Send personal invite to warm contacts",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T08:00:00.000Z",
+          "scheduledLabel": "2026-06-06 11:00 +0300",
+          "owner": "Nano",
+          "channel": "DM follow-up",
+          "mode": "manual replies",
+          "action": "Reply to first reactions and send the simple how-it-works answer",
+          "asset": "campaign/copy-bank.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h7",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T11:00:00.000Z",
+          "scheduledLabel": "2026-06-06 14:00 +0300",
+          "owner": "Nano",
+          "channel": "Replies",
+          "mode": "manual replies",
+          "action": "Answer questions using reply bank; push code/link once per conversation",
+          "asset": "campaign/copy-bank.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h10",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T14:00:00.000Z",
+          "scheduledLabel": "2026-06-06 17:00 +0300",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "mode": "manual outreach",
+          "action": "Send second warm-contact batch with main invite",
+          "asset": "media/worldcup26-main-video.mp4",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h13",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T19:00:00.000Z",
+          "scheduledLabel": "2026-06-06 22:00 +0300",
+          "owner": "Nano",
+          "channel": "Direct DMs",
+          "mode": "manual outreach",
+          "action": "Send one-to-one invite to people who reacted to stories",
+          "asset": "campaign/copy-bank.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=direct-dms&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h18",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-06T23:00:00.000Z",
+          "scheduledLabel": "2026-06-07 02:00 +0300",
+          "owner": "Nano",
+          "channel": "Community replies",
+          "mode": "manual replies",
+          "action": "Answer how many teams and why code matters",
+          "asset": "campaign/copy-bank.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h22",
+          "status": "queued"
+        }
+      ],
+      "dueNow": [],
+      "upcoming": [
+        {
+          "scheduledAt": "2026-06-07T19:00:00.000Z",
+          "scheduledLabel": "2026-06-07 22:00 +0300",
+          "owner": "Nano",
+          "channel": "Replies",
+          "mode": "manual replies",
+          "action": "Reply bank sweep across all open conversations",
+          "asset": "campaign/copy-bank.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h42",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-07T21:00:00.000Z",
+          "scheduledLabel": "2026-06-08 00:00 +0300",
+          "owner": "Nano",
+          "channel": "Community replies",
+          "mode": "manual replies",
+          "action": "Reply to objections: how it works, code, 3 picks",
+          "asset": "campaign/copy-bank.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h44",
+          "status": "queued"
+        },
+        {
+          "scheduledAt": "2026-06-08T02:00:00.000Z",
+          "scheduledLabel": "2026-06-08 05:00 +0300",
+          "owner": "Nano",
+          "channel": "DM follow-up",
+          "mode": "manual outreach",
+          "action": "Follow up once with people who opened but did not answer",
+          "asset": "campaign/copy-bank.md",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h49",
+          "status": "queued"
+        }
+      ]
+    }
+  ],
+  "nextActions": [
+    {
+      "scheduledAt": "2026-06-06T01:00:00.000Z",
+      "scheduledLabel": "2026-06-06 04:00 +0300",
+      "owner": "Sienna",
+      "channel": "WhatsApp Status",
+      "mode": "manual post",
+      "action": "Post story asset with video caption 1",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T03:00:00.000Z",
+      "scheduledLabel": "2026-06-06 06:00 +0300",
+      "owner": "Nano",
+      "channel": "WhatsApp personal",
+      "mode": "manual outreach",
+      "action": "Send personal invite to warm contacts",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T05:00:00.000Z",
+      "scheduledLabel": "2026-06-06 08:00 +0300",
+      "owner": "Dexter",
+      "channel": "Football groups",
+      "mode": "approval first",
+      "action": "Ask approved group admin for permission; post group variant only if allowed",
+      "asset": "campaign/first-wave-posts.md",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T21:00:00.000Z",
+      "scheduledLabel": "2026-06-07 00:00 +0300",
+      "owner": "Memo",
+      "channel": "Ops check",
+      "mode": "internal",
+      "action": "Summarize Day 1: posts, replies, joins observed, next 5 actions",
+      "asset": "campaign/posting-log-template.csv",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h20",
+      "status": "queued"
+    }
+  ],
+  "urgentActions": [
+    {
+      "scheduledAt": "2026-06-06T01:00:00.000Z",
+      "scheduledLabel": "2026-06-06 04:00 +0300",
+      "owner": "Sienna",
+      "channel": "WhatsApp Status",
+      "mode": "manual post",
+      "action": "Post story asset with video caption 1",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T03:00:00.000Z",
+      "scheduledLabel": "2026-06-06 06:00 +0300",
+      "owner": "Nano",
+      "channel": "WhatsApp personal",
+      "mode": "manual outreach",
+      "action": "Send personal invite to warm contacts",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T04:00:00.000Z",
+      "scheduledLabel": "2026-06-06 07:00 +0300",
+      "owner": "Sienna",
+      "channel": "Instagram/Facebook story",
+      "mode": "manual post",
+      "action": "Story: Code 26BC4B90CB + link sticker",
+      "asset": "media/worldcup26-referral-story.jpg",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h3",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T05:00:00.000Z",
+      "scheduledLabel": "2026-06-06 08:00 +0300",
+      "owner": "Dexter",
+      "channel": "Football groups",
+      "mode": "approval first",
+      "action": "Ask approved group admin for permission; post group variant only if allowed",
+      "asset": "campaign/first-wave-posts.md",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T06:00:00.000Z",
+      "scheduledLabel": "2026-06-06 09:00 +0300",
+      "owner": "Sienna",
+      "channel": "TikTok/Reels/Shorts",
+      "mode": "manual post",
+      "action": "Upload main video with short caption and code in first line",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h5",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T08:00:00.000Z",
+      "scheduledLabel": "2026-06-06 11:00 +0300",
+      "owner": "Nano",
+      "channel": "DM follow-up",
+      "mode": "manual replies",
+      "action": "Reply to first reactions and send the simple how-it-works answer",
+      "asset": "campaign/copy-bank.md",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h7",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T09:00:00.000Z",
+      "scheduledLabel": "2026-06-06 12:00 +0300",
+      "owner": "Sienna",
+      "channel": "YouTube Shorts",
+      "mode": "manual post",
+      "action": "Post main video as Shorts with code and link in description",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h8",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T10:00:00.000Z",
+      "scheduledLabel": "2026-06-06 13:00 +0300",
+      "owner": "Dexter",
+      "channel": "Facebook profile/page",
+      "mode": "manual post",
+      "action": "Publish simple rules feed post for friends and football contacts",
+      "asset": "media/worldcup26-referral-square.jpg",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-profile-page&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h9",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T11:00:00.000Z",
+      "scheduledLabel": "2026-06-06 14:00 +0300",
+      "owner": "Nano",
+      "channel": "Replies",
+      "mode": "manual replies",
+      "action": "Answer questions using reply bank; push code/link once per conversation",
+      "asset": "campaign/copy-bank.md",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h10",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T12:00:00.000Z",
+      "scheduledLabel": "2026-06-06 15:00 +0300",
+      "owner": "Sienna",
+      "channel": "Instagram Story",
+      "mode": "manual post",
+      "action": "Post referral story image with link sticker and code overlay",
+      "asset": "media/worldcup26-referral-story.jpg",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h11",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T14:00:00.000Z",
+      "scheduledLabel": "2026-06-06 17:00 +0300",
+      "owner": "Nano",
+      "channel": "WhatsApp personal",
+      "mode": "manual outreach",
+      "action": "Send second warm-contact batch with main invite",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h13",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T16:00:00.000Z",
+      "scheduledLabel": "2026-06-06 19:00 +0300",
+      "owner": "Sienna",
+      "channel": "Facebook Reels",
+      "mode": "manual post",
+      "action": "Upload main video as Reel with code in caption",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-reels&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h15",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T17:00:00.000Z",
+      "scheduledLabel": "2026-06-06 20:00 +0300",
+      "owner": "Sienna",
+      "channel": "WhatsApp/Telegram groups",
+      "mode": "approval first",
+      "action": "Community post variant if promo welcome",
+      "asset": "media/worldcup26-referral-story.jpg",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-telegram-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h16",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T18:00:00.000Z",
+      "scheduledLabel": "2026-06-06 21:00 +0300",
+      "owner": "Dexter",
+      "channel": "Creator outreach",
+      "mode": "manual outreach",
+      "action": "Send partner DM to football micro-creators",
+      "asset": "campaign/first-wave-posts.md",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h17",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T19:00:00.000Z",
+      "scheduledLabel": "2026-06-06 22:00 +0300",
+      "owner": "Nano",
+      "channel": "Direct DMs",
+      "mode": "manual outreach",
+      "action": "Send one-to-one invite to people who reacted to stories",
+      "asset": "campaign/copy-bank.md",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=direct-dms&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h18",
+      "status": "queued"
+    },
+    {
+      "scheduledAt": "2026-06-06T20:00:00.000Z",
+      "scheduledLabel": "2026-06-06 23:00 +0300",
+      "owner": "Sienna",
+      "channel": "TikTok/Reels/Shorts",
+      "mode": "manual post",
+      "action": "Repost video with favorites-or-underdogs caption",
+      "asset": "media/worldcup26-main-video.mp4",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h19",
+      "status": "queued"
+    }
+  ]
+}
