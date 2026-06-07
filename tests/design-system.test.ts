@@ -277,7 +277,7 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /className="nav-item nav-item--primary" href=\{showPickWorkflow \? "#pick" : "#me"\}/);
     assert.match(dashboard, /showPickWorkflow \? "Pick Teams" : "Account"/);
     assert.match(dashboard, /showPickWorkflow \? "Main task" : "Your entry"/);
-    assert.match(dashboard, /href="#leaderboard"[\s\S]*?Leaderboard[\s\S]*?Ranking[\s\S]*?pathname: "\/wallet"[\s\S]*?Wallet[\s\S]*?Tickets & USDT[\s\S]*?nav-item--admin[\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?Manage[\s\S]*?<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw/);
+    assert.match(dashboard, /href="#leaderboard"[\s\S]*?Leaderboard[\s\S]*?Ranking[\s\S]*?pathname: "\/wallet"[\s\S]*?Wallet[\s\S]*?My account[\s\S]*?nav-item--admin[\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?Manage[\s\S]*?<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw/);
     assert.match(dashboard, /<details className="nav-more">[\s\S]*?Explore[\s\S]*?Rules & draw[\s\S]*?href="#rules"[\s\S]*?pathname: "\/schema"/);
     assert.match(dashboard, /\{showAdminNav \? \([\s\S]*?pathname: "\/admin"[\s\S]*?Admin[\s\S]*?\) : null\}/);
     assert.match(dashboard, /<details className="nav-more">[\s\S]*?<\/details>[\s\S]*?\{signedInWithGoogle && showPickWorkflow \? \([\s\S]*?className="nav-item nav-item--identity" href="#me"[\s\S]*?Account[\s\S]*?\) : !signedInWithGoogle \? \([\s\S]*?className="nav-item nav-item--identity"[\s\S]*?pathname: "\/login"[\s\S]*?Login[\s\S]*?\) : null\}/);
@@ -321,7 +321,7 @@ describe("WorldCup design system integration", () => {
     assert.doesNotMatch(heroCard, /className="hero-edition"/);
     assert.doesNotMatch(heroCard, /Predict the Game/);
     assert.match(heroCard, /Pick 3 Teams/);
-    assert.match(heroCard, /Top 10 Rewarded/);
+    assert.match(heroCard, /Free to Play/);
   });
 
   it("keeps the first poster installable as a PWA without hiding Play now", () => {

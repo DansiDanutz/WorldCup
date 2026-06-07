@@ -36,12 +36,7 @@ jobs:
         run: npm run lint
 
       - name: Test
-        run: |
-          npm test || {
-            echo "=== FAILING TESTS (diagnostic) ===";
-            npm test 2>&1 | grep -nE "not ok|✖|# (tests|pass|fail)" || true;
-            exit 1;
-          }
+        run: npm test
 
       - name: Build
         run: npm run build
