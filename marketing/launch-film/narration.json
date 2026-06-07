@@ -1,0 +1,29 @@
+{
+  "comment": "Brian voiceover for the 3-minute WorldCup26 App Launch Film. Lines are placed at scene/caption timestamps; mux.mjs time-fits each line into its slot so the VO tracks the on-screen captions. Scenes: S1 0-26 intro, S2 26-48 onboarding/referral, S3 48-82 pick entry, S4 82-116 scoring/multipliers, S5 116-146 leaderboard/prize, S6 146-168 referrals/earnings, S7 168-180 outro.",
+  "voice": "Brian",
+  "lines": [
+    { "at": 1.5,   "text": "Every four years, the whole world stops for one tournament." },
+    { "at": 8.0,   "text": "Forty-eight nations, one unforgettable month of football." },
+    { "at": 14.5,  "text": "And now, a brand-new way to play along — from the very first whistle." },
+    { "at": 26.8,  "text": "Getting in takes just two taps." },
+    { "at": 32.8,  "text": "Join with a friend's code, and your referral is already set." },
+    { "at": 39.8,  "text": "Continue with Google, and you're in." },
+    { "at": 48.8,  "text": "Here's the heart of it — pick any three of the forty-eight nations." },
+    { "at": 55.6,  "text": "Play it safe for steady points, or chase the bigger upside." },
+    { "at": 64.4,  "text": "Balance your three: the favorites, the dark horses, the bold call." },
+    { "at": 73.6,  "text": "Then lock your entry before kickoff." },
+    { "at": 82.8,  "text": "From here, your teams score for you after every match they play." },
+    { "at": 91.5,  "text": "And the underdogs? They pay big." },
+    { "at": 98.0,  "text": "The deeper a team runs, the more every single goal is worth." },
+    { "at": 106.5, "text": "Every result rewrites the board — and your points climb in real time." },
+    { "at": 116.8, "text": "With forty-eight thousand dollars on the line for the top ten," },
+    { "at": 123.4, "text": "you watch your teams rise, match after match." },
+    { "at": 131.4, "text": "Climbing into the money." },
+    { "at": 139.2, "text": "And right to the final whistle, anyone can still win." },
+    { "at": 146.8, "text": "Invite your friends with a tap, and your chain begins." },
+    { "at": 154.0, "text": "Three percent from your direct invites, five percent down the chain." },
+    { "at": 161.0, "text": "Build your community, and earn every time they win." },
+    { "at": 168.5, "text": "Forty-eight teams. One month. Every match, yours to play." },
+    { "at": 174.5, "text": "WorldCup twenty-six. Climb — at WorldCup twenty-six dot world." }
+  ]
+}

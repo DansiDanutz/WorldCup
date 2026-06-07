@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WorldCup26 — App Launch Film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #06170f; overflow: hidden; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+  img { -webkit-user-drag: none; user-select: none; }
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+    <rect width="120" height="120" rx="20" fill="#0a3328"/>
+    <rect x="34" y="30" width="52" height="52" rx="12" fill="#106b4f"/>
+    <g transform="translate(46 42) scale(1.7)" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/>
+      <path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/>
+      <path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/>
+      <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/>
+    </g>
+    <text x="60" y="104" font-family="Inter,sans-serif" font-size="15" font-weight="800" fill="#c9942e" text-anchor="middle">WC26</text>
+  </svg>
+</template>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="worldcup-data.js"></script>
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="shared.jsx"></script>
+<script type="text/babel" src="scene1.jsx"></script>
+<script type="text/babel" src="scene2.jsx"></script>
+<script type="text/babel" src="scene3.jsx"></script>
+<script type="text/babel" src="scene4.jsx"></script>
+<script type="text/babel" src="scene5.jsx"></script>
+<script type="text/babel" src="scene6.jsx"></script>
+<script type="text/babel" src="scene7.jsx"></script>
+
+<script type="text/babel">
+  const { Stage, Sprite, Timecode, useTimeline } = window;
+  const { Scene1, Scene2, Scene3, Scene4, Scene5, Scene6, Scene7 } = window;
+
+  function DevSeek() {
+    const { setTime, setPlaying } = useTimeline();
+    React.useEffect(() => {
+      window.__seek = (t) => { setPlaying(false); setTime(t); };
+      window.__play = () => setPlaying(true);
+    }, [setTime, setPlaying]);
+    return null;
+  }
+
+  function Film() {
+    return (
+      <div data-video-root data-screen-label="0:00" style={{ position: 'absolute', inset: 0 }}>
+        <Timecode />
+        <DevSeek />
+        <Sprite start={0}   end={26}><Scene1 /></Sprite>
+        <Sprite start={26}  end={48}><Scene2 /></Sprite>
+        <Sprite start={48}  end={82}><Scene3 /></Sprite>
+        <Sprite start={82}  end={116}><Scene4 /></Sprite>
+        <Sprite start={116} end={146}><Scene5 /></Sprite>
+        <Sprite start={146} end={168}><Scene6 /></Sprite>
+        <Sprite start={168} end={180}><Scene7 /></Sprite>
+      </div>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <Stage width={1920} height={1080} duration={180} background="#06170f" persistKey="wc26film">
+      <Film />
+    </Stage>
+  );
+</script>
+</body>
+</html>

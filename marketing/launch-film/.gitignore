@@ -1,0 +1,13 @@
+# Generated render artifacts and local pipeline copies — never commit these.
+node_modules
+frames/
+audio/
+smoke/
+*.mp4
+filter.txt
+# Local copies of the shared pipeline (canonical versions live in ../worldcup26-ad).
+render.mjs
+mux.mjs
+gen_audio.mjs
+film.html
+.thumbnail
