@@ -908,13 +908,13 @@ export function Dashboard({
             2026
           </span>
         </Link>
-        <div className="prize-pool" aria-label="Prize pool">
-          <CircleDollarSign size={18} />
+        <div className="prize-pool" aria-label="Players">
+          <Users size={18} />
           <div>
-            <span>Prize Pool</span>
-            <strong>{netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}</strong>
+            <span>Players</span>
+            <strong>{participantCount > 0 ? participantCount : "—"}</strong>
           </div>
-          <small>{paidPlaces > 0 ? `Top ${paidPlaces} paid` : "Paid places TBA"}</small>
+          <small>Free to play</small>
         </div>
         <SmartMenu>
           <nav className="nav nav--app" aria-label="Primary navigation">
@@ -936,7 +936,7 @@ export function Dashboard({
               <Wallet size={16} />
               <span className="nav-item__copy">
                 <strong>Wallet</strong>
-                <small>Tickets & USDT</small>
+                <small>My account</small>
               </span>
             </Link>
             {showAdminNav ? (
