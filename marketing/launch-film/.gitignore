@@ -6,6 +6,7 @@ smoke/
 *.mp4
 *.wav
 filter.txt
+thumbnail.png
 # Local copies of the shared pipeline (canonical versions live in ../worldcup26-ad).
 render.mjs
 mux.mjs
