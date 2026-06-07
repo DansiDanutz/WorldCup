@@ -188,8 +188,8 @@ function HowToPoster() {
               <Ticket size={20} aria-hidden="true" />
             </span>
             <span className="hero-feature__body">
-              <strong>1 · Buy-in 50 USD</strong>
-              <small>Unlocks one entry ticket.</small>
+              <strong>1 · Sign up free</strong>
+              <small>One tap with Google. No payment needed.</small>
             </span>
           </div>
 
@@ -199,7 +199,7 @@ function HowToPoster() {
             </span>
             <span className="hero-feature__body">
               <strong>2 · Pick 3 teams</strong>
-              <small>Lock your entry before kickoff.</small>
+              <small>Choose before kickoff on June 11.</small>
             </span>
           </div>
 
@@ -223,25 +223,25 @@ function HowToPoster() {
   );
 }
 
-// Photo poster: the payoff.
+// Photo poster: the leaderboard.
 function PrizePoster() {
   return (
-    <section className="hero-card hero-card--prize" aria-label="Prize pool">
+    <section className="hero-card hero-card--prize" aria-label="Leaderboard">
       <div className="hero-card__photo" aria-hidden="true" />
       <div className="hero-card__scrim" aria-hidden="true" />
       <div className="hero-card__content">
         <div className="hero-card__top">
           <span className="hero-edition">
             <span className="hero-edition__dot" aria-hidden="true" />
-            PRIZE POOL
+            LEADERBOARD
           </span>
         </div>
 
         <div className="hero-card__center hero-poster__lede">
           <strong>
-            Top 10
+            Compete
             <br />
-            share the pool.
+            worldwide.
           </strong>
         </div>
 
@@ -251,8 +251,8 @@ function PrizePoster() {
               <Crown size={20} aria-hidden="true" />
             </span>
             <span className="hero-feature__body">
-              <strong>Winner takes the crown</strong>
-              <small>The biggest slice of the pool.</small>
+              <strong>Top of the world</strong>
+              <small>Best predictions rise to the crown.</small>
             </span>
           </div>
 
@@ -261,13 +261,13 @@ function PrizePoster() {
               <Medal size={20} aria-hidden="true" />
             </span>
             <span className="hero-feature__body">
-              <strong>Top 10 all paid</strong>
-              <small>Every finisher in the top 10 earns.</small>
+              <strong>Free for everyone</strong>
+              <small>No entry fee. Pick 3 teams and play.</small>
             </span>
           </div>
 
           <a className="hero-cta" href="#leaderboard">
-            See payouts
+            See rankings
             <ArrowRight size={16} aria-hidden="true" />
           </a>
         </div>

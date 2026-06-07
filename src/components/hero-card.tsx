@@ -156,9 +156,9 @@ export function HeroCard() {
               <Award size={20} aria-hidden="true" />
             </span>
             <span className="hero-feature__body">
-              <strong>Top 10 Rewarded</strong>
+              <strong>Free to Play</strong>
               <small>
-                The <b>top 10</b> share the prize pool.
+                Pick 3 teams. Climb the <b>global leaderboard</b>.
               </small>
             </span>
           </div>
