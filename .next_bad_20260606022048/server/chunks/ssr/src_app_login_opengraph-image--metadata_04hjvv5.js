@@ -1,3 +1,0 @@
-module.exports=[42756,a=>{"use strict";a.i(7997),a.i(99475);var b=a.i(52425);let c={alt:"WorldCup26 referral invite",contentType:"image/png",runtime:"edge",size:{width:1200,height:630}};async function d(a){let{__metadata_id__:d,...e}=await a.params,f=(0,b.fillMetadataSegment)("/login",e,"opengraph-image",!1);return[function(a){let b={alt:a.alt,type:a.contentType||"image/png",url:f+"?f8d2833883918475"},{size:c}=a;return c&&(b.width=c.width,b.height=c.height),b}(c)]}a.s(["default",0,d],42756)},68321,a=>{a.n(a.i(42756))}];
-
-//# sourceMappingURL=src_app_login_opengraph-image--metadata_04hjvv5.js.map
