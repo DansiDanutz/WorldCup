@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
 import { AppLaunchSplash } from "@/components/app-launch-splash";
-import { AppViewTracker } from "@/components/app-view-tracker";
 import { CANONICAL_ORIGIN } from "@/lib/canonical-url";
 
 import "./globals.css";
@@ -22,10 +21,30 @@ export const metadata: Metadata = {
     template: "%s · WorldCup",
   },
   description:
-    "Pick 3 teams free before the FIFA World Cup 2026, track your private points preview, and use a ticket for paid leaderboard entry.",
+    "Pick 3 teams before the FIFA World Cup 2026 and climb the leaderboard as they earn points.",
   applicationName: "WorldCup",
+  keywords: [
+    "World Cup 2026",
+    "WorldCup26",
+    "football predictions",
+    "soccer prediction game",
+    "World Cup bracket",
+    "pick 3 teams",
+    "World Cup leaderboard",
+    "FIFA World Cup 2026 game",
+  ],
   alternates: {
     canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   manifest: "/manifest.webmanifest",
   appleWebApp: {
@@ -44,17 +63,53 @@ export const metadata: Metadata = {
   openGraph: {
     title: "WorldCup — Predict the Game · WorldCup26",
     description:
-      "Pick 3 teams free before the FIFA World Cup 2026, track your private points preview, and use a ticket for paid leaderboard entry.",
+      "Pick 3 teams before the FIFA World Cup 2026 and climb the leaderboard as they earn points.",
     siteName: "WorldCup",
     type: "website",
     url: siteUrl,
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "WorldCup — Predict the Game · WorldCup26",
     description:
-      "Pick 3 teams free before the FIFA World Cup 2026, track your private points preview, and use a ticket for paid leaderboard entry.",
+      "Pick 3 teams before the FIFA World Cup 2026 and climb the leaderboard as they earn points.",
   },
+};
+
+// Structured data for richer search/social results. Kept factual: a brand
+// Organization, the WebSite, and the pick-3 game as a WebApplication.
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "WorldCup",
+      url: siteUrl,
+      logo: `${siteUrl}/logo-lockup.svg`,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "WorldCup — Predict the Game · WorldCup26",
+      description:
+        "Pick 3 teams before the FIFA World Cup 2026 and climb the leaderboard as they earn points.",
+      publisher: { "@id": `${siteUrl}/#organization` },
+      inLanguage: "en",
+    },
+    {
+      "@type": "WebApplication",
+      name: "WorldCup26 — Predict the Game",
+      url: siteUrl,
+      applicationCategory: "GameApplication",
+      operatingSystem: "Web",
+      description:
+        "A team-picking leaderboard game for the FIFA World Cup 2026: choose 3 teams, earn points after every match they play, and climb the leaderboard.",
+      publisher: { "@id": `${siteUrl}/#organization` },
+    },
+  ],
 };
 
 export const viewport: Viewport = {
@@ -73,8 +128,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          // Static, build-time brand metadata — no user input is interpolated.
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <AppLaunchSplash />
-        <AppViewTracker />
         {children}
       </body>
     </html>

@@ -47,8 +47,20 @@ If it fails because `autoAssignCustomDomains` is enabled, turn it off:
 npm run vercel:domain-guard:fix
 ```
 
-After every verified deployment, explicitly bind both domains to the deployment
-that passed smoke checks:
+After every verified deployment, explicitly promote it so all production domains
+point at the reviewed build. This is the deliberate go-live step — merging to
+`main` builds a *staged* production deployment but does not move the domains
+(that is the guardrail above). Promote in one command:
+
+```bash
+npm run vercel:promote            # dry-run: shows the latest READY prod build
+npm run vercel:promote -- --confirm   # points worldcup26.world + www at it
+```
+
+`vercel:promote` calls Vercel's promote API, which repoints all production
+domains for the project at once. To promote a specific build instead of the
+latest, pass `-- --deployment <id> --confirm`. The older manual equivalent still
+works if you prefer binding domains individually:
 
 ```bash
 npx vercel alias set <latest-deployment-url> worldcup26.world
