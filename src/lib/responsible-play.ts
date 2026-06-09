@@ -96,39 +96,15 @@ export function formatResponsiblePlayStatus(
 }
 
 export function getResponsiblePlayRestriction(
-  status: ResponsiblePlayStatus,
-  action: ResponsiblePlayAction,
-  options: { requestedTickets?: number } = {},
+  _status: ResponsiblePlayStatus,
+  _action: ResponsiblePlayAction,
+  _options: { requestedTickets?: number } = {},
 ): string | null {
-  if (action === "withdrawal") {
-    return null;
-  }
-
-  if (status.selfExcluded) {
-    return status.selfExcludedUntil
-      ? `Account ticket actions are paused until ${new Date(
-          status.selfExcludedUntil,
-        ).toLocaleString()}. Deposits, ticket transfers, and entries are paused.`
-      : "Account ticket actions are paused. Deposits, ticket transfers, and entries are paused.";
-  }
-
-  if (status.maxEntries === null || action === "deposit") {
-    return null;
-  }
-
-  if (action === "ticket") {
-    const requestedTickets = options.requestedTickets ?? 1;
-    const ticketsReserved = status.ticketsReserved ?? 0;
-
-    if (ticketsReserved + requestedTickets > status.maxEntries) {
-      return `Your account entry-ticket limit is ${status.maxEntries}. Lower the ticket quantity or ask Admin to update the account limit.`;
-    }
-  }
-
-  if (action === "entry" && (status.entriesUsed ?? 0) >= status.maxEntries) {
-    return `Your account entry limit is ${status.maxEntries}.`;
-  }
-
+  // worldcup26 has no per-account play restrictions: no self-exclusion and no
+  // entry limit. Anyone can deposit and play (until the entry cutoff). This is
+  // the single enforcement choke-point used by every paid route, so always
+  // returning null leaves deposits, tickets, transfers, withdrawals, and entries
+  // unrestricted.
   return null;
 }
 
