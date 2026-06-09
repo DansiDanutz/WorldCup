@@ -1,6 +1,6 @@
 # WorldCup26 Live Campaign Monitor
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Referral code: `26BC4B90CB`
 Referral link: https://worldcup26.world/login?ref=26BC4B90CB
@@ -9,23 +9,23 @@ Referral link: https://worldcup26.world/login?ref=26BC4B90CB
 
 | Metric | Count |
 | --- | ---: |
-| Overdue actions (60+ min) | 36 |
+| Overdue actions (60+ min) | 49 |
 | Due now | 1 |
 | Upcoming in window | 12 |
-| Ready outbox rows | 29 |
+| Ready outbox rows | 31 |
 | Logged proof rows | 49 |
 | Proven active queue rows | 6 |
 | Proven due rows | 6 |
-| Due rows still needing proof | 37 |
+| Due rows still needing proof | 50 |
 
 ## Worker Board
 
 | Worker | Lane | Overdue | Due now | Upcoming | Ready | Next |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| Dexter | Football hooks and short feed posts | 9 | 0 | 3 | 8 | Football groups - Ask approved group admin for permission; post group variant only if allowed |
-| Sienna | Visual captions, stories, reels, and community posts | 14 | 1 | 4 | 8 | WhatsApp Status - Post story asset with video caption 1 |
-| Memo | Ops tracker and campaign log | 3 | 0 | 2 | 5 | Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions |
-| Nano | Replies, DMs, objections, and micro-posts | 10 | 0 | 3 | 8 | WhatsApp personal - Send personal invite to warm contacts |
+| Dexter | Football hooks and short feed posts | 12 | 1 | 3 | 8 | Football groups - Ask approved group admin for permission; post group variant only if allowed |
+| Sienna | Visual captions, stories, reels, and community posts | 19 | 0 | 3 | 8 | WhatsApp Status - Post story asset with video caption 1 |
+| Memo | Ops tracker and campaign log | 5 | 0 | 2 | 7 | Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions |
+| Nano | Replies, DMs, objections, and micro-posts | 13 | 0 | 4 | 8 | WhatsApp personal - Send personal invite to warm contacts |
 
 ## Urgent Actions
 
@@ -161,22 +161,29 @@ Overdue:
   - Asset: campaign/first-wave-posts.md
   - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h28
 
-Upcoming:
-- 2026-06-07 21:00 +0300 / Dexter / Discord/community
+Due now:
+- 2026-06-08 09:00 +0300 / Dexter / Football groups
   - Mode: approval first
-  - Action: Ask moderator first; post only in promo-friendly channel
+  - Action: Second approved admin post/reminder where allowed
   - Asset: campaign/first-wave-posts.md
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=discord-community&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h41
-- 2026-06-08 02:00 +0300 / Dexter / X / short feed
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h53
+
+Upcoming:
+- 2026-06-08 13:00 +0300 / Dexter / X / short feed
   - Mode: manual post
-  - Action: Post direct CTA with ask to quote reply three teams
-  - Asset: media/worldcup26-referral-16x9.jpg
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h46
-- 2026-06-08 04:00 +0300 / Dexter / Feed post
-  - Mode: manual post
-  - Action: Direct CTA: Join with code 26BC4B90CB
+  - Action: Post late-night simple rules recap
   - Asset: media/worldcup26-referral-square.jpg
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=feed-post&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h48
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h57
+- 2026-06-08 16:00 +0300 / Dexter / Football groups
+  - Mode: approval first
+  - Action: Approved reminder only where prior permission exists
+  - Asset: campaign/first-wave-posts.md
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h60
+- 2026-06-08 21:00 +0300 / Dexter / X / short feed
+  - Mode: manual post
+  - Action: Post final-day football challenge hook
+  - Asset: media/worldcup26-referral-16x9.jpg
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h65
 
 ### Sienna
 
@@ -212,34 +219,22 @@ Overdue:
   - Asset: media/worldcup26-main-video.mp4
   - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-reels&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h15
 
-Due now:
-- 2026-06-07 20:00 +0300 / Sienna / Video repost
-  - Mode: manual post
-  - Action: Repost video with new caption and first comment link/code
-  - Asset: media/worldcup26-main-video.mp4
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=video-repost&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h40
-
 Upcoming:
-- 2026-06-08 01:00 +0300 / Sienna / WhatsApp Status
+- 2026-06-08 11:00 +0300 / Sienna / YouTube Shorts
   - Mode: manual post
-  - Action: Status: friends football group angle
-  - Asset: media/worldcup26-referral-story.jpg
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h45
-- 2026-06-08 03:00 +0300 / Sienna / TikTok/Reels/Shorts
-  - Mode: manual post
-  - Action: Post video with football-friends caption
+  - Action: Post video with code and short description
   - Asset: media/worldcup26-main-video.mp4
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h47
-- 2026-06-08 06:00 +0300 / Sienna / Instagram/Facebook story
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h55
+- 2026-06-08 15:00 +0300 / Sienna / Facebook Reels
   - Mode: manual post
-  - Action: Story poll: favorites or underdogs + link sticker
-  - Asset: media/worldcup26-referral-story.jpg
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h50
-- 2026-06-08 08:00 +0300 / Sienna / Story/status
+  - Action: Repost main video with friends-angle caption
+  - Asset: media/worldcup26-main-video.mp4
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-reels&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h59
+- 2026-06-08 18:00 +0300 / Sienna / Instagram Story
   - Mode: manual post
-  - Action: All teams still available / pick before locks, verify before posting
+  - Action: Story: three-pick challenge + link sticker
   - Asset: media/worldcup26-referral-story.jpg
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=story-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h52
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h62
 
 ### Memo
 
@@ -259,8 +254,6 @@ Overdue:
   - Action: Update channel performance and pending replies
   - Asset: campaign/posting-log-template.csv
   - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h36
-
-Upcoming:
 - 2026-06-07 23:00 +0300 / Memo / Ops check
   - Mode: internal
   - Action: List channels with permission granted and blocked channels to avoid
@@ -271,6 +264,18 @@ Upcoming:
   - Action: Check if any copy claims a fixed prize; remove fixed amount before posting
   - Asset: campaign/copy-bank.md
   - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h51
+
+Upcoming:
+- 2026-06-08 12:00 +0300 / Memo / Ops check
+  - Mode: internal
+  - Action: Choose best two channels and double posting cadence there
+  - Asset: campaign/posting-log-template.csv
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h56
+- 2026-06-08 19:00 +0300 / Memo / Ops check
+  - Mode: internal
+  - Action: Prepare final-day push list from best channels and replies
+  - Asset: campaign/posting-log-template.csv
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h63
 
 ### Nano
 
@@ -307,21 +312,26 @@ Overdue:
   - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h22
 
 Upcoming:
-- 2026-06-07 22:00 +0300 / Nano / Replies
-  - Mode: manual replies
-  - Action: Reply bank sweep across all open conversations
-  - Asset: campaign/copy-bank.md
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h42
-- 2026-06-08 00:00 +0300 / Nano / Community replies
-  - Mode: manual replies
-  - Action: Reply to objections: how it works, code, 3 picks
-  - Asset: campaign/copy-bank.md
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=community-replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h44
-- 2026-06-08 05:00 +0300 / Nano / DM follow-up
+- 2026-06-08 10:00 +0300 / Nano / WhatsApp personal
   - Mode: manual outreach
-  - Action: Follow up once with people who opened but did not answer
+  - Action: Invite warm-contact batch with simple personal message
+  - Asset: media/worldcup26-main-video.mp4
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h54
+- 2026-06-08 14:00 +0300 / Nano / Replies
+  - Mode: manual replies
+  - Action: Answer late replies and resend link once if requested
   - Asset: campaign/copy-bank.md
-  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h49
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h58
+- 2026-06-08 17:00 +0300 / Nano / Direct DMs
+  - Mode: manual outreach
+  - Action: Ask interested contacts if they want the invite link again
+  - Asset: campaign/copy-bank.md
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=direct-dms&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h61
+- 2026-06-08 20:00 +0300 / Nano / Warm contacts
+  - Mode: manual outreach
+  - Action: Ask joined users to invite 3 friends
+  - Asset: campaign/copy-bank.md
+  - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=warm-contacts&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h64
 
 ## Posting Rule
 

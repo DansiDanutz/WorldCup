@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-referral-activity-v1",
-  "generatedAt": "2026-06-07T17:44:59.458Z",
-  "generatedAtEest": "2026-06-07 20:44 +0300",
+  "generatedAt": "2026-06-08T06:51:10.064Z",
+  "generatedAtEest": "2026-06-08 09:51 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "ok": true,
@@ -22,7 +22,7 @@
   },
   "accountCounts": {
     "profiles": 5,
-    "profiles24h": 3,
+    "profiles24h": 0,
     "profiles72h": 4,
     "freeAccounts": 4,
     "paidAccounts": 1,
@@ -31,17 +31,17 @@
     "draftEntries": 3,
     "lockedEntries": 1,
     "lockedEntries24h": 0,
-    "lockedEntries72h": 1
+    "lockedEntries72h": 0
   },
   "viewCounts": {
     "available": true,
     "reason": "",
-    "appViews": 514,
-    "appViews24h": 514,
-    "appViews72h": 514,
-    "referralViews": 175,
-    "referralViews24h": 175,
-    "referralViews72h": 175,
+    "appViews": 1431,
+    "appViews24h": 1431,
+    "appViews72h": 1431,
+    "referralViews": 678,
+    "referralViews24h": 678,
+    "referralViews72h": 678,
     "signupReturned": 0,
     "signupMissingAcceptance": 0,
     "signupAttempts": 0,
@@ -55,8 +55,8 @@
       "medium": "paid-social",
       "campaign": "worldcup26_referral_72h",
       "content": "three-team-question",
-      "count": 74,
-      "lastViewedAt": "2026-06-07T17:44:57.453166+00:00"
+      "count": 577,
+      "lastViewedAt": "2026-06-08T05:59:43.38194+00:00"
     },
     {
       "source": "an",
@@ -109,20 +109,20 @@
   ],
   "allSourceBreakdown": [
     {
+      "source": "meta",
+      "medium": "paid-social",
+      "campaign": "worldcup26_referral_72h",
+      "content": "three-team-question",
+      "count": 577,
+      "lastViewedAt": "2026-06-08T05:59:43.38194+00:00"
+    },
+    {
       "source": "an",
       "medium": "paid",
       "campaign": "6971048256000",
       "content": "6971048413400",
       "count": 84,
       "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
-    },
-    {
-      "source": "meta",
-      "medium": "paid-social",
-      "campaign": "worldcup26_referral_72h",
-      "content": "three-team-question",
-      "count": 74,
-      "lastViewedAt": "2026-06-07T17:44:57.453166+00:00"
     },
     {
       "source": "fb",

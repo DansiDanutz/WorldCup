@@ -1,6 +1,6 @@
 # WorldCup26 Session Recovery
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:53 +0300
 
 - Proof rows: 49
 - Urgent rows still needing real proof: 16
@@ -14,38 +14,40 @@ Use this when a browser or app is logged out. Log proof only after the real post
 
 ### X public fallback
 
-- Scheduled: 2026-06-07 20:45 +0300
+- Scheduled: 2026-06-08 08:45 +0300
 - Action: Publish or prepare a short public CTA if X is logged in.
 - Asset: `media/worldcup26-referral-16x9.jpg`
 - Login: https://x.com/i/flow/login
-- Share: https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB
-- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse145
+- Share: https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse193
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse193
 
 Copy:
 
 ```text
-If you already have strong World Cup takes, make your 3 picks.
+WorldCup26 is open.
 
-WorldCup26 now lets you save the picks first and decide later if you want the paid leaderboard:
-https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse145
+Pick 3 teams for free. See your private points preview.
+
+Use a ticket only when you want to enter the paid leaderboard.
 
 Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse193
 ```
 
 Proof after real action:
 
 ```bash
-node campaign-proof-log.mjs --pulse "145" --proof-url "PUBLIC_X_POST_URL" --status "posted"
+node campaign-proof-log.mjs --pulse "193" --proof-url "PUBLIC_X_POST_URL" --status "posted"
 ```
 
 ### Facebook feed fallback
 
-- Scheduled: 2026-06-07 18:45 +0300
+- Scheduled: 2026-06-08 06:45 +0300
 - Action: Post a friendly feed variant if Facebook is logged in.
 - Asset: `media/worldcup26-referral-square.jpg`
 - Login: https://www.facebook.com/login/
-- Share: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137
-- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse137
+- Share: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse185
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse185
 
 Copy:
 
@@ -57,13 +59,13 @@ Pick 3 teams before they lock. You can save the picks for free and watch your pr
 Use a ticket only if you want to enter the paid leaderboard.
 
 Code: 26BC4B90CB
-https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse137
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse185
 ```
 
 Proof after real action:
 
 ```bash
-node campaign-proof-log.mjs --pulse "137" --proof-url "PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE" --status "posted"
+node campaign-proof-log.mjs --pulse "185" --proof-url "PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE" --status "posted"
 ```
 
 ## Phone-First Actions

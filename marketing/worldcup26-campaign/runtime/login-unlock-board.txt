@@ -1,4 +1,4 @@
-WorldCup26 login unlock board 2026-06-07 20:45 +0300
+WorldCup26 login unlock board 2026-06-08 09:30 +0300
 ok=yes blocked=6 login_required=5 platforms=X,YouTube Shorts,Facebook,LinkedIn
 code=26BC4B90CB
 rule=This unlock board does not prove posting. Complete login/verification in the owned account, publish/send the action, then log proof only after a real public URL or precise private-channel note exists.

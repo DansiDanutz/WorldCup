@@ -1,0 +1,68 @@
+{
+  "worker": "Sienna",
+  "slug": "sienna",
+  "ok": true,
+  "actionCount": 3,
+  "actions": [
+    {
+      "id": "rot-01-sienna",
+      "hour": 1,
+      "startsAt": "2026-06-07T18:54:42.772Z",
+      "startsAtEest": "07/06/2026 21:54",
+      "worker": "Sienna",
+      "platform": "FourFourTwo",
+      "target": "World Cup 2026 sweepstake kit article",
+      "action": "Use this as a timely social-reply angle: office sweepstake readers can also pick 3 teams free on mobile. Post only on allowed comments or social shares.",
+      "openUrl": "https://www.fourfourtwo.com/competition/world-cup-2026-sweepstakes-kit-download-and-print-our-sweepstake-template",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_sweepstake_f21&utm_rotation_hour=1&utm_worker=sienna",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_sweepstake_f21",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"FourFourTwo\" --channel \"World Cup 2026 sweepstake kit article\" --status \"posted\" --attempt-url \"https://www.fourfourtwo.com/competition/world-cup-2026-sweepstakes-kit-download-and-print-our-sweepstake-template\" --detail \"public-url-or-screenshot-note: FourFourTwo/social comment URL or screenshot note with code/link included at YYYY-MM-DD HH:mm EEST\"",
+      "proofInstruction": "public-url-or-screenshot-note: FourFourTwo/social comment URL or screenshot note with code/link included"
+    },
+    {
+      "id": "rot-02-sienna",
+      "hour": 2,
+      "startsAt": "2026-06-07T19:54:42.772Z",
+      "startsAtEest": "07/06/2026 22:54",
+      "worker": "Sienna",
+      "platform": "Instagram/Facebook Story",
+      "target": "Owned Instagram/Facebook story audience",
+      "action": "Post the story card with a link sticker and referral code.",
+      "openUrl": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=story_a3",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=story_a3&utm_rotation_hour=2&utm_worker=sienna",
+      "copy": "48 teams are still open. Pick your 3 before everyone copies the favorites. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=story_a3",
+      "proofCommand": "node campaign-proof-log.mjs --priority \"3\" --proof-url \"private-meta-story: story posted from <account>; screenshot saved; code/link sticker included at YYYY-MM-DD HH:mm EEST\" --status \"posted\"",
+      "proofInstruction": "private-meta-story: story posted from <account>; screenshot saved; code/link sticker included"
+    },
+    {
+      "id": "rot-03-sienna",
+      "hour": 3,
+      "startsAt": "2026-06-07T20:54:42.772Z",
+      "startsAtEest": "07/06/2026 23:54",
+      "worker": "Sienna",
+      "platform": "X OpenClaw Reply",
+      "target": "soccer fans world cup 2026",
+      "action": "Use prepared reply style: React to prediction",
+      "openUrl": "https://x.com/search?q=soccer%20fans%20world%20cup%202026%20-giveaway%20-crypto&src=typed_query&f=live",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=soccer-fans-world-cup-2026_bold-prediction&utm_rotation_hour=3&utm_worker=sienna",
+      "copy": "That is a bold pick. I built a small WorldCup26 game for this exact debate: pick 3 teams, track points, then join the paid leaderboard only if you want.\n\nFree picks first:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=soccer-fans-world-cup-2026_bold-prediction\n\nCode: 26BC4B90CB",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"X\" --channel \"football manual replies\" --status \"replied\" --attempt-url \"<real-x-reply-url-or-private-note>\" --detail \"Manual X reply from david2015bestai@gmail.com at YYYY-MM-DD HH:mm EEST; target=<@handle or tweet URL>; search='soccer fans world cup 2026'; code 26BC4B90CB and WorldCup26 link included\" --next-action \"watch replies, then run campaign-referral-activity.mjs after 15 minutes\"",
+      "proofInstruction": "real X reply URL or precise private proof note"
+    }
+  ],
+  "firstAction": {
+    "id": "rot-01-sienna",
+    "hour": 1,
+    "startsAt": "2026-06-07T18:54:42.772Z",
+    "startsAtEest": "07/06/2026 21:54",
+    "worker": "Sienna",
+    "platform": "FourFourTwo",
+    "target": "World Cup 2026 sweepstake kit article",
+    "action": "Use this as a timely social-reply angle: office sweepstake readers can also pick 3 teams free on mobile. Post only on allowed comments or social shares.",
+    "openUrl": "https://www.fourfourtwo.com/competition/world-cup-2026-sweepstakes-kit-download-and-print-our-sweepstake-template",
+    "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_sweepstake_f21&utm_rotation_hour=1&utm_worker=sienna",
+    "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=fourfourtwo&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_sweepstake_f21",
+    "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"FourFourTwo\" --channel \"World Cup 2026 sweepstake kit article\" --status \"posted\" --attempt-url \"https://www.fourfourtwo.com/competition/world-cup-2026-sweepstakes-kit-download-and-print-our-sweepstake-template\" --detail \"public-url-or-screenshot-note: FourFourTwo/social comment URL or screenshot note with code/link included at YYYY-MM-DD HH:mm EEST\"",
+    "proofInstruction": "public-url-or-screenshot-note: FourFourTwo/social comment URL or screenshot note with code/link included"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-real-action-bridge-v1",
-  "generatedAt": "2026-06-07T17:45:01.409Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:30:52.723Z",
+  "generatedAtEest": "2026-06-08 09:30 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "ok": true,
@@ -13,10 +13,10 @@
     "entries": 0
   },
   "sourceGeneratedAtEest": {
-    "operatorPush": "2026-06-07 20:45 +0300",
-    "zeroSignupRescue": "2026-06-07 20:45 +0300",
-    "phoneActionCenter": "2026-06-07 20:45 +0300",
-    "referralActivity": "2026-06-07 20:44 +0300"
+    "operatorPush": "2026-06-08 09:30 +0300",
+    "zeroSignupRescue": "2026-06-08 09:30 +0300",
+    "phoneActionCenter": "2026-06-08 09:30 +0300",
+    "referralActivity": "2026-06-08 09:30 +0300"
   },
   "actionCount": 4,
   "rescueVariantCount": 4,

@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-conversion-guard-v1",
-  "generatedAt": "2026-06-07T17:44:57.675Z",
-  "generatedAtEest": "2026-06-07 20:44 +0300",
+  "generatedAt": "2026-06-08T06:50:57.447Z",
+  "generatedAtEest": "2026-06-08 09:50 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "expectedInviter": "David Ai",
@@ -22,7 +22,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45394,
-        "elapsedMs": 340
+        "elapsedMs": 320
       },
       {
         "name": "facebook-feed",
@@ -33,7 +33,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45406,
-        "elapsedMs": 202
+        "elapsedMs": 196
       },
       {
         "name": "instagram-story",
@@ -44,7 +44,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45391,
-        "elapsedMs": 212
+        "elapsedMs": 209
       },
       {
         "name": "x-campaign",
@@ -55,7 +55,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45385,
-        "elapsedMs": 223
+        "elapsedMs": 184
       }
     ],
     "resolver": {
@@ -66,14 +66,14 @@
       "inviterName": "David Ai",
       "referralPercent": 5,
       "failures": [],
-      "elapsedMs": 625
+      "elapsedMs": 718
     },
     "auth": {
       "ok": true,
       "status": 302,
-      "location": "https://accounts.google.com/o/oauth2/v2/auth?client_id=293611580417-tsu81oqicpoce0348mfte86pnvhrq6q4.apps.googleusercontent.com&redirect_to=https%3A%2F%2Fworldcup26.world&redirect_uri=https%3A%2F%2Fapi.worldcup26.world%2Fauth%2Fv1%2Fcallback&response_type=code&scope=email+profile&state=a4750571-2341-458e-be3d-c1ccb95af429",
+      "location": "https://accounts.google.com/o/oauth2/v2/auth?client_id=293611580417-tsu81oqicpoce0348mfte86pnvhrq6q4.apps.googleusercontent.com&redirect_to=https%3A%2F%2Fworldcup26.world&redirect_uri=https%3A%2F%2Fapi.worldcup26.world%2Fauth%2Fv1%2Fcallback&response_type=code&scope=email+profile&state=1f60bf9e-5de1-47a9-9a73-be4e50fb1711",
       "failures": [],
-      "elapsedMs": 134
+      "elapsedMs": 213
     },
     "browserProof": {
       "status": "provided",

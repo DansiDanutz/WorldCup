@@ -1,12 +1,12 @@
-WorldCup26 conversion guard 2026-06-07 20:44 +0300
+WorldCup26 conversion guard 2026-06-08 09:50 +0300
 ok=yes browser_verified=yes pages=4 code=26BC4B90CB inviter="David Ai" percent=5 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
 resolver=ok auth=ok browser_proof=provided
 
 first_paint:
-- meta-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=340
-- facebook-feed: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=202
-- instagram-story: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=212
-- x-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=223
+- meta-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=320
+- facebook-feed: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=196
+- instagram-story: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=209
+- x-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=184
 
 browser_snapshot:
 - ok status=provided /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime/conversion-browser-snapshot.yml

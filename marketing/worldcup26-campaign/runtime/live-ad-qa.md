@@ -1,6 +1,6 @@
 # WorldCup26 Live Ad QA
 
-Generated: 2026-06-07 20:46 +0300
+Generated: 2026-06-08 09:48 +0300
 
 - Status: ok
 - Referral code: `26BC4B90CB`
@@ -22,7 +22,7 @@ This proves ad clicks can land, render, resolve the inviter, and start Google au
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 283 ms
+- Elapsed: 353 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=live_ad_qa
 
 
@@ -31,7 +31,7 @@ This proves ad clicks can land, render, resolve the inviter, and start Google au
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 177 ms
+- Elapsed: 192 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=live_ad_qa
 
 
@@ -40,7 +40,7 @@ This proves ad clicks can land, render, resolve the inviter, and start Google au
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 224 ms
+- Elapsed: 203 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h&utm_content=live_ad_qa
 
 
@@ -49,7 +49,7 @@ This proves ad clicks can land, render, resolve the inviter, and start Google au
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 210 ms
+- Elapsed: 236 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=live_ad_qa
 
 
@@ -58,7 +58,7 @@ This proves ad clicks can land, render, resolve the inviter, and start Google au
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 206 ms
+- Elapsed: 209 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok&utm_medium=video&utm_campaign=worldcup26_referral_72h&utm_content=live_ad_qa
 
 
@@ -67,7 +67,7 @@ This proves ad clicks can land, render, resolve the inviter, and start Google au
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 186 ms
+- Elapsed: 198 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube&utm_medium=shorts&utm_campaign=worldcup26_referral_72h&utm_content=live_ad_qa
 
 
@@ -76,7 +76,7 @@ This proves ad clicks can land, render, resolve the inviter, and start Google au
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 183 ms
+- Elapsed: 201 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp&utm_medium=status&utm_campaign=worldcup26_referral_72h&utm_content=live_ad_qa
 
 

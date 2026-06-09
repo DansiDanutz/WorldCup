@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-first-send-bridge-v1",
-  "generatedAt": "2026-06-07T17:45:00.690Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:53:03.497Z",
+  "generatedAtEest": "2026-06-08 09:53 +0300",
   "ok": true,
   "failures": [],
   "state": "send-now",
@@ -14,7 +14,7 @@
   "counts": {
     "warmAttempts": 0,
     "signupSaves": 0,
-    "referralViews": 171,
+    "referralViews": 678,
     "adClicks": 227
   },
   "copy": "I need 3 clean WorldCup26 signup tests now.\n\nPlease send this to three trusted people with different Google accounts. They should open it on a fresh phone/browser, accept the invite, continue with Google, and pick 3 teams. Do not pay.\n\nAsk each tester to reply with one of these:\n1. \"joined + picked teams\"\n2. screenshot of the exact screen where it stops\n\nCode 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",

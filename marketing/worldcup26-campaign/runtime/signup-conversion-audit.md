@@ -1,13 +1,13 @@
 # WorldCup26 Signup Conversion Audit
 
-Generated: 07/06/2026 20:44
+Generated: 08/06/2026 09:51
 
 - State: `critical-auth-to-signup-save-unproven`
 - Referral code: `26BC4B90CB`
 - Referral link: https://worldcup26.world/login?ref=26BC4B90CB
-- App views: 509
-- Referral views: 171
-- Paid-source views: 244
+- App views: 1421
+- Referral views: 678
+- Paid-source views: 751
 - Dashboard clicks: 227
 - Signup saves: 0
 - Accepted referral rows: 0

@@ -57,7 +57,9 @@ function loadHostState(host) {
     const [zeroSignupPart = "{}", realActionAndRest = ""] = zeroSignupAndRest.split("\n---REAL_ACTION_BRIDGE---\n");
     const [realActionPart = "{}", oneClickShareAndRest = ""] = realActionAndRest.split("\n---ONE_CLICK_SHARE---\n");
     const [oneClickSharePart = "{}", publicOutreachAndRest = ""] = oneClickShareAndRest.split("\n---PUBLIC_OUTREACH_TARGETS---\n");
-    const [publicOutreachPart = "{}", adOpsAndRest = ""] = publicOutreachAndRest.split("\n---AD_OPS_LINKS---\n");
+    const [publicOutreachPart = "{}", platformRotationAndRest = ""] = publicOutreachAndRest.split("\n---PLATFORM_ROTATION---\n");
+    const [platformRotationPart = "{}", immediateSprintAndRest = ""] = platformRotationAndRest.split("\n---IMMEDIATE_SPRINT---\n");
+    const [immediateSprintPart = "{}", adOpsAndRest = ""] = immediateSprintAndRest.split("\n---AD_OPS_LINKS---\n");
     const [adOpsPart = "{}", paidAdTriageAndRest = ""] = adOpsAndRest.split("\n---PAID_AD_TRIAGE---\n");
     const [paidAdTriagePart = "{}", paidNoClickAndRest = ""] = paidAdTriageAndRest.split("\n---PAID_NO_CLICK_RESCUE---\n");
     const [paidNoClickPart = "{}", paidDashboardAndRest = ""] = paidNoClickAndRest.split("\n---PAID_DASHBOARD_CHECKS---\n");
@@ -78,7 +80,12 @@ function loadHostState(host) {
     const [publicAttemptsPart = "{}", loginUnlockAndRest = ""] = publicAttemptsAndRest.split("\n---LOGIN_UNLOCK---\n");
     const [loginUnlockPart = "{}", objectiveAuditAndRest = ""] = loginUnlockAndRest.split("\n---OBJECTIVE_AUDIT---\n");
     const [objectiveAuditPart = "{}", operatorPushAndRest = ""] = objectiveAuditAndRest.split("\n---OPERATOR_PUSH---\n");
-    const [operatorPushPart = "{}", rest = ""] = operatorPushAndRest.split("\n---LOG---\n");
+    const [operatorPushPart = "{}", actionCommandCenterAndRest = ""] = operatorPushAndRest.split("\n---ACTION_COMMAND_CENTER---\n");
+    const [actionCommandCenterPart = "{}", xFootballOpenclawAndRest = ""] = actionCommandCenterAndRest.split("\n---X_FOOTBALL_OPENCLAW---\n");
+    const [xFootballOpenclawPart = "{}", xTargetHunterAndRest = ""] = xFootballOpenclawAndRest.split("\n---X_TARGET_HUNTER---\n");
+    const [xTargetHunterPart = "{}", xAccountWatchlistAndRest = ""] = xTargetHunterAndRest.split("\n---X_ACCOUNT_WATCHLIST---\n");
+    const [xAccountWatchlistPart = "{}", xReplyProofAndRest = ""] = xAccountWatchlistAndRest.split("\n---X_REPLY_PROOF_HELPER---\n");
+    const [xReplyProofPart = "{}", rest = ""] = xReplyProofAndRest.split("\n---LOG---\n");
     const [logPart = "", psAndCronPart = ""] = rest.split("\n---PS---\n");
     const [psPart = "", cronPart = ""] = psAndCronPart.split("\n---CRON---\n");
     const hotPing = JSON.parse(jsonPart);
@@ -97,6 +104,8 @@ function loadHostState(host) {
     const realActionBridge = parseJson(realActionPart, { ok: false });
     const oneClickShare = parseJson(oneClickSharePart, { ok: false });
     const publicOutreachTargets = parseJson(publicOutreachPart, { ok: false });
+    const platformRotation = parseJson(platformRotationPart, { ok: false });
+    const immediateSprint = parseJson(immediateSprintPart, { ok: false });
     const adOpsLinks = parseJson(adOpsPart, { ok: false });
     const paidAdTriage = parseJson(paidAdTriagePart, { ok: false });
     const paidNoClickRescue = parseJson(paidNoClickPart, { ok: false });
@@ -118,6 +127,11 @@ function loadHostState(host) {
     const loginUnlock = parseJson(loginUnlockPart, { ok: false });
     const objectiveAudit = parseJson(objectiveAuditPart, { ok: false });
     const operatorPush = parseJson(operatorPushPart, { ok: false });
+    const actionCommandCenter = parseJson(actionCommandCenterPart, { ok: false });
+    const xFootballOpenclaw = parseJson(xFootballOpenclawPart, { ok: false });
+    const xTargetHunter = parseJson(xTargetHunterPart, { ok: false });
+    const xAccountWatchlist = parseJson(xAccountWatchlistPart, { ok: false });
+    const xReplyProofHelper = parseJson(xReplyProofPart, { ok: false });
     const loopRows = psPart
       .split(/\n/)
       .map((line) => line.trim())
@@ -222,6 +236,18 @@ function loadHostState(host) {
         ? String(publicOutreachTargets.generatedAtEest)
         : "",
       publicOutreachTargets: normalizePublicOutreachTargets(publicOutreachTargets),
+      platformRotationOk: isPlatformRotationOk(platformRotation),
+      platformRotationFresh: isFreshIso(platformRotation.generatedAt),
+      platformRotationGeneratedAtEest: platformRotation.generatedAtEest
+        ? String(platformRotation.generatedAtEest)
+        : "",
+      platformRotation: normalizePlatformRotation(platformRotation),
+      immediateSprintOk: isImmediateSprintOk(immediateSprint),
+      immediateSprintFresh: isFreshIso(immediateSprint.generatedAt),
+      immediateSprintGeneratedAtEest: immediateSprint.generatedAtEest
+        ? String(immediateSprint.generatedAtEest)
+        : "",
+      immediateSprint: normalizeImmediateSprint(immediateSprint),
       adOpsLinksOk: isAdOpsLinksOk(adOpsLinks),
       adOpsLinksFresh: isFreshIso(adOpsLinks.generatedAt),
       adOpsLinksGeneratedAtEest: adOpsLinks.generatedAtEest ? String(adOpsLinks.generatedAtEest) : "",
@@ -329,6 +355,36 @@ function loadHostState(host) {
         ? String(operatorPush.generatedAtEest)
         : "",
       operatorPush: normalizeOperatorPush(operatorPush),
+      actionCommandCenterOk: isActionCommandCenterOk(actionCommandCenter),
+      actionCommandCenterFresh: isFreshIso(actionCommandCenter.generatedAt),
+      actionCommandCenterGeneratedAtEest: actionCommandCenter.generatedAtEest
+        ? String(actionCommandCenter.generatedAtEest)
+        : "",
+      actionCommandCenter: normalizeActionCommandCenter(actionCommandCenter),
+      xFootballOpenclawOk: isXFootballOpenclawOk(xFootballOpenclaw),
+      xFootballOpenclawFresh: isFreshIso(xFootballOpenclaw.generatedAt),
+      xFootballOpenclawGeneratedAtEest: xFootballOpenclaw.generatedAtEest
+        ? String(xFootballOpenclaw.generatedAtEest)
+        : "",
+      xFootballOpenclaw: normalizeXFootballOpenclaw(xFootballOpenclaw),
+      xTargetHunterOk: isXTargetHunterOk(xTargetHunter),
+      xTargetHunterFresh: isFreshIso(xTargetHunter.generatedAt),
+      xTargetHunterGeneratedAtEest: xTargetHunter.generatedAtEest
+        ? String(xTargetHunter.generatedAtEest)
+        : "",
+      xTargetHunter: normalizeXTargetHunter(xTargetHunter),
+      xAccountWatchlistOk: isXAccountWatchlistOk(xAccountWatchlist),
+      xAccountWatchlistFresh: isFreshIso(xAccountWatchlist.generatedAt),
+      xAccountWatchlistGeneratedAtEest: xAccountWatchlist.generatedAtEest
+        ? String(xAccountWatchlist.generatedAtEest)
+        : "",
+      xAccountWatchlist: normalizeXAccountWatchlist(xAccountWatchlist),
+      xReplyProofHelperOk: isXReplyProofHelperOk(xReplyProofHelper),
+      xReplyProofHelperFresh: isFreshIso(xReplyProofHelper.generatedAt),
+      xReplyProofHelperGeneratedAtEest: xReplyProofHelper.generatedAtEest
+        ? String(xReplyProofHelper.generatedAtEest)
+        : "",
+      xReplyProofHelper: normalizeXReplyProofHelper(xReplyProofHelper),
       lastLogLines: logLines.slice(-8),
     };
   } catch (error) {
@@ -408,6 +464,14 @@ function loadHostState(host) {
       publicOutreachTargetsFresh: false,
       publicOutreachTargetsGeneratedAtEest: "",
       publicOutreachTargets: normalizePublicOutreachTargets({}),
+      platformRotationOk: false,
+      platformRotationFresh: false,
+      platformRotationGeneratedAtEest: "",
+      platformRotation: normalizePlatformRotation({}),
+      immediateSprintOk: false,
+      immediateSprintFresh: false,
+      immediateSprintGeneratedAtEest: "",
+      immediateSprint: normalizeImmediateSprint({}),
       adOpsLinksOk: false,
       adOpsLinksFresh: false,
       adOpsLinksGeneratedAtEest: "",
@@ -493,6 +557,26 @@ function loadHostState(host) {
       operatorPushFresh: false,
       operatorPushGeneratedAtEest: "",
       operatorPush: normalizeOperatorPush({}),
+      actionCommandCenterOk: false,
+      actionCommandCenterFresh: false,
+      actionCommandCenterGeneratedAtEest: "",
+      actionCommandCenter: normalizeActionCommandCenter({}),
+      xFootballOpenclawOk: false,
+      xFootballOpenclawFresh: false,
+      xFootballOpenclawGeneratedAtEest: "",
+      xFootballOpenclaw: normalizeXFootballOpenclaw({}),
+      xTargetHunterOk: false,
+      xTargetHunterFresh: false,
+      xTargetHunterGeneratedAtEest: "",
+      xTargetHunter: normalizeXTargetHunter({}),
+      xAccountWatchlistOk: false,
+      xAccountWatchlistFresh: false,
+      xAccountWatchlistGeneratedAtEest: "",
+      xAccountWatchlist: normalizeXAccountWatchlist({}),
+      xReplyProofHelperOk: false,
+      xReplyProofHelperFresh: false,
+      xReplyProofHelperGeneratedAtEest: "",
+      xReplyProofHelper: normalizeXReplyProofHelper({}),
       lastLogLines: [],
     };
   }
@@ -532,6 +616,10 @@ function remoteCommand() {
     "cat runtime/one-click-share.json 2>/dev/null || printf '{}'",
     "printf '\\n---PUBLIC_OUTREACH_TARGETS---\\n'",
     "cat runtime/public-outreach-targets.json 2>/dev/null || printf '{}'",
+    "printf '\\n---PLATFORM_ROTATION---\\n'",
+    "cat runtime/platform-rotation.json 2>/dev/null || printf '{}'",
+    "printf '\\n---IMMEDIATE_SPRINT---\\n'",
+    "cat runtime/immediate-sprint.json 2>/dev/null || printf '{}'",
     "printf '\\n---AD_OPS_LINKS---\\n'",
     "cat runtime/ad-ops-links.json 2>/dev/null || printf '{}'",
     "printf '\\n---PAID_AD_TRIAGE---\\n'",
@@ -574,6 +662,16 @@ function remoteCommand() {
     "cat runtime/objective-audit.json 2>/dev/null || printf '{}'",
     "printf '\\n---OPERATOR_PUSH---\\n'",
     "cat runtime/operator-push-packet.json 2>/dev/null || printf '{}'",
+    "printf '\\n---ACTION_COMMAND_CENTER---\\n'",
+    "cat runtime/action-command-center.json 2>/dev/null || printf '{}'",
+    "printf '\\n---X_FOOTBALL_OPENCLAW---\\n'",
+    "cat runtime/x-football-openclaw.json 2>/dev/null || printf '{}'",
+    "printf '\\n---X_TARGET_HUNTER---\\n'",
+    "cat runtime/x-target-hunter.json 2>/dev/null || printf '{}'",
+    "printf '\\n---X_ACCOUNT_WATCHLIST---\\n'",
+    "cat runtime/x-account-watchlist.json 2>/dev/null || printf '{}'",
+    "printf '\\n---X_REPLY_PROOF_HELPER---\\n'",
+    "cat runtime/x-reply-proof-helper.json 2>/dev/null || printf '{}'",
     "printf '\\n---LOG---\\n'",
     "tail -500 runtime/campaign-loop.log 2>/dev/null || true",
     "printf '\\n---PS---\\n'",
@@ -649,6 +747,19 @@ function summarize(hosts, localFunnel) {
     publicOutreachMissingOwners: [
       ...new Set(hosts.flatMap((host) => host.publicOutreachTargets.workerCoverage.missing)),
     ],
+    platformRotationsOk: hosts.filter((host) => host.platformRotationOk).length,
+    platformRotationsFresh: hosts.filter((host) => host.platformRotationFresh).length,
+    platformRotationStates: [...new Set(okHosts.map((host) => host.platformRotation.state).filter(Boolean))],
+    platformRotationSlots: Math.max(0, ...hosts.map((host) => host.platformRotation.slotCount)),
+    platformRotationPlatforms: Math.max(0, ...hosts.map((host) => host.platformRotation.platformCount)),
+    platformRotationHours: Math.max(0, ...hosts.map((host) => host.platformRotation.hours)),
+    immediateSprintsOk: hosts.filter((host) => host.immediateSprintOk).length,
+    immediateSprintsFresh: hosts.filter((host) => host.immediateSprintFresh).length,
+    immediateSprintStates: [...new Set(okHosts.map((host) => host.immediateSprint.state).filter(Boolean))],
+    immediateSprintSelected: Math.max(0, ...hosts.map((host) => host.immediateSprint.selectedSlotCount)),
+    immediateSprintDue: Math.max(0, ...hosts.map((host) => host.immediateSprint.dueSlotCount)),
+    immediateSprintSignupSaves: Math.max(0, ...hosts.map((host) => host.immediateSprint.signupSaves)),
+    immediateSprintPublicAttempts: Math.max(0, ...hosts.map((host) => host.immediateSprint.publicAttempts)),
     adOpsLinksOk: hosts.filter((host) => host.adOpsLinksOk).length,
     adOpsLinksFresh: hosts.filter((host) => host.adOpsLinksFresh).length,
     adOpsChannels: Math.max(0, ...hosts.map((host) => host.adOpsLinks.channelCount)),
@@ -804,6 +915,40 @@ function summarize(hosts, localFunnel) {
     operatorPushActions: Math.max(0, ...hosts.map((host) => host.operatorPush.actionCount)),
     operatorPushBlocked: Math.max(0, ...hosts.map((host) => host.operatorPush.publicBlocked)),
     operatorPushLoginRequired: Math.max(0, ...hosts.map((host) => host.operatorPush.publicLoginRequired)),
+    actionCommandCentersOk: hosts.filter((host) => host.actionCommandCenterOk).length,
+    actionCommandCentersFresh: hosts.filter((host) => host.actionCommandCenterFresh).length,
+    actionCommandCenterStates: [...new Set(okHosts.map((host) => host.actionCommandCenter.state).filter(Boolean))],
+    actionCommandCenterSignupSaves: Math.max(0, ...hosts.map((host) => host.actionCommandCenter.signupSaves)),
+    actionCommandCenterViews: Math.max(0, ...hosts.map((host) => host.actionCommandCenter.appViews)),
+    actionCommandCenterReferralViews: Math.max(0, ...hosts.map((host) => host.actionCommandCenter.referralViews)),
+    actionCommandCenterPaidViews: Math.max(0, ...hosts.map((host) => host.actionCommandCenter.paidViews)),
+    actionCommandCenterXActions: Math.max(0, ...hosts.map((host) => host.actionCommandCenter.xActions)),
+    actionCommandCenterXAccountTargets: Math.max(0, ...hosts.map((host) => host.actionCommandCenter.xAccountTargets)),
+    actionCommandCenterXAccountWorkerPacks: Math.max(0, ...hosts.map((host) => host.actionCommandCenter.xAccountWorkerPacks)),
+    actionCommandCenterXReady: Math.max(0, ...hosts.map((host) => host.actionCommandCenter.xProofReadyWorkers)),
+    xFootballOpenclawsOk: hosts.filter((host) => host.xFootballOpenclawOk).length,
+    xFootballOpenclawsFresh: hosts.filter((host) => host.xFootballOpenclawFresh).length,
+    xFootballOpenclawStates: [...new Set(okHosts.map((host) => host.xFootballOpenclaw.state).filter(Boolean))],
+    xFootballOpenclawActions: Math.max(0, ...hosts.map((host) => host.xFootballOpenclaw.actionCount)),
+    xFootballOpenclawSearches: Math.max(0, ...hosts.map((host) => host.xFootballOpenclaw.searchCount)),
+    xFootballOpenclawAccountSearches: Math.max(0, ...hosts.map((host) => host.xFootballOpenclaw.accountSearchCount)),
+    xFootballOpenclawWorkerPacks: Math.max(0, ...hosts.map((host) => host.xFootballOpenclaw.workerPackCount)),
+    xTargetHuntersOk: hosts.filter((host) => host.xTargetHunterOk).length,
+    xTargetHuntersFresh: hosts.filter((host) => host.xTargetHunterFresh).length,
+    xTargetHunterStates: [...new Set(okHosts.map((host) => host.xTargetHunter.state).filter(Boolean))],
+    xTargetHunterLanes: Math.max(0, ...hosts.map((host) => host.xTargetHunter.laneCount)),
+    xTargetHunterLiveLanes: Math.max(0, ...hosts.map((host) => host.xTargetHunter.liveLaneCount)),
+    xTargetHunterUserLanes: Math.max(0, ...hosts.map((host) => host.xTargetHunter.userLaneCount)),
+    xTargetHunterWorkerPacks: Math.max(0, ...hosts.map((host) => host.xTargetHunter.workerPackCount)),
+    xAccountWatchlistsOk: hosts.filter((host) => host.xAccountWatchlistOk).length,
+    xAccountWatchlistsFresh: hosts.filter((host) => host.xAccountWatchlistFresh).length,
+    xAccountWatchlistStates: [...new Set(okHosts.map((host) => host.xAccountWatchlist.state).filter(Boolean))],
+    xAccountWatchlistAccounts: Math.max(0, ...hosts.map((host) => host.xAccountWatchlist.accountCount)),
+    xAccountWatchlistWorkerPacks: Math.max(0, ...hosts.map((host) => host.xAccountWatchlist.workerPackCount)),
+    xReplyProofHelpersOk: hosts.filter((host) => host.xReplyProofHelperOk).length,
+    xReplyProofHelpersFresh: hosts.filter((host) => host.xReplyProofHelperFresh).length,
+    xReplyProofHelperStates: [...new Set(okHosts.map((host) => host.xReplyProofHelper.state).filter(Boolean))],
+    xReplyProofHelperReadyWorkers: Math.max(0, ...hosts.map((host) => host.xReplyProofHelper.readyWorkers)),
     workerWakesOk: hosts.filter((host) => host.workerWakeOk).length,
     workerWakesFresh: hosts.filter((host) => host.workerWakeFresh).length,
     sessionRecoveriesOk: hosts.filter((host) => host.sessionRecoveryOk).length,
@@ -863,6 +1008,10 @@ function isHostAligned(host) {
     host.oneClickShareFresh &&
     host.publicOutreachTargetsOk &&
     host.publicOutreachTargetsFresh &&
+    host.platformRotationOk &&
+    host.platformRotationFresh &&
+    host.immediateSprintOk &&
+    host.immediateSprintFresh &&
     host.adOpsLinksOk &&
     host.adOpsLinksFresh &&
     host.paidAdTriageOk &&
@@ -899,6 +1048,16 @@ function isHostAligned(host) {
     host.objectiveAuditFresh &&
     host.operatorPushOk &&
     host.operatorPushFresh &&
+    host.actionCommandCenterOk &&
+    host.actionCommandCenterFresh &&
+    host.xFootballOpenclawOk &&
+    host.xFootballOpenclawFresh &&
+    host.xTargetHunterOk &&
+    host.xTargetHunterFresh &&
+    host.xAccountWatchlistOk &&
+    host.xAccountWatchlistFresh &&
+    host.xReplyProofHelperOk &&
+    host.xReplyProofHelperFresh &&
     host.workerWakeOk &&
     host.workerWakeFresh &&
     host.sessionRecoveryOk &&
@@ -1173,6 +1332,198 @@ function isOperatorPushOk(operatorPush) {
   );
 }
 
+function isActionCommandCenterOk(actionCommandCenter) {
+  const counts = actionCommandCenter.counts ?? {};
+  const firstAction = actionCommandCenter.firstAction ?? {};
+  const secondAction = actionCommandCenter.secondAction ?? {};
+  const thirdAction = actionCommandCenter.thirdAction ?? {};
+  const workers = Array.isArray(secondAction.workers) ? secondAction.workers : [];
+  const watchlistWorkers = Array.isArray(thirdAction.workers) ? thirdAction.workers : [];
+  return (
+    Boolean(actionCommandCenter.ok) &&
+    String(actionCommandCenter.schema ?? "") === "worldcup26-action-command-center-v1" &&
+    String(actionCommandCenter.referralCode ?? "") === "26BC4B90CB" &&
+    String(actionCommandCenter.referralLink ?? "") === "https://worldcup26.world/login?ref=26BC4B90CB" &&
+    Number(counts.xActions ?? 0) >= 16 &&
+    Number(counts.xAccountTargets ?? 0) >= 36 &&
+    Number(counts.xAccountWorkerPacks ?? 0) === 4 &&
+    Number(counts.xProofReadyWorkers ?? 0) === 4 &&
+    String(firstAction.title ?? "").includes("Send 3 clean signup tests") &&
+    String(firstAction.link ?? "").includes("26BC4B90CB") &&
+    String(firstAction.copy ?? "").includes("26BC4B90CB") &&
+    String(firstAction.logAfterRealSend ?? "").includes("campaign-public-channel-attempts.mjs") &&
+    String(secondAction.operatorAccount ?? "") === "david2015bestai@gmail.com" &&
+    String(secondAction.overviewFile ?? "") === "x-football-openclaw.html" &&
+    String(secondAction.proofHelperFile ?? "") === "x-reply-proof-helper.html" &&
+    workers.length === 4 &&
+    ["Dexter", "Sienna", "Memo", "Nano"].every((worker) =>
+      workers.some((row) => String(row.worker ?? "") === worker && Number(row.actions ?? 0) >= 4),
+    ) &&
+    String(thirdAction.operatorAccount ?? "") === "david2015bestai@gmail.com" &&
+    String(thirdAction.overviewFile ?? "") === "x-account-watchlist.html" &&
+    Number(thirdAction.accountCount ?? 0) >= 36 &&
+    watchlistWorkers.length === 4 &&
+    ["Dexter", "Sienna", "Memo", "Nano"].every((worker) =>
+      watchlistWorkers.some((row) => String(row.worker ?? "") === worker && Number(row.accounts ?? 0) >= 9),
+    ) &&
+    String(actionCommandCenter.proofRule ?? "").includes("Do not log proof for plans")
+  );
+}
+
+function isXFootballOpenclawOk(xFootballOpenclaw) {
+  const searches = Array.isArray(xFootballOpenclaw.searches) ? xFootballOpenclaw.searches : [];
+  const accountSearches = Array.isArray(xFootballOpenclaw.accountSearches) ? xFootballOpenclaw.accountSearches : [];
+  const actions = Array.isArray(xFootballOpenclaw.actions) ? xFootballOpenclaw.actions : [];
+  const workerPacks = Array.isArray(xFootballOpenclaw.workerPacks) ? xFootballOpenclaw.workerPacks : [];
+  return (
+    Boolean(xFootballOpenclaw.ok) &&
+    String(xFootballOpenclaw.schema ?? "") === "worldcup26-x-football-openclaw-v1" &&
+    String(xFootballOpenclaw.operatorAccount ?? "") === "david2015bestai@gmail.com" &&
+    String(xFootballOpenclaw.referralCode ?? "") === "26BC4B90CB" &&
+    String(xFootballOpenclaw.referralLink ?? "") === "https://worldcup26.world/login?ref=26BC4B90CB" &&
+    searches.length >= 8 &&
+    accountSearches.length >= 8 &&
+    accountSearches.every((search) =>
+      String(search.url ?? "").includes("x.com/search") &&
+      String(search.url ?? "").includes("f=user") &&
+      String(search.action ?? "").includes("recent football post"),
+    ) &&
+    actions.length >= 12 &&
+    workerPacks.length === 4 &&
+    ["Dexter", "Sienna", "Memo", "Nano"].every((worker) =>
+      workerPacks.some((pack) =>
+        String(pack.worker ?? "") === worker &&
+        String(pack.schema ?? "") === "worldcup26-x-openclaw-worker-pack-v1" &&
+        Array.isArray(pack.accountSearches) &&
+        pack.accountSearches.length >= 2 &&
+        Array.isArray(pack.searches) &&
+        pack.searches.length >= 2 &&
+        Array.isArray(pack.actions) &&
+        pack.actions.length >= 4,
+      ),
+    ) &&
+    actions.every((action) =>
+      String(action.searchUrl ?? "").includes("x.com/search") &&
+      String(action.copy ?? "").includes("26BC4B90CB") &&
+      String(action.copy ?? "").includes("worldcup26.world/login") &&
+      String(action.intentUrl ?? "").includes("twitter.com/intent/tweet") &&
+      String(action.proofCommand ?? "").includes("campaign-public-channel-attempts.mjs"),
+    ) &&
+    String(xFootballOpenclaw.proofRule ?? "").includes("does not auto-post")
+  );
+}
+
+function isXTargetHunterOk(xTargetHunter) {
+  const lanes = Array.isArray(xTargetHunter.lanes) ? xTargetHunter.lanes : [];
+  const workerPacks = Array.isArray(xTargetHunter.workerPacks) ? xTargetHunter.workerPacks : [];
+  return (
+    Boolean(xTargetHunter.ok) &&
+    String(xTargetHunter.schema ?? "") === "worldcup26-x-target-hunter-v1" &&
+    String(xTargetHunter.operatorAccount ?? "") === "david2015bestai@gmail.com" &&
+    String(xTargetHunter.referralCode ?? "") === "26BC4B90CB" &&
+    String(xTargetHunter.referralLink ?? "") === "https://worldcup26.world/login?ref=26BC4B90CB" &&
+    lanes.length >= 40 &&
+    lanes.every((lane) =>
+      String(lane.url ?? "").includes("x.com/search") &&
+      ["live", "user"].includes(String(lane.type ?? "")) &&
+      String(lane.next ?? "").length > 20,
+    ) &&
+    workerPacks.length === 4 &&
+    ["Dexter", "Sienna", "Memo", "Nano"].every((worker) =>
+      workerPacks.some((pack) =>
+        String(pack.worker ?? "") === worker &&
+        String(pack.schema ?? "") === "worldcup26-x-target-hunter-worker-pack-v1" &&
+        Array.isArray(pack.lanes) &&
+        pack.lanes.length >= 10,
+      ),
+    ) &&
+    String(xTargetHunter.proofRule ?? "").includes("Target hunting is not posting proof")
+  );
+}
+
+function isXReplyProofHelperOk(xReplyProofHelper) {
+  const helpers = Array.isArray(xReplyProofHelper.helpers) ? xReplyProofHelper.helpers : [];
+  return (
+    Boolean(xReplyProofHelper.ok) &&
+    String(xReplyProofHelper.schema ?? "") === "worldcup26-x-reply-proof-helper-v1" &&
+    String(xReplyProofHelper.operatorAccount ?? "") === "david2015bestai@gmail.com" &&
+    String(xReplyProofHelper.referralCode ?? "") === "26BC4B90CB" &&
+    String(xReplyProofHelper.referralLink ?? "") === "https://worldcup26.world/login?ref=26BC4B90CB" &&
+    helpers.length === 4 &&
+    ["Dexter", "Sienna", "Memo", "Nano"].every((worker) =>
+      helpers.some((helper) =>
+        String(helper.worker ?? "") === worker &&
+        Boolean(helper.ok) &&
+        String(helper.proofCommandTemplate ?? "").includes("campaign-x-reply-log.mjs") &&
+        String(helper.proofCommandTemplate ?? "").includes("--proof-url"),
+      ),
+    ) &&
+    String(xReplyProofHelper.proofRule ?? "").includes("real manual X reply")
+  );
+}
+
+function isXAccountWatchlistOk(xAccountWatchlist) {
+  const accounts = Array.isArray(xAccountWatchlist.accounts) ? xAccountWatchlist.accounts : [];
+  const workerPacks = Array.isArray(xAccountWatchlist.workerPacks) ? xAccountWatchlist.workerPacks : [];
+  return (
+    Boolean(xAccountWatchlist.ok) &&
+    String(xAccountWatchlist.schema ?? "") === "worldcup26-x-account-watchlist-v1" &&
+    String(xAccountWatchlist.operatorAccount ?? "") === "david2015bestai@gmail.com" &&
+    String(xAccountWatchlist.referralCode ?? "") === "26BC4B90CB" &&
+    String(xAccountWatchlist.referralLink ?? "") === "https://worldcup26.world/login?ref=26BC4B90CB" &&
+    Number(xAccountWatchlist.accountCount ?? accounts.length) >= 36 &&
+    accounts.every((account) =>
+      String(account.profileUrl ?? "").includes("x.com/") &&
+      String(account.searchUrl ?? "").includes("x.com/search") &&
+      String(account.copy ?? "").includes("26BC4B90CB") &&
+      String(account.copy ?? "").includes("worldcup26.world/login") &&
+      String(account.proofCommand ?? "").includes("campaign-x-reply-log.mjs"),
+    ) &&
+    workerPacks.length === 4 &&
+    ["Dexter", "Sienna", "Memo", "Nano"].every((worker) =>
+      workerPacks.some((pack) =>
+        String(pack.worker ?? "") === worker &&
+        String(pack.schema ?? "") === "worldcup26-x-account-watchlist-worker-v1" &&
+        Array.isArray(pack.accounts) &&
+        pack.accounts.length >= 9,
+      ),
+    ) &&
+    String(xAccountWatchlist.proofRule ?? "").includes("Never log a planned reply")
+  );
+}
+
+function isImmediateSprintOk(immediateSprint) {
+  const workers = Array.isArray(immediateSprint.workers) ? immediateSprint.workers : [];
+  return (
+    Boolean(immediateSprint.ok) &&
+    String(immediateSprint.schema ?? "") === "worldcup26-immediate-sprint-v1" &&
+    Number(immediateSprint.selectedSlotCount ?? 0) >= 12 &&
+    workers.length === 4 &&
+    ["Dexter", "Sienna", "Memo", "Nano"].every((worker) =>
+      workers.some((row) =>
+        String(row.worker ?? "") === worker &&
+        Number(row.actionCount ?? 0) >= 3 &&
+        Array.isArray(row.actions) &&
+        row.actions.every((action) =>
+          String(action.copy ?? "").includes("26BC4B90CB") &&
+          String(action.link ?? "").includes("worldcup26.world/login") &&
+          isRecognizedProofLogger(action.proofCommand ?? action.proofInstruction),
+        ),
+      ),
+    ) &&
+    String(immediateSprint.proofRule ?? "").includes("not proof")
+  );
+}
+
+function isRecognizedProofLogger(command) {
+  const text = String(command ?? "");
+  return [
+    "campaign-public-channel-attempts.mjs",
+    "campaign-x-reply-log.mjs",
+    "campaign-proof-log.mjs",
+  ].some((logger) => text.includes(logger));
+}
+
 function isRealActionBridgeOk(realActionBridge) {
   const actions = Array.isArray(realActionBridge.actions) ? realActionBridge.actions : [];
   const variants = Array.isArray(realActionBridge.rescueVariants)
@@ -1253,6 +1604,36 @@ function isPublicOutreachTargetsOk(publicOutreachTargets) {
         String(target.proofCommand ?? "").includes("campaign-public-channel-attempts.mjs")
       ),
     )
+  );
+}
+
+function isPlatformRotationOk(platformRotation) {
+  const slots = Array.isArray(platformRotation.slots) ? platformRotation.slots : [];
+  const platforms = Array.isArray(platformRotation.platforms) ? platformRotation.platforms : [];
+  const workerCounts = platformRotation.workerCounts ?? {};
+  return (
+    Boolean(platformRotation.ok) &&
+    String(platformRotation.schema ?? "") === "worldcup26-platform-rotation-v1" &&
+    String(platformRotation.referralCode ?? "") === "26BC4B90CB" &&
+    String(platformRotation.referralLink ?? "") === "https://worldcup26.world/login?ref=26BC4B90CB" &&
+    Number(platformRotation.hours ?? 0) === 72 &&
+    Number(platformRotation.slotCount ?? slots.length) >= 288 &&
+    platforms.length >= 12 &&
+    ["Dexter", "Sienna", "Memo", "Nano"].every((worker) => Number(workerCounts[worker] ?? 0) >= 72) &&
+    slots.slice(0, 40).every((slot) =>
+      Boolean(slot.worker) &&
+      Boolean(slot.platform) &&
+      String(slot.link ?? "").includes("26BC4B90CB") &&
+      String(slot.link ?? "").includes("utm_rotation_hour=") &&
+      String(slot.link ?? "").includes("utm_worker=") &&
+      (
+        String(slot.proofCommand ?? "").includes("campaign-public-channel-attempts.mjs") ||
+        String(slot.proofCommand ?? "").includes("campaign-proof-log.mjs") ||
+        String(slot.proofCommand ?? "").includes("campaign-x-reply-log.mjs") ||
+        String(slot.proofInstruction ?? "").length > 12
+      ),
+    ) &&
+    String(platformRotation.proofRule ?? "").includes("This is a schedule, not proof")
   );
 }
 
@@ -1750,6 +2131,60 @@ function normalizePublicOutreachTargets(row) {
           owner: String(first.owner ?? ""),
           platform: String(first.platform ?? ""),
           target: String(first.target ?? ""),
+          link: String(first.link ?? ""),
+        }
+      : null,
+  };
+}
+
+function normalizePlatformRotation(row) {
+  const slots = Array.isArray(row.slots) ? row.slots : [];
+  const platforms = Array.isArray(row.platforms) ? row.platforms.map(String) : [];
+  const first = slots[0] ?? null;
+  const workerCounts = row.workerCounts && typeof row.workerCounts === "object" ? row.workerCounts : {};
+  return {
+    ok: Boolean(row.ok),
+    state: String(row.state ?? ""),
+    hours: Number(row.hours ?? 0),
+    slotCount: Number(row.slotCount ?? slots.length),
+    platformCount: platforms.length,
+    platforms,
+    workerCounts: Object.fromEntries(
+      ["Dexter", "Sienna", "Memo", "Nano"].map((worker) => [worker, Number(workerCounts[worker] ?? 0)]),
+    ),
+    first: first
+      ? {
+          id: String(first.id ?? ""),
+          hour: Number(first.hour ?? 0),
+          startsAtEest: String(first.startsAtEest ?? ""),
+          worker: String(first.worker ?? ""),
+          platform: String(first.platform ?? ""),
+          target: String(first.target ?? ""),
+          openUrl: String(first.openUrl ?? ""),
+          link: String(first.link ?? ""),
+        }
+      : null,
+  };
+}
+
+function normalizeImmediateSprint(row) {
+  const workers = Array.isArray(row.workers) ? row.workers : [];
+  const first = row.firstAction ?? workers.find((worker) => worker.firstAction)?.firstAction ?? null;
+  return {
+    ok: Boolean(row.ok),
+    state: String(row.state ?? ""),
+    dueSlotCount: Number(row.dueSlotCount ?? 0),
+    selectedSlotCount: Number(row.selectedSlotCount ?? 0),
+    signupSaves: Number(row.signupSaves ?? 0),
+    publicAttempts: Number(row.publicAttempts ?? 0),
+    workers: workers.map((worker) => `${worker.worker ?? "-"}:${Number(worker.actionCount ?? 0)}`),
+    first: first
+      ? {
+          id: String(first.id ?? ""),
+          worker: String(first.worker ?? ""),
+          platform: String(first.platform ?? ""),
+          target: String(first.target ?? ""),
+          openUrl: String(first.openUrl ?? ""),
           link: String(first.link ?? ""),
         }
       : null,
@@ -2285,6 +2720,147 @@ function normalizeOperatorPush(row) {
   };
 }
 
+function normalizeActionCommandCenter(row) {
+  const counts = row.counts ?? {};
+  const firstAction = row.firstAction ?? {};
+  const secondAction = row.secondAction ?? {};
+  const workers = Array.isArray(secondAction.workers) ? secondAction.workers : [];
+  return {
+    ok: Boolean(row.ok),
+    state: String(row.state ?? ""),
+    blocker: String(row.blocker ?? ""),
+    appViews: Number(counts.appViews ?? 0),
+    referralViews: Number(counts.referralViews ?? 0),
+    paidViews: Number(counts.paidViews ?? 0),
+    dashboardClicks: Number(counts.dashboardClicks ?? 0),
+    signupSaves: Number(counts.signupSaves ?? 0),
+    profiles: Number(counts.profiles ?? 0),
+    accepted: Number(counts.accepted ?? 0),
+    publicAttempts: Number(counts.publicAttempts ?? 0),
+    xActions: Number(counts.xActions ?? 0),
+    xWorkerPacks: Number(counts.xWorkerPacks ?? 0),
+    xAccountTargets: Number(counts.xAccountTargets ?? 0),
+    xAccountWorkerPacks: Number(counts.xAccountWorkerPacks ?? 0),
+    xProofReadyWorkers: Number(counts.xProofReadyWorkers ?? 0),
+    firstAction: {
+      owner: String(firstAction.owner ?? ""),
+      title: String(firstAction.title ?? ""),
+      why: String(firstAction.why ?? ""),
+      link: String(firstAction.link ?? ""),
+      logAfterRealSend: String(firstAction.logAfterRealSend ?? ""),
+    },
+    secondAction: {
+      title: String(secondAction.title ?? ""),
+      operatorAccount: String(secondAction.operatorAccount ?? ""),
+      overviewFile: String(secondAction.overviewFile ?? ""),
+      proofHelperFile: String(secondAction.proofHelperFile ?? ""),
+    },
+    workers: workers.map((worker) => ({
+      worker: String(worker.worker ?? ""),
+      packFile: String(worker.packFile ?? ""),
+      actions: Number(worker.actions ?? 0),
+      firstActionId: String(worker.firstAction?.id ?? ""),
+    })),
+  };
+}
+
+function normalizeXFootballOpenclaw(row) {
+  const searches = Array.isArray(row.searches) ? row.searches : [];
+  const accountSearches = Array.isArray(row.accountSearches) ? row.accountSearches : [];
+  const actions = Array.isArray(row.actions) ? row.actions : [];
+  const workerPacks = Array.isArray(row.workerPacks) ? row.workerPacks : [];
+  const first = actions[0] ?? null;
+  return {
+    ok: Boolean(row.ok),
+    state: String(row.state ?? ""),
+    operatorAccount: String(row.operatorAccount ?? ""),
+    searchCount: searches.length,
+    accountSearchCount: accountSearches.length,
+    actionCount: actions.length,
+    workerPackCount: workerPacks.length,
+    workerPackActions: workerPacks.map((pack) => `${pack.worker ?? "-"}:${Array.isArray(pack.actions) ? pack.actions.length : 0}`),
+    perHourCap: Number(row.perHourCap ?? 0),
+    dailyCap: Number(row.dailyCap ?? 0),
+    first: first
+      ? {
+          id: String(first.id ?? ""),
+          owner: String(first.owner ?? ""),
+          query: String(first.query ?? ""),
+          searchUrl: String(first.searchUrl ?? ""),
+          replyStyle: String(first.replyStyle ?? ""),
+          intentUrl: String(first.intentUrl ?? ""),
+          proofCommand: String(first.proofCommand ?? ""),
+        }
+      : null,
+  };
+}
+
+function normalizeXTargetHunter(row) {
+  const lanes = Array.isArray(row.lanes) ? row.lanes : [];
+  const workerPacks = Array.isArray(row.workerPacks) ? row.workerPacks : [];
+  const first = lanes[0] ?? null;
+  return {
+    ok: Boolean(row.ok),
+    state: String(row.state ?? ""),
+    operatorAccount: String(row.operatorAccount ?? ""),
+    laneCount: lanes.length,
+    liveLaneCount: lanes.filter((lane) => String(lane.type ?? "") === "live").length,
+    userLaneCount: lanes.filter((lane) => String(lane.type ?? "") === "user").length,
+    workerPackCount: workerPacks.length,
+    workerPackLanes: workerPacks.map((pack) => `${pack.worker}:${Array.isArray(pack.lanes) ? pack.lanes.length : 0}`),
+    first: first
+      ? {
+          id: String(first.id ?? ""),
+          type: String(first.type ?? ""),
+          query: String(first.query ?? ""),
+          url: String(first.url ?? ""),
+        }
+      : null,
+  };
+}
+
+function normalizeXAccountWatchlist(row) {
+  const accounts = Array.isArray(row.accounts) ? row.accounts : [];
+  const workerPacks = Array.isArray(row.workerPacks) ? row.workerPacks : [];
+  const first = accounts[0] ?? null;
+  return {
+    ok: Boolean(row.ok),
+    state: String(row.state ?? ""),
+    operatorAccount: String(row.operatorAccount ?? ""),
+    accountCount: Number(row.accountCount ?? accounts.length),
+    workerPackCount: workerPacks.length,
+    workerPackAccounts: workerPacks.map((pack) => `${pack.worker ?? "-"}:${Array.isArray(pack.accounts) ? pack.accounts.length : 0}`),
+    first: first
+      ? {
+          id: String(first.id ?? ""),
+          handle: String(first.handle ?? ""),
+          lane: String(first.lane ?? ""),
+          profileUrl: String(first.profileUrl ?? ""),
+          searchUrl: String(first.searchUrl ?? ""),
+        }
+      : null,
+  };
+}
+
+function normalizeXReplyProofHelper(row) {
+  const helpers = Array.isArray(row.helpers) ? row.helpers : [];
+  return {
+    ok: Boolean(row.ok),
+    state: String(row.state ?? ""),
+    operatorAccount: String(row.operatorAccount ?? ""),
+    helperCount: helpers.length,
+    readyWorkers: helpers.filter((helper) => helper.ok).length,
+    workers: helpers.map((helper) => `${helper.worker ?? "-"}:${helper.ok ? "ready" : "missing"}`),
+    first: helpers[0]
+      ? {
+          worker: String(helpers[0].worker ?? ""),
+          firstActionId: String(helpers[0].firstActionId ?? ""),
+          firstQuery: String(helpers[0].firstQuery ?? ""),
+        }
+      : null,
+  };
+}
+
 function normalizeProofCloseout(row) {
   const rows = Array.isArray(row.rows) ? row.rows : [];
   const first = rows[0] ?? null;
@@ -2531,8 +3107,15 @@ function renderText(payload) {
     `login_unlock=cards:${payload.summary.loginUnlockCards} blocked:${payload.summary.loginUnlockBlocked} login_required:${payload.summary.loginUnlockLoginRequired} platforms=${payload.summary.loginUnlockPlatforms.join(",") || "-"}`,
     `objective_audit=${payload.summary.objectiveAuditsOk}/${payload.summary.totalHosts} objective_fresh=${payload.summary.objectiveAuditsFresh}/${payload.summary.totalHosts} objective_states=${payload.summary.objectiveAuditStates.join(",") || "-"} objective_complete=${payload.summary.objectiveAuditComplete}/${payload.summary.totalHosts} objective_critical_open=${payload.summary.objectiveAuditCriticalOpen}`,
     `operator_push=${payload.summary.operatorPushesOk}/${payload.summary.totalHosts} operator_fresh=${payload.summary.operatorPushesFresh}/${payload.summary.totalHosts} operator_states=${payload.summary.operatorPushStates.join(",") || "-"} operator_actions=${payload.summary.operatorPushActions} operator_blocked=${payload.summary.operatorPushBlocked} operator_login_required=${payload.summary.operatorPushLoginRequired}`,
+    `action_center=${payload.summary.actionCommandCentersOk}/${payload.summary.totalHosts} action_center_fresh=${payload.summary.actionCommandCentersFresh}/${payload.summary.totalHosts} action_center_states=${payload.summary.actionCommandCenterStates.join(",") || "-"} action_center_signup_saves=${payload.summary.actionCommandCenterSignupSaves} action_center_views=${payload.summary.actionCommandCenterViews} action_center_referral_views=${payload.summary.actionCommandCenterReferralViews} action_center_paid_views=${payload.summary.actionCommandCenterPaidViews} action_center_x_actions=${payload.summary.actionCommandCenterXActions} action_center_x_account_targets=${payload.summary.actionCommandCenterXAccountTargets} action_center_x_account_packs=${payload.summary.actionCommandCenterXAccountWorkerPacks} action_center_x_ready=${payload.summary.actionCommandCenterXReady}`,
+    `x_openclaw=${payload.summary.xFootballOpenclawsOk}/${payload.summary.totalHosts} x_openclaw_fresh=${payload.summary.xFootballOpenclawsFresh}/${payload.summary.totalHosts} x_openclaw_states=${payload.summary.xFootballOpenclawStates.join(",") || "-"} x_openclaw_worker_packs=${payload.summary.xFootballOpenclawWorkerPacks} x_openclaw_account_searches=${payload.summary.xFootballOpenclawAccountSearches} x_openclaw_searches=${payload.summary.xFootballOpenclawSearches} x_openclaw_actions=${payload.summary.xFootballOpenclawActions}`,
+    `x_target_hunter=${payload.summary.xTargetHuntersOk}/${payload.summary.totalHosts} x_target_fresh=${payload.summary.xTargetHuntersFresh}/${payload.summary.totalHosts} x_target_states=${payload.summary.xTargetHunterStates.join(",") || "-"} x_target_lanes=${payload.summary.xTargetHunterLanes} x_target_live=${payload.summary.xTargetHunterLiveLanes} x_target_users=${payload.summary.xTargetHunterUserLanes} x_target_worker_packs=${payload.summary.xTargetHunterWorkerPacks}`,
+    `x_account_watchlist=${payload.summary.xAccountWatchlistsOk}/${payload.summary.totalHosts} x_account_fresh=${payload.summary.xAccountWatchlistsFresh}/${payload.summary.totalHosts} x_account_states=${payload.summary.xAccountWatchlistStates.join(",") || "-"} x_account_targets=${payload.summary.xAccountWatchlistAccounts} x_account_worker_packs=${payload.summary.xAccountWatchlistWorkerPacks}`,
+    `x_reply_proof=${payload.summary.xReplyProofHelpersOk}/${payload.summary.totalHosts} x_reply_proof_fresh=${payload.summary.xReplyProofHelpersFresh}/${payload.summary.totalHosts} x_reply_proof_states=${payload.summary.xReplyProofHelperStates.join(",") || "-"} x_reply_proof_ready_workers=${payload.summary.xReplyProofHelperReadyWorkers}`,
     `one_click=${payload.summary.oneClickSharesOk}/${payload.summary.totalHosts} one_click_fresh=${payload.summary.oneClickSharesFresh}/${payload.summary.totalHosts} one_click_actions=${payload.summary.oneClickShareActions} one_click_share_links=${payload.summary.oneClickShareLinks}`,
     `public_targets=${payload.summary.publicOutreachTargetsOk}/${payload.summary.totalHosts} public_targets_fresh=${payload.summary.publicOutreachTargetsFresh}/${payload.summary.totalHosts} target_count=${payload.summary.publicOutreachTargetCount} owners=${payload.summary.publicOutreachOwners.join(",") || "-"} missing=${payload.summary.publicOutreachMissingOwners.join(",") || "none"}`,
+    `platform_rotation=${payload.summary.platformRotationsOk}/${payload.summary.totalHosts} platform_rotation_fresh=${payload.summary.platformRotationsFresh}/${payload.summary.totalHosts} platform_rotation_states=${payload.summary.platformRotationStates.join(",") || "-"} platform_rotation_hours=${payload.summary.platformRotationHours} platform_rotation_slots=${payload.summary.platformRotationSlots} platform_rotation_platforms=${payload.summary.platformRotationPlatforms}`,
+    `immediate_sprint=${payload.summary.immediateSprintsOk}/${payload.summary.totalHosts} immediate_fresh=${payload.summary.immediateSprintsFresh}/${payload.summary.totalHosts} immediate_states=${payload.summary.immediateSprintStates.join(",") || "-"} immediate_due=${payload.summary.immediateSprintDue} immediate_selected=${payload.summary.immediateSprintSelected} immediate_signup_saves=${payload.summary.immediateSprintSignupSaves} immediate_public_attempts=${payload.summary.immediateSprintPublicAttempts}`,
     `ad_ops_links=${payload.summary.adOpsLinksOk}/${payload.summary.totalHosts} ad_ops_fresh=${payload.summary.adOpsLinksFresh}/${payload.summary.totalHosts} ad_ops_channels=${payload.summary.adOpsChannels} platforms=${payload.summary.adOpsPlatforms.join(",") || "-"}`,
     `paid_ad_triage=${payload.summary.paidAdTriagesOk}/${payload.summary.totalHosts} paid_ad_fresh=${payload.summary.paidAdTriagesFresh}/${payload.summary.totalHosts} paid_ad_states=${payload.summary.paidAdTriageStates.join(",") || "-"} paid_views=${payload.summary.paidAdTriagePaidViews} paid_app_views=${payload.summary.paidAdTriageAppViews} paid_referral_views=${payload.summary.paidAdTriageReferralViews} paid_signup_saves=${payload.summary.paidAdTriageSignupSaves} dashboard_states=${payload.summary.paidAdDashboardStates.join(",") || "-"} dashboard_checks=${payload.summary.paidAdDashboardChecks} dashboard_impressions=${payload.summary.paidAdDashboardImpressions} dashboard_clicks=${payload.summary.paidAdDashboardClicks}`,
     `signup_conversion=${payload.summary.signupConversionsOk}/${payload.summary.totalHosts} signup_fresh=${payload.summary.signupConversionsFresh}/${payload.summary.totalHosts} signup_states=${payload.summary.signupConversionStates.join(",") || "-"} signup_paid_views=${payload.summary.signupConversionPaidViews} signup_referral_views=${payload.summary.signupConversionReferralViews} signup_dashboard_clicks=${payload.summary.signupConversionDashboardClicks} signup_accepted=${payload.summary.signupConversionAccepted} signup_saves=${payload.summary.signupConversionSignupSaves} signup_profiles=${payload.summary.signupConversionProfiles}`,
@@ -2563,8 +3146,15 @@ function renderText(payload) {
     lines.push(`${host.host}: ${host.ok ? "ok" : "error"} proof=${host.proof} urgent=${host.urgent} loop=${host.loopRunning ? "yes" : "no"} hook=${host.hotPingHookOk ? "yes" : "no"} hot_fresh=${host.hotPingFresh ? "yes" : "no"} link=${host.linkSentinelOk ? "yes" : "no"} link_fresh=${host.linkSentinelFresh ? "yes" : "no"} paid=${host.paidTrafficOk ? "yes" : "no"} paid_fresh=${host.paidTrafficFresh ? "yes" : "no"} live_ad=${host.liveAdQaOk ? "yes" : "no"} live_ad_fresh=${host.liveAdQaFresh ? "yes" : "no"} ad_platform=${host.adPlatformAuditOk ? "yes" : "no"} ad_platform_fresh=${host.adPlatformAuditFresh ? "yes" : "no"} conversion=${host.conversionGuardOk ? "yes" : "no"} conversion_fresh=${host.conversionGuardFresh ? "yes" : "no"} conversion_browser=${host.conversionGuard.browserVerified ? "yes" : "no"} sprint=${host.postingSprintOk ? "yes" : "no"} sprint_fresh=${host.postingSprintFresh ? "yes" : "no"} recovery=${host.sessionRecoveryOk ? "yes" : "no"} recovery_fresh=${host.sessionRecoveryFresh ? "yes" : "no"} escalation=${host.escalationOk ? "yes" : "no"} escalation_fresh=${host.escalationFresh ? "yes" : "no"} proof_activity=${host.proofActivityOk ? "yes" : "no"} proof_stall_fresh=${host.proofStallFresh ? "yes" : "no"} proof_sla=${host.proofSlaOk ? host.proofSla.state || "yes" : "no"} sla_fresh=${host.proofSlaFresh ? "yes" : "no"} proof_rescue=${host.proofRescueOk ? "yes" : "no"} rescue_fresh=${host.proofRescueFresh ? "yes" : "no"} proof_url_recovery=${host.proofUrlRecoveryOk ? host.proofUrlRecovery.pendingCount : "no"} url_recovery_fresh=${host.proofUrlRecoveryFresh ? "yes" : "no"} social_rescue=${host.socialRescueOk ? "yes" : "no"} social_fresh=${host.socialRescueFresh ? "yes" : "no"} zero_signup=${host.zeroSignupRescueOk ? host.zeroSignupRescue.state || "yes" : "no"} zero_fresh=${host.zeroSignupRescueFresh ? "yes" : "no"} real_action=${host.realActionBridgeOk ? host.realActionBridge.state || "yes" : "no"} real_fresh=${host.realActionBridgeFresh ? "yes" : "no"} cockpit=${host.postingCockpitOk ? "yes" : "no"} cockpit_fresh=${host.postingCockpitFresh ? "yes" : "no"} phone_action=${host.phoneActionCenterOk ? "yes" : "no"} phone_fresh=${host.phoneActionCenterFresh ? "yes" : "no"} proof_closeout=${host.proofCloseoutOk ? host.proofCloseout.commandCount : "no"} closeout_fresh=${host.proofCloseoutFresh ? "yes" : "no"} public_attempts=${host.publicAttemptsOk ? "yes" : "no"} attempts_fresh=${host.publicAttemptsFresh ? "yes" : "no"} worker_wake=${host.workerWakeOk ? "yes" : "no"} wake_fresh=${host.workerWakeFresh ? "yes" : "no"} watchdog=${host.watchdogRunning ? "yes" : "no"} cron=${host.watchdogCronInstalled ? "yes" : "no"}`);
     lines.push(`  objective_audit=${host.objectiveAuditOk ? host.objectiveAudit.state || "yes" : "no"} objective_fresh=${host.objectiveAuditFresh ? "yes" : "no"} complete=${host.objectiveAudit.complete ? "yes" : "no"} proven=${host.objectiveAudit.proven}/${host.objectiveAudit.total} critical_open=${host.objectiveAudit.criticalOpen}`);
     lines.push(`  operator_push=${host.operatorPushOk ? host.operatorPush.state || "yes" : "no"} operator_fresh=${host.operatorPushFresh ? "yes" : "no"} actions=${host.operatorPush.actionCount} blocked=${host.operatorPush.publicBlocked} login_required=${host.operatorPush.publicLoginRequired} first=${host.operatorPush.first ? `#${host.operatorPush.first.priority} ${host.operatorPush.first.owner} / ${host.operatorPush.first.channel}` : "-"}`);
+    lines.push(`  action_center=${host.actionCommandCenterOk ? host.actionCommandCenter.state || "yes" : "no"} action_center_fresh=${host.actionCommandCenterFresh ? "yes" : "no"} signup_saves=${host.actionCommandCenter.signupSaves} views=${host.actionCommandCenter.appViews} referral_views=${host.actionCommandCenter.referralViews} paid_views=${host.actionCommandCenter.paidViews} x_actions=${host.actionCommandCenter.xActions} x_account_targets=${host.actionCommandCenter.xAccountTargets} x_account_packs=${host.actionCommandCenter.xAccountWorkerPacks} x_ready=${host.actionCommandCenter.xProofReadyWorkers} first=${host.actionCommandCenter.firstAction.owner || "-"} / ${host.actionCommandCenter.firstAction.title || "-"} blocker=${host.actionCommandCenter.blocker || "-"}`);
+    lines.push(`  x_openclaw=${host.xFootballOpenclawOk ? host.xFootballOpenclaw.state || "yes" : "no"} x_openclaw_fresh=${host.xFootballOpenclawFresh ? "yes" : "no"} account=${host.xFootballOpenclaw.operatorAccount || "-"} worker_packs=${host.xFootballOpenclaw.workerPackCount} pack_actions=${host.xFootballOpenclaw.workerPackActions.join(",") || "-"} account_searches=${host.xFootballOpenclaw.accountSearchCount} searches=${host.xFootballOpenclaw.searchCount} actions=${host.xFootballOpenclaw.actionCount} caps=${host.xFootballOpenclaw.perHourCap}/h ${host.xFootballOpenclaw.dailyCap}/d first=${host.xFootballOpenclaw.first ? `${host.xFootballOpenclaw.first.owner}/${host.xFootballOpenclaw.first.query}` : "-"}`);
+    lines.push(`  x_target_hunter=${host.xTargetHunterOk ? host.xTargetHunter.state || "yes" : "no"} x_target_fresh=${host.xTargetHunterFresh ? "yes" : "no"} account=${host.xTargetHunter.operatorAccount || "-"} lanes=${host.xTargetHunter.laneCount} live=${host.xTargetHunter.liveLaneCount} users=${host.xTargetHunter.userLaneCount} worker_packs=${host.xTargetHunter.workerPackCount} pack_lanes=${host.xTargetHunter.workerPackLanes.join(",") || "-"} first=${host.xTargetHunter.first ? `${host.xTargetHunter.first.type}/${host.xTargetHunter.first.query}` : "-"}`);
+    lines.push(`  x_account_watchlist=${host.xAccountWatchlistOk ? host.xAccountWatchlist.state || "yes" : "no"} x_account_fresh=${host.xAccountWatchlistFresh ? "yes" : "no"} account=${host.xAccountWatchlist.operatorAccount || "-"} targets=${host.xAccountWatchlist.accountCount} worker_packs=${host.xAccountWatchlist.workerPackCount} pack_accounts=${host.xAccountWatchlist.workerPackAccounts.join(",") || "-"} first=${host.xAccountWatchlist.first ? `@${host.xAccountWatchlist.first.handle}/${host.xAccountWatchlist.first.lane}` : "-"}`);
+    lines.push(`  x_reply_proof=${host.xReplyProofHelperOk ? host.xReplyProofHelper.state || "yes" : "no"} x_reply_proof_fresh=${host.xReplyProofHelperFresh ? "yes" : "no"} account=${host.xReplyProofHelper.operatorAccount || "-"} helpers=${host.xReplyProofHelper.helperCount} ready=${host.xReplyProofHelper.readyWorkers} workers=${host.xReplyProofHelper.workers.join(",") || "-"} first=${host.xReplyProofHelper.first ? `${host.xReplyProofHelper.first.worker}/${host.xReplyProofHelper.first.firstActionId}` : "-"}`);
     lines.push(`  one_click=${host.oneClickShareOk ? "yes" : "no"} one_click_fresh=${host.oneClickShareFresh ? "yes" : "no"} actions=${host.oneClickShare.actionCount} share_links=${host.oneClickShare.shareLinkCount} first=${host.oneClickShare.first ? `#${host.oneClickShare.first.priority} ${host.oneClickShare.first.owner} / ${host.oneClickShare.first.channel}` : "-"}`);
     lines.push(`  public_targets=${host.publicOutreachTargetsOk ? "yes" : "no"} public_targets_fresh=${host.publicOutreachTargetsFresh ? "yes" : "no"} targets=${host.publicOutreachTargets.targetCount} owners=${host.publicOutreachTargets.workerCoverage.owners.join(",") || "-"} missing=${host.publicOutreachTargets.workerCoverage.missing.join(",") || "none"} first=${host.publicOutreachTargets.first ? `${host.publicOutreachTargets.first.owner} / ${host.publicOutreachTargets.first.platform}` : "-"}`);
+    lines.push(`  platform_rotation=${host.platformRotationOk ? host.platformRotation.state || "yes" : "no"} platform_rotation_fresh=${host.platformRotationFresh ? "yes" : "no"} hours=${host.platformRotation.hours} slots=${host.platformRotation.slotCount} platforms=${host.platformRotation.platformCount} workers=${Object.entries(host.platformRotation.workerCounts).map(([worker, count]) => `${worker}:${count}`).join(",")} first=${host.platformRotation.first ? `${host.platformRotation.first.worker}/${host.platformRotation.first.platform}/${host.platformRotation.first.target}` : "-"}`);
+    lines.push(`  immediate_sprint=${host.immediateSprintOk ? host.immediateSprint.state || "yes" : "no"} immediate_fresh=${host.immediateSprintFresh ? "yes" : "no"} due=${host.immediateSprint.dueSlotCount} selected=${host.immediateSprint.selectedSlotCount} signup_saves=${host.immediateSprint.signupSaves} public_attempts=${host.immediateSprint.publicAttempts} workers=${host.immediateSprint.workers.join(",") || "-"} first=${host.immediateSprint.first ? `${host.immediateSprint.first.worker}/${host.immediateSprint.first.platform}/${host.immediateSprint.first.target}` : "-"}`);
     lines.push(`  ad_ops=${host.adOpsLinksOk ? "yes" : "no"} ad_ops_fresh=${host.adOpsLinksFresh ? "yes" : "no"} channels=${host.adOpsLinks.channelCount} platforms=${host.adOpsLinks.platforms.join(",") || "-"}`);
     lines.push(`  paid_ad_triage=${host.paidAdTriageOk ? host.paidAdTriage.state || "yes" : "no"} paid_ad_fresh=${host.paidAdTriageFresh ? "yes" : "no"} paid_views=${host.paidAdTriage.paidViews} app_views=${host.paidAdTriage.appViews} referral_views=${host.paidAdTriage.referralViews} signup_saves=${host.paidAdTriage.signupSaves} dashboard=${host.paidAdTriage.dashboardState || "-"} dashboard_checks=${host.paidAdTriage.dashboardChecks} dashboard_impressions=${host.paidAdTriage.dashboardImpressions} dashboard_clicks=${host.paidAdTriage.dashboardClicks} platforms=${host.paidAdTriage.platforms.join(",") || "-"}`);
     lines.push(`  signup_conversion=${host.signupConversionOk ? host.signupConversion.state || "yes" : "no"} signup_fresh=${host.signupConversionFresh ? "yes" : "no"} paid_views=${host.signupConversion.paidViews} referral_views=${host.signupConversion.referralViews} dashboard_clicks=${host.signupConversion.dashboardClicks} accepted=${host.signupConversion.accepted} signup_saves=${host.signupConversion.signupSaves} returned=${host.signupConversion.signupReturned} attempts=${host.signupConversion.signupAttempts} saved_events=${host.signupConversion.signupSavedEvents} failed=${host.signupConversion.signupFailedEvents} errors=${host.signupConversion.signupErrorEvents} blockers=${host.signupConversion.blockerCount} first_action=${host.signupConversion.firstAction || "-"}`);
@@ -2709,6 +3299,11 @@ Generated: ${payload.generatedAtEest}
 - Public outreach target count: ${payload.summary.publicOutreachTargetCount}
 - Public outreach owners: ${payload.summary.publicOutreachOwners.join(", ") || "-"}
 - Public outreach missing owners: ${payload.summary.publicOutreachMissingOwners.join(", ") || "none"}
+- Platform rotations OK: ${payload.summary.platformRotationsOk}/${payload.summary.totalHosts}
+- Platform rotations fresh: ${payload.summary.platformRotationsFresh}/${payload.summary.totalHosts}
+- Platform rotation hours: ${payload.summary.platformRotationHours}
+- Platform rotation slots: ${payload.summary.platformRotationSlots}
+- Platform rotation platforms: ${payload.summary.platformRotationPlatforms}
 - Ad ops links OK: ${payload.summary.adOpsLinksOk}/${payload.summary.totalHosts}
 - Ad ops links fresh: ${payload.summary.adOpsLinksFresh}/${payload.summary.totalHosts}
 - Ad ops platforms: ${payload.summary.adOpsPlatforms.join(", ") || "-"}
@@ -2795,6 +3390,17 @@ Generated: ${payload.generatedAtEest}
 - Operator push actions: ${payload.summary.operatorPushActions}
 - Operator public blockers: ${payload.summary.operatorPushBlocked}
 - Operator login required: ${payload.summary.operatorPushLoginRequired}
+- Action command centers OK: ${payload.summary.actionCommandCentersOk}/${payload.summary.totalHosts}
+- Action command centers fresh: ${payload.summary.actionCommandCentersFresh}/${payload.summary.totalHosts}
+- Action command center states: ${payload.summary.actionCommandCenterStates.join(", ") || "-"}
+- Action command center signup saves: ${payload.summary.actionCommandCenterSignupSaves}
+- Action command center X actions: ${payload.summary.actionCommandCenterXActions}
+- Action command center X ready workers: ${payload.summary.actionCommandCenterXReady}
+- X target hunters OK: ${payload.summary.xTargetHuntersOk}/${payload.summary.totalHosts}
+- X target hunters fresh: ${payload.summary.xTargetHuntersFresh}/${payload.summary.totalHosts}
+- X target hunter lanes: ${payload.summary.xTargetHunterLanes}
+- X target hunter live lanes: ${payload.summary.xTargetHunterLiveLanes}
+- X target hunter account lanes: ${payload.summary.xTargetHunterUserLanes}
 - Worker wake boards OK: ${payload.summary.workerWakesOk}/${payload.summary.totalHosts}
 - Worker wake boards fresh: ${payload.summary.workerWakesFresh}/${payload.summary.totalHosts}
 - Watchdog loops running: ${payload.summary.watchdogLoopsRunning}/${payload.summary.totalHosts}
@@ -2888,6 +3494,9 @@ ${host.first.nextCommand}
 - Public outreach targets: ${host.publicOutreachTargetsOk ? "yes" : "no"}${host.publicOutreachTargetsGeneratedAtEest ? ` (${host.publicOutreachTargetsGeneratedAtEest})` : ""}
 - Public outreach targets fresh: ${host.publicOutreachTargetsFresh ? "yes" : "no"}
 - Public outreach details: targets ${host.publicOutreachTargets.targetCount}, platforms ${host.publicOutreachTargets.platformCount}, owners ${host.publicOutreachTargets.workerCoverage.owners.join(", ") || "-"}, missing ${host.publicOutreachTargets.workerCoverage.missing.join(", ") || "none"}
+- Platform rotation: ${host.platformRotationOk ? host.platformRotation.state || "yes" : "no"}${host.platformRotationGeneratedAtEest ? ` (${host.platformRotationGeneratedAtEest})` : ""}
+- Platform rotation fresh: ${host.platformRotationFresh ? "yes" : "no"}
+- Platform rotation details: hours ${host.platformRotation.hours}, slots ${host.platformRotation.slotCount}, platforms ${host.platformRotation.platformCount}, workers ${Object.entries(host.platformRotation.workerCounts).map(([worker, count]) => `${worker}:${count}`).join(", ")}
 - Ad ops links: ${host.adOpsLinksOk ? "yes" : "no"}${host.adOpsLinksGeneratedAtEest ? ` (${host.adOpsLinksGeneratedAtEest})` : ""}
 - Ad ops links fresh: ${host.adOpsLinksFresh ? "yes" : "no"}
 - Ad ops details: channels ${host.adOpsLinks.channelCount}, platforms ${host.adOpsLinks.platforms.join(", ") || "-"}

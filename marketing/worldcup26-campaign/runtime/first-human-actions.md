@@ -1,11 +1,11 @@
 # WorldCup26 First Human Actions
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:52 +0300
 
 - State: `needs-first-human-action`
 - Warm attempts: 0
 - Signup saves: 0
-- Referral views: 171
+- Referral views: 678
 - Dashboard clicks: 227
 - Signup returned events: 0
 - Signup save attempts: 0

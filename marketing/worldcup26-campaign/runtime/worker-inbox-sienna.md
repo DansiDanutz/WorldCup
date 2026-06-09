@@ -1,6 +1,6 @@
 # Sienna Live Posting Inbox
 
-Generated: 2026-06-07T17:46:16.913Z
+Generated: 2026-06-08T06:48:19.568Z
 
 Goal: push WorldCup26 for the next 72 hours.
 
@@ -51,34 +51,32 @@ node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status:
 
 ## Current 15-Minute Pulse
 
-- Pulse: 146
-- Scheduled: 2026-06-07 21:00 +0300
-- Lane: Status/story
-- Channel: WhatsApp Status
+- Pulse: 198
+- Scheduled: 2026-06-08 10:00 +0300
+- Lane: Story
+- Channel: Instagram/Facebook Story
 - Mode: manual post
-- Action: Post the video/status copy if WhatsApp is available.
-- Asset: `media/worldcup26-main-video.mp4`
-- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse146
-- Proof hint: private-whatsapp-status-note
+- Action: Post story image with code and link sticker if logged in.
+- Asset: `media/worldcup26-referral-story.jpg`
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse198
+- Proof hint: story-url-or-account-note
 
 ## Pulse Copy
 
 ```text
-I invited you to WorldCup26.
+Pick 3 teams before they lock.
 
-Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+Free preview first. Paid leaderboard only when you use a ticket.
 
-Use my referral code 26BC4B90CB when you join:
-https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse146
-
-All teams are still available right now.
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse198
 ```
 
 ## Next Pulse Backups
 
-- 2026-06-07 22:00 +0300: Instagram/Facebook Story - Post story image with code and link sticker if logged in.
-- 2026-06-07 23:00 +0300: Shorts/Reels/TikTok - Upload the main video with code in the first line.
-- 2026-06-08 00:00 +0300: Community caption - Post a friendly invite where promo links are welcome.
+- 2026-06-08 11:00 +0300: Shorts/Reels/TikTok - Upload the main video with code in the first line.
+- 2026-06-08 12:00 +0300: Community caption - Post a friendly invite where promo links are welcome.
+- 2026-06-08 13:00 +0300: WhatsApp Status - Post the video/status copy if WhatsApp is available.
 
 ## Backup Urgent Rows
 

@@ -1,6 +1,6 @@
 # WorldCup26 Link Sentinel
 
-Generated: 2026-06-07 20:46 +0300
+Generated: 2026-06-08 09:48 +0300
 
 - Status: ok
 - Referral code: `26BC4B90CB`
@@ -12,7 +12,7 @@ Generated: 2026-06-07 20:46 +0300
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
 - Resolver: ok (David Ai)
-- Elapsed: 1086 ms
+- Elapsed: 1131 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB
 
 
@@ -22,7 +22,7 @@ Generated: 2026-06-07 20:46 +0300
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
 - Resolver: ok (David Ai)
-- Elapsed: 903 ms
+- Elapsed: 880 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h
 
 
@@ -32,7 +32,7 @@ Generated: 2026-06-07 20:46 +0300
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
 - Resolver: ok (David Ai)
-- Elapsed: 821 ms
+- Elapsed: 885 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid-social&utm_campaign=worldcup26_referral_72h
 
 
@@ -42,6 +42,6 @@ Generated: 2026-06-07 20:46 +0300
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
 - Resolver: ok (David Ai)
-- Elapsed: 833 ms
+- Elapsed: 802 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h
 

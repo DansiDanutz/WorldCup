@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-worker-launchers-v1",
-  "generatedAt": "2026-06-07T17:45:01.518Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:30:52.865Z",
+  "generatedAtEest": "2026-06-08 09:30 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "sourceState": "critical",
@@ -17,7 +17,7 @@
     "doneWhen": "The tester batch is really sent and logged with count/account, then a real profile plus referral signup-save row appears, or a precise tester screenshot captures the failing step.",
     "warmAttempts": 0,
     "signupSaves": 0,
-    "referralViews": 171,
+    "referralViews": 678,
     "adClicks": 227,
     "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
     "whatsapp": "https://wa.me/?text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test",

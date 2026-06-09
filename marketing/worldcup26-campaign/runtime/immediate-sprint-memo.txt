@@ -1,0 +1,19 @@
+WorldCup26 immediate sprint / Memo 07/06/2026 21:54
+ok=yes state=execute-now-signup-and-proof-sprint actions=3
+rule=This is the next action sprint, not proof. Log only after a real post/reply/message exists, using a real URL or precise private proof note.
+
+- rot-01-memo 07/06/2026 21:54 X Target Hunter
+  target=Spain World Cup 2026
+  open=https://x.com/search?q=Spain%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  copy=Good football question. I am asking people for exactly 3 World Cup picks before the event starts. Pick free first and see your private points preview: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-15_spain-world-cup-2026 Code: 26BC4B90CB
+  proof_after_real_action=node campaign-x-reply-log.mjs --worker "Memo" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "<@handle or tweet URL>" --query "Spain World Cup 2026" --timestamp-eest "<YYYY-MM-DD HH:mm EEST>"
+- rot-02-memo 07/06/2026 22:54 Reddit
+  target=r/sportsanalytics printable prediction kit update
+  open=https://www.reddit.com/r/sportsanalytics/comments/1tx0gm4/free_world_cup_2026_prediction_kit_updated/
+  copy=What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard. https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsanalytics&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_prediction_kit_f14
+  proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "Reddit" --channel "r/sportsanalytics printable prediction kit update" --status "posted" --attempt-url "https://www.reddit.com/r/sportsanalytics/comments/1tx0gm4/free_world_cup_2026_prediction_kit_updated/" --detail "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST"
+- rot-03-memo 07/06/2026 23:54 Football Forums
+  target=World Cup 2026 prediction forum threads
+  open=https://www.google.com/search?q=World+Cup+2026+predictions+forum
+  copy=What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard. https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-forums&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=memo_forums_m3
+  proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Memo" --platform "Football Forums" --channel "World Cup 2026 prediction forum threads" --status "posted" --attempt-url "https://www.google.com/search?q=World+Cup+2026+predictions+forum" --detail "public-url-or-approval-note: Memo forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST"

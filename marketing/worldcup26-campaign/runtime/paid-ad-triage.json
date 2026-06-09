@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-paid-ad-triage-v1",
-  "generatedAt": "2026-06-07T17:44:57.604Z",
-  "generatedAtEest": "2026-06-07 20:44 +0300",
+  "generatedAt": "2026-06-08T06:50:38.969Z",
+  "generatedAtEest": "2026-06-08 09:50 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "ok": true,
@@ -9,27 +9,27 @@
   "state": "critical-paid-signup-friction",
   "counts": {
     "available": true,
-    "appViews": 509,
-    "referralViews": 171,
+    "appViews": 1421,
+    "referralViews": 678,
     "signupSaves": 0,
     "accepted": 0,
     "entries": 0
   },
-  "paidViews": 244,
+  "paidViews": 751,
   "paidSources": [
+    {
+      "source": "meta",
+      "medium": "paid-social",
+      "campaign": "worldcup26_referral_72h",
+      "content": "three-team-question",
+      "views": 577
+    },
     {
       "source": "an",
       "medium": "paid",
       "campaign": "6971048256000",
       "content": "6971048413400",
       "views": 84
-    },
-    {
-      "source": "meta",
-      "medium": "paid-social",
-      "campaign": "worldcup26_referral_72h",
-      "content": "three-team-question",
-      "views": 70
     },
     {
       "source": "fb",

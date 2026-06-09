@@ -1,4 +1,4 @@
-WorldCup26 public channel attempts 2026-06-07 20:45 +0300
+WorldCup26 public channel attempts 2026-06-08 09:30 +0300
 ok=yes attempts=9 posted=2 blocked=7 login_required=6 approval_required=0
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB

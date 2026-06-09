@@ -1,6 +1,6 @@
 # WorldCup26 Next-Hour Handoff
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:51 +0300
 
 Referral code: `26BC4B90CB`
 Referral link: https://worldcup26.world/login?ref=26BC4B90CB
@@ -46,32 +46,34 @@ node campaign-proof-log.mjs --priority "4" --proof-url "approval-request: asked 
 
 ### Current Pulse
 
-- Pulse: 145
-- Scheduled: 2026-06-07 20:45 +0300
-- Channel: X / public fallback
-- Action: Publish or prepare a short public CTA if X is logged in.
-- Asset: `media/worldcup26-referral-16x9.jpg`
-- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse145
+- Pulse: 201
+- Scheduled: 2026-06-08 10:45 +0300
+- Channel: Facebook/feed fallback
+- Action: Post a friendly feed variant if Facebook is logged in.
+- Asset: `media/worldcup26-referral-square.jpg`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse201
 
 ```text
-If you already have strong World Cup takes, make your 3 picks.
+WorldCup26 is live for signups.
 
-WorldCup26 now lets you save the picks first and decide later if you want the paid leaderboard:
-https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse145
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
+
+Use a ticket only if you want to enter the paid leaderboard.
 
 Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse201
 ```
 
 Pulse private proof note template:
 
 ```text
-manual-post-note: posted from <account/destination> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB and link included; replace with public URL when available
+manual-post-note: posted from <account/destination> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB and link included; replace with public URL when available
 ```
 
 Pulse proof command after extra real action:
 
 ```bash
-node campaign-proof-log.mjs --pulse "145" --proof-url "manual-post-note: posted from <account/destination> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB and link included; replace with public URL when available" --status "posted"
+node campaign-proof-log.mjs --pulse "201" --proof-url "manual-post-note: posted from <account/destination> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB and link included; replace with public URL when available" --status "posted"
 ```
 
 ## Sienna - Urgent 1
@@ -109,52 +111,47 @@ node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status:
 
 ### Current Pulse
 
-- Pulse: 146
-- Scheduled: 2026-06-07 21:00 +0300
-- Channel: WhatsApp Status
-- Action: Post the video/status copy if WhatsApp is available.
-- Asset: `media/worldcup26-main-video.mp4`
-- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse146
+- Pulse: 198
+- Scheduled: 2026-06-08 10:00 +0300
+- Channel: Instagram/Facebook Story
+- Action: Post story image with code and link sticker if logged in.
+- Asset: `media/worldcup26-referral-story.jpg`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse198
 
 ```text
-I invited you to WorldCup26.
+Pick 3 teams before they lock.
 
-Pick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.
+Free preview first. Paid leaderboard only when you use a ticket.
 
-Use my referral code 26BC4B90CB when you join:
-https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse146
-
-All teams are still available right now.
+Join with code 26BC4B90CB:
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse198
 ```
 
 Pulse private proof note template:
 
 ```text
-private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included
+private-meta-story: story posted from <account> at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included
 ```
 
 Pulse proof command after extra real action:
 
 ```bash
-node campaign-proof-log.mjs --pulse "146" --proof-url "private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included" --status "posted"
+node campaign-proof-log.mjs --pulse "198" --proof-url "private-meta-story: story posted from <account> at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included" --status "posted"
 ```
 
 ## Memo - No urgent row
 
 ### Current Pulse
 
-- Pulse: 147
-- Scheduled: 2026-06-07 21:15 +0300
-- Channel: Proof audit
-- Action: Check proof log, list unproven current rows, and flag blocked channels.
-- Asset: `runtime/posting-log-live.csv`
-- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147
+- Pulse: 199
+- Scheduled: 2026-06-08 10:15 +0300
+- Channel: Asset audit
+- Action: Confirm video and image assets are present on this worker.
+- Asset: `promo-kit-manifest.md`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse199
 
 ```text
-Ops pulse: verify proof rows, urgent rows, and blocked channels.
-
-Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147
-Code: 26BC4B90CB
+Ops pulse: verify MP4, story image, square image, and command center are present.
 ```
 
 Pulse private proof note template:
@@ -166,7 +163,7 @@ internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public pr
 Pulse proof command after extra real action:
 
 ```bash
-node campaign-proof-log.mjs --pulse "147" --proof-url "internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included" --status "logged"
+node campaign-proof-log.mjs --pulse "199" --proof-url "internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included" --status "logged"
 ```
 
 ## Nano - Urgent 2
@@ -204,31 +201,30 @@ node campaign-proof-log.mjs --priority "2" --proof-url "private-whatsapp: sent t
 
 ### Current Pulse
 
-- Pulse: 148
-- Scheduled: 2026-06-07 21:30 +0300
-- Channel: WhatsApp personal
-- Action: Send one warm-contact batch if WhatsApp is available.
-- Asset: `media/worldcup26-main-video.mp4`
-- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse148
+- Pulse: 200
+- Scheduled: 2026-06-08 10:30 +0300
+- Channel: Telegram personal
+- Action: Send the invite to one approved Telegram contact or group where welcome.
+- Asset: `campaign/copy-bank.md`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse200
 
 ```text
-I am inviting friends to WorldCup26.
+WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
 
-You can pick 3 teams for free and see your private points preview during the tournament.
-Use a ticket only if you want to enter the paid leaderboard.
-Use my code when you join: 26BC4B90CB
+Paid leaderboard entry happens only when you use a ticket.
 
-https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse148
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse200
 ```
 
 Pulse private proof note template:
 
 ```text
-private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>
+private-telegram: posted/sent in <group/contact> at YYYY-MM-DD HH:mm EEST; asset campaign/copy-bank.md; code 26BC4B90CB and link included; admin-approved yes/no
 ```
 
 Pulse proof command after extra real action:
 
 ```bash
-node campaign-proof-log.mjs --pulse "148" --proof-url "private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>" --status "sent"
+node campaign-proof-log.mjs --pulse "200" --proof-url "private-telegram: posted/sent in <group/contact> at YYYY-MM-DD HH:mm EEST; asset campaign/copy-bank.md; code 26BC4B90CB and link included; admin-approved yes/no" --status "sent"
 ```

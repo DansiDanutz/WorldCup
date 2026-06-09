@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-objective-audit-v1",
-  "generatedAt": "2026-06-07T17:45:01.297Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:30:52.583Z",
+  "generatedAtEest": "2026-06-08 09:30 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "ok": true,
@@ -95,28 +95,22 @@
     {
       "id": "droplets-awake",
       "label": "Four droplets have campaign tooling awake",
-      "status": "proven",
-      "severity": "critical",
+      "status": "unknown",
+      "severity": "info",
       "evidence": [
-        "hosts=4/4",
-        "worker_wake=4/4",
-        "phone_action=4/4",
-        "public_attempts=4/4",
-        "unhealthy=dexter,sienna,memo,nano"
+        "fleet_war_room=stale_or_missing_new_fields"
       ],
-      "next": "Run the remote war-room and repair any infrastructure host failure before relying on the campaign loop."
+      "next": "Use the leader remote war-room report to prove all four droplets together."
     },
     {
       "id": "nonstop-72h-loop",
       "label": "Nonstop 72h campaign loop/watchdog is running",
-      "status": "proven",
-      "severity": "critical",
+      "status": "unknown",
+      "severity": "info",
       "evidence": [
-        "loops=4/4",
-        "watchdogs=4/4",
-        "watchdog_cron=4/4"
+        "fleet_war_room=stale_or_missing_new_fields"
       ],
-      "next": "Restart campaign-loop/watchdog on any host that drops out."
+      "next": "Use the leader remote war-room report to prove all four loops and watchdogs together."
     },
     {
       "id": "response-kit-ready",
@@ -155,7 +149,7 @@
       "severity": "critical",
       "evidence": [
         "proof_state=critical",
-        "latest_external=3.5h",
+        "latest_external=16.3h",
         "external_rows=31",
         "public_rows=29",
         "urgent_open=16",
@@ -179,10 +173,10 @@
   ],
   "counts": {
     "total": 12,
-    "proven": 10,
+    "proven": 8,
     "incomplete": 1,
     "blocked": 1,
-    "unknown": 0,
+    "unknown": 2,
     "critical": 1
   },
   "nextAction": {

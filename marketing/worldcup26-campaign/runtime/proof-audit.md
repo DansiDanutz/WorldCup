@@ -1,11 +1,11 @@
 # WorldCup26 Proof Audit
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:54 +0300
 
 - Status: audit ok
 - Proof state: critical
 - Proof fresh: no
-- Latest external proof age: 3.5h
+- Latest external proof age: 16.7h
 - External proof rows: 31
 - Public URL proof rows: 29
 - Private-note proof rows: 2

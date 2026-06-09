@@ -1,14 +1,14 @@
 # WorldCup26 Warm Follow-up Monitor
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:52 +0300
 
 - State: awaiting-first-human-send
 - Warm attempts: 0
 - Tester attempts: 0
 - Follow-up attempts: 0
 - Follow-up window: 15 minutes
-- Views: 509
-- Referral views: 171
+- Views: 1421
+- Referral views: 678
 - Profiles: 5
 - Accepted referrals: 0
 - Signup saves: 0

@@ -1,5 +1,5 @@
-WorldCup26 objective audit 2026-06-07 20:45 +0300
-state=critical audit_ok=yes complete=no proven=10/12 critical_open=1
+WorldCup26 objective audit 2026-06-08 09:30 +0300
+state=critical audit_ok=yes complete=no proven=8/12 critical_open=1
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB
 
@@ -22,12 +22,12 @@ requirements:
 - PROVEN workers-awake: Dexter/Sienna/Memo/Nano have current actions
   evidence=worker_wake=ok; workers=4; state=critical; first=#warm-1 Nano / WhatsApp personal
   next=Wake the worker shown in the board and execute the real action before logging proof.
-- PROVEN droplets-awake: Four droplets have campaign tooling awake
-  evidence=hosts=4/4; worker_wake=4/4; phone_action=4/4; public_attempts=4/4; unhealthy=dexter,sienna,memo,nano
-  next=Run the remote war-room and repair any infrastructure host failure before relying on the campaign loop.
-- PROVEN nonstop-72h-loop: Nonstop 72h campaign loop/watchdog is running
-  evidence=loops=4/4; watchdogs=4/4; watchdog_cron=4/4
-  next=Restart campaign-loop/watchdog on any host that drops out.
+- UNKNOWN droplets-awake: Four droplets have campaign tooling awake
+  evidence=fleet_war_room=stale_or_missing_new_fields
+  next=Use the leader remote war-room report to prove all four droplets together.
+- UNKNOWN nonstop-72h-loop: Nonstop 72h campaign loop/watchdog is running
+  evidence=fleet_war_room=stale_or_missing_new_fields
+  next=Use the leader remote war-room report to prove all four loops and watchdogs together.
 - PROVEN response-kit-ready: Reply/conversion response kit is ready
   evidence=response_kit=ok; state=ready-for-warm-replies; replies=13; warm_attempts=0; signup_saves=0
   next=Use the response kit after a real person replies, then log the reply proof only after it happened.
@@ -35,7 +35,7 @@ requirements:
   evidence=first_human=ok; state=needs-first-human-action; actions=2; warm_attempts=0; signup_saves=0; ad_clicks=227; first=Memo/WhatsApp testers/clean-signup-test-batch
   next=Send the first real tester or warm-contact batch, then run the logger with the real count/account.
 - INCOMPLETE advertise-everywhere-proof: Real external posting proof is current
-  evidence=proof_state=critical; latest_external=3.5h; external_rows=31; public_rows=29; urgent_open=16; next=#warm-1 Nano / WhatsApp personal
+  evidence=proof_state=critical; latest_external=16.3h; external_rows=31; public_rows=29; urgent_open=16; next=#warm-1 Nano / WhatsApp personal
   next=Do the next real action and log proof with a public URL or precise private-channel note.
 - BLOCKED public-channel-blockers: Public channel blockers are tracked
   evidence=attempts=9; blocked=7; login_required=6; first_blocked=X / X public fallback

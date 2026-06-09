@@ -1,11 +1,11 @@
 # WorldCup26 Objective Audit
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:30 +0300
 
 - State: critical
 - Audit OK: yes
 - Complete: no
-- Proven: 10/12
+- Proven: 8/12
 - Critical open: 1
 - Referral code: `26BC4B90CB`
 - Referral link: https://worldcup26.world/login?ref=26BC4B90CB
@@ -56,19 +56,19 @@ This objective audit is a completion guard. It proves readiness where evidence e
 - Evidence: worker_wake=ok; workers=4; state=critical; first=#warm-1 Nano / WhatsApp personal
 - Next: Wake the worker shown in the board and execute the real action before logging proof.
 
-### PROVEN - Four droplets have campaign tooling awake
+### UNKNOWN - Four droplets have campaign tooling awake
 
 - ID: `droplets-awake`
-- Severity: critical
-- Evidence: hosts=4/4; worker_wake=4/4; phone_action=4/4; public_attempts=4/4; unhealthy=dexter,sienna,memo,nano
-- Next: Run the remote war-room and repair any infrastructure host failure before relying on the campaign loop.
+- Severity: info
+- Evidence: fleet_war_room=stale_or_missing_new_fields
+- Next: Use the leader remote war-room report to prove all four droplets together.
 
-### PROVEN - Nonstop 72h campaign loop/watchdog is running
+### UNKNOWN - Nonstop 72h campaign loop/watchdog is running
 
 - ID: `nonstop-72h-loop`
-- Severity: critical
-- Evidence: loops=4/4; watchdogs=4/4; watchdog_cron=4/4
-- Next: Restart campaign-loop/watchdog on any host that drops out.
+- Severity: info
+- Evidence: fleet_war_room=stale_or_missing_new_fields
+- Next: Use the leader remote war-room report to prove all four loops and watchdogs together.
 
 ### PROVEN - Reply/conversion response kit is ready
 
@@ -88,7 +88,7 @@ This objective audit is a completion guard. It proves readiness where evidence e
 
 - ID: `advertise-everywhere-proof`
 - Severity: critical
-- Evidence: proof_state=critical; latest_external=3.5h; external_rows=31; public_rows=29; urgent_open=16; next=#warm-1 Nano / WhatsApp personal
+- Evidence: proof_state=critical; latest_external=16.3h; external_rows=31; public_rows=29; urgent_open=16; next=#warm-1 Nano / WhatsApp personal
 - Next: Do the next real action and log proof with a public URL or precise private-channel note.
 
 ### BLOCKED - Public channel blockers are tracked

@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-06-07T17:46:16.753Z",
+  "generatedAt": "2026-06-08T06:46:27.658Z",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "campaignDir": "/Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign",
   "queuePath": "/Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/72h-posting-queue.csv",
   "windowHours": 12,
   "overdueMinutes": 60,
-  "dueCount": 37,
+  "dueCount": 50,
   "dueNowCount": 1,
-  "overdueCount": 36,
+  "overdueCount": 49,
   "upcomingCount": 12,
   "postNowCount": 16,
-  "outboxCount": 29,
+  "outboxCount": 31,
   "postingProof": {
-    "generatedAt": "2026-06-07T17:46:16.753Z",
+    "generatedAt": "2026-06-08T06:46:27.658Z",
     "liveLogPath": "/Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime/posting-log-live.csv",
     "loggedCount": 49,
     "proofedActiveCount": 6,
     "proofedDueCount": 6,
-    "unloggedDueCount": 37,
+    "unloggedDueCount": 50,
     "recentLogs": [
       {
         "timestamp": "2026-06-06 16:22 +0300",
@@ -272,15 +272,15 @@
   },
   "monitor": {
     "overdueMinutes": 60,
-    "overdueCount": 36,
+    "overdueCount": 49,
     "dueNowCount": 1,
-    "dueCount": 37,
+    "dueCount": 50,
     "upcomingCount": 12,
-    "readyOutboxCount": 29,
+    "readyOutboxCount": 31,
     "loggedProofCount": 49,
     "proofedActiveCount": 6,
     "proofedDueCount": 6,
-    "unloggedDueCount": 37,
+    "unloggedDueCount": 50,
     "workerCount": 4
   },
   "activeHotActions": [
@@ -308,7 +308,7 @@
   "owners": {
     "Dexter": {
       "owner": "Dexter",
-      "generatedAt": "2026-06-07T17:46:16.753Z",
+      "generatedAt": "2026-06-08T06:46:27.658Z",
       "referralCode": "26BC4B90CB",
       "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
       "brief": {
@@ -459,9 +459,7 @@
           "status": "queued",
           "notes": "",
           "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h38"
-        }
-      ],
-      "upcoming": [
+        },
         {
           "scheduledAt": "2026-06-07T18:00:00.000Z",
           "scheduledLabel": "2026-06-07 21:00 +0300",
@@ -509,6 +507,72 @@
           "status": "queued",
           "notes": "",
           "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=feed-post&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h48"
+        },
+        {
+          "scheduledAt": "2026-06-08T06:00:00.000Z",
+          "scheduledLabel": "2026-06-08 09:00 +0300",
+          "hour": "53",
+          "owner": "Dexter",
+          "channel": "Football groups",
+          "action": "Second approved admin post/reminder where allowed",
+          "asset": "first-wave-posts.md",
+          "assetHint": "campaign/first-wave-posts.md",
+          "mode": "approval first",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_53",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h53"
+        }
+      ],
+      "upcoming": [
+        {
+          "scheduledAt": "2026-06-08T10:00:00.000Z",
+          "scheduledLabel": "2026-06-08 13:00 +0300",
+          "hour": "57",
+          "owner": "Dexter",
+          "channel": "X / short feed",
+          "action": "Post late-night simple rules recap",
+          "asset": "worldcup26-referral-square.jpg",
+          "assetHint": "media/worldcup26-referral-square.jpg",
+          "mode": "manual post",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_57",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h57"
+        },
+        {
+          "scheduledAt": "2026-06-08T13:00:00.000Z",
+          "scheduledLabel": "2026-06-08 16:00 +0300",
+          "hour": "60",
+          "owner": "Dexter",
+          "channel": "Football groups",
+          "action": "Approved reminder only where prior permission exists",
+          "asset": "first-wave-posts.md",
+          "assetHint": "campaign/first-wave-posts.md",
+          "mode": "approval first",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_60",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h60"
+        },
+        {
+          "scheduledAt": "2026-06-08T18:00:00.000Z",
+          "scheduledLabel": "2026-06-08 21:00 +0300",
+          "hour": "65",
+          "owner": "Dexter",
+          "channel": "X / short feed",
+          "action": "Post final-day football challenge hook",
+          "asset": "worldcup26-referral-16x9.jpg",
+          "assetHint": "media/worldcup26-referral-16x9.jpg",
+          "mode": "manual post",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_65",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h65"
         }
       ],
       "next": {
@@ -617,11 +681,11 @@
           "firstComment": "Follow up once after 24 hours if they react but do not answer."
         }
       ],
-      "prompt": "You are Dexter, assigned to Football hooks and short feed posts for WorldCup26.\nWrite punchy football-fan copy. Use favorites, underdogs, friends, leaderboard, and pick-three-team angles.\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\nDo not claim a fixed prize amount unless the live site is checked at posting time.\nDo not post automatically. Prepare copy, channel notes, and a log-ready summary.\nImmediate next action: Football groups: Ask approved group admin for permission; post group variant only if allowed using campaign/first-wave-posts.md\nDue actions for you: 9\nUpcoming actions for you in this window: 3"
+      "prompt": "You are Dexter, assigned to Football hooks and short feed posts for WorldCup26.\nWrite punchy football-fan copy. Use favorites, underdogs, friends, leaderboard, and pick-three-team angles.\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\nDo not claim a fixed prize amount unless the live site is checked at posting time.\nDo not post automatically. Prepare copy, channel notes, and a log-ready summary.\nImmediate next action: Football groups: Ask approved group admin for permission; post group variant only if allowed using campaign/first-wave-posts.md\nDue actions for you: 13\nUpcoming actions for you in this window: 3"
     },
     "Sienna": {
       "owner": "Sienna",
-      "generatedAt": "2026-06-07T17:46:16.753Z",
+      "generatedAt": "2026-06-08T06:46:27.658Z",
       "referralCode": "26BC4B90CB",
       "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
       "brief": {
@@ -868,9 +932,7 @@
           "status": "queued",
           "notes": "",
           "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=video-repost&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h40"
-        }
-      ],
-      "upcoming": [
+        },
         {
           "scheduledAt": "2026-06-07T22:00:00.000Z",
           "scheduledLabel": "2026-06-08 01:00 +0300",
@@ -934,6 +996,56 @@
           "status": "queued",
           "notes": "",
           "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=story-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h52"
+        }
+      ],
+      "upcoming": [
+        {
+          "scheduledAt": "2026-06-08T08:00:00.000Z",
+          "scheduledLabel": "2026-06-08 11:00 +0300",
+          "hour": "55",
+          "owner": "Sienna",
+          "channel": "YouTube Shorts",
+          "action": "Post video with code and short description",
+          "asset": "worldcup26-main-video.mp4",
+          "assetHint": "media/worldcup26-main-video.mp4",
+          "mode": "manual post",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_55",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h55"
+        },
+        {
+          "scheduledAt": "2026-06-08T12:00:00.000Z",
+          "scheduledLabel": "2026-06-08 15:00 +0300",
+          "hour": "59",
+          "owner": "Sienna",
+          "channel": "Facebook Reels",
+          "action": "Repost main video with friends-angle caption",
+          "asset": "worldcup26-main-video.mp4",
+          "assetHint": "media/worldcup26-main-video.mp4",
+          "mode": "manual post",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-reels&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_59",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-reels&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h59"
+        },
+        {
+          "scheduledAt": "2026-06-08T15:00:00.000Z",
+          "scheduledLabel": "2026-06-08 18:00 +0300",
+          "hour": "62",
+          "owner": "Sienna",
+          "channel": "Instagram Story",
+          "action": "Story: three-pick challenge + link sticker",
+          "asset": "worldcup26-referral-story.jpg",
+          "assetHint": "media/worldcup26-referral-story.jpg",
+          "mode": "manual post",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_62",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h62"
         }
       ],
       "next": {
@@ -1042,11 +1154,11 @@
           "firstComment": "Code: 26BC4B90CB\nJoin: https://worldcup26.world/login?ref=26BC4B90CB"
         }
       ],
-      "prompt": "You are Sienna, assigned to Visual captions, stories, reels, and community posts for WorldCup26.\nWrite friendly captions and story/status text for the video and referral images. Keep it clear and human.\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\nDo not claim a fixed prize amount unless the live site is checked at posting time.\nDo not post automatically. Prepare copy, channel notes, and a log-ready summary.\nImmediate next action: WhatsApp Status: Post story asset with video caption 1 using media/worldcup26-main-video.mp4\nDue actions for you: 15\nUpcoming actions for you in this window: 4"
+      "prompt": "You are Sienna, assigned to Visual captions, stories, reels, and community posts for WorldCup26.\nWrite friendly captions and story/status text for the video and referral images. Keep it clear and human.\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\nDo not claim a fixed prize amount unless the live site is checked at posting time.\nDo not post automatically. Prepare copy, channel notes, and a log-ready summary.\nImmediate next action: WhatsApp Status: Post story asset with video caption 1 using media/worldcup26-main-video.mp4\nDue actions for you: 19\nUpcoming actions for you in this window: 3"
     },
     "Memo": {
       "owner": "Memo",
-      "generatedAt": "2026-06-07T17:46:16.753Z",
+      "generatedAt": "2026-06-08T06:46:27.658Z",
       "referralCode": "26BC4B90CB",
       "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
       "brief": {
@@ -1101,9 +1213,7 @@
           "status": "queued",
           "notes": "",
           "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h36"
-        }
-      ],
-      "upcoming": [
+        },
         {
           "scheduledAt": "2026-06-07T20:00:00.000Z",
           "scheduledLabel": "2026-06-07 23:00 +0300",
@@ -1135,6 +1245,40 @@
           "status": "queued",
           "notes": "",
           "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h51"
+        }
+      ],
+      "upcoming": [
+        {
+          "scheduledAt": "2026-06-08T09:00:00.000Z",
+          "scheduledLabel": "2026-06-08 12:00 +0300",
+          "hour": "56",
+          "owner": "Memo",
+          "channel": "Ops check",
+          "action": "Choose best two channels and double posting cadence there",
+          "asset": "posting-log-template.csv",
+          "assetHint": "campaign/posting-log-template.csv",
+          "mode": "internal",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_56",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h56"
+        },
+        {
+          "scheduledAt": "2026-06-08T16:00:00.000Z",
+          "scheduledLabel": "2026-06-08 19:00 +0300",
+          "hour": "63",
+          "owner": "Memo",
+          "channel": "Ops check",
+          "action": "Prepare final-day push list from best channels and replies",
+          "asset": "posting-log-template.csv",
+          "assetHint": "campaign/posting-log-template.csv",
+          "mode": "internal",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_63",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h63"
         }
       ],
       "next": {
@@ -1208,13 +1352,35 @@
           "logNote": "Memo prepared Ops check action for 2026-06-08 07:00 +0300.",
           "primaryCopy": "Campaign ops check for WorldCup26.\n\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\n\nVerify the current assets:\n- media/worldcup26-main-video.mp4\n- media/worldcup26-referral-story.jpg\n- media/worldcup26-referral-16x9.jpg\n- runtime/outbox-ready.csv\n\nNext action: Check if any copy claims a fixed prize; remove fixed amount before posting",
           "firstComment": "Update runtime/posting-log-live.csv after each manual post, reply, or outreach. Track channel, copy used, asset, and next follow-up."
+        },
+        {
+          "owner": "Memo",
+          "scheduledLabel": "2026-06-08 12:00 +0300",
+          "channel": "Ops check",
+          "mode": "internal",
+          "assetHint": "campaign/posting-log-template.csv",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h56",
+          "logNote": "Memo prepared Ops check action for 2026-06-08 12:00 +0300.",
+          "primaryCopy": "Campaign ops check for WorldCup26.\n\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\n\nVerify the current assets:\n- media/worldcup26-main-video.mp4\n- media/worldcup26-referral-story.jpg\n- media/worldcup26-referral-16x9.jpg\n- runtime/outbox-ready.csv\n\nNext action: Choose best two channels and double posting cadence there",
+          "firstComment": "Update runtime/posting-log-live.csv after each manual post, reply, or outreach. Track channel, copy used, asset, and next follow-up."
+        },
+        {
+          "owner": "Memo",
+          "scheduledLabel": "2026-06-08 19:00 +0300",
+          "channel": "Ops check",
+          "mode": "internal",
+          "assetHint": "campaign/posting-log-template.csv",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h63",
+          "logNote": "Memo prepared Ops check action for 2026-06-08 19:00 +0300.",
+          "primaryCopy": "Campaign ops check for WorldCup26.\n\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\n\nVerify the current assets:\n- media/worldcup26-main-video.mp4\n- media/worldcup26-referral-story.jpg\n- media/worldcup26-referral-16x9.jpg\n- runtime/outbox-ready.csv\n\nNext action: Prepare final-day push list from best channels and replies",
+          "firstComment": "Update runtime/posting-log-live.csv after each manual post, reply, or outreach. Track channel, copy used, asset, and next follow-up."
         }
       ],
-      "prompt": "You are Memo, assigned to Ops tracker and campaign log for WorldCup26.\nKeep the log clean, summarize what is due, and identify the next five actions. Do not post automatically.\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\nDo not claim a fixed prize amount unless the live site is checked at posting time.\nDo not post automatically. Prepare copy, channel notes, and a log-ready summary.\nImmediate next action: Ops check: Summarize Day 1: posts, replies, joins observed, next 5 actions using campaign/posting-log-template.csv\nDue actions for you: 3\nUpcoming actions for you in this window: 2"
+      "prompt": "You are Memo, assigned to Ops tracker and campaign log for WorldCup26.\nKeep the log clean, summarize what is due, and identify the next five actions. Do not post automatically.\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\nDo not claim a fixed prize amount unless the live site is checked at posting time.\nDo not post automatically. Prepare copy, channel notes, and a log-ready summary.\nImmediate next action: Ops check: Summarize Day 1: posts, replies, joins observed, next 5 actions using campaign/posting-log-template.csv\nDue actions for you: 5\nUpcoming actions for you in this window: 2"
     },
     "Nano": {
       "owner": "Nano",
-      "generatedAt": "2026-06-07T17:46:16.753Z",
+      "generatedAt": "2026-06-08T06:46:27.658Z",
       "referralCode": "26BC4B90CB",
       "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
       "brief": {
@@ -1381,9 +1547,7 @@
           "status": "queued",
           "notes": "",
           "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h39"
-        }
-      ],
-      "upcoming": [
+        },
         {
           "scheduledAt": "2026-06-07T19:00:00.000Z",
           "scheduledLabel": "2026-06-07 22:00 +0300",
@@ -1431,6 +1595,72 @@
           "status": "queued",
           "notes": "",
           "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h49"
+        }
+      ],
+      "upcoming": [
+        {
+          "scheduledAt": "2026-06-08T07:00:00.000Z",
+          "scheduledLabel": "2026-06-08 10:00 +0300",
+          "hour": "54",
+          "owner": "Nano",
+          "channel": "WhatsApp personal",
+          "action": "Invite warm-contact batch with simple personal message",
+          "asset": "worldcup26-main-video.mp4",
+          "assetHint": "media/worldcup26-main-video.mp4",
+          "mode": "manual outreach",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_54",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h54"
+        },
+        {
+          "scheduledAt": "2026-06-08T11:00:00.000Z",
+          "scheduledLabel": "2026-06-08 14:00 +0300",
+          "hour": "58",
+          "owner": "Nano",
+          "channel": "Replies",
+          "action": "Answer late replies and resend link once if requested",
+          "asset": "copy-bank.md",
+          "assetHint": "campaign/copy-bank.md",
+          "mode": "manual replies",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_58",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h58"
+        },
+        {
+          "scheduledAt": "2026-06-08T14:00:00.000Z",
+          "scheduledLabel": "2026-06-08 17:00 +0300",
+          "hour": "61",
+          "owner": "Nano",
+          "channel": "Direct DMs",
+          "action": "Ask interested contacts if they want the invite link again",
+          "asset": "copy-bank.md",
+          "assetHint": "campaign/copy-bank.md",
+          "mode": "manual outreach",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=direct-dms&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_61",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=direct-dms&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h61"
+        },
+        {
+          "scheduledAt": "2026-06-08T17:00:00.000Z",
+          "scheduledLabel": "2026-06-08 20:00 +0300",
+          "hour": "64",
+          "owner": "Nano",
+          "channel": "Warm contacts",
+          "action": "Ask joined users to invite 3 friends",
+          "asset": "copy-bank.md",
+          "assetHint": "campaign/copy-bank.md",
+          "mode": "manual outreach",
+          "referralCode": "26BC4B90CB",
+          "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=warm-contacts&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_64",
+          "status": "queued",
+          "notes": "",
+          "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=warm-contacts&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h64"
         }
       ],
       "next": {
@@ -1539,7 +1769,7 @@
           "firstComment": "If they ask why the code matters: it connects the account to the invite. Code 26BC4B90CB."
         }
       ],
-      "prompt": "You are Nano, assigned to Replies, DMs, objections, and micro-posts for WorldCup26.\nPrepare short replies that answer one question and return to the code/link CTA without pressure.\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\nDo not claim a fixed prize amount unless the live site is checked at posting time.\nDo not post automatically. Prepare copy, channel notes, and a log-ready summary.\nImmediate next action: WhatsApp personal: Send personal invite to warm contacts using media/worldcup26-main-video.mp4\nDue actions for you: 10\nUpcoming actions for you in this window: 3"
+      "prompt": "You are Nano, assigned to Replies, DMs, objections, and micro-posts for WorldCup26.\nPrepare short replies that answer one question and return to the code/link CTA without pressure.\nReferral code: 26BC4B90CB\nReferral link: https://worldcup26.world/login?ref=26BC4B90CB\nDo not claim a fixed prize amount unless the live site is checked at posting time.\nDo not post automatically. Prepare copy, channel notes, and a log-ready summary.\nImmediate next action: WhatsApp personal: Send personal invite to warm contacts using media/worldcup26-main-video.mp4\nDue actions for you: 13\nUpcoming actions for you in this window: 4"
     }
   }
 }

@@ -1,0 +1,223 @@
+{
+  "schema": "worldcup26-action-command-center-v1",
+  "generatedAt": "2026-06-07T18:56:14.810Z",
+  "generatedAtEest": "07/06/2026 21:56",
+  "ok": true,
+  "state": "critical-first-human-action",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "blocker": "No proven referral signup-save exists yet. Do the tester batch before changing ads again.",
+  "failures": [
+    "signup-save-unproven"
+  ],
+  "counts": {
+    "appViews": 671,
+    "referralViews": 300,
+    "paidViews": 373,
+    "dashboardClicks": 227,
+    "signupSaves": 0,
+    "profiles": 5,
+    "accepted": 0,
+    "publicAttempts": 9,
+    "xActions": 16,
+    "xWorkerPacks": 4,
+    "xAccountTargets": 36,
+    "xAccountWorkerPacks": 4,
+    "xProofReadyWorkers": 4
+  },
+  "firstAction": {
+    "owner": "Memo",
+    "title": "Send 3 clean signup tests",
+    "why": "Paid and referral views exist, but no completed signup-save event exists. This proves or isolates the Google signup path.",
+    "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+    "whatsappUrl": "https://wa.me/?text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test",
+    "copy": "I need 3 clean WorldCup26 signup tests now.\n\nPlease send this to three trusted people with different Google accounts. They should open it on a fresh phone/browser, accept the invite, continue with Google, and pick 3 teams. Do not pay.\n\nAsk each tester to reply with one of these:\n1. \"joined + picked teams\"\n2. screenshot of the exact screen where it stops\n\nCode 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+    "logAfterRealSend": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+  },
+  "secondAction": {
+    "title": "Run one X OpenClaw reply from each worker",
+    "why": "The droplets can find football conversations and prepare replies; proof begins only after a real reply URL or precise private note.",
+    "operatorAccount": "david2015bestai@gmail.com",
+    "overviewFile": "x-football-openclaw.html",
+    "proofHelperFile": "x-reply-proof-helper.html",
+    "workers": [
+      {
+        "worker": "Dexter",
+        "packFile": "x-openclaw-dexter.html",
+        "firstAction": {
+          "id": "x-1-1",
+          "owner": "Dexter",
+          "query": "world cup 2026 predictions",
+          "searchUrl": "https://x.com/search?q=world%20cup%202026%20predictions%20-giveaway%20-crypto&src=typed_query&f=live",
+          "targetSignal": "People already talking about favorites or dark horses.",
+          "replyStyle": "Ask for 3 picks",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=world-cup-2026-predictions_three-picks",
+          "copy": "Good football question. I am asking people for exactly 3 World Cup picks before the event starts.\n\nYou can save your 3 teams free and see your private points preview here:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=world-cup-2026-predictions_three-picks\n\nCode: 26BC4B90CB",
+          "intentUrl": "https://twitter.com/intent/tweet?text=Good%20football%20question.%20I%20am%20asking%20people%20for%20exactly%203%20World%20Cup%20picks%20before%20the%20event%20starts.%0A%0AYou%20can%20save%20your%203%20teams%20free%20and%20see%20your%20private%20points%20preview%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_football_openclaw%26utm_content%3Dworld-cup-2026-predictions_three-picks%0A%0ACode%3A%2026BC4B90CB",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X\" --channel \"football manual replies\" --status \"replied\" --attempt-url \"<real-x-reply-url-or-private-note>\" --detail \"Manual X reply from david2015bestai@gmail.com at YYYY-MM-DD HH:mm EEST; target=<@handle or tweet URL>; search='world cup 2026 predictions'; code 26BC4B90CB and WorldCup26 link included\" --next-action \"watch replies, then run campaign-referral-activity.mjs after 15 minutes\""
+        },
+        "actions": 4
+      },
+      {
+        "worker": "Sienna",
+        "packFile": "x-openclaw-sienna.html",
+        "firstAction": {
+          "id": "x-1-2",
+          "owner": "Sienna",
+          "query": "world cup 2026 predictions",
+          "searchUrl": "https://x.com/search?q=world%20cup%202026%20predictions%20-giveaway%20-crypto&src=typed_query&f=live",
+          "targetSignal": "People already talking about favorites or dark horses.",
+          "replyStyle": "React to prediction",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=world-cup-2026-predictions_bold-prediction",
+          "copy": "That is a bold pick. I built a small WorldCup26 game for this exact debate: pick 3 teams, track points, then join the paid leaderboard only if you want.\n\nFree picks first:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=world-cup-2026-predictions_bold-prediction\n\nCode: 26BC4B90CB",
+          "intentUrl": "https://twitter.com/intent/tweet?text=That%20is%20a%20bold%20pick.%20I%20built%20a%20small%20WorldCup26%20game%20for%20this%20exact%20debate%3A%20pick%203%20teams%2C%20track%20points%2C%20then%20join%20the%20paid%20leaderboard%20only%20if%20you%20want.%0A%0AFree%20picks%20first%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_football_openclaw%26utm_content%3Dworld-cup-2026-predictions_bold-prediction%0A%0ACode%3A%2026BC4B90CB",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Sienna\" --platform \"X\" --channel \"football manual replies\" --status \"replied\" --attempt-url \"<real-x-reply-url-or-private-note>\" --detail \"Manual X reply from david2015bestai@gmail.com at YYYY-MM-DD HH:mm EEST; target=<@handle or tweet URL>; search='world cup 2026 predictions'; code 26BC4B90CB and WorldCup26 link included\" --next-action \"watch replies, then run campaign-referral-activity.mjs after 15 minutes\""
+        },
+        "actions": 4
+      },
+      {
+        "worker": "Memo",
+        "packFile": "x-openclaw-memo.html",
+        "firstAction": {
+          "id": "x-2-2",
+          "owner": "Memo",
+          "query": "pick 3 teams world cup",
+          "searchUrl": "https://x.com/search?q=pick%203%20teams%20world%20cup%20-giveaway%20-crypto&src=typed_query&f=live",
+          "targetSignal": "People discussing team picks or fantasy-style selections.",
+          "replyStyle": "React to prediction",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=pick-3-teams-world-cup_bold-prediction",
+          "copy": "That is a bold pick. I built a small WorldCup26 game for this exact debate: pick 3 teams, track points, then join the paid leaderboard only if you want.\n\nFree picks first:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=pick-3-teams-world-cup_bold-prediction\n\nCode: 26BC4B90CB",
+          "intentUrl": "https://twitter.com/intent/tweet?text=That%20is%20a%20bold%20pick.%20I%20built%20a%20small%20WorldCup26%20game%20for%20this%20exact%20debate%3A%20pick%203%20teams%2C%20track%20points%2C%20then%20join%20the%20paid%20leaderboard%20only%20if%20you%20want.%0A%0AFree%20picks%20first%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_football_openclaw%26utm_content%3Dpick-3-teams-world-cup_bold-prediction%0A%0ACode%3A%2026BC4B90CB",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"X\" --channel \"football manual replies\" --status \"replied\" --attempt-url \"<real-x-reply-url-or-private-note>\" --detail \"Manual X reply from david2015bestai@gmail.com at YYYY-MM-DD HH:mm EEST; target=<@handle or tweet URL>; search='pick 3 teams world cup'; code 26BC4B90CB and WorldCup26 link included\" --next-action \"watch replies, then run campaign-referral-activity.mjs after 15 minutes\""
+        },
+        "actions": 4
+      },
+      {
+        "worker": "Nano",
+        "packFile": "x-openclaw-nano.html",
+        "firstAction": {
+          "id": "x-3-2",
+          "owner": "Nano",
+          "query": "who will win world cup 2026",
+          "searchUrl": "https://x.com/search?q=who%20will%20win%20world%20cup%202026%20-giveaway%20-crypto&src=typed_query&f=live",
+          "targetSignal": "Prediction threads with natural invite fit.",
+          "replyStyle": "React to prediction",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=who-will-win-world-cup-2026_bold-prediction",
+          "copy": "That is a bold pick. I built a small WorldCup26 game for this exact debate: pick 3 teams, track points, then join the paid leaderboard only if you want.\n\nFree picks first:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=who-will-win-world-cup-2026_bold-prediction\n\nCode: 26BC4B90CB",
+          "intentUrl": "https://twitter.com/intent/tweet?text=That%20is%20a%20bold%20pick.%20I%20built%20a%20small%20WorldCup26%20game%20for%20this%20exact%20debate%3A%20pick%203%20teams%2C%20track%20points%2C%20then%20join%20the%20paid%20leaderboard%20only%20if%20you%20want.%0A%0AFree%20picks%20first%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_football_openclaw%26utm_content%3Dwho-will-win-world-cup-2026_bold-prediction%0A%0ACode%3A%2026BC4B90CB",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"X\" --channel \"football manual replies\" --status \"replied\" --attempt-url \"<real-x-reply-url-or-private-note>\" --detail \"Manual X reply from david2015bestai@gmail.com at YYYY-MM-DD HH:mm EEST; target=<@handle or tweet URL>; search='who will win world cup 2026'; code 26BC4B90CB and WorldCup26 link included\" --next-action \"watch replies, then run campaign-referral-activity.mjs after 15 minutes\""
+        },
+        "actions": 4
+      }
+    ],
+    "proofTemplates": [
+      {
+        "worker": "Dexter",
+        "query": "world cup 2026 predictions",
+        "command": "node campaign-x-reply-log.mjs --worker \"Dexter\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"world cup 2026 predictions\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\""
+      },
+      {
+        "worker": "Sienna",
+        "query": "world cup 2026 predictions",
+        "command": "node campaign-x-reply-log.mjs --worker \"Sienna\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"world cup 2026 predictions\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\""
+      },
+      {
+        "worker": "Memo",
+        "query": "pick 3 teams world cup",
+        "command": "node campaign-x-reply-log.mjs --worker \"Memo\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"pick 3 teams world cup\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\""
+      },
+      {
+        "worker": "Nano",
+        "query": "who will win world cup 2026",
+        "command": "node campaign-x-reply-log.mjs --worker \"Nano\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"who will win world cup 2026\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\""
+      }
+    ]
+  },
+  "thirdAction": {
+    "title": "Run targeted X account replies",
+    "why": "The account watchlist gives each worker real football accounts to inspect, reducing time lost in generic search results.",
+    "operatorAccount": "david2015bestai@gmail.com",
+    "overviewFile": "x-account-watchlist.html",
+    "accountCount": 36,
+    "workers": [
+      {
+        "worker": "Dexter",
+        "packFile": "x-account-watchlist-dexter.html",
+        "accounts": 9,
+        "firstAccount": {
+          "id": "xacct-01",
+          "handle": "FIFAWorldCup",
+          "lane": "Official World Cup conversation",
+          "signal": "World Cup 2026 posts and national-team questions",
+          "profileUrl": "https://x.com/FIFAWorldCup",
+          "searchUrl": "https://x.com/search?q=from%3AFIFAWorldCup%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=fifaworldcup",
+          "copy": "This is exactly the kind of football debate I am collecting before the World Cup.\n\nI am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=fifaworldcup\n\nCode: 26BC4B90CB",
+          "proofCommand": "node campaign-x-reply-log.mjs --worker \"<Dexter|Sienna|Memo|Nano>\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"@FIFAWorldCup\" --query \"account watchlist FIFAWorldCup\"",
+          "next": "Open the profile/search, pick a recent relevant post, personalize the first sentence, reply manually, then log proof only after the reply exists."
+        }
+      },
+      {
+        "worker": "Sienna",
+        "packFile": "x-account-watchlist-sienna.html",
+        "accounts": 9,
+        "firstAccount": {
+          "id": "xacct-02",
+          "handle": "fifaworldcup_es",
+          "lane": "Spanish World Cup conversation",
+          "signal": "Spanish-language World Cup posts",
+          "profileUrl": "https://x.com/fifaworldcup_es",
+          "searchUrl": "https://x.com/search?q=from%3Afifaworldcup_es%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=fifaworldcup_es",
+          "copy": "This is exactly the kind of football debate I am collecting before the World Cup.\n\nI am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=fifaworldcup_es\n\nCode: 26BC4B90CB",
+          "proofCommand": "node campaign-x-reply-log.mjs --worker \"<Dexter|Sienna|Memo|Nano>\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"@fifaworldcup_es\" --query \"account watchlist fifaworldcup_es\"",
+          "next": "Open the profile/search, pick a recent relevant post, personalize the first sentence, reply manually, then log proof only after the reply exists."
+        }
+      },
+      {
+        "worker": "Memo",
+        "packFile": "x-account-watchlist-memo.html",
+        "accounts": 9,
+        "firstAccount": {
+          "id": "xacct-03",
+          "handle": "FIFAcom",
+          "lane": "FIFA general football feed",
+          "signal": "global football and national-team posts",
+          "profileUrl": "https://x.com/FIFAcom",
+          "searchUrl": "https://x.com/search?q=from%3AFIFAcom%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=fifacom",
+          "copy": "This is exactly the kind of football debate I am collecting before the World Cup.\n\nI am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=fifacom\n\nCode: 26BC4B90CB",
+          "proofCommand": "node campaign-x-reply-log.mjs --worker \"<Dexter|Sienna|Memo|Nano>\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"@FIFAcom\" --query \"account watchlist FIFAcom\"",
+          "next": "Open the profile/search, pick a recent relevant post, personalize the first sentence, reply manually, then log proof only after the reply exists."
+        }
+      },
+      {
+        "worker": "Nano",
+        "packFile": "x-account-watchlist-nano.html",
+        "accounts": 9,
+        "firstAccount": {
+          "id": "xacct-04",
+          "handle": "ESPNFC",
+          "lane": "large football discussion feed",
+          "signal": "prediction, ranking, and fan debate posts",
+          "profileUrl": "https://x.com/ESPNFC",
+          "searchUrl": "https://x.com/search?q=from%3AESPNFC%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=espnfc",
+          "copy": "This is exactly the kind of football debate I am collecting before the World Cup.\n\nI am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=espnfc\n\nCode: 26BC4B90CB",
+          "proofCommand": "node campaign-x-reply-log.mjs --worker \"<Dexter|Sienna|Memo|Nano>\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"@ESPNFC\" --query \"account watchlist ESPNFC\"",
+          "next": "Open the profile/search, pick a recent relevant post, personalize the first sentence, reply manually, then log proof only after the reply exists."
+        }
+      }
+    ]
+  },
+  "proofRule": "Do not log proof for plans, generated packs, or intended posts. Log only a real post/reply URL or a precise private-channel note with account, target, timestamp, and action.",
+  "sourceFiles": [
+    "signup-conversion-audit.html",
+    "tester-batch-operator.html",
+    "x-football-openclaw.html",
+    "x-account-watchlist.html",
+    "x-reply-proof-helper.html",
+    "remote-war-room.html"
+  ],
+  "warRoomGeneratedAt": "2026-06-07T18:55:53.240Z"
+}

@@ -1,5 +1,5 @@
-WorldCup26 social rescue pack 2026-06-07 20:45 +0300
-ok=yes state=critical latest_external=3.5h live_ad=ok actions=4
+WorldCup26 social rescue pack 2026-06-08 09:30 +0300
+ok=yes state=critical latest_external=16.1h live_ad=ok actions=4
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB
 

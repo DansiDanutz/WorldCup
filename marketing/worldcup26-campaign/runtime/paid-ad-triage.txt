@@ -1,7 +1,7 @@
-WorldCup26 paid ad triage 2026-06-07 20:44 +0300
+WorldCup26 paid ad triage 2026-06-08 09:50 +0300
 ok=yes state=critical-paid-signup-friction code=26BC4B90CB
-app_views=509 referral_views=171 paid_views=244 signup_saves=0 accepted=0
-paid_sources=an:84,meta:70,fb:48,fb:22,ig:19,browser-probe:1
+app_views=1421 referral_views=678 paid_views=751 signup_saves=0 accepted=0
+paid_sources=meta:577,an:84,fb:48,fb:22,ig:19,browser-probe:1
 dashboard_state=paid-clicks-no-signups dashboard_checks=2 dashboard_impressions=12 dashboard_clicks=227 dashboard_spend=31.78
 top_source=- top_signup_source=-
 rule=This is an operator triage page. It proves paid delivery only after Memo records real dashboard status, spend, impressions, clicks, landing URL, and screenshot/note details.

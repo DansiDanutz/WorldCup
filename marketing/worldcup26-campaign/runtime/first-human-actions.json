@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-first-human-actions-v1",
-  "generatedAt": "2026-06-07T17:45:00.653Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:52:56.048Z",
+  "generatedAtEest": "2026-06-08 09:52 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "ok": true,
@@ -9,7 +9,7 @@
   "counts": {
     "warmAttempts": 0,
     "signupSaves": 0,
-    "referralViews": 171,
+    "referralViews": 678,
     "dashboardClicks": 227,
     "signupReturned": 0,
     "signupAttempts": 0

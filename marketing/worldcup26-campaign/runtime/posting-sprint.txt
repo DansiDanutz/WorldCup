@@ -1,4 +1,4 @@
-WorldCup26 posting sprint 2026-06-07 20:45 +0300
+WorldCup26 posting sprint 2026-06-08 09:51 +0300
 proof=49 urgent=16 link=ok dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
 
 Dexter: Priority 4 / Football groups
@@ -11,11 +11,11 @@ Sienna: Priority 1 / WhatsApp Status
   asset=media/worldcup26-main-video.mp4
   link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0
   proof_after_action=node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included" --status "posted"
-Memo: Pulse 147 / Proof audit
-  action=Check proof log, list unproven current rows, and flag blocked channels.
-  asset=runtime/posting-log-live.csv
-  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147
-  proof_after_action=node campaign-proof-log.mjs --pulse "147" --proof-url "internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included" --status "logged"
+Memo: Pulse 199 / Asset audit
+  action=Confirm video and image assets are present on this worker.
+  asset=promo-kit-manifest.md
+  link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse199
+  proof_after_action=node campaign-proof-log.mjs --pulse "199" --proof-url "internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included" --status "logged"
 Nano: Priority 2 / WhatsApp personal
   action=Send personal invite to warm contacts
   asset=media/worldcup26-main-video.mp4

@@ -1,6 +1,6 @@
 # Memo Live Posting Inbox
 
-Generated: 2026-06-07T17:46:16.913Z
+Generated: 2026-06-08T06:48:19.568Z
 
 Goal: push WorldCup26 for the next 72 hours.
 
@@ -19,30 +19,27 @@ sed -n '1,140p' runtime/next-actions-memo.md
 
 ## Current 15-Minute Pulse
 
-- Pulse: 147
-- Scheduled: 2026-06-07 21:15 +0300
+- Pulse: 199
+- Scheduled: 2026-06-08 10:15 +0300
 - Lane: Ops
-- Channel: Proof audit
+- Channel: Asset audit
 - Mode: internal
-- Action: Check proof log, list unproven current rows, and flag blocked channels.
-- Asset: `runtime/posting-log-live.csv`
-- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147
+- Action: Confirm video and image assets are present on this worker.
+- Asset: `promo-kit-manifest.md`
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse199
 - Proof hint: internal-log-note
 
 ## Pulse Copy
 
 ```text
-Ops pulse: verify proof rows, urgent rows, and blocked channels.
-
-Referral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147
-Code: 26BC4B90CB
+Ops pulse: verify MP4, story image, square image, and command center are present.
 ```
 
 ## Next Pulse Backups
 
-- 2026-06-07 22:15 +0300: Asset audit - Confirm video and image assets are present on this worker.
-- 2026-06-07 23:15 +0300: Copy rotation - Prepare one fresh short hook and one reply answer for the next worker.
-- 2026-06-08 00:15 +0300: Next best channel - Choose the next unblocked public or private channel and keep the board moving.
+- 2026-06-08 11:15 +0300: Copy rotation - Prepare one fresh short hook and one reply answer for the next worker.
+- 2026-06-08 12:15 +0300: Next best channel - Choose the next unblocked public or private channel and keep the board moving.
+- 2026-06-08 13:15 +0300: Proof audit - Check proof log, list unproven current rows, and flag blocked channels.
 
 
 

@@ -1,6 +1,6 @@
 # Dexter Live Posting Inbox
 
-Generated: 2026-06-07T17:46:16.913Z
+Generated: 2026-06-08T06:48:19.568Z
 
 Goal: push WorldCup26 for the next 72 hours.
 
@@ -52,34 +52,34 @@ node campaign-proof-log.mjs --priority "4" --proof-url "approval-request: asked 
 
 ## Current 15-Minute Pulse
 
-- Pulse: 149
-- Scheduled: 2026-06-07 21:45 +0300
-- Lane: Permission first
-- Channel: Football groups
-- Mode: approval first
-- Action: Ask one football group admin for approval; post only if welcome.
-- Asset: `campaign/first-wave-posts.md`
-- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse149
-- Proof hint: admin-approved-url-or-note
+- Pulse: 201
+- Scheduled: 2026-06-08 10:45 +0300
+- Lane: Friends feed
+- Channel: Facebook/feed fallback
+- Mode: manual post
+- Action: Post a friendly feed variant if Facebook is logged in.
+- Asset: `media/worldcup26-referral-square.jpg`
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse201
+- Proof hint: public-post-url
 
 ## Pulse Copy
 
 ```text
-For football fans here:
+WorldCup26 is live for signups.
 
-WorldCup26 lets you pick 3 teams free first and see what your points would do.
+Pick 3 teams before they lock. You can save the picks for free and watch your private points preview.
 
-If you want the real paid leaderboard, use a ticket after.
+Use a ticket only if you want to enter the paid leaderboard.
 
 Code: 26BC4B90CB
-https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse149
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse201
 ```
 
 ## Next Pulse Backups
 
-- 2026-06-07 22:45 +0300: Facebook/feed fallback - Post a friendly feed variant if Facebook is logged in.
-- 2026-06-07 23:45 +0300: Creator outreach - Send one approved partner DM to a football micro-creator.
-- 2026-06-08 00:45 +0300: X / public fallback - Publish or prepare a short public CTA if X is logged in.
+- 2026-06-08 11:45 +0300: Creator outreach - Send one approved partner DM to a football micro-creator.
+- 2026-06-08 12:45 +0300: X / public fallback - Publish or prepare a short public CTA if X is logged in.
+- 2026-06-08 13:45 +0300: Football groups - Ask one football group admin for approval; post only if welcome.
 
 ## Backup Urgent Rows
 

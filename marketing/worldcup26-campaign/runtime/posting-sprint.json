@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-07T17:45:00.397Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:51:26.918Z",
+  "generatedAtEest": "2026-06-08 09:51 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "liveProofRows": 49,
@@ -51,20 +51,20 @@
     {
       "worker": "Memo",
       "source": "pulse",
-      "label": "Pulse 147",
-      "channel": "Proof audit",
-      "action": "Check proof log, list unproven current rows, and flag blocked channels.",
-      "asset": "runtime/posting-log-live.csv",
-      "scheduledAt": "2026-06-07 21:15 +0300",
-      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147",
-      "copy": "Ops pulse: verify proof rows, urgent rows, and blocked channels.\n\nReferral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147\nCode: 26BC4B90CB",
+      "label": "Pulse 199",
+      "channel": "Asset audit",
+      "action": "Confirm video and image assets are present on this worker.",
+      "asset": "promo-kit-manifest.md",
+      "scheduledAt": "2026-06-08 10:15 +0300",
+      "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse199",
+      "copy": "Ops pulse: verify MP4, story image, square image, and command center are present.",
       "proofNote": "internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included",
-      "proofCommand": "node campaign-proof-log.mjs --pulse \"147\" --proof-url \"internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included\" --status \"logged\"",
+      "proofCommand": "node campaign-proof-log.mjs --pulse \"199\" --proof-url \"internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included\" --status \"logged\"",
       "share": {
-        "whatsapp": "https://wa.me/?text=Ops%20pulse%3A%20verify%20proof%20rows%2C%20urgent%20rows%2C%20and%20blocked%20channels.%0A%0AReferral%3A%20https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dproof-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse147%0ACode%3A%2026BC4B90CB",
-        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dproof-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse147&text=Ops%20pulse%3A%20verify%20proof%20rows%2C%20urgent%20rows%2C%20and%20blocked%20channels.%0A%0AReferral%3A%20https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dproof-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse147%0ACode%3A%2026BC4B90CB",
-        "x": "https://twitter.com/intent/tweet?text=Ops%20pulse%3A%20verify%20proof%20rows%2C%20urgent%20rows%2C%20and%20blocked%20channels.%0A%0AReferral%3A%20https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dproof-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse147%0ACode%3A%2026BC4B90CB",
-        "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dproof-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse147"
+        "whatsapp": "https://wa.me/?text=Ops%20pulse%3A%20verify%20MP4%2C%20story%20image%2C%20square%20image%2C%20and%20command%20center%20are%20present.",
+        "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dasset-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse199&text=Ops%20pulse%3A%20verify%20MP4%2C%20story%20image%2C%20square%20image%2C%20and%20command%20center%20are%20present.",
+        "x": "https://twitter.com/intent/tweet?text=Ops%20pulse%3A%20verify%20MP4%2C%20story%20image%2C%20square%20image%2C%20and%20command%20center%20are%20present.",
+        "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dasset-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse199"
       },
       "urgentCount": 0
     },

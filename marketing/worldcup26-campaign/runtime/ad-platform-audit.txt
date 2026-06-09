@@ -1,17 +1,17 @@
-WorldCup26 ad platform audit 2026-06-07 20:46 +0300
+WorldCup26 ad platform audit 2026-06-08 09:48 +0300
 ok=yes pages=9 social_images=1 code=26BC4B90CB inviter="David Ai" percent=5 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
 resolver=ok health=ok
 
 ad_clicks_and_previews:
-- meta-campaign/browser: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=366
-- meta-campaign/meta: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=196
-- meta-campaign/whatsapp: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=205
-- facebook-feed/browser: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=243
-- facebook-feed/meta: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=192
-- instagram-story/browser: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=194
-- instagram-story/meta: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=196
-- x-campaign/browser: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=195
-- x-campaign/x: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=195
+- meta-campaign/browser: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=299
+- meta-campaign/meta: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=180
+- meta-campaign/whatsapp: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=185
+- facebook-feed/browser: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=178
+- facebook-feed/meta: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=176
+- instagram-story/browser: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=193
+- instagram-story/meta: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=182
+- x-campaign/browser: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=221
+- x-campaign/x: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD og=yes twitter=yes elapsed_ms=199
 
 social_images:
 - ok 200 bytes=206851 https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03

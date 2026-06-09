@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-07T17:44:13.983Z",
-  "generatedAtEest": "2026-06-07 20:44 +0300",
+  "generatedAt": "2026-06-07T18:57:17.446Z",
+  "generatedAtEest": "2026-06-07 21:57 +0300",
   "localFunnel": {
     "ok": true,
     "available": true,
@@ -29,12 +29,12 @@
     "lockedEntries24h": 0,
     "lockedEntries72h": 1,
     "viewCountsAvailable": true,
-    "appViews": 509,
-    "appViews24h": 509,
-    "appViews72h": 509,
-    "referralViews": 171,
-    "referralViews24h": 171,
-    "referralViews72h": 171,
+    "appViews": 687,
+    "appViews24h": 687,
+    "appViews72h": 687,
+    "referralViews": 305,
+    "referralViews24h": 305,
+    "referralViews72h": 305,
     "signupReturned": 0,
     "signupMissingAcceptance": 0,
     "signupAttempts": 0,
@@ -47,8 +47,8 @@
         "medium": "paid-social",
         "campaign": "worldcup26_referral_72h",
         "content": "three-team-question",
-        "count": 70,
-        "lastViewedAt": "2026-06-07T17:44:09.214627+00:00"
+        "count": 204,
+        "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
       },
       {
         "source": "an",
@@ -104,8 +104,8 @@
       "medium": "paid-social",
       "campaign": "worldcup26_referral_72h",
       "content": "three-team-question",
-      "count": 70,
-      "lastViewedAt": "2026-06-07T17:44:09.214627+00:00"
+      "count": 204,
+      "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
     },
     "signupSourceBreakdown": [],
     "topSignupSource": null,
@@ -114,13 +114,13 @@
     "latestEntryCreatedAt": "",
     "latestEntryLockedAt": "",
     "fresh": true,
-    "generatedAtEest": "2026-06-07 20:44 +0300"
+    "generatedAtEest": "2026-06-07 21:56 +0300"
   },
   "hosts": [
     {
       "host": "dexter",
       "ok": true,
-      "generatedAtEest": "2026-06-07 20:41 +0300",
+      "generatedAtEest": "2026-06-07 21:42 +0300",
       "hotPingFresh": true,
       "proof": 49,
       "urgent": 16,
@@ -141,7 +141,7 @@
           "escalation": "hot",
           "nextPriority": "4",
           "nextChannel": "Football groups",
-          "oldestAgeLabel": "36.7h open"
+          "oldestAgeLabel": "37.7h open"
         },
         {
           "worker": "Sienna",
@@ -149,7 +149,7 @@
           "escalation": "hot",
           "nextPriority": "1",
           "nextChannel": "WhatsApp Status",
-          "oldestAgeLabel": "40.7h open"
+          "oldestAgeLabel": "41.7h open"
         },
         {
           "worker": "Memo",
@@ -165,22 +165,22 @@
           "escalation": "hot",
           "nextPriority": "2",
           "nextChannel": "WhatsApp personal",
-          "oldestAgeLabel": "38.7h open"
+          "oldestAgeLabel": "39.7h open"
         }
       ],
       "loopRows": [
-        "3570007       1 S       01:04:23 bash ./campaign-loop.sh run"
+        "3570007       1 S       02:17:26 bash ./campaign-loop.sh run"
       ],
       "loopRunning": true,
       "watchdogRows": [
-        "2550465       1 S       22:54:21 bash ./campaign-watchdog-loop.sh run"
+        "2550465       1 S     1-00:07:24 bash ./campaign-watchdog-loop.sh run"
       ],
       "watchdogRunning": true,
       "watchdogCronInstalled": true,
       "hotPingHookOk": true,
       "linkSentinelOk": true,
       "linkSentinelFresh": true,
-      "linkGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "linkGeneratedAtEest": "2026-06-07 21:56 +0300",
       "linkChecks": [
         {
           "name": "base",
@@ -213,7 +213,7 @@
       ],
       "paidTrafficOk": true,
       "paidTrafficFresh": true,
-      "paidTrafficGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidTrafficGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidTraffic": {
         "ok": true,
         "deploymentIds": [
@@ -226,7 +226,7 @@
       },
       "liveAdQaOk": true,
       "liveAdQaFresh": true,
-      "liveAdQaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "liveAdQaGeneratedAtEest": "2026-06-07 21:42 +0300",
       "liveAdQa": {
         "ok": true,
         "deploymentIds": [
@@ -247,7 +247,7 @@
       },
       "adPlatformAuditOk": true,
       "adPlatformAuditFresh": true,
-      "adPlatformAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adPlatformAuditGeneratedAtEest": "2026-06-07 21:42 +0300",
       "adPlatformAudit": {
         "ok": true,
         "deploymentIds": [
@@ -262,7 +262,7 @@
       },
       "conversionGuardOk": true,
       "conversionGuardFresh": true,
-      "conversionGuardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "conversionGuardGeneratedAtEest": "2026-06-07 21:42 +0300",
       "conversionGuard": {
         "ok": true,
         "browserVerified": true,
@@ -277,7 +277,7 @@
       },
       "postingSprintOk": true,
       "postingSprintFresh": true,
-      "postingSprintGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingSprintGeneratedAtEest": "2026-06-07 21:42 +0300",
       "postingSprintCards": [
         {
           "worker": "Dexter",
@@ -298,10 +298,10 @@
         {
           "worker": "Memo",
           "source": "pulse",
-          "label": "Pulse 147",
-          "channel": "Proof audit",
-          "asset": "runtime/posting-log-live.csv",
-          "action": "Check proof log, list unproven current rows, and flag blocked channels."
+          "label": "Pulse 151",
+          "channel": "Asset audit",
+          "asset": "promo-kit-manifest.md",
+          "action": "Confirm video and image assets are present on this worker."
         },
         {
           "worker": "Nano",
@@ -314,24 +314,24 @@
       ],
       "proofActivityOk": false,
       "proofStallFresh": true,
-      "proofStallGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofStallGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofStall": {
         "ok": false,
         "externalStalled": true,
         "proofStalled": true,
-        "latestExternalProofAgeMinutes": 209,
-        "latestAnyProofAgeMinutes": 209,
+        "latestExternalProofAgeMinutes": 270,
+        "latestAnyProofAgeMinutes": 270,
         "oldestOpenPriority": "1",
         "oldestOpenOwner": "Sienna",
         "oldestOpenChannel": "WhatsApp Status"
       },
       "proofSlaOk": true,
       "proofSlaFresh": true,
-      "proofSlaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofSlaGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofSla": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeMinutes": 209,
+        "latestExternalProofAgeMinutes": 270,
         "urgentOpenRows": 16,
         "doNowRows": 4,
         "paidTrafficOk": true,
@@ -346,11 +346,11 @@
       },
       "proofRescueOk": true,
       "proofRescueFresh": true,
-      "proofRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofRescue": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeLabel": "3.2h",
+        "latestExternalProofAgeLabel": "4.3h",
         "urgentOpenRows": 16,
         "liveAdQaOk": true,
         "actionCount": 4,
@@ -364,7 +364,7 @@
       },
       "proofUrlRecoveryOk": true,
       "proofUrlRecoveryFresh": true,
-      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofUrlRecovery": {
         "ok": true,
         "pendingCount": 1,
@@ -379,11 +379,11 @@
       },
       "socialRescueOk": true,
       "socialRescueFresh": true,
-      "socialRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "socialRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "socialRescue": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeLabel": "3.2h",
+        "latestExternalProofAgeLabel": "4.3h",
         "liveAdQaOk": true,
         "actionCount": 4,
         "workerPageCount": 4,
@@ -418,7 +418,7 @@
       },
       "zeroSignupRescueOk": true,
       "zeroSignupRescueFresh": true,
-      "zeroSignupRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "zeroSignupRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "zeroSignupRescue": {
         "ok": true,
         "state": "critical-zero-signups",
@@ -438,7 +438,7 @@
       },
       "realActionBridgeOk": true,
       "realActionBridgeFresh": true,
-      "realActionBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "realActionBridgeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "realActionBridge": {
         "ok": true,
         "state": "critical-zero-signups",
@@ -458,7 +458,7 @@
       },
       "oneClickShareOk": true,
       "oneClickShareFresh": true,
-      "oneClickShareGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "oneClickShareGeneratedAtEest": "2026-06-07 21:42 +0300",
       "oneClickShare": {
         "ok": true,
         "actionCount": 4,
@@ -480,7 +480,7 @@
       },
       "publicOutreachTargetsOk": true,
       "publicOutreachTargetsFresh": true,
-      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "publicOutreachTargets": {
         "ok": true,
         "targetCount": 41,
@@ -509,9 +509,85 @@
           "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1"
         }
       },
+      "platformRotationOk": true,
+      "platformRotationFresh": true,
+      "platformRotationGeneratedAtEest": "07/06/2026 21:39",
+      "platformRotation": {
+        "ok": true,
+        "state": "nonstop-72h-platform-rotation-ready",
+        "hours": 72,
+        "slotCount": 288,
+        "platformCount": 23,
+        "platforms": [
+          "Bracket Predictor Search",
+          "Digital Spy Forum",
+          "Facebook Groups",
+          "Facebook Profile/Page",
+          "FollowFollow Forum",
+          "Football Forums",
+          "FourFourTwo",
+          "Instagram Hashtags",
+          "Instagram/Facebook Story",
+          "Lichess Forum",
+          "My World Cup Guide",
+          "Operation Sports Forum",
+          "RedCafe Forum",
+          "Reddit",
+          "Reddit Search",
+          "Softpedia Forum",
+          "TikTok/Reels",
+          "WhatsApp Status",
+          "World Cup Predictor Search",
+          "X OpenClaw Reply",
+          "X Search",
+          "X Target Hunter",
+          "YouTube Search"
+        ],
+        "workerCounts": {
+          "Dexter": 72,
+          "Sienna": 72,
+          "Memo": 72,
+          "Nano": 72
+        },
+        "first": {
+          "id": "rot-01-dexter",
+          "hour": 1,
+          "startsAtEest": "07/06/2026 21:39",
+          "worker": "Dexter",
+          "platform": "X Search",
+          "target": "World Cup 2026 prediction conversations",
+          "openUrl": "https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1&utm_rotation_hour=1&utm_worker=dexter"
+        }
+      },
+      "immediateSprintOk": true,
+      "immediateSprintFresh": true,
+      "immediateSprintGeneratedAtEest": "07/06/2026 21:39",
+      "immediateSprint": {
+        "ok": true,
+        "state": "execute-now-signup-and-proof-sprint",
+        "dueSlotCount": 4,
+        "selectedSlotCount": 12,
+        "signupSaves": 0,
+        "publicAttempts": 9,
+        "workers": [
+          "Dexter:3",
+          "Sienna:3",
+          "Memo:3",
+          "Nano:3"
+        ],
+        "first": {
+          "id": "rot-01-memo",
+          "worker": "Memo",
+          "platform": "X Target Hunter",
+          "target": "Spain World Cup 2026",
+          "openUrl": "https://x.com/search?q=Spain%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-15_spain-world-cup-2026&utm_rotation_hour=1&utm_worker=memo"
+        }
+      },
       "adOpsLinksOk": true,
       "adOpsLinksFresh": true,
-      "adOpsLinksGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adOpsLinksGeneratedAtEest": "2026-06-07 21:42 +0300",
       "adOpsLinks": {
         "ok": true,
         "channelCount": 2,
@@ -540,7 +616,7 @@
       },
       "paidAdTriageOk": true,
       "paidAdTriageFresh": true,
-      "paidAdTriageGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidAdTriageGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidAdTriage": {
         "ok": true,
         "state": "critical-paid-signup-friction",
@@ -582,7 +658,7 @@
       },
       "paidNoClickRescueOk": true,
       "paidNoClickRescueFresh": true,
-      "paidNoClickRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidNoClickRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidNoClickRescue": {
         "ok": true,
         "state": "clicks-no-signups",
@@ -591,8 +667,8 @@
         "dashboardChecks": 2,
         "impressions": 12,
         "clicks": 227,
-        "paidViews": 215,
-        "appViews": 471,
+        "paidViews": 219,
+        "appViews": 478,
         "signupSaves": 0,
         "variantCount": 8,
         "platforms": [
@@ -609,7 +685,7 @@
       },
       "paidDashboardOk": true,
       "paidDashboardFresh": true,
-      "paidDashboardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidDashboardGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidDashboard": {
         "ok": true,
         "state": "paid-clicks-no-signups",
@@ -617,7 +693,7 @@
         "totalSpend": 31.78,
         "totalImpressions": 12,
         "totalClicks": 227,
-        "paidViews": 215,
+        "paidViews": 219,
         "signupSaves": 0,
         "platforms": [
           "Meta Ads Manager",
@@ -647,7 +723,7 @@
       "referralActivityOk": true,
       "referralActivityFresh": true,
       "referralActivityAvailable": true,
-      "referralActivityGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "referralActivityGeneratedAtEest": "2026-06-07 21:56 +0300",
       "referralActivity": {
         "ok": true,
         "available": true,
@@ -676,12 +752,12 @@
         "lockedEntries24h": 0,
         "lockedEntries72h": 1,
         "viewCountsAvailable": true,
-        "appViews": 478,
-        "appViews24h": 478,
-        "appViews72h": 478,
-        "referralViews": 146,
-        "referralViews24h": 146,
-        "referralViews72h": 146,
+        "appViews": 687,
+        "appViews24h": 687,
+        "appViews72h": 687,
+        "referralViews": 305,
+        "referralViews24h": 305,
+        "referralViews72h": 305,
         "signupReturned": 0,
         "signupMissingAcceptance": 0,
         "signupAttempts": 0,
@@ -690,20 +766,20 @@
         "signupErrorEvents": 0,
         "sourceBreakdown": [
           {
+            "source": "meta",
+            "medium": "paid-social",
+            "campaign": "worldcup26_referral_72h",
+            "content": "three-team-question",
+            "count": 204,
+            "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
+          },
+          {
             "source": "an",
             "medium": "paid",
             "campaign": "6971048256000",
             "content": "6971048413400",
             "count": 50,
             "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
-          },
-          {
-            "source": "meta",
-            "medium": "paid-social",
-            "campaign": "worldcup26_referral_72h",
-            "content": "three-team-question",
-            "count": 45,
-            "lastViewedAt": "2026-06-07T17:32:35.286197+00:00"
           },
           {
             "source": "fb",
@@ -747,12 +823,12 @@
           }
         ],
         "topSource": {
-          "source": "an",
-          "medium": "paid",
-          "campaign": "6971048256000",
-          "content": "6971048413400",
-          "count": 50,
-          "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+          "source": "meta",
+          "medium": "paid-social",
+          "campaign": "worldcup26_referral_72h",
+          "content": "three-team-question",
+          "count": 204,
+          "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
         },
         "signupSourceBreakdown": [],
         "topSignupSource": null,
@@ -763,13 +839,13 @@
       },
       "signupConversionOk": true,
       "signupConversionFresh": true,
-      "signupConversionGeneratedAtEest": "07/06/2026 20:41",
+      "signupConversionGeneratedAtEest": "07/06/2026 21:56",
       "signupConversion": {
         "ok": false,
         "state": "critical-auth-to-signup-save-unproven",
-        "appViews": 478,
-        "referralViews": 146,
-        "paidViews": 219,
+        "appViews": 671,
+        "referralViews": 300,
+        "paidViews": 373,
         "accepted": 0,
         "signupSaves": 0,
         "entries": 0,
@@ -802,7 +878,7 @@
       },
       "warmContactOk": true,
       "warmContactFresh": true,
-      "warmContactGeneratedAtEest": "07/06/2026 20:41",
+      "warmContactGeneratedAtEest": "07/06/2026 21:42",
       "warmContact": {
         "ok": true,
         "state": "warm-contact-sprint-needed",
@@ -816,7 +892,7 @@
       },
       "warmFollowupOk": true,
       "warmFollowupFresh": true,
-      "warmFollowupGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "warmFollowupGeneratedAtEest": "2026-06-07 21:42 +0300",
       "warmFollowup": {
         "ok": true,
         "state": "awaiting-first-human-send",
@@ -825,7 +901,7 @@
         "followupAttempts": 0,
         "followupMinutes": 15,
         "signupSaves": 0,
-        "referralViews": 152,
+        "referralViews": 146,
         "profiles": 5,
         "due": false,
         "latest": null,
@@ -833,7 +909,7 @@
       },
       "responseKitOk": true,
       "responseKitFresh": true,
-      "responseKitGeneratedAtEest": "07/06/2026 20:41",
+      "responseKitGeneratedAtEest": "07/06/2026 21:42",
       "responseKit": {
         "ok": true,
         "state": "ready-for-warm-replies",
@@ -854,7 +930,7 @@
       },
       "firstHumanActionsOk": true,
       "firstHumanActionsFresh": true,
-      "firstHumanActionsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstHumanActionsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "firstHumanActions": {
         "ok": true,
         "state": "needs-first-human-action",
@@ -875,7 +951,7 @@
       },
       "firstSendBridgeOk": true,
       "firstSendBridgeFresh": true,
-      "firstSendBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstSendBridgeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "firstSendBridge": {
         "ok": true,
         "state": "send-now",
@@ -892,11 +968,11 @@
       },
       "postingCockpitOk": true,
       "postingCockpitFresh": true,
-      "postingCockpitGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingCockpitGeneratedAtEest": "2026-06-07 21:42 +0300",
       "postingCockpit": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "urgentOpenRows": 16,
         "paidTrafficOk": true,
         "pageCount": 18,
@@ -929,7 +1005,7 @@
       },
       "phoneActionCenterOk": true,
       "phoneActionCenterFresh": true,
-      "phoneActionCenterGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "phoneActionCenterGeneratedAtEest": "2026-06-07 21:42 +0300",
       "phoneActionCenter": {
         "ok": true,
         "referralCode": "26BC4B90CB",
@@ -954,28 +1030,28 @@
       },
       "proofCloseoutOk": true,
       "proofCloseoutFresh": true,
-      "proofCloseoutGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofCloseoutGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofCloseout": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "commandCount": 6,
         "first": {
           "priority": "1",
           "owner": "Sienna",
           "channel": "WhatsApp Status",
           "status": "posted",
-          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:41 +0300' --status posted"
+          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 21:42 +0300' --status posted"
         },
         "failures": []
       },
       "workerWakeOk": true,
       "workerWakeFresh": true,
-      "workerWakeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "workerWakeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "workerWake": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "urgentOpenRows": 16,
         "workerCount": 4,
         "workers": [
@@ -1027,7 +1103,7 @@
       },
       "sessionRecoveryOk": true,
       "sessionRecoveryFresh": true,
-      "sessionRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "sessionRecoveryGeneratedAtEest": "2026-06-07 21:42 +0300",
       "sessionRecovery": {
         "proofRows": 49,
         "urgentRows": 16,
@@ -1036,8 +1112,8 @@
           {
             "key": "x",
             "label": "X public fallback",
-            "scheduledAtEest": "2026-06-07 16:45 +0300",
-            "shareUrl": "https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse129"
+            "scheduledAtEest": "2026-06-07 20:45 +0300",
+            "shareUrl": "https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB"
           },
           {
             "key": "facebook",
@@ -1049,18 +1125,18 @@
       },
       "escalationOk": true,
       "escalationFresh": true,
-      "escalationGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "escalationGeneratedAtEest": "2026-06-07 21:42 +0300",
       "escalation": {
         "linkOk": true,
         "externalOpen": 16,
         "critical": 16,
         "hot": 0,
         "workersWithStale": 3,
-        "latestExternalProofAgeMinutes": 209
+        "latestExternalProofAgeMinutes": 270
       },
       "publicAttemptsOk": true,
       "publicAttemptsFresh": true,
-      "publicAttemptsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicAttemptsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "publicAttempts": {
         "ok": true,
         "attempts": 9,
@@ -1086,7 +1162,7 @@
       },
       "loginUnlockOk": true,
       "loginUnlockFresh": true,
-      "loginUnlockGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "loginUnlockGeneratedAtEest": "2026-06-07 21:42 +0300",
       "loginUnlock": {
         "ok": true,
         "cards": 6,
@@ -1114,19 +1190,19 @@
       },
       "objectiveAuditOk": true,
       "objectiveAuditFresh": true,
-      "objectiveAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "objectiveAuditGeneratedAtEest": "2026-06-07 21:42 +0300",
       "objectiveAudit": {
         "ok": true,
         "complete": false,
         "state": "critical",
-        "proven": 10,
+        "proven": 8,
         "total": 12,
-        "criticalOpen": 1,
+        "criticalOpen": 3,
         "firstOpen": {
-          "id": "advertise-everywhere-proof",
+          "id": "droplets-awake",
           "status": "incomplete",
-          "label": "Real external posting proof is current",
-          "next": "Do the next real action and log proof with a public URL or precise private-channel note."
+          "label": "Four droplets have campaign tooling awake",
+          "next": "Run the remote war-room and repair any infrastructure host failure before relying on the campaign loop."
         },
         "primaryAction": {
           "priority": "clean-signup-test-batch",
@@ -1142,7 +1218,7 @@
       },
       "operatorPushOk": true,
       "operatorPushFresh": true,
-      "operatorPushGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "operatorPushGeneratedAtEest": "2026-06-07 21:42 +0300",
       "operatorPush": {
         "ok": true,
         "complete": false,
@@ -1192,21 +1268,178 @@
           }
         ]
       },
+      "actionCommandCenterOk": true,
+      "actionCommandCenterFresh": true,
+      "actionCommandCenterGeneratedAtEest": "07/06/2026 21:56",
+      "actionCommandCenter": {
+        "ok": true,
+        "state": "critical-first-human-action",
+        "blocker": "No proven referral signup-save exists yet. Do the tester batch before changing ads again.",
+        "appViews": 671,
+        "referralViews": 300,
+        "paidViews": 373,
+        "dashboardClicks": 227,
+        "signupSaves": 0,
+        "profiles": 5,
+        "accepted": 0,
+        "publicAttempts": 9,
+        "xActions": 16,
+        "xWorkerPacks": 4,
+        "xAccountTargets": 36,
+        "xAccountWorkerPacks": 4,
+        "xProofReadyWorkers": 4,
+        "firstAction": {
+          "owner": "Memo",
+          "title": "Send 3 clean signup tests",
+          "why": "Paid and referral views exist, but no completed signup-save event exists. This proves or isolates the Google signup path.",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+          "logAfterRealSend": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+        },
+        "secondAction": {
+          "title": "Run one X OpenClaw reply from each worker",
+          "operatorAccount": "david2015bestai@gmail.com",
+          "overviewFile": "x-football-openclaw.html",
+          "proofHelperFile": "x-reply-proof-helper.html"
+        },
+        "workers": [
+          {
+            "worker": "Dexter",
+            "packFile": "x-openclaw-dexter.html",
+            "actions": 4,
+            "firstActionId": "x-1-1"
+          },
+          {
+            "worker": "Sienna",
+            "packFile": "x-openclaw-sienna.html",
+            "actions": 4,
+            "firstActionId": "x-1-2"
+          },
+          {
+            "worker": "Memo",
+            "packFile": "x-openclaw-memo.html",
+            "actions": 4,
+            "firstActionId": "x-2-2"
+          },
+          {
+            "worker": "Nano",
+            "packFile": "x-openclaw-nano.html",
+            "actions": 4,
+            "firstActionId": "x-3-2"
+          }
+        ]
+      },
+      "xFootballOpenclawOk": true,
+      "xFootballOpenclawFresh": true,
+      "xFootballOpenclawGeneratedAtEest": "07/06/2026 21:54",
+      "xFootballOpenclaw": {
+        "ok": true,
+        "state": "manual-x-outreach-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "searchCount": 8,
+        "accountSearchCount": 8,
+        "actionCount": 16,
+        "workerPackCount": 4,
+        "workerPackActions": [
+          "Dexter:4",
+          "Sienna:4",
+          "Memo:4",
+          "Nano:4"
+        ],
+        "perHourCap": 6,
+        "dailyCap": 24,
+        "first": {
+          "id": "x-1-1",
+          "owner": "Dexter",
+          "query": "world cup 2026 predictions",
+          "searchUrl": "https://x.com/search?q=world%20cup%202026%20predictions%20-giveaway%20-crypto&src=typed_query&f=live",
+          "replyStyle": "Ask for 3 picks",
+          "intentUrl": "https://twitter.com/intent/tweet?text=Good%20football%20question.%20I%20am%20asking%20people%20for%20exactly%203%20World%20Cup%20picks%20before%20the%20event%20starts.%0A%0AYou%20can%20save%20your%203%20teams%20free%20and%20see%20your%20private%20points%20preview%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_football_openclaw%26utm_content%3Dworld-cup-2026-predictions_three-picks%0A%0ACode%3A%2026BC4B90CB",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X\" --channel \"football manual replies\" --status \"replied\" --attempt-url \"<real-x-reply-url-or-private-note>\" --detail \"Manual X reply from david2015bestai@gmail.com at YYYY-MM-DD HH:mm EEST; target=<@handle or tweet URL>; search='world cup 2026 predictions'; code 26BC4B90CB and WorldCup26 link included\" --next-action \"watch replies, then run campaign-referral-activity.mjs after 15 minutes\""
+        }
+      },
+      "xTargetHunterOk": true,
+      "xTargetHunterFresh": true,
+      "xTargetHunterGeneratedAtEest": "07/06/2026 21:39",
+      "xTargetHunter": {
+        "ok": true,
+        "state": "manual-x-target-hunting-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "laneCount": 48,
+        "liveLaneCount": 30,
+        "userLaneCount": 18,
+        "workerPackCount": 4,
+        "workerPackLanes": [
+          "Dexter:12",
+          "Sienna:12",
+          "Memo:12",
+          "Nano:12"
+        ],
+        "first": {
+          "id": "xh-01",
+          "type": "live",
+          "query": "World Cup 2026 predictions",
+          "url": "https://x.com/search?q=World%20Cup%202026%20predictions%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live"
+        }
+      },
+      "xAccountWatchlistOk": true,
+      "xAccountWatchlistFresh": true,
+      "xAccountWatchlistGeneratedAtEest": "07/06/2026 21:54",
+      "xAccountWatchlist": {
+        "ok": true,
+        "state": "manual-x-account-reply-watchlist-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "accountCount": 36,
+        "workerPackCount": 4,
+        "workerPackAccounts": [
+          "Dexter:9",
+          "Sienna:9",
+          "Memo:9",
+          "Nano:9"
+        ],
+        "first": {
+          "id": "xacct-01",
+          "handle": "FIFAWorldCup",
+          "lane": "Official World Cup conversation",
+          "profileUrl": "https://x.com/FIFAWorldCup",
+          "searchUrl": "https://x.com/search?q=from%3AFIFAWorldCup%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live"
+        }
+      },
+      "xReplyProofHelperOk": true,
+      "xReplyProofHelperFresh": true,
+      "xReplyProofHelperGeneratedAtEest": "07/06/2026 21:54",
+      "xReplyProofHelper": {
+        "ok": true,
+        "state": "ready-for-real-x-proof",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "helperCount": 4,
+        "readyWorkers": 4,
+        "workers": [
+          "Dexter:ready",
+          "Sienna:ready",
+          "Memo:ready",
+          "Nano:ready"
+        ],
+        "first": {
+          "worker": "Dexter",
+          "firstActionId": "x-1-1",
+          "firstQuery": "world cup 2026 predictions"
+        }
+      },
       "lastLogLines": [
-        "2026-06-07T17:41:19Z escalation-board ok",
-        "2026-06-07T17:41:19Z objective-audit ok",
-        "2026-06-07T17:41:19Z evidence-board ok",
-        "2026-06-07T17:41:19Z operator-push ok",
-        "2026-06-07T17:41:20Z real-action-bridge ok",
-        "2026-06-07T17:41:20Z one-click-share ok",
-        "2026-06-07T17:41:20Z public-outreach-targets ok",
-        "2026-06-07T17:41:20Z worker-launchers ok"
+        "2026-06-07T18:42:30Z escalation-board ok",
+        "2026-06-07T18:42:30Z objective-audit ok",
+        "2026-06-07T18:42:30Z evidence-board failed",
+        "2026-06-07T18:42:30Z operator-push ok",
+        "2026-06-07T18:42:30Z real-action-bridge ok",
+        "2026-06-07T18:42:30Z one-click-share ok",
+        "2026-06-07T18:42:30Z public-outreach-targets ok",
+        "2026-06-07T18:42:30Z worker-launchers ok"
       ]
     },
     {
       "host": "sienna",
       "ok": true,
-      "generatedAtEest": "2026-06-07 20:41 +0300",
+      "generatedAtEest": "2026-06-07 21:42 +0300",
       "hotPingFresh": true,
       "proof": 49,
       "urgent": 16,
@@ -1227,7 +1460,7 @@
           "escalation": "hot",
           "nextPriority": "4",
           "nextChannel": "Football groups",
-          "oldestAgeLabel": "36.7h open"
+          "oldestAgeLabel": "37.7h open"
         },
         {
           "worker": "Sienna",
@@ -1235,7 +1468,7 @@
           "escalation": "hot",
           "nextPriority": "1",
           "nextChannel": "WhatsApp Status",
-          "oldestAgeLabel": "40.7h open"
+          "oldestAgeLabel": "41.7h open"
         },
         {
           "worker": "Memo",
@@ -1251,22 +1484,22 @@
           "escalation": "hot",
           "nextPriority": "2",
           "nextChannel": "WhatsApp personal",
-          "oldestAgeLabel": "38.7h open"
+          "oldestAgeLabel": "39.7h open"
         }
       ],
       "loopRows": [
-        "2593917       1 S       01:04:23 bash ./campaign-loop.sh run"
+        "2593917       1 S       02:17:26 bash ./campaign-loop.sh run"
       ],
       "loopRunning": true,
       "watchdogRows": [
-        "1709998       1 S       22:54:21 bash ./campaign-watchdog-loop.sh run"
+        "1709998       1 S     1-00:07:24 bash ./campaign-watchdog-loop.sh run"
       ],
       "watchdogRunning": true,
       "watchdogCronInstalled": true,
       "hotPingHookOk": true,
       "linkSentinelOk": true,
       "linkSentinelFresh": true,
-      "linkGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "linkGeneratedAtEest": "2026-06-07 21:56 +0300",
       "linkChecks": [
         {
           "name": "base",
@@ -1299,7 +1532,7 @@
       ],
       "paidTrafficOk": true,
       "paidTrafficFresh": true,
-      "paidTrafficGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidTrafficGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidTraffic": {
         "ok": true,
         "deploymentIds": [
@@ -1312,7 +1545,7 @@
       },
       "liveAdQaOk": true,
       "liveAdQaFresh": true,
-      "liveAdQaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "liveAdQaGeneratedAtEest": "2026-06-07 21:42 +0300",
       "liveAdQa": {
         "ok": true,
         "deploymentIds": [
@@ -1333,7 +1566,7 @@
       },
       "adPlatformAuditOk": true,
       "adPlatformAuditFresh": true,
-      "adPlatformAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adPlatformAuditGeneratedAtEest": "2026-06-07 21:42 +0300",
       "adPlatformAudit": {
         "ok": true,
         "deploymentIds": [
@@ -1348,7 +1581,7 @@
       },
       "conversionGuardOk": true,
       "conversionGuardFresh": true,
-      "conversionGuardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "conversionGuardGeneratedAtEest": "2026-06-07 21:42 +0300",
       "conversionGuard": {
         "ok": true,
         "browserVerified": true,
@@ -1363,7 +1596,7 @@
       },
       "postingSprintOk": true,
       "postingSprintFresh": true,
-      "postingSprintGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingSprintGeneratedAtEest": "2026-06-07 21:42 +0300",
       "postingSprintCards": [
         {
           "worker": "Dexter",
@@ -1384,10 +1617,10 @@
         {
           "worker": "Memo",
           "source": "pulse",
-          "label": "Pulse 147",
-          "channel": "Proof audit",
-          "asset": "runtime/posting-log-live.csv",
-          "action": "Check proof log, list unproven current rows, and flag blocked channels."
+          "label": "Pulse 151",
+          "channel": "Asset audit",
+          "asset": "promo-kit-manifest.md",
+          "action": "Confirm video and image assets are present on this worker."
         },
         {
           "worker": "Nano",
@@ -1400,24 +1633,24 @@
       ],
       "proofActivityOk": false,
       "proofStallFresh": true,
-      "proofStallGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofStallGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofStall": {
         "ok": false,
         "externalStalled": true,
         "proofStalled": true,
-        "latestExternalProofAgeMinutes": 209,
-        "latestAnyProofAgeMinutes": 209,
+        "latestExternalProofAgeMinutes": 270,
+        "latestAnyProofAgeMinutes": 270,
         "oldestOpenPriority": "1",
         "oldestOpenOwner": "Sienna",
         "oldestOpenChannel": "WhatsApp Status"
       },
       "proofSlaOk": true,
       "proofSlaFresh": true,
-      "proofSlaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofSlaGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofSla": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeMinutes": 209,
+        "latestExternalProofAgeMinutes": 270,
         "urgentOpenRows": 16,
         "doNowRows": 4,
         "paidTrafficOk": true,
@@ -1432,11 +1665,11 @@
       },
       "proofRescueOk": true,
       "proofRescueFresh": true,
-      "proofRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofRescue": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeLabel": "3.2h",
+        "latestExternalProofAgeLabel": "4.3h",
         "urgentOpenRows": 16,
         "liveAdQaOk": true,
         "actionCount": 4,
@@ -1450,7 +1683,7 @@
       },
       "proofUrlRecoveryOk": true,
       "proofUrlRecoveryFresh": true,
-      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofUrlRecovery": {
         "ok": true,
         "pendingCount": 1,
@@ -1465,11 +1698,11 @@
       },
       "socialRescueOk": true,
       "socialRescueFresh": true,
-      "socialRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "socialRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "socialRescue": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeLabel": "3.2h",
+        "latestExternalProofAgeLabel": "4.3h",
         "liveAdQaOk": true,
         "actionCount": 4,
         "workerPageCount": 4,
@@ -1504,7 +1737,7 @@
       },
       "zeroSignupRescueOk": true,
       "zeroSignupRescueFresh": true,
-      "zeroSignupRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "zeroSignupRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "zeroSignupRescue": {
         "ok": true,
         "state": "critical-zero-signups",
@@ -1524,7 +1757,7 @@
       },
       "realActionBridgeOk": true,
       "realActionBridgeFresh": true,
-      "realActionBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "realActionBridgeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "realActionBridge": {
         "ok": true,
         "state": "critical-zero-signups",
@@ -1544,7 +1777,7 @@
       },
       "oneClickShareOk": true,
       "oneClickShareFresh": true,
-      "oneClickShareGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "oneClickShareGeneratedAtEest": "2026-06-07 21:42 +0300",
       "oneClickShare": {
         "ok": true,
         "actionCount": 4,
@@ -1566,7 +1799,7 @@
       },
       "publicOutreachTargetsOk": true,
       "publicOutreachTargetsFresh": true,
-      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "publicOutreachTargets": {
         "ok": true,
         "targetCount": 41,
@@ -1595,9 +1828,85 @@
           "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1"
         }
       },
+      "platformRotationOk": true,
+      "platformRotationFresh": true,
+      "platformRotationGeneratedAtEest": "07/06/2026 21:39",
+      "platformRotation": {
+        "ok": true,
+        "state": "nonstop-72h-platform-rotation-ready",
+        "hours": 72,
+        "slotCount": 288,
+        "platformCount": 23,
+        "platforms": [
+          "Bracket Predictor Search",
+          "Digital Spy Forum",
+          "Facebook Groups",
+          "Facebook Profile/Page",
+          "FollowFollow Forum",
+          "Football Forums",
+          "FourFourTwo",
+          "Instagram Hashtags",
+          "Instagram/Facebook Story",
+          "Lichess Forum",
+          "My World Cup Guide",
+          "Operation Sports Forum",
+          "RedCafe Forum",
+          "Reddit",
+          "Reddit Search",
+          "Softpedia Forum",
+          "TikTok/Reels",
+          "WhatsApp Status",
+          "World Cup Predictor Search",
+          "X OpenClaw Reply",
+          "X Search",
+          "X Target Hunter",
+          "YouTube Search"
+        ],
+        "workerCounts": {
+          "Dexter": 72,
+          "Sienna": 72,
+          "Memo": 72,
+          "Nano": 72
+        },
+        "first": {
+          "id": "rot-01-dexter",
+          "hour": 1,
+          "startsAtEest": "07/06/2026 21:39",
+          "worker": "Dexter",
+          "platform": "X Search",
+          "target": "World Cup 2026 prediction conversations",
+          "openUrl": "https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1&utm_rotation_hour=1&utm_worker=dexter"
+        }
+      },
+      "immediateSprintOk": true,
+      "immediateSprintFresh": true,
+      "immediateSprintGeneratedAtEest": "07/06/2026 21:39",
+      "immediateSprint": {
+        "ok": true,
+        "state": "execute-now-signup-and-proof-sprint",
+        "dueSlotCount": 4,
+        "selectedSlotCount": 12,
+        "signupSaves": 0,
+        "publicAttempts": 9,
+        "workers": [
+          "Dexter:3",
+          "Sienna:3",
+          "Memo:3",
+          "Nano:3"
+        ],
+        "first": {
+          "id": "rot-01-memo",
+          "worker": "Memo",
+          "platform": "X Target Hunter",
+          "target": "Spain World Cup 2026",
+          "openUrl": "https://x.com/search?q=Spain%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-15_spain-world-cup-2026&utm_rotation_hour=1&utm_worker=memo"
+        }
+      },
       "adOpsLinksOk": true,
       "adOpsLinksFresh": true,
-      "adOpsLinksGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adOpsLinksGeneratedAtEest": "2026-06-07 21:42 +0300",
       "adOpsLinks": {
         "ok": true,
         "channelCount": 2,
@@ -1626,7 +1935,7 @@
       },
       "paidAdTriageOk": true,
       "paidAdTriageFresh": true,
-      "paidAdTriageGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidAdTriageGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidAdTriage": {
         "ok": true,
         "state": "critical-paid-signup-friction",
@@ -1668,7 +1977,7 @@
       },
       "paidNoClickRescueOk": true,
       "paidNoClickRescueFresh": true,
-      "paidNoClickRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidNoClickRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidNoClickRescue": {
         "ok": true,
         "state": "clicks-no-signups",
@@ -1677,8 +1986,8 @@
         "dashboardChecks": 2,
         "impressions": 12,
         "clicks": 227,
-        "paidViews": 215,
-        "appViews": 471,
+        "paidViews": 219,
+        "appViews": 478,
         "signupSaves": 0,
         "variantCount": 8,
         "platforms": [
@@ -1695,7 +2004,7 @@
       },
       "paidDashboardOk": true,
       "paidDashboardFresh": true,
-      "paidDashboardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidDashboardGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidDashboard": {
         "ok": true,
         "state": "paid-clicks-no-signups",
@@ -1703,7 +2012,7 @@
         "totalSpend": 31.78,
         "totalImpressions": 12,
         "totalClicks": 227,
-        "paidViews": 215,
+        "paidViews": 219,
         "signupSaves": 0,
         "platforms": [
           "Meta Ads Manager",
@@ -1733,7 +2042,7 @@
       "referralActivityOk": true,
       "referralActivityFresh": true,
       "referralActivityAvailable": true,
-      "referralActivityGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "referralActivityGeneratedAtEest": "2026-06-07 21:56 +0300",
       "referralActivity": {
         "ok": true,
         "available": true,
@@ -1762,12 +2071,12 @@
         "lockedEntries24h": 0,
         "lockedEntries72h": 1,
         "viewCountsAvailable": true,
-        "appViews": 478,
-        "appViews24h": 478,
-        "appViews72h": 478,
-        "referralViews": 146,
-        "referralViews24h": 146,
-        "referralViews72h": 146,
+        "appViews": 687,
+        "appViews24h": 687,
+        "appViews72h": 687,
+        "referralViews": 305,
+        "referralViews24h": 305,
+        "referralViews72h": 305,
         "signupReturned": 0,
         "signupMissingAcceptance": 0,
         "signupAttempts": 0,
@@ -1776,20 +2085,20 @@
         "signupErrorEvents": 0,
         "sourceBreakdown": [
           {
+            "source": "meta",
+            "medium": "paid-social",
+            "campaign": "worldcup26_referral_72h",
+            "content": "three-team-question",
+            "count": 204,
+            "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
+          },
+          {
             "source": "an",
             "medium": "paid",
             "campaign": "6971048256000",
             "content": "6971048413400",
             "count": 50,
             "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
-          },
-          {
-            "source": "meta",
-            "medium": "paid-social",
-            "campaign": "worldcup26_referral_72h",
-            "content": "three-team-question",
-            "count": 45,
-            "lastViewedAt": "2026-06-07T17:32:35.286197+00:00"
           },
           {
             "source": "fb",
@@ -1833,12 +2142,12 @@
           }
         ],
         "topSource": {
-          "source": "an",
-          "medium": "paid",
-          "campaign": "6971048256000",
-          "content": "6971048413400",
-          "count": 50,
-          "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+          "source": "meta",
+          "medium": "paid-social",
+          "campaign": "worldcup26_referral_72h",
+          "content": "three-team-question",
+          "count": 204,
+          "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
         },
         "signupSourceBreakdown": [],
         "topSignupSource": null,
@@ -1849,13 +2158,13 @@
       },
       "signupConversionOk": true,
       "signupConversionFresh": true,
-      "signupConversionGeneratedAtEest": "07/06/2026 20:41",
+      "signupConversionGeneratedAtEest": "07/06/2026 21:56",
       "signupConversion": {
         "ok": false,
         "state": "critical-auth-to-signup-save-unproven",
-        "appViews": 478,
-        "referralViews": 146,
-        "paidViews": 219,
+        "appViews": 671,
+        "referralViews": 300,
+        "paidViews": 373,
         "accepted": 0,
         "signupSaves": 0,
         "entries": 0,
@@ -1888,7 +2197,7 @@
       },
       "warmContactOk": true,
       "warmContactFresh": true,
-      "warmContactGeneratedAtEest": "07/06/2026 20:41",
+      "warmContactGeneratedAtEest": "07/06/2026 21:42",
       "warmContact": {
         "ok": true,
         "state": "warm-contact-sprint-needed",
@@ -1902,7 +2211,7 @@
       },
       "warmFollowupOk": true,
       "warmFollowupFresh": true,
-      "warmFollowupGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "warmFollowupGeneratedAtEest": "2026-06-07 21:42 +0300",
       "warmFollowup": {
         "ok": true,
         "state": "awaiting-first-human-send",
@@ -1911,7 +2220,7 @@
         "followupAttempts": 0,
         "followupMinutes": 15,
         "signupSaves": 0,
-        "referralViews": 152,
+        "referralViews": 146,
         "profiles": 5,
         "due": false,
         "latest": null,
@@ -1919,7 +2228,7 @@
       },
       "responseKitOk": true,
       "responseKitFresh": true,
-      "responseKitGeneratedAtEest": "07/06/2026 20:41",
+      "responseKitGeneratedAtEest": "07/06/2026 21:42",
       "responseKit": {
         "ok": true,
         "state": "ready-for-warm-replies",
@@ -1940,7 +2249,7 @@
       },
       "firstHumanActionsOk": true,
       "firstHumanActionsFresh": true,
-      "firstHumanActionsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstHumanActionsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "firstHumanActions": {
         "ok": true,
         "state": "needs-first-human-action",
@@ -1961,7 +2270,7 @@
       },
       "firstSendBridgeOk": true,
       "firstSendBridgeFresh": true,
-      "firstSendBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstSendBridgeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "firstSendBridge": {
         "ok": true,
         "state": "send-now",
@@ -1978,11 +2287,11 @@
       },
       "postingCockpitOk": true,
       "postingCockpitFresh": true,
-      "postingCockpitGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingCockpitGeneratedAtEest": "2026-06-07 21:42 +0300",
       "postingCockpit": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "urgentOpenRows": 16,
         "paidTrafficOk": true,
         "pageCount": 18,
@@ -2015,7 +2324,7 @@
       },
       "phoneActionCenterOk": true,
       "phoneActionCenterFresh": true,
-      "phoneActionCenterGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "phoneActionCenterGeneratedAtEest": "2026-06-07 21:42 +0300",
       "phoneActionCenter": {
         "ok": true,
         "referralCode": "26BC4B90CB",
@@ -2040,28 +2349,28 @@
       },
       "proofCloseoutOk": true,
       "proofCloseoutFresh": true,
-      "proofCloseoutGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofCloseoutGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofCloseout": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "commandCount": 6,
         "first": {
           "priority": "1",
           "owner": "Sienna",
           "channel": "WhatsApp Status",
           "status": "posted",
-          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:41 +0300' --status posted"
+          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 21:42 +0300' --status posted"
         },
         "failures": []
       },
       "workerWakeOk": true,
       "workerWakeFresh": true,
-      "workerWakeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "workerWakeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "workerWake": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "urgentOpenRows": 16,
         "workerCount": 4,
         "workers": [
@@ -2113,7 +2422,7 @@
       },
       "sessionRecoveryOk": true,
       "sessionRecoveryFresh": true,
-      "sessionRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "sessionRecoveryGeneratedAtEest": "2026-06-07 21:42 +0300",
       "sessionRecovery": {
         "proofRows": 49,
         "urgentRows": 16,
@@ -2122,8 +2431,8 @@
           {
             "key": "x",
             "label": "X public fallback",
-            "scheduledAtEest": "2026-06-07 16:45 +0300",
-            "shareUrl": "https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse129"
+            "scheduledAtEest": "2026-06-07 20:45 +0300",
+            "shareUrl": "https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB"
           },
           {
             "key": "facebook",
@@ -2135,18 +2444,18 @@
       },
       "escalationOk": true,
       "escalationFresh": true,
-      "escalationGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "escalationGeneratedAtEest": "2026-06-07 21:42 +0300",
       "escalation": {
         "linkOk": true,
         "externalOpen": 16,
         "critical": 16,
         "hot": 0,
         "workersWithStale": 3,
-        "latestExternalProofAgeMinutes": 209
+        "latestExternalProofAgeMinutes": 270
       },
       "publicAttemptsOk": true,
       "publicAttemptsFresh": true,
-      "publicAttemptsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicAttemptsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "publicAttempts": {
         "ok": true,
         "attempts": 9,
@@ -2172,7 +2481,7 @@
       },
       "loginUnlockOk": true,
       "loginUnlockFresh": true,
-      "loginUnlockGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "loginUnlockGeneratedAtEest": "2026-06-07 21:42 +0300",
       "loginUnlock": {
         "ok": true,
         "cards": 6,
@@ -2200,19 +2509,19 @@
       },
       "objectiveAuditOk": true,
       "objectiveAuditFresh": true,
-      "objectiveAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "objectiveAuditGeneratedAtEest": "2026-06-07 21:42 +0300",
       "objectiveAudit": {
         "ok": true,
         "complete": false,
         "state": "critical",
-        "proven": 10,
+        "proven": 8,
         "total": 12,
-        "criticalOpen": 1,
+        "criticalOpen": 3,
         "firstOpen": {
-          "id": "advertise-everywhere-proof",
+          "id": "droplets-awake",
           "status": "incomplete",
-          "label": "Real external posting proof is current",
-          "next": "Do the next real action and log proof with a public URL or precise private-channel note."
+          "label": "Four droplets have campaign tooling awake",
+          "next": "Run the remote war-room and repair any infrastructure host failure before relying on the campaign loop."
         },
         "primaryAction": {
           "priority": "clean-signup-test-batch",
@@ -2228,7 +2537,7 @@
       },
       "operatorPushOk": true,
       "operatorPushFresh": true,
-      "operatorPushGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "operatorPushGeneratedAtEest": "2026-06-07 21:42 +0300",
       "operatorPush": {
         "ok": true,
         "complete": false,
@@ -2278,21 +2587,178 @@
           }
         ]
       },
+      "actionCommandCenterOk": true,
+      "actionCommandCenterFresh": true,
+      "actionCommandCenterGeneratedAtEest": "07/06/2026 21:56",
+      "actionCommandCenter": {
+        "ok": true,
+        "state": "critical-first-human-action",
+        "blocker": "No proven referral signup-save exists yet. Do the tester batch before changing ads again.",
+        "appViews": 671,
+        "referralViews": 300,
+        "paidViews": 373,
+        "dashboardClicks": 227,
+        "signupSaves": 0,
+        "profiles": 5,
+        "accepted": 0,
+        "publicAttempts": 9,
+        "xActions": 16,
+        "xWorkerPacks": 4,
+        "xAccountTargets": 36,
+        "xAccountWorkerPacks": 4,
+        "xProofReadyWorkers": 4,
+        "firstAction": {
+          "owner": "Memo",
+          "title": "Send 3 clean signup tests",
+          "why": "Paid and referral views exist, but no completed signup-save event exists. This proves or isolates the Google signup path.",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+          "logAfterRealSend": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+        },
+        "secondAction": {
+          "title": "Run one X OpenClaw reply from each worker",
+          "operatorAccount": "david2015bestai@gmail.com",
+          "overviewFile": "x-football-openclaw.html",
+          "proofHelperFile": "x-reply-proof-helper.html"
+        },
+        "workers": [
+          {
+            "worker": "Dexter",
+            "packFile": "x-openclaw-dexter.html",
+            "actions": 4,
+            "firstActionId": "x-1-1"
+          },
+          {
+            "worker": "Sienna",
+            "packFile": "x-openclaw-sienna.html",
+            "actions": 4,
+            "firstActionId": "x-1-2"
+          },
+          {
+            "worker": "Memo",
+            "packFile": "x-openclaw-memo.html",
+            "actions": 4,
+            "firstActionId": "x-2-2"
+          },
+          {
+            "worker": "Nano",
+            "packFile": "x-openclaw-nano.html",
+            "actions": 4,
+            "firstActionId": "x-3-2"
+          }
+        ]
+      },
+      "xFootballOpenclawOk": true,
+      "xFootballOpenclawFresh": true,
+      "xFootballOpenclawGeneratedAtEest": "07/06/2026 21:54",
+      "xFootballOpenclaw": {
+        "ok": true,
+        "state": "manual-x-outreach-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "searchCount": 8,
+        "accountSearchCount": 8,
+        "actionCount": 16,
+        "workerPackCount": 4,
+        "workerPackActions": [
+          "Dexter:4",
+          "Sienna:4",
+          "Memo:4",
+          "Nano:4"
+        ],
+        "perHourCap": 6,
+        "dailyCap": 24,
+        "first": {
+          "id": "x-1-1",
+          "owner": "Dexter",
+          "query": "world cup 2026 predictions",
+          "searchUrl": "https://x.com/search?q=world%20cup%202026%20predictions%20-giveaway%20-crypto&src=typed_query&f=live",
+          "replyStyle": "Ask for 3 picks",
+          "intentUrl": "https://twitter.com/intent/tweet?text=Good%20football%20question.%20I%20am%20asking%20people%20for%20exactly%203%20World%20Cup%20picks%20before%20the%20event%20starts.%0A%0AYou%20can%20save%20your%203%20teams%20free%20and%20see%20your%20private%20points%20preview%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_football_openclaw%26utm_content%3Dworld-cup-2026-predictions_three-picks%0A%0ACode%3A%2026BC4B90CB",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X\" --channel \"football manual replies\" --status \"replied\" --attempt-url \"<real-x-reply-url-or-private-note>\" --detail \"Manual X reply from david2015bestai@gmail.com at YYYY-MM-DD HH:mm EEST; target=<@handle or tweet URL>; search='world cup 2026 predictions'; code 26BC4B90CB and WorldCup26 link included\" --next-action \"watch replies, then run campaign-referral-activity.mjs after 15 minutes\""
+        }
+      },
+      "xTargetHunterOk": true,
+      "xTargetHunterFresh": true,
+      "xTargetHunterGeneratedAtEest": "07/06/2026 21:39",
+      "xTargetHunter": {
+        "ok": true,
+        "state": "manual-x-target-hunting-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "laneCount": 48,
+        "liveLaneCount": 30,
+        "userLaneCount": 18,
+        "workerPackCount": 4,
+        "workerPackLanes": [
+          "Dexter:12",
+          "Sienna:12",
+          "Memo:12",
+          "Nano:12"
+        ],
+        "first": {
+          "id": "xh-01",
+          "type": "live",
+          "query": "World Cup 2026 predictions",
+          "url": "https://x.com/search?q=World%20Cup%202026%20predictions%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live"
+        }
+      },
+      "xAccountWatchlistOk": true,
+      "xAccountWatchlistFresh": true,
+      "xAccountWatchlistGeneratedAtEest": "07/06/2026 21:54",
+      "xAccountWatchlist": {
+        "ok": true,
+        "state": "manual-x-account-reply-watchlist-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "accountCount": 36,
+        "workerPackCount": 4,
+        "workerPackAccounts": [
+          "Dexter:9",
+          "Sienna:9",
+          "Memo:9",
+          "Nano:9"
+        ],
+        "first": {
+          "id": "xacct-01",
+          "handle": "FIFAWorldCup",
+          "lane": "Official World Cup conversation",
+          "profileUrl": "https://x.com/FIFAWorldCup",
+          "searchUrl": "https://x.com/search?q=from%3AFIFAWorldCup%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live"
+        }
+      },
+      "xReplyProofHelperOk": true,
+      "xReplyProofHelperFresh": true,
+      "xReplyProofHelperGeneratedAtEest": "07/06/2026 21:54",
+      "xReplyProofHelper": {
+        "ok": true,
+        "state": "ready-for-real-x-proof",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "helperCount": 4,
+        "readyWorkers": 4,
+        "workers": [
+          "Dexter:ready",
+          "Sienna:ready",
+          "Memo:ready",
+          "Nano:ready"
+        ],
+        "first": {
+          "worker": "Dexter",
+          "firstActionId": "x-1-1",
+          "firstQuery": "world cup 2026 predictions"
+        }
+      },
       "lastLogLines": [
-        "2026-06-07T17:41:21Z escalation-board ok",
-        "2026-06-07T17:41:21Z objective-audit ok",
-        "2026-06-07T17:41:22Z evidence-board ok",
-        "2026-06-07T17:41:22Z operator-push ok",
-        "2026-06-07T17:41:22Z real-action-bridge ok",
-        "2026-06-07T17:41:22Z one-click-share ok",
-        "2026-06-07T17:41:22Z public-outreach-targets ok",
-        "2026-06-07T17:41:22Z worker-launchers ok"
+        "2026-06-07T18:42:30Z escalation-board ok",
+        "2026-06-07T18:42:30Z objective-audit ok",
+        "2026-06-07T18:42:30Z evidence-board failed",
+        "2026-06-07T18:42:30Z operator-push ok",
+        "2026-06-07T18:42:30Z real-action-bridge ok",
+        "2026-06-07T18:42:30Z one-click-share ok",
+        "2026-06-07T18:42:31Z public-outreach-targets ok",
+        "2026-06-07T18:42:31Z worker-launchers ok"
       ]
     },
     {
       "host": "memo",
       "ok": true,
-      "generatedAtEest": "2026-06-07 20:41 +0300",
+      "generatedAtEest": "2026-06-07 21:42 +0300",
       "hotPingFresh": true,
       "proof": 49,
       "urgent": 16,
@@ -2305,7 +2771,7 @@
           "escalation": "hot",
           "nextPriority": "4",
           "nextChannel": "Football groups",
-          "oldestAgeLabel": "36.7h open"
+          "oldestAgeLabel": "37.7h open"
         },
         {
           "worker": "Sienna",
@@ -2313,7 +2779,7 @@
           "escalation": "hot",
           "nextPriority": "1",
           "nextChannel": "WhatsApp Status",
-          "oldestAgeLabel": "40.7h open"
+          "oldestAgeLabel": "41.7h open"
         },
         {
           "worker": "Memo",
@@ -2329,22 +2795,22 @@
           "escalation": "hot",
           "nextPriority": "2",
           "nextChannel": "WhatsApp personal",
-          "oldestAgeLabel": "38.7h open"
+          "oldestAgeLabel": "39.7h open"
         }
       ],
       "loopRows": [
-        "3721231       1 S       01:04:24 bash ./campaign-loop.sh run"
+        "3721231       1 S       02:17:28 bash ./campaign-loop.sh run"
       ],
       "loopRunning": true,
       "watchdogRows": [
-        "2458122       1 S       22:54:22 bash ./campaign-watchdog-loop.sh run"
+        "2458122       1 S     1-00:07:25 bash ./campaign-watchdog-loop.sh run"
       ],
       "watchdogRunning": true,
       "watchdogCronInstalled": true,
       "hotPingHookOk": true,
       "linkSentinelOk": true,
       "linkSentinelFresh": true,
-      "linkGeneratedAtEest": "2026-06-07 20:40 +0300",
+      "linkGeneratedAtEest": "2026-06-07 21:56 +0300",
       "linkChecks": [
         {
           "name": "base",
@@ -2377,7 +2843,7 @@
       ],
       "paidTrafficOk": true,
       "paidTrafficFresh": true,
-      "paidTrafficGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidTrafficGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidTraffic": {
         "ok": true,
         "deploymentIds": [
@@ -2390,7 +2856,7 @@
       },
       "liveAdQaOk": true,
       "liveAdQaFresh": true,
-      "liveAdQaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "liveAdQaGeneratedAtEest": "2026-06-07 21:42 +0300",
       "liveAdQa": {
         "ok": true,
         "deploymentIds": [
@@ -2411,7 +2877,7 @@
       },
       "adPlatformAuditOk": true,
       "adPlatformAuditFresh": true,
-      "adPlatformAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adPlatformAuditGeneratedAtEest": "2026-06-07 21:42 +0300",
       "adPlatformAudit": {
         "ok": true,
         "deploymentIds": [
@@ -2426,7 +2892,7 @@
       },
       "conversionGuardOk": true,
       "conversionGuardFresh": true,
-      "conversionGuardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "conversionGuardGeneratedAtEest": "2026-06-07 21:42 +0300",
       "conversionGuard": {
         "ok": true,
         "browserVerified": true,
@@ -2441,7 +2907,7 @@
       },
       "postingSprintOk": true,
       "postingSprintFresh": true,
-      "postingSprintGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingSprintGeneratedAtEest": "2026-06-07 21:42 +0300",
       "postingSprintCards": [
         {
           "worker": "Dexter",
@@ -2462,10 +2928,10 @@
         {
           "worker": "Memo",
           "source": "pulse",
-          "label": "Pulse 147",
-          "channel": "Proof audit",
-          "asset": "runtime/posting-log-live.csv",
-          "action": "Check proof log, list unproven current rows, and flag blocked channels."
+          "label": "Pulse 151",
+          "channel": "Asset audit",
+          "asset": "promo-kit-manifest.md",
+          "action": "Confirm video and image assets are present on this worker."
         },
         {
           "worker": "Nano",
@@ -2478,24 +2944,24 @@
       ],
       "proofActivityOk": false,
       "proofStallFresh": true,
-      "proofStallGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofStallGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofStall": {
         "ok": false,
         "externalStalled": true,
         "proofStalled": true,
-        "latestExternalProofAgeMinutes": 209,
-        "latestAnyProofAgeMinutes": 209,
+        "latestExternalProofAgeMinutes": 270,
+        "latestAnyProofAgeMinutes": 270,
         "oldestOpenPriority": "1",
         "oldestOpenOwner": "Sienna",
         "oldestOpenChannel": "WhatsApp Status"
       },
       "proofSlaOk": true,
       "proofSlaFresh": true,
-      "proofSlaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofSlaGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofSla": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeMinutes": 209,
+        "latestExternalProofAgeMinutes": 270,
         "urgentOpenRows": 16,
         "doNowRows": 4,
         "paidTrafficOk": true,
@@ -2510,11 +2976,11 @@
       },
       "proofRescueOk": true,
       "proofRescueFresh": true,
-      "proofRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofRescue": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeLabel": "3.2h",
+        "latestExternalProofAgeLabel": "4.2h",
         "urgentOpenRows": 16,
         "liveAdQaOk": true,
         "actionCount": 4,
@@ -2528,7 +2994,7 @@
       },
       "proofUrlRecoveryOk": true,
       "proofUrlRecoveryFresh": true,
-      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofUrlRecovery": {
         "ok": true,
         "pendingCount": 1,
@@ -2543,11 +3009,11 @@
       },
       "socialRescueOk": true,
       "socialRescueFresh": true,
-      "socialRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "socialRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "socialRescue": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeLabel": "3.2h",
+        "latestExternalProofAgeLabel": "4.2h",
         "liveAdQaOk": true,
         "actionCount": 4,
         "workerPageCount": 4,
@@ -2582,7 +3048,7 @@
       },
       "zeroSignupRescueOk": true,
       "zeroSignupRescueFresh": true,
-      "zeroSignupRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "zeroSignupRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "zeroSignupRescue": {
         "ok": true,
         "state": "critical-zero-signups",
@@ -2602,7 +3068,7 @@
       },
       "realActionBridgeOk": true,
       "realActionBridgeFresh": true,
-      "realActionBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "realActionBridgeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "realActionBridge": {
         "ok": true,
         "state": "critical-zero-signups",
@@ -2622,7 +3088,7 @@
       },
       "oneClickShareOk": true,
       "oneClickShareFresh": true,
-      "oneClickShareGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "oneClickShareGeneratedAtEest": "2026-06-07 21:42 +0300",
       "oneClickShare": {
         "ok": true,
         "actionCount": 4,
@@ -2644,7 +3110,7 @@
       },
       "publicOutreachTargetsOk": true,
       "publicOutreachTargetsFresh": true,
-      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "publicOutreachTargets": {
         "ok": true,
         "targetCount": 41,
@@ -2673,9 +3139,85 @@
           "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1"
         }
       },
+      "platformRotationOk": true,
+      "platformRotationFresh": true,
+      "platformRotationGeneratedAtEest": "07/06/2026 21:39",
+      "platformRotation": {
+        "ok": true,
+        "state": "nonstop-72h-platform-rotation-ready",
+        "hours": 72,
+        "slotCount": 288,
+        "platformCount": 23,
+        "platforms": [
+          "Bracket Predictor Search",
+          "Digital Spy Forum",
+          "Facebook Groups",
+          "Facebook Profile/Page",
+          "FollowFollow Forum",
+          "Football Forums",
+          "FourFourTwo",
+          "Instagram Hashtags",
+          "Instagram/Facebook Story",
+          "Lichess Forum",
+          "My World Cup Guide",
+          "Operation Sports Forum",
+          "RedCafe Forum",
+          "Reddit",
+          "Reddit Search",
+          "Softpedia Forum",
+          "TikTok/Reels",
+          "WhatsApp Status",
+          "World Cup Predictor Search",
+          "X OpenClaw Reply",
+          "X Search",
+          "X Target Hunter",
+          "YouTube Search"
+        ],
+        "workerCounts": {
+          "Dexter": 72,
+          "Sienna": 72,
+          "Memo": 72,
+          "Nano": 72
+        },
+        "first": {
+          "id": "rot-01-dexter",
+          "hour": 1,
+          "startsAtEest": "07/06/2026 21:39",
+          "worker": "Dexter",
+          "platform": "X Search",
+          "target": "World Cup 2026 prediction conversations",
+          "openUrl": "https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1&utm_rotation_hour=1&utm_worker=dexter"
+        }
+      },
+      "immediateSprintOk": true,
+      "immediateSprintFresh": true,
+      "immediateSprintGeneratedAtEest": "07/06/2026 21:39",
+      "immediateSprint": {
+        "ok": true,
+        "state": "execute-now-signup-and-proof-sprint",
+        "dueSlotCount": 4,
+        "selectedSlotCount": 12,
+        "signupSaves": 0,
+        "publicAttempts": 9,
+        "workers": [
+          "Dexter:3",
+          "Sienna:3",
+          "Memo:3",
+          "Nano:3"
+        ],
+        "first": {
+          "id": "rot-01-memo",
+          "worker": "Memo",
+          "platform": "X Target Hunter",
+          "target": "Spain World Cup 2026",
+          "openUrl": "https://x.com/search?q=Spain%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-15_spain-world-cup-2026&utm_rotation_hour=1&utm_worker=memo"
+        }
+      },
       "adOpsLinksOk": true,
       "adOpsLinksFresh": true,
-      "adOpsLinksGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adOpsLinksGeneratedAtEest": "2026-06-07 21:42 +0300",
       "adOpsLinks": {
         "ok": true,
         "channelCount": 2,
@@ -2704,7 +3246,7 @@
       },
       "paidAdTriageOk": true,
       "paidAdTriageFresh": true,
-      "paidAdTriageGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidAdTriageGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidAdTriage": {
         "ok": true,
         "state": "critical-paid-signup-friction",
@@ -2746,7 +3288,7 @@
       },
       "paidNoClickRescueOk": true,
       "paidNoClickRescueFresh": true,
-      "paidNoClickRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidNoClickRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidNoClickRescue": {
         "ok": true,
         "state": "clicks-no-signups",
@@ -2755,8 +3297,8 @@
         "dashboardChecks": 2,
         "impressions": 12,
         "clicks": 227,
-        "paidViews": 215,
-        "appViews": 471,
+        "paidViews": 219,
+        "appViews": 478,
         "signupSaves": 0,
         "variantCount": 8,
         "platforms": [
@@ -2773,7 +3315,7 @@
       },
       "paidDashboardOk": true,
       "paidDashboardFresh": true,
-      "paidDashboardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidDashboardGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidDashboard": {
         "ok": true,
         "state": "paid-clicks-no-signups",
@@ -2781,7 +3323,7 @@
         "totalSpend": 31.78,
         "totalImpressions": 12,
         "totalClicks": 227,
-        "paidViews": 215,
+        "paidViews": 219,
         "signupSaves": 0,
         "platforms": [
           "Meta Ads Manager",
@@ -2811,7 +3353,7 @@
       "referralActivityOk": true,
       "referralActivityFresh": true,
       "referralActivityAvailable": true,
-      "referralActivityGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "referralActivityGeneratedAtEest": "2026-06-07 21:56 +0300",
       "referralActivity": {
         "ok": true,
         "available": true,
@@ -2840,12 +3382,12 @@
         "lockedEntries24h": 0,
         "lockedEntries72h": 1,
         "viewCountsAvailable": true,
-        "appViews": 478,
-        "appViews24h": 478,
-        "appViews72h": 478,
-        "referralViews": 146,
-        "referralViews24h": 146,
-        "referralViews72h": 146,
+        "appViews": 687,
+        "appViews24h": 687,
+        "appViews72h": 687,
+        "referralViews": 305,
+        "referralViews24h": 305,
+        "referralViews72h": 305,
         "signupReturned": 0,
         "signupMissingAcceptance": 0,
         "signupAttempts": 0,
@@ -2854,20 +3396,20 @@
         "signupErrorEvents": 0,
         "sourceBreakdown": [
           {
+            "source": "meta",
+            "medium": "paid-social",
+            "campaign": "worldcup26_referral_72h",
+            "content": "three-team-question",
+            "count": 204,
+            "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
+          },
+          {
             "source": "an",
             "medium": "paid",
             "campaign": "6971048256000",
             "content": "6971048413400",
             "count": 50,
             "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
-          },
-          {
-            "source": "meta",
-            "medium": "paid-social",
-            "campaign": "worldcup26_referral_72h",
-            "content": "three-team-question",
-            "count": 45,
-            "lastViewedAt": "2026-06-07T17:32:35.286197+00:00"
           },
           {
             "source": "fb",
@@ -2911,12 +3453,12 @@
           }
         ],
         "topSource": {
-          "source": "an",
-          "medium": "paid",
-          "campaign": "6971048256000",
-          "content": "6971048413400",
-          "count": 50,
-          "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+          "source": "meta",
+          "medium": "paid-social",
+          "campaign": "worldcup26_referral_72h",
+          "content": "three-team-question",
+          "count": 204,
+          "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
         },
         "signupSourceBreakdown": [],
         "topSignupSource": null,
@@ -2927,13 +3469,13 @@
       },
       "signupConversionOk": true,
       "signupConversionFresh": true,
-      "signupConversionGeneratedAtEest": "07/06/2026 20:41",
+      "signupConversionGeneratedAtEest": "07/06/2026 21:56",
       "signupConversion": {
         "ok": false,
         "state": "critical-auth-to-signup-save-unproven",
-        "appViews": 478,
-        "referralViews": 146,
-        "paidViews": 219,
+        "appViews": 671,
+        "referralViews": 300,
+        "paidViews": 373,
         "accepted": 0,
         "signupSaves": 0,
         "entries": 0,
@@ -2966,7 +3508,7 @@
       },
       "warmContactOk": true,
       "warmContactFresh": true,
-      "warmContactGeneratedAtEest": "07/06/2026 20:41",
+      "warmContactGeneratedAtEest": "07/06/2026 21:42",
       "warmContact": {
         "ok": true,
         "state": "warm-contact-sprint-needed",
@@ -2980,7 +3522,7 @@
       },
       "warmFollowupOk": true,
       "warmFollowupFresh": true,
-      "warmFollowupGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "warmFollowupGeneratedAtEest": "2026-06-07 21:42 +0300",
       "warmFollowup": {
         "ok": true,
         "state": "awaiting-first-human-send",
@@ -2989,7 +3531,7 @@
         "followupAttempts": 0,
         "followupMinutes": 15,
         "signupSaves": 0,
-        "referralViews": 152,
+        "referralViews": 146,
         "profiles": 5,
         "due": false,
         "latest": null,
@@ -2997,7 +3539,7 @@
       },
       "responseKitOk": true,
       "responseKitFresh": true,
-      "responseKitGeneratedAtEest": "07/06/2026 20:41",
+      "responseKitGeneratedAtEest": "07/06/2026 21:42",
       "responseKit": {
         "ok": true,
         "state": "ready-for-warm-replies",
@@ -3018,7 +3560,7 @@
       },
       "firstHumanActionsOk": true,
       "firstHumanActionsFresh": true,
-      "firstHumanActionsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstHumanActionsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "firstHumanActions": {
         "ok": true,
         "state": "needs-first-human-action",
@@ -3039,7 +3581,7 @@
       },
       "firstSendBridgeOk": true,
       "firstSendBridgeFresh": true,
-      "firstSendBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstSendBridgeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "firstSendBridge": {
         "ok": true,
         "state": "send-now",
@@ -3056,11 +3598,11 @@
       },
       "postingCockpitOk": true,
       "postingCockpitFresh": true,
-      "postingCockpitGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingCockpitGeneratedAtEest": "2026-06-07 21:42 +0300",
       "postingCockpit": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "urgentOpenRows": 16,
         "paidTrafficOk": true,
         "pageCount": 18,
@@ -3093,7 +3635,7 @@
       },
       "phoneActionCenterOk": true,
       "phoneActionCenterFresh": true,
-      "phoneActionCenterGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "phoneActionCenterGeneratedAtEest": "2026-06-07 21:42 +0300",
       "phoneActionCenter": {
         "ok": true,
         "referralCode": "26BC4B90CB",
@@ -3118,28 +3660,28 @@
       },
       "proofCloseoutOk": true,
       "proofCloseoutFresh": true,
-      "proofCloseoutGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofCloseoutGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofCloseout": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "commandCount": 6,
         "first": {
           "priority": "1",
           "owner": "Sienna",
           "channel": "WhatsApp Status",
           "status": "posted",
-          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:41 +0300' --status posted"
+          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 21:42 +0300' --status posted"
         },
         "failures": []
       },
       "workerWakeOk": true,
       "workerWakeFresh": true,
-      "workerWakeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "workerWakeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "workerWake": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "urgentOpenRows": 16,
         "workerCount": 4,
         "workers": [
@@ -3191,7 +3733,7 @@
       },
       "sessionRecoveryOk": true,
       "sessionRecoveryFresh": true,
-      "sessionRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "sessionRecoveryGeneratedAtEest": "2026-06-07 21:42 +0300",
       "sessionRecovery": {
         "proofRows": 49,
         "urgentRows": 16,
@@ -3200,8 +3742,8 @@
           {
             "key": "x",
             "label": "X public fallback",
-            "scheduledAtEest": "2026-06-07 16:45 +0300",
-            "shareUrl": "https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse129"
+            "scheduledAtEest": "2026-06-07 20:45 +0300",
+            "shareUrl": "https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB"
           },
           {
             "key": "facebook",
@@ -3213,18 +3755,18 @@
       },
       "escalationOk": true,
       "escalationFresh": true,
-      "escalationGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "escalationGeneratedAtEest": "2026-06-07 21:42 +0300",
       "escalation": {
         "linkOk": true,
         "externalOpen": 16,
         "critical": 16,
         "hot": 0,
         "workersWithStale": 3,
-        "latestExternalProofAgeMinutes": 209
+        "latestExternalProofAgeMinutes": 270
       },
       "publicAttemptsOk": true,
       "publicAttemptsFresh": true,
-      "publicAttemptsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicAttemptsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "publicAttempts": {
         "ok": true,
         "attempts": 9,
@@ -3250,7 +3792,7 @@
       },
       "loginUnlockOk": true,
       "loginUnlockFresh": true,
-      "loginUnlockGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "loginUnlockGeneratedAtEest": "2026-06-07 21:42 +0300",
       "loginUnlock": {
         "ok": true,
         "cards": 6,
@@ -3278,19 +3820,19 @@
       },
       "objectiveAuditOk": true,
       "objectiveAuditFresh": true,
-      "objectiveAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "objectiveAuditGeneratedAtEest": "2026-06-07 21:42 +0300",
       "objectiveAudit": {
         "ok": true,
         "complete": false,
         "state": "critical",
-        "proven": 10,
+        "proven": 8,
         "total": 12,
-        "criticalOpen": 1,
+        "criticalOpen": 3,
         "firstOpen": {
-          "id": "advertise-everywhere-proof",
+          "id": "droplets-awake",
           "status": "incomplete",
-          "label": "Real external posting proof is current",
-          "next": "Do the next real action and log proof with a public URL or precise private-channel note."
+          "label": "Four droplets have campaign tooling awake",
+          "next": "Run the remote war-room and repair any infrastructure host failure before relying on the campaign loop."
         },
         "primaryAction": {
           "priority": "clean-signup-test-batch",
@@ -3306,7 +3848,7 @@
       },
       "operatorPushOk": true,
       "operatorPushFresh": true,
-      "operatorPushGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "operatorPushGeneratedAtEest": "2026-06-07 21:42 +0300",
       "operatorPush": {
         "ok": true,
         "complete": false,
@@ -3356,21 +3898,178 @@
           }
         ]
       },
+      "actionCommandCenterOk": true,
+      "actionCommandCenterFresh": true,
+      "actionCommandCenterGeneratedAtEest": "07/06/2026 21:56",
+      "actionCommandCenter": {
+        "ok": true,
+        "state": "critical-first-human-action",
+        "blocker": "No proven referral signup-save exists yet. Do the tester batch before changing ads again.",
+        "appViews": 671,
+        "referralViews": 300,
+        "paidViews": 373,
+        "dashboardClicks": 227,
+        "signupSaves": 0,
+        "profiles": 5,
+        "accepted": 0,
+        "publicAttempts": 9,
+        "xActions": 16,
+        "xWorkerPacks": 4,
+        "xAccountTargets": 36,
+        "xAccountWorkerPacks": 4,
+        "xProofReadyWorkers": 4,
+        "firstAction": {
+          "owner": "Memo",
+          "title": "Send 3 clean signup tests",
+          "why": "Paid and referral views exist, but no completed signup-save event exists. This proves or isolates the Google signup path.",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+          "logAfterRealSend": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+        },
+        "secondAction": {
+          "title": "Run one X OpenClaw reply from each worker",
+          "operatorAccount": "david2015bestai@gmail.com",
+          "overviewFile": "x-football-openclaw.html",
+          "proofHelperFile": "x-reply-proof-helper.html"
+        },
+        "workers": [
+          {
+            "worker": "Dexter",
+            "packFile": "x-openclaw-dexter.html",
+            "actions": 4,
+            "firstActionId": "x-1-1"
+          },
+          {
+            "worker": "Sienna",
+            "packFile": "x-openclaw-sienna.html",
+            "actions": 4,
+            "firstActionId": "x-1-2"
+          },
+          {
+            "worker": "Memo",
+            "packFile": "x-openclaw-memo.html",
+            "actions": 4,
+            "firstActionId": "x-2-2"
+          },
+          {
+            "worker": "Nano",
+            "packFile": "x-openclaw-nano.html",
+            "actions": 4,
+            "firstActionId": "x-3-2"
+          }
+        ]
+      },
+      "xFootballOpenclawOk": true,
+      "xFootballOpenclawFresh": true,
+      "xFootballOpenclawGeneratedAtEest": "07/06/2026 21:54",
+      "xFootballOpenclaw": {
+        "ok": true,
+        "state": "manual-x-outreach-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "searchCount": 8,
+        "accountSearchCount": 8,
+        "actionCount": 16,
+        "workerPackCount": 4,
+        "workerPackActions": [
+          "Dexter:4",
+          "Sienna:4",
+          "Memo:4",
+          "Nano:4"
+        ],
+        "perHourCap": 6,
+        "dailyCap": 24,
+        "first": {
+          "id": "x-1-1",
+          "owner": "Dexter",
+          "query": "world cup 2026 predictions",
+          "searchUrl": "https://x.com/search?q=world%20cup%202026%20predictions%20-giveaway%20-crypto&src=typed_query&f=live",
+          "replyStyle": "Ask for 3 picks",
+          "intentUrl": "https://twitter.com/intent/tweet?text=Good%20football%20question.%20I%20am%20asking%20people%20for%20exactly%203%20World%20Cup%20picks%20before%20the%20event%20starts.%0A%0AYou%20can%20save%20your%203%20teams%20free%20and%20see%20your%20private%20points%20preview%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_football_openclaw%26utm_content%3Dworld-cup-2026-predictions_three-picks%0A%0ACode%3A%2026BC4B90CB",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X\" --channel \"football manual replies\" --status \"replied\" --attempt-url \"<real-x-reply-url-or-private-note>\" --detail \"Manual X reply from david2015bestai@gmail.com at YYYY-MM-DD HH:mm EEST; target=<@handle or tweet URL>; search='world cup 2026 predictions'; code 26BC4B90CB and WorldCup26 link included\" --next-action \"watch replies, then run campaign-referral-activity.mjs after 15 minutes\""
+        }
+      },
+      "xTargetHunterOk": true,
+      "xTargetHunterFresh": true,
+      "xTargetHunterGeneratedAtEest": "07/06/2026 21:39",
+      "xTargetHunter": {
+        "ok": true,
+        "state": "manual-x-target-hunting-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "laneCount": 48,
+        "liveLaneCount": 30,
+        "userLaneCount": 18,
+        "workerPackCount": 4,
+        "workerPackLanes": [
+          "Dexter:12",
+          "Sienna:12",
+          "Memo:12",
+          "Nano:12"
+        ],
+        "first": {
+          "id": "xh-01",
+          "type": "live",
+          "query": "World Cup 2026 predictions",
+          "url": "https://x.com/search?q=World%20Cup%202026%20predictions%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live"
+        }
+      },
+      "xAccountWatchlistOk": true,
+      "xAccountWatchlistFresh": true,
+      "xAccountWatchlistGeneratedAtEest": "07/06/2026 21:54",
+      "xAccountWatchlist": {
+        "ok": true,
+        "state": "manual-x-account-reply-watchlist-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "accountCount": 36,
+        "workerPackCount": 4,
+        "workerPackAccounts": [
+          "Dexter:9",
+          "Sienna:9",
+          "Memo:9",
+          "Nano:9"
+        ],
+        "first": {
+          "id": "xacct-01",
+          "handle": "FIFAWorldCup",
+          "lane": "Official World Cup conversation",
+          "profileUrl": "https://x.com/FIFAWorldCup",
+          "searchUrl": "https://x.com/search?q=from%3AFIFAWorldCup%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live"
+        }
+      },
+      "xReplyProofHelperOk": true,
+      "xReplyProofHelperFresh": true,
+      "xReplyProofHelperGeneratedAtEest": "07/06/2026 21:54",
+      "xReplyProofHelper": {
+        "ok": true,
+        "state": "ready-for-real-x-proof",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "helperCount": 4,
+        "readyWorkers": 4,
+        "workers": [
+          "Dexter:ready",
+          "Sienna:ready",
+          "Memo:ready",
+          "Nano:ready"
+        ],
+        "first": {
+          "worker": "Dexter",
+          "firstActionId": "x-1-1",
+          "firstQuery": "world cup 2026 predictions"
+        }
+      },
       "lastLogLines": [
-        "2026-06-07T17:41:12Z escalation-board ok",
-        "2026-06-07T17:41:12Z objective-audit ok",
-        "2026-06-07T17:41:13Z evidence-board ok",
-        "2026-06-07T17:41:13Z operator-push ok",
-        "2026-06-07T17:41:13Z real-action-bridge ok",
-        "2026-06-07T17:41:13Z one-click-share ok",
-        "2026-06-07T17:41:13Z public-outreach-targets ok",
-        "2026-06-07T17:41:13Z worker-launchers ok"
+        "2026-06-07T18:42:20Z escalation-board ok",
+        "2026-06-07T18:42:20Z objective-audit ok",
+        "2026-06-07T18:42:20Z evidence-board failed",
+        "2026-06-07T18:42:20Z operator-push ok",
+        "2026-06-07T18:42:20Z real-action-bridge ok",
+        "2026-06-07T18:42:20Z one-click-share ok",
+        "2026-06-07T18:42:20Z public-outreach-targets ok",
+        "2026-06-07T18:42:20Z worker-launchers ok"
       ]
     },
     {
       "host": "nano",
       "ok": true,
-      "generatedAtEest": "2026-06-07 20:41 +0300",
+      "generatedAtEest": "2026-06-07 21:42 +0300",
       "hotPingFresh": true,
       "proof": 49,
       "urgent": 16,
@@ -3391,7 +4090,7 @@
           "escalation": "hot",
           "nextPriority": "4",
           "nextChannel": "Football groups",
-          "oldestAgeLabel": "36.7h open"
+          "oldestAgeLabel": "37.7h open"
         },
         {
           "worker": "Sienna",
@@ -3399,7 +4098,7 @@
           "escalation": "hot",
           "nextPriority": "1",
           "nextChannel": "WhatsApp Status",
-          "oldestAgeLabel": "40.7h open"
+          "oldestAgeLabel": "41.7h open"
         },
         {
           "worker": "Memo",
@@ -3415,22 +4114,22 @@
           "escalation": "hot",
           "nextPriority": "2",
           "nextChannel": "WhatsApp personal",
-          "oldestAgeLabel": "38.7h open"
+          "oldestAgeLabel": "39.7h open"
         }
       ],
       "loopRows": [
-        "2905724       1 S       01:04:20 bash ./campaign-loop.sh run"
+        "2905724       1 S       02:17:24 bash ./campaign-loop.sh run"
       ],
       "loopRunning": true,
       "watchdogRows": [
-        "1996386       1 S       22:54:23 bash ./campaign-watchdog-loop.sh run"
+        "1996386       1 S     1-00:07:26 bash ./campaign-watchdog-loop.sh run"
       ],
       "watchdogRunning": true,
       "watchdogCronInstalled": true,
       "hotPingHookOk": true,
       "linkSentinelOk": true,
       "linkSentinelFresh": true,
-      "linkGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "linkGeneratedAtEest": "2026-06-07 21:56 +0300",
       "linkChecks": [
         {
           "name": "base",
@@ -3463,7 +4162,7 @@
       ],
       "paidTrafficOk": true,
       "paidTrafficFresh": true,
-      "paidTrafficGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidTrafficGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidTraffic": {
         "ok": true,
         "deploymentIds": [
@@ -3476,7 +4175,7 @@
       },
       "liveAdQaOk": true,
       "liveAdQaFresh": true,
-      "liveAdQaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "liveAdQaGeneratedAtEest": "2026-06-07 21:42 +0300",
       "liveAdQa": {
         "ok": true,
         "deploymentIds": [
@@ -3497,7 +4196,7 @@
       },
       "adPlatformAuditOk": true,
       "adPlatformAuditFresh": true,
-      "adPlatformAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adPlatformAuditGeneratedAtEest": "2026-06-07 21:42 +0300",
       "adPlatformAudit": {
         "ok": true,
         "deploymentIds": [
@@ -3512,7 +4211,7 @@
       },
       "conversionGuardOk": true,
       "conversionGuardFresh": true,
-      "conversionGuardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "conversionGuardGeneratedAtEest": "2026-06-07 21:42 +0300",
       "conversionGuard": {
         "ok": true,
         "browserVerified": true,
@@ -3527,7 +4226,7 @@
       },
       "postingSprintOk": true,
       "postingSprintFresh": true,
-      "postingSprintGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingSprintGeneratedAtEest": "2026-06-07 21:42 +0300",
       "postingSprintCards": [
         {
           "worker": "Dexter",
@@ -3548,10 +4247,10 @@
         {
           "worker": "Memo",
           "source": "pulse",
-          "label": "Pulse 147",
-          "channel": "Proof audit",
-          "asset": "runtime/posting-log-live.csv",
-          "action": "Check proof log, list unproven current rows, and flag blocked channels."
+          "label": "Pulse 151",
+          "channel": "Asset audit",
+          "asset": "promo-kit-manifest.md",
+          "action": "Confirm video and image assets are present on this worker."
         },
         {
           "worker": "Nano",
@@ -3564,24 +4263,24 @@
       ],
       "proofActivityOk": false,
       "proofStallFresh": true,
-      "proofStallGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofStallGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofStall": {
         "ok": false,
         "externalStalled": true,
         "proofStalled": true,
-        "latestExternalProofAgeMinutes": 209,
-        "latestAnyProofAgeMinutes": 209,
+        "latestExternalProofAgeMinutes": 270,
+        "latestAnyProofAgeMinutes": 270,
         "oldestOpenPriority": "1",
         "oldestOpenOwner": "Sienna",
         "oldestOpenChannel": "WhatsApp Status"
       },
       "proofSlaOk": true,
       "proofSlaFresh": true,
-      "proofSlaGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofSlaGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofSla": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeMinutes": 209,
+        "latestExternalProofAgeMinutes": 270,
         "urgentOpenRows": 16,
         "doNowRows": 4,
         "paidTrafficOk": true,
@@ -3596,11 +4295,11 @@
       },
       "proofRescueOk": true,
       "proofRescueFresh": true,
-      "proofRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofRescue": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeLabel": "3.2h",
+        "latestExternalProofAgeLabel": "4.3h",
         "urgentOpenRows": 16,
         "liveAdQaOk": true,
         "actionCount": 4,
@@ -3614,7 +4313,7 @@
       },
       "proofUrlRecoveryOk": true,
       "proofUrlRecoveryFresh": true,
-      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofUrlRecoveryGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofUrlRecovery": {
         "ok": true,
         "pendingCount": 1,
@@ -3629,11 +4328,11 @@
       },
       "socialRescueOk": true,
       "socialRescueFresh": true,
-      "socialRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "socialRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "socialRescue": {
         "ok": true,
         "state": "critical",
-        "latestExternalProofAgeLabel": "3.2h",
+        "latestExternalProofAgeLabel": "4.3h",
         "liveAdQaOk": true,
         "actionCount": 4,
         "workerPageCount": 4,
@@ -3668,7 +4367,7 @@
       },
       "zeroSignupRescueOk": true,
       "zeroSignupRescueFresh": true,
-      "zeroSignupRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "zeroSignupRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "zeroSignupRescue": {
         "ok": true,
         "state": "critical-zero-signups",
@@ -3688,7 +4387,7 @@
       },
       "realActionBridgeOk": true,
       "realActionBridgeFresh": true,
-      "realActionBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "realActionBridgeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "realActionBridge": {
         "ok": true,
         "state": "critical-zero-signups",
@@ -3708,7 +4407,7 @@
       },
       "oneClickShareOk": true,
       "oneClickShareFresh": true,
-      "oneClickShareGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "oneClickShareGeneratedAtEest": "2026-06-07 21:42 +0300",
       "oneClickShare": {
         "ok": true,
         "actionCount": 4,
@@ -3730,7 +4429,7 @@
       },
       "publicOutreachTargetsOk": true,
       "publicOutreachTargetsFresh": true,
-      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicOutreachTargetsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "publicOutreachTargets": {
         "ok": true,
         "targetCount": 41,
@@ -3759,9 +4458,85 @@
           "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_public_outreach&utm_content=status_a1"
         }
       },
+      "platformRotationOk": true,
+      "platformRotationFresh": true,
+      "platformRotationGeneratedAtEest": "07/06/2026 21:39",
+      "platformRotation": {
+        "ok": true,
+        "state": "nonstop-72h-platform-rotation-ready",
+        "hours": 72,
+        "slotCount": 288,
+        "platformCount": 23,
+        "platforms": [
+          "Bracket Predictor Search",
+          "Digital Spy Forum",
+          "Facebook Groups",
+          "Facebook Profile/Page",
+          "FollowFollow Forum",
+          "Football Forums",
+          "FourFourTwo",
+          "Instagram Hashtags",
+          "Instagram/Facebook Story",
+          "Lichess Forum",
+          "My World Cup Guide",
+          "Operation Sports Forum",
+          "RedCafe Forum",
+          "Reddit",
+          "Reddit Search",
+          "Softpedia Forum",
+          "TikTok/Reels",
+          "WhatsApp Status",
+          "World Cup Predictor Search",
+          "X OpenClaw Reply",
+          "X Search",
+          "X Target Hunter",
+          "YouTube Search"
+        ],
+        "workerCounts": {
+          "Dexter": 72,
+          "Sienna": 72,
+          "Memo": 72,
+          "Nano": 72
+        },
+        "first": {
+          "id": "rot-01-dexter",
+          "hour": 1,
+          "startsAtEest": "07/06/2026 21:39",
+          "worker": "Dexter",
+          "platform": "X Search",
+          "target": "World Cup 2026 prediction conversations",
+          "openUrl": "https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1&utm_rotation_hour=1&utm_worker=dexter"
+        }
+      },
+      "immediateSprintOk": true,
+      "immediateSprintFresh": true,
+      "immediateSprintGeneratedAtEest": "07/06/2026 21:39",
+      "immediateSprint": {
+        "ok": true,
+        "state": "execute-now-signup-and-proof-sprint",
+        "dueSlotCount": 4,
+        "selectedSlotCount": 12,
+        "signupSaves": 0,
+        "publicAttempts": 9,
+        "workers": [
+          "Dexter:3",
+          "Sienna:3",
+          "Memo:3",
+          "Nano:3"
+        ],
+        "first": {
+          "id": "rot-01-memo",
+          "worker": "Memo",
+          "platform": "X Target Hunter",
+          "target": "Spain World Cup 2026",
+          "openUrl": "https://x.com/search?q=Spain%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-15_spain-world-cup-2026&utm_rotation_hour=1&utm_worker=memo"
+        }
+      },
       "adOpsLinksOk": true,
       "adOpsLinksFresh": true,
-      "adOpsLinksGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "adOpsLinksGeneratedAtEest": "2026-06-07 21:42 +0300",
       "adOpsLinks": {
         "ok": true,
         "channelCount": 2,
@@ -3790,7 +4565,7 @@
       },
       "paidAdTriageOk": true,
       "paidAdTriageFresh": true,
-      "paidAdTriageGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidAdTriageGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidAdTriage": {
         "ok": true,
         "state": "critical-paid-signup-friction",
@@ -3832,7 +4607,7 @@
       },
       "paidNoClickRescueOk": true,
       "paidNoClickRescueFresh": true,
-      "paidNoClickRescueGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidNoClickRescueGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidNoClickRescue": {
         "ok": true,
         "state": "clicks-no-signups",
@@ -3841,8 +4616,8 @@
         "dashboardChecks": 2,
         "impressions": 12,
         "clicks": 227,
-        "paidViews": 215,
-        "appViews": 471,
+        "paidViews": 219,
+        "appViews": 478,
         "signupSaves": 0,
         "variantCount": 8,
         "platforms": [
@@ -3859,7 +4634,7 @@
       },
       "paidDashboardOk": true,
       "paidDashboardFresh": true,
-      "paidDashboardGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "paidDashboardGeneratedAtEest": "2026-06-07 21:42 +0300",
       "paidDashboard": {
         "ok": true,
         "state": "paid-clicks-no-signups",
@@ -3867,7 +4642,7 @@
         "totalSpend": 31.78,
         "totalImpressions": 12,
         "totalClicks": 227,
-        "paidViews": 215,
+        "paidViews": 219,
         "signupSaves": 0,
         "platforms": [
           "Meta Ads Manager",
@@ -3897,7 +4672,7 @@
       "referralActivityOk": true,
       "referralActivityFresh": true,
       "referralActivityAvailable": true,
-      "referralActivityGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "referralActivityGeneratedAtEest": "2026-06-07 21:56 +0300",
       "referralActivity": {
         "ok": true,
         "available": true,
@@ -3926,12 +4701,12 @@
         "lockedEntries24h": 0,
         "lockedEntries72h": 1,
         "viewCountsAvailable": true,
-        "appViews": 478,
-        "appViews24h": 478,
-        "appViews72h": 478,
-        "referralViews": 146,
-        "referralViews24h": 146,
-        "referralViews72h": 146,
+        "appViews": 687,
+        "appViews24h": 687,
+        "appViews72h": 687,
+        "referralViews": 305,
+        "referralViews24h": 305,
+        "referralViews72h": 305,
         "signupReturned": 0,
         "signupMissingAcceptance": 0,
         "signupAttempts": 0,
@@ -3940,20 +4715,20 @@
         "signupErrorEvents": 0,
         "sourceBreakdown": [
           {
+            "source": "meta",
+            "medium": "paid-social",
+            "campaign": "worldcup26_referral_72h",
+            "content": "three-team-question",
+            "count": 204,
+            "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
+          },
+          {
             "source": "an",
             "medium": "paid",
             "campaign": "6971048256000",
             "content": "6971048413400",
             "count": 50,
             "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
-          },
-          {
-            "source": "meta",
-            "medium": "paid-social",
-            "campaign": "worldcup26_referral_72h",
-            "content": "three-team-question",
-            "count": 45,
-            "lastViewedAt": "2026-06-07T17:32:35.286197+00:00"
           },
           {
             "source": "fb",
@@ -3997,12 +4772,12 @@
           }
         ],
         "topSource": {
-          "source": "an",
-          "medium": "paid",
-          "campaign": "6971048256000",
-          "content": "6971048413400",
-          "count": 50,
-          "lastViewedAt": "2026-06-07T12:13:50.600932+00:00"
+          "source": "meta",
+          "medium": "paid-social",
+          "campaign": "worldcup26_referral_72h",
+          "content": "three-team-question",
+          "count": 204,
+          "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
         },
         "signupSourceBreakdown": [],
         "topSignupSource": null,
@@ -4013,13 +4788,13 @@
       },
       "signupConversionOk": true,
       "signupConversionFresh": true,
-      "signupConversionGeneratedAtEest": "07/06/2026 20:41",
+      "signupConversionGeneratedAtEest": "07/06/2026 21:56",
       "signupConversion": {
         "ok": false,
         "state": "critical-auth-to-signup-save-unproven",
-        "appViews": 478,
-        "referralViews": 146,
-        "paidViews": 219,
+        "appViews": 671,
+        "referralViews": 300,
+        "paidViews": 373,
         "accepted": 0,
         "signupSaves": 0,
         "entries": 0,
@@ -4052,7 +4827,7 @@
       },
       "warmContactOk": true,
       "warmContactFresh": true,
-      "warmContactGeneratedAtEest": "07/06/2026 20:41",
+      "warmContactGeneratedAtEest": "07/06/2026 21:42",
       "warmContact": {
         "ok": true,
         "state": "warm-contact-sprint-needed",
@@ -4066,7 +4841,7 @@
       },
       "warmFollowupOk": true,
       "warmFollowupFresh": true,
-      "warmFollowupGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "warmFollowupGeneratedAtEest": "2026-06-07 21:42 +0300",
       "warmFollowup": {
         "ok": true,
         "state": "awaiting-first-human-send",
@@ -4075,7 +4850,7 @@
         "followupAttempts": 0,
         "followupMinutes": 15,
         "signupSaves": 0,
-        "referralViews": 152,
+        "referralViews": 146,
         "profiles": 5,
         "due": false,
         "latest": null,
@@ -4083,7 +4858,7 @@
       },
       "responseKitOk": true,
       "responseKitFresh": true,
-      "responseKitGeneratedAtEest": "07/06/2026 20:41",
+      "responseKitGeneratedAtEest": "07/06/2026 21:42",
       "responseKit": {
         "ok": true,
         "state": "ready-for-warm-replies",
@@ -4104,7 +4879,7 @@
       },
       "firstHumanActionsOk": true,
       "firstHumanActionsFresh": true,
-      "firstHumanActionsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstHumanActionsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "firstHumanActions": {
         "ok": true,
         "state": "needs-first-human-action",
@@ -4125,7 +4900,7 @@
       },
       "firstSendBridgeOk": true,
       "firstSendBridgeFresh": true,
-      "firstSendBridgeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "firstSendBridgeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "firstSendBridge": {
         "ok": true,
         "state": "send-now",
@@ -4142,11 +4917,11 @@
       },
       "postingCockpitOk": true,
       "postingCockpitFresh": true,
-      "postingCockpitGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "postingCockpitGeneratedAtEest": "2026-06-07 21:42 +0300",
       "postingCockpit": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "urgentOpenRows": 16,
         "paidTrafficOk": true,
         "pageCount": 18,
@@ -4179,7 +4954,7 @@
       },
       "phoneActionCenterOk": true,
       "phoneActionCenterFresh": true,
-      "phoneActionCenterGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "phoneActionCenterGeneratedAtEest": "2026-06-07 21:42 +0300",
       "phoneActionCenter": {
         "ok": true,
         "referralCode": "26BC4B90CB",
@@ -4204,28 +4979,28 @@
       },
       "proofCloseoutOk": true,
       "proofCloseoutFresh": true,
-      "proofCloseoutGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "proofCloseoutGeneratedAtEest": "2026-06-07 21:42 +0300",
       "proofCloseout": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "commandCount": 6,
         "first": {
           "priority": "1",
           "owner": "Sienna",
           "channel": "WhatsApp Status",
           "status": "posted",
-          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:41 +0300' --status posted"
+          "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 21:42 +0300' --status posted"
         },
         "failures": []
       },
       "workerWakeOk": true,
       "workerWakeFresh": true,
-      "workerWakeGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "workerWakeGeneratedAtEest": "2026-06-07 21:42 +0300",
       "workerWake": {
         "ok": true,
         "proofState": "critical",
-        "latestExternalProofAgeLabel": "3.5h",
+        "latestExternalProofAgeLabel": "4.5h",
         "urgentOpenRows": 16,
         "workerCount": 4,
         "workers": [
@@ -4277,7 +5052,7 @@
       },
       "sessionRecoveryOk": true,
       "sessionRecoveryFresh": true,
-      "sessionRecoveryGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "sessionRecoveryGeneratedAtEest": "2026-06-07 21:42 +0300",
       "sessionRecovery": {
         "proofRows": 49,
         "urgentRows": 16,
@@ -4286,8 +5061,8 @@
           {
             "key": "x",
             "label": "X public fallback",
-            "scheduledAtEest": "2026-06-07 16:45 +0300",
-            "shareUrl": "https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse129"
+            "scheduledAtEest": "2026-06-07 20:45 +0300",
+            "shareUrl": "https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB"
           },
           {
             "key": "facebook",
@@ -4299,18 +5074,18 @@
       },
       "escalationOk": true,
       "escalationFresh": true,
-      "escalationGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "escalationGeneratedAtEest": "2026-06-07 21:42 +0300",
       "escalation": {
         "linkOk": true,
         "externalOpen": 16,
         "critical": 16,
         "hot": 0,
         "workersWithStale": 3,
-        "latestExternalProofAgeMinutes": 209
+        "latestExternalProofAgeMinutes": 270
       },
       "publicAttemptsOk": true,
       "publicAttemptsFresh": true,
-      "publicAttemptsGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "publicAttemptsGeneratedAtEest": "2026-06-07 21:42 +0300",
       "publicAttempts": {
         "ok": true,
         "attempts": 9,
@@ -4336,7 +5111,7 @@
       },
       "loginUnlockOk": true,
       "loginUnlockFresh": true,
-      "loginUnlockGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "loginUnlockGeneratedAtEest": "2026-06-07 21:42 +0300",
       "loginUnlock": {
         "ok": true,
         "cards": 6,
@@ -4364,19 +5139,19 @@
       },
       "objectiveAuditOk": true,
       "objectiveAuditFresh": true,
-      "objectiveAuditGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "objectiveAuditGeneratedAtEest": "2026-06-07 21:42 +0300",
       "objectiveAudit": {
         "ok": true,
         "complete": false,
         "state": "critical",
-        "proven": 10,
+        "proven": 8,
         "total": 12,
-        "criticalOpen": 1,
+        "criticalOpen": 3,
         "firstOpen": {
-          "id": "advertise-everywhere-proof",
+          "id": "droplets-awake",
           "status": "incomplete",
-          "label": "Real external posting proof is current",
-          "next": "Do the next real action and log proof with a public URL or precise private-channel note."
+          "label": "Four droplets have campaign tooling awake",
+          "next": "Run the remote war-room and repair any infrastructure host failure before relying on the campaign loop."
         },
         "primaryAction": {
           "priority": "clean-signup-test-batch",
@@ -4392,7 +5167,7 @@
       },
       "operatorPushOk": true,
       "operatorPushFresh": true,
-      "operatorPushGeneratedAtEest": "2026-06-07 20:41 +0300",
+      "operatorPushGeneratedAtEest": "2026-06-07 21:42 +0300",
       "operatorPush": {
         "ok": true,
         "complete": false,
@@ -4442,15 +5217,172 @@
           }
         ]
       },
+      "actionCommandCenterOk": true,
+      "actionCommandCenterFresh": true,
+      "actionCommandCenterGeneratedAtEest": "07/06/2026 21:56",
+      "actionCommandCenter": {
+        "ok": true,
+        "state": "critical-first-human-action",
+        "blocker": "No proven referral signup-save exists yet. Do the tester batch before changing ads again.",
+        "appViews": 671,
+        "referralViews": 300,
+        "paidViews": 373,
+        "dashboardClicks": 227,
+        "signupSaves": 0,
+        "profiles": 5,
+        "accepted": 0,
+        "publicAttempts": 9,
+        "xActions": 16,
+        "xWorkerPacks": 4,
+        "xAccountTargets": 36,
+        "xAccountWorkerPacks": 4,
+        "xProofReadyWorkers": 4,
+        "firstAction": {
+          "owner": "Memo",
+          "title": "Send 3 clean signup tests",
+          "why": "Paid and referral views exist, but no completed signup-save event exists. This proves or isolates the Google signup path.",
+          "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test",
+          "logAfterRealSend": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"WhatsApp testers\" --channel \"clean signup test batch\" --status \"sent\" --attempt-url \"https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=clean_signup_test\" --detail \"Sent clean signup test to <N> trusted testers from <account> at YYYY-MM-DD HH:mm EEST; asked each to accept invite, Google signup, pick 3 teams, and reply with success or blocking screenshot; code 26BC4B90CB included\" --next-action \"run campaign-signup-conversion-audit.mjs after tester replies or after 15 minutes\""
+        },
+        "secondAction": {
+          "title": "Run one X OpenClaw reply from each worker",
+          "operatorAccount": "david2015bestai@gmail.com",
+          "overviewFile": "x-football-openclaw.html",
+          "proofHelperFile": "x-reply-proof-helper.html"
+        },
+        "workers": [
+          {
+            "worker": "Dexter",
+            "packFile": "x-openclaw-dexter.html",
+            "actions": 4,
+            "firstActionId": "x-1-1"
+          },
+          {
+            "worker": "Sienna",
+            "packFile": "x-openclaw-sienna.html",
+            "actions": 4,
+            "firstActionId": "x-1-2"
+          },
+          {
+            "worker": "Memo",
+            "packFile": "x-openclaw-memo.html",
+            "actions": 4,
+            "firstActionId": "x-2-2"
+          },
+          {
+            "worker": "Nano",
+            "packFile": "x-openclaw-nano.html",
+            "actions": 4,
+            "firstActionId": "x-3-2"
+          }
+        ]
+      },
+      "xFootballOpenclawOk": true,
+      "xFootballOpenclawFresh": true,
+      "xFootballOpenclawGeneratedAtEest": "07/06/2026 21:54",
+      "xFootballOpenclaw": {
+        "ok": true,
+        "state": "manual-x-outreach-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "searchCount": 8,
+        "accountSearchCount": 8,
+        "actionCount": 16,
+        "workerPackCount": 4,
+        "workerPackActions": [
+          "Dexter:4",
+          "Sienna:4",
+          "Memo:4",
+          "Nano:4"
+        ],
+        "perHourCap": 6,
+        "dailyCap": 24,
+        "first": {
+          "id": "x-1-1",
+          "owner": "Dexter",
+          "query": "world cup 2026 predictions",
+          "searchUrl": "https://x.com/search?q=world%20cup%202026%20predictions%20-giveaway%20-crypto&src=typed_query&f=live",
+          "replyStyle": "Ask for 3 picks",
+          "intentUrl": "https://twitter.com/intent/tweet?text=Good%20football%20question.%20I%20am%20asking%20people%20for%20exactly%203%20World%20Cup%20picks%20before%20the%20event%20starts.%0A%0AYou%20can%20save%20your%203%20teams%20free%20and%20see%20your%20private%20points%20preview%20here%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx%26utm_medium%3Dmanual-reply%26utm_campaign%3Dworldcup26_football_openclaw%26utm_content%3Dworld-cup-2026-predictions_three-picks%0A%0ACode%3A%2026BC4B90CB",
+          "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X\" --channel \"football manual replies\" --status \"replied\" --attempt-url \"<real-x-reply-url-or-private-note>\" --detail \"Manual X reply from david2015bestai@gmail.com at YYYY-MM-DD HH:mm EEST; target=<@handle or tweet URL>; search='world cup 2026 predictions'; code 26BC4B90CB and WorldCup26 link included\" --next-action \"watch replies, then run campaign-referral-activity.mjs after 15 minutes\""
+        }
+      },
+      "xTargetHunterOk": true,
+      "xTargetHunterFresh": true,
+      "xTargetHunterGeneratedAtEest": "07/06/2026 21:39",
+      "xTargetHunter": {
+        "ok": true,
+        "state": "manual-x-target-hunting-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "laneCount": 48,
+        "liveLaneCount": 30,
+        "userLaneCount": 18,
+        "workerPackCount": 4,
+        "workerPackLanes": [
+          "Dexter:12",
+          "Sienna:12",
+          "Memo:12",
+          "Nano:12"
+        ],
+        "first": {
+          "id": "xh-01",
+          "type": "live",
+          "query": "World Cup 2026 predictions",
+          "url": "https://x.com/search?q=World%20Cup%202026%20predictions%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live"
+        }
+      },
+      "xAccountWatchlistOk": true,
+      "xAccountWatchlistFresh": true,
+      "xAccountWatchlistGeneratedAtEest": "07/06/2026 21:54",
+      "xAccountWatchlist": {
+        "ok": true,
+        "state": "manual-x-account-reply-watchlist-ready",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "accountCount": 36,
+        "workerPackCount": 4,
+        "workerPackAccounts": [
+          "Dexter:9",
+          "Sienna:9",
+          "Memo:9",
+          "Nano:9"
+        ],
+        "first": {
+          "id": "xacct-01",
+          "handle": "FIFAWorldCup",
+          "lane": "Official World Cup conversation",
+          "profileUrl": "https://x.com/FIFAWorldCup",
+          "searchUrl": "https://x.com/search?q=from%3AFIFAWorldCup%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live"
+        }
+      },
+      "xReplyProofHelperOk": true,
+      "xReplyProofHelperFresh": true,
+      "xReplyProofHelperGeneratedAtEest": "07/06/2026 21:54",
+      "xReplyProofHelper": {
+        "ok": true,
+        "state": "ready-for-real-x-proof",
+        "operatorAccount": "david2015bestai@gmail.com",
+        "helperCount": 4,
+        "readyWorkers": 4,
+        "workers": [
+          "Dexter:ready",
+          "Sienna:ready",
+          "Memo:ready",
+          "Nano:ready"
+        ],
+        "first": {
+          "worker": "Dexter",
+          "firstActionId": "x-1-1",
+          "firstQuery": "world cup 2026 predictions"
+        }
+      },
       "lastLogLines": [
-        "2026-06-07T17:41:24Z escalation-board ok",
-        "2026-06-07T17:41:24Z objective-audit ok",
-        "2026-06-07T17:41:24Z evidence-board ok",
-        "2026-06-07T17:41:25Z operator-push ok",
-        "2026-06-07T17:41:25Z real-action-bridge ok",
-        "2026-06-07T17:41:25Z one-click-share ok",
-        "2026-06-07T17:41:25Z public-outreach-targets ok",
-        "2026-06-07T17:41:25Z worker-launchers ok"
+        "2026-06-07T18:42:32Z escalation-board ok",
+        "2026-06-07T18:42:32Z objective-audit ok",
+        "2026-06-07T18:42:32Z evidence-board failed",
+        "2026-06-07T18:42:32Z operator-push ok",
+        "2026-06-07T18:42:32Z real-action-bridge ok",
+        "2026-06-07T18:42:32Z one-click-share ok",
+        "2026-06-07T18:42:32Z public-outreach-targets ok",
+        "2026-06-07T18:42:32Z worker-launchers ok"
       ]
     }
   ],
@@ -4516,6 +5448,23 @@
       "Memo"
     ],
     "publicOutreachMissingOwners": [],
+    "platformRotationsOk": 4,
+    "platformRotationsFresh": 4,
+    "platformRotationStates": [
+      "nonstop-72h-platform-rotation-ready"
+    ],
+    "platformRotationSlots": 288,
+    "platformRotationPlatforms": 23,
+    "platformRotationHours": 72,
+    "immediateSprintsOk": 4,
+    "immediateSprintsFresh": 4,
+    "immediateSprintStates": [
+      "execute-now-signup-and-proof-sprint"
+    ],
+    "immediateSprintSelected": 12,
+    "immediateSprintDue": 4,
+    "immediateSprintSignupSaves": 0,
+    "immediateSprintPublicAttempts": 9,
     "adOpsLinksOk": 4,
     "adOpsLinksFresh": 4,
     "adOpsChannels": 2,
@@ -4561,10 +5510,10 @@
     "funnelProfiles": 5,
     "funnelFreeAccounts": 4,
     "funnelPaidAccounts": 1,
-    "funnelAppViews": 478,
-    "funnelAppViews24h": 478,
-    "funnelReferralViews": 146,
-    "funnelReferralViews24h": 146,
+    "funnelAppViews": 687,
+    "funnelAppViews24h": 687,
+    "funnelReferralViews": 305,
+    "funnelReferralViews24h": 305,
     "funnelSignupReturned": 0,
     "funnelSignupMissingAcceptance": 0,
     "funnelSignupAttempts": 0,
@@ -4579,8 +5528,8 @@
     "signupConversionSignupSaves": 0,
     "signupConversionAccepted": 0,
     "signupConversionProfiles": 5,
-    "signupConversionPaidViews": 219,
-    "signupConversionReferralViews": 146,
+    "signupConversionPaidViews": 373,
+    "signupConversionReferralViews": 300,
     "signupConversionDashboardClicks": 227,
     "signupConversionReturned": 0,
     "signupConversionMissingAcceptance": 0,
@@ -4608,7 +5557,7 @@
     "warmFollowupTesterAttempts": 0,
     "warmFollowupTotalAttempts": 0,
     "warmFollowupSignupSaves": 0,
-    "warmFollowupReferralViews": 152,
+    "warmFollowupReferralViews": 146,
     "warmFollowupDue": 0,
     "responseKitsOk": 4,
     "responseKitsFresh": 4,
@@ -4646,14 +5595,14 @@
     "localFunnelFresh": true,
     "localFunnelAvailable": true,
     "localFunnelStatus": "ok",
-    "localFunnelGeneratedAtEest": "2026-06-07 20:44 +0300",
+    "localFunnelGeneratedAtEest": "2026-06-07 21:56 +0300",
     "localFunnelProfiles": 5,
     "localFunnelFreeAccounts": 4,
     "localFunnelPaidAccounts": 1,
-    "localFunnelAppViews": 509,
-    "localFunnelAppViews24h": 509,
-    "localFunnelReferralViews": 171,
-    "localFunnelReferralViews24h": 171,
+    "localFunnelAppViews": 687,
+    "localFunnelAppViews24h": 687,
+    "localFunnelReferralViews": 305,
+    "localFunnelReferralViews24h": 305,
     "localFunnelSignupReturned": 0,
     "localFunnelSignupMissingAcceptance": 0,
     "localFunnelSignupAttempts": 0,
@@ -4665,8 +5614,8 @@
       "medium": "paid-social",
       "campaign": "worldcup26_referral_72h",
       "content": "three-team-question",
-      "count": 70,
-      "lastViewedAt": "2026-06-07T17:44:09.214627+00:00"
+      "count": 204,
+      "lastViewedAt": "2026-06-07T18:52:36.377026+00:00"
     },
     "localFunnelTopSignupSource": null,
     "localFunnelAcceptedReferrals": 0,
@@ -4699,7 +5648,7 @@
     "objectiveAuditStates": [
       "critical"
     ],
-    "objectiveAuditCriticalOpen": 1,
+    "objectiveAuditCriticalOpen": 3,
     "objectiveAuditComplete": 0,
     "operatorPushesOk": 4,
     "operatorPushesFresh": 4,
@@ -4709,6 +5658,50 @@
     "operatorPushActions": 4,
     "operatorPushBlocked": 7,
     "operatorPushLoginRequired": 6,
+    "actionCommandCentersOk": 4,
+    "actionCommandCentersFresh": 4,
+    "actionCommandCenterStates": [
+      "critical-first-human-action"
+    ],
+    "actionCommandCenterSignupSaves": 0,
+    "actionCommandCenterViews": 671,
+    "actionCommandCenterReferralViews": 300,
+    "actionCommandCenterPaidViews": 373,
+    "actionCommandCenterXActions": 16,
+    "actionCommandCenterXAccountTargets": 36,
+    "actionCommandCenterXAccountWorkerPacks": 4,
+    "actionCommandCenterXReady": 4,
+    "xFootballOpenclawsOk": 4,
+    "xFootballOpenclawsFresh": 4,
+    "xFootballOpenclawStates": [
+      "manual-x-outreach-ready"
+    ],
+    "xFootballOpenclawActions": 16,
+    "xFootballOpenclawSearches": 8,
+    "xFootballOpenclawAccountSearches": 8,
+    "xFootballOpenclawWorkerPacks": 4,
+    "xTargetHuntersOk": 4,
+    "xTargetHuntersFresh": 4,
+    "xTargetHunterStates": [
+      "manual-x-target-hunting-ready"
+    ],
+    "xTargetHunterLanes": 48,
+    "xTargetHunterLiveLanes": 30,
+    "xTargetHunterUserLanes": 18,
+    "xTargetHunterWorkerPacks": 4,
+    "xAccountWatchlistsOk": 4,
+    "xAccountWatchlistsFresh": 4,
+    "xAccountWatchlistStates": [
+      "manual-x-account-reply-watchlist-ready"
+    ],
+    "xAccountWatchlistAccounts": 36,
+    "xAccountWatchlistWorkerPacks": 4,
+    "xReplyProofHelpersOk": 4,
+    "xReplyProofHelpersFresh": 4,
+    "xReplyProofHelperStates": [
+      "ready-for-real-x-proof"
+    ],
+    "xReplyProofHelperReadyWorkers": 4,
     "workerWakesOk": 4,
     "workerWakesFresh": 4,
     "sessionRecoveriesOk": 4,

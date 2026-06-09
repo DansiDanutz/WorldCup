@@ -1,6 +1,6 @@
 # Nano Live Posting Inbox
 
-Generated: 2026-06-07T17:46:16.913Z
+Generated: 2026-06-08T06:48:19.568Z
 
 Goal: push WorldCup26 for the next 72 hours.
 
@@ -51,33 +51,32 @@ node campaign-proof-log.mjs --priority "2" --proof-url "private-whatsapp: sent t
 
 ## Current 15-Minute Pulse
 
-- Pulse: 148
-- Scheduled: 2026-06-07 21:30 +0300
+- Pulse: 200
+- Scheduled: 2026-06-08 10:30 +0300
 - Lane: Warm contacts
-- Channel: WhatsApp personal
+- Channel: Telegram personal
 - Mode: manual outreach
-- Action: Send one warm-contact batch if WhatsApp is available.
-- Asset: `media/worldcup26-main-video.mp4`
-- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse148
-- Proof hint: private-whatsapp-note
+- Action: Send the invite to one approved Telegram contact or group where welcome.
+- Asset: `campaign/copy-bank.md`
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse200
+- Proof hint: private-telegram-note
 
 ## Pulse Copy
 
 ```text
-I am inviting friends to WorldCup26.
+WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.
 
-You can pick 3 teams for free and see your private points preview during the tournament.
-Use a ticket only if you want to enter the paid leaderboard.
-Use my code when you join: 26BC4B90CB
+Paid leaderboard entry happens only when you use a ticket.
 
-https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse148
+Code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse200
 ```
 
 ## Next Pulse Backups
 
-- 2026-06-07 22:30 +0300: Telegram personal - Send the invite to one approved Telegram contact or group where welcome.
-- 2026-06-07 23:30 +0300: Replies - Answer one pending question and return to the code/link CTA.
-- 2026-06-08 00:30 +0300: DM follow-up - Follow up once with someone who reacted but did not join.
+- 2026-06-08 11:30 +0300: Replies - Answer one pending question and return to the code/link CTA.
+- 2026-06-08 12:30 +0300: DM follow-up - Follow up once with someone who reacted but did not join.
+- 2026-06-08 13:30 +0300: WhatsApp personal - Send one warm-contact batch if WhatsApp is available.
 
 ## Backup Urgent Rows
 

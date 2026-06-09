@@ -1,12 +1,12 @@
 # WorldCup26 Paid Ad Triage
 
-Generated: 2026-06-07 20:44 +0300
+Generated: 2026-06-08 09:50 +0300
 
 - State: `critical-paid-signup-friction`
 - Referral code: `26BC4B90CB`
-- App views: 509
-- Referral views: 171
-- Paid-source views: 244
+- App views: 1421
+- Referral views: 678
+- Paid-source views: 751
 - Signup saves: 0
 - Accepted referrals: 0
 - Dashboard state: `paid-clicks-no-signups`

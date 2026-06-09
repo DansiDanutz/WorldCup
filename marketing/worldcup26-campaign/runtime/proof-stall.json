@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-07T17:45:00.833Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:53:51.813Z",
+  "generatedAtEest": "2026-06-08 09:53 +0300",
   "ok": false,
   "externalStalled": true,
   "proofStalled": true,
@@ -15,7 +15,7 @@
   },
   "latestAnyProof": {
     "timestampEest": "2026-06-07 17:12 +0300",
-    "ageLabel": "3.5h",
+    "ageLabel": "16.7h",
     "owner": "Sienna",
     "channel": "Instagram",
     "status": "posted",
@@ -24,15 +24,15 @@
   },
   "latestExternalProof": {
     "timestampEest": "2026-06-07 17:12 +0300",
-    "ageLabel": "3.5h",
+    "ageLabel": "16.7h",
     "owner": "Sienna",
     "channel": "Instagram",
     "status": "posted",
     "asset": "assets/worldcup26-meta-free-first.png",
     "proofUrl": "https://www.instagram.com/p/DZSZwTrF8nX/"
   },
-  "latestAnyProofAgeMinutes": 213,
-  "latestExternalProofAgeMinutes": 213,
+  "latestAnyProofAgeMinutes": 1001,
+  "latestExternalProofAgeMinutes": 1001,
   "oldestOpenRow": {
     "priority": "1",
     "owner": "Sienna",
@@ -41,7 +41,7 @@
     "asset": "media/worldcup26-main-video.mp4",
     "scheduledAtEest": "2026-06-06 04:00 +0300",
     "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
-    "ageMinutes": 2445
+    "ageMinutes": 3233
   },
   "nextExternalActions": [
     {
@@ -52,7 +52,7 @@
       "asset": "media/worldcup26-main-video.mp4",
       "scheduledAtEest": "2026-06-06 04:00 +0300",
       "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h0",
-      "ageMinutes": 2445
+      "ageMinutes": 3233
     },
     {
       "priority": "2",
@@ -62,7 +62,7 @@
       "asset": "media/worldcup26-main-video.mp4",
       "scheduledAtEest": "2026-06-06 06:00 +0300",
       "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2",
-      "ageMinutes": 2325
+      "ageMinutes": 3113
     },
     {
       "priority": "3",
@@ -72,7 +72,7 @@
       "asset": "media/worldcup26-referral-story.jpg",
       "scheduledAtEest": "2026-06-06 07:00 +0300",
       "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h3",
-      "ageMinutes": 2265
+      "ageMinutes": 3053
     },
     {
       "priority": "4",
@@ -82,7 +82,7 @@
       "asset": "campaign/first-wave-posts.md",
       "scheduledAtEest": "2026-06-06 08:00 +0300",
       "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h4",
-      "ageMinutes": 2205
+      "ageMinutes": 2993
     },
     {
       "priority": "5",
@@ -92,7 +92,7 @@
       "asset": "media/worldcup26-main-video.mp4",
       "scheduledAtEest": "2026-06-06 09:00 +0300",
       "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h5",
-      "ageMinutes": 2145
+      "ageMinutes": 2933
     },
     {
       "priority": "6",
@@ -102,7 +102,7 @@
       "asset": "campaign/copy-bank.md",
       "scheduledAtEest": "2026-06-06 11:00 +0300",
       "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h7",
-      "ageMinutes": 2025
+      "ageMinutes": 2813
     }
   ]
 }

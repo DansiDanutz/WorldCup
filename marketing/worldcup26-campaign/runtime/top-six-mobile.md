@@ -1,6 +1,6 @@
 # WorldCup26 Top Six Mobile
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:51 +0300
 
 - Paid traffic guard: ok
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD

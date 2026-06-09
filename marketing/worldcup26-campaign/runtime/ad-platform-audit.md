@@ -1,6 +1,6 @@
 # WorldCup26 Ad Platform Audit
 
-Generated: 2026-06-07 20:46 +0300
+Generated: 2026-06-08 09:48 +0300
 
 - Status: ok
 - Referral code: `26BC4B90CB`
@@ -19,7 +19,7 @@ This proves Meta/X ad URLs, crawler previews, referral resolver, social images, 
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 366 ms
+- Elapsed: 299 ms
 - OG image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - Twitter image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=meta_campaign
@@ -30,7 +30,7 @@ This proves Meta/X ad URLs, crawler previews, referral resolver, social images, 
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 196 ms
+- Elapsed: 180 ms
 - OG image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - Twitter image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=meta_campaign
@@ -41,7 +41,7 @@ This proves Meta/X ad URLs, crawler previews, referral resolver, social images, 
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 205 ms
+- Elapsed: 185 ms
 - OG image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - Twitter image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=meta_campaign
@@ -52,7 +52,7 @@ This proves Meta/X ad URLs, crawler previews, referral resolver, social images, 
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 243 ms
+- Elapsed: 178 ms
 - OG image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - Twitter image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=facebook_feed
@@ -63,7 +63,7 @@ This proves Meta/X ad URLs, crawler previews, referral resolver, social images, 
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 192 ms
+- Elapsed: 176 ms
 - OG image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - Twitter image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=facebook_feed
@@ -74,7 +74,7 @@ This proves Meta/X ad URLs, crawler previews, referral resolver, social images, 
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 194 ms
+- Elapsed: 193 ms
 - OG image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - Twitter image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h&utm_content=instagram_story
@@ -85,7 +85,7 @@ This proves Meta/X ad URLs, crawler previews, referral resolver, social images, 
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 196 ms
+- Elapsed: 182 ms
 - OG image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - Twitter image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h&utm_content=instagram_story
@@ -96,7 +96,7 @@ This proves Meta/X ad URLs, crawler previews, referral resolver, social images, 
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 195 ms
+- Elapsed: 221 ms
 - OG image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - Twitter image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=x_campaign
@@ -107,7 +107,7 @@ This proves Meta/X ad URLs, crawler previews, referral resolver, social images, 
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 195 ms
+- Elapsed: 199 ms
 - OG image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - Twitter image: https://worldcup26.world/login/opengraph-image?1c07efc11aa5be03
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h&utm_content=x_campaign

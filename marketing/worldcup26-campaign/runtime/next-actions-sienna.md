@@ -1,6 +1,6 @@
 # Sienna Next Actions
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Referral code: `26BC4B90CB`
 Referral link: https://worldcup26.world/login?ref=26BC4B90CB
@@ -139,8 +139,6 @@ Lane: Visual captions, stories, reels, and community posts
 - CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=video-repost&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_40 / code 26BC4B90CB
 - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=video-repost&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h40
 
-## Upcoming Window
-
 - Time: 2026-06-08 01:00 +0300
 - Channel: WhatsApp Status
 - Mode: manual post
@@ -173,6 +171,32 @@ Lane: Visual captions, stories, reels, and community posts
 - CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=story-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_52 / code 26BC4B90CB
 - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=story-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h52
 
+## Upcoming Window
+
+- Time: 2026-06-08 11:00 +0300
+- Channel: YouTube Shorts
+- Mode: manual post
+- Action: Post video with code and short description
+- Asset: media/worldcup26-main-video.mp4
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_55 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-shorts&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h55
+
+- Time: 2026-06-08 15:00 +0300
+- Channel: Facebook Reels
+- Mode: manual post
+- Action: Repost main video with friends-angle caption
+- Asset: media/worldcup26-main-video.mp4
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-reels&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_59 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-reels&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h59
+
+- Time: 2026-06-08 18:00 +0300
+- Channel: Instagram Story
+- Mode: manual post
+- Action: Story: three-pick challenge + link sticker
+- Asset: media/worldcup26-referral-story.jpg
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_62 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_h62
+
 ## Draft Prompt
 
 ```text
@@ -183,8 +207,8 @@ Referral link: https://worldcup26.world/login?ref=26BC4B90CB
 Do not claim a fixed prize amount unless the live site is checked at posting time.
 Do not post automatically. Prepare copy, channel notes, and a log-ready summary.
 Immediate next action: WhatsApp Status: Post story asset with video caption 1 using media/worldcup26-main-video.mp4
-Due actions for you: 15
-Upcoming actions for you in this window: 4
+Due actions for you: 19
+Upcoming actions for you in this window: 3
 ```
 
 ## Ready Copy

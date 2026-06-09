@@ -1,6 +1,6 @@
 # Nano Next Actions
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Referral code: `26BC4B90CB`
 Referral link: https://worldcup26.world/login?ref=26BC4B90CB
@@ -99,8 +99,6 @@ Lane: Replies, DMs, objections, and micro-posts
 - CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_39 / code 26BC4B90CB
 - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h39
 
-## Upcoming Window
-
 - Time: 2026-06-07 22:00 +0300
 - Channel: Replies
 - Mode: manual replies
@@ -125,6 +123,40 @@ Lane: Replies, DMs, objections, and micro-posts
 - CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_49 / code 26BC4B90CB
 - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=dm-follow-up&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h49
 
+## Upcoming Window
+
+- Time: 2026-06-08 10:00 +0300
+- Channel: WhatsApp personal
+- Mode: manual outreach
+- Action: Invite warm-contact batch with simple personal message
+- Asset: media/worldcup26-main-video.mp4
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_54 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h54
+
+- Time: 2026-06-08 14:00 +0300
+- Channel: Replies
+- Mode: manual replies
+- Action: Answer late replies and resend link once if requested
+- Asset: campaign/copy-bank.md
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_58 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=replies&utm_medium=manual-replies&utm_campaign=worldcup26_referral_72h&utm_content=nano_h58
+
+- Time: 2026-06-08 17:00 +0300
+- Channel: Direct DMs
+- Mode: manual outreach
+- Action: Ask interested contacts if they want the invite link again
+- Asset: campaign/copy-bank.md
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=direct-dms&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_61 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=direct-dms&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h61
+
+- Time: 2026-06-08 20:00 +0300
+- Channel: Warm contacts
+- Mode: manual outreach
+- Action: Ask joined users to invite 3 friends
+- Asset: campaign/copy-bank.md
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=warm-contacts&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_64 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=warm-contacts&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h64
+
 ## Draft Prompt
 
 ```text
@@ -135,8 +167,8 @@ Referral link: https://worldcup26.world/login?ref=26BC4B90CB
 Do not claim a fixed prize amount unless the live site is checked at posting time.
 Do not post automatically. Prepare copy, channel notes, and a log-ready summary.
 Immediate next action: WhatsApp personal: Send personal invite to warm contacts using media/worldcup26-main-video.mp4
-Due actions for you: 10
-Upcoming actions for you in this window: 3
+Due actions for you: 13
+Upcoming actions for you in this window: 4
 ```
 
 ## Ready Copy

@@ -141,3 +141,3606 @@ Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campa
 2026-06-07T17:45:01Z one-click-share ok
 2026-06-07T17:45:01Z public-outreach-targets ok
 2026-06-07T17:45:01Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T18:00:01.614Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 38
+Due now: 1
+Overdue actions (60+ min): 37
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 38
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T18:00:01Z runner ok
+2026-06-07T18:00:01Z pulse ok
+2026-06-07T18:00:01Z dispatch ok
+2026-06-07T18:00:05Z link-sentinel ok
+2026-06-07T18:00:07Z paid-traffic-guard ok
+2026-06-07T18:00:12Z live-ad-qa ok
+2026-06-07T18:00:16Z ad-platform-audit ok
+2026-06-07T18:00:16Z ad-ops-links ok
+2026-06-07T18:00:16Z paid-dashboard-checks ok
+2026-06-07T18:00:16Z paid-ad-triage ok
+2026-06-07T18:00:16Z paid-no-click-rescue ok
+2026-06-07T18:00:18Z conversion-guard ok
+2026-06-07T18:00:18Z referral-activity ok
+2026-06-07T18:00:19Z signup-conversion-audit ok
+2026-06-07T18:00:19Z next-hour ok
+2026-06-07T18:00:19Z phone-action-sheet ok
+2026-06-07T18:00:19Z top-six-mobile ok
+2026-06-07T18:00:19Z warm-contact-sprint ok
+2026-06-07T18:00:19Z warm-followup-monitor ok
+2026-06-07T18:00:19Z response-kit ok
+2026-06-07T18:00:19Z action-launcher ok
+2026-06-07T18:00:19Z first-human-actions ok
+2026-06-07T18:00:19Z first-send-bridge ok
+2026-06-07T18:00:19Z hot-proof-ping ok
+2026-06-07T18:00:19Z posting-sprint ok
+2026-06-07T18:00:19Z session-recovery ok
+2026-06-07T18:00:19Z proof-stall monitor ok
+2026-06-07T18:00:19Z proof-sla ok
+2026-06-07T18:00:19Z proof-audit ok
+2026-06-07T18:00:19Z proof-url-recovery ok
+2026-06-07T18:00:19Z proof-rescue ok
+2026-06-07T18:00:19Z social-rescue-pack ok
+2026-06-07T18:00:20Z zero-signup-rescue ok
+2026-06-07T18:00:20Z public-channel-attempts ok
+2026-06-07T18:00:20Z login-unlock-board ok
+2026-06-07T18:00:20Z proof-intake ok
+2026-06-07T18:00:20Z proof-closeout ok
+2026-06-07T18:00:20Z posting-cockpit ok
+2026-06-07T18:00:20Z worker-wake ok
+2026-06-07T18:00:20Z escalation-board ok
+2026-06-07T18:00:20Z objective-audit ok
+2026-06-07T18:00:20Z evidence-board ok
+2026-06-07T18:00:20Z operator-push ok
+2026-06-07T18:00:20Z real-action-bridge ok
+2026-06-07T18:00:20Z one-click-share ok
+2026-06-07T18:00:20Z public-outreach-targets ok
+2026-06-07T18:00:20Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T18:15:20.666Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 38
+Due now: 1
+Overdue actions (60+ min): 37
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 38
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T18:15:20Z runner ok
+2026-06-07T18:15:20Z pulse ok
+2026-06-07T18:15:20Z dispatch ok
+2026-06-07T18:15:24Z link-sentinel ok
+2026-06-07T18:15:26Z paid-traffic-guard ok
+2026-06-07T18:15:31Z live-ad-qa ok
+2026-06-07T18:15:34Z ad-platform-audit ok
+2026-06-07T18:15:34Z ad-ops-links ok
+2026-06-07T18:15:34Z paid-dashboard-checks ok
+2026-06-07T18:15:34Z paid-ad-triage ok
+2026-06-07T18:15:34Z paid-no-click-rescue ok
+2026-06-07T18:15:36Z conversion-guard ok
+2026-06-07T18:15:37Z referral-activity ok
+2026-06-07T18:15:37Z signup-conversion-audit ok
+2026-06-07T18:15:37Z next-hour ok
+2026-06-07T18:15:37Z phone-action-sheet ok
+2026-06-07T18:15:37Z top-six-mobile ok
+2026-06-07T18:15:37Z warm-contact-sprint ok
+2026-06-07T18:15:37Z warm-followup-monitor ok
+2026-06-07T18:15:37Z response-kit ok
+2026-06-07T18:15:38Z action-launcher ok
+2026-06-07T18:15:38Z first-human-actions ok
+2026-06-07T18:15:38Z first-send-bridge ok
+2026-06-07T18:15:38Z hot-proof-ping ok
+2026-06-07T18:15:38Z posting-sprint ok
+2026-06-07T18:15:38Z session-recovery ok
+2026-06-07T18:15:38Z proof-stall monitor ok
+2026-06-07T18:15:38Z proof-sla ok
+2026-06-07T18:15:38Z proof-audit ok
+2026-06-07T18:15:38Z proof-url-recovery ok
+2026-06-07T18:15:38Z proof-rescue ok
+2026-06-07T18:15:38Z social-rescue-pack ok
+2026-06-07T18:15:38Z zero-signup-rescue ok
+2026-06-07T18:15:38Z public-channel-attempts ok
+2026-06-07T18:15:38Z login-unlock-board ok
+2026-06-07T18:15:38Z proof-intake ok
+2026-06-07T18:15:38Z proof-closeout ok
+2026-06-07T18:15:38Z posting-cockpit ok
+2026-06-07T18:15:38Z worker-wake ok
+2026-06-07T18:15:38Z escalation-board ok
+2026-06-07T18:15:38Z objective-audit ok
+2026-06-07T18:15:38Z evidence-board ok
+2026-06-07T18:15:38Z operator-push ok
+2026-06-07T18:15:39Z real-action-bridge ok
+2026-06-07T18:15:39Z one-click-share ok
+2026-06-07T18:15:39Z public-outreach-targets ok
+2026-06-07T18:15:39Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T18:30:39.163Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 38
+Due now: 1
+Overdue actions (60+ min): 37
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 38
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T18:30:39Z runner ok
+2026-06-07T18:30:39Z pulse ok
+2026-06-07T18:30:39Z dispatch ok
+2026-06-07T18:30:43Z link-sentinel ok
+2026-06-07T18:30:46Z paid-traffic-guard ok
+2026-06-07T18:30:50Z live-ad-qa ok
+2026-06-07T18:30:54Z ad-platform-audit ok
+2026-06-07T18:30:54Z ad-ops-links ok
+2026-06-07T18:30:54Z paid-dashboard-checks ok
+2026-06-07T18:30:54Z paid-ad-triage ok
+2026-06-07T18:30:54Z paid-no-click-rescue ok
+2026-06-07T18:30:56Z conversion-guard ok
+2026-06-07T18:30:57Z referral-activity ok
+2026-06-07T18:30:57Z signup-conversion-audit ok
+2026-06-07T18:30:57Z next-hour ok
+2026-06-07T18:30:57Z phone-action-sheet ok
+2026-06-07T18:30:57Z top-six-mobile ok
+2026-06-07T18:30:57Z warm-contact-sprint ok
+2026-06-07T18:30:57Z warm-followup-monitor ok
+2026-06-07T18:30:57Z response-kit ok
+2026-06-07T18:30:57Z action-launcher ok
+2026-06-07T18:30:57Z first-human-actions ok
+2026-06-07T18:30:57Z first-send-bridge ok
+2026-06-07T18:30:57Z hot-proof-ping ok
+2026-06-07T18:30:58Z posting-sprint ok
+2026-06-07T18:30:58Z session-recovery ok
+2026-06-07T18:30:58Z proof-stall monitor ok
+2026-06-07T18:30:58Z proof-sla ok
+2026-06-07T18:30:58Z proof-audit ok
+2026-06-07T18:30:58Z proof-url-recovery ok
+2026-06-07T18:30:58Z proof-rescue ok
+2026-06-07T18:30:58Z social-rescue-pack ok
+2026-06-07T18:30:58Z zero-signup-rescue ok
+2026-06-07T18:30:58Z public-channel-attempts ok
+2026-06-07T18:30:58Z login-unlock-board ok
+2026-06-07T18:30:58Z proof-intake ok
+2026-06-07T18:30:58Z proof-closeout ok
+2026-06-07T18:30:58Z posting-cockpit ok
+2026-06-07T18:30:58Z worker-wake ok
+2026-06-07T18:30:58Z escalation-board ok
+2026-06-07T18:30:58Z objective-audit ok
+2026-06-07T18:30:58Z evidence-board ok
+2026-06-07T18:30:58Z operator-push ok
+2026-06-07T18:30:58Z real-action-bridge ok
+2026-06-07T18:30:58Z one-click-share ok
+2026-06-07T18:30:58Z public-outreach-targets ok
+2026-06-07T18:30:58Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T18:45:58.988Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 38
+Due now: 1
+Overdue actions (60+ min): 37
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 38
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T18:45:59Z runner ok
+2026-06-07T18:45:59Z pulse ok
+2026-06-07T18:45:59Z dispatch ok
+2026-06-07T18:46:02Z link-sentinel ok
+2026-06-07T18:46:05Z paid-traffic-guard ok
+2026-06-07T18:46:09Z live-ad-qa ok
+2026-06-07T18:46:13Z ad-platform-audit ok
+2026-06-07T18:46:13Z ad-ops-links ok
+2026-06-07T18:46:13Z paid-dashboard-checks ok
+2026-06-07T18:46:13Z paid-ad-triage ok
+2026-06-07T18:46:13Z paid-no-click-rescue ok
+2026-06-07T18:46:14Z conversion-guard ok
+2026-06-07T18:46:15Z referral-activity ok
+2026-06-07T18:46:15Z signup-conversion-audit ok
+2026-06-07T18:46:15Z next-hour ok
+2026-06-07T18:46:15Z phone-action-sheet ok
+2026-06-07T18:46:15Z top-six-mobile ok
+2026-06-07T18:46:15Z warm-contact-sprint ok
+2026-06-07T18:46:15Z warm-followup-monitor ok
+2026-06-07T18:46:15Z response-kit ok
+2026-06-07T18:46:15Z action-launcher ok
+2026-06-07T18:46:16Z first-human-actions ok
+2026-06-07T18:46:16Z first-send-bridge ok
+2026-06-07T18:46:16Z hot-proof-ping ok
+2026-06-07T18:46:16Z posting-sprint ok
+2026-06-07T18:46:16Z session-recovery ok
+2026-06-07T18:46:16Z proof-stall monitor ok
+2026-06-07T18:46:16Z proof-sla ok
+2026-06-07T18:46:16Z proof-audit ok
+2026-06-07T18:46:16Z proof-url-recovery ok
+2026-06-07T18:46:16Z proof-rescue ok
+2026-06-07T18:46:16Z social-rescue-pack ok
+2026-06-07T18:46:16Z zero-signup-rescue ok
+2026-06-07T18:46:16Z public-channel-attempts ok
+2026-06-07T18:46:16Z login-unlock-board ok
+2026-06-07T18:46:16Z proof-intake ok
+2026-06-07T18:46:16Z proof-closeout ok
+2026-06-07T18:46:16Z posting-cockpit ok
+2026-06-07T18:46:16Z worker-wake ok
+2026-06-07T18:46:16Z escalation-board ok
+2026-06-07T18:46:16Z objective-audit ok
+2026-06-07T18:46:16Z evidence-board ok
+2026-06-07T18:46:16Z operator-push ok
+2026-06-07T18:46:16Z real-action-bridge ok
+2026-06-07T18:46:16Z one-click-share ok
+2026-06-07T18:46:16Z public-outreach-targets ok
+2026-06-07T18:46:16Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T19:01:16.962Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 39
+Due now: 1
+Overdue actions (60+ min): 38
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 39
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T19:01:16Z runner ok
+2026-06-07T19:01:17Z pulse ok
+2026-06-07T19:01:17Z dispatch ok
+2026-06-07T19:01:21Z link-sentinel ok
+2026-06-07T19:01:23Z paid-traffic-guard ok
+2026-06-07T19:01:28Z live-ad-qa ok
+2026-06-07T19:01:32Z ad-platform-audit ok
+2026-06-07T19:01:32Z ad-ops-links ok
+2026-06-07T19:01:32Z paid-dashboard-checks ok
+2026-06-07T19:01:32Z paid-ad-triage ok
+2026-06-07T19:01:32Z paid-no-click-rescue ok
+2026-06-07T19:01:34Z conversion-guard ok
+2026-06-07T19:01:34Z referral-activity ok
+2026-06-07T19:01:35Z signup-conversion-audit ok
+2026-06-07T19:01:35Z next-hour ok
+2026-06-07T19:01:35Z phone-action-sheet ok
+2026-06-07T19:01:35Z top-six-mobile ok
+2026-06-07T19:01:35Z warm-contact-sprint ok
+2026-06-07T19:01:35Z warm-followup-monitor ok
+2026-06-07T19:01:35Z response-kit ok
+2026-06-07T19:01:35Z action-launcher ok
+2026-06-07T19:01:35Z first-human-actions ok
+2026-06-07T19:01:35Z first-send-bridge ok
+2026-06-07T19:01:35Z hot-proof-ping ok
+2026-06-07T19:01:35Z posting-sprint ok
+2026-06-07T19:01:35Z session-recovery ok
+2026-06-07T19:01:35Z proof-stall monitor ok
+2026-06-07T19:01:35Z proof-sla ok
+2026-06-07T19:01:35Z proof-audit ok
+2026-06-07T19:01:35Z proof-url-recovery ok
+2026-06-07T19:01:35Z proof-rescue ok
+2026-06-07T19:01:35Z social-rescue-pack ok
+2026-06-07T19:01:36Z zero-signup-rescue ok
+2026-06-07T19:01:36Z public-channel-attempts ok
+2026-06-07T19:01:36Z login-unlock-board ok
+2026-06-07T19:01:36Z proof-intake ok
+2026-06-07T19:01:36Z proof-closeout ok
+2026-06-07T19:01:36Z posting-cockpit ok
+2026-06-07T19:01:36Z worker-wake ok
+2026-06-07T19:01:36Z escalation-board ok
+2026-06-07T19:01:36Z objective-audit ok
+2026-06-07T19:01:36Z evidence-board ok
+2026-06-07T19:01:36Z operator-push ok
+2026-06-07T19:01:36Z real-action-bridge ok
+2026-06-07T19:01:36Z one-click-share ok
+2026-06-07T19:01:36Z public-outreach-targets ok
+2026-06-07T19:01:36Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T19:16:36.688Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 39
+Due now: 1
+Overdue actions (60+ min): 38
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 39
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T19:16:36Z runner ok
+2026-06-07T19:16:36Z pulse ok
+2026-06-07T19:16:36Z dispatch ok
+2026-06-07T19:16:40Z link-sentinel ok
+2026-06-07T19:16:42Z paid-traffic-guard ok
+2026-06-07T19:16:47Z live-ad-qa ok
+2026-06-07T19:16:51Z ad-platform-audit ok
+2026-06-07T19:16:51Z ad-ops-links ok
+2026-06-07T19:16:51Z paid-dashboard-checks ok
+2026-06-07T19:16:51Z paid-ad-triage ok
+2026-06-07T19:16:51Z paid-no-click-rescue ok
+2026-06-07T19:16:53Z conversion-guard ok
+2026-06-07T19:16:53Z referral-activity ok
+2026-06-07T19:16:54Z signup-conversion-audit ok
+2026-06-07T19:16:54Z next-hour ok
+2026-06-07T19:16:54Z phone-action-sheet ok
+2026-06-07T19:16:54Z top-six-mobile ok
+2026-06-07T19:16:54Z warm-contact-sprint ok
+2026-06-07T19:16:54Z warm-followup-monitor ok
+2026-06-07T19:16:54Z response-kit ok
+2026-06-07T19:16:54Z action-launcher ok
+2026-06-07T19:16:54Z first-human-actions ok
+2026-06-07T19:16:54Z first-send-bridge ok
+2026-06-07T19:16:54Z hot-proof-ping ok
+2026-06-07T19:16:54Z posting-sprint ok
+2026-06-07T19:16:54Z session-recovery ok
+2026-06-07T19:16:54Z proof-stall monitor ok
+2026-06-07T19:16:54Z proof-sla ok
+2026-06-07T19:16:54Z proof-audit ok
+2026-06-07T19:16:54Z proof-url-recovery ok
+2026-06-07T19:16:55Z proof-rescue ok
+2026-06-07T19:16:55Z social-rescue-pack ok
+2026-06-07T19:16:55Z zero-signup-rescue ok
+2026-06-07T19:16:55Z public-channel-attempts ok
+2026-06-07T19:16:55Z login-unlock-board ok
+2026-06-07T19:16:55Z proof-intake ok
+2026-06-07T19:16:55Z proof-closeout ok
+2026-06-07T19:16:55Z posting-cockpit ok
+2026-06-07T19:16:55Z worker-wake ok
+2026-06-07T19:16:55Z escalation-board ok
+2026-06-07T19:16:55Z objective-audit ok
+2026-06-07T19:16:55Z evidence-board ok
+2026-06-07T19:16:55Z operator-push ok
+2026-06-07T19:16:55Z real-action-bridge ok
+2026-06-07T19:16:55Z one-click-share ok
+2026-06-07T19:16:55Z public-outreach-targets ok
+2026-06-07T19:16:55Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T19:31:55.891Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 39
+Due now: 1
+Overdue actions (60+ min): 38
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 39
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T19:31:55Z runner ok
+2026-06-07T19:31:55Z pulse ok
+2026-06-07T19:31:56Z dispatch ok
+2026-06-07T19:31:59Z link-sentinel ok
+2026-06-07T19:32:01Z paid-traffic-guard ok
+2026-06-07T19:32:05Z live-ad-qa ok
+2026-06-07T19:32:09Z ad-platform-audit ok
+2026-06-07T19:32:09Z ad-ops-links ok
+2026-06-07T19:32:09Z paid-dashboard-checks ok
+2026-06-07T19:32:09Z paid-ad-triage ok
+2026-06-07T19:32:09Z paid-no-click-rescue ok
+2026-06-07T19:32:11Z conversion-guard ok
+2026-06-07T19:32:12Z referral-activity ok
+2026-06-07T19:32:12Z signup-conversion-audit ok
+2026-06-07T19:32:12Z next-hour ok
+2026-06-07T19:32:12Z phone-action-sheet ok
+2026-06-07T19:32:12Z top-six-mobile ok
+2026-06-07T19:32:13Z warm-contact-sprint ok
+2026-06-07T19:32:13Z warm-followup-monitor ok
+2026-06-07T19:32:13Z response-kit ok
+2026-06-07T19:32:13Z action-launcher ok
+2026-06-07T19:32:13Z first-human-actions ok
+2026-06-07T19:32:13Z first-send-bridge ok
+2026-06-07T19:32:13Z hot-proof-ping ok
+2026-06-07T19:32:13Z posting-sprint ok
+2026-06-07T19:32:13Z session-recovery ok
+2026-06-07T19:32:13Z proof-stall monitor ok
+2026-06-07T19:32:13Z proof-sla ok
+2026-06-07T19:32:13Z proof-audit ok
+2026-06-07T19:32:13Z proof-url-recovery ok
+2026-06-07T19:32:13Z proof-rescue ok
+2026-06-07T19:32:13Z social-rescue-pack ok
+2026-06-07T19:32:13Z zero-signup-rescue ok
+2026-06-07T19:32:13Z public-channel-attempts ok
+2026-06-07T19:32:13Z login-unlock-board ok
+2026-06-07T19:32:13Z proof-intake ok
+2026-06-07T19:32:13Z proof-closeout ok
+2026-06-07T19:32:13Z posting-cockpit ok
+2026-06-07T19:32:13Z worker-wake ok
+2026-06-07T19:32:13Z escalation-board ok
+2026-06-07T19:32:13Z objective-audit ok
+2026-06-07T19:32:13Z evidence-board ok
+2026-06-07T19:32:13Z operator-push ok
+2026-06-07T19:32:13Z real-action-bridge ok
+2026-06-07T19:32:14Z one-click-share ok
+2026-06-07T19:32:14Z public-outreach-targets ok
+2026-06-07T19:32:14Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T19:47:14.213Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 39
+Due now: 1
+Overdue actions (60+ min): 38
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 39
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T19:47:14Z runner ok
+2026-06-07T19:47:14Z pulse ok
+2026-06-07T19:47:14Z dispatch ok
+2026-06-07T19:47:18Z link-sentinel ok
+2026-06-07T19:47:21Z paid-traffic-guard ok
+2026-06-07T19:47:25Z live-ad-qa ok
+2026-06-07T19:47:29Z ad-platform-audit ok
+2026-06-07T19:47:29Z ad-ops-links ok
+2026-06-07T19:47:29Z paid-dashboard-checks ok
+2026-06-07T19:47:29Z paid-ad-triage ok
+2026-06-07T19:47:29Z paid-no-click-rescue ok
+2026-06-07T19:47:31Z conversion-guard ok
+2026-06-07T19:47:31Z referral-activity ok
+2026-06-07T19:47:32Z signup-conversion-audit ok
+2026-06-07T19:47:32Z next-hour ok
+2026-06-07T19:47:32Z phone-action-sheet ok
+2026-06-07T19:47:32Z top-six-mobile ok
+2026-06-07T19:47:32Z warm-contact-sprint ok
+2026-06-07T19:47:32Z warm-followup-monitor ok
+2026-06-07T19:47:32Z response-kit ok
+2026-06-07T19:47:32Z action-launcher ok
+2026-06-07T19:47:32Z first-human-actions ok
+2026-06-07T19:47:32Z first-send-bridge ok
+2026-06-07T19:47:32Z hot-proof-ping ok
+2026-06-07T19:47:32Z posting-sprint ok
+2026-06-07T19:47:32Z session-recovery ok
+2026-06-07T19:47:32Z proof-stall monitor ok
+2026-06-07T19:47:32Z proof-sla ok
+2026-06-07T19:47:32Z proof-audit ok
+2026-06-07T19:47:32Z proof-url-recovery ok
+2026-06-07T19:47:32Z proof-rescue ok
+2026-06-07T19:47:32Z social-rescue-pack ok
+2026-06-07T19:47:32Z zero-signup-rescue ok
+2026-06-07T19:47:32Z public-channel-attempts ok
+2026-06-07T19:47:32Z login-unlock-board ok
+2026-06-07T19:47:32Z proof-intake ok
+2026-06-07T19:47:32Z proof-closeout ok
+2026-06-07T19:47:32Z posting-cockpit ok
+2026-06-07T19:47:33Z worker-wake ok
+2026-06-07T19:47:33Z escalation-board ok
+2026-06-07T19:47:33Z objective-audit ok
+2026-06-07T19:47:33Z evidence-board ok
+2026-06-07T19:47:33Z operator-push ok
+2026-06-07T19:47:33Z real-action-bridge ok
+2026-06-07T19:47:33Z one-click-share ok
+2026-06-07T19:47:33Z public-outreach-targets ok
+2026-06-07T19:47:33Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T20:02:33.472Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 40
+Due now: 1
+Overdue actions (60+ min): 39
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 40
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T20:02:33Z runner ok
+2026-06-07T20:02:33Z pulse ok
+2026-06-07T20:02:33Z dispatch ok
+2026-06-07T20:02:37Z link-sentinel ok
+2026-06-07T20:02:39Z paid-traffic-guard ok
+2026-06-07T20:02:44Z live-ad-qa ok
+2026-06-07T20:02:50Z ad-platform-audit ok
+2026-06-07T20:02:50Z ad-ops-links ok
+2026-06-07T20:02:50Z paid-dashboard-checks ok
+2026-06-07T20:02:50Z paid-ad-triage ok
+2026-06-07T20:02:51Z paid-no-click-rescue ok
+2026-06-07T20:02:52Z conversion-guard ok
+2026-06-07T20:02:53Z referral-activity ok
+2026-06-07T20:02:53Z signup-conversion-audit ok
+2026-06-07T20:02:53Z next-hour ok
+2026-06-07T20:02:53Z phone-action-sheet ok
+2026-06-07T20:02:53Z top-six-mobile ok
+2026-06-07T20:02:53Z warm-contact-sprint ok
+2026-06-07T20:02:53Z warm-followup-monitor ok
+2026-06-07T20:02:53Z response-kit ok
+2026-06-07T20:02:53Z action-launcher ok
+2026-06-07T20:02:53Z first-human-actions ok
+2026-06-07T20:02:54Z first-send-bridge ok
+2026-06-07T20:02:54Z hot-proof-ping ok
+2026-06-07T20:02:54Z posting-sprint ok
+2026-06-07T20:02:54Z session-recovery ok
+2026-06-07T20:02:54Z proof-stall monitor ok
+2026-06-07T20:02:54Z proof-sla ok
+2026-06-07T20:02:54Z proof-audit ok
+2026-06-07T20:02:54Z proof-url-recovery ok
+2026-06-07T20:02:54Z proof-rescue ok
+2026-06-07T20:02:54Z social-rescue-pack ok
+2026-06-07T20:02:54Z zero-signup-rescue ok
+2026-06-07T20:02:54Z public-channel-attempts ok
+2026-06-07T20:02:54Z login-unlock-board ok
+2026-06-07T20:02:54Z proof-intake ok
+2026-06-07T20:02:54Z proof-closeout ok
+2026-06-07T20:02:54Z posting-cockpit ok
+2026-06-07T20:02:54Z worker-wake ok
+2026-06-07T20:02:54Z escalation-board ok
+2026-06-07T20:02:54Z objective-audit ok
+2026-06-07T20:02:54Z evidence-board ok
+2026-06-07T20:02:54Z operator-push ok
+2026-06-07T20:02:54Z real-action-bridge ok
+2026-06-07T20:02:54Z one-click-share ok
+2026-06-07T20:02:54Z public-outreach-targets ok
+2026-06-07T20:02:54Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T20:17:54.925Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 40
+Due now: 1
+Overdue actions (60+ min): 39
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 40
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T20:17:54Z runner ok
+2026-06-07T20:17:54Z pulse ok
+2026-06-07T20:17:55Z dispatch ok
+2026-06-07T20:17:58Z link-sentinel ok
+2026-06-07T20:18:01Z paid-traffic-guard ok
+2026-06-07T20:18:05Z live-ad-qa ok
+2026-06-07T20:18:12Z ad-platform-audit ok
+2026-06-07T20:18:12Z ad-ops-links ok
+2026-06-07T20:18:12Z paid-dashboard-checks ok
+2026-06-07T20:18:13Z paid-ad-triage ok
+2026-06-07T20:18:13Z paid-no-click-rescue ok
+2026-06-07T20:18:14Z conversion-guard ok
+2026-06-07T20:18:15Z referral-activity ok
+2026-06-07T20:18:15Z signup-conversion-audit ok
+2026-06-07T20:18:15Z next-hour ok
+2026-06-07T20:18:16Z phone-action-sheet ok
+2026-06-07T20:18:16Z top-six-mobile ok
+2026-06-07T20:18:16Z warm-contact-sprint ok
+2026-06-07T20:18:16Z warm-followup-monitor ok
+2026-06-07T20:18:16Z response-kit ok
+2026-06-07T20:18:16Z action-launcher ok
+2026-06-07T20:18:16Z first-human-actions ok
+2026-06-07T20:18:16Z first-send-bridge ok
+2026-06-07T20:18:16Z hot-proof-ping ok
+2026-06-07T20:18:16Z posting-sprint ok
+2026-06-07T20:18:16Z session-recovery ok
+2026-06-07T20:18:16Z proof-stall monitor ok
+2026-06-07T20:18:16Z proof-sla ok
+2026-06-07T20:18:16Z proof-audit ok
+2026-06-07T20:18:16Z proof-url-recovery ok
+2026-06-07T20:18:16Z proof-rescue ok
+2026-06-07T20:18:16Z social-rescue-pack ok
+2026-06-07T20:18:16Z zero-signup-rescue ok
+2026-06-07T20:18:16Z public-channel-attempts ok
+2026-06-07T20:18:16Z login-unlock-board ok
+2026-06-07T20:18:16Z proof-intake ok
+2026-06-07T20:18:16Z proof-closeout ok
+2026-06-07T20:18:16Z posting-cockpit ok
+2026-06-07T20:18:16Z worker-wake ok
+2026-06-07T20:18:16Z escalation-board ok
+2026-06-07T20:18:16Z objective-audit ok
+2026-06-07T20:18:16Z evidence-board ok
+2026-06-07T20:18:16Z operator-push ok
+2026-06-07T20:18:17Z real-action-bridge ok
+2026-06-07T20:18:17Z one-click-share ok
+2026-06-07T20:18:17Z public-outreach-targets ok
+2026-06-07T20:18:17Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T20:33:17.190Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 40
+Due now: 1
+Overdue actions (60+ min): 39
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 40
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T20:33:17Z runner ok
+2026-06-07T20:33:17Z pulse ok
+2026-06-07T20:33:17Z dispatch ok
+2026-06-07T20:33:21Z link-sentinel ok
+2026-06-07T20:33:24Z paid-traffic-guard ok
+2026-06-07T20:33:28Z live-ad-qa ok
+2026-06-07T20:33:35Z ad-platform-audit ok
+2026-06-07T20:33:35Z ad-ops-links ok
+2026-06-07T20:33:35Z paid-dashboard-checks ok
+2026-06-07T20:33:35Z paid-ad-triage ok
+2026-06-07T20:33:35Z paid-no-click-rescue ok
+2026-06-07T20:33:37Z conversion-guard ok
+2026-06-07T20:33:38Z referral-activity ok
+2026-06-07T20:33:38Z signup-conversion-audit ok
+2026-06-07T20:33:38Z next-hour ok
+2026-06-07T20:33:38Z phone-action-sheet ok
+2026-06-07T20:33:38Z top-six-mobile ok
+2026-06-07T20:33:38Z warm-contact-sprint ok
+2026-06-07T20:33:38Z warm-followup-monitor ok
+2026-06-07T20:33:39Z response-kit ok
+2026-06-07T20:33:39Z action-launcher ok
+2026-06-07T20:33:39Z first-human-actions ok
+2026-06-07T20:33:39Z first-send-bridge ok
+2026-06-07T20:33:39Z hot-proof-ping ok
+2026-06-07T20:33:39Z posting-sprint ok
+2026-06-07T20:33:39Z session-recovery ok
+2026-06-07T20:33:39Z proof-stall monitor ok
+2026-06-07T20:33:39Z proof-sla ok
+2026-06-07T20:33:39Z proof-audit ok
+2026-06-07T20:33:39Z proof-url-recovery ok
+2026-06-07T20:33:39Z proof-rescue ok
+2026-06-07T20:33:39Z social-rescue-pack ok
+2026-06-07T20:33:39Z zero-signup-rescue ok
+2026-06-07T20:33:39Z public-channel-attempts ok
+2026-06-07T20:33:39Z login-unlock-board ok
+2026-06-07T20:33:39Z proof-intake ok
+2026-06-07T20:33:39Z proof-closeout ok
+2026-06-07T20:33:39Z posting-cockpit ok
+2026-06-07T20:33:39Z worker-wake ok
+2026-06-07T20:33:40Z escalation-board ok
+2026-06-07T20:33:40Z objective-audit ok
+2026-06-07T20:33:40Z evidence-board ok
+2026-06-07T20:33:40Z operator-push ok
+2026-06-07T20:33:40Z real-action-bridge ok
+2026-06-07T20:33:40Z one-click-share ok
+2026-06-07T20:33:40Z public-outreach-targets ok
+2026-06-07T20:33:40Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T20:48:40.393Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 40
+Due now: 1
+Overdue actions (60+ min): 39
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 29
+Logged proof rows: 49
+Due rows still needing proof: 40
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T20:48:40Z runner ok
+2026-06-07T20:48:40Z pulse ok
+2026-06-07T20:48:40Z dispatch ok
+2026-06-07T20:48:44Z link-sentinel ok
+2026-06-07T20:48:46Z paid-traffic-guard ok
+2026-06-07T20:48:51Z live-ad-qa ok
+2026-06-07T20:48:55Z ad-platform-audit ok
+2026-06-07T20:48:55Z ad-ops-links ok
+2026-06-07T20:48:55Z paid-dashboard-checks ok
+2026-06-07T20:48:55Z paid-ad-triage ok
+2026-06-07T20:48:55Z paid-no-click-rescue ok
+2026-06-07T20:48:57Z conversion-guard ok
+2026-06-07T20:48:58Z referral-activity ok
+2026-06-07T20:48:58Z signup-conversion-audit ok
+2026-06-07T20:48:58Z next-hour ok
+2026-06-07T20:48:58Z phone-action-sheet ok
+2026-06-07T20:48:58Z top-six-mobile ok
+2026-06-07T20:48:59Z warm-contact-sprint ok
+2026-06-07T20:48:59Z warm-followup-monitor ok
+2026-06-07T20:48:59Z response-kit ok
+2026-06-07T20:48:59Z action-launcher ok
+2026-06-07T20:48:59Z first-human-actions ok
+2026-06-07T20:48:59Z first-send-bridge ok
+2026-06-07T20:48:59Z hot-proof-ping ok
+2026-06-07T20:48:59Z posting-sprint ok
+2026-06-07T20:48:59Z session-recovery ok
+2026-06-07T20:48:59Z proof-stall monitor ok
+2026-06-07T20:48:59Z proof-sla ok
+2026-06-07T20:48:59Z proof-audit ok
+2026-06-07T20:48:59Z proof-url-recovery ok
+2026-06-07T20:48:59Z proof-rescue ok
+2026-06-07T20:48:59Z social-rescue-pack ok
+2026-06-07T20:48:59Z zero-signup-rescue ok
+2026-06-07T20:48:59Z public-channel-attempts ok
+2026-06-07T20:48:59Z login-unlock-board ok
+2026-06-07T20:48:59Z proof-intake ok
+2026-06-07T20:48:59Z proof-closeout ok
+2026-06-07T20:48:59Z posting-cockpit ok
+2026-06-07T20:48:59Z worker-wake ok
+2026-06-07T20:48:59Z escalation-board ok
+2026-06-07T20:48:59Z objective-audit ok
+2026-06-07T20:48:59Z evidence-board ok
+2026-06-07T20:48:59Z operator-push ok
+2026-06-07T20:48:59Z real-action-bridge ok
+2026-06-07T20:48:59Z one-click-share ok
+2026-06-07T20:48:59Z public-outreach-targets ok
+2026-06-07T20:49:00Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T21:04:00.099Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 41
+Due now: 1
+Overdue actions (60+ min): 40
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 41
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T21:04:00Z runner ok
+2026-06-07T21:04:00Z pulse ok
+2026-06-07T21:04:00Z dispatch ok
+2026-06-07T21:04:03Z link-sentinel ok
+2026-06-07T21:04:06Z paid-traffic-guard ok
+2026-06-07T21:04:11Z live-ad-qa ok
+2026-06-07T21:04:15Z ad-platform-audit ok
+2026-06-07T21:04:15Z ad-ops-links ok
+2026-06-07T21:04:15Z paid-dashboard-checks ok
+2026-06-07T21:04:15Z paid-ad-triage ok
+2026-06-07T21:04:15Z paid-no-click-rescue ok
+2026-06-07T21:04:17Z conversion-guard ok
+2026-06-07T21:04:18Z referral-activity ok
+2026-06-07T21:04:19Z signup-conversion-audit ok
+2026-06-07T21:04:19Z next-hour ok
+2026-06-07T21:04:19Z phone-action-sheet ok
+2026-06-07T21:04:19Z top-six-mobile ok
+2026-06-07T21:04:19Z warm-contact-sprint ok
+2026-06-07T21:04:19Z warm-followup-monitor ok
+2026-06-07T21:04:19Z response-kit ok
+2026-06-07T21:04:19Z action-launcher ok
+2026-06-07T21:04:19Z first-human-actions ok
+2026-06-07T21:04:19Z first-send-bridge ok
+2026-06-07T21:04:19Z hot-proof-ping ok
+2026-06-07T21:04:19Z posting-sprint ok
+2026-06-07T21:04:19Z session-recovery ok
+2026-06-07T21:04:19Z proof-stall monitor ok
+2026-06-07T21:04:19Z proof-sla ok
+2026-06-07T21:04:19Z proof-audit ok
+2026-06-07T21:04:19Z proof-url-recovery ok
+2026-06-07T21:04:19Z proof-rescue ok
+2026-06-07T21:04:19Z social-rescue-pack ok
+2026-06-07T21:04:20Z zero-signup-rescue ok
+2026-06-07T21:04:20Z public-channel-attempts ok
+2026-06-07T21:04:20Z login-unlock-board ok
+2026-06-07T21:04:20Z proof-intake ok
+2026-06-07T21:04:20Z proof-closeout ok
+2026-06-07T21:04:20Z posting-cockpit ok
+2026-06-07T21:04:20Z worker-wake ok
+2026-06-07T21:04:20Z escalation-board ok
+2026-06-07T21:04:20Z objective-audit ok
+2026-06-07T21:04:20Z evidence-board ok
+2026-06-07T21:04:20Z operator-push ok
+2026-06-07T21:04:20Z real-action-bridge ok
+2026-06-07T21:04:20Z one-click-share ok
+2026-06-07T21:04:20Z public-outreach-targets ok
+2026-06-07T21:04:20Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T21:19:20.820Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 41
+Due now: 1
+Overdue actions (60+ min): 40
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 41
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T21:19:20Z runner ok
+2026-06-07T21:19:20Z pulse ok
+2026-06-07T21:19:20Z dispatch ok
+2026-06-07T21:19:24Z link-sentinel ok
+2026-06-07T21:19:27Z paid-traffic-guard ok
+2026-06-07T21:19:31Z live-ad-qa ok
+2026-06-07T21:19:34Z ad-platform-audit ok
+2026-06-07T21:19:34Z ad-ops-links ok
+2026-06-07T21:19:34Z paid-dashboard-checks ok
+2026-06-07T21:19:34Z paid-ad-triage ok
+2026-06-07T21:19:34Z paid-no-click-rescue ok
+2026-06-07T21:19:36Z conversion-guard ok
+2026-06-07T21:19:37Z referral-activity ok
+2026-06-07T21:19:37Z signup-conversion-audit ok
+2026-06-07T21:19:37Z next-hour ok
+2026-06-07T21:19:37Z phone-action-sheet ok
+2026-06-07T21:19:37Z top-six-mobile ok
+2026-06-07T21:19:37Z warm-contact-sprint ok
+2026-06-07T21:19:37Z warm-followup-monitor ok
+2026-06-07T21:19:37Z response-kit ok
+2026-06-07T21:19:37Z action-launcher ok
+2026-06-07T21:19:37Z first-human-actions ok
+2026-06-07T21:19:37Z first-send-bridge ok
+2026-06-07T21:19:37Z hot-proof-ping ok
+2026-06-07T21:19:37Z posting-sprint ok
+2026-06-07T21:19:37Z session-recovery ok
+2026-06-07T21:19:38Z proof-stall monitor ok
+2026-06-07T21:19:38Z proof-sla ok
+2026-06-07T21:19:38Z proof-audit ok
+2026-06-07T21:19:38Z proof-url-recovery ok
+2026-06-07T21:19:38Z proof-rescue ok
+2026-06-07T21:19:38Z social-rescue-pack ok
+2026-06-07T21:19:38Z zero-signup-rescue ok
+2026-06-07T21:19:38Z public-channel-attempts ok
+2026-06-07T21:19:38Z login-unlock-board ok
+2026-06-07T21:19:38Z proof-intake ok
+2026-06-07T21:19:38Z proof-closeout ok
+2026-06-07T21:19:38Z posting-cockpit ok
+2026-06-07T21:19:38Z worker-wake ok
+2026-06-07T21:19:38Z escalation-board ok
+2026-06-07T21:19:38Z objective-audit ok
+2026-06-07T21:19:38Z evidence-board ok
+2026-06-07T21:19:38Z operator-push ok
+2026-06-07T21:19:38Z real-action-bridge ok
+2026-06-07T21:19:38Z one-click-share ok
+2026-06-07T21:19:38Z public-outreach-targets ok
+2026-06-07T21:19:38Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T21:34:38.816Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 41
+Due now: 1
+Overdue actions (60+ min): 40
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 41
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T21:34:38Z runner ok
+2026-06-07T21:34:38Z pulse ok
+2026-06-07T21:34:38Z dispatch ok
+2026-06-07T21:34:42Z link-sentinel ok
+2026-06-07T21:34:45Z paid-traffic-guard ok
+2026-06-07T21:34:49Z live-ad-qa ok
+2026-06-07T21:34:53Z ad-platform-audit ok
+2026-06-07T21:34:53Z ad-ops-links ok
+2026-06-07T21:34:53Z paid-dashboard-checks ok
+2026-06-07T21:34:53Z paid-ad-triage ok
+2026-06-07T21:34:53Z paid-no-click-rescue ok
+2026-06-07T21:34:55Z conversion-guard ok
+2026-06-07T21:34:56Z referral-activity ok
+2026-06-07T21:34:56Z signup-conversion-audit ok
+2026-06-07T21:34:56Z next-hour ok
+2026-06-07T21:34:56Z phone-action-sheet ok
+2026-06-07T21:34:56Z top-six-mobile ok
+2026-06-07T21:34:56Z warm-contact-sprint ok
+2026-06-07T21:34:56Z warm-followup-monitor ok
+2026-06-07T21:34:56Z response-kit ok
+2026-06-07T21:34:56Z action-launcher ok
+2026-06-07T21:34:56Z first-human-actions ok
+2026-06-07T21:34:57Z first-send-bridge ok
+2026-06-07T21:34:57Z hot-proof-ping ok
+2026-06-07T21:34:57Z posting-sprint ok
+2026-06-07T21:34:57Z session-recovery ok
+2026-06-07T21:34:57Z proof-stall monitor ok
+2026-06-07T21:34:57Z proof-sla ok
+2026-06-07T21:34:57Z proof-audit ok
+2026-06-07T21:34:57Z proof-url-recovery ok
+2026-06-07T21:34:57Z proof-rescue ok
+2026-06-07T21:34:57Z social-rescue-pack ok
+2026-06-07T21:34:57Z zero-signup-rescue ok
+2026-06-07T21:34:57Z public-channel-attempts ok
+2026-06-07T21:34:57Z login-unlock-board ok
+2026-06-07T21:34:57Z proof-intake ok
+2026-06-07T21:34:57Z proof-closeout ok
+2026-06-07T21:34:57Z posting-cockpit ok
+2026-06-07T21:34:57Z worker-wake ok
+2026-06-07T21:34:57Z escalation-board ok
+2026-06-07T21:34:57Z objective-audit ok
+2026-06-07T21:34:57Z evidence-board ok
+2026-06-07T21:34:57Z operator-push ok
+2026-06-07T21:34:57Z real-action-bridge ok
+2026-06-07T21:34:57Z one-click-share ok
+2026-06-07T21:34:57Z public-outreach-targets ok
+2026-06-07T21:34:57Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T21:49:58.011Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 41
+Due now: 1
+Overdue actions (60+ min): 40
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 41
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T21:49:58Z runner ok
+2026-06-07T21:49:58Z pulse ok
+2026-06-07T21:49:58Z dispatch ok
+2026-06-07T21:50:01Z link-sentinel ok
+2026-06-07T21:50:04Z paid-traffic-guard ok
+2026-06-07T21:50:08Z live-ad-qa ok
+2026-06-07T21:50:12Z ad-platform-audit ok
+2026-06-07T21:50:12Z ad-ops-links ok
+2026-06-07T21:50:12Z paid-dashboard-checks ok
+2026-06-07T21:50:12Z paid-ad-triage ok
+2026-06-07T21:50:12Z paid-no-click-rescue ok
+2026-06-07T21:50:14Z conversion-guard ok
+2026-06-07T21:50:15Z referral-activity ok
+2026-06-07T21:50:15Z signup-conversion-audit ok
+2026-06-07T21:50:15Z next-hour ok
+2026-06-07T21:50:16Z phone-action-sheet ok
+2026-06-07T21:50:16Z top-six-mobile ok
+2026-06-07T21:50:16Z warm-contact-sprint ok
+2026-06-07T21:50:16Z warm-followup-monitor ok
+2026-06-07T21:50:16Z response-kit ok
+2026-06-07T21:50:16Z action-launcher ok
+2026-06-07T21:50:16Z first-human-actions ok
+2026-06-07T21:50:16Z first-send-bridge ok
+2026-06-07T21:50:16Z hot-proof-ping ok
+2026-06-07T21:50:16Z posting-sprint ok
+2026-06-07T21:50:16Z session-recovery ok
+2026-06-07T21:50:16Z proof-stall monitor ok
+2026-06-07T21:50:16Z proof-sla ok
+2026-06-07T21:50:16Z proof-audit ok
+2026-06-07T21:50:16Z proof-url-recovery ok
+2026-06-07T21:50:16Z proof-rescue ok
+2026-06-07T21:50:16Z social-rescue-pack ok
+2026-06-07T21:50:16Z zero-signup-rescue ok
+2026-06-07T21:50:16Z public-channel-attempts ok
+2026-06-07T21:50:16Z login-unlock-board ok
+2026-06-07T21:50:16Z proof-intake ok
+2026-06-07T21:50:16Z proof-closeout ok
+2026-06-07T21:50:16Z posting-cockpit ok
+2026-06-07T21:50:16Z worker-wake ok
+2026-06-07T21:50:16Z escalation-board ok
+2026-06-07T21:50:17Z objective-audit ok
+2026-06-07T21:50:17Z evidence-board ok
+2026-06-07T21:50:17Z operator-push ok
+2026-06-07T21:50:17Z real-action-bridge ok
+2026-06-07T21:50:17Z one-click-share ok
+2026-06-07T21:50:17Z public-outreach-targets ok
+2026-06-07T21:50:17Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T22:05:17.314Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 42
+Due now: 1
+Overdue actions (60+ min): 41
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 42
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T22:05:17Z runner ok
+2026-06-07T22:05:17Z pulse ok
+2026-06-07T22:05:17Z dispatch ok
+2026-06-07T22:05:21Z link-sentinel ok
+2026-06-07T22:05:23Z paid-traffic-guard ok
+2026-06-07T22:05:27Z live-ad-qa ok
+2026-06-07T22:05:31Z ad-platform-audit ok
+2026-06-07T22:05:31Z ad-ops-links ok
+2026-06-07T22:05:31Z paid-dashboard-checks ok
+2026-06-07T22:05:31Z paid-ad-triage ok
+2026-06-07T22:05:31Z paid-no-click-rescue ok
+2026-06-07T22:05:33Z conversion-guard ok
+2026-06-07T22:05:33Z referral-activity ok
+2026-06-07T22:05:34Z signup-conversion-audit ok
+2026-06-07T22:05:34Z next-hour ok
+2026-06-07T22:05:34Z phone-action-sheet ok
+2026-06-07T22:05:34Z top-six-mobile ok
+2026-06-07T22:05:34Z warm-contact-sprint ok
+2026-06-07T22:05:34Z warm-followup-monitor ok
+2026-06-07T22:05:34Z response-kit ok
+2026-06-07T22:05:34Z action-launcher ok
+2026-06-07T22:05:34Z first-human-actions ok
+2026-06-07T22:05:34Z first-send-bridge ok
+2026-06-07T22:05:34Z hot-proof-ping ok
+2026-06-07T22:05:34Z posting-sprint ok
+2026-06-07T22:05:34Z session-recovery ok
+2026-06-07T22:05:34Z proof-stall monitor ok
+2026-06-07T22:05:34Z proof-sla ok
+2026-06-07T22:05:34Z proof-audit ok
+2026-06-07T22:05:35Z proof-url-recovery ok
+2026-06-07T22:05:35Z proof-rescue ok
+2026-06-07T22:05:35Z social-rescue-pack ok
+2026-06-07T22:05:35Z zero-signup-rescue ok
+2026-06-07T22:05:35Z public-channel-attempts ok
+2026-06-07T22:05:35Z login-unlock-board ok
+2026-06-07T22:05:35Z proof-intake ok
+2026-06-07T22:05:35Z proof-closeout ok
+2026-06-07T22:05:35Z posting-cockpit ok
+2026-06-07T22:05:35Z worker-wake ok
+2026-06-07T22:05:35Z escalation-board ok
+2026-06-07T22:05:35Z objective-audit ok
+2026-06-07T22:05:35Z evidence-board ok
+2026-06-07T22:05:35Z operator-push ok
+2026-06-07T22:05:35Z real-action-bridge ok
+2026-06-07T22:05:35Z one-click-share ok
+2026-06-07T22:05:35Z public-outreach-targets ok
+2026-06-07T22:05:35Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T22:20:35.822Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 42
+Due now: 1
+Overdue actions (60+ min): 41
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 42
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T22:20:35Z runner ok
+2026-06-07T22:20:35Z pulse ok
+2026-06-07T22:20:35Z dispatch ok
+2026-06-07T22:20:39Z link-sentinel ok
+2026-06-07T22:20:42Z paid-traffic-guard ok
+2026-06-07T22:20:46Z live-ad-qa ok
+2026-06-07T22:20:50Z ad-platform-audit ok
+2026-06-07T22:20:50Z ad-ops-links ok
+2026-06-07T22:20:50Z paid-dashboard-checks ok
+2026-06-07T22:20:50Z paid-ad-triage ok
+2026-06-07T22:20:50Z paid-no-click-rescue ok
+2026-06-07T22:20:51Z conversion-guard ok
+2026-06-07T22:20:52Z referral-activity ok
+2026-06-07T22:20:52Z signup-conversion-audit ok
+2026-06-07T22:20:52Z next-hour ok
+2026-06-07T22:20:52Z phone-action-sheet ok
+2026-06-07T22:20:53Z top-six-mobile ok
+2026-06-07T22:20:53Z warm-contact-sprint ok
+2026-06-07T22:20:53Z warm-followup-monitor ok
+2026-06-07T22:20:53Z response-kit ok
+2026-06-07T22:20:53Z action-launcher ok
+2026-06-07T22:20:53Z first-human-actions ok
+2026-06-07T22:20:53Z first-send-bridge ok
+2026-06-07T22:20:53Z hot-proof-ping ok
+2026-06-07T22:20:53Z posting-sprint ok
+2026-06-07T22:20:53Z session-recovery ok
+2026-06-07T22:20:53Z proof-stall monitor ok
+2026-06-07T22:20:53Z proof-sla ok
+2026-06-07T22:20:53Z proof-audit ok
+2026-06-07T22:20:53Z proof-url-recovery ok
+2026-06-07T22:20:53Z proof-rescue ok
+2026-06-07T22:20:53Z social-rescue-pack ok
+2026-06-07T22:20:53Z zero-signup-rescue ok
+2026-06-07T22:20:53Z public-channel-attempts ok
+2026-06-07T22:20:53Z login-unlock-board ok
+2026-06-07T22:20:53Z proof-intake ok
+2026-06-07T22:20:53Z proof-closeout ok
+2026-06-07T22:20:53Z posting-cockpit ok
+2026-06-07T22:20:53Z worker-wake ok
+2026-06-07T22:20:53Z escalation-board ok
+2026-06-07T22:20:53Z objective-audit ok
+2026-06-07T22:20:53Z evidence-board ok
+2026-06-07T22:20:53Z operator-push ok
+2026-06-07T22:20:53Z real-action-bridge ok
+2026-06-07T22:20:53Z one-click-share ok
+2026-06-07T22:20:54Z public-outreach-targets ok
+2026-06-07T22:20:54Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T22:35:54.119Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 42
+Due now: 1
+Overdue actions (60+ min): 41
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 42
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T22:35:54Z runner ok
+2026-06-07T22:35:54Z pulse ok
+2026-06-07T22:35:54Z dispatch ok
+2026-06-07T22:35:58Z link-sentinel ok
+2026-06-07T22:36:00Z paid-traffic-guard ok
+2026-06-07T22:36:05Z live-ad-qa ok
+2026-06-07T22:36:09Z ad-platform-audit ok
+2026-06-07T22:36:09Z ad-ops-links ok
+2026-06-07T22:36:09Z paid-dashboard-checks ok
+2026-06-07T22:36:09Z paid-ad-triage ok
+2026-06-07T22:36:09Z paid-no-click-rescue ok
+2026-06-07T22:36:11Z conversion-guard ok
+2026-06-07T22:36:11Z referral-activity ok
+2026-06-07T22:36:12Z signup-conversion-audit ok
+2026-06-07T22:36:12Z next-hour ok
+2026-06-07T22:36:12Z phone-action-sheet ok
+2026-06-07T22:36:12Z top-six-mobile ok
+2026-06-07T22:36:12Z warm-contact-sprint ok
+2026-06-07T22:36:12Z warm-followup-monitor ok
+2026-06-07T22:36:12Z response-kit ok
+2026-06-07T22:36:12Z action-launcher ok
+2026-06-07T22:36:12Z first-human-actions ok
+2026-06-07T22:36:12Z first-send-bridge ok
+2026-06-07T22:36:12Z hot-proof-ping ok
+2026-06-07T22:36:12Z posting-sprint ok
+2026-06-07T22:36:12Z session-recovery ok
+2026-06-07T22:36:12Z proof-stall monitor ok
+2026-06-07T22:36:12Z proof-sla ok
+2026-06-07T22:36:12Z proof-audit ok
+2026-06-07T22:36:12Z proof-url-recovery ok
+2026-06-07T22:36:12Z proof-rescue ok
+2026-06-07T22:36:12Z social-rescue-pack ok
+2026-06-07T22:36:12Z zero-signup-rescue ok
+2026-06-07T22:36:12Z public-channel-attempts ok
+2026-06-07T22:36:12Z login-unlock-board ok
+2026-06-07T22:36:12Z proof-intake ok
+2026-06-07T22:36:12Z proof-closeout ok
+2026-06-07T22:36:12Z posting-cockpit ok
+2026-06-07T22:36:13Z worker-wake ok
+2026-06-07T22:36:13Z escalation-board ok
+2026-06-07T22:36:13Z objective-audit ok
+2026-06-07T22:36:13Z evidence-board ok
+2026-06-07T22:36:13Z operator-push ok
+2026-06-07T22:36:13Z real-action-bridge ok
+2026-06-07T22:36:13Z one-click-share ok
+2026-06-07T22:36:13Z public-outreach-targets ok
+2026-06-07T22:36:13Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T22:51:13.379Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 42
+Due now: 1
+Overdue actions (60+ min): 41
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 42
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T22:51:13Z runner ok
+2026-06-07T22:51:13Z pulse ok
+2026-06-07T22:51:13Z dispatch ok
+2026-06-07T22:51:17Z link-sentinel ok
+2026-06-07T22:51:19Z paid-traffic-guard ok
+2026-06-07T22:51:24Z live-ad-qa ok
+2026-06-07T22:51:27Z ad-platform-audit ok
+2026-06-07T22:51:28Z ad-ops-links ok
+2026-06-07T22:51:28Z paid-dashboard-checks ok
+2026-06-07T22:51:28Z paid-ad-triage ok
+2026-06-07T22:51:28Z paid-no-click-rescue ok
+2026-06-07T22:51:29Z conversion-guard ok
+2026-06-07T22:51:30Z referral-activity ok
+2026-06-07T22:51:30Z signup-conversion-audit ok
+2026-06-07T22:51:30Z next-hour ok
+2026-06-07T22:51:31Z phone-action-sheet ok
+2026-06-07T22:51:31Z top-six-mobile ok
+2026-06-07T22:51:31Z warm-contact-sprint ok
+2026-06-07T22:51:31Z warm-followup-monitor ok
+2026-06-07T22:51:31Z response-kit ok
+2026-06-07T22:51:31Z action-launcher ok
+2026-06-07T22:51:31Z first-human-actions ok
+2026-06-07T22:51:31Z first-send-bridge ok
+2026-06-07T22:51:31Z hot-proof-ping ok
+2026-06-07T22:51:31Z posting-sprint ok
+2026-06-07T22:51:31Z session-recovery ok
+2026-06-07T22:51:31Z proof-stall monitor ok
+2026-06-07T22:51:31Z proof-sla ok
+2026-06-07T22:51:31Z proof-audit ok
+2026-06-07T22:51:31Z proof-url-recovery ok
+2026-06-07T22:51:31Z proof-rescue ok
+2026-06-07T22:51:31Z social-rescue-pack ok
+2026-06-07T22:51:31Z zero-signup-rescue ok
+2026-06-07T22:51:31Z public-channel-attempts ok
+2026-06-07T22:51:31Z login-unlock-board ok
+2026-06-07T22:51:31Z proof-intake ok
+2026-06-07T22:51:31Z proof-closeout ok
+2026-06-07T22:51:31Z posting-cockpit ok
+2026-06-07T22:51:31Z worker-wake ok
+2026-06-07T22:51:31Z escalation-board ok
+2026-06-07T22:51:31Z objective-audit ok
+2026-06-07T22:51:32Z evidence-board ok
+2026-06-07T22:51:32Z operator-push ok
+2026-06-07T22:51:32Z real-action-bridge ok
+2026-06-07T22:51:32Z one-click-share ok
+2026-06-07T22:51:32Z public-outreach-targets ok
+2026-06-07T22:51:32Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T23:06:32.413Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 43
+Due now: 1
+Overdue actions (60+ min): 42
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 43
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T23:06:32Z runner ok
+2026-06-07T23:06:32Z pulse ok
+2026-06-07T23:06:32Z dispatch ok
+2026-06-07T23:06:36Z link-sentinel ok
+2026-06-07T23:06:38Z paid-traffic-guard ok
+2026-06-07T23:06:43Z live-ad-qa ok
+2026-06-07T23:06:46Z ad-platform-audit ok
+2026-06-07T23:06:46Z ad-ops-links ok
+2026-06-07T23:06:46Z paid-dashboard-checks ok
+2026-06-07T23:06:46Z paid-ad-triage ok
+2026-06-07T23:06:46Z paid-no-click-rescue ok
+2026-06-07T23:06:48Z conversion-guard ok
+2026-06-07T23:06:49Z referral-activity ok
+2026-06-07T23:06:49Z signup-conversion-audit ok
+2026-06-07T23:06:49Z next-hour ok
+2026-06-07T23:06:49Z phone-action-sheet ok
+2026-06-07T23:06:49Z top-six-mobile ok
+2026-06-07T23:06:49Z warm-contact-sprint ok
+2026-06-07T23:06:49Z warm-followup-monitor ok
+2026-06-07T23:06:49Z response-kit ok
+2026-06-07T23:06:49Z action-launcher ok
+2026-06-07T23:06:49Z first-human-actions ok
+2026-06-07T23:06:49Z first-send-bridge ok
+2026-06-07T23:06:50Z hot-proof-ping ok
+2026-06-07T23:06:50Z posting-sprint ok
+2026-06-07T23:06:50Z session-recovery ok
+2026-06-07T23:06:50Z proof-stall monitor ok
+2026-06-07T23:06:50Z proof-sla ok
+2026-06-07T23:06:50Z proof-audit ok
+2026-06-07T23:06:50Z proof-url-recovery ok
+2026-06-07T23:06:50Z proof-rescue ok
+2026-06-07T23:06:50Z social-rescue-pack ok
+2026-06-07T23:06:50Z zero-signup-rescue ok
+2026-06-07T23:06:50Z public-channel-attempts ok
+2026-06-07T23:06:50Z login-unlock-board ok
+2026-06-07T23:06:50Z proof-intake ok
+2026-06-07T23:06:50Z proof-closeout ok
+2026-06-07T23:06:50Z posting-cockpit ok
+2026-06-07T23:06:50Z worker-wake ok
+2026-06-07T23:06:50Z escalation-board ok
+2026-06-07T23:06:50Z objective-audit ok
+2026-06-07T23:06:50Z evidence-board ok
+2026-06-07T23:06:50Z operator-push ok
+2026-06-07T23:06:50Z real-action-bridge ok
+2026-06-07T23:06:50Z one-click-share ok
+2026-06-07T23:06:50Z public-outreach-targets ok
+2026-06-07T23:06:50Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T23:21:51.026Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 43
+Due now: 1
+Overdue actions (60+ min): 42
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 43
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T23:21:51Z runner ok
+2026-06-07T23:21:51Z pulse ok
+2026-06-07T23:21:51Z dispatch ok
+2026-06-07T23:21:55Z link-sentinel ok
+2026-06-07T23:21:57Z paid-traffic-guard ok
+2026-06-07T23:22:01Z live-ad-qa ok
+2026-06-07T23:22:05Z ad-platform-audit ok
+2026-06-07T23:22:05Z ad-ops-links ok
+2026-06-07T23:22:05Z paid-dashboard-checks ok
+2026-06-07T23:22:05Z paid-ad-triage ok
+2026-06-07T23:22:05Z paid-no-click-rescue ok
+2026-06-07T23:22:07Z conversion-guard ok
+2026-06-07T23:22:07Z referral-activity ok
+2026-06-07T23:22:08Z signup-conversion-audit ok
+2026-06-07T23:22:08Z next-hour ok
+2026-06-07T23:22:08Z phone-action-sheet ok
+2026-06-07T23:22:08Z top-six-mobile ok
+2026-06-07T23:22:08Z warm-contact-sprint ok
+2026-06-07T23:22:08Z warm-followup-monitor ok
+2026-06-07T23:22:08Z response-kit ok
+2026-06-07T23:22:08Z action-launcher ok
+2026-06-07T23:22:08Z first-human-actions ok
+2026-06-07T23:22:08Z first-send-bridge ok
+2026-06-07T23:22:08Z hot-proof-ping ok
+2026-06-07T23:22:08Z posting-sprint ok
+2026-06-07T23:22:08Z session-recovery ok
+2026-06-07T23:22:08Z proof-stall monitor ok
+2026-06-07T23:22:08Z proof-sla ok
+2026-06-07T23:22:08Z proof-audit ok
+2026-06-07T23:22:08Z proof-url-recovery ok
+2026-06-07T23:22:08Z proof-rescue ok
+2026-06-07T23:22:08Z social-rescue-pack ok
+2026-06-07T23:22:08Z zero-signup-rescue ok
+2026-06-07T23:22:08Z public-channel-attempts ok
+2026-06-07T23:22:08Z login-unlock-board ok
+2026-06-07T23:22:08Z proof-intake ok
+2026-06-07T23:22:08Z proof-closeout ok
+2026-06-07T23:22:09Z posting-cockpit ok
+2026-06-07T23:22:09Z worker-wake ok
+2026-06-07T23:22:09Z escalation-board ok
+2026-06-07T23:22:09Z objective-audit ok
+2026-06-07T23:22:09Z evidence-board ok
+2026-06-07T23:22:09Z operator-push ok
+2026-06-07T23:22:09Z real-action-bridge ok
+2026-06-07T23:22:09Z one-click-share ok
+2026-06-07T23:22:09Z public-outreach-targets ok
+2026-06-07T23:22:09Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T23:37:09.458Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 43
+Due now: 1
+Overdue actions (60+ min): 42
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 43
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T23:37:09Z runner ok
+2026-06-07T23:37:09Z pulse ok
+2026-06-07T23:37:09Z dispatch ok
+2026-06-07T23:37:13Z link-sentinel ok
+2026-06-07T23:37:15Z paid-traffic-guard ok
+2026-06-07T23:37:20Z live-ad-qa ok
+2026-06-07T23:37:23Z ad-platform-audit ok
+2026-06-07T23:37:24Z ad-ops-links ok
+2026-06-07T23:37:24Z paid-dashboard-checks ok
+2026-06-07T23:37:24Z paid-ad-triage ok
+2026-06-07T23:37:24Z paid-no-click-rescue ok
+2026-06-07T23:37:26Z conversion-guard ok
+2026-06-07T23:37:26Z referral-activity ok
+2026-06-07T23:37:26Z signup-conversion-audit ok
+2026-06-07T23:37:27Z next-hour ok
+2026-06-07T23:37:27Z phone-action-sheet ok
+2026-06-07T23:37:27Z top-six-mobile ok
+2026-06-07T23:37:27Z warm-contact-sprint ok
+2026-06-07T23:37:27Z warm-followup-monitor ok
+2026-06-07T23:37:27Z response-kit ok
+2026-06-07T23:37:27Z action-launcher ok
+2026-06-07T23:37:27Z first-human-actions ok
+2026-06-07T23:37:27Z first-send-bridge ok
+2026-06-07T23:37:27Z hot-proof-ping ok
+2026-06-07T23:37:27Z posting-sprint ok
+2026-06-07T23:37:27Z session-recovery ok
+2026-06-07T23:37:27Z proof-stall monitor ok
+2026-06-07T23:37:27Z proof-sla ok
+2026-06-07T23:37:27Z proof-audit ok
+2026-06-07T23:37:27Z proof-url-recovery ok
+2026-06-07T23:37:27Z proof-rescue ok
+2026-06-07T23:37:27Z social-rescue-pack ok
+2026-06-07T23:37:27Z zero-signup-rescue ok
+2026-06-07T23:37:27Z public-channel-attempts ok
+2026-06-07T23:37:27Z login-unlock-board ok
+2026-06-07T23:37:27Z proof-intake ok
+2026-06-07T23:37:27Z proof-closeout ok
+2026-06-07T23:37:27Z posting-cockpit ok
+2026-06-07T23:37:27Z worker-wake ok
+2026-06-07T23:37:27Z escalation-board ok
+2026-06-07T23:37:27Z objective-audit ok
+2026-06-07T23:37:27Z evidence-board ok
+2026-06-07T23:37:28Z operator-push ok
+2026-06-07T23:37:28Z real-action-bridge ok
+2026-06-07T23:37:28Z one-click-share ok
+2026-06-07T23:37:28Z public-outreach-targets ok
+2026-06-07T23:37:28Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-07T23:52:28.314Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 43
+Due now: 1
+Overdue actions (60+ min): 42
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 43
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-07T23:52:28Z runner ok
+2026-06-07T23:52:28Z pulse ok
+2026-06-07T23:52:28Z dispatch ok
+2026-06-07T23:52:32Z link-sentinel ok
+2026-06-07T23:52:34Z paid-traffic-guard ok
+2026-06-07T23:52:39Z live-ad-qa ok
+2026-06-07T23:52:42Z ad-platform-audit ok
+2026-06-07T23:52:42Z ad-ops-links ok
+2026-06-07T23:52:42Z paid-dashboard-checks ok
+2026-06-07T23:52:42Z paid-ad-triage ok
+2026-06-07T23:52:42Z paid-no-click-rescue ok
+2026-06-07T23:52:44Z conversion-guard ok
+2026-06-07T23:52:45Z referral-activity ok
+2026-06-07T23:52:45Z signup-conversion-audit ok
+2026-06-07T23:52:45Z next-hour ok
+2026-06-07T23:52:45Z phone-action-sheet ok
+2026-06-07T23:52:45Z top-six-mobile ok
+2026-06-07T23:52:45Z warm-contact-sprint ok
+2026-06-07T23:52:45Z warm-followup-monitor ok
+2026-06-07T23:52:45Z response-kit ok
+2026-06-07T23:52:45Z action-launcher ok
+2026-06-07T23:52:45Z first-human-actions ok
+2026-06-07T23:52:46Z first-send-bridge ok
+2026-06-07T23:52:46Z hot-proof-ping ok
+2026-06-07T23:52:46Z posting-sprint ok
+2026-06-07T23:52:46Z session-recovery ok
+2026-06-07T23:52:46Z proof-stall monitor ok
+2026-06-07T23:52:46Z proof-sla ok
+2026-06-07T23:52:46Z proof-audit ok
+2026-06-07T23:52:46Z proof-url-recovery ok
+2026-06-07T23:52:46Z proof-rescue ok
+2026-06-07T23:52:46Z social-rescue-pack ok
+2026-06-07T23:52:46Z zero-signup-rescue ok
+2026-06-07T23:52:46Z public-channel-attempts ok
+2026-06-07T23:52:46Z login-unlock-board ok
+2026-06-07T23:52:46Z proof-intake ok
+2026-06-07T23:52:46Z proof-closeout ok
+2026-06-07T23:52:46Z posting-cockpit ok
+2026-06-07T23:52:46Z worker-wake ok
+2026-06-07T23:52:46Z escalation-board ok
+2026-06-07T23:52:46Z objective-audit ok
+2026-06-07T23:52:46Z evidence-board ok
+2026-06-07T23:52:46Z operator-push ok
+2026-06-07T23:52:46Z real-action-bridge ok
+2026-06-07T23:52:46Z one-click-share ok
+2026-06-07T23:52:46Z public-outreach-targets ok
+2026-06-07T23:52:46Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T00:07:46.862Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 44
+Due now: 1
+Overdue actions (60+ min): 43
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 44
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T00:07:46Z runner ok
+2026-06-08T00:07:46Z pulse ok
+2026-06-08T00:07:46Z dispatch ok
+2026-06-08T00:07:50Z link-sentinel ok
+2026-06-08T00:07:53Z paid-traffic-guard ok
+2026-06-08T00:07:57Z live-ad-qa ok
+2026-06-08T00:08:01Z ad-platform-audit ok
+2026-06-08T00:08:01Z ad-ops-links ok
+2026-06-08T00:08:01Z paid-dashboard-checks ok
+2026-06-08T00:08:01Z paid-ad-triage ok
+2026-06-08T00:08:01Z paid-no-click-rescue ok
+2026-06-08T00:08:03Z conversion-guard ok
+2026-06-08T00:08:04Z referral-activity ok
+2026-06-08T00:08:04Z signup-conversion-audit ok
+2026-06-08T00:08:04Z next-hour ok
+2026-06-08T00:08:04Z phone-action-sheet ok
+2026-06-08T00:08:04Z top-six-mobile ok
+2026-06-08T00:08:04Z warm-contact-sprint ok
+2026-06-08T00:08:04Z warm-followup-monitor ok
+2026-06-08T00:08:04Z response-kit ok
+2026-06-08T00:08:04Z action-launcher ok
+2026-06-08T00:08:04Z first-human-actions ok
+2026-06-08T00:08:04Z first-send-bridge ok
+2026-06-08T00:08:04Z hot-proof-ping ok
+2026-06-08T00:08:04Z posting-sprint ok
+2026-06-08T00:08:04Z session-recovery ok
+2026-06-08T00:08:04Z proof-stall monitor ok
+2026-06-08T00:08:04Z proof-sla ok
+2026-06-08T00:08:04Z proof-audit ok
+2026-06-08T00:08:05Z proof-url-recovery ok
+2026-06-08T00:08:05Z proof-rescue ok
+2026-06-08T00:08:05Z social-rescue-pack ok
+2026-06-08T00:08:05Z zero-signup-rescue ok
+2026-06-08T00:08:05Z public-channel-attempts ok
+2026-06-08T00:08:05Z login-unlock-board ok
+2026-06-08T00:08:05Z proof-intake ok
+2026-06-08T00:08:05Z proof-closeout ok
+2026-06-08T00:08:05Z posting-cockpit ok
+2026-06-08T00:08:05Z worker-wake ok
+2026-06-08T00:08:05Z escalation-board ok
+2026-06-08T00:08:05Z objective-audit ok
+2026-06-08T00:08:05Z evidence-board ok
+2026-06-08T00:08:05Z operator-push ok
+2026-06-08T00:08:05Z real-action-bridge ok
+2026-06-08T00:08:05Z one-click-share ok
+2026-06-08T00:08:05Z public-outreach-targets ok
+2026-06-08T00:08:05Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T00:23:05.680Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 44
+Due now: 1
+Overdue actions (60+ min): 43
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 44
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T00:23:05Z runner ok
+2026-06-08T00:23:05Z pulse ok
+2026-06-08T00:23:05Z dispatch ok
+2026-06-08T00:23:09Z link-sentinel ok
+2026-06-08T00:23:12Z paid-traffic-guard ok
+2026-06-08T00:23:16Z live-ad-qa ok
+2026-06-08T00:23:20Z ad-platform-audit ok
+2026-06-08T00:23:20Z ad-ops-links ok
+2026-06-08T00:23:20Z paid-dashboard-checks ok
+2026-06-08T00:23:20Z paid-ad-triage ok
+2026-06-08T00:23:20Z paid-no-click-rescue ok
+2026-06-08T00:23:22Z conversion-guard ok
+2026-06-08T00:23:22Z referral-activity ok
+2026-06-08T00:23:23Z signup-conversion-audit ok
+2026-06-08T00:23:23Z next-hour ok
+2026-06-08T00:23:23Z phone-action-sheet ok
+2026-06-08T00:23:23Z top-six-mobile ok
+2026-06-08T00:23:23Z warm-contact-sprint ok
+2026-06-08T00:23:23Z warm-followup-monitor ok
+2026-06-08T00:23:23Z response-kit ok
+2026-06-08T00:23:23Z action-launcher ok
+2026-06-08T00:23:23Z first-human-actions ok
+2026-06-08T00:23:23Z first-send-bridge ok
+2026-06-08T00:23:23Z hot-proof-ping ok
+2026-06-08T00:23:23Z posting-sprint ok
+2026-06-08T00:23:23Z session-recovery ok
+2026-06-08T00:23:23Z proof-stall monitor ok
+2026-06-08T00:23:23Z proof-sla ok
+2026-06-08T00:23:23Z proof-audit ok
+2026-06-08T00:23:24Z proof-url-recovery ok
+2026-06-08T00:23:24Z proof-rescue ok
+2026-06-08T00:23:24Z social-rescue-pack ok
+2026-06-08T00:23:24Z zero-signup-rescue ok
+2026-06-08T00:23:24Z public-channel-attempts ok
+2026-06-08T00:23:24Z login-unlock-board ok
+2026-06-08T00:23:24Z proof-intake ok
+2026-06-08T00:23:24Z proof-closeout ok
+2026-06-08T00:23:24Z posting-cockpit ok
+2026-06-08T00:23:24Z worker-wake ok
+2026-06-08T00:23:24Z escalation-board ok
+2026-06-08T00:23:24Z objective-audit ok
+2026-06-08T00:23:24Z evidence-board ok
+2026-06-08T00:23:24Z operator-push ok
+2026-06-08T00:23:24Z real-action-bridge ok
+2026-06-08T00:23:24Z one-click-share ok
+2026-06-08T00:23:24Z public-outreach-targets ok
+2026-06-08T00:23:24Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T00:38:24.853Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 44
+Due now: 1
+Overdue actions (60+ min): 43
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 44
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T00:38:24Z runner ok
+2026-06-08T00:38:24Z pulse ok
+2026-06-08T00:38:24Z dispatch ok
+2026-06-08T00:38:28Z link-sentinel ok
+2026-06-08T00:38:31Z paid-traffic-guard ok
+2026-06-08T00:38:36Z live-ad-qa ok
+2026-06-08T00:38:40Z ad-platform-audit ok
+2026-06-08T00:38:40Z ad-ops-links ok
+2026-06-08T00:38:40Z paid-dashboard-checks ok
+2026-06-08T00:38:40Z paid-ad-triage ok
+2026-06-08T00:38:40Z paid-no-click-rescue ok
+2026-06-08T00:38:42Z conversion-guard ok
+2026-06-08T00:38:42Z referral-activity ok
+2026-06-08T00:38:43Z signup-conversion-audit ok
+2026-06-08T00:38:43Z next-hour ok
+2026-06-08T00:38:43Z phone-action-sheet ok
+2026-06-08T00:38:43Z top-six-mobile ok
+2026-06-08T00:38:43Z warm-contact-sprint ok
+2026-06-08T00:38:43Z warm-followup-monitor ok
+2026-06-08T00:38:43Z response-kit ok
+2026-06-08T00:38:43Z action-launcher ok
+2026-06-08T00:38:43Z first-human-actions ok
+2026-06-08T00:38:43Z first-send-bridge ok
+2026-06-08T00:38:43Z hot-proof-ping ok
+2026-06-08T00:38:43Z posting-sprint ok
+2026-06-08T00:38:43Z session-recovery ok
+2026-06-08T00:38:43Z proof-stall monitor ok
+2026-06-08T00:38:43Z proof-sla ok
+2026-06-08T00:38:43Z proof-audit ok
+2026-06-08T00:38:43Z proof-url-recovery ok
+2026-06-08T00:38:43Z proof-rescue ok
+2026-06-08T00:38:43Z social-rescue-pack ok
+2026-06-08T00:38:43Z zero-signup-rescue ok
+2026-06-08T00:38:43Z public-channel-attempts ok
+2026-06-08T00:38:44Z login-unlock-board ok
+2026-06-08T00:38:44Z proof-intake ok
+2026-06-08T00:38:44Z proof-closeout ok
+2026-06-08T00:38:44Z posting-cockpit ok
+2026-06-08T00:38:44Z worker-wake ok
+2026-06-08T00:38:44Z escalation-board ok
+2026-06-08T00:38:44Z objective-audit ok
+2026-06-08T00:38:44Z evidence-board ok
+2026-06-08T00:38:44Z operator-push ok
+2026-06-08T00:38:44Z real-action-bridge ok
+2026-06-08T00:38:44Z one-click-share ok
+2026-06-08T00:38:44Z public-outreach-targets ok
+2026-06-08T00:38:44Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T00:53:44.557Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 44
+Due now: 1
+Overdue actions (60+ min): 43
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 44
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T00:53:44Z runner ok
+2026-06-08T00:53:44Z pulse ok
+2026-06-08T00:53:44Z dispatch ok
+2026-06-08T00:53:48Z link-sentinel ok
+2026-06-08T00:53:51Z paid-traffic-guard ok
+2026-06-08T00:53:55Z live-ad-qa ok
+2026-06-08T00:53:58Z ad-platform-audit ok
+2026-06-08T00:53:59Z ad-ops-links ok
+2026-06-08T00:53:59Z paid-dashboard-checks ok
+2026-06-08T00:53:59Z paid-ad-triage ok
+2026-06-08T00:53:59Z paid-no-click-rescue ok
+2026-06-08T00:54:01Z conversion-guard ok
+2026-06-08T00:54:01Z referral-activity ok
+2026-06-08T00:54:02Z signup-conversion-audit ok
+2026-06-08T00:54:02Z next-hour ok
+2026-06-08T00:54:02Z phone-action-sheet ok
+2026-06-08T00:54:02Z top-six-mobile ok
+2026-06-08T00:54:02Z warm-contact-sprint ok
+2026-06-08T00:54:02Z warm-followup-monitor ok
+2026-06-08T00:54:02Z response-kit ok
+2026-06-08T00:54:02Z action-launcher ok
+2026-06-08T00:54:02Z first-human-actions ok
+2026-06-08T00:54:02Z first-send-bridge ok
+2026-06-08T00:54:02Z hot-proof-ping ok
+2026-06-08T00:54:02Z posting-sprint ok
+2026-06-08T00:54:02Z session-recovery ok
+2026-06-08T00:54:02Z proof-stall monitor ok
+2026-06-08T00:54:02Z proof-sla ok
+2026-06-08T00:54:02Z proof-audit ok
+2026-06-08T00:54:02Z proof-url-recovery ok
+2026-06-08T00:54:02Z proof-rescue ok
+2026-06-08T00:54:02Z social-rescue-pack ok
+2026-06-08T00:54:02Z zero-signup-rescue ok
+2026-06-08T00:54:02Z public-channel-attempts ok
+2026-06-08T00:54:02Z login-unlock-board ok
+2026-06-08T00:54:03Z proof-intake ok
+2026-06-08T00:54:03Z proof-closeout ok
+2026-06-08T00:54:03Z posting-cockpit ok
+2026-06-08T00:54:03Z worker-wake ok
+2026-06-08T00:54:03Z escalation-board ok
+2026-06-08T00:54:03Z objective-audit ok
+2026-06-08T00:54:03Z evidence-board ok
+2026-06-08T00:54:03Z operator-push ok
+2026-06-08T00:54:03Z real-action-bridge ok
+2026-06-08T00:54:03Z one-click-share ok
+2026-06-08T00:54:03Z public-outreach-targets ok
+2026-06-08T00:54:03Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T01:09:03.542Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 45
+Due now: 1
+Overdue actions (60+ min): 44
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 45
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T01:09:03Z runner ok
+2026-06-08T01:09:03Z pulse ok
+2026-06-08T01:09:03Z dispatch ok
+2026-06-08T01:09:07Z link-sentinel ok
+2026-06-08T01:09:10Z paid-traffic-guard ok
+2026-06-08T01:09:14Z live-ad-qa ok
+2026-06-08T01:09:18Z ad-platform-audit ok
+2026-06-08T01:09:18Z ad-ops-links ok
+2026-06-08T01:09:18Z paid-dashboard-checks ok
+2026-06-08T01:09:18Z paid-ad-triage ok
+2026-06-08T01:09:18Z paid-no-click-rescue ok
+2026-06-08T01:09:20Z conversion-guard ok
+2026-06-08T01:09:20Z referral-activity ok
+2026-06-08T01:09:21Z signup-conversion-audit ok
+2026-06-08T01:09:21Z next-hour ok
+2026-06-08T01:09:21Z phone-action-sheet ok
+2026-06-08T01:09:21Z top-six-mobile ok
+2026-06-08T01:09:21Z warm-contact-sprint ok
+2026-06-08T01:09:21Z warm-followup-monitor ok
+2026-06-08T01:09:21Z response-kit ok
+2026-06-08T01:09:21Z action-launcher ok
+2026-06-08T01:09:21Z first-human-actions ok
+2026-06-08T01:09:21Z first-send-bridge ok
+2026-06-08T01:09:21Z hot-proof-ping ok
+2026-06-08T01:09:21Z posting-sprint ok
+2026-06-08T01:09:21Z session-recovery ok
+2026-06-08T01:09:21Z proof-stall monitor ok
+2026-06-08T01:09:21Z proof-sla ok
+2026-06-08T01:09:21Z proof-audit ok
+2026-06-08T01:09:21Z proof-url-recovery ok
+2026-06-08T01:09:21Z proof-rescue ok
+2026-06-08T01:09:21Z social-rescue-pack ok
+2026-06-08T01:09:21Z zero-signup-rescue ok
+2026-06-08T01:09:21Z public-channel-attempts ok
+2026-06-08T01:09:21Z login-unlock-board ok
+2026-06-08T01:09:21Z proof-intake ok
+2026-06-08T01:09:21Z proof-closeout ok
+2026-06-08T01:09:21Z posting-cockpit ok
+2026-06-08T01:09:21Z worker-wake ok
+2026-06-08T01:09:21Z escalation-board ok
+2026-06-08T01:09:21Z objective-audit ok
+2026-06-08T01:09:21Z evidence-board ok
+2026-06-08T01:09:22Z operator-push ok
+2026-06-08T01:09:22Z real-action-bridge ok
+2026-06-08T01:09:22Z one-click-share ok
+2026-06-08T01:09:22Z public-outreach-targets ok
+2026-06-08T01:09:22Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T01:24:22.309Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 45
+Due now: 1
+Overdue actions (60+ min): 44
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 45
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T01:24:22Z runner ok
+2026-06-08T01:24:22Z pulse ok
+2026-06-08T01:24:22Z dispatch ok
+2026-06-08T01:24:26Z link-sentinel ok
+2026-06-08T01:24:28Z paid-traffic-guard ok
+2026-06-08T01:24:32Z live-ad-qa ok
+2026-06-08T01:24:36Z ad-platform-audit ok
+2026-06-08T01:24:36Z ad-ops-links ok
+2026-06-08T01:24:36Z paid-dashboard-checks ok
+2026-06-08T01:24:36Z paid-ad-triage ok
+2026-06-08T01:24:36Z paid-no-click-rescue ok
+2026-06-08T01:24:38Z conversion-guard ok
+2026-06-08T01:24:38Z referral-activity ok
+2026-06-08T01:24:39Z signup-conversion-audit ok
+2026-06-08T01:24:39Z next-hour ok
+2026-06-08T01:24:39Z phone-action-sheet ok
+2026-06-08T01:24:39Z top-six-mobile ok
+2026-06-08T01:24:39Z warm-contact-sprint ok
+2026-06-08T01:24:39Z warm-followup-monitor ok
+2026-06-08T01:24:39Z response-kit ok
+2026-06-08T01:24:39Z action-launcher ok
+2026-06-08T01:24:39Z first-human-actions ok
+2026-06-08T01:24:39Z first-send-bridge ok
+2026-06-08T01:24:39Z hot-proof-ping ok
+2026-06-08T01:24:39Z posting-sprint ok
+2026-06-08T01:24:39Z session-recovery ok
+2026-06-08T01:24:39Z proof-stall monitor ok
+2026-06-08T01:24:39Z proof-sla ok
+2026-06-08T01:24:39Z proof-audit ok
+2026-06-08T01:24:39Z proof-url-recovery ok
+2026-06-08T01:24:39Z proof-rescue ok
+2026-06-08T01:24:39Z social-rescue-pack ok
+2026-06-08T01:24:39Z zero-signup-rescue ok
+2026-06-08T01:24:39Z public-channel-attempts ok
+2026-06-08T01:24:40Z login-unlock-board ok
+2026-06-08T01:24:40Z proof-intake ok
+2026-06-08T01:24:40Z proof-closeout ok
+2026-06-08T01:24:40Z posting-cockpit ok
+2026-06-08T01:24:40Z worker-wake ok
+2026-06-08T01:24:40Z escalation-board ok
+2026-06-08T01:24:40Z objective-audit ok
+2026-06-08T01:24:40Z evidence-board ok
+2026-06-08T01:24:40Z operator-push ok
+2026-06-08T01:24:40Z real-action-bridge ok
+2026-06-08T01:24:40Z one-click-share ok
+2026-06-08T01:24:40Z public-outreach-targets ok
+2026-06-08T01:24:40Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T01:39:40.482Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 45
+Due now: 1
+Overdue actions (60+ min): 44
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 45
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T01:39:40Z runner ok
+2026-06-08T01:39:40Z pulse ok
+2026-06-08T01:39:40Z dispatch ok
+2026-06-08T01:39:44Z link-sentinel ok
+2026-06-08T01:39:46Z paid-traffic-guard ok
+2026-06-08T01:39:51Z live-ad-qa ok
+2026-06-08T01:39:54Z ad-platform-audit ok
+2026-06-08T01:39:54Z ad-ops-links ok
+2026-06-08T01:39:54Z paid-dashboard-checks ok
+2026-06-08T01:39:55Z paid-ad-triage ok
+2026-06-08T01:39:55Z paid-no-click-rescue ok
+2026-06-08T01:39:56Z conversion-guard ok
+2026-06-08T01:39:57Z referral-activity ok
+2026-06-08T01:39:57Z signup-conversion-audit ok
+2026-06-08T01:39:57Z next-hour ok
+2026-06-08T01:39:57Z phone-action-sheet ok
+2026-06-08T01:39:57Z top-six-mobile ok
+2026-06-08T01:39:57Z warm-contact-sprint ok
+2026-06-08T01:39:57Z warm-followup-monitor ok
+2026-06-08T01:39:58Z response-kit ok
+2026-06-08T01:39:58Z action-launcher ok
+2026-06-08T01:39:58Z first-human-actions ok
+2026-06-08T01:39:58Z first-send-bridge ok
+2026-06-08T01:39:58Z hot-proof-ping ok
+2026-06-08T01:39:58Z posting-sprint ok
+2026-06-08T01:39:58Z session-recovery ok
+2026-06-08T01:39:58Z proof-stall monitor ok
+2026-06-08T01:39:58Z proof-sla ok
+2026-06-08T01:39:58Z proof-audit ok
+2026-06-08T01:39:58Z proof-url-recovery ok
+2026-06-08T01:39:58Z proof-rescue ok
+2026-06-08T01:39:58Z social-rescue-pack ok
+2026-06-08T01:39:58Z zero-signup-rescue ok
+2026-06-08T01:39:58Z public-channel-attempts ok
+2026-06-08T01:39:58Z login-unlock-board ok
+2026-06-08T01:39:58Z proof-intake ok
+2026-06-08T01:39:58Z proof-closeout ok
+2026-06-08T01:39:58Z posting-cockpit ok
+2026-06-08T01:39:58Z worker-wake ok
+2026-06-08T01:39:58Z escalation-board ok
+2026-06-08T01:39:58Z objective-audit ok
+2026-06-08T01:39:58Z evidence-board ok
+2026-06-08T01:39:58Z operator-push ok
+2026-06-08T01:39:58Z real-action-bridge ok
+2026-06-08T01:39:58Z one-click-share ok
+2026-06-08T01:39:59Z public-outreach-targets ok
+2026-06-08T01:39:59Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T01:54:59.153Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 45
+Due now: 1
+Overdue actions (60+ min): 44
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 45
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T01:54:59Z runner ok
+2026-06-08T01:54:59Z pulse ok
+2026-06-08T01:54:59Z dispatch ok
+2026-06-08T01:55:03Z link-sentinel ok
+2026-06-08T01:55:05Z paid-traffic-guard ok
+2026-06-08T01:55:10Z live-ad-qa ok
+2026-06-08T01:55:13Z ad-platform-audit ok
+2026-06-08T01:55:13Z ad-ops-links ok
+2026-06-08T01:55:13Z paid-dashboard-checks ok
+2026-06-08T01:55:13Z paid-ad-triage ok
+2026-06-08T01:55:13Z paid-no-click-rescue ok
+2026-06-08T01:55:15Z conversion-guard ok
+2026-06-08T01:55:16Z referral-activity ok
+2026-06-08T01:55:16Z signup-conversion-audit ok
+2026-06-08T01:55:16Z next-hour ok
+2026-06-08T01:55:17Z phone-action-sheet ok
+2026-06-08T01:55:17Z top-six-mobile ok
+2026-06-08T01:55:17Z warm-contact-sprint ok
+2026-06-08T01:55:17Z warm-followup-monitor ok
+2026-06-08T01:55:17Z response-kit ok
+2026-06-08T01:55:17Z action-launcher ok
+2026-06-08T01:55:17Z first-human-actions ok
+2026-06-08T01:55:17Z first-send-bridge ok
+2026-06-08T01:55:17Z hot-proof-ping ok
+2026-06-08T01:55:17Z posting-sprint ok
+2026-06-08T01:55:17Z session-recovery ok
+2026-06-08T01:55:17Z proof-stall monitor ok
+2026-06-08T01:55:17Z proof-sla ok
+2026-06-08T01:55:17Z proof-audit ok
+2026-06-08T01:55:17Z proof-url-recovery ok
+2026-06-08T01:55:17Z proof-rescue ok
+2026-06-08T01:55:17Z social-rescue-pack ok
+2026-06-08T01:55:17Z zero-signup-rescue ok
+2026-06-08T01:55:17Z public-channel-attempts ok
+2026-06-08T01:55:17Z login-unlock-board ok
+2026-06-08T01:55:17Z proof-intake ok
+2026-06-08T01:55:17Z proof-closeout ok
+2026-06-08T01:55:17Z posting-cockpit ok
+2026-06-08T01:55:17Z worker-wake ok
+2026-06-08T01:55:17Z escalation-board ok
+2026-06-08T01:55:17Z objective-audit ok
+2026-06-08T01:55:17Z evidence-board ok
+2026-06-08T01:55:17Z operator-push ok
+2026-06-08T01:55:17Z real-action-bridge ok
+2026-06-08T01:55:17Z one-click-share ok
+2026-06-08T01:55:17Z public-outreach-targets ok
+2026-06-08T01:55:17Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T02:10:18.302Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 46
+Due now: 1
+Overdue actions (60+ min): 45
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 46
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T02:10:18Z runner ok
+2026-06-08T02:10:18Z pulse ok
+2026-06-08T02:10:18Z dispatch ok
+2026-06-08T02:10:21Z link-sentinel ok
+2026-06-08T02:10:24Z paid-traffic-guard ok
+2026-06-08T02:10:28Z live-ad-qa ok
+2026-06-08T02:10:32Z ad-platform-audit ok
+2026-06-08T02:10:32Z ad-ops-links ok
+2026-06-08T02:10:32Z paid-dashboard-checks ok
+2026-06-08T02:10:32Z paid-ad-triage ok
+2026-06-08T02:10:32Z paid-no-click-rescue ok
+2026-06-08T02:10:34Z conversion-guard ok
+2026-06-08T02:10:34Z referral-activity ok
+2026-06-08T02:10:35Z signup-conversion-audit ok
+2026-06-08T02:10:35Z next-hour ok
+2026-06-08T02:10:35Z phone-action-sheet ok
+2026-06-08T02:10:35Z top-six-mobile ok
+2026-06-08T02:10:35Z warm-contact-sprint ok
+2026-06-08T02:10:35Z warm-followup-monitor ok
+2026-06-08T02:10:35Z response-kit ok
+2026-06-08T02:10:35Z action-launcher ok
+2026-06-08T02:10:35Z first-human-actions ok
+2026-06-08T02:10:35Z first-send-bridge ok
+2026-06-08T02:10:35Z hot-proof-ping ok
+2026-06-08T02:10:35Z posting-sprint ok
+2026-06-08T02:10:35Z session-recovery ok
+2026-06-08T02:10:35Z proof-stall monitor ok
+2026-06-08T02:10:35Z proof-sla ok
+2026-06-08T02:10:35Z proof-audit ok
+2026-06-08T02:10:35Z proof-url-recovery ok
+2026-06-08T02:10:35Z proof-rescue ok
+2026-06-08T02:10:35Z social-rescue-pack ok
+2026-06-08T02:10:35Z zero-signup-rescue ok
+2026-06-08T02:10:35Z public-channel-attempts ok
+2026-06-08T02:10:36Z login-unlock-board ok
+2026-06-08T02:10:36Z proof-intake ok
+2026-06-08T02:10:36Z proof-closeout ok
+2026-06-08T02:10:36Z posting-cockpit ok
+2026-06-08T02:10:36Z worker-wake ok
+2026-06-08T02:10:36Z escalation-board ok
+2026-06-08T02:10:36Z objective-audit ok
+2026-06-08T02:10:36Z evidence-board ok
+2026-06-08T02:10:36Z operator-push ok
+2026-06-08T02:10:36Z real-action-bridge ok
+2026-06-08T02:10:36Z one-click-share ok
+2026-06-08T02:10:36Z public-outreach-targets ok
+2026-06-08T02:10:36Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T02:25:36.571Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 46
+Due now: 1
+Overdue actions (60+ min): 45
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 46
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T02:25:36Z runner ok
+2026-06-08T02:25:36Z pulse ok
+2026-06-08T02:25:36Z dispatch ok
+2026-06-08T02:25:40Z link-sentinel ok
+2026-06-08T02:25:42Z paid-traffic-guard ok
+2026-06-08T02:25:46Z live-ad-qa ok
+2026-06-08T02:25:50Z ad-platform-audit ok
+2026-06-08T02:25:50Z ad-ops-links ok
+2026-06-08T02:25:50Z paid-dashboard-checks ok
+2026-06-08T02:25:50Z paid-ad-triage ok
+2026-06-08T02:25:50Z paid-no-click-rescue ok
+2026-06-08T02:25:52Z conversion-guard ok
+2026-06-08T02:25:53Z referral-activity ok
+2026-06-08T02:25:53Z signup-conversion-audit ok
+2026-06-08T02:25:53Z next-hour ok
+2026-06-08T02:25:53Z phone-action-sheet ok
+2026-06-08T02:25:53Z top-six-mobile ok
+2026-06-08T02:25:53Z warm-contact-sprint ok
+2026-06-08T02:25:54Z warm-followup-monitor ok
+2026-06-08T02:25:54Z response-kit ok
+2026-06-08T02:25:54Z action-launcher ok
+2026-06-08T02:25:54Z first-human-actions ok
+2026-06-08T02:25:54Z first-send-bridge ok
+2026-06-08T02:25:54Z hot-proof-ping ok
+2026-06-08T02:25:54Z posting-sprint ok
+2026-06-08T02:25:54Z session-recovery ok
+2026-06-08T02:25:54Z proof-stall monitor ok
+2026-06-08T02:25:54Z proof-sla ok
+2026-06-08T02:25:54Z proof-audit ok
+2026-06-08T02:25:54Z proof-url-recovery ok
+2026-06-08T02:25:54Z proof-rescue ok
+2026-06-08T02:25:54Z social-rescue-pack ok
+2026-06-08T02:25:54Z zero-signup-rescue ok
+2026-06-08T02:25:54Z public-channel-attempts ok
+2026-06-08T02:25:54Z login-unlock-board ok
+2026-06-08T02:25:54Z proof-intake ok
+2026-06-08T02:25:54Z proof-closeout ok
+2026-06-08T02:25:54Z posting-cockpit ok
+2026-06-08T02:25:54Z worker-wake ok
+2026-06-08T02:25:54Z escalation-board ok
+2026-06-08T02:25:54Z objective-audit ok
+2026-06-08T02:25:54Z evidence-board ok
+2026-06-08T02:25:54Z operator-push ok
+2026-06-08T02:25:54Z real-action-bridge ok
+2026-06-08T02:25:55Z one-click-share ok
+2026-06-08T02:25:55Z public-outreach-targets ok
+2026-06-08T02:25:55Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T02:40:55.134Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 46
+Due now: 1
+Overdue actions (60+ min): 45
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 46
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T02:40:55Z runner ok
+2026-06-08T02:40:55Z pulse ok
+2026-06-08T02:40:55Z dispatch ok
+2026-06-08T02:40:59Z link-sentinel ok
+2026-06-08T02:41:01Z paid-traffic-guard ok
+2026-06-08T02:41:05Z live-ad-qa ok
+2026-06-08T02:41:09Z ad-platform-audit ok
+2026-06-08T02:41:09Z ad-ops-links ok
+2026-06-08T02:41:09Z paid-dashboard-checks ok
+2026-06-08T02:41:09Z paid-ad-triage ok
+2026-06-08T02:41:09Z paid-no-click-rescue ok
+2026-06-08T02:41:11Z conversion-guard ok
+2026-06-08T02:41:12Z referral-activity ok
+2026-06-08T02:41:12Z signup-conversion-audit ok
+2026-06-08T02:41:12Z next-hour ok
+2026-06-08T02:41:12Z phone-action-sheet ok
+2026-06-08T02:41:12Z top-six-mobile ok
+2026-06-08T02:41:12Z warm-contact-sprint ok
+2026-06-08T02:41:13Z warm-followup-monitor ok
+2026-06-08T02:41:13Z response-kit ok
+2026-06-08T02:41:13Z action-launcher ok
+2026-06-08T02:41:13Z first-human-actions ok
+2026-06-08T02:41:13Z first-send-bridge ok
+2026-06-08T02:41:13Z hot-proof-ping ok
+2026-06-08T02:41:13Z posting-sprint ok
+2026-06-08T02:41:13Z session-recovery ok
+2026-06-08T02:41:13Z proof-stall monitor ok
+2026-06-08T02:41:13Z proof-sla ok
+2026-06-08T02:41:13Z proof-audit ok
+2026-06-08T02:41:13Z proof-url-recovery ok
+2026-06-08T02:41:13Z proof-rescue ok
+2026-06-08T02:41:13Z social-rescue-pack ok
+2026-06-08T02:41:13Z zero-signup-rescue ok
+2026-06-08T02:41:13Z public-channel-attempts ok
+2026-06-08T02:41:13Z login-unlock-board ok
+2026-06-08T02:41:13Z proof-intake ok
+2026-06-08T02:41:13Z proof-closeout ok
+2026-06-08T02:41:13Z posting-cockpit ok
+2026-06-08T02:41:13Z worker-wake ok
+2026-06-08T02:41:13Z escalation-board ok
+2026-06-08T02:41:13Z objective-audit ok
+2026-06-08T02:41:13Z evidence-board ok
+2026-06-08T02:41:13Z operator-push ok
+2026-06-08T02:41:13Z real-action-bridge ok
+2026-06-08T02:41:13Z one-click-share ok
+2026-06-08T02:41:13Z public-outreach-targets ok
+2026-06-08T02:41:13Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T02:56:14.055Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 46
+Due now: 1
+Overdue actions (60+ min): 45
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 46
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T02:56:14Z runner ok
+2026-06-08T02:56:14Z pulse ok
+2026-06-08T02:56:14Z dispatch ok
+2026-06-08T02:56:18Z link-sentinel ok
+2026-06-08T02:56:20Z paid-traffic-guard ok
+2026-06-08T02:56:24Z live-ad-qa ok
+2026-06-08T02:56:28Z ad-platform-audit ok
+2026-06-08T02:56:28Z ad-ops-links ok
+2026-06-08T02:56:28Z paid-dashboard-checks ok
+2026-06-08T02:56:28Z paid-ad-triage ok
+2026-06-08T02:56:28Z paid-no-click-rescue ok
+2026-06-08T02:56:30Z conversion-guard ok
+2026-06-08T02:56:31Z referral-activity ok
+2026-06-08T02:56:31Z signup-conversion-audit ok
+2026-06-08T02:56:31Z next-hour ok
+2026-06-08T02:56:31Z phone-action-sheet ok
+2026-06-08T02:56:31Z top-six-mobile ok
+2026-06-08T02:56:31Z warm-contact-sprint ok
+2026-06-08T02:56:32Z warm-followup-monitor ok
+2026-06-08T02:56:32Z response-kit ok
+2026-06-08T02:56:32Z action-launcher ok
+2026-06-08T02:56:32Z first-human-actions ok
+2026-06-08T02:56:32Z first-send-bridge ok
+2026-06-08T02:56:32Z hot-proof-ping ok
+2026-06-08T02:56:32Z posting-sprint ok
+2026-06-08T02:56:32Z session-recovery ok
+2026-06-08T02:56:32Z proof-stall monitor ok
+2026-06-08T02:56:32Z proof-sla ok
+2026-06-08T02:56:32Z proof-audit ok
+2026-06-08T02:56:32Z proof-url-recovery ok
+2026-06-08T02:56:32Z proof-rescue ok
+2026-06-08T02:56:32Z social-rescue-pack ok
+2026-06-08T02:56:32Z zero-signup-rescue ok
+2026-06-08T02:56:32Z public-channel-attempts ok
+2026-06-08T02:56:32Z login-unlock-board ok
+2026-06-08T02:56:32Z proof-intake ok
+2026-06-08T02:56:32Z proof-closeout ok
+2026-06-08T02:56:32Z posting-cockpit ok
+2026-06-08T02:56:32Z worker-wake ok
+2026-06-08T02:56:32Z escalation-board ok
+2026-06-08T02:56:32Z objective-audit ok
+2026-06-08T02:56:32Z evidence-board ok
+2026-06-08T02:56:32Z operator-push ok
+2026-06-08T02:56:32Z real-action-bridge ok
+2026-06-08T02:56:32Z one-click-share ok
+2026-06-08T02:56:32Z public-outreach-targets ok
+2026-06-08T02:56:32Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T03:11:33.046Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 47
+Due now: 1
+Overdue actions (60+ min): 46
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 47
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T03:11:33Z runner ok
+2026-06-08T03:11:33Z pulse ok
+2026-06-08T03:11:33Z dispatch ok
+2026-06-08T03:11:36Z link-sentinel ok
+2026-06-08T03:11:39Z paid-traffic-guard ok
+2026-06-08T03:11:43Z live-ad-qa ok
+2026-06-08T03:11:47Z ad-platform-audit ok
+2026-06-08T03:11:47Z ad-ops-links ok
+2026-06-08T03:11:47Z paid-dashboard-checks ok
+2026-06-08T03:11:47Z paid-ad-triage ok
+2026-06-08T03:11:47Z paid-no-click-rescue ok
+2026-06-08T03:11:49Z conversion-guard ok
+2026-06-08T03:11:49Z referral-activity ok
+2026-06-08T03:11:50Z signup-conversion-audit ok
+2026-06-08T03:11:50Z next-hour ok
+2026-06-08T03:11:50Z phone-action-sheet ok
+2026-06-08T03:11:50Z top-six-mobile ok
+2026-06-08T03:11:50Z warm-contact-sprint ok
+2026-06-08T03:11:50Z warm-followup-monitor ok
+2026-06-08T03:11:50Z response-kit ok
+2026-06-08T03:11:50Z action-launcher ok
+2026-06-08T03:11:50Z first-human-actions ok
+2026-06-08T03:11:50Z first-send-bridge ok
+2026-06-08T03:11:50Z hot-proof-ping ok
+2026-06-08T03:11:50Z posting-sprint ok
+2026-06-08T03:11:50Z session-recovery ok
+2026-06-08T03:11:50Z proof-stall monitor ok
+2026-06-08T03:11:50Z proof-sla ok
+2026-06-08T03:11:50Z proof-audit ok
+2026-06-08T03:11:50Z proof-url-recovery ok
+2026-06-08T03:11:50Z proof-rescue ok
+2026-06-08T03:11:50Z social-rescue-pack ok
+2026-06-08T03:11:50Z zero-signup-rescue ok
+2026-06-08T03:11:50Z public-channel-attempts ok
+2026-06-08T03:11:51Z login-unlock-board ok
+2026-06-08T03:11:51Z proof-intake ok
+2026-06-08T03:11:51Z proof-closeout ok
+2026-06-08T03:11:51Z posting-cockpit ok
+2026-06-08T03:11:51Z worker-wake ok
+2026-06-08T03:11:51Z escalation-board ok
+2026-06-08T03:11:51Z objective-audit ok
+2026-06-08T03:11:51Z evidence-board ok
+2026-06-08T03:11:51Z operator-push ok
+2026-06-08T03:11:51Z real-action-bridge ok
+2026-06-08T03:11:51Z one-click-share ok
+2026-06-08T03:11:51Z public-outreach-targets ok
+2026-06-08T03:11:51Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T03:26:51.582Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 47
+Due now: 1
+Overdue actions (60+ min): 46
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 47
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T03:26:51Z runner ok
+2026-06-08T03:26:51Z pulse ok
+2026-06-08T03:26:51Z dispatch ok
+2026-06-08T03:26:55Z link-sentinel ok
+2026-06-08T03:26:57Z paid-traffic-guard ok
+2026-06-08T03:27:01Z live-ad-qa ok
+2026-06-08T03:27:05Z ad-platform-audit ok
+2026-06-08T03:27:05Z ad-ops-links ok
+2026-06-08T03:27:05Z paid-dashboard-checks ok
+2026-06-08T03:27:05Z paid-ad-triage ok
+2026-06-08T03:27:05Z paid-no-click-rescue ok
+2026-06-08T03:27:07Z conversion-guard ok
+2026-06-08T03:27:08Z referral-activity ok
+2026-06-08T03:27:08Z signup-conversion-audit ok
+2026-06-08T03:27:08Z next-hour ok
+2026-06-08T03:27:08Z phone-action-sheet ok
+2026-06-08T03:27:08Z top-six-mobile ok
+2026-06-08T03:27:08Z warm-contact-sprint ok
+2026-06-08T03:27:08Z warm-followup-monitor ok
+2026-06-08T03:27:08Z response-kit ok
+2026-06-08T03:27:08Z action-launcher ok
+2026-06-08T03:27:08Z first-human-actions ok
+2026-06-08T03:27:08Z first-send-bridge ok
+2026-06-08T03:27:08Z hot-proof-ping ok
+2026-06-08T03:27:09Z posting-sprint ok
+2026-06-08T03:27:09Z session-recovery ok
+2026-06-08T03:27:09Z proof-stall monitor ok
+2026-06-08T03:27:09Z proof-sla ok
+2026-06-08T03:27:09Z proof-audit ok
+2026-06-08T03:27:09Z proof-url-recovery ok
+2026-06-08T03:27:09Z proof-rescue ok
+2026-06-08T03:27:09Z social-rescue-pack ok
+2026-06-08T03:27:09Z zero-signup-rescue ok
+2026-06-08T03:27:09Z public-channel-attempts ok
+2026-06-08T03:27:09Z login-unlock-board ok
+2026-06-08T03:27:09Z proof-intake ok
+2026-06-08T03:27:09Z proof-closeout ok
+2026-06-08T03:27:09Z posting-cockpit ok
+2026-06-08T03:27:09Z worker-wake ok
+2026-06-08T03:27:09Z escalation-board ok
+2026-06-08T03:27:09Z objective-audit ok
+2026-06-08T03:27:09Z evidence-board ok
+2026-06-08T03:27:09Z operator-push ok
+2026-06-08T03:27:09Z real-action-bridge ok
+2026-06-08T03:27:09Z one-click-share ok
+2026-06-08T03:27:09Z public-outreach-targets ok
+2026-06-08T03:27:09Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T03:42:09.842Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 47
+Due now: 1
+Overdue actions (60+ min): 46
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 47
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T03:42:09Z runner ok
+2026-06-08T03:42:09Z pulse ok
+2026-06-08T03:42:09Z dispatch ok
+2026-06-08T03:42:13Z link-sentinel ok
+2026-06-08T03:42:16Z paid-traffic-guard ok
+2026-06-08T03:42:20Z live-ad-qa ok
+2026-06-08T03:42:24Z ad-platform-audit ok
+2026-06-08T03:42:24Z ad-ops-links ok
+2026-06-08T03:42:24Z paid-dashboard-checks ok
+2026-06-08T03:42:24Z paid-ad-triage ok
+2026-06-08T03:42:24Z paid-no-click-rescue ok
+2026-06-08T03:42:26Z conversion-guard ok
+2026-06-08T03:42:26Z referral-activity ok
+2026-06-08T03:42:27Z signup-conversion-audit ok
+2026-06-08T03:42:27Z next-hour ok
+2026-06-08T03:42:27Z phone-action-sheet ok
+2026-06-08T03:42:27Z top-six-mobile ok
+2026-06-08T03:42:27Z warm-contact-sprint ok
+2026-06-08T03:42:27Z warm-followup-monitor ok
+2026-06-08T03:42:27Z response-kit ok
+2026-06-08T03:42:27Z action-launcher ok
+2026-06-08T03:42:27Z first-human-actions ok
+2026-06-08T03:42:27Z first-send-bridge ok
+2026-06-08T03:42:27Z hot-proof-ping ok
+2026-06-08T03:42:27Z posting-sprint ok
+2026-06-08T03:42:27Z session-recovery ok
+2026-06-08T03:42:27Z proof-stall monitor ok
+2026-06-08T03:42:27Z proof-sla ok
+2026-06-08T03:42:27Z proof-audit ok
+2026-06-08T03:42:27Z proof-url-recovery ok
+2026-06-08T03:42:27Z proof-rescue ok
+2026-06-08T03:42:27Z social-rescue-pack ok
+2026-06-08T03:42:27Z zero-signup-rescue ok
+2026-06-08T03:42:27Z public-channel-attempts ok
+2026-06-08T03:42:27Z login-unlock-board ok
+2026-06-08T03:42:27Z proof-intake ok
+2026-06-08T03:42:27Z proof-closeout ok
+2026-06-08T03:42:28Z posting-cockpit ok
+2026-06-08T03:42:28Z worker-wake ok
+2026-06-08T03:42:28Z escalation-board ok
+2026-06-08T03:42:28Z objective-audit ok
+2026-06-08T03:42:28Z evidence-board ok
+2026-06-08T03:42:28Z operator-push ok
+2026-06-08T03:42:28Z real-action-bridge ok
+2026-06-08T03:42:28Z one-click-share ok
+2026-06-08T03:42:28Z public-outreach-targets ok
+2026-06-08T03:42:28Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T03:57:28.543Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 47
+Due now: 1
+Overdue actions (60+ min): 46
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 30
+Logged proof rows: 49
+Due rows still needing proof: 47
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T03:57:28Z runner ok
+2026-06-08T03:57:28Z pulse ok
+2026-06-08T03:57:28Z dispatch ok
+2026-06-08T03:57:32Z link-sentinel ok
+2026-06-08T03:57:34Z paid-traffic-guard ok
+2026-06-08T03:57:39Z live-ad-qa ok
+2026-06-08T03:57:42Z ad-platform-audit ok
+2026-06-08T03:57:42Z ad-ops-links ok
+2026-06-08T03:57:42Z paid-dashboard-checks ok
+2026-06-08T03:57:42Z paid-ad-triage ok
+2026-06-08T03:57:43Z paid-no-click-rescue ok
+2026-06-08T03:57:44Z conversion-guard ok
+2026-06-08T03:57:45Z referral-activity ok
+2026-06-08T03:57:45Z signup-conversion-audit ok
+2026-06-08T03:57:45Z next-hour ok
+2026-06-08T03:57:45Z phone-action-sheet ok
+2026-06-08T03:57:45Z top-six-mobile ok
+2026-06-08T03:57:45Z warm-contact-sprint ok
+2026-06-08T03:57:45Z warm-followup-monitor ok
+2026-06-08T03:57:46Z response-kit ok
+2026-06-08T03:57:46Z action-launcher ok
+2026-06-08T03:57:46Z first-human-actions ok
+2026-06-08T03:57:46Z first-send-bridge ok
+2026-06-08T03:57:46Z hot-proof-ping ok
+2026-06-08T03:57:46Z posting-sprint ok
+2026-06-08T03:57:46Z session-recovery ok
+2026-06-08T03:57:46Z proof-stall monitor ok
+2026-06-08T03:57:46Z proof-sla ok
+2026-06-08T03:57:46Z proof-audit ok
+2026-06-08T03:57:46Z proof-url-recovery ok
+2026-06-08T03:57:46Z proof-rescue ok
+2026-06-08T03:57:46Z social-rescue-pack ok
+2026-06-08T03:57:46Z zero-signup-rescue ok
+2026-06-08T03:57:46Z public-channel-attempts ok
+2026-06-08T03:57:46Z login-unlock-board ok
+2026-06-08T03:57:46Z proof-intake ok
+2026-06-08T03:57:46Z proof-closeout ok
+2026-06-08T03:57:46Z posting-cockpit ok
+2026-06-08T03:57:46Z worker-wake ok
+2026-06-08T03:57:46Z escalation-board ok
+2026-06-08T03:57:46Z objective-audit ok
+2026-06-08T03:57:46Z evidence-board ok
+2026-06-08T03:57:46Z operator-push ok
+2026-06-08T03:57:46Z real-action-bridge ok
+2026-06-08T03:57:46Z one-click-share ok
+2026-06-08T03:57:46Z public-outreach-targets ok
+2026-06-08T03:57:46Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T04:12:47.093Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 48
+Due now: 1
+Overdue actions (60+ min): 47
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 48
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T04:12:47Z runner ok
+2026-06-08T04:12:47Z pulse ok
+2026-06-08T04:12:47Z dispatch ok
+2026-06-08T04:12:50Z link-sentinel ok
+2026-06-08T04:12:53Z paid-traffic-guard ok
+2026-06-08T04:12:56Z live-ad-qa ok
+2026-06-08T04:13:00Z ad-platform-audit ok
+2026-06-08T04:13:00Z ad-ops-links ok
+2026-06-08T04:13:00Z paid-dashboard-checks ok
+2026-06-08T04:13:00Z paid-ad-triage ok
+2026-06-08T04:13:00Z paid-no-click-rescue ok
+2026-06-08T04:13:02Z conversion-guard ok
+2026-06-08T04:13:03Z referral-activity ok
+2026-06-08T04:13:03Z signup-conversion-audit ok
+2026-06-08T04:13:03Z next-hour ok
+2026-06-08T04:13:03Z phone-action-sheet ok
+2026-06-08T04:13:03Z top-six-mobile ok
+2026-06-08T04:13:03Z warm-contact-sprint ok
+2026-06-08T04:13:03Z warm-followup-monitor ok
+2026-06-08T04:13:04Z response-kit ok
+2026-06-08T04:13:04Z action-launcher ok
+2026-06-08T04:13:04Z first-human-actions ok
+2026-06-08T04:13:04Z first-send-bridge ok
+2026-06-08T04:13:04Z hot-proof-ping ok
+2026-06-08T04:13:04Z posting-sprint ok
+2026-06-08T04:13:04Z session-recovery ok
+2026-06-08T04:13:04Z proof-stall monitor ok
+2026-06-08T04:13:04Z proof-sla ok
+2026-06-08T04:13:04Z proof-audit ok
+2026-06-08T04:13:04Z proof-url-recovery ok
+2026-06-08T04:13:04Z proof-rescue ok
+2026-06-08T04:13:04Z social-rescue-pack ok
+2026-06-08T04:13:04Z zero-signup-rescue ok
+2026-06-08T04:13:04Z public-channel-attempts ok
+2026-06-08T04:13:04Z login-unlock-board ok
+2026-06-08T04:13:04Z proof-intake ok
+2026-06-08T04:13:04Z proof-closeout ok
+2026-06-08T04:13:04Z posting-cockpit ok
+2026-06-08T04:13:04Z worker-wake ok
+2026-06-08T04:13:04Z escalation-board ok
+2026-06-08T04:13:04Z objective-audit ok
+2026-06-08T04:13:04Z evidence-board ok
+2026-06-08T04:13:04Z operator-push ok
+2026-06-08T04:13:04Z real-action-bridge ok
+2026-06-08T04:13:04Z one-click-share ok
+2026-06-08T04:13:05Z public-outreach-targets ok
+2026-06-08T04:13:05Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T04:28:05.220Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 48
+Due now: 1
+Overdue actions (60+ min): 47
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 48
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T04:28:05Z runner ok
+2026-06-08T04:28:05Z pulse ok
+2026-06-08T04:28:05Z dispatch ok
+2026-06-08T04:28:08Z link-sentinel ok
+2026-06-08T04:28:11Z paid-traffic-guard ok
+2026-06-08T04:28:15Z live-ad-qa ok
+2026-06-08T04:28:18Z ad-platform-audit ok
+2026-06-08T04:28:18Z ad-ops-links ok
+2026-06-08T04:28:18Z paid-dashboard-checks ok
+2026-06-08T04:28:18Z paid-ad-triage ok
+2026-06-08T04:28:18Z paid-no-click-rescue ok
+2026-06-08T04:28:20Z conversion-guard ok
+2026-06-08T04:28:21Z referral-activity ok
+2026-06-08T04:28:21Z signup-conversion-audit ok
+2026-06-08T04:28:21Z next-hour ok
+2026-06-08T04:28:21Z phone-action-sheet ok
+2026-06-08T04:28:21Z top-six-mobile ok
+2026-06-08T04:28:21Z warm-contact-sprint ok
+2026-06-08T04:28:21Z warm-followup-monitor ok
+2026-06-08T04:28:21Z response-kit ok
+2026-06-08T04:28:21Z action-launcher ok
+2026-06-08T04:28:22Z first-human-actions ok
+2026-06-08T04:28:22Z first-send-bridge ok
+2026-06-08T04:28:22Z hot-proof-ping ok
+2026-06-08T04:28:22Z posting-sprint ok
+2026-06-08T04:28:22Z session-recovery ok
+2026-06-08T04:28:22Z proof-stall monitor ok
+2026-06-08T04:28:22Z proof-sla ok
+2026-06-08T04:28:22Z proof-audit ok
+2026-06-08T04:28:22Z proof-url-recovery ok
+2026-06-08T04:28:22Z proof-rescue ok
+2026-06-08T04:28:22Z social-rescue-pack ok
+2026-06-08T04:28:22Z zero-signup-rescue ok
+2026-06-08T04:28:22Z public-channel-attempts ok
+2026-06-08T04:28:22Z login-unlock-board ok
+2026-06-08T04:28:22Z proof-intake ok
+2026-06-08T04:28:22Z proof-closeout ok
+2026-06-08T04:28:22Z posting-cockpit ok
+2026-06-08T04:28:22Z worker-wake ok
+2026-06-08T04:28:22Z escalation-board ok
+2026-06-08T04:28:22Z objective-audit ok
+2026-06-08T04:28:22Z evidence-board ok
+2026-06-08T04:28:22Z operator-push ok
+2026-06-08T04:28:22Z real-action-bridge ok
+2026-06-08T04:28:22Z one-click-share ok
+2026-06-08T04:28:22Z public-outreach-targets ok
+2026-06-08T04:28:22Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T04:43:22.906Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 48
+Due now: 1
+Overdue actions (60+ min): 47
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 48
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T04:43:22Z runner ok
+2026-06-08T04:43:22Z pulse ok
+2026-06-08T04:43:23Z dispatch ok
+2026-06-08T04:43:26Z link-sentinel ok
+2026-06-08T04:43:28Z paid-traffic-guard ok
+2026-06-08T04:43:33Z live-ad-qa ok
+2026-06-08T04:43:37Z ad-platform-audit ok
+2026-06-08T04:43:37Z ad-ops-links ok
+2026-06-08T04:43:37Z paid-dashboard-checks ok
+2026-06-08T04:43:37Z paid-ad-triage ok
+2026-06-08T04:43:37Z paid-no-click-rescue ok
+2026-06-08T04:43:39Z conversion-guard ok
+2026-06-08T04:43:39Z referral-activity ok
+2026-06-08T04:43:40Z signup-conversion-audit ok
+2026-06-08T04:43:40Z next-hour ok
+2026-06-08T04:43:40Z phone-action-sheet ok
+2026-06-08T04:43:40Z top-six-mobile ok
+2026-06-08T04:43:40Z warm-contact-sprint ok
+2026-06-08T04:43:40Z warm-followup-monitor ok
+2026-06-08T04:43:40Z response-kit ok
+2026-06-08T04:43:40Z action-launcher ok
+2026-06-08T04:43:40Z first-human-actions ok
+2026-06-08T04:43:40Z first-send-bridge ok
+2026-06-08T04:43:40Z hot-proof-ping ok
+2026-06-08T04:43:40Z posting-sprint ok
+2026-06-08T04:43:40Z session-recovery ok
+2026-06-08T04:43:40Z proof-stall monitor ok
+2026-06-08T04:43:40Z proof-sla ok
+2026-06-08T04:43:40Z proof-audit ok
+2026-06-08T04:43:40Z proof-url-recovery ok
+2026-06-08T04:43:40Z proof-rescue ok
+2026-06-08T04:43:40Z social-rescue-pack ok
+2026-06-08T04:43:40Z zero-signup-rescue ok
+2026-06-08T04:43:40Z public-channel-attempts ok
+2026-06-08T04:43:40Z login-unlock-board ok
+2026-06-08T04:43:40Z proof-intake ok
+2026-06-08T04:43:40Z proof-closeout ok
+2026-06-08T04:43:40Z posting-cockpit ok
+2026-06-08T04:43:40Z worker-wake ok
+2026-06-08T04:43:40Z escalation-board ok
+2026-06-08T04:43:41Z objective-audit ok
+2026-06-08T04:43:41Z evidence-board ok
+2026-06-08T04:43:41Z operator-push ok
+2026-06-08T04:43:41Z real-action-bridge ok
+2026-06-08T04:43:41Z one-click-share ok
+2026-06-08T04:43:41Z public-outreach-targets ok
+2026-06-08T04:43:41Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T04:58:41.346Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 48
+Due now: 1
+Overdue actions (60+ min): 47
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 48
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T04:58:41Z runner ok
+2026-06-08T04:58:41Z pulse ok
+2026-06-08T04:58:41Z dispatch ok
+2026-06-08T04:58:44Z link-sentinel ok
+2026-06-08T04:58:47Z paid-traffic-guard ok
+2026-06-08T04:58:51Z live-ad-qa ok
+2026-06-08T04:58:55Z ad-platform-audit ok
+2026-06-08T04:58:55Z ad-ops-links ok
+2026-06-08T04:58:55Z paid-dashboard-checks ok
+2026-06-08T04:58:55Z paid-ad-triage ok
+2026-06-08T04:58:55Z paid-no-click-rescue ok
+2026-06-08T04:58:57Z conversion-guard ok
+2026-06-08T04:58:58Z referral-activity ok
+2026-06-08T04:58:58Z signup-conversion-audit ok
+2026-06-08T04:58:58Z next-hour ok
+2026-06-08T04:58:58Z phone-action-sheet ok
+2026-06-08T04:58:58Z top-six-mobile ok
+2026-06-08T04:58:58Z warm-contact-sprint ok
+2026-06-08T04:58:58Z warm-followup-monitor ok
+2026-06-08T04:58:58Z response-kit ok
+2026-06-08T04:58:58Z action-launcher ok
+2026-06-08T04:58:58Z first-human-actions ok
+2026-06-08T04:58:58Z first-send-bridge ok
+2026-06-08T04:58:58Z hot-proof-ping ok
+2026-06-08T04:58:58Z posting-sprint ok
+2026-06-08T04:58:58Z session-recovery ok
+2026-06-08T04:58:58Z proof-stall monitor ok
+2026-06-08T04:58:58Z proof-sla ok
+2026-06-08T04:58:59Z proof-audit ok
+2026-06-08T04:58:59Z proof-url-recovery ok
+2026-06-08T04:58:59Z proof-rescue ok
+2026-06-08T04:58:59Z social-rescue-pack ok
+2026-06-08T04:58:59Z zero-signup-rescue ok
+2026-06-08T04:58:59Z public-channel-attempts ok
+2026-06-08T04:58:59Z login-unlock-board ok
+2026-06-08T04:58:59Z proof-intake ok
+2026-06-08T04:58:59Z proof-closeout ok
+2026-06-08T04:58:59Z posting-cockpit ok
+2026-06-08T04:58:59Z worker-wake ok
+2026-06-08T04:58:59Z escalation-board ok
+2026-06-08T04:58:59Z objective-audit ok
+2026-06-08T04:58:59Z evidence-board ok
+2026-06-08T04:58:59Z operator-push ok
+2026-06-08T04:58:59Z real-action-bridge ok
+2026-06-08T04:58:59Z one-click-share ok
+2026-06-08T04:58:59Z public-outreach-targets ok
+2026-06-08T04:58:59Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T05:13:59.738Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 49
+Due now: 1
+Overdue actions (60+ min): 48
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 49
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T05:13:59Z runner ok
+2026-06-08T05:13:59Z pulse ok
+2026-06-08T05:13:59Z dispatch ok
+2026-06-08T05:14:03Z link-sentinel ok
+2026-06-08T05:14:05Z paid-traffic-guard ok
+2026-06-08T05:14:09Z live-ad-qa ok
+2026-06-08T05:14:13Z ad-platform-audit ok
+2026-06-08T05:14:13Z ad-ops-links ok
+2026-06-08T05:14:13Z paid-dashboard-checks ok
+2026-06-08T05:14:13Z paid-ad-triage ok
+2026-06-08T05:14:13Z paid-no-click-rescue ok
+2026-06-08T05:14:15Z conversion-guard ok
+2026-06-08T05:14:15Z referral-activity ok
+2026-06-08T05:14:16Z signup-conversion-audit ok
+2026-06-08T05:14:16Z next-hour ok
+2026-06-08T05:14:16Z phone-action-sheet ok
+2026-06-08T05:14:16Z top-six-mobile ok
+2026-06-08T05:14:16Z warm-contact-sprint ok
+2026-06-08T05:14:16Z warm-followup-monitor ok
+2026-06-08T05:14:16Z response-kit ok
+2026-06-08T05:14:16Z action-launcher ok
+2026-06-08T05:14:16Z first-human-actions ok
+2026-06-08T05:14:16Z first-send-bridge ok
+2026-06-08T05:14:16Z hot-proof-ping ok
+2026-06-08T05:14:16Z posting-sprint ok
+2026-06-08T05:14:16Z session-recovery ok
+2026-06-08T05:14:16Z proof-stall monitor ok
+2026-06-08T05:14:17Z proof-sla ok
+2026-06-08T05:14:17Z proof-audit ok
+2026-06-08T05:14:17Z proof-url-recovery ok
+2026-06-08T05:14:17Z proof-rescue ok
+2026-06-08T05:14:17Z social-rescue-pack ok
+2026-06-08T05:14:17Z zero-signup-rescue ok
+2026-06-08T05:14:17Z public-channel-attempts ok
+2026-06-08T05:14:17Z login-unlock-board ok
+2026-06-08T05:14:17Z proof-intake ok
+2026-06-08T05:14:17Z proof-closeout ok
+2026-06-08T05:14:17Z posting-cockpit ok
+2026-06-08T05:14:17Z worker-wake ok
+2026-06-08T05:14:17Z escalation-board ok
+2026-06-08T05:14:17Z objective-audit ok
+2026-06-08T05:14:17Z evidence-board ok
+2026-06-08T05:14:17Z operator-push ok
+2026-06-08T05:14:17Z real-action-bridge ok
+2026-06-08T05:14:17Z one-click-share ok
+2026-06-08T05:14:17Z public-outreach-targets ok
+2026-06-08T05:14:17Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T05:29:17.838Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 49
+Due now: 1
+Overdue actions (60+ min): 48
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 49
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T05:29:17Z runner ok
+2026-06-08T05:29:17Z pulse ok
+2026-06-08T05:29:17Z dispatch ok
+2026-06-08T05:29:21Z link-sentinel ok
+2026-06-08T05:29:24Z paid-traffic-guard ok
+2026-06-08T05:29:28Z live-ad-qa ok
+2026-06-08T05:29:32Z ad-platform-audit ok
+2026-06-08T05:29:32Z ad-ops-links ok
+2026-06-08T05:29:32Z paid-dashboard-checks ok
+2026-06-08T05:29:32Z paid-ad-triage ok
+2026-06-08T05:29:32Z paid-no-click-rescue ok
+2026-06-08T05:29:34Z conversion-guard ok
+2026-06-08T05:29:34Z referral-activity ok
+2026-06-08T05:29:35Z signup-conversion-audit ok
+2026-06-08T05:29:35Z next-hour ok
+2026-06-08T05:29:35Z phone-action-sheet ok
+2026-06-08T05:29:35Z top-six-mobile ok
+2026-06-08T05:29:35Z warm-contact-sprint ok
+2026-06-08T05:29:35Z warm-followup-monitor ok
+2026-06-08T05:29:35Z response-kit ok
+2026-06-08T05:29:35Z action-launcher ok
+2026-06-08T05:29:35Z first-human-actions ok
+2026-06-08T05:29:35Z first-send-bridge ok
+2026-06-08T05:29:35Z hot-proof-ping ok
+2026-06-08T05:29:35Z posting-sprint ok
+2026-06-08T05:29:35Z session-recovery ok
+2026-06-08T05:29:35Z proof-stall monitor ok
+2026-06-08T05:29:35Z proof-sla ok
+2026-06-08T05:29:35Z proof-audit ok
+2026-06-08T05:29:35Z proof-url-recovery ok
+2026-06-08T05:29:35Z proof-rescue ok
+2026-06-08T05:29:35Z social-rescue-pack ok
+2026-06-08T05:29:35Z zero-signup-rescue ok
+2026-06-08T05:29:35Z public-channel-attempts ok
+2026-06-08T05:29:35Z login-unlock-board ok
+2026-06-08T05:29:35Z proof-intake ok
+2026-06-08T05:29:35Z proof-closeout ok
+2026-06-08T05:29:35Z posting-cockpit ok
+2026-06-08T05:29:35Z worker-wake ok
+2026-06-08T05:29:36Z escalation-board ok
+2026-06-08T05:29:36Z objective-audit ok
+2026-06-08T05:29:36Z evidence-board ok
+2026-06-08T05:29:36Z operator-push ok
+2026-06-08T05:29:36Z real-action-bridge ok
+2026-06-08T05:29:36Z one-click-share ok
+2026-06-08T05:29:36Z public-outreach-targets ok
+2026-06-08T05:29:36Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T05:44:36.369Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 49
+Due now: 1
+Overdue actions (60+ min): 48
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 49
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T05:44:36Z runner ok
+2026-06-08T05:44:36Z pulse ok
+2026-06-08T05:44:36Z dispatch ok
+2026-06-08T05:44:39Z link-sentinel ok
+2026-06-08T05:44:42Z paid-traffic-guard ok
+2026-06-08T05:44:47Z live-ad-qa ok
+2026-06-08T05:44:51Z ad-platform-audit ok
+2026-06-08T05:44:51Z ad-ops-links ok
+2026-06-08T05:44:51Z paid-dashboard-checks ok
+2026-06-08T05:44:51Z paid-ad-triage ok
+2026-06-08T05:44:51Z paid-no-click-rescue ok
+2026-06-08T05:44:53Z conversion-guard ok
+2026-06-08T05:44:53Z referral-activity ok
+2026-06-08T05:44:54Z signup-conversion-audit ok
+2026-06-08T05:44:54Z next-hour ok
+2026-06-08T05:44:54Z phone-action-sheet ok
+2026-06-08T05:44:54Z top-six-mobile ok
+2026-06-08T05:44:54Z warm-contact-sprint ok
+2026-06-08T05:44:54Z warm-followup-monitor ok
+2026-06-08T05:44:54Z response-kit ok
+2026-06-08T05:44:54Z action-launcher ok
+2026-06-08T05:44:54Z first-human-actions ok
+2026-06-08T05:44:54Z first-send-bridge ok
+2026-06-08T05:44:54Z hot-proof-ping ok
+2026-06-08T05:44:54Z posting-sprint ok
+2026-06-08T05:44:54Z session-recovery ok
+2026-06-08T05:44:54Z proof-stall monitor ok
+2026-06-08T05:44:54Z proof-sla ok
+2026-06-08T05:44:54Z proof-audit ok
+2026-06-08T05:44:54Z proof-url-recovery ok
+2026-06-08T05:44:54Z proof-rescue ok
+2026-06-08T05:44:54Z social-rescue-pack ok
+2026-06-08T05:44:55Z zero-signup-rescue ok
+2026-06-08T05:44:55Z public-channel-attempts ok
+2026-06-08T05:44:55Z login-unlock-board ok
+2026-06-08T05:44:55Z proof-intake ok
+2026-06-08T05:44:55Z proof-closeout ok
+2026-06-08T05:44:55Z posting-cockpit ok
+2026-06-08T05:44:55Z worker-wake ok
+2026-06-08T05:44:55Z escalation-board ok
+2026-06-08T05:44:55Z objective-audit ok
+2026-06-08T05:44:55Z evidence-board ok
+2026-06-08T05:44:55Z operator-push ok
+2026-06-08T05:44:55Z real-action-bridge ok
+2026-06-08T05:44:55Z one-click-share ok
+2026-06-08T05:44:55Z public-outreach-targets ok
+2026-06-08T05:44:55Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T05:59:55.680Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 49
+Due now: 1
+Overdue actions (60+ min): 48
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 49
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T05:59:55Z runner ok
+2026-06-08T05:59:55Z pulse ok
+2026-06-08T05:59:55Z dispatch ok
+2026-06-08T05:59:59Z link-sentinel ok
+2026-06-08T06:00:01Z paid-traffic-guard ok
+2026-06-08T06:00:05Z live-ad-qa ok
+2026-06-08T06:00:09Z ad-platform-audit ok
+2026-06-08T06:00:09Z ad-ops-links ok
+2026-06-08T06:00:09Z paid-dashboard-checks ok
+2026-06-08T06:00:10Z paid-ad-triage ok
+2026-06-08T06:00:10Z paid-no-click-rescue ok
+2026-06-08T06:00:11Z conversion-guard ok
+2026-06-08T06:00:12Z referral-activity ok
+2026-06-08T06:00:13Z signup-conversion-audit ok
+2026-06-08T06:00:13Z next-hour ok
+2026-06-08T06:00:13Z phone-action-sheet ok
+2026-06-08T06:00:13Z top-six-mobile ok
+2026-06-08T06:00:13Z warm-contact-sprint ok
+2026-06-08T06:00:13Z warm-followup-monitor ok
+2026-06-08T06:00:13Z response-kit ok
+2026-06-08T06:00:13Z action-launcher ok
+2026-06-08T06:00:13Z first-human-actions ok
+2026-06-08T06:00:13Z first-send-bridge ok
+2026-06-08T06:00:13Z hot-proof-ping ok
+2026-06-08T06:00:13Z posting-sprint ok
+2026-06-08T06:00:13Z session-recovery ok
+2026-06-08T06:00:13Z proof-stall monitor ok
+2026-06-08T06:00:13Z proof-sla ok
+2026-06-08T06:00:13Z proof-audit ok
+2026-06-08T06:00:13Z proof-url-recovery ok
+2026-06-08T06:00:13Z proof-rescue ok
+2026-06-08T06:00:13Z social-rescue-pack ok
+2026-06-08T06:00:13Z zero-signup-rescue ok
+2026-06-08T06:00:13Z public-channel-attempts ok
+2026-06-08T06:00:13Z login-unlock-board ok
+2026-06-08T06:00:13Z proof-intake ok
+2026-06-08T06:00:14Z proof-closeout ok
+2026-06-08T06:00:14Z posting-cockpit ok
+2026-06-08T06:00:14Z worker-wake ok
+2026-06-08T06:00:14Z escalation-board ok
+2026-06-08T06:00:14Z objective-audit ok
+2026-06-08T06:00:14Z evidence-board ok
+2026-06-08T06:00:14Z operator-push ok
+2026-06-08T06:00:14Z real-action-bridge ok
+2026-06-08T06:00:14Z one-click-share ok
+2026-06-08T06:00:14Z public-outreach-targets ok
+2026-06-08T06:00:14Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T06:15:14.483Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 50
+Due now: 1
+Overdue actions (60+ min): 49
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 50
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T06:15:14Z runner ok
+2026-06-08T06:15:14Z pulse ok
+2026-06-08T06:15:14Z dispatch ok
+2026-06-08T06:15:18Z link-sentinel ok
+2026-06-08T06:15:20Z paid-traffic-guard ok
+2026-06-08T06:15:24Z live-ad-qa ok
+2026-06-08T06:15:28Z ad-platform-audit ok
+2026-06-08T06:15:28Z ad-ops-links ok
+2026-06-08T06:15:29Z paid-dashboard-checks ok
+2026-06-08T06:15:29Z paid-ad-triage ok
+2026-06-08T06:15:29Z paid-no-click-rescue ok
+2026-06-08T06:15:30Z conversion-guard ok
+2026-06-08T06:15:31Z referral-activity ok
+2026-06-08T06:15:31Z signup-conversion-audit ok
+2026-06-08T06:15:32Z next-hour ok
+2026-06-08T06:15:32Z phone-action-sheet ok
+2026-06-08T06:15:32Z top-six-mobile ok
+2026-06-08T06:15:32Z warm-contact-sprint ok
+2026-06-08T06:15:32Z warm-followup-monitor ok
+2026-06-08T06:15:32Z response-kit ok
+2026-06-08T06:15:32Z action-launcher ok
+2026-06-08T06:15:32Z first-human-actions ok
+2026-06-08T06:15:32Z first-send-bridge ok
+2026-06-08T06:15:32Z hot-proof-ping ok
+2026-06-08T06:15:32Z posting-sprint ok
+2026-06-08T06:15:32Z session-recovery ok
+2026-06-08T06:15:32Z proof-stall monitor ok
+2026-06-08T06:15:32Z proof-sla ok
+2026-06-08T06:15:32Z proof-audit ok
+2026-06-08T06:15:32Z proof-url-recovery ok
+2026-06-08T06:15:32Z proof-rescue ok
+2026-06-08T06:15:32Z social-rescue-pack ok
+2026-06-08T06:15:32Z zero-signup-rescue ok
+2026-06-08T06:15:32Z public-channel-attempts ok
+2026-06-08T06:15:32Z login-unlock-board ok
+2026-06-08T06:15:32Z proof-intake ok
+2026-06-08T06:15:32Z proof-closeout ok
+2026-06-08T06:15:32Z posting-cockpit ok
+2026-06-08T06:15:32Z worker-wake ok
+2026-06-08T06:15:32Z escalation-board ok
+2026-06-08T06:15:32Z objective-audit ok
+2026-06-08T06:15:33Z evidence-board ok
+2026-06-08T06:15:33Z operator-push ok
+2026-06-08T06:15:33Z real-action-bridge ok
+2026-06-08T06:15:33Z one-click-share ok
+2026-06-08T06:15:33Z public-outreach-targets ok
+2026-06-08T06:15:33Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T06:30:33.308Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 50
+Due now: 1
+Overdue actions (60+ min): 49
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 50
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T06:30:33Z runner ok
+2026-06-08T06:30:33Z pulse ok
+2026-06-08T06:30:33Z dispatch ok
+2026-06-08T06:30:36Z link-sentinel ok
+2026-06-08T06:30:39Z paid-traffic-guard ok
+2026-06-08T06:30:44Z live-ad-qa ok
+2026-06-08T06:30:48Z ad-platform-audit ok
+2026-06-08T06:30:48Z ad-ops-links ok
+2026-06-08T06:30:48Z paid-dashboard-checks ok
+2026-06-08T06:30:48Z paid-ad-triage ok
+2026-06-08T06:30:48Z paid-no-click-rescue ok
+2026-06-08T06:30:50Z conversion-guard ok
+2026-06-08T06:30:51Z referral-activity ok
+2026-06-08T06:30:51Z signup-conversion-audit ok
+2026-06-08T06:30:51Z next-hour ok
+2026-06-08T06:30:51Z phone-action-sheet ok
+2026-06-08T06:30:51Z top-six-mobile ok
+2026-06-08T06:30:51Z warm-contact-sprint ok
+2026-06-08T06:30:51Z warm-followup-monitor ok
+2026-06-08T06:30:51Z response-kit ok
+2026-06-08T06:30:51Z action-launcher ok
+2026-06-08T06:30:51Z first-human-actions ok
+2026-06-08T06:30:51Z first-send-bridge ok
+2026-06-08T06:30:51Z hot-proof-ping ok
+2026-06-08T06:30:51Z posting-sprint ok
+2026-06-08T06:30:52Z session-recovery ok
+2026-06-08T06:30:52Z proof-stall monitor ok
+2026-06-08T06:30:52Z proof-sla ok
+2026-06-08T06:30:52Z proof-audit ok
+2026-06-08T06:30:52Z proof-url-recovery ok
+2026-06-08T06:30:52Z proof-rescue ok
+2026-06-08T06:30:52Z social-rescue-pack ok
+2026-06-08T06:30:52Z zero-signup-rescue ok
+2026-06-08T06:30:52Z public-channel-attempts ok
+2026-06-08T06:30:52Z login-unlock-board ok
+2026-06-08T06:30:52Z proof-intake ok
+2026-06-08T06:30:52Z proof-closeout ok
+2026-06-08T06:30:52Z posting-cockpit ok
+2026-06-08T06:30:52Z worker-wake ok
+2026-06-08T06:30:52Z escalation-board ok
+2026-06-08T06:30:52Z objective-audit ok
+2026-06-08T06:30:52Z evidence-board ok
+2026-06-08T06:30:52Z operator-push ok
+2026-06-08T06:30:52Z real-action-bridge ok
+2026-06-08T06:30:52Z one-click-share ok
+2026-06-08T06:30:52Z public-outreach-targets ok
+2026-06-08T06:30:52Z worker-launchers ok
+WorldCup26 campaign runner ready
+Generated: 2026-06-08T06:46:27.658Z
+Referral: 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB
+Due actions: 50
+Due now: 1
+Overdue actions (60+ min): 49
+Post-now rows: 16
+Upcoming actions (12h): 12
+Ready outbox rows: 31
+Logged proof rows: 49
+Due rows still needing proof: 50
+
+Active hot actions from worker wake board:
+Nano: WhatsApp personal - Send warm-contact invite to 10 football friends.
+Sienna: WhatsApp personal - Send warm-contact invite to 10 close contacts.
+Dexter: WhatsApp admins - Send warm-contact invite to football group admins.
+Memo: WhatsApp testers - Send warm-contact invite to 3 trusted testers.
+
+Dexter: Football groups - Ask approved group admin for permission; post group variant only if allowed
+Sienna: WhatsApp Status - Post story asset with video caption 1
+Memo: Ops check - Summarize Day 1: posts, replies, joins observed, next 5 actions
+Nano: WhatsApp personal - Send personal invite to warm contacts
+
+Outputs written to: /Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime
+2026-06-08T06:47:15Z runner ok
+2026-06-08T06:47:25Z pulse ok
+2026-06-08T06:48:19Z dispatch ok
+2026-06-08T06:48:31Z link-sentinel ok
+2026-06-08T06:48:42Z paid-traffic-guard ok
+2026-06-08T06:48:56Z live-ad-qa ok
+2026-06-08T06:49:09Z ad-platform-audit ok
+2026-06-08T06:49:18Z ad-ops-links ok
+2026-06-08T06:50:37Z paid-dashboard-checks ok
+2026-06-08T06:50:45Z paid-ad-triage ok
+2026-06-08T06:50:55Z paid-no-click-rescue ok
+2026-06-08T06:51:06Z conversion-guard ok
+2026-06-08T06:51:16Z referral-activity ok
+2026-06-08T06:51:25Z signup-conversion-audit ok
+2026-06-08T06:51:44Z next-hour ok
+2026-06-08T06:51:52Z phone-action-sheet ok
+2026-06-08T06:52:02Z top-six-mobile ok
+2026-06-08T06:52:16Z warm-contact-sprint ok
+2026-06-08T06:52:25Z warm-followup-monitor ok
+2026-06-08T06:52:35Z response-kit ok
+2026-06-08T06:52:54Z action-launcher ok
+2026-06-08T06:53:01Z first-human-actions ok
+2026-06-08T06:53:10Z first-send-bridge ok
+2026-06-08T06:53:33Z hot-proof-ping ok
+2026-06-08T06:53:42Z posting-sprint ok
+2026-06-08T06:53:50Z session-recovery ok
+2026-06-08T06:53:59Z proof-stall monitor ok
+2026-06-08T06:54:08Z proof-sla ok
+2026-06-08T06:54:22Z proof-audit ok

@@ -1,4 +1,4 @@
-WorldCup26 top-six mobile 2026-06-07 20:45 +0300
+WorldCup26 top-six mobile 2026-06-08 09:51 +0300
 paid=ok proof=49 urgent=16 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB

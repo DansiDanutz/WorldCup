@@ -1,6 +1,6 @@
-WorldCup26 paid dashboard checks 2026-06-07 20:44 +0300
+WorldCup26 paid dashboard checks 2026-06-08 09:50 +0300
 ok=yes state=paid-clicks-no-signups rows=7 latest=2 spend=31.78 impressions=12 clicks=227
-paid_views=230 app_views=493 referral_views=157 signup_saves=0 accepted=0
+paid_views=751 app_views=1413 referral_views=678 signup_saves=0 accepted=0
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB
 rule=Record only real dashboard observations. Use this to decide whether the paid problem is delivery, creative, tracking, or signup friction.

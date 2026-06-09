@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 X Reply Proof Helper</title>
+  <style>
+    :root{color-scheme:dark;--bg:#03140f;--panel:#0b2a20;--line:rgba(255,255,255,.15);--text:#f8fff9;--muted:#bad0c6;--gold:#ffd974;--mint:#74f0b2;--green:#0f7b5d;--danger:#ff7d6e}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 8% 0%,rgba(255,217,116,.22),transparent 24rem),radial-gradient(circle at 90% 6%,rgba(116,240,178,.15),transparent 26rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{width:min(860px,100%);margin:0 auto;padding:12px 10px 44px}section{border:1px solid var(--line);border-radius:10px;background:rgba(11,42,32,.94);padding:14px;margin-bottom:10px}.hero{border-color:rgba(255,217,116,.66);background:linear-gradient(135deg,rgba(255,217,116,.18),rgba(11,42,32,.96))}
+    h1{margin:0 0 8px;font-size:clamp(38px,10vw,72px);line-height:.9}h2{margin:0 0 10px;font-size:22px}p{margin:0 0 8px;color:var(--muted);line-height:1.35}.pill{display:inline-flex;margin-bottom:10px;padding:7px 10px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--mint));color:#03140f;font-weight:950;text-transform:uppercase;font-size:12px}
+    label{display:block;margin:10px 0 5px;color:var(--gold);font-weight:900}select,input,textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:rgba(0,0,0,.26);color:var(--text);font:inherit;padding:10px}textarea{min-height:90px;resize:vertical}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.button,button{min-height:46px;border:1px solid rgba(116,240,178,.42);border-radius:8px;background:var(--green);color:#fff;font:inherit;font-weight:950;display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;padding:9px;cursor:pointer}.gold{background:var(--gold);color:#03140f;border-color:var(--gold)}
+    pre{white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid var(--line);border-radius:8px;background:rgba(0,0,0,.25);padding:10px;line-height:1.35}.warn{border-color:rgba(255,125,110,.55);background:rgba(255,125,110,.10)}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}h1{font-size:42px}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <span class="pill">ready-for-real-x-proof</span>
+      <h1>X Proof Helper</h1>
+      <p>After a real reply from <strong>david2015bestai@gmail.com</strong>, paste the public X reply URL or a precise private note. This builds the logging command. It does not create proof by itself.</p>
+    </section>
+    <section>
+      <label for="worker">Worker</label>
+      <select id="worker"><option value="Dexter">Dexter</option><option value="Sienna">Sienna</option><option value="Memo">Memo</option><option value="Nano">Nano</option></select>
+      <div class="grid">
+        <div>
+          <label for="proof">Real X reply URL or private note</label>
+          <textarea id="proof" placeholder="https://x.com/.../status/... or private-reply-note: replied to @handle at YYYY-MM-DD HH:mm EEST"></textarea>
+        </div>
+        <div>
+          <label for="target">Target handle or tweet URL</label>
+          <input id="target" placeholder="@handle or https://x.com/.../status/..." />
+          <label for="time">Time</label>
+          <input id="time" placeholder="YYYY-MM-DD HH:mm EEST" />
+        </div>
+      </div>
+      <div class="grid" style="margin-top:10px">
+        <button class="gold" id="build">Build command</button>
+        <button id="copy">Copy command</button>
+      </div>
+    </section>
+    <section>
+      <h2>Command</h2>
+      <pre id="command">Fill the fields above after a real reply.</pre>
+    </section>
+    <section class="warn">
+      <h2>Proof Rule</h2>
+      <p>Use this only after a real manual X reply happened. Proof must be a public X reply URL, or a precise private note with account, target handle/tweet, and timestamp.</p>
+    </section>
+  </main>
+  <script>
+    const helpers = {"Dexter":{"worker":"Dexter","slug":"dexter","ok":true,"firstActionId":"x-1-1","firstQuery":"world cup 2026 predictions","firstSearchUrl":"https://x.com/search?q=world%20cup%202026%20predictions%20-giveaway%20-crypto&src=typed_query&f=live","proofCommandTemplate":"node campaign-x-reply-log.mjs --worker \"Dexter\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"world cup 2026 predictions\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\""},"Sienna":{"worker":"Sienna","slug":"sienna","ok":true,"firstActionId":"x-1-2","firstQuery":"world cup 2026 predictions","firstSearchUrl":"https://x.com/search?q=world%20cup%202026%20predictions%20-giveaway%20-crypto&src=typed_query&f=live","proofCommandTemplate":"node campaign-x-reply-log.mjs --worker \"Sienna\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"world cup 2026 predictions\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\""},"Memo":{"worker":"Memo","slug":"memo","ok":true,"firstActionId":"x-2-2","firstQuery":"pick 3 teams world cup","firstSearchUrl":"https://x.com/search?q=pick%203%20teams%20world%20cup%20-giveaway%20-crypto&src=typed_query&f=live","proofCommandTemplate":"node campaign-x-reply-log.mjs --worker \"Memo\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"pick 3 teams world cup\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\""},"Nano":{"worker":"Nano","slug":"nano","ok":true,"firstActionId":"x-3-2","firstQuery":"who will win world cup 2026","firstSearchUrl":"https://x.com/search?q=who%20will%20win%20world%20cup%202026%20-giveaway%20-crypto&src=typed_query&f=live","proofCommandTemplate":"node campaign-x-reply-log.mjs --worker \"Nano\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"who will win world cup 2026\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\""}};
+    const proof = document.getElementById("proof");
+    const target = document.getElementById("target");
+    const time = document.getElementById("time");
+    const worker = document.getElementById("worker");
+    const command = document.getElementById("command");
+    function shell(value) {
+      const tick = String.fromCharCode(96);
+      return String(value || "").replaceAll('"', '\\"').replaceAll("$", "\\$").replaceAll(tick, "\\" + tick);
+    }
+    function buildCommand() {
+      const row = helpers[worker.value] || helpers.Dexter;
+      const proofValue = proof.value.trim();
+      const targetValue = target.value.trim();
+      const timeValue = time.value.trim();
+      const query = row.firstQuery || "manual X football reply";
+      command.textContent = `node campaign-x-reply-log.mjs --worker "${shell(worker.value)}" --proof-url "${shell(proofValue || "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>")}" --target "${shell(targetValue || "<@handle or tweet URL>")}" --query "${shell(query)}" --timestamp-eest "${shell(timeValue || "<YYYY-MM-DD HH:mm EEST>")}"`;
+    }
+    document.getElementById("build").addEventListener("click", buildCommand);
+    document.getElementById("copy").addEventListener("click", async () => {
+      buildCommand();
+      try {
+        await navigator.clipboard.writeText(command.textContent);
+      } catch {
+        window.prompt("Copy this", command.textContent);
+      }
+    });
+    buildCommand();
+  </script>
+</body>
+</html>

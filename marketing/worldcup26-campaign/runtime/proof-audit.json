@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-proof-audit-v1",
-  "generatedAt": "2026-06-07T17:45:00.894Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:54:10.185Z",
+  "generatedAtEest": "2026-06-08 09:54 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "ok": true,
@@ -19,13 +19,13 @@
     "rescueActions": 4,
     "socialActions": 4
   },
-  "latestExternalProofAgeMinutes": 213,
-  "latestExternalProofAgeLabel": "3.5h",
-  "latestAnyProofAgeMinutes": 213,
-  "latestAnyProofAgeLabel": "3.5h",
+  "latestExternalProofAgeMinutes": 1001,
+  "latestExternalProofAgeLabel": "16.7h",
+  "latestAnyProofAgeMinutes": 1001,
+  "latestAnyProofAgeLabel": "16.7h",
   "latestExternalProof": {
     "timestampEest": "2026-06-07 17:12 +0300",
-    "ageLabel": "3.5h",
+    "ageLabel": "16.7h",
     "owner": "Sienna",
     "channel": "Instagram",
     "status": "posted",
@@ -35,7 +35,7 @@
   },
   "latestAnyProof": {
     "timestampEest": "2026-06-07 17:12 +0300",
-    "ageLabel": "3.5h",
+    "ageLabel": "16.7h",
     "owner": "Sienna",
     "channel": "Instagram",
     "status": "posted",

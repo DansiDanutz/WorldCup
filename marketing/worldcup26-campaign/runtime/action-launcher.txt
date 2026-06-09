@@ -1,5 +1,5 @@
-WorldCup26 action launcher 2026-06-07 20:45 +0300
-ok=yes source_state=critical source_generated=2026-06-07 20:44 +0300
+WorldCup26 action launcher 2026-06-08 09:52 +0300
+ok=yes source_state=critical source_generated=2026-06-08 09:30 +0300
 do_now=#warm-1 Nano / WhatsApp personal
 task=Send warm-contact invite to 10 football friends.
 asset=media/worldcup26-main-video.mp4

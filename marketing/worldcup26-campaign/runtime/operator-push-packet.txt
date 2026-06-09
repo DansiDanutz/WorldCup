@@ -1,6 +1,6 @@
-WorldCup26 operator push packet 2026-06-07 20:45 +0300
+WorldCup26 operator push packet 2026-06-08 09:30 +0300
 state=critical action_mode=warm-contact-sprint complete=no urgent=16 proof_rows=49 public_blocked=7 login_required=6
-paid_ad=critical-paid-signup-friction paid_views=244 app_views=509 referral_views=171 signup_saves=0
+paid_ad=critical-paid-signup-friction paid_views=751 app_views=1413 referral_views=678 signup_saves=0
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB
 rule=Do not log proof until the real post, story, message batch, upload, reply, or approval request exists.

@@ -1,13 +1,13 @@
 # Dexter Hot Proof Ping
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:53 +0300
 Referral code: `26BC4B90CB`
 Referral link: https://worldcup26.world/login?ref=26BC4B90CB
 
 State: needs-first-human-action
 Warm attempts: 0
 Signup saves: 0
-Referral views: 171
+Referral views: 678
 Ad clicks: 227
 
 First required action: Memo / WhatsApp testers - Send three clean referral signup tests
@@ -38,7 +38,7 @@ https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_me
 
 - Status: hot
 - Open proof rows: 3
-- Oldest gap: 36.7h open
+- Oldest gap: 49.8h open
 - Priority: 4
 - Channel: Football groups
 - Mode: approval first

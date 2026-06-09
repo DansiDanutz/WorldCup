@@ -1,6 +1,6 @@
 # WorldCup26 Paid Traffic Guard
 
-Generated: 2026-06-07 20:46 +0300
+Generated: 2026-06-08 09:48 +0300
 
 - Status: ok
 - Referral code: `26BC4B90CB`
@@ -17,7 +17,7 @@ Generated: 2026-06-07 20:46 +0300
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 296 ms
+- Elapsed: 309 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=meta&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h
 
 
@@ -26,7 +26,7 @@ Generated: 2026-06-07 20:46 +0300
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 182 ms
+- Elapsed: 184 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h
 
 
@@ -35,7 +35,7 @@ Generated: 2026-06-07 20:46 +0300
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 184 ms
+- Elapsed: 203 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram&utm_medium=story&utm_campaign=worldcup26_referral_72h
 
 
@@ -44,7 +44,7 @@ Generated: 2026-06-07 20:46 +0300
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 178 ms
+- Elapsed: 182 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x&utm_medium=paid_social&utm_campaign=worldcup26_referral_72h
 
 
@@ -53,7 +53,7 @@ Generated: 2026-06-07 20:46 +0300
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 188 ms
+- Elapsed: 181 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok&utm_medium=video&utm_campaign=worldcup26_referral_72h
 
 
@@ -62,7 +62,7 @@ Generated: 2026-06-07 20:46 +0300
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 198 ms
+- Elapsed: 184 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube&utm_medium=shorts&utm_campaign=worldcup26_referral_72h
 
 
@@ -71,7 +71,7 @@ Generated: 2026-06-07 20:46 +0300
 - Status: ok
 - HTTP: 200
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Elapsed: 190 ms
+- Elapsed: 174 ms
 - URL: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp&utm_medium=status&utm_campaign=worldcup26_referral_72h
 
 

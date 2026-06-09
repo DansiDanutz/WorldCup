@@ -1,15 +1,15 @@
-WorldCup26 session recovery 2026-06-07 20:45 +0300
+WorldCup26 session recovery 2026-06-08 09:53 +0300
 proof=49 urgent=16 blockers=1
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB
 
 public_recovery:
 - X public fallback: login=https://x.com/i/flow/login
-  share=https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB
-  proof_after_action=node campaign-proof-log.mjs --pulse "145" --proof-url "PUBLIC_X_POST_URL" --status "posted"
+  share=https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse193
+  proof_after_action=node campaign-proof-log.mjs --pulse "193" --proof-url "PUBLIC_X_POST_URL" --status "posted"
 - Facebook feed fallback: login=https://www.facebook.com/login/
-  share=https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137
-  proof_after_action=node campaign-proof-log.mjs --pulse "137" --proof-url "PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE" --status "posted"
+  share=https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse185
+  proof_after_action=node campaign-proof-log.mjs --pulse "185" --proof-url "PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE" --status "posted"
 
 phone_first:
 - #1 Sienna / WhatsApp Status: Post story asset with video caption 1

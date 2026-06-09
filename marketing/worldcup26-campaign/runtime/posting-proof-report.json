@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-07T17:46:16.753Z",
+  "generatedAt": "2026-06-08T06:46:27.658Z",
   "liveLogPath": "/Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime/posting-log-live.csv",
   "loggedCount": 49,
   "proofedActiveCount": 6,
   "proofedDueCount": 6,
-  "unloggedDueCount": 37,
+  "unloggedDueCount": 50,
   "recentLogs": [
     {
       "timestamp": "2026-06-06 16:22 +0300",

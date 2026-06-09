@@ -1,5 +1,5 @@
-WorldCup26 first human actions 2026-06-07 20:45 +0300
-ok=yes state=needs-first-human-action warm_attempts=0 signup_saves=0 referral_views=171 dashboard_clicks=227 signup_returned=0 signup_attempts=0
+WorldCup26 first human actions 2026-06-08 09:52 +0300
+ok=yes state=needs-first-human-action warm_attempts=0 signup_saves=0 referral_views=678 dashboard_clicks=227 signup_returned=0 signup_attempts=0
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB
 rule=First priority is three clean Google signup tests because the live funnel has zero returned/attempt events. Do not log planned work as proof.

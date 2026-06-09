@@ -1,15 +1,15 @@
 {
   "schema": "worldcup26-signup-conversion-audit-v1",
-  "generatedAt": "2026-06-07T17:44:59.934Z",
-  "generatedAtEest": "07/06/2026 20:44",
+  "generatedAt": "2026-06-08T06:51:17.945Z",
+  "generatedAtEest": "08/06/2026 09:51",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "ok": false,
   "state": "critical-auth-to-signup-save-unproven",
   "counts": {
-    "appViews": 509,
-    "referralViews": 171,
-    "paidViews": 244,
+    "appViews": 1421,
+    "referralViews": 678,
+    "paidViews": 751,
     "signupSaves": 0,
     "accepted": 0,
     "entries": 0,
@@ -42,7 +42,7 @@
     "ok": true,
     "status": 401,
     "expected": "401 until Google bearer token is present",
-    "elapsedMs": 418,
+    "elapsedMs": 472,
     "failures": []
   },
   "blockers": [

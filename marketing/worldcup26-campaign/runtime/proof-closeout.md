@@ -1,10 +1,10 @@
 # WorldCup26 Proof Closeout
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:30 +0300
 
 - Status: ok
 - Proof state: critical
-- Latest external proof age: 3.5h
+- Latest external proof age: 16.3h
 - Referral code: `26BC4B90CB`
 
 Run one of these commands only after the matching real post, story, message batch, upload, reply, or approval request exists. Edit account/audience if the suggested value is not true.
@@ -17,7 +17,7 @@ Run one of these commands only after the matching real post, story, message batc
 - Status: posted
 
 ```bash
-node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:45 +0300' --status posted
+node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-08 09:30 +0300' --status posted
 ```
 
 ## #2 Nano / WhatsApp personal
@@ -28,7 +28,7 @@ node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audienc
 - Status: sent
 
 ```bash
-node campaign-proof-intake.mjs --priority 2 --account 'personal phone' --audience 'warm contacts' --happened-at '2026-06-07 20:45 +0300' --status sent
+node campaign-proof-intake.mjs --priority 2 --account 'personal phone' --audience 'warm contacts' --happened-at '2026-06-08 09:30 +0300' --status sent
 ```
 
 ## #3 Sienna / Instagram/Facebook story
@@ -39,7 +39,7 @@ node campaign-proof-intake.mjs --priority 2 --account 'personal phone' --audienc
 - Status: posted
 
 ```bash
-node campaign-proof-intake.mjs --priority 3 --account 'Meta account' --audience 'story followers' --happened-at '2026-06-07 20:45 +0300' --status posted
+node campaign-proof-intake.mjs --priority 3 --account 'Meta account' --audience 'story followers' --happened-at '2026-06-08 09:30 +0300' --status posted
 ```
 
 ## #4 Dexter / Football groups
@@ -50,7 +50,7 @@ node campaign-proof-intake.mjs --priority 3 --account 'Meta account' --audience 
 - Status: requested
 
 ```bash
-node campaign-proof-intake.mjs --priority 4 --account 'posting account' --audience 'football group admin or approved group' --happened-at '2026-06-07 20:45 +0300' --status requested
+node campaign-proof-intake.mjs --priority 4 --account 'posting account' --audience 'football group admin or approved group' --happened-at '2026-06-08 09:30 +0300' --status requested
 ```
 
 ## #5 Sienna / TikTok/Reels/Shorts
@@ -61,7 +61,7 @@ node campaign-proof-intake.mjs --priority 4 --account 'posting account' --audien
 - Status: uploaded
 
 ```bash
-node campaign-proof-intake.mjs --priority 5 --account 'TikTok account' --audience 'public TikTok viewers' --happened-at '2026-06-07 20:45 +0300' --status uploaded
+node campaign-proof-intake.mjs --priority 5 --account 'TikTok account' --audience 'public TikTok viewers' --happened-at '2026-06-08 09:30 +0300' --status uploaded
 ```
 
 ## #6 Nano / DM follow-up
@@ -72,5 +72,5 @@ node campaign-proof-intake.mjs --priority 5 --account 'TikTok account' --audienc
 - Status: replied
 
 ```bash
-node campaign-proof-intake.mjs --priority 6 --account 'posting account' --audience 'reply thread or contact initials' --happened-at '2026-06-07 20:45 +0300' --status replied
+node campaign-proof-intake.mjs --priority 6 --account 'posting account' --audience 'reply thread or contact initials' --happened-at '2026-06-08 09:30 +0300' --status replied
 ```

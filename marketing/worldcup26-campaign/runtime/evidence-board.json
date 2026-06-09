@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-evidence-board-v1",
-  "generatedAt": "2026-06-07T17:45:01.335Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:30:52.634Z",
+  "generatedAtEest": "2026-06-08 09:30 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "ok": true,
@@ -71,7 +71,7 @@
   ],
   "proofStatus": {
     "state": "critical",
-    "latestExternalProofAgeLabel": "3.5h",
+    "latestExternalProofAgeLabel": "16.3h",
     "urgentOpenRows": 16,
     "publicUrlProofRows": 0,
     "externalProofRows": 31,
@@ -79,6 +79,20 @@
     "blockerStatus": "blocked"
   },
   "openRequirements": [
+    {
+      "id": "droplets-awake",
+      "status": "unknown",
+      "severity": "info",
+      "label": "Four droplets have campaign tooling awake",
+      "next": "Use the leader remote war-room report to prove all four droplets together."
+    },
+    {
+      "id": "nonstop-72h-loop",
+      "status": "unknown",
+      "severity": "info",
+      "label": "Nonstop 72h campaign loop/watchdog is running",
+      "next": "Use the leader remote war-room report to prove all four loops and watchdogs together."
+    },
     {
       "id": "advertise-everywhere-proof",
       "status": "incomplete",
@@ -106,7 +120,7 @@
     "status": "posted",
     "account": "personal phone",
     "audience": "WhatsApp contacts",
-    "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:45 +0300' --status posted"
+    "command": "node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-08 09:30 +0300' --status posted"
   },
   "publicBlocker": {
     "platform": "X",

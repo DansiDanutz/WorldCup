@@ -1,15 +1,15 @@
-WorldCup26 live ad QA 2026-06-07 20:46 +0300
+WorldCup26 live ad QA 2026-06-08 09:48 +0300
 ok=yes pages=7 assets=14 code=26BC4B90CB inviter="David Ai" percent=5 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
 resolver=ok health=ok auth=ok social=2/2 local_assets=5/5
 
 landing_pages:
-- meta-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=283
-- facebook-feed: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=177
-- instagram-story: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=224
-- x-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=210
-- tiktok-video: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=206
-- youtube-shorts: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=186
-- whatsapp-status: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=183
+- meta-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=353
+- facebook-feed: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=192
+- instagram-story: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=203
+- x-campaign: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=236
+- tiktok-video: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=209
+- youtube-shorts: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=198
+- whatsapp-status: ok status=200 dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD elapsed_ms=201
 
 rendered_assets:
 - ok 200 https://worldcup26.world/_next/static/chunks/0dgq26a5_oy.a.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD

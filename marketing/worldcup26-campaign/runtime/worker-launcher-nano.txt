@@ -1,4 +1,4 @@
-WorldCup26 Nano launcher 2026-06-07 20:45 +0300
+WorldCup26 Nano launcher 2026-06-08 09:30 +0300
 state=wake-now ok=yes assigned=5
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB

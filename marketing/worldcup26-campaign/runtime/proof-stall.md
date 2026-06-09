@@ -1,6 +1,6 @@
 # WorldCup26 Proof Stall
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:53 +0300
 
 - Status: stalled
 - External proof stalled: yes
@@ -8,8 +8,8 @@ Generated: 2026-06-07 20:45 +0300
 - Proof rows: 49
 - External proof rows: 31
 - Urgent open rows: 16
-- Latest external proof: 2026-06-07 17:12 +0300 (3.5h)
-- Latest any proof: 2026-06-07 17:12 +0300 (3.5h)
+- Latest external proof: 2026-06-07 17:12 +0300 (16.7h)
+- Latest any proof: 2026-06-07 17:12 +0300 (16.7h)
 
 ## Next External Actions
 

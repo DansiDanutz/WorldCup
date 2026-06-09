@@ -203,6 +203,30 @@ Verify the current assets:
 - runtime/outbox-ready.csv
 
 Next action: Check if any copy claims a fixed prize; remove fixed amount before posting","Update runtime/posting-log-live.csv after each manual post, reply, or outreach. Track channel, copy used, asset, and next follow-up.",ready
+2026-06-08 12:00 +0300,Memo,Ops check,internal,campaign/posting-log-template.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h56,"Campaign ops check for WorldCup26.
+
+Referral code: 26BC4B90CB
+Referral link: https://worldcup26.world/login?ref=26BC4B90CB
+
+Verify the current assets:
+- media/worldcup26-main-video.mp4
+- media/worldcup26-referral-story.jpg
+- media/worldcup26-referral-16x9.jpg
+- runtime/outbox-ready.csv
+
+Next action: Choose best two channels and double posting cadence there","Update runtime/posting-log-live.csv after each manual post, reply, or outreach. Track channel, copy used, asset, and next follow-up.",ready
+2026-06-08 19:00 +0300,Memo,Ops check,internal,campaign/posting-log-template.csv,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=ops-check&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_h63,"Campaign ops check for WorldCup26.
+
+Referral code: 26BC4B90CB
+Referral link: https://worldcup26.world/login?ref=26BC4B90CB
+
+Verify the current assets:
+- media/worldcup26-main-video.mp4
+- media/worldcup26-referral-story.jpg
+- media/worldcup26-referral-16x9.jpg
+- runtime/outbox-ready.csv
+
+Next action: Prepare final-day push list from best channels and replies","Update runtime/posting-log-live.csv after each manual post, reply, or outreach. Track channel, copy used, asset, and next follow-up.",ready
 2026-06-06 06:00 +0300,Nano,WhatsApp personal,manual outreach,media/worldcup26-main-video.mp4,https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_h2,"I invited you to WorldCup26.
 
 Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.

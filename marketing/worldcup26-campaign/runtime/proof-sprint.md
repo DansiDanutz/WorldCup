@@ -1,6 +1,6 @@
 # WorldCup26 Proof Sprint
 
-Generated: 2026-06-07T17:46:16.913Z
+Generated: 2026-06-08T06:48:19.568Z
 Referral code: `26BC4B90CB`
 Referral link: https://worldcup26.world/login?ref=26BC4B90CB
 
@@ -11,20 +11,20 @@ This is the short execution sheet. Do the real action first. Then run the matchi
 
 ## Escalation Board
 
-- Dexter: 3 open / hot / oldest 36.8h open / next #4 Football groups
+- Dexter: 3 open / hot / oldest 49.8h open / next #4 Football groups
   - Command: `node campaign-proof-log.mjs --priority "4" --proof-url "approval-request: asked admin <group/channel> at YYYY-MM-DD HH:mm EEST; asset campaign/first-wave-posts.md; code 26BC4B90CB and link included; post only after allowed" --status "requested"`
-- Sienna: 8 open / hot / oldest 40.8h open / next #1 WhatsApp Status
+- Sienna: 8 open / hot / oldest 53.8h open / next #1 WhatsApp Status
   - Command: `node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included" --status "posted"`
 - Memo: clear. Keep monitoring pulse actions and replies.
-- Nano: 5 open / hot / oldest 38.8h open / next #2 WhatsApp personal
+- Nano: 5 open / hot / oldest 51.8h open / next #2 WhatsApp personal
   - Command: `node campaign-proof-log.mjs --priority "2" --proof-url "private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>" --status "sent"`
 
 ## Worker Focus
 
-- Dexter: priority 4 / Football groups / status requested / oldest 36.8h open
-- Sienna: priority 1 / WhatsApp Status / status posted / oldest 40.8h open
+- Dexter: priority 4 / Football groups / status requested / oldest 49.8h open
+- Sienna: priority 1 / WhatsApp Status / status posted / oldest 53.8h open
 - Memo: no urgent proof row. Keep pulse/audit moving.
-- Nano: priority 2 / WhatsApp personal / status sent / oldest 38.8h open
+- Nano: priority 2 / WhatsApp personal / status sent / oldest 51.8h open
 
 ## All Open Proof Gaps
 

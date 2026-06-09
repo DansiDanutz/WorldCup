@@ -1,10 +1,10 @@
 # WorldCup26 Proof SLA
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:54 +0300
 
 - Status: ready
 - Proof state: critical
-- Latest external proof age: 3.5h
+- Latest external proof age: 16.7h
 - Warning threshold: 60m
 - Critical threshold: 90m
 - Urgent external rows: 16
@@ -20,7 +20,7 @@ This board is a recovery handoff. It does not prove posting. It tells the phone/
 ### #warm-1 Nano / WhatsApp personal
 
 - Age: now
-- Scheduled: 2026-06-07 20:44 +0300
+- Scheduled: 2026-06-08 09:30 +0300
 - Action: Send warm-contact invite to 10 football friends.
 - Asset: `media/worldcup26-main-video.mp4`
 - Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch
@@ -49,7 +49,7 @@ node campaign-public-channel-attempts.mjs --add --owner 'Nano' --platform 'Whats
 ### #warm-3 Sienna / WhatsApp personal
 
 - Age: now
-- Scheduled: 2026-06-07 20:44 +0300
+- Scheduled: 2026-06-08 09:30 +0300
 - Action: Send warm-contact invite to 10 close contacts.
 - Asset: `media/worldcup26-referral-story.jpg`
 - Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch
@@ -78,7 +78,7 @@ node campaign-public-channel-attempts.mjs --add --owner 'Sienna' --platform 'Wha
 ### #warm-4 Dexter / WhatsApp admins
 
 - Age: now
-- Scheduled: 2026-06-07 20:44 +0300
+- Scheduled: 2026-06-08 09:30 +0300
 - Action: Send warm-contact invite to football group admins.
 - Asset: `media/worldcup26-referral-16x9.jpg`
 - Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission
@@ -103,7 +103,7 @@ node campaign-public-channel-attempts.mjs --add --owner 'Dexter' --platform 'Wha
 ### #warm-5 Memo / WhatsApp testers
 
 - Age: now
-- Scheduled: 2026-06-07 20:44 +0300
+- Scheduled: 2026-06-08 09:30 +0300
 - Action: Send warm-contact invite to 3 trusted testers.
 - Asset: `runtime/signup-conversion-audit.html`
 - Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup
@@ -132,19 +132,19 @@ node campaign-public-channel-attempts.mjs --add --owner 'Memo' --platform 'Whats
 ### X public fallback
 
 - Login: https://x.com/i/flow/login
-- Share: https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB
+- Share: https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse193
 
 ```bash
-node campaign-proof-log.mjs --pulse "145" --proof-url "PUBLIC_X_POST_URL" --status "posted"
+node campaign-proof-log.mjs --pulse "193" --proof-url "PUBLIC_X_POST_URL" --status "posted"
 ```
 
 ### Facebook feed fallback
 
 - Login: https://www.facebook.com/login/
-- Share: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137
+- Share: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse185
 
 ```bash
-node campaign-proof-log.mjs --pulse "137" --proof-url "PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE" --status "posted"
+node campaign-proof-log.mjs --pulse "185" --proof-url "PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE" --status "posted"
 ```
 
 ## Proof Rule

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-07T17:46:20.687Z",
-  "generatedAtEest": "2026-06-07 20:46 +0300",
+  "generatedAt": "2026-06-08T06:48:33.282Z",
+  "generatedAtEest": "2026-06-08 09:48 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "expectedInviter": "David Ai",
@@ -20,7 +20,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45281,
-        "elapsedMs": 296
+        "elapsedMs": 309
       },
       {
         "name": "facebook-feed",
@@ -31,7 +31,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45293,
-        "elapsedMs": 182
+        "elapsedMs": 184
       },
       {
         "name": "instagram-story",
@@ -42,7 +42,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45278,
-        "elapsedMs": 184
+        "elapsedMs": 203
       },
       {
         "name": "x-campaign",
@@ -53,7 +53,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45272,
-        "elapsedMs": 178
+        "elapsedMs": 182
       },
       {
         "name": "tiktok-video",
@@ -64,7 +64,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45269,
-        "elapsedMs": 188
+        "elapsedMs": 181
       },
       {
         "name": "youtube-shorts",
@@ -75,7 +75,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45275,
-        "elapsedMs": 198
+        "elapsedMs": 184
       },
       {
         "name": "whatsapp-status",
@@ -86,7 +86,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45278,
-        "elapsedMs": 190
+        "elapsedMs": 174
       }
     ],
     "resolver": {
@@ -97,7 +97,7 @@
       "inviterName": "David Ai",
       "referralPercent": 5,
       "failures": [],
-      "elapsedMs": 624
+      "elapsedMs": 645
     },
     "health": {
       "ok": true,
@@ -106,7 +106,7 @@
       "database": "available",
       "tournamentStatus": "open",
       "failures": [],
-      "elapsedMs": 279
+      "elapsedMs": 463
     }
   }
 }

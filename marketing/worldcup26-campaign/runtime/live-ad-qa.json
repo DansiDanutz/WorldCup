@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-live-ad-qa-v1",
-  "generatedAt": "2026-06-07T17:46:23.084Z",
-  "generatedAtEest": "2026-06-07 20:46 +0300",
+  "generatedAt": "2026-06-08T06:48:44.165Z",
+  "generatedAtEest": "2026-06-08 09:48 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "expectedInviter": "David Ai",
@@ -21,7 +21,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45376,
-        "elapsedMs": 283
+        "elapsedMs": 353
       },
       {
         "name": "facebook-feed",
@@ -32,7 +32,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45388,
-        "elapsedMs": 177
+        "elapsedMs": 192
       },
       {
         "name": "instagram-story",
@@ -43,7 +43,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45373,
-        "elapsedMs": 224
+        "elapsedMs": 203
       },
       {
         "name": "x-campaign",
@@ -54,7 +54,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45367,
-        "elapsedMs": 210
+        "elapsedMs": 236
       },
       {
         "name": "tiktok-video",
@@ -65,7 +65,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45364,
-        "elapsedMs": 206
+        "elapsedMs": 209
       },
       {
         "name": "youtube-shorts",
@@ -76,7 +76,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45370,
-        "elapsedMs": 186
+        "elapsedMs": 198
       },
       {
         "name": "whatsapp-status",
@@ -87,7 +87,7 @@
         "failures": [],
         "dplId": "dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
         "bytes": 45373,
-        "elapsedMs": 183
+        "elapsedMs": 201
       }
     ],
     "renderedAssets": [
@@ -97,7 +97,7 @@
         "ok": true,
         "failures": [],
         "bytes": 50702,
-        "elapsedMs": 38
+        "elapsedMs": 62
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/0307a-r-4hb3i.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -105,7 +105,7 @@
         "ok": true,
         "failures": [],
         "bytes": 145012,
-        "elapsedMs": 48
+        "elapsedMs": 73
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/10u3y4bw1ayzs.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -113,7 +113,7 @@
         "ok": true,
         "failures": [],
         "bytes": 227314,
-        "elapsedMs": 40
+        "elapsedMs": 62
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/turbopack-04~unr0vns_b9.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -121,7 +121,7 @@
         "ok": true,
         "failures": [],
         "bytes": 11019,
-        "elapsedMs": 39
+        "elapsedMs": 65
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/15lvn.u6g559..js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -129,7 +129,7 @@
         "ok": true,
         "failures": [],
         "bytes": 21031,
-        "elapsedMs": 41
+        "elapsedMs": 56
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/0.4e1wu8znb0x.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -137,7 +137,7 @@
         "ok": true,
         "failures": [],
         "bytes": 227641,
-        "elapsedMs": 36
+        "elapsedMs": 65
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/01xlw8hd842-c.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -145,7 +145,7 @@
         "ok": true,
         "failures": [],
         "bytes": 3377,
-        "elapsedMs": 35
+        "elapsedMs": 60
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/00-csyj9a6t-x.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -153,7 +153,7 @@
         "ok": true,
         "failures": [],
         "bytes": 54646,
-        "elapsedMs": 37
+        "elapsedMs": 56
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/0cdzq69u44xu6.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -161,7 +161,7 @@
         "ok": true,
         "failures": [],
         "bytes": 25157,
-        "elapsedMs": 34
+        "elapsedMs": 60
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/03~yq9q893hmn.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -169,7 +169,7 @@
         "ok": true,
         "failures": [],
         "bytes": 112594,
-        "elapsedMs": 34
+        "elapsedMs": 66
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/0bj39187d3s9z.js?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -177,7 +177,7 @@
         "ok": true,
         "failures": [],
         "bytes": 23111,
-        "elapsedMs": 36
+        "elapsedMs": 54
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/0083r6gqu1g2v.css?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -185,7 +185,7 @@
         "ok": true,
         "failures": [],
         "bytes": 2290,
-        "elapsedMs": 39
+        "elapsedMs": 54
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/04isqvz~7lhk5.css?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -193,7 +193,7 @@
         "ok": true,
         "failures": [],
         "bytes": 141623,
-        "elapsedMs": 36
+        "elapsedMs": 63
       },
       {
         "url": "https://worldcup26.world/_next/static/chunks/16hdsnprn.8ol.css?dpl=dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD",
@@ -201,7 +201,7 @@
         "ok": true,
         "failures": [],
         "bytes": 8285,
-        "elapsedMs": 42
+        "elapsedMs": 57
       }
     ],
     "resolver": {
@@ -212,7 +212,7 @@
       "inviterName": "David Ai",
       "referralPercent": 5,
       "failures": [],
-      "elapsedMs": 608
+      "elapsedMs": 694
     },
     "health": {
       "ok": true,
@@ -221,14 +221,14 @@
       "database": "available",
       "tournamentStatus": "open",
       "failures": [],
-      "elapsedMs": 270
+      "elapsedMs": 368
     },
     "auth": {
       "ok": true,
       "status": 302,
-      "location": "https://accounts.google.com/o/oauth2/v2/auth?client_id=293611580417-tsu81oqicpoce0348mfte86pnvhrq6q4.apps.googleusercontent.com&redirect_to=https%3A%2F%2Fworldcup26.world&redirect_uri=https%3A%2F%2Fapi.worldcup26.world%2Fauth%2Fv1%2Fcallback&response_type=code&scope=email+profile&state=172a61f6-d53e-4522-8532-acab83950c9e",
+      "location": "https://accounts.google.com/o/oauth2/v2/auth?client_id=293611580417-tsu81oqicpoce0348mfte86pnvhrq6q4.apps.googleusercontent.com&redirect_to=https%3A%2F%2Fworldcup26.world&redirect_uri=https%3A%2F%2Fapi.worldcup26.world%2Fauth%2Fv1%2Fcallback&response_type=code&scope=email+profile&state=231a80c2-1cd3-4562-8b65-7b70dbf7df18",
       "failures": [],
-      "elapsedMs": 211
+      "elapsedMs": 357
     },
     "social": [
       {
@@ -236,14 +236,14 @@
         "status": 200,
         "ok": true,
         "failures": [],
-        "elapsedMs": 345
+        "elapsedMs": 459
       },
       {
         "path": "/login?ref=26BC4B90CB",
         "status": 200,
         "ok": true,
         "failures": [],
-        "elapsedMs": 192
+        "elapsedMs": 222
       }
     ],
     "localAssets": [

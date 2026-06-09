@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-07T17:45:00.397Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:51:26.918Z",
+  "generatedAtEest": "2026-06-08 09:51 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "liveProofRows": 49,
   "urgentRows": 16,
-  "pulseGeneratedAt": "2026-06-07T17:44:43.738Z",
+  "pulseGeneratedAt": "2026-06-08T06:47:17.664Z",
   "workers": [
     {
       "worker": "Dexter",
@@ -31,22 +31,22 @@
         }
       },
       "pulse": {
-        "pulse": 145,
-        "scheduledAt": "2026-06-07 20:45 +0300",
-        "channel": "X / public fallback",
+        "pulse": 201,
+        "scheduledAt": "2026-06-08 10:45 +0300",
+        "channel": "Facebook/feed fallback",
         "mode": "manual post",
-        "action": "Publish or prepare a short public CTA if X is logged in.",
-        "asset": "media/worldcup26-referral-16x9.jpg",
-        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse145",
-        "copy": "If you already have strong World Cup takes, make your 3 picks.\n\nWorldCup26 now lets you save the picks first and decide later if you want the paid leaderboard:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-public-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse145\n\nCode: 26BC4B90CB",
+        "action": "Post a friendly feed variant if Facebook is logged in.",
+        "asset": "media/worldcup26-referral-square.jpg",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse201",
+        "copy": "WorldCup26 is live for signups.\n\nPick 3 teams before they lock. You can save the picks for free and watch your private points preview.\n\nUse a ticket only if you want to enter the paid leaderboard.\n\nCode: 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse201",
         "proofHint": "public-post-url",
-        "privateProofNote": "manual-post-note: posted from <account/destination> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB and link included; replace with public URL when available",
-        "privateProofCommand": "node campaign-proof-log.mjs --pulse \"145\" --proof-url \"manual-post-note: posted from <account/destination> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-16x9.jpg; code 26BC4B90CB and link included; replace with public URL when available\" --status \"posted\"",
+        "privateProofNote": "manual-post-note: posted from <account/destination> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB and link included; replace with public URL when available",
+        "privateProofCommand": "node campaign-proof-log.mjs --pulse \"201\" --proof-url \"manual-post-note: posted from <account/destination> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-referral-square.jpg; code 26BC4B90CB and link included; replace with public URL when available\" --status \"posted\"",
         "share": {
-          "whatsapp": "https://wa.me/?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB",
-          "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145&text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB",
-          "x": "https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB",
-          "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145"
+          "whatsapp": "https://wa.me/?text=WorldCup26%20is%20live%20for%20signups.%0A%0APick%203%20teams%20before%20they%20lock.%20You%20can%20save%20the%20picks%20for%20free%20and%20watch%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse201",
+          "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse201&text=WorldCup26%20is%20live%20for%20signups.%0A%0APick%203%20teams%20before%20they%20lock.%20You%20can%20save%20the%20picks%20for%20free%20and%20watch%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse201",
+          "x": "https://twitter.com/intent/tweet?text=WorldCup26%20is%20live%20for%20signups.%0A%0APick%203%20teams%20before%20they%20lock.%20You%20can%20save%20the%20picks%20for%20free%20and%20watch%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse201",
+          "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse201"
         }
       }
     },
@@ -74,22 +74,22 @@
         }
       },
       "pulse": {
-        "pulse": 146,
-        "scheduledAt": "2026-06-07 21:00 +0300",
-        "channel": "WhatsApp Status",
+        "pulse": 198,
+        "scheduledAt": "2026-06-08 10:00 +0300",
+        "channel": "Instagram/Facebook Story",
         "mode": "manual post",
-        "action": "Post the video/status copy if WhatsApp is available.",
-        "asset": "media/worldcup26-main-video.mp4",
-        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse146",
-        "copy": "I invited you to WorldCup26.\n\nPick 3 teams for free first. You can see what your points would be, then use a ticket only if you want to enter the paid leaderboard.\n\nUse my referral code 26BC4B90CB when you join:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse146\n\nAll teams are still available right now.",
-        "proofHint": "private-whatsapp-status-note",
-        "privateProofNote": "private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included",
-        "privateProofCommand": "node campaign-proof-log.mjs --pulse \"146\" --proof-url \"private-whatsapp-status: posted status from <phone/account> at YYYY-MM-DD HH:mm EEST; visible to contacts; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included\" --status \"posted\"",
+        "action": "Post story image with code and link sticker if logged in.",
+        "asset": "media/worldcup26-referral-story.jpg",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse198",
+        "copy": "Pick 3 teams before they lock.\n\nFree preview first. Paid leaderboard only when you use a ticket.\n\nJoin with code 26BC4B90CB:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse198",
+        "proofHint": "story-url-or-account-note",
+        "privateProofNote": "private-meta-story: story posted from <account> at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included",
+        "privateProofCommand": "node campaign-proof-log.mjs --pulse \"198\" --proof-url \"private-meta-story: story posted from <account> at YYYY-MM-DD HH:mm EEST; screenshot saved on phone; asset media/worldcup26-referral-story.jpg; code/link sticker or caption included\" --status \"posted\"",
         "share": {
-          "whatsapp": "https://wa.me/?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%20first.%20You%20can%20see%20what%20your%20points%20would%20be%2C%20then%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_pulse146%0A%0AAll%20teams%20are%20still%20available%20right%20now.",
-          "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_pulse146&text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%20first.%20You%20can%20see%20what%20your%20points%20would%20be%2C%20then%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_pulse146%0A%0AAll%20teams%20are%20still%20available%20right%20now.",
-          "x": "https://twitter.com/intent/tweet?text=I%20invited%20you%20to%20WorldCup26.%0A%0APick%203%20teams%20for%20free%20first.%20You%20can%20see%20what%20your%20points%20would%20be%2C%20then%20use%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0AUse%20my%20referral%20code%2026BC4B90CB%20when%20you%20join%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_pulse146%0A%0AAll%20teams%20are%20still%20available%20right%20now.",
-          "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-status%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_pulse146"
+          "whatsapp": "https://wa.me/?text=Pick%203%20teams%20before%20they%20lock.%0A%0AFree%20preview%20first.%20Paid%20leaderboard%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_pulse198",
+          "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_pulse198&text=Pick%203%20teams%20before%20they%20lock.%0A%0AFree%20preview%20first.%20Paid%20leaderboard%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_pulse198",
+          "x": "https://twitter.com/intent/tweet?text=Pick%203%20teams%20before%20they%20lock.%0A%0AFree%20preview%20first.%20Paid%20leaderboard%20only%20when%20you%20use%20a%20ticket.%0A%0AJoin%20with%20code%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_pulse198",
+          "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dinstagram-facebook-story%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dsienna_pulse198"
         }
       }
     },
@@ -98,22 +98,22 @@
       "urgentCount": 0,
       "urgent": null,
       "pulse": {
-        "pulse": 147,
-        "scheduledAt": "2026-06-07 21:15 +0300",
-        "channel": "Proof audit",
+        "pulse": 199,
+        "scheduledAt": "2026-06-08 10:15 +0300",
+        "channel": "Asset audit",
         "mode": "internal",
-        "action": "Check proof log, list unproven current rows, and flag blocked channels.",
-        "asset": "runtime/posting-log-live.csv",
-        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147",
-        "copy": "Ops pulse: verify proof rows, urgent rows, and blocked channels.\n\nReferral: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147\nCode: 26BC4B90CB",
+        "action": "Confirm video and image assets are present on this worker.",
+        "asset": "promo-kit-manifest.md",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse199",
+        "copy": "Ops pulse: verify MP4, story image, square image, and command center are present.",
         "proofHint": "internal-log-note",
         "privateProofNote": "internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included",
-        "privateProofCommand": "node campaign-proof-log.mjs --pulse \"147\" --proof-url \"internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included\" --status \"logged\"",
+        "privateProofCommand": "node campaign-proof-log.mjs --pulse \"199\" --proof-url \"internal-log: prepared copy/asset handoff at YYYY-MM-DD HH:mm EEST; no public proof claimed; code 26BC4B90CB and link included\" --status \"logged\"",
         "share": {
-          "whatsapp": "https://wa.me/?text=Ops%20pulse%3A%20verify%20proof%20rows%2C%20urgent%20rows%2C%20and%20blocked%20channels.%0A%0AReferral%3A%20https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dproof-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse147%0ACode%3A%2026BC4B90CB",
-          "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dproof-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse147&text=Ops%20pulse%3A%20verify%20proof%20rows%2C%20urgent%20rows%2C%20and%20blocked%20channels.%0A%0AReferral%3A%20https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dproof-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse147%0ACode%3A%2026BC4B90CB",
-          "x": "https://twitter.com/intent/tweet?text=Ops%20pulse%3A%20verify%20proof%20rows%2C%20urgent%20rows%2C%20and%20blocked%20channels.%0A%0AReferral%3A%20https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dproof-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse147%0ACode%3A%2026BC4B90CB",
-          "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dproof-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse147"
+          "whatsapp": "https://wa.me/?text=Ops%20pulse%3A%20verify%20MP4%2C%20story%20image%2C%20square%20image%2C%20and%20command%20center%20are%20present.",
+          "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dasset-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse199&text=Ops%20pulse%3A%20verify%20MP4%2C%20story%20image%2C%20square%20image%2C%20and%20command%20center%20are%20present.",
+          "x": "https://twitter.com/intent/tweet?text=Ops%20pulse%3A%20verify%20MP4%2C%20story%20image%2C%20square%20image%2C%20and%20command%20center%20are%20present.",
+          "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dasset-audit%26utm_medium%3Dinternal%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dmemo_pulse199"
         }
       }
     },
@@ -141,22 +141,22 @@
         }
       },
       "pulse": {
-        "pulse": 148,
-        "scheduledAt": "2026-06-07 21:30 +0300",
-        "channel": "WhatsApp personal",
+        "pulse": 200,
+        "scheduledAt": "2026-06-08 10:30 +0300",
+        "channel": "Telegram personal",
         "mode": "manual outreach",
-        "action": "Send one warm-contact batch if WhatsApp is available.",
-        "asset": "media/worldcup26-main-video.mp4",
-        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse148",
-        "copy": "I am inviting friends to WorldCup26.\n\nYou can pick 3 teams for free and see your private points preview during the tournament.\nUse a ticket only if you want to enter the paid leaderboard.\nUse my code when you join: 26BC4B90CB\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse148",
-        "proofHint": "private-whatsapp-note",
-        "privateProofNote": "private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>",
-        "privateProofCommand": "node campaign-proof-log.mjs --pulse \"148\" --proof-url \"private-whatsapp: sent to <N> warm contacts from <phone/account> at YYYY-MM-DD HH:mm EEST; asset media/worldcup26-main-video.mp4; code 26BC4B90CB and link included; replies <N>\" --status \"sent\"",
+        "action": "Send the invite to one approved Telegram contact or group where welcome.",
+        "asset": "campaign/copy-bank.md",
+        "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse200",
+        "copy": "WorldCup26 = pick 3 teams free first, score through real matches, and see what your points would be.\n\nPaid leaderboard entry happens only when you use a ticket.\n\nCode: 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse200",
+        "proofHint": "private-telegram-note",
+        "privateProofNote": "private-telegram: posted/sent in <group/contact> at YYYY-MM-DD HH:mm EEST; asset campaign/copy-bank.md; code 26BC4B90CB and link included; admin-approved yes/no",
+        "privateProofCommand": "node campaign-proof-log.mjs --pulse \"200\" --proof-url \"private-telegram: posted/sent in <group/contact> at YYYY-MM-DD HH:mm EEST; asset campaign/copy-bank.md; code 26BC4B90CB and link included; admin-approved yes/no\" --status \"sent\"",
         "share": {
-          "whatsapp": "https://wa.me/?text=I%20am%20inviting%20friends%20to%20WorldCup26.%0A%0AYou%20can%20pick%203%20teams%20for%20free%20and%20see%20your%20private%20points%20preview%20during%20the%20tournament.%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0AUse%20my%20code%20when%20you%20join%3A%2026BC4B90CB%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_pulse148",
-          "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_pulse148&text=I%20am%20inviting%20friends%20to%20WorldCup26.%0A%0AYou%20can%20pick%203%20teams%20for%20free%20and%20see%20your%20private%20points%20preview%20during%20the%20tournament.%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0AUse%20my%20code%20when%20you%20join%3A%2026BC4B90CB%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_pulse148",
-          "x": "https://twitter.com/intent/tweet?text=I%20am%20inviting%20friends%20to%20WorldCup26.%0A%0AYou%20can%20pick%203%20teams%20for%20free%20and%20see%20your%20private%20points%20preview%20during%20the%20tournament.%0AUse%20a%20ticket%20only%20if%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0AUse%20my%20code%20when%20you%20join%3A%2026BC4B90CB%0A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_pulse148",
-          "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_pulse148"
+          "whatsapp": "https://wa.me/?text=WorldCup26%20%3D%20pick%203%20teams%20free%20first%2C%20score%20through%20real%20matches%2C%20and%20see%20what%20your%20points%20would%20be.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtelegram-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_pulse200",
+          "telegram": "https://t.me/share/url?url=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtelegram-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_pulse200&text=WorldCup26%20%3D%20pick%203%20teams%20free%20first%2C%20score%20through%20real%20matches%2C%20and%20see%20what%20your%20points%20would%20be.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtelegram-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_pulse200",
+          "x": "https://twitter.com/intent/tweet?text=WorldCup26%20%3D%20pick%203%20teams%20free%20first%2C%20score%20through%20real%20matches%2C%20and%20see%20what%20your%20points%20would%20be.%0A%0APaid%20leaderboard%20entry%20happens%20only%20when%20you%20use%20a%20ticket.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtelegram-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_pulse200",
+          "facebook": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dtelegram-personal%26utm_medium%3Dmanual-outreach%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Dnano_pulse200"
         }
       }
     }

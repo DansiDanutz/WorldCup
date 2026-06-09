@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-paid-no-click-rescue-v1",
-  "generatedAt": "2026-06-07T17:44:57.639Z",
-  "generatedAtEest": "2026-06-07 20:44 +0300",
+  "generatedAt": "2026-06-08T06:50:47.772Z",
+  "generatedAtEest": "2026-06-08 09:50 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "ok": true,
@@ -13,8 +13,8 @@
     "dashboardChecks": 2,
     "impressions": 12,
     "clicks": 227,
-    "paidViews": 230,
-    "appViews": 493,
+    "paidViews": 751,
+    "appViews": 1413,
     "signupSaves": 0
   },
   "variantCount": 8,

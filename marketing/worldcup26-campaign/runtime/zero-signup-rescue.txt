@@ -1,4 +1,4 @@
-WorldCup26 zero signup rescue 2026-06-07 20:45 +0300
+WorldCup26 zero signup rescue 2026-06-08 09:30 +0300
 state=critical-zero-signups code=26BC4B90CB
 counts accepted=0 signup_saves=0 entries=0
 urgent_external_actions=16

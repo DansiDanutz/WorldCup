@@ -1,6 +1,6 @@
 # WorldCup26 Operator Push Packet
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:30 +0300
 
 - State: critical
 - Action mode: warm-contact-sprint
@@ -10,9 +10,9 @@ Generated: 2026-06-07 20:45 +0300
 - Public blockers: 7
 - Login required: 6
 - Paid ad state: critical-paid-signup-friction
-- Paid-source views: 244
-- Paid app views: 509
-- Paid referral views: 171
+- Paid-source views: 751
+- Paid app views: 1413
+- Paid referral views: 678
 - Paid signup saves: 0
 - Referral code: `26BC4B90CB`
 - Referral link: https://worldcup26.world/login?ref=26BC4B90CB

@@ -1,6 +1,6 @@
-WorldCup26 evidence board 2026-06-07 20:45 +0300
+WorldCup26 evidence board 2026-06-08 09:30 +0300
 state=critical ok=yes complete=no code=26BC4B90CB
-proof_state=critical latest_external=3.5h urgent_open=16
+proof_state=critical latest_external=16.3h urgent_open=16
 
 readiness:
 - PROVEN referral: Referral code resolves to David Ai at 5%
@@ -15,6 +15,10 @@ readiness:
 - PROVEN referral-activity: Accepted 0, signup saves 0, entries 0
 
 open_items:
+- UNKNOWN droplets-awake: Four droplets have campaign tooling awake
+  next=Use the leader remote war-room report to prove all four droplets together.
+- UNKNOWN nonstop-72h-loop: Nonstop 72h campaign loop/watchdog is running
+  next=Use the leader remote war-room report to prove all four loops and watchdogs together.
 - INCOMPLETE advertise-everywhere-proof: Real external posting proof is current
   next=Do the next real action and log proof with a public URL or precise private-channel note.
 - BLOCKED public-channel-blockers: Public channel blockers are tracked
@@ -27,7 +31,7 @@ asset=media/worldcup26-main-video.mp4
 closeout_after_real_action:
 account=personal phone
 audience=WhatsApp contacts
-command=node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:45 +0300' --status posted
+command=node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-08 09:30 +0300' --status posted
 
 public_blocker=X / X public fallback status=login_required
 blocker_next=Owner must log into X or use an already logged-in owned X session, then publish a public fallback post and log the public status URL.

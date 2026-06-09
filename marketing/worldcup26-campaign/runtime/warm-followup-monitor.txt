@@ -1,6 +1,6 @@
-WorldCup26 warm follow-up monitor 2026-06-07 20:45 +0300
+WorldCup26 warm follow-up monitor 2026-06-08 09:52 +0300
 ok=yes state=awaiting-first-human-send warm_attempts=0 tester_attempts=0 followup_attempts=0 followup_minutes=15
-views=509 referral_views=171 profiles=5 accepted=0 signup_saves=0 entries=0
+views=1421 referral_views=678 profiles=5 accepted=0 signup_saves=0 entries=0
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB
 

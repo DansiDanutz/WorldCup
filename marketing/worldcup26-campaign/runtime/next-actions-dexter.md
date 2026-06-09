@@ -1,6 +1,6 @@
 # Dexter Next Actions
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Referral code: `26BC4B90CB`
 Referral link: https://worldcup26.world/login?ref=26BC4B90CB
@@ -91,8 +91,6 @@ Lane: Football hooks and short feed posts
 - CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_38 / code 26BC4B90CB
 - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h38
 
-## Upcoming Window
-
 - Time: 2026-06-07 21:00 +0300
 - Channel: Discord/community
 - Mode: approval first
@@ -117,6 +115,40 @@ Lane: Football hooks and short feed posts
 - CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=feed-post&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_48 / code 26BC4B90CB
 - Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=feed-post&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h48
 
+- Time: 2026-06-08 09:00 +0300
+- Channel: Football groups
+- Mode: approval first
+- Action: Second approved admin post/reminder where allowed
+- Asset: campaign/first-wave-posts.md
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_53 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h53
+
+## Upcoming Window
+
+- Time: 2026-06-08 13:00 +0300
+- Channel: X / short feed
+- Mode: manual post
+- Action: Post late-night simple rules recap
+- Asset: media/worldcup26-referral-square.jpg
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_57 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h57
+
+- Time: 2026-06-08 16:00 +0300
+- Channel: Football groups
+- Mode: approval first
+- Action: Approved reminder only where prior permission exists
+- Asset: campaign/first-wave-posts.md
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_60 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h60
+
+- Time: 2026-06-08 21:00 +0300
+- Channel: X / short feed
+- Mode: manual post
+- Action: Post final-day football challenge hook
+- Asset: media/worldcup26-referral-16x9.jpg
+- CTA: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_65 / code 26BC4B90CB
+- Tracked link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-short-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h65
+
 ## Draft Prompt
 
 ```text
@@ -127,7 +159,7 @@ Referral link: https://worldcup26.world/login?ref=26BC4B90CB
 Do not claim a fixed prize amount unless the live site is checked at posting time.
 Do not post automatically. Prepare copy, channel notes, and a log-ready summary.
 Immediate next action: Football groups: Ask approved group admin for permission; post group variant only if allowed using campaign/first-wave-posts.md
-Due actions for you: 9
+Due actions for you: 13
 Upcoming actions for you in this window: 3
 ```
 

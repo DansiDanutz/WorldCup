@@ -1,4 +1,4 @@
-WorldCup26 tester batch operator 07/06/2026 20:46
+WorldCup26 tester batch operator 07/06/2026 21:54
 ok=yes state=send-tester-batch-now
 owner=Memo
 platform=WhatsApp testers
@@ -7,7 +7,7 @@ tester_link=https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-te
 whatsapp=https://wa.me/?text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test
 referral_qr=https://api.qrserver.com/v1/create-qr-code/?size=360x360&data=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test
 whatsapp_qr=https://api.qrserver.com/v1/create-qr-code/?size=360x360&data=https%3A%2F%2Fwa.me%2F%3Ftext%3DI%2520need%25203%2520clean%2520WorldCup26%2520signup%2520tests%2520now.%250A%250APlease%2520send%2520this%2520to%2520three%2520trusted%2520people%2520with%2520different%2520Google%2520accounts.%2520They%2520should%2520open%2520it%2520on%2520a%2520fresh%2520phone%252Fbrowser%252C%2520accept%2520the%2520invite%252C%2520continue%2520with%2520Google%252C%2520and%2520pick%25203%2520teams.%2520Do%2520not%2520pay.%250A%250AAsk%2520each%2520tester%2520to%2520reply%2520with%2520one%2520of%2520these%253A%250A1.%2520%2522joined%2520%252B%2520picked%2520teams%2522%250A2.%2520screenshot%2520of%2520the%2520exact%2520screen%2520where%2520it%2520stops%250A%250ACode%252026BC4B90CB%253A%250Ahttps%253A%252F%252Fworldcup26.world%252Flogin%253Fref%253D26BC4B90CB%2526utm_source%253Dwhatsapp-testers%2526utm_medium%253Dwarm-contact%2526utm_campaign%253Dworldcup26_warm_contact_sprint%2526utm_content%253Dclean_signup_test
-counts=paid_views:244 referral_views:171 dashboard_clicks:0 returned:0 attempts:0 signup_saves:0 tester_attempts:0
+counts=paid_views:373 referral_views:300 dashboard_clicks:227 returned:0 attempts:0 signup_saves:0 tester_attempts:0
 done_when=A real tester reply proves joined + picked teams, or a screenshot captures the exact blocking screen, and signup-conversion-audit is rerun.
 rule=Only run the log command after the tester batch was really sent. Replace <N>, <account>, and timestamp with the real private-channel note.
 

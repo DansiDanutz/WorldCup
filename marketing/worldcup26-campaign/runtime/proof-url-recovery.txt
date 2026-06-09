@@ -1,4 +1,4 @@
-WorldCup26 proof URL recovery 2026-06-07 20:45 +0300
+WorldCup26 proof URL recovery 2026-06-08 09:54 +0300
 ok=yes pending=1 code=26BC4B90CB
 
 pending_public_urls:

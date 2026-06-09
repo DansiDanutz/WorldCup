@@ -1,13 +1,13 @@
 # WorldCup26 Paid Dashboard Checks
 
-Generated: 2026-06-07 20:44 +0300
+Generated: 2026-06-08 09:50 +0300
 
 - State: `paid-clicks-no-signups`
 - Checks: 2/2
 - Spend: 31.78
 - Impressions: 12
 - Clicks: 227
-- Paid-source views: 230
+- Paid-source views: 751
 - Signup saves: 0
 
 Record only real dashboard observations. Use this to decide whether the paid problem is delivery, creative, tracking, or signup friction.

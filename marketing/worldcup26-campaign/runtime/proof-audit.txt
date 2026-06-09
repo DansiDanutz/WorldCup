@@ -1,5 +1,5 @@
-WorldCup26 proof audit 2026-06-07 20:45 +0300
-ok=yes state=critical proof_fresh=no latest_external=3.5h external=31 public=29 private=2 internal=18 invalid=0 urgent=16
+WorldCup26 proof audit 2026-06-08 09:54 +0300
+ok=yes state=critical proof_fresh=no latest_external=16.7h external=31 public=29 private=2 internal=18 invalid=0 urgent=16
 code=26BC4B90CB
 link=https://worldcup26.world/login?ref=26BC4B90CB
 

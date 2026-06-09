@@ -1,6 +1,6 @@
 # WorldCup26 Referral Activity
 
-Generated: 2026-06-07 20:44 +0300
+Generated: 2026-06-08 09:51 +0300
 
 - Status: ok
 - Available: yes
@@ -17,16 +17,16 @@ Generated: 2026-06-07 20:44 +0300
 - Paid accounts: 1
 - Total profiles: 5
 - App views available: yes
-- App views total: 514
-- App views 24h: 514
-- Referral-code app views: 175
-- Referral-code app views 24h: 175
+- App views total: 1431
+- App views 24h: 1431
+- Referral-code app views: 678
+- Referral-code app views 24h: 678
 - Signup returned events: 0
 - Signup save attempts: 0
 - Signup saved events: 0
 - Signup failed/error events: 0
-- Top all tagged source: an (84)
-- Top tagged source: meta (74)
+- Top all tagged source: meta (577)
+- Top tagged source: meta (577)
 - Top signup source: -
 - Latest accepted referral: -
 - Latest signup save: -

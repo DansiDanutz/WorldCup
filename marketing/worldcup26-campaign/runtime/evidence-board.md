@@ -1,6 +1,6 @@
 # WorldCup26 Evidence Board
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:30 +0300
 
 - State: critical
 - Complete: no
@@ -25,6 +25,10 @@ This board separates readiness evidence from real external posting proof. Do not
 
 ## Open Items
 
+- UNKNOWN droplets-awake: Four droplets have campaign tooling awake
+  - Next: Use the leader remote war-room report to prove all four droplets together.
+- UNKNOWN nonstop-72h-loop: Nonstop 72h campaign loop/watchdog is running
+  - Next: Use the leader remote war-room report to prove all four loops and watchdogs together.
 - INCOMPLETE advertise-everywhere-proof: Real external posting proof is current
   - Next: Do the next real action and log proof with a public URL or precise private-channel note.
 - BLOCKED public-channel-blockers: Public channel blockers are tracked
@@ -39,5 +43,5 @@ Send three clean referral signup tests
 ## Closeout Command
 
 ```bash
-node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-07 20:45 +0300' --status posted
+node campaign-proof-intake.mjs --priority 1 --account 'personal phone' --audience 'WhatsApp contacts' --happened-at '2026-06-08 09:30 +0300' --status posted
 ```

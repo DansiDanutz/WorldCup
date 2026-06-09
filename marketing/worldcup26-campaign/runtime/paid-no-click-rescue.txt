@@ -1,6 +1,6 @@
-WorldCup26 paid no-click rescue 2026-06-07 20:44 +0300
+WorldCup26 paid no-click rescue 2026-06-08 09:50 +0300
 ok=yes state=clicks-no-signups dashboard=paid-clicks-no-signups triage=critical-paid-signup-friction variants=8
-impressions=12 clicks=227 paid_views=230 app_views=493 signup_saves=0
+impressions=12 clicks=227 paid_views=751 app_views=1413 signup_saves=0
 rule=Use this only after a real dashboard check shows no clicks, rejected/limited delivery, or review limbo. It is a creative rescue packet, not proof of ad delivery.
 
 META-1 Meta Ads Manager / Free private score preview

@@ -1,13 +1,13 @@
 # WorldCup26 First Send Bridge
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:53 +0300
 
 - State: `send-now`
 - Owner: Memo
 - Channel: WhatsApp testers
 - Warm attempts: 0
 - Signup saves: 0
-- Referral views: 171
+- Referral views: 678
 - Ad clicks: 227
 
 This bridge is an action launcher, not proof. Do the real send or signup test first, then log the real count/account or rerun the audit.

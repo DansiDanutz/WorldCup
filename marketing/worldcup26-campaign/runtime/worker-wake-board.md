@@ -1,15 +1,15 @@
 # WorldCup26 Worker Wake Board
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:30 +0300
 
 - Status: ready
 - Proof state: critical
-- Latest external proof age: 3.5h
+- Latest external proof age: 16.3h
 - Paid ad state: critical-paid-signup-friction
 - Signup conversion state: critical-auth-to-signup-save-unproven
 - Warm-contact sprint: active (warm-contact-sprint-needed)
 - First human gate: needs-first-human-action; warm attempts 0; signup saves 0
-- Paid-source views: 244
+- Paid-source views: 751
 - Zero-signup rescue: active (critical-zero-signups)
 - Urgent rows: 16
 - Posting cockpit: `runtime/posting-cockpit.html`
@@ -25,7 +25,7 @@ Wake the worker, do the real action, then log proof with proof intake. Do not cl
 - State: needs-first-human-action
 - Warm attempts: 0
 - Signup saves: 0
-- Referral views: 171
+- Referral views: 678
 - Ad clicks: 227
 - Required action: Memo / WhatsApp testers - Send three clean referral signup tests
 - WhatsApp: https://wa.me/?text=I%20need%203%20clean%20WorldCup26%20signup%20tests%20now.%0A%0APlease%20send%20this%20to%20three%20trusted%20people%20with%20different%20Google%20accounts.%20They%20should%20open%20it%20on%20a%20fresh%20phone%2Fbrowser%2C%20accept%20the%20invite%2C%20continue%20with%20Google%2C%20and%20pick%203%20teams.%20Do%20not%20pay.%0A%0AAsk%20each%20tester%20to%20reply%20with%20one%20of%20these%3A%0A1.%20%22joined%20%2B%20picked%20teams%22%0A2.%20screenshot%20of%20the%20exact%20screen%20where%20it%20stops%0A%0ACode%2026BC4B90CB%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dwhatsapp-testers%26utm_medium%3Dwarm-contact%26utm_campaign%3Dworldcup26_warm_contact_sprint%26utm_content%3Dclean_signup_test

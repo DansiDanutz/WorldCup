@@ -1,9 +1,9 @@
 # WorldCup26 Proof Intake
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:30 +0300
 
 - Proof state: critical
-- Latest external proof age: 3.5h
+- Latest external proof age: 16.3h
 - Rows ready for intake: 8
 
 Use this only after the real post, story, message, upload, reply, or approval request exists.

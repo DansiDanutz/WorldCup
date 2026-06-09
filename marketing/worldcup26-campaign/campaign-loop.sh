@@ -210,6 +210,10 @@ if [ "${1:-}" = "status" ]; then
     echo
     sed -n '1,110p' runtime/tester-batch-operator.txt
   fi
+  if [ -s runtime/action-command-center.txt ]; then
+    echo
+    sed -n '1,140p' runtime/action-command-center.txt
+  fi
   if [ -s runtime/response-kit.txt ]; then
     echo
     sed -n '1,120p' runtime/response-kit.txt
@@ -218,9 +222,33 @@ if [ "${1:-}" = "status" ]; then
     echo
     sed -n '1,140p' runtime/public-outreach-targets.txt
   fi
+  if [ -s runtime/platform-rotation.txt ]; then
+    echo
+    sed -n '1,120p' runtime/platform-rotation.txt
+  fi
+  if [ -s runtime/immediate-sprint.txt ]; then
+    echo
+    sed -n '1,120p' runtime/immediate-sprint.txt
+  fi
   if [ -s runtime/public-channel-attempts.txt ]; then
     echo
     sed -n '1,90p' runtime/public-channel-attempts.txt
+  fi
+  if [ -s runtime/x-football-openclaw.txt ]; then
+    echo
+    sed -n '1,120p' runtime/x-football-openclaw.txt
+  fi
+  if [ -s runtime/x-target-hunter.txt ]; then
+    echo
+    sed -n '1,120p' runtime/x-target-hunter.txt
+  fi
+  if [ -s runtime/x-account-watchlist.txt ]; then
+    echo
+    sed -n '1,120p' runtime/x-account-watchlist.txt
+  fi
+  if [ -s runtime/x-reply-proof-helper.txt ]; then
+    echo
+    sed -n '1,90p' runtime/x-reply-proof-helper.txt
   fi
   if [ -s runtime/login-unlock-board.txt ]; then
     echo
@@ -554,6 +582,41 @@ while [ "$(date +%s)" -lt "$end_epoch" ]; do
         echo "$(timestamp) public-channel-attempts failed"
       fi
     fi
+    if [ -f campaign-x-football-openclaw.mjs ]; then
+      if node campaign-x-football-openclaw.mjs --quiet; then
+        echo "$(timestamp) x-football-openclaw ok"
+      else
+        echo "$(timestamp) x-football-openclaw failed"
+      fi
+    fi
+    if [ -f campaign-x-target-hunter.mjs ]; then
+      if node campaign-x-target-hunter.mjs --quiet; then
+        echo "$(timestamp) x-target-hunter ok"
+      else
+        echo "$(timestamp) x-target-hunter failed"
+      fi
+    fi
+    if [ -f campaign-x-account-watchlist.mjs ]; then
+      if node campaign-x-account-watchlist.mjs --quiet; then
+        echo "$(timestamp) x-account-watchlist ok"
+      else
+        echo "$(timestamp) x-account-watchlist failed"
+      fi
+    fi
+    if [ -f campaign-x-reply-proof-helper.mjs ]; then
+      if node campaign-x-reply-proof-helper.mjs --quiet; then
+        echo "$(timestamp) x-reply-proof-helper ok"
+      else
+        echo "$(timestamp) x-reply-proof-helper failed"
+      fi
+    fi
+    if [ -f campaign-action-command-center.mjs ]; then
+      if node campaign-action-command-center.mjs --quiet; then
+        echo "$(timestamp) action-command-center ok"
+      else
+        echo "$(timestamp) action-command-center failed"
+      fi
+    fi
     if [ -f campaign-login-unlock-board.mjs ]; then
       if node campaign-login-unlock-board.mjs --quiet; then
         echo "$(timestamp) login-unlock-board ok"
@@ -636,6 +699,20 @@ while [ "$(date +%s)" -lt "$end_epoch" ]; do
         echo "$(timestamp) public-outreach-targets ok"
       else
         echo "$(timestamp) public-outreach-targets failed"
+      fi
+    fi
+    if [ -f campaign-platform-rotation.mjs ]; then
+      if node campaign-platform-rotation.mjs --quiet; then
+        echo "$(timestamp) platform-rotation ok"
+      else
+        echo "$(timestamp) platform-rotation failed"
+      fi
+    fi
+    if [ -f campaign-immediate-sprint.mjs ]; then
+      if node campaign-immediate-sprint.mjs --quiet; then
+        echo "$(timestamp) immediate-sprint ok"
+      else
+        echo "$(timestamp) immediate-sprint failed"
       fi
     fi
     if [ -f campaign-worker-launchers.mjs ]; then

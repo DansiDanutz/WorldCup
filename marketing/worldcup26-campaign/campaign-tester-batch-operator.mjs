@@ -35,10 +35,10 @@ function buildPayload({ signupAudit, warmFollowup, firstHumanActions }) {
   const counts = {
     paidViews: Number(signupAudit.paidViews ?? signupAudit.counts?.paidViews ?? 0),
     referralViews: Number(signupAudit.counts?.referralViews ?? signupAudit.referralViews ?? 0),
-    dashboardClicks: Number(signupAudit.dashboardClicks ?? signupAudit.counts?.dashboardClicks ?? 0),
+    dashboardClicks: Number(signupAudit.dashboard?.clicks ?? signupAudit.dashboardClicks ?? signupAudit.counts?.dashboardClicks ?? 0),
     signupSaves: Number(signupAudit.counts?.signupSaves ?? signupAudit.signupSaves ?? 0),
-    returned: Number(signupAudit.signupFunnel?.returned ?? signupAudit.signup_funnel?.returned ?? 0),
-    attempts: Number(signupAudit.signupFunnel?.attempts ?? signupAudit.signup_funnel?.attempts ?? 0),
+    returned: Number(signupAudit.counts?.signupReturned ?? signupAudit.signupFunnel?.returned ?? signupAudit.signup_funnel?.returned ?? 0),
+    attempts: Number(signupAudit.counts?.signupAttempts ?? signupAudit.signupFunnel?.attempts ?? signupAudit.signup_funnel?.attempts ?? 0),
     testerAttempts: Number(warmFollowup.counts?.testerAttempts ?? 0),
     warmAttempts: Number(warmFollowup.counts?.warmAttempts ?? 0),
   };

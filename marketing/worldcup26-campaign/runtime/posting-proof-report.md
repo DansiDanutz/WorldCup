@@ -1,6 +1,6 @@
 # WorldCup26 Posting Proof Report
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Live log: `/Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runtime/posting-log-live.csv`
 
@@ -9,7 +9,7 @@ Live log: `/Users/davidai/Documents/WorldCup/marketing/worldcup26-campaign/runti
 | Logged proof rows | 49 |
 | Active queue rows proven posted | 6 |
 | Due rows proven posted | 6 |
-| Due rows still needing proof | 37 |
+| Due rows still needing proof | 50 |
 
 ## Proven Due Rows
 

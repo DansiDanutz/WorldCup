@@ -1,13 +1,13 @@
 # WorldCup26 Paid No-Click Rescue
 
-Generated: 2026-06-07 20:44 +0300
+Generated: 2026-06-08 09:50 +0300
 
 - State: `clicks-no-signups`
 - Dashboard state: `paid-clicks-no-signups`
 - Triage state: `critical-paid-signup-friction`
 - Impressions: 12
 - Clicks: 227
-- Paid-source views: 230
+- Paid-source views: 751
 - Signup saves: 0
 - Variants: 8
 

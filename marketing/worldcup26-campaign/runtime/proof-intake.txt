@@ -1,5 +1,5 @@
-WorldCup26 proof intake 2026-06-07 20:45 +0300
-state=critical mode=warm-contact-sprint latest_external=3.5h rows=8 warm_rows=4
+WorldCup26 proof intake 2026-06-08 09:30 +0300
+state=critical mode=warm-contact-sprint latest_external=16.3h rows=8 warm_rows=4
 rule=Use this only after the real post, story, message, upload, reply, or approval request exists.
 
 quick_examples:

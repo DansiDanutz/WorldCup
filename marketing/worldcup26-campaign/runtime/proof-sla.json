@@ -1,7 +1,7 @@
 {
   "schema": "worldcup26-proof-sla-v1",
-  "generatedAt": "2026-06-07T17:45:00.864Z",
-  "generatedAtEest": "2026-06-07 20:45 +0300",
+  "generatedAt": "2026-06-08T06:54:01.305Z",
+  "generatedAtEest": "2026-06-08 09:54 +0300",
   "referralCode": "26BC4B90CB",
   "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
   "ok": true,
@@ -16,11 +16,11 @@
     "proofRows": 49,
     "externalProofRows": 31
   },
-  "latestExternalProofAgeMinutes": 213,
-  "latestExternalProofAgeLabel": "3.5h",
+  "latestExternalProofAgeMinutes": 1001,
+  "latestExternalProofAgeLabel": "16.7h",
   "latestExternalProof": {
     "timestampEest": "2026-06-07 17:12 +0300",
-    "ageLabel": "3.5h",
+    "ageLabel": "16.7h",
     "owner": "Sienna",
     "channel": "Instagram",
     "status": "posted",
@@ -37,7 +37,7 @@
       "mode": "warm contact sprint",
       "action": "Send warm-contact invite to 10 football friends.",
       "asset": "media/worldcup26-main-video.mp4",
-      "scheduledAtEest": "2026-06-07 20:44 +0300",
+      "scheduledAtEest": "2026-06-08 09:30 +0300",
       "ageMinutes": 0,
       "ageLabel": "now",
       "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_friends_batch",
@@ -60,7 +60,7 @@
       "mode": "warm contact sprint",
       "action": "Send warm-contact invite to 10 close contacts.",
       "asset": "media/worldcup26-referral-story.jpg",
-      "scheduledAtEest": "2026-06-07 20:44 +0300",
+      "scheduledAtEest": "2026-06-08 09:30 +0300",
       "ageMinutes": 0,
       "ageLabel": "now",
       "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=close_contacts_batch",
@@ -83,7 +83,7 @@
       "mode": "warm contact sprint",
       "action": "Send warm-contact invite to football group admins.",
       "asset": "media/worldcup26-referral-16x9.jpg",
-      "scheduledAtEest": "2026-06-07 20:44 +0300",
+      "scheduledAtEest": "2026-06-08 09:30 +0300",
       "ageMinutes": 0,
       "ageLabel": "now",
       "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-admins&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=football_admin_permission",
@@ -106,7 +106,7 @@
       "mode": "warm contact sprint",
       "action": "Send warm-contact invite to 3 trusted testers.",
       "asset": "runtime/signup-conversion-audit.html",
-      "scheduledAtEest": "2026-06-07 20:44 +0300",
+      "scheduledAtEest": "2026-06-08 09:30 +0300",
       "ageMinutes": 0,
       "ageLabel": "now",
       "trackedLink": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-testers&utm_medium=warm-contact&utm_campaign=worldcup26_warm_contact_sprint&utm_content=trusted_tester_signup",
@@ -128,15 +128,15 @@
       "key": "x",
       "label": "X public fallback",
       "loginUrl": "https://x.com/i/flow/login",
-      "shareUrl": "https://twitter.com/intent/tweet?text=If%20you%20already%20have%20strong%20World%20Cup%20takes%2C%20make%20your%203%20picks.%0A%0AWorldCup26%20now%20lets%20you%20save%20the%20picks%20first%20and%20decide%20later%20if%20you%20want%20the%20paid%20leaderboard%3A%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse145%0A%0ACode%3A%2026BC4B90CB",
-      "proofCommand": "node campaign-proof-log.mjs --pulse \"145\" --proof-url \"PUBLIC_X_POST_URL\" --status \"posted\""
+      "shareUrl": "https://twitter.com/intent/tweet?text=WorldCup26%20is%20open.%0A%0APick%203%20teams%20for%20free.%20See%20your%20private%20points%20preview.%0A%0AUse%20a%20ticket%20only%20when%20you%20want%20to%20enter%20the%20paid%20leaderboard.%0A%0ACode%3A%2026BC4B90CB%0Ahttps%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dx-public-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse193",
+      "proofCommand": "node campaign-proof-log.mjs --pulse \"193\" --proof-url \"PUBLIC_X_POST_URL\" --status \"posted\""
     },
     {
       "key": "facebook",
       "label": "Facebook feed fallback",
       "loginUrl": "https://www.facebook.com/login/",
-      "shareUrl": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse137",
-      "proofCommand": "node campaign-proof-log.mjs --pulse \"137\" --proof-url \"PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE\" --status \"posted\""
+      "shareUrl": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworldcup26.world%2Flogin%3Fref%3D26BC4B90CB%26utm_source%3Dfacebook-feed-fallback%26utm_medium%3Dmanual-post%26utm_campaign%3Dworldcup26_referral_72h%26utm_content%3Ddexter_pulse185",
+      "proofCommand": "node campaign-proof-log.mjs --pulse \"185\" --proof-url \"PUBLIC_FACEBOOK_POST_URL_OR_ACCOUNT_NOTE\" --status \"posted\""
     }
   ],
   "proofRule": "Do the real post, story, message, upload, reply, or approval request first. Log proof only after it exists."

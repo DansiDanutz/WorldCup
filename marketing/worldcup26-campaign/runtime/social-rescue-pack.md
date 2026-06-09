@@ -1,10 +1,10 @@
 # WorldCup26 Social Rescue Pack
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:30 +0300
 
 - Status: ready
 - Proof state: critical
-- Latest external proof age: 3.5h
+- Latest external proof age: 16.1h
 - Live ad QA: ok
 - Referral code: `26BC4B90CB`
 - Referral link: https://worldcup26.world/login?ref=26BC4B90CB

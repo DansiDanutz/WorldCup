@@ -1,10 +1,10 @@
 # WorldCup26 Escalation Board
 
-Generated: 2026-06-07 20:45 +0300
+Generated: 2026-06-08 09:30 +0300
 
 - Link sentinel: ok
 - Deployment: dpl_4jhJsLzjVMmQ5ipVZC8svAftNoUD
-- Latest external proof age: 3.5h
+- Latest external proof age: 16.3h
 - External open actions: 16
 - Critical stale actions: 16
 - Hot stale actions: 0
@@ -16,7 +16,7 @@ Use this as the "wake up now" board. It does not prove posting. It only says whi
 
 ### CRITICAL #1 Sienna / WhatsApp Status
 
-- Age: 40.8h
+- Age: 53.5h
 - Scheduled: 2026-06-06 04:00 +0300
 - Action: Post story asset with video caption 1
 - Asset: `media/worldcup26-main-video.mp4`
@@ -46,7 +46,7 @@ node campaign-proof-log.mjs --priority "1" --proof-url "private-whatsapp-status:
 
 ### CRITICAL #2 Nano / WhatsApp personal
 
-- Age: 38.8h
+- Age: 51.5h
 - Scheduled: 2026-06-06 06:00 +0300
 - Action: Send personal invite to warm contacts
 - Asset: `media/worldcup26-main-video.mp4`
@@ -76,7 +76,7 @@ node campaign-proof-log.mjs --priority "2" --proof-url "private-whatsapp: sent t
 
 ### CRITICAL #3 Sienna / Instagram/Facebook story
 
-- Age: 37.8h
+- Age: 50.5h
 - Scheduled: 2026-06-06 07:00 +0300
 - Action: Story: Code 26BC4B90CB + link sticker
 - Asset: `media/worldcup26-referral-story.jpg`
@@ -107,7 +107,7 @@ node campaign-proof-log.mjs --priority "3" --proof-url "private-meta-story: stor
 
 ### CRITICAL #4 Dexter / Football groups
 
-- Age: 36.8h
+- Age: 49.5h
 - Scheduled: 2026-06-06 08:00 +0300
 - Action: Ask approved group admin for permission; post group variant only if allowed
 - Asset: `campaign/first-wave-posts.md`
@@ -138,7 +138,7 @@ node campaign-proof-log.mjs --priority "4" --proof-url "approval-request: asked 
 
 ### CRITICAL #5 Sienna / TikTok/Reels/Shorts
 
-- Age: 35.8h
+- Age: 48.5h
 - Scheduled: 2026-06-06 09:00 +0300
 - Action: Upload main video with short caption and code in first line
 - Asset: `media/worldcup26-main-video.mp4`
@@ -169,7 +169,7 @@ node campaign-proof-log.mjs --priority "5" --proof-url "public-video-url-preferr
 
 ### CRITICAL #6 Nano / DM follow-up
 
-- Age: 33.8h
+- Age: 46.5h
 - Scheduled: 2026-06-06 11:00 +0300
 - Action: Reply to first reactions and send the simple how-it-works answer
 - Asset: `campaign/copy-bank.md`
@@ -197,7 +197,7 @@ node campaign-proof-log.mjs --priority "6" --proof-url "private-reply-note: repl
 
 ### CRITICAL #7 Sienna / YouTube Shorts
 
-- Age: 32.8h
+- Age: 45.5h
 - Scheduled: 2026-06-06 12:00 +0300
 - Action: Post main video as Shorts with code and link in description
 - Asset: `media/worldcup26-main-video.mp4`
@@ -228,7 +228,7 @@ node campaign-proof-log.mjs --priority "7" --proof-url "public-video-url-preferr
 
 ### CRITICAL #8 Dexter / Facebook profile/page
 
-- Age: 31.8h
+- Age: 44.5h
 - Scheduled: 2026-06-06 13:00 +0300
 - Action: Publish simple rules feed post for friends and football contacts
 - Asset: `media/worldcup26-referral-square.jpg`
@@ -260,7 +260,7 @@ node campaign-proof-log.mjs --priority "8" --proof-url "manual-post-note: posted
 
 ### CRITICAL #9 Nano / Replies
 
-- Age: 30.8h
+- Age: 43.5h
 - Scheduled: 2026-06-06 14:00 +0300
 - Action: Answer questions using reply bank; push code/link once per conversation
 - Asset: `campaign/copy-bank.md`
@@ -288,7 +288,7 @@ node campaign-proof-log.mjs --priority "9" --proof-url "manual-post-note: posted
 
 ### CRITICAL #10 Sienna / Instagram Story
 
-- Age: 29.8h
+- Age: 42.5h
 - Scheduled: 2026-06-06 15:00 +0300
 - Action: Post referral story image with link sticker and code overlay
 - Asset: `media/worldcup26-referral-story.jpg`
@@ -323,7 +323,7 @@ node campaign-proof-log.mjs --priority "10" --proof-url "private-meta-story: sto
 
 - Open external actions: 3
 - Stale actions: 3
-- Next: #4 Football groups (36.8h)
+- Next: #4 Football groups (49.5h)
 
 Must do now:
 - #4 Football groups: Ask approved group admin for permission; post group variant only if allowed
@@ -333,7 +333,7 @@ Must do now:
 
 - Open external actions: 8
 - Stale actions: 8
-- Next: #1 WhatsApp Status (40.8h)
+- Next: #1 WhatsApp Status (53.5h)
 
 Must do now:
 - #1 WhatsApp Status: Post story asset with video caption 1
@@ -348,7 +348,7 @@ Must do now:
 
 - Open external actions: 5
 - Stale actions: 5
-- Next: #2 WhatsApp personal (38.8h)
+- Next: #2 WhatsApp personal (51.5h)
 
 Must do now:
 - #2 WhatsApp personal: Send personal invite to warm contacts

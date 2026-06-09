@@ -1,4 +1,4 @@
-WorldCup26 public outreach sprint 2026-06-07 20:45 +0300
+WorldCup26 public outreach sprint 2026-06-08 09:30 +0300
 worker=Sienna targets=9 code=26BC4B90CB
 rule=This is a target map, not proof. Use owned accounts or approved communities, then log a real URL or private-channel note.
 

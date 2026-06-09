@@ -1,6 +1,6 @@
 # WorldCup26 Worker Dispatch Board
 
-Generated: 2026-06-07T17:46:16.913Z
+Generated: 2026-06-08T06:48:19.568Z
 
 Referral code: `26BC4B90CB`
 Referral link: https://worldcup26.world/login?ref=26BC4B90CB
@@ -46,7 +46,7 @@ No urgent row is assigned right now. Keep monitoring `runtime/next-actions-memo.
 
 ## Non-Stop Pulse Overlay
 
-Pulse generated: 2026-06-07T17:46:16.852Z
+Pulse generated: 2026-06-08T06:47:17.664Z
 Pulse actions available: 288
 Pulse actions already proofed: 18
 Pulse command center: `runtime/pulse-command-center.html`
@@ -56,39 +56,39 @@ These are the next live cadence actions. They keep every worker moving between f
 
 ### Dexter
 
-- Pulse: 149
-- Scheduled: 2026-06-07 21:45 +0300
-- Channel: Football groups
-- Action: Ask one football group admin for approval; post only if welcome.
-- Asset: `campaign/first-wave-posts.md`
-- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-groups&utm_medium=approval-first&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse149
+- Pulse: 201
+- Scheduled: 2026-06-08 10:45 +0300
+- Channel: Facebook/feed fallback
+- Action: Post a friendly feed variant if Facebook is logged in.
+- Asset: `media/worldcup26-referral-square.jpg`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-feed-fallback&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=dexter_pulse201
 
 ### Sienna
 
-- Pulse: 146
-- Scheduled: 2026-06-07 21:00 +0300
-- Channel: WhatsApp Status
-- Action: Post the video/status copy if WhatsApp is available.
-- Asset: `media/worldcup26-main-video.mp4`
-- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-status&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse146
+- Pulse: 198
+- Scheduled: 2026-06-08 10:00 +0300
+- Channel: Instagram/Facebook Story
+- Action: Post story image with code and link sticker if logged in.
+- Asset: `media/worldcup26-referral-story.jpg`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-facebook-story&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=sienna_pulse198
 
 ### Memo
 
-- Pulse: 147
-- Scheduled: 2026-06-07 21:15 +0300
-- Channel: Proof audit
-- Action: Check proof log, list unproven current rows, and flag blocked channels.
-- Asset: `runtime/posting-log-live.csv`
-- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=proof-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse147
+- Pulse: 199
+- Scheduled: 2026-06-08 10:15 +0300
+- Channel: Asset audit
+- Action: Confirm video and image assets are present on this worker.
+- Asset: `promo-kit-manifest.md`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=asset-audit&utm_medium=internal&utm_campaign=worldcup26_referral_72h&utm_content=memo_pulse199
 
 ### Nano
 
-- Pulse: 148
-- Scheduled: 2026-06-07 21:30 +0300
-- Channel: WhatsApp personal
-- Action: Send one warm-contact batch if WhatsApp is available.
-- Asset: `media/worldcup26-main-video.mp4`
-- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse148
+- Pulse: 200
+- Scheduled: 2026-06-08 10:30 +0300
+- Channel: Telegram personal
+- Action: Send the invite to one approved Telegram contact or group where welcome.
+- Asset: `campaign/copy-bank.md`
+- Link: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=telegram-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=nano_pulse200
 
 ## Rule For This Board
 

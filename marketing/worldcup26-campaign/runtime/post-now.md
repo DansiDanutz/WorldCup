@@ -1,6 +1,6 @@
 # WorldCup26 Post Now
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Referral code: `26BC4B90CB`
 Referral link: https://worldcup26.world/login?ref=26BC4B90CB
@@ -38,7 +38,7 @@ If they ask what to do: Sign in, use the code, save 3 picks for free, then use a
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 04:00 +0300,Sienna,WhatsApp Status,media/worldcup26-main-video.mp4,"I invited you to WorldCup26.
+2026-06-08 09:46 +0300,2026-06-06 04:00 +0300,Sienna,WhatsApp Status,media/worldcup26-main-video.mp4,"I invited you to WorldCup26.
 
 Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
 
@@ -79,7 +79,7 @@ If they ask what to do: Sign in, use the code, save 3 picks for free, then use a
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 06:00 +0300,Nano,WhatsApp personal,media/worldcup26-main-video.mp4,"I invited you to WorldCup26.
+2026-06-08 09:46 +0300,2026-06-06 06:00 +0300,Nano,WhatsApp personal,media/worldcup26-main-video.mp4,"I invited you to WorldCup26.
 
 Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
 
@@ -121,7 +121,7 @@ Join: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-faceboo
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 07:00 +0300,Sienna,Instagram/Facebook story,media/worldcup26-referral-story.jpg,"Pick 3 teams before they lock.
+2026-06-08 09:46 +0300,2026-06-06 07:00 +0300,Sienna,Instagram/Facebook story,media/worldcup26-referral-story.jpg,"Pick 3 teams before they lock.
 
 Watch your private points preview move with every match.
 
@@ -163,7 +163,7 @@ Use only where group rules allow promo links. If unsure, ask the group admin bef
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 08:00 +0300,Dexter,Football groups,campaign/first-wave-posts.md,"For football fans here:
+2026-06-08 09:46 +0300,2026-06-06 08:00 +0300,Dexter,Football groups,campaign/first-wave-posts.md,"For football fans here:
 
 WorldCup26 is a prediction game where you pick 3 teams free first and see your private points preview.
 
@@ -206,7 +206,7 @@ Join: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shor
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 09:00 +0300,Sienna,TikTok/Reels/Shorts,media/worldcup26-main-video.mp4,"Pick 3 teams before they lock.
+2026-06-08 09:46 +0300,2026-06-06 09:00 +0300,Sienna,TikTok/Reels/Shorts,media/worldcup26-main-video.mp4,"Pick 3 teams before they lock.
 
 Watch your private points preview move with every match.
 
@@ -245,7 +245,7 @@ If they ask why the code matters: it connects the account to the invite. Code 26
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 11:00 +0300,Nano,DM follow-up,campaign/copy-bank.md,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.
+2026-06-08 09:46 +0300,2026-06-06 11:00 +0300,Nano,DM follow-up,campaign/copy-bank.md,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.
 
 Use a ticket only if you want to enter the paid leaderboard.
 
@@ -285,7 +285,7 @@ Join: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=youtube-shorts&ut
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 12:00 +0300,Sienna,YouTube Shorts,media/worldcup26-main-video.mp4,"Pick 3 teams before they lock.
+2026-06-08 09:46 +0300,2026-06-06 12:00 +0300,Sienna,YouTube Shorts,media/worldcup26-main-video.mp4,"Pick 3 teams before they lock.
 
 Watch your private points preview move with every match.
 
@@ -328,7 +328,7 @@ Favorites or underdogs? Pick your 3 and send me your lineup.
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 13:00 +0300,Dexter,Facebook profile/page,media/worldcup26-referral-square.jpg,"WorldCup26 is open.
+2026-06-08 09:46 +0300,2026-06-06 13:00 +0300,Dexter,Facebook profile/page,media/worldcup26-referral-square.jpg,"WorldCup26 is open.
 
 Pick 3 teams for free. See your private points preview.
 
@@ -369,7 +369,7 @@ If they ask why the code matters: it connects the account to the invite. Code 26
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 14:00 +0300,Nano,Replies,campaign/copy-bank.md,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.
+2026-06-08 09:46 +0300,2026-06-06 14:00 +0300,Nano,Replies,campaign/copy-bank.md,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.
 
 Use a ticket only if you want to enter the paid leaderboard.
 
@@ -409,7 +409,7 @@ Join: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=instagram-story&u
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 15:00 +0300,Sienna,Instagram Story,media/worldcup26-referral-story.jpg,"Pick 3 teams before they lock.
+2026-06-08 09:46 +0300,2026-06-06 15:00 +0300,Sienna,Instagram Story,media/worldcup26-referral-story.jpg,"Pick 3 teams before they lock.
 
 Watch your private points preview move with every match.
 
@@ -450,7 +450,7 @@ If they ask what to do: Sign in, use the code, save 3 picks for free, then use a
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 17:00 +0300,Nano,WhatsApp personal,media/worldcup26-main-video.mp4,"I invited you to WorldCup26.
+2026-06-08 09:46 +0300,2026-06-06 17:00 +0300,Nano,WhatsApp personal,media/worldcup26-main-video.mp4,"I invited you to WorldCup26.
 
 Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
 
@@ -492,7 +492,7 @@ Join: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=facebook-reels&ut
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 19:00 +0300,Sienna,Facebook Reels,media/worldcup26-main-video.mp4,"Pick 3 teams before they lock.
+2026-06-08 09:46 +0300,2026-06-06 19:00 +0300,Sienna,Facebook Reels,media/worldcup26-main-video.mp4,"Pick 3 teams before they lock.
 
 Watch your private points preview move with every match.
 
@@ -533,7 +533,7 @@ If they ask what to do: Sign in, use the code, save 3 picks for free, then use a
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 20:00 +0300,Sienna,WhatsApp/Telegram groups,media/worldcup26-referral-story.jpg,"I invited you to WorldCup26.
+2026-06-08 09:46 +0300,2026-06-06 20:00 +0300,Sienna,WhatsApp/Telegram groups,media/worldcup26-referral-story.jpg,"I invited you to WorldCup26.
 
 Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
 
@@ -574,7 +574,7 @@ Follow up once after 24 hours if they react but do not answer.
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 21:00 +0300,Dexter,Creator outreach,campaign/first-wave-posts.md,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
+2026-06-08 09:46 +0300,2026-06-06 21:00 +0300,Dexter,Creator outreach,campaign/first-wave-posts.md,"Hey - I am promoting WorldCup26, a World Cup prediction game where users pick 3 teams free first, see a private points preview, and can use a ticket later for the paid leaderboard.
 
 I have a video, captions, and a referral link ready:
 https://worldcup26.world/login?ref=26BC4B90CB&utm_source=creator-outreach&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=dexter_h17
@@ -613,7 +613,7 @@ If they ask why the code matters: it connects the account to the invite. Code 26
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 22:00 +0300,Nano,Direct DMs,campaign/copy-bank.md,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.
+2026-06-08 09:46 +0300,2026-06-06 22:00 +0300,Nano,Direct DMs,campaign/copy-bank.md,"Quick version: you pick 3 World Cup teams for free first. They score from real results and you can see your private points preview.
 
 Use a ticket only if you want to enter the paid leaderboard.
 
@@ -653,7 +653,7 @@ Join: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=tiktok-reels-shor
 
 ```csv
 timestamp_eest,scheduled_at_eest,owner,channel,asset,copy_used,link,status,proof_url,reply_count,signup_notes,next_followup
-2026-06-07 20:46 +0300,2026-06-06 23:00 +0300,Sienna,TikTok/Reels/Shorts,media/worldcup26-main-video.mp4,"Pick 3 teams before they lock.
+2026-06-08 09:46 +0300,2026-06-06 23:00 +0300,Sienna,TikTok/Reels/Shorts,media/worldcup26-main-video.mp4,"Pick 3 teams before they lock.
 
 Watch your private points preview move with every match.
 

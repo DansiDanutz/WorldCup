@@ -1,13 +1,13 @@
 # WorldCup26 Draft Pack
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Referral code: `26BC4B90CB`
 Referral link: https://worldcup26.world/login?ref=26BC4B90CB
 
 # Dexter Draft Pack
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Lane: Football hooks and short feed posts
 
@@ -216,7 +216,7 @@ Log note: Dexter prepared Creator outreach action for 2026-06-07 13:00 +0300.
 
 # Sienna Draft Pack
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Lane: Visual captions, stories, reels, and community posts
 
@@ -421,7 +421,7 @@ Log note: Sienna prepared TikTok/Reels/Shorts action for 2026-06-06 23:00 +0300.
 
 # Memo Draft Pack
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Lane: Ops tracker and campaign log
 
@@ -565,10 +565,66 @@ Update runtime/posting-log-live.csv after each manual post, reply, or outreach. 
 
 Log note: Memo prepared Ops check action for 2026-06-08 07:00 +0300.
 
+### Ops check - 2026-06-08 12:00 +0300
+
+Asset: `campaign/posting-log-template.csv`
+Mode: internal
+
+```text
+Campaign ops check for WorldCup26.
+
+Referral code: 26BC4B90CB
+Referral link: https://worldcup26.world/login?ref=26BC4B90CB
+
+Verify the current assets:
+- media/worldcup26-main-video.mp4
+- media/worldcup26-referral-story.jpg
+- media/worldcup26-referral-16x9.jpg
+- runtime/outbox-ready.csv
+
+Next action: Choose best two channels and double posting cadence there
+```
+
+First comment / follow-up:
+
+```text
+Update runtime/posting-log-live.csv after each manual post, reply, or outreach. Track channel, copy used, asset, and next follow-up.
+```
+
+Log note: Memo prepared Ops check action for 2026-06-08 12:00 +0300.
+
+### Ops check - 2026-06-08 19:00 +0300
+
+Asset: `campaign/posting-log-template.csv`
+Mode: internal
+
+```text
+Campaign ops check for WorldCup26.
+
+Referral code: 26BC4B90CB
+Referral link: https://worldcup26.world/login?ref=26BC4B90CB
+
+Verify the current assets:
+- media/worldcup26-main-video.mp4
+- media/worldcup26-referral-story.jpg
+- media/worldcup26-referral-16x9.jpg
+- runtime/outbox-ready.csv
+
+Next action: Prepare final-day push list from best channels and replies
+```
+
+First comment / follow-up:
+
+```text
+Update runtime/posting-log-live.csv after each manual post, reply, or outreach. Track channel, copy used, asset, and next follow-up.
+```
+
+Log note: Memo prepared Ops check action for 2026-06-08 19:00 +0300.
+
 
 # Nano Draft Pack
 
-Generated: 2026-06-07T17:46:16.753Z
+Generated: 2026-06-08T06:46:27.658Z
 
 Lane: Replies, DMs, objections, and micro-posts
 

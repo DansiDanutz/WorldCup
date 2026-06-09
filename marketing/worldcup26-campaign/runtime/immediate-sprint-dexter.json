@@ -1,0 +1,68 @@
+{
+  "worker": "Dexter",
+  "slug": "dexter",
+  "ok": true,
+  "actionCount": 3,
+  "actions": [
+    {
+      "id": "rot-01-dexter",
+      "hour": 1,
+      "startsAt": "2026-06-07T18:54:42.772Z",
+      "startsAtEest": "07/06/2026 21:54",
+      "worker": "Dexter",
+      "platform": "X Search",
+      "target": "World Cup 2026 prediction conversations",
+      "action": "Reply only where useful: ask people their 3 teams and include the free-picks link once.",
+      "openUrl": "https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1&utm_rotation_hour=1&utm_worker=dexter",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X Search\" --channel \"World Cup 2026 prediction conversations\" --status \"posted\" --attempt-url \"https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live\" --detail \"public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST\"",
+      "proofInstruction": "public-url: X reply/post URL with code/link included"
+    },
+    {
+      "id": "rot-02-dexter",
+      "hour": 2,
+      "startsAt": "2026-06-07T19:54:42.772Z",
+      "startsAtEest": "07/06/2026 22:54",
+      "worker": "Dexter",
+      "platform": "X Target Hunter",
+      "target": "rank World Cup teams",
+      "action": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.",
+      "openUrl": "https://x.com/search?q=rank%20World%20Cup%20teams%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-45_rank-world-cup-teams&utm_rotation_hour=2&utm_worker=dexter",
+      "copy": "Good football question. I am asking people for exactly 3 World Cup picks before the event starts.\n\nPick free first and see your private points preview:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-45_rank-world-cup-teams\n\nCode: 26BC4B90CB",
+      "proofCommand": "node campaign-x-reply-log.mjs --worker \"Dexter\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"rank World Cup teams\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\"",
+      "proofInstruction": "real X reply URL or precise private proof note"
+    },
+    {
+      "id": "rot-03-dexter",
+      "hour": 3,
+      "startsAt": "2026-06-07T20:54:42.772Z",
+      "startsAtEest": "07/06/2026 23:54",
+      "worker": "Dexter",
+      "platform": "X Target Hunter",
+      "target": "Japan World Cup 2026",
+      "action": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.",
+      "openUrl": "https://x.com/search?q=Japan%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-21_japan-world-cup-2026&utm_rotation_hour=3&utm_worker=dexter",
+      "copy": "Good football question. I am asking people for exactly 3 World Cup picks before the event starts.\n\nPick free first and see your private points preview:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-21_japan-world-cup-2026\n\nCode: 26BC4B90CB",
+      "proofCommand": "node campaign-x-reply-log.mjs --worker \"Dexter\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"Japan World Cup 2026\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\"",
+      "proofInstruction": "real X reply URL or precise private proof note"
+    }
+  ],
+  "firstAction": {
+    "id": "rot-01-dexter",
+    "hour": 1,
+    "startsAt": "2026-06-07T18:54:42.772Z",
+    "startsAtEest": "07/06/2026 21:54",
+    "worker": "Dexter",
+    "platform": "X Search",
+    "target": "World Cup 2026 prediction conversations",
+    "action": "Reply only where useful: ask people their 3 teams and include the free-picks link once.",
+    "openUrl": "https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live",
+    "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1&utm_rotation_hour=1&utm_worker=dexter",
+    "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1",
+    "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Dexter\" --platform \"X Search\" --channel \"World Cup 2026 prediction conversations\" --status \"posted\" --attempt-url \"https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live\" --detail \"public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST\"",
+    "proofInstruction": "public-url: X reply/post URL with code/link included"
+  }
+}
