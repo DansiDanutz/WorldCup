@@ -7,6 +7,8 @@ import ffmpegPath from 'ffmpeg-static';
 const FPS = Number(process.env.FPS || 30);
 const DURATION = Number(process.env.DURATION || 90);
 const OUT = process.env.OUTFILE || 'WorldCup26_Ad.mp4';
+const FRAMES = process.env.FRAMES || 'frames';      // frame dir (frames_v for 9:16)
+const CROP = process.env.CROP || '1920:1080:0:0';    // even dims (1080:1920:0:0 for 9:16)
 const { lines } = JSON.parse(fs.readFileSync('narration.json', 'utf8'));
 
 // duration of an audio file via ffmpeg banner parse
@@ -45,13 +47,13 @@ for (let i = 0; i < lines.length; i++) {
 const mix = `${labels.join('')}amix=inputs=${lines.length}:normalize=0:dropout_transition=0[mx];` +
             `[mx]alimiter=limit=0.97,apad,atrim=0:${DURATION},aformat=channel_layouts=stereo:sample_rates=44100[aout]`;
 // crop the stray sub-pixel row so dimensions are even (libx264 needs even w/h)
-const vid = `[0:v]crop=1920:1080:0:0,fps=${FPS},format=yuv420p[v]`;
+const vid = `[0:v]crop=${CROP},fps=${FPS},format=yuv420p[v]`;
 const filter = chains.join(';') + ';' + mix + ';' + vid;
 fs.writeFileSync('filter.txt', filter);
 
 const args = [
   '-y',
-  '-framerate', String(FPS), '-start_number', '0', '-i', 'frames/f_%05d.jpg',
+  '-framerate', String(FPS), '-start_number', '0', '-i', `${FRAMES}/f_%05d.jpg`,
   ...files.flatMap(f => ['-i', f]),
   '-filter_complex', filter,
   '-map', '[v]', '-map', '[aout]',
