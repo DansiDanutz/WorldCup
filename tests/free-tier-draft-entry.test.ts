@@ -48,7 +48,10 @@ describe("free draft entry tier", () => {
     );
     // Free permanent lock sets the committed tier without consuming a ticket.
     assert.match(freeLockedMigration, /status = 'committed'/);
-    assert.doesNotMatch(freeLockedMigration, /worldcup_commit_entry[\s\S]*?consumed_at = now\(\)/);
+    // A committed entry can enter the paid pool any time during the tournament:
+    // the kickoff cutoff in lock only applies while still a draft.
+    assert.match(freeLockedMigration, /create or replace function public\.worldcup_lock_draft_entry/);
+    assert.match(freeLockedMigration, /v_entry\.status = 'draft' and exists/);
     // Picks are immutable once committed or locked.
     assert.match(freeLockedMigration, /raise exception 'TEAMS_LOCKED'/);
     assert.match(

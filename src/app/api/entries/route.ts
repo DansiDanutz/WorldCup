@@ -125,9 +125,24 @@ export async function POST(request: Request) {
     return jsonError("Could not check team availability.", 500);
   }
 
+  // A free (committed) or already-paid (locked) entry has finalized its teams,
+  // so buying a ticket to enter the paid pool is allowed any time during the
+  // tournament. The team-pick cutoff below only governs still-editable picks.
+  let enteringPoolWithLockedTeams = false;
+  if (action === "lock") {
+    const existingEntry = await supabase
+      .from("worldcup_entries")
+      .select("status")
+      .eq("tournament_id", tournamentResult.data.id)
+      .eq("user_id", user.id)
+      .maybeSingle();
+    enteringPoolWithLockedTeams =
+      existingEntry.data?.status === "committed" || existingEntry.data?.status === "locked";
+  }
+
   const lockedTeamIds = getLockedTeamIds(teamIds, groupMatchesResult.data ?? []);
 
-  if (lockedTeamIds.length > 0) {
+  if (!enteringPoolWithLockedTeams && lockedTeamIds.length > 0) {
     const namesById = new Map((teamsResult.data ?? []).map((team) => [team.id, team.name]));
     const lockedTeamNames = lockedTeamIds.map((teamId) => namesById.get(teamId) ?? teamId);
 
