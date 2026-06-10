@@ -20,15 +20,16 @@ describe("SEO entrypoints", () => {
 
     assert.equal(result.sitemap, `${CANONICAL_ORIGIN}/sitemap.xml`);
     assert.equal(result.host, CANONICAL_ORIGIN);
-    assert.deepEqual(disallow, ["/admin", "/api/", "/preview", "/wallet"]);
+    assert.deepEqual(disallow, ["/admin", "/wallet", "/api/", "/preview"]);
   });
 
   it("lists the public marketing routes in the sitemap", () => {
     const routes = sitemap().map((entry) => entry.url);
 
     assert.deepEqual(routes, [
-      `${CANONICAL_ORIGIN}`,
+      `${CANONICAL_ORIGIN}/`,
       `${CANONICAL_ORIGIN}/coefficients`,
+      `${CANONICAL_ORIGIN}/schema`,
       `${CANONICAL_ORIGIN}/login`,
       `${CANONICAL_ORIGIN}/privacy`,
       `${CANONICAL_ORIGIN}/terms`,
