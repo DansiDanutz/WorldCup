@@ -1,0 +1,31 @@
+{
+  "match": "Mexico-vs-South-Africa",
+  "voice": "Brian",
+  "model": "eleven_multilingual_v2",
+  "lines": [
+    {
+      "at": 0.5,
+      "text": "Welcome to WorldCup twenty-six dot world — the game of the world's greatest tournament. Pick three teams. Every match scores. Win the pool."
+    },
+    {
+      "at": 11.2,
+      "text": "June eleventh, twenty twenty-six. One hundred thousand voices shake the Estadio Azteca. The World Cup is home — and Mexico opens it against South Africa."
+    },
+    {
+      "at": 22.0,
+      "text": "El Tri. Santiago Gimenez leads the line. Hirving Lozano — the man who silenced Germany — waits to strike again. Edson Alvarez anchors the midfield. Guillermo Ochoa — forty years old, six World Cups, ageless. And Orbelin Pineda pulls the strings."
+    },
+    {
+      "at": 44.5,
+      "text": "Sixteen years ago, these two nations opened a World Cup together. One, one. The draw that sent Bafana Bafana home — and Mexico onward. Tonight, the ghost of twenty ten returns."
+    },
+    {
+      "at": 57.5,
+      "text": "South Africa. Percy Tau — the Lion of Judah. Lyle Foster, forged in Premier League fire. Captain Ronwen Williams guards the goal. Teboho Mokoena dictates the tempo. Evidence Makgopa hunts the breakthrough."
+    },
+    {
+      "at": 91.0,
+      "text": "Two nations. One shared memory. Ninety minutes to rewrite it. Don't just watch it — play it. Sign up free at WorldCup twenty-six dot world. Pick your three teams. Win the pool."
+    }
+  ]
+}

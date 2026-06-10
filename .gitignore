@@ -18,3 +18,5 @@ supabase/.temp/
 
 # Build artifact backups
 .next_bad_*/
+__pycache__/
+*.pyc
