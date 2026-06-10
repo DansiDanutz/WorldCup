@@ -69,7 +69,10 @@ Hour-rotation hooks (vary, never repeat consecutively):
 
 ### Sienna — visual blitz (Stories, Status, Reels/Shorts)
 
-- WhatsApp Status + Instagram/Facebook Story every 2 hours: countdown screenshot or QR story card, fresh caption each time, `utm_source=story`/`whatsapp-status`.
+- Fresh kickoff-day story cards (9:16, generated 2026-06-10):
+  `assets/kickoff-1000-story-a.png` and `assets/kickoff-1000-story-b.png` —
+  "KICKOFF TOMORROW · Pick 3 Teams FREE · Before the first whistle". Lead with these.
+- WhatsApp Status + Instagram/Facebook Story every 2 hours: kickoff story card, countdown screenshot, or QR story card, fresh caption each time, `utm_source=story`/`whatsapp-status`.
 - 4 short-form videos today across TikTok/Reels/Shorts/Facebook Reels: cut from `media/worldcup26-main-video.mp4`, first frame = the ticking countdown, caption = the one message of the day. `utm_source=tiktok|reels|shorts|fb-reels`.
 - Refresh the QR cards' caption: "Scan before the first whistle."
 
