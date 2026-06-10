@@ -520,11 +520,12 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
     if (!session?.access_token) return;
 
     let cancelled = false;
+    const token = session.access_token;
     fetch("/api/admin/metrics", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${session.access_token}`,
+        Authorization: `Bearer ${token}`,
       },
     })
       .then(async (response) => {
@@ -541,9 +542,32 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
       })
       .catch(() => undefined);
 
+    // Preload the ticket inventory pool + accounts so the "Assign user ticket"
+    // form is immediately usable. Without this, agentPool.admin stays 0 and the
+    // account dropdown is empty, leaving the assign button permanently disabled
+    // until the admin manually clicks Load Accounts / refresh agents.
+    void loadAgents();
+    fetch("/api/admin/accounts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(async (response) => {
+        if (!response.ok) return;
+        const result = (await response.json()) as { accounts?: AdminAccountRow[] };
+        if (!cancelled) {
+          setAccounts(result.accounts ?? []);
+        }
+      })
+      .catch(() => undefined);
+
     return () => {
       cancelled = true;
     };
+    // loadAgents is a stable component closure; only re-run when the session changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session?.access_token]);
 
   const signedIn = Boolean(session?.user);

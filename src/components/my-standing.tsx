@@ -97,7 +97,9 @@ export function MyStanding() {
   const [session, setSession] = useState<Session | null>(null);
   const [data, setData] = useState<Standing | null>(null);
   const [agentCodeMessage, setAgentCodeMessage] = useState<string | null>(null);
-  const [agentCodeOpen, setAgentCodeOpen] = useState(false);
+  // Agents land here to sell codes, so surface the next sellable code by
+  // default instead of hiding it behind the gift toggle.
+  const [agentCodeOpen, setAgentCodeOpen] = useState(true);
   const [referralsOpen, setReferralsOpen] = useState(false);
   const [standingModalOpen, setStandingModalOpen] = useState(false);
 
