@@ -245,7 +245,12 @@ export async function GET(request: Request) {
   const me = myEntry.data
     ? {
         hasEntry: true,
+        // `locked` means "in the paid pool" (a ticket was consumed). `committed`
+        // is a free permanent lock: picks are final but the entry is not in the
+        // pool and shows a shadow ("if you were paying") rank instead.
         locked: myEntryStatus === "locked",
+        committed: myEntryStatus === "committed",
+        picksLocked: myEntryStatus === "committed" || myEntryStatus === "locked",
         displayName: (myRow?.display_name ?? myEntry.data.display_name) as string,
         totalPoints: myRow ? Number(myRow.total_points) : myTotalFromTeams,
         rank: myRank,

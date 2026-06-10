@@ -570,10 +570,11 @@ describe("WorldCup design system integration", () => {
     assert.match(walletScreen, /Agent Call requests/);
     assert.match(walletScreen, /acceptAgentTicketRequest/);
     assert.match(dashboard, /disabled=\{Boolean\(entryActionBlocker\) \|\| isPending\}/);
-    assert.match(dashboard, /submitEntry\(hasEntryTicket \? "lock" : "save-draft"\)/);
-    assert.match(dashboard, /Save free picks/);
-    assert.match(dashboard, /Update free picks/);
-    assert.match(dashboard, /Lock paid entry/);
+    assert.match(dashboard, /submitEntry\(entryPrimaryAction\)/);
+    assert.match(dashboard, /Save a draft to preview first/);
+    assert.match(dashboard, /Update saved draft/);
+    assert.match(dashboard, /Lock & enter prize pool/);
+    assert.match(dashboard, /Lock my 3 teams/);
     assert.match(dashboard, /function getEntryLockBlocker/);
     assert.match(dashboard, /function getEntryDraftBlocker/);
     assert.doesNotMatch(dashboard, /signedInWithGoogle && consented !== true/);

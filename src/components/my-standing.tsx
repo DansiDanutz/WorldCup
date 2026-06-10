@@ -17,6 +17,8 @@ type Standing = {
     | {
         hasEntry: true;
         locked: boolean;
+        committed: boolean;
+        picksLocked: boolean;
         displayName: string;
         totalPoints: number;
         rank: number | null;
@@ -250,7 +252,9 @@ export function MyStanding() {
                           ? `of ${data.tournament.participants}`
                           : "ranking pending"
                         : me.rank
-                          ? "if locked now"
+                          ? me.committed
+                            ? "if you were paying"
+                            : "if locked now"
                           : "preview pending"}
                     </small>
                   </div>
@@ -278,14 +282,22 @@ export function MyStanding() {
                   <div className="standing-share">
                     <Crown size={20} aria-hidden="true" />
                     <div>
-                      <span>{me.locked ? "In the money — projected share" : "If locked — projected share"}</span>
+                      <span>
+                        {me.locked
+                          ? "In the money — projected share"
+                          : me.committed
+                            ? "If you were paying — projected share"
+                            : "If locked — projected share"}
+                      </span>
                       <strong>{formatMoneyAmount(me.share)} USDT</strong>
                     </div>
                   </div>
                 ) : (
                   <p className="field-note">
-                    {!me.locked
-                      ? "Free preview only. Your points are live here; lock with a ticket to enter the paid leaderboard."
+                    {me.committed
+                      ? "Your 3 teams are locked. You're playing for fun — buy a ticket to enter the prize pool. This preview shows where you'd place if you were paying."
+                      : !me.locked
+                      ? "Free preview only. Your points are live here; lock your teams, then add a ticket to enter the paid prize pool."
                       : me.rank
                       ? `Top ${data.tournament.paidPlaces} share the prize pool. Keep climbing to break in.`
                       : "Leaderboard ranking appears after the first points refresh."}
@@ -523,7 +535,11 @@ export function MyStanding() {
                     </div>
                     <small>
                       {formatPoints(modalMe.totalPoints)} points
-                      {!modalMe.locked ? " · if locked now" : ""}
+                      {modalMe.locked
+                        ? ""
+                        : modalMe.committed
+                          ? " · if you were paying"
+                          : " · if locked now"}
                       {modalMe.teams.length > 0
                         ? ` · ${modalMe.teams.map((team) => team.name).join(", ")}`
                         : ""}

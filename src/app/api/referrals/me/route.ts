@@ -86,7 +86,7 @@ export async function GET(request: Request) {
       .or(`from_user_id.eq.${user.id},to_user_id.eq.${user.id}`),
     supabase
       .from("worldcup_entries")
-      .select("id,display_name,status,locked_at")
+      .select("id,display_name,status,locked_at,committed_at")
       .eq("tournament_id", tournament.data.id)
       .eq("user_id", user.id)
       .order("locked_at", { ascending: false, nullsFirst: false })
@@ -126,7 +126,11 @@ export async function GET(request: Request) {
     projectedShare: number | null;
   } | null = null;
 
-  if (ownEntry.data?.id && ownEntry.data.status === "draft") {
+  // Both editable drafts and free permanent-locked ("committed") entries get a
+  // private points preview and a "where you would place if you were paying"
+  // shadow rank. Paid ("locked") entries read their real rank from the
+  // standing endpoint instead.
+  if (ownEntry.data?.id && (ownEntry.data.status === "draft" || ownEntry.data.status === "committed")) {
     const teamTotals = await supabase
       .from("worldcup_entry_team_totals")
       .select("total_points")
@@ -207,6 +211,7 @@ export async function GET(request: Request) {
           displayName: ownEntry.data.display_name,
           teamIds: (ownEntryTeams?.data ?? []).map((team) => team.team_id),
           lockedAt: ownEntry.data.locked_at,
+          committedAt: ownEntry.data.committed_at ?? null,
         }
       : null,
     entryPreview,

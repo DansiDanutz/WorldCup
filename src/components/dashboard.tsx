@@ -210,7 +210,13 @@ export function Dashboard({
     .filter((team): team is WorldCupTeam => Boolean(team));
   const accountEntry = myAccountStatus?.entry ?? null;
   const accountHasDraftEntry = accountEntry?.status === "draft";
-  const accountHasEntry = accountEntry?.status === "locked";
+  // Teams are permanently locked for both a free "committed" entry and a paid
+  // "locked" (in the pool) entry. Only a paid entry is in the prize pool.
+  const accountInPool = accountEntry?.status === "locked";
+  const accountCommittedFree = accountEntry?.status === "committed";
+  const accountTeamsLocked = accountInPool || accountCommittedFree;
+  // Kept for existing call sites that mean "the picks workflow is finished".
+  const accountHasEntry = accountTeamsLocked;
   const lockedEntryTeamRecords = (accountEntry?.teamIds ?? [])
     .map((teamId) => teamsById.get(teamId))
     .filter((team): team is WorldCupTeam => Boolean(team));
@@ -218,8 +224,8 @@ export function Dashboard({
   const pickInstruction =
     selectedTeams.length === 3
       ? accountHasDraftEntry
-        ? "Your free picks are saved. Update them here or lock them after you get a ticket."
-        : "Your 3 teams are ready. Save them free now and watch the private points preview."
+        ? "Your free picks are saved. Lock your 3 teams forever, or get a ticket to lock straight into the prize pool."
+        : "Your 3 teams are ready. Lock them free forever, or save a draft first to watch the private points preview."
       : `Choose ${remainingPickCount} more ${remainingPickCount === 1 ? "team" : "teams"}.`;
 
   const visibleMatches = matches.slice(0, 24);
@@ -307,23 +313,25 @@ export function Dashboard({
     signedInWithGoogle,
   });
   const journeySteps = [
-    { label: "Pick", done: selectedTeams.length === 3 },
-    { label: "Save", done: accountHasDraftEntry || accountHasEntry },
-    { label: "Ticket", done: hasEntryTicket },
-    { label: "Lock", done: accountHasEntry },
+    { label: "Pick", done: selectedTeams.length === 3 || accountTeamsLocked },
+    { label: "Lock teams", done: accountTeamsLocked },
+    { label: "Ticket", done: hasEntryTicket || accountInPool },
+    { label: "In pool", done: accountInPool },
   ];
   const journeyCurrentStep = journeySteps.findIndex((step) => !step.done);
+  // Primary action: with a ticket you lock straight into the paid pool; without
+  // one you lock your teams for free forever ("commit"). Both need the same
+  // prerequisites (display name, 3 valid teams, referral terms).
+  const entryPrimaryAction: "lock" | "commit" = hasEntryTicket ? "lock" : "commit";
   const entryActionBlocker = hasEntryTicket ? entryLockBlocker : entryDraftBlocker;
-  const entryActionLabel = hasEntryTicket
-    ? "Lock paid entry"
-    : accountHasDraftEntry
-      ? "Update free picks"
-      : "Save free picks";
+  const entryActionLabel = hasEntryTicket ? "Lock & enter prize pool" : "Lock my 3 teams";
   const entryLockHint = hasEntryTicket
     ? entryLockBlocker && !missingEntryTicket
       ? `Ticket is ready. ${entryLockBlocker}`
       : entryLockBlocker
-    : entryDraftBlocker;
+    : entryDraftBlocker
+      ? entryDraftBlocker
+      : "Locking is permanent — your 3 teams can never be changed. No ticket needed; add one anytime to enter the prize pool.";
   const pendingAgentTicketRequest = agentTicketRequests.find((request) => request.status === "pending");
   const launchEvidenceMode = Boolean(
     signedInWithGoogle &&
@@ -867,7 +875,10 @@ export function Dashboard({
     });
   }
 
-  function submitEntry(action: "save-draft" | "lock") {
+  function submitEntry(
+    action: "save-draft" | "commit" | "lock",
+    overrideTeamIds?: string[],
+  ) {
     setEntryError(null);
     setEntryMessage(null);
 
@@ -881,6 +892,8 @@ export function Dashboard({
       return;
     }
 
+    const teamIds = overrideTeamIds ?? selectedTeams;
+
     startTransition(async () => {
       const response = await fetch("/api/entries", {
         method: "POST",
@@ -891,7 +904,7 @@ export function Dashboard({
         body: JSON.stringify({
           action,
           displayName,
-          teamIds: selectedTeams,
+          teamIds,
           referralCode,
           referralTermsAccepted: referralAccepted,
         }),
@@ -900,7 +913,7 @@ export function Dashboard({
       const result = (await response.json()) as {
         error?: string;
         entryId?: string;
-        status?: "draft" | "locked";
+        status?: "draft" | "committed" | "locked";
       };
 
       if (!response.ok) {
@@ -909,13 +922,18 @@ export function Dashboard({
       }
 
       const savedDisplayName = displayName.trim();
-      const savedTeamIds = [...selectedTeams];
-      const savedStatus = result.status ?? (action === "save-draft" ? "draft" : "locked");
+      const savedTeamIds = [...teamIds];
+      const savedStatus =
+        result.status ??
+        (action === "save-draft" ? "draft" : action === "commit" ? "committed" : "locked");
+      const teamsNowLocked = savedStatus === "committed" || savedStatus === "locked";
 
       setEntryMessage(
         savedStatus === "draft"
-          ? "Free picks saved. Your points and preview rank stay visible here; a ticket only upgrades this draft into the paid leaderboard."
-          : "Entry locked. Your account is now focused on your entry, wallet, and agent deal.",
+          ? "Free picks saved. Your points and preview rank stay visible here; lock your teams when you're sure, then add a ticket to enter the prize pool."
+          : savedStatus === "committed"
+            ? "Your 3 teams are locked forever. You're playing for fun — your points and a 'where you'd place if paying' preview stay live. Buy a ticket anytime to enter the prize pool."
+            : "Entry locked and in the prize pool. Your account is now focused on your entry, wallet, and agent deal.",
       );
       setMyAccountStatus((current) => ({
         walletBalance: current?.walletBalance ?? "0.00",
@@ -933,19 +951,26 @@ export function Dashboard({
         usdtSenderWalletErc20Address: current?.usdtSenderWalletErc20Address ?? null,
         usdtSenderWalletErc20UpdatedAt: current?.usdtSenderWalletErc20UpdatedAt ?? null,
         paidActionGates: current?.paidActionGates,
+        // Drafts and free-locked entries keep the private preview; only a paid
+        // (pooled) entry switches to its real leaderboard rank.
         entryPreview:
-          savedStatus === "draft"
-            ? current?.entryPreview ?? draftPreviewFallback
-            : null,
+          savedStatus === "locked" ? null : current?.entryPreview ?? draftPreviewFallback,
         entry: {
-          id: result.entryId ?? (savedStatus === "draft" ? "draft-entry" : "locked-entry"),
+          id:
+            result.entryId ??
+            (savedStatus === "draft"
+              ? "draft-entry"
+              : savedStatus === "committed"
+                ? "committed-entry"
+                : "locked-entry"),
           status: savedStatus,
           displayName: savedDisplayName,
           teamIds: savedTeamIds,
           lockedAt: savedStatus === "locked" ? new Date().toISOString() : null,
+          committedAt: savedStatus === "committed" ? new Date().toISOString() : null,
         },
       }));
-      if (savedStatus === "locked") {
+      if (teamsNowLocked) {
         setSelectedTeams([]);
         window.localStorage.removeItem("worldcup_selected_teams");
         window.localStorage.removeItem("worldcup_referral_code");
@@ -1173,12 +1198,16 @@ export function Dashboard({
             <div className="panel pick-panel entry-complete-panel" id="pick">
               <div className="panel-header">
                 <div>
-                  <h1 className="panel-title">Your entry is locked</h1>
+                  <h1 className="panel-title">
+                    {accountInPool ? "Your entry is locked" : "Your 3 teams are locked"}
+                  </h1>
                   <p className="panel-subtitle">
-                    One entry per account. Your final teams are saved and can no longer be changed.
+                    {accountInPool
+                      ? "One entry per account. Your final teams are in the prize pool and can no longer be changed."
+                      : "Your 3 teams are locked forever and can no longer be changed. You're playing for fun — add a ticket anytime to enter the prize pool."}
                   </p>
                 </div>
-                <span className="status-pill">Locked</span>
+                <span className="status-pill">{accountInPool ? "In pool" : "Locked · free"}</span>
               </div>
               <div className="entry-complete-card">
                 <div className="entry-complete-card__title">
@@ -1186,9 +1215,13 @@ export function Dashboard({
                   <div>
                     <strong>{accountEntry?.displayName ?? "Your WorldCup26 entry"}</strong>
                     <span>
-                      {accountEntry?.lockedAt
-                        ? `Locked ${formatDateTime(accountEntry.lockedAt)}`
-                        : "Entry locked"}
+                      {accountInPool
+                        ? accountEntry?.lockedAt
+                          ? `Locked into the pool ${formatDateTime(accountEntry.lockedAt)}`
+                          : "Entry in the pool"
+                        : accountEntry?.committedAt
+                          ? `Teams locked ${formatDateTime(accountEntry.committedAt)}`
+                          : "Teams locked"}
                     </span>
                   </div>
                 </div>
@@ -1212,8 +1245,36 @@ export function Dashboard({
                     );
                   })}
                 </div>
+                {accountCommittedFree ? (
+                  <div className="ticket-ready-note entry-pool-note">
+                    <Trophy size={16} aria-hidden="true" />
+                    <span>
+                      Playing for fun: your points and a &ldquo;where you&rsquo;d place if paying&rdquo;
+                      preview are live on your account below. A ticket puts you in the prize pool for
+                      real money — your full points so far come with you.
+                    </span>
+                  </div>
+                ) : null}
                 <div className="entry-complete-actions">
-                  <a className="button" href="#me">
+                  {accountCommittedFree ? (
+                    hasEntryTicket ? (
+                      <button
+                        className="button entry-lock-cta is-ready"
+                        disabled={isPending}
+                        onClick={() => submitEntry("lock", accountEntry?.teamIds ?? [])}
+                        type="button"
+                      >
+                        <Lock size={16} />
+                        {isPending ? "Entering…" : "Enter the prize pool"}
+                      </button>
+                    ) : (
+                      <Link className="button" href={{ pathname: "/wallet" }}>
+                        <Ticket size={16} />
+                        Buy a ticket to enter the pool
+                      </Link>
+                    )
+                  ) : null}
+                  <a className={`button${accountCommittedFree ? " secondary" : ""}`} href="#me">
                     <UserRound size={16} />
                     Open account
                   </a>
@@ -1725,11 +1786,20 @@ export function Dashboard({
               <button
                 className={`button entry-lock-cta ${entryActionBlocker ? "" : "is-ready"}`}
                 disabled={Boolean(entryActionBlocker) || isPending}
-                onClick={() => submitEntry(hasEntryTicket ? "lock" : "save-draft")}
+                onClick={() => submitEntry(entryPrimaryAction)}
                 type="button"
               >
-                {hasEntryTicket ? <Lock size={16} /> : <Check size={16} />}
+                <Lock size={16} />
                 {isPending ? "Saving..." : entryActionLabel}
+              </button>
+              <button
+                className="button secondary entry-draft-cta"
+                disabled={Boolean(entryDraftBlocker) || isPending}
+                onClick={() => submitEntry("save-draft")}
+                type="button"
+              >
+                <Check size={16} />
+                {accountHasDraftEntry ? "Update saved draft" : "Save a draft to preview first"}
               </button>
               {entryMessage ? <div className="message">{entryMessage}</div> : null}
               {entryError ? <div className="message error">{entryError}</div> : null}
