@@ -7429,17 +7429,7 @@ html {
     min-height: 68px;
   }
 
-  .wallet-balance-grid,
-  .wallet-usdt-quick-actions,
   .agent-revenue-box {
-    grid-template-columns: 1fr;
-  }
-
-  .wallet-balance-card {
-    min-height: 94px;
-  }
-
-  .transfer-confirm-card {
     grid-template-columns: 1fr;
   }
 }
@@ -7514,8 +7504,11 @@ html {
 }
 
 .wallet-usdt-quick-actions {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  /* Flex-wrap (not a fixed grid) so the help buttons drop to the next line
+     instead of overflowing the panel when the wallet grid is 2-up on tablets
+     (~761-810px) where each panel is narrower than the four columns need. */
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   padding: 14px;
@@ -7526,7 +7519,8 @@ html {
     #ffffff;
 }
 
-.wallet-usdt-quick-actions div {
+.wallet-usdt-quick-actions > div {
+  flex: 1 1 0;
   display: grid;
   gap: 3px;
   min-width: 0;
@@ -7544,6 +7538,7 @@ html {
 }
 
 .wallet-usdt-quick-actions .button {
+  flex: 0 1 auto;
   min-height: 40px;
   white-space: nowrap;
 }
@@ -7949,6 +7944,31 @@ html {
 .agent-qty {
   flex: 0 0 auto;
   max-width: 110px;
+}
+
+/* Mobile wallet overrides. These must live *after* the base wallet rules
+   above: several of those base rules (balance grid, quick-actions, confirm
+   card) are single-class selectors, so an earlier @media block of equal
+   specificity loses on source order and the desktop multi-column layout
+   leaks onto phones, overflowing horizontally. Keeping the overrides here
+   guarantees they win at <=760px. */
+@media (max-width: 760px) {
+  .wallet-balance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wallet-balance-card {
+    min-height: 94px;
+  }
+
+  .wallet-usdt-quick-actions > div,
+  .wallet-usdt-quick-actions .button {
+    flex: 1 1 100%;
+  }
+
+  .transfer-confirm-card {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================================================================
