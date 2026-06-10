@@ -1,15 +1,48 @@
 # Canada vs Qatar — From the Desert to the Frozen North
+*Group B · Matchday 2 · June 16, 2026 · Gillette Stadium, Boston*
 
-*Group B, Matchday 2 — June 16, 2026*
+> **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Music arc:** lone oud (the desert) → cold synth pads (the north) → the two climates circling → tense strings on Qatar's goal → eruption on the equaliser → unresolved chord on the question
+> **Supporters (crowd-SFX layer):** Canada — *"Ca-na-da! Ca-na-da!"*, *"Oh Ca-na-da!"*; Al-Annabi — *"Yal-la Qa-tar!"*, *"Qa-tar! Qa-tar!"*
+> **THE MYSTERY (recurring spine):** *Four years ago Qatar hosted a World Cup and were humiliated. Tonight they face a host nation drunk on the same dream they once had. Can a wound become a weapon — and does the desert ever truly forgive the cold?*
 
-Akram Afif remembers 2022. The Qatar World Cup was supposed to be his coronation — the first Qatari to play in La Liga, the star of the 2019 Asian Cup, the man who would announce his nation's arrival on football's grandest stage. Instead, Qatar lost all three matches, scored one goal, and became the worst-performing host nation in World Cup history. The pain of that failure has burned inside Afif for four years.
+---
 
-Now he stands in Boston's Gillette Stadium, facing Canada, a co-host nation experiencing the same euphoria that Qatar felt in 2022. The symmetry is almost cruel. Almoez Ali, the prolific striker who won the 2019 Asian Cup Golden Boot, leads the line for Al-Annabi — "The Maroon" — a team that has everything to prove and nothing to lose.
+### 1 · COLD OPEN — The Symmetry (0:00–0:55)
+**[MUSIC: a single oud note bends in the dark.]**
+**[ANIMATION: 2022 ghost-scoreboard — Qatar's three group defeats flicker — then dissolves into a euphoric red Canadian crowd.]**
 
-Canada's response is Alphonso Davies, the Bayern Munich left-back who attacks like a winger and defends like his life depends on it. Tajon Buchanan provides width on the right, his pace a mirror image of Davies' on the left. Stephen Eustaquio, the Portuguese-Canadian midfielder, pulls the strings in the center with a calmness that belies the chaos around him.
+Akram Afif remembers 2022. It was meant to be his coronation — Qatar's arrival on football's grandest stage. Instead: three defeats, one goal, the worst host performance in World Cup history. The pain has burned in him for four years. *(beat)* Now he stands in Boston, across from Canada — a co-host living the exact euphoria Qatar once felt. The symmetry is almost cruel. *And cruelty, sometimes, is fuel.*
 
-The match is a study in contrasts. Qatar's Aspire Academy system has produced technically gifted players who move the ball with surgical precision — the Spanish influence evident in every touch. Canada's approach is primal: speed, power, directness. When Davies gets the ball, the stadium holds its breath, because everyone knows what comes next — a burst of acceleration that leaves defenders grasping at air.
+**[SUPPORTERS — maroon corner: "Yal-la Qa-tar!"]**
 
-In the 56th minute, Afif collects the ball in midfield, turns, and plays a pass that shouldn't be possible — a through ball that splits three Canadian defenders and finds Almoez Ali in space. Ali's finish is clinical, low into the corner. Qatar leads. The Canadian crowd falls silent for the first time in the tournament. But Canada has Davies. And Davies does not accept silence.
+### 2 · THE MAROON, REFORGED (0:55–1:45)
+**[MUSIC: the oud gathers strength.]**
+**[ANIMATION: Almoez Ali leading the line; Aspire Academy training-ground ghosts pass the ball in crisp triangles.]**
 
-In the 72nd minute, he picks up the ball 60 yards from goal, beats one defender, beats another, and delivers a cross that Jonathan David meets with a thumping header. Goal. The stadium erupts. Qatar's bench holds its head. Two nations with everything to prove, one point shared, and the desert and the frozen north find common ground on a football pitch.
+Almoez Ali, the 2019 Asian Cup Golden Boot, leads Al-Annabi — a team with everything to prove and nothing to lose. Behind them, the Aspire Academy's Spanish-schooled passing moves like surgery. They are not here to apologise for 2022. They are here to bury it.
+
+### 3 · THE FROZEN NORTH (1:45–2:35)
+**[MUSIC: cold, wide synth pads.]**
+**[ANIMATION: Davies attacking like a winger; Tajon Buchanan mirroring him on the right; Eustáquio calm in the storm.]**
+
+Canada answers with primal football: speed, power, directness. Alphonso Davies attacks like a winger and defends like his life depends on it. Tajon Buchanan mirrors his pace on the right. Stephen Eustáquio pulls the strings with a calm that defies the chaos. When Davies gets it, the stadium inhales — everyone knows what comes next.
+
+### 4 · THE WOUND STRIKES (2:35–3:35)
+**[MUSIC: strings tighten — then a clean, cold resolution on the finish.]**
+
+56th minute. Afif collects in midfield, turns, and threads a pass that should not exist — splitting three Canadian defenders, finding Almoez Ali in space. The finish is clinical, low into the corner. **[SUPPORTERS: "Qa-tar! Qa-tar!" erupts.]** Qatar lead. For the first time all tournament, the Canadian crowd falls silent. *The wound has become a weapon.*
+
+### 5 · THE NORTH ANSWERS (3:35–4:30)
+**[MUSIC: the cold synth ignites; percussion drives.]**
+**[ANIMATION: Davies carrying the ball sixty yards, defenders peeling off him; David rising at the back post.]**
+
+But Canada has Davies, and Davies does not accept silence. 72nd minute: he picks it up sixty yards out, beats one, beats another, and hangs a cross into the box. Jonathan David meets it with a thumping header. **Goal.** **[SUPPORTERS: the red wall explodes — "Oh Ca-na-da!"]** Qatar's bench drops its head. The desert and the frozen north, level.
+
+### 6 · THE MYSTERY, UNDERLINED (4:30–5:00)
+**[MUSIC: an unresolved chord; oud and synth hold the same note from opposite ends.]**
+**[ANIMATION: Afif looks at the Canadian celebration — the dream he once held — and turns away.]**
+
+One point each. Two nations with everything to prove, meeting in the middle. *(beat)* Qatar proved their humiliation can bite. Canada proved their dream can survive a scare. But the question hangs over Gillette Stadium like cold desert air: **a wound can be made into a weapon for one night — but can it carry a nation all the way back?** The desert isn't done answering.
+
+**[SUPPORTERS — fading, overlapping: "Yal-la Qa-tar!" … "Ca-na-da!"]**
