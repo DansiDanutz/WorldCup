@@ -17,15 +17,22 @@ import {
 } from "@/lib/validation";
 
 const ENTRY_ERROR_MESSAGES: Record<string, { status: number; message: string }> = {
-  NO_TICKET: { status: 403, message: "You need an assigned ticket before entering the game." },
-  NO_DRAFT: { status: 400, message: "Save your 3 free picks before locking a paid entry." },
+  NO_TICKET: { status: 403, message: "You need an assigned ticket before entering the prize pool." },
+  NO_DRAFT: { status: 400, message: "Pick your 3 teams before locking your entry." },
   ENTRY_ALREADY_LOCKED: { status: 409, message: "You already locked an entry for this tournament." },
+  TEAMS_LOCKED: {
+    status: 409,
+    message: "Your 3 teams are locked and can no longer be changed.",
+  },
   TEAM_SELECTION_CLOSED: { status: 403, message: "Team selection is closed." },
   TOURNAMENT_NOT_FOUND: { status: 500, message: "Tournament is not available." },
   INVALID_TEAM_COUNT: { status: 400, message: "Choose exactly 3 different teams." },
 };
 
-type EntryAction = "save-draft" | "lock";
+// "save-draft": keep editable free picks. "commit": lock the 3 teams forever for
+// free (no ticket, not in the pool). "lock": consume a ticket and enter the paid
+// prize pool / public leaderboard (works from a draft or an already-committed entry).
+type EntryAction = "save-draft" | "commit" | "lock";
 
 export async function POST(request: Request) {
   const limited = await enforceRateLimit(request, "entries", { limit: 10, windowMs: 60_000 });
@@ -43,7 +50,12 @@ export async function POST(request: Request) {
 
   try {
     const body = requireObject(await request.json());
-    action = body.action === "save-draft" ? "save-draft" : "lock";
+    action =
+      body.action === "save-draft"
+        ? "save-draft"
+        : body.action === "commit"
+          ? "commit"
+          : "lock";
     displayName = requireString(body.displayName, "Display name", { max: 60 });
     teamIds = requireStringArray(body.teamIds, "teamIds");
     // Team ids are slug identifiers; restrict the charset before they are
@@ -113,9 +125,24 @@ export async function POST(request: Request) {
     return jsonError("Could not check team availability.", 500);
   }
 
+  // A free (committed) or already-paid (locked) entry has finalized its teams,
+  // so buying a ticket to enter the paid pool is allowed any time during the
+  // tournament. The team-pick cutoff below only governs still-editable picks.
+  let enteringPoolWithLockedTeams = false;
+  if (action === "lock") {
+    const existingEntry = await supabase
+      .from("worldcup_entries")
+      .select("status")
+      .eq("tournament_id", tournamentResult.data.id)
+      .eq("user_id", user.id)
+      .maybeSingle();
+    enteringPoolWithLockedTeams =
+      existingEntry.data?.status === "committed" || existingEntry.data?.status === "locked";
+  }
+
   const lockedTeamIds = getLockedTeamIds(teamIds, groupMatchesResult.data ?? []);
 
-  if (lockedTeamIds.length > 0) {
+  if (!enteringPoolWithLockedTeams && lockedTeamIds.length > 0) {
     const namesById = new Map((teamsResult.data ?? []).map((team) => [team.id, team.name]));
     const lockedTeamNames = lockedTeamIds.map((teamId) => namesById.get(teamId) ?? teamId);
 
@@ -176,28 +203,66 @@ export async function POST(request: Request) {
 
   if (draftResult.error) {
     const code = draftResult.error.message?.match(/[A-Z_]{4,}/)?.[0] ?? "";
-    const mapped = ENTRY_ERROR_MESSAGES[code];
 
-    if (mapped) {
-      return jsonError(mapped.message, mapped.status);
+    // Entering the pool ("lock") only consumes a ticket — it does not change
+    // teams — so a draft-save rejection because the picks are already final
+    // (committed or locked) is expected and we fall through to locking.
+    const teamsAlreadyFinal =
+      code === "TEAMS_LOCKED" ||
+      code === "ENTRY_ALREADY_LOCKED" ||
+      draftResult.error.code === "23505";
+
+    if (!(action === "lock" && teamsAlreadyFinal)) {
+      const mapped = ENTRY_ERROR_MESSAGES[code];
+
+      if (mapped) {
+        return jsonError(mapped.message, mapped.status);
+      }
+
+      if (draftResult.error.code === "23505") {
+        return jsonError("You already locked an entry for this tournament.", 409);
+      }
+
+      if (/first match|second group-stage match/i.test(draftResult.error.message ?? "")) {
+        return jsonError(
+          "A selected team can no longer be picked; its first match starts in less than one minute or already started.",
+          403,
+        );
+      }
+
+      return jsonError("Could not create entry.", 500);
     }
-
-    if (draftResult.error.code === "23505") {
-      return jsonError("You already locked an entry for this tournament.", 409);
-    }
-
-    if (/first match|second group-stage match/i.test(draftResult.error.message ?? "")) {
-      return jsonError(
-        "A selected team can no longer be picked; its first match starts in less than one minute or already started.",
-        403,
-      );
-    }
-
-    return jsonError("Could not create entry.", 500);
   }
 
   if (action === "save-draft") {
     return NextResponse.json({ entryId: draftResult.data, status: "draft" });
+  }
+
+  if (action === "commit") {
+    const commitResult = await supabase.rpc("worldcup_commit_entry", {
+      p_user_id: user.id,
+      p_tournament_id: tournamentResult.data.id,
+    });
+
+    if (commitResult.error) {
+      const code = commitResult.error.message?.match(/[A-Z_]{4,}/)?.[0] ?? "";
+      const mapped = ENTRY_ERROR_MESSAGES[code];
+
+      if (mapped) {
+        return jsonError(mapped.message, mapped.status);
+      }
+
+      if (/first match|second group-stage match/i.test(commitResult.error.message ?? "")) {
+        return jsonError(
+          "A selected team can no longer be picked; its first match starts in less than one minute or already started.",
+          403,
+        );
+      }
+
+      return jsonError("Could not lock your teams.", 500);
+    }
+
+    return NextResponse.json({ entryId: commitResult.data, status: "committed" });
   }
 
   const entryResult = await supabase.rpc("worldcup_lock_draft_entry", {

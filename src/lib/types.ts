@@ -236,10 +236,11 @@ export type MyAccountStatus = {
   ticketPriceAmount: string;
   entry?: {
     id: string;
-    status: "draft" | "locked";
+    status: "draft" | "committed" | "locked";
     displayName: string;
     teamIds: string[];
     lockedAt: string | null;
+    committedAt?: string | null;
   } | null;
   entryPreview?: {
     totalPoints: number;

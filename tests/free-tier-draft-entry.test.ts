@@ -14,6 +14,10 @@ const awardedLeaderboardMigration = readFileSync(
   "supabase/migrations/20260601194500_worldcup_kickoff_cron_points.sql",
   "utf8",
 );
+const freeLockedMigration = readFileSync(
+  "supabase/migrations/20260610120000_worldcup_free_locked_entries.sql",
+  "utf8",
+);
 const entryRoute = readFileSync("src/app/api/entries/route.ts", "utf8");
 const referralsMeRoute = readFileSync("src/app/api/referrals/me/route.ts", "utf8");
 const standingRoute = readFileSync("src/app/api/me/standing/route.ts", "utf8");
@@ -37,34 +41,62 @@ describe("free draft entry tier", () => {
     assert.doesNotMatch(awardedLeaderboardMigration, /where e\.status in \('draft', 'locked'\)/);
   });
 
-  it("routes entries through save-draft first and lock only after ticket", () => {
-    assert.match(entryRoute, /type EntryAction = "save-draft" \| "lock"/);
-    assert.match(entryRoute, /body\.action === "save-draft" \? "save-draft" : "lock"/);
+  it("locks teams for free forever, separate from the paid pool", () => {
+    assert.match(
+      freeLockedMigration,
+      /create or replace function public\.worldcup_commit_entry/,
+    );
+    // Free permanent lock sets the committed tier without consuming a ticket.
+    assert.match(freeLockedMigration, /status = 'committed'/);
+    // A committed entry can enter the paid pool any time during the tournament:
+    // the kickoff cutoff in lock only applies while still a draft.
+    assert.match(freeLockedMigration, /create or replace function public\.worldcup_lock_draft_entry/);
+    assert.match(freeLockedMigration, /v_entry\.status = 'draft' and exists/);
+    // Picks are immutable once committed or locked.
+    assert.match(freeLockedMigration, /raise exception 'TEAMS_LOCKED'/);
+    assert.match(
+      freeLockedMigration,
+      /check \(status in \('draft', 'committed', 'locked'\)\)/,
+    );
+    // Point snapshots accrue for committed entries too, so a later ticket keeps
+    // the full history.
+    assert.match(freeLockedMigration, /e\.status in \('draft', 'committed', 'locked'\)/);
+    assert.match(
+      freeLockedMigration,
+      /grant execute on function public\.worldcup_commit_entry\(uuid, uuid\)\s+to service_role;/,
+    );
+    // The paid pool / public leaderboard stays locked-only.
+    assert.match(awardedLeaderboardMigration, /where e\.status = 'locked'/);
+  });
+
+  it("routes entries through save-draft, free commit, and paid pool lock", () => {
+    assert.match(entryRoute, /type EntryAction = "save-draft" \| "commit" \| "lock"/);
     assert.match(entryRoute, /worldcup_save_draft_entry/);
+    assert.match(entryRoute, /worldcup_commit_entry/);
     assert.match(entryRoute, /worldcup_lock_draft_entry/);
     assert.match(entryRoute, /status: "draft"/);
+    assert.match(entryRoute, /status: "committed"/);
     assert.match(entryRoute, /status: "locked"/);
     assert.match(entryRoute, /NO_TICKET/);
+    assert.match(entryRoute, /TEAMS_LOCKED/);
+    // Already-final picks can still enter the pool by consuming a ticket.
+    assert.match(entryRoute, /action === "lock" && teamsAlreadyFinal/);
     assert.match(entryRoute, /if \(action === "lock" && !isPaidActionLaunchTestAdmin\(user\.email\)\)/);
   });
 
-  it("shows free picks as a private score preview in the app", () => {
+  it("locks teams for free and shows a private 'if paying' preview in the app", () => {
     assert.match(dashboard, /accountHasDraftEntry = accountEntry\?\.status === "draft"/);
-    assert.match(dashboard, /accountHasEntry = accountEntry\?\.status === "locked"/);
-    assert.match(dashboard, /Save free picks/);
-    assert.match(dashboard, /Update free picks/);
-    assert.match(dashboard, /Lock paid entry/);
-    assert.match(dashboard, /private points preview/);
-    assert.match(dashboard, /what\s+would happen if the draft were paid/);
-    assert.match(dashboard, /leaderboard-private-preview/);
-    assert.match(dashboard, /Your free picks are scoring privately/);
-    assert.match(dashboard, /leaderboard-preview-stats/);
-    assert.match(dashboard, /What-if share/);
-    assert.match(dashboard, /would happen if your draft entered the paid leaderboard/);
-    assert.match(dashboard, /onClick=\{\(\) => submitEntry\(hasEntryTicket \? "lock" : "save-draft"\)\}/);
+    assert.match(dashboard, /accountInPool = accountEntry\?\.status === "locked"/);
+    assert.match(dashboard, /accountCommittedFree = accountEntry\?\.status === "committed"/);
+    // Primary lock action: free commit without a ticket, paid pool lock with one.
+    assert.match(dashboard, /Lock my 3 teams/);
+    assert.match(dashboard, /Lock & enter prize pool/);
+    assert.match(dashboard, /Enter the prize pool/);
+    assert.match(dashboard, /submitEntry\(entryPrimaryAction\)/);
+    assert.match(dashboard, /Locking is permanent/);
     assert.match(myStanding, /Preview rank/);
     assert.match(myStanding, /private preview/);
-    assert.match(myStanding, /if locked now/);
+    assert.match(myStanding, /if you were paying/);
     assert.match(myStanding, /worldcup-account-updated/);
   });
 
