@@ -1,4 +1,6 @@
-# Worker Missions: Dexter, Sienna, Memo, Nano
+# Worker Missions: Hermes, Dexter, Sienna, Memo, Nano
+
+> **ACTIVE PRIORITY — 2026-06-10:** all agents (Hermes on the Mac Studio plus all droplet/OpenClaw workers) work ONLY on `mission-1000-signups-today.md`: 1,000 signups today on worldcup26.world, leading with the YouTube video and channel. The lane missions below resume after that mission ends.
 
 Campaign source of truth:
 
@@ -17,6 +19,16 @@ Campaign source of truth:
 - Every output must include a clear CTA and either the code or a tracked link.
 - Make the free-tier flow clear: users can save 3 picks first and need a ticket only for paid leaderboard entry.
 - Keep a log entry for every suggested or completed post.
+
+## Hermes: Coordinator And YouTube Lane (Mac Studio)
+
+Mission:
+
+- Coordinate all worker lanes toward the single active goal and reallocate volume hourly based on Memo's scoreboard.
+- Own the YouTube lane: channel `https://www.youtube.com/channel/UC7j29XhArv5tlRqQj2qAb4Q`, main video, comment placements on relevant prediction/preview videos.
+- Runs on the Mac Studio (Tailscale). If the Mac Studio is offline, Memo holds the coordinator role until Hermes is back.
+
+Prompt: see `mission-1000-signups-today.md` (Hermes section).
 
 ## Dexter: Football Hook Writer
 
