@@ -49,8 +49,21 @@ WHITE = (255, 255, 255)
 MUTED = (147, 169, 162)
 BORDER = (216, 227, 223)
 
-CARD_SECONDS = {"open": 6, "team": 3, "story": 6, "cta": 6}
+CARD_SECONDS = {"brand": 5, "open": 6, "team": 3, "story": 6, "cta": 12}
 SUPPORTER_SECONDS = 4
+
+# Every match video opens and closes on the WorldCup26.world brand with a
+# sign-up pitch. Configs may override these strings per match if needed.
+BRAND = {
+    "domain": "WORLDCUP26.WORLD",
+    "pitch": "PICK 3 TEAMS · EVERY MATCH SCORES · WIN THE POOL",
+    "signup": "Sign Up Free · Pick Before Kickoff",
+    "cta_lines": [
+        "Pick your 3 teams before kickoff",
+        "Your teams earn points in every match they play",
+        "Climb the leaderboard · Win the prize pool",
+    ],
+}
 
 
 def font(weight: str, size: int) -> ImageFont.FreeTypeFont:
@@ -90,6 +103,17 @@ def base_card() -> tuple[Image.Image, ImageDraw.ImageDraw]:
 
 def gold_rule(draw: ImageDraw.ImageDraw, y: int, width: int = 120):
     draw.rectangle([(W - width) // 2, y, (W + width) // 2, y + 3], fill=GOLD)
+
+
+def render_brand_card(cfg: dict, path: Path):
+    brand = {**BRAND, **cfg.get("brand", {})}
+    img, draw = base_card()
+    draw.rounded_rectangle([340, 230, W - 340, 250], radius=8, fill=GREEN)
+    centered(draw, 280, brand["domain"], font("Black", 64), GOLD)
+    gold_rule(draw, 380)
+    centered(draw, 420, brand["pitch"], font("SemiBold", 24), WHITE, tracking=2)
+    centered(draw, 490, brand["signup"], font("Regular", 22), MUTED)
+    img.save(path)
 
 
 def render_open_card(cfg: dict, path: Path):
@@ -135,11 +159,18 @@ def render_story_card(cfg: dict, path: Path):
 
 
 def render_cta_card(cfg: dict, path: Path):
+    brand = {**BRAND, **cfg.get("brand", {})}
     img, draw = base_card()
-    draw.rounded_rectangle([340, 200, W - 340, 380], radius=8, fill=GREEN)
-    centered(draw, 250, cfg["cta_title"], font("Black", 54), WHITE)
-    centered(draw, 440, cfg["cta_subtitle"], font("SemiBold", 30), GOLD)
-    centered(draw, 540, cfg["competition"], font("SemiBold", 18), MUTED, tracking=6)
+    draw.rounded_rectangle([300, 110, W - 300, 250], radius=8, fill=GREEN)
+    centered(draw, 140, cfg["cta_title"], font("Black", 44), WHITE)
+    centered(draw, 200, brand["signup"], font("SemiBold", 22), GREEN_TINT)
+    y = 300
+    for line in brand["cta_lines"]:
+        centered(draw, y, line, font("Regular", 24), WHITE)
+        y += 44
+    gold_rule(draw, y + 16)
+    centered(draw, y + 50, brand["domain"], font("Black", 48), GOLD)
+    centered(draw, y + 125, cfg["competition"], font("SemiBold", 16), MUTED, tracking=6)
     img.save(path)
 
 
@@ -252,6 +283,7 @@ def main():
         segments.append(seg)
 
     print(f"Building {args.match} presentation in {tmp}")
+    add_card("brand", render_brand_card, cfg)
     add_card("open", render_open_card, cfg)
 
     for side in ("team_a", "team_b"):
