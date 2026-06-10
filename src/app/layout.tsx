@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
 import { AppLaunchSplash } from "@/components/app-launch-splash";
+import { AppViewTracker } from "@/components/app-view-tracker";
 import { CANONICAL_ORIGIN } from "@/lib/canonical-url";
 
 import "./globals.css";
@@ -134,6 +135,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <AppLaunchSplash />
+        <AppViewTracker />
         {children}
       </body>
     </html>
