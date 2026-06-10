@@ -6275,7 +6275,11 @@ html {
     flex-direction: column;
   }
 
-  .admin-referral-row > div:last-child {
+  /* The referral row's info column should left-align on mobile, but the
+     withdrawal row reuses .admin-referral-row with a .deposit-review as its
+     last child — excluding it lets .deposit-review keep its full-width grid
+     below instead of being pinned to content width. */
+  .admin-referral-row > div:last-child:not(.deposit-review) {
     justify-items: start;
     width: 100%;
   }
@@ -6293,6 +6297,11 @@ html {
   }
 
   .deposit-review {
+    /* Force a single full-width column. Without an explicit track the implicit
+       grid column sizes to its content (the widest button ~130px), so
+       justify-items: stretch alone left the fields/actions stuck at that width
+       on the narrow withdrawal card. */
+    grid-template-columns: 1fr;
     justify-items: stretch;
     min-width: 0;
     width: 100%;
@@ -6302,8 +6311,20 @@ html {
     grid-template-columns: 1fr;
   }
 
+  /* Stack the review action buttons full-width on phones. Wrapping them in a
+     right-aligned row left an awkward empty gutter on the narrower withdrawal
+     card, and full-width targets are easier to tap. The deposit row keeps this
+     as a flex container (flex-direction); the withdrawal row's
+     `.admin-referral-row div` rule forces display:grid, so a single 1fr column
+     gives the same full-width stack there. */
+  .deposit-review-actions {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
   .deposit-review-actions .button {
-    flex: 1 1 120px;
+    width: 100%;
     justify-content: center;
   }
 
