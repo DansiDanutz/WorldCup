@@ -2,6 +2,7 @@
 *Group B · Matchday 3 · June 22, 2026 · Boston*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** a lone Balkan flute (sevdah) → two themes from the same root branching apart → silence on the chances → twin swells on both late goals → the flute returns, broken, on the question
 > **Supporters (crowd-SFX layer):** Zmajevi — *"Bos-na! Bos-na!"*, *"Zma-je-vi!"*; La Nati — *"Hopp Schwiiz!"*, *"Schwii-zer-land!"*
 > **THE MYSTERY (recurring spine):** *Two men born of the same wounded region, wearing two different flags. On the final matchday, the Balkans must break one of its own sons' hearts. Which one — and who decides?*

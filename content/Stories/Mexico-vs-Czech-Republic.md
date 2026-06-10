@@ -2,6 +2,7 @@
 *Group A · Matchday 3 · June 21, 2026 · Estadio Azteca, Mexico City*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** distant music-box (Prague) over Aztec drums → twin themes circling → tense strings on the turn → triumphant brass on the goal → single held note on the question
 > **Supporters (crowd-SFX layer):** El Tri — *"Cielito Lindo"*, *"¡Mé-xi-co!"*; Češi — *"Če-ši do to-ho!"*, *"Kdo neskáče není Čech!"*
 > **THE MYSTERY (recurring spine):** *Two nations who touched football's summit in 1962, then sixty-four years of silence. On the final matchday, only one survives. Which dream dies tonight — the diamond's, or the sun's?*

@@ -2,6 +2,7 @@
 *Group B · Matchday 1 · June 12, 2026 · BMO Field, Toronto*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** military snare (a march) → opposing themes of order (Swiss) and chaos (Canada) → silence on the crossbar → driving percussion on the Canadian goal → the march returns, weary, on the question
 > **Supporters (crowd-SFX layer):** Canada — *"Ca-na-da! Ca-na-da!"*; La Nati — *"Hopp Schwiiz!"*, *"Hopp Hopp Hopp!"*
 > **THE MYSTERY (recurring spine):** *A general has fought every battle football can offer. Tonight he marches into his last campaign — but does experience win wars, or does hunger? And which side has more to lose?*

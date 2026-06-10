@@ -2,6 +2,7 @@
 *Group B · Matchday 2 · June 17, 2026 · Gillette Stadium, Boston*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** a single ember-crackle and low cello → a slow-burning Balkan theme → desert oud rising in answer → strings swelling to the header → near-silence, just the ember, on the question
 > **Supporters (crowd-SFX layer):** Zmajevi — *"Bos-na! Bos-na!"*, *"Zma-je-vi!"* (Dragons), a low terrace hum from Sarajevo; Al-Annabi — *"Yal-la Qa-tar!"*
 > **THE MYSTERY (recurring spine):** *A fire that has burned for twenty years is almost out. Tonight it flares one more time. The question every Bosnian fears to ask — how bright does a dying flame burn before the dark?*

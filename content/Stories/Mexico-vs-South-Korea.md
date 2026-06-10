@@ -2,6 +2,7 @@
 *Group A · Matchday 2 · June 16, 2026 · Estadio Azteca, Mexico City*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** mysterious pulse → thin-air shimmer (high strings) → driving Korean drums → orchestral tension on the chances → unresolved chord on the closing question
 > **Supporters (crowd-SFX layer):** El Tri — *"¡Mé-xi-co! ¡Mé-xi-co!"*, *"Cielito Lindo"*; Taegeuk Warriors — *"Dae-han-min-guk!"* (clap · clap · clap-clap-clap), *"Pil-seung Korea!"*
 > **THE MYSTERY (recurring spine):** *Two nations who have never met when it mattered — yet an invisible thread has tied them since 2002. Tonight, does the thread finally pull tight, or snap?*

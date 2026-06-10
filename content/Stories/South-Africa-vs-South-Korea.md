@@ -2,6 +2,7 @@
 *Group A · Matchday 2 · June 16, 2026 · Atlanta*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** two solo themes (African choir / Korean strings) → interweaving → silence on the disputed goal → driving tension on Son's surge → warm resolve under the closing question
 > **Supporters (crowd-SFX layer):** Bafana Bafana — *"Shosholoza"*, vuvuzela drone, *"Ba-fa-na! Ba-fa-na!"*; Taegeuk Warriors — *"Dae-han-min-guk!"* (clap · clap · clap-clap-clap)
 > **THE MYSTERY (recurring spine):** *Two sons carried their fathers' dreams across the world to this pitch. Tonight, whose father's voice is louder when the final whistle blows?*

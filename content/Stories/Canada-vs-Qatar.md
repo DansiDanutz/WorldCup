@@ -2,6 +2,7 @@
 *Group B · Matchday 2 · June 16, 2026 · Gillette Stadium, Boston*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** lone oud (the desert) → cold synth pads (the north) → the two climates circling → tense strings on Qatar's goal → eruption on the equaliser → unresolved chord on the question
 > **Supporters (crowd-SFX layer):** Canada — *"Ca-na-da! Ca-na-da!"*, *"Oh Ca-na-da!"*; Al-Annabi — *"Yal-la Qa-tar!"*, *"Qa-tar! Qa-tar!"*
 > **THE MYSTERY (recurring spine):** *Four years ago Qatar hosted a World Cup and were humiliated. Tonight they face a host nation drunk on the same dream they once had. Can a wound become a weapon — and does the desert ever truly forgive the cold?*

@@ -2,6 +2,7 @@
 *Group A · Matchday 1 · June 12, 2026 · Atlanta*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** lone cello (a river) → ticking clock under Korean strings → the duel's circling tension → soaring theme on Son's goal → ticking returns, slows, stops on the question
 > **Supporters (crowd-SFX layer):** Taegeuk Warriors — *"Dae-han-min-guk!"* (clap · clap · clap-clap-clap), *"Oh Pil-seung Korea!"*; Češi — *"Če-ši do to-ho!"*, *"Kdo neskáče není Čech!"*
 > **THE MYSTERY (recurring spine):** *A farewell has a beginning, but how many dances does it get before time takes the floor? Tonight the last waltz starts — and no one knows the song's length.*

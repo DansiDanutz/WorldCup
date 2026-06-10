@@ -2,6 +2,7 @@
 *Group B · Matchday 1 · June 11, 2026 · BMO Field, Toronto*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** ticking watch (time) → youthful synth-pulse for Davies / weathered cello for Džeko → the two themes trading blows → silence on the chances → both themes resolving into one on the closing handshake
 > **Supporters (crowd-SFX layer):** Canada — *"Oh Ca-na-da!"*, *"Ca-na-da! Ca-na-da!"*; Zmajevi — *"Bos-na! Bos-na!"*, *"Zma-je-vi!"* (Dragons)
 > **THE MYSTERY (recurring spine):** *One man is 24 and made of lightning. One is 40 and made of memory. Tonight football asks the oldest question of all — does the night belong to speed, or to wisdom?*

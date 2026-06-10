@@ -2,6 +2,7 @@
 *Group A · Matchday 3 · June 21, 2026 · Atlanta*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** lone waltz (3/4 time) → two underdog themes circling → silence on the Czech header → rising African storm → triumphant swell on the 91st-minute equaliser → unresolved waltz on the question
 > **Supporters (crowd-SFX layer):** Bafana Bafana — *"Shosholoza"*, vuvuzela drone; Češi — *"Kdo neskáče není Čech!"*, *"Če-ši! Če-ši!"*
 > **THE MYSTERY (recurring spine):** *Nobody booked either of these teams for the final dance. So why does it feel like fate cleared the floor just for them?*

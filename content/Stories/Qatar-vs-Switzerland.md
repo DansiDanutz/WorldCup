@@ -2,6 +2,7 @@
 *Group B · Matchday 3 · June 23, 2026 · Boston*
 
 > **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
 > **Music arc:** free, untethered oud (nothing to lose) → tense, precise Swiss strings (everything to lose) → silence on Qatar's miss → clean swell on the Swiss header → the oud rises, unbroken, on the closing line
 > **Supporters (crowd-SFX layer):** Al-Annabi — *"Yal-la Qa-tar!"*, *"Qa-tar! Qa-tar!"*; La Nati — *"Hopp Schwiiz!"*, *"Hopp Hopp Hopp!"*
 > **THE MYSTERY (recurring spine):** *One team has nothing left to lose; the other has everything. Football's oldest trap question — which of the two is truly the more dangerous tonight?*
