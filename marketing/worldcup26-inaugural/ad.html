@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WorldCup26 — The Inaugural Match</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #0a0a0a; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="WorldCup26 inaugural · t=0s"></div>
+
+<!-- data (sets window.WC_TEAMS, WC_ISO, wcFlag, etc.) -->
+<script src="worldcup-data.js"></script>
+
+<!-- React + Babel (pinned) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="wc-kit.jsx"></script>
+<script type="text/babel" src="inaugural-scenes.jsx"></script>
+
+<script type="text/babel">
+const { useEffect } = React;
+
+// Scene timeline (global seconds) — 180s story film.
+// Boundaries align with narration.json so the VO never straddles a cut.
+const SCENES = [
+  { c: SceneGhosts,   start: 0,     end: 17.5  },
+  { c: SceneRivalry,  start: 17.5,  end: 31.5  },
+  { c: SceneMexico,   start: 31.5,  end: 55.3  },
+  { c: SceneAztec,    start: 55.3,  end: 73.1  },
+  { c: SceneBafana,   start: 73.1,  end: 95.3  },
+  { c: SceneSpirit,   start: 95.3,  end: 112.1 },
+  { c: SceneQuestion, start: 112.1, end: 128.1 },
+  { c: SceneGame,     start: 128.1, end: 152.3 },
+  { c: SceneLock,     start: 152.3, end: 167.1 },
+  { c: SceneFinale,   start: 167.1, end: 180.0 },
+];
+const DURATION = 180.0;
+
+// Keeps the root's data-screen-label in sync with the playhead
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root) root.dataset.screenLabel = `WorldCup26 inaugural · t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+
+function Film() {
+  return (
+    <Stage width={1920} height={1080} duration={DURATION} background={DK.bg} persistKey="wc26inaugural">
+      <NightBackdrop />
+      <NightWatermark />
+      <ScreenLabeler />
+      <SeekBridge />
+      {SCENES.map((s, i) => (
+        <Sprite key={i} start={s.start} end={s.end}>
+          <s.c />
+        </Sprite>
+      ))}
+    </Stage>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Film />);
+</script>
+</body>
+</html>

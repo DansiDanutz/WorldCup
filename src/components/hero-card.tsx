@@ -175,7 +175,7 @@ export function HeroCard() {
             </span>
             <span className="hero-feature__body">
               <strong>Pick 3 Teams</strong>
-              <small>Free preview first.</small>
+              <small>All 48 nations open until kickoff.</small>
             </span>
           </div>
 
@@ -197,7 +197,7 @@ export function HeroCard() {
             }
           >
             <a className="hero-cta" href="#pick">
-              Play now
+              Pick 3 teams free
               <ArrowRight size={16} aria-hidden="true" />
             </a>
             {installState === "available" ? (

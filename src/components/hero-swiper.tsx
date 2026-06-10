@@ -602,12 +602,30 @@ function LoginPoster({ prizePool, playerCount }: { prizePool?: string; playerCou
         <div className="hero-card__cards">
           <div className="hero-login-stats">
             <div className="hero-mini hero-stat hero-stat--gold">
-              <span>Prize pool</span>
-              <strong>{prizePool ?? "TBA"}</strong>
+              {prizePool && prizePool !== "TBA" ? (
+                <>
+                  <span>Prize pool</span>
+                  <strong>{prizePool}</strong>
+                </>
+              ) : (
+                <>
+                  <span>Entry</span>
+                  <strong>Free</strong>
+                </>
+              )}
             </div>
             <div className="hero-mini hero-stat">
-              <span>Players</span>
-              <strong>{playerCount != null ? playerCount.toLocaleString() : "—"}</strong>
+              {playerCount != null ? (
+                <>
+                  <span>Players</span>
+                  <strong>{playerCount.toLocaleString()}</strong>
+                </>
+              ) : (
+                <>
+                  <span>Kickoff</span>
+                  <strong>June 11</strong>
+                </>
+              )}
             </div>
           </div>
 
