@@ -397,7 +397,7 @@ describe("WorldCup design system integration", () => {
     assert.match(heroCard, /Free to Play/);
   });
 
-  it("keeps the first poster installable as a PWA without hiding Play now", () => {
+  it("keeps the first poster installable as a PWA without hiding the play CTA", () => {
     assert.match(rootLayout, /manifest:\s*"\/manifest\.webmanifest"/);
     assert.match(rootLayout, /appleWebApp:\s*{/);
     assert.match(rootLayout, /\/icons\/icon-192\.png/);
@@ -414,7 +414,7 @@ describe("WorldCup design system integration", () => {
     assert.match(heroCard, /key\.startsWith\("worldcup26-shell"\)/);
     assert.match(heroCard, /navigator\.serviceWorker\.register\("\/sw\.js"\)/);
     assert.match(heroCard, /installState === "available" \? "hero-cta-row" : "hero-cta-row hero-cta-row--single"/);
-    assert.match(heroCard, /Play now/);
+    assert.match(heroCard, /Pick 3 teams free/);
     assert.match(heroCard, /Install app/);
     assert.match(heroCard, /showInstalledConfirmation/);
     assert.match(heroCard, /window\.localStorage\.setItem\(INSTALL_CONFIRMATION_KEY,\s*"true"\)/);
