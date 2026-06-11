@@ -26,3 +26,7 @@ marketing/match-videos/*/audio/*.mp3
 marketing/match-videos/*/filter.txt
 marketing/match-videos/*/render.log
 marketing/match-videos/*/WorldCup26_*.mp4
+# Generated source clips are re-fetchable via `npm run fetch-assets`
+marketing/match-videos/*/assets/*.mp4
+marketing/match-videos/*/music/*.mp4
+marketing/match-videos/*/music/*.m4a

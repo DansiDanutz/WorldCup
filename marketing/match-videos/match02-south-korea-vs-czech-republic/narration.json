@@ -1,0 +1,45 @@
+{
+  "comment": "Brian (ElevenLabs) VO for the 300s Match 2 video. Story source: content/Stories/South-Korea-vs-Czech-Republic.md ('The Last Waltz of Sonaldo'). Lines are sized to fill each scene window; mux.mjs time-fits each line to its slot. `at` = start time in seconds on the global 300s timeline.",
+  "voice": "Brian",
+  "lines": [
+    { "at": 0.8,   "text": "Listen. Do you hear that? That is not just a crowd. That is thirty years of dreams... beating inside one man's chest." },
+    { "at": 9.0,   "text": "Tonight, the greatest footballer Asia has ever produced begins his goodbye. And trust me... you are not ready for it." },
+
+    { "at": 16.5,  "text": "Welcome back to WorldCup twenty-six Legends. Match Two of one hundred and four. South Korea versus the Czech Republic — Group A, under the lights of Guadalajara." },
+
+    { "at": 28.5,  "text": "The Estadio Akron is shaking. Korean drums on one side. Czech songs on the other. Forty-eight thousand fans, and one question hanging in the warm Mexican night." },
+    { "at": 39.5,  "text": "Can the Taegeuk Warriors give their captain the farewell he deserves?" },
+
+    { "at": 46.5,  "text": "Meet South Korea. Nine straight World Cups. Semi-finalists on home soil in two thousand two. And led by a man the whole world calls... Sonaldo." },
+    { "at": 57.0,  "text": "Son Heung-min. Thirty-three years old. His fourth World Cup — and his last. Every touch, every sprint, every shot is now a goodbye written in lightning." },
+    { "at": 67.5,  "text": "Behind him stands The Monster. Kim Min-jae — the wall that conquered Italy with Napoli. The defender that strikers see in their nightmares." },
+    { "at": 77.5,  "text": "When the Monster locks the gate, entire nations are left waiting outside. But tonight, his cage faces its greatest escape artist." },
+    { "at": 87.5,  "text": "And pulling the strings — Lee Kang-in. The magician from Paris who turns grass into a chessboard... and defenders into spectators." },
+    { "at": 97.5,  "text": "Pace. Power. And poetry. That is the Korean storm rolling into Group A." },
+
+    { "at": 106.5, "text": "But storms have met Bohemia before... and broken against it. The Czech Republic. The heart of Europe. Built on patience, granite, and devastating precision." },
+    { "at": 117.5, "text": "Patrik Schick. The man who scored from the halfway line at a European Championship. He lives in the margins, finds space where none exists... and he has already calculated every possible outcome." },
+    { "at": 128.0, "text": "Tomas Soucek. The tower of Prague. Two metres of midfield iron, attacking every cross as if it owes him money." },
+    { "at": 138.0, "text": "And Adam Hlozek. The young wolf. Fast, fearless, and hungry to drag Czech football back into the light." },
+    { "at": 147.5, "text": "Patience against passion. Granite against lightning. THIS... is why we love the World Cup." },
+
+    { "at": 158.5, "text": "Because every great match hides a secret duel inside it. The Monster... against the Marksman. Kim Min-jae against Patrik Schick. Ninety minutes. One cage. One escape artist." },
+    { "at": 171.0, "text": "One of them will own this night. The other will dream about it for the rest of his life." },
+    { "at": 179.0, "text": "Our storytellers have looked into the night of June twelfth... and this is what they saw." },
+
+    { "at": 186.5, "text": "Forty-first minute. Son receives on the left. He cuts inside — the move that has beaten a thousand defenders — and he lets it fly." },
+    { "at": 196.0, "text": "GOAL! Top corner! Sonaldo! In the first dance of his farewell, the old magic makes the river of time stand still!" },
+    { "at": 204.5, "text": "Look at these faces. Tears of pure joy. This is what football does — it turns grown men back into children." },
+    { "at": 213.0, "text": "But the Czechs rise. Schick drifts wide, escapes the Monster for the very first time all night... and the whole stadium forgets how to breathe." },
+    { "at": 223.0, "text": "And out of nowhere — Hwang Hee-chan! The tackle of a lifetime! The ball spins away... and with it, the Czech dream." },
+    { "at": 231.5, "text": "Full time. One, nil. A warrior's farewell begins with victory... and on the other side, a heartbreak that words cannot reach." },
+
+    { "at": 242.5, "text": "Three points for South Korea. A goal for the captain. And for the Czechs — two more chances to write a different ending." },
+    { "at": 252.0, "text": "That is the beauty of Group A. Nothing is decided... and everything is still possible." },
+
+    { "at": 262.5, "text": "Now here is where YOU come in. Did you see this coming? At WorldCup twenty-six dot world, you pick three of the forty-eight nations — and every single goal they score... scores for you." },
+    { "at": 275.5, "text": "Underdogs multiply your points. The leaderboard moves live with every goal. And it is completely free to play. Your three picks could change everything." },
+
+    { "at": 286.5, "text": "If this story gave you goosebumps — smash that like, share it with a football romantic, and subscribe. Because next, Canada opens its World Cup... and you do NOT want to miss what our storytellers have seen." }
+  ]
+}
