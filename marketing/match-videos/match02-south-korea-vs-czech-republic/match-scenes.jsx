@@ -23,11 +23,24 @@ function SceneColdOpen() {
           transform: `scale(${1.06 + 0.05 * ((lt - g.at) / g.dur)})`,
         }} />
       ))}
+      {/* ember base so the screen never reads as dead air */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: `radial-gradient(ellipse at 50% 78%, rgba(212,49,63,0.14) 0%, transparent 55%)`,
+      }} />
       {/* heartbeat glow */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: `radial-gradient(ellipse at center, rgba(212,49,63,${(0.34 * beat).toFixed(3)}) 0%, transparent 60%)`,
+        background: `radial-gradient(ellipse at center, rgba(212,49,63,${(0.55 * beat).toFixed(3)}) 0%, transparent 62%)`,
       }} />
+      {lt > 1.2 && lt < 12.2 && (
+        <div style={{
+          position: 'absolute', left: 0, right: 0, bottom: 170, textAlign: 'center', zIndex: 22,
+          opacity: Math.min(1, (lt - 1.2) / 1.5) * (lt > 11.0 ? Math.max(0, (12.2 - lt) / 1.2) : 1) * (0.55 + 0.45 * beat),
+          fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 30, color: '#b8909a',
+          letterSpacing: '0.5em', textTransform: 'uppercase',
+        }}>June 12 2026 · Guadalajara</div>
+      )}
       <Vignette strength={0.8} />
       {lt > 12.6 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 34, opacity: titleP, zIndex: 22 }}>
