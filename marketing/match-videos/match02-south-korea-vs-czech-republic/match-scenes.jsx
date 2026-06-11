@@ -288,9 +288,9 @@ function SceneVerdict() {
           <Kicker size={26}>Group A · After Matchday 1</Kicker>
           <div style={{ marginTop: 26 }}>
             <StatLine start={S + 0.8} delay={0.0} label="1 · South Korea" value="3 pts · +1" accent={MV.gold} />
-            <StatLine start={S + 0.8} delay={0.25} label="2 · Mexico" value="Matchday 1 winners" accent={MV.text} />
-            <StatLine start={S + 0.8} delay={0.5} label="3 · Czech Republic" value="0 pts · two games left" accent={MV.muted} />
-            <StatLine start={S + 0.8} delay={0.75} label="4 · South Africa" value="0 pts · the hunt continues" accent={MV.muted} />
+            <StatLine start={S + 0.8} delay={0.25} label="2 · Mexico" value="1 pt · goalless thriller" accent={MV.text} />
+            <StatLine start={S + 0.8} delay={0.5} label="3 · South Africa" value="1 pt · ghosts not yet gone" accent={MV.text} />
+            <StatLine start={S + 0.8} delay={0.75} label="4 · Czech Republic" value="0 pts · two games left" accent={MV.muted} />
           </div>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 30, color: MV.gold, marginTop: 38, textAlign: 'center' }}>
             Nothing is decided. Everything is possible.
