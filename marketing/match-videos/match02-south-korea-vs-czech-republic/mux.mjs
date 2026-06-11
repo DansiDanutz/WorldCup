@@ -99,7 +99,8 @@ if (hasBgm) {
 if (fxLabels.length) mixes.push('[fx]');
 
 chains.push(`${mixes.join('')}amix=inputs=${mixes.length}:normalize=0:dropout_transition=0[mx];` +
-            `[mx]alimiter=limit=0.97,apad,atrim=0:${DURATION},aformat=channel_layouts=stereo:sample_rates=44100[aout]`);
+            // loudnorm to the YouTube delivery target so the mix never lands quiet
+            `[mx]loudnorm=I=-14:TP=-1.2:LRA=11,alimiter=limit=0.97,apad,atrim=0:${DURATION},aformat=channel_layouts=stereo:sample_rates=44100[aout]`);
 
 // crop the stray sub-pixel row so dimensions are even (libx264 needs even w/h)
 chains.push(`[0:v]crop=1920:1080:0:0,fps=${FPS},format=yuv420p[vout]`);
