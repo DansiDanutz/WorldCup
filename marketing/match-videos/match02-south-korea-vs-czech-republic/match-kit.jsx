@@ -314,3 +314,97 @@ function CtaButton({ start, delay, label, icon, accent, x }) {
     </div>
   );
 }
+
+// ── 10/10 polish layer ───────────────────────────────────────────────────────
+
+// Letter-staggered title reveal with a gold shine sweep — replaces flat fades.
+function TitleReveal({ text, start, size = 150, color = MV.gold, stagger = 0.055, shine = true }) {
+  const t = useTime();
+  const local = t - start;
+  if (local < 0) return null;
+  const chars = String(text).split('');
+  const shineX = -40 + clamp((local - chars.length * stagger - 0.2) / 1.1, 0, 1) * 180;
+  return (
+    <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', overflow: 'visible' }}>
+      <div style={{ display: 'flex' }}>
+        {chars.map((ch, i) => {
+          const p = Easing.easeOutBack(clamp((local - i * stagger) / 0.5, 0, 1));
+          return (
+            <span key={i} style={{
+              fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: size, color,
+              letterSpacing: '0.02em', lineHeight: 1.04, whiteSpace: 'pre',
+              opacity: clamp(p, 0, 1),
+              transform: `translateY(${(1 - p) * 70}px) scale(${0.6 + 0.4 * p})`,
+              textShadow: `0 0 42px ${color}55, 0 4px 24px rgba(0,0,0,0.8)`,
+              display: 'inline-block',
+            }}>{ch}</span>
+          );
+        })}
+      </div>
+      {shine && (
+        <div style={{
+          position: 'absolute', inset: '-10% -5%', pointerEvents: 'none',
+          background: `linear-gradient(115deg, transparent ${shineX - 12}%, rgba(255,255,255,0.5) ${shineX}%, transparent ${shineX + 12}%)`,
+          mixBlendMode: 'overlay',
+        }} />
+      )}
+    </div>
+  );
+}
+
+// Slow ambient particle drift (deterministic) — depth and life on hold frames.
+function AmbientParticles({ start, dur, count = 40, color = '255,210,74', maxR = 5, zIndex = 21 }) {
+  const t = useTime();
+  const local = t - start;
+  if (local < 0 || local > dur) return null;
+  const W = 1920, H = 1080;
+  const dots = [];
+  for (let i = 0; i < count; i++) {
+    const s1 = (i * 2654435761 % 1000) / 1000;
+    const s2 = (i * 1597334677 % 1000) / 1000;
+    const s3 = (i * 805306457 % 1000) / 1000;
+    const x = (s1 * W + Math.sin(local * (0.25 + s2 * 0.4) + s3 * 6.28) * 60) % W;
+    const y = H - ((local * (14 + s2 * 26)) + s3 * H) % (H + 40) + 20;
+    const r = 1.5 + s2 * maxR;
+    const o = 0.12 + 0.3 * s3 * (0.6 + 0.4 * Math.sin(local * 1.4 + i));
+    dots.push(<div key={i} style={{
+      position: 'absolute', left: x, top: y, width: r * 2, height: r * 2, borderRadius: '50%',
+      background: `rgba(${color},${Math.max(0, o).toFixed(3)})`,
+      filter: 'blur(1px)',
+    }} />);
+  }
+  return <div style={{ position: 'absolute', inset: 0, zIndex, pointerEvents: 'none', overflow: 'hidden' }}>{dots}</div>;
+}
+
+// Gentle flag wave (applied as a wrapper so the CSS flags feel alive).
+function Waving({ children, speed = 1.6, amount = 2.2 }) {
+  const t = useTime();
+  return (
+    <div style={{
+      transform: `rotate(${Math.sin(t * speed) * amount * 0.4}deg) skewY(${Math.sin(t * speed * 1.3) * amount * 0.35}deg)`,
+      transformOrigin: 'left center',
+    }}>{children}</div>
+  );
+}
+
+// Cinematic transitions at scene boundaries: luminous flash or dip-to-black.
+// Boundaries are read from window.MV_TRANSITIONS = [{at, type:'flash'|'dip'}].
+function TransitionLayer() {
+  const t = useTime();
+  let flash = 0, dip = 0;
+  for (const tr of (window.MV_TRANSITIONS || [])) {
+    const d = t - tr.at;
+    if (tr.type === 'flash') {
+      // 0.12s rise into the cut, 0.25s decay out of it
+      if (d > -0.12 && d < 0.3) flash = Math.max(flash, d < 0 ? (d + 0.12) / 0.12 : 1 - d / 0.3);
+    } else {
+      // 0.35s dip each side of the cut
+      if (d > -0.4 && d < 0.4) dip = Math.max(dip, 1 - Math.abs(d) / 0.4);
+    }
+  }
+  if (flash <= 0 && dip <= 0) return null;
+  return (<>
+    {dip > 0 && <div style={{ position: 'absolute', inset: 0, zIndex: 40, background: '#000', opacity: clamp(dip, 0, 1) }} />}
+    {flash > 0 && <div style={{ position: 'absolute', inset: 0, zIndex: 41, background: '#fff', opacity: clamp(flash * 0.85, 0, 1) }} />}
+  </>);
+}

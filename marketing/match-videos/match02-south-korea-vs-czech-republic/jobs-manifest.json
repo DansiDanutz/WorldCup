@@ -25,7 +25,8 @@
     "../../../content/images/Uzbekistan/Eldor-Shomurodov.png": "0318b44c-c3db-4877-90c8-da354b1fdf00",
     "../../../content/images/Uzbekistan/Jaloliddin-Masharipov.png": "971cf6f1-488e-4670-a54e-4f849365a330",
     "../../../content/images/Tunisia/DylanBronn.png": "74737e56-bf7a-4b9d-8305-7492f0525856",
-    "../../../content/images/Tunisia/HannibalMejbri.png": "aaa6e569-f8cf-430a-842c-7e84a30ba23d"
+    "../../../content/images/Tunisia/HannibalMejbri.png": "aaa6e569-f8cf-430a-842c-7e84a30ba23d",
+    "assets/mystery-master.png": "852c5647-ddee-49f8-ab29-c16b9dae6440"
   },
   "videos": {
     "assets/player-son.mp4": "8339b77b-444a-4358-a8e1-ac97a09665f4",
@@ -39,6 +40,7 @@
     "assets/fan-cze-hopeful.mp4": "02ea8b9e-a356-4199-93a7-9121a9b62929",
     "assets/fan-kor-anxious.mp4": "0bef6036-43c7-495c-aedf-63f5b469bc7b",
     "assets/stadium-flyover.mp4": "2099c277-e8e2-457f-98c8-8f0a7f53b4bd",
-    "music/anthem-source.mp4": "43d86652-310b-4edb-9cc0-32645e108c04"
+    "music/anthem-source.mp4": "43d86652-310b-4edb-9cc0-32645e108c04",
+    "assets/mystery-master.mp4": "5dcd273a-80bd-495d-bb11-bc42dcb4d1c6"
   }
 }

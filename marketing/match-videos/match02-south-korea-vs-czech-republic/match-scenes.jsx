@@ -6,22 +6,14 @@
 function SceneColdOpen() {
   const { localTime: lt } = useSprite();
   const beat = Math.pow(Math.max(0, Math.sin(lt * Math.PI * 1.15)), 8);
-  const glimpses = [
-    { at: 4.2, dur: 0.34, src: 'assets/player-son.png' },
-    { at: 7.0, dur: 0.42, src: 'assets/stadium-akron.png' },
-    { at: 9.6, dur: 0.5, src: 'assets/fan-cze-crying.png' },
-    { at: 11.8, dur: 0.62, src: 'assets/fan-kor-euphoric.png' },
-  ];
   const titleP = Easing.easeOutCubic(clamp((lt - 12.6) / 1.4, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      {glimpses.map((g, i) => (lt >= g.at && lt < g.at + g.dur) && (
-        <img key={i} src={g.src} alt="" style={{
-          position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-          filter: 'brightness(0.75) contrast(1.15) saturate(1.2)',
-          transform: `scale(${1.06 + 0.05 * ((lt - g.at) / g.dur)})`,
-        }} />
-      ))}
+      {/* moving flash-glimpses of what's coming (video, not stills) */}
+      <ClipSprite id="glimpse-son" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
+      <ClipSprite id="glimpse-stad" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
+      <ClipSprite id="glimpse-cry" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
+      <ClipSprite id="glimpse-joy" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
       {/* ember base so the screen never reads as dead air */}
       <div style={{
         position: 'absolute', inset: 0,
@@ -44,7 +36,7 @@ function SceneColdOpen() {
       {lt > 12.6 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 34, opacity: titleP, zIndex: 22 }}>
           <Kicker size={34}>Every legend gets</Kicker>
-          <BigTitle size={150} color={MV.gold} glow={MV.gold}>ONE LAST DANCE</BigTitle>
+          <TitleReveal text="ONE LAST DANCE" start={12.7} size={150} color={MV.gold} />
         </div>
       )}
       <Letterbox />
@@ -61,18 +53,19 @@ function SceneTitle() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, #0a0f1c 0%, #11182b 55%, #0a0f1c 100%)` }}>
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(255,210,74,0.10) 0%, transparent 55%)` }} />
+      <AmbientParticles start={16} dur={12} count={34} />
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 44 }}>
         <div style={{ opacity: p1, transform: `translateY(${(1 - p1) * -30}px)` }}>
           <Kicker>WorldCup26 Legends · Episode 2</Kicker>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 70, opacity: clamp(p2, 0, 1), transform: `scale(${p2})` }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-            <FlagKOR w={230} />
+            <Waving><FlagKOR w={230} /></Waving>
             <BigTitle size={66} glow={MV.kor}>SOUTH KOREA</BigTitle>
           </div>
           <BigTitle size={120} color={MV.gold}>VS</BigTitle>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-            <FlagCZE w={230} />
+            <Waving speed={1.9}><FlagCZE w={230} /></Waving>
             <BigTitle size={66} glow={MV.czeBlue}>CZECH REPUBLIC</BigTitle>
           </div>
         </div>
@@ -149,16 +142,11 @@ function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, 
 function SceneHistory() {
   const { localTime: lt } = useSprite();
   const S = 44;
-  // alternating dimmed backdrops to keep the archive alive
-  const bg = lt < 23 ? 'assets/player-son.png' : lt < 33.5 ? 'assets/player-schick.png' : 'assets/fan-kor-euphoric.png';
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <img src={bg} alt="" style={{
-        position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-        filter: 'brightness(0.22) saturate(0.6) contrast(1.1)',
-        transform: `scale(${1.05 + 0.0012 * lt * 10})`,
-      }} />
+      <ClipSprite id="history-bg" dim={0.72} style={{ filter: 'brightness(0.28) saturate(0.65) contrast(1.1)' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
+      <AmbientParticles start={44} dur={54.5} count={30} maxR={4} />
       {/* chapter header */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 26 }}>
         <Kicker size={28}>Chapter One · The History</Kicker>
@@ -409,7 +397,7 @@ function SceneVerdict() {
   const S = 242;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#0a0f1c' }}>
-      <KenBurns src="assets/stadium-akron.png" start={S} dur={20} from={1.05} to={1.18} dim={0.55} />
+      <ClipSprite id="verdict-bg" dim={0.6} />
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 25 }}>
         <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 24, padding: '52px 84px', minWidth: 900, backdropFilter: 'blur(6px)' }}>
           <Kicker size={26}>Group A · After Matchday 1</Kicker>
@@ -430,10 +418,51 @@ function SceneVerdict() {
   );
 }
 
+
+// ── 10b. Mystery Supporter (256–270): the series' signature segment ──────────
+function SceneMystery() {
+  const { localTime: lt } = useSprite();
+  const S = 256;
+  const inP = Easing.easeOutCubic(clamp((lt - 0.6) / 1.4, 0, 1));
+  const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
+  return (
+    <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
+      <ClipSprite id="mystery" dim={0.12} />
+      {/* drifting fog layers */}
+      <div style={{
+        position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,
+        background: `radial-gradient(ellipse at ${20 + Math.sin(lt * 0.3) * 14}% 75%, rgba(120,140,200,0.16) 0%, transparent 45%),` +
+                    `radial-gradient(ellipse at ${78 - Math.sin(lt * 0.22) * 12}% 30%, rgba(212,49,63,0.10) 0%, transparent 50%)`,
+      }} />
+      <AmbientParticles start={S} dur={14} count={46} color="200,215,255" maxR={3.5} zIndex={22} />
+      <div style={{ position: 'absolute', top: 118, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
+        <Kicker size={26} color="#9fb4e8">The Mystery Supporter · Legend No. 002</Kicker>
+      </div>
+      {plateP > 0 && (
+        <div style={{
+          position: 'absolute', left: 110, bottom: 150, zIndex: 25,
+          opacity: clamp(plateP, 0, 1), transform: `translateY(${(1 - plateP) * 50}px)`,
+        }}>
+          <div style={{ background: 'rgba(8,12,26,0.88)', border: '1px solid rgba(159,180,232,0.35)', borderRadius: 18, padding: '28px 44px', backdropFilter: 'blur(6px)' }}>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#e8eeff', letterSpacing: '0.02em' }}>THE TAEKWONDO MASTER</div>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 25, color: '#9fb4e8', letterSpacing: '0.2em', marginTop: 8 }}>SEEN BEFORE EVERY KOREA MATCH · AGE UNKNOWN</div>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginTop: 18, background: 'rgba(255,210,74,0.12)', border: '1px solid rgba(255,210,74,0.5)', borderRadius: 999, padding: '10px 24px' }}>
+              <span style={{ fontSize: 26 }}>✦</span>
+              <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 24, color: MV.gold, letterSpacing: '0.08em' }}>COLLECTIBLE · worldcup26.world</span>
+            </div>
+          </div>
+        </div>
+      )}
+      <Vignette strength={0.55} />
+      <Letterbox />
+    </div>
+  );
+}
+
 // ── 10. App promo (262–286): worldcup26.world ────────────────────────────────
 function SceneApp() {
   const { localTime: lt } = useSprite();
-  const S = 262;
+  const S = 270;
   const inP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const cards = [
     { name: 'SOUTH KOREA', coef: 'x2.40', pts: '+2.40', flag: <FlagKOR w={86} /> },
@@ -479,22 +508,23 @@ function SceneApp() {
 // ── 11. CTA outro (286–300) ──────────────────────────────────────────────────
 function SceneCTA() {
   const { localTime: lt } = useSprite();
-  const S = 286;
+  const S = 288;
   const inP = Easing.easeOutCubic(clamp(lt / 0.8, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#07090f' }}>
-      <KenBurns src="assets/fan-kor-euphoric.png" start={S} dur={14} from={1.0} to={1.15} dim={0.72} />
+      <ClipSprite id="cta-bg" dim={0.68} />
+      <AmbientParticles start={288} dur={12} count={28} />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
         <Kicker size={30}>Enjoyed the story?</Kicker>
-        <BigTitle size={92} style={{ marginTop: 24 }}>JOIN THE LEGENDS</BigTitle>
+        <div style={{ marginTop: 24 }}><TitleReveal text="JOIN THE LEGENDS" start={S + 0.5} size={92} color={MV.text} /></div>
       </div>
       <div style={{ position: 'absolute', inset: 0, zIndex: 26 }}>
         <CtaButton start={S} delay={1.2} label="SUBSCRIBE" icon="🔔" accent="#d4313f" x={500} />
         <CtaButton start={S} delay={1.6} label="LIKE" icon="👍" accent="#1f4fa3" x={960} />
         <CtaButton start={S} delay={2.0} label="SHARE" icon="📣" accent="#106b4f" x={1400} />
       </div>
-      <Sprite start={290.6} end={300}>
+      <Sprite start={292.6} end={300}>
         <NextMatchTease start={S + 4.6} />
       </Sprite>
       <Letterbox />

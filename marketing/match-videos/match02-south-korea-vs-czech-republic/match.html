@@ -39,9 +39,25 @@ const SCENES = [
   { c: SceneCzech,    start: 133.5, end: 164.5 },
   { c: SceneDuel,     start: 164.5, end: 186.0 },
   { c: SceneDrama,    start: 186.0, end: 242.0 },
-  { c: SceneVerdict,  start: 242.0, end: 262.0 },
-  { c: SceneApp,      start: 262.0, end: 286.0 },
-  { c: SceneCTA,      start: 286.0, end: 300.0 },
+  { c: SceneVerdict,  start: 242.0, end: 256.0 },
+  { c: SceneMystery,  start: 256.0, end: 270.0 },
+  { c: SceneApp,      start: 270.0, end: 288.0 },
+  { c: SceneCTA,      start: 288.0, end: 300.0 },
+];
+
+// Cinematic cut treatment per scene boundary (read by TransitionLayer).
+window.MV_TRANSITIONS = [
+  { at: 16.0,  type: 'flash' },
+  { at: 28.0,  type: 'flash' },
+  { at: 44.0,  type: 'dip' },
+  { at: 98.5,  type: 'flash' },
+  { at: 133.5, type: 'flash' },
+  { at: 164.5, type: 'flash' },
+  { at: 186.0, type: 'dip' },
+  { at: 242.0, type: 'dip' },
+  { at: 256.0, type: 'dip' },
+  { at: 270.0, type: 'flash' },
+  { at: 288.0, type: 'flash' },
 ];
 const DURATION = 300.0;
 
@@ -72,6 +88,7 @@ function MatchVideo() {
           <s.c />
         </Sprite>
       ))}
+      <TransitionLayer />
     </Stage>
   );
 }

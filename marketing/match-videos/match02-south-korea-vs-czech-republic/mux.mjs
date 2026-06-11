@@ -14,7 +14,7 @@ const OUT = process.env.OUTFILE || 'WorldCup26_Match02_KOR_CZE.mp4';
 const NO_VO = process.env.NO_VO === '1'; // music+FX preview before the ElevenLabs pass
 
 const { lines } = JSON.parse(fs.readFileSync('narration.json', 'utf8'));
-const { clips, music } = JSON.parse(fs.readFileSync('clips.json', 'utf8'));
+const { clips, music, sfx } = JSON.parse(fs.readFileSync('clips.json', 'utf8'));
 
 function durOf(f) {
   const r = spawnSync(ffmpegPath, ['-i', f], { encoding: 'utf8' });
@@ -30,6 +30,8 @@ const voFiles = NO_VO ? [] : lines.map((_, i) => `audio/line_${String(i).padStar
 for (const f of voFiles) inputs.push('-i', f);
 const clipFiles = clips.filter(c => fs.existsSync(c.src) && (c.vol ?? 0) > 0);
 for (const c of clipFiles) inputs.push('-i', c.src);
+const hits = (sfx?.hits || []).filter(h => fs.existsSync(h.src));
+for (const h of hits) inputs.push('-i', h.src);
 const cues = (music?.cues || []).filter(c => fs.existsSync(c.src));
 for (const c of cues) {
   if (c.loop) inputs.push('-stream_loop', '-1');
@@ -75,11 +77,22 @@ if (fxLabels.length) {
   chains.push(`${fxLabels.join('')}amix=inputs=${fxLabels.length}:normalize=0:dropout_transition=0,apad,atrim=0:${DURATION}[fx]`);
 }
 
+// ── Sound design hits (ElevenLabs SFX) at their story beats ──────────────────
+if (hits.length) {
+  const hitLabels = [];
+  hits.forEach((h, k) => {
+    const idx = 1 + voFiles.length + clipFiles.length + k;
+    chains.push(`[${idx}:a]volume=${(h.vol ?? 0.6).toFixed(2)},adelay=${Math.round(h.at * 1000)}:all=1,aresample=44100[s${k}]`);
+    hitLabels.push(`[s${k}]`);
+  });
+  chains.push(`${hitLabels.join('')}amix=inputs=${hitLabels.length}:normalize=0:dropout_transition=0,apad,atrim=0:${DURATION}[sfxmix]`);
+}
+
 // ── Music score: each cue looped/trimmed to its window, then mixed ──────────
 if (cues.length) {
   const cueLabels = [];
   cues.forEach((c, k) => {
-    const idx = 1 + voFiles.length + clipFiles.length + k;
+    const idx = 1 + voFiles.length + clipFiles.length + hits.length + k;
     const ms = Math.round(c.at * 1000);
     const fi = c.fadeIn ?? 1.5, fo = c.fadeOut ?? 3;
     chains.push(
@@ -101,6 +114,7 @@ if (cues.length) {
   mixes.push('[vo]');
 }
 if (fxLabels.length) mixes.push('[fx]');
+if (hits.length) mixes.push('[sfxmix]');
 
 chains.push(`${mixes.join('')}amix=inputs=${mixes.length}:normalize=0:dropout_transition=0[mx];` +
             // loudnorm to the YouTube delivery target so the mix never lands quiet
