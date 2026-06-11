@@ -6275,7 +6275,11 @@ html {
     flex-direction: column;
   }
 
-  .admin-referral-row > div:last-child {
+  /* The referral row's info column should left-align on mobile, but the
+     withdrawal row reuses .admin-referral-row with a .deposit-review as its
+     last child — excluding it lets .deposit-review keep its full-width grid
+     below instead of being pinned to content width. */
+  .admin-referral-row > div:last-child:not(.deposit-review) {
     justify-items: start;
     width: 100%;
   }
@@ -6293,6 +6297,11 @@ html {
   }
 
   .deposit-review {
+    /* Force a single full-width column. Without an explicit track the implicit
+       grid column sizes to its content (the widest button ~130px), so
+       justify-items: stretch alone left the fields/actions stuck at that width
+       on the narrow withdrawal card. */
+    grid-template-columns: 1fr;
     justify-items: stretch;
     min-width: 0;
     width: 100%;
@@ -6302,8 +6311,20 @@ html {
     grid-template-columns: 1fr;
   }
 
+  /* Stack the review action buttons full-width on phones. Wrapping them in a
+     right-aligned row left an awkward empty gutter on the narrower withdrawal
+     card, and full-width targets are easier to tap. The deposit row keeps this
+     as a flex container (flex-direction); the withdrawal row's
+     `.admin-referral-row div` rule forces display:grid, so a single 1fr column
+     gives the same full-width stack there. */
+  .deposit-review-actions {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
   .deposit-review-actions .button {
-    flex: 1 1 120px;
+    width: 100%;
     justify-content: center;
   }
 
@@ -7429,17 +7450,7 @@ html {
     min-height: 68px;
   }
 
-  .wallet-balance-grid,
-  .wallet-usdt-quick-actions,
   .agent-revenue-box {
-    grid-template-columns: 1fr;
-  }
-
-  .wallet-balance-card {
-    min-height: 94px;
-  }
-
-  .transfer-confirm-card {
     grid-template-columns: 1fr;
   }
 }
@@ -7514,8 +7525,11 @@ html {
 }
 
 .wallet-usdt-quick-actions {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  /* Flex-wrap (not a fixed grid) so the help buttons drop to the next line
+     instead of overflowing the panel when the wallet grid is 2-up on tablets
+     (~761-810px) where each panel is narrower than the four columns need. */
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   padding: 14px;
@@ -7526,7 +7540,8 @@ html {
     #ffffff;
 }
 
-.wallet-usdt-quick-actions div {
+.wallet-usdt-quick-actions > div {
+  flex: 1 1 0;
   display: grid;
   gap: 3px;
   min-width: 0;
@@ -7544,6 +7559,7 @@ html {
 }
 
 .wallet-usdt-quick-actions .button {
+  flex: 0 1 auto;
   min-height: 40px;
   white-space: nowrap;
 }
@@ -7949,6 +7965,31 @@ html {
 .agent-qty {
   flex: 0 0 auto;
   max-width: 110px;
+}
+
+/* Mobile wallet overrides. These must live *after* the base wallet rules
+   above: several of those base rules (balance grid, quick-actions, confirm
+   card) are single-class selectors, so an earlier @media block of equal
+   specificity loses on source order and the desktop multi-column layout
+   leaks onto phones, overflowing horizontally. Keeping the overrides here
+   guarantees they win at <=760px. */
+@media (max-width: 760px) {
+  .wallet-balance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wallet-balance-card {
+    min-height: 94px;
+  }
+
+  .wallet-usdt-quick-actions > div,
+  .wallet-usdt-quick-actions .button {
+    flex: 1 1 100%;
+  }
+
+  .transfer-confirm-card {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================================================================

@@ -1,13 +1,53 @@
 # Spain vs Saudi Arabia — The Ghost of 2022
+*Group H · Matchday 2 · June 17, 2026 · Rose Bowl, Pasadena*
 
-*Group H, Matchday 2 — June 17, 2026*
+> **Runtime:** ~5:00 · **Genre:** narrated mystery film
+> **Narrator:** Brian (ElevenLabs) — warm, cinematic, mysterious delivery
+> **Narrator note:** the ghost is the recurring visual — keep returning to the 2022 replay
+> **Music arc:** a single haunted note (the ghost) → tiki-taka pulse vs Arabic strings and drums → silence on the 55th-minute cut-in → a Spanish counter surging → the haunted note returning, unresolved, on the question
+> **Supporters (crowd-SFX layer):** La Roja — *"¡A por e-llos, o-é!"*, *"¡Es-pa-ña!"*; Green Falcons — *"Sau-di! Sau-di!"*, *"Al-Akh-dar!"* (the Green), Arabic drums
+> **THE MYSTERY (recurring spine):** *The same stadium, the same left foot that once felled Argentina. Spain remember 2022 with dread; Saudi Arabia with longing. But ghosts have a way of returning exactly when you least expect them — for whom, tonight?*
 
-The Rose Bowl in Pasadena, California, holds its breath. Spain and Saudi Arabia walk onto the same pitch where the greatest upset in recent World Cup history was born. In 2022, Saudi Arabia beat Argentina 2-1 in the opening match — a result that shook the footballing world to its core. Salem Al-Dawsari scored that day, curling a stunning left-foot shot past Emiliano Martinez. Now he stands on the pitch again, older but no less dangerous, his jersey still the best-selling in Saudi Pro League history.
+---
 
-Lamine Yamal watches Al-Dawsari from across the midfield line. Yamal was 15 years old when that goal went in, still a child in Barcelona's La Masia academy. Now he is Spain's brightest star, a Euro 2024 champion at 16, the youngest goalscorer in European Championship history. The contrast is cinematic: the veteran who felled a giant versus the teenager who might become one. Rodri, the Ballon d'Or winner who does "the dirty work" so beautifully, will orchestrate Spain's tempo from deep. His unbeaten run of 74 games is one of the longest in football history.
+### 1 · COLD OPEN — Where the Giant Fell (0:00–0:55)
+**[MUSIC: a single haunted, hanging note.]**
+**[ANIMATION: a ghostly 2022 replay — Al-Dawsari's curling left-foot strike past Martínez — flickers over the same Rose Bowl turf.]**
 
-Saudi Arabia remember 2022 differently. That victory over Argentina was followed by two defeats and elimination in the group stage — a lesson in the cruelty of tournaments. They will not make the same mistake twice. Al-Dawsari, the Al-Hilal legend and avid falconer, is one of the most decorated players in Saudi Pro League history. His stunning goal against Argentina was voted one of the best of the 2022 World Cup. Firas Al-Buraikan provides youthful energy up front, while Salman Al-Faraj pulls the strings in midfield with the calm authority of a man who has played in two World Cups.
+The Rose Bowl holds its breath. Spain and Saudi Arabia walk onto the very pitch where the greatest upset in recent World Cup history was born. In 2022 the Saudis beat Argentina 2–1 in their opener — a result that shook the world. Salem Al-Dawsari scored that day, curling a stunning left-foot shot past Emiliano Martínez. *(beat)* Now he stands here again — older, no less dangerous. *The ghost has come home.*
 
-In the 55th minute, Al-Dawsari receives the ball on the left wing. The stadium falls silent — every Spanish fan remembers what happened the last time this man had the ball at his feet in a World Cup. He cuts inside, that same sweeping motion, but this time Rodri is there. The Ballon d'Or winner reads the move perfectly, dispossessing Al-Dawsari with a tackle so clean it could be framed. Spain counter. Yamal sprints down the right, the ball at his feet, three Saudi defenders chasing shadows.
+**[SUPPORTERS — Green Falcons: "Al-Akh-dar! Al-Akh-dar!"]**
 
-The ghost of 2022 hangs over this match like desert heat. But ghosts, as Spain will discover, have a way of returning when you least expect them.
+### 2 · THE BOY WHO WAS FIFTEEN (0:55–1:45)
+**[MUSIC: a bright tiki-taka motif, edged with unease.]**
+**[ANIMATION: Lamine Yamal watching Al-Dawsari; a flash of a 15-year-old Yamal in La Masia the night that goal went in.]**
+
+Lamine Yamal watches Al-Dawsari across the line. He was 15 when that goal went in, still a child at La Masia. Now he is Spain's brightest star — a Euro 2024 champion at 16, the youngest scorer in Euros history. *The cinematic contrast: the veteran who felled a giant, against the teenager who might become one.* Rodri orchestrates from deep, his 74-game unbeaten run among the longest in football.
+
+### 3 · A LESSON IN CRUELTY (1:45–2:35)
+**[MUSIC: Arabic strings, patient and proud.]**
+**[ANIMATION: the 2022 Saudi celebration, then two defeats flashing past — joy curdling into elimination.]**
+
+Saudi Arabia remember 2022 differently. That famous win was followed by two defeats and a group-stage exit — a lesson in the cruelty of tournaments. *They will not make the same mistake twice.* Al-Dawsari, Al-Hilal legend and avid falconer, hunts with patience. Firas Al-Buraikan brings youthful fire; Salman Al-Faraj pulls the strings with two-World-Cup calm.
+
+**[SUPPORTERS — full falcon roar: "Sau-di! Sau-di!"]**
+
+### 4 · THE 55TH MINUTE (2:35–3:45)
+**[MUSIC: everything drops to silence as the ghost moves.]**
+**[ANIMATION: Al-Dawsari on the left; the same sweeping cut inside; the whole stadium remembering — then Rodri stepping in.]**
+
+55th minute. Al-Dawsari receives on the left. The stadium falls silent — every Spanish fan remembers the last time this man had the ball in a World Cup. He cuts inside, that same motion — but this time Rodri is there. The Ballon d'Or winner reads it perfectly and dispossesses him with a tackle so clean it could be framed. **[SUPPORTERS: a Spanish roar of relief.]** Spain counter — Yamal sprinting down the right, three Saudis chasing shadows.
+
+### 5 · GHOSTS DON'T LEAVE (3:45–4:25)
+**[MUSIC: the haunted note creeps back beneath the tiki-taka.]**
+**[ANIMATION: the 2022 replay flickers once more at the edge of frame, refusing to fade.]**
+
+The ghost of 2022 hangs over this match like desert heat. *(beat)* Rodri exorcised it once, in the 55th minute. But ghosts, as Spain are about to discover, are rarely banished by a single clean tackle.
+
+### 6 · THE MYSTERY, UNDERLINED (4:25–5:00)
+**[MUSIC: the haunted note holds, unresolved.]**
+**[ANIMATION: the flickering 2022 goal and the live match overlapping, indistinguishable for a heartbeat.]**
+
+The same stadium. The same left foot. The same impossible memory. *(beat)* **And the riddle hangs in the California heat: a ghost remembers the night it was born — so when it returns to the very place it haunted, does it come back to be exorcised at last, or to strike the exact same blow twice?** Spain think the past is behind them. The ghost of 2022 is still on the pitch.
+
+**[SUPPORTERS — fading, overlapping: "Al-Akh-dar!" … "¡Es-pa-ña!"]**
