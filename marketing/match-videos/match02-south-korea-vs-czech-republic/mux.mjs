@@ -23,9 +23,11 @@ function durOf(f) {
   return (+m[1]) * 3600 + (+m[2]) * 60 + parseFloat(m[3]);
 }
 
-// ── Inputs ──────────────────────────────────────────────────────────────────
-// input 0: frames; then VO lines; then clip audios; then music cues (last).
-const inputs = ['-framerate', String(FPS), '-start_number', '0', '-i', 'frames/f_%05d.jpg'];
+// ── Inputs (audio stage) ─────────────────────────────────────────────────────
+// Stage 1 mixes audio only; stage 2 encodes the frames and muxes the result.
+// (A single graph pairing the image2 sequence with 50+ audio inputs can
+// deadlock ffmpeg's demuxer pacing near the tail - hence the two stages.)
+const inputs = [];
 const voFiles = NO_VO ? [] : lines.map((_, i) => `audio/line_${String(i).padStart(2, '0')}.mp3`);
 for (const f of voFiles) inputs.push('-i', f);
 const clipFiles = clips.filter(c => fs.existsSync(c.src) && (c.vol ?? 0) > 0);
@@ -34,7 +36,9 @@ const hits = (sfx?.hits || []).filter(h => fs.existsSync(h.src));
 for (const h of hits) inputs.push('-i', h.src);
 const cues = (music?.cues || []).filter(c => fs.existsSync(c.src));
 for (const c of cues) {
-  if (c.loop) inputs.push('-stream_loop', '-1');
+  // finite loop count (enough repeats to cover the window) - an infinite
+  // -stream_loop can wedge amix at EOF time
+  if (c.loop) inputs.push('-stream_loop', String(Math.max(1, Math.ceil(c.dur / 60))));
   inputs.push('-i', c.src);
 }
 
@@ -53,7 +57,7 @@ if (!NO_VO) {
     tempo = Math.min(1.4, Math.max(0.95, tempo)); // only fit when spilling; keep Brian natural
     if (tempo < 1) tempo = 1;                      // never slow him down on a 300s bed
     const ms = Math.round(at * 1000);
-    const idx = i + 1;
+    const idx = i;
     let c = `[${idx}:a]`;
     if (Math.abs(tempo - 1) > 0.02) c += `atempo=${tempo.toFixed(4)},`;
     c += `adelay=${ms}:all=1,aresample=44100[v${i}]`;
@@ -67,7 +71,7 @@ if (!NO_VO) {
 // ── Clip FX audio at their timeline slots ────────────────────────────────────
 const fxLabels = [];
 clipFiles.forEach((c, k) => {
-  const idx = 1 + voFiles.length + k;
+  const idx = voFiles.length + k;
   const ms = Math.round(c.at * 1000);
   // play the clip's own sound once (5-10s), faded out so loops don't pop
   chains.push(`[${idx}:a]volume=${(c.vol ?? 0.4).toFixed(2)},afade=t=in:st=0:d=0.3,afade=t=out:st=${Math.max(0.5, Math.min(c.dur, 10) - 1).toFixed(2)}:d=1,adelay=${ms}:all=1,aresample=44100[f${k}]`);
@@ -81,7 +85,7 @@ if (fxLabels.length) {
 if (hits.length) {
   const hitLabels = [];
   hits.forEach((h, k) => {
-    const idx = 1 + voFiles.length + clipFiles.length + k;
+    const idx = voFiles.length + clipFiles.length + k;
     chains.push(`[${idx}:a]volume=${(h.vol ?? 0.6).toFixed(2)},adelay=${Math.round(h.at * 1000)}:all=1,aresample=44100[s${k}]`);
     hitLabels.push(`[s${k}]`);
   });
@@ -92,7 +96,7 @@ if (hits.length) {
 if (cues.length) {
   const cueLabels = [];
   cues.forEach((c, k) => {
-    const idx = 1 + voFiles.length + clipFiles.length + hits.length + k;
+    const idx = voFiles.length + clipFiles.length + hits.length + k;
     const ms = Math.round(c.at * 1000);
     const fi = c.fadeIn ?? 1.5, fo = c.fadeOut ?? 3;
     chains.push(
@@ -120,24 +124,34 @@ chains.push(`${mixes.join('')}amix=inputs=${mixes.length}:normalize=0:dropout_tr
             // loudnorm to the YouTube delivery target so the mix never lands quiet
             `[mx]loudnorm=I=-14:TP=-1.2:LRA=11,alimiter=limit=0.97,apad,atrim=0:${DURATION},aformat=channel_layouts=stereo:sample_rates=44100[aout]`);
 
-// crop the stray sub-pixel row so dimensions are even (libx264 needs even w/h)
-chains.push(`[0:v]crop=1920:1080:0:0,fps=${FPS},format=yuv420p[vout]`);
-
 const filter = chains.join(';');
 fs.writeFileSync('filter.txt', filter);
 
-const args = [
-  '-y',
-  ...inputs,
+// ── Stage 1: audio master ────────────────────────────────────────────────────
+console.log('stage 1: audio master -> audio_master.m4a');
+execFileSync(ffmpegPath, [
+  '-y', ...inputs,
   '-filter_complex', filter,
-  '-map', '[vout]', '-map', '[aout]',
+  '-map', '[aout]',
+  '-c:a', 'aac', '-b:a', '192k',
+  '-t', String(DURATION),
+  'audio_master.m4a',
+], { stdio: 'inherit' });
+
+// ── Stage 2: video encode + mux ──────────────────────────────────────────────
+// crop the stray sub-pixel row so dimensions are even (libx264 needs even w/h)
+console.log('stage 2: video encode ->', OUT);
+execFileSync(ffmpegPath, [
+  '-y',
+  '-framerate', String(FPS), '-start_number', '0', '-i', 'frames/f_%05d.jpg',
+  '-i', 'audio_master.m4a',
+  '-filter_complex', `[0:v]crop=1920:1080:0:0,fps=${FPS},format=yuv420p[vout]`,
+  '-map', '[vout]', '-map', '1:a',
   '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-preset', 'medium',
   '-r', String(FPS),
-  '-c:a', 'aac', '-b:a', '192k',
+  '-c:a', 'copy',
   '-t', String(DURATION),
   '-movflags', '+faststart',
   OUT,
-];
-console.log('ffmpeg muxing ->', OUT);
-execFileSync(ffmpegPath, args, { stdio: 'inherit' });
+], { stdio: 'inherit' });
 console.log('MUX DONE ->', OUT);
