@@ -31,12 +31,13 @@ const { useEffect } = React;
 // Scene timeline (global seconds) — 300s. Keep in sync with narration.json
 // (VO slots) and clips.json (video clip placements).
 const SCENES = [
-  { c: SceneColdOpen, start: 0,    end: 16.0 },
-  { c: SceneTitle,    start: 16.0, end: 28.0 },
-  { c: SceneStadium,  start: 28.0, end: 46.0 },
-  { c: SceneKorea,    start: 46.0, end: 106.0 },
-  { c: SceneCzech,    start: 106.0, end: 158.0 },
-  { c: SceneDuel,     start: 158.0, end: 186.0 },
+  { c: SceneColdOpen, start: 0,     end: 16.0 },
+  { c: SceneTitle,    start: 16.0,  end: 28.0 },
+  { c: SceneStadium,  start: 28.0,  end: 44.0 },
+  { c: SceneHistory,  start: 44.0,  end: 98.5 },
+  { c: SceneKorea,    start: 98.5,  end: 133.5 },
+  { c: SceneCzech,    start: 133.5, end: 164.5 },
+  { c: SceneDuel,     start: 164.5, end: 186.0 },
   { c: SceneDrama,    start: 186.0, end: 242.0 },
   { c: SceneVerdict,  start: 242.0, end: 262.0 },
   { c: SceneApp,      start: 262.0, end: 286.0 },

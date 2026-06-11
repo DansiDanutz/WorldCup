@@ -1,7 +1,7 @@
 // Final assembly for the Match 2 video:
 //   frames/  (from render.mjs)
 // + audio/line_NN.mp3  (Brian VO from gen_audio.mjs)
-// + music/anthem-source.mp4 -> looped, side-chain ducked background anthem
+// + music cues from clips.json (looped/trimmed, side-chain ducked under the VO)
 // + each generated clip's own crowd/FX audio at its clips.json timeline slot
 // -> WorldCup26_Match02_KOR_CZE.mp4 (H.264/AAC, 1920x1080)
 import fs from 'node:fs';
@@ -23,24 +23,18 @@ function durOf(f) {
   return (+m[1]) * 3600 + (+m[2]) * 60 + parseFloat(m[3]);
 }
 
-// ── Prep: extract the anthem audio once (music/bgm.m4a) ─────────────────────
-const bgmSrc = 'music/anthem-source.mp4';
-const bgm = music?.src || 'music/bgm.m4a';
-if (!fs.existsSync(bgm) && fs.existsSync(bgmSrc)) {
-  console.log('extracting background anthem ->', bgm);
-  execFileSync(ffmpegPath, ['-y', '-i', bgmSrc, '-vn', '-c:a', 'aac', '-b:a', '192k', bgm], { stdio: 'inherit' });
-}
-const hasBgm = fs.existsSync(bgm);
-if (!hasBgm) console.warn('WARNING: no background music found at', bgm, '- muxing without it');
-
 // ── Inputs ──────────────────────────────────────────────────────────────────
-// input 0: frames; then VO lines; then clip audios; then bgm (last).
+// input 0: frames; then VO lines; then clip audios; then music cues (last).
 const inputs = ['-framerate', String(FPS), '-start_number', '0', '-i', 'frames/f_%05d.jpg'];
 const voFiles = NO_VO ? [] : lines.map((_, i) => `audio/line_${String(i).padStart(2, '0')}.mp3`);
 for (const f of voFiles) inputs.push('-i', f);
 const clipFiles = clips.filter(c => fs.existsSync(c.src) && (c.vol ?? 0) > 0);
 for (const c of clipFiles) inputs.push('-i', c.src);
-if (hasBgm) inputs.push('-stream_loop', '-1', '-i', bgm);
+const cues = (music?.cues || []).filter(c => fs.existsSync(c.src));
+for (const c of cues) {
+  if (c.loop) inputs.push('-stream_loop', '-1');
+  inputs.push('-i', c.src);
+}
 
 const chains = [];
 const mixes = [];
@@ -81,14 +75,24 @@ if (fxLabels.length) {
   chains.push(`${fxLabels.join('')}amix=inputs=${fxLabels.length}:normalize=0:dropout_transition=0,apad,atrim=0:${DURATION}[fx]`);
 }
 
-// ── Background anthem: loop for 300s, duck under the VO ─────────────────────
-if (hasBgm) {
-  const bgmIdx = 1 + voFiles.length + clipFiles.length;
-  const vol = (music?.vol ?? 0.4).toFixed(2);
-  chains.push(`[${bgmIdx}:a]atrim=0:${DURATION},volume=${vol},afade=t=in:st=0:d=1.5,afade=t=out:st=${DURATION - 3}:d=3,aresample=44100[bgraw]`);
+// ── Music score: each cue looped/trimmed to its window, then mixed ──────────
+if (cues.length) {
+  const cueLabels = [];
+  cues.forEach((c, k) => {
+    const idx = 1 + voFiles.length + clipFiles.length + k;
+    const ms = Math.round(c.at * 1000);
+    const fi = c.fadeIn ?? 1.5, fo = c.fadeOut ?? 3;
+    chains.push(
+      `[${idx}:a]atrim=0:${c.dur},volume=${(c.vol ?? 0.4).toFixed(2)},` +
+      `afade=t=in:st=0:d=${fi},afade=t=out:st=${(c.dur - fo).toFixed(2)}:d=${fo},` +
+      `adelay=${ms}:all=1,aresample=44100[m${k}]`
+    );
+    cueLabels.push(`[m${k}]`);
+  });
+  chains.push(`${cueLabels.join('')}amix=inputs=${cueLabels.length}:normalize=0:dropout_transition=0,apad,atrim=0:${DURATION}[bgraw]`);
   if (!NO_VO) {
     chains.push(`[vo]asplit=2[voa][vob]`);
-    chains.push(`[bgraw][vob]sidechaincompress=threshold=0.02:ratio=6:attack=120:release=600:makeup=1[bg]`);
+    chains.push(`[bgraw][vob]sidechaincompress=threshold=0.02:ratio=5:attack=120:release=700:makeup=1[bg]`);
     mixes.push('[voa]', '[bg]');
   } else {
     mixes.push('[bgraw]');

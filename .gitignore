@@ -31,3 +31,9 @@ marketing/match-videos/*/preview_*.mp4
 marketing/match-videos/*/assets/*.mp4
 marketing/match-videos/*/music/*.mp4
 marketing/match-videos/*/music/*.m4a
+marketing/match-videos/*/assets/squad/
+marketing/match-videos/*/music/*.mp3
+marketing/match-videos/*/voice.log
+marketing/match-videos/*/mux.log
+marketing/match-videos/*/render-*.log
+marketing/match-videos/*/preview_*.mp4

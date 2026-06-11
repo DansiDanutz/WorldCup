@@ -1,12 +1,11 @@
-// match-scenes.jsx — the ten scenes of the Match 2 video (300s timeline).
+// match-scenes.jsx — the eleven scenes of the Match 2 video (300s timeline).
 // Scene windows must match the SCENES table in match.html and narration.json.
+// NOTE: nested <Sprite> windows are GLOBAL seconds (Sprite reads the timeline clock).
 
 // ── 1. Cold open (0–16): heartbeat in the dark, flash glimpses, hook line ────
 function SceneColdOpen() {
   const { localTime: lt } = useSprite();
-  // Heartbeat vignette pulse
   const beat = Math.pow(Math.max(0, Math.sin(lt * Math.PI * 1.15)), 8);
-  // Flash glimpses of what's coming (subliminal cuts, growing longer)
   const glimpses = [
     { at: 4.2, dur: 0.34, src: 'assets/player-son.png' },
     { at: 7.0, dur: 0.42, src: 'assets/stadium-akron.png' },
@@ -39,7 +38,7 @@ function SceneColdOpen() {
           opacity: Math.min(1, (lt - 1.2) / 1.5) * (lt > 11.0 ? Math.max(0, (12.2 - lt) / 1.2) : 1) * (0.55 + 0.45 * beat),
           fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 30, color: '#b8909a',
           letterSpacing: '0.5em', textTransform: 'uppercase',
-        }}>June 12 2026 · Guadalajara</div>
+        }}>June 11 2026 · Guadalajara</div>
       )}
       <Vignette strength={0.8} />
       {lt > 12.6 && (
@@ -64,7 +63,7 @@ function SceneTitle() {
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(255,210,74,0.10) 0%, transparent 55%)` }} />
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 44 }}>
         <div style={{ opacity: p1, transform: `translateY(${(1 - p1) * -30}px)` }}>
-          <Kicker>FIFA World Cup 2026 · Match 2 of 104</Kicker>
+          <Kicker>WorldCup26 Legends · Episode 2</Kicker>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 70, opacity: clamp(p2, 0, 1), transform: `scale(${p2})` }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
@@ -78,7 +77,7 @@ function SceneTitle() {
           </div>
         </div>
         <div style={{ opacity: p3, transform: `translateY(${(1 - p3) * 26}px)`, fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 32, color: MV.muted, letterSpacing: '0.08em' }}>
-          GROUP A · ESTADIO AKRON, GUADALAJARA · JUNE 12, 2026
+          GROUP A · ESTADIO AKRON, GUADALAJARA · JUNE 11, 2026
         </div>
       </div>
       <Letterbox />
@@ -86,7 +85,7 @@ function SceneTitle() {
   );
 }
 
-// ── 3. Stadium (28–46): flyover clip + atmosphere ────────────────────────────
+// ── 3. Stadium (28–44): flyover clip + atmosphere ────────────────────────────
 function SceneStadium() {
   const { localTime: lt } = useSprite();
   const stripP = Easing.easeOutCubic(clamp((lt - 1.2) / 0.9, 0, 1));
@@ -99,7 +98,7 @@ function SceneStadium() {
         opacity: stripP, transform: `translateY(${(1 - stripP) * 30}px)`,
       }}>
         <div style={{ display: 'flex', gap: 0, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 16, overflow: 'hidden', backdropFilter: 'blur(6px)' }}>
-          {[['48,000', 'FANS'], ['9th', 'STRAIGHT WC FOR KOREA'], ["41'", 'THE MINUTE TO REMEMBER'], ['1', 'LAST DANCE']].map(([v, l], i) => (
+          {[['48,000', 'FANS'], ['9th', 'STRAIGHT WC FOR KOREA'], ['4', 'MEETINGS — ALL FRIENDLIES'], ['0', 'WORLD CUP MEETINGS… YET']].map(([v, l], i) => (
             <div key={i} style={{ padding: '24px 46px', borderLeft: i ? `1px solid ${MV.line}` : 'none', textAlign: 'center' }}>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 46, color: MV.gold }}>{v}</div>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 19, color: MV.muted, letterSpacing: '0.18em', marginTop: 6 }}>{l}</div>
@@ -112,33 +111,145 @@ function SceneStadium() {
   );
 }
 
-// ── 4. South Korea team intro (46–106) ───────────────────────────────────────
+// ── 4. History (44–98.5): the real story between the two nations ────────────
+function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, stamp }) {
+  const t = useTime();
+  if (t < start || t > end) return null;
+  const p = Easing.easeOutBack(clamp((t - start) / 0.8, 0, 1));
+  const fade = t > end - 0.6 ? (end - t) / 0.6 : 1;
+  const stampP = stamp ? Easing.easeOutBack(clamp((t - start - 1.6) / 0.5, 0, 1)) : 0;
+  return (
+    <div style={{
+      position: 'absolute', inset: 0, zIndex: 25, display: 'flex', alignItems: 'center', justifyContent: 'center',
+      opacity: clamp(p, 0, 1) * clamp(fade, 0, 1),
+    }}>
+      <div style={{
+        transform: `scale(${0.86 + 0.14 * p})`,
+        background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 24,
+        padding: '52px 100px', textAlign: 'center', position: 'relative',
+        boxShadow: '0 30px 110px rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)',
+      }}>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 30, color: MV.muted, letterSpacing: '0.34em' }}>{venue}</div>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 130, color: accent, lineHeight: 1.05, margin: '14px 0 6px', textShadow: `0 0 60px ${accent}44` }}>{score}</div>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 44, color: MV.text, letterSpacing: '0.08em' }}>{year}</div>
+        {note && <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 27, color: MV.muted, marginTop: 14, maxWidth: 760 }}>{note}</div>}
+        {stamp && stampP > 0 && (
+          <div style={{
+            position: 'absolute', top: -34, right: -60, transform: `rotate(-12deg) scale(${stampP})`,
+            border: `5px solid ${MV.cze}`, color: MV.cze, borderRadius: 14, padding: '10px 26px',
+            fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 38, letterSpacing: '0.1em',
+            background: 'rgba(7,9,15,0.85)',
+          }}>{stamp}</div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function SceneHistory() {
+  const { localTime: lt } = useSprite();
+  const S = 44;
+  // alternating dimmed backdrops to keep the archive alive
+  const bg = lt < 23 ? 'assets/player-son.png' : lt < 33.5 ? 'assets/player-schick.png' : 'assets/fan-kor-euphoric.png';
+  return (
+    <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
+      <img src={bg} alt="" style={{
+        position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+        filter: 'brightness(0.22) saturate(0.6) contrast(1.1)',
+        transform: `scale(${1.05 + 0.0012 * lt * 10})`,
+      }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
+      {/* chapter header */}
+      <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 26 }}>
+        <Kicker size={28}>Chapter One · The History</Kicker>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: MV.text, letterSpacing: '0.05em', marginTop: 16, textShadow: '0 4px 22px rgba(0,0,0,0.8)' }}>
+          TWO NATIONS · ONE MISSING CHAPTER
+        </div>
+      </div>
+      {/* flag pair, always present */}
+      <div style={{ position: 'absolute', bottom: 132, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 40, zIndex: 26, opacity: 0.95 }}>
+        <FlagKOR w={108} />
+        <div style={{ alignSelf: 'center', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 34, color: MV.gold }}>×</div>
+        <FlagCZE w={108} />
+      </div>
+      {/* beats synced to the narration */}
+      <HistoryPlate start={S + 1.0} end={S + 12} year="1989 → 2026" venue="THE FULL RECORD" score="4 GAMES" note="Every single one a friendly. Never once at a World Cup — until tonight." accent={MV.gold} />
+      <HistoryPlate start={S + 12} end={S + 21.5} year="SEOUL · 1998" venue="FRIENDLY" score="2 — 2" note="A wild draw that settled nothing." accent={MV.text} />
+      <HistoryPlate start={S + 21.5} end={S + 33} year="PRAGUE · 2001" venue="NEDVED & THE CZECHS" score="5 — 0" note="Korean newspapers nicknamed their new coach 'Mister Five-Zero'. His name: Guus Hiddink." accent={MV.cze} stamp="MR. FIVE-ZERO" />
+      <HistoryPlate start={S + 33} end={S + 43.5} year="WORLD CUP 2002" venue="ONE YEAR LATER" score="SEMI-FINAL" note="Italy stunned. Spain shocked. The five-nil didn't break Korea — it built the miracle." accent={MV.gold} />
+      <HistoryPlate start={S + 43.5} end={S + 54} year="PRAGUE · 2016" venue="THE REVENGE" score="2 — 1" note="The scar settled. The World Cup chapter — still unwritten… until tonight." accent={MV.kor} />
+      <Vignette strength={0.5} />
+      <Letterbox />
+    </div>
+  );
+}
+
+// ── Squad montage grid (uses the full generated image library) ───────────────
+function SquadGrid({ start, end, players, accent }) {
+  const t = useTime();
+  if (t < start || t > end) return null;
+  const fade = t > end - 0.5 ? (end - t) / 0.5 : 1;
+  return (
+    <div style={{
+      position: 'absolute', inset: 0, zIndex: 25, display: 'flex', alignItems: 'center', justifyContent: 'center',
+      gap: 34, opacity: clamp(fade, 0, 1), padding: '0 90px',
+    }}>
+      {players.map((p, i) => {
+        const cp = Easing.easeOutBack(clamp((t - start - 0.25 - i * 0.28) / 0.7, 0, 1));
+        return (
+          <div key={i} style={{
+            width: 308, transform: `translateY(${(1 - cp) * 90}px) scale(${0.85 + 0.15 * cp})`, opacity: clamp(cp, 0, 1),
+            borderRadius: 22, overflow: 'hidden', background: MV.panel, border: `1px solid ${MV.line}`,
+            boxShadow: `0 26px 80px rgba(0,0,0,0.6)`,
+          }}>
+            <div style={{ height: 322, overflow: 'hidden' }}>
+              <img src={p.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.02 + 0.05 * clamp((t - start) / (end - start), 0, 1)})` }} />
+            </div>
+            <div style={{ padding: '18px 16px 20px', textAlign: 'center', borderTop: `4px solid ${accent}` }}>
+              <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 25, color: MV.text }}>{p.name}</div>
+              <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 17, color: MV.muted, letterSpacing: '0.16em', marginTop: 5 }}>{p.role}</div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ── 5. South Korea (98.5–133.5): squad grid then animated stars ──────────────
 function SceneKorea() {
   const { localTime: lt } = useSprite();
-  const S = 46; // global scene start
+  const S = 98.5;
   const headerP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#0a0c14' }}>
-      {/* player clips placed on the global timeline via clips.json */}
+      {/* grid backdrop while the montage is up */}
+      {lt < 7.5 && <img src="assets/stadium-akron.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.28) saturate(0.8)' }} />}
       <ClipSprite id="son" dim={0.12} />
       <ClipSprite id="kim" dim={0.12} />
       <ClipSprite id="lee" dim={0.12} />
-      {/* red team wash + header band */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 22, pointerEvents: 'none', background: `linear-gradient(90deg, rgba(212,49,63,0.20) 0%, transparent 30%, transparent 70%, rgba(31,79,163,0.16) 100%)` }} />
-      <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 25, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
+      <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
           <FlagKOR w={74} />
           <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>THE TAEGEUK WARRIORS</span>
         </div>
       </div>
-      <Sprite start={48.0} end={67.5}>
-        <LowerThird start={S + 2.0} name="SON HEUNG-MIN" role="Captain · Forward" line="His 4th World Cup. His last. The Last Waltz of Sonaldo begins." accent={MV.kor} />
+      <SquadGrid start={S + 0.4} end={S + 7.5} accent={MV.kor} players={[
+        { img: 'assets/squad/kor-1-Son-Heung-min.png', name: 'SON HEUNG-MIN', role: 'CAPTAIN' },
+        { img: 'assets/squad/kor-2-Kim-Min-jae.png', name: 'KIM MIN-JAE', role: 'THE MONSTER' },
+        { img: 'assets/squad/kor-3-Lee-Kang-in.png', name: 'LEE KANG-IN', role: 'THE MAGICIAN' },
+        { img: 'assets/squad/kor-4-Hwang-Hee-chan.png', name: 'HWANG HEE-CHAN', role: 'THE BULL' },
+        { img: 'assets/squad/kor-5-Hwang-In-beom.png', name: 'HWANG IN-BEOM', role: 'THE ENGINE' },
+      ]} />
+      <Sprite start={106.0} end={116.0}>
+        <LowerThird start={106.5} name="SON HEUNG-MIN" role="Captain · Forward" line="His 4th World Cup. His last. The Last Waltz of Sonaldo begins." accent={MV.kor} />
       </Sprite>
-      <Sprite start={67.5} end={87.5}>
-        <LowerThird start={S + 21.5} name="KIM MIN-JAE" role="The Monster · Centre-back" line="Conquered Serie A with Napoli. Strikers see him in their nightmares." accent={MV.kor} />
+      <Sprite start={116.0} end={125.0}>
+        <LowerThird start={116.5} name="KIM MIN-JAE" role="The Monster · Centre-back" line="Conquered Serie A with Napoli. Strikers see him in their nightmares." accent={MV.kor} />
       </Sprite>
-      <Sprite start={87.5} end={106}>
-        <LowerThird start={S + 41.5} name="LEE KANG-IN" role="The Magician · Midfield" line="Turns grass into a chessboard, defenders into spectators." accent={MV.kor} />
+      <Sprite start={125.0} end={133.5}>
+        <LowerThird start={125.3} name="LEE KANG-IN" role="The Magician · Midfield" line="Turns grass into a chessboard, defenders into spectators." accent={MV.kor} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -146,32 +257,39 @@ function SceneKorea() {
   );
 }
 
-// ── 5. Czech team intro (106–158) ────────────────────────────────────────────
+// ── 6. Czech Republic (133.5–164.5): dynasty grid then the marksmen ──────────
 function SceneCzech() {
   const { localTime: lt } = useSprite();
-  const S = 106;
+  const S = 133.5;
   const headerP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#0a0c14' }}>
+      <ClipSprite id="cze-hopeful" dim={0.55} />
       <ClipSprite id="schick" dim={0.12} />
       <ClipSprite id="soucek" dim={0.12} />
       <ClipSprite id="hlozek" dim={0.12} />
-      <ClipSprite id="cze-hopeful" dim={0.06} />
       <div style={{ position: 'absolute', inset: 0, zIndex: 22, pointerEvents: 'none', background: `linear-gradient(90deg, rgba(17,69,126,0.22) 0%, transparent 30%, transparent 70%, rgba(221,44,62,0.16) 100%)` }} />
-      <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 25, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
+      <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
           <FlagCZE w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>THE HEART OF EUROPE</span>
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>HEIRS OF THE PANENKA</span>
         </div>
       </div>
-      <Sprite start={108.0} end={127.5}>
-        <LowerThird start={S + 2.0} name="PATRIK SCHICK" role="The Marksman · Striker" line="Scored from the halfway line at a Euro. Lives in the margins." accent={MV.cze} />
+      <SquadGrid start={S + 0.4} end={S + 11} accent={MV.cze} players={[
+        { img: 'assets/squad/cze-1-Patrik-Schick.png', name: 'PATRIK SCHICK', role: 'THE MARKSMAN' },
+        { img: 'assets/squad/cze-2-Tomas-Soucek.png', name: 'TOMAS SOUCEK', role: 'THE TOWER' },
+        { img: 'assets/squad/cze-3-Adam-Hlozek.png', name: 'ADAM HLOZEK', role: 'THE YOUNG WOLF' },
+        { img: 'assets/squad/cze-4-Vladimir-Coufal.png', name: 'VLADIMIR COUFAL', role: 'THE WARRIOR' },
+        { img: 'assets/squad/cze-5-Jindrich-Stanek.png', name: 'JINDRICH STANEK', role: 'THE WALL' },
+      ]} />
+      <Sprite start={144.5} end={154.5}>
+        <LowerThird start={144.8} name="PATRIK SCHICK" role="The Marksman · Striker" line="Scored from the halfway line at a Euro. Audacity is a Czech tradition." accent={MV.cze} />
       </Sprite>
-      <Sprite start={127.5} end={137.5}>
-        <LowerThird start={S + 21.5} name="TOMAS SOUCEK" role="The Tower of Prague · Midfield" line="Two metres of iron. Attacks every cross like it owes him money." accent={MV.cze} />
+      <Sprite start={154.5} end={159.0}>
+        <LowerThird start={154.7} name="TOMAS SOUCEK" role="The Tower of Prague · Midfield" line="Two metres of iron. Attacks every cross like it owes him money." accent={MV.cze} />
       </Sprite>
-      <Sprite start={137.5} end={147}>
-        <LowerThird start={S + 31.5} name="ADAM HLOZEK" role="The Young Wolf · Forward" line="Fast, fearless, hungry to drag Czech football back into the light." accent={MV.cze} />
+      <Sprite start={159.0} end={164.5}>
+        <LowerThird start={159.2} name="ADAM HLOZEK" role="The Young Wolf · Forward" line="Fast, fearless, hungry to drag Czech football back into the light." accent={MV.cze} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -179,7 +297,7 @@ function SceneCzech() {
   );
 }
 
-// ── 6. The duel (158–186): Kim vs Schick split screen ────────────────────────
+// ── 7. The duel (164.5–186): Kim vs Schick split screen ──────────────────────
 function SceneDuel() {
   const { localTime: lt } = useSprite();
   const slideP = Easing.easeOutQuart(clamp(lt / 1.1, 0, 1));
@@ -187,7 +305,6 @@ function SceneDuel() {
   const shake = lt > 0.9 && lt < 1.25 ? Math.sin(lt * 160) * 7 * (1.25 - lt) / 0.35 : 0;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
-      {/* split halves */}
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
         <img src="assets/player-kim.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(212,49,63,0.30), transparent 65%)' }} />
@@ -204,7 +321,6 @@ function SceneDuel() {
           <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>PATRIK SCHICK</div>
         </div>
       </div>
-      {/* center seam + VS badge */}
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 'calc(50% - 3px)', width: 6, background: `linear-gradient(180deg, transparent, ${MV.gold}, transparent)`, zIndex: 24, opacity: slideP }} />
       <div style={{
         position: 'absolute', top: '50%', left: '50%', zIndex: 26,
@@ -215,10 +331,10 @@ function SceneDuel() {
       }}>
         <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 92, color: MV.gold }}>VS</span>
       </div>
-      <Sprite start={178.5} end={186}>
+      <Sprite start={182} end={186}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
           <BigTitle size={74} color={MV.text} style={{ maxWidth: 1400 }}>
-            “Our storytellers have looked into the night of June 12th…”
+            “Our storytellers have looked into tonight…”
           </BigTitle>
         </div>
       </Sprite>
@@ -227,7 +343,7 @@ function SceneDuel() {
   );
 }
 
-// ── 7. Match drama (186–242): the 41' goal, joy, despair ─────────────────────
+// ── 8. Match drama (186–242): the 41' goal, joy, despair ─────────────────────
 function SceneDrama() {
   const { localTime: lt } = useSprite();
   const S = 186;
@@ -239,7 +355,6 @@ function SceneDrama() {
       <ClipSprite id="kor-anxious" dim={0.05} />
       <ClipSprite id="cze-crying" dim={0.05} />
 
-      {/* slow-mo tension bar before the strike */}
       <Sprite start={186} end={195.5}>
         <ScoreBug start={S + 0.4} kor={0} cze={0} minute="41'" />
       </Sprite>
@@ -252,7 +367,6 @@ function SceneDrama() {
         <ScoreBug start={S + 26.5} kor={1} cze={0} minute="73'" />
       </Sprite>
 
-      {/* full-time card */}
       <Sprite start={231} end={242}>
         <FullTimeCard start={S + 45} />
       </Sprite>
@@ -282,14 +396,14 @@ function FullTimeCard({ start }) {
           </div>
         </div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 36 }}>
-          Son Heung-min 41' — the farewell begins with victory
+          Son Heung-min 41' — 25 years after “Mr. Five-Zero”, the rematch belongs to Korea
         </div>
       </div>
     </div>
   );
 }
 
-// ── 8. Verdict (242–262): standings + what it means ─────────────────────────
+// ── 9. Verdict (242–262): standings + what it means ──────────────────────────
 function SceneVerdict() {
   const { localTime: lt } = useSprite();
   const S = 242;
@@ -316,7 +430,7 @@ function SceneVerdict() {
   );
 }
 
-// ── 9. App promo (262–286): worldcup26.world ─────────────────────────────────
+// ── 10. App promo (262–286): worldcup26.world ────────────────────────────────
 function SceneApp() {
   const { localTime: lt } = useSprite();
   const S = 262;
@@ -362,7 +476,7 @@ function SceneApp() {
   );
 }
 
-// ── 10. CTA outro (286–300) ──────────────────────────────────────────────────
+// ── 11. CTA outro (286–300) ──────────────────────────────────────────────────
 function SceneCTA() {
   const { localTime: lt } = useSprite();
   const S = 286;

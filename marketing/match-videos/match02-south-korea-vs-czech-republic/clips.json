@@ -1,23 +1,26 @@
 {
-  "comment": "Single source of truth for generated video clips on the 300s timeline. match.html places each clip visually (looping the 5s source while visible); mux.mjs mixes each clip's own audio once at `at` (capped to its source length) at volume `vol`. All clips are Higgsfield kling2.6 renders from the Pixar character images.",
+  "comment": "Single source of truth for generated clips and the music score on the 300s timeline. match.html places each clip visually (looping the 5s source while visible); mux.mjs mixes each clip's own audio once at `at` at volume `vol`, plus the music cues (looped/trimmed, ducked under Brian's VO).",
   "clips": [
-    { "id": "stadium",       "src": "assets/stadium-flyover.mp4",  "at": 28.0,  "dur": 18.0, "vol": 0.50 },
-    { "id": "son",           "src": "assets/player-son.mp4",       "at": 48.0,  "dur": 19.0, "vol": 0.35 },
-    { "id": "kim",           "src": "assets/player-kim.mp4",       "at": 67.5,  "dur": 19.5, "vol": 0.35 },
-    { "id": "lee",           "src": "assets/player-lee.mp4",       "at": 87.5,  "dur": 18.5, "vol": 0.35 },
-    { "id": "schick",        "src": "assets/player-schick.mp4",    "at": 108.0, "dur": 19.0, "vol": 0.35 },
-    { "id": "soucek",        "src": "assets/player-soucek.mp4",    "at": 127.5, "dur": 10.0, "vol": 0.35 },
-    { "id": "hlozek",        "src": "assets/player-hlozek.mp4",    "at": 137.5, "dur": 9.5,  "vol": 0.35 },
-    { "id": "cze-hopeful",   "src": "assets/fan-cze-hopeful.mp4",  "at": 147.0, "dur": 11.0, "vol": 0.45 },
-    { "id": "goal-replay",   "src": "assets/player-son.mp4",       "at": 187.0, "dur": 17.0, "vol": 0.40 },
-    { "id": "kor-euphoric",  "src": "assets/fan-kor-euphoric.mp4", "at": 204.0, "dur": 9.0,  "vol": 0.55 },
-    { "id": "schick-chance", "src": "assets/player-schick.mp4",    "at": 213.0, "dur": 6.0,  "vol": 0.30 },
-    { "id": "kor-anxious",   "src": "assets/fan-kor-anxious.mp4",  "at": 219.0, "dur": 11.0, "vol": 0.50 },
-    { "id": "cze-crying",    "src": "assets/fan-cze-crying.mp4",   "at": 233.0, "dur": 9.0,  "vol": 0.45 }
+    { "id": "stadium",       "src": "assets/stadium-flyover.mp4",  "at": 28.0,  "dur": 16.0, "vol": 0.45 },
+    { "id": "son",           "src": "assets/player-son.mp4",       "at": 106.0, "dur": 10.0, "vol": 0.30 },
+    { "id": "kim",           "src": "assets/player-kim.mp4",       "at": 116.0, "dur": 9.0,  "vol": 0.30 },
+    { "id": "lee",           "src": "assets/player-lee.mp4",       "at": 125.0, "dur": 8.5,  "vol": 0.30 },
+    { "id": "cze-hopeful",   "src": "assets/fan-cze-hopeful.mp4",  "at": 133.5, "dur": 11.0, "vol": 0.35 },
+    { "id": "schick",        "src": "assets/player-schick.mp4",    "at": 144.5, "dur": 10.0, "vol": 0.30 },
+    { "id": "soucek",        "src": "assets/player-soucek.mp4",    "at": 154.5, "dur": 4.5,  "vol": 0.30 },
+    { "id": "hlozek",        "src": "assets/player-hlozek.mp4",    "at": 159.0, "dur": 5.0,  "vol": 0.30 },
+    { "id": "goal-replay",   "src": "assets/player-son.mp4",       "at": 187.0, "dur": 17.0, "vol": 0.35 },
+    { "id": "kor-euphoric",  "src": "assets/fan-kor-euphoric.mp4", "at": 204.0, "dur": 9.0,  "vol": 0.50 },
+    { "id": "schick-chance", "src": "assets/player-schick.mp4",    "at": 213.0, "dur": 6.0,  "vol": 0.25 },
+    { "id": "kor-anxious",   "src": "assets/fan-kor-anxious.mp4",  "at": 219.0, "dur": 11.0, "vol": 0.45 },
+    { "id": "cze-crying",    "src": "assets/fan-cze-crying.mp4",   "at": 233.0, "dur": 9.0,  "vol": 0.40 }
   ],
   "music": {
-    "src": "music/bgm.m4a",
-    "comment": "Extracted from the Higgsfield anthem clip (music/anthem-source.mp4) via `npm run mux` prep step; looped for 300s and side-chain ducked under Brian's VO.",
-    "vol": 0.40
+    "comment": "Three-cue film score. Kevin MacLeod (incompetech.com), CC-BY 4.0 — credit required in the YouTube description (see README). Cues are looped/trimmed to their windows and side-chain ducked under the VO.",
+    "cues": [
+      { "src": "music/cue-tense.mp3",  "at": 0,   "dur": 30,  "vol": 0.50, "fadeIn": 0.5, "fadeOut": 3 },
+      { "src": "music/cue-epic.mp3",   "at": 28,  "dur": 232, "vol": 0.40, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-heroic.mp3", "at": 258, "dur": 42,  "vol": 0.48, "fadeIn": 2,   "fadeOut": 3 }
+    ]
   }
 }

@@ -4,9 +4,12 @@ A 5-minute (300s, 1920×1080, 30fps) cinematic match video for the
 [DansLab YouTube channel](https://www.youtube.com/watch?v=myNgytIwZ0U), the follow-up
 to the Match 1 (Mexico vs South Africa) inaugural video — upgraded with:
 
-- **Background music** — an epic orchestral/taiko anthem generated with Higgsfield
-  (`music/anthem-source.mp4`), looped for the full runtime and side-chain **ducked
-  under the narration** so Brian always cuts through.
+- **Background music** — a three-cue orchestral film score (tense strings for the
+  cold open, an epic battle theme for the body, a heroic finale for the CTA), each
+  cue trimmed/faded per `clips.json` and side-chain **ducked under the narration**
+  so Brian always cuts through. Tracks: "Achilles", "Five Armies", "Invariance" by
+  Kevin MacLeod (incompetech.com), licensed CC-BY 4.0 — **credit required in the
+  YouTube description** (line below).
 - **Animated players** — the Pixar character images of Son Heung-min, Kim Min-jae,
   Lee Kang-in, Patrik Schick, Tomáš Souček and Adam Hložek brought to life as
   cinematic 5s clips (Higgsfield kling 2.6 image-to-video).
@@ -21,18 +24,19 @@ to the Match 1 (Mexico vs South Africa) inaugural video — upgraded with:
   free to play) + animated SUBSCRIBE / LIKE / SHARE buttons + next-episode tease.
 
 Story source: `content/Stories/South-Korea-vs-Czech-Republic.md`
-("The Last Waltz of Sonaldo") — Group A, Estadio Akron, Guadalajara, June 12 2026.
+("The Last Waltz of Sonaldo") — Group A, Estadio Akron, Guadalajara, June 11 2026.
 
 ## Timeline (300s)
 
 | t (s) | Scene | VO / visuals |
 |-------|-------|--------------|
 | 0–16 | Cold open | Heartbeat in the dark, flash glimpses, "ONE LAST DANCE" |
-| 16–28 | Title card | Match 2 of 104 · flags · venue |
-| 28–46 | Stadium | Akron flyover clip + stat strip |
-| 46–106 | South Korea | Son / Kim / Lee animated, lower thirds |
-| 106–158 | Czech Republic | Schick / Souček / Hložek + hopeful ultra |
-| 158–186 | The Duel | Kim vs Schick split screen, "VS" badge |
+| 16–28 | Title card | Episode 2 · flags · venue |
+| 28–44 | Stadium | Akron flyover clip + H2H stat strip |
+| 44–98.5 | The History | The real story between the nations: 4 friendlies, the 1998 2-2, the 2001 Prague 0-5 ("Mr. Five-Zero" Hiddink), the 2002 miracle it forged, the 2016 2-1 revenge — and the first EVER World Cup meeting |
+| 98.5–133.5 | South Korea | 5-man squad montage (full image library), then Son / Kim / Lee animated with lower thirds |
+| 133.5–164.5 | Czech Republic | 5-man squad montage, then Schick / Souček / Hložek + hopeful ultra |
+| 164.5–186 | The Duel | Kim vs Schick split screen, "VS" badge |
 | 186–242 | The Drama | 41' Son goal (flash + confetti), joy, Schick chance, Hwang tackle, FT 1–0 card |
 | 242–262 | Verdict | Group A table after Matchday 1 |
 | 262–286 | App promo | worldcup26.world — pick 3, free to play |
@@ -86,3 +90,8 @@ The final MP4 is gitignored (like the 90s ad) — upload it to YouTube directly.
   story nobody saw coming. Pick your 3 teams free at https://worldcup26.world
 - **Tags:** see `content/youtube/SEO_KEYWORDS.md`; thumbnail per
   `content/youtube/THUMBNAIL_GUIDE.md` (Son close-up + "HIS LAST DANCE" text).
+
+## Music attribution (required in the YouTube description)
+
+> "Achilles", "Five Armies", "Invariance" — Kevin MacLeod (incompetech.com)
+> Licensed under Creative Commons: By Attribution 4.0 — https://creativecommons.org/licenses/by/4.0/
