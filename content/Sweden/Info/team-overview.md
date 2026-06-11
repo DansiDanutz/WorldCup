@@ -1,5 +1,7 @@
 # Sweden - 2026 FIFA World Cup Team Overview
 
+## Group F: Netherlands, Japan, Sweden, Tunisia
+
 ## General Information
 
 - **Country:** Sweden (Sverige)

@@ -4,6 +4,10 @@
 
 The Jordan national football team, known as **Al-Nashama** (The Brave), has emerged as one of Asia's rising football nations. Jordan reached the Asian Cup final in 2024, their best-ever result, and qualified for their first-ever FIFA World Cup in 2026.
 
+## Group J: Argentina, Algeria, Austria, Jordan
+
+Jordan's World Cup debut comes with a draw worthy of the occasion: world champions Argentina, North African rivals Algeria, and a well-drilled Austria stand between Al-Nashama and the knockout rounds.
+
 ## World Cup Record
 | Year | Result | Notes |
 |------|--------|-------|

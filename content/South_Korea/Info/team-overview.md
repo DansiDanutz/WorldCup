@@ -1,6 +1,6 @@
 # South Korea - FIFA World Cup 2026
 
-## Group E: France, Japan, New Zealand, South Korea
+## Group A: Mexico (H), South Africa, South Korea, Czech Republic
 
 ---
 
@@ -37,7 +37,7 @@ South Korea plays a **counter-attacking 4-2-3-1** emphasizing:
 
 ## World Cup 2026 Prospects
 
-Drawn in a difficult group with France and Japan, South Korea faces an uphill battle to reach the knockout stage. But with Son in top form, anything is possible.
+Drawn in Group A alongside hosts Mexico, South Africa, and the Czech Republic, South Korea has a real chance to reach the knockout stage. The campaign opens against the Czech Republic on June 12, 2026 — a winnable match that could set the tone — before the daunting task of facing Mexico in front of a partisan home crowd. With Son in top form, anything is possible.
 
 **Key Question**: Can Son Heung-min carry South Korea past the group stage?
 

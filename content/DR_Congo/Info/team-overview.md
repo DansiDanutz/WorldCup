@@ -1,5 +1,9 @@
 # DR Congo National Football Team — The Leopards
 
+## Group K: Portugal, DR Congo, Uzbekistan, Colombia
+
+Back at the World Cup after 52 years, the Leopards face Cristiano Ronaldo's Portugal, debutants Uzbekistan, and a dangerous Colombia in the group stage.
+
 ## Overview
 
 The Democratic Republic of Congo national football team, known as **The Leopards** (Les Léopards), is one of Africa's most successful football nations. Despite the country's challenges, DR Congo has a proud football heritage that includes two Africa Cup of Nations titles.

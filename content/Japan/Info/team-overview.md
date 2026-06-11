@@ -1,6 +1,6 @@
 # Japan - FIFA World Cup 2026
 
-## Group E: Japan, France, New Zealand, Cape Verde
+## Group F: Netherlands, Japan, Sweden, Tunisia
 
 ---
 
@@ -38,7 +38,7 @@ Japan plays a **technical, high-tempo 4-2-3-1** emphasizing:
 
 ## World Cup 2026 Prospects
 
-Japan enters 2026 with its most talented squad ever, featuring players at Liverpool, Brighton, Celtic, and Monaco. Drawn in a tough group with France, they will need their best performance to advance.
+Japan enters 2026 with its most talented squad ever, featuring players at Liverpool, Brighton, Celtic, and Monaco. Drawn in a tough group with the Netherlands, Sweden, and Tunisia, they will need their best performance to advance.
 
 **Key Question**: Can Japan finally win a World Cup knockout match in 90 minutes?
 

@@ -1,6 +1,6 @@
 # Ivory Coast (Cote d'Ivoire) — Team Overview
 
-## FIFA World Cup 2026 | Group E: Germany, Curaçao, Ivory Coast, Ecuador
+## Group E: Germany, Curaçao, Ivory Coast, Ecuador
 
 ---
 

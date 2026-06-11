@@ -1,8 +1,8 @@
 # Paraguay - La Albirroja
 
-## FIFA World Cup 2026 | Group D
+## Group D: USA (H), Paraguay, Australia, Turkey
 
-**Group D Opponents:** United States, Australia, Turkey
+**Group D Opponents:** United States (hosts), Australia, Turkey
 
 ---
 

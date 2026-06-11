@@ -62,7 +62,7 @@ Under Ronald Koeman, the Netherlands combine traditional Dutch principles with m
 - **Direct attacking**: Gakpo and Depay offer pace, skill, and goal-scoring threat on the flanks and through the middle
 - **Defensive solidity**: Built around Virgil van Dijk's commanding presence at centre-back
 
-## 2026 World Cup - Group F
+## Group F: Netherlands, Japan, Sweden, Tunisia
 
 | Match | Date | Venue | City |
 |-------|------|-------|------|

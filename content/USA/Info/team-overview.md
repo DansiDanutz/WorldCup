@@ -1,6 +1,6 @@
 # USA - FIFA World Cup 2026
 
-## Group D: USA, Germany, Ivory Coast, Jordan
+## Group D: USA (H), Paraguay, Australia, Turkey
 
 ---
 

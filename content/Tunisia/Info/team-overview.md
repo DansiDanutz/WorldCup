@@ -1,8 +1,8 @@
 # Tunisia - Les Aigles de Carthage
 
-## FIFA World Cup 2026 | Group F
+## Group F: Netherlands, Japan, Sweden, Tunisia
 
-**Group F Opponents:** Netherlands, Japan, Sweden, Tunisia
+**Group F Opponents:** Netherlands, Japan, Sweden
 
 ---
 

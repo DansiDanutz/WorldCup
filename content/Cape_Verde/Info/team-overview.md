@@ -1,6 +1,6 @@
 # Cape Verde - FIFA World Cup 2026
 
-## Group E: France, Japan, New Zealand, Cape Verde
+## Group H: Spain, Cape Verde, Saudi Arabia, Uruguay
 
 ---
 
@@ -35,7 +35,7 @@ Cape Verde plays a **disciplined 4-4-2** emphasizing:
 
 ## World Cup 2026 Prospects
 
-Drawn with France and Japan, Cape Verde faces a massive challenge. The goal is to compete with pride and perhaps shock a bigger nation.
+Drawn with Spain and Uruguay, Cape Verde faces a massive challenge. The goal is to compete with pride and perhaps shock a bigger nation.
 
 **Key Question**: Can the Blue Sharks cause an upset?
 

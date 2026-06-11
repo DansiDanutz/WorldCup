@@ -1,5 +1,9 @@
 # Curaçao National Football Team
 
+## Group E: Germany, Curaçao, Ivory Coast, Ecuador
+
+At their first-ever World Cup, the smallest nation in the field opens against four-time champions Germany, the athletic Ivory Coast, and a gifted Ecuador side — a debut draw worthy of a movie script.
+
 ## Overview
 
 The Curaçao national football team represents the Caribbean island of Curaçao in international football. Despite the island's small size (population ~150,000), Curaçao has produced remarkable talent and made history by qualifying for the 2026 FIFA World Cup — the first Caribbean nation to do so via the CONCACAF pathway in decades.

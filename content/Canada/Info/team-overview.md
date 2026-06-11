@@ -1,6 +1,6 @@
 # Canada - FIFA World Cup 2026
 
-## Group B: Canada, Belgium, Colombia, Qatar
+## Group B: Canada (H), Bosnia and Herzegovina, Qatar, Switzerland
 
 ---
 

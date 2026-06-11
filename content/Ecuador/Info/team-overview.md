@@ -4,6 +4,10 @@
 
 The Ecuador national football team (Spanish: Seleccion de futbol de Ecuador), known as **La Tricolor** (The Tricolor), represents Ecuador in international football and is controlled by the Ecuadorian Football Federation (FEF). Despite being one of South America's smaller footballing nations, Ecuador has established itself as a competitive force, qualifying for their third consecutive World Cup in 2026.
 
+## Group E: Germany, Curaçao, Ivory Coast, Ecuador
+
+At the 2026 World Cup, La Tri face four-time champions Germany, World Cup debutants Curaçao, and a physical Ivory Coast side in the group stage.
+
 ## FIFA World Cup Record
 
 | Year | Result |
@@ -54,7 +58,7 @@ Ecuador arrives at the 2026 World Cup with arguably their most talented squad ev
 - **Enner Valencia** (Pachuca) — Ecuador's all-time top scorer (49 goals) and captain
 - **Kendry Paez** (River Plate, Chelsea-bound) — One of football's most exciting teenagers
 
-Drawn in **Group E**, Ecuador has the talent to advance deep into the knockout rounds. The combination of South American grit and European-club sophistication makes them a dangerous proposition for any opponent.
+Drawn in **Group E** alongside Germany, Curaçao, and Ivory Coast, Ecuador has the talent to advance deep into the knockout rounds. The combination of South American grit and European-club sophistication makes them a dangerous proposition for any opponent.
 
 ## Nickname
 
