@@ -39,3 +39,5 @@ marketing/match-videos/*/render-*.log
 marketing/match-videos/*/preview_*.mp4
 marketing/match-videos/*/audio_master.m4a
 marketing/match-videos/*/final_*.mp4
+marketing/match-videos/*/thumb-*.png
+marketing/match-videos/*/thumbnail.png
