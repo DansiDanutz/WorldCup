@@ -86,6 +86,14 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
    by the channel owner after Ep4's recap treated the Ep3 prediction as a
    result). On-screen recap plates carry the label "OUR PREDICTION".
 
+## Soccer-only prompt template (mandatory for player/fan/stadium generations)
+
+Always include in generation prompts: "SOCCER player / SOCCER jersey (round
+neck football shirt), NO helmet, NO shoulder pads, NOT american football" and
+for venues: "football/soccer stadium with a grass pitch and goals". Review
+every generated image for the correct sport before use — nano-banana drew an
+NFL quarterback for the Ep4 'USA' thumbnail until the prompt was hardened.
+
 ## Per-episode production checklist
 
 - [ ] Story researched: real H2H history with one "wait, what?" fact (web-verified)

@@ -15,7 +15,15 @@ Non-negotiables distilled from channel data (details in the playbook):
    2–3 Shorts cuts, pinned comment, first-hour campaign push.
 4. Brian (ElevenLabs) is always the narrator. Mystery Supporter segment in every episode.
 5. Keep series canon consistent with `content/Stories/` (Ep1: MEX 0-0 RSA; Ep2: KOR 1-0 CZE, Son 41').
-6. **REAL-RESULTS-ONLY RULE (hard rule):** never state a match result as fact
+6. **SOCCER ONLY (hard rule):** this channel is about FOOTBALL/SOCCER, never
+   American football. Every image/video generation prompt for players,
+   avatars, fans, or stadiums MUST say "soccer" explicitly and exclude
+   gridiron cues ("NO helmet, NO shoulder pads, NOT american football";
+   round-neck football shirts; a soccer pitch with goals, never goalposts).
+   AI image models default US players to NFL gear — always review the output
+   for the correct sport before using it (an Ep4 thumbnail shipped a
+   helmeted NFL player before review caught it).
+7. **REAL-RESULTS-ONLY RULE (hard rule):** never state a match result as fact
    unless the real match has actually been played. Our episode endings are
    PREDICTIONS — in any later episode they may only be referenced as
    "our prediction"/"our story" ("we predicted 0-0 in Toronto"), NEVER as
