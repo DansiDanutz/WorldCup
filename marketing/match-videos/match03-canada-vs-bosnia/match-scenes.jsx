@@ -52,7 +52,7 @@ function SceneRecapTitle() {
       {showRecap && lt > 4.5 && (
         <div style={{ position: 'absolute', bottom: 150, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
           <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 44, color: MV.text, textShadow: '0 4px 22px #000' }}>
-            KOR 1 — 0 CZE · Sonaldo, 41'
+            EPISODE 2 · OUR PREDICTION: KOR 1—0 CZE
           </span>
         </div>
       )}

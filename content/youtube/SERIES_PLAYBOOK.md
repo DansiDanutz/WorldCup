@@ -80,6 +80,11 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
    (compliance rule from the campaign pack).
 8. ❌ Don't drift from canon: scores/dates must match the Stories files and
    earlier episodes (Ep1 = 0-0 draw; Ep2 = KOR 1-0 CZE, Son 41').
+8b. ❌ **Never present our own predictions as real results.** Recaps of earlier
+   episodes must say "OUR PREDICTION: ..." — not "last night this happened".
+   Only matches that have REALLY been played may be stated as fact (flagged
+   by the channel owner after Ep4's recap treated the Ep3 prediction as a
+   result). On-screen recap plates carry the label "OUR PREDICTION".
 
 ## Per-episode production checklist
 

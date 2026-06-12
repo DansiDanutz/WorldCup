@@ -15,6 +15,12 @@ Non-negotiables distilled from channel data (details in the playbook):
    2–3 Shorts cuts, pinned comment, first-hour campaign push.
 4. Brian (ElevenLabs) is always the narrator. Mystery Supporter segment in every episode.
 5. Keep series canon consistent with `content/Stories/` (Ep1: MEX 0-0 RSA; Ep2: KOR 1-0 CZE, Son 41').
+6. **REAL-RESULTS-ONLY RULE (hard rule):** never state a match result as fact
+   unless the real match has actually been played. Our episode endings are
+   PREDICTIONS — in any later episode they may only be referenced as
+   "our prediction"/"our story" ("we predicted 0-0 in Toronto"), NEVER as
+   what happened ("last night: no goals"). Before writing any recap line,
+   ask: has this match really been played? If not → label it OUR PREDICTION.
 
 ## Video production pipeline
 
