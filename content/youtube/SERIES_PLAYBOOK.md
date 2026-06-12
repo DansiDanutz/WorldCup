@@ -1,0 +1,94 @@
+# WorldCup26 Legends — Series Playbook (Knowledge File)
+
+> **Living document.** After EVERY episode: add a row to the Results Log and move
+> anything learned into DO / DON'T. Claude reads this file before producing any
+> new episode (see /CLAUDE.md).
+
+## Why view counts differed (channel audit, 2026-06-12)
+
+| Video | Views | Why |
+|---|---|---|
+| Launch Film FINAL (Jun 7) | 1,672 | It was the **promoted asset of the 72h paid+organic campaign** (Meta ads, WhatsApp/Telegram pushes, referral links, premiere). Distribution, not just content. |
+| Ep1 Mexico vs South Africa (Jun 10) | 370 | **Premiere** + first-wave campaign posts + **published the day BEFORE the real opening match** (caught the search/interest wave). Topical "JUNE 11" thumbnail. |
+| Ep2 South Korea vs Czech Republic (Jun 12) | 0 (at audit) | Published as a plain upload (no Premiere), **after** the real June 11 match window, with **zero promotion** so far. The view gap is a distribution gap, not content quality. |
+
+**Core law of this channel: Views = Packaging × Timing × Distribution × Retention.**
+A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four.
+
+## DO (what worked — keep doing)
+
+1. **Publish 24–48h BEFORE the real match**, never after. Our format is a
+   "storytellers' prophecy" — it only sells before kickoff.
+2. **Schedule as a Premiere** (not plain upload): creates a countdown page,
+   subscriber notifications, and live chat at minute one.
+3. **Push every episode through the campaign machine in the first hour:**
+   WhatsApp/Telegram groups, X first-wave posts, referral links from
+   `marketing/worldcup26-campaign/copy-bank.md`. The Launch Film proved this
+   is worth ~1,000+ views per asset.
+4. **Topical thumbnails**: big date or 3-word emotional headline ("JUNE 11",
+   "HIS LAST DANCE"), one face, tear/emotion, thick black-outlined gold text.
+5. **Cold-open hook in the first 8 seconds** — heartbeat / question / flash-cuts.
+   Never open with a logo.
+6. **Real history beats invented drama**: the "Mr. Five-Zero" 2001 story is
+   shareable because it's TRUE and little-known. Every episode needs one
+   verified "wait, what?" fact (researched, with sources).
+7. **Brian (ElevenLabs) as the one constant voice** — series identity.
+8. **Mystery Supporter segment** in every episode (collectible tie-in to the
+   app, recurring Easter egg, cross-episode hook).
+9. **Professional audio chain**: real music cues (not AI-extracted), SFX hits
+   on story beats, side-chain duck under VO, master to −14 LUFS.
+10. **End on next-episode tease + Subscribe/Like/Share + worldcup26.world.**
+
+## DON'T (what cost us — never repeat)
+
+1. ❌ Don't upload after the match the episode is about (Ep2 mistake — lost the
+   pre-match search wave).
+2. ❌ Don't publish without a same-day promotion plan (Ep2 had none at launch).
+3. ❌ Don't use plain "Publish" when a Premiere is possible.
+4. ❌ Don't ship a generic description ("South Korea take on the Czech
+   Republic…"). Lead with the story hook + a question, include keywords from
+   `content/youtube/SEO_KEYWORDS.md`, chapters, app link, music attribution.
+5. ❌ Don't leave the first comment empty — pin a comment with the app link and
+   a question that begs replies ("Did you pick Korea? 🇰🇷 or are you on Schick?").
+6. ❌ Don't skip the Shorts cut. Every episode must spawn 2–3 vertical Shorts
+   (the 16s cold open, the goal moment, the Mystery Supporter) that point to
+   the full video — Shorts are the channel's free discovery engine.
+7. ❌ Don't claim fixed prize amounts in video copy; say "live prize pool"
+   (compliance rule from the campaign pack).
+8. ❌ Don't drift from canon: scores/dates must match the Stories files and
+   earlier episodes (Ep1 = 0-0 draw; Ep2 = KOR 1-0 CZE, Son 41').
+
+## Per-episode production checklist
+
+- [ ] Story researched: real H2H history with one "wait, what?" fact (web-verified)
+- [ ] Script: cold-open hook → title → stadium → HISTORY chapter → squads (montage
+      + animated players + lower thirds) → duel → match drama (goal/SFX/fans) →
+      verdict → Mystery Supporter → app promo → CTA + next tease (300s)
+- [ ] Brian VO generated; music cues + SFX placed; mix ducked, −14 LUFS
+- [ ] Thumbnail: 1 face + ≤4 words + flags + episode badge (guide: THUMBNAIL_GUIDE.md)
+- [ ] Title: `WorldCup26 [Team A] vs [Team B] | [Story Hook] — FIFA World Cup 2026 Match N`
+- [ ] Description: hook line + question + chapters + worldcup26.world + tags + music credit
+- [ ] **Premiere scheduled ≥24h before the real match kickoff**
+- [ ] 2–3 Shorts cut and scheduled (hook / goal / mystery legend)
+- [ ] First-hour push: WhatsApp, Telegram, X first-wave, community post, pinned comment
+- [ ] End screen + cards linking previous episode and the playlist
+- [ ] After 48h: log results below + add new learnings above
+
+## Results log
+
+| Ep | Match | Published | Format | Views @48h | Likes | Learnings |
+|---|---|---|---|---|---|---|
+| 0 | Launch Film | Jun 7 | Premiere + paid campaign | 1,672 | 2 | Distribution works; campaign machine = ~1.6k views |
+| 1 | MEX vs RSA | Jun 10 | Premiere, day before match | 370 | 4 | Pre-match timing + premiere works organically |
+| 2 | KOR vs CZE | Jun 12 | Plain upload, after match, no promo | _update at 48h_ | _…_ | Late + unpromoted = cold start. Fix with Shorts funnel + push now |
+
+## Ep2 recovery actions (do now)
+
+1. Pin a comment: "He scored in the 41st minute… exactly like our storytellers
+   said. 👁️ Pick your 3 teams free → worldcup26.world"
+2. Cut 3 Shorts from the master: 0:00–0:16 (heartbeat hook), 3:15–3:30 (GOAL +
+   crying fans), 4:16–4:30 (Taekwondo Master) — each ending "full story on the
+   channel".
+3. Community post with the thumbnail + "Did the prophecy come true?"
+4. Push through the campaign channels with the copy-bank links.
+5. Ep3 (Canada) must be PREMIERED before Canada's real kickoff.
