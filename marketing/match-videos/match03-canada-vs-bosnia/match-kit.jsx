@@ -51,13 +51,16 @@ function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0, rate
         let done = false;
         const settle = () => { if (!done) { done = true; window.__pendingVideoSeeks--; } };
         const onSeeked = () => {
-          // wait until the seeked frame is actually presented to the compositor
-          if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(() => settle());
-          else settle();
+          // give the compositor a beat to present the seeked frame, racing
+          // rVFC against a short timeout (rVFC can stall in headless shell)
+          if (v.requestVideoFrameCallback) {
+            v.requestVideoFrameCallback(() => settle());
+            setTimeout(settle, 90);
+          } else setTimeout(settle, 60);
         };
         v.addEventListener('seeked', onSeeked, { once: true });
         v.addEventListener('error', settle, { once: true });
-        setTimeout(settle, 2000); // safety: never wedge the renderer
+        setTimeout(settle, 1200); // safety: never wedge the renderer
         v.currentTime = Math.max(0, target);
       }
     }
