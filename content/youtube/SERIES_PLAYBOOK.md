@@ -53,6 +53,14 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
     player clip exists; animate missing players before the render (Ep3 fix,
     flagged by the channel owner).
 12. **End on next-episode tease + Subscribe/Like/Share + worldcup26.world.**
+13. **Targeted share trigger**: don't say "share this" — name WHO to send it to
+    ("send this to the friend who still doubts American soccer"). Specific
+    recipients convert far better than generic share asks (Ep4+).
+14. **Comment-bait cliffhanger**: when canon allows, freeze the drama at its
+    peak and ask viewers to comment their ending (Ep4: "Comment 1 or 2").
+    Comments are the strongest algorithm signal we can ask for.
+15. **Every episode must be UNIQUE**: new true-history hook, new structural
+    twist, new sound/visual idea. Same skeleton, never the same episode.
 
 ## DON'T (what cost us — never repeat)
 
