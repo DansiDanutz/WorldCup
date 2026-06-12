@@ -1,6 +1,6 @@
 # Brazil vs Morocco — When the Atlas Lions Danced with Samba
 
-*Group C, Matchday 1 — June 11, 2026*
+*Group C, Matchday 1 — June 13, 2026*
 
 The world stops when Brazil plays. It is a law of football, as immutable as gravity, as constant as the tides. One hundred and ninety-six million Brazilians will watch this match. The favelas of Rio, the skyscrapers of São Paulo, the Amazon villages reachable only by boat — all of Brazil becomes a single living organism, breathing in rhythm with every touch of the yellow shirt.
 
