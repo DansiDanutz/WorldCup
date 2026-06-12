@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "version": "1.0.0",
-  "description": "WorldCup26 Legends — Match 2: South Korea vs Czech Republic. 5-minute cinematic match video with Brian (ElevenLabs) narration, animated players, supporter emotions and background music.",
+  "description": "WorldCup26 Legends \u2014 Match 2: South Korea vs Czech Republic. 5-minute cinematic match video with Brian (ElevenLabs) narration, animated players, supporter emotions and background music.",
   "scripts": {
-    "serve": "python3 -m http.server 8098",
+    "serve": "PORT=8098 node serve.mjs",
     "render": "FPS=30 DURATION=300 OUT=frames node render.mjs",
     "voice": "node gen_audio.mjs",
     "mux": "node mux.mjs",
