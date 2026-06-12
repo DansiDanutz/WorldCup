@@ -1,0 +1,19 @@
+{
+  "name": "wc26-match06-video",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "WorldCup26 Legends \u2014 Match 6: Argentina vs Algeria. 5-minute cinematic match video with Brian (ElevenLabs) narration, animated players, supporter emotions and background music.",
+  "scripts": {
+    "serve": "PORT=8094 node serve.mjs",
+    "render": "FPS=30 DURATION=300 OUT=frames node render.mjs",
+    "voice": "node gen_audio.mjs",
+    "mux": "node mux.mjs",
+    "fetch-assets": "node fetch_assets.mjs",
+    "subs": "node gen_srt.mjs"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "playwright": "^1.60.0"
+  }
+}

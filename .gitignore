@@ -22,6 +22,7 @@ supabase/.temp/
 # Match video render artifacts (marketing/match-videos/*)
 marketing/match-videos/*/frames/
 marketing/match-videos/*/shots/
+marketing/match-videos/*/frames-test/
 marketing/match-videos/*/audio/*.mp3
 marketing/match-videos/*/filter.txt
 marketing/match-videos/*/*.log

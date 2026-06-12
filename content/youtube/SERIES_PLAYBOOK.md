@@ -61,6 +61,14 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
     Comments are the strongest algorithm signal we can ask for.
 15. **Every episode must be UNIQUE**: new true-history hook, new structural
     twist, new sound/visual idea. Same skeleton, never the same episode.
+16. **On-screen open loops (Ep6+)**: a ChapterBar showing named chapters ahead
+    and a ~3s "COMING UP — MINUTE 83" climax flash near the 40s mark. Promise
+    the payoff early, deliver it late — the strongest retention device we use.
+17. **Speed-ramp the climax (Ep6+)**: long slow-motion build (rate ~0.35) into a
+    hard snap to real time on the decisive beat, with stacked heartbeat SFX
+    under the slow section and a braam on the snap.
+18. **Two mystery legends can share one episode** when both nations have a
+    natural ghost — sell them as a collectible DUO (Ep6: Legends 006 & 007).
 
 ## DON'T (what cost us — never repeat)
 
@@ -117,6 +125,10 @@ NFL quarterback for the Ep4 'USA' thumbnail until the prompt was hardened.
 | 0 | Launch Film | Jun 7 | Premiere + paid campaign | 1,672 | 2 | Distribution works; campaign machine = ~1.6k views |
 | 1 | MEX vs RSA | Jun 10 | Premiere, day before match | 370 | 4 | Pre-match timing + premiere works organically |
 | 2 | KOR vs CZE | Jun 12 | Plain upload, after match, no promo | _update at 48h_ | _…_ | Late + unpromoted = cold start. Fix with Shorts funnel + push now |
+| 3 | CAN vs BIH | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | Mystery cold open, all-animated cards, range-server fix, motion QA born |
+| 4 | USA vs PAR | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | 1930 hook, cliffhanger comment-bait (1 or 2), auto-subtitles, soccer-only prompts |
+| 5 | BRA vs MAR | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | Prophet framing, StarCounter, new music identity (samba/bazaar), Tangier 2023 hook |
+| 6 | ARG vs ALG | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | Gijón 1982 hook, double ghost, ChapterBar + ComingUp, speed-ramp save, zero new player gens (pure library reuse) |
 
 ## Ep2 recovery actions (do now)
 
