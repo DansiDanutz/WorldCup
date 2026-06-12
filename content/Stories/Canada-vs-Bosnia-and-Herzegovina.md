@@ -1,6 +1,6 @@
 # Canada vs Bosnia and Herzegovina — The Bosnian Diamond and the Maple Leaf
 
-*Group B, Matchday 1 — June 11, 2026*
+*Group B, Matchday 1 — June 12, 2026*
 
 BMO Field in Toronto erupts in a sea of red and white. For only the second time in history, Canada opens a World Cup on home soil, and the nation that invented ice hockey is discovering that football can freeze the blood just as effectively. Alphonso Davies stands at the mouth of the tunnel, Bayern Munich's Champion League winner, a refugee from Liberia who became Canada's greatest footballer. He is twenty-four years old and carries the weight of a nation that has never advanced past the group stage.
 

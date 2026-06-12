@@ -37,6 +37,13 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
    app, recurring Easter egg, cross-episode hook).
 9. **Professional audio chain**: real music cues (not AI-extracted), SFX hits
    on story beats, side-chain duck under VO, master to −14 LUFS.
+9b. **Narration at natural speed, always**: length-check every Brian line
+   against its timeline slot (script in the project README); rewrite and
+   regenerate any line that spills. NEVER tempo-stretch the voice — Ep2's
+   sped-up lines were audible and flagged by the channel owner.
+9c. **Use the paid asset library in every episode**: previous episodes' player
+   animations and crowd clips (recap beats, app-promo video cards). Nothing
+   we generated goes unused.
 10. **End on next-episode tease + Subscribe/Like/Share + worldcup26.world.**
 
 ## DON'T (what cost us — never repeat)

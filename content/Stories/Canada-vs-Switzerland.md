@@ -1,6 +1,6 @@
 # Canada vs Switzerland — The General's Last Campaign
 
-*Group B, Matchday 1 — June 12, 2026*
+*Group B, Matchday 3 — 2026*
 
 Granit Xhaka has 145 international caps. He has played at three World Cups and three European Championships. He has won the Bundesliga with Bayer Leverkusen and captained Arsenal through their darkest hours and brightest redemption. He has played through brother-against-brother matches at Euro 2016, survived being stripped of the Arsenal captaincy by his own fans, and rebuilt himself into one of the most respected midfielders in European football. At 33, "The General" marches into his final World Cup campaign with the weight of a nation's expectations on shoulders that have never buckled.
 
