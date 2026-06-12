@@ -26,7 +26,7 @@ const MV = {
 window.__pendingVideoSeeks = 0;
 window.__videosSettled = () => window.__pendingVideoSeeks === 0;
 
-function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0 }) {
+function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0, rate = 1 }) {
   const t = useTime();
   const { playing } = useTimeline();
   const ref = React.useRef(null);
@@ -39,7 +39,7 @@ function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0 }) {
     const clipDur = (isFinite(v.duration) && v.duration > 0.2) ? v.duration : 5;
     // Loop the short source for as long as the sprite is on screen, holding
     // just shy of the end so a loop boundary never shows a black frame.
-    const target = Math.min(local % clipDur, clipDur - 0.07);
+    const target = Math.min((local * rate) % clipDur, clipDur - 0.07);
     if (playing) {
       // Preview mode: free-run playback, only correct large drift.
       if (v.paused) v.play().catch(() => {});
@@ -50,9 +50,14 @@ function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0 }) {
         window.__pendingVideoSeeks++;
         let done = false;
         const settle = () => { if (!done) { done = true; window.__pendingVideoSeeks--; } };
-        v.addEventListener('seeked', settle, { once: true });
+        const onSeeked = () => {
+          // wait until the seeked frame is actually presented to the compositor
+          if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(() => settle());
+          else settle();
+        };
+        v.addEventListener('seeked', onSeeked, { once: true });
         v.addEventListener('error', settle, { once: true });
-        setTimeout(settle, 1500); // safety: never wedge the renderer
+        setTimeout(settle, 2000); // safety: never wedge the renderer
         v.currentTime = Math.max(0, target);
       }
     }
@@ -81,7 +86,7 @@ function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0 }) {
 function ClipSprite({ id, ...rest }) {
   const c = (window.MV_CLIPS || []).find((x) => x.id === id);
   if (!c) return null;
-  return <VideoSprite src={c.src} start={c.at} dur={c.dur} {...rest} />;
+  return <VideoSprite src={c.src} start={c.at} dur={c.dur} rate={c.rate || 1} {...rest} />;
 }
 
 // ── Ken Burns still ──────────────────────────────────────────────────────────

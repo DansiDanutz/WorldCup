@@ -44,7 +44,15 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
 9c. **Use the paid asset library in every episode**: previous episodes' player
    animations and crowd clips (recap beats, app-promo video cards). Nothing
    we generated goes unused.
-10. **End on next-episode tease + Subscribe/Like/Share + worldcup26.world.**
+10. **Motivated predictions only**: when the storytellers show a score, say
+    explicitly that it is OUR PREDICTION and give the reasoning first
+    (the history chapter, form, pace vs experience, the numbers on screen).
+    Never present a score as a mystic vision with no basis — viewers trust
+    (and argue with) a reasoned call, and arguments are comments.
+11. **Every montage card must be ANIMATED** — never Ken Burns stills when a
+    player clip exists; animate missing players before the render (Ep3 fix,
+    flagged by the channel owner).
+12. **End on next-episode tease + Subscribe/Like/Share + worldcup26.world.**
 
 ## DON'T (what cost us — never repeat)
 

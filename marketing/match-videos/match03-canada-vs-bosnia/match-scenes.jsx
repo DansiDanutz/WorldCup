@@ -164,8 +164,10 @@ function SquadGrid({ start, end, players, accent }) {
         const cp = Easing.easeOutBack(clamp((t - start - 0.25 - i * 0.28) / 0.7, 0, 1));
         return (
           <div key={i} style={{ width: 308, transform: `translateY(${(1 - cp) * 90}px) scale(${0.85 + 0.15 * cp})`, opacity: clamp(cp, 0, 1), borderRadius: 22, overflow: 'hidden', background: MV.panel, border: `1px solid ${MV.line}`, boxShadow: `0 26px 80px rgba(0,0,0,0.6)` }}>
-            <div style={{ height: 322, overflow: 'hidden' }}>
-              <img src={p.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.02 + 0.05 * clamp((t - start) / (end - start), 0, 1)})` }} />
+            <div style={{ height: 322, overflow: 'hidden', position: 'relative' }}>
+              {p.clip
+                ? <VideoSprite src={p.clip} start={start} dur={end - start} rate={0.5} />
+                : <img src={p.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.02 + 0.05 * clamp((t - start) / (end - start), 0, 1)})` }} />}
             </div>
             <div style={{ padding: '18px 14px 20px', textAlign: 'center', borderTop: `4px solid ${accent}` }}>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 24, color: MV.text }}>{p.name}</div>
@@ -184,7 +186,7 @@ function SceneCanada() {
   const headerP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#0a0c14' }}>
-      {lt < 8 && <img src="assets/squad/can-1-Alphonso-Davies.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.22) saturate(0.7)' }} />}
+      {lt < 8 && <VideoSprite src="assets/stadium-bmo.mp4" start={96.5} dur={8} style={{ filter: 'brightness(0.25) saturate(0.7)' }} />}
       <ClipSprite id="davies" dim={0.12} />
       <ClipSprite id="david" dim={0.12} />
       <ClipSprite id="eustaquio" dim={0.12} />
@@ -197,11 +199,11 @@ function SceneCanada() {
         </div>
       </div>
       <SquadGrid start={97} end={104.5} accent="#d52b1e" players={[
-        { img: 'assets/squad/can-1-Alphonso-Davies.png', name: 'ALPHONSO DAVIES', role: 'THE LIGHTNING BOLT' },
-        { img: 'assets/squad/can-2-Jonathan-David.png', name: 'JONATHAN DAVID', role: 'THE SILENT ASSASSIN' },
-        { img: 'assets/squad/can-3-Stephen-Eustaquio.png', name: 'STEPHEN EUSTAQUIO', role: 'THE METRONOME' },
-        { img: 'assets/squad/can-4-Cyle-Larin.png', name: 'CYLE LARIN', role: 'THE FINISHER' },
-        { img: 'assets/squad/can-5-Tajon-Buchanan.png', name: 'TAJON BUCHANAN', role: 'THE SPARK' },
+        { img: 'assets/squad/can-1-Alphonso-Davies.png', clip: 'assets/player-davies.mp4', name: 'ALPHONSO DAVIES', role: 'THE LIGHTNING BOLT' },
+        { img: 'assets/squad/can-2-Jonathan-David.png', clip: 'assets/player-david.mp4', name: 'JONATHAN DAVID', role: 'THE SILENT ASSASSIN' },
+        { img: 'assets/squad/can-3-Stephen-Eustaquio.png', clip: 'assets/player-eustaquio.mp4', name: 'STEPHEN EUSTAQUIO', role: 'THE METRONOME' },
+        { img: 'assets/squad/can-4-Cyle-Larin.png', clip: 'assets/player-larin.mp4', name: 'CYLE LARIN', role: 'THE FINISHER' },
+        { img: 'assets/squad/can-5-Tajon-Buchanan.png', clip: 'assets/player-buchanan.mp4', name: 'TAJON BUCHANAN', role: 'THE SPARK' },
       ]} />
       <Sprite start={104.5} end={114.5}>
         <LowerThird start={104.8} name="ALPHONSO DAVIES" role="The Lightning Bolt · Left flank" line="Refugee camp to Champions League winner. The fastest defender alive." accent="#d52b1e" />
@@ -239,11 +241,11 @@ function SceneBosnia() {
         </div>
       </div>
       <SquadGrid start={134.5} end={144.5} accent="#fecb00" players={[
-        { img: 'assets/squad/bih-1-Edin-Dzeko.png', name: 'EDIN DZEKO', role: 'THE DIAMOND · 40' },
-        { img: 'assets/squad/bih-2-Miralem-Pjanic.png', name: 'MIRALEM PJANIC', role: 'THE CARTOGRAPHER' },
-        { img: 'assets/squad/bih-3-Benjamin-Sesko.png', name: 'BENJAMIN SESKO', role: 'THE HAMMER' },
-        { img: 'assets/squad/bih-4-Sead-Kolasinac.png', name: 'SEAD KOLASINAC', role: 'THE WARRIOR' },
-        { img: 'assets/squad/bih-5-Nikola-Vasilj.png', name: 'NIKOLA VASILJ', role: 'THE WALL' },
+        { img: 'assets/squad/bih-1-Edin-Dzeko.png', clip: 'assets/player-dzeko.mp4', name: 'EDIN DZEKO', role: 'THE DIAMOND · 40' },
+        { img: 'assets/squad/bih-2-Miralem-Pjanic.png', clip: 'assets/player-pjanic.mp4', name: 'MIRALEM PJANIC', role: 'THE CARTOGRAPHER' },
+        { img: 'assets/squad/bih-3-Benjamin-Sesko.png', clip: 'assets/player-sesko.mp4', name: 'BENJAMIN SESKO', role: 'THE HAMMER' },
+        { img: 'assets/squad/bih-4-Sead-Kolasinac.png', clip: 'assets/player-kolasinac.mp4', name: 'SEAD KOLASINAC', role: 'THE WARRIOR' },
+        { img: 'assets/squad/bih-5-Nikola-Vasilj.png', clip: 'assets/player-vasilj.mp4', name: 'NIKOLA VASILJ', role: 'THE WALL' },
       ]} />
       <Sprite start={144.5} end={154.5}>
         <LowerThird start={144.8} name="EDIN DZEKO" role="The Bosnian Diamond · Striker" line="65 goals for a nation of 3.5 million. His very last dance." accent="#fecb00" />
@@ -291,7 +293,7 @@ function SceneDuel() {
       <Sprite start={179} end={186}>
         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
           <BigTitle size={74} color={MV.text} style={{ maxWidth: 1400 }}>
-            “What they saw will give you chills…”
+            “Our prediction — based on everything you just saw…”
           </BigTitle>
         </div>
       </Sprite>
