@@ -18,7 +18,7 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 7 | Brazil vs Haiti | [WorldCup26_Match07_BRA_HAI_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match07-brazil-vs-haiti/WorldCup26_Match07_BRA_HAI_upload.mp4) | 71 MB | "BRAZIL'S NIGHTMARE?" | in repo | https://youtu.be/4RxCyLtIccs |
 | 8 | England vs Ghana | _rendering — fills the gap_ | ~70 MB | "ENGLAND'S SECRET" | in repo | _paste after upload_ |
 | 9 | Qatar vs Switzerland | [WorldCup26_Match09_QAT_SUI_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match09-qatar-vs-switzerland/WorldCup26_Match09_QAT_SUI_upload.mp4) | 66 MB | "THE DESERT TRAP?" | in repo | https://youtu.be/8Pf-oRROUyk |
-| 10 | Haiti vs Scotland | [WorldCup26_Match10_HAI_SCO_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/WorldCup26_Match10_HAI_SCO_upload.mp4) | 71 MB | "SCOTLAND'S CURSE?" | in repo | _paste after upload_ |
+| 10 | Haiti vs Scotland | [WorldCup26_Match10_HAI_SCO_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/WorldCup26_Match10_HAI_SCO_upload.mp4) | 71 MB | "SCOTLAND'S CURSE?" | in repo | https://youtu.be/x5N4LiIgXRo |
 
 ### Shorts (new from Ep6 — upload as YouTube Shorts, link to the full episode)
 
