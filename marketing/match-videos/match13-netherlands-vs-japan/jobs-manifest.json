@@ -1,7 +1,18 @@
 {
-  "comment": "Ep13 Netherlands vs Japan (June 14). Total Football vs Samurai. Netherlands orange, Japan deep-blue. Mystery: The Blue Samurai Elder (Legend 013). Hook: Japan beat Germany+Spain in 2022.",
-  "netherlands_players": {"vandijk":"bef7f2aa-d000-4567-b3f2-f8de1a7bc9fa","dejong":"a226bbd9-ced4-4589-8246-8acd9bc33dfe","gakpo":"1f122efa-7555-41c1-b5e4-8cc63907b7b5","depay":"4207097f-95b4-491c-b805-83ce4148a6d3","gravenberch":"8f1f2188-9c00-4263-8e16-f255880b68b1"},
-  "japan_players": {"mitoma":"f9ed130e-075c-46fe-9024-ec5b90841de0","kubo":"2d3627de-695a-4350-813c-005e6ad314cf","endo":"3cfb83fc-4075-4ffe-864e-eb394e6cf2a7","ueda":"b229567e-ae0d-4c8e-b9a3-13521a860a58","minamino":"e5d2b3bc-1e35-43b2-ba36-07dc94e12744"},
-  "scenes": {"samurai-elder":"4767d0d3-90b9-4ced-93d2-da820edb7d48","stadium-nj":"03e4120a-3926-4f72-9195-4bdcb2290ad3","fan-ned":"145b7475-f402-4175-890f-6f4dff08a096","fan-jpn":"51e1b0ef-0f6f-4644-8db4-010230fd9b6f"},
-  "thumbnail":"aeaedd5c-b76d-4554-b259-db6b7b796ce3"
+  "comment": "Ep13 Netherlands vs Japan (June 14). Total Football vs Samurai Spirit. Netherlands orange, Japan deep-blue. Mystery: The Blue Samurai Elder (Legend 013). Hook: Japan beat Germany+Spain in 2022. REGENERATED text-to-video job IDs (submitted ~17:31, original 12:32 batch never reached CDN).",
+  "players": {
+    "vandijk": "12f870e1-f7d3-48a3-bbd7-3bc0bc51bf1d",
+    "dejong": "72778e95-1a5c-4e6a-9b38-37f6ac4e7e11",
+    "gakpo": "a629ee7b-9ca3-4bd1-8f7b-a7c9af557999",
+    "mitoma": "2c855224-ba5b-48e1-a16e-c39a18d089d3",
+    "kubo": "32698117-0e95-4cf7-a90c-17e41b73cafe",
+    "endo": "6b2ea6a4-27be-4baf-8446-0e376510ec46"
+  },
+  "scenes": {
+    "samurai-elder": "cbc2560d-e647-4558-9f1c-fe38e31c0e0c",
+    "stadium-nj": "f8e41249-6b9b-4656-a8b3-8187114067c9",
+    "fan-ned": "2b3a1541-a86e-4601-9c29-b7e3cdf8ba05",
+    "fan-jpn": "925b8223-e65f-4fa7-b65d-a63ef5bbcac6"
+  },
+  "thumbnail": "aeaedd5c-b76d-4554-b259-db6b7b796ce3"
 }
