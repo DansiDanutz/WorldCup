@@ -1,0 +1,7 @@
+{
+  "comment": "Ep12 Germany vs Curacao (June 14). David vs the Machine. Germany white, Curacao royal-blue. Mystery: The Beach Keeper (Legend 012).",
+  "germany_players": {"musiala":"af199b01-a48c-4899-8098-a4ef2572f3d6","wirtz":"9c0d0011-319b-4fcf-b27d-2eb829e608af","havertz":"13dc2425-306b-4291-bf95-2f084d07802c","kimmich":"d8c8119d-02a2-4506-bbf7-da73e03306e5","rudiger":"f26321ef-1c8f-4797-b535-f4cf82e2d30b"},
+  "curacao_players": {"room":"6255d0b4-9fb1-4ed9-904d-56311a32b7b3","juninho":"596d998d-44d9-41de-878a-ec89bcca8f46","janga":"fd4fc71c-5b33-4f89-a785-0d3c5115d011","locadia":"4c267c3d-0beb-459f-863d-20980637a336","leandro":"ef0ae406-ff15-491c-a275-ff2ef99461e8"},
+  "scenes": {"beachkeeper":"6ff7fa7b-8292-478e-ae33-4e5c477cef0e","stadium-gc":"e5e2cc1e-1178-474b-9f14-9a42158fdd4a","fan-ger":"d4786180-dbba-4305-8799-ec48b88caf47","fan-cur":"ee014d1f-38ef-4444-a435-17ea778c0dd5"},
+  "thumbnail":"02e2c71f-26bc-4f8e-9d41-8e4f092e2ad3"
+}
