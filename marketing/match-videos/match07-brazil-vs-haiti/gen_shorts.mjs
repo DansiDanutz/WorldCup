@@ -12,12 +12,12 @@ import { chromium } from 'playwright';
 const MASTER = process.argv[2] || 'WorldCup26_Match06_ARG_ALG.mp4';
 
 const SHORTS = [
-  { out: 'short1_ghosts.mp4', from: 0.0, to: 16.0,
-    head: 'TWO GHOSTS.<br>ONE NIGHT.' },
-  { out: 'short2_the_save.mp4', from: 205.0, to: 233.5,
-    head: 'MINUTE 83.<br>THE SAVE.' },
-  { out: 'short3_legends_duo.mp4', from: 252.5, to: 272.5,
-    head: 'LEGENDS<br>006 &amp; 007' },
+  { out: 'short1_the_drum.mp4', from: 0.0, to: 16.0,
+    head: 'THE DRUM<br>OF 1974' },
+  { out: 'short2_the_miracle.mp4', from: 206.0, to: 233.0,
+    head: '45+2.<br>THE MIRACLE.' },
+  { out: 'short3_tambouye.mp4', from: 252.5, to: 272.0,
+    head: 'LE TAMBOUYÉ<br>DE 74' },
 ];
 
 // ── 1. Render the text overlays (1080x1920, transparent) ────────────────────
