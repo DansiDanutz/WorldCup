@@ -24,7 +24,7 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 10 | Haiti vs Scotland | [WorldCup26_Match10_HAI_SCO_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/WorldCup26_Match10_HAI_SCO_upload.mp4) | 71 MB | "SCOTLAND'S CURSE?" | https://youtu.be/x5N4LiIgXRo |
 | 11 | Australia vs Turkey | [WorldCup26_Match11_AUS_TUR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/WorldCup26_Match11_AUS_TUR_upload.mp4) | 61 MB | "THE NOMADS" | _paste after upload_ |
 | 12 | Germany vs Curaçao | [WorldCup26_Match12_GER_CUR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/WorldCup26_Match12_GER_CUR_upload.mp4) | 58 MB | "DAVID vs GOLIATH" | _paste after upload_ |
-| 13 | Netherlands vs Japan | _rendering — Higgsfield clips + Brian VO in generation; thumbnail/scaffold committed_ | — | "THEY BEAT SPAIN" | _pending render_ |
+| 13 | Netherlands vs Japan | [WorldCup26_Match13_NED_JPN_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/WorldCup26_Match13_NED_JPN_upload.mp4) | 63 MB | "THEY BEAT SPAIN" | _paste after upload_ |
 
 ### Shorts (new from Ep6 — upload as YouTube Shorts, link to the full episode)
 
@@ -42,8 +42,9 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 12 | DAVID vs GOLIATH | [short1_david.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short1_david.mp4) | The Beach Keeper / island cold open — post 24h before the episode premieres |
 | 12 | MINUTE 34. THE SAVE. | [short2_the_save.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short2_the_save.mp4) | Eloy Room's flying save — post day-of |
 | 12 | LEGEND 012: BEACH KEEPER | [short3_legend.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short3_legend.mp4) | The Legend 012 reveal — post day after, drives app signups |
-
-> **Ep13 Shorts:** pending — cut after the Ep13 master renders (its Higgsfield clips + Brian VO are still in generation).
+| 13 | THEY BEAT SPAIN. | [short1_samurai.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/short1_samurai.mp4) | The Samurai Elder cold open — post 24h before the episode premieres |
+| 13 | MINUTE 90+3. MITOMA. | [short2_equaliser.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/short2_equaliser.mp4) | Mitoma's late equaliser — post day-of |
+| 13 | LEGEND 013: THE ELDER | [short3_legend.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/short3_legend.mp4) | The Legend 013 reveal — post day after, drives app signups |
 
 ## Where everything lives
 

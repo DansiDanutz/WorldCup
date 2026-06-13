@@ -30,7 +30,16 @@ function durOf(f) {
 const inputs = [];
 const voFiles = NO_VO ? [] : lines.map((_, i) => `audio/line_${String(i).padStart(2, '0')}.mp3`);
 for (const f of voFiles) inputs.push('-i', f);
-const clipFiles = clips.filter(c => fs.existsSync(c.src) && (c.vol ?? 0) > 0);
+// Only clips that actually carry an audio stream can feed the FX mix. The
+// Higgsfield clips here were generated with sound:false (no audio track), so
+// referencing [n:a] for them makes ffmpeg fail with "Error binding filtergraph
+// inputs/outputs". Their visuals already live in the rendered frames; we just
+// skip them in the audio graph.
+function hasAudio(f) {
+  const r = spawnSync(ffmpegPath, ['-i', f], { encoding: 'utf8' });
+  return /Stream #\d+:\d+.*: Audio:/.test(r.stderr || '');
+}
+const clipFiles = clips.filter(c => fs.existsSync(c.src) && (c.vol ?? 0) > 0 && hasAudio(c.src));
 for (const c of clipFiles) inputs.push('-i', c.src);
 const hits = (sfx?.hits || []).filter(h => fs.existsSync(h.src));
 for (const h of hits) inputs.push('-i', h.src);
