@@ -1511,6 +1511,59 @@ svg {
   box-shadow: var(--shadow);
 }
 
+.series-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border: 1px solid #2c3550;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #10162b 0%, #1b2440 100%);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+}
+
+.series-banner__icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(246, 180, 14, 0.16);
+  color: #f6b40e;
+  flex: none;
+}
+
+.series-banner__copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.series-banner__copy strong {
+  color: #fff;
+  font-size: 14px;
+}
+
+.series-banner__copy small {
+  color: #9fb0d8;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.series-banner__cta {
+  flex: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #f6b40e;
+  color: #101010;
+  font-weight: 800;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
 .launch-notice > div {
   display: grid;
   gap: 4px;

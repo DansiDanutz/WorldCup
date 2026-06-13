@@ -69,6 +69,14 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
     under the slow section and a braam on the snap.
 18. **Two mystery legends can share one episode** when both nations have a
     natural ghost — sell them as a collectible DUO (Ep6: Legends 006 & 007).
+19. **Hook-first titles**: the emotional hook goes BEFORE the pipe, search
+    terms after ("The Night Football Betrayed Algeria | Argentina vs Algeria —
+    World Cup 2026"). Search-style titles get truncated to the generic part
+    and earn ~zero CTR on a low-authority channel (proved by Ep2/Ep3, Jun 13).
+20. **Every video on the channel must be on-brand**: hide/unlist test uploads
+    (the WhatsApp video) — off-brand content confuses the algorithm's channel
+    identity. Site → channel funnel: the worldcup26.world dashboard banner
+    links to the series (added Jun 13).
 
 ## DON'T (what cost us — never repeat)
 
@@ -122,9 +130,10 @@ NFL quarterback for the Ep4 'USA' thumbnail until the prompt was hardened.
 
 | Ep | Match | Published | Format | Views @48h | Likes | Learnings |
 |---|---|---|---|---|---|---|
-| 0 | Launch Film | Jun 7 | Premiere + paid campaign | 1,672 | 2 | Distribution works; campaign machine = ~1.6k views |
-| 1 | MEX vs RSA | Jun 10 | Premiere, day before match | 370 | 4 | Pre-match timing + premiere works organically |
-| 2 | KOR vs CZE | Jun 12 | Plain upload, after match, no promo | _update at 48h_ | _…_ | Late + unpromoted = cold start. Fix with Shorts funnel + push now |
+| 0 | Launch Film | Jun 7 | Premiere + paid campaign | 2,000 (Jun 13) | 2 | Distribution works; campaign machine = ~2k views |
+| 1 | MEX vs RSA | Jun 10 | Premiere, day before match | 627 (Jun 13) | 4 | Pre-match timing + premiere works organically; still growing |
+| 2 | KOR vs CZE | Jun 12 | Plain upload, after match, no promo | 83 (Jun 13) | _…_ | Late + unpromoted = cold start. Rescue: Shorts + retitle + pin (VIEWS_RESCUE_PLAN.md) |
+| 2b | CAN vs BIH (live) | Jun 12 | Plain upload, no promo | 11 (Jun 13, 9h) | _…_ | Confirms the pattern: zero fuel = zero impressions, regardless of quality |
 | 3 | CAN vs BIH | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | Mystery cold open, all-animated cards, range-server fix, motion QA born |
 | 4 | USA vs PAR | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | 1930 hook, cliffhanger comment-bait (1 or 2), auto-subtitles, soccer-only prompts |
 | 5 | BRA vs MAR | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | Prophet framing, StarCounter, new music identity (samba/bazaar), Tangier 2023 hook |
