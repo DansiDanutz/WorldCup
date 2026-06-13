@@ -1564,6 +1564,26 @@ svg {
   white-space: nowrap;
 }
 
+.board-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+  background: rgba(127, 214, 181, 0.18);
+  color: #2f8f6e;
+  border: 1px solid rgba(127, 214, 181, 0.5);
+}
+
+.board-tag--paid {
+  background: rgba(246, 180, 14, 0.18);
+  color: #b07d05;
+  border-color: rgba(246, 180, 14, 0.55);
+}
+
 .launch-notice > div {
   display: grid;
   gap: 4px;

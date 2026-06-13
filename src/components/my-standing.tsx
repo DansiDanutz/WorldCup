@@ -42,6 +42,7 @@ type Standing = {
     displayName: string;
     totalPoints: number;
     rank: number;
+    isPaid?: boolean;
     teams: Array<{ name: string; points: number }>;
   }>;
   agent: {
@@ -558,9 +559,9 @@ export function MyStanding() {
                 )}
               </section>
 
-              <section className="standing-modal-section" aria-label="Top 10 leaderboard">
+              <section className="standing-modal-section" aria-label="Top 10 community leaderboard">
                 <div className="standing-modal-section__title">
-                  <strong>Top 10 leaderboard</strong>
+                  <strong>Top 10 · Free Play community</strong>
                   <span>{leaderboardTop.length} shown</span>
                 </div>
                 {leaderboardTop.length > 0 ? (
@@ -574,7 +575,12 @@ export function MyStanding() {
                       >
                         <span className="standing-modal-rank">#{row.rank}</span>
                         <div>
-                          <strong>{row.displayName}</strong>
+                          <strong>
+                            {row.displayName}
+                            <span className={`board-tag${row.isPaid ? " board-tag--paid" : ""}`}>
+                              {row.isPaid ? "PRIZE POOL" : "FREE"}
+                            </span>
+                          </strong>
                           <small>{row.teams.map((team) => team.name).join(" · ") || "Teams pending"}</small>
                         </div>
                         <b>{formatPoints(row.totalPoints)}</b>
@@ -582,7 +588,9 @@ export function MyStanding() {
                     ))}
                   </div>
                 ) : (
-                  <p className="standing-modal-empty">No locked entries are on the leaderboard yet.</p>
+                  <p className="standing-modal-empty">
+                    Be the first — pick 3 teams free and your points appear here live.
+                  </p>
                 )}
               </section>
 
