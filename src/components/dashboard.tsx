@@ -1043,6 +1043,13 @@ export function Dashboard({
                 <small>Ranking</small>
               </span>
             </a>
+            <Link className="nav-item" href={{ pathname: "/predictions" }}>
+              <Sparkles size={16} />
+              <span className="nav-item__copy">
+                <strong>Predictions</strong>
+                <small>Match videos</small>
+              </span>
+            </Link>
             <Link className="nav-item" href={{ pathname: "/wallet" }}>
               <Wallet size={16} />
               <span className="nav-item__copy">
@@ -1084,6 +1091,10 @@ export function Dashboard({
                 <Link href={{ pathname: "/schema" }}>
                   <GitBranch size={16} />
                   Schema
+                </Link>
+                <Link href={{ pathname: "/predictions" }}>
+                  <Sparkles size={16} />
+                  Predictions
                 </Link>
                 <a href="#invite">
                   <Users size={16} />
