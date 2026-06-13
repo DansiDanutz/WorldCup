@@ -1,0 +1,26 @@
+{
+  "comment": "Higgsfield job IDs for Episode 9 (Qatar vs Switzerland). Player + scene clips were generated from the repo character images and re-downloadable via ./download_clips.sh (job IDs below). Library clips (lib-messi/lib-vini/lib-nazon) copied from earlier episodes.",
+  "images": {
+    "falconer.png":   "39e8eff0-6549-4b94-a8e8-fd520c20848c",
+    "stadium-qs.png": "7d35aed9-d24b-4554-a189-92ff70c0ad0c",
+    "fan-qat.png":    "d8e853c8-e724-4c52-af1c-5bc831f0539e",
+    "fan-sui.png":    "b8fe0984-db4f-4309-ac8a-ac1e898aadeb",
+    "thumbnail.png":  "0688a012-2131-4b2c-b5b6-541d3a77be6e"
+  },
+  "videos": {
+    "player-afif.mp4":       "daea1dfc-ae7c-4538-bdc3-ccedef410bde",
+    "player-almoez.mp4":     "5a94c242-b60a-49c6-b9cf-c9382586f834",
+    "player-haydos.mp4":     "c553e4ca-0a19-41bf-b705-08af3a26b7d4",
+    "player-abdelkarim.mp4": "3b4982be-d089-4a0f-94d8-f8d7f86e1792",
+    "player-boudiaf.mp4":    "43512878-f036-4b86-8d4e-6d41424539ae",
+    "player-xhaka.mp4":      "a368f7a2-1d95-4a4c-a713-43aec7ea1193",
+    "player-akanji.mp4":     "10cf5c84-82b1-4b1f-8bac-ce3a6c0f33b1",
+    "player-ndoye.mp4":      "275d396c-4384-453a-bda8-be8a8fefc52b",
+    "player-embolo.mp4":     "c7a1f79d-8f97-4a27-9800-330227d74e93",
+    "player-jashari.mp4":    "12fe941a-3226-4b8e-8e9e-17fdd1084fbd",
+    "falconer.mp4":          "ad335fd5-7665-4f8b-a5a3-26359fa4202d",
+    "stadium-qs.mp4":        "b5af1c7f-cbc7-4c07-9d8f-599b49979e16",
+    "fan-qat.mp4":           "5429a7b4-2dd8-4753-976a-bf93002f7f60",
+    "fan-sui.mp4":           "ef6a2fa3-21c2-4f00-906a-45dce12e22f2"
+  }
+}

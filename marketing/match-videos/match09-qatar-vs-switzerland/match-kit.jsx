@@ -615,6 +615,28 @@ function FlagHTI({ w = 120 }) {
   );
 }
 
+function FlagQAT({ w = 120 }) {
+  const h = w * 0.66;
+  const pts = Array.from({ length: 9 }, (_, i) => `${i % 2 ? 86 : 78},${(i * 100 / 8).toFixed(1)}`).join(' ');
+  return (
+    <div style={{ width: w, height: h, borderRadius: w * 0.04, position: 'relative', overflow: 'hidden', background: '#fff', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+        <polygon points={`0,0 78,0 ${pts} 78,100 0,100`} fill="#8a1538" />
+      </svg>
+    </div>
+  );
+}
+
+function FlagSUI({ w = 120 }) {
+  const s = w * 0.7;
+  return (
+    <div style={{ width: s, height: s, borderRadius: w * 0.04, position: 'relative', overflow: 'hidden', background: '#d52b1e', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: s * 0.2, height: s * 0.62, background: '#fff' }} />
+      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: s * 0.62, height: s * 0.2, background: '#fff' }} />
+    </div>
+  );
+}
+
 // Live fan-reaction picture-in-picture (Ep7 innovation): a framed corner box
 // showing the crowd reacting WHILE the action plays — broadcast double-feed.
 function ReactionPiP({ start, dur, clipId, label, accent = MV.gold }) {
