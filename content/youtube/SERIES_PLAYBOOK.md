@@ -137,7 +137,20 @@ NFL quarterback for the Ep4 'USA' thumbnail until the prompt was hardened.
 | 3 | CAN vs BIH | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | Mystery cold open, all-animated cards, range-server fix, motion QA born |
 | 4 | USA vs PAR | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | 1930 hook, cliffhanger comment-bait (1 or 2), auto-subtitles, soccer-only prompts |
 | 5 | BRA vs MAR | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | Prophet framing, StarCounter, new music identity (samba/bazaar), Tangier 2023 hook |
-| 6 | ARG vs ALG | _delivered Jun 12_ | master + thumbnail handed off | _log at 48h_ | _…_ | Gijón 1982 hook, double ghost, ChapterBar + ComingUp, speed-ramp save, zero new player gens (pure library reuse) |
+| 6 | ARG vs ALG | Jun 13 | hook title + mystery thumb | **979** (h1) | 2 | 🔥 BREAKOUT. Messi/Argentina star-power + "The Night Football Betrayed Algeria" hook + mystery thumbnail. Near Launch-Film numbers with ZERO ad spend |
+| 5 | BRA vs MAR | Jun 13 | hook title + mystery thumb | 207 (h1) | 2 | Brazil draws well; "Kings Have a Secret" |
+| 7 | BRA vs HAI | Jun 13 | hook title + mystery thumb | 300 (h1) | 2 | Brazil again; supermarket-worker hook |
+| 4 | USA vs PAR | Jun 13 | hook title | 4 (fresh) | 2 | just uploaded |
+| 9 | QAT vs SUI | Jun 13 | hook title + mystery thumb | 0 (fresh) | — | just uploaded |
+| 10 | HAI vs SCO | Jun 13 | hook title + mystery thumb | 0 (fresh) | — | just uploaded |
+
+**KEY LEARNING (Jun 13, real data): star-power teams massively outperform.**
+Argentina/Messi = 979, Brazil = 200-300, vs neutral matchups = 28-108. PRIORITISE
+big-audience nations (Argentina, Brazil, England, Germany, France, Spain, Portugal,
+Netherlands) and put their superstar on the mystery thumbnail. The hook-first title +
+mystery thumbnail formula is validated (Ep5-6-7 with it: 200-979; old generic-titled
+Ep2-3 without it: 28-108). RETITLE Ep2 (Korea) and Ep3 (Canada) to the hook format —
+they still carry the old "Highlights & All Goals" titles and are leaving views on the table.
 
 ## Ep2 recovery actions (do now)
 
