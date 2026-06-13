@@ -20,6 +20,8 @@ supabase/.temp/
 .next_bad_*/
 
 # Match video render artifacts (marketing/match-videos/*)
+# Series rule: episodes ship with NO subtitles — never commit .srt files.
+marketing/match-videos/*/*.srt
 marketing/match-videos/*/frames/
 marketing/match-videos/*/shots/
 marketing/match-videos/*/frames-test/
