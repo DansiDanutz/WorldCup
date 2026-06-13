@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --green:#106b4f; --green-deep:#0a3328; --gold:#c9942e; --gold-bright:#f0b542;
+    --text:#ffffff; --muted:#acc6bc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1280px;height:720px;overflow:hidden;font-family:'Inter',system-ui,sans-serif;}
+  .stage{position:relative;width:1280px;height:720px;overflow:hidden;
+    background:
+      radial-gradient(1100px 700px at 80% 30%, rgba(16,107,79,.6), rgba(6,23,15,0) 62%),
+      radial-gradient(800px 600px at 8% 95%, rgba(201,148,46,.16), rgba(6,23,15,0) 55%),
+      linear-gradient(150deg,#071c13 0%,#0a3328 55%,#06170f 100%);}
+  .pitch{position:absolute;inset:0;opacity:.05;
+    background-image:repeating-linear-gradient(90deg,#fff 0 2px,transparent 2px 130px);}
+  .ring{position:absolute;border-radius:999px;border:2px solid rgba(255,255,255,.05);}
+  .ring.a{width:560px;height:560px;left:-160px;bottom:-200px;}
+  .glow{position:absolute;right:130px;top:50%;transform:translateY(-50%);
+    width:470px;height:470px;border-radius:999px;
+    background:radial-gradient(circle, rgba(240,181,66,.30), rgba(16,107,79,0) 70%);filter:blur(8px);}
+
+  /* LEFT text column */
+  .left{position:absolute;left:80px;top:0;bottom:0;width:680px;display:flex;flex-direction:column;justify-content:center;z-index:3;}
+  .eyebrow{display:flex;align-items:center;gap:13px;color:var(--muted);
+    font-weight:700;font-size:21px;letter-spacing:.2em;text-transform:uppercase;}
+  .eyebrow .dot{width:9px;height:9px;border-radius:999px;background:var(--gold-bright);box-shadow:0 0 16px var(--gold-bright);}
+  h1{margin-top:16px;color:var(--text);font-weight:900;letter-spacing:-.04em;line-height:.9;font-size:150px;}
+  h1 .gold{color:var(--gold-bright);display:block;text-shadow:0 8px 36px rgba(240,181,66,.35);}
+  .sub{margin-top:24px;color:#e3f0ea;font-weight:600;font-size:29px;line-height:1.32;max-width:560px;}
+  .badges{margin-top:34px;display:flex;gap:16px;align-items:center;}
+  .badge{display:inline-flex;align-items:center;gap:10px;
+    background:linear-gradient(180deg,var(--gold-bright),#b9831f);color:#1a1205;
+    font-weight:800;font-size:25px;padding:15px 24px;border-radius:999px;box-shadow:0 16px 38px rgba(201,148,46,.30);}
+  .badge.ghost{background:rgba(255,255,255,.07);color:#eaf4ef;border:1.5px solid rgba(255,255,255,.16);box-shadow:none;}
+
+  .myst{position:absolute;left:80px;bottom:46px;color:var(--muted);font-weight:600;font-style:italic;font-size:23px;z-index:3;}
+  .brand{position:absolute;right:60px;bottom:40px;display:flex;align-items:center;gap:12px;
+    color:#fff;font-weight:800;font-size:27px;letter-spacing:-.02em;z-index:4;}
+  .brand .mark{width:48px;height:48px;border-radius:13px;background:linear-gradient(160deg,var(--green),#0c5a42);
+    display:flex;align-items:center;justify-content:center;font-size:27px;box-shadow:0 10px 26px rgba(0,0,0,.45);}
+  .brand .tld{color:var(--gold-bright);}
+
+  /* PHONE mockup */
+  .phone{position:absolute;right:96px;top:50%;transform:translateY(-50%) rotate(-5deg);
+    width:360px;height:600px;border-radius:46px;background:#0a1713;
+    border:9px solid #06120d;box-shadow:0 40px 90px rgba(0,0,0,.55), 0 0 0 2px rgba(255,255,255,.04) inset;
+    overflow:hidden;z-index:2;}
+  .notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:120px;height:26px;border-radius:16px;background:#06120d;z-index:5;}
+  .scr{position:absolute;inset:0;background:linear-gradient(180deg,#0e2c22,#0a1713);padding:42px 22px 22px;color:#fff;}
+  .scr .top{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#bcd4cb;font-weight:700;}
+  .pill{background:rgba(201,148,46,.16);color:var(--gold-bright);border:1px solid rgba(240,181,66,.4);
+    padding:5px 11px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;}
+  .scr h3{margin-top:16px;font-size:25px;font-weight:900;letter-spacing:-.02em;}
+  .scr .hint{color:#9fc0b4;font-size:13px;margin-top:2px;font-weight:600;}
+  .row{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:11px 13px;margin-top:12px;}
+  .row img{width:34px;height:23px;border-radius:4px;object-fit:cover;box-shadow:0 2px 6px rgba(0,0,0,.4);}
+  .row .nm{font-weight:800;font-size:17px;}
+  .row .gp{color:#90b1a5;font-size:12px;font-weight:600;}
+  .row .co{margin-left:auto;font-weight:900;font-size:19px;}
+  .co.g{color:#6fe0b0;} .co.y{color:var(--gold-bright);} .co.r{color:#ff8d7a;}
+  .lock{margin-top:16px;background:linear-gradient(180deg,#13b07f,#0c7d59);color:#04140e;
+    text-align:center;font-weight:900;font-size:18px;padding:15px;border-radius:16px;box-shadow:0 12px 26px rgba(19,176,127,.3);}
+  .scr .total{margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;}
+  .scr .total small{color:#9fc0b4;font-size:13px;font-weight:700;}
+  .scr .total b{font-size:26px;font-weight:900;color:var(--gold-bright);}
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="pitch"></div>
+    <div class="ring a"></div>
+    <div class="glow"></div>
+
+    <div class="left">
+      <div class="eyebrow"><span class="dot"></span>FIFA World Cup 2026 · 48 Teams</div>
+      <h1>Pick 3.<span class="gold">Climb.</span></h1>
+      <div class="sub">Choose 3 nations. Earn points every match. Underdogs pay up to 3×.</div>
+      <div class="badges">
+        <span class="badge">$48,000 Prize Pool</span>
+        <span class="badge ghost">Top 10 win</span>
+      </div>
+    </div>
+
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="scr">
+        <div class="top"><span>WorldCup26</span><span class="pill">$48,000 · TOP 10</span></div>
+        <h3>Your Entry</h3>
+        <div class="hint">Pick 3 of 48 nations</div>
+        <div class="row"><img src="flags/br.png"><div><div class="nm">Brazil</div><div class="gp">Group · Favorite</div></div><div class="co g">1.00×</div></div>
+        <div class="row"><img src="flags/ma.png"><div><div class="nm">Morocco</div><div class="gp">Group · Dark horse</div></div><div class="co y">1.77×</div></div>
+        <div class="row"><img src="flags/cw.png"><div><div class="nm">Curaçao</div><div class="gp">Group · Underdog</div></div><div class="co r">3.00×</div></div>
+        <div class="total"><small>Entry coefficient</small><b>5.77×</b></div>
+        <div class="lock">Lock Entry</div>
+      </div>
+    </div>
+
+    <div class="myst">Who will shock the world?</div>
+    <div class="brand"><span class="mark">⚽</span>WorldCup26<span class="tld">.world</span></div>
+  </div>
+</body>
+</html>

@@ -29,14 +29,13 @@ describe("checkRateLimit", () => {
   it("frees capacity once the window elapses", () => {
     const key = `window-${Math.random()}`;
 
-    assert.equal(checkRateLimit(key, 1, 5).allowed, true);
-    assert.equal(checkRateLimit(key, 1, 5).allowed, false);
+    // Inject the clock so the window is exercised deterministically — no
+    // wall-clock busy-wait that can flake on a loaded CI runner.
+    const t0 = 1_000_000;
+    assert.equal(checkRateLimit(key, 1, 5, t0).allowed, true);
+    assert.equal(checkRateLimit(key, 1, 5, t0 + 1).allowed, false);
 
-    const start = Date.now();
-    while (Date.now() - start < 10) {
-      // busy-wait past the 5ms window
-    }
-
-    assert.equal(checkRateLimit(key, 1, 5).allowed, true);
+    // Advance past the 5ms window: capacity frees up.
+    assert.equal(checkRateLimit(key, 1, 5, t0 + 6).allowed, true);
   });
 });

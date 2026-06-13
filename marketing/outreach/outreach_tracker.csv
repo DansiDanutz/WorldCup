@@ -1,0 +1,4 @@
+name,handle_or_company,platform,niche,followers,engagement_rate,region,score,contact_type,contact_verified,status,date_contacted,followup_date,notes
+EXAMPLE - replace these rows,@example_handle,TikTok,fantasy football,45000,4.2%,US,10,DM,n/a,not_started,,,"micro creator, posts daily - high priority"
+EXAMPLE - replace these rows,Example Affiliate Group,Email,betting affiliate,n/a,n/a,UK,9,email,verify-before-send,not_started,,,"target BD/affiliate manager via LinkedIn"
+EXAMPLE - replace these rows,Example WC Telegram,Telegram,football channel,120000,n/a,global,8,Telegram,n/a,not_started,,,"contact admin in channel bio"

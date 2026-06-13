@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const file = process.env.HTML || 'thumbnail.html';
+const out = process.env.OUT || 'thumbnail.png';
+const browser = await chromium.launch({ args:['--no-sandbox','--force-color-profile=srgb','--hide-scrollbars'] });
+const page = await browser.newPage({ viewport:{width:1280,height:720}, deviceScaleFactor:2 });
+await page.goto('file://'+process.cwd()+'/'+file, { waitUntil:'networkidle', timeout:60000 });
+await page.evaluate(()=>document.fonts && document.fonts.ready);
+await page.waitForTimeout(400);
+await page.locator('.stage').screenshot({ path: out });
+await browser.close();
+console.log('wrote', out);
