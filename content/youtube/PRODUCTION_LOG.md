@@ -14,7 +14,15 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 3 | Canada vs Bosnia & Herzegovina | [WorldCup26_Match03_CAN_BIH_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match03-canada-vs-bosnia/WorldCup26_Match03_CAN_BIH_upload.mp4) | 89 MB | [thumbnail.jpg](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match03-canada-vs-bosnia/thumbnail.jpg) | in repo | _paste after upload_ |
 | 4 | USA vs Paraguay | [WorldCup26_Match04_USA_PAR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match04-usa-vs-paraguay/WorldCup26_Match04_USA_PAR_upload.mp4) | 78 MB | [thumbnail.jpg](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match04-usa-vs-paraguay/thumbnail.jpg) | in repo | _paste after upload_ |
 | 5 | Brazil vs Morocco | [WorldCup26_Match05_BRA_MAR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match05-brazil-vs-morocco/WorldCup26_Match05_BRA_MAR_upload.mp4) | 84 MB | [thumbnail.jpg](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match05-brazil-vs-morocco/thumbnail.jpg) | in repo | _paste after upload_ |
-| 6 | Argentina vs Algeria | _rendering now — link will be added on delivery_ | ~80 MB | [thumbnail.jpg](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/thumbnail.jpg) | in repo | _paste after upload_ |
+| 6 | Argentina vs Algeria | [WorldCup26_Match06_ARG_ALG_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/WorldCup26_Match06_ARG_ALG_upload.mp4) | 71 MB | [thumbnail.jpg](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/thumbnail.jpg) | in repo | _paste after upload_ |
+
+### Shorts (new from Ep6 — upload as YouTube Shorts, link to the full episode)
+
+| Ep | Short | File | Use |
+|---|---|---|---|
+| 6 | TWO GHOSTS. ONE NIGHT. | [short1_ghosts.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/short1_ghosts.mp4) | The 16s mystery cold open — post 24h before the episode premieres |
+| 6 | MINUTE 83. THE SAVE. | [short2_the_save.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/short2_the_save.mp4) | The slow-motion save climax — post day-of |
+| 6 | LEGENDS 006 & 007 | [short3_legends_duo.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/short3_legends_duo.mp4) | The collectible duo reveal — post day after, drives app signups |
 
 ## Where everything lives
 
