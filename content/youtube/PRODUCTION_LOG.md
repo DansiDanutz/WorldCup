@@ -33,11 +33,14 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 10 | THE PIPER. 50 YEARS. | [short1_piper.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/short1_piper.mp4) | The 16s mystery cold open — post 24h before the episode premieres |
 | 10 | MINUTE 63. THE DANCE. | [short2_the_dance.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/short2_the_dance.mp4) | The equaliser climax — post day-of |
 | 10 | THE LONE PIPER | [short3_lone_piper.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/short3_lone_piper.mp4) | The Legend 010 reveal — post day after, drives app signups |
+| 11 | EVERY STADIUM. NO COUNTRY. | [short1_wanderer.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/short1_wanderer.mp4) | The Wanderer mystery cold open — post 24h before the episode premieres |
+| 11 | MINUTE 88. THE HEADER. | [short2_the_header.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/short2_the_header.mp4) | Souttar's late equaliser climax — post day-of |
+| 11 | LEGEND 011: THE WANDERER | [short3_legend.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/short3_legend.mp4) | The Legend 011 reveal — post day after, drives app signups |
+| 12 | DAVID vs GOLIATH | [short1_david.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short1_david.mp4) | The Beach Keeper / island cold open — post 24h before the episode premieres |
+| 12 | MINUTE 34. THE SAVE. | [short2_the_save.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short2_the_save.mp4) | Eloy Room's flying save — post day-of |
+| 12 | LEGEND 012: BEACH KEEPER | [short3_legend.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short3_legend.mp4) | The Legend 012 reveal — post day after, drives app signups |
 
-> **Ep11 & Ep12 Shorts:** not yet cut. Their `gen_shorts.mjs` still carries Ep10's
-> placeholder cut points/headlines and needs per-episode beats (Ep11: the Nomad
-> supporter cold open / Souttar's 88' header / Legend 011; Ep12: David-and-the-Machine
-> cold open / Room's 34' save / Legend 012) before rendering.
+> **Ep13 Shorts:** pending — cut after the Ep13 master renders (its Higgsfield clips + Brian VO are still in generation).
 
 ## Where everything lives
 
