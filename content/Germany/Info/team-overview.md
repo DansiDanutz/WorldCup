@@ -2,6 +2,8 @@
 
 ## Deutscher Fussball-Bund (DFB)
 
+## Group E: Germany, Curaçao, Ivory Coast, Ecuador
+
 ---
 
 ## Team History

@@ -59,7 +59,9 @@ Egypt arrives at the 2026 World Cup with one of its most talented squads ever as
 - **Trezeguet** (Al Ahly) — Experienced winger with 96 caps and 23 international goals
 - **Mohamed El Shenawy** (Al Ahly) — Reliable goalkeeper with 76 caps
 
-Drawn in **Group G**, Egypt has a realistic chance of advancing past the group stage for the first time in their World Cup history. The expanded 48-team format and the quality of their attack gives them genuine hope.
+## Group G: Belgium, Egypt, Iran, New Zealand
+
+Drawn in **Group G** alongside Belgium, Iran, and New Zealand, Egypt has a realistic chance of advancing past the group stage for the first time in their World Cup history. Belgium are the seeded favorites, but the meetings with Iran and New Zealand are winnable — and the expanded 48-team format and the quality of their attack gives them genuine hope.
 
 ## Nickname
 

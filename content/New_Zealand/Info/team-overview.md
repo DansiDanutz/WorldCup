@@ -4,6 +4,10 @@
 
 The New Zealand national football team, known as the **All Whites**, represents New Zealand in international football and is governed by New Zealand Football (NZF). Named in contrast to the famous All Blacks rugby team, the All Whites have been a competitive force in the Oceania Football Confederation (OFC) and have earned respect on the world stage for their resilience and organization.
 
+## Group G: Belgium, Egypt, Iran, New Zealand
+
+The All Whites face Belgium, Egypt, and Iran in Group G — a stern draw, but exactly the kind of contest where their organization, set-piece threat, and never-say-die spirit can frustrate more celebrated opponents.
+
 ## World Cup Record
 
 | Year | Result | Notes |

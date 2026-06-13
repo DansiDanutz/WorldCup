@@ -12,6 +12,7 @@ import {
   Lock,
   LogOut,
   MessageCircle,
+  PlayCircle,
   RefreshCw,
   Search,
   ShieldCheck,
@@ -1042,6 +1043,13 @@ export function Dashboard({
                 <small>Ranking</small>
               </span>
             </a>
+            <Link className="nav-item" href={{ pathname: "/predictions" }}>
+              <Sparkles size={16} />
+              <span className="nav-item__copy">
+                <strong>Predictions</strong>
+                <small>Match videos</small>
+              </span>
+            </Link>
             <Link className="nav-item" href={{ pathname: "/wallet" }}>
               <Wallet size={16} />
               <span className="nav-item__copy">
@@ -1083,6 +1091,10 @@ export function Dashboard({
                 <Link href={{ pathname: "/schema" }}>
                   <GitBranch size={16} />
                   Schema
+                </Link>
+                <Link href={{ pathname: "/predictions" }}>
+                  <Sparkles size={16} />
+                  Predictions
                 </Link>
                 <a href="#invite">
                   <Users size={16} />
@@ -1140,6 +1152,23 @@ export function Dashboard({
         ) : null}
 
         <MyStanding />
+
+        <a
+          className="series-banner"
+          href="https://www.youtube.com/channel/UC7j29XhArv5tlRqQj2qAb4Q?sub_confirmation=1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Watch the WorldCup26 Legends story series on YouTube"
+        >
+          <span className="series-banner__icon" aria-hidden="true">
+            <PlayCircle size={22} />
+          </span>
+          <span className="series-banner__copy">
+            <strong>WorldCup26 Legends — the story series</strong>
+            <small>A Pixar-style episode before every match. New: Brazil vs Haiti.</small>
+          </span>
+          <span className="series-banner__cta">Watch on YouTube</span>
+        </a>
 
         {launchEvidenceMode ? (
           <section className="launch-notice" aria-label="Launch evidence mode">

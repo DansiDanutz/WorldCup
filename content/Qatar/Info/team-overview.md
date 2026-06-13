@@ -4,6 +4,10 @@
 
 The Qatar national football team, known as **Al-Annabi** (The Maroon), has invested heavily in football development through the Aspire Academy system. As hosts of the 2022 FIFA World Cup, Qatar gained valuable experience and has continued to develop, qualifying for the 2026 tournament.
 
+## Group B: Canada (H), Bosnia and Herzegovina, Qatar, Switzerland
+
+Al-Annabi face host nation Canada, Bosnia and Herzegovina, and Switzerland in Group B — a chance to show how far the project has come since 2022, with the possession game built at Aspire tested against three very different styles.
+
 ## World Cup Record
 | Year | Result | Notes |
 |------|--------|-------|

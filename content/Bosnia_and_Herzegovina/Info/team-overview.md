@@ -1,6 +1,6 @@
 # Bosnia and Herzegovina - FIFA World Cup 2026
 
-## Group A: Mexico, South Africa, South Korea, Bosnia and Herzegovina
+## Group B: Canada (H), Bosnia and Herzegovina, Qatar, Switzerland
 
 ---
 
@@ -35,7 +35,7 @@ Bosnia plays a **technical 4-2-3-1** emphasizing:
 
 ## World Cup 2026 Prospects
 
-Drawn with Mexico, South Africa, and South Korea, Bosnia has a realistic chance of advancing to the knockout stage.
+Drawn with host nation Canada, Qatar, and Switzerland, Bosnia has a realistic chance of advancing to the knockout stage.
 
 **Key Question**: Can Dzeko's farewell tournament end in glory?
 

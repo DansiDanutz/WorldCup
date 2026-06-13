@@ -1,5 +1,7 @@
 # Switzerland - 2026 FIFA World Cup Team Overview
 
+## Group B: Canada (H), Bosnia and Herzegovina, Qatar, Switzerland
+
 ## General Information
 
 - **Country:** Switzerland (Schweiz / Suisse / Svizzera)

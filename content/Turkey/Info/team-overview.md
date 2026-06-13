@@ -1,5 +1,7 @@
 # Turkey National Football Team
 
+## Group D: USA (H), Paraguay, Australia, Turkey
+
 ## Overview
 
 The Turkey national football team (Turkish: Turkiye Mill Futbol Takimi) represents Turkey in international football and is controlled by the Turkish Football Federation (TFF). Known for their passionate playing style and fervent fan base, Turkey has been a rising force in international football, combining European tactical discipline with Anatolian fighting spirit.
@@ -57,7 +59,7 @@ Turkey enters the 2026 World Cup with genuine optimism. The team features its mo
 - **Hakan Calhanoglu** (Inter Milan) — One of Europe's elite midfielders
 - **Ferdi Kadioglu** (Brighton) — Premier League proven utility player
 
-Drawn in **Group D**, Turkey will aim to advance past the group stage for only the second time in their World Cup history. The expanded 48-team format gives them a realistic chance of reaching the knockout rounds, with ambitions of a deep tournament run.
+Drawn in **Group D** alongside hosts USA, Paraguay, and Australia, Turkey will aim to advance past the group stage for only the second time in their World Cup history. The expanded 48-team format gives them a realistic chance of reaching the knockout rounds, with ambitions of a deep tournament run.
 
 ## Nickname
 

@@ -1,0 +1,18 @@
+{
+  "comment": "Ep13 Netherlands vs Japan (June 14). Total Football vs Samurai Spirit. Netherlands orange, Japan deep-blue. Mystery: The Blue Samurai Elder (Legend 013). Hook: Japan beat Germany+Spain in 2022. REGENERATED text-to-video job IDs (submitted ~17:31, original 12:32 batch never reached CDN).",
+  "players": {
+    "vandijk": "12f870e1-f7d3-48a3-bbd7-3bc0bc51bf1d",
+    "dejong": "72778e95-1a5c-4e6a-9b38-37f6ac4e7e11",
+    "gakpo": "a629ee7b-9ca3-4bd1-8f7b-a7c9af557999",
+    "mitoma": "2c855224-ba5b-48e1-a16e-c39a18d089d3",
+    "kubo": "32698117-0e95-4cf7-a90c-17e41b73cafe",
+    "endo": "6b2ea6a4-27be-4baf-8446-0e376510ec46"
+  },
+  "scenes": {
+    "samurai-elder": "cbc2560d-e647-4558-9f1c-fe38e31c0e0c",
+    "stadium-nj": "f8e41249-6b9b-4656-a8b3-8187114067c9",
+    "fan-ned": "2b3a1541-a86e-4601-9c29-b7e3cdf8ba05",
+    "fan-jpn": "925b8223-e65f-4fa7-b65d-a63ef5bbcac6"
+  },
+  "thumbnail": "aeaedd5c-b76d-4554-b259-db6b7b796ce3"
+}

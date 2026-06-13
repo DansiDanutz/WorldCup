@@ -1,0 +1,23 @@
+{
+  "comment": "Ep12 Germany vs Curacao (June 14). David vs the Machine. REGENERATED job IDs (submitted ~17:21, original 12:29 batch failed and never reached CDN). Germany white, Curacao royal-blue. Mystery: The Beach Keeper (Legend 012).",
+  "players": {
+    "musiala": "18a000eb-808b-4ec3-aef5-bbdfa3569f73",
+    "wirtz": "601e382a-4a2c-43ba-ad2f-fc2971ee4cfc",
+    "havertz": "7de8c09d-481b-4b0b-9f8e-81c3c971457d",
+    "room": "481f21ed-fb86-4743-b1b8-0f391c7219fb",
+    "juninho": "16eb0c87-e426-47f5-8c84-0ec9d8266fa0",
+    "janga": "a27633e3-be08-45af-bbba-d4f6b0292e7d"
+  },
+  "scenes": {
+    "beachkeeper": "c9ff2cce-ec8d-4b23-bd17-4910ac8480dc",
+    "stadium-gc": "292e112c-8fe2-4ff4-b3e7-d2086ea0e0e8",
+    "fan-ger": "98237a02-9e25-4b8d-a0b0-f0952d9a8599",
+    "fan-cur": "3af61bb9-e0ca-4259-a615-c141f6343089"
+  },
+  "original_failed_batch": {
+    "comment": "12:29 batch — never reached CDN, do not use",
+    "germany_players": {"musiala":"af199b01-a48c-4899-8098-a4ef2572f3d6","wirtz":"9c0d0011-319b-4fcf-b27d-2eb829e608af","havertz":"13dc2425-306b-4291-bf95-2f084d07802c"},
+    "curacao_players": {"room":"6255d0b4-9fb1-4ed9-904d-56311a32b7b3","juninho":"596d998d-44d9-41de-878a-ec89bcca8f46","janga":"fd4fc71c-5b33-4f89-a785-0d3c5115d011"}
+  },
+  "thumbnail": "02e2c71f-26bc-4f8e-9d41-8e4f092e2ad3"
+}

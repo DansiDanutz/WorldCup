@@ -1,0 +1,20 @@
+{
+  "comment": "Higgsfield job IDs for Episode 6 (Argentina vs Algeria). Player clips are NOT here - they are reused from the paid library (content/videos/, copied into assets/). Re-download scene media with npm run fetch-assets.",
+  "images": {
+    "abuelo.png":          "5b30a582-dacc-4221-afad-b8d4566910a2",
+    "fennec.png":          "4d005bb1-3e7e-4c26-9efd-dfedd482c93d",
+    "stadium-ja.png":      "2ff0ec92-25e1-4318-a4d4-c215512c6b8c",
+    "fan-arg-joy.png":     "dd3f2aaf-4fbd-44a0-92df-b480b66d9873",
+    "fan-arg-anxious.png": "ee8e3e76-4861-49e3-b500-e3a220a7e515",
+    "fan-alg-ultras.png":  "6b3fc45d-2f2f-40b8-8e3b-9a33409dcd8c",
+    "thumbnail.png":       "2565ea4e-f5b2-49d8-978b-77fb8af29383"
+  },
+  "videos": {
+    "abuelo.mp4":          "b4df1304-d3fc-46c2-9217-f962949cfa40",
+    "fennec.mp4":          "6ef902f9-75a9-406d-9095-e9da5f416aef",
+    "stadium-ja.mp4":      "0066f8d7-6bad-4dc4-b262-84bb3a9709b2",
+    "fan-arg-joy.mp4":     "a8551c17-7341-4464-bf0c-7ca57c617b35",
+    "fan-arg-anxious.mp4": "6b2d8b6a-7d30-4e8a-8365-c8c9b41c279e",
+    "fan-alg-ultras.mp4":  "11d0a31c-44dd-461e-9d5c-4071953ddf12"
+  }
+}

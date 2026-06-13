@@ -1,6 +1,6 @@
 # Ghana Black Stars — Team Overview
 
-## FIFA World Cup 2026 | Group L: England, Croatia, Ghana, Panama
+## Group L: England, Croatia, Ghana, Panama
 
 ---
 

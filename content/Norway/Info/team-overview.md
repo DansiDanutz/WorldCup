@@ -1,6 +1,6 @@
 # Norway - FIFA World Cup 2026
 
-## Group H: Norway, Netherlands, Paraguay, Ghana
+## Group I: France, Senegal, Iraq, Norway
 
 ---
 
@@ -37,7 +37,7 @@ Norway plays a **direct, counter-attacking 4-4-2 or 4-2-3-1** emphasizing:
 
 ## World Cup 2026 Prospects
 
-Norway qualified for their first World Cup in 28 years, largely thanks to Haaland's 18 goals in qualifying. Drawn in a tough group with the Netherlands, progression will be difficult but not impossible.
+Norway qualified for their first World Cup in 28 years, largely thanks to Haaland's 18 goals in qualifying. Drawn in a tough Group I alongside France, Senegal, and Iraq, progression will be difficult but not impossible.
 
 **Key Question**: Can Haaland and Odegaard carry Norway to the knockout stage?
 

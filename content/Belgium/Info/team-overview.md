@@ -71,7 +71,7 @@ Under Rudi Garcia, Belgium aim to combine their traditional attacking flair with
 - **Midfield control**: Youri Tielemans and Amadou Onana provide the engine room balance
 - **Courtois's leadership**: Thibaut Courtois anchors the defense with world-class goalkeeping
 
-## 2026 World Cup - Group G
+## Group G: Belgium, Egypt, Iran, New Zealand
 
 | Match | Date | Venue | City |
 |-------|------|-------|------|

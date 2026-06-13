@@ -77,7 +77,7 @@ Senegal faces a challenging Group I with France, Iraq, and Norway. The opening m
 
 ---
 
-## Fixtures (Group I)
+## Group I: France, Senegal, Iraq, Norway
 
 | Date | Match | Venue | Location |
 |------|-------|-------|----------|

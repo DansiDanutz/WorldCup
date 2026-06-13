@@ -1,6 +1,6 @@
 # South Korea vs Czech Republic — The Last Waltz of Sonaldo
 
-*Group A, Matchday 1 — June 12, 2026*
+*Group A, Matchday 1 — June 11, 2026*
 
 Son Heung-min touches the captain's armband and looks at the sky. This is his fourth World Cup. It will be his last. At 33, the Premier League's greatest Asian goalscorer knows that time is a river flowing in one direction, and he can feel the current pulling. Every touch, every sprint, every shot is now measured against the knowledge that there will be no next time. Against the Czech Republic, in the opening match of Group A, Sonaldo begins his farewell.
 

@@ -1,5 +1,9 @@
 # Haiti National Football Team — Les Grenadiers
 
+## Group C: Brazil, Morocco, Haiti, Scotland
+
+---
+
 ## Overview
 
 The Haiti national football team, known as **Les Grenadiers** (The Grenadiers), represents Haiti in international football. Haiti has a proud football history and was the first Caribbean nation to qualify for a FIFA World Cup, achieving this feat in 1974.

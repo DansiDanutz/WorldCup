@@ -616,7 +616,7 @@ describe("WorldCup design system integration", () => {
     assert.match(myStanding, /standing-trophy-trigger/);
     assert.match(myStanding, /aria-controls="standing-leaderboard-modal"/);
     assert.match(myStanding, /standing-modal-backdrop/);
-    assert.match(myStanding, /Top 10 leaderboard/);
+    assert.match(myStanding, /Free Play community/);
     assert.match(myStanding, /Referral positions/);
     assert.match(myStanding, /referralsOpen, setReferralsOpen/);
     assert.match(myStanding, /referrals-trigger/);

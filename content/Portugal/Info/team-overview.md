@@ -56,7 +56,7 @@ Under Roberto Martinez, Portugal plays a possession-based attacking system, typi
 - **Midfield dominance**: Vitinha, Bruno Fernandes, and Bernardo Silva form one of the tournament's most technically gifted midfields
 - **Ronaldo as focal point**: Even at 41, Cristiano Ronaldo remains the primary goal threat and team leader
 
-## 2026 World Cup - Group K
+## Group K: Portugal, DR Congo, Uzbekistan, Colombia
 
 | Match | Date | Venue | City |
 |-------|------|-------|------|

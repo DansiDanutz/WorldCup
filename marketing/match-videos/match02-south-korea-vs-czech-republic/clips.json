@@ -1,0 +1,59 @@
+{
+  "comment": "Single source of truth for generated clips, the music score and the SFX track on the 300s timeline. match.html places each clip visually (looping the 5s source while visible); mux.mjs mixes each clip's own audio once at `at` at volume `vol` (vol 0 = visual only), the music cues (looped/trimmed, ducked under Brian's VO) and the ElevenLabs sound-design hits.",
+  "clips": [
+    { "id": "glimpse-son",   "src": "assets/player-son.mp4",       "at": 4.2,   "dur": 0.34, "vol": 0 },
+    { "id": "glimpse-stad",  "src": "assets/stadium-flyover.mp4",  "at": 7.0,   "dur": 0.42, "vol": 0 },
+    { "id": "glimpse-cry",   "src": "assets/fan-cze-crying.mp4",   "at": 9.6,   "dur": 0.5,  "vol": 0 },
+    { "id": "glimpse-joy",   "src": "assets/fan-kor-euphoric.mp4", "at": 11.8,  "dur": 0.62, "vol": 0 },
+    { "id": "stadium",       "src": "assets/stadium-flyover.mp4",  "at": 28.0,  "dur": 16.0, "vol": 0.45 },
+    { "id": "history-bg",    "src": "assets/stadium-flyover.mp4",  "at": 44.0,  "dur": 54.5, "vol": 0 },
+    { "id": "son",           "src": "assets/player-son.mp4",       "at": 106.0, "dur": 10.0, "vol": 0.30 },
+    { "id": "kim",           "src": "assets/player-kim.mp4",       "at": 116.0, "dur": 9.0,  "vol": 0.30 },
+    { "id": "lee",           "src": "assets/player-lee.mp4",       "at": 125.0, "dur": 8.5,  "vol": 0.30 },
+    { "id": "cze-hopeful",   "src": "assets/fan-cze-hopeful.mp4",  "at": 133.5, "dur": 11.0, "vol": 0.35 },
+    { "id": "schick",        "src": "assets/player-schick.mp4",    "at": 144.5, "dur": 10.0, "vol": 0.30 },
+    { "id": "soucek",        "src": "assets/player-soucek.mp4",    "at": 154.5, "dur": 4.5,  "vol": 0.30 },
+    { "id": "hlozek",        "src": "assets/player-hlozek.mp4",    "at": 159.0, "dur": 5.5,  "vol": 0.30 },
+    { "id": "goal-replay",   "src": "assets/player-son.mp4",       "at": 187.0, "dur": 17.0, "vol": 0.35 },
+    { "id": "kor-euphoric",  "src": "assets/fan-kor-euphoric.mp4", "at": 204.0, "dur": 9.0,  "vol": 0.50 },
+    { "id": "schick-chance", "src": "assets/player-schick.mp4",    "at": 213.0, "dur": 6.0,  "vol": 0.25 },
+    { "id": "kor-anxious",   "src": "assets/fan-kor-anxious.mp4",  "at": 219.0, "dur": 11.0, "vol": 0.45 },
+    { "id": "cze-crying",    "src": "assets/fan-cze-crying.mp4",   "at": 233.0, "dur": 9.0,  "vol": 0.40 },
+    { "id": "verdict-bg",    "src": "assets/stadium-flyover.mp4",  "at": 242.0, "dur": 14.0, "vol": 0 },
+    { "id": "mystery",       "src": "assets/mystery-master.mp4",   "at": 257.0, "dur": 13.0, "vol": 0.45 },
+    { "id": "cta-bg",        "src": "assets/fan-kor-euphoric.mp4", "at": 288.0, "dur": 12.0, "vol": 0 }
+  ],
+  "music": {
+    "comment": "Three-cue film score. Kevin MacLeod (incompetech.com), CC-BY 4.0 — credit required in the YouTube description (see README). The Mystery segment (256-270) deliberately has no music: shimmer SFX + Brian only.",
+    "cues": [
+      { "src": "music/cue-tense.mp3",  "at": 0,   "dur": 30,  "vol": 0.50, "fadeIn": 0.5, "fadeOut": 3 },
+      { "src": "music/cue-epic.mp3",   "at": 28,  "dur": 228, "vol": 0.40, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-heroic.mp3", "at": 268, "dur": 32,  "vol": 0.48, "fadeIn": 2.5, "fadeOut": 3 }
+    ]
+  },
+  "sfx": {
+    "comment": "ElevenLabs sound-design hits (sfx/*.mp3). Whooshes ride the scene transitions; the rest mark story beats.",
+    "hits": [
+      { "src": "sfx/heartbeat.mp3", "at": 0.3,   "vol": 0.95 },
+      { "src": "sfx/heartbeat.mp3", "at": 8.0,   "vol": 0.85 },
+      { "src": "sfx/braam.mp3",     "at": 12.5,  "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 15.7,  "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 27.7,  "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 43.7,  "vol": 0.55 },
+      { "src": "sfx/stamp.mp3",     "at": 67.1,  "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 98.2,  "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 133.2, "vol": 0.55 },
+      { "src": "sfx/braam.mp3",     "at": 164.6, "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 185.7, "vol": 0.55 },
+      { "src": "sfx/goal.mp3",      "at": 195.4, "vol": 0.95 },
+      { "src": "sfx/whistle.mp3",   "at": 231.2, "vol": 0.70 },
+      { "src": "sfx/whoosh.mp3",    "at": 241.7, "vol": 0.55 },
+      { "src": "sfx/mystic.mp3",    "at": 256.1, "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 269.7, "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 287.7, "vol": 0.55 },
+      { "src": "sfx/pop.mp3",       "at": 289.2, "vol": 0.70 },
+      { "src": "sfx/pop.mp3",       "at": 289.6, "vol": 0.70 },
+      { "src": "sfx/pop.mp3",       "at": 290.0, "vol": 0.70 }
+    ]
+  }
+}

@@ -15,6 +15,7 @@ type LeaderboardRow = {
   total_points: string | number;
   teams: Array<{ team_name?: string; total_points?: string | number }> | null;
   leaderboard_rank: number;
+  is_paid?: boolean | null;
 };
 
 type EntryRow = {
@@ -40,6 +41,7 @@ function formatLeaderboardPreview(row: LeaderboardRow) {
     displayName: row.display_name ?? "Player",
     totalPoints: Number(row.total_points ?? 0),
     rank: row.leaderboard_rank,
+    isPaid: Boolean(row.is_paid),
     teams: (row.teams ?? []).map((team) => ({
       name: team.team_name ?? "",
       points: Number(team.total_points ?? 0),
@@ -130,9 +132,12 @@ export async function GET(request: Request) {
       .eq("tournament_id", tournamentId)
       .eq("user_id", user.id)
       .maybeSingle(),
+    // Displayed Top 10 is the FREE/community board (committed + locked) so it
+    // is full of activity even with no paying users. Money logic below stays
+    // on worldcup_awarded_leaderboard (locked only).
     supabase
-      .from("worldcup_awarded_leaderboard")
-      .select("entry_id,display_name,total_points,teams,leaderboard_rank")
+      .from("worldcup_public_leaderboard")
+      .select("entry_id,display_name,total_points,teams,leaderboard_rank,is_paid")
       .eq("tournament_id", tournamentId)
       .order("leaderboard_rank", { ascending: true })
       .limit(10),

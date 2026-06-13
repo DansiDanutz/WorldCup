@@ -1,5 +1,7 @@
 # Uzbekistan National Football Team — White Wolves
 
+## Group K: Portugal, DR Congo, Uzbekistan, Colombia
+
 ## Overview
 
 The Uzbekistan national football team, known as the **White Wolves** (Oq Bo'rilar), is Central Asia's most successful football nation. After decades of near-misses, Uzbekistan finally qualified for their first FIFA World Cup in 2026.

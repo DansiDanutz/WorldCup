@@ -1,8 +1,6 @@
 # Australia - Socceroos
 
-## FIFA World Cup 2026 | Group D
-
-**Group D Opponents:** United States, Paraguay, Turkey
+## Group D: USA (H), Paraguay, Australia, Turkey
 
 ---
 

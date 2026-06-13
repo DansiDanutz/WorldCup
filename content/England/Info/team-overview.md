@@ -1,6 +1,6 @@
 # England - FIFA World Cup 2026
 
-## Group K: England, Senegal, Tunisia, Uzbekistan
+## Group L: England, Croatia, Ghana, Panama
 
 ---
 

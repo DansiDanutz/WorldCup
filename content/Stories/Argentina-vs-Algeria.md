@@ -1,6 +1,6 @@
 # Argentina vs Algeria — The Echo of the Desert Fox
 
-*Group J, Matchday 1 — June 11, 2026*
+*Group J, Matchday 1 — June 13, 2026*
 
 The stadium hums with a tension that has nothing to do with the scoreline. On one side of the pitch stands Lionel Messi, La Pulga, the greatest footballer who ever lived, wrapping the captain's armband around his arm for what may be his final World Cup dance. On the other, Riyad Mahrez — Algeria's son, a man who conquered the Premier League and chose the desert instead of the throne. Two magicians. Two stories written in different ink. About to share the same page.
 

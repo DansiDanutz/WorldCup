@@ -2,6 +2,8 @@
 
 ## Federation Francaise de Football (FFF)
 
+## Group I: France, Senegal, Iraq, Norway
+
 ---
 
 ## Team History

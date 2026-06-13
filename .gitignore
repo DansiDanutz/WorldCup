@@ -18,3 +18,43 @@ supabase/.temp/
 
 # Build artifact backups
 .next_bad_*/
+
+# Match video render artifacts (marketing/match-videos/*)
+# Series rule: episodes ship with NO subtitles — never commit .srt files.
+marketing/match-videos/*/*.srt
+marketing/match-videos/*/frames/
+marketing/match-videos/*/shots/
+marketing/match-videos/*/frames-test/
+marketing/match-videos/*/audio/*.mp3
+marketing/match-videos/*/filter.txt
+marketing/match-videos/*/*.log
+marketing/match-videos/*/WorldCup26_*.mp4
+marketing/match-videos/*/preview_*.mp4
+# Generated source clips are re-fetchable via `npm run fetch-assets`
+marketing/match-videos/*/assets/*.mp4
+marketing/match-videos/*/music/*.mp4
+marketing/match-videos/*/music/*.m4a
+marketing/match-videos/*/assets/squad/
+marketing/match-videos/*/music/*.mp3
+marketing/match-videos/*/voice.log
+marketing/match-videos/*/mux.log
+marketing/match-videos/*/render-*.log
+marketing/match-videos/*/preview_*.mp4
+marketing/match-videos/*/audio_master.m4a
+marketing/match-videos/*/final_*.mp4
+marketing/match-videos/*/thumb-*.png
+marketing/match-videos/*/thumbnail.png
+marketing/match-videos/*/hook_16s.mp4
+marketing/match-videos/*/audio_master.m4a
+marketing/match-videos/*/thumbnail-2k.png
+marketing/match-videos/*/urls9.txt
+marketing/match-videos/*/dl2.sh
+marketing/match-videos/*/download_clips.sh
+marketing/match-videos/*/dl*.sh
+marketing/match-videos/*/dl*.log
+marketing/match-videos/*/finish_*.sh
+marketing/match-videos/*/render_loop.sh
+marketing/match-videos/*/ep10_pipeline.sh
+marketing/match-videos/*/shots.log
+marketing/match-videos/*/ep*_pipeline.sh
+marketing/match-videos/*/dl*.sh
