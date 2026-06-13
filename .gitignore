@@ -52,3 +52,5 @@ marketing/match-videos/*/dl*.sh
 marketing/match-videos/*/dl*.log
 marketing/match-videos/*/finish_*.sh
 marketing/match-videos/*/render_loop.sh
+marketing/match-videos/*/ep10_pipeline.sh
+marketing/match-videos/*/shots.log

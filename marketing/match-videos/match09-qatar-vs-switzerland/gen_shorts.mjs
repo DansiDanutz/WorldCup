@@ -9,15 +9,12 @@ import fs from 'node:fs';
 import ffmpegPath from 'ffmpeg-static';
 import { chromium } from 'playwright';
 
-const MASTER = process.argv[2] || 'WorldCup26_Match06_ARG_ALG.mp4';
+const MASTER = process.argv[2] || 'WorldCup26_Match09_QAT_SUI.mp4';
 
 const SHORTS = [
-  { out: 'short1_ghosts.mp4', from: 0.0, to: 16.0,
-    head: 'TWO GHOSTS.<br>ONE NIGHT.' },
-  { out: 'short2_the_save.mp4', from: 205.0, to: 233.5,
-    head: 'MINUTE 83.<br>THE SAVE.' },
-  { out: 'short3_legends_duo.mp4', from: 252.5, to: 272.5,
-    head: 'LEGENDS<br>006 &amp; 007' },
+  { out: 'short1_falcon.mp4', from: 0.0, to: 16.0, head: 'THE FALCON<br>RETURNS' },
+  { out: 'short2_the_wall.mp4', from: 205.0, to: 233.0, head: 'MINUTE 78.<br>THE WALL.' },
+  { out: 'short3_falconer.mp4', from: 252.5, to: 272.0, head: 'THE<br>FALCONER' },
 ];
 
 // ── 1. Render the text overlays (1080x1920, transparent) ────────────────────
