@@ -1,0 +1,21 @@
+{
+  "comment": "Higgsfield job IDs for Episode 7 (Brazil vs Haiti). Brazil player clips reused from the paid library (content/videos/Brazil/). NEW Haiti player animations were generated from the repo's character images and archived to content/videos/Haiti/. Re-download scene media with npm run fetch-assets.",
+  "images": {
+    "tambouye.png":      "fb3937c9-b590-4a93-8367-a5b9f86bc7fe",
+    "stadium-c2.png":    "9943caf1-55bb-4640-b1e0-bc9db2fa9fe3",
+    "fan-hai-joy.png":   "52cce100-42f1-4ac0-86e7-4839bef3f073",
+    "fan-hai-pride.png": "57e72c32-eef3-4626-8cb8-5fcd0d50a4cb",
+    "thumbnail.png":     "e3bf2042-e756-44a0-9f64-ee5b1ae57426"
+  },
+  "videos": {
+    "player-nazon.mp4":   "880fbc5e-a123-4be8-a667-3441cf6da3d6",
+    "player-etienne.mp4": "cb87e9e2-d1c4-48e3-8e53-ae3f7cf49195",
+    "player-placide.mp4": "bab9b336-e34c-4d6b-b71f-04bb58d25905",
+    "player-arcus.mp4":   "6ab09d50-cbde-4c60-a96e-5f1924c3f2db",
+    "player-alceus.mp4":  "5c9f3a04-af7e-4410-af92-45f45bbe29c5",
+    "tambouye.mp4":       "88c4e222-d281-440b-8679-8e2472b1d0bd",
+    "stadium-c2.mp4":     "d896441e-633a-4369-862e-7508790bfda4",
+    "fan-hai-joy.mp4":    "f2f4e8d2-5399-4981-aeee-d01f8d3432df",
+    "fan-hai-pride.mp4":  "ed343295-dd58-42d6-af2f-26b77c16b442"
+  }
+}
