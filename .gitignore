@@ -48,5 +48,5 @@ marketing/match-videos/*/thumbnail-2k.png
 marketing/match-videos/*/urls9.txt
 marketing/match-videos/*/dl2.sh
 marketing/match-videos/*/download_clips.sh
-marketing/match-videos/*/dl3.sh
+marketing/match-videos/*/dl*.sh
 marketing/match-videos/*/dl*.log
