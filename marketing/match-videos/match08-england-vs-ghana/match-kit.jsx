@@ -615,6 +615,28 @@ function FlagHTI({ w = 120 }) {
   );
 }
 
+function FlagENG({ w = 120 }) {
+  const h = w * 0.6;
+  return (
+    <div style={{ width: w, height: h, borderRadius: w * 0.04, position: 'relative', overflow: 'hidden', background: '#fff', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ position: 'absolute', left: '50%', top: 0, transform: 'translateX(-50%)', width: w * 0.16, height: '100%', background: '#ce1124' }} />
+      <div style={{ position: 'absolute', top: '50%', left: 0, transform: 'translateY(-50%)', height: h * 0.16, width: '100%', background: '#ce1124' }} />
+    </div>
+  );
+}
+
+function FlagGHA({ w = 120 }) {
+  const h = w * 0.66;
+  return (
+    <div style={{ width: w, height: h, borderRadius: w * 0.04, position: 'relative', overflow: 'hidden', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ position: 'absolute', left: 0, right: 0, top: 0, height: '33.33%', background: '#ce1126' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, top: '33.33%', height: '33.33%', background: '#fcd116' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: '33.33%', background: '#006b3f' }} />
+      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', color: '#000', fontSize: h * 0.34, lineHeight: 1 }}>★</div>
+    </div>
+  );
+}
+
 // Live fan-reaction picture-in-picture (Ep7 innovation): a framed corner box
 // showing the crowd reacting WHILE the action plays — broadcast double-feed.
 function ReactionPiP({ start, dur, clipId, label, accent = MV.gold }) {
