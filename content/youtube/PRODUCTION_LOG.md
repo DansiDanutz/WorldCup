@@ -19,6 +19,9 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 8 | England vs Ghana | [WorldCup26_Match08_ENG_GHA_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match08-england-vs-ghana/WorldCup26_Match08_ENG_GHA_upload.mp4) | 68 MB | "ENGLAND'S SECRET" | in repo | https://youtu.be/zWAcb4CLOWs |
 | 9 | Qatar vs Switzerland | [WorldCup26_Match09_QAT_SUI_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match09-qatar-vs-switzerland/WorldCup26_Match09_QAT_SUI_upload.mp4) | 66 MB | "THE DESERT TRAP?" | in repo | https://youtu.be/8Pf-oRROUyk |
 | 10 | Haiti vs Scotland | [WorldCup26_Match10_HAI_SCO_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/WorldCup26_Match10_HAI_SCO_upload.mp4) | 71 MB | "SCOTLAND'S CURSE?" | in repo | https://youtu.be/x5N4LiIgXRo |
+| 11 | Australia vs Turkey | [WorldCup26_Match11_AUS_TUR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/WorldCup26_Match11_AUS_TUR_upload.mp4) | 61 MB | "THE NOMADS" | in repo | _paste after upload_ |
+| 12 | Germany vs Curaçao | [WorldCup26_Match12_GER_CUR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/WorldCup26_Match12_GER_CUR_upload.mp4) | 58 MB | "DAVID vs GOLIATH" | in repo | _paste after upload_ |
+| 13 | Netherlands vs Japan | _rendering — Higgsfield clips + Brian VO in generation; thumbnail/scaffold committed_ | — | "THEY BEAT SPAIN" | — | _pending render_ |
 
 ### Shorts (new from Ep6 — upload as YouTube Shorts, link to the full episode)
 
@@ -27,6 +30,14 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 6 | TWO GHOSTS. ONE NIGHT. | [short1_ghosts.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/short1_ghosts.mp4) | The 16s mystery cold open — post 24h before the episode premieres |
 | 6 | MINUTE 83. THE SAVE. | [short2_the_save.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/short2_the_save.mp4) | The slow-motion save climax — post day-of |
 | 6 | LEGENDS 006 & 007 | [short3_legends_duo.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/short3_legends_duo.mp4) | The collectible duo reveal — post day after, drives app signups |
+| 10 | THE PIPER. 50 YEARS. | [short1_piper.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/short1_piper.mp4) | The 16s mystery cold open — post 24h before the episode premieres |
+| 10 | MINUTE 63. THE DANCE. | [short2_the_dance.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/short2_the_dance.mp4) | The equaliser climax — post day-of |
+| 10 | THE LONE PIPER | [short3_lone_piper.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/short3_lone_piper.mp4) | The Legend 010 reveal — post day after, drives app signups |
+
+> **Ep11 & Ep12 Shorts:** not yet cut. Their `gen_shorts.mjs` still carries Ep10's
+> placeholder cut points/headlines and needs per-episode beats (Ep11: the Nomad
+> supporter cold open / Souttar's 88' header / Legend 011; Ep12: David-and-the-Machine
+> cold open / Room's 34' save / Legend 012) before rendering.
 
 ## Where everything lives
 
