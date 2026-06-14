@@ -1,0 +1,18 @@
+{
+  "comment": "Episode thumbnail config for the WorldCup26 Legends series. One entry per episode. The generator (gen-thumbnails.mjs) renders a 1280x720 thumbnail fusing the proven star-face + <=4-word hook formula with the best-performing app hooks (Pick 3 + climb the leaderboard, on a phone). `dir` is the episode folder under marketing/match-videos (null = inaugural Ep1, has no pipeline folder). `img` is the star face. `face` is highlighted at #1 in the mini-leaderboard. Hooks are <=4 words; keep them topical and curiosity/stakes-driven.",
+  "episodes": [
+    { "ep": 1,  "dir": null, "img": "content/images/Mexico/Santiago-Gimenez.png", "name": "GIMÉNEZ", "hook": "AZTECA<br>AWAKENS", "face": "MEX", "away": "RSA", "marquee": "ARG", "sub": "MEXICO vs S. AFRICA" },
+    { "ep": 2,  "dir": "match02-south-korea-vs-czech-republic", "img": "content/images/South_Korea/Son-Heung-min.png", "name": "SON", "hook": "ONE LAST<br>DANCE", "face": "KOR", "away": "CZE", "marquee": "ARG", "sub": "S. KOREA vs CZECHIA" },
+    { "ep": 3,  "dir": "match03-canada-vs-bosnia", "img": "content/images/Canada/Alphonso-Davies.png", "name": "DAVIES", "hook": "MAPLE LEAF<br>MAGIC", "face": "CAN", "away": "BIH", "marquee": "BRA", "sub": "CANADA vs BOSNIA" },
+    { "ep": 4,  "dir": "match04-usa-vs-paraguay", "img": "content/images/USA/Christian-Pulisic.png", "name": "PULISIC", "hook": "USA'S<br>TEST", "face": "USA", "away": "PAR", "marquee": "BRA", "sub": "USA vs PARAGUAY" },
+    { "ep": 5,  "dir": "match05-brazil-vs-morocco", "img": "content/images/Brazil/Vinicius-Junior.png", "name": "VINI JR", "hook": "TANGIER<br>REVENGE", "face": "BRA", "away": "MAR", "marquee": "ARG", "sub": "BRAZIL vs MOROCCO" },
+    { "ep": 6,  "dir": "match06-argentina-vs-algeria", "img": "content/images/Argentina/Lionel-Messi.png", "name": "MESSI", "hook": "MESSI vs<br>MAHREZ", "face": "ARG", "away": "ALG", "marquee": "BRA", "sub": "ARGENTINA vs ALGERIA" },
+    { "ep": 7,  "dir": "match07-brazil-vs-haiti", "img": "content/images/Haiti/Duckens-Nazon.png", "name": "NAZON", "hook": "BRAZIL'S<br>NIGHTMARE?", "face": "HAI", "away": "BRA", "marquee": "ARG", "sub": "BRAZIL vs HAITI" },
+    { "ep": 8,  "dir": "match08-england-vs-ghana", "img": "content/images/England/Jude-Bellingham.png", "name": "BELLINGHAM", "hook": "ENGLAND'S<br>SECRET", "face": "ENG", "away": "GHA", "marquee": "BRA", "sub": "ENGLAND vs GHANA" },
+    { "ep": 9,  "dir": "match09-qatar-vs-switzerland", "img": "content/images/Switzerland/Breel-Embolo.png", "name": "EMBOLO", "hook": "THE DESERT<br>TRAP?", "face": "SUI", "away": "QAT", "marquee": "BRA", "sub": "QATAR vs SWITZERLAND" },
+    { "ep": 10, "dir": "match10-haiti-vs-scotland", "img": "content/images/Scotland/ScottMcTominay.png", "name": "McTOMINAY", "hook": "SCOTLAND'S<br>CURSE?", "face": "SCO", "away": "HAI", "marquee": "ARG", "sub": "HAITI vs SCOTLAND" },
+    { "ep": 11, "dir": "match11-australia-vs-turkey", "img": "content/images/Turkey/ArdaGuler.png", "name": "GÜLER", "hook": "THE<br>NOMADS", "face": "TUR", "away": "AUS", "marquee": "BRA", "sub": "AUSTRALIA vs TURKEY" },
+    { "ep": 12, "dir": "match12-germany-vs-curacao", "img": "content/images/Germany/Jamal-Musiala.png", "name": "MUSIALA", "hook": "DAVID vs<br>GOLIATH", "face": "GER", "away": "CUR", "marquee": "BRA", "sub": "GERMANY vs CURAÇAO" },
+    { "ep": 13, "dir": "match13-netherlands-vs-japan", "img": "content/images/Japan/Kaoru-Mitoma.png", "name": "MITOMA", "hook": "THEY BEAT<br>SPAIN", "face": "JPN", "away": "NED", "marquee": "BRA", "sub": "JAPAN vs NETHERLANDS" }
+  ]
+}
