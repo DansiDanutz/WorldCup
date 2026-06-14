@@ -3,10 +3,23 @@
 ## YouTube series: WorldCup26 Legends (MANDATORY reading before any video work)
 
 Before producing, editing, or advising on ANY episode of the match-video series,
-read **`content/youtube/SERIES_PLAYBOOK.md`** — the living knowledge file with
-the DO / DON'T lists, the per-episode checklist, and the results log.
-After every published episode, UPDATE that file: log the results at 48h and add
-any new good/bad learnings.
+read ALL THREE of these living knowledge files:
+- **`content/youtube/SERIES_PLAYBOOK.md`** — DO / DON'T lists, per-episode
+  checklist, and the results log.
+- **`content/youtube/CHANNEL_GROWTH_ACTION_PLAN.md`** — channel config + the
+  growth law, the canonical channel (`@DansLab-Kimi`), and the packaging rules.
+- **`content/youtube/PREMIERE_CALENDAR.md`** — which episode premieres WHEN,
+  mapped to the real WC2026 fixtures, plus the Shorts posting schedule.
+
+After every published episode, UPDATE the playbook (log results at 48h + new
+learnings) and tick the episode off in the premiere calendar.
+
+**TIMING IS THE JOB: every video must ship ON TIME — premiered ≥24h before its
+real match kickoff.** A great episode published late is a cold start (see Ep2:
+83 views). Check `PREMIERE_CALENDAR.md` for the next fixture window BEFORE
+starting any episode, and work back from kickoff so the render, VO, thumbnail,
+Shorts and first-hour push are all ready with ≥24h to spare. If a match window
+has already passed, the episode is RESCUE mode (Shorts + retitle), not a Premiere.
 
 Non-negotiables distilled from channel data (details in the playbook):
 1. Views = Packaging × Timing × Distribution × Retention — content alone is not enough.
