@@ -135,7 +135,7 @@ export const PREDICTIONS: MatchPrediction[] = [
     date: "Jun 14, 2026",
     score: "2–2",
     hook: "Two nations of wanderers; Souttar's 88' header.",
-    youtube: null,
+    youtube: "https://youtu.be/gGOqgKEG10o",
   },
   {
     ep: 13,
