@@ -17,6 +17,7 @@
     { "ep": 15, "dir": "match15-ivory-coast-vs-ecuador", "img": "content/images/Ivory_Coast/Amad-Diallo.png", "name": "DIALLO", "hook": "THEY STOPPED<br>A WAR", "face": "CIV", "away": "ECU", "marquee": "BRA", "sub": "IVORY COAST vs ECUADOR" },
     { "ep": 16, "dir": "match16-sweden-vs-tunisia", "img": "content/images/Tunisia/HannibalMejbri.png", "name": "MEJBRI", "hook": "THEY OPENED<br>THE DOOR", "face": "TUN", "away": "SWE", "marquee": "BRA", "sub": "SWEDEN vs TUNISIA" },
     { "ep": 17, "dir": "match17-spain-vs-cape-verde", "img": "content/images/Cape_Verde/Ryan-Mendes.png", "name": "MENDES", "hook": "THEIR FIRST<br>EVER", "face": "CPV", "away": "ESP", "marquee": "BRA", "sub": "SPAIN vs CAPE VERDE" },
-    { "ep": 18, "dir": "match18-belgium-vs-egypt", "img": "content/images/Egypt/MohamedSalah.png", "name": "SALAH", "hook": "NEVER<br>WON", "face": "EGY", "away": "BEL", "marquee": "BRA", "sub": "BELGIUM vs EGYPT" }
+    { "ep": 18, "dir": "match18-belgium-vs-egypt", "img": "content/images/Egypt/MohamedSalah.png", "name": "SALAH", "hook": "NEVER<br>WON", "face": "EGY", "away": "BEL", "marquee": "BRA", "sub": "BELGIUM vs EGYPT" },
+    { "ep": 19, "dir": "match19-france-vs-iraq", "img": "content/images/Iraq/Zidane-Iqbal.png", "name": "IQBAL", "hook": "NAMED AFTER<br>ZIDANE", "face": "IRQ", "away": "FRA", "marquee": "BRA", "sub": "FRANCE vs IRAQ" }
   ]
 }

@@ -805,6 +805,58 @@ world cup 2026, worldcup26, Belgium vs Egypt, Belgium football, Egypt football, 
 
 ---
 
+## Episode 19 — France vs Iraq
+
+**Title:** `The Boy Named After Zidane — vs France | France vs Iraq — World Cup 2026 (Ep.19)`
+
+**Description:**
+```
+During a war back home, a father in Manchester named his newborn son after a footballer from another country: Zidane. Tonight that boy walks out to face the very nation his name came from.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 19: France vs Iraq, Group I (Matchday 2). The reigning machine against the tournament's most impossible story.
+
+🇮🇶 Zidane Iqbal was born in Manchester to an Iraqi-Pakistani family and named after the French-Algerian legend Zinedine Zidane. He came through Manchester United's academy — the first British South Asian to feature for the club's first team — and now leads Iraq's midfield against France itself. 🇫🇷 France arrive as 2018 world champions and 2022 finalists, captained by Kylian Mbappé, with Michael Olise, Ousmane Dembélé and William Saliba.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "BLEUS" for France, or "IRAQ" for the impossible story.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — the boy named Zidane
+0:19 The story so far
+0:29 France vs Iraq
+0:40 The duel promise
+0:49 The history — named after a legend
+1:34 The champions — Mbappé, Olise, Dembélé
+2:18 The miracle — Iraq & Zidane Iqbal
+2:48 The duel — machine vs miracle
+3:00 Our prediction
+3:08 Minute 38 — Iraq believe
+3:31 Mbappé strikes — 1-0
+3:41 France's second — 2-0
+3:50 Full time
+4:03 Do you agree?
+4:12 Legend 019 — the Namesake
+4:33 Play free at worldcup26.world
+4:50 Like, share & subscribe
+
+📲 Send this to the friend who believes football is bigger than borders.
+
+🎵 Music: "Crossing the Chasm", "Desert City", "Five Armies", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #France #Iraq #ZidaneIqbal #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, France vs Iraq, France football, Iraq football, Zidane Iqbal, Kylian Mbappe, Michael Olise, Ousmane Dembele, William Saliba, Aymen Hussein, Les Bleus, Lions of Mesopotamia, FIFA World Cup 2026, Group I, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
 ## Shorts (per episode) — caption template
 
 Post 2 per day. Caption format:

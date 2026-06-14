@@ -27,6 +27,10 @@ const COLORS = {
   GER: '#e6b400', CUR: '#1d4ed8', NED: '#f36c21', JPN: '#c0163a',
   CIV: '#ff7a00', ECU: '#ffd100', SWE: '#006aa7', TUN: '#e70013',
   ESP: '#c60b1e', CPV: '#003893', BEL: '#ef3340', EGY: '#c8102e',
+  IRN: '#239f40', NZL: '#1f1f1f', KSA: '#006c35', URU: '#4e9ce0',
+  FRA: '#002654', SEN: '#00853f', IRQ: '#ce1126', NOR: '#ba0c2f',
+  AUT: '#ed2939', JOR: '#007a3d', POR: '#aa151b', COD: '#007fff',
+  UZB: '#1eb53a', COL: '#fcd116', CRO: '#d52b1e', PAN: '#005293',
 };
 
 const dataUri = (p) => {
