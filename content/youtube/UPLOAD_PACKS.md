@@ -296,9 +296,12 @@ world cup 2026, worldcup26, Brazil vs Haiti, Brazil football, Haiti football, Du
 
 ---
 
-## Episode 8 — England vs Ghana
+## Episode 11 — England vs Ghana
 
-**Title:** `The Empire Talks Back | England vs Ghana — World Cup 2026 (Ep.8)`
+> Published out of story order, so on the channel this is **Ep11** (its in-video
+> recap still references Ep7 Brazil–Haiti). There is no Ep8 on the channel.
+
+**Title (as published):** `England's SECRET vs Ghana 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇭 The Story No One Tells | World Cup 2026 (Ep.11)`
 
 **Description:**
 ```
@@ -447,9 +450,9 @@ world cup 2026, worldcup26, Haiti vs Scotland, Scotland football, Haiti football
 
 ---
 
-## Episode 11 — Australia vs Turkey
+## Episode 12 — Australia vs Turkey
 
-**Title:** `Two Nations With No Home | Australia vs Turkey — World Cup 2026 (Ep.11)`
+**Title:** `Two Nations With No Home | Australia vs Turkey — World Cup 2026 (Ep.12)`
 
 **Description:**
 ```
@@ -497,9 +500,9 @@ world cup 2026, worldcup26, Australia vs Turkey, Australia football, Turkey foot
 
 ---
 
-## Episode 12 — Germany vs Curaçao
+## Episode 13 — Germany vs Curaçao
 
-**Title:** `The Island of 150,000 vs The Machine | Germany vs Curaçao — World Cup 2026 (Ep.12)`
+**Title:** `The Island of 150,000 vs The Machine | Germany vs Curaçao — World Cup 2026 (Ep.13)`
 
 **Description:**
 ```
@@ -546,9 +549,9 @@ world cup 2026, worldcup26, Germany vs Curacao, Germany football, Curacao footba
 
 ---
 
-## Episode 13 — Netherlands vs Japan
+## Episode 14 — Netherlands vs Japan
 
-**Title:** `Total Football Meets the Samurai | Netherlands vs Japan — World Cup 2026 (Ep.13)`
+**Title:** `Total Football Meets the Samurai | Netherlands vs Japan — World Cup 2026 (Ep.14)`
 
 **Description:**
 ```

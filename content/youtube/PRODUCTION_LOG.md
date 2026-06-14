@@ -7,6 +7,12 @@
 
 Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/<path>`
 
+> **Numbering note:** the **Ep** column below is the **channel episode number**
+> (publish order). It can differ from the file/match number in the path: England–
+> Ghana (`match08…`) was published out of order as **Ep11**, so there is no Ep8 on
+> the channel, and the remaining episodes shift up (Australia–Turkey = Ep12,
+> Germany–Curaçao = Ep13, Netherlands–Japan = Ep14).
+
 > **Series rule: episodes ship with NO subtitles.** No `.srt` files are committed or
 > uploaded — `*.srt` is gitignored under `marketing/match-videos/`.
 
@@ -19,12 +25,12 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 5 | Brazil vs Morocco | [WorldCup26_Match05_BRA_MAR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match05-brazil-vs-morocco/WorldCup26_Match05_BRA_MAR_upload.mp4) | 84 MB | [thumbnail.jpg](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match05-brazil-vs-morocco/thumbnail.jpg) | _paste after upload_ |
 | 6 | Argentina vs Algeria | [WorldCup26_Match06_ARG_ALG_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/WorldCup26_Match06_ARG_ALG_upload.mp4) | 71 MB | [thumbnail.jpg](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match06-argentina-vs-algeria/thumbnail.jpg) | _paste after upload_ |
 | 7 | Brazil vs Haiti | [WorldCup26_Match07_BRA_HAI_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match07-brazil-vs-haiti/WorldCup26_Match07_BRA_HAI_upload.mp4) | 71 MB | "BRAZIL'S NIGHTMARE?" | https://youtu.be/4RxCyLtIccs |
-| 8 | England vs Ghana | [WorldCup26_Match08_ENG_GHA_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match08-england-vs-ghana/WorldCup26_Match08_ENG_GHA_upload.mp4) | 68 MB | "ENGLAND'S SECRET" | https://youtu.be/zWAcb4CLOWs |
+| 11 | England vs Ghana | [WorldCup26_Match08_ENG_GHA_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match08-england-vs-ghana/WorldCup26_Match08_ENG_GHA_upload.mp4) | 68 MB | "ENGLAND'S SECRET" | https://youtu.be/zWAcb4CLOWs |
 | 9 | Qatar vs Switzerland | [WorldCup26_Match09_QAT_SUI_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match09-qatar-vs-switzerland/WorldCup26_Match09_QAT_SUI_upload.mp4) | 66 MB | "THE DESERT TRAP?" | https://youtu.be/8Pf-oRROUyk |
 | 10 | Haiti vs Scotland | [WorldCup26_Match10_HAI_SCO_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/WorldCup26_Match10_HAI_SCO_upload.mp4) | 71 MB | "SCOTLAND'S CURSE?" | https://youtu.be/x5N4LiIgXRo |
-| 11 | Australia vs Turkey | [WorldCup26_Match11_AUS_TUR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/WorldCup26_Match11_AUS_TUR_upload.mp4) | 61 MB | "THE NOMADS" | _paste after upload_ |
-| 12 | Germany vs Curaçao | [WorldCup26_Match12_GER_CUR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/WorldCup26_Match12_GER_CUR_upload.mp4) | 58 MB | "DAVID vs GOLIATH" | _paste after upload_ |
-| 13 | Netherlands vs Japan | [WorldCup26_Match13_NED_JPN_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/WorldCup26_Match13_NED_JPN_upload.mp4) | 63 MB | "THEY BEAT SPAIN" | _paste after upload_ |
+| 12 | Australia vs Turkey | [WorldCup26_Match11_AUS_TUR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/WorldCup26_Match11_AUS_TUR_upload.mp4) | 61 MB | "THE NOMADS" | https://youtu.be/gGOqgKEG10o |
+| 13 | Germany vs Curaçao | [WorldCup26_Match12_GER_CUR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/WorldCup26_Match12_GER_CUR_upload.mp4) | 58 MB | "DAVID vs GOLIATH" | https://youtu.be/uKZ5R7vlBi8 |
+| 14 | Netherlands vs Japan | [WorldCup26_Match13_NED_JPN_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/WorldCup26_Match13_NED_JPN_upload.mp4) | 63 MB | "THEY BEAT SPAIN" | https://youtu.be/vKJ1O2sNV1Y |
 
 ### Shorts (new from Ep6 — upload as YouTube Shorts, link to the full episode)
 
@@ -36,15 +42,15 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 10 | THE PIPER. 50 YEARS. | [short1_piper.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/short1_piper.mp4) | The 16s mystery cold open — post 24h before the episode premieres |
 | 10 | MINUTE 63. THE DANCE. | [short2_the_dance.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/short2_the_dance.mp4) | The equaliser climax — post day-of |
 | 10 | THE LONE PIPER | [short3_lone_piper.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match10-haiti-vs-scotland/short3_lone_piper.mp4) | The Legend 010 reveal — post day after, drives app signups |
-| 11 | EVERY STADIUM. NO COUNTRY. | [short1_wanderer.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/short1_wanderer.mp4) | The Wanderer mystery cold open — post 24h before the episode premieres |
-| 11 | MINUTE 88. THE HEADER. | [short2_the_header.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/short2_the_header.mp4) | Souttar's late equaliser climax — post day-of |
-| 11 | LEGEND 011: THE WANDERER | [short3_legend.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/short3_legend.mp4) | The Legend 011 reveal — post day after, drives app signups |
-| 12 | DAVID vs GOLIATH | [short1_david.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short1_david.mp4) | The Beach Keeper / island cold open — post 24h before the episode premieres |
-| 12 | MINUTE 34. THE SAVE. | [short2_the_save.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short2_the_save.mp4) | Eloy Room's flying save — post day-of |
-| 12 | LEGEND 012: BEACH KEEPER | [short3_legend.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short3_legend.mp4) | The Legend 012 reveal — post day after, drives app signups |
-| 13 | THEY BEAT SPAIN. | [short1_samurai.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/short1_samurai.mp4) | The Samurai Elder cold open — post 24h before the episode premieres |
-| 13 | MINUTE 90+3. MITOMA. | [short2_equaliser.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/short2_equaliser.mp4) | Mitoma's late equaliser — post day-of |
-| 13 | LEGEND 013: THE ELDER | [short3_legend.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/short3_legend.mp4) | The Legend 013 reveal — post day after, drives app signups |
+| 12 | EVERY STADIUM. NO COUNTRY. | [short1_wanderer.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/short1_wanderer.mp4) | The Wanderer mystery cold open — post 24h before the episode premieres |
+| 12 | MINUTE 88. THE HEADER. | [short2_the_header.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/short2_the_header.mp4) | Souttar's late equaliser climax — post day-of |
+| 12 | LEGEND 011: THE WANDERER | [short3_legend.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/short3_legend.mp4) | The Legend 011 reveal — post day after, drives app signups |
+| 13 | DAVID vs GOLIATH | [short1_david.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short1_david.mp4) | The Beach Keeper / island cold open — post 24h before the episode premieres |
+| 13 | MINUTE 34. THE SAVE. | [short2_the_save.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short2_the_save.mp4) | Eloy Room's flying save — post day-of |
+| 13 | LEGEND 012: BEACH KEEPER | [short3_legend.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/short3_legend.mp4) | The Legend 012 reveal — post day after, drives app signups |
+| 14 | THEY BEAT SPAIN. | [short1_samurai.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/short1_samurai.mp4) | The Samurai Elder cold open — post 24h before the episode premieres |
+| 14 | MINUTE 90+3. MITOMA. | [short2_equaliser.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/short2_equaliser.mp4) | Mitoma's late equaliser — post day-of |
+| 14 | LEGEND 013: THE ELDER | [short3_legend.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/short3_legend.mp4) | The Legend 013 reveal — post day after, drives app signups |
 
 ## Where everything lives
 
