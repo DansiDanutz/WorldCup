@@ -15,7 +15,7 @@
 | Distribution | Launch Film **2,000** (paid push) vs Ep2 **83** / Ep2b **11** (no promo) | Feed every upload (§3) |
 | Star power | Argentina/Messi **979** (h1) vs neutral matchups **11–108** | Prioritise big nations (§5) |
 | Packaging | Hook-titled Ep5–7 **207–979** vs generic-titled Ep2–3 **28–108** | Hook-first titles + face thumbs (§4) |
-| Timing | Ep1 (premiered day-before) **627** vs Ep2 (uploaded after) **83** | Premiere ≥24h pre-kickoff (§3) |
+| Timing | Ep1 (premiered day-before) **627** vs Ep2 (uploaded after) **83** | Premiere ≥48h pre-kickoff (§3) |
 
 The bottleneck has never been content quality. It's distribution, timing and packaging.
 
@@ -53,7 +53,7 @@ brand — in which case still set the handle to something football-searchable.
 - [ ] **Refresh descriptions + pinned comments** on every live episode from `UPLOAD_PACKS.md`.
 - [ ] **Start the Shorts engine** — 2 Shorts/day from the 15 already rendered (§3).
 - [ ] **Build the playlist** "WorldCup26 Legends — All Episodes", set as featured section.
-- [ ] **Every NEW episode goes out as a Premiere ≥24h before its real kickoff** (§3).
+- [ ] **Every NEW episode goes out as a Premiere ≥48h before its real kickoff** (§3).
 
 ---
 
@@ -129,7 +129,7 @@ testing long-form when it sees: (1) Shorts traffic, (2) external clicks,
 (3) premiere notifications, (4) strong CTR when impressions arrive. Give it all four.
 
 ### Premiere (never a plain "Publish")
-- Schedule each episode as a **Premiere ≥24h before the real match kickoff**.
+- Schedule each episode as a **Premiere ≥48h before the real match kickoff**.
 - Premiere creates a countdown page, sends subscriber notifications, opens live chat.
 - Plain uploads after the match = the Ep2 cold-start (83 views). Never repeat.
 

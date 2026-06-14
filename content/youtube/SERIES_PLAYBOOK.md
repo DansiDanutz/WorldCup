@@ -120,7 +120,7 @@ NFL quarterback for the Ep4 'USA' thumbnail until the prompt was hardened.
 - [ ] Thumbnail: 1 face + ≤4 words + flags + episode badge (guide: THUMBNAIL_GUIDE.md)
 - [ ] Title: `WorldCup26 [Team A] vs [Team B] | [Story Hook] — FIFA World Cup 2026 Match N`
 - [ ] Description: hook line + question + chapters + worldcup26.world + tags + music credit
-- [ ] **Premiere scheduled ≥24h before the real match kickoff**
+- [ ] **Premiere scheduled ≥48h before the real match kickoff**
 - [ ] 2–3 Shorts cut and scheduled (hook / goal / mystery legend)
 - [ ] First-hour push: WhatsApp, Telegram, X first-wave, community post, pinned comment
 - [ ] End screen + cards linking previous episode and the playlist

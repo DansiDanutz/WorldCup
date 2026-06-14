@@ -53,7 +53,7 @@ Titles are currently truncated to the generic part. Copy-paste these in Studio:
 - Channel trailer = the Launch Film; channel description leads with "Pixar-style World Cup 2026 stories. New episode before every match. Free prediction game: worldcup26.world".
 
 ### 5. Feed the machine on every upload (the iron rule)
-Every episode from now on: **Premiere scheduled ≥24h before the real match**
+Every episode from now on: **Premiere scheduled ≥48h before the real match**
 + first-hour push (WhatsApp/Telegram groups, X first-wave from
 `marketing/worldcup26-campaign/copy-bank.md`, community post with the
 thumbnail) + pinned comment + 3 Shorts staggered around it (1 the day before,

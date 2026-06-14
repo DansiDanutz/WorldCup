@@ -14,16 +14,20 @@ read ALL THREE of these living knowledge files:
 After every published episode, UPDATE the playbook (log results at 48h + new
 learnings) and tick the episode off in the premiere calendar.
 
-**TIMING IS THE JOB: every video must ship ON TIME — premiered ≥24h before its
-real match kickoff.** A great episode published late is a cold start (see Ep2:
-83 views). Check `PREMIERE_CALENDAR.md` for the next fixture window BEFORE
-starting any episode, and work back from kickoff so the render, VO, thumbnail,
-Shorts and first-hour push are all ready with ≥24h to spare. If a match window
-has already passed, the episode is RESCUE mode (Shorts + retitle), not a Premiere.
+**TIMING IS THE JOB — HARD MINIMUM 48h: every episode must already be POSTED
+(as a scheduled Premiere) at least 48 hours before its real match kicks off.**
+Not "started", not "rendering" — live on the channel with 48h to spare. A great
+episode published late is a cold start (see Ep2: 83 views). Check
+`PREMIERE_CALENDAR.md` for the next fixture window BEFORE starting any episode
+and work BACKWARDS from kickoff: subtract 48h to get the post deadline, then
+subtract render + VO + thumbnail + Shorts + QA time to get the start date — and
+start then. If you cannot make the 48h deadline, say so immediately so the
+schedule can flex; never quietly ship late. If a match window has already
+passed, the episode is RESCUE mode (Shorts + retitle), not a Premiere.
 
 Non-negotiables distilled from channel data (details in the playbook):
 1. Views = Packaging × Timing × Distribution × Retention — content alone is not enough.
-2. Episodes go live (as YouTube **Premieres**) ≥24h BEFORE the real match they cover.
+2. Episodes go live (as YouTube **Premieres**) ≥48h BEFORE the real match they cover.
 3. Every episode ships with: thumbnail (1 face + ≤4 words), SEO title/description,
    2–3 Shorts cuts, pinned comment, first-hour campaign push.
 4. Brian (ElevenLabs) is always the narrator. Mystery Supporter segment in every episode.

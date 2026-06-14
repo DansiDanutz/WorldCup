@@ -4,7 +4,7 @@
 > group-stage window (June 11–27). **Match windows are derived** from the
 > canonical draw (`content/README.md`) + the real tournament calendar — the
 > project draw is fictional, so confirm each exact kickoff against the live
-> fixture list before scheduling a Premiere. Iron rule: **Premiere ≥24h before
+> fixture list before scheduling a Premiere. Iron rule: **Premiere ≥48h before
 > the match's real kickoff** (`SERIES_PLAYBOOK.md`).
 
 ## The key insight from the mapping
@@ -34,8 +34,8 @@ Belgium have NO episode yet** — top-audience nations, Stories already written.
 | 4 | USA v Paraguay | D | 1 | ~Jun 12 | PAST → rescue |
 | 5 | Brazil v Morocco | C | 1 | ~Jun 12 | PAST → rescue |
 | 6 | Argentina v Algeria | J | 1 | ~Jun 16 | IMMINENT — premiere NOW if not kicked off; else rescue |
-| 7 | **Brazil v Haiti** | C | 2 | **~Jun 19** | **PREMIERE — schedule ≥24h before kickoff (~Jun 18)** |
-| 8 | **England v Ghana** | L | 2 | **~Jun 22** | **PREMIERE — schedule ≥24h before kickoff (~Jun 21)** |
+| 7 | **Brazil v Haiti** | C | 2 | **~Jun 19** | **PREMIERE — must be POSTED by ~Jun 17 (48h before)** |
+| 8 | **England v Ghana** | L | 2 | **~Jun 22** | **PREMIERE — must be POSTED by ~Jun 20 (48h before)** |
 | 9 | Qatar v Switzerland | B | 1 | ~Jun 12 | PAST → rescue |
 | 10 | Haiti v Scotland | C | 1 | ~Jun 12 | PAST → rescue |
 | 11 | Australia v Turkey | D | 1 | ~Jun 12 | PAST → rescue |
@@ -45,7 +45,7 @@ Belgium have NO episode yet** — top-audience nations, Stories already written.
 ## 14-day posting calendar (Jun 14 → 27)
 
 **Rules:** 2 Shorts every day (AM + PM). Premieres on big-nation match days,
-≥24h pre-kickoff. Shorts ordered by audience size (Argentina → Brazil → USA →
+≥48h pre-kickoff. Shorts ordered by audience size (Argentina → Brazil → USA →
 Canada → Korea) to pull the strongest discovery first.
 
 | Date | AM Short | PM Short | Premiere / long-form |
@@ -53,12 +53,12 @@ Canada → Korea) to pull the strongest discovery first.
 | Sun Jun 14 | Ep6 `short1_ghosts` (Argentina) | Ep6 `short3_legends_duo` | Ep13 NL v JPN if pre-kickoff |
 | Mon Jun 15 | Ep6 `short2_the_save` | Ep5 `short2_neymar_sees` (Brazil) | — |
 | Tue Jun 16 | Ep5 `short3_prophet` | Ep5 `short1_sixth_vision` | Ep6 ARG v ALG if window still open |
-| Wed Jun 17 | Ep4 `short2_cliffhanger` (USA) | Ep4 `short1_1930_secret` | **Produce Ep14 (France/Spain/Portugal MD2)** |
-| Thu Jun 18 | Ep4 `short3_liberty_fan` | Ep3 `short3_maple_leaf_man` (CAN) | **PREMIERE Ep7 Brazil v Haiti** (≥24h pre) |
-| Fri Jun 19 | Ep3 `short1_who_is_he` | Ep3 `short2_the_save` | Ep7 match day — first-hour push |
-| Sat Jun 20 | Ep2 `short1_last_dance` (KOR) | Ep2 `short2_minute_41` | cut 3 Shorts from Ep7 |
-| Sun Jun 21 | Ep2 `short3_taekwondo_master` | Ep7 short (new) | **PREMIERE Ep8 England v Ghana** (≥24h pre) |
-| Mon Jun 22 | Ep7 short (new) | Ep8 short (new) | Ep8 match day — first-hour push |
+| Wed Jun 17 | Ep4 `short2_cliffhanger` (USA) | Ep4 `short1_1930_secret` | **POST Ep7 Brazil v Haiti as Premiere** (48h before ~Jun 19 match) + produce Ep14 |
+| Thu Jun 18 | Ep4 `short3_liberty_fan` | Ep3 `short3_maple_leaf_man` (CAN) | Ep7 pre-match push; produce Ep14 (France/Spain) |
+| Fri Jun 19 | Ep3 `short1_who_is_he` | Ep3 `short2_the_save` | Ep7 MATCH DAY — first-hour push; cut 3 Shorts from Ep7 |
+| Sat Jun 20 | Ep2 `short1_last_dance` (KOR) | Ep2 `short2_minute_41` | **POST Ep8 England v Ghana as Premiere** (48h before ~Jun 22 match) |
+| Sun Jun 21 | Ep2 `short3_taekwondo_master` | Ep7 short (new) | Ep8 pre-match push |
+| Mon Jun 22 | Ep7 short (new) | Ep8 short (new) | Ep8 MATCH DAY — first-hour push |
 | Tue Jun 23 | Ep8 short (new) | new-ep short | **Produce Ep15 (big-nation MD3)** |
 | Wed Jun 24 | new-ep short | new-ep short | premiere next MD3 big-nation ep |
 | Thu Jun 25 | new-ep short | new-ep short | first-hour push |
@@ -81,10 +81,10 @@ have Stories already written in `content/Stories/`:
 6. **Belgium** (v Egypt / v Iran) — no episode yet.
 7. **Germany MD2/MD3**, **Netherlands MD2/MD3** — already have one each; extend.
 
-Each new episode ships premiere ≥24h pre-kickoff + 3 Shorts + first-hour push
+Each new episode ships premiere ≥48h pre-kickoff + 3 Shorts + first-hour push
 (the §3 iron rule in `CHANNEL_GROWTH_ACTION_PLAN.md`).
 
 ## Confirm before scheduling
 The match windows above are derived (fictional draw + real June 11–27 frame).
 Pull the exact kickoff date/time for each fixture from the official schedule,
-then lock each Premiere to ≥24h before it.
+then lock each Premiere to ≥48h before it.
