@@ -595,6 +595,62 @@ world cup 2026, worldcup26, Netherlands vs Japan, Netherlands football, Japan fo
 
 ---
 
+## Episode 14 — France vs Senegal
+
+**Title:** `The Night the Colony Humbled the Empire | France vs Senegal — World Cup 2026 (Ep.14)`
+
+> Scheduling note: France v Senegal is Matchday 1 (already played) → publish as an
+> evergreen upload, not a ≥48h Premiere. For a Premiere, use an upcoming France
+> fixture (v Iraq / v Norway). Episode number stays 14 (production order).
+
+**Description:**
+```
+In 2002, Senegal — a former French colony at its first ever World Cup — beat the reigning world champions France 1-0 and sent them home without a single goal. Twenty-four years later, the empire and the lion meet again in Los Angeles.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 14: France vs Senegal, Group I, SoFi Stadium. The Prince of Bondy against the King of Teranga.
+
+🇫🇷 Kylian Mbappé — 38 km/h, a hat-trick in a World Cup final. 🇸🇳 Sadio Mané — Senegal's greatest scorer, who walked 400km for a dream and built his village a hospital, a school and a mosque.
+
+🔮 Our ending is a PREDICTION, with the reasoning on screen — not a result. Do you agree?
+👉 Comment "BLEUS" if France avenge 2002. Comment "LIONS" if Senegal roar again.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 The empire and the lion
+0:16 France vs Senegal
+0:28 SoFi Stadium, Los Angeles
+0:44 2002 — the night the colony beat the champions
+1:38 Les Bleus — Mbappé, Dembélé, Tchouaméni
+2:13 The Lions of Teranga — Mané, Jackson, Koulibaly
+2:44 The Duel — the Prince vs the King
+3:06 The Match — our prediction
+4:02 Our prediction: 1-1
+4:16 Legend 014 — the Lion of Gorée
+4:30 Play free at worldcup26.world
+4:48 Like, share & subscribe
+
+📲 Send this to the friend who still thinks Africa can't stand toe to toe with Europe.
+
+🎵 Music: "Achilles", "Five Armies", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #France #Senegal #Mbappe #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, France vs Senegal, France football, Senegal football, Kylian Mbappe, Sadio Mane, Les Bleus, Lions of Teranga, FIFA World Cup 2026, Group I, 2002 World Cup upset, Papa Bouba Diop, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+**Pinned comment:**
+```
+In 2002 Senegal beat the champions of the world 1-0 — at their FIRST ever World Cup. 24 years on… can they do it again? 🦁🇸🇳 Pick your 3 teams FREE → worldcup26.world
+```
+
+---
+
 ## Shorts (per episode) — caption template
 
 Post 2 per day. Caption format:
