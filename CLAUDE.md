@@ -1,9 +1,45 @@
 # CLAUDE.md — WorldCup26 project guide
 
+## NORTH STAR (read first): enable monetization ASAP
+
+The current single objective is to cross the YouTube Partner Program (YPP)
+watch-time threshold and switch on fan funding, then ads. Subscribers (1,327) and
+uploads are already met — **only watch time is missing, and it reads 0 because
+content is split across two channels.** Weigh every decision against one question:
+*does this bank VALID PUBLIC WATCH HOURS faster?* Use all leverage we have — the
+1,327 existing subscribers, the 13 finished episodes, the 15 rendered Shorts, the
+organic campaign machine, the worldcup26.world funnel, Higgsfield, and the live
+World Cup discovery window happening right now.
+
+**Priority levers, in order (detail in `MONETIZATION_STATUS.md`):**
+1. **Consolidate** every episode onto `@DansLab-Kimi`, public — the 0-hours root cause.
+2. **Verify "No, not made for kids"** on every video — made-for-kids silently
+   disables fan funding and voids personalized features; Pixar style is
+   high-risk, so check it TODAY.
+3. **Point the ORGANIC campaign** (WhatsApp/Telegram/X/community + the site
+   funnel) at the long-form episodes — organic external watch time counts toward
+   the 3,000h. Keep PAID ads aimed at the site, not YouTube (paid-driven watch
+   time risks being ruled non-valid).
+4. **Premiere ≥48h ahead + autoplay "All Episodes" playlist** — concentrated live
+   + binge watch time.
+5. **Shorts 2–4/day during the tournament** — funnel to long-form & subs, and a
+   hedge toward the 3M-Shorts path.
+
+**Daily operating loop (improve every single day):** post the day's Shorts + run
+the first-hour push on any premiere → ship/schedule the next buffered episode
+(stay 2 ahead, chronological) → read yesterday's analytics and log watch-hours,
+subs and Shorts views in `MONETIZATION_STATUS.md` → reply to every comment → if a
+lever is underperforming, change it.
+
+**Change the approach if:** after a week of consolidated, fully-pushed uploads the
+watch-hours velocity won't reach 3,000h within ~60–90 days → escalate (more
+premieres, higher-retention/longer episodes, heavier organic distribution) or
+shift effort to the Shorts-views path. Never keep doing what isn't moving the KPI.
+
 ## YouTube series: WorldCup26 Legends (MANDATORY reading before any video work)
 
 Before producing, editing, or advising on ANY episode of the match-video series,
-read ALL THREE of these living knowledge files:
+read ALL of these living knowledge files:
 - **`content/youtube/SERIES_PLAYBOOK.md`** — DO / DON'T lists, per-episode
   checklist, and the results log.
 - **`content/youtube/CHANNEL_GROWTH_ACTION_PLAN.md`** — channel config + the

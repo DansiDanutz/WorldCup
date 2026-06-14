@@ -65,6 +65,66 @@ that feeds long-form watch time* (and subs), not as the monetization path itself
    longer sessions. Fill the empty pipeline (`PREMIERE_CALENDAR.md`).
 7. **Get-notified toggle ON** so the YPP application opens the day we cross 3,000h.
 
+## Fastest-path leverage — use everything we have
+
+We don't have to wait passively for watch hours. Each asset we already own can be
+pointed at banking **valid public watch hours**:
+
+- **The 1,327 existing subscribers** are dormant value — they're on the channel
+  but the videos they'd watch are on the *other* channel. Consolidation alone
+  exposes the catalog to a built-in audience (notifications + "Subscriptions" feed).
+- **The organic campaign machine** (proven ~1.6–2k views/asset) should now drive
+  to the **YouTube episodes**, not only the site. Organic external watch time
+  (WhatsApp/Telegram/X shares, community posts) **counts** toward the 3,000h.
+  ⚠️ Keep **paid** ad spend pointed at worldcup26.world — watch time driven by
+  paid promotion can be ruled **non-valid** and excluded from the threshold.
+- **The site → channel funnel** already exists; make "watch the episode" (not
+  just "play the game") a primary CTA on worldcup26.world during the tournament.
+- **The live World Cup** is a once-in-4-years discovery window — search and
+  browse demand for these fixtures is at its annual peak right now. Every day we
+  delay consolidation, we waste it.
+- **Premieres + autoplay playlist** concentrate and chain watch time (binge
+  sessions are the cheapest hours-per-view multiplier).
+- **Higgsfield** removes the asset ceiling — we can produce as many big-nation
+  episodes as the buffer needs (`PRODUCTION_ACCELERATION.md`).
+
+### Possible approach changes to test (don't assume the first plan is optimal)
+- **Episode length A/B:** watch hours = views × avg view duration. If retention
+  holds, a slightly longer episode (7–8 min) banks more hours per view. Test on
+  one big-nation episode; keep 5 min if retention drops.
+- **Premiere frequency:** during the group stage, more premieres/day (still
+  chronological, still big nations) = more concentrated live watch time.
+- **Shorts cadence:** lift to 3–4/day during the tournament as both a funnel and
+  a hedge toward the 3M-Shorts-views path.
+
+## Daily operating loop (improve every day)
+
+1. Post the day's Shorts (2–4); pinned comment links the full episode.
+2. Run the first-hour push on any premiere (organic channels + community post).
+3. Ship/schedule the next buffered episode — stay 2 ahead, chronological.
+4. Read yesterday's Studio analytics; **log the KPI row below**.
+5. Reply to every comment (engagement = recommendation signal).
+6. If a lever underperforms vs the KPI, change it (triggers below).
+
+## KPI & decision log
+
+| Date | Subs | Watch hrs (365d) | Shorts views (90d) | Eps live on @DansLab-Kimi | Decision / change |
+|---|---|---|---|---|---|
+| Jun 14 | 1,327 | 0 | 0 | 3 | Baseline. Blocker = watch time. Action: consolidate + verify not-made-for-kids + point organic campaign at episodes |
+
+> Add one row per day. The job is to make `Watch hrs` climb toward 3,000 — if a
+> week passes with little movement after consolidation, escalate per the trigger
+> in `CLAUDE.md`'s North Star.
+
+## When to change the approach (triggers)
+- **Watch-hours flat 7 days after consolidation** → escalate distribution
+  (more premieres, heavier organic push) or test longer episodes.
+- **Premieres under-attended** → improve thumbnail/title CTR and push timing.
+- **Shorts not converting to long-form** → tighten the Short's CTA + pinned link,
+  or re-cut the hook.
+- **On track (hours climbing steadily)** → don't change; keep the daily loop and
+  compound it.
+
 ## What NOT to do
 - ❌ Don't chase the 3M-Shorts-views path as primary — the math doesn't favour a small channel.
 - ❌ Don't leave episodes on two channels "to be safe" — it splits the watch hours that unlock the money.
