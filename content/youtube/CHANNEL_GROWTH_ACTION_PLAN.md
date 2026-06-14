@@ -46,6 +46,10 @@ brand — in which case still set the handle to something football-searchable.
 
 ## 1. THIS WEEK — priority order (highest impact first)
 
+- [ ] **Consolidate ALL 13 episodes onto `@DansLab-Kimi` (public, not made-for-kids).**
+      Studio shows only 3 uploads + 0 watch hours — the rest are on the other
+      channel, which is why monetization watch-time reads 0. This is the #1
+      money move (`MONETIZATION_STATUS.md`).
 - [ ] **Rename channel → "WorldCup26 Legends" / `@worldcup26legends`** (branding fix above). Everything else points at the one channel.
 - [ ] **Channel configuration pass** — §2, ~30 min in YouTube Studio, one time.
 - [ ] **Retitle live episodes** to the hook-first titles in `UPLOAD_PACKS.md`

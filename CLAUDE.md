@@ -10,6 +10,9 @@ read ALL THREE of these living knowledge files:
   growth law, the canonical channel (`@DansLab-Kimi`), and the packaging rules.
 - **`content/youtube/PREMIERE_CALENDAR.md`** — which episode premieres WHEN,
   mapped to the real WC2026 fixtures, plus the Shorts posting schedule.
+- **`content/youtube/MONETIZATION_STATUS.md`** — real YPP eligibility, the
+  watch-hours path, and the channel-consolidation blocker (only the watch-time
+  requirement is unmet; content is split across two channels = 0 watch hours).
 
 After every published episode, UPDATE the playbook (log results at 48h + new
 learnings) and tick the episode off in the premiere calendar.
