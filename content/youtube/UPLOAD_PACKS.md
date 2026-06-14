@@ -650,6 +650,109 @@ world cup 2026, worldcup26, Ivory Coast vs Ecuador, Ivory Coast football, Ecuado
 
 ---
 
+## Episode 16 — Sweden vs Tunisia
+
+**Title:** `The Team That Opened Africa's Door | Sweden vs Tunisia — World Cup 2026 (Ep.16)`
+
+**Description:**
+```
+In 1978, a tiny North African nation kicked open a door no African team had ever walked through. Tonight that same shirt walks out again — against two of the most feared strikers on Earth.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 16: Sweden vs Tunisia, Group F. The frost of the deep north against the fire of the desert.
+
+🇹🇳 On 2 June 1978 Tunisia beat Mexico 3-1 to become the first African nation EVER to win a World Cup match — and in 2022 they beat reigning champions France 1-0. Yet they've never once escaped the group stage. 🇸🇪 Sweden bring Viktor Gyökeres — the striker the Premier League gave up on, who came back a beast — alongside the elegant Alexander Isak.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "FROST" for Sweden, or "FIRE" for Tunisia.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — the door that opened in 1978
+0:19 The story so far
+0:29 Sweden vs Tunisia
+0:40 The late-goal promise
+0:49 The history — Rosario 1978 & France 2022
+1:46 The frost — Gyökeres & Isak
+2:30 The fire — Talbi & Mejbri
+2:50 The duel — strikers vs the wall
+3:00 Our prediction
+3:09 Gyökeres pounces — 1-0
+3:31 Mejbri and the fire answer — 1-1
+3:51 Full time
+4:03 Do you agree?
+4:12 Legend 016 — the Firekeeper
+4:32 Play free at worldcup26.world
+4:50 Like, share & subscribe
+
+📲 Send this to the friend who still thinks the small nations are only making up the numbers.
+
+🎵 Music: "Crossing the Chasm", "Desert City", "Five Armies", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #Sweden #Tunisia #Gyokeres #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, Sweden vs Tunisia, Sweden football, Tunisia football, Viktor Gyokeres, Alexander Isak, Hannibal Mejbri, Montassar Talbi, Tunisia 1978, first African World Cup win, Eagles of Carthage, FIFA World Cup 2026, Group F, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
+## Episode 17 — Spain vs Cape Verde
+
+**Title:** `Half a Million People vs Spain | Spain vs Cape Verde — World Cup 2026 (Ep.17)`
+
+**Description:**
+```
+Ten volcanic islands. Half a million people. For sixty years they sent their sons to play for other people's flags — tonight, for the very first time, the islands play for themselves. Against the best team on Earth.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 17: Spain vs Cape Verde, Group H. An empire of 47 million against an archipelago of half a million, on its first-ever World Cup night.
+
+🇨🇻 Cape Verde — ten islands ~350 miles off West Africa — reached their first World Cup ever. For decades the islands were a nursery for the world: Henrik Larsson starred for Sweden, Nani for Portugal, Gelson Martins for Portugal — now the islands field their own, led by captain Ryan Mendes. 🇪🇸 Spain arrive as 2010 world and 2024 European champions, with 18-year-old Lamine Yamal and 2024 Ballon d'Or winner Rodri.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "EMPIRE" for Spain, or "ISLAND" for Cape Verde.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — the islands that kept no stars
+0:20 The story so far
+0:30 Spain vs Cape Verde
+0:41 The first-goal promise
+0:49 The history — the diaspora & a maiden World Cup
+1:39 The empire — Yamal & Rodri
+2:22 The island — Ryan Mendes & Garry Rodrigues
+2:50 The duel — empire vs dream
+3:00 Our prediction
+3:09 Yamal opens — 1-0
+3:20 Spain's second — 2-0
+3:37 Cape Verde's first-ever World Cup goal — 2-1
+3:48 Spain finish it — 3-1
+4:07 Do you agree?
+4:16 Legend 017 — the Lighthouse Keeper
+4:33 Play free at worldcup26.world
+4:50 Like, share & subscribe
+
+📲 Send this to the friend who loves an underdog.
+
+🎵 Music: "Crossing the Chasm", "Desert City", "Five Armies", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #Spain #CapeVerde #LamineYamal #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, Spain vs Cape Verde, Spain football, Cape Verde football, Lamine Yamal, Rodri, Ryan Mendes, Garry Rodrigues, Blue Sharks, La Roja, Cape Verde first World Cup, FIFA World Cup 2026, Group H, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
 ## Episode 18 — Belgium vs Egypt
 
 **Title:** `The #1 Team That Never Won | Belgium vs Egypt — World Cup 2026 (Ep.18)`

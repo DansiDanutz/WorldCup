@@ -15,6 +15,8 @@
     { "ep": 12, "dir": "match12-germany-vs-curacao", "img": "content/images/Germany/Jamal-Musiala.png", "name": "MUSIALA", "hook": "DAVID vs<br>GOLIATH", "face": "GER", "away": "CUR", "marquee": "BRA", "sub": "GERMANY vs CURAÇAO" },
     { "ep": 13, "dir": "match13-netherlands-vs-japan", "img": "content/images/Japan/Kaoru-Mitoma.png", "name": "MITOMA", "hook": "THEY BEAT<br>SPAIN", "face": "JPN", "away": "NED", "marquee": "BRA", "sub": "JAPAN vs NETHERLANDS" },
     { "ep": 15, "dir": "match15-ivory-coast-vs-ecuador", "img": "content/images/Ivory_Coast/Amad-Diallo.png", "name": "DIALLO", "hook": "THEY STOPPED<br>A WAR", "face": "CIV", "away": "ECU", "marquee": "BRA", "sub": "IVORY COAST vs ECUADOR" },
+    { "ep": 16, "dir": "match16-sweden-vs-tunisia", "img": "content/images/Tunisia/HannibalMejbri.png", "name": "MEJBRI", "hook": "THEY OPENED<br>THE DOOR", "face": "TUN", "away": "SWE", "marquee": "BRA", "sub": "SWEDEN vs TUNISIA" },
+    { "ep": 17, "dir": "match17-spain-vs-cape-verde", "img": "content/images/Cape_Verde/Ryan-Mendes.png", "name": "MENDES", "hook": "THEIR FIRST<br>EVER", "face": "CPV", "away": "ESP", "marquee": "BRA", "sub": "SPAIN vs CAPE VERDE" },
     { "ep": 18, "dir": "match18-belgium-vs-egypt", "img": "content/images/Egypt/MohamedSalah.png", "name": "SALAH", "hook": "NEVER<br>WON", "face": "EGY", "away": "BEL", "marquee": "BRA", "sub": "BELGIUM vs EGYPT" }
   ]
 }
