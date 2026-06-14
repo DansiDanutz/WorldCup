@@ -9,13 +9,20 @@ tournament. Pipeline reference: `docs/SCORING.md`,
 ## How scoring works (already built & deployed)
 
 1. A match result is saved to `worldcup_matches` (`status='completed'`).
-2. `worldcup_apply_match_points(match_id)` writes per-team points into
-   `worldcup_entry_match_points` for **all** draft/committed/locked entries.
+2. **A database trigger auto-applies points the moment a match is completed.**
+   `worldcup_apply_points_on_complete` (migration
+   `20260614010000_worldcup_auto_apply_points_trigger.sql`) fires on any write
+   that marks a match `completed` — admin route, cron, or a direct/simple
+   operator write — and calls `worldcup_apply_match_points(match_id)`, writing
+   per-team points into `worldcup_entry_match_points` for **all**
+   draft/committed/locked entries. It re-applies if a score is later corrected,
+   and is recursion-safe.
 3. The leaderboard **views** (`worldcup_awarded_leaderboard` = paid prize board,
    `worldcup_public_leaderboard` = free+paid community board) recompute live — no
    refresh job needed. Points = `base × team_coefficient × stage_coefficient`.
 
-Two Vercel crons drive this automatically (`vercel.json`):
+So: **record the result → points + leaderboard update instantly, no extra step.**
+The two Vercel crons remain as a safety net + the external-results fetcher (`vercel.json`):
 - `/api/cron/results` — hourly: fetch results for due matches → apply points.
 - `/api/cron/apply` — hourly at :30: idempotent backfill for any completed match
   whose points were not yet applied.
