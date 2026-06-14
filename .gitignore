@@ -58,3 +58,6 @@ marketing/match-videos/*/ep10_pipeline.sh
 marketing/match-videos/*/shots.log
 marketing/match-videos/*/ep*_pipeline.sh
 marketing/match-videos/*/dl*.sh
+
+# Thumbnail kit: committed source + per-episode thumbnail.jpg; out/ is regenerable
+marketing/match-videos/_thumbnail-kit/out/
