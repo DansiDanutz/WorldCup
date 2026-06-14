@@ -21,23 +21,32 @@ The bottleneck has never been content quality. It's distribution, timing and pac
 
 ---
 
-## ⚠️ OPEN ITEM — resolve before anything else: which channel is real?
+## ✅ RESOLVED — canonical channel + a branding problem to fix
 
-Two different channel IDs are in play:
+**Canonical channel: `@DansLab-Kimi`** (https://youtube.com/@DansLab-Kimi),
+confirmed by the owner Jun 14. Use this handle as the single source everywhere;
+retire/redirect any other channel so effort isn't split (split channels can't
+build one identity and momentum dies).
 
-- Owner-supplied link (Jun 14): `UC7kFHZYDL2Z5eB8i9CVNyWg`
-- Referenced in `VIEWS_RESCUE_PLAN.md` §6: `UC7j29XhArv5tlRqQj2qAb4Q`
+> Two `UC…` IDs were seen earlier (`UC7kFHZYDL2Z5eB8i9CVNyWg` and
+> `UC7j29XhArv5tlRqQj2qAb4Q`); the **handle** `@DansLab-Kimi` is now the
+> authoritative identifier. Confirm which `UC…` resolves to it (Studio →
+> Settings → Channel, or the API) only if a raw ID is ever needed.
 
-If episodes/effort are split across two channels, the algorithm can't build a
-single channel identity and momentum dies. **Pick ONE canonical channel**,
-move/retire content off the other, and tell Claude the correct ID so every doc
-and the site→channel funnel can be aligned. Do not run both in parallel.
+### ⚠️ Branding finding (high impact, easy fix)
+The channel name/handle reads **"DansLab"**, but 100% of the content is the
+**WorldCup26 Legends** series. That mismatch costs you on three fronts:
+search (nobody searches "DansLab"), click trust (the name doesn't match the
+thumbnails), and algorithm topic-modelling. **Recommended:** rename the channel
+to **WorldCup26 Legends** and the handle to **@worldcup26legends** (both free,
+instant, in §2). Keep "DansLab" only if it's a deliberate multi-project parent
+brand — in which case still set the handle to something football-searchable.
 
 ---
 
 ## 1. THIS WEEK — priority order (highest impact first)
 
-- [ ] **Decide the canonical channel** (open item above). Everything else points at it.
+- [ ] **Rename channel → "WorldCup26 Legends" / `@worldcup26legends`** (branding fix above). Everything else points at the one channel.
 - [ ] **Channel configuration pass** — §2, ~30 min in YouTube Studio, one time.
 - [ ] **Retitle live episodes** to the hook-first titles in `UPLOAD_PACKS.md`
       (Ep2 & Ep3 still carry old "Highlights & All Goals" titles — pure lost CTR).
@@ -53,8 +62,12 @@ and the site→channel funnel can be aligned. Do not run both in parallel.
 YouTube Studio → Customization / Settings.
 
 ### Handle & URL
-- Handle: `@worldcup26legends` (Settings → Channel → set a memorable handle)
-- This becomes `youtube.com/@worldcup26legends` — use it everywhere instead of the `UC…` URL.
+- **Current:** `@DansLab-Kimi` → https://youtube.com/@DansLab-Kimi
+- **Recommended rename:** handle `@worldcup26legends`, channel name
+  `WorldCup26 Legends` (Settings → Channel → Basic info / Customization →
+  Branding). Free and instant; aligns name ↔ thumbnails ↔ search.
+- Use the `@handle` URL everywhere (campaign copy, site footer, Shorts) instead
+  of the `UC…` link.
 
 ### Channel name & "About" description
 ```

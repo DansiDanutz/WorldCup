@@ -62,7 +62,8 @@ thumbnail) + pinned comment + 3 Shorts staggered around it (1 the day before,
 ### 6. Site → channel funnel (DONE in code)
 worldcup26.world now cross-promotes the YouTube series (the campaign sends
 people to the site; the site now sends them to the channel). Channel link:
-https://www.youtube.com/channel/UC7j29XhArv5tlRqQj2qAb4Q
+https://www.youtube.com/@DansLab-Kimi (canonical handle, confirmed Jun 14 —
+see CHANNEL_GROWTH_ACTION_PLAN.md for the branding-rename recommendation).
 
 ### 7. What NOT to do
 - Don't buy views/subs — kills the channel's recommendation profile.
