@@ -155,6 +155,6 @@ export const PREDICTIONS: MatchPrediction[] = [
     date: "Jun 14, 2026",
     score: "2–2",
     hook: "Total Football vs the Samurai; Mitoma's late equaliser.",
-    youtube: null,
+    youtube: "https://youtu.be/vKJ1O2sNV1Y",
   },
 ];
