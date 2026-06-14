@@ -61,6 +61,7 @@ import type {
   MyAccountStatus,
   PaidActionGate,
   PaidActionGates,
+  PublicLeaderboardRow,
   WorldCupTournament,
   WorldCupMatch,
   WorldCupStage,
@@ -75,6 +76,7 @@ type DashboardProps = {
   stages: WorldCupStage[];
   matches: WorldCupMatch[];
   leaderboard: LeaderboardRow[];
+  publicLeaderboard: PublicLeaderboardRow[];
   dueMatches: DueMatch[];
   publicPaidActionGates?: PaidActionGates;
 };
@@ -163,6 +165,7 @@ export function Dashboard({
   stages,
   matches,
   leaderboard,
+  publicLeaderboard,
   dueMatches,
   publicPaidActionGates,
 }: DashboardProps) {
@@ -1949,10 +1952,11 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Leaderboard</h2>
                 <p className="panel-subtitle">
+                  Everyone who locks 3 picks appears here.{" "}
                   {paidPlaces >= 10
-                    ? "Top 10 positions share the prize pool."
+                    ? "Top 10 paid positions share the prize pool."
                     : paidPlaces > 0
-                      ? `Top ${paidPlaces} positions share the prize pool.`
+                      ? `Top ${paidPlaces} paid positions share the prize pool.`
                       : "Paid places are calculated after players lock entries."}
                 </p>
               </div>
@@ -2011,16 +2015,16 @@ export function Dashboard({
               </div>
             ) : null}
             <div className="leaderboard-list">
-              {leaderboard.length === 0 ? (
+              {publicLeaderboard.length === 0 ? (
                 <div className="leaderboard-empty">
                   <div className="empty-icon">
                     <Trophy size={20} />
                   </div>
                   <div>
-                    <div className="leaderboard-name">No locked entries yet.</div>
+                    <div className="leaderboard-name">No entries yet.</div>
                     <p>
-                      Free picks still keep a private score preview; the public board starts when a
-                      ticket locks an entry.
+                      Pick 3 teams and lock them in free to appear on the board. Everyone is shown
+                      here — a ticket also puts you in the cash prize pool.
                     </p>
                   </div>
                   <a className="button secondary" href="#pick">
@@ -2029,12 +2033,31 @@ export function Dashboard({
                   </a>
                 </div>
               ) : (
-                leaderboard.map((row) => (
+                publicLeaderboard.map((row) => (
                   <div className="leaderboard-row" key={row.entry_id}>
                     <div className="leaderboard-main">
                       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                         <span className="rank">{row.leaderboard_rank}</span>
                         <span className="leaderboard-name">{row.display_name}</span>
+                        <span
+                          className={row.is_paid ? "entry-badge entry-badge-paid" : "entry-badge entry-badge-free"}
+                          title={
+                            row.is_paid
+                              ? "Paid entry — in the cash prize pool"
+                              : "Free entry — on the board, not in the cash pool"
+                          }
+                          style={{
+                            fontSize: 10,
+                            fontWeight: 700,
+                            letterSpacing: 0.5,
+                            borderRadius: 6,
+                            padding: "1px 6px",
+                            border: "1px solid currentColor",
+                            color: row.is_paid ? "var(--gold)" : "#8a94a6",
+                          }}
+                        >
+                          {row.is_paid ? "POOL" : "FREE"}
+                        </span>
                       </div>
                       <span className="points">{formatPoints(row.total_points)}</span>
                     </div>

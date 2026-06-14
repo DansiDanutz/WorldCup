@@ -69,6 +69,12 @@ export type LeaderboardRow = {
   leaderboard_rank: number;
 };
 
+// Public/community board row: every finalized entry, free ("committed") and paid
+// ("locked"). is_paid marks who is actually in the cash prize pool.
+export type PublicLeaderboardRow = LeaderboardRow & {
+  is_paid: boolean;
+};
+
 export type DueMatch = {
   id: string;
   tournament_id: string;
