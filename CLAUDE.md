@@ -13,6 +13,9 @@ read ALL THREE of these living knowledge files:
 - **`content/youtube/MONETIZATION_STATUS.md`** — real YPP eligibility, the
   watch-hours path, and the channel-consolidation blocker (only the watch-time
   requirement is unmet; content is split across two channels = 0 watch hours).
+- **`content/youtube/PRODUCTION_ACCELERATION.md`** — how we stay 48h ahead: the
+  rolling 2-episode buffer, the backwards-from-kickoff timebox, batching the
+  Higgsfield asset step, and the one-command `build-episode.sh` (render ‖ VO).
 
 After every published episode, UPDATE the playbook (log results at 48h + new
 learnings) and tick the episode off in the premiere calendar.
