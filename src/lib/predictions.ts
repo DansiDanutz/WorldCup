@@ -145,7 +145,7 @@ export const PREDICTIONS: MatchPrediction[] = [
     date: "Jun 14, 2026",
     score: "3–0",
     hook: "David and the machine; Eloy Room's 34' save.",
-    youtube: null,
+    youtube: "https://youtu.be/uKZ5R7vlBi8",
   },
   {
     ep: 14,
