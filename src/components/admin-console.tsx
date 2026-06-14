@@ -2477,7 +2477,11 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Result entry</h2>
-                <p className="panel-subtitle">Manual fallback; also progresses the bracket.</p>
+                <p className="panel-subtitle">
+                  Automatic by default — finished matches score themselves. Use this only to
+                  correct a result; picking a completed match pre-fills its current score and
+                  saving re-applies points instantly. Also progresses the bracket.
+                </p>
               </div>
               <ClipboardCheck size={18} color="var(--green)" />
             </div>
@@ -2487,14 +2491,42 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 <select
                   id="result-match"
                   value={resultForm.matchId}
-                  onChange={(event) => setResultForm((current) => ({ ...current, matchId: event.target.value }))}
+                  onChange={(event) => {
+                    const id = event.target.value;
+                    const selected = matches.find((item) => item.id === id);
+                    setResultForm((current) => {
+                      // Fresh entry for a not-yet-completed match; pre-fill the
+                      // current result when correcting a completed one.
+                      if (!selected || selected.status !== "completed") {
+                        return { ...current, matchId: id };
+                      }
+                      const str = (value: number | string | null) =>
+                        value === null || value === undefined ? "" : String(value);
+                      return {
+                        matchId: id,
+                        finishMethod: selected.finish_method ?? "90",
+                        homeGoals90: str(selected.home_goals_90),
+                        awayGoals90: str(selected.away_goals_90),
+                        homeGoalsTotal: str(selected.home_goals_total),
+                        awayGoalsTotal: str(selected.away_goals_total),
+                        homePenalties: str(selected.home_penalties),
+                        awayPenalties: str(selected.away_penalties),
+                        winnerTeamId: str(selected.winner_team_id),
+                      };
+                    });
+                  }}
                 >
                   <option value="">Select match</option>
-                  {matches.map((match) => (
-                    <option key={match.id} value={match.id}>
-                      #{match.match_number} {match.home_slot} vs {match.away_slot}
-                    </option>
-                  ))}
+                  {matches.map((match) => {
+                    const done = match.status === "completed";
+                    const score = `${match.home_goals_total ?? match.home_goals_90 ?? 0}-${match.away_goals_total ?? match.away_goals_90 ?? 0}`;
+                    return (
+                      <option key={match.id} value={match.id}>
+                        #{match.match_number} {match.home_slot} vs {match.away_slot}
+                        {done ? ` · ✓ ${score}${match.points_applied_at ? " (pts)" : ""}` : ""}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
               <div className="field">
