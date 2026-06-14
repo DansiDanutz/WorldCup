@@ -3,6 +3,7 @@ import type {
   DueMatch,
   LeaderboardRow,
   MatchTeamPoints,
+  PublicLeaderboardRow,
   WorldCupTournament,
   WorldCupMatch,
   WorldCupStage,
@@ -13,8 +14,15 @@ import { normalizeWorldCupTicketPriceAmount } from "@/lib/worldcup-ticket-price"
 export async function getDashboardData() {
   const supabase = createServerReadSupabaseClient();
 
-  const [tournamentResult, teamsResult, stagesResult, matchesResult, leaderboardResult, dueResult] =
-    await Promise.all([
+  const [
+    tournamentResult,
+    teamsResult,
+    stagesResult,
+    matchesResult,
+    leaderboardResult,
+    publicLeaderboardResult,
+    dueResult,
+  ] = await Promise.all([
       supabase
         .from("worldcup_tournaments")
         .select(
@@ -42,6 +50,13 @@ export async function getDashboardData() {
         .select("entry_id,tournament_id,display_name,total_points,teams,leaderboard_rank")
         .order("leaderboard_rank", { ascending: true })
         .limit(50),
+      // Public/community board: every finalized entry (free + paid) so the board
+      // is visible to everyone, not just paying members.
+      supabase
+        .from("worldcup_public_leaderboard")
+        .select("entry_id,tournament_id,display_name,is_paid,total_points,teams,leaderboard_rank")
+        .order("leaderboard_rank", { ascending: true })
+        .limit(50),
       supabase
         .from("worldcup_matches_due_for_result_check")
         .select(
@@ -57,6 +72,7 @@ export async function getDashboardData() {
     stagesResult,
     matchesResult,
     leaderboardResult,
+    publicLeaderboardResult,
     dueResult,
   ]) {
     if (result.error) {
@@ -75,6 +91,7 @@ export async function getDashboardData() {
     stages: (stagesResult.data ?? []) as WorldCupStage[],
     matches: (matchesResult.data ?? []) as WorldCupMatch[],
     leaderboard: (leaderboardResult.data ?? []) as LeaderboardRow[],
+    publicLeaderboard: (publicLeaderboardResult.data ?? []) as PublicLeaderboardRow[],
     dueMatches: (dueResult.data ?? []) as DueMatch[],
   };
 }
