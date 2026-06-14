@@ -98,7 +98,7 @@ export const PREDICTIONS: MatchPrediction[] = [
     youtube: "https://youtu.be/4RxCyLtIccs",
   },
   {
-    ep: 8,
+    ep: 11,
     home: "England",
     away: "Ghana",
     stage: "Group L · Matchday 2",
@@ -128,7 +128,7 @@ export const PREDICTIONS: MatchPrediction[] = [
     youtube: "https://youtu.be/x5N4LiIgXRo",
   },
   {
-    ep: 11,
+    ep: 12,
     home: "Australia",
     away: "Turkey",
     stage: "Group stage",
@@ -138,7 +138,7 @@ export const PREDICTIONS: MatchPrediction[] = [
     youtube: null,
   },
   {
-    ep: 12,
+    ep: 13,
     home: "Germany",
     away: "Curaçao",
     stage: "Group stage",
@@ -148,7 +148,7 @@ export const PREDICTIONS: MatchPrediction[] = [
     youtube: null,
   },
   {
-    ep: 13,
+    ep: 14,
     home: "Netherlands",
     away: "Japan",
     stage: "Group stage",
