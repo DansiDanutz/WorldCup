@@ -98,6 +98,27 @@ two-stage ffmpeg mux (audio master, then video encode). See that project's
 README.md for commands. Generated media comes from Higgsfield (job IDs in
 `jobs-manifest.json`, re-downloadable via `npm run fetch-assets`).
 
+### Series versioning & insertion (CHECK BEFORE building any episode)
+
+The series is numbered and growing — insert new work in the RIGHT place, never
+reuse or skip a number. Before creating an episode:
+
+1. **Find the next number.** Episodes are numbered by **production order**. The
+   next number = (highest existing `marketing/match-videos/matchNN-...` folder) + 1.
+   Cross-check the `SERIES_PLAYBOOK.md` results log and `UPLOAD_PACKS.md`.
+   **Current state: latest is Ep14 (France vs Senegal) → next is Ep15.**
+2. **Folder name = `matchNN-teama-vs-teamb`** where `NN` is the zero-padded
+   episode number (folder number == episode number; the series starts at
+   `match02` — Ep1 was the inaugural one-off).
+3. **Keep the number consistent across EVERY artifact:** VO says "episode N";
+   the Mystery Supporter is **Legend 0NN**; the upload-pack title ends `(Ep.N)`;
+   the next-episode tease points to **Ep N+1**; add the `UPLOAD_PACKS.md` entry
+   in sequence and tick the row in `PREMIERE_CALENDAR.md`.
+4. **Stay on canon:** scores/dates/players consistent with `content/Stories/`
+   and earlier episodes; never contradict `content/README.md`'s group draw.
+5. **Reuse, don't duplicate:** build on the Ep2 template (content swap), reuse
+   the music/SFX library and any existing player/crowd clips for repeat nations.
+
 ## Content library
 
 - `content/<Team>/` — Info/ (overviews, players), Character/ (image prompts), Match/
