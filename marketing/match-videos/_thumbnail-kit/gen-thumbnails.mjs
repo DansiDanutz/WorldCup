@@ -25,6 +25,8 @@ const COLORS = {
   ARG: '#75aadb', ALG: '#0a7d3e', HAI: '#00209f', ENG: '#cf142b', GHA: '#006b3f',
   QAT: '#8a1538', SUI: '#d52b1e', SCO: '#005eb8', AUS: '#00843d', TUR: '#e30a17',
   GER: '#e6b400', CUR: '#1d4ed8', NED: '#f36c21', JPN: '#c0163a',
+  CIV: '#ff7a00', ECU: '#ffd100', SWE: '#006aa7', TUN: '#e70013',
+  ESP: '#c60b1e', CPV: '#003893', BEL: '#ef3340', EGY: '#c8102e',
 };
 
 const dataUri = (p) => {

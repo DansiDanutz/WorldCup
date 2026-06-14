@@ -598,6 +598,110 @@ world cup 2026, worldcup26, Netherlands vs Japan, Netherlands football, Japan fo
 
 ---
 
+## Episode 15 — Ivory Coast vs Ecuador
+
+**Title:** `The Footballer Who Helped Stop a War | Ivory Coast vs Ecuador — World Cup 2026 (Ep.15)`
+
+**Description:**
+```
+In 2005, an Ivory Coast captain dropped to his knees on live TV and begged his country to stop a civil war — and it helped. Tonight, that shirt walks out for the World Cup, against a nation it has never once faced.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 15: Ivory Coast vs Ecuador, Group E. African champions and their fearless flair against the altitude fortress with the meanest defence at the tournament. Their first meeting, ever.
+
+🇨🇮 In 2005 Didier Drogba and his teammates knelt on camera pleading "lay down your weapons" — and in 2007 he had a match moved to the rebel city of Bouaké, where both sides watched together. 🇪🇨 Ecuador, forged in the thin air of Quito, qualified with just two defeats in eighteen games.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "ELEPHANTS" for Ivory Coast, or "ALTITUDE" for Ecuador.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — the plea that stopped a war
+0:16 The story so far
+0:27 Ivory Coast vs Ecuador
+0:37 The second-half promise
+0:46 The history — 2005 & Bouaké 2007
+1:38 The Elephants — Kessié, Adingra, Diallo
+2:14 La Tri — the altitude wall, Caicedo & Hincapié
+2:49 The duel — flair vs the wall
+3:00 Our prediction
+3:08 Adingra burns the line — 1-0
+3:31 The mountain holds
+3:40 Valencia equalises — 1-1
+3:53 Full time
+4:03 Do you agree?
+4:12 Legend 015 — the Peacemaker
+4:32 Play free at worldcup26.world
+4:50 Like, share & subscribe
+
+📲 Send this to the friend who still thinks football is only a game.
+
+🎵 Music: "Crossing the Chasm", "Desert City", "Five Armies", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #IvoryCoast #Ecuador #Drogba #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, Ivory Coast vs Ecuador, Ivory Coast football, Ecuador football, Les Elephants, La Tri, Didier Drogba, Franck Kessie, Simon Adingra, Moises Caicedo, Piero Hincapie, Enner Valencia, FIFA World Cup 2026, Group E, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
+## Episode 18 — Belgium vs Egypt
+
+**Title:** `The #1 Team That Never Won | Belgium vs Egypt — World Cup 2026 (Ep.18)`
+
+**Description:**
+```
+For four years Belgium were the best team on Earth — and won nothing. Egypt have ruled Africa seven times — and never won a single World Cup match. Tonight, two cursed crowns collide, and an old scribe is keeping score.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 18: Belgium vs Egypt, Group G. The Red Devils' golden generation, on its last dance, against the Pharaohs and Mohamed Salah.
+
+🇧🇪 Belgium held the FIFA world No.1 ranking for nearly four years and reached the 2018 semifinal — yet De Bruyne, Lukaku and Courtois have never won a major trophy. 🇪🇬 Egypt were the first African and Arab nation ever to play a World Cup (1934) and have won the Africa Cup of Nations a record 7 times — but have never won a single World Cup match across 1934, 1990 and 2018.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "DEVILS" if Belgium's golden generation finally delivers, or "PHARAOHS" if Salah breaks the curse.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — two crowns, two curses
+0:16 The story so far
+0:27 Belgium vs Egypt
+0:37 The last-dance promise
+0:46 The history — 1934 & the two curses
+1:38 The Red Devils — De Bruyne, Lukaku, Doku
+2:14 The Pharaohs — Salah & Marmoush
+2:49 The duel — De Bruyne vs Salah
+3:00 Our prediction
+3:08 Lukaku finishes for Belgium (1-0)
+3:17 Salah levels it (1-1)
+3:38 Doku sets up the winner (2-1)
+3:53 Full time
+4:03 Do you agree?
+4:12 Legend 018 — the Keeper of the Two Crowns
+4:32 Play free at worldcup26.world
+4:50 Like, share & subscribe
+
+📲 Send this to the friend who still believes Salah can break the curse.
+
+🎵 Music: "Crossing the Chasm", "Desert City", "Five Armies", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #Belgium #Egypt #Salah #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, Belgium vs Egypt, Belgium football, Egypt football, Mohamed Salah, Kevin De Bruyne, Romelu Lukaku, Jeremy Doku, Omar Marmoush, Pharaohs, Red Devils, FIFA World Cup 2026, Group G, golden generation, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
 ## Shorts (per episode) — caption template
 
 Post 2 per day. Caption format:
