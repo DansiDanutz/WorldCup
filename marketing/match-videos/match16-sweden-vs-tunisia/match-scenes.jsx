@@ -376,13 +376,18 @@ function SceneDrama() {
         <ScoreBug start={S + 22.0} swe={1} tun={0} minute="2nd half" />
       </Sprite>
       <GoalFlash at={S + 31.5} color={MV.tun} />
-      <Confetti start={S + 31.7} dur={11} colors={[MV.tun, '#fff', MV.fire, MV.gold]} />
-      <Sprite start={220.5} end={232}>
+      <Confetti start={S + 31.7} dur={8} colors={[MV.tun, '#fff', MV.fire, MV.gold]} />
+      <Sprite start={220.5} end={228.5}>
         <ScoreBug start={S + 31.5} swe={1} tun={1} minute="MEJBRI · THE FIRE" />
       </Sprite>
+      <GoalFlash at={S + 39.5} color={MV.swe} />
+      <Confetti start={S + 39.7} dur={10} colors={[MV.swe, '#fff', MV.sweBlue, MV.gold]} />
+      <Sprite start={228.5} end={235}>
+        <ScoreBug start={S + 39.5} swe={2} tun={1} minute="ISAK · THE WINNER" />
+      </Sprite>
 
-      <Sprite start={232} end={243.0}>
-        <FullTimeCard start={S + 43.5} />
+      <Sprite start={235} end={243.0}>
+        <FullTimeCard start={S + 46.0} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -403,14 +408,14 @@ function FullTimeCard({ start }) {
             <FlagSWE w={156} />
             <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>SWEDEN</span>
           </div>
-          <BigTitle size={170} color={MV.gold}>1 — 1</BigTitle>
+          <BigTitle size={170} color={MV.gold}>2 — 1</BigTitle>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <FlagTUN w={150} />
             <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>TUNISIA</span>
           </div>
         </div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 34, maxWidth: 1000 }}>
-          The frost would not melt. The fire would not die. Two warriors, flat on the grass, both having given everything.
+          The fire burned bright — but the frost had the final word. Gyökeres and Isak settle it for Sweden.
         </div>
       </div>
     </div>

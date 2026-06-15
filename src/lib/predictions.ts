@@ -173,8 +173,8 @@ export const PREDICTIONS: MatchPrediction[] = [
     away: "Tunisia",
     stage: "Group F",
     date: "Jun 15, 2026",
-    score: "1–1",
-    hook: "Frost vs fire; the team that opened Africa's door, Mejbri's equaliser.",
+    score: "2–1",
+    hook: "Frost vs fire; Tunisia's door creaks open, but Gyökeres & Isak settle it.",
     youtube: null,
   },
   {

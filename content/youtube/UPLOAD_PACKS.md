@@ -681,7 +681,8 @@ In 1978, a tiny North African nation kicked open a door no African team had ever
 3:00 Our prediction
 3:09 Gyökeres pounces — 1-0
 3:31 Mejbri and the fire answer — 1-1
-3:51 Full time
+3:49 Isak wins it — 2-1
+3:55 Full time
 4:03 Do you agree?
 4:12 Legend 016 — the Firekeeper
 4:32 Play free at worldcup26.world

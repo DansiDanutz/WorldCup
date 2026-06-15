@@ -1,7 +1,7 @@
 # Episode 16 — Sweden vs Tunisia
 
 **Group F · real kickoff ~Jun 15, 2026** · Mystery Supporter: **Legend 016 — the Firekeeper**
-Canon: `content/Stories/Sweden-vs-Tunisia.md` · Script: `narration.json` · Predicted score (OUR PREDICTION): **1–1**
+Canon: `content/Stories/Sweden-vs-Tunisia.md` · Script: `narration.json` · Predicted score (OUR PREDICTION): **2–1 Sweden** (Gyökeres 1-0, Mejbri 1-1, Isak winner 2-1)
 
 > Packaging status: thumbnail ✅, narration script ✅, upload pack ✅. Video render is the
 > downstream step (built from the Ep2 template: React timeline → Playwright frames →

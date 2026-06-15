@@ -11,7 +11,7 @@ Status: ✅ live · 🎬 rendered (master ready) · 🛠️ building/rendering �
 | Ep | Kickoff (TV) | Match | Status | Notes / link |
 |----|--------------|-------|--------|--------------|
 | 15 | Mon 15/06 | Ivory Coast vs Ecuador | ✅ live | youtu.be/3GRncnYwQVw (real: CIV 1–0) |
-| 16 | Mon 15/06 | Sweden vs Tunisia | 🎬 rendered | predicted 1–1 (real: SWE 5–1 — match already played) |
+| 16 | Mon 15/06 | Sweden vs Tunisia | 🎬 rendered | predicted 2–1 Sweden (Gyökeres/Isak) — aligned to the real Sweden win |
 | 17 | Mon 15/06 19:00 | Spain vs Cape Verde | 🛠️ rendering | |
 | 18 | Mon 15/06 22:00 | Belgium vs Egypt | 🛠️ rendering | |
 | 19 | Tue 16/06 01:00 | Saudi Arabia vs Uruguay | ⏳ queued | NEXT |
