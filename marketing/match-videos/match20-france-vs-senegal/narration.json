@@ -1,10 +1,10 @@
 {
-  "comment": "Brian (ElevenLabs) VO for the 300s Match 14 video — France vs Senegal, Group I, Matchday 1, SoFi Stadium, Los Angeles. Series episode 14. On-canon with content/Stories/France-vs-Senegal.md ('The Empire and the Lion'). REAL history: the two nations have met only ONCE that mattered — the 2002 World Cup opening match, when Senegal, a former French colony, beat the reigning world champions France 1-0 (Papa Bouba Diop, 30'), one of the greatest upsets ever. The ending here is OUR PREDICTION (a 1-1 draw built on the Story's 56th-minute Mbappe-vs-Mane sequence), explicitly labelled as a prediction. `at` = start time in seconds; mux.mjs time-fits lines to their slots. SOCCER ONLY.",
+  "comment": "Brian (ElevenLabs) VO for the 300s Match 20 video — France vs Senegal, Group I, Matchday 1, SoFi Stadium, Los Angeles. Series episode 20. On-canon with content/Stories/France-vs-Senegal.md ('The Empire and the Lion'). REAL history: the two nations have met only ONCE that mattered — the 2002 World Cup opening match, when Senegal, a former French colony, beat the reigning world champions France 1-0 (Papa Bouba Diop, 30'), one of the greatest upsets ever. The ending here is OUR PREDICTION (a 1-1 draw built on the Story's 56th-minute Mbappe-vs-Mane sequence), explicitly labelled as a prediction. `at` = start time in seconds; mux.mjs time-fits lines to their slots. SOCCER ONLY.",
   "voice": "Brian",
   "lines": [
     { "at": 0.8,  "text": "Listen. One goal. One night in two thousand and two... and the champions of the world fell to a country they once ruled." },
     { "at": 9.0,  "text": "Tonight, the empire and the lion meet again. And the ghosts of that night... are still watching." },
-    { "at": 16.5, "text": "Welcome back to WorldCup twenty-six Legends — episode fourteen. France versus Senegal. Group I. SoFi Stadium, Los Angeles." },
+    { "at": 16.5, "text": "Welcome back to WorldCup twenty-six Legends — episode twenty. France versus Senegal. Group I. SoFi Stadium, Los Angeles." },
     { "at": 28.5, "text": "Seventy thousand fans under the cathedral of American sport. The blue of France, the green of Senegal... and a wound that never fully healed." },
     { "at": 44.5, "text": "These two nations have met only once where it truly mattered. The opening match of the two thousand and two World Cup. France: reigning world champions, reigning European champions, untouchable." },
     { "at": 56.0, "text": "Senegal: a former French colony, playing in their very first World Cup, with a squad raised in the French leagues. Nobody gave them a prayer." },
@@ -34,6 +34,6 @@
     { "at": 266.0, "text": "Tonight... they say the drum was heard. Collect the Lion of Goree — and forty-seven more legends — inside the game." },
     { "at": 270.5, "text": "Now here is where YOU come in. Did you see this coming? At WorldCup twenty-six dot world, you pick three of the forty-eight nations — and every single goal they score... scores for you." },
     { "at": 281.0, "text": "Underdogs multiply your points. The leaderboard moves live with every goal. And it is completely free to play. Your three picks could change everything." },
-    { "at": 288.5, "text": "If this story moved you, send it to the friend who still thinks Africa cannot stand toe to toe with Europe. Like, subscribe... because next, Spain begin their hunt — and the storytellers have already seen the ending." }
+    { "at": 288.5, "text": "If this story moved you, send it to the friend who still thinks Africa cannot stand toe to toe with Europe. Like, subscribe... because the next legend is already waiting in the shadows — and the storytellers have already seen the ending." }
   ]
 }

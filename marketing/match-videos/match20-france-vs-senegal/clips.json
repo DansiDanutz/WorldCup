@@ -1,5 +1,5 @@
 {
-  "comment": "Ep14 France vs Senegal — single source of truth for generated clips, music score and SFX on the 300s timeline. Same structure/slots as the Ep2 template; assets swapped to France/Senegal. match.html places each clip visually (looping the 5s source while visible); mux.mjs mixes each clip's own audio once at `at` at volume `vol` (vol 0 = visual only), the music cues (ducked under Brian's VO) and the ElevenLabs SFX hits. SOCCER ONLY — see README asset prompts.",
+  "comment": "Ep20 France vs Senegal — single source of truth for generated clips, music score and SFX on the 300s timeline. Same structure/slots as the Ep2 template; assets swapped to France/Senegal. match.html places each clip visually (looping the 5s source while visible); mux.mjs mixes each clip's own audio once at `at` at volume `vol` (vol 0 = visual only), the music cues (ducked under Brian's VO) and the ElevenLabs SFX hits. SOCCER ONLY — see README asset prompts.",
   "clips": [
     { "id": "glimpse-mbappe", "src": "assets/player-mbappe.mp4",   "at": 4.2,   "dur": 0.34, "vol": 0 },
     { "id": "glimpse-stad",   "src": "assets/stadium-sofi.mp4",    "at": 7.0,   "dur": 0.42, "vol": 0 },

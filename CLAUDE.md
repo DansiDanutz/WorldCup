@@ -103,10 +103,24 @@ README.md for commands. Generated media comes from Higgsfield (job IDs in
 The series is numbered and growing — insert new work in the RIGHT place, never
 reuse or skip a number. Before creating an episode:
 
-1. **Find the next number.** Episodes are numbered by **production order**. The
-   next number = (highest existing `marketing/match-videos/matchNN-...` folder) + 1.
-   Cross-check the `SERIES_PLAYBOOK.md` results log and `UPLOAD_PACKS.md`.
-   **Current state: latest is Ep14 (France vs Senegal) → next is Ep15.**
+1. **Find the next number.** Episodes are numbered by **production order**, and
+   in this repo **Ep number == folder number** (canonical). The next number =
+   (highest existing `marketing/match-videos/matchNN-...` folder across ALL
+   branches) + 1. Cross-check the `SERIES_PLAYBOOK.md` results log and `UPLOAD_PACKS.md`.
+   **⚠️ CHECK OTHER BRANCHES FIRST** (`git fetch origin && git branch -r`, then
+   `git ls-tree -d --name-only <branch> marketing/match-videos/`) — episodes are
+   produced in parallel sessions on separate branches, so `main` alone is NOT the
+   full picture. (This rule exists because a session once mis-numbered France–Senegal
+   as Ep14 while Ep14 = Netherlands–Japan and Ep15–19 already existed elsewhere.)
+   **Current state: `match15`–`match19` (Ivory Coast–Ecuador, Sweden–Tunisia,
+   Spain–Cape Verde, Belgium–Egypt, France–Iraq) are packaged on branch
+   `claude/episode-renumber-publish-order`; `match20` (France–Senegal) is here →
+   next free is Ep21.**
+   > Production order (this repo) ≠ the channel's PUBLISH order. On YouTube,
+   > England–Ghana published out of order as Ep11 (no public Ep8), so the channel's
+   > episode labels drift from our folder numbers — see `PRODUCTION_LOG.md`. Our
+   > folder/Ep number is the source of truth for the repo; the publish label is
+   > whatever the channel actually shows.
 2. **Folder name = `matchNN-teama-vs-teamb`** where `NN` is the zero-padded
    episode number (folder number == episode number; the series starts at
    `match02` — Ep1 was the inaugural one-off).

@@ -595,19 +595,19 @@ world cup 2026, worldcup26, Netherlands vs Japan, Netherlands football, Japan fo
 
 ---
 
-## Episode 14 — France vs Senegal
+## Episode 20 — France vs Senegal
 
-**Title:** `The Night the Colony Humbled the Empire | France vs Senegal — World Cup 2026 (Ep.14)`
+**Title:** `The Night the Colony Humbled the Empire | France vs Senegal — World Cup 2026 (Ep.20)`
 
 > Scheduling note: France v Senegal is Matchday 1 (already played) → publish as an
 > evergreen upload, not a ≥48h Premiere. For a Premiere, use an upcoming France
-> fixture (v Iraq / v Norway). Episode number stays 14 (production order).
+> fixture (v Norway — v Iraq is already produced as Ep19). Episode number stays 20 (production order).
 
 **Description:**
 ```
 In 2002, Senegal — a former French colony at its first ever World Cup — beat the reigning world champions France 1-0 and sent them home without a single goal. Twenty-four years later, the empire and the lion meet again in Los Angeles.
 
-⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 14: France vs Senegal, Group I, SoFi Stadium. The Prince of Bondy against the King of Teranga.
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 20: France vs Senegal, Group I, SoFi Stadium. The Prince of Bondy against the King of Teranga.
 
 🇫🇷 Kylian Mbappé — 38 km/h, a hat-trick in a World Cup final. 🇸🇳 Sadio Mané — Senegal's greatest scorer, who walked 400km for a dream and built his village a hospital, a school and a mosque.
 
@@ -628,7 +628,7 @@ In 2002, Senegal — a former French colony at its first ever World Cup — beat
 2:44 The Duel — the Prince vs the King
 3:06 The Match — our prediction
 4:02 Our prediction: 1-1
-4:16 Legend 014 — the Lion of Gorée
+4:16 Legend 020 — the Lion of Gorée
 4:30 Play free at worldcup26.world
 4:48 Like, share & subscribe
 

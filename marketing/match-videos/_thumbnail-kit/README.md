@@ -30,7 +30,7 @@ node gen-thumbnails.mjs --install # render all AND copy into each episode's thum
 Append an entry to `thumbnails.config.json`:
 
 ```json
-{ "ep": 14, "dir": "match14-...", "img": "content/images/<Team>/<Player>.png",
+{ "ep": 20, "dir": "match20-...", "img": "content/images/<Team>/<Player>.png",
   "name": "SURNAME", "hook": "TWO<br>WORDS", "face": "XXX", "away": "YYY",
   "marquee": "BRA", "sub": "HOME vs AWAY" }
 ```

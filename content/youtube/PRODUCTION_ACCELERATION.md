@@ -66,7 +66,7 @@ you're effectively working **5–7 days ahead** of the live match — comfortabl
 5. **One-command unattended build:** `marketing/match-videos/build-episode.sh
    <dir>` chains install → fetch-assets → serve → (render ‖ voice) → mux so an
    episode builds **overnight without babysitting**. Batch several:
-   `for ep in match14-... match15-...; do ./build-episode.sh $ep; done`.
+   `for ep in match20-... match21-...; do ./build-episode.sh $ep; done`.
 6. **Pre-write scripts in batch:** Stories for *every* matchup already exist in
    `content/Stories/` — draft the next several narration scripts in one pass so
    production is never waiting on writing.
