@@ -62,7 +62,7 @@ function ScreenLabeler() {
   const time = useTime();
   useEffect(() => {
     const root = document.getElementById('root');
-    if (root) root.dataset.screenLabel = `WC26 Match 15 · t=${Math.floor(time)}s`;
+    if (root) root.dataset.screenLabel = `WC26 Match 22 · t=${Math.floor(time)}s`;
   }, [Math.floor(time)]);
   return null;
 }
@@ -77,7 +77,7 @@ function SeekBridge() {
 
 function MatchVideo() {
   return (
-    <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26m15">
+    <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26m22">
       <ScreenLabeler />
       <SeekBridge />
       {SCENES.map((s, i) => (

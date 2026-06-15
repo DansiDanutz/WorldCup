@@ -418,23 +418,23 @@ function FullTimeCard({ start }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 56, marginTop: 36 }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <FlagCIV w={150} />
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>IVORY COAST</span>
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>PORTUGAL</span>
           </div>
-          <BigTitle size={170} color={MV.gold}>1 — 1</BigTitle>
+          <BigTitle size={170} color={MV.gold}>3 — 1</BigTitle>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <FlagECU w={150} />
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>ECUADOR</span>
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>DR CONGO</span>
           </div>
         </div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 34, maxWidth: 980 }}>
-          Adingra strikes, Valencia answers — the champions brought the fire, the mountain refused to fall.
+          Leão twice, Ronaldo at the death — Wissa keeps the Leopards roaring. The chase goes on; pride stays intact.
         </div>
       </div>
     </div>
   );
 }
 
-// ── 9. Verdict (243.5–252.5): do you agree? ELEPHANTS / ALTITUDE ─────────────
+// ── 9. Verdict (243.5–252.5): do you agree? SELEÇÃO / LEOPARDS ────────────────
 function SceneVerdict() {
   const { localTime: lt } = useSprite();
   const S = 243.5;
@@ -443,19 +443,19 @@ function SceneVerdict() {
   const b = Easing.easeOutBack(clamp((lt - 1.6) / 0.7, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#0a0f1c' }}>
-      <PitchBackdrop tint="#10241a" dim={0.45} />
+      <PitchBackdrop tint="#1a0a10" dim={0.45} />
       <div style={{ position: 'absolute', top: 150, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: headP }}>
-        <Kicker size={30} color={MV.text}>A first meeting nobody wins — and nobody forgets</Kicker>
+        <Kicker size={30} color={MV.text}>The chase goes on — the Leopards walk off proud</Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 72, color: MV.gold, marginTop: 18, letterSpacing: '0.04em' }}>DO YOU AGREE?</div>
       </div>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 70, zIndex: 26, marginTop: 60 }}>
-        <div style={{ opacity: clamp(a, 0, 1), transform: `translateY(${(1 - a) * 50}px) scale(${0.85 + 0.15 * a})`, background: 'rgba(255,122,0,0.12)', border: `2px solid ${MV.civ}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: MV.civ, letterSpacing: '0.06em' }}>“ELEPHANTS”</div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if Ivory Coast's flair wins the group</div>
+        <div style={{ opacity: clamp(a, 0, 1), transform: `translateY(${(1 - a) * 50}px) scale(${0.85 + 0.15 * a})`, background: 'rgba(170,21,27,0.16)', border: `2px solid ${MV.civ}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: '#ff5d63', letterSpacing: '0.06em' }}>“SELEÇÃO”</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if Ronaldo finally lifts it</div>
         </div>
-        <div style={{ opacity: clamp(b, 0, 1), transform: `translateY(${(1 - b) * 50}px) scale(${0.85 + 0.15 * b})`, background: 'rgba(10,61,145,0.18)', border: `2px solid ${MV.ecu}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: MV.ecu, letterSpacing: '0.06em' }}>“ALTITUDE”</div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if Ecuador's wall is the one nobody breaks</div>
+        <div style={{ opacity: clamp(b, 0, 1), transform: `translateY(${(1 - b) * 50}px) scale(${0.85 + 0.15 * b})`, background: 'rgba(0,127,255,0.18)', border: `2px solid ${MV.ecu}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: MV.ecu, letterSpacing: '0.06em' }}>“LEOPARDS”</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if the door swings open again</div>
         </div>
       </div>
       <Vignette strength={0.5} />
@@ -464,7 +464,7 @@ function SceneVerdict() {
   );
 }
 
-// ── 10. Mystery Supporter (252.5–272.5): Legend 015 — the Peacemaker ─────────
+// ── 10. Mystery Supporter (252.5–272.5): Legend 024 — the Leopard ─────────────
 function SceneMystery() {
   const { localTime: lt } = useSprite();
   const S = 252.5;
@@ -472,25 +472,25 @@ function SceneMystery() {
   const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
-      <KenBurns src="assets/player-diallo.png" start={S} dur={20} from={1.16} to={1.3} panY={-20}
-        dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.1) saturate(1.0) grayscale(0.3)' }} />
+      <KenBurns src="assets/player-mbemba.png" start={S} dur={20} from={1.16} to={1.3} panY={-20}
+        dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.12) saturate(0.95) grayscale(0.4)' }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,
-        background: `radial-gradient(ellipse at ${20 + Math.sin(lt * 0.3) * 14}% 75%, rgba(255,122,0,0.16) 0%, transparent 45%),` +
-                    `radial-gradient(ellipse at ${78 - Math.sin(lt * 0.22) * 12}% 30%, rgba(0,166,79,0.12) 0%, transparent 50%)`,
+        background: `radial-gradient(ellipse at ${20 + Math.sin(lt * 0.3) * 14}% 75%, rgba(0,127,255,0.18) 0%, transparent 45%),` +
+                    `radial-gradient(ellipse at ${78 - Math.sin(lt * 0.22) * 12}% 30%, rgba(247,214,24,0.12) 0%, transparent 50%)`,
       }} />
-      <AmbientParticles start={S} dur={20} count={46} color="255,210,150" maxR={3.5} zIndex={22} />
+      <AmbientParticles start={S} dur={20} count={46} color="180,210,255" maxR={3.5} zIndex={22} />
       <div style={{ position: 'absolute', top: 118, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={26} color="#f4c98a">The Mystery Supporter · Legend No. 015</Kicker>
+        <Kicker size={26} color="#a9cdff">The Mystery Supporter · Legend No. 024</Kicker>
       </div>
       {plateP > 0 && (
         <div style={{
           position: 'absolute', left: 110, bottom: 150, zIndex: 25,
           opacity: clamp(plateP, 0, 1), transform: `translateY(${(1 - plateP) * 50}px)`,
         }}>
-          <div style={{ background: 'rgba(14,12,8,0.9)', border: '1px solid rgba(255,200,120,0.4)', borderRadius: 18, padding: '28px 44px', backdropFilter: 'blur(6px)' }}>
-            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#fff3e2', letterSpacing: '0.02em' }}>THE PEACEMAKER</div>
-            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 24, color: '#f4c98a', letterSpacing: '0.16em', marginTop: 8, maxWidth: 760 }}>HE CARRIES A SMALL BALL EVERYWHERE — THE BALL THAT DID WHAT ARMIES COULD NOT</div>
+          <div style={{ background: 'rgba(8,12,20,0.9)', border: '1px solid rgba(140,190,255,0.4)', borderRadius: 18, padding: '28px 44px', backdropFilter: 'blur(6px)' }}>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#eaf3ff', letterSpacing: '0.02em' }}>THE LEOPARD</div>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 24, color: '#a9cdff', letterSpacing: '0.16em', marginTop: 8, maxWidth: 760 }}>HE STOOD IN THAT WALL IN '74 — HE CARRIES THE YELLOW CARD THAT WAS NEVER SHAME, ONLY COURAGE</div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginTop: 18, background: 'rgba(255,210,74,0.12)', border: '1px solid rgba(255,210,74,0.5)', borderRadius: 999, padding: '10px 24px' }}>
               <span style={{ fontSize: 26 }}>✦</span>
               <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 24, color: MV.gold, letterSpacing: '0.08em' }}>COLLECT HIM INSIDE THE GAME · worldcup26.world</span>
@@ -510,8 +510,8 @@ function SceneApp() {
   const S = 272.5;
   const inP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const cards = [
-    { name: 'IVORY COAST', coef: 'x2.10', pts: '+2.10', flag: <FlagCIV w={86} />, hot: true },
-    { name: 'ECUADOR', coef: 'x3.00', pts: 'UNDERDOG', flag: <FlagECU w={86} />, hot: true },
+    { name: 'PORTUGAL', coef: 'x1.65', pts: '+1.65', flag: <FlagCIV w={86} />, hot: true },
+    { name: 'DR CONGO', coef: 'x3.00', pts: 'UNDERDOG', flag: <FlagECU w={86} />, hot: true },
     { name: 'BRAZIL', coef: 'x1.20', pts: '+0.00', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
   ];
   return (
@@ -557,17 +557,17 @@ function SceneCTA() {
   const inP = Easing.easeOutCubic(clamp(lt / 0.8, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#07090f' }}>
-      <PitchBackdrop tint="#0a2e1a" dim={0.55} />
-      <AmbientParticles start={S} dur={10} count={28} color="255,122,0" />
+      <PitchBackdrop tint="#1a0a10" dim={0.55} />
+      <AmbientParticles start={S} dur={10} count={28} color="0,127,255" />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
         <Kicker size={30} color={MV.civ}>The legends are only beginning</Kicker>
         <div style={{ marginTop: 24 }}><TitleReveal text="JOIN THE LEGENDS" start={S + 0.5} size={86} color={MV.text} /></div>
       </div>
       <div style={{ position: 'absolute', inset: 0, zIndex: 26 }}>
-        <CtaButton start={S} delay={1.2} label="SUBSCRIBE" icon="🔔" accent="#ff7a00" x={500} />
-        <CtaButton start={S} delay={1.6} label="LIKE" icon="👍" accent="#0a3d91" x={960} />
-        <CtaButton start={S} delay={2.0} label="SHARE" icon="📣" accent="#00a64f" x={1400} />
+        <CtaButton start={S} delay={1.2} label="SUBSCRIBE" icon="🔔" accent="#aa151b" x={500} />
+        <CtaButton start={S} delay={1.6} label="LIKE" icon="👍" accent="#007fff" x={960} />
+        <CtaButton start={S} delay={2.0} label="SHARE" icon="📣" accent="#1f8a4c" x={1400} />
       </div>
       <Sprite start={294.6} end={300}>
         <NextMatchTease start={S + 4.6} />
@@ -584,7 +584,7 @@ function NextMatchTease({ start }) {
     <div style={{ position: 'absolute', left: 0, right: 0, bottom: 150, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: p, transform: `translateY(${(1 - p) * 24}px)` }}>
       <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '20px 54px', display: 'flex', alignItems: 'center', gap: 22 }}>
         <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 26, color: MV.muted, letterSpacing: '0.14em' }}>WORLDCUP26 LEGENDS</span>
-        <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 30, color: MV.gold }}>🐘 THE ELEPHANTS PLAY ON · worldcup26.world</span>
+        <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 30, color: MV.gold }}>🐆 THE LEGENDS PLAY ON · worldcup26.world</span>
       </div>
     </div>
   );
