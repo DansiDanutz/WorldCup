@@ -8858,6 +8858,7 @@ html {
 
 .standing-modal {
   display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
   width: min(720px, 100%);
   max-height: min(760px, calc(100svh - 36px));
   overflow: hidden;
@@ -8923,7 +8924,8 @@ html {
   display: grid;
   gap: 12px;
   padding: 16px;
-  overflow: auto;
+  min-height: 0;
+  overflow-y: auto;
   overscroll-behavior-y: contain;
   touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
