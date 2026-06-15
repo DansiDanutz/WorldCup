@@ -143,8 +143,8 @@ function LowerThird({ start, name, role, line, accent = MV.civ }) {
   );
 }
 
-// Match scoreboard chip (top center). CIV — ECU.
-function ScoreBug({ start, civ = 0, ecu = 0, minute }) {
+// Match scoreboard chip (top center). KSA — URU.
+function ScoreBug({ start, ksa = 0, uru = 0, minute }) {
   const t = useTime();
   const local = t - start;
   if (local < 0) return null;
@@ -158,9 +158,9 @@ function ScoreBug({ start, civ = 0, ecu = 0, minute }) {
       background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 14,
       boxShadow: '0 10px 36px rgba(0,0,0,0.5)', overflow: 'hidden',
     }}>
-      <div style={{ ...cell, background: MV.civ, color: '#0a0a0a' }}>CIV</div>
-      <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{civ} — {ecu}</div>
-      <div style={{ ...cell, background: MV.ecuBlue }}>ECU</div>
+      <div style={{ ...cell, background: MV.ksaDeep }}>KSA</div>
+      <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{ksa} — {uru}</div>
+      <div style={{ ...cell, background: MV.uru, color: '#06182c' }}>URU</div>
       {minute && <div style={{ ...cell, fontSize: 26, color: MV.muted, borderLeft: `1px solid ${MV.line}` }}>{minute}</div>}
     </div>
   );

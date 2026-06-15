@@ -805,6 +805,55 @@ world cup 2026, worldcup26, Belgium vs Egypt, Belgium football, Egypt football, 
 
 ---
 
+## Episode 19 — Saudi Arabia vs Uruguay
+
+**Title:** `Did You Know 3 Million People Silenced 200,000? | Saudi Arabia vs Uruguay — World Cup 2026 (Ep.19)`
+
+**Description:**
+```
+In 1950, two hundred thousand people packed the Maracanã to crown Brazil champions of the world. Then a nation of just three million silenced every single one of them. Tonight, that shirt walks out again — against a team that knows exactly how it feels to shock the world.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 19: Saudi Arabia vs Uruguay, Group H. The giant-killers who beat Messi's Argentina, against the smallest giant in football history.
+
+🇺🇾 Uruguay — 3.4 million people — won the very first World Cup (1930) and the Maracanazo (1950): Ghiggia's goal, the silence, "Frank Sinatra, the Pope, and me." Two World Cups, fifteen Copa Américas. 🇸🇦 Saudi Arabia stunned Lionel Messi's Argentina 2-1 at the 2022 World Cup, Salem Al-Dawsari with the winner.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "GREEN FALCONS" for Saudi Arabia, or "CELESTE" for Uruguay.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — the Maracanazo
+0:18 The story so far
+0:30 Saudi Arabia vs Uruguay
+0:41 A man who heard the silence
+0:50 The history — 1930 & the Maracanazo
+2:00 The Green Falcons — Al-Dawsari, Al-Buraikan
+2:38 La Celeste — Valverde, Núñez, Araújo
+3:14 The duel — giant-killers vs the smallest giant
+3:21 Al-Dawsari strikes — 1-0
+3:41 Núñez levels — 1-1
+3:51 Araújo heads in — 1-2
+4:02 Full time
+4:11 Do you agree?
+4:21 Legend 019 — the Ghost of the Maracanã
+4:40 Play free at worldcup26.world
+4:50 Like & subscribe
+
+🎵 Music: "Crossing the Chasm", "Five Armies", "Desert City", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #SaudiArabia #Uruguay #Maracanazo #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, Saudi Arabia vs Uruguay, Uruguay football, Saudi Arabia football, La Celeste, Green Falcons, Maracanazo, 1950 World Cup, Alcides Ghiggia, Federico Valverde, Darwin Nunez, Ronald Araujo, Salem Al-Dawsari, Saudi Arabia beat Argentina, FIFA World Cup 2026, Group H, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
 ## Shorts (per episode) — caption template
 
 Post 2 per day. Caption format:

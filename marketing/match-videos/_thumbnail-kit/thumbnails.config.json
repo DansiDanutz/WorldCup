@@ -195,6 +195,19 @@
       "sub": "BELGIUM vs EGYPT",
       "awayImg": "content/images/Belgium/KevinDeBruyne.png",
       "awayName": "DE BRUYNE"
+    },
+    {
+      "ep": 19,
+      "dir": "match19-saudi-arabia-vs-uruguay",
+      "img": "content/images/Uruguay/Federico-Valverde.png",
+      "name": "VALVERDE",
+      "hook": "THE SMALLEST<br>GIANT",
+      "face": "URU",
+      "away": "KSA",
+      "marquee": "BRA",
+      "sub": "SAUDI ARABIA vs URUGUAY",
+      "awayImg": "content/images/Saudi_Arabia/Salem-Al-Dawsari.png",
+      "awayName": "AL-DAWSARI"
     }
   ]
 }

@@ -197,4 +197,14 @@ export const PREDICTIONS: MatchPrediction[] = [
     hook: "Two cursed crowns; Salah levels, Doku sets up the late winner.",
     youtube: null,
   },
+  {
+    ep: 19,
+    home: "Saudi Arabia",
+    away: "Uruguay",
+    stage: "Group H",
+    date: "Jun 16, 2026",
+    score: "1–2",
+    hook: "3 million people once silenced 200,000; the Maracanazo, Araújo's header.",
+    youtube: null,
+  },
 ];
