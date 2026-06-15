@@ -31,6 +31,7 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 12 | Australia vs Turkey | [WorldCup26_Match11_AUS_TUR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match11-australia-vs-turkey/WorldCup26_Match11_AUS_TUR_upload.mp4) | 61 MB | "THE NOMADS" | https://youtu.be/gGOqgKEG10o |
 | 13 | Germany vs Curaçao | [WorldCup26_Match12_GER_CUR_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match12-germany-vs-curacao/WorldCup26_Match12_GER_CUR_upload.mp4) | 58 MB | "DAVID vs GOLIATH" | https://youtu.be/uKZ5R7vlBi8 |
 | 14 | Netherlands vs Japan | [WorldCup26_Match13_NED_JPN_upload.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-v24dsy/marketing/match-videos/match13-netherlands-vs-japan/WorldCup26_Match13_NED_JPN_upload.mp4) | 63 MB | "THEY BEAT SPAIN" | https://youtu.be/vKJ1O2sNV1Y |
+| 15 | Ivory Coast vs Ecuador | [WorldCup26_Match15_CIV_ECU.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/episode-renumber-publish-order/marketing/match-videos/match15-ivory-coast-vs-ecuador/WorldCup26_Match15_CIV_ECU.mp4) | 70 MB | "THEY STOPPED A WAR" | https://youtu.be/3GRncnYwQVw |
 
 ### Shorts (new from Ep6 — upload as YouTube Shorts, link to the full episode)
 

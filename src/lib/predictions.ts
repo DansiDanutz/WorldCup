@@ -165,7 +165,7 @@ export const PREDICTIONS: MatchPrediction[] = [
     date: "Jun 15, 2026",
     score: "1–1",
     hook: "The team that helped stop a war; Valencia's equaliser, the Peacemaker watches.",
-    youtube: null,
+    youtube: "https://youtu.be/3GRncnYwQVw",
   },
   {
     ep: 16,
