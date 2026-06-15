@@ -1,4 +1,4 @@
-// Restore all gitignored media for this Ep15 project:
+// Restore all gitignored media for this Ep18 project:
 //  1. Music cues (Kevin MacLeod, incompetech.com, CC-BY 4.0)
 //  2. Player stills copied from the repo's content/images library
 // This episode is IMAGE-BASED (Ken-Burns motion on stills) — there are no
@@ -16,28 +16,28 @@ const downloads = {
 
 const repoImages = '../../../content/images';
 const squadCopies = {
-  // Ivory Coast — Les Elephants (orange/white/green)
-  'assets/player-kessie.png':        `${repoImages}/Ivory_Coast/Franck-Kessie.png`,
-  'assets/player-adingra.png':       `${repoImages}/Ivory_Coast/Simon-Adingra.png`,
-  'assets/player-diallo.png':        `${repoImages}/Ivory_Coast/Amad-Diallo.png`,
-  'assets/player-diomande.png':      `${repoImages}/Ivory_Coast/Ousmane-Diomande.png`,
-  'assets/player-yandiomande.png':   `${repoImages}/Ivory_Coast/Yan-Diomande.png`,
-  'assets/squad/civ-1-Kessie.png':       `${repoImages}/Ivory_Coast/Franck-Kessie.png`,
-  'assets/squad/civ-2-Adingra.png':      `${repoImages}/Ivory_Coast/Simon-Adingra.png`,
-  'assets/squad/civ-3-Diallo.png':       `${repoImages}/Ivory_Coast/Amad-Diallo.png`,
-  'assets/squad/civ-4-Diomande.png':     `${repoImages}/Ivory_Coast/Ousmane-Diomande.png`,
-  'assets/squad/civ-5-YanDiomande.png':  `${repoImages}/Ivory_Coast/Yan-Diomande.png`,
-  // Ecuador — La Tri (yellow/blue/red)
-  'assets/player-caicedo.png':       `${repoImages}/Ecuador/MoisesCaicedo.png`,
-  'assets/player-hincapie.png':      `${repoImages}/Ecuador/PieroHincapie.png`,
-  'assets/player-pacho.png':         `${repoImages}/Ecuador/WillianPacho.png`,
-  'assets/player-valencia.png':      `${repoImages}/Ecuador/EnnerValencia.png`,
-  'assets/player-plata.png':         `${repoImages}/Ecuador/Gonzalo-Plata.png`,
-  'assets/squad/ecu-1-Caicedo.png':      `${repoImages}/Ecuador/MoisesCaicedo.png`,
-  'assets/squad/ecu-2-Hincapie.png':     `${repoImages}/Ecuador/PieroHincapie.png`,
-  'assets/squad/ecu-3-Pacho.png':        `${repoImages}/Ecuador/WillianPacho.png`,
-  'assets/squad/ecu-4-Valencia.png':     `${repoImages}/Ecuador/EnnerValencia.png`,
-  'assets/squad/ecu-5-Plata.png':        `${repoImages}/Ecuador/Gonzalo-Plata.png`,
+  // Belgium — the Red Devils (red/black/gold)
+  'assets/player-debruyne.png':      `${repoImages}/Belgium/KevinDeBruyne.png`,
+  'assets/player-lukaku.png':        `${repoImages}/Belgium/RomeluLukaku.png`,
+  'assets/player-doku.png':          `${repoImages}/Belgium/JeremyDoku.png`,
+  'assets/player-courtois.png':      `${repoImages}/Belgium/ThibautCourtois.png`,
+  'assets/player-trossard.png':      `${repoImages}/Belgium/LeandroTrossard.png`,
+  'assets/squad/bel-1-DeBruyne.png':     `${repoImages}/Belgium/KevinDeBruyne.png`,
+  'assets/squad/bel-2-Lukaku.png':       `${repoImages}/Belgium/RomeluLukaku.png`,
+  'assets/squad/bel-3-Doku.png':         `${repoImages}/Belgium/JeremyDoku.png`,
+  'assets/squad/bel-4-Courtois.png':     `${repoImages}/Belgium/ThibautCourtois.png`,
+  'assets/squad/bel-5-Trossard.png':     `${repoImages}/Belgium/LeandroTrossard.png`,
+  // Egypt — the Pharaohs (red/white/black)
+  'assets/player-salah.png':         `${repoImages}/Egypt/MohamedSalah.png`,
+  'assets/player-marmoush.png':      `${repoImages}/Egypt/OmarMarmoush.png`,
+  'assets/player-trezeguet.png':     `${repoImages}/Egypt/Trezeguet.png`,
+  'assets/player-elshenawy.png':     `${repoImages}/Egypt/MohamedElShenawy.png`,
+  'assets/player-abdelkarim.png':    `${repoImages}/Egypt/HamzaAbdelkarim.png`,
+  'assets/squad/egy-1-Salah.png':        `${repoImages}/Egypt/MohamedSalah.png`,
+  'assets/squad/egy-2-Marmoush.png':     `${repoImages}/Egypt/OmarMarmoush.png`,
+  'assets/squad/egy-3-Trezeguet.png':    `${repoImages}/Egypt/Trezeguet.png`,
+  'assets/squad/egy-4-ElShenawy.png':    `${repoImages}/Egypt/MohamedElShenawy.png`,
+  'assets/squad/egy-5-Abdelkarim.png':   `${repoImages}/Egypt/HamzaAbdelkarim.png`,
 };
 
 let ok = 0, fail = 0;

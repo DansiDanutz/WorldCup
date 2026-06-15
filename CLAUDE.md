@@ -29,6 +29,29 @@ Non-negotiables distilled from channel data (details in the playbook):
    "our prediction"/"our story" ("we predicted 0-0 in Toronto"), NEVER as
    what happened ("last night: no goals"). Before writing any recap line,
    ask: has this match really been played? If not → label it OUR PREDICTION.
+8. **CHRONOLOGICAL PRODUCTION ORDER (hard rule):** produce and publish episodes
+   in the EXACT order the matches are played on TV — by kickoff date, then
+   kickoff time within a day. The live broadcast schedule (date + kickoff time,
+   e.g. the fixtures grid the owner shares) is the single source of truth for
+   ORDER; reconcile it with `content/<Team>/Match/<Opponent>.md` dates. NEVER
+   jump ahead to a later-kickoff match while an earlier-kickoff match still has
+   no episode. Each episode must be READY ≥48h before its kickoff (hard
+   deadline). Episode number = chronological slot; keep
+   `content/youtube/SCHEDULE.md` (the ordered fixture list with status) current
+   and treat it as the canonical production queue.
+9. **HOOK = MYSTERY + HISTORY (the #1 quality bar):** every episode lives or dies
+   on a captivating, VERIFIED "Did you know?" hook — a real secret about the
+   nation, a player, or a special event (e.g. Tunisia 1978 = first African team
+   to win a World Cup match; Zidane Iqbal named after Zinedine Zidane). The
+   mystery (the Mystery Supporter / Legend) and the true history are the
+   PRIORITY of the script, opened in the cold open and paid off at the end.
+   Rules: (a) AUTORESEARCH every episode — web-search to find and fact-check the
+   hook before writing; cite sources in the episode README; never invent
+   history. (b) Keep it captivating and curiosity-driven ("Did you know…",
+   "the secret nobody talks about…"). (c) SELF-IMPROVING: after each episode log
+   what worked in `SERIES_PLAYBOOK.md` and raise the bar for both quality and
+   cross-episode CONSISTENCY (voice = Brian, soccer-only, same structure, recap
+   the previous episode's prediction).
 
 ## Video production pipeline
 

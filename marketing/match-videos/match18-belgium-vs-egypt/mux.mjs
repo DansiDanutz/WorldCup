@@ -1,9 +1,9 @@
-// Final assembly for the Match 15 video:
+// Final assembly for the Match 18 video:
 //   frames/  (from render.mjs)
 // + audio/line_NN.mp3  (Brian VO from gen_audio.mjs)
 // + music cues from clips.json (looped/trimmed, side-chain ducked under the VO)
 // + each placement's own crowd/FX audio at its clips.json timeline slot
-// -> WorldCup26_Match15_CIV_ECU.mp4 (H.264/AAC, 1920x1080)
+// -> WorldCup26_Match18_BEL_EGY.mp4 (H.264/AAC, 1920x1080)
 import fs from 'node:fs';
 import { execFileSync, spawnSync } from 'node:child_process';
 import ffmpegStatic from 'ffmpeg-static';
@@ -13,7 +13,7 @@ const ffmpegPath = (fs.existsSync('/usr/bin/ffmpeg') && '/usr/bin/ffmpeg') || ff
 
 const FPS = Number(process.env.FPS || 30);
 const DURATION = Number(process.env.DURATION || 300);
-const OUT = process.env.OUTFILE || 'WorldCup26_Match15_CIV_ECU.mp4';
+const OUT = process.env.OUTFILE || 'WorldCup26_Match18_BEL_EGY.mp4';
 const NO_VO = process.env.NO_VO === '1'; // music+FX preview before the ElevenLabs pass
 
 const { lines } = JSON.parse(fs.readFileSync('narration.json', 'utf8'));

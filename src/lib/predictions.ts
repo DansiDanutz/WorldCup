@@ -197,14 +197,4 @@ export const PREDICTIONS: MatchPrediction[] = [
     hook: "Two cursed crowns; Salah levels, Doku sets up the late winner.",
     youtube: null,
   },
-  {
-    ep: 19,
-    home: "France",
-    away: "Iraq",
-    stage: "Group I",
-    date: "Jun 17, 2026",
-    score: "2–0",
-    hook: "The impossible meeting; Zidane Iqbal faces the nation of his namesake.",
-    youtube: null,
-  },
 ];

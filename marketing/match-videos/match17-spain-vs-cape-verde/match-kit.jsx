@@ -1,7 +1,7 @@
-// match-kit.jsx — shared primitives for the Match 19 video (loads after animations.jsx)
-// Dark cinematic broadcast theme. Episode 19 is IMAGE-BASED: Ken-Burns motion on
+// match-kit.jsx — shared primitives for the Match 17 video (loads after animations.jsx)
+// Dark cinematic broadcast theme. Episode 17 is IMAGE-BASED: Ken-Burns motion on
 // still PNGs (no generated video clips). SOCCER ONLY — round-neck shirts, a pitch
-// with goals; never gridiron.
+// with goals; never gridiron (NO helmets/pads). REAL-RESULTS-ONLY: the 3-1 is OUR PREDICTION.
 
 const SANS = '"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
 
@@ -10,18 +10,16 @@ const MV = {
   panel: 'rgba(13,18,30,0.86)',
   text: '#f4f6fa',
   muted: '#93a0b4',
-  gold: '#ffd24a',
+  gold: '#f9d616',       // Spain gold
   goldDeep: '#c9942e',
-  // France — Les Bleus: blue / white / red
-  fra: '#3a6bff',        // bright tricolore blue for accents/text glow
-  fraDeep: '#002654',    // official deep France blue
-  fraRed: '#ed2939',
-  // Iraq — Lions of Mesopotamia: green / white / black (+ flag red)
-  irq: '#00a651',        // vivid Iraq green for accents
-  irqDeep: '#007a3d',
-  irqRed: '#ce1126',
-  irqBlack: '#0a0a0a',
-  green: '#0c6b46',
+  // Spain — La Roja: red + gold
+  esp: '#c60b1e',
+  espGold: '#f9d616',
+  // Cape Verde — Tubarões Azuis: blue + white + red
+  cpv: '#003893',
+  cpvRed: '#cf2027',
+  cpvWhite: '#ffffff',
+  green: '#106b4f',
   line: 'rgba(255,255,255,0.14)',
 };
 
@@ -66,32 +64,47 @@ function Vignette({ strength = 0.55 }) {
 }
 
 // ── Flags (pure CSS approximations, crisp at any size) ───────────────────────
-// France — Le Tricolore: vertical blue / white / red.
-function FlagFRA({ w = 120 }) {
+// Spain: horizontal red / gold (double-height) / red, with a crest token.
+function FlagESP({ w = 120 }) {
   const h = w * 2 / 3;
   return (
-    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', display: 'flex', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
-      <div style={{ flex: 1, background: '#002654' }} />
-      <div style={{ flex: 1, background: '#fff' }} />
-      <div style={{ flex: 1, background: '#ed2939' }} />
+    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ position: 'absolute', left: 0, right: 0, top: 0, height: '25%', background: '#c60b1e' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, top: '25%', height: '50%', background: '#f9d616' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, top: '75%', height: '25%', background: '#c60b1e' }} />
+      {/* crest token (shield abstraction, left of centre as on the real flag) */}
+      <div style={{ position: 'absolute', left: '34%', top: '50%', transform: 'translate(-50%,-50%)', width: h * 0.30, height: h * 0.38, borderRadius: '6px', background: 'rgba(198,11,30,0.9)', border: '2px solid rgba(255,255,255,0.55)' }} />
     </div>
   );
 }
 
-// Iraq: horizontal red / white / black, with the green Takbir wordmark centred.
-function FlagIRQ({ w = 120 }) {
+// Cape Verde: blue field with a white-and-red horizontal band low-third, and a
+// ring of ten stars (abstracted) off-centre.
+function FlagCPV({ w = 120 }) {
   const h = w * 2 / 3;
+  const stars = [];
+  const cx = w * 0.375, cy = h * 0.5, r = Math.min(w, h) * 0.20;
+  for (let i = 0; i < 10; i++) {
+    const a = (i / 10) * Math.PI * 2 - Math.PI / 2;
+    stars.push(
+      <div key={i} style={{
+        position: 'absolute',
+        left: cx + Math.cos(a) * r - h * 0.018,
+        top: cy + Math.sin(a) * r - h * 0.018,
+        width: h * 0.036, height: h * 0.036,
+        background: '#f9d616', borderRadius: 1,
+        transform: 'rotate(45deg)',
+      }} />
+    );
+  }
   return (
     <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
-      <div style={{ position: 'absolute', left: 0, right: 0, top: 0, height: '33.34%', background: '#ce1126' }} />
-      <div style={{ position: 'absolute', left: 0, right: 0, top: '33.33%', height: '33.34%', background: '#fff' }} />
-      <div style={{ position: 'absolute', left: 0, right: 0, top: '66.66%', height: '33.34%', background: '#0a0a0a' }} />
-      {/* central green Takbir token (Allahu Akbar) abstracted as three green strokes */}
-      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', display: 'flex', gap: h * 0.07, alignItems: 'center' }}>
-        <div style={{ width: h * 0.06, height: h * 0.30, borderRadius: 2, background: '#007a3d' }} />
-        <div style={{ width: h * 0.10, height: h * 0.20, borderRadius: '50%', border: `${Math.max(2, h * 0.04)}px solid #007a3d` }} />
-        <div style={{ width: h * 0.06, height: h * 0.30, borderRadius: 2, background: '#007a3d' }} />
-      </div>
+      <div style={{ position: 'absolute', inset: 0, background: '#003893' }} />
+      {/* white / red / white band across the lower third */}
+      <div style={{ position: 'absolute', left: 0, right: 0, top: '58%', height: '8%', background: '#fff' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, top: '66%', height: '8%', background: '#cf2027' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, top: '74%', height: '8%', background: '#fff' }} />
+      {stars}
     </div>
   );
 }
@@ -119,7 +132,7 @@ function Kicker({ children, color = MV.gold, size = 30 }) {
 }
 
 // Slide-in lower third for player segments.
-function LowerThird({ start, name, role, line, accent = MV.civ }) {
+function LowerThird({ start, name, role, line, accent = MV.esp }) {
   const t = useTime();
   const local = t - start;
   if (local < 0) return null;
@@ -141,8 +154,8 @@ function LowerThird({ start, name, role, line, accent = MV.civ }) {
   );
 }
 
-// Match scoreboard chip (top center). FRA — IRQ.
-function ScoreBug({ start, fra = 0, irq = 0, minute }) {
+// Match scoreboard chip (top center). ESP — CPV.
+function ScoreBug({ start, esp = 0, cpv = 0, minute }) {
   const t = useTime();
   const local = t - start;
   if (local < 0) return null;
@@ -156,9 +169,9 @@ function ScoreBug({ start, fra = 0, irq = 0, minute }) {
       background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 14,
       boxShadow: '0 10px 36px rgba(0,0,0,0.5)', overflow: 'hidden',
     }}>
-      <div style={{ ...cell, background: MV.fraDeep, color: '#fff' }}>FRA</div>
-      <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{fra} — {irq}</div>
-      <div style={{ ...cell, background: MV.irqDeep, color: '#fff' }}>IRQ</div>
+      <div style={{ ...cell, background: MV.esp, color: '#fff' }}>ESP</div>
+      <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{esp} — {cpv}</div>
+      <div style={{ ...cell, background: MV.cpv }}>CPV</div>
       {minute && <div style={{ ...cell, fontSize: 26, color: MV.muted, borderLeft: `1px solid ${MV.line}` }}>{minute}</div>}
     </div>
   );
@@ -206,7 +219,7 @@ function Confetti({ start, dur, count = 90, zIndex = 24, colors }) {
   const local = t - start;
   if (local < 0 || local > dur) return null;
   const W = 1920, H = 1080;
-  const pal = colors || [MV.gold, '#fff', MV.fra, MV.fraRed];
+  const pal = colors || [MV.gold, '#fff', MV.esp, MV.cpv];
   const pieces = [];
   for (let i = 0; i < count; i++) {
     const seed = (i * 2654435761 % 1000) / 1000;
@@ -284,7 +297,7 @@ function TitleReveal({ text, start, size = 150, color = MV.gold, stagger = 0.055
 }
 
 // Slow ambient particle drift (deterministic) — depth and life on hold frames.
-function AmbientParticles({ start, dur, count = 40, color = '255,210,74', maxR = 5, zIndex = 21 }) {
+function AmbientParticles({ start, dur, count = 40, color = '249,214,22', maxR = 5, zIndex = 21 }) {
   const t = useTime();
   const local = t - start;
   if (local < 0 || local > dur) return null;
@@ -319,7 +332,7 @@ function Waving({ children, speed = 1.6, amount = 2.2 }) {
 }
 
 // A reusable "pitch with goals" CSS backdrop — soccer-only, never gridiron.
-// Green turf, centre circle + halfway line, and a goal frame top & bottom.
+// Green turf, centre circle + halfway line, and a soccer goal frame top & bottom.
 function PitchBackdrop({ tint = '#0a3a1e', dim = 0 }) {
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', filter: dim ? `brightness(${1 - dim})` : 'none' }}>
@@ -331,7 +344,7 @@ function PitchBackdrop({ tint = '#0a3a1e', dim = 0 }) {
       {/* halfway line + centre circle */}
       <div style={{ position: 'absolute', left: 0, right: 0, top: '50%', height: 4, background: 'rgba(255,255,255,0.18)' }} />
       <div style={{ position: 'absolute', left: '50%', top: '50%', width: 260, height: 260, marginLeft: -130, marginTop: -130, borderRadius: '50%', border: '4px solid rgba(255,255,255,0.18)' }} />
-      {/* soccer goal frames (round-neck-shirt era, NO goalposts cross-bars of gridiron) */}
+      {/* soccer goal frames (round-net soccer goals, NOT gridiron goalposts) */}
       <div style={{ position: 'absolute', left: '50%', top: 0, width: 420, height: 120, marginLeft: -210, border: '6px solid rgba(255,255,255,0.22)', borderTop: 'none' }} />
       <div style={{ position: 'absolute', left: '50%', bottom: 0, width: 420, height: 120, marginLeft: -210, border: '6px solid rgba(255,255,255,0.22)', borderBottom: 'none' }} />
     </div>

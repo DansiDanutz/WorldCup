@@ -1,9 +1,9 @@
 {
-  "name": "wc26-match15-video",
+  "name": "wc26-match18-video",
   "private": true,
   "type": "module",
   "version": "1.0.0",
-  "description": "WorldCup26 Legends — Match 15: Ivory Coast vs Ecuador. 5-minute cinematic match video with Brian (ElevenLabs) narration, Ken-Burns player stills, supporter emotions and background music.",
+  "description": "WorldCup26 Legends — Match 18: Belgium vs Egypt. 5-minute cinematic match video with Brian (ElevenLabs) narration, Ken-Burns player stills, supporter emotions and background music.",
   "scripts": {
     "serve": "PORT=8098 node serve.mjs",
     "render": "FPS=30 DURATION=300 OUT=frames node render.mjs",
