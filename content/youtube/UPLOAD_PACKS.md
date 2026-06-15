@@ -854,6 +854,57 @@ world cup 2026, worldcup26, Saudi Arabia vs Uruguay, Uruguay football, Saudi Ara
 
 ---
 
+## Episode 20 — Iran vs New Zealand
+
+**Title:** `The Team That Went Home Unbeaten | Iran vs New Zealand — World Cup 2026 (Ep.20)`
+
+**Description:**
+```
+At the 2010 World Cup, one team faced the defending champions of the world, the runners-up, everyone — and never lost a single game. They still went home. Tonight the All Whites walk out again, against Iran's Team Melli, and an old man in the stands keeps an impossible record alive.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 20: Iran vs New Zealand, Group G. Team Melli's craft against the All Whites' refusal to lose, with a knockout place on the line.
+
+🇳🇿 At South Africa 2010, New Zealand were the ONLY team in the whole tournament not to lose a match — three draws (Slovakia 1-1 with Winston Reid's 93rd-minute header for their first ever World Cup point, defending champions Italy 1-1 thanks to Shane Smeltz, and Paraguay 0-0). They went home in the group stage UNBEATEN — while the champions, Italy, finished bottom and were eliminated. 🇮🇷 At France 1998, Iran beat the USA 2-1 in a politically charged match — their first ever World Cup win — yet across their whole history Iran have never escaped the group stage.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "TEAM MELLI" if Iran finally break through, or "ALL WHITES" if New Zealand stay unbeaten again.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — the team that never lost
+0:19 The story so far
+0:29 Iran vs New Zealand
+0:40 The strangest unbeaten run
+0:49 The history — New Zealand at South Africa 2010
+1:54 Iran's France '98 & Team Melli — Taremi, Jahanbakhsh, Ghoddos
+2:14 The All Whites — Wood, Stamenic, Cacace
+3:11 The duel — craft vs power
+3:20 Our prediction
+3:30 Taremi heads Iran in front (1-0)
+3:52 Chris Wood climbs to equalise (1-1)
+4:02 Full time
+4:14 Do you agree?
+4:23 Legend 020 — the Unbeaten
+4:41 Play free at worldcup26.world
+4:55 Like, share & subscribe
+
+📲 Send this to the friend who forgot New Zealand went home unbeaten.
+
+🎵 Music: "Crossing the Chasm", "Desert City", "Five Armies", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #Iran #NewZealand #AllWhites #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, Iran vs New Zealand, Iran football, New Zealand football, Team Melli, All Whites, New Zealand 2010 unbeaten, Winston Reid, Shane Smeltz, Italy eliminated 2010, Mehdi Taremi, Chris Wood, Alireza Jahanbakhsh, Saman Ghoddos, Marko Stamenic, Liberato Cacace, Iran USA 1998, FIFA World Cup 2026, Group G, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
 ## Episode 21 — France vs Senegal
 
 **Title:** `The Debutants Who Knocked Out the Champions | France vs Senegal — World Cup 2026 (Ep.21)`

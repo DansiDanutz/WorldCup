@@ -208,6 +208,16 @@ export const PREDICTIONS: MatchPrediction[] = [
     youtube: null,
   },
   {
+    ep: 20,
+    home: "Iran",
+    away: "New Zealand",
+    stage: "Group G",
+    date: "Jun 16, 2026",
+    score: "1–1",
+    hook: "The team that went home unbeaten; Taremi heads in, Wood climbs to level.",
+    youtube: null,
+  },
+  {
     ep: 21,
     home: "France",
     away: "Senegal",

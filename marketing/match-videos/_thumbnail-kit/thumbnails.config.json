@@ -210,6 +210,19 @@
       "awayName": "AL-DAWSARI"
     },
     {
+      "ep": 20,
+      "dir": "match20-iran-vs-new-zealand",
+      "img": "content/images/New_Zealand/Chris-Wood.png",
+      "name": "WOOD",
+      "hook": "HOME<br>UNBEATEN",
+      "face": "NZL",
+      "away": "IRN",
+      "marquee": "BRA",
+      "sub": "IRAN vs NEW ZEALAND",
+      "awayImg": "content/images/Iran/Mehdi-Taremi.png",
+      "awayName": "TAREMI"
+    },
+    {
       "ep": 21,
       "dir": "match21-france-vs-senegal",
       "img": "content/images/Senegal/Sadio-Mane.png",

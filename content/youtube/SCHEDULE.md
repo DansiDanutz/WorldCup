@@ -15,7 +15,7 @@ Status: ✅ live · 🎬 rendered (master ready) · 🛠️ building/rendering �
 | 17 | Mon 15/06 19:00 | Spain vs Cape Verde | 🛠️ rendering | |
 | 18 | Mon 15/06 22:00 | Belgium vs Egypt | 🛠️ rendering | |
 | 19 | Tue 16/06 01:00 | Saudi Arabia vs Uruguay | ⏳ queued | NEXT |
-| 20 | Tue 16/06 04:00 | Iran vs New Zealand | ⏳ queued | |
+| 20 | Tue 16/06 04:00 | Iran vs New Zealand | 🛠️ rendering | predicted 1–1 · NZ only unbeaten team at 2010 WC (3 draws, Italy out) / Iran beat USA '98 · Legend 020 the Unbeaten |
 | 21 | Tue 16/06 22:00 | France vs Senegal | 🛠️ rendering | predicted FRA 2–1 · 2002 Seoul shock / Bouba Diop tribute · Legend 021 the Dancing Lion |
 | 22 | Wed 17/06 01:00 | Iraq vs Norway | ⏳ queued | |
 | —  | Wed 17/06 04:00 | Argentina vs Algeria | ✅ live | already covered (Ep6) — skip |
@@ -29,7 +29,7 @@ Status: ✅ live · 🎬 rendered (master ready) · 🛠️ building/rendering �
 
 ## Research hook log (fill as built — keep the "Did you know?" secret per episode)
 - Ep19 Saudi Arabia vs Uruguay — _research the verified hook_
-- Ep20 Iran vs New Zealand — _research the verified hook_
+- Ep20 Iran vs New Zealand — New Zealand were the ONLY unbeaten team at the 2010 World Cup (three draws: Slovakia 1-1, defending champions Italy 1-1, Paraguay 0-0); went home unbeaten while champions Italy were eliminated bottom of the group. Secondary: Iran beat USA 2-1 at France '98 (first ever WC win) but have never escaped the group. Legend 020 = the Unbeaten.
 - Ep21 France vs Senegal — Senegal 1-0 France, 2002 opener (Bouba Diop) — greatest WC upset
 - Ep22 Iraq vs Norway — _research the verified hook_
 - Ep23 Austria vs Jordan — _research the verified hook_
