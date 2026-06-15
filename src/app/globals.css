@@ -9828,3 +9828,15 @@ html {
 .admin-sweep-row--error span:last-child {
   color: #ff8080;
 }
+
+/* Free-play landing tagline (fun mode) */
+.auth-freeplay-tagline {
+  font-weight: 700;
+  color: var(--gold, #f5c451);
+  background: rgba(245, 196, 81, 0.08);
+  border: 1px solid rgba(245, 196, 81, 0.25);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin: 6px 0 0;
+  line-height: 1.4;
+}

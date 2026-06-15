@@ -448,10 +448,17 @@ export function LoginRegister({ initialReferralCode, publicPaidActionGates }: Lo
               <h1 className="motto" id="auth-title">
                 Predict the Game <span className="motto-accent">WorldCup26</span>
               </h1>
-              <p>
-                Create your account, pick three teams, then receive an Admin or Agent assigned
-                ticket to lock the entry.
-              </p>
+              {funMode ? (
+                <p className="auth-freeplay-tagline">
+                  🏆 Free to play · just for fun — pick 3 teams and climb the leaderboard. No
+                  deposits, no prizes, nothing to buy.
+                </p>
+              ) : (
+                <p>
+                  Create your account, pick three teams, then receive an Admin or Agent assigned
+                  ticket to lock the entry.
+                </p>
+              )}
             </div>
 
             <div className="auth-info-grid" aria-label="Signup details">
