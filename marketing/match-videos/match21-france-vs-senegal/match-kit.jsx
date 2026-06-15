@@ -1,7 +1,9 @@
 // match-kit.jsx — shared primitives for the Match 21 video (loads after animations.jsx)
-// Dark cinematic broadcast theme. Episode 21 is IMAGE-BASED: Ken-Burns motion on
-// still PNGs (no generated video clips). SOCCER ONLY — round-neck shirts, a pitch
-// with goals; never gridiron.
+// CLIP-BASED cinematic broadcast theme + frame-exact <VideoSprite>/<ClipSprite>
+// for the paid Higgsfield animation clips. (Ported from the Ep13 clip kit.)
+// HARD RULES: NO subtitles / NO caption sentences. The only text allowed on screen
+// is the title card, player NAME labels (surname only), the FRA—SEN score bug, the
+// "OUR PREDICTION" watermark, and worldcup26.world. SOCCER ONLY.
 
 const SANS = '"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
 
@@ -12,10 +14,10 @@ const MV = {
   muted: '#93a0b4',
   gold: '#ffd24a',
   goldDeep: '#c9942e',
-  // France — Les Bleus: blue / white / red
-  fra: '#1d4ed8',
-  fraDeep: '#002654',
-  fraRed: '#ce1126',
+  // France — Les Bleus: navy / white / red
+  fra: '#1a2f6b',
+  fraDeep: '#0e1c47',
+  fraRed: '#e31b23',
   // Senegal — Lions of Teranga: green / yellow / red
   sen: '#00853f',
   senYellow: '#fdef42',
@@ -24,12 +26,73 @@ const MV = {
   line: 'rgba(255,255,255,0.14)',
 };
 
-// Image-based episode: keep the render-settle hooks as harmless no-ops so the
-// shared render.mjs (which calls window.__videosSettled) never wedges.
+// ── Frame-exact video playback ───────────────────────────────────────────────
+// The renderer drives the timeline with window.__seek(t) while paused; each
+// mounted VideoSprite must then show the exact source frame for that playhead.
 window.__pendingVideoSeeks = 0;
 window.__videosSettled = () => window.__pendingVideoSeeks === 0;
 
-// ── Ken Burns still (the workhorse of this episode) ──────────────────────────
+function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0, rate = 1 }) {
+  const t = useTime();
+  const { playing } = useTimeline();
+  const ref = React.useRef(null);
+  const local = t - start;
+  const visible = local >= 0 && local < dur;
+
+  React.useEffect(() => {
+    const v = ref.current;
+    if (!v || !visible) return;
+    const clipDur = (isFinite(v.duration) && v.duration > 0.2) ? v.duration : 5;
+    const target = Math.min((local * rate) % clipDur, clipDur - 0.07);
+    if (playing) {
+      if (v.paused) v.play().catch(() => {});
+      if (Math.abs(v.currentTime - target) > 0.4) v.currentTime = target;
+    } else {
+      if (!v.paused) v.pause();
+      if (Math.abs(v.currentTime - target) > 1 / 60) {
+        window.__pendingVideoSeeks++;
+        let done = false;
+        const settle = () => { if (!done) { done = true; window.__pendingVideoSeeks--; } };
+        const onSeeked = () => {
+          if (v.requestVideoFrameCallback) {
+            v.requestVideoFrameCallback(() => settle());
+            setTimeout(settle, 90);
+          } else setTimeout(settle, 60);
+        };
+        v.addEventListener('seeked', onSeeked, { once: true });
+        v.addEventListener('error', settle, { once: true });
+        setTimeout(settle, 1200);
+        v.currentTime = Math.max(0, target);
+      }
+    }
+  }, [local, visible, playing]);
+
+  if (!visible) return null;
+  return (
+    <video
+      ref={ref}
+      src={src}
+      muted
+      playsInline
+      preload="auto"
+      style={{
+        position: 'absolute', inset: 0, width: '100%', height: '100%',
+        objectFit: fit,
+        filter: dim ? `brightness(${1 - dim})` : 'none',
+        ...style,
+      }}
+    />
+  );
+}
+
+// Looks up a clip window from clips.json (loaded into window.MV_CLIPS at boot)
+function ClipSprite({ id, ...rest }) {
+  const c = (window.MV_CLIPS || []).find((x) => x.id === id);
+  if (!c) return null;
+  return <VideoSprite src={c.src} start={c.at} dur={c.dur} rate={c.rate || 1} {...rest} />;
+}
+
+// ── Ken Burns still (last-resort fallback ONLY for the player line-up shots) ──
 function KenBurns({ src, start, dur, from = 1.0, to = 1.12, panX = 0, panY = 0, dim = 0, fit = 'cover', style = {} }) {
   const t = useTime();
   const local = t - start;
@@ -65,19 +128,19 @@ function Vignette({ strength = 0.55 }) {
 }
 
 // ── Flags (pure CSS approximations, crisp at any size) ───────────────────────
-// France: vertical blue / white / red tricolore.
+// France: vertical navy / white / red tricolore.
 function FlagFRA({ w = 120 }) {
   const h = w * 2 / 3;
   return (
     <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', display: 'flex', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
-      <div style={{ flex: 1, background: '#002654' }} />
+      <div style={{ flex: 1, background: '#1a2f6b' }} />
       <div style={{ flex: 1, background: '#fff' }} />
-      <div style={{ flex: 1, background: '#ce1126' }} />
+      <div style={{ flex: 1, background: '#e31b23' }} />
     </div>
   );
 }
 
-// Senegal: vertical green / yellow / red, with a green five-pointed star on the centre band.
+// Senegal: vertical green / yellow / red, with a green five-pointed star centred.
 function FlagSEN({ w = 120 }) {
   const h = w * 2 / 3;
   const star = h * 0.42;
@@ -86,7 +149,6 @@ function FlagSEN({ w = 120 }) {
       <div style={{ flex: 1, background: '#00853f' }} />
       <div style={{ flex: 1, background: '#fdef42' }} />
       <div style={{ flex: 1, background: '#e31b23' }} />
-      {/* central green five-pointed star */}
       <div style={{
         position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)',
         width: star, height: star, background: '#00853f',
@@ -118,24 +180,21 @@ function Kicker({ children, color = MV.gold, size = 30 }) {
   );
 }
 
-// Slide-in lower third for player segments.
-function LowerThird({ start, name, role, line, accent = MV.fra }) {
+// Player NAME label (surname only — NO role sentence). Slides in bottom-left.
+function NameLabel({ start, name, accent = MV.fra }) {
   const t = useTime();
   const local = t - start;
   if (local < 0) return null;
-  const inP = Easing.easeOutCubic(clamp(local / 0.8, 0, 1));
+  const inP = Easing.easeOutCubic(clamp(local / 0.7, 0, 1));
   return (
     <div style={{
       position: 'absolute', left: 110, bottom: 150, zIndex: 25,
       transform: `translateX(${(1 - inP) * -80}px)`, opacity: inP,
+      display: 'flex', alignItems: 'stretch',
     }}>
-      <div style={{ display: 'flex', alignItems: 'stretch' }}>
-        <div style={{ width: 14, background: accent, borderRadius: '6px 0 0 6px' }} />
-        <div style={{ background: MV.panel, backdropFilter: 'blur(6px)', padding: '26px 44px 24px 34px', borderRadius: '0 14px 14px 0', border: `1px solid ${MV.line}`, borderLeft: 'none' }}>
-          <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 56, color: MV.text, letterSpacing: '0.01em' }}>{name}</div>
-          <div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 26, color: accent, letterSpacing: '0.22em', textTransform: 'uppercase', marginTop: 6 }}>{role}</div>
-          {line && <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 24, color: MV.muted, marginTop: 10, maxWidth: 640 }}>{line}</div>}
-        </div>
+      <div style={{ width: 16, background: accent, borderRadius: '6px 0 0 6px' }} />
+      <div style={{ background: MV.panel, backdropFilter: 'blur(6px)', padding: '20px 52px 20px 38px', borderRadius: '0 14px 14px 0', border: `1px solid ${MV.line}`, borderLeft: 'none' }}>
+        <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 72, color: MV.text, letterSpacing: '0.04em', textTransform: 'uppercase', lineHeight: 1 }}>{name}</div>
       </div>
     </div>
   );
@@ -164,21 +223,23 @@ function ScoreBug({ start, fra = 0, sen = 0, minute }) {
   );
 }
 
-// Stat row for team intro side panels
-function StatLine({ label, value, accent = MV.gold, delay = 0, start }) {
+// "OUR PREDICTION" watermark chip (top-right) — allowed graphic furniture.
+function PredictionMark({ start = 0 }) {
   const t = useTime();
-  const local = t - start - delay;
-  const p = Easing.easeOutCubic(clamp(local / 0.6, 0, 1));
-  if (local < 0) return null;
+  if (t < start) return null;
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', gap: 30, opacity: p, transform: `translateY(${(1 - p) * 18}px)`, padding: '13px 0', borderBottom: `1px solid ${MV.line}` }}>
-      <span style={{ fontFamily: SANS, fontWeight: 600, fontSize: 26, color: MV.muted }}>{label}</span>
-      <span style={{ fontFamily: SANS, fontWeight: 800, fontSize: 26, color: accent, textAlign: 'right' }}>{value}</span>
+    <div style={{
+      position: 'absolute', top: 116, right: 70, zIndex: 26,
+      background: 'rgba(7,9,15,0.7)', border: `1px solid ${MV.gold}66`, borderRadius: 999,
+      padding: '10px 24px', display: 'flex', alignItems: 'center', gap: 12,
+    }}>
+      <span style={{ width: 9, height: 9, borderRadius: '50%', background: MV.gold, boxShadow: `0 0 10px ${MV.gold}` }} />
+      <span style={{ fontFamily: SANS, fontWeight: 900, fontSize: 22, color: MV.gold, letterSpacing: '0.22em' }}>OUR PREDICTION</span>
     </div>
   );
 }
 
-// Golden goal flash + text burst used at the goal moments.
+// Golden goal flash (NO sentence text — the score bug carries the number).
 function GoalFlash({ at, color = MV.gold }) {
   const t = useTime();
   const local = t - at;
@@ -195,7 +256,7 @@ function GoalFlash({ at, color = MV.gold }) {
       <div style={{
         fontFamily: SANS, fontWeight: 900, fontSize: 230, color, letterSpacing: '0.04em',
         textShadow: `0 0 80px ${color}aa, 0 10px 40px rgba(0,0,0,0.8)`, WebkitTextStroke: '4px rgba(70,40,0,0.45)',
-      }}>GOAL!</div>
+      }}>GOAL</div>
     </div>
   </>);
 }
@@ -206,7 +267,7 @@ function Confetti({ start, dur, count = 90, zIndex = 24, colors }) {
   const local = t - start;
   if (local < 0 || local > dur) return null;
   const W = 1920, H = 1080;
-  const pal = colors || [MV.gold, '#fff', MV.fra, MV.fraRed];
+  const pal = colors || [MV.gold, '#fff', MV.fra, MV.sen];
   const pieces = [];
   for (let i = 0; i < count; i++) {
     const seed = (i * 2654435761 % 1000) / 1000;
@@ -226,7 +287,7 @@ function Confetti({ start, dur, count = 90, zIndex = 24, colors }) {
   return <div style={{ position: 'absolute', inset: 0, zIndex, pointerEvents: 'none', overflow: 'hidden' }}>{pieces}</div>;
 }
 
-// CTA buttons (subscribe / like / share) with staged pop-ins and a pulsing ring.
+// CTA icon buttons (no sentence — icon + single word).
 function CtaButton({ start, delay, label, icon, accent, x }) {
   const t = useTime();
   const local = t - start - delay;
@@ -246,9 +307,7 @@ function CtaButton({ start, delay, label, icon, accent, x }) {
   );
 }
 
-// ── 10/10 polish layer ───────────────────────────────────────────────────────
-
-// Letter-staggered title reveal with a gold shine sweep — replaces flat fades.
+// Letter-staggered title reveal with a gold shine sweep.
 function TitleReveal({ text, start, size = 150, color = MV.gold, stagger = 0.055, shine = true }) {
   const t = useTime();
   const local = t - start;
@@ -283,7 +342,7 @@ function TitleReveal({ text, start, size = 150, color = MV.gold, stagger = 0.055
   );
 }
 
-// Slow ambient particle drift (deterministic) — depth and life on hold frames.
+// Slow ambient particle drift (deterministic) — depth on hold frames.
 function AmbientParticles({ start, dur, count = 40, color = '255,210,74', maxR = 5, zIndex = 21 }) {
   const t = useTime();
   const local = t - start;
@@ -307,7 +366,7 @@ function AmbientParticles({ start, dur, count = 40, color = '255,210,74', maxR =
   return <div style={{ position: 'absolute', inset: 0, zIndex, pointerEvents: 'none', overflow: 'hidden' }}>{dots}</div>;
 }
 
-// Gentle flag wave (applied as a wrapper so the CSS flags feel alive).
+// Gentle flag wave wrapper.
 function Waving({ children, speed = 1.6, amount = 2.2 }) {
   const t = useTime();
   return (
@@ -318,28 +377,22 @@ function Waving({ children, speed = 1.6, amount = 2.2 }) {
   );
 }
 
-// A reusable "pitch with goals" CSS backdrop — soccer-only, never gridiron.
-// Green turf, centre circle + halfway line, and a goal frame top & bottom.
-function PitchBackdrop({ tint = '#0a3a1e', dim = 0 }) {
-  return (
-    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', filter: dim ? `brightness(${1 - dim})` : 'none' }}>
-      <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, ${tint} 0%, #06160c 100%)` }} />
-      {/* mowed stripes */}
-      {Array.from({ length: 10 }).map((_, i) => (
-        <div key={i} style={{ position: 'absolute', left: `${i * 10}%`, top: 0, bottom: 0, width: '10%', background: i % 2 ? 'rgba(255,255,255,0.025)' : 'transparent' }} />
-      ))}
-      {/* halfway line + centre circle */}
-      <div style={{ position: 'absolute', left: 0, right: 0, top: '50%', height: 4, background: 'rgba(255,255,255,0.18)' }} />
-      <div style={{ position: 'absolute', left: '50%', top: '50%', width: 260, height: 260, marginLeft: -130, marginTop: -130, borderRadius: '50%', border: '4px solid rgba(255,255,255,0.18)' }} />
-      {/* soccer goal frames (round-neck-shirt era, NO gridiron goalposts) */}
-      <div style={{ position: 'absolute', left: '50%', top: 0, width: 420, height: 120, marginLeft: -210, border: '6px solid rgba(255,255,255,0.22)', borderTop: 'none' }} />
-      <div style={{ position: 'absolute', left: '50%', bottom: 0, width: 420, height: 120, marginLeft: -210, border: '6px solid rgba(255,255,255,0.22)', borderBottom: 'none' }} />
-    </div>
-  );
+// Subtle animated film grain for cinematic drama grades.
+const GRAIN_URI = "data:image/svg+xml;utf8," + encodeURIComponent(
+  `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix type='saturate' values='0'/></filter><rect width='240' height='240' filter='url(%23n)' opacity='0.5'/></svg>`);
+function FilmGrain({ start, dur, opacity = 0.07 }) {
+  const t = useTime();
+  const local = t - start;
+  if (local < 0 || local > dur) return null;
+  const jx = Math.floor((local * 24) % 7) * 31;
+  const jy = Math.floor((local * 17) % 5) * 47;
+  return <div style={{
+    position: 'absolute', inset: 0, zIndex: 29, pointerEvents: 'none', opacity,
+    backgroundImage: `url("${GRAIN_URI}")`, backgroundPosition: `${jx}px ${jy}px`, mixBlendMode: 'overlay',
+  }} />;
 }
 
 // Cinematic transitions at scene boundaries: luminous flash or dip-to-black.
-// Boundaries are read from window.MV_TRANSITIONS = [{at, type:'flash'|'dip'}].
 function TransitionLayer() {
   const t = useTime();
   let flash = 0, dip = 0;
