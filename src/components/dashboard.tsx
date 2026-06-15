@@ -954,7 +954,11 @@ export function Dashboard({
       const teamsNowLocked = savedStatus === "committed" || savedStatus === "locked";
 
       setEntryMessage(
-        savedStatus === "draft"
+        funMode
+          ? savedStatus === "draft"
+            ? "Free picks saved. Your points and preview rank stay visible here — lock your teams when you're sure. Just for fun, no prizes."
+            : "Your 3 teams are locked. Free to play — climb the leaderboard, just for fun, no prizes. Your points stay live on your account below."
+          : savedStatus === "draft"
           ? "Free picks saved. Your points and preview rank stay visible here; lock your teams when you're sure, then add a ticket to enter the prize pool."
           : savedStatus === "committed"
             ? "Your 3 teams are locked forever. You're playing for fun — your points and a 'where you'd place if paying' preview stay live. Buy a ticket anytime to enter the prize pool."

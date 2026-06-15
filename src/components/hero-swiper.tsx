@@ -15,7 +15,7 @@ import {
   Users,
 } from "lucide-react";
 import Link from "next/link";
-import { type KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
+import { type KeyboardEvent, type ReactElement, useCallback, useEffect, useRef, useState } from "react";
 
 import { HeroCard } from "@/components/hero-card";
 import { isFunMode } from "@/lib/fun-mode";
@@ -24,18 +24,6 @@ import { isFunMode } from "@/lib/fun-mode";
 // Slide 1 is the live face-off hero; the rest are on-brand poster slides.
 // Built on CSS scroll-snap (native momentum + touch) with dots, arrows and
 // keyboard support layered on top — no carousel dependency.
-const SLIDE_LABELS = [
-  "The Matchup",
-  "How to play",
-  "Prize pool",
-  "Scoring",
-  "Example",
-  "Coefficients",
-  "Invite a friend",
-  "Agent Deal",
-  "Login or register",
-] as const;
-
 export function HeroSwiper({
   prizePool,
   playerCount,
@@ -45,18 +33,46 @@ export function HeroSwiper({
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
+  const funMode = isFunMode();
 
-  const goTo = useCallback((index: number) => {
+  const goTo = useCallback((index: number, slideCount: number) => {
     const track = trackRef.current;
     if (!track) {
       return;
     }
-    const clamped = Math.max(0, Math.min(SLIDE_LABELS.length - 1, index));
+    const clamped = Math.max(0, Math.min(slideCount - 1, index));
     const reduce =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     track.scrollTo({ left: track.clientWidth * clamped, behavior: reduce ? "auto" : "smooth" });
   }, []);
+
+  // In fun mode this is a FREE game: drop the money-earning slides
+  // (referral "earn a cut" and the agent ticket-selling deal) so nothing
+  // reads as a paid product.
+  const slides: Array<{ label: string; render: () => ReactElement }> = [
+    { label: "The Matchup", render: () => <HeroCard /> },
+    { label: "How to play", render: () => <HowToPoster /> },
+    { label: funMode ? "Leaderboard" : "Prize pool", render: () => <PrizePoster /> },
+    {
+      label: "Scoring",
+      render: () => <PointsPoster onSeeExample={() => goTo(scoringExampleIndex, slides.length)} />,
+    },
+    { label: "Example", render: () => <ExamplePoster /> },
+    { label: "Coefficients", render: () => <CoefficientsPoster /> },
+    ...(funMode
+      ? []
+      : [
+          { label: "Invite a friend", render: () => <InvitePoster /> },
+          { label: "Agent Deal", render: () => <AgentDealPoster /> },
+        ]),
+    {
+      label: "Login or register",
+      render: () => <LoginPoster prizePool={prizePool} playerCount={playerCount} />,
+    },
+  ];
+  const slideCount = slides.length;
+  const scoringExampleIndex = slides.findIndex((slide) => slide.label === "Example");
 
   useEffect(() => {
     const track = trackRef.current;
@@ -80,43 +96,25 @@ export function HeroSwiper({
   function onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
     if (event.key === "ArrowRight") {
       event.preventDefault();
-      goTo(active + 1);
+      goTo(active + 1, slideCount);
     } else if (event.key === "ArrowLeft") {
       event.preventDefault();
-      goTo(active - 1);
+      goTo(active - 1, slideCount);
     }
   }
 
   return (
     <section className="hero-swiper" aria-roledescription="carousel" aria-label="WorldCup26 highlights">
       <div className="hero-swiper__track" ref={trackRef} tabIndex={0} onKeyDown={onKeyDown}>
-        {SLIDE_LABELS.map((label, index) => (
+        {slides.map((slide, index) => (
           <div
             className={`hero-swiper__slide${index === active ? " is-active" : ""}`}
-            key={label}
+            key={slide.label}
             role="group"
             aria-roledescription="slide"
-            aria-label={`${index + 1} of ${SLIDE_LABELS.length}: ${label}`}
+            aria-label={`${index + 1} of ${slideCount}: ${slide.label}`}
           >
-            {index === 0 ? (
-              <HeroCard />
-            ) : index === 1 ? (
-              <HowToPoster />
-            ) : index === 2 ? (
-              <PrizePoster />
-            ) : index === 3 ? (
-              <PointsPoster onSeeExample={() => goTo(4)} />
-            ) : index === 4 ? (
-              <ExamplePoster />
-            ) : index === 5 ? (
-              <CoefficientsPoster />
-            ) : index === 6 ? (
-              <InvitePoster />
-            ) : index === 7 ? (
-              <AgentDealPoster />
-            ) : (
-              <LoginPoster prizePool={prizePool} playerCount={playerCount} />
-            )}
+            {slide.render()}
           </div>
         ))}
       </div>
@@ -126,20 +124,20 @@ export function HeroSwiper({
           className="hero-swiper__arrow"
           type="button"
           aria-label="Previous slide"
-          onClick={() => goTo(active - 1)}
+          onClick={() => goTo(active - 1, slideCount)}
           disabled={active === 0}
         >
           <ChevronLeft size={18} aria-hidden="true" />
         </button>
         <div className="hero-swiper__dots" role="tablist" aria-label="Choose slide">
-          {SLIDE_LABELS.map((label, index) => (
+          {slides.map((slide, index) => (
             <button
-              key={label}
+              key={slide.label}
               type="button"
               className={`hero-swiper__dot${index === active ? " is-active" : ""}`}
-              aria-label={`Go to ${label}`}
+              aria-label={`Go to ${slide.label}`}
               aria-current={index === active}
-              onClick={() => goTo(index)}
+              onClick={() => goTo(index, slideCount)}
             />
           ))}
         </div>
@@ -147,15 +145,15 @@ export function HeroSwiper({
           className="hero-swiper__arrow"
           type="button"
           aria-label="Next slide"
-          onClick={() => goTo(active + 1)}
-          disabled={active === SLIDE_LABELS.length - 1}
+          onClick={() => goTo(active + 1, slideCount)}
+          disabled={active === slideCount - 1}
         >
           <ChevronRight size={18} aria-hidden="true" />
         </button>
       </div>
 
       <p className="hero-swiper__status" aria-live="polite">
-        {`Slide ${active + 1} of ${SLIDE_LABELS.length}: ${SLIDE_LABELS[active]}`}
+        {`Slide ${active + 1} of ${slideCount}: ${slides[active]?.label ?? ""}`}
       </p>
     </section>
   );
