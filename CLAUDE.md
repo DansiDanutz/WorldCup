@@ -1,16 +1,75 @@
 # CLAUDE.md — WorldCup26 project guide
 
+## NORTH STAR (read first): enable monetization ASAP
+
+The current single objective is to cross the YouTube Partner Program (YPP)
+watch-time threshold and switch on fan funding, then ads. Subscribers (1,327) and
+uploads are already met — **only watch time is missing, and it reads 0 because
+content is split across two channels.** Weigh every decision against one question:
+*does this bank VALID PUBLIC WATCH HOURS faster?* Use all leverage we have — the
+1,327 existing subscribers, the 13 finished episodes, the 15 rendered Shorts, the
+organic campaign machine, the worldcup26.world funnel, Higgsfield, and the live
+World Cup discovery window happening right now.
+
+**Priority levers, in order (detail in `MONETIZATION_STATUS.md`):**
+1. **Consolidate** every episode onto `@DansLab-Kimi`, public — the 0-hours root cause.
+2. **Verify "No, not made for kids"** on every video — made-for-kids silently
+   disables fan funding and voids personalized features; Pixar style is
+   high-risk, so check it TODAY.
+3. **Point the ORGANIC campaign** (WhatsApp/Telegram/X/community + the site
+   funnel) at the long-form episodes — organic external watch time counts toward
+   the 3,000h. Keep PAID ads aimed at the site, not YouTube (paid-driven watch
+   time risks being ruled non-valid).
+4. **Premiere ≥48h ahead + autoplay "All Episodes" playlist** — concentrated live
+   + binge watch time.
+5. **Shorts 2–4/day during the tournament** — funnel to long-form & subs, and a
+   hedge toward the 3M-Shorts path.
+
+**Daily operating loop (improve every single day):** post the day's Shorts + run
+the first-hour push on any premiere → ship/schedule the next buffered episode
+(stay 2 ahead, chronological) → read yesterday's analytics and log watch-hours,
+subs and Shorts views in `MONETIZATION_STATUS.md` → reply to every comment → if a
+lever is underperforming, change it.
+
+**Change the approach if:** after a week of consolidated, fully-pushed uploads the
+watch-hours velocity won't reach 3,000h within ~60–90 days → escalate (more
+premieres, higher-retention/longer episodes, heavier organic distribution) or
+shift effort to the Shorts-views path. Never keep doing what isn't moving the KPI.
+
 ## YouTube series: WorldCup26 Legends (MANDATORY reading before any video work)
 
 Before producing, editing, or advising on ANY episode of the match-video series,
-read **`content/youtube/SERIES_PLAYBOOK.md`** — the living knowledge file with
-the DO / DON'T lists, the per-episode checklist, and the results log.
-After every published episode, UPDATE that file: log the results at 48h and add
-any new good/bad learnings.
+read ALL of these living knowledge files:
+- **`content/youtube/SERIES_PLAYBOOK.md`** — DO / DON'T lists, per-episode
+  checklist, and the results log.
+- **`content/youtube/CHANNEL_GROWTH_ACTION_PLAN.md`** — channel config + the
+  growth law, the canonical channel (`@DansLab-Kimi`), and the packaging rules.
+- **`content/youtube/PREMIERE_CALENDAR.md`** — which episode premieres WHEN,
+  mapped to the real WC2026 fixtures, plus the Shorts posting schedule.
+- **`content/youtube/MONETIZATION_STATUS.md`** — real YPP eligibility, the
+  watch-hours path, and the channel-consolidation blocker (only the watch-time
+  requirement is unmet; content is split across two channels = 0 watch hours).
+- **`content/youtube/PRODUCTION_ACCELERATION.md`** — how we stay 48h ahead: the
+  rolling 2-episode buffer, the backwards-from-kickoff timebox, batching the
+  Higgsfield asset step, and the one-command `build-episode.sh` (render ‖ VO).
+
+After every published episode, UPDATE the playbook (log results at 48h + new
+learnings) and tick the episode off in the premiere calendar.
+
+**TIMING IS THE JOB — HARD MINIMUM 48h: every episode must already be POSTED
+(as a scheduled Premiere) at least 48 hours before its real match kicks off.**
+Not "started", not "rendering" — live on the channel with 48h to spare. A great
+episode published late is a cold start (see Ep2: 83 views). Check
+`PREMIERE_CALENDAR.md` for the next fixture window BEFORE starting any episode
+and work BACKWARDS from kickoff: subtract 48h to get the post deadline, then
+subtract render + VO + thumbnail + Shorts + QA time to get the start date — and
+start then. If you cannot make the 48h deadline, say so immediately so the
+schedule can flex; never quietly ship late. If a match window has already
+passed, the episode is RESCUE mode (Shorts + retitle), not a Premiere.
 
 Non-negotiables distilled from channel data (details in the playbook):
 1. Views = Packaging × Timing × Distribution × Retention — content alone is not enough.
-2. Episodes go live (as YouTube **Premieres**) ≥24h BEFORE the real match they cover.
+2. Episodes go live (as YouTube **Premieres**) ≥48h BEFORE the real match they cover.
 3. Every episode ships with: thumbnail (1 face + ≤4 words), SEO title/description,
    2–3 Shorts cuts, pinned comment, first-hour campaign push.
 4. Brian (ElevenLabs) is always the narrator. Mystery Supporter segment in every episode.
@@ -61,6 +120,27 @@ React/Babel 300s timeline → Playwright frame render → ElevenLabs Brian VO �
 two-stage ffmpeg mux (audio master, then video encode). See that project's
 README.md for commands. Generated media comes from Higgsfield (job IDs in
 `jobs-manifest.json`, re-downloadable via `npm run fetch-assets`).
+
+### Series versioning & insertion (CHECK BEFORE building any episode)
+
+The series is numbered and growing — insert new work in the RIGHT place, never
+reuse or skip a number. Before creating an episode:
+
+1. **Find the next number.** Episodes are numbered by **production order**. The
+   next number = (highest existing `marketing/match-videos/matchNN-...` folder) + 1.
+   Cross-check the `SERIES_PLAYBOOK.md` results log and `UPLOAD_PACKS.md`.
+   **Current state: latest is Ep14 (France vs Senegal) → next is Ep15.**
+2. **Folder name = `matchNN-teama-vs-teamb`** where `NN` is the zero-padded
+   episode number (folder number == episode number; the series starts at
+   `match02` — Ep1 was the inaugural one-off).
+3. **Keep the number consistent across EVERY artifact:** VO says "episode N";
+   the Mystery Supporter is **Legend 0NN**; the upload-pack title ends `(Ep.N)`;
+   the next-episode tease points to **Ep N+1**; add the `UPLOAD_PACKS.md` entry
+   in sequence and tick the row in `PREMIERE_CALENDAR.md`.
+4. **Stay on canon:** scores/dates/players consistent with `content/Stories/`
+   and earlier episodes; never contradict `content/README.md`'s group draw.
+5. **Reuse, don't duplicate:** build on the Ep2 template (content swap), reuse
+   the music/SFX library and any existing player/crowd clips for repeat nations.
 
 ## Content library
 
