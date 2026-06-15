@@ -1,3 +1,4 @@
+import { resolveFootballDataResult } from "@/lib/football-data";
 import type { ResultPayload } from "@/lib/types";
 import { normalizeResultPayload, type ResultMatchContext } from "@/lib/result-validation";
 
@@ -9,6 +10,14 @@ type ProviderResult =
     };
 
 export async function fetchExternalResult(context: ResultMatchContext): Promise<ProviderResult> {
+  // Preferred source: the live football-data.org World Cup feed. Only FINISHED
+  // matches resolve to a result; everything else is "not available yet".
+  const footballDataKey = process.env.FOOTBALL_DATA_API_KEY;
+  if (footballDataKey) {
+    const result = await resolveFootballDataResult(footballDataKey, context);
+    return result ? { status: "completed", result } : { status: "not_found" };
+  }
+
   const resultApiUrl = process.env.RESULT_API_URL;
 
   if (!resultApiUrl) {
