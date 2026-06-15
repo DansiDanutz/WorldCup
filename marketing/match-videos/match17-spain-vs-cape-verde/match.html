@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WorldCup26 Legends — Match 17: Spain vs Cape Verde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #050608; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="WC26 Match 17 · t=0s"></div>
+
+<!-- React + Babel (pinned, same stack as the worldcup26 ad) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="match-kit.jsx"></script>
+<script type="text/babel" src="match-scenes.jsx"></script>
+
+<script type="text/babel">
+const { useEffect } = React;
+
+// Scene timeline (global seconds) — 300s. Kept in sync with narration.json
+// (Brian VO slots) and clips.json (music/SFX placements).
+const SCENES = [
+  { c: SceneColdOpen, start: 0,     end: 20.0 },   // ten volcanic islands · diaspora · lighthouse keeper
+  { c: SceneTitle,    start: 20.0,  end: 49.0 },   // recap (SWE-TUN our prediction) + Ep.17 title + "an island scores"
+  { c: SceneHistory,  start: 49.0,  end: 94.0 },   // Cape Verde true history: diaspora + maiden World Cup
+  { c: SceneSpain,    start: 94.0,  end: 142.0 },  // Spain — the empire (Yamal, Rodri)
+  { c: SceneCapeVerde,start: 142.0, end: 170.0 },  // Cape Verde line-up (Ryan Mendes, Garry Rodrigues)
+  { c: SceneDuel,     start: 170.0, end: 189.0 },  // empire vs island
+  { c: SceneDrama,    start: 189.0, end: 247.0 },  // OUR PREDICTION 3-1 (Yamal 1-0, 2-0, Garry 2-1 historic, 3-1)
+  { c: SceneVerdict,  start: 247.0, end: 256.0 },  // do you agree? EMPIRE / ISLAND
+  { c: SceneMystery,  start: 256.0, end: 273.0 },  // Legend 017 — the Lighthouse Keeper
+  { c: SceneApp,      start: 273.0, end: 290.0 },  // worldcup26.world
+  { c: SceneCTA,      start: 290.0, end: 300.0 },  // like / subscribe outro
+];
+
+// Cinematic cut treatment per scene boundary (read by TransitionLayer).
+window.MV_TRANSITIONS = [
+  { at: 20.0,  type: 'flash' },
+  { at: 49.0,  type: 'dip' },
+  { at: 94.0,  type: 'flash' },
+  { at: 142.0, type: 'flash' },
+  { at: 170.0, type: 'flash' },
+  { at: 189.0, type: 'dip' },
+  { at: 247.0, type: 'dip' },
+  { at: 256.0, type: 'dip' },
+  { at: 273.0, type: 'flash' },
+  { at: 290.0, type: 'flash' },
+];
+const DURATION = 300.0;
+
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root) root.dataset.screenLabel = `WC26 Match 17 · t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+
+function MatchVideo() {
+  return (
+    <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26m17">
+      <ScreenLabeler />
+      <SeekBridge />
+      {SCENES.map((s, i) => (
+        <Sprite key={i} start={s.start} end={s.end}>
+          <s.c />
+        </Sprite>
+      ))}
+      <TransitionLayer />
+    </Stage>
+  );
+}
+
+function boot() {
+  ReactDOM.createRoot(document.getElementById('root')).render(<MatchVideo />);
+}
+// Load clip placements first so any clip lookups + mux can never drift apart.
+fetch('./clips.json')
+  .then((r) => r.json())
+  .then((d) => { window.MV_CLIPS = d.clips || []; })
+  .catch((e) => { console.warn('clips.json load failed', e); window.MV_CLIPS = []; })
+  .finally(boot);
+</script>
+</body>
+</html>
