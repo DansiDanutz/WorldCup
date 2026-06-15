@@ -141,8 +141,8 @@ function LowerThird({ start, name, role, line, accent = MV.civ }) {
   );
 }
 
-// Match scoreboard chip (top center). CIV — ECU.
-function ScoreBug({ start, civ = 0, ecu = 0, minute }) {
+// Match scoreboard chip (top center). FRA — IRQ.
+function ScoreBug({ start, fra = 0, irq = 0, minute }) {
   const t = useTime();
   const local = t - start;
   if (local < 0) return null;
@@ -156,9 +156,9 @@ function ScoreBug({ start, civ = 0, ecu = 0, minute }) {
       background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 14,
       boxShadow: '0 10px 36px rgba(0,0,0,0.5)', overflow: 'hidden',
     }}>
-      <div style={{ ...cell, background: MV.civ, color: '#0a0a0a' }}>CIV</div>
-      <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{civ} — {ecu}</div>
-      <div style={{ ...cell, background: MV.ecuBlue }}>ECU</div>
+      <div style={{ ...cell, background: MV.fraDeep, color: '#fff' }}>FRA</div>
+      <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{fra} — {irq}</div>
+      <div style={{ ...cell, background: MV.irqDeep, color: '#fff' }}>IRQ</div>
       {minute && <div style={{ ...cell, fontSize: 26, color: MV.muted, borderLeft: `1px solid ${MV.line}` }}>{minute}</div>}
     </div>
   );
@@ -206,7 +206,7 @@ function Confetti({ start, dur, count = 90, zIndex = 24, colors }) {
   const local = t - start;
   if (local < 0 || local > dur) return null;
   const W = 1920, H = 1080;
-  const pal = colors || [MV.gold, '#fff', MV.civ, MV.civGreen];
+  const pal = colors || [MV.gold, '#fff', MV.fra, MV.fraRed];
   const pieces = [];
   for (let i = 0; i < count; i++) {
     const seed = (i * 2654435761 % 1000) / 1000;
