@@ -227,4 +227,14 @@ export const PREDICTIONS: MatchPrediction[] = [
     hook: "The rematch of 2002; Mbappé strikes twice, Jackson answers for the Lions.",
     youtube: null,
   },
+  {
+    ep: 22,
+    home: "Iraq",
+    away: "Norway",
+    stage: "Group I",
+    date: "Jun 17, 2026",
+    score: "1–1",
+    hook: "The war-torn nation that became champions of Asia; Haaland strikes, Hussein answers.",
+    youtube: null,
+  },
 ];

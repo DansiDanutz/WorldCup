@@ -957,6 +957,56 @@ world cup 2026, worldcup26, France vs Senegal, France football, Senegal football
 
 ---
 
+## Episode 22 — Iraq vs Norway
+
+**Title:** `The War-Torn Nation That Became Champions of Asia | Iraq vs Norway — World Cup 2026 (Ep.22)`
+
+**Description:**
+```
+In 2007, a country torn apart by war sent eleven men to play football — Sunni, Shia and Kurd, in one dressing room, playing for one flag. They beat Saudi Arabia in the final and became champions of Asia. For one afternoon, an entire nation forgot the fighting. Tonight, that same shirt walks out again — against the Vikings of Norway, back at a World Cup after 28 years away.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 22: Iraq vs Norway, Group I. The survivors of war against the sons of the north — the heart of Mesopotamia against the power of Haaland and Ødegaard.
+
+🇮🇶 On 29 July 2007 in Jakarta, war-torn Iraq won the AFC Asian Cup for the first time, beating Saudi Arabia 1-0 in the final. Captain Younis Mahmoud headed the only goal; their Brazilian coach Jorvan Vieira had been in charge barely two months. The joy carried a wound — bombings struck the crowds celebrating in Baghdad — yet the people danced anyway. It remains the greatest day in Iraqi football. Did you know? Iraq midfielder Zidane Iqbal, once of Manchester United, is named after Zinedine Zidane.
+🇳🇴 Norway are back at a World Cup for the first time since 1998 — a 28-year absence — powered by Erling Haaland, their all-time top scorer at just 25 (16 goals in qualifying), and captain Martin Ødegaard. Ståle Solbakken's golden generation won all eight qualifiers, beating Italy home and away.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "LIONS" if Iraq's heart wins it, or "VIKINGS" if Norway's power is simply too much.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — the war-torn team that became champions
+0:16 The story so far
+0:30 The most powerful story in football
+0:50 The history — Iraq, 2007, champions of Asia
+2:02 The Lions of Mesopotamia — Iqbal, Hussein, Al-Hamadi
+2:45 The Vikings — Haaland, Ødegaard, Sørloth
+3:26 The duel — the heart vs the power
+3:34 Our prediction
+3:43 Haaland strikes — 1-0
+4:01 Hussein answers — 1-1
+4:10 Full time & do you agree?
+4:22 Legend 022 — the Standard-Bearer
+4:40 Play free at worldcup26.world
+4:54 Like, share & subscribe
+
+📲 Send this to the friend who still loves a World Cup underdog.
+
+🎵 Music: "Crossing the Chasm", "Five Armies", "Desert City", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #Iraq #Norway #Haaland #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, Iraq vs Norway, Iraq football, Norway football, Lions of Mesopotamia, Iraq 2007 Asian Cup, Younis Mahmoud, Jorvan Vieira, AFC Asian Cup, war-torn nation football, Norway World Cup, Norway 1998, Erling Haaland, Martin Odegaard, Alexander Sorloth, Antonio Nusa, Sander Berge, Zidane Iqbal, Aymen Hussein, Ali Al-Hamadi, FIFA World Cup 2026, Group I, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
 ## Shorts (per episode) — caption template
 
 Post 2 per day. Caption format:

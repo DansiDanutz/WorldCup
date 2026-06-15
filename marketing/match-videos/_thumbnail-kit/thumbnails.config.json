@@ -234,6 +234,19 @@
       "sub": "FRANCE vs SENEGAL",
       "awayImg": "content/images/France/Kylian-Mbappe.png",
       "awayName": "MBAPPÉ"
+    },
+    {
+      "ep": 22,
+      "dir": "match22-iraq-vs-norway",
+      "img": "content/images/Iraq/Aymen-Hussein.png",
+      "name": "HUSSEIN",
+      "hook": "ONE TEAM<br>ONE FLAG",
+      "face": "IRQ",
+      "away": "NOR",
+      "marquee": "BRA",
+      "sub": "IRAQ vs NORWAY",
+      "awayImg": "content/images/Norway/Erling-Haaland.png",
+      "awayName": "HAALAND"
     }
   ]
 }
