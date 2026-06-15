@@ -14,8 +14,17 @@ async function runResultCron(request: Request) {
 
   try {
     const summary = await runResultsSweep();
-    return NextResponse.json(summary);
+    const applied = summary.processed.filter(
+      (entry) => entry.action === "fetched_result_and_applied" || entry.action === "applied_existing_result",
+    ).length;
+    const errors = summary.processed.filter((entry) => entry.action === "error").length;
+    // Logged so the unattended job is observable in Vercel runtime logs.
+    console.log(
+      `[cron/results] checked=${summary.processed.length} applied=${applied} errors=${errors} bracketAdvanced=${summary.bracketAdvanced}`,
+    );
+    return NextResponse.json({ ...summary, applied, errors, checked: summary.processed.length });
   } catch (error) {
+    console.error("[cron/results] sweep failed:", error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Result sweep failed." },
       { status: 500 },
