@@ -301,7 +301,7 @@ function SceneEcuador() {
   );
 }
 
-// ── 7. The duel (169.5–188.5): flair vs wall ─────────────────────────────────
+// ── 7. The duel (169.5–188.5): golden chase vs the Leopards ───────────────────
 function SceneDuel() {
   const { localTime: lt } = useSprite();
   const slideP = Easing.easeOutQuart(clamp(lt / 1.1, 0, 1));
@@ -310,19 +310,19 @@ function SceneDuel() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
-        <img src="assets/player-adingra.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(255,122,0,0.32), transparent 65%)' }} />
+        <img src="assets/player-ronaldo.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(170,21,27,0.4), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
-          THE FLAIR
-          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>IVORY COAST · FASTEST WINGERS</div>
+          THE CHASE
+          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>PORTUGAL · THE GOLDEN GENERATION</div>
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * 100}%)` }}>
-        <img src="assets/player-caicedo.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(10,61,145,0.4), transparent 65%)' }} />
+        <img src="assets/player-wissa.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(0,127,255,0.42), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
-          THE WALL
-          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>ECUADOR · CALMEST DEFENDERS</div>
+          THE PRIDE
+          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>DR CONGO · THE LEOPARDS</div>
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 'calc(50% - 3px)', width: 6, background: `linear-gradient(180deg, transparent, ${MV.gold}, transparent)`, zIndex: 24, opacity: slideP }} />
@@ -338,7 +338,7 @@ function SceneDuel() {
       <Sprite start={183.5} end={188.5}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
           <BigTitle size={70} color={MV.text} style={{ maxWidth: 1400 }}>
-            Our prediction — built on power, discipline, and one striker who never misses his stage. Watch.
+            Our prediction — Portuguese class, Congolese pride, and one old king who is not finished yet. Watch.
           </BigTitle>
         </div>
       </Sprite>
