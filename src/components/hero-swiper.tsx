@@ -18,6 +18,7 @@ import Link from "next/link";
 import { type KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { HeroCard } from "@/components/hero-card";
+import { isFunMode } from "@/lib/fun-mode";
 
 // "The Matchup" landing swiper — a touch-native carousel of 9:16 posters.
 // Slide 1 is the live face-off hero; the rest are on-brand poster slides.
@@ -600,16 +601,29 @@ function LoginPoster({ prizePool, playerCount }: { prizePool?: string; playerCou
         </div>
 
         <div className="hero-card__cards">
-          <div className="hero-login-stats">
-            <div className="hero-mini hero-stat hero-stat--gold">
-              <span>Prize pool</span>
-              <strong>{prizePool ?? "TBA"}</strong>
+          {isFunMode() ? (
+            <div className="hero-login-stats">
+              <div className="hero-mini hero-stat hero-stat--gold">
+                <span>🏆 Free leaderboard</span>
+                <strong>Bragging rights only</strong>
+              </div>
+              <div className="hero-mini hero-stat">
+                <span>Players</span>
+                <strong>{playerCount != null ? playerCount.toLocaleString() : "—"}</strong>
+              </div>
             </div>
-            <div className="hero-mini hero-stat">
-              <span>Players</span>
-              <strong>{playerCount != null ? playerCount.toLocaleString() : "—"}</strong>
+          ) : (
+            <div className="hero-login-stats">
+              <div className="hero-mini hero-stat hero-stat--gold">
+                <span>Prize pool</span>
+                <strong>{prizePool ?? "TBA"}</strong>
+              </div>
+              <div className="hero-mini hero-stat">
+                <span>Players</span>
+                <strong>{playerCount != null ? playerCount.toLocaleString() : "—"}</strong>
+              </div>
             </div>
-          </div>
+          )}
 
           <p className="hero-formula">Sign in with Google — one tap, no password</p>
 

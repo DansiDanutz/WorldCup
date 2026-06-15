@@ -9,6 +9,7 @@ import {
   normalizeDepositAddress,
   normalizeNetwork,
 } from "@/lib/deposits";
+import { FUN_MODE_DISABLED_MESSAGE, isFunMode } from "@/lib/fun-mode";
 import { enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import {
   getAuthProvider,
@@ -22,6 +23,10 @@ import {
 } from "@/lib/validation";
 
 export async function POST(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
   const limited = await enforceRateLimit(request, "deposit-sender-wallet", {
     limit: 10,
     windowMs: 60_000,

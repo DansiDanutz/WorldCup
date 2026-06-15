@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { FUN_MODE_DISABLED_MESSAGE, isFunMode } from "@/lib/fun-mode";
 import { enforceGeoEligibility, enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import { getPolicyGeoEnv, loadOperatorPolicy } from "@/lib/operator-policy";
 import { getUserPaidActionGate, isPaidActionLaunchTestAdmin } from "@/lib/paid-action-gates";
@@ -16,6 +17,10 @@ const TRANSFER_ERROR_MESSAGES: Record<string, { status: number; message: string 
 };
 
 export async function POST(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
   const limited = await enforceRateLimit(request, "ticket-transfer", { limit: 10, windowMs: 60_000 });
   if (limited) {
     return limited;

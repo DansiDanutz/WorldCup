@@ -7,6 +7,7 @@ import {
   subAccountName,
   type DepositAddressInfo,
 } from "@/lib/deposits";
+import { FUN_MODE_DISABLED_MESSAGE, isFunMode } from "@/lib/fun-mode";
 import { enforceGeoEligibility, enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import {
   createBrokerSubAccount,
@@ -27,6 +28,10 @@ type AddressRow = {
 };
 
 export async function GET(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
   const limited = await enforceRateLimit(request, "deposits", { limit: 20, windowMs: 60_000 });
   if (limited) {
     return limited;

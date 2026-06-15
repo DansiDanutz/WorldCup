@@ -12,6 +12,7 @@ import {
   parseDepositAmount,
   sumActiveDepositClaimAmounts,
 } from "@/lib/deposits";
+import { FUN_MODE_DISABLED_MESSAGE, isFunMode } from "@/lib/fun-mode";
 import { enforceGeoEligibility, enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import {
   getKucoinMainConfig,
@@ -62,6 +63,10 @@ const DEPOSIT_LOOKBACK_MS = 14 * 24 * 60 * 60 * 1000;
 const SENDER_WALLET_LOCK_BUFFER_MS = 5 * 60 * 1000;
 
 export async function POST(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
   const limited = await enforceRateLimit(request, "deposit-check", {
     limit: 10,
     windowMs: 60_000,

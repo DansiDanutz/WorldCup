@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { enforceGeoEligibility, enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
+import { isFunMode } from "@/lib/fun-mode";
 import {
   getPolicyGeoEnv,
   loadOperatorPolicy,
@@ -236,6 +237,27 @@ export async function POST(request: Request) {
 
   if (action === "save-draft") {
     return NextResponse.json({ entryId: draftResult.data, status: "draft" });
+  }
+
+  // FREE-PLAY (fun mode): "commit"/"lock" both finalize the entry onto the
+  // leaderboard WITHOUT a ticket or any payment — bragging rights only. The
+  // leaderboard view ranks status = 'locked', so we set the saved draft to
+  // locked directly (scoped to this user + tournament). No fees, no prizes.
+  if (isFunMode()) {
+    const funLock = await supabase
+      .from("worldcup_entries")
+      .update({ status: "locked", locked_at: new Date().toISOString() })
+      .eq("user_id", user.id)
+      .eq("tournament_id", tournamentResult.data.id)
+      .neq("status", "locked")
+      .select("id")
+      .maybeSingle();
+
+    if (funLock.error) {
+      return jsonError("Could not lock your free entry.", 500);
+    }
+
+    return NextResponse.json({ entryId: funLock.data?.id ?? draftResult.data, status: "locked" });
   }
 
   if (action === "commit") {

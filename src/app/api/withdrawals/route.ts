@@ -7,6 +7,7 @@ import {
   loadAgeVerification,
 } from "@/lib/age-verification";
 import { calculateWalletBalance } from "@/lib/economy";
+import { FUN_MODE_DISABLED_MESSAGE, isFunMode } from "@/lib/fun-mode";
 import { enforceGeoEligibility, enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import {
   getPolicyGeoEnv,
@@ -85,6 +86,10 @@ async function getSignedInUser(request: Request): Promise<SignedInUserResult> {
 }
 
 export async function GET(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
   const limited = await enforceRateLimit(request, "withdrawals", {
     limit: 30,
     windowMs: 60_000,
@@ -125,6 +130,10 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
   const limited = await enforceRateLimit(request, "withdrawals", {
     limit: 10,
     windowMs: 60_000,

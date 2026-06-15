@@ -1,8 +1,13 @@
+import { FUN_MODE_DISABLED_MESSAGE, isFunMode } from "@/lib/fun-mode";
 import { enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import { getAuthProvider } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 
 export async function POST(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
   const limited = await enforceRateLimit(request, "ticket-purchase", { limit: 10, windowMs: 60_000 });
   if (limited) {
     return limited;

@@ -4,6 +4,7 @@ import { ArrowRight, ClipboardCopy, Crown, Gift, LogOut, Trophy, Users, X } from
 import { useEffect, useMemo, useState } from "react";
 
 import { formatMoneyAmount } from "@/lib/economy";
+import { isFunMode } from "@/lib/fun-mode";
 import { formatPoints } from "@/lib/scoring";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import type { Session } from "@supabase/supabase-js";
@@ -206,6 +207,7 @@ export function MyStanding() {
   const referralsListOpen = referralsOpen && hasReferrals;
   const modalMe = me && me.hasEntry ? me : null;
   const leaderboardTop = data?.leaderboardTop ?? [];
+  const funMode = isFunMode();
 
   return (
     <section
@@ -281,7 +283,12 @@ export function MyStanding() {
                   <p className="field-note">Your entry is locked. Team points appear after leaderboard data updates.</p>
                 )}
 
-                {me.inPaidPlaces && me.share != null ? (
+                {funMode ? (
+                  <p className="field-note">
+                    🏆 Free leaderboard — bragging rights only. Free to play — pick 3 teams and
+                    climb the leaderboard. Just for fun, no prizes.
+                  </p>
+                ) : me.inPaidPlaces && me.share != null ? (
                   <div className="standing-share">
                     <Crown size={20} aria-hidden="true" />
                     <div>
@@ -328,7 +335,11 @@ export function MyStanding() {
             <div>
               <h2 className="panel-title">My referrals</h2>
               <p className="panel-subtitle">
-                {data && data.referrals.length > 0
+                {funMode
+                  ? data && data.referrals.length > 0
+                    ? `${data.referrals.length} invited · climbing the free leaderboard`
+                    : "Invite friends to the free leaderboard"
+                  : data && data.referrals.length > 0
                   ? `${data.referrals.length} invited · your cut so far ${formatMoneyAmount(data.referralCutTotal)}`
                   : "Earn a cut of everyone you invite"}
               </p>
@@ -353,7 +364,11 @@ export function MyStanding() {
               <div className="field-note">Loading…</div>
             ) : data.referrals.length === 0 ? (
               <div className="standing-empty">
-                <p>Invite friends — earn 5% of their winnings.</p>
+                <p>
+                  {funMode
+                    ? "Invite friends to play the free leaderboard with you."
+                    : "Invite friends — earn 5% of their winnings."}
+                </p>
                 <a className="button secondary" href="#invite">
                   Invite a friend
                   <ArrowRight size={16} />
@@ -369,7 +384,7 @@ export function MyStanding() {
                   <span>Player</span>
                   <span>Rank</span>
                   <span>Points</span>
-                  <span>Your cut</span>
+                  <span>{funMode ? "Board" : "Your cut"}</span>
                 </div>
                 <div className="referral-position-list">
                   {data.referrals.map((referral, index) => (
@@ -387,9 +402,11 @@ export function MyStanding() {
                         <strong>{formatPoints(referral.totalPoints)}</strong>
                       </div>
                       <div className="referral-stat-cell referral-stat-cell--cut">
-                        <span>{referral.feePercent}% cut</span>
+                        <span>{funMode ? "Free" : `${referral.feePercent}% cut`}</span>
                         <strong>
-                          {referral.inPaidPlaces && referral.myCut != null
+                          {funMode
+                            ? "🏆"
+                            : referral.inPaidPlaces && referral.myCut != null
                             ? formatMoneyAmount(referral.myCut)
                             : "—"}
                         </strong>
@@ -404,10 +421,17 @@ export function MyStanding() {
                   <span>Invited</span>
                   <strong>{data.referrals.length}</strong>
                 </div>
-                <div>
-                  <span>Projected cut</span>
-                  <strong>{formatMoneyAmount(data.referralCutTotal)}</strong>
-                </div>
+                {funMode ? (
+                  <div>
+                    <span>Leaderboard</span>
+                    <strong>🏆 Free</strong>
+                  </div>
+                ) : (
+                  <div>
+                    <span>Projected cut</span>
+                    <strong>{formatMoneyAmount(data.referralCutTotal)}</strong>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -577,8 +601,8 @@ export function MyStanding() {
                         <div>
                           <strong>
                             {row.displayName}
-                            <span className={`board-tag${row.isPaid ? " board-tag--paid" : ""}`}>
-                              {row.isPaid ? "PRIZE POOL" : "FREE"}
+                            <span className={`board-tag${row.isPaid && !funMode ? " board-tag--paid" : ""}`}>
+                              {row.isPaid && !funMode ? "PRIZE POOL" : "FREE"}
                             </span>
                           </strong>
                           <small>{row.teams.map((team) => team.name).join(" · ") || "Teams pending"}</small>

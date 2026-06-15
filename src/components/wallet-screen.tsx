@@ -32,6 +32,7 @@ import {
 } from "@/lib/deposits";
 import type { DepositNetwork } from "@/lib/deposits";
 import { formatLedgerAmount, formatMoneyAmount } from "@/lib/economy";
+import { isFunMode } from "@/lib/fun-mode";
 import { buildSupportWhatsAppUrl, SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import type {
@@ -159,6 +160,7 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const senderWalletSetupRef = useRef<HTMLDivElement | null>(null);
 
   const signedIn = Boolean(session?.access_token && session.user.email);
+  const funMode = isFunMode();
   const showAdminNav = session?.user.email?.trim().toLowerCase() === ownerAdminEmail;
   const depositClaimAccountLabel =
     session?.user.email ?? session?.user.id ?? "your signed-in account";
@@ -1004,7 +1006,36 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
       </header>
 
       <div className="page">
-        {launchEvidenceMode ? (
+        {funMode ? (
+          <section className="wallet-solo">
+            <div className="panel">
+              <div className="panel-header">
+                <div>
+                  <h1 className="panel-title">🏆 Free leaderboard — bragging rights only</h1>
+                  <p className="panel-subtitle">
+                    Free to play — pick 3 teams and climb the leaderboard. Just for fun, no prizes.
+                    No deposits, no withdrawals, no tickets — nothing to fund.
+                  </p>
+                </div>
+                <Trophy size={18} color="var(--gold)" />
+              </div>
+              <div className="panel-body">
+                <div className="message">
+                  WorldCup26 is in free-play mode. Just pick your 3 teams and watch your points
+                  climb the public leaderboard.
+                </div>
+                <Link className="button" href={{ pathname: "/", hash: "pick" }}>
+                  <Ticket size={16} />
+                  Pick 3 teams
+                </Link>
+                <Link className="button secondary" href={{ pathname: "/", hash: "leaderboard" }}>
+                  <Trophy size={16} />
+                  See the leaderboard
+                </Link>
+              </div>
+            </div>
+          </section>
+        ) : launchEvidenceMode ? (
           <section className="launch-notice" aria-label="Wallet launch evidence mode">
             <div>
               <strong>Admin launch evidence mode</strong>

@@ -1,3 +1,4 @@
+import { isFunMode } from "@/lib/fun-mode";
 import { formatPrizeAmount, type PayoutRow } from "@/lib/prize-pool";
 
 import { podiumClass } from "./utils";
@@ -16,6 +17,17 @@ export function PayoutCard({
   subtitle = "Weighted split of the prize pool.",
   currency = "$",
 }: PayoutCardProps) {
+  if (isFunMode()) {
+    return (
+      <article className="wc-card payout-card" aria-label="Free leaderboard">
+        <div className="payout-card-head">
+          <strong>🏆 Free leaderboard — bragging rights only</strong>
+          <span>Free to play — pick 3 teams and climb the leaderboard. Just for fun, no prizes.</span>
+        </div>
+      </article>
+    );
+  }
+
   return (
     <article className="wc-card payout-card" aria-label={title}>
       <div className="payout-card-head">

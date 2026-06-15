@@ -14,6 +14,7 @@ import {
   parseDepositAmount,
   sumActiveDepositClaimAmounts,
 } from "@/lib/deposits";
+import { FUN_MODE_DISABLED_MESSAGE, isFunMode } from "@/lib/fun-mode";
 import { enforceGeoEligibility, enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import {
   getDepositLimitConfigFromPolicy,
@@ -80,6 +81,10 @@ async function getSignedInUser(request: Request): Promise<SignedInUserResult> {
 }
 
 export async function GET(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
   const limited = await enforceRateLimit(request, "deposit-claims", {
     limit: 30,
     windowMs: 60_000,
@@ -108,6 +113,10 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
   const limited = await enforceRateLimit(request, "deposit-claims", {
     limit: 10,
     windowMs: 60_000,
