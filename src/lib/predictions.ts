@@ -185,7 +185,7 @@ export const PREDICTIONS: MatchPrediction[] = [
     date: "Jun 15, 2026",
     score: "3–1",
     hook: "The empire and the island; Cape Verde's historic first World Cup goal.",
-    youtube: null,
+    youtube: "https://youtu.be/_vHQqJxt6G4",
   },
   {
     ep: 18,
