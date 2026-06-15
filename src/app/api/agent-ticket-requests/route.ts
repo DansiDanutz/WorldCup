@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-import { FUN_MODE_DISABLED_MESSAGE, isFunMode } from "@/lib/fun-mode";
 import { enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
 import { getAuthProvider, getOrCreateReferralProfile } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
@@ -59,9 +58,6 @@ async function getSignedInGoogleUser(request: Request) {
 }
 
 export async function GET(request: Request) {
-  if (isFunMode()) {
-    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
-  }
 
   const limited = await enforceRateLimit(request, "agent-ticket-requests", {
     limit: 30,
@@ -103,9 +99,6 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  if (isFunMode()) {
-    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
-  }
 
   const limited = await enforceRateLimit(request, "agent-ticket-request-create", {
     limit: 8,
