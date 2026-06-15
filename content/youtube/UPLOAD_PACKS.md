@@ -601,7 +601,7 @@ world cup 2026, worldcup26, Netherlands vs Japan, Netherlands football, Japan fo
 
 > Scheduling note: France v Senegal is Matchday 1 (already played) → publish as an
 > evergreen upload, not a ≥48h Premiere. For a Premiere, use an upcoming France
-> fixture (v Norway — v Iraq is already produced as Ep19). Episode number stays 20 (production order).
+> fixture (v Norway — v Iraq is already produced as Ep19). Episode number stays 20 (channel publish order).
 
 **Description:**
 ```

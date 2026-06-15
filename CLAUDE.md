@@ -103,27 +103,29 @@ README.md for commands. Generated media comes from Higgsfield (job IDs in
 The series is numbered and growing — insert new work in the RIGHT place, never
 reuse or skip a number. Before creating an episode:
 
-1. **Find the next number.** Episodes are numbered by **production order**, and
-   in this repo **Ep number == folder number** (canonical). The next number =
-   (highest existing `marketing/match-videos/matchNN-...` folder across ALL
-   branches) + 1. Cross-check the `SERIES_PLAYBOOK.md` results log and `UPLOAD_PACKS.md`.
+1. **Find the next number.** The **Ep number is the channel's PUBLISH order**
+   (the public episode label on YouTube) — that is canonical, the single source of
+   truth. It can differ from the `matchNN` folder number, because some episodes
+   published out of order: **England–Ghana (`match08`) = Ep11, so there is NO public
+   Ep8**, and the rest shift up — Australia–Turkey (`match11`) = Ep12, Germany–Curaçao
+   (`match12`) = Ep13, Netherlands–Japan (`match13`) = Ep14. See `PRODUCTION_LOG.md`
+   for the full Ep↔folder↔URL map. The next number = (highest **Ep number** across
+   ALL branches + `PRODUCTION_LOG.md`) + 1. Cross-check `SERIES_PLAYBOOK.md`.
    **⚠️ CHECK OTHER BRANCHES FIRST** (`git fetch origin && git branch -r`, then
    `git ls-tree -d --name-only <branch> marketing/match-videos/`) — episodes are
    produced in parallel sessions on separate branches, so `main` alone is NOT the
    full picture. (This rule exists because a session once mis-numbered France–Senegal
    as Ep14 while Ep14 = Netherlands–Japan and Ep15–19 already existed elsewhere.)
-   **Current state: `match15`–`match19` (Ivory Coast–Ecuador, Sweden–Tunisia,
-   Spain–Cape Verde, Belgium–Egypt, France–Iraq) are packaged on branch
-   `claude/episode-renumber-publish-order`; `match20` (France–Senegal) is here →
+   **Current state: Ep15–Ep19 (Ivory Coast–Ecuador, Sweden–Tunisia, Spain–Cape Verde,
+   Belgium–Egypt, France–Iraq) are packaged on branch
+   `claude/episode-renumber-publish-order`; Ep20 (France–Senegal, `match20`) is here →
    next free is Ep21.**
-   > Production order (this repo) ≠ the channel's PUBLISH order. On YouTube,
-   > England–Ghana published out of order as Ep11 (no public Ep8), so the channel's
-   > episode labels drift from our folder numbers — see `PRODUCTION_LOG.md`. Our
-   > folder/Ep number is the source of truth for the repo; the publish label is
-   > whatever the channel actually shows.
-2. **Folder name = `matchNN-teama-vs-teamb`** where `NN` is the zero-padded
-   episode number (folder number == episode number; the series starts at
-   `match02` — Ep1 was the inaugural one-off).
+2. **Folder name = `matchNN-teama-vs-teamb`.** For all NEW episodes keep the folder
+   number aligned to the publish Ep number (from Ep15 on they match: `match15` = Ep15
+   … `match20` = Ep20). The series starts at `match02` (Ep1 was the inaugural one-off).
+   Older folders (`match08`–`match13`) keep their original numbers even though their
+   publish Ep numbers differ — do NOT renumber existing folders; the publish Ep number
+   in `PRODUCTION_LOG.md` is what's canonical.
 3. **Keep the number consistent across EVERY artifact:** VO says "episode N";
    the Mystery Supporter is **Legend 0NN**; the upload-pack title ends `(Ep.N)`;
    the next-episode tease points to **Ep N+1**; add the `UPLOAD_PACKS.md` entry

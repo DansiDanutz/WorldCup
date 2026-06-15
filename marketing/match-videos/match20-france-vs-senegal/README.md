@@ -17,7 +17,7 @@ A 5-minute (300s, 1920×1080, 30fps) cinematic episode built on the **Ep2 templa
 > high-value (France + Senegal star power → watch hours, the monetization goal).
 > If you want the buffer's first *Premiere*, produce an **upcoming** France
 > fixture instead (France v Norway, MD3 — France v Iraq is already produced as Ep19).
-> Either way the episode NUMBER stays 20 — numbering is by production order, not match date.
+> Either way the episode NUMBER stays 20 — numbering is by channel publish order, not match date.
 
 ## Timeline (300s) — same skeleton as Ep2, France/Senegal content
 
