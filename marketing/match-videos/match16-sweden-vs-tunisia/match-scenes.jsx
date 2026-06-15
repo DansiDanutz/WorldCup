@@ -1,37 +1,40 @@
-// match-scenes.jsx — the twelve scenes of the Match 15 video (300s timeline).
-// Scene windows must match the SCENES table in match.html and narration.json.
+// match-scenes.jsx — the twelve scenes of the Match 16 video (300s timeline).
+// Sweden vs Tunisia, Group F. Scene windows must match the SCENES table in
+// match.html and the VO slots in narration.json.
 // IMAGE-BASED: Ken-Burns motion on still PNGs. SOCCER ONLY — round-neck shirts,
 // a pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 1-1 is OUR PREDICTION.
 // NOTE: nested <Sprite> windows are GLOBAL seconds (Sprite reads the timeline clock).
+// Theme: SWEDEN = the FROST (blue #006aa7 + yellow #fecc00); TUNISIA = the FIRE
+// (red #e70013 + white). The "old man keeping a flame" = Legend 016 the Firekeeper.
 
-// ── 1. Cold open (0–16): the 2005 kneel — "they stopped a war" ───────────────
+// ── 1. Cold open (0–13): 1978 Tunisia — "they opened the door" ───────────────
 function SceneColdOpen() {
   const { localTime: lt } = useSprite();
   const beat = Math.pow(Math.max(0, Math.sin(lt * Math.PI * 1.1)), 8);
-  const line1P = Easing.easeOutCubic(clamp((lt - 1.2) / 1.4, 0, 1)) * (lt > 10.5 ? Math.max(0, (12.0 - lt) / 1.5) : 1);
-  const titleP = Easing.easeOutCubic(clamp((lt - 12.3) / 1.4, 0, 1));
+  const line1P = Easing.easeOutCubic(clamp((lt - 1.0) / 1.4, 0, 1)) * (lt > 8.6 ? Math.max(0, (10.0 - lt) / 1.4) : 1);
+  const titleP = Easing.easeOutCubic(clamp((lt - 10.0) / 1.2, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      {/* Drogba kneeling — captain image as the symbol of the plea (dark, dramatic) */}
-      <KenBurns src="assets/player-diallo.png" start={0} dur={16} from={1.18} to={1.32} panY={-30}
-        dim={0.5} style={{ filter: 'brightness(0.42) contrast(1.18) saturate(1.05) grayscale(0.35)' }} />
-      {/* ember base in CIV orange so the screen never reads as dead air */}
-      <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 78%, rgba(255,122,0,0.16) 0%, transparent 55%)` }} />
-      {/* heartbeat glow */}
-      <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at center, rgba(255,122,0,${(0.5 * beat).toFixed(3)}) 0%, transparent 62%)` }} />
+      {/* Tunisia in red — the shirt that opened the door (dark, ember-lit) */}
+      <KenBurns src="assets/player-mejbri.png" start={0} dur={13} from={1.16} to={1.32} panY={-26}
+        dim={0.5} style={{ filter: 'brightness(0.46) contrast(1.18) saturate(1.1) grayscale(0.18)' }} />
+      {/* ember base in Tunisia red/fire so the screen never reads as dead air */}
+      <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 80%, rgba(255,90,31,0.20) 0%, transparent 55%)` }} />
+      {/* keeper's-flame heartbeat glow */}
+      <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at center, rgba(231,0,19,${(0.42 * beat).toFixed(3)}) 0%, transparent 62%)` }} />
       {line1P > 0.01 && (
         <div style={{
           position: 'absolute', left: 160, right: 160, bottom: 200, textAlign: 'center', zIndex: 22,
           opacity: line1P,
-          fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 46, color: '#f4d9bf',
+          fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 46, color: '#ffe3d4',
           letterSpacing: '0.04em', lineHeight: 1.25, textShadow: '0 4px 22px rgba(0,0,0,0.9)',
-        }}>He grabbed a live camera, fell to his knees, and begged his country to stop a war.</div>
+        }}>1978 — a tiny North African nation walked in unwanted… and kicked a door wide open for a whole continent.</div>
       )}
       <Vignette strength={0.85} />
-      {lt > 12.3 && (
+      {lt > 10.0 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30, opacity: titleP, zIndex: 22 }}>
-          <Kicker size={32} color="#f4d9bf">A true story</Kicker>
-          <TitleReveal text="THEY STOPPED A WAR" start={12.4} size={120} color={MV.civ} />
+          <Kicker size={32} color="#ffd9c4">A true story</Kicker>
+          <TitleReveal text="THEY OPENED THE DOOR" start={10.1} size={104} color={MV.tun} />
         </div>
       )}
       <Letterbox />
@@ -39,45 +42,46 @@ function SceneColdOpen() {
   );
 }
 
-// ── 2. Recap + title card (16–28) ────────────────────────────────────────────
+// ── 2. Recap + title card (13–29) ────────────────────────────────────────────
+// Ep15 recap is OUR PREDICTION (Ivory Coast 1-1 Ecuador) — never a real result.
 function SceneTitle() {
   const { localTime: lt } = useSprite();
-  // first ~10s carries the Ep14 recap line, then the Ep15 title settles
-  const recapP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1)) * Math.max(0, Math.min(1, (10.5 - lt) / 1.0));
-  const p1 = Easing.easeOutCubic(clamp((lt - 10.0) / 1.0, 0, 1));
-  const p2 = Easing.easeOutBack(clamp((lt - 10.6) / 1.0, 0, 1));
-  const p3 = Easing.easeOutCubic(clamp((lt - 11.4) / 0.9, 0, 1));
+  // first ~5s carries the Ep15 recap line, then the Ep16 title settles
+  const recapP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1)) * Math.max(0, Math.min(1, (5.5 - lt) / 1.0));
+  const p1 = Easing.easeOutCubic(clamp((lt - 5.0) / 1.0, 0, 1));
+  const p2 = Easing.easeOutBack(clamp((lt - 5.8) / 1.0, 0, 1));
+  const p3 = Easing.easeOutCubic(clamp((lt - 6.8) / 0.9, 0, 1));
   return (
-    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, #0a0f1c 0%, #11182b 55%, #0a0f1c 100%)` }}>
-      <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(255,122,0,0.10) 0%, transparent 55%)` }} />
-      <AmbientParticles start={16} dur={12} count={34} color="255,122,0" />
-      {/* RECAP — OUR PREDICTION from Ep14 (never stated as a real result) */}
+    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, #061528 0%, #0a1c33 55%, #061528 100%)` }}>
+      <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(255,90,31,0.10) 0%, transparent 55%)` }} />
+      <AmbientParticles start={13} dur={16} count={34} color="255,204,0" />
+      {/* RECAP — OUR PREDICTION from Ep15 (never stated as a real result) */}
       {recapP > 0.01 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22, opacity: recapP }}>
           <Kicker size={26} color={MV.muted}>Last time · our prediction</Kicker>
-          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>NETHERLANDS 2 — 2 JAPAN</BigTitle>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}>Total Football against the Samurai</div>
+          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>IVORY COAST 1 — 1 ECUADOR</BigTitle>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}>African power against the mountain</div>
         </div>
       )}
       {/* TITLE CARD */}
-      {lt >= 9.5 && (
+      {lt >= 4.6 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 40 }}>
           <div style={{ opacity: p1, transform: `translateY(${(1 - p1) * -30}px)` }}>
-            <Kicker color={MV.civ}>WorldCup26 Legends · Episode 15</Kicker>
+            <Kicker color={MV.swe}>WorldCup26 Legends · Episode 16</Kicker>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 70, opacity: clamp(p2, 0, 1), transform: `scale(${p2})` }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-              <Waving><FlagCIV w={230} /></Waving>
-              <BigTitle size={62} glow={MV.civ}>IVORY COAST</BigTitle>
+              <Waving><FlagSWE w={240} /></Waving>
+              <BigTitle size={62} glow={MV.swe}>SWEDEN</BigTitle>
             </div>
             <BigTitle size={120} color={MV.gold}>VS</BigTitle>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-              <Waving speed={1.9}><FlagECU w={230} /></Waving>
-              <BigTitle size={62} glow={MV.ecu}>ECUADOR</BigTitle>
+              <Waving speed={1.9}><FlagTUN w={230} /></Waving>
+              <BigTitle size={62} glow={MV.tun}>TUNISIA</BigTitle>
             </div>
           </div>
           <div style={{ opacity: p3, transform: `translateY(${(1 - p3) * 26}px)`, fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 32, color: MV.muted, letterSpacing: '0.08em' }}>
-            GROUP E · FIRST MEETING IN HISTORY · THE ELEPHANTS AND THE MOUNTAIN
+            GROUP F · THE NORTHERN WINTER × THE DESERT SUN
           </div>
         </div>
       )}
@@ -86,22 +90,22 @@ function SceneTitle() {
   );
 }
 
-// ── 3. Tease (28–46.5): never-met-before + "the man who always scores" ───────
+// ── 3. Tease (29–49): welcome back + "a striker the PL gave up on" ───────────
 function SceneTease() {
   const { localTime: lt } = useSprite();
   const a = Easing.easeOutCubic(clamp((lt - 0.4) / 1.0, 0, 1));
-  // second beat (~37.5 global → lt ~9.5): "in the second half, the man who always scores does it again"
-  const b = Easing.easeOutBack(clamp((lt - 8.5) / 1.0, 0, 1)) * Math.max(0, Math.min(1, (18.0 - lt) / 1.0));
+  // second beat (~40 global → lt ~11): "a striker the Premier League gave up on comes back to haunt it"
+  const b = Easing.easeOutBack(clamp((lt - 10.5) / 1.0, 0, 1)) * Math.max(0, Math.min(1, (19.5 - lt) / 1.0));
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <PitchBackdrop tint="#0a2e1a" dim={0.25} />
+    <div style={{ position: 'absolute', inset: 0, background: '#04060c' }}>
+      <PitchBackdrop tint="#0a2335" dim={0.25} />
       <Vignette strength={0.5} />
-      <AmbientParticles start={28} dur={18.5} count={26} color="255,209,0" />
-      {/* first-ever meeting headline */}
+      <AmbientParticles start={29} dur={20} count={26} color="154,216,255" />
+      {/* frost vs fire headline */}
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
-        <Kicker size={28} color={MV.civ}>Two nations · never once met</Kicker>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 76, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
-          THE VERY FIRST TIME
+        <Kicker size={28} color={MV.frost}>The deep northern winter · the desert sun</Kicker>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 80, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
+          FROST&nbsp;&nbsp;MEETS&nbsp;&nbsp;FIRE
         </div>
       </div>
       {/* the tease */}
@@ -109,7 +113,7 @@ function SceneTease() {
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 210, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: clamp(b, 0, 1), transform: `scale(${0.9 + 0.1 * clamp(b,0,1)})` }}>
           <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '20px 52px', display: 'flex', alignItems: 'center', gap: 18 }}>
             <span style={{ fontSize: 30 }}>⚽</span>
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.04em' }}>Second half — the man who always scores does it again</span>
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.04em' }}>Late on — a striker the Premier League gave up on comes back to haunt it</span>
           </div>
         </div>
       )}
@@ -118,7 +122,7 @@ function SceneTease() {
   );
 }
 
-// ── 4. History (46.5–98): the real Drogba / Bouaké peace story ───────────────
+// ── 4. History (49–106): the real 1978 Rosario story + 2022 France ───────────
 function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, stamp }) {
   const t = useTime();
   if (t < start || t > end) return null;
@@ -143,7 +147,7 @@ function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, 
         {stamp && stampP > 0 && (
           <div style={{
             position: 'absolute', top: -34, right: -60, transform: `rotate(-12deg) scale(${stampP})`,
-            border: `5px solid ${MV.civGreen}`, color: MV.civGreen, borderRadius: 14, padding: '10px 26px',
+            border: `5px solid ${MV.tun}`, color: MV.tun, borderRadius: 14, padding: '10px 26px',
             fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 32, letterSpacing: '0.08em',
             background: 'rgba(7,9,15,0.85)',
           }}>{stamp}</div>
@@ -154,30 +158,31 @@ function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, 
 }
 
 function SceneHistory() {
-  const S = 46.5;
+  const S = 49.0;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <KenBurns src="assets/player-kessie.png" start={S} dur={51.5} from={1.1} to={1.24} panX={-20}
-        dim={0.72} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1) grayscale(0.2)' }} />
+      <KenBurns src="assets/player-talbi.png" start={S} dur={57} from={1.1} to={1.24} panX={-20}
+        dim={0.72} style={{ filter: 'brightness(0.28) saturate(0.8) contrast(1.1) grayscale(0.18)' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
-      <AmbientParticles start={S} dur={51.5} count={28} color="255,122,0" maxR={4} />
+      <AmbientParticles start={S} dur={57} count={28} color="255,90,31" maxR={4} />
       {/* chapter header */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 26 }}>
-        <Kicker size={28} color={MV.civ}>Chapter One · The True History</Kicker>
+        <Kicker size={28} color={MV.tun}>Chapter One · The True History</Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: MV.text, letterSpacing: '0.04em', marginTop: 16, textShadow: '0 4px 22px rgba(0,0,0,0.8)' }}>
           WHAT THIS SHIRT CARRIES
         </div>
       </div>
       {/* flag, always present */}
       <div style={{ position: 'absolute', bottom: 124, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: 0.95 }}>
-        <FlagCIV w={120} />
+        <FlagTUN w={120} />
       </div>
-      {/* beats synced to narration (46.5, 58, 70, 82, 92) */}
-      <HistoryPlate start={S + 0.5}  end={S + 11.0} year="8 OCTOBER 2005" venue="QUALIFIED — FIRST WORLD CUP" score="3 — 1" note="Beat Sudan to reach their first World Cup. Then their captain made a plea the world never forgot." accent={MV.civ} />
-      <HistoryPlate start={S + 11.0} end={S + 23.0} year="LIVE ON TELEVISION" venue="ABIDJAN · 2005" score="“LAY DOWN YOUR WEAPONS”" note="Drogba and his teammates dropped to their knees. A country at war… listened." accent={MV.gold} />
-      <HistoryPlate start={S + 23.0} end={S + 35.0} year="BOUAKÉ · JUNE 2007" venue="THE REBEL CITY · AFCON QUALIFIER" score="5 — 0" note="Drogba had the match moved to the rebel stronghold. Soldiers from both sides watched football, side by side." accent={MV.civGreen} stamp="BOUAKÉ" />
-      <HistoryPlate start={S + 35.0} end={S + 45.5} year="THE HEADLINE" venue="THE NEXT MORNING" score="5 GOALS · 5 YEARS" note="“Five goals erase five years of war.” That is what this shirt carries." accent={MV.text} />
-      <HistoryPlate start={S + 45.5} end={S + 51.5} year="TONIGHT · GROUP E" venue="FIRST MEETING IN HISTORY" score="CIV × ECU" note="And tonight, for the first time ever, that shirt meets Ecuador." accent={MV.ecu} />
+      {/* beats synced to narration (49 history intro, 60 Rosario 3-1, 71 the door, 80 France 2022, 90 the ache, 101 tonight) */}
+      <HistoryPlate start={S + 0.5}  end={S + 11.0} year="2 JUNE 1978" venue="ROSARIO · 2,500 MILES FROM HOME" score="WRITTEN OFF" note="A tiny nation, dismissed before kickoff. And this part is true." accent={MV.fire} />
+      <HistoryPlate start={S + 11.0} end={S + 22.0} year="TUNISIA 3 — 1 MEXICO" venue="1978 WORLD CUP · GROUP STAGE" score="3 — 1" note="The first African nation EVER to win a match at a World Cup." accent={MV.tun} stamp="1978" />
+      <HistoryPlate start={S + 22.0} end={S + 31.0} year="THE DOOR WAS OPEN" venue="AFTER THAT DAY" score="A CONTINENT BELIEVED" note="No African team had done it before. After Rosario, the whole continent believed." accent={MV.gold} />
+      <HistoryPlate start={S + 31.0} end={S + 41.0} year="30 NOVEMBER 2022" venue="EDUCATION CITY · QATAR" score="TUNISIA 1 — 0 FRANCE" note="They kept knocking — and beat the world champions, one to nothing." accent={MV.tun} />
+      <HistoryPlate start={S + 41.0} end={S + 51.5} year="THE ACHE" venue="ACROSS EVERY TOURNAMENT" score="NEVER PAST THE GROUP" note="The door they opened for everyone… they have never once walked through." accent={MV.text} />
+      <HistoryPlate start={S + 51.5} end={S + 57.0} year="TONIGHT · GROUP F" venue="THEY TRY AGAIN" score="TUN × SWE" note="Tonight they try again — against the frost." accent={MV.swe} />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>
@@ -216,81 +221,40 @@ function SquadGrid({ start, end, players, accent }) {
   );
 }
 
-// ── 5. Ivory Coast (98–134): Les Elephants ───────────────────────────────────
-function SceneIvory() {
+// ── 5. Sweden (106–142): the frost — Gyokeres + Isak ─────────────────────────
+function SceneSweden() {
   const { localTime: lt } = useSprite();
-  const S = 98.0;
+  const S = 106.0;
   const headerP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1));
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#0a0c14' }}>
-      <PitchBackdrop tint="#0a2e1a" dim={0.4} />
-      <div style={{ position: 'absolute', inset: 0, zIndex: 22, pointerEvents: 'none', background: `linear-gradient(90deg, rgba(255,122,0,0.20) 0%, transparent 30%, transparent 70%, rgba(0,166,79,0.16) 100%)` }} />
-      <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
-          <FlagCIV w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>LES ÉLÉPHANTS · CHAMPIONS OF AFRICA</span>
-        </div>
-      </div>
-      <SquadGrid start={S + 0.4} end={S + 9.0} accent={MV.civ} players={[
-        { img: 'assets/squad/civ-1-Kessie.png',      name: 'FRANCK KESSIÉ',  role: 'CAPTAIN · ENGINE' },
-        { img: 'assets/squad/civ-2-Adingra.png',     name: 'SIMON ADINGRA',  role: 'THE WINGER' },
-        { img: 'assets/squad/civ-3-Diallo.png',      name: 'AMAD DIALLO',    role: 'THE SPARK' },
-        { img: 'assets/squad/civ-4-Diomande.png',    name: 'O. DIOMANDÉ',    role: 'THE WALL' },
-        { img: 'assets/squad/civ-5-YanDiomande.png', name: 'YAN DIOMANDÉ',   role: 'THE FLYER' },
-      ]} />
-      {/* line beats: 108 Kessié, 116 Adingra/Amad/Pépé, 127 champions */}
-      <Sprite start={108.0} end={116.0}>
-        <KenBurns src="assets/player-kessie.png" start={108} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={108.4} name="FRANCK KESSIÉ" role="Captain · Midfield" line="All muscle and will — the engine that drives the champions of Africa." accent={MV.civ} />
-      </Sprite>
-      <Sprite start={116.0} end={127.0}>
-        <KenBurns src="assets/player-adingra.png" start={116} dur={11} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={116.4} name="ADINGRA · AMAD · PÉPÉ" role="The Attack" line="Wingers who run like the lights went out behind them. This attack can hurt anyone." accent={MV.civ} />
-      </Sprite>
-      <Sprite start={127.0} end={134.0}>
-        <KenBurns src="assets/player-diallo.png" start={127} dur={7} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={127.3} name="AFCON CHAMPIONS" role="Crowned at home" line="Power, pace and flair in every position — champions who win the close ones." accent={MV.civGreen} />
-      </Sprite>
-      <Vignette strength={0.42} />
-      <Letterbox />
-    </div>
-  );
-}
-
-// ── 6. Ecuador (134–169.5): La Tri, the altitude wall ────────────────────────
-function SceneEcuador() {
-  const { localTime: lt } = useSprite();
-  const S = 134.0;
-  const headerP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1));
-  return (
-    <div style={{ position: 'absolute', inset: 0, background: '#0a0c14' }}>
+    <div style={{ position: 'absolute', inset: 0, background: '#0a0f18' }}>
       <PitchBackdrop tint="#0a2540" dim={0.4} />
-      <div style={{ position: 'absolute', inset: 0, zIndex: 22, pointerEvents: 'none', background: `linear-gradient(90deg, rgba(10,61,145,0.24) 0%, transparent 30%, transparent 70%, rgba(255,209,0,0.14) 100%)` }} />
+      <div style={{ position: 'absolute', inset: 0, zIndex: 22, pointerEvents: 'none', background: `linear-gradient(90deg, rgba(0,106,167,0.26) 0%, transparent 30%, transparent 70%, rgba(254,204,0,0.16) 100%)` }} />
       <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
-          <FlagECU w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>LA TRI · THE ALTITUDE FORTRESS</span>
+          <FlagSWE w={88} />
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>SWEDEN · THE FROST</span>
         </div>
       </div>
-      <SquadGrid start={S + 0.4} end={S + 10.0} accent={MV.ecu} players={[
-        { img: 'assets/squad/ecu-1-Caicedo.png',  name: 'MOISÉS CAICEDO',  role: 'THE DESTROYER' },
-        { img: 'assets/squad/ecu-2-Hincapie.png', name: 'PIERO HINCAPIÉ',  role: 'STONE WALL' },
-        { img: 'assets/squad/ecu-3-Pacho.png',    name: 'WILLIAN PACHO',   role: 'STONE WALL' },
-        { img: 'assets/squad/ecu-4-Valencia.png', name: 'ENNER VALENCIA',  role: 'THE FINISHER' },
-        { img: 'assets/squad/ecu-5-Plata.png',    name: 'GONZALO PLATA',   role: 'THE SPARK' },
+      <SquadGrid start={S + 0.4} end={S + 8.0} accent={MV.swe} players={[
+        { img: 'assets/squad/swe-1-Gyokeres.png', name: 'V. GYÖKERES',   role: 'THE FREIGHT TRAIN' },
+        { img: 'assets/squad/swe-2-Isak.png',     name: 'ALEX. ISAK',    role: 'THE ELEGANCE' },
+        { img: 'assets/squad/swe-3-Elanga.png',   name: 'A. ELANGA',     role: 'THE FLYER' },
+        { img: 'assets/squad/swe-4-Bergvall.png', name: 'L. BERGVALL',   role: 'THE YOUNG ENGINE' },
+        { img: 'assets/squad/swe-5-Lindelof.png', name: 'V. LINDELÖF',   role: 'THE ANCHOR' },
       ]} />
-      {/* line beats: 134 Quito/altitude, 145 meanest defence, 154 Caicedo wall, 164 Valencia */}
-      <Sprite start={145.0} end={154.0}>
-        <KenBurns src="assets/player-pacho.png" start={145} dur={9} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={145.3} name="THE MEANEST DEFENCE" role="Forged at altitude · Quito" line="Nearly 3,000m up — only two defeats in eighteen qualifiers." accent={MV.ecu} />
+      {/* line beats: 106 forged in winters, 115 Gyokeres the freight train, 124 came back a beast, 133 Isak */}
+      <Sprite start={115.0} end={124.0}>
+        <KenBurns src="assets/player-gyokeres.png" start={115} dur={9} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
+        <LowerThird start={115.4} name="VIKTOR GYÖKERES" role="The Freight Train · Striker" line="A few years ago he couldn't hold a Premier League place — written off, shipped out." accent={MV.swe} />
       </Sprite>
-      <Sprite start={154.0} end={164.0}>
-        <KenBurns src="assets/player-caicedo.png" start={154} dur={10} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={154.3} name="MOISÉS CAICEDO" role="The Destroyer · Midfield" line="Shields everything behind him — with Hincapié and Pacho, a wall built of stone." accent={MV.ecu} />
+      <Sprite start={124.0} end={133.0}>
+        <KenBurns src="assets/player-gyokeres.png" start={124} dur={9} from={1.06} to={1.18} panX={-20} dim={0.18} style={{ zIndex: 10 }} />
+        <LowerThird start={124.4} name="CAME BACK A BEAST" role="All muscle · all menace" line="He went away, scored a mountain of goals — the man defenders now have nightmares about." accent={MV.sweBlue} />
       </Sprite>
-      <Sprite start={164.0} end={169.5}>
-        <KenBurns src="assets/player-valencia.png" start={164} dur={5.5} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={164.3} name="ENNER VALENCIA" role="The Finisher · Striker" line="The man who simply scores at World Cups — again and again." accent={MV.ecuBlue} />
+      <Sprite start={133.0} end={142.0}>
+        <KenBurns src="assets/player-isak.png" start={133} dur={9} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <LowerThird start={133.3} name="ALEXANDER ISAK" role="The Elegance · Striker" line="Where Gyökeres is power, Isak is grace — so smooth defenders forget to move." accent={MV.swe} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -298,7 +262,44 @@ function SceneEcuador() {
   );
 }
 
-// ── 7. The duel (169.5–188.5): flair vs wall ─────────────────────────────────
+// ── 6. Tunisia (142–170): the fire — Talbi the wall + Mejbri ─────────────────
+function SceneTunisia() {
+  const { localTime: lt } = useSprite();
+  const S = 142.0;
+  const headerP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1));
+  return (
+    <div style={{ position: 'absolute', inset: 0, background: '#140a0c' }}>
+      <PitchBackdrop tint="#3a1010" dim={0.42} />
+      <div style={{ position: 'absolute', inset: 0, zIndex: 22, pointerEvents: 'none', background: `linear-gradient(90deg, rgba(231,0,19,0.26) 0%, transparent 30%, transparent 70%, rgba(255,90,31,0.18) 100%)` }} />
+      <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
+          <FlagTUN w={80} />
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>TUNISIA · THE FIRE</span>
+        </div>
+      </div>
+      <SquadGrid start={S + 0.4} end={S + 8.0} accent={MV.tun} players={[
+        { img: 'assets/squad/tun-2-Talbi.png',   name: 'M. TALBI',      role: 'THE WALL' },
+        { img: 'assets/squad/tun-1-Mejbri.png',  name: 'H. MEJBRI',     role: 'THE POINT TO PROVE' },
+        { img: 'assets/squad/tun-3-Skhiri.png',  name: 'E. SKHIRI',     role: 'THE MIDFIELD HEART' },
+        { img: 'assets/squad/tun-4-Achouri.png', name: 'E. ACHOURI',    role: 'THE SPARK' },
+        { img: 'assets/squad/tun-5-Bronn.png',   name: 'D. BRONN',      role: 'THE STOPPER' },
+      ]} />
+      {/* line beats: 142 a man who studies strikers, 150 Talbi homework, 160 Mejbri proving them wrong */}
+      <Sprite start={150.0} end={160.0}>
+        <KenBurns src="assets/player-talbi.png" start={150} dur={10} from={1.04} to={1.16} panX={-18} dim={0.2} style={{ zIndex: 10 }} />
+        <LowerThird start={150.3} name="MONTASSAR TALBI" role="The Wall · Centre-back" line="Knows Gyökeres's runs, knows Isak's patterns — a defender who does his homework on Europe's best." accent={MV.tun} />
+      </Sprite>
+      <Sprite start={160.0} end={170.0}>
+        <KenBurns src="assets/player-mejbri.png" start={160} dur={10} from={1.05} to={1.18} dim={0.2} style={{ zIndex: 10 }} />
+        <LowerThird start={160.3} name="HANNIBAL MEJBRI" role="The Point to Prove · Midfield" line="Once told he wasn't good enough for the Premier League — now plays every minute like he's still proving them wrong." accent={MV.fire} />
+      </Sprite>
+      <Vignette strength={0.42} />
+      <Letterbox />
+    </div>
+  );
+}
+
+// ── 7. The duel (170–189): frost vs fire ─────────────────────────────────────
 function SceneDuel() {
   const { localTime: lt } = useSprite();
   const slideP = Easing.easeOutQuart(clamp(lt / 1.1, 0, 1));
@@ -306,20 +307,22 @@ function SceneDuel() {
   const shake = lt > 0.9 && lt < 1.25 ? Math.sin(lt * 160) * 7 * (1.25 - lt) / 0.35 : 0;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
+      {/* LEFT — Sweden / the frost (Gyokeres) */}
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
-        <img src="assets/player-adingra.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(255,122,0,0.32), transparent 65%)' }} />
-        <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
-          THE FLAIR
-          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>IVORY COAST · FASTEST WINGERS</div>
+        <img src="assets/player-gyokeres.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.1) brightness(0.92)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,106,167,0.4), transparent 65%)' }} />
+        <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 64, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
+          THE FROST
+          <div style={{ fontSize: 27, fontWeight: 700, color: MV.frost, letterSpacing: '0.2em', marginTop: 8 }}>SWEDEN · THE FREIGHT TRAIN</div>
         </div>
       </div>
+      {/* RIGHT — Tunisia / the fire (Mejbri) */}
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * 100}%)` }}>
-        <img src="assets/player-caicedo.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(10,61,145,0.4), transparent 65%)' }} />
-        <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
-          THE WALL
-          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>ECUADOR · CALMEST DEFENDERS</div>
+        <img src="assets/player-mejbri.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(231,0,19,0.42), transparent 65%)' }} />
+        <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 64, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
+          THE FIRE
+          <div style={{ fontSize: 27, fontWeight: 700, color: MV.fire, letterSpacing: '0.2em', marginTop: 8 }}>TUNISIA · THE WALL THAT DID ITS HOMEWORK</div>
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 'calc(50% - 3px)', width: 6, background: `linear-gradient(180deg, transparent, ${MV.gold}, transparent)`, zIndex: 24, opacity: slideP }} />
@@ -332,10 +335,10 @@ function SceneDuel() {
       }}>
         <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 92, color: MV.gold }}>VS</span>
       </div>
-      <Sprite start={183.5} end={188.5}>
+      <Sprite start={184.0} end={189.0}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
-          <BigTitle size={70} color={MV.text} style={{ maxWidth: 1400 }}>
-            Our prediction — built on power, discipline, and one striker who never misses his stage. Watch.
+          <BigTitle size={66} color={MV.text} style={{ maxWidth: 1450 }}>
+            Our prediction — Swedish steel, Tunisian heart, and a striker with a grudge against the game that doubted him. Watch.
           </BigTitle>
         </div>
       </Sprite>
@@ -344,42 +347,42 @@ function SceneDuel() {
   );
 }
 
-// ── 8. Match drama (188.5–243.5): OUR PREDICTION 1-1 ─────────────────────────
-// Adingra crosses, Elephants strike (1-0, ~196.5). Ecuador slow it. Caicedo
-// turnover → Valencia equalises (1-1, ~221). Full-time card = OUR PREDICTION.
+// ── 8. Match drama (189–243): OUR PREDICTION 1-1 ─────────────────────────────
+// Isak free kick, Gyokeres pounces on the rebound (1-0, ~200). Tunisia come in
+// waves of red. Mejbri drives, the fire answers (1-1, ~220). Full-time = PREDICTION.
 function SceneDrama() {
   const { localTime: lt } = useSprite();
-  const S = 188.5;
+  const S = 189.0;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <KenBurns src="assets/player-adingra.png" start={S} dur={32} from={1.1} to={1.28} panX={-30} dim={0.18} />
-      <Sprite start={211} end={233}>
-        <KenBurns src="assets/player-valencia.png" start={211} dur={22} from={1.08} to={1.24} panX={20} dim={0.16} />
+      <KenBurns src="assets/player-gyokeres.png" start={S} dur={31} from={1.1} to={1.28} panX={-30} dim={0.18} />
+      <Sprite start={211} end={232}>
+        <KenBurns src="assets/player-mejbri.png" start={211} dur={21} from={1.08} to={1.24} panX={20} dim={0.16} />
       </Sprite>
       {/* OUR PREDICTION watermark — REAL-RESULTS-ONLY rule */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
         <Kicker size={24} color={MV.gold}>Our Prediction · Our Story</Kicker>
       </div>
 
-      <Sprite start={188.5} end={196.5}>
-        <ScoreBug start={S + 0.4} civ={0} ecu={0} minute="1st half" />
+      <Sprite start={189.0} end={200.0}>
+        <ScoreBug start={S + 0.4} swe={0} tun={0} minute="1st half" />
       </Sprite>
-      <GoalFlash at={S + 8.0} color={MV.civ} />
-      <Confetti start={S + 8.2} dur={12} colors={[MV.civ, '#fff', MV.civGreen, MV.gold]} />
-      <Sprite start={196.5} end={211}>
-        <ScoreBug start={S + 8.0} civ={1} ecu={0} minute="ADINGRA" />
+      <GoalFlash at={S + 11.0} color={MV.swe} />
+      <Confetti start={S + 11.2} dur={12} colors={[MV.swe, '#fff', MV.sweBlue, MV.gold]} />
+      <Sprite start={200.0} end={211}>
+        <ScoreBug start={S + 11.0} swe={1} tun={0} minute="GYÖKERES" />
       </Sprite>
-      <Sprite start={211} end={221}>
-        <ScoreBug start={S + 22.5} civ={1} ecu={0} minute="2nd half" />
+      <Sprite start={211} end={220.5}>
+        <ScoreBug start={S + 22.0} swe={1} tun={0} minute="2nd half" />
       </Sprite>
-      <GoalFlash at={S + 32.5} color={MV.ecu} />
-      <Confetti start={S + 32.7} dur={11} colors={[MV.ecu, '#fff', MV.ecuBlue, MV.ecuRed]} />
-      <Sprite start={221} end={233}>
-        <ScoreBug start={S + 32.5} civ={1} ecu={1} minute="VALENCIA" />
+      <GoalFlash at={S + 31.5} color={MV.tun} />
+      <Confetti start={S + 31.7} dur={11} colors={[MV.tun, '#fff', MV.fire, MV.gold]} />
+      <Sprite start={220.5} end={232}>
+        <ScoreBug start={S + 31.5} swe={1} tun={1} minute="MEJBRI · THE FIRE" />
       </Sprite>
 
-      <Sprite start={233} end={243.5}>
-        <FullTimeCard start={S + 44.5} />
+      <Sprite start={232} end={243.0}>
+        <FullTimeCard start={S + 43.5} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -397,45 +400,45 @@ function FullTimeCard({ start }) {
         <Kicker size={26} color={MV.gold}>Our Prediction · Full Time</Kicker>
         <div style={{ display: 'flex', alignItems: 'center', gap: 56, marginTop: 36 }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-            <FlagCIV w={150} />
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>IVORY COAST</span>
+            <FlagSWE w={156} />
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>SWEDEN</span>
           </div>
           <BigTitle size={170} color={MV.gold}>1 — 1</BigTitle>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-            <FlagECU w={150} />
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>ECUADOR</span>
+            <FlagTUN w={150} />
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>TUNISIA</span>
           </div>
         </div>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 34, maxWidth: 980 }}>
-          Adingra strikes, Valencia answers — the champions brought the fire, the mountain refused to fall.
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 34, maxWidth: 1000 }}>
+          The frost would not melt. The fire would not die. Two warriors, flat on the grass, both having given everything.
         </div>
       </div>
     </div>
   );
 }
 
-// ── 9. Verdict (243.5–252.5): do you agree? ELEPHANTS / ALTITUDE ─────────────
+// ── 9. Verdict (243–252): do you agree? FROST / FIRE ─────────────────────────
 function SceneVerdict() {
   const { localTime: lt } = useSprite();
-  const S = 243.5;
+  const S = 243.0;
   const headP = Easing.easeOutCubic(clamp(lt / 0.8, 0, 1));
   const a = Easing.easeOutBack(clamp((lt - 1.2) / 0.7, 0, 1));
   const b = Easing.easeOutBack(clamp((lt - 1.6) / 0.7, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#0a0f1c' }}>
-      <PitchBackdrop tint="#10241a" dim={0.45} />
+      <PitchBackdrop tint="#10202e" dim={0.45} />
       <div style={{ position: 'absolute', top: 150, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: headP }}>
-        <Kicker size={30} color={MV.text}>A first meeting nobody wins — and nobody forgets</Kicker>
+        <Kicker size={30} color={MV.text}>A night nobody loses — and nobody forgets</Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 72, color: MV.gold, marginTop: 18, letterSpacing: '0.04em' }}>DO YOU AGREE?</div>
       </div>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 70, zIndex: 26, marginTop: 60 }}>
-        <div style={{ opacity: clamp(a, 0, 1), transform: `translateY(${(1 - a) * 50}px) scale(${0.85 + 0.15 * a})`, background: 'rgba(255,122,0,0.12)', border: `2px solid ${MV.civ}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: MV.civ, letterSpacing: '0.06em' }}>“ELEPHANTS”</div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if Ivory Coast's flair wins the group</div>
+        <div style={{ opacity: clamp(a, 0, 1), transform: `translateY(${(1 - a) * 50}px) scale(${0.85 + 0.15 * a})`, background: 'rgba(0,106,167,0.16)', border: `2px solid ${MV.sweBlue}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: MV.frost, letterSpacing: '0.06em' }}>“FROST”</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if Sweden's strikers are too much</div>
         </div>
-        <div style={{ opacity: clamp(b, 0, 1), transform: `translateY(${(1 - b) * 50}px) scale(${0.85 + 0.15 * b})`, background: 'rgba(10,61,145,0.18)', border: `2px solid ${MV.ecu}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: MV.ecu, letterSpacing: '0.06em' }}>“ALTITUDE”</div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if Ecuador's wall is the one nobody breaks</div>
+        <div style={{ opacity: clamp(b, 0, 1), transform: `translateY(${(1 - b) * 50}px) scale(${0.85 + 0.15 * b})`, background: 'rgba(231,0,19,0.16)', border: `2px solid ${MV.tun}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: MV.fire, letterSpacing: '0.06em' }}>“FIRE”</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if Tunisia finally walk through the door</div>
         </div>
       </div>
       <Vignette strength={0.5} />
@@ -444,36 +447,37 @@ function SceneVerdict() {
   );
 }
 
-// ── 10. Mystery Supporter (252.5–272.5): Legend 015 — the Peacemaker ─────────
+// ── 10. Mystery Supporter (252–272): Legend 016 — the Firekeeper ─────────────
 function SceneMystery() {
   const { localTime: lt } = useSprite();
-  const S = 252.5;
+  const S = 252.0;
   const inP = Easing.easeOutCubic(clamp((lt - 0.6) / 1.4, 0, 1));
   const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
-      <KenBurns src="assets/player-diallo.png" start={S} dur={20} from={1.16} to={1.3} panY={-20}
-        dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.1) saturate(1.0) grayscale(0.3)' }} />
+    <div style={{ position: 'absolute', inset: 0, background: '#0a0302' }}>
+      <KenBurns src="assets/player-talbi.png" start={S} dur={20} from={1.16} to={1.3} panY={-20}
+        dim={0.34} style={{ filter: 'brightness(0.42) contrast(1.12) saturate(1.05) grayscale(0.2)' }} />
+      {/* ember light — the keeper's flame */}
       <div style={{
-        position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,
-        background: `radial-gradient(ellipse at ${20 + Math.sin(lt * 0.3) * 14}% 75%, rgba(255,122,0,0.16) 0%, transparent 45%),` +
-                    `radial-gradient(ellipse at ${78 - Math.sin(lt * 0.22) * 12}% 30%, rgba(0,166,79,0.12) 0%, transparent 50%)`,
+        position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.55,
+        background: `radial-gradient(ellipse at ${22 + Math.sin(lt * 0.3) * 12}% 74%, rgba(255,90,31,0.22) 0%, transparent 45%),` +
+                    `radial-gradient(ellipse at ${76 - Math.sin(lt * 0.22) * 12}% 32%, rgba(231,0,19,0.14) 0%, transparent 50%)`,
       }} />
-      <AmbientParticles start={S} dur={20} count={46} color="255,210,150" maxR={3.5} zIndex={22} />
+      <AmbientParticles start={S} dur={20} count={50} color="255,160,90" maxR={3.5} zIndex={22} />
       <div style={{ position: 'absolute', top: 118, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={26} color="#f4c98a">The Mystery Supporter · Legend No. 015</Kicker>
+        <Kicker size={26} color="#ffbf8a">The Mystery Supporter · Legend No. 016</Kicker>
       </div>
       {plateP > 0 && (
         <div style={{
           position: 'absolute', left: 110, bottom: 150, zIndex: 25,
           opacity: clamp(plateP, 0, 1), transform: `translateY(${(1 - plateP) * 50}px)`,
         }}>
-          <div style={{ background: 'rgba(14,12,8,0.9)', border: '1px solid rgba(255,200,120,0.4)', borderRadius: 18, padding: '28px 44px', backdropFilter: 'blur(6px)' }}>
-            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#fff3e2', letterSpacing: '0.02em' }}>THE PEACEMAKER</div>
-            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 24, color: '#f4c98a', letterSpacing: '0.16em', marginTop: 8, maxWidth: 760 }}>HE CARRIES A SMALL BALL EVERYWHERE — THE BALL THAT DID WHAT ARMIES COULD NOT</div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginTop: 18, background: 'rgba(255,210,74,0.12)', border: '1px solid rgba(255,210,74,0.5)', borderRadius: 999, padding: '10px 24px' }}>
+          <div style={{ background: 'rgba(14,8,6,0.9)', border: '1px solid rgba(255,140,80,0.45)', borderRadius: 18, padding: '28px 44px', backdropFilter: 'blur(6px)' }}>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#ffeede', letterSpacing: '0.02em' }}>THE FIREKEEPER</div>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 24, color: '#ffbf8a', letterSpacing: '0.14em', marginTop: 8, maxWidth: 800 }}>HE WAS IN ROSARIO IN '78 — HE CARRIES AN EMBER FROM THE NIGHT A CONTINENT LEARNED IT BELONGED</div>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginTop: 18, background: 'rgba(255,90,31,0.14)', border: '1px solid rgba(255,90,31,0.5)', borderRadius: 999, padding: '10px 24px' }}>
               <span style={{ fontSize: 26 }}>✦</span>
-              <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 24, color: MV.gold, letterSpacing: '0.08em' }}>COLLECT HIM INSIDE THE GAME · worldcup26.world</span>
+              <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 24, color: MV.fire, letterSpacing: '0.08em' }}>COLLECT HIM INSIDE THE GAME · worldcup26.world</span>
             </div>
           </div>
         </div>
@@ -484,23 +488,23 @@ function SceneMystery() {
   );
 }
 
-// ── 11. App promo (272.5–290): worldcup26.world ──────────────────────────────
+// ── 11. App promo (272–290): worldcup26.world ────────────────────────────────
 function SceneApp() {
   const { localTime: lt } = useSprite();
-  const S = 272.5;
+  const S = 272.0;
   const inP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const cards = [
-    { name: 'IVORY COAST', coef: 'x2.10', pts: '+2.10', flag: <FlagCIV w={86} />, hot: true },
-    { name: 'ECUADOR', coef: 'x3.00', pts: 'UNDERDOG', flag: <FlagECU w={86} />, hot: true },
-    { name: 'BRAZIL', coef: 'x1.20', pts: '+0.00', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
+    { name: 'TUNISIA', coef: 'x3.00', pts: 'UNDERDOG', flag: <FlagTUN w={86} />, hot: true },
+    { name: 'SWEDEN',  coef: 'x2.10', pts: '+2.10',    flag: <FlagSWE w={92} />, hot: true },
+    { name: 'BRAZIL',  coef: 'x1.20', pts: '+0.00',    flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
   ];
   return (
-    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(160deg, #0d2a20 0%, #07090f 70%)` }}>
-      <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 20%, rgba(16,107,79,0.35) 0%, transparent 60%)` }} />
+    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(160deg, #0d2436 0%, #07090f 70%)` }}>
+      <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 20%, rgba(0,106,167,0.32) 0%, transparent 60%)` }} />
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 40, opacity: inP }}>
-        <Kicker color="#7fd6b5" size={30}>The Prediction Game</Kicker>
-        <BigTitle size={100} color="#fff" glow={MV.green}>worldcup26.world</BigTitle>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 36, color: '#cfe9de', letterSpacing: '0.04em' }}>
+        <Kicker color="#9ad8ff" size={30}>The Prediction Game</Kicker>
+        <BigTitle size={100} color="#fff" glow={MV.sweBlue}>worldcup26.world</BigTitle>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 36, color: '#cfe4f0', letterSpacing: '0.04em' }}>
           Pick 3 of the 48 nations. Every goal they score… scores for YOU.
         </div>
         <div style={{ display: 'flex', gap: 36, marginTop: 8 }}>
@@ -522,7 +526,7 @@ function SceneApp() {
           })}
         </div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 32, color: MV.gold, letterSpacing: '0.05em', marginTop: 6 }}>
-          FREE TO PLAY · LIVE PRIZE POOL · UNDERDOGS PAY TRIPLE
+          FREE TO PLAY · LIVE PRIZE POOL · UNDERDOGS PAY TRIPLE — LIKE TUNISIA TONIGHT
         </div>
       </div>
       <Letterbox />
@@ -537,17 +541,17 @@ function SceneCTA() {
   const inP = Easing.easeOutCubic(clamp(lt / 0.8, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#07090f' }}>
-      <PitchBackdrop tint="#0a2e1a" dim={0.55} />
-      <AmbientParticles start={S} dur={10} count={28} color="255,122,0" />
+      <PitchBackdrop tint="#0a2540" dim={0.55} />
+      <AmbientParticles start={S} dur={10} count={28} color="255,204,0" />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={30} color={MV.civ}>The legends are only beginning</Kicker>
+        <Kicker size={30} color={MV.swe}>The legends are only beginning</Kicker>
         <div style={{ marginTop: 24 }}><TitleReveal text="JOIN THE LEGENDS" start={S + 0.5} size={86} color={MV.text} /></div>
       </div>
       <div style={{ position: 'absolute', inset: 0, zIndex: 26 }}>
-        <CtaButton start={S} delay={1.2} label="SUBSCRIBE" icon="🔔" accent="#ff7a00" x={500} />
-        <CtaButton start={S} delay={1.6} label="LIKE" icon="👍" accent="#0a3d91" x={960} />
-        <CtaButton start={S} delay={2.0} label="SHARE" icon="📣" accent="#00a64f" x={1400} />
+        <CtaButton start={S} delay={1.2} label="SUBSCRIBE" icon="🔔" accent="#e70013" x={500} />
+        <CtaButton start={S} delay={1.6} label="LIKE" icon="👍" accent="#006aa7" x={960} />
+        <CtaButton start={S} delay={2.0} label="SHARE" icon="📣" accent="#ff5a1f" x={1400} />
       </div>
       <Sprite start={294.6} end={300}>
         <NextMatchTease start={S + 4.6} />
@@ -564,7 +568,7 @@ function NextMatchTease({ start }) {
     <div style={{ position: 'absolute', left: 0, right: 0, bottom: 150, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: p, transform: `translateY(${(1 - p) * 24}px)` }}>
       <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '20px 54px', display: 'flex', alignItems: 'center', gap: 22 }}>
         <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 26, color: MV.muted, letterSpacing: '0.14em' }}>WORLDCUP26 LEGENDS</span>
-        <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 30, color: MV.gold }}>🐘 THE ELEPHANTS PLAY ON · worldcup26.world</span>
+        <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 30, color: MV.gold }}>🔥 THE FIRE BURNS ON · worldcup26.world</span>
       </div>
     </div>
   );
