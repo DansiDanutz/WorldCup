@@ -1007,6 +1007,161 @@ world cup 2026, worldcup26, Iraq vs Norway, Iraq football, Norway football, Lion
 
 ---
 
+## Episode 23 — Austria vs Jordan
+
+**Title:** `The Tiny Kingdom at Its First World Cup | Austria vs Jordan — World Cup 2026 (Ep.23)`
+
+**Description:**
+```
+For forty years they tried. Nine times Jordan came knocking on the door of the World Cup, and nine times it stayed shut. Tonight, for the very first time, a tiny kingdom walks out onto the biggest stage on Earth — Al-Nashama, "The Brave Ones," at their first-ever World Cup. And across from them stand the heirs of a golden age that football never crowned: Austria, home of the legendary 1930s Wunderteam.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 23: Austria vs Jordan, Group J. Old European royalty against the bravest newcomers in the world.
+
+🇦🇹 In the 1930s, Austria had a team they simply called the Wunderteam — the wonder team. Under coach Hugo Meisl they tore Europe apart: 6-0 over Germany, 8-1 over Switzerland. Their heartbeat was Matthias Sindelar, so graceful they called him "the Mozart of Football." They reached the 1934 World Cup semifinal — and then they fell. Austria have never, not once, won a World Cup. Today they are led by David Alaba.
+🇯🇴 Jordan are at their FIRST-EVER World Cup, 40 years after their first qualifying campaign, sealing their place with a 3-0 win over Oman. Two years earlier they wrote history at the 2023 Asian Cup: in the semifinal they stunned South Korea — ranked some 60 places above them — 2-0, with Yazan Al-Naimat and Musa Al-Tamari scoring, to reach their first-ever continental final (they lost it to Qatar). The Brave Ones have arrived.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "WUNDERTEAM" if Austria's class is too much, or "NASHAMA" if you back the brave to shock the world.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — forty years, nine campaigns, the door stayed shut
+0:23 The story so far
+0:33 Royalty vs the brave
+0:46 The history — Austria's Wunderteam & Jordan's Asian Cup stunner
+2:30 Austria — Alaba, Sabitzer, Laimer, Baumgartner, Arnautović
+2:58 Jordan — Al-Tamari & Al-Naimat
+3:15 The duel — the pedigree vs the fearless
+3:24 Our prediction
+3:41 Baumgartner strikes — 1-0
+3:52 Al-Naimat answers — 1-1
+4:04 Alaba heads the winner — 2-1
+4:16 Full time & do you agree?
+4:26 Legend 023 — the Keeper of the Dream
+4:44 Play free at worldcup26.world
+4:52 Like, share & subscribe
+
+📲 Send this to the friend who still loves a World Cup underdog.
+
+🎵 Music: "Crossing the Chasm", "Five Armies", "Desert City", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #Austria #Jordan #AlTamari #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, Austria vs Jordan, Austria football, Jordan football, Al-Nashama, Jordan first World Cup, Jordan debut, Jordan 2023 Asian Cup, Jordan beat South Korea, Musa Al-Tamari, Yazan Al-Naimat, Austria Wunderteam, Matthias Sindelar, Mozart of football, David Alaba, Marcel Sabitzer, Konrad Laimer, Marko Arnautovic, Christoph Baumgartner, FIFA World Cup 2026, Group J, soccer story, Pixar football, world cup prediction, world cup underdog, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
+## Episode 24 — Portugal vs DR Congo
+
+**Title:** `The Free Kick the World Got Wrong | Portugal vs DR Congo — World Cup 2026 (Ep.24)`
+
+**Description:**
+```
+In 1974, a defender ran out of the wall and booted a free kick away before it was taken — and the whole world laughed at him, called it ignorance. They were wrong. Behind that misunderstood moment was a frightened squad, a dictator, and a team that had already kicked open a door for an entire continent. Tonight that shirt walks out again — DR Congo, the heirs of the Leopards — to face Portugal and a 41-year-old legend chasing the one prize that has always escaped him.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 24: Portugal vs DR Congo, Group K. The golden chase against the spirit of the Leopards.
+
+🇨🇩 In 1974, a nation then called Zaire — today's DR Congo — became the FIRST Black African team ever to reach a World Cup finals, arriving as reigning African champions, the Leopards (Africa Cup of Nations winners in 1968 and 1974). The tournament turned cruel: a 9-0 defeat to Yugoslavia. In the Brazil game, defender Mwepu Ilunga charged from the defensive wall and hammered the free kick away — and for decades commentators mocked the clip as "African ignorance." The truth, told later: dictator Mobutu had the squad threatened over how heavily they were losing, and their bonuses had been withheld. Ilunga has said he acted in protest, to be sent off. Not a joke — a frightened man's act of courage.
+🇵🇹 Portugal were European champions in 2016, but a World Cup has always slipped through their fingers. They are led, one last time, by Cristiano Ronaldo — 41 years old, at his sixth and final World Cup, hunting the only trophy he has never lifted — with Bruno Fernandes, Bernardo Silva, Rafael Leão and Rúben Dias around him.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "SELEÇÃO" if Ronaldo finally lifts it, or "LEOPARDS" if you back DR Congo to swing the door open again.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — the free kick the world got wrong
+0:16 The story so far
+0:27 The golden chase & the Leopards' door
+0:46 The history — Zaire 1974, the Leopards & Mwepu Ilunga
+1:38 Portugal — Ronaldo, Bruno, Bernardo, Leão, Dias
+2:14 DR Congo — Wissa, Bakambu, Mbemba, Silas, Masuaku
+2:49 The duel — the golden chase vs the pride of the Leopards
+3:00 Our prediction
+3:08 Leão strikes — 1-0
+3:20 Wissa answers — 1-1
+3:40 Leão again — 2-1
+3:53 Ronaldo at the death — 3-1
+4:03 Full time & do you agree?
+4:21 Legend 024 — the Leopard
+4:37 Play free at worldcup26.world
+4:46 Like, share & subscribe
+
+📲 Send this to the friend who still thinks the small nations are only making up the numbers.
+
+🎵 Music: "Crossing the Chasm", "Five Armies", "Desert City", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #Portugal #DRCongo #Ronaldo #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, Portugal vs DR Congo, Portugal football, DR Congo football, the Leopards, Les Leopards, Zaire 1974, Zaire World Cup, Mwepu Ilunga, Ilunga free kick, first African World Cup team, Africa Cup of Nations, Cristiano Ronaldo, Ronaldo last World Cup, Portugal Euro 2016, Bruno Fernandes, Bernardo Silva, Rafael Leao, Ruben Dias, Yoane Wissa, Cedric Bakambu, Chancel Mbemba, FIFA World Cup 2026, Group K, soccer story, Pixar football, world cup prediction, world cup underdog, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
+## Episode 25 — England vs Croatia
+
+**Title:** `The Tiny Nation That Broke England's Dream | England vs Croatia — World Cup 2026 (Ep.25)`
+
+**Description:**
+```
+In 2018, in a World Cup semi-final in Moscow, England led after five minutes and the whole country sang "It's Coming Home." Then a nation of barely four million people refused to bow — and broke England's heart in extra time. Eight years on, the giant and the ghost meet again. And in the stands, a figure in a red-and-white checkerboard is watching, and waiting.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 25: England vs Croatia, Group L. The deepest squad on the planet against the greatest overachievers football has ever seen.
+
+🏴󠁧󠁢󠁥󠁮󠁧󠁿 England have won the World Cup exactly once — in 1966 — and have ached for it ever since. 🇭🇷 Croatia, a country of under four million, have somehow finished 3rd in 1998, runners-up in 2018 (beating England 2-1 after extra time, Mandžukić's winner) and 3rd again in 2022 — the most decorated small nation in World Cup history. Luka Modrić was named the best player of the 2018 tournament, the first Croatian ever to win the Golden Ball.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "THREE LIONS" if England finally lay the ghost to rest, or "VATRENI" if the little nation breaks them all over again.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — the night a tiny nation broke a giant
+0:19 The story so far
+0:29 The rematch of 2018
+0:40 Late tonight — the ghost walks again
+0:49 The history — Moscow 2018 & Modrić's Golden Ball
+1:46 The Three Lions — Kane, Bellingham, Saka, Foden
+2:22 Vatreni — Modrić, Gvardiol, Kovačić, Kramarić
+2:50 The duel — the giant vs the ghost
+3:00 Our prediction
+3:09 Kane heads it home — 1-0
+3:31 Kramarić levels — 1-1
+3:41 Bellingham, late — 2-1
+3:53 Full time
+4:03 Do you agree?
+4:12 Legend 025 — the Ghost of 2018
+4:32 Play free at worldcup26.world
+4:50 Like, share & subscribe
+
+📲 Send this to the friend who still thinks football is only about the big nations.
+
+🎵 Music: "Crossing the Chasm", "Five Armies", "Desert City", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #England #Croatia #Modric #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, England vs Croatia, England football, Croatia football, Three Lions, Vatreni, Croatia 2018, 2018 World Cup semi-final, It's Coming Home, Mario Mandzukic, Ivan Perisic, Kieran Trippier, Luka Modric, Golden Ball 2018, England 1966, smallest World Cup nations, Harry Kane, Jude Bellingham, Bukayo Saka, Phil Foden, Declan Rice, Josko Gvardiol, Mateo Kovacic, Andrej Kramaric, Dominik Livakovic, FIFA World Cup 2026, Group L, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
 ## Shorts (per episode) — caption template
 
 Post 2 per day. Caption format:

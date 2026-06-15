@@ -247,6 +247,45 @@
       "sub": "IRAQ vs NORWAY",
       "awayImg": "content/images/Norway/Erling-Haaland.png",
       "awayName": "HAALAND"
+    },
+    {
+      "ep": 23,
+      "dir": "match23-austria-vs-jordan",
+      "img": "content/images/Jordan/Musa-Al-Taamari.png",
+      "name": "AL-TAMARI",
+      "hook": "40 YEARS<br>ONE NIGHT",
+      "face": "JOR",
+      "away": "AUT",
+      "marquee": "BRA",
+      "sub": "AUSTRIA vs JORDAN",
+      "awayImg": "content/images/Austria/David-Alaba.png",
+      "awayName": "ALABA"
+    },
+    {
+      "ep": 24,
+      "dir": "match24-portugal-vs-dr-congo",
+      "img": "content/images/Portugal/CristianoRonaldo.png",
+      "name": "RONALDO",
+      "hook": "THE FREE KICK<br>THEY GOT WRONG",
+      "face": "POR",
+      "away": "COD",
+      "marquee": "BRA",
+      "sub": "PORTUGAL vs DR CONGO",
+      "awayImg": "content/images/DR_Congo/Yoane-Wissa.png",
+      "awayName": "WISSA"
+    },
+    {
+      "ep": 25,
+      "dir": "match25-england-vs-croatia",
+      "img": "content/images/Croatia/Luka-Modric.png",
+      "name": "MODRIĆ",
+      "hook": "THEY ENDED<br>THE DREAM",
+      "face": "CRO",
+      "away": "ENG",
+      "marquee": "BRA",
+      "sub": "ENGLAND vs CROATIA",
+      "awayImg": "content/images/England/Jude-Bellingham.png",
+      "awayName": "BELLINGHAM"
     }
   ]
 }
