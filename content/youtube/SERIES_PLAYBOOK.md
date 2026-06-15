@@ -27,8 +27,9 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
    is worth ~1,000+ views per asset.
 4. **Topical thumbnails**: big date or 3-word emotional headline ("JUNE 11",
    "HIS LAST DANCE"), one face, tear/emotion, thick black-outlined gold text.
-5. **Cold-open hook in the first 8 seconds** — heartbeat / question / flash-cuts.
-   Never open with a logo.
+5. **Cold-open hook in the first 7 seconds** — heartbeat / question / flash-cuts.
+   Never open with a logo. (2026 algo rewards a fast hook + high completion; see
+   `ALGORITHM_2026_CONFIG_PLAN.md`.)
 6. **Real history beats invented drama**: the "Mr. Five-Zero" 2001 story is
    shareable because it's TRUE and little-known. Every episode needs one
    verified "wait, what?" fact (researched, with sources).
@@ -121,10 +122,15 @@ NFL quarterback for the Ep4 'USA' thumbnail until the prompt was hardened.
 - [ ] Title: `WorldCup26 [Team A] vs [Team B] | [Story Hook] — FIFA World Cup 2026 Match N`
 - [ ] Description: hook line + question + chapters + worldcup26.world + tags + music credit
 - [ ] **Premiere scheduled ≥48h before the real match kickoff**
-- [ ] 2–3 Shorts cut and scheduled (hook / goal / mystery legend)
+- [ ] 2–3 Shorts cut and scheduled (hook / goal / mystery legend) — each **LOOPED**
+      (last frame seams into the first so it auto-replays; 2026 algo loves replays)
 - [ ] First-hour push: WhatsApp, Telegram, X first-wave, community post, pinned comment
+- [ ] **Off-platform** (`ALGORITHM_2026_CONFIG_PLAN.md` §C): publish the episode's
+      blog article (`content/youtube/blog/`) + pin its thumbnail (`PINTEREST_PINS.md`)
+- [ ] **AI disclosure**: mark "Altered or synthetic content" in the upload Checks
+      step (does NOT reduce reach/monetization — keep "No, not made for kids")
 - [ ] End screen + cards linking previous episode and the playlist
-- [ ] After 48h: log results below + add new learnings above
+- [ ] After 48h: log results **+ RETENTION %** below + add new learnings above
 
 ## Results log
 
