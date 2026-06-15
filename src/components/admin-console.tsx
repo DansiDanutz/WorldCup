@@ -410,6 +410,13 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [breakGlassSecret, setBreakGlassSecret] = useState("");
 
   const [resultForm, setResultForm] = useState<ResultForm>(initialResultForm);
+  const [sweepReport, setSweepReport] = useState<{
+    checked?: number;
+    applied?: number;
+    errors?: number;
+    bracketAdvanced?: number;
+    processed?: Array<{ matchNumber: number; action: string; awardedRows?: number; error?: string }>;
+  } | null>(null);
   const [prizePoolAmount, setPrizePoolAmount] = useState(tournament.prize_pool_amount);
   const [feePoolAmount, setFeePoolAmount] = useState(tournament.fee_pool_amount ?? "0");
   const [ticketPriceAmount, setTicketPriceAmount] = useState(
@@ -644,6 +651,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
           headers: authHeaders(),
         });
         const result = await readResult(response);
+        setSweepReport(result as typeof sweepReport);
         setMessage(
           `Results sweep done. Checked ${result.checked ?? 0}, applied ${result.applied ?? 0}, errors ${result.errors ?? 0}, bracket advanced ${result.bracketAdvanced ?? 0}.`,
         );
@@ -2634,6 +2642,42 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 “Run results now” fetches every played match from the live feed, applies points and
                 advances the bracket — the same job the daily cron runs (needs FOOTBALL_DATA_API_KEY set).
               </p>
+              {sweepReport?.processed && sweepReport.processed.length > 0 ? (
+                <div className="admin-sweep-report" aria-label="Results sweep detail">
+                  <div className="admin-sweep-report__head">
+                    Last sweep — checked {sweepReport.checked ?? sweepReport.processed.length}, applied{" "}
+                    {sweepReport.applied ?? 0}, errors {sweepReport.errors ?? 0}, bracket advanced{" "}
+                    {sweepReport.bracketAdvanced ?? 0}
+                  </div>
+                  <ul className="admin-sweep-report__list">
+                    {sweepReport.processed.map((row) => (
+                      <li
+                        className={`admin-sweep-row admin-sweep-row--${
+                          row.action === "error"
+                            ? "error"
+                            : row.action === "result_not_available"
+                              ? "pending"
+                              : "ok"
+                        }`}
+                        key={`${row.matchNumber}-${row.action}`}
+                      >
+                        <span>Match #{row.matchNumber}</span>
+                        <span>
+                          {row.action === "fetched_result_and_applied"
+                            ? `scored (+${row.awardedRows ?? 0} rows)`
+                            : row.action === "applied_existing_result"
+                              ? `points applied (+${row.awardedRows ?? 0} rows)`
+                              : row.action === "result_not_available"
+                                ? "no result yet"
+                                : row.action === "error"
+                                  ? `error: ${row.error ?? "unknown"}`
+                                  : row.action}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </div>
           </div>
 

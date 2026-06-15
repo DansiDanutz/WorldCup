@@ -13,6 +13,7 @@
     "lint": "eslint .",
     "test": "node --experimental-strip-types --import ./tests/register.mjs --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
+    "sync:results": "node scripts/sync-results.mjs",
     "generate:migrations": "node scripts/generate-worldcup-sql.mjs && node scripts/generate-worldcup-kickoff-sql.mjs",
     "preflight:prod": "node scripts/production-preflight.mjs",
     "preflight:prod:launch": "node scripts/production-preflight.mjs --require-ready",

@@ -9784,3 +9784,47 @@ html {
 #admin-referral-panel {
   scroll-margin-top: 104px;
 }
+
+/* Admin results-sweep per-match readout */
+.admin-sweep-report {
+  margin-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+.admin-sweep-report__head {
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text, #fff);
+  background: rgba(255, 255, 255, 0.05);
+}
+.admin-sweep-report__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.admin-sweep-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 12px;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.admin-sweep-row span:first-child {
+  font-weight: 600;
+  opacity: 0.85;
+}
+.admin-sweep-row--ok span:last-child {
+  color: #46d39a;
+}
+.admin-sweep-row--pending span:last-child {
+  color: rgba(255, 255, 255, 0.55);
+}
+.admin-sweep-row--error span:last-child {
+  color: #ff8080;
+}
