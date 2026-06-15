@@ -1,5 +1,5 @@
-// match-kit.jsx — shared primitives for the Match 15 video (loads after animations.jsx)
-// Dark cinematic broadcast theme. Episode 15 is IMAGE-BASED: Ken-Burns motion on
+// match-kit.jsx — shared primitives for the Match 22 video (loads after animations.jsx)
+// Dark cinematic broadcast theme. Episode 22 is IMAGE-BASED: Ken-Burns motion on
 // still PNGs (no generated video clips). SOCCER ONLY — round-neck shirts, a pitch
 // with goals; never gridiron.
 
@@ -12,14 +12,18 @@ const MV = {
   muted: '#93a0b4',
   gold: '#ffd24a',
   goldDeep: '#c9942e',
-  // Ivory Coast — Les Elephants: orange / white / green
-  civ: '#ff7a00',
+  // Iraq — Lions of Mesopotamia: green / white / black  (aliases kept as civ/civGreen)
+  civ: '#007a3d',
   civGreen: '#00a64f',
-  // Ecuador — La Tri: yellow / blue / red
-  ecu: '#ffd100',
-  ecuBlue: '#0a3d91',
-  ecuRed: '#d52b1e',
-  green: '#106b4f',
+  irq: '#007a3d',
+  irqGreen: '#00a64f',
+  // Norway — the Vikings: red / navy / white  (aliases kept as ecu/ecuBlue/ecuRed)
+  ecu: '#ba0c2f',
+  ecuBlue: '#00205b',
+  ecuRed: '#ba0c2f',
+  nor: '#ba0c2f',
+  norNavy: '#00205b',
+  green: '#0c5c38',
   line: 'rgba(255,255,255,0.14)',
 };
 
@@ -64,31 +68,41 @@ function Vignette({ strength = 0.55 }) {
 }
 
 // ── Flags (pure CSS approximations, crisp at any size) ───────────────────────
-// Ivory Coast: vertical orange / white / green.
+// Iraq: three horizontal bands red / white / black, with the green Takbir
+// ("Allahu Akbar") abstracted as a centred green script token on the white band.
 function FlagCIV({ w = 120 }) {
   const h = w * 2 / 3;
   return (
-    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', display: 'flex', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
-      <div style={{ flex: 1, background: '#ff7a00' }} />
-      <div style={{ flex: 1, background: '#fff' }} />
-      <div style={{ flex: 1, background: '#00a64f' }} />
+    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ position: 'absolute', left: 0, right: 0, top: 0, height: '33.34%', background: '#ce1126' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, top: '33.33%', height: '33.34%', background: '#fff' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, top: '66.66%', height: '33.34%', background: '#000' }} />
+      {/* green Takbir token on the central white band */}
+      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: h * 0.5, height: h * 0.12, borderRadius: h * 0.06, background: '#007a3d' }} />
     </div>
   );
 }
+const FlagIRQ = FlagCIV;
 
-// Ecuador: horizontal yellow (top half) / blue / red, with a central crest mark.
+// Norway: red field with an offset blue-on-white Scandinavian cross.
 function FlagECU({ w = 120 }) {
   const h = w * 2 / 3;
+  const armX = w * 0.30;   // vertical bar centred at 30% from the left
+  const armY = h * 0.50;   // horizontal bar centred vertically
+  const whiteT = w * 0.18; // white outline thickness band
+  const blueT = w * 0.10;  // blue cross thickness band
   return (
-    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
-      <div style={{ position: 'absolute', left: 0, right: 0, top: 0, height: '50%', background: '#ffd100' }} />
-      <div style={{ position: 'absolute', left: 0, right: 0, top: '50%', height: '25%', background: '#0a3d91' }} />
-      <div style={{ position: 'absolute', left: 0, right: 0, top: '75%', height: '25%', background: '#d52b1e' }} />
-      {/* central crest token (condor-on-shield abstraction) */}
-      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: h * 0.32, height: h * 0.32, borderRadius: '50%', background: 'rgba(10,61,145,0.85)', border: '2px solid rgba(255,255,255,0.7)' }} />
+    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', background: '#ba0c2f', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      {/* white cross */}
+      <div style={{ position: 'absolute', top: 0, bottom: 0, left: armX - whiteT / 2, width: whiteT, background: '#fff' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, top: armY - whiteT / 2, height: whiteT, background: '#fff' }} />
+      {/* blue cross on top */}
+      <div style={{ position: 'absolute', top: 0, bottom: 0, left: armX - blueT / 2, width: blueT, background: '#00205b' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, top: armY - blueT / 2, height: blueT, background: '#00205b' }} />
     </div>
   );
 }
+const FlagNOR = FlagECU;
 
 // ── Type & cards ─────────────────────────────────────────────────────────────
 function BigTitle({ children, size = 110, color = MV.text, spacing = '0.02em', glow = MV.gold, style = {} }) {
@@ -150,9 +164,9 @@ function ScoreBug({ start, civ = 0, ecu = 0, minute }) {
       background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 14,
       boxShadow: '0 10px 36px rgba(0,0,0,0.5)', overflow: 'hidden',
     }}>
-      <div style={{ ...cell, background: MV.civ, color: '#0a0a0a' }}>CIV</div>
+      <div style={{ ...cell, background: MV.irq, color: '#fff' }}>IRQ</div>
       <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{civ} — {ecu}</div>
-      <div style={{ ...cell, background: MV.ecuBlue }}>ECU</div>
+      <div style={{ ...cell, background: MV.nor, color: '#fff' }}>NOR</div>
       {minute && <div style={{ ...cell, fontSize: 26, color: MV.muted, borderLeft: `1px solid ${MV.line}` }}>{minute}</div>}
     </div>
   );
