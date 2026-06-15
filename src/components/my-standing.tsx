@@ -142,7 +142,8 @@ export function MyStanding() {
     };
   }, [session?.access_token, signedIn]);
 
-  const hasAgentStanding = Boolean(data?.agent);
+  // Agent deal is paused & hidden in free-play mode (even for existing agents).
+  const hasAgentStanding = Boolean(data?.agent) && !isFunMode();
   const referralCount = data?.referrals.length ?? 0;
 
   useEffect(() => {
@@ -211,7 +212,7 @@ export function MyStanding() {
 
   return (
     <section
-      className={`my-standing${data?.agent ? " my-standing--agent" : ""}`}
+      className={`my-standing${hasAgentStanding ?" my-standing--agent" : ""}`}
       id="me"
       aria-label="My account"
     >
@@ -438,7 +439,7 @@ export function MyStanding() {
         </div>
       </div>
 
-      {data?.agent ? (
+      {hasAgentStanding ?(
         <div className="panel standing-agent standing-card standing-card--agent">
           <div className="panel-header">
             <div>

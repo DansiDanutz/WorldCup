@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
+import { FUN_MODE_DISABLED_MESSAGE, isFunMode } from "@/lib/fun-mode";
 import { getAuthProvider, getOrCreateReferralProfile } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import { requireObject, requireString, ValidationError } from "@/lib/validation";
@@ -14,6 +15,10 @@ const AGENT_TRANSFER_ERROR_MESSAGES: Record<string, { status: number; message: s
 };
 
 export async function POST(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
 
   const limited = await enforceRateLimit(request, "agent-ticket-transfer", {
     limit: 12,

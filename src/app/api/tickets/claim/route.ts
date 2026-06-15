@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { enforceRateLimit, getBearerToken, jsonError } from "@/lib/http";
+import { FUN_MODE_DISABLED_MESSAGE, isFunMode } from "@/lib/fun-mode";
 import { getAuthProvider } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
 import { requireObject, requireString, ValidationError } from "@/lib/validation";
@@ -67,6 +68,10 @@ export function createTicketClaimPostHandler(deps: TicketClaimDeps) {
 }
 
 export async function POST(request: Request) {
+  if (isFunMode()) {
+    return jsonError(FUN_MODE_DISABLED_MESSAGE, 403);
+  }
+
   return createTicketClaimPostHandler({
     enforceRateLimit,
     getBearerToken,
