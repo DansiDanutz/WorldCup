@@ -183,6 +183,13 @@ export async function resolveFootballDataResult(
       continue;
     }
 
+    // The feed sometimes flags a match FINISHED before the score is populated
+    // (null fullTime). Never write a bogus 0-0 — leave it for the next sweep.
+    const fullTime = fd.score?.fullTime;
+    if (fullTime == null || fullTime.home == null || fullTime.away == null) {
+      return null;
+    }
+
     return normalizeResultPayload(buildPayload(fd, swapped), context);
   }
 
