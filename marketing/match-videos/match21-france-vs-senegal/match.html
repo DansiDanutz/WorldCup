@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WorldCup26 Legends — Match 21: France vs Senegal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #050608; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="WC26 Match 21 · t=0s"></div>
+
+<!-- React + Babel (pinned, same stack as the worldcup26 ad) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="match-kit.jsx"></script>
+<script type="text/babel" src="match-scenes.jsx"></script>
+
+<script type="text/babel">
+const { useEffect } = React;
+
+// Scene timeline (global seconds) — 300s. Kept in sync with narration.json
+// (Brian VO slots) and clips.json (music/SFX placements).
+const SCENES = [
+  { c: SceneColdOpen, start: 0,     end: 16.0 },   // 2002 Seoul shock — Senegal beat France
+  { c: SceneTitle,    start: 16.0,  end: 28.0 },   // recap line (Iran/NZ) + Ep.21 title card
+  { c: SceneTease,    start: 28.0,  end: 47.0 },   // "the greatest shock football has seen"
+  { c: SceneHistory,  start: 47.0,  end: 113.0 },  // the true 2002 story + Bouba Diop tribute
+  { c: SceneFrance,   start: 113.0, end: 156.0 },  // Les Bleus line-up
+  { c: SceneSenegal,  start: 156.0, end: 200.0 },  // Lions of Teranga line-up
+  { c: SceneDuel,     start: 200.0, end: 220.0 },  // empire vs lion
+  { c: SceneDrama,    start: 220.0, end: 263.0 },  // OUR PREDICTION 2-1 (Mbappe, Jackson, Mbappe)
+  { c: SceneVerdict,  start: 263.0, end: 271.0 },  // do you agree? LES BLEUS / LIONS
+  { c: SceneMystery,  start: 271.0, end: 288.5 },  // Legend 021 — the Dancing Lion
+  { c: SceneApp,      start: 288.5, end: 296.0 },  // worldcup26.world
+  { c: SceneCTA,      start: 296.0, end: 300.0 },  // like / subscribe outro
+];
+
+// Cinematic cut treatment per scene boundary (read by TransitionLayer).
+window.MV_TRANSITIONS = [
+  { at: 16.0,  type: 'flash' },
+  { at: 28.0,  type: 'flash' },
+  { at: 47.0,  type: 'dip' },
+  { at: 113.0, type: 'flash' },
+  { at: 156.0, type: 'flash' },
+  { at: 200.0, type: 'flash' },
+  { at: 220.0, type: 'dip' },
+  { at: 263.0, type: 'dip' },
+  { at: 271.0, type: 'dip' },
+  { at: 288.5, type: 'flash' },
+  { at: 296.0, type: 'flash' },
+];
+const DURATION = 300.0;
+
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root) root.dataset.screenLabel = `WC26 Match 21 · t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+
+function MatchVideo() {
+  return (
+    <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26m21">
+      <ScreenLabeler />
+      <SeekBridge />
+      {SCENES.map((s, i) => (
+        <Sprite key={i} start={s.start} end={s.end}>
+          <s.c />
+        </Sprite>
+      ))}
+      <TransitionLayer />
+    </Stage>
+  );
+}
+
+function boot() {
+  ReactDOM.createRoot(document.getElementById('root')).render(<MatchVideo />);
+}
+// Load clip placements first so any clip lookups + mux can never drift apart.
+fetch('./clips.json')
+  .then((r) => r.json())
+  .then((d) => { window.MV_CLIPS = d.clips || []; })
+  .catch((e) => { console.warn('clips.json load failed', e); window.MV_CLIPS = []; })
+  .finally(boot);
+</script>
+</body>
+</html>

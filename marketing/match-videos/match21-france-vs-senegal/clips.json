@@ -1,0 +1,39 @@
+{
+  "comment": "Single source of truth for the music score and the SFX track on the 300s Ep21 timeline. This episode is IMAGE-BASED (Ken-Burns motion on player stills) — there are NO generated video clips, so the `clips` array is empty. mux.mjs mixes the music cues (looped/trimmed, ducked under Brian's VO) and any ElevenLabs sound-design hits in sfx/ (skipped gracefully if not yet generated). Music plan per README: Crossing the Chasm, Desert City, Five Armies, Invariance — Kevin MacLeod (incompetech.com), CC-BY 4.0.",
+  "clips": [],
+  "music": {
+    "comment": "Four-cue film score. Kevin MacLeod (incompetech.com), CC-BY 4.0 — credit required in the YouTube description (see README). The Dancing Lion mystery segment (271-288.5) deliberately drops the heavy bed: only the heroic cue swells under Brian.",
+    "cues": [
+      { "src": "music/cue-tense.mp3",  "at": 0,     "dur": 47,  "vol": 0.50, "fadeIn": 0.5, "fadeOut": 4 },
+      { "src": "music/cue-epic.mp3",   "at": 45,    "dur": 113, "vol": 0.40, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-andes.mp3",  "at": 156,   "dur": 100, "vol": 0.40, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-heroic.mp3", "at": 254,   "dur": 46,  "vol": 0.46, "fadeIn": 2.5, "fadeOut": 4, "loop": true }
+    ]
+  },
+  "sfx": {
+    "comment": "ElevenLabs sound-design hits (sfx/*.mp3). These files are generated alongside the VO; mux.mjs skips any that are missing, so the NO_VO music preview still works before they exist. Whooshes ride the scene transitions; the rest mark story beats.",
+    "hits": [
+      { "src": "sfx/heartbeat.mp3", "at": 0.3,   "vol": 0.95 },
+      { "src": "sfx/heartbeat.mp3", "at": 6.0,   "vol": 0.85 },
+      { "src": "sfx/braam.mp3",     "at": 11.5,  "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 15.7,  "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 27.7,  "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 46.7,  "vol": 0.55 },
+      { "src": "sfx/stamp.mp3",     "at": 78.5,  "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 112.7, "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 155.7, "vol": 0.55 },
+      { "src": "sfx/braam.mp3",     "at": 199.5, "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 218.7, "vol": 0.55 },
+      { "src": "sfx/goal.mp3",      "at": 224.5, "vol": 0.95 },
+      { "src": "sfx/goal.mp3",      "at": 235.5, "vol": 0.95 },
+      { "src": "sfx/goal.mp3",      "at": 246.5, "vol": 0.95 },
+      { "src": "sfx/whistle.mp3",   "at": 252.5, "vol": 0.70 },
+      { "src": "sfx/whoosh.mp3",    "at": 262.7, "vol": 0.55 },
+      { "src": "sfx/mystic.mp3",    "at": 271.6, "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 287.7, "vol": 0.55 },
+      { "src": "sfx/pop.mp3",       "at": 296.5, "vol": 0.70 },
+      { "src": "sfx/pop.mp3",       "at": 296.9, "vol": 0.70 },
+      { "src": "sfx/pop.mp3",       "at": 297.3, "vol": 0.70 }
+    ]
+  }
+}
