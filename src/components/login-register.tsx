@@ -16,6 +16,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { getCampaignReferralCode, normalizeCampaignReferralCode } from "@/lib/campaign-attribution";
+import { isFunMode } from "@/lib/fun-mode";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import type { PaidActionGate, PaidActionGates } from "@/lib/types";
@@ -97,6 +98,10 @@ export function LoginRegister({ initialReferralCode, publicPaidActionGates }: Lo
   const referralInputRef = useRef<HTMLInputElement | null>(null);
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
+  const funMode = isFunMode();
+  const referralAgreementCopy = funMode
+    ? "Free to play — pick 3 teams and climb the leaderboard. Just for fun, no prizes."
+    : referralAgreementText;
   const canContinueWithReferral = Boolean(referralCode && referralInviter && referralAccepted);
   const selectedSignupPath = signupPath ?? (referralCode ? "referral" : noReferral ? "direct" : null);
   const showReferralForm = selectedSignupPath === "referral";
@@ -359,7 +364,7 @@ export function LoginRegister({ initialReferralCode, publicPaidActionGates }: Lo
                   <div className={`referral-acceptance ${referralInviter ? "accepted" : ""}`}>
                     <div>
                       <strong>{referralAccepted ? "Referral accepted" : "Referral agreement"}</strong>
-                      <span>{referralAgreementText}</span>
+                      <span>{referralAgreementCopy}</span>
                     </div>
                     <button
                       className="button secondary"

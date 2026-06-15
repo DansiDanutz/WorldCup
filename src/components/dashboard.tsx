@@ -28,6 +28,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 
 import { HeroSwiper } from "@/components/hero-swiper";
+import { isFunMode } from "@/lib/fun-mode";
 import { MyStanding } from "@/components/my-standing";
 import { SmartMenu } from "@/components/smart-menu";
 import { formatLedgerAmount, formatMoneyAmount } from "@/lib/economy";
@@ -227,7 +228,9 @@ export function Dashboard({
   const remainingPickCount = Math.max(0, 3 - selectedTeams.length);
   const pickInstruction =
     selectedTeams.length === 3
-      ? accountHasDraftEntry
+      ? isFunMode()
+        ? "Your 3 teams are ready. Lock them in free to climb the leaderboard — just for fun, no prizes."
+        : accountHasDraftEntry
         ? "Your free picks are saved. Lock your 3 teams forever, or get a ticket to lock straight into the prize pool."
         : "Your 3 teams are ready. Lock them free forever, or save a draft first to watch the private points preview."
       : `Choose ${remainingPickCount} more ${remainingPickCount === 1 ? "team" : "teams"}.`;
@@ -261,6 +264,11 @@ export function Dashboard({
     [matches, teams],
   );
   const signedInWithGoogle = Boolean(session?.access_token && session.user.email);
+  const funMode = isFunMode();
+  // In fun mode there is no prize pool, so a "locked" entry must never read as
+  // "in the pool" for UI purposes (the free backend lock is just a permanent
+  // free entry). Keep accountInPool intact for structural "teams locked" logic.
+  const accountInPoolUi = accountInPool && !funMode;
   const showAdminNav = session?.user.email?.trim().toLowerCase() === ownerAdminEmail;
   const waitingForAccountStatus = signedInWithGoogle && myAccountStatus === null;
   const showPickWorkflow = !accountHasEntry && !waitingForAccountStatus;
@@ -316,20 +324,33 @@ export function Dashboard({
     selectedTeamCount: selectedTeams.length,
     signedInWithGoogle,
   });
-  const journeySteps = [
-    { label: "Pick", done: selectedTeams.length === 3 || accountTeamsLocked },
-    { label: "Lock teams", done: accountTeamsLocked },
-    { label: "Ticket", done: hasEntryTicket || accountInPool },
-    { label: "In pool", done: accountInPool },
-  ];
+  const journeySteps = funMode
+    ? [
+        { label: "Pick", done: selectedTeams.length === 3 || accountTeamsLocked },
+        { label: "Lock teams", done: accountTeamsLocked },
+      ]
+    : [
+        { label: "Pick", done: selectedTeams.length === 3 || accountTeamsLocked },
+        { label: "Lock teams", done: accountTeamsLocked },
+        { label: "Ticket", done: hasEntryTicket || accountInPool },
+        { label: "In pool", done: accountInPool },
+      ];
   const journeyCurrentStep = journeySteps.findIndex((step) => !step.done);
   // Primary action: with a ticket you lock straight into the paid pool; without
   // one you lock your teams for free forever ("commit"). Both need the same
   // prerequisites (display name, 3 valid teams, referral terms).
-  const entryPrimaryAction: "lock" | "commit" = hasEntryTicket ? "lock" : "commit";
-  const entryActionBlocker = hasEntryTicket ? entryLockBlocker : entryDraftBlocker;
-  const entryActionLabel = hasEntryTicket ? "Lock & enter prize pool" : "Lock my 3 teams";
-  const entryLockHint = hasEntryTicket
+  const entryPrimaryAction: "lock" | "commit" = funMode ? "commit" : hasEntryTicket ? "lock" : "commit";
+  const entryActionBlocker = funMode ? entryDraftBlocker : hasEntryTicket ? entryLockBlocker : entryDraftBlocker;
+  const entryActionLabel = funMode
+    ? "Lock my 3 teams (free)"
+    : hasEntryTicket
+      ? "Lock & enter prize pool"
+      : "Lock my 3 teams";
+  const entryLockHint = funMode
+    ? entryDraftBlocker
+      ? entryDraftBlocker
+      : "Free to play — lock your 3 teams and climb the leaderboard. Just for fun, no prizes."
+    : hasEntryTicket
     ? entryLockBlocker && !missingEntryTicket
       ? `Ticket is ready. ${entryLockBlocker}`
       : entryLockBlocker
@@ -1053,13 +1074,15 @@ export function Dashboard({
                 <small>Match videos</small>
               </span>
             </Link>
-            <Link className="nav-item" href={{ pathname: "/wallet" }}>
-              <Wallet size={16} />
-              <span className="nav-item__copy">
-                <strong>Wallet</strong>
-                <small>My account</small>
-              </span>
-            </Link>
+            {!funMode ? (
+              <Link className="nav-item" href={{ pathname: "/wallet" }}>
+                <Wallet size={16} />
+                <span className="nav-item__copy">
+                  <strong>Wallet</strong>
+                  <small>My account</small>
+                </span>
+              </Link>
+            ) : null}
             {signedInWithGoogle ? (
               <button className="nav-item nav-item--logout" onClick={signOut} type="button">
                 <LogOut size={16} />
@@ -1149,7 +1172,7 @@ export function Dashboard({
       <div className={`page page--landing ${showPickWorkflow ? "" : "page--post-entry"}`}>
         {showPickWorkflow ? (
           <HeroSwiper
-            prizePool={netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
+            prizePool={funMode ? undefined : netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
             playerCount={participantCount}
           />
         ) : null}
@@ -1173,7 +1196,7 @@ export function Dashboard({
           <span className="series-banner__cta">Watch on YouTube</span>
         </a>
 
-        {launchEvidenceMode ? (
+        {!funMode && launchEvidenceMode ? (
           <section className="launch-notice" aria-label="Launch evidence mode">
             <div>
               <strong>Admin launch evidence mode</strong>
@@ -1231,15 +1254,17 @@ export function Dashboard({
               <div className="panel-header">
                 <div>
                   <h1 className="panel-title">
-                    {accountInPool ? "Your entry is locked" : "Your 3 teams are locked"}
+                    {accountInPoolUi ? "Your entry is locked" : "Your 3 teams are locked"}
                   </h1>
                   <p className="panel-subtitle">
-                    {accountInPool
+                    {funMode
+                      ? "Your 3 teams are locked. Free to play — climb the leaderboard, just for fun, no prizes."
+                      : accountInPool
                       ? "One entry per account. Your final teams are in the prize pool and can no longer be changed."
                       : "Your 3 teams are locked forever and can no longer be changed. You're playing for fun — add a ticket anytime to enter the prize pool."}
                   </p>
                 </div>
-                <span className="status-pill">{accountInPool ? "In pool" : "Locked · free"}</span>
+                <span className="status-pill">{accountInPoolUi ? "In pool" : "Locked · free"}</span>
               </div>
               <div className="entry-complete-card">
                 <div className="entry-complete-card__title">
@@ -1247,7 +1272,7 @@ export function Dashboard({
                   <div>
                     <strong>{accountEntry?.displayName ?? "Your WorldCup26 entry"}</strong>
                     <span>
-                      {accountInPool
+                      {accountInPoolUi
                         ? accountEntry?.lockedAt
                           ? `Locked into the pool ${formatDateTime(accountEntry.lockedAt)}`
                           : "Entry in the pool"
@@ -1281,14 +1306,14 @@ export function Dashboard({
                   <div className="ticket-ready-note entry-pool-note">
                     <Trophy size={16} aria-hidden="true" />
                     <span>
-                      Playing for fun: your points and a &ldquo;where you&rsquo;d place if paying&rdquo;
-                      preview are live on your account below. A ticket puts you in the prize pool for
-                      real money — your full points so far come with you.
+                      {funMode
+                        ? "🏆 Free leaderboard — bragging rights only. Your points are live on your account below. Just for fun, no prizes."
+                        : "Playing for fun: your points and a “where you’d place if paying” preview are live on your account below. A ticket puts you in the prize pool for real money — your full points so far come with you."}
                     </span>
                   </div>
                 ) : null}
                 <div className="entry-complete-actions">
-                  {accountCommittedFree ? (
+                  {accountCommittedFree && !funMode ? (
                     hasEntryTicket ? (
                       <button
                         className="button entry-lock-cta is-ready"
@@ -1306,14 +1331,16 @@ export function Dashboard({
                       </Link>
                     )
                   ) : null}
-                  <a className={`button${accountCommittedFree ? " secondary" : ""}`} href="#me">
+                  <a className={`button${accountCommittedFree && !funMode ? " secondary" : ""}`} href="#me">
                     <UserRound size={16} />
                     Open account
                   </a>
-                  <Link className="button secondary" href={{ pathname: "/wallet" }}>
-                    <Wallet size={16} />
-                    Wallet / Agent
-                  </Link>
+                  {!funMode ? (
+                    <Link className="button secondary" href={{ pathname: "/wallet" }}>
+                      <Wallet size={16} />
+                      Wallet / Agent
+                    </Link>
+                  ) : null}
                 </div>
                 {entryMessage ? <div className="message">{entryMessage}</div> : null}
               </div>
@@ -1543,8 +1570,9 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Entry</h2>
                 <p className="panel-subtitle">
-                  Save your 3 picks free. Even without paying, you can follow your points and
-                  see what would happen if this draft entered the paid leaderboard.
+                  {funMode
+                    ? "Free to play — pick 3 teams, lock them, and climb the leaderboard. Just for fun, no prizes."
+                    : "Save your 3 picks free. Even without paying, you can follow your points and see what would happen if this draft entered the paid leaderboard."}
                 </p>
               </div>
               <Lock size={18} color="var(--green)" />
@@ -1648,6 +1676,22 @@ export function Dashboard({
                   );
                 })}
               </div>
+              {funMode ? (
+                <div className="ticket-requirement-card" aria-label="Free play">
+                  <div className="ticket-requirement-card__icon">
+                    <Trophy size={18} />
+                  </div>
+                  <div className="ticket-requirement-card__content">
+                    <div className="ticket-ready-note ticket-ready-note--free">
+                      <Check size={16} />
+                      <span>
+                        🏆 Free leaderboard — bragging rights only. Pick 3 teams and lock them for
+                        free. Just for fun, no prizes — nothing to buy.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ) : (
               <div
                 className={`ticket-requirement-card ${missingEntryTicket ? "needs-ticket" : ""}`}
                 aria-label="Entry ticket requirement"
@@ -1812,6 +1856,7 @@ export function Dashboard({
                   ) : null}
                 </div>
               </div>
+              )}
               {entryLockHint ? (
                 <div className="message entry-lock-hint">{entryLockHint}</div>
               ) : null}
@@ -1844,7 +1889,9 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Invite Friend</h2>
                 <p className="panel-subtitle">
-                  Share your referral link. Every accepted inviter earns 5%.
+                  {funMode
+                    ? "Share your link and invite friends to the free leaderboard."
+                    : "Share your referral link. Every accepted inviter earns 5%."}
                 </p>
               </div>
               <div className="panel-header-actions">
@@ -1863,27 +1910,29 @@ export function Dashboard({
             <div className="invite-content">
               {signedInWithGoogle && myReferralCode ? (
                 <>
-                  <div className="account-status-grid">
-                    <div>
-                      <span>Tickets available</span>
-                      <strong>{myAccountStatus?.ticketsAvailable ?? 0}</strong>
-                      <small>{myAccountStatus?.ticketsAssigned ?? 0} assigned</small>
+                  {funMode ? null : (
+                    <div className="account-status-grid">
+                      <div>
+                        <span>Tickets available</span>
+                        <strong>{myAccountStatus?.ticketsAvailable ?? 0}</strong>
+                        <small>{myAccountStatus?.ticketsAssigned ?? 0} assigned</small>
+                      </div>
+                      <div>
+                        <span>Wallet balance</span>
+                        <strong>{formatLedgerAmount(myAccountStatus?.walletBalance ?? 0)}</strong>
+                        <small>Internal funds</small>
+                      </div>
+                      <div>
+                        <span>Ticket price</span>
+                        <strong>
+                          {formatMoneyAmount(
+                            normalizeWorldCupTicketPriceAmount(myAccountStatus?.ticketPriceAmount),
+                          )}
+                        </strong>
+                        <small>Set by admin</small>
+                      </div>
                     </div>
-                    <div>
-                      <span>Wallet balance</span>
-                      <strong>{formatLedgerAmount(myAccountStatus?.walletBalance ?? 0)}</strong>
-                      <small>Internal funds</small>
-                    </div>
-                    <div>
-                      <span>Ticket price</span>
-                      <strong>
-                        {formatMoneyAmount(
-                          normalizeWorldCupTicketPriceAmount(myAccountStatus?.ticketPriceAmount),
-                        )}
-                      </strong>
-                      <small>Set by admin</small>
-                    </div>
-                  </div>
+                  )}
                   <div className="invite-preview-card" aria-label="Referral invite preview">
                     <div className="invite-preview-card__top">
                       <span className="invite-preview-card__icon">
@@ -1952,17 +2001,23 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Leaderboard</h2>
                 <p className="panel-subtitle">
-                  Everyone who locks 3 picks appears here.{" "}
-                  {paidPlaces >= 10
-                    ? "Top 10 paid positions share the prize pool."
-                    : paidPlaces > 0
-                      ? `Top ${paidPlaces} paid positions share the prize pool.`
-                      : "Paid places are calculated after players lock entries."}
+                  {funMode
+                    ? "Everyone who locks 3 picks appears here. 🏆 Free leaderboard — bragging rights only."
+                    : (
+                      <>
+                        Everyone who locks 3 picks appears here.{" "}
+                        {paidPlaces >= 10
+                          ? "Top 10 paid positions share the prize pool."
+                          : paidPlaces > 0
+                            ? `Top ${paidPlaces} paid positions share the prize pool.`
+                            : "Paid places are calculated after players lock entries."}
+                      </>
+                    )}
                 </p>
               </div>
-              <CircleDollarSign size={18} color="var(--gold)" />
+              {funMode ? <Trophy size={18} color="var(--gold)" /> : <CircleDollarSign size={18} color="var(--gold)" />}
             </div>
-            {payoutPlan.length > 0 ? (
+            {!funMode && payoutPlan.length > 0 ? (
               <div className="payout-strip" aria-label="Prize payout preview">
                 <div className="payout-strip-header">
                   <strong>Payout Preview</strong>
@@ -1998,9 +2053,11 @@ export function Dashboard({
                     <strong>{draftPreviewDisplay?.rank ? `#${draftPreviewDisplay.rank}` : "TBA"}</strong>
                   </div>
                   <div>
-                    <span>What-if share</span>
+                    <span>{funMode ? "Leaderboard" : "What-if share"}</span>
                     <strong>
-                      {draftPreviewDisplay?.projectedShare != null
+                      {funMode
+                        ? "🏆 Free"
+                        : draftPreviewDisplay?.projectedShare != null
                         ? `${formatMoneyAmount(draftPreviewDisplay.projectedShare)} USDT`
                         : draftPreviewDisplay?.paidPlaces
                           ? `Top ${draftPreviewDisplay.paidPlaces}`
@@ -2023,8 +2080,9 @@ export function Dashboard({
                   <div>
                     <div className="leaderboard-name">No entries yet.</div>
                     <p>
-                      Pick 3 teams and lock them in free to appear on the board. Everyone is shown
-                      here — a ticket also puts you in the cash prize pool.
+                      {funMode
+                        ? "Pick 3 teams and lock them in free to appear on the board. 🏆 Free leaderboard — bragging rights only."
+                        : "Pick 3 teams and lock them in free to appear on the board. Everyone is shown here — a ticket also puts you in the cash prize pool."}
                     </p>
                   </div>
                   <a className="button secondary" href="#pick">
@@ -2040,11 +2098,11 @@ export function Dashboard({
                         <span className="rank">{row.leaderboard_rank}</span>
                         <span className="leaderboard-name">{row.display_name}</span>
                         <span
-                          className={row.is_paid ? "entry-badge entry-badge-paid" : "entry-badge entry-badge-free"}
+                          className={row.is_paid && !funMode ? "entry-badge entry-badge-paid" : "entry-badge entry-badge-free"}
                           title={
-                            row.is_paid
+                            row.is_paid && !funMode
                               ? "Paid entry — in the cash prize pool"
-                              : "Free entry — on the board, not in the cash pool"
+                              : "Free entry — on the leaderboard for bragging rights"
                           }
                           style={{
                             fontSize: 10,
@@ -2053,10 +2111,10 @@ export function Dashboard({
                             borderRadius: 6,
                             padding: "1px 6px",
                             border: "1px solid currentColor",
-                            color: row.is_paid ? "var(--gold)" : "#8a94a6",
+                            color: row.is_paid && !funMode ? "var(--gold)" : "#8a94a6",
                           }}
                         >
-                          {row.is_paid ? "POOL" : "FREE"}
+                          {row.is_paid && !funMode ? "POOL" : "FREE"}
                         </span>
                       </div>
                       <span className="points">{formatPoints(row.total_points)}</span>
