@@ -439,7 +439,7 @@ export function MyStanding() {
         </div>
       </div>
 
-      {hasAgentStanding ?(
+      {hasAgentStanding && data?.agent ? (
         <div className="panel standing-agent standing-card standing-card--agent">
           <div className="panel-header">
             <div>
