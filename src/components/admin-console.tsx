@@ -12,6 +12,7 @@ import {
   GitBranch,
   Lock,
   Phone,
+  RefreshCw,
   ShieldCheck,
   Trophy,
   Upload,
@@ -631,6 +632,23 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
         );
       } catch (err) {
         setError(err instanceof Error ? err.message : "Could not apply result.");
+      }
+    });
+  }
+
+  function runResultsNow() {
+    run(async () => {
+      try {
+        const response = await fetch("/api/admin/run-results", {
+          method: "POST",
+          headers: authHeaders(),
+        });
+        const result = await readResult(response);
+        setMessage(
+          `Results sweep done. Checked ${result.checked ?? 0}, applied ${result.applied ?? 0}, errors ${result.errors ?? 0}, bracket advanced ${result.bracketAdvanced ?? 0}.`,
+        );
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Could not run results sweep.");
       }
     });
   }
@@ -2597,15 +2615,25 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   ))}
                 </select>
               </div>
-              <button
-                className="button secondary"
-                disabled={!resultForm.matchId || isPending}
-                onClick={submitResult}
-                type="button"
-              >
-                <ClipboardCheck size={16} />
-                Save Result & Apply Points
-              </button>
+              <div className="two-col">
+                <button
+                  className="button secondary"
+                  disabled={!resultForm.matchId || isPending}
+                  onClick={submitResult}
+                  type="button"
+                >
+                  <ClipboardCheck size={16} />
+                  Save Result & Apply Points
+                </button>
+                <button className="button" disabled={isPending} onClick={runResultsNow} type="button">
+                  <RefreshCw size={16} />
+                  Run results now
+                </button>
+              </div>
+              <p className="field-note">
+                “Run results now” fetches every played match from the live feed, applies points and
+                advances the bracket — the same job the daily cron runs (needs FOOTBALL_DATA_API_KEY set).
+              </p>
             </div>
           </div>
 
