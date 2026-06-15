@@ -42,6 +42,6 @@ And the old man with the falcon? Legend number nine is the Falconer of the Deser
 
 ## Play along — free
 
-Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Live prize pool, underdogs pay triple.
+Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Free to play, climb the leaderboard, just for fun, no prizes.
 
 — New legend before every match. Subscribe on [@DansLab-Kimi](https://youtube.com/@DansLab-Kimi).

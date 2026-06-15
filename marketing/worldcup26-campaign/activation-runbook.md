@@ -20,7 +20,7 @@ Purpose: move the next 72 hours without confusion.
 2. Attach the video from `media-manifest.md`.
 3. Log posts in `posting-log-template.csv`.
 4. Use `copy-bank.md` for replies and second-wave variants.
-5. Recheck live prize pool before using a number.
+5. Keep it free-to-play: no prize numbers — just for fun, climb the leaderboard.
 
 ## 72-Hour Runner
 

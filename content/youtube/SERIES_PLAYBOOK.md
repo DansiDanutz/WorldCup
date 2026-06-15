@@ -93,8 +93,8 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
 6. ❌ Don't skip the Shorts cut. Every episode must spawn 2–3 vertical Shorts
    (the 16s cold open, the goal moment, the Mystery Supporter) that point to
    the full video — Shorts are the channel's free discovery engine.
-7. ❌ Don't claim fixed prize amounts in video copy; say "live prize pool"
-   (compliance rule from the campaign pack).
+7. ❌ Don't promise money or prizes in video copy; say "free to play" / "just for
+   fun, no prizes" (compliance rule from the campaign pack).
 8. ❌ Don't drift from canon: scores/dates must match the Stories files and
    earlier episodes (Ep1 = 0-0 draw; Ep2 = KOR 1-0 CZE, Son 41').
 8b. ❌ **Never present our own predictions as real results.** Recaps of earlier

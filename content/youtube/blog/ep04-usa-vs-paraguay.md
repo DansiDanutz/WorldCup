@@ -34,6 +34,6 @@ This is our story, not a result — and we hand you the ending. Comment ONE if i
 Remember her? Legend number four is the Liberty Fan, present at every American World Cup match since 1990 — the flame that never went out. Tonight it burned brighter than ever. Watch the episode to meet her, and collect her inside the game.
 
 ## Play along — free
-Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Live prize pool, underdogs pay triple.
+Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Free to play, climb the leaderboard, just for fun, no prizes.
 
 — New legend before every match. Subscribe on [@DansLab-Kimi](https://youtube.com/@DansLab-Kimi).

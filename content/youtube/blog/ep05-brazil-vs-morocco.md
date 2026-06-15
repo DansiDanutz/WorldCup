@@ -34,6 +34,6 @@ This is the Prophet's vision, our story, not a result: Brazil survive, our predi
 And the man with the feathers? Legend number five is the Feathered Prophet — five visions, five stars. They say Pelé's spirit speaks through him. Tonight he saw the sixth begin. Watch the episode to meet him, and collect him inside the game.
 
 ## Play along — free
-Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Live prize pool, underdogs pay triple.
+Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Free to play, climb the leaderboard, just for fun, no prizes.
 
 — New legend before every match. Subscribe on [@DansLab-Kimi](https://youtube.com/@DansLab-Kimi).

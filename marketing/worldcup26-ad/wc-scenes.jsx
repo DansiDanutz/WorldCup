@@ -129,7 +129,7 @@ function SceneHook() {
           </div>
         </div>
         <div style={{ ...rev(localTime, 1.7, 0.55), fontFamily: SANS, fontWeight: 650, fontSize: 30, color: WC.muted, textAlign: 'center' }}>
-          Pick 3 teams. Watch them score. Win the prize pool.
+          Pick 3 teams. Watch them score. Climb the leaderboard.
         </div>
       </div>
     </SceneWrap>
@@ -429,7 +429,7 @@ function SceneBoard() {
 }
 
 // =============================================================================
-// SCENE 5 — PRIZE POOL
+// SCENE 5 — LEADERBOARD
 // =============================================================================
 const PAYOUTS = [
   { rank: '#1', pct: 32.0, amt: 15360 },
@@ -457,7 +457,7 @@ function ScenePrize() {
           </div>
         </div>
         <div style={{ ...rev(localTime, 0.6, 0.5), fontFamily: SANS, fontWeight: 800, fontSize: 38, color: WC.text, marginTop: 6, whiteSpace: 'nowrap' }}>
-          Prize pool · <span style={{ color: WC.green }}>Top 10 paid</span>
+          Leaderboard · <span style={{ color: WC.green }}>Top 10 paid</span>
         </div>
 
         {/* payout strip */}
@@ -478,7 +478,7 @@ function ScenePrize() {
           ))}
         </div>
         <div style={{ ...rev(localTime, 1.9, 0.5), fontFamily: SANS, fontWeight: 650, fontSize: 22, color: WC.muted, marginTop: 34 }}>
-          Weighted split from the live prize pool — it grows with every entry.
+          Weighted split from the live leaderboard — it grows with every entry.
         </div>
       </div>
     </SceneWrap>
@@ -610,7 +610,7 @@ function SceneRefer() {
 
       <div style={{ ...rev(localTime, 2.5, 0.5), position: 'absolute', left: 0, right: 0, top: 870, textAlign: 'center' }}>
         <span style={{ fontFamily: SANS, fontWeight: 650, fontSize: 23, color: WC.muted }}>
-          Paid out automatically from the prize pool — your income keeps coming as long as they keep winning.
+          Paid out automatically from the leaderboard — your income keeps coming as long as they keep winning.
         </span>
       </div>
     </SceneWrap>

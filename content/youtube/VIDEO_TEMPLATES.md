@@ -35,7 +35,7 @@ The CURSED Fan Who Never Misses a [TEAM] Game
 ## Description Template
 
 ```
-🌍 WorldCup26.world — Pick 3 teams. Win real money. First 1,000 entries FREE.
+🌍 WorldCup26.world — Pick 3 teams. Free to play, climb the leaderboard, just for fun, no prizes.
 
 In this video, we dive deep into [TEAM/NATION] and their road to the 2026 FIFA World Cup. 
 
@@ -59,10 +59,10 @@ In this video, we dive deep into [TEAM/NATION] and their road to the 2026 FIFA W
 3. Pick exactly 3 teams
 4. Watch the tournament and climb the leaderboard
 
-🏆 PRIZE POOL:
-• Top 10 split the pool
+🏆 LEADERBOARD:
+• Top 10 climb the leaderboard, just for fun
 • Points = wins × coefficient + goal bonuses + clean sheets
-• Underdogs earn MORE per point
+• Underdogs earn MORE per point — no prizes, just bragging rights
 
 📱 FOLLOW US:
 TikTok: @worldcup26

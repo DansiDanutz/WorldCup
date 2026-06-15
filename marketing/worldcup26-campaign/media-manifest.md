@@ -57,7 +57,7 @@ Each image includes:
 
 - `Pick 3 teams free first.`
 - `Private points preview first.`
-- `Paid leaderboard only with a ticket.`
+- `Free to play — climb the leaderboard, just for fun, no prizes.`
 - Referral code `26BC4B90CB`
 - Referral URL `worldcup26.world/login?ref=26BC4B90CB`
 

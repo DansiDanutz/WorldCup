@@ -34,6 +34,6 @@ This is our story, not a result. We predict Canada 0, Bosnia 0 — and then the 
 Remember the beginning — the Leaf? Legend number three is the Maple Leaf Man, present at every Canada match since 1986, who has never once shown his face. Tonight he watched his team survive. Watch the episode to meet him, and collect him inside the game.
 
 ## Play along — free
-Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Live prize pool, underdogs pay triple.
+Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Free to play, climb the leaderboard, just for fun, no prizes.
 
 — New legend before every match. Subscribe on [@DansLab-Kimi](https://youtube.com/@DansLab-Kimi).

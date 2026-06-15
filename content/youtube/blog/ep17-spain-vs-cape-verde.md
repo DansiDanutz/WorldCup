@@ -38,6 +38,6 @@ And the keeper with the lamp? Legend number seventeen: the Lighthouse Keeper. Fo
 
 ## Play along — free
 
-Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Live prize pool, underdogs pay triple.
+Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Free to play, climb the leaderboard, just for fun, no prizes.
 
 — New legend before every match. Subscribe on [@DansLab-Kimi](https://youtube.com/@DansLab-Kimi).

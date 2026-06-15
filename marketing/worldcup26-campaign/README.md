@@ -7,7 +7,7 @@ Primary invite:
 ```text
 I invited you to WorldCup26.
 
-Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
+Pick 3 teams for free, see your private points preview, and climb the leaderboard, just for fun, no prizes.
 
 Use my referral code 26BC4B90CB when you join:
 https://worldcup26.world/login?ref=26BC4B90CB&utm_source=campaign-readme&utm_medium=operator-doc&utm_campaign=worldcup26_referral_72h&utm_content=primary_invite
@@ -35,9 +35,9 @@ No final MP4 was found inside the WorldCup repo. If the final rendered video exi
 - Use owned accounts, groups where posting is allowed, direct friends, and communities where invitation links are welcome.
 - Do not spam the same message repeatedly into the same place.
 - Always vary copy and lead angle.
-- Keep prize wording dynamic: say `live prize pool` or `top leaderboard rewards`, not a fixed amount unless the site shows that amount at posting time.
+- Keep it free-to-play: say `free to play` and `climb the leaderboard, just for fun, no prizes` — never promise money or prizes.
 - Every post must include either a tracked referral link or the referral code.
-- Every reply should answer one question and then return to the CTA: join, save 3 picks free, use a ticket later only for paid leaderboard entry, invite friends.
+- Every reply should answer one question and then return to the CTA: join, save 3 picks free, climb the leaderboard just for fun, invite friends.
 
 ## 72-Hour Rhythm
 
@@ -74,7 +74,7 @@ Latest queue expansion: `75` campaign actions across the 72-hour window, includi
 - Confirm final MP4 location or render it from `marketing/worldcup26-ad`.
 - Post the main invite once to owned WhatsApp/Telegram contacts.
 - Publish one video post with the direct referral link in caption.
-- Publish one feed post explaining the simple game: pick 3 teams free first, then paid leaderboard only with ticket.
+- Publish one feed post explaining the simple game: pick 3 teams free first, then climb the leaderboard, just for fun, no prizes.
 - Start a campaign log from `posting-log-template.csv`.
 - Fill partner targets in `partner-targets-template.csv`.
 - Assign worker lanes from `worker-missions.md`.

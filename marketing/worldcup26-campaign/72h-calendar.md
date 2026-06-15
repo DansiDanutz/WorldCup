@@ -9,14 +9,14 @@ Start when the final video is available or when the first post goes live.
 - Publish the main video on all owned short-form channels.
 - Send the personal WhatsApp/Telegram invite to warm contacts.
 - Post Feed 1 from `copy-bank.md`.
-- Lead with the free-picks flow: save 3 teams first, paid leaderboard only with ticket.
+- Lead with the free-picks flow: save 3 teams, then climb the leaderboard, just for fun, no prizes.
 - Log every post in `posting-log-template.csv`.
 
 ### Hours 4-8
 
 - Post one story/status with the referral code large and clear.
 - Share one still image or screen recording of the Pick 3 Teams flow.
-- Mention the private points preview, not only the paid leaderboard.
+- Mention the private points preview and the just-for-fun leaderboard.
 - Reply to all questions within 30 minutes.
 
 ### Hours 9-16
@@ -56,7 +56,7 @@ Start when the final video is available or when the first post goes live.
 ### Hours 49-56
 
 - Post the direct CTA: `Join with code 26BC4B90CB`.
-- Share a short step list: sign in, code, pick 3 teams free, use ticket later for paid leaderboard.
+- Share a short step list: sign in, code, pick 3 teams free, climb the leaderboard just for fun.
 - Ask existing users to send the link to 3 friends.
 
 ### Hours 57-64

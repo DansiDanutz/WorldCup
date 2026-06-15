@@ -42,7 +42,7 @@ Render: `npm run serve` (port 8093) → `npm run render` → `npm run voice` →
   goalkeeping history. 52 years later they're back — against the five-time
   champions — and a striker who was discovered stacking supermarket shelves
   writes the next chapter. Comment SAMBA or SPIRIT. Pick your 3 teams free at
-  https://worldcup26.world (underdogs pay triple — Haiti pays x3).
+  https://worldcup26.world (free to play — climb the leaderboard, just for fun).
 - **Subtitles:** upload `subtitles.srt` alongside the video.
 - **Music credit (required):** "Drums of the Deep", "Samba Isobel",
   "Five Armies", "Invariance" — Kevin MacLeod (incompetech.com), CC-BY 4.0 —

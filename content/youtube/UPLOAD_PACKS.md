@@ -6,7 +6,7 @@ answer **"No, not made for kids"**, and pin the suggested comment.
 
 General reminders:
 - Chapters are accurate to each episode's render (first is always 0:00).
-- Always say "live prize pool" / "underdogs pay triple" — never a fixed amount.
+- Always say "free to play" / "just for fun, no prizes" — never promise money or prizes.
 - Music credit lines are per-episode (different cues per episode).
 - **COMPLIANCE on every upload (legal/monetization-critical):**
   - **"No, not made for kids"** (made-for-kids voids fan funding) — verify it.
@@ -41,7 +41,7 @@ Son Heung-min has carried Korea for a decade. This summer, the dance begins one 
 🔮 Our ending is a PREDICTION, not a result — and we explain the reasoning on screen. Do you agree?
 👉 Comment "KOREA" or "CZECH" with your call.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live leaderboard, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -88,7 +88,7 @@ For 40 years a mystery man has appeared at every Canada match. Tonight, the Mapl
 🔮 Our ending is a PREDICTION, with the reasoning on screen — not a result.
 👉 Comment "DAVIES" or "DZEKO" with who you'd build a team around.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live leaderboard, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -135,7 +135,7 @@ They met at the very first World Cup in 1930 — and an American made history th
 🔮 Our prediction is just that — and the story stops at the 78th minute with Enciso 40 yards out. YOU finish it:
 👉 Comment "1" if it stays 1-1. Comment "2" if Enciso scores.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live leaderboard, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -182,7 +182,7 @@ Five stars. The most successful nation in football history. But Brazil has a sec
 🔮 Our ending is a PREDICTION, with the reasoning on screen — not a result. Do you agree?
 👉 Comment "HEXA" if Brazil win it all. Comment "LIONS" if Morocco tops the group.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live leaderboard, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -229,7 +229,7 @@ In 1982, football betrayed Algeria so badly that FIFA changed the rules of the W
 🔮 Our ending is a PREDICTION, with the reasoning on screen — not a result. Do you agree?
 👉 Comment "GOAT" if Argentina go back-to-back. Comment "FOX" if Algeria shocks the group.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live leaderboard, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -276,7 +276,7 @@ In 1974, Haiti ended the longest unbeaten run in goalkeeping history. 52 years l
 🔮 Our ending is a PREDICTION, with the reasoning on screen — not a result. Do you agree?
 👉 Comment "SAMBA" if Brazil win the Hexa. Comment "SPIRIT" if Nazon's goal is the moment of the tournament.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live leaderboard, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -324,7 +324,7 @@ Ghana — the first nation in sub-Saharan Africa to win its freedom — has wait
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "LIONS" if England survive, or "BLACK STARS" if Ghana shock them.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -374,7 +374,7 @@ Four years ago, Qatar lost all three games at their own World Cup — the worst 
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "EAGLE" if Switzerland win, or "FALCON" if Qatar rise.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -424,7 +424,7 @@ Scotland has reached more World Cups than almost any nation — and never once e
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "TARTAN" for Scotland, or "HAITI" for the islanders.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -475,7 +475,7 @@ One supporter belongs to no country at all — a wanderer with a suitcase of fla
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "SOCCEROOS" for Australia, or "CRESCENT" for Turkey.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -525,7 +525,7 @@ On a tiny island you could drive across in an hour, an old man once taught child
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "MACHINE" for Germany, or "DAVID" for Curaçao.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -574,7 +574,7 @@ The Netherlands invented Total Football and reached three finals without ever li
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "TULIP" for the Dutch, or "SAMURAI" for Japan.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -625,7 +625,7 @@ In 2005, an Ivory Coast captain dropped to his knees on live TV and begged his c
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "ELEPHANTS" for Ivory Coast, or "ALTITUDE" for Ecuador.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -677,7 +677,7 @@ In 1978, a tiny North African nation kicked open a door no African team had ever
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "FROST" for Sweden, or "FIRE" for Tunisia.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -729,7 +729,7 @@ Ten volcanic islands. Half a million people. For sixty years they sent their son
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "EMPIRE" for Spain, or "ISLAND" for Cape Verde.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -781,7 +781,7 @@ For four years Belgium were the best team on Earth — and won nothing. Egypt ha
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "DEVILS" if Belgium's golden generation finally delivers, or "PHARAOHS" if Salah breaks the curse.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -833,7 +833,7 @@ In 1950, two hundred thousand people packed the Maracanã to crown Brazil champi
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "GREEN FALCONS" for Saudi Arabia, or "CELESTE" for Uruguay.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -882,7 +882,7 @@ At the 2010 World Cup, one team faced the defending champions of the world, the 
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "TEAM MELLI" if Iran finally break through, or "ALL WHITES" if New Zealand stay unbeaten again.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -933,7 +933,7 @@ In 2002, in the opening match of the entire World Cup, debutants Senegal beat th
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "LES BLEUS" if France are simply too strong, or "LIONS" if Senegal shock the world all over again.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -986,7 +986,7 @@ In 2007, a country torn apart by war sent eleven men to play football — Sunni,
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "LIONS" if Iraq's heart wins it, or "VIKINGS" if Norway's power is simply too much.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -1036,7 +1036,7 @@ For forty years they tried. Nine times Jordan came knocking on the door of the W
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "WUNDERTEAM" if Austria's class is too much, or "NASHAMA" if you back the brave to shock the world.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -1087,7 +1087,7 @@ In 1974, a defender ran out of the wall and booted a free kick away before it wa
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "SELEÇÃO" if Ronaldo finally lifts it, or "LEOPARDS" if you back DR Congo to swing the door open again.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 
@@ -1138,7 +1138,7 @@ In 2018, in a World Cup semi-final in Moscow, England led after five minutes and
 🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
 👉 Comment "THREE LIONS" if England finally lay the ghost to rest, or "VATRENI" if the little nation breaks them all over again.
 
-🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Free to play, climb the leaderboard, just for fun, no prizes.
 
 ▶️ New legend before every match. Subscribe and turn on the bell 🔔
 

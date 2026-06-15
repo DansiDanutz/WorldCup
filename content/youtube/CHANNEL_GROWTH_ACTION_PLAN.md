@@ -85,7 +85,7 @@ can argue with, and a Mystery Supporter legend hidden in every episode.
 New legend before every match. ▶️ Subscribe & turn on the bell 🔔
 
 🎮 Play free — pick 3 of the 48 nations, every goal they score scores for you.
-Live prize pool, underdogs pay triple → https://worldcup26.world
+Free to play, climb the leaderboard, just for fun, no prizes → https://worldcup26.world
 ```
 
 ### Channel keywords (Settings → Channel → Basic info → Keywords)

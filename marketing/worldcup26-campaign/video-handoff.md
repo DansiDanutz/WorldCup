@@ -11,13 +11,13 @@ What exists:
 
 ## Script Check
 
-The narration currently contains a fixed prize claim:
+If any older narration still contains a prize claim like:
 
 ```text
 prize pool of forty-eight thousand dollars
 ```
 
-Only use that version if the live app currently supports that exact claim. For safer campaign copy, the campaign pack uses `live prize pool` instead of a fixed amount.
+do NOT use it — the game is now free to play, just for fun, with no prizes. Campaign copy uses `free to play` and `climb the leaderboard, just for fun, no prizes` instead of any amount.
 
 ## If Final MP4 Exists Outside Repo
 

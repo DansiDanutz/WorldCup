@@ -328,7 +328,7 @@ function SceneApp() {
           <VideoCard clipId="app-jpn" name="JAPAN" coef="x4.50" start={S} delay={1.55} accent={JPN} />
           <VideoCard clipId="app-arg" name="ARGENTINA" coef="x1.15" start={S} delay={1.9} accent="#74acdf" />
         </div>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 32, color: MV.gold, letterSpacing: '0.06em' }}>FREE TO PLAY · LIVE LEADERBOARD · UNDERDOGS PAY TRIPLE</div>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 32, color: MV.gold, letterSpacing: '0.06em' }}>FREE TO PLAY · LIVE LEADERBOARD · JUST FOR FUN</div>
       </div>
       <Letterbox />
     </div>

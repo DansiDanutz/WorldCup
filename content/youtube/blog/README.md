@@ -25,8 +25,8 @@ that counts toward the YPP 3,000-hour goal (`../MONETIZATION_STATUS.md`).
   `../UPLOAD_PACKS.md`); reconcile to the channel number when you publish if you want
   them to match the videos exactly.
 - Hard rules honored in every article: endings are labeled **our prediction** (never
-  stated as results), **soccer-only**, CTA says "live prize pool / underdogs pay
-  triple" with **no fixed amount**.
+  stated as results), **soccer-only**, CTA says "free to play / just for fun, no
+  prizes" with **no money or prizes promised**.
 
 ## Articles (23)
 Ep2 Korea–Czech · Ep3 Canada–Bosnia · Ep4 USA–Paraguay · Ep5 Brazil–Morocco ·

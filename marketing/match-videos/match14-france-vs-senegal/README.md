@@ -32,7 +32,7 @@ A 5-minute (300s, 1920×1080, 30fps) cinematic episode built on the **Ep2 templa
 | 186–242 | The Drama (OUR PREDICTION) | 56' Mbappé goal (France 1-0); Mané at 34 tracks back, wins it, → Jackson counter → Senegal equalise; FT **1–1** |
 | 242–262 | Verdict | Group I table after MD1 — left open |
 | 256–270 | Mystery Supporter | **Legend 014 — the Lion of Gorée** revealed |
-| 262–286 | App promo | worldcup26.world — pick 3, free, live prize pool, underdogs pay triple |
+| 262–286 | App promo | worldcup26.world — pick 3, free to play, climb the leaderboard, just for fun, no prizes |
 | 286–300 | CTA outro | Subscribe/Like/Share + named share trigger + **Spain (Ep15) tease** |
 
 ## Files in this folder (authored)

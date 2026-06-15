@@ -99,8 +99,8 @@ Structure (≈300s, ~30 short lines, each its own line of audio — never tempo-
 7) The match drama → OUR PREDICTION scoreline, stated EXPLICITLY as "our prediction
    / our story", NEVER as a real result.
 8) Mystery Supporter payoff.
-9) CTA: play free at worldcup26.world — pick 3 nations, live prize pool, underdogs
-   pay triple (never a fixed amount). Tease Episode N+1.
+9) CTA: play free at worldcup26.world — pick 3 nations, free to play, climb the
+   leaderboard, just for fun, no prizes (never promise money or prizes). Tease Episode N+1.
 
 HARD RULES: soccer/football ONLY (round-neck shirts, a pitch with goals; NO
 helmets/pads/American football). No on-screen subtitle/caption sentences — Brian's

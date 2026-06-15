@@ -522,7 +522,7 @@ function SceneApp() {
           })}
         </div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 32, color: MV.gold, letterSpacing: '0.05em', marginTop: 6 }}>
-          FREE TO PLAY · LIVE PRIZE POOL · UNDERDOGS PAY TRIPLE
+          FREE TO PLAY · LIVE LEADERBOARD · JUST FOR FUN
         </div>
       </div>
       <Letterbox />

@@ -20,7 +20,7 @@ Fallback tracked link: `https://worldcup26.world/login?ref=26BC4B90CB&utm_source
 ```text
 I invited you to WorldCup26.
 
-Pick 3 teams for free, see your private points preview, and use a ticket only if you want to enter the paid leaderboard.
+Pick 3 teams for free, see your private points preview, and climb the leaderboard, just for fun, no prizes.
 
 Use my referral code 26BC4B90CB when you join:
 https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-bank&utm_medium=manual-copy&utm_campaign=worldcup26_referral_72h&utm_content=core_invite
@@ -47,7 +47,7 @@ WorldCup26 is live for signups.
 You pick 3 teams.
 They score points as they win, draw, score goals, and move through the tournament.
 You can see your private points preview for free.
-Use a ticket only when you want to enter the paid leaderboard.
+It is free to play — climb the leaderboard, just for fun, no prizes.
 
 Join through my invite:
 https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-bank-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=feed_simple_rules
@@ -62,7 +62,7 @@ I want a small football group inside WorldCup26.
 
 Pick your 3 teams for free, follow your private points preview, and invite your friends too.
 It is more fun when we all have our teams locked before the tournament starts.
-Paid leaderboard entry only starts when you use a ticket.
+It is free to play — climb the leaderboard, just for fun, no prizes.
 
 Use my code when you join: 26BC4B90CB
 https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-bank-feed&utm_medium=manual-post&utm_campaign=worldcup26_referral_72h&utm_content=feed_friends_angle
@@ -87,7 +87,7 @@ https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-bank-feed&utm_medi
 WorldCup26 has a referral side too.
 
 Invite friends, build your group, and let them save their 3 picks first.
-They can enter the paid leaderboard later with a ticket.
+It is free to play — they climb the leaderboard, just for fun, no prizes.
 If you want to join, use my code so we are connected from the start.
 
 Code: 26BC4B90CB
@@ -110,7 +110,7 @@ https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-bank-video&utm_med
 ```text
 WorldCup26 is for the football friends who always think they know better.
 
-Pick 3 teams free first. Enter the paid leaderboard only with a ticket.
+Pick 3 teams free. Climb the leaderboard, just for fun, no prizes.
 Code: 26BC4B90CB
 https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-bank-video&utm_medium=video-caption&utm_campaign=worldcup26_referral_72h&utm_content=caption_2
 ```
@@ -133,7 +133,7 @@ https://worldcup26.world/login?ref=26BC4B90CB&utm_source=copy-bank-video&utm_med
 I am inviting friends to WorldCup26.
 
 You pick 3 teams for free and follow your private points preview during the tournament.
-Use a ticket only if you want to enter the paid leaderboard.
+It is free to play — climb the leaderboard, just for fun, no prizes.
 Use my code when you join: 26BC4B90CB
 
 https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_medium=manual-outreach&utm_campaign=worldcup26_referral_72h&utm_content=copy_bank_personal
@@ -145,7 +145,7 @@ https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-personal&utm_m
 For anyone who wants a World Cup prediction game:
 
 WorldCup26 = pick 3 teams free first, score through real matches, and see your private points preview.
-Paid leaderboard entry happens only when you use a ticket.
+It is free to play — climb the leaderboard, just for fun, no prizes.
 
 My invite code:
 26BC4B90CB
@@ -160,7 +160,7 @@ https://worldcup26.world/login?ref=26BC4B90CB&utm_source=whatsapp-telegram-group
 
 ```text
 You pick 3 World Cup teams for free. They score points from real match results and goals, and you can see your private preview.
-Use a ticket only if you want to enter the paid leaderboard.
+It is free to play — climb the leaderboard, just for fun, no prizes.
 Join with my code: 26BC4B90CB
 https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=manual-reply&utm_campaign=worldcup26_referral_72h&utm_content=what_is_it
 ```
@@ -182,7 +182,7 @@ Use: 26BC4B90CB
 ### Is it hard?
 
 ```text
-No. Sign in, use the invite code, pick 3 teams for free, then follow your points preview. Use a ticket later only if you want the paid leaderboard.
+No. Sign in, use the invite code, pick 3 teams for free, then follow your points preview. It stays free — climb the leaderboard, just for fun, no prizes.
 https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reply-bank&utm_medium=manual-reply&utm_campaign=worldcup26_referral_72h&utm_content=is_it_hard
 ```
 

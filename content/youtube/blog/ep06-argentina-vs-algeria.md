@@ -39,6 +39,6 @@ This is our story, not a result: we predict Argentina 1, Algeria 0 — Alvarez w
 And the two ghosts? Legends six and seven: El Abuelo de la Bombonera, seen at every Argentina match since '78, and Le Vieux Fennec, whose raised cane has blessed Algeria since independence. Tonight they watched together. Who they truly are — and how their two stories finally cross — is something you'll only discover by watching.
 
 ## Play along — free
-Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Live prize pool, underdogs pay triple.
+Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Free to play, climb the leaderboard, just for fun, no prizes.
 
 — New legend before every match. Subscribe on [@DansLab-Kimi](https://youtube.com/@DansLab-Kimi).

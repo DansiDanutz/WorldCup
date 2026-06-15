@@ -36,6 +36,6 @@ This is our story, not a result. Our storytellers see South Korea 1, Czech Repub
 Every nation in our story hides a legend. Korea's is ninety years old: the Taekwondo Master, who performs one sacred form before every match, sending his energy to the eleven men below. Tonight, they say, it worked. Watch the episode to meet him — and collect him, plus forty-seven more legends, inside the game.
 
 ## Play along — free
-Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Live prize pool, underdogs pay triple.
+Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Free to play, climb the leaderboard, just for fun, no prizes.
 
 — New legend before every match. Subscribe on [@DansLab-Kimi](https://youtube.com/@DansLab-Kimi).

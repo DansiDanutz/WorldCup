@@ -174,5 +174,5 @@ reuse or skip a number. Before creating an episode:
 ## App
 
 Next.js app (src/, Supabase, Vercel). The series always advertises
-**worldcup26.world** (pick 3 teams, free to play; say "live prize pool",
-never a fixed amount).
+**worldcup26.world** (pick 3 teams, **free to play for fun** — climb the
+leaderboard, no prizes; never promise money or prizes).

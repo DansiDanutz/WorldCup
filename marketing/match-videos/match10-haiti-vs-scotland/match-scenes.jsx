@@ -442,7 +442,7 @@ function SceneApp() {
           <VideoCard clipId="app-vini" name="BRAZIL" coef="x1.10" start={S} delay={1.9} accent="#ffdf00" />
         </div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 32, color: MV.gold, letterSpacing: '0.06em' }}>
-          FREE TO PLAY · LIVE LEADERBOARD · UNDERDOGS PAY TRIPLE
+          FREE TO PLAY · LIVE LEADERBOARD · JUST FOR FUN
         </div>
       </div>
       <Letterbox />

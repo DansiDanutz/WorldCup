@@ -1373,7 +1373,7 @@ Updated the campaign message from the older "climb the leaderboard" framing to t
 ```text
 Pick 3 teams for free.
 See your private points preview.
-Use a ticket only for the paid leaderboard.
+It is free to play — climb the leaderboard, just for fun, no prizes.
 ```
 
 Changed source copy and generated assets:
