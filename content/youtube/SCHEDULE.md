@@ -16,7 +16,7 @@ Status: ✅ live · 🎬 rendered (master ready) · 🛠️ building/rendering �
 | 18 | Mon 15/06 22:00 | Belgium vs Egypt | 🛠️ rendering | |
 | 19 | Tue 16/06 01:00 | Saudi Arabia vs Uruguay | ⏳ queued | NEXT |
 | 20 | Tue 16/06 04:00 | Iran vs New Zealand | ⏳ queued | |
-| 21 | Tue 16/06 22:00 | France vs Senegal | ⏳ queued | |
+| 21 | Tue 16/06 22:00 | France vs Senegal | 🛠️ rendering | predicted FRA 2–1 · 2002 Seoul shock / Bouba Diop tribute · Legend 021 the Dancing Lion |
 | 22 | Wed 17/06 01:00 | Iraq vs Norway | ⏳ queued | |
 | —  | Wed 17/06 04:00 | Argentina vs Algeria | ✅ live | already covered (Ep6) — skip |
 | 23 | Wed 17/06 07:00 | Austria vs Jordan | ⏳ queued | |
