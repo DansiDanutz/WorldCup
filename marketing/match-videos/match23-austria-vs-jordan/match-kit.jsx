@@ -118,7 +118,7 @@ function Kicker({ children, color = MV.gold, size = 30 }) {
 }
 
 // Slide-in lower third for player segments.
-function LowerThird({ start, name, role, line, accent = MV.civ }) {
+function LowerThird({ start, name, role, line, accent = MV.aut }) {
   const t = useTime();
   const local = t - start;
   if (local < 0) return null;
@@ -205,7 +205,7 @@ function Confetti({ start, dur, count = 90, zIndex = 24, colors }) {
   const local = t - start;
   if (local < 0 || local > dur) return null;
   const W = 1920, H = 1080;
-  const pal = colors || [MV.gold, '#fff', MV.civ, MV.civGreen];
+  const pal = colors || [MV.gold, '#fff', MV.aut, MV.jorGreen];
   const pieces = [];
   for (let i = 0; i < count; i++) {
     const seed = (i * 2654435761 % 1000) / 1000;

@@ -347,42 +347,59 @@ function SceneDuel() {
   );
 }
 
-// ── 8. Match drama (188.5–243.5): OUR PREDICTION 1-1 ─────────────────────────
-// Adingra crosses, Elephants strike (1-0, ~196.5). Ecuador slow it. Caicedo
-// turnover → Valencia equalises (1-1, ~221). Full-time card = OUR PREDICTION.
+// ── 8. Match drama (188.5–243.5): OUR PREDICTION — Portugal 3-1 DR Congo ──────
+// Leão strikes (1-0, ~196.5). Wissa answers for the Leopards (1-1, ~208). Leão
+// again off Bernardo (2-1, ~221). Ronaldo at the death (3-1, ~234). FT = PREDICTION.
 function SceneDrama() {
   const { localTime: lt } = useSprite();
   const S = 188.5;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <KenBurns src="assets/player-adingra.png" start={S} dur={32} from={1.1} to={1.28} panX={-30} dim={0.18} />
-      <Sprite start={211} end={233}>
-        <KenBurns src="assets/player-valencia.png" start={211} dur={22} from={1.08} to={1.24} panX={20} dim={0.16} />
+      <KenBurns src="assets/player-leao.png" start={S} dur={20} from={1.1} to={1.26} panX={-30} dim={0.18} />
+      <Sprite start={S + 16} end={S + 30}>
+        <KenBurns src="assets/player-wissa.png" start={S + 16} dur={14} from={1.08} to={1.22} panX={20} dim={0.16} />
+      </Sprite>
+      <Sprite start={S + 30} end={S + 55}>
+        <KenBurns src="assets/player-ronaldo.png" start={S + 30} dur={25} from={1.08} to={1.24} panX={-20} dim={0.16} />
       </Sprite>
       {/* OUR PREDICTION watermark — REAL-RESULTS-ONLY rule */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
         <Kicker size={24} color={MV.gold}>Our Prediction · Our Story</Kicker>
       </div>
 
+      {/* 0-0 (188.5) → 1-0 Leão (~196.5) */}
       <Sprite start={188.5} end={196.5}>
         <ScoreBug start={S + 0.4} civ={0} ecu={0} minute="1st half" />
       </Sprite>
       <GoalFlash at={S + 8.0} color={MV.civ} />
-      <Confetti start={S + 8.2} dur={12} colors={[MV.civ, '#fff', MV.civGreen, MV.gold]} />
-      <Sprite start={196.5} end={211}>
-        <ScoreBug start={S + 8.0} civ={1} ecu={0} minute="ADINGRA" />
-      </Sprite>
-      <Sprite start={211} end={221}>
-        <ScoreBug start={S + 22.5} civ={1} ecu={0} minute="2nd half" />
-      </Sprite>
-      <GoalFlash at={S + 32.5} color={MV.ecu} />
-      <Confetti start={S + 32.7} dur={11} colors={[MV.ecu, '#fff', MV.ecuBlue, MV.ecuRed]} />
-      <Sprite start={221} end={233}>
-        <ScoreBug start={S + 32.5} civ={1} ecu={1} minute="VALENCIA" />
+      <Confetti start={S + 8.2} dur={10} colors={[MV.civ, '#fff', MV.civGreen, MV.gold]} />
+      <Sprite start={196.5} end={208}>
+        <ScoreBug start={S + 8.0} civ={1} ecu={0} minute="LEÃO" />
       </Sprite>
 
-      <Sprite start={233} end={243.5}>
-        <FullTimeCard start={S + 44.5} />
+      {/* 1-1 Wissa (~208) */}
+      <GoalFlash at={S + 19.5} color={MV.ecu} />
+      <Confetti start={S + 19.7} dur={9} colors={[MV.ecu, '#fff', MV.ecuYellow, MV.ecuRed]} />
+      <Sprite start={208} end={221}>
+        <ScoreBug start={S + 19.5} civ={1} ecu={1} minute="WISSA" />
+      </Sprite>
+
+      {/* 2-1 Leão (~221) */}
+      <GoalFlash at={S + 32.5} color={MV.civ} />
+      <Confetti start={S + 32.7} dur={9} colors={[MV.civ, '#fff', MV.civGreen, MV.gold]} />
+      <Sprite start={221} end={233.5}>
+        <ScoreBug start={S + 32.5} civ={2} ecu={1} minute="LEÃO" />
+      </Sprite>
+
+      {/* 3-1 Ronaldo at the death (~234) */}
+      <GoalFlash at={S + 45.5} color={MV.gold} />
+      <Confetti start={S + 45.7} dur={10} colors={[MV.civ, '#fff', MV.gold, MV.civGreen]} />
+      <Sprite start={233.5} end={238.5}>
+        <ScoreBug start={S + 45.5} civ={3} ecu={1} minute="RONALDO" />
+      </Sprite>
+
+      <Sprite start={238.5} end={243.5}>
+        <FullTimeCard start={S + 50.5} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
