@@ -208,6 +208,19 @@
       "sub": "SAUDI ARABIA vs URUGUAY",
       "awayImg": "content/images/Saudi_Arabia/Salem-Al-Dawsari.png",
       "awayName": "AL-DAWSARI"
+    },
+    {
+      "ep": 21,
+      "dir": "match21-france-vs-senegal",
+      "img": "content/images/Senegal/Sadio-Mane.png",
+      "name": "MANÉ",
+      "hook": "THEY STUNNED<br>FRANCE",
+      "face": "SEN",
+      "away": "FRA",
+      "marquee": "BRA",
+      "sub": "FRANCE vs SENEGAL",
+      "awayImg": "content/images/France/Kylian-Mbappe.png",
+      "awayName": "MBAPPÉ"
     }
   ]
 }

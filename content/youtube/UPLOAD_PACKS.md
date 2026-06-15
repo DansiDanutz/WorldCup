@@ -854,6 +854,58 @@ world cup 2026, worldcup26, Saudi Arabia vs Uruguay, Uruguay football, Saudi Ara
 
 ---
 
+## Episode 21 — France vs Senegal
+
+**Title:** `The Debutants Who Knocked Out the Champions | France vs Senegal — World Cup 2026 (Ep.21)`
+
+**Description:**
+```
+In 2002, in the opening match of the entire World Cup, debutants Senegal beat the reigning champions of the world — France — one-nil. France went home without scoring a single goal. Tonight, those same two nations meet again, and in the stands, a man is dancing for someone who is gone.
+
+⚽ WorldCup26 Legends — a Pixar-style story before every match of the 2026 World Cup. Episode 21: France vs Senegal, Group I. The empire against the lion — the deepest squad on the planet against the heirs of one of football's greatest shocks.
+
+🇫🇷 France arrived in 2002 as world champions and crashed out in the group stage without scoring a goal — the only defending champions ever to fail like that. 🇸🇳 Senegal, on their World Cup debut, won that opening match through Papa Bouba Diop's goal and his iconic corner-flag dance, then ran all the way to the quarter-finals. Diop sadly passed away in 2020, aged 42. Senegal went on to win their first-ever Africa Cup of Nations in 2022.
+
+🔮 Our ending is a PREDICTION, not a result — we explain the reasoning on screen. Do you agree?
+👉 Comment "LES BLEUS" if France are simply too strong, or "LIONS" if Senegal shock the world all over again.
+
+🎮 PLAY FREE: pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for YOU. Live prize pool, underdogs pay triple.
+
+▶️ New legend before every match. Subscribe and turn on the bell 🔔
+
+⏱️ CHAPTERS
+0:00 Cold open — the night the debutants stunned the champions
+0:16 The story so far
+0:28 The rematch of 2002
+0:39 The greatest shock football has seen
+0:47 The history — Seoul 2002 & a tribute to Papa Bouba Diop
+1:53 Les Bleus — Mbappé, Dembélé, Olise
+2:36 The Lions of Teranga — Mané, Koulibaly, Jackson
+3:20 The duel — the empire vs the lion
+3:30 Our prediction
+3:44 Mbappé strikes — 1-0
+3:55 Jackson heads it home — 1-1
+4:06 Mbappé again, late — 2-1
+4:18 Full time
+4:23 Do you agree?
+4:31 Legend 021 — the Dancing Lion
+4:48 Play free at worldcup26.world
+4:56 Like, share & subscribe
+
+📲 Send this to the friend who still loves a World Cup upset.
+
+🎵 Music: "Crossing the Chasm", "Desert City", "Five Armies", "Invariance" — Kevin MacLeod (incompetech.com), CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+#WorldCup2026 #France #Senegal #Mbappe #worldcup26
+```
+
+**Tags:**
+```
+world cup 2026, worldcup26, France vs Senegal, France football, Senegal football, Les Bleus, Lions of Teranga, Senegal 2002, Papa Bouba Diop, France 2002 World Cup, biggest World Cup upsets, Kylian Mbappe, Ousmane Dembele, Michael Olise, Aurelien Tchouameni, William Saliba, Sadio Mane, Kalidou Koulibaly, Nicolas Jackson, Edouard Mendy, AFCON 2022, FIFA World Cup 2026, Group I, soccer story, Pixar football, world cup prediction, worldcup26.world, WorldCup26 Legends, soccer animation, prediction game
+```
+
+---
+
 ## Shorts (per episode) — caption template
 
 Post 2 per day. Caption format:

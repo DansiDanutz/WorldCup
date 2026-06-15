@@ -207,4 +207,14 @@ export const PREDICTIONS: MatchPrediction[] = [
     hook: "3 million people once silenced 200,000; the Maracanazo, Araújo's header.",
     youtube: null,
   },
+  {
+    ep: 21,
+    home: "France",
+    away: "Senegal",
+    stage: "Group I",
+    date: "Jun 16, 2026",
+    score: "2–1",
+    hook: "The rematch of 2002; Mbappé strikes twice, Jackson answers for the Lions.",
+    youtube: null,
+  },
 ];
