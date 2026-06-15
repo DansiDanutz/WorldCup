@@ -153,7 +153,9 @@
       "face": "CIV",
       "away": "ECU",
       "marquee": "BRA",
-      "sub": "IVORY COAST vs ECUADOR"
+      "sub": "IVORY COAST vs ECUADOR",
+      "awayImg": "content/images/Ecuador/EnnerValencia.png",
+      "awayName": "VALENCIA"
     },
     {
       "ep": 16,
@@ -164,7 +166,9 @@
       "face": "TUN",
       "away": "SWE",
       "marquee": "BRA",
-      "sub": "SWEDEN vs TUNISIA"
+      "sub": "SWEDEN vs TUNISIA",
+      "awayImg": "content/images/Sweden/Viktor-Gyokeres.png",
+      "awayName": "GYÖKERES"
     },
     {
       "ep": 17,
@@ -175,7 +179,9 @@
       "face": "CPV",
       "away": "ESP",
       "marquee": "BRA",
-      "sub": "SPAIN vs CAPE VERDE"
+      "sub": "SPAIN vs CAPE VERDE",
+      "awayImg": "content/images/Spain/Lamine-Yamal.png",
+      "awayName": "YAMAL"
     },
     {
       "ep": 18,
@@ -186,7 +192,9 @@
       "face": "EGY",
       "away": "BEL",
       "marquee": "BRA",
-      "sub": "BELGIUM vs EGYPT"
+      "sub": "BELGIUM vs EGYPT",
+      "awayImg": "content/images/Belgium/KevinDeBruyne.png",
+      "awayName": "DE BRUYNE"
     }
   ]
 }

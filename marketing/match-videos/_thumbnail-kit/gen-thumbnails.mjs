@@ -110,6 +110,64 @@ function buildHtml(c) {
 </body></html>`;
 }
 
+// ── New two-player "VS clash" design (used when the entry has awayImg) ────────
+const hexA = (key, a) => {
+  const h = (COLORS[key] || key).replace('#', '');
+  const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r},${g},${b},${a})`;
+};
+function buildHtmlVS(c) {
+  const home = COLORS[c.face] || '#c9942e';
+  const away = COLORS[c.away] || '#1f6feb';
+  const bg = dataUri('public/leaderboard-bg.png');
+  const pL = dataUri(c.img);
+  const pR = dataUri(c.awayImg);
+  return `<!doctype html><html><head><meta charset="utf-8"><style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Arial Black','DejaVu Sans',sans-serif}
+  #c{position:relative;width:1280px;height:720px;overflow:hidden;background:#070b10}
+  #bg{position:absolute;inset:0;background:url('${bg}') center/cover;filter:brightness(.3) saturate(1.2)}
+  #tl{position:absolute;inset:0;background:linear-gradient(115deg,${hexA(c.face,.92)} 0%,${hexA(c.face,.45)} 30%,transparent 52%)}
+  #tr{position:absolute;inset:0;background:linear-gradient(295deg,${hexA(c.away,.92)} 0%,${hexA(c.away,.45)} 30%,transparent 52%)}
+  #pl{position:absolute;left:-40px;bottom:0;width:570px;height:678px;background:url('${pL}') top center/cover;
+     -webkit-mask-image:linear-gradient(105deg,#000 66%,transparent 88%);mask-image:linear-gradient(105deg,#000 66%,transparent 88%)}
+  #pr{position:absolute;right:-40px;bottom:0;width:570px;height:678px;background:url('${pR}') top center/cover;
+     -webkit-mask-image:linear-gradient(255deg,#000 66%,transparent 88%);mask-image:linear-gradient(255deg,#000 66%,transparent 88%)}
+  #scrim{position:absolute;left:0;right:0;top:0;height:300px;background:linear-gradient(to bottom,rgba(5,9,14,.85),transparent)}
+  #bot{position:absolute;left:0;right:0;bottom:0;height:210px;background:linear-gradient(to top,rgba(5,9,14,.93),transparent)}
+  #seam{position:absolute;left:50%;top:-60px;width:8px;height:840px;transform:translateX(-50%) rotate(9deg);
+     background:linear-gradient(#fff,rgba(255,255,255,.15));box-shadow:0 0 50px 8px rgba(255,255,255,.55)}
+  #vs{position:absolute;left:50%;top:53%;transform:translate(-50%,-50%);width:118px;height:118px;border-radius:50%;
+     background:#FFD24A;color:#070b10;display:flex;align-items:center;justify-content:center;font-size:50px;font-weight:900;
+     border:6px solid #070b10;box-shadow:0 0 0 6px #FFD24A,0 12px 34px rgba(0,0,0,.7);z-index:6}
+  #hook{position:absolute;top:20px;left:50%;transform:translateX(-50%);width:1210px;text-align:center;
+     font-size:98px;line-height:.88;font-weight:900;color:#FFD24A;text-transform:uppercase;letter-spacing:-1px;
+     -webkit-text-stroke:8px #070b10;paint-order:stroke fill;text-shadow:0 8px 30px rgba(0,0,0,.85);z-index:7}
+  #ep{position:absolute;top:24px;right:28px;background:#e10600;color:#fff;font-size:24px;font-weight:900;
+     padding:8px 16px;border-radius:8px;z-index:8;letter-spacing:1px;border:3px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+  .nm{position:absolute;bottom:72px;display:flex;align-items:center;gap:12px;z-index:8}
+  .nm .sw{width:28px;height:28px;border-radius:6px;border:3px solid #fff}
+  .nm .t{font-size:46px;font-weight:900;color:#fff;-webkit-text-stroke:4px #070b10;paint-order:stroke fill}
+  #nl{left:36px}
+  #nr{right:36px;flex-direction:row-reverse}
+  #brand{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);display:flex;align-items:center;gap:14px;z-index:8}
+  #brand .u{font-size:30px;font-weight:900;color:#fff;text-shadow:0 2px 8px #000}
+  #brand .p{background:#FFD24A;color:#070b10;font-size:24px;font-weight:900;padding:7px 16px;border-radius:999px}
+</style></head><body>
+  <div id="c">
+    <div id="bg"></div><div id="tl"></div><div id="tr"></div>
+    <div id="pl"></div><div id="pr"></div>
+    <div id="scrim"></div><div id="bot"></div>
+    <div id="seam"></div>
+    <div id="hook">${c.hook}</div>
+    <div id="vs">VS</div>
+    <div id="ep">EP ${c.ep}</div>
+    <div class="nm" id="nl"><span class="sw" style="background:${home}"></span><span class="t">${c.name}</span></div>
+    <div class="nm" id="nr"><span class="sw" style="background:${away}"></span><span class="t">${c.awayName || ''}</span></div>
+    <div id="brand"><span class="u">worldcup26.world</span><span class="p">PICK 3 · FREE</span></div>
+  </div>
+</body></html>`;
+}
+
 const { episodes } = JSON.parse(fs.readFileSync('thumbnails.config.json', 'utf8'));
 const list = ARG_EP ? episodes.filter((e) => e.ep === ARG_EP) : episodes;
 fs.mkdirSync(OUT, { recursive: true });
@@ -117,7 +175,7 @@ fs.mkdirSync(OUT, { recursive: true });
 const browser = await chromium.launch({ args: ['--no-sandbox', '--disable-gpu'] });
 const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
 for (const c of list) {
-  await page.setContent(buildHtml(c), { waitUntil: 'networkidle' });
+  await page.setContent(c.awayImg ? buildHtmlVS(c) : buildHtml(c), { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts && document.fonts.ready);
   await page.waitForTimeout(150);
   const outFile = path.join(OUT, `ep${String(c.ep).padStart(2, '0')}.jpg`);
