@@ -8,6 +8,18 @@ General reminders:
 - Chapters are accurate to each episode's render (first is always 0:00).
 - Always say "live prize pool" / "underdogs pay triple" — never a fixed amount.
 - Music credit lines are per-episode (different cues per episode).
+- **COMPLIANCE on every upload (legal/monetization-critical):**
+  - **"No, not made for kids"** (made-for-kids voids fan funding) — verify it.
+  - **Tick "Altered or synthetic content"** in the Checks step (AI/Pixar visuals of
+    real people) — required, and does NOT reduce reach/monetization.
+  - **Music must be licensed/credited** — only use cleared tracks (e.g. Kevin MacLeod
+    CC-BY with the credit line, or YouTube Audio Library); log it in the episode README.
+    Uncleared music = copyright claim = instant demonetization.
+  - **Put the non-affiliation line in EVERY description** (see below).
+- **Non-affiliation disclaimer — paste at the end of every description:**
+  `Not affiliated with or endorsed by FIFA or the FIFA World Cup™. An independent fan
+  series; team/player names and AI-generated artistic depictions are used for
+  storytelling only. Endings are our PREDICTIONS, not results, and are not betting advice.`
 - **Title + thumbnail are one package** (see `THUMBNAIL_RESEARCH.md`): the thumbnail
   hook raises the question, the title answers/extends it — never repeat the
   thumbnail's words. e.g. thumb "BRAZIL'S NIGHTMARE?" → title "The Supermarket

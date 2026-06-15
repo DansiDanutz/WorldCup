@@ -91,6 +91,30 @@ export default function TermsPage() {
                 channel.
               </p>
             </div>
+            <div className="rule-block">
+              <h3>Not affiliated with FIFA · trademarks &amp; names</h3>
+              <p>
+                WorldCup26 is an independent, fan-made prediction game. It is{" "}
+                <strong>not affiliated with, endorsed by, sponsored by, or connected to</strong>{" "}
+                FIFA, the FIFA World Cup&trade;, or any participating national team, league, club,
+                broadcaster, or player. Competition names, team names, and related marks are the
+                property of their respective owners and are used only for identification and
+                commentary. Player names and stylised, AI-generated artistic depictions are used for
+                informational and narrative purposes; no endorsement or official association is implied.
+              </p>
+            </div>
+            <div className="rule-block">
+              <h3>Responsible play &amp; getting help</h3>
+              <p>
+                WorldCup26 is adult entertainment ({MINIMUM_AGE}+). From your account you can set a
+                personal entry limit and self-exclude for 24 hours, 7 days, 30 days, or the season;
+                while self-excluded, deposits, ticket actions, and entries are paused. If play stops
+                being fun or feels out of control, please get help. In the US, the National Problem
+                Gambling Helpline is <strong>1-800-522-4700</strong> (free, confidential, 24/7) or
+                ncpgambling.org; Gamblers Anonymous is at gamblersanonymous.org. Never play with money
+                you cannot afford to lose.
+              </p>
+            </div>
           </div>
           <Link className="button secondary" href={{ pathname: "/" }}>
             Back to game
