@@ -111,6 +111,22 @@ Non-negotiables distilled from channel data (details in the playbook):
    what worked in `SERIES_PLAYBOOK.md` and raise the bar for both quality and
    cross-episode CONSISTENCY (voice = Brian, soccer-only, same structure, recap
    the previous episode's prediction).
+10. **NO SUBTITLES / NO ON-SCREEN CAPTION TEXT (hard rule, NO EXCEPTIONS):** the
+    videos must NOT burn in subtitles or sentence captions. Brian's voice carries
+    the story — do NOT mirror the narration as text on screen. This bans the
+    template's `LowerThird` bio sentences, narration captions, and any paragraph
+    text. The ONLY text permitted on screen is minimal graphic furniture: the
+    episode title card, player NAME labels (name only, no sentence), the score
+    bug (e.g. "SWE 2–1 TUN"), the "OUR PREDICTION" watermark, and the
+    worldcup26.world CTA. If in doubt, leave the text OFF.
+11. **USE THE PAID HIGGSFIELD ANIMATIONS — NOT KEN-BURNS STILLS (hard rule):**
+    every player/crowd/stadium shot must use the already-generated, already-paid
+    Higgsfield VIDEO clips (in `content/videos/<Team>/`, plus the per-episode
+    `jobs-manifest.json` re-downloadable via Higgsfield, and any new clips
+    generated through the Higgsfield MCP). Populate `clips.json` with real video
+    clips; do NOT ship an episode as "IMAGE-BASED (Ken-Burns on stills)". Stills
+    are a last-resort fallback ONLY when no clip exists for that nation/shot —
+    and if so, say it explicitly and generate the missing clip.
 
 ## Video production pipeline
 
@@ -118,8 +134,13 @@ Each episode is a self-contained project under `marketing/match-videos/<epNN-...
 built on the Ep2 template (`match02-south-korea-vs-czech-republic/`):
 React/Babel 300s timeline → Playwright frame render → ElevenLabs Brian VO →
 two-stage ffmpeg mux (audio master, then video encode). See that project's
-README.md for commands. Generated media comes from Higgsfield (job IDs in
-`jobs-manifest.json`, re-downloadable via `npm run fetch-assets`).
+README.md for commands. **The visuals are the paid Higgsfield VIDEO clips**
+(`content/videos/<Team>/`, job IDs in `jobs-manifest.json`, re-downloadable via
+`npm run fetch-assets`, or generated/fetched through the Higgsfield MCP) — the
+timeline plays these clips; it does NOT pan-and-zoom stills (see hard rules 10 &
+11 above: NO subtitles/caption text, and use the animations, not Ken-Burns
+stills). Ep2 (the canonical template) is clip-based — copy that, not the
+later image-only shortcuts.
 
 ### Series versioning & insertion (CHECK BEFORE building any episode)
 
