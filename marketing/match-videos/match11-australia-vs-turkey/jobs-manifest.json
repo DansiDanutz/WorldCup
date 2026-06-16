@@ -1,0 +1,7 @@
+{
+  "comment": "Ep11 Australia vs Turkey (June 14). Players + scenes generated from repo character images. Australia gold/green, Turkey red+crescent. Mystery legend: The Wanderer (Legend 011). Canon: Aus-Tur cliffhanger 88' Souttar header (Australia-vs-Turkey.md) - prediction TBD in build.",
+  "australia_players": {"ryan":"e6522586-8506-4919-81e4-695290eaa400","souttar":"724e5d51-abf6-40cf-b6ea-dcb71a14acda","irvine":"f895078a-29ed-4a5c-9667-38203c3450ee","volpato":"50de2738-3982-4f88-8145-d74fc30f3115","irankunda":"122caafa-0b12-4722-aaad-811571e30e9e"},
+  "turkey_players": {"calhanoglu":"e6e61687-9281-4afd-952a-34f175654d42","guler":"aef76747-4565-4887-b9f0-0f4f5e15d175","yildiz":"fad03fbd-8f50-4e1a-bed5-0f608f6dcf6e","akturkoglu":"a516d15e-2128-466b-b3b7-9f70260d5d84","baris":"d610926e-6a97-440d-ae21-cdbe603c3157"},
+  "scenes": {"wanderer":"a24dbd0e-b534-484f-8435-549cfc427952","stadium-at":"e8697f34-4008-4f95-bae3-ccdbff6502be","fan-aus":"eb1e42bc-ec1f-47c5-9a6e-2350486fd623","fan-tur":"310633b3-43e2-4a53-8b34-8d5ddf3695e7"},
+  "thumbnail":"2d1b323a-059b-41f3-9a4d-f548eca03376"
+}

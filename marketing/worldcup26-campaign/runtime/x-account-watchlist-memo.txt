@@ -1,0 +1,50 @@
+WorldCup26 X account watchlist / Memo 07/06/2026 21:54
+ok=yes state=manual-x-account-reply-watchlist-ready account=david2015bestai@gmail.com
+cap=3/h 12/d
+rule=This watchlist is not proof. Log proof only after a real X reply URL exists, or after a precise private note says which account replied to which handle/post and when.
+
+- xacct-03 @FIFAcom FIFA general football feed
+  profile=https://x.com/FIFAcom
+  search=https://x.com/search?q=from%3AFIFAcom%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live
+  copy=This is exactly the kind of football debate I am collecting before the World Cup. I am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=fifacom Code: 26BC4B90CB
+  proof=node campaign-x-reply-log.mjs --worker "Memo" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "@FIFAcom" --query "account watchlist FIFAcom"
+- xacct-07 @goal football news feed
+  profile=https://x.com/goal
+  search=https://x.com/search?q=from%3Agoal%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live
+  copy=This is exactly the kind of football debate I am collecting before the World Cup. I am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=goal Code: 26BC4B90CB
+  proof=node campaign-x-reply-log.mjs --worker "Memo" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "@goal" --query "account watchlist goal"
+- xacct-11 @CBSSportsGolazo US football audience
+  profile=https://x.com/CBSSportsGolazo
+  search=https://x.com/search?q=from%3ACBSSportsGolazo%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live
+  copy=This is exactly the kind of football debate I am collecting before the World Cup. I am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=cbssportsgolazo Code: 26BC4B90CB
+  proof=node campaign-x-reply-log.mjs --worker "Memo" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "@CBSSportsGolazo" --query "account watchlist CBSSportsGolazo"
+- xacct-15 @FourFourTwo football magazine audience
+  profile=https://x.com/FourFourTwo
+  search=https://x.com/search?q=from%3AFourFourTwo%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live
+  copy=This is exactly the kind of football debate I am collecting before the World Cup. I am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=fourfourtwo Code: 26BC4B90CB
+  proof=node campaign-x-reply-log.mjs --worker "Memo" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "@FourFourTwo" --query "account watchlist FourFourTwo"
+- xacct-19 @premierleague large football audience
+  profile=https://x.com/premierleague
+  search=https://x.com/search?q=from%3Apremierleague%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live
+  copy=This is exactly the kind of football debate I am collecting before the World Cup. I am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=premierleague Code: 26BC4B90CB
+  proof=node campaign-x-reply-log.mjs --worker "Memo" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "@premierleague" --query "account watchlist premierleague"
+- xacct-23 @CAF_Online African football
+  profile=https://x.com/CAF_Online
+  search=https://x.com/search?q=from%3ACAF_Online%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live
+  copy=This is exactly the kind of football debate I am collecting before the World Cup. I am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=caf_online Code: 26BC4B90CB
+  proof=node campaign-x-reply-log.mjs --worker "Memo" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "@CAF_Online" --query "account watchlist CAF_Online"
+- xacct-27 @miseleccionmx Mexico national team
+  profile=https://x.com/miseleccionmx
+  search=https://x.com/search?q=from%3Amiseleccionmx%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live
+  copy=This is exactly the kind of football debate I am collecting before the World Cup. I am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=miseleccionmx Code: 26BC4B90CB
+  proof=node campaign-x-reply-log.mjs --worker "Memo" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "@miseleccionmx" --query "account watchlist miseleccionmx"
+- xacct-31 @England England national team
+  profile=https://x.com/England
+  search=https://x.com/search?q=from%3AEngland%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live
+  copy=This is exactly the kind of football debate I am collecting before the World Cup. I am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=england Code: 26BC4B90CB
+  proof=node campaign-x-reply-log.mjs --worker "Memo" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "@England" --query "account watchlist England"
+- xacct-35 @SEFutbol Spain national team
+  profile=https://x.com/SEFutbol
+  search=https://x.com/search?q=from%3ASEFutbol%20(%22World%20Cup%22%20OR%20football%20OR%20soccer%20OR%20prediction%20OR%20teams%20OR%20fans)%20-giveaway%20-crypto&src=typed_query&f=live
+  copy=This is exactly the kind of football debate I am collecting before the World Cup. I am asking people to pick only 3 teams, save them free, and see how their points would look when the matches start: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-account-watchlist&utm_medium=manual-reply&utm_campaign=worldcup26_football_openclaw&utm_content=sefutbol Code: 26BC4B90CB
+  proof=node campaign-x-reply-log.mjs --worker "Memo" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "@SEFutbol" --query "account watchlist SEFutbol"

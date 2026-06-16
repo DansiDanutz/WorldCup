@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldCup26 Paid No-Click Rescue</title>
+  <style>
+    :root { color-scheme: dark; --bg:#041510; --panel:#0d3126; --line:rgba(255,255,255,.16); --text:#f7fff9; --muted:#bfd5cc; --gold:#ffd66b; --green:#71efad; --red:#ff8f8f; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--text); background:radial-gradient(circle at 10% 0%, rgba(255,214,107,.18), transparent 22rem), radial-gradient(circle at 100% 0%, rgba(113,239,173,.15), transparent 26rem), var(--bg); }
+    main { width:min(1040px, 100%); margin:0 auto; padding:16px 10px 48px; }
+    header, article { border:1px solid var(--line); border-radius:10px; background:rgba(13,49,38,.92); padding:14px; margin-bottom:10px; }
+    h1 { margin:0 0 8px; font-size:clamp(34px, 7vw, 68px); line-height:.92; }
+    h2 { margin:0 0 8px; font-size:22px; }
+    p, li { color:var(--muted); line-height:1.45; }
+    a { color:var(--gold); overflow-wrap:anywhere; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:10px; }
+    .pill { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 8px; margin:0 6px 6px 0; color:var(--muted); }
+    pre { white-space:pre-wrap; overflow-wrap:anywhere; border:1px solid var(--line); border-radius:8px; background:rgba(0,0,0,.28); padding:10px; }
+    button, .button { border:1px solid var(--line); border-radius:8px; color:#03140f; background:linear-gradient(135deg, var(--gold), var(--green)); font-weight:950; padding:10px 12px; text-decoration:none; cursor:pointer; display:inline-flex; min-height:42px; align-items:center; justify-content:center; }
+    .actions { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0; }
+    .copy-state { color:var(--green); min-height:18px; font-size:13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Paid No-Click Rescue</h1>
+      <p>Use this only after a real dashboard check shows no clicks, rejected/limited delivery, or review limbo. It is a creative rescue packet, not proof of ad delivery.</p>
+      <span class="pill">state clicks-no-signups</span>
+      <span class="pill">impressions 12</span>
+      <span class="pill">clicks 227</span>
+      <span class="pill">variants 8</span>
+    </header>
+    <div class="grid"><article>
+    <h2>META-1 Free private score preview</h2>
+    <p><strong>Pick 3 teams free</strong></p>
+    <p>Ticket only if you later want the paid leaderboard.</p>
+    <p>Asset: <code>media/worldcup26-referral-16x9.jpg</code></p>
+    <p><a href="https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&amp;ads_manager_write_regions=true&amp;nav_entry_point=lep_176&amp;selected_ad_ids=6971048413400&amp;nav_source=unknown">Open manager</a></p>
+    <p><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=free-private-score">Open landing</a></p>
+    <div class="actions">
+      <button type="button" data-copy="#copy-META-1">Copy ad copy</button>
+      <button type="button" data-copy="#command-META-1">Copy dashboard log</button>
+      <span class="copy-state"></span>
+    </div>
+    <pre id="copy-META-1">Most World Cup predictions are too complicated. Pick 3 teams free first and watch your private score move during the tournament.
+
+Invite code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=free-private-score</pre>
+    <pre id="command-META-1">node campaign-paid-dashboard-intake.mjs --add --platform &quot;meta&quot; --status &quot;active&quot; --spend &quot;0&quot; --impressions &quot;0&quot; --clicks &quot;0&quot; --landing-url &quot;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=free-private-score&quot; --warning &quot;rescue variant free-private-score launched or prepared; replace with real dashboard warning&quot; --screenshot-note &quot;Meta Ads Manager no-click rescue free-private-score checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved&quot; --next-action &quot;watch CTR for 60-120 minutes; kill if impressions continue with zero clicks&quot;</pre>
+  </article><article>
+    <h2>META-2 Direct football question</h2>
+    <p><strong>Which 3 teams would you take?</strong></p>
+    <p>Use invite code 26BC4B90CB.</p>
+    <p>Asset: <code>media/worldcup26-referral-square.jpg</code></p>
+    <p><a href="https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&amp;ads_manager_write_regions=true&amp;nav_entry_point=lep_176&amp;selected_ad_ids=6971048413400&amp;nav_source=unknown">Open manager</a></p>
+    <p><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=three-team-question">Open landing</a></p>
+    <div class="actions">
+      <button type="button" data-copy="#copy-META-2">Copy ad copy</button>
+      <button type="button" data-copy="#command-META-2">Copy dashboard log</button>
+      <span class="copy-state"></span>
+    </div>
+    <pre id="copy-META-2">WorldCup26 is simple: choose 3 national teams, follow their points, and compare your picks. Free pick preview is open now.
+
+Invite code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=three-team-question</pre>
+    <pre id="command-META-2">node campaign-paid-dashboard-intake.mjs --add --platform &quot;meta&quot; --status &quot;active&quot; --spend &quot;0&quot; --impressions &quot;0&quot; --clicks &quot;0&quot; --landing-url &quot;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=three-team-question&quot; --warning &quot;rescue variant three-team-question launched or prepared; replace with real dashboard warning&quot; --screenshot-note &quot;Meta Ads Manager no-click rescue three-team-question checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved&quot; --next-action &quot;watch CTR for 60-120 minutes; kill if impressions continue with zero clicks&quot;</pre>
+  </article><article>
+    <h2>META-3 48 teams still open</h2>
+    <p><strong>48 teams. Pick only 3.</strong></p>
+    <p>Referral code 26BC4B90CB is already applied.</p>
+    <p>Asset: <code>media/worldcup26-referral-story.jpg</code></p>
+    <p><a href="https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&amp;ads_manager_write_regions=true&amp;nav_entry_point=lep_176&amp;selected_ad_ids=6971048413400&amp;nav_source=unknown">Open manager</a></p>
+    <p><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=forty-eight-open">Open landing</a></p>
+    <div class="actions">
+      <button type="button" data-copy="#copy-META-3">Copy ad copy</button>
+      <button type="button" data-copy="#command-META-3">Copy dashboard log</button>
+      <span class="copy-state"></span>
+    </div>
+    <pre id="copy-META-3">Before the World Cup starts, lock in your 3-team prediction for free. See what your points would do before deciding about the paid leaderboard.
+
+Invite code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=forty-eight-open</pre>
+    <pre id="command-META-3">node campaign-paid-dashboard-intake.mjs --add --platform &quot;meta&quot; --status &quot;active&quot; --spend &quot;0&quot; --impressions &quot;0&quot; --clicks &quot;0&quot; --landing-url &quot;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=forty-eight-open&quot; --warning &quot;rescue variant forty-eight-open launched or prepared; replace with real dashboard warning&quot; --screenshot-note &quot;Meta Ads Manager no-click rescue forty-eight-open checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved&quot; --next-action &quot;watch CTR for 60-120 minutes; kill if impressions continue with zero clicks&quot;</pre>
+  </article><article>
+    <h2>META-4 Fast mobile action</h2>
+    <p><strong>Make your picks in 60 seconds</strong></p>
+    <p>Join with code 26BC4B90CB.</p>
+    <p>Asset: <code>media/worldcup26-main-video-vertical.mp4</code></p>
+    <p><a href="https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=61071192&amp;ads_manager_write_regions=true&amp;nav_entry_point=lep_176&amp;selected_ad_ids=6971048413400&amp;nav_source=unknown">Open manager</a></p>
+    <p><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=one-minute-picks">Open landing</a></p>
+    <div class="actions">
+      <button type="button" data-copy="#copy-META-4">Copy ad copy</button>
+      <button type="button" data-copy="#command-META-4">Copy dashboard log</button>
+      <span class="copy-state"></span>
+    </div>
+    <pre id="copy-META-4">No bracket, no spreadsheet. Pick 3 World Cup teams free first, then follow your private points preview match by match.
+
+Invite code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=one-minute-picks</pre>
+    <pre id="command-META-4">node campaign-paid-dashboard-intake.mjs --add --platform &quot;meta&quot; --status &quot;active&quot; --spend &quot;0&quot; --impressions &quot;0&quot; --clicks &quot;0&quot; --landing-url &quot;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=meta&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=one-minute-picks&quot; --warning &quot;rescue variant one-minute-picks launched or prepared; replace with real dashboard warning&quot; --screenshot-note &quot;Meta Ads Manager no-click rescue one-minute-picks checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved&quot; --next-action &quot;watch CTR for 60-120 minutes; kill if impressions continue with zero clicks&quot;</pre>
+  </article><article>
+    <h2>X-1 Free private score preview</h2>
+    <p><strong>Pick 3 teams free</strong></p>
+    <p>Ticket only if you later want the paid leaderboard.</p>
+    <p>Asset: <code>media/worldcup26-referral-16x9.jpg</code></p>
+    <p><a href="https://ads.x.com/manager/18ce55rrs16/campaigns">Open manager</a></p>
+    <p><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=free-private-score">Open landing</a></p>
+    <div class="actions">
+      <button type="button" data-copy="#copy-X-1">Copy ad copy</button>
+      <button type="button" data-copy="#command-X-1">Copy dashboard log</button>
+      <span class="copy-state"></span>
+    </div>
+    <pre id="copy-X-1">Most World Cup predictions are too complicated. Pick 3 teams free first and watch your private score move during the tournament.
+
+Invite code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=free-private-score</pre>
+    <pre id="command-X-1">node campaign-paid-dashboard-intake.mjs --add --platform &quot;x&quot; --status &quot;active&quot; --spend &quot;0&quot; --impressions &quot;0&quot; --clicks &quot;0&quot; --landing-url &quot;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=free-private-score&quot; --warning &quot;rescue variant free-private-score launched or prepared; replace with real dashboard warning&quot; --screenshot-note &quot;X Ads Manager no-click rescue free-private-score checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved&quot; --next-action &quot;watch CTR for 60-120 minutes; kill if impressions continue with zero clicks&quot;</pre>
+  </article><article>
+    <h2>X-2 Direct football question</h2>
+    <p><strong>Which 3 teams would you take?</strong></p>
+    <p>Use invite code 26BC4B90CB.</p>
+    <p>Asset: <code>media/worldcup26-referral-square.jpg</code></p>
+    <p><a href="https://ads.x.com/manager/18ce55rrs16/campaigns">Open manager</a></p>
+    <p><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=three-team-question">Open landing</a></p>
+    <div class="actions">
+      <button type="button" data-copy="#copy-X-2">Copy ad copy</button>
+      <button type="button" data-copy="#command-X-2">Copy dashboard log</button>
+      <span class="copy-state"></span>
+    </div>
+    <pre id="copy-X-2">WorldCup26 is simple: choose 3 national teams, follow their points, and compare your picks. Free pick preview is open now.
+
+Invite code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=three-team-question</pre>
+    <pre id="command-X-2">node campaign-paid-dashboard-intake.mjs --add --platform &quot;x&quot; --status &quot;active&quot; --spend &quot;0&quot; --impressions &quot;0&quot; --clicks &quot;0&quot; --landing-url &quot;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=three-team-question&quot; --warning &quot;rescue variant three-team-question launched or prepared; replace with real dashboard warning&quot; --screenshot-note &quot;X Ads Manager no-click rescue three-team-question checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved&quot; --next-action &quot;watch CTR for 60-120 minutes; kill if impressions continue with zero clicks&quot;</pre>
+  </article><article>
+    <h2>X-3 48 teams still open</h2>
+    <p><strong>48 teams. Pick only 3.</strong></p>
+    <p>Referral code 26BC4B90CB is already applied.</p>
+    <p>Asset: <code>media/worldcup26-referral-story.jpg</code></p>
+    <p><a href="https://ads.x.com/manager/18ce55rrs16/campaigns">Open manager</a></p>
+    <p><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=forty-eight-open">Open landing</a></p>
+    <div class="actions">
+      <button type="button" data-copy="#copy-X-3">Copy ad copy</button>
+      <button type="button" data-copy="#command-X-3">Copy dashboard log</button>
+      <span class="copy-state"></span>
+    </div>
+    <pre id="copy-X-3">Before the World Cup starts, lock in your 3-team prediction for free. See what your points would do before deciding about the paid leaderboard.
+
+Invite code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=forty-eight-open</pre>
+    <pre id="command-X-3">node campaign-paid-dashboard-intake.mjs --add --platform &quot;x&quot; --status &quot;active&quot; --spend &quot;0&quot; --impressions &quot;0&quot; --clicks &quot;0&quot; --landing-url &quot;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=forty-eight-open&quot; --warning &quot;rescue variant forty-eight-open launched or prepared; replace with real dashboard warning&quot; --screenshot-note &quot;X Ads Manager no-click rescue forty-eight-open checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved&quot; --next-action &quot;watch CTR for 60-120 minutes; kill if impressions continue with zero clicks&quot;</pre>
+  </article><article>
+    <h2>X-4 Fast mobile action</h2>
+    <p><strong>Make your picks in 60 seconds</strong></p>
+    <p>Join with code 26BC4B90CB.</p>
+    <p>Asset: <code>media/worldcup26-main-video-vertical.mp4</code></p>
+    <p><a href="https://ads.x.com/manager/18ce55rrs16/campaigns">Open manager</a></p>
+    <p><a href="https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=one-minute-picks">Open landing</a></p>
+    <div class="actions">
+      <button type="button" data-copy="#copy-X-4">Copy ad copy</button>
+      <button type="button" data-copy="#command-X-4">Copy dashboard log</button>
+      <span class="copy-state"></span>
+    </div>
+    <pre id="copy-X-4">No bracket, no spreadsheet. Pick 3 World Cup teams free first, then follow your private points preview match by match.
+
+Invite code: 26BC4B90CB
+https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=one-minute-picks</pre>
+    <pre id="command-X-4">node campaign-paid-dashboard-intake.mjs --add --platform &quot;x&quot; --status &quot;active&quot; --spend &quot;0&quot; --impressions &quot;0&quot; --clicks &quot;0&quot; --landing-url &quot;https://worldcup26.world/login?ref=26BC4B90CB&amp;utm_source=x&amp;utm_medium=paid-social&amp;utm_campaign=worldcup26_referral_72h&amp;utm_content=one-minute-picks&quot; --warning &quot;rescue variant one-minute-picks launched or prepared; replace with real dashboard warning&quot; --screenshot-note &quot;X Ads Manager no-click rescue one-minute-picks checked at YYYY-MM-DD HH:mm EEST; screenshot/private note saved&quot; --next-action &quot;watch CTR for 60-120 minutes; kill if impressions continue with zero clicks&quot;</pre>
+  </article></div>
+  </main>
+  <script>
+    document.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-copy]");
+      if (!button) return;
+      const target = document.querySelector(button.getAttribute("data-copy"));
+      if (!target) return;
+      await navigator.clipboard.writeText(target.textContent.trim());
+      const state = button.parentElement.querySelector(".copy-state");
+      if (state) state.textContent = "Copied";
+      setTimeout(() => { if (state) state.textContent = ""; }, 1600);
+    });
+  </script>
+</body>
+</html>

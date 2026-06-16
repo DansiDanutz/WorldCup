@@ -1,0 +1,14 @@
+{
+  "name": "wc26-thumbnail-kit",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Batch episode-thumbnail generator for the WorldCup26 Legends series.",
+  "scripts": {
+    "gen": "node gen-thumbnails.mjs",
+    "install:thumbs": "node gen-thumbnails.mjs --install"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "worker": "Nano",
+  "slug": "nano",
+  "ok": true,
+  "actionCount": 3,
+  "actions": [
+    {
+      "id": "rot-01-nano",
+      "hour": 1,
+      "startsAt": "2026-06-07T18:54:42.772Z",
+      "startsAtEest": "07/06/2026 21:54",
+      "worker": "Nano",
+      "platform": "X Target Hunter",
+      "target": "World Cup fantasy football",
+      "action": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.",
+      "openUrl": "https://x.com/search?q=World%20Cup%20fantasy%20football%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-48_world-cup-fantasy-football&utm_rotation_hour=1&utm_worker=nano",
+      "copy": "Good football question. I am asking people for exactly 3 World Cup picks before the event starts.\n\nPick free first and see your private points preview:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-48_world-cup-fantasy-football\n\nCode: 26BC4B90CB",
+      "proofCommand": "node campaign-x-reply-log.mjs --worker \"Nano\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"World Cup fantasy football\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\"",
+      "proofInstruction": "real X reply URL or precise private proof note"
+    },
+    {
+      "id": "rot-02-nano",
+      "hour": 2,
+      "startsAt": "2026-06-07T19:54:42.772Z",
+      "startsAtEest": "07/06/2026 22:54",
+      "worker": "Nano",
+      "platform": "X Target Hunter",
+      "target": "Croatia World Cup 2026",
+      "action": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.",
+      "openUrl": "https://x.com/search?q=Croatia%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-24_croatia-world-cup-2026&utm_rotation_hour=2&utm_worker=nano",
+      "copy": "Good football question. I am asking people for exactly 3 World Cup picks before the event starts.\n\nPick free first and see your private points preview:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-24_croatia-world-cup-2026\n\nCode: 26BC4B90CB",
+      "proofCommand": "node campaign-x-reply-log.mjs --worker \"Nano\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"Croatia World Cup 2026\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\"",
+      "proofInstruction": "real X reply URL or precise private proof note"
+    },
+    {
+      "id": "rot-03-nano",
+      "hour": 3,
+      "startsAt": "2026-06-07T20:54:42.772Z",
+      "startsAtEest": "07/06/2026 23:54",
+      "worker": "Nano",
+      "platform": "My World Cup Guide",
+      "target": "World Cup 2026 predictor page audience",
+      "action": "Find shareable discussion paths around their predictor. Ask users to choose only 3 teams first, then compare private points over the tournament.",
+      "openUrl": "https://myworldcupguide.com/predictor/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=myworldcupguide&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_predictor_f25&utm_rotation_hour=3&utm_worker=nano",
+      "copy": "Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=myworldcupguide&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_predictor_f25",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Nano\" --platform \"My World Cup Guide\" --channel \"World Cup 2026 predictor page audience\" --status \"posted\" --attempt-url \"https://myworldcupguide.com/predictor/\" --detail \"public-url-or-research-note: public discussion URL or precise no-post research note with next allowed channel at YYYY-MM-DD HH:mm EEST\"",
+      "proofInstruction": "public-url-or-research-note: public discussion URL or precise no-post research note with next allowed channel"
+    }
+  ],
+  "firstAction": {
+    "id": "rot-01-nano",
+    "hour": 1,
+    "startsAt": "2026-06-07T18:54:42.772Z",
+    "startsAtEest": "07/06/2026 21:54",
+    "worker": "Nano",
+    "platform": "X Target Hunter",
+    "target": "World Cup fantasy football",
+    "action": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.",
+    "openUrl": "https://x.com/search?q=World%20Cup%20fantasy%20football%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+    "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-48_world-cup-fantasy-football&utm_rotation_hour=1&utm_worker=nano",
+    "copy": "Good football question. I am asking people for exactly 3 World Cup picks before the event starts.\n\nPick free first and see your private points preview:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-48_world-cup-fantasy-football\n\nCode: 26BC4B90CB",
+    "proofCommand": "node campaign-x-reply-log.mjs --worker \"Nano\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"World Cup fantasy football\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\"",
+    "proofInstruction": "real X reply URL or precise private proof note"
+  }
+}

@@ -1,0 +1,56 @@
+WorldCup26 X target hunter / Sienna 07/06/2026 21:54
+ok=yes state=manual-x-target-hunting-ready account=david2015bestai@gmail.com
+code=26BC4B90CB
+link=https://worldcup26.world/login?ref=26BC4B90CB
+lanes=12 cap=20/h 80/d
+action=Open each lane, collect real football accounts/tweets, then use x-openclaw worker replies only where the conversation genuinely fits.
+rule=This hunter is discovery only. Do not log proof for opening searches. Log proof only after a real reply/post URL or precise private proof note exists.
+
+- xh-02 live who wins World Cup 2026
+  signal=fans naming favorites
+  url=https://x.com/search?q=who%20wins%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  next=Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.
+- xh-06 live World Cup group stage predictions
+  signal=fixtures and group-stage forecast threads
+  url=https://x.com/search?q=World%20Cup%20group%20stage%20predictions%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  next=Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.
+- xh-10 live Brazil World Cup 2026
+  signal=Brazil fan conversations
+  url=https://x.com/search?q=Brazil%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  next=Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.
+- xh-14 live Portugal World Cup 2026
+  signal=Portugal fan conversations
+  url=https://x.com/search?q=Portugal%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  next=Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.
+- xh-18 live Canada World Cup 2026
+  signal=Canada host-country fan conversations
+  url=https://x.com/search?q=Canada%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  next=Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.
+- xh-22 live Korea World Cup 2026
+  signal=Korea fan conversations
+  url=https://x.com/search?q=Korea%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  next=Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.
+- xh-26 user football predictions
+  signal=prediction accounts
+  url=https://x.com/search?q=football%20predictions&src=typed_query&f=user
+  next=Open promising profiles, choose a recent football post, then reply naturally if WorldCup26 fits.
+- xh-30 user national team football
+  signal=national-team supporter accounts
+  url=https://x.com/search?q=national%20team%20football&src=typed_query&f=user
+  next=Open promising profiles, choose a recent football post, then reply naturally if WorldCup26 fits.
+- xh-34 user Brazil football fan
+  signal=Brazil fan accounts
+  url=https://x.com/search?q=Brazil%20football%20fan&src=typed_query&f=user
+  next=Open promising profiles, choose a recent football post, then reply naturally if WorldCup26 fits.
+- xh-38 user Portugal football fan
+  signal=Portugal fan accounts
+  url=https://x.com/search?q=Portugal%20football%20fan&src=typed_query&f=user
+  next=Open promising profiles, choose a recent football post, then reply naturally if WorldCup26 fits.
+- xh-42 user Canada soccer fan
+  signal=Canada fan accounts
+  url=https://x.com/search?q=Canada%20soccer%20fan&src=typed_query&f=user
+  next=Open promising profiles, choose a recent football post, then reply naturally if WorldCup26 fits.
+- xh-46 live top 3 teams World Cup
+  signal=exact top-three discussions
+  url=https://x.com/search?q=top%203%20teams%20World%20Cup%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  next=Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.

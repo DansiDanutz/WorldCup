@@ -1,0 +1,122 @@
+{
+  "schema": "worldcup26-x-target-hunter-worker-pack-v1",
+  "generatedAt": "2026-06-07T18:54:41.771Z",
+  "generatedAtEest": "07/06/2026 21:54",
+  "ok": true,
+  "state": "manual-x-target-hunting-ready",
+  "worker": "Sienna",
+  "slug": "sienna",
+  "operatorAccount": "david2015bestai@gmail.com",
+  "referralCode": "26BC4B90CB",
+  "referralLink": "https://worldcup26.world/login?ref=26BC4B90CB",
+  "perHourCap": 20,
+  "dailyCap": 80,
+  "lanes": [
+    {
+      "id": "xh-02",
+      "type": "live",
+      "query": "who wins World Cup 2026",
+      "signal": "fans naming favorites",
+      "url": "https://x.com/search?q=who%20wins%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "next": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits."
+    },
+    {
+      "id": "xh-06",
+      "type": "live",
+      "query": "World Cup group stage predictions",
+      "signal": "fixtures and group-stage forecast threads",
+      "url": "https://x.com/search?q=World%20Cup%20group%20stage%20predictions%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "next": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits."
+    },
+    {
+      "id": "xh-10",
+      "type": "live",
+      "query": "Brazil World Cup 2026",
+      "signal": "Brazil fan conversations",
+      "url": "https://x.com/search?q=Brazil%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "next": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits."
+    },
+    {
+      "id": "xh-14",
+      "type": "live",
+      "query": "Portugal World Cup 2026",
+      "signal": "Portugal fan conversations",
+      "url": "https://x.com/search?q=Portugal%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "next": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits."
+    },
+    {
+      "id": "xh-18",
+      "type": "live",
+      "query": "Canada World Cup 2026",
+      "signal": "Canada host-country fan conversations",
+      "url": "https://x.com/search?q=Canada%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "next": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits."
+    },
+    {
+      "id": "xh-22",
+      "type": "live",
+      "query": "Korea World Cup 2026",
+      "signal": "Korea fan conversations",
+      "url": "https://x.com/search?q=Korea%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "next": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits."
+    },
+    {
+      "id": "xh-26",
+      "type": "user",
+      "query": "football predictions",
+      "signal": "prediction accounts",
+      "url": "https://x.com/search?q=football%20predictions&src=typed_query&f=user",
+      "next": "Open promising profiles, choose a recent football post, then reply naturally if WorldCup26 fits."
+    },
+    {
+      "id": "xh-30",
+      "type": "user",
+      "query": "national team football",
+      "signal": "national-team supporter accounts",
+      "url": "https://x.com/search?q=national%20team%20football&src=typed_query&f=user",
+      "next": "Open promising profiles, choose a recent football post, then reply naturally if WorldCup26 fits."
+    },
+    {
+      "id": "xh-34",
+      "type": "user",
+      "query": "Brazil football fan",
+      "signal": "Brazil fan accounts",
+      "url": "https://x.com/search?q=Brazil%20football%20fan&src=typed_query&f=user",
+      "next": "Open promising profiles, choose a recent football post, then reply naturally if WorldCup26 fits."
+    },
+    {
+      "id": "xh-38",
+      "type": "user",
+      "query": "Portugal football fan",
+      "signal": "Portugal fan accounts",
+      "url": "https://x.com/search?q=Portugal%20football%20fan&src=typed_query&f=user",
+      "next": "Open promising profiles, choose a recent football post, then reply naturally if WorldCup26 fits."
+    },
+    {
+      "id": "xh-42",
+      "type": "user",
+      "query": "Canada soccer fan",
+      "signal": "Canada fan accounts",
+      "url": "https://x.com/search?q=Canada%20soccer%20fan&src=typed_query&f=user",
+      "next": "Open promising profiles, choose a recent football post, then reply naturally if WorldCup26 fits."
+    },
+    {
+      "id": "xh-46",
+      "type": "live",
+      "query": "top 3 teams World Cup",
+      "signal": "exact top-three discussions",
+      "url": "https://x.com/search?q=top%203%20teams%20World%20Cup%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "next": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits."
+    }
+  ],
+  "firstLane": {
+    "id": "xh-02",
+    "type": "live",
+    "query": "who wins World Cup 2026",
+    "signal": "fans naming favorites",
+    "url": "https://x.com/search?q=who%20wins%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+    "next": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits."
+  },
+  "action": "Open each lane, collect real football accounts/tweets, then use x-openclaw worker replies only where the conversation genuinely fits.",
+  "proofRule": "This hunter is discovery only. Do not log proof for opening searches. Log proof only after a real reply/post URL or precise private proof note exists."
+}

@@ -1,0 +1,30 @@
+{
+  "comment": "Higgsfield job IDs for Episode 4 assets (2026-06-12).",
+  "images": {
+    "assets/stadium-att.png":      "73d86fb4-5f5b-48ed-bbdb-c1f3df9d863d",
+    "assets/liberty-fan.png":      "222d804b-cece-4bb1-aef6-6e8d84126377",
+    "assets/fan-usa-euphoric.png": "44078c8a-f331-4087-ac7e-b3b9eb21b1fa",
+    "assets/fan-usa-anxious.png":  "afb19893-a31d-44c7-9b91-c5817bb52326",
+    "assets/fan-par-euphoric.png": "c4176193-c827-452b-a27f-9a33d4855276",
+    "assets/fan-par-hopeful.png":  "70c07d20-b50d-4f67-adae-2b3f8e1b8291",
+    "thumbnail":                   "d0e1973c-bfb8-4586-8cce-32d1c2be5231"
+  },
+  "videos": {
+    "assets/player-pulisic.mp4":  "65fae742-31c8-4eea-8e16-492dc9c2b80f",
+    "assets/player-balogun.mp4":  "c9a3e0b9-8a4a-4bf8-9c4f-aeff58484b32",
+    "assets/player-mckennie.mp4": "b922bbf3-a958-4a42-8cdd-ee4e0265104c",
+    "assets/player-adams.mp4":    "4eac71e9-8eb8-4c73-97f0-ca71f7ba3789",
+    "assets/player-reyna.mp4":    "07aa2299-f141-4978-9842-c3d4e5be3992",
+    "assets/player-almiron.mp4":  "0c1c8ccd-6374-47a1-9aa7-96330d013d68",
+    "assets/player-enciso.mp4":   "797740ac-eb3c-4f67-948d-19a471659e47",
+    "assets/player-ggomez.mp4":   "5daf141e-2508-4c78-b0a7-d2b62ae12760",
+    "assets/player-alderete.mp4": "18dd097e-a4c2-4a14-84c7-10e39d7385e7",
+    "assets/player-dgomez.mp4":   "7d7ea6b2-4afb-49ec-ab72-40121a955571",
+    "assets/liberty-fan.mp4":     "bb260511-2648-48e6-94fc-99db30cc570f",
+    "assets/stadium-att.mp4":     "e0a3d504-61ec-4923-aa6d-ca1a0923e9d9",
+    "assets/fan-usa-euphoric.mp4":"936b7864-6abd-4e69-81c4-bd6227179a4e",
+    "assets/fan-usa-anxious.mp4": "d941d42f-1474-4653-b12f-9b90e13bf039",
+    "assets/fan-par-euphoric.mp4":"e161cb91-d291-4a42-b043-7846b378ba6a",
+    "assets/fan-par-hopeful.mp4": "b4f10030-e4bc-40de-a4f3-5d358c98d69f"
+  }
+}

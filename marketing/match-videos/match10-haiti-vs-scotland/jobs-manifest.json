@@ -1,0 +1,6 @@
+{
+  "comment": "Ep10 Haiti vs Scotland job IDs. Haiti player clips reused from Ep7 (content/videos pipeline). Scotland players + scene clips generated from repo character images; re-downloadable via dl5.sh.",
+  "scotland_players": {"mctominay":"3a9e8acc-3c3f-4fc5-81e0-4255ae87ee3e","mcginn":"b4404bb7-fe0c-4fae-b984-fe19437c1d10","robertson":"b6a03ba4-5787-4a4c-b05b-4bbe46a25b71","tierney":"450da018-887c-412d-9ef9-72e0afc0ed4d","shankland":"3e9b7c6d-2632-48d5-9b1e-3486fc983ebc"},
+  "scenes": {"piper":"fc2197b8-ffff-4b17-b52c-e66b2384426c","stadium-hs":"9d272d72-9492-4a69-97b0-08338dee9a77","fan-hai":"3e4069f5-ace4-4357-965c-d51b48c76676","fan-sco":"ccf059d9-28ed-4b40-91cf-9adb5d792810"},
+  "thumbnail_image":"602fa354-a227-414c-b895-acf5ad1eee04"
+}

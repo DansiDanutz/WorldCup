@@ -1,0 +1,19 @@
+WorldCup26 immediate sprint / Nano 07/06/2026 21:54
+ok=yes state=execute-now-signup-and-proof-sprint actions=3
+rule=This is the next action sprint, not proof. Log only after a real post/reply/message exists, using a real URL or precise private proof note.
+
+- rot-01-nano 07/06/2026 21:54 X Target Hunter
+  target=World Cup fantasy football
+  open=https://x.com/search?q=World%20Cup%20fantasy%20football%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  copy=Good football question. I am asking people for exactly 3 World Cup picks before the event starts. Pick free first and see your private points preview: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-48_world-cup-fantasy-football Code: 26BC4B90CB
+  proof_after_real_action=node campaign-x-reply-log.mjs --worker "Nano" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "<@handle or tweet URL>" --query "World Cup fantasy football" --timestamp-eest "<YYYY-MM-DD HH:mm EEST>"
+- rot-02-nano 07/06/2026 22:54 X Target Hunter
+  target=Croatia World Cup 2026
+  open=https://x.com/search?q=Croatia%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  copy=Good football question. I am asking people for exactly 3 World Cup picks before the event starts. Pick free first and see your private points preview: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-24_croatia-world-cup-2026 Code: 26BC4B90CB
+  proof_after_real_action=node campaign-x-reply-log.mjs --worker "Nano" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "<@handle or tweet URL>" --query "Croatia World Cup 2026" --timestamp-eest "<YYYY-MM-DD HH:mm EEST>"
+- rot-03-nano 07/06/2026 23:54 My World Cup Guide
+  target=World Cup 2026 predictor page audience
+  open=https://myworldcupguide.com/predictor/
+  copy=Pick 3 teams free for WorldCup26 and watch your private points preview. Paid leaderboard entry only needs a ticket later. Code 26BC4B90CB https://worldcup26.world/login?ref=26BC4B90CB&utm_source=myworldcupguide&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_predictor_f25
+  proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Nano" --platform "My World Cup Guide" --channel "World Cup 2026 predictor page audience" --status "posted" --attempt-url "https://myworldcupguide.com/predictor/" --detail "public-url-or-research-note: public discussion URL or precise no-post research note with next allowed channel at YYYY-MM-DD HH:mm EEST"

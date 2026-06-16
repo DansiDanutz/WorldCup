@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WorldCup26 Legends — Episode 8: England vs Ghana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #050608; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="WC26 Ep8 · t=0s"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="match-kit.jsx"></script>
+<script type="text/babel" src="match-scenes.jsx"></script>
+
+<script type="text/babel">
+const { useEffect } = React;
+
+const SCENES = [
+  { c: SceneMystery0,      start: 0,     end: 16.0 },
+  { c: SceneRecapTitle,    start: 16.0,  end: 40.5 },
+  { c: SceneStadium,       start: 40.5,  end: 46.5 },
+  { c: SceneHistory,       start: 46.5,  end: 98.0 },
+  { c: SceneEngland,       start: 98.0,  end: 133.6 },
+  { c: SceneGhana,         start: 133.6, end: 169.5 },
+  { c: SceneDuel,          start: 169.5, end: 188.5 },
+  { c: SceneDrama,         start: 188.5, end: 243.5 },
+  { c: SceneVerdict,       start: 243.5, end: 252.5 },
+  { c: SceneMysteryPayoff, start: 252.5, end: 272.0 },
+  { c: SceneApp,           start: 272.0, end: 290.0 },
+  { c: SceneCTA,           start: 290.0, end: 300.0 },
+];
+
+window.MV_CHAPTERS = [
+  { label: 'THE BLACK STAR', at: 0 },
+  { label: 'THE COLONY', at: 46.5 },
+  { label: 'THE INVENTORS', at: 98 },
+  { label: 'THE BLACK STARS', at: 133.6 },
+  { label: 'THE DUEL', at: 169.5 },
+  { label: 'MINUTE 67', at: 188.5 },
+  { label: 'THE LEGEND', at: 243.5 },
+];
+
+window.MV_TRANSITIONS = [
+  { at: 16.0,  type: 'dip' },
+  { at: 27.0,  type: 'flash' },
+  { at: 37.5,  type: 'flash' },
+  { at: 40.5,  type: 'flash' },
+  { at: 46.5,  type: 'dip' },
+  { at: 98.0,  type: 'flash' },
+  { at: 133.6, type: 'flash' },
+  { at: 169.5, type: 'flash' },
+  { at: 188.5, type: 'dip' },
+  { at: 243.5, type: 'dip' },
+  { at: 252.5, type: 'dip' },
+  { at: 272.0, type: 'flash' },
+  { at: 290.0, type: 'flash' },
+];
+const DURATION = 300.0;
+
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root) root.dataset.screenLabel = `WC26 Ep8 · t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+
+function MatchVideo() {
+  return (
+    <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26m08">
+      <ScreenLabeler />
+      <SeekBridge />
+      {SCENES.map((s, i) => (
+        <Sprite key={i} start={s.start} end={s.end}>
+          <s.c />
+        </Sprite>
+      ))}
+      <TransitionLayer />
+      <ChapterBar chapters={window.MV_CHAPTERS} />
+    </Stage>
+  );
+}
+
+function boot() {
+  ReactDOM.createRoot(document.getElementById('root')).render(<MatchVideo />);
+}
+fetch('./clips.json')
+  .then((r) => r.json())
+  .then((d) => {
+    window.MV_CLIPS = d.clips || [];
+    fetch('./match-scenes.jsx').then(r => r.text()).then(src => {
+      const used = [...src.matchAll(/ClipSprite id="([^"]+)"/g)].map(m => m[1]);
+      const known = new Set(window.MV_CLIPS.map(c => c.id));
+      used.filter(id => !known.has(id)).forEach(id => console.error('MISSING CLIP ID:', id));
+    });
+  })
+  .catch((e) => { console.warn('clips.json load failed', e); window.MV_CLIPS = []; })
+  .finally(boot);
+</script>
+</body>
+</html>

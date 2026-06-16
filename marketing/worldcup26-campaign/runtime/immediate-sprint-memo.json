@@ -1,0 +1,68 @@
+{
+  "worker": "Memo",
+  "slug": "memo",
+  "ok": true,
+  "actionCount": 3,
+  "actions": [
+    {
+      "id": "rot-01-memo",
+      "hour": 1,
+      "startsAt": "2026-06-07T18:54:42.772Z",
+      "startsAtEest": "07/06/2026 21:54",
+      "worker": "Memo",
+      "platform": "X Target Hunter",
+      "target": "Spain World Cup 2026",
+      "action": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.",
+      "openUrl": "https://x.com/search?q=Spain%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-15_spain-world-cup-2026&utm_rotation_hour=1&utm_worker=memo",
+      "copy": "Good football question. I am asking people for exactly 3 World Cup picks before the event starts.\n\nPick free first and see your private points preview:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-15_spain-world-cup-2026\n\nCode: 26BC4B90CB",
+      "proofCommand": "node campaign-x-reply-log.mjs --worker \"Memo\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"Spain World Cup 2026\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\"",
+      "proofInstruction": "real X reply URL or precise private proof note"
+    },
+    {
+      "id": "rot-02-memo",
+      "hour": 2,
+      "startsAt": "2026-06-07T19:54:42.772Z",
+      "startsAtEest": "07/06/2026 22:54",
+      "worker": "Memo",
+      "platform": "Reddit",
+      "target": "r/sportsanalytics printable prediction kit update",
+      "action": "Use the prediction-tracking angle: ask users to save their 3 picks free and compare how they age during the tournament.",
+      "openUrl": "https://www.reddit.com/r/sportsanalytics/comments/1tx0gm4/free_world_cup_2026_prediction_kit_updated/",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsanalytics&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_prediction_kit_f14&utm_rotation_hour=2&utm_worker=memo",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=reddit-sportsanalytics&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=fresh_prediction_kit_f14",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"Reddit\" --channel \"r/sportsanalytics printable prediction kit update\" --status \"posted\" --attempt-url \"https://www.reddit.com/r/sportsanalytics/comments/1tx0gm4/free_world_cup_2026_prediction_kit_updated/\" --detail \"public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\"",
+      "proofInstruction": "public-url-or-mod-note: Reddit comment URL or moderator approval note with code/link included"
+    },
+    {
+      "id": "rot-03-memo",
+      "hour": 3,
+      "startsAt": "2026-06-07T20:54:42.772Z",
+      "startsAtEest": "07/06/2026 23:54",
+      "worker": "Memo",
+      "platform": "Football Forums",
+      "target": "World Cup 2026 prediction forum threads",
+      "action": "Find forum threads where prediction games are welcome; ask the 3-team question before sharing the link.",
+      "openUrl": "https://www.google.com/search?q=World+Cup+2026+predictions+forum",
+      "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-forums&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=memo_forums_m3&utm_rotation_hour=3&utm_worker=memo",
+      "copy": "What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard.\n\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=football-forums&utm_medium=manual-comment&utm_campaign=worldcup26_public_outreach&utm_content=memo_forums_m3",
+      "proofCommand": "node campaign-public-channel-attempts.mjs --add --owner \"Memo\" --platform \"Football Forums\" --channel \"World Cup 2026 prediction forum threads\" --status \"posted\" --attempt-url \"https://www.google.com/search?q=World+Cup+2026+predictions+forum\" --detail \"public-url-or-approval-note: Memo forum post URL or moderator approval note with code/link included at YYYY-MM-DD HH:mm EEST\"",
+      "proofInstruction": "public-url-or-approval-note: Memo forum post URL or moderator approval note with code/link included"
+    }
+  ],
+  "firstAction": {
+    "id": "rot-01-memo",
+    "hour": 1,
+    "startsAt": "2026-06-07T18:54:42.772Z",
+    "startsAtEest": "07/06/2026 21:54",
+    "worker": "Memo",
+    "platform": "X Target Hunter",
+    "target": "Spain World Cup 2026",
+    "action": "Open latest posts, reply only to real football discussion where pick-3 or prediction angle fits.",
+    "openUrl": "https://x.com/search?q=Spain%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live",
+    "link": "https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-15_spain-world-cup-2026&utm_rotation_hour=1&utm_worker=memo",
+    "copy": "Good football question. I am asking people for exactly 3 World Cup picks before the event starts.\n\nPick free first and see your private points preview:\nhttps://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-15_spain-world-cup-2026\n\nCode: 26BC4B90CB",
+    "proofCommand": "node campaign-x-reply-log.mjs --worker \"Memo\" --proof-url \"<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>\" --target \"<@handle or tweet URL>\" --query \"Spain World Cup 2026\" --timestamp-eest \"<YYYY-MM-DD HH:mm EEST>\"",
+    "proofInstruction": "real X reply URL or precise private proof note"
+  }
+}

@@ -1,0 +1,19 @@
+WorldCup26 immediate sprint / Dexter 07/06/2026 21:54
+ok=yes state=execute-now-signup-and-proof-sprint actions=3
+rule=This is the next action sprint, not proof. Log only after a real post/reply/message exists, using a real URL or precise private proof note.
+
+- rot-01-dexter 07/06/2026 21:54 X Search
+  target=World Cup 2026 prediction conversations
+  open=https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live
+  copy=What are your 3 World Cup teams right now? I made mine here. Pick free first, ticket only if you want the paid leaderboard. https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-search&utm_medium=manual-reply&utm_campaign=worldcup26_public_outreach&utm_content=predictions_b1
+  proof_after_real_action=node campaign-public-channel-attempts.mjs --add --owner "Dexter" --platform "X Search" --channel "World Cup 2026 prediction conversations" --status "posted" --attempt-url "https://twitter.com/search?q=%22World%20Cup%202026%22%20predictions&src=typed_query&f=live" --detail "public-url: X reply/post URL with code/link included at YYYY-MM-DD HH:mm EEST"
+- rot-02-dexter 07/06/2026 22:54 X Target Hunter
+  target=rank World Cup teams
+  open=https://x.com/search?q=rank%20World%20Cup%20teams%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  copy=Good football question. I am asking people for exactly 3 World Cup picks before the event starts. Pick free first and see your private points preview: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-45_rank-world-cup-teams Code: 26BC4B90CB
+  proof_after_real_action=node campaign-x-reply-log.mjs --worker "Dexter" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "<@handle or tweet URL>" --query "rank World Cup teams" --timestamp-eest "<YYYY-MM-DD HH:mm EEST>"
+- rot-03-dexter 07/06/2026 23:54 X Target Hunter
+  target=Japan World Cup 2026
+  open=https://x.com/search?q=Japan%20World%20Cup%202026%20-giveaway%20-crypto%20-airdrop&src=typed_query&f=live
+  copy=Good football question. I am asking people for exactly 3 World Cup picks before the event starts. Pick free first and see your private points preview: https://worldcup26.world/login?ref=26BC4B90CB&utm_source=x-target-hunter&utm_medium=manual-reply&utm_campaign=worldcup26_platform_rotation&utm_content=xh-21_japan-world-cup-2026 Code: 26BC4B90CB
+  proof_after_real_action=node campaign-x-reply-log.mjs --worker "Dexter" --proof-url "<REAL_X_REPLY_URL_OR_PRIVATE_NOTE>" --target "<@handle or tweet URL>" --query "Japan World Cup 2026" --timestamp-eest "<YYYY-MM-DD HH:mm EEST>"

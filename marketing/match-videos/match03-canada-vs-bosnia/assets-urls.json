@@ -1,0 +1,9 @@
+{
+  "assets/maple-leaf-man.png": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260612_084038_a2322905-2865-4090-8052-57c1b4a08a18.png",
+  "assets/stadium-bmo.png": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260612_084040_78954a83-27e7-4eef-b0a3-633461d7f543.png",
+  "assets/fan-can-euphoric.png": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260612_084053_6dfd6e7d-9e89-45b0-a4f2-e178377baf06.png",
+  "assets/fan-can-anxious.png": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260612_084058_d019a925-56b4-4eb4-933e-8c2e9f448262.png",
+  "assets/fan-bih-hopeful.png": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260612_084101_5904c705-51c7-45ab-84f8-b8935795d87b.png",
+  "assets/fan-bih-crying.png": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260612_084104_9637613a-cfa2-464b-b59f-34cceb4d4913.png",
+  "_note": "Video clip URLs follow hf_YYYYMMDD_HHMMSS_<jobid>.mp4 (creation second); job IDs in jobs-manifest.json. Library clips (assets/lib-*.mp4) are copied from content/videos and match02 by fetch_assets."
+}

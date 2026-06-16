@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WorldCup26 Legends — Match 25: England vs Croatia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #050608; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="WC26 Match 25 · t=0s"></div>
+
+<!-- React + Babel (pinned, same stack as the worldcup26 ad) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="match-kit.jsx"></script>
+<script type="text/babel" src="match-scenes.jsx"></script>
+
+<script type="text/babel">
+const { useEffect } = React;
+
+// Scene timeline (global seconds) — 300s. Kept in sync with narration.json
+// (Brian VO slots) and clips.json (music/SFX placements).
+const SCENES = [
+  { c: SceneColdOpen, start: 0,     end: 16.0 },   // 2018 semi-final — "they ended It's Coming Home"
+  { c: SceneTitle,    start: 16.0,  end: 28.0 },   // recap line + Ep.25 title card
+  { c: SceneTease,    start: 28.0,  end: 46.5 },   // the ghost of 2018 + "the little nation that broke a giant"
+  { c: SceneHistory,  start: 46.5,  end: 98.0 },   // the true 2018 Moscow semi-final story
+  { c: SceneIvory,    start: 98.0,  end: 134.0 },  // England line-up (the Three Lions)
+  { c: SceneEcuador,  start: 134.0, end: 169.5 },  // Croatia line-up (Vatreni)
+  { c: SceneDuel,     start: 169.5, end: 188.5 },  // empire vs checkerboard
+  { c: SceneDrama,    start: 188.5, end: 243.5 },  // OUR PREDICTION 2-1 (Kane, Kramaric, Bellingham late)
+  { c: SceneVerdict,  start: 243.5, end: 252.5 },  // do you agree? THREE LIONS / VATRENI
+  { c: SceneMystery,  start: 252.5, end: 272.5 },  // Legend 025 — the Ghost of 2018
+  { c: SceneApp,      start: 272.5, end: 290.0 },  // worldcup26.world
+  { c: SceneCTA,      start: 290.0, end: 300.0 },  // like / subscribe outro
+];
+
+// Cinematic cut treatment per scene boundary (read by TransitionLayer).
+window.MV_TRANSITIONS = [
+  { at: 16.0,  type: 'flash' },
+  { at: 28.0,  type: 'flash' },
+  { at: 46.5,  type: 'dip' },
+  { at: 98.0,  type: 'flash' },
+  { at: 134.0, type: 'flash' },
+  { at: 169.5, type: 'flash' },
+  { at: 188.5, type: 'dip' },
+  { at: 243.5, type: 'dip' },
+  { at: 252.5, type: 'dip' },
+  { at: 272.5, type: 'flash' },
+  { at: 290.0, type: 'flash' },
+];
+const DURATION = 300.0;
+
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root) root.dataset.screenLabel = `WC26 Match 25 · t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+
+function MatchVideo() {
+  return (
+    <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26m25">
+      <ScreenLabeler />
+      <SeekBridge />
+      {SCENES.map((s, i) => (
+        <Sprite key={i} start={s.start} end={s.end}>
+          <s.c />
+        </Sprite>
+      ))}
+      <TransitionLayer />
+    </Stage>
+  );
+}
+
+function boot() {
+  ReactDOM.createRoot(document.getElementById('root')).render(<MatchVideo />);
+}
+// Load clip placements first so any clip lookups + mux can never drift apart.
+fetch('./clips.json')
+  .then((r) => r.json())
+  .then((d) => { window.MV_CLIPS = d.clips || []; })
+  .catch((e) => { console.warn('clips.json load failed', e); window.MV_CLIPS = []; })
+  .finally(boot);
+</script>
+</body>
+</html>

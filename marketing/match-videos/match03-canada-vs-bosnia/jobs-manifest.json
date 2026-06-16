@@ -1,0 +1,27 @@
+{
+  "comment": "Higgsfield job IDs for Episode 3 assets (2026-06-12).",
+  "images": {
+    "assets/maple-leaf-man.png":   "a2322905-2865-4090-8052-57c1b4a08a18",
+    "assets/stadium-bmo.png":      "78954a83-27e7-4eef-b0a3-633461d7f543",
+    "assets/fan-can-euphoric.png": "6dfd6e7d-9e89-45b0-a4f2-e178377baf06",
+    "assets/fan-can-anxious.png":  "d019a925-56b4-4eb4-933e-8c2e9f448262",
+    "assets/fan-bih-hopeful.png":  "5904c705-51c7-45ab-84f8-b8935795d87b",
+    "assets/fan-bih-crying.png":   "9637613a-cfa2-464b-b59f-34cceb4d4913"
+  },
+  "videos": {
+    "assets/player-davies.mp4":    "11380771-db57-43eb-8062-96abeeadbf09",
+    "assets/player-dzeko.mp4":     "67fbf1ca-b9ec-42ca-9690-8de0c5b1aacc",
+    "assets/player-david.mp4":     "8e2c4855-b58a-4d53-af22-c444fa5ac1e3",
+    "assets/player-pjanic.mp4":    "75dc9ac7-bf42-4948-85dd-8b80b76b466a",
+    "assets/player-eustaquio.mp4": "0c475a87-b767-4957-82e6-b08fc1847163",
+    "assets/player-larin.mp4":     "e2191767-7f7b-44cc-8549-e261295257d6",
+    "assets/player-sesko.mp4":     "f89eed45-04f7-4e39-be0f-db0d886fc641",
+    "assets/player-buchanan.mp4":  "8f33a7b6-d1b6-42f8-9f8e-115aa88ca526",
+    "assets/maple-leaf-man.mp4":   "41df4177-c5e2-4335-b18f-24b771e73053",
+    "assets/stadium-bmo.mp4":      "ba964582-4e40-49f4-8a3f-f76ded6e7de4",
+    "assets/fan-can-euphoric.mp4": "c0c6d578-9202-4437-b295-81131a8435aa",
+    "assets/fan-can-anxious.mp4":  "c21aa7bf-6400-4570-beec-834754903c85",
+    "assets/fan-bih-hopeful.mp4":  "638b6acf-485e-4904-908e-c553ebbe628e",
+    "assets/fan-bih-crying.mp4":   "c88c7790-5b71-41a7-9b9e-8bed4d84c605"
+  }
+}
