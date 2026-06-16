@@ -61,3 +61,12 @@ marketing/match-videos/*/dl*.sh
 
 # Thumbnail kit: committed source + per-episode thumbnail.jpg; out/ is regenerable
 marketing/match-videos/_thumbnail-kit/out/
+
+# Player films — generated/large artifacts (code + VO are tracked)
+marketing/player-films/*/node_modules
+marketing/player-films/*/frames/
+marketing/player-films/*/lt/
+marketing/player-films/*/assets/*.mp4
+marketing/player-films/*/music/*.mp3
+marketing/player-films/*/*.mp4
+marketing/player-films/*/audio_master.m4a
