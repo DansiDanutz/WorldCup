@@ -28,7 +28,7 @@ function SceneColdOpen() {
           opacity: line1P,
           fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 46, color: '#e7f3ea',
           letterSpacing: '0.04em', lineHeight: 1.25, textShadow: '0 4px 22px rgba(0,0,0,0.9)',
-        }}>A country torn apart by war sent eleven men to play football — and made an entire nation forget the fighting.</div>
+        }}></div>
       )}
       <Vignette strength={0.85} />
       {lt > 12.3 && (
@@ -59,7 +59,7 @@ function SceneTitle() {
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22, opacity: recapP }}>
           <Kicker size={26} color={MV.muted}>Last time · our prediction</Kicker>
           <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>FRANCE 2 — 1 SENEGAL</BigTitle>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}>We predicted France would edge the Lions of Teranga</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}></div>
         </div>
       )}
       {/* TITLE CARD */}
@@ -101,7 +101,7 @@ function SceneTease() {
       <Vignette strength={0.5} />
       <AmbientParticles start={30} dur={20} count={26} color="255,255,255" />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
-        <Kicker size={28} color={MV.civ}>Survivors of war · sons of the north</Kicker>
+        <Kicker size={28} color={MV.civ}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 72, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
           THE MOST POWERFUL STORY IN FOOTBALL
         </div>
@@ -110,7 +110,7 @@ function SceneTease() {
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 210, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: clamp(b, 0, 1), transform: `scale(${0.9 + 0.1 * clamp(b,0,1)})` }}>
           <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '20px 52px', display: 'flex', alignItems: 'center', gap: 18 }}>
             <span style={{ fontSize: 30 }}>⚽</span>
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.04em' }}>It's true — and it's coming</span>
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.04em' }}></span>
           </div>
         </div>
       )}
@@ -175,12 +175,12 @@ function SceneHistory() {
         <FlagCIV w={120} />
       </div>
       {/* beats synced to narration (50, 59, 68, 86, 94, 103, 112) */}
-      <HistoryPlate start={S + 0.4}  end={S + 8.6}  year="29 JULY 2007 · JAKARTA" venue="THE AFC ASIAN CUP FINAL" score="THE FINAL" note="A nation at war sent a team to Asia's biggest stage. Nobody gave them a chance." accent={MV.gold} />
-      <HistoryPlate start={S + 8.6}  end={S + 26.6} year="ONE DRESSING ROOM" venue="BACK HOME · WAR, BOMBS, CHECKPOINTS" score="SUNNI · SHIA · KURD" note="A country split three ways. But the team was all three — together, playing for one flag." accent={MV.civ} />
-      <HistoryPlate start={S + 26.6} end={S + 35.6} year="ONLY TWO MONTHS IN CHARGE" venue="COACH · JORVAN VIEIRA (BRAZIL)" score="THE OUTSIDERS" note="A Brazilian coach, barely settled. A squad nobody expected to last a week." accent={MV.text} />
-      <HistoryPlate start={S + 35.6} end={S + 52.6} year="THE 72ND MINUTE" venue="FINAL · IRAQ vs SAUDI ARABIA" score="1 — 0" note="A corner swings in. Captain Younis Mahmoud rises above everyone — and heads it home." accent={MV.civGreen} stamp="CHAMPIONS" />
-      <HistoryPlate start={S + 52.6} end={S + 62.6} year="CHAMPIONS OF ASIA" venue="THE GREATEST DAY IN IRAQI FOOTBALL" score="A NATION, NO.1" note="The best team on the continent — from a country the world had written off." accent={MV.gold} />
-      <HistoryPlate start={S + 62.6} end={S + 72.0} year="THEY DANCED ANYWAY" venue="AND THEY HAD TO" score="JOY WITH A WOUND" note="Bombs struck the celebrating crowds. The people poured into the streets — and danced anyway. That is what this shirt carries." accent={MV.civ} />
+      <HistoryPlate start={S + 0.4}  end={S + 8.6}  year="29 JULY 2007 · JAKARTA" venue="THE AFC ASIAN CUP FINAL" score="THE FINAL" accent={MV.gold} />
+      <HistoryPlate start={S + 8.6}  end={S + 26.6} year="ONE DRESSING ROOM" venue="BACK HOME · WAR, BOMBS, CHECKPOINTS" score="SUNNI · SHIA · KURD" accent={MV.civ} />
+      <HistoryPlate start={S + 26.6} end={S + 35.6} year="ONLY TWO MONTHS IN CHARGE" venue="COACH · JORVAN VIEIRA (BRAZIL)" score="THE OUTSIDERS" accent={MV.text} />
+      <HistoryPlate start={S + 35.6} end={S + 52.6} year="THE 72ND MINUTE" venue="FINAL · IRAQ vs SAUDI ARABIA" score="1 — 0" accent={MV.civGreen} stamp="CHAMPIONS" />
+      <HistoryPlate start={S + 52.6} end={S + 62.6} year="CHAMPIONS OF ASIA" venue="THE GREATEST DAY IN IRAQI FOOTBALL" score="A NATION, NO.1" accent={MV.gold} />
+      <HistoryPlate start={S + 62.6} end={S + 72.0} year="THEY DANCED ANYWAY" venue="AND THEY HAD TO" score="JOY WITH A WOUND" accent={MV.civ} />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>
@@ -244,15 +244,15 @@ function SceneIraq() {
       {/* line beats: 138 Iqbal, 147 Hussein/Hamadi, 156 Ammari/Sulaka */}
       <Sprite start={138.0} end={147.0}>
         <VideoSprite src="assets/iqbal.mp4" start={138} dur={9} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={138.4} name="ZIDANE IQBAL" role="Midfield · The Brain" line="Named after Zinedine Zidane. Once at Manchester United — now the heartbeat of Iraq." accent={MV.civ} />
+        <LowerThird start={138.4} name="ZIDANE IQBAL" role="Midfield · The Brain" accent={MV.civ} />
       </Sprite>
       <Sprite start={147.0} end={156.0}>
         <VideoSprite src="assets/hussein.mp4" start={147} dur={9} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={147.4} name="HUSSEIN · AL-HAMADI" role="The Attack" line="Strikers who fight for every ball — exactly as the shirt demands." accent={MV.civ} />
+        <LowerThird start={147.4} name="HUSSEIN · AL-HAMADI" role="The Attack" accent={MV.civ} />
       </Sprite>
       <Sprite start={156.0} end={165.0}>
         <VideoSprite src="assets/sulaka.mp4" start={156} dur={9} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={156.3} name="AL-AMMARI · SULAKA" role="Spine · Underdogs" line="Driving from deep, holding the wall. Underdogs — and proud of it." accent={MV.civGreen} />
+        <LowerThird start={156.3} name="AL-AMMARI · SULAKA" role="Spine · Underdogs" accent={MV.civGreen} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -285,15 +285,15 @@ function SceneNorway() {
       {/* line beats: 179 Haaland, 188 Odegaard, 197 golden generation */}
       <Sprite start={179.0} end={188.0}>
         <VideoSprite src="assets/haaland.mp4" start={179} dur={9} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={179.3} name="ERLING HAALAND" role="Striker · The Machine" line="Norway's all-time top scorer at 25. Sixteen goals in qualifying alone." accent={MV.ecu} />
+        <LowerThird start={179.3} name="ERLING HAALAND" role="Striker · The Machine" accent={MV.ecu} />
       </Sprite>
       <Sprite start={188.0} end={197.0}>
         <VideoSprite src="assets/odegaard.mp4" start={188} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={188.3} name="MARTIN ØDEGAARD" role="Captain · Playmaker" line="All silk and vision — the one who sets the machine running." accent={MV.ecu} />
+        <LowerThird start={188.3} name="MARTIN ØDEGAARD" role="Captain · Playmaker" accent={MV.ecu} />
       </Sprite>
       <Sprite start={197.0} end={206.0}>
         <VideoSprite src="assets/sorloth.mp4" start={197} dur={9} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={197.3} name="SØRLOTH · NUSA · BERGE" role="A Golden Generation" line="They beat Italy home and away to get here. This is Norway's best team in a generation." accent={MV.norNavy} />
+        <LowerThird start={197.3} name="SØRLOTH · NUSA · BERGE" role="A Golden Generation" accent={MV.norNavy} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -337,9 +337,7 @@ function SceneDuel() {
       </div>
       <Sprite start={216.5} end={222.0}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
-          <BigTitle size={70} color={MV.text} style={{ maxWidth: 1400 }}>
-            Our prediction — built on a nation that knows how to fight, and a striker who never stops. Watch.
-          </BigTitle>
+          <BigTitle size={70} color={MV.text} style={{ maxWidth: 1400 }}></BigTitle>
         </div>
       </Sprite>
       <Letterbox />
@@ -407,20 +405,18 @@ function FullTimeCard({ start }) {
             <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>NORWAY</span>
           </div>
         </div>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 28, maxWidth: 980 }}>
-          Haaland strikes, Hussein answers — the storm could not break the heart.
-        </div>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 28, maxWidth: 980 }}></div>
       </div>
       {/* do-you-agree verdict folded in (narration line ~250) */}
       {tagP > 0 && (
         <div style={{ display: 'flex', gap: 36, opacity: clamp(tagP, 0, 1), transform: `translateY(${(1 - tagP) * 30}px)` }}>
           <div style={{ background: 'rgba(0,122,61,0.16)', border: `2px solid ${MV.civ}`, borderRadius: 18, padding: '20px 44px', textAlign: 'center' }}>
             <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 44, color: MV.civ, letterSpacing: '0.06em' }}>“LIONS”</div>
-            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 22, color: MV.muted, marginTop: 8 }}>if Iraq's heart wins it</div>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 22, color: MV.muted, marginTop: 8 }}></div>
           </div>
           <div style={{ background: 'rgba(186,12,47,0.18)', border: `2px solid ${MV.ecu}`, borderRadius: 18, padding: '20px 44px', textAlign: 'center' }}>
             <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 44, color: MV.ecu, letterSpacing: '0.06em' }}>“VIKINGS”</div>
-            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 22, color: MV.muted, marginTop: 8 }}>if Norway's power is too much</div>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 22, color: MV.muted, marginTop: 8 }}></div>
           </div>
         </div>
       )}
@@ -485,9 +481,7 @@ function SceneApp() {
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 40, opacity: inP }}>
         <Kicker color="#7fd6b5" size={30}>The Prediction Game</Kicker>
         <BigTitle size={100} color="#fff" glow={MV.green}>worldcup26.world</BigTitle>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 36, color: '#cfe9de', letterSpacing: '0.04em' }}>
-          Pick 3 of the 48 nations. Every goal they score… scores for YOU.
-        </div>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 36, color: '#cfe9de', letterSpacing: '0.04em' }}></div>
         <div style={{ display: 'flex', gap: 36, marginTop: 8 }}>
           {cards.map((c, i) => {
             const cp = Easing.easeOutBack(clamp((lt - 1.2 - i * 0.35) / 0.7, 0, 1));
@@ -526,7 +520,7 @@ function SceneCTA() {
       <AmbientParticles start={S} dur={6} count={28} color="0,166,79" />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={30} color={MV.civ}>The legends are only beginning</Kicker>
+        <Kicker size={30} color={MV.civ}></Kicker>
         <div style={{ marginTop: 24 }}><TitleReveal text="JOIN THE LEGENDS" start={S + 0.5} size={86} color={MV.text} /></div>
       </div>
       <div style={{ position: 'absolute', inset: 0, zIndex: 26 }}>

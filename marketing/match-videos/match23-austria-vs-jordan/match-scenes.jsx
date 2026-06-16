@@ -30,7 +30,7 @@ function SceneColdOpen() {
           opacity: line1P,
           fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 46, color: '#f4d9bf',
           letterSpacing: '0.04em', lineHeight: 1.25, textShadow: '0 4px 22px rgba(0,0,0,0.9)',
-        }}>Forty years. Nine campaigns. Nine times the door stayed shut.</div>
+        }}></div>
       )}
       <Vignette strength={0.85} />
       {lt > 12.3 && (
@@ -61,7 +61,7 @@ function SceneTitle() {
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22, opacity: recapP }}>
           <Kicker size={26} color={MV.muted}>Last time · our prediction</Kicker>
           <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>IRAQ 1 — 1 NORWAY</BigTitle>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}>We predicted they would draw one-all</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}></div>
         </div>
       )}
       {/* TITLE CARD */}
@@ -104,7 +104,7 @@ function SceneTease() {
       <AmbientParticles start={28} dur={18.5} count={26} color="255,209,0" />
       {/* royalty vs newcomers headline */}
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
-        <Kicker size={28} color={MV.aut}>A century of pedigree · a first-ever debut</Kicker>
+        <Kicker size={28} color={MV.aut}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 76, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
           ROYALTY vs THE BRAVE
         </div>
@@ -114,7 +114,7 @@ function SceneTease() {
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 210, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: clamp(b, 0, 1), transform: `scale(${0.9 + 0.1 * clamp(b,0,1)})` }}>
           <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '20px 52px', display: 'flex', alignItems: 'center', gap: 18 }}>
             <span style={{ fontSize: 30 }}>⚽</span>
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.04em' }}>How Jordan got here — one of football's great fairytales</span>
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.04em' }}></span>
           </div>
         </div>
       )}
@@ -187,15 +187,15 @@ function SceneHistory() {
         {austriaBg ? <FlagAUT w={120} /> : <FlagJOR w={120} />}
       </div>
       {/* AUSTRIA — the Wunderteam (narration 53–93) */}
-      <HistoryPlate start={S + 6.0}  end={S + 16.0} year="THE 1930s · VIENNA" venue="AUSTRIA · THE WUNDERTEAM" score="6 — 0" note="Coach Hugo Meisl's side tore Europe apart — six-nil over Germany, eight-one over Switzerland." accent={MV.aut} />
-      <HistoryPlate start={S + 16.0} end={S + 26.0} year="MATTHIAS SINDELAR" venue="THE HEARTBEAT" score="“THE MOZART”" note="So graceful they called him the Mozart of Football — the soul of the wonder team." accent={MV.gold} />
-      <HistoryPlate start={S + 26.0} end={S + 36.0} year="ITALY · 1934" venue="WORLD CUP SEMIFINAL" score="THEY FELL" note="They reached a World Cup semifinal… and lost it. Austria have never, not once, won a World Cup." accent={MV.text} stamp="NEVER" />
-      <HistoryPlate start={S + 36.0} end={S + 46.5} year="ALMOST A CENTURY" venue="THE WEIGHT THEY CARRY" score="0 TITLES" note="Nearly ninety years of waiting for the wonder team's heirs to finish the story." accent={MV.aut} />
+      <HistoryPlate start={S + 6.0}  end={S + 16.0} year="THE 1930s · VIENNA" venue="AUSTRIA · THE WUNDERTEAM" score="6 — 0" accent={MV.aut} />
+      <HistoryPlate start={S + 16.0} end={S + 26.0} year="MATTHIAS SINDELAR" venue="THE HEARTBEAT" score="“THE MOZART”" accent={MV.gold} />
+      <HistoryPlate start={S + 26.0} end={S + 36.0} year="ITALY · 1934" venue="WORLD CUP SEMIFINAL" score="THEY FELL" accent={MV.text} stamp="NEVER" />
+      <HistoryPlate start={S + 36.0} end={S + 46.5} year="ALMOST A CENTURY" venue="THE WEIGHT THEY CARRY" score="0 TITLES" accent={MV.aut} />
       {/* JORDAN — the Nashama (narration 101–139) */}
-      <HistoryPlate start={S + 56.0} end={S + 65.5} year="AL-NASHAMA" venue="JORDAN · “THE BRAVE ONES”" score="A NEARLY-TEAM" note="For decades, hope after hope — and the World Cup always just out of reach." accent={MV.jor} />
-      <HistoryPlate start={S + 65.5} end={S + 76.5} year="6 FEBRUARY 2024" venue="ASIAN CUP SEMIFINAL · vs SOUTH KOREA" score="2 — 0" note="Sixty places below Korea in the world — and Jordan won. Al-Naimat, then Al-Tamari." accent={MV.jorGreen} stamp="STUNNED" />
-      <HistoryPlate start={S + 76.5} end={S + 87.0} year="THEIR FIRST FINAL" venue="2023 ASIAN CUP" score="HISTORY" note="A nation that had never reached a final was suddenly in one. They lost to Qatar — but the world had seen them." accent={MV.gold} />
-      <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026 · THE DEBUT" venue="FIRST WORLD CUP — EVER" score="AUT × JOR" note="Forty years. Nine campaigns. And finally, Jordan qualified for their first ever World Cup." accent={MV.jor} stamp="FIRST EVER" />
+      <HistoryPlate start={S + 56.0} end={S + 65.5} year="AL-NASHAMA" venue="JORDAN · “THE BRAVE ONES”" score="A NEARLY-TEAM" accent={MV.jor} />
+      <HistoryPlate start={S + 65.5} end={S + 76.5} year="6 FEBRUARY 2024" venue="ASIAN CUP SEMIFINAL · vs SOUTH KOREA" score="2 — 0" accent={MV.jorGreen} stamp="STUNNED" />
+      <HistoryPlate start={S + 76.5} end={S + 87.0} year="THEIR FIRST FINAL" venue="2023 ASIAN CUP" score="HISTORY" accent={MV.gold} />
+      <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026 · THE DEBUT" venue="FIRST WORLD CUP — EVER" score="AUT × JOR" accent={MV.jor} stamp="FIRST EVER" />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>
@@ -259,15 +259,15 @@ function SceneAustria() {
       {/* line beats: 150 Alaba, 160 Sabitzer/Laimer/Baumgartner, 170 Arnautovic */}
       <Sprite start={150.0} end={160.0}>
         <VideoSprite src="assets/alaba.mp4" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={150.4} name="DAVID ALABA" role="Captain · Defender" line="A defender who has won everything in the club game — captaining the heirs of the Wunderteam." accent={MV.aut} />
+        <LowerThird start={150.4} name="DAVID ALABA" role="Captain · Defender" accent={MV.aut} />
       </Sprite>
       <Sprite start={160.0} end={170.0}>
         <VideoSprite src="assets/sabitzer.mp4" start={160} dur={10} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={160.4} name="SABITZER · LAIMER · BAUMGARTNER" role="The Midfield" line="Sabitzer drives, Laimer never stops running, Baumgartner arrives late in the box." accent={MV.aut} />
+        <LowerThird start={160.4} name="SABITZER · LAIMER · BAUMGARTNER" role="The Midfield" accent={MV.aut} />
       </Sprite>
       <Sprite start={170.0} end={178.0}>
         <VideoSprite src="assets/arnautovic.mp4" start={170} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={170.3} name="MARKO ARNAUTOVIĆ" role="The Old Fox · Striker" line="Still dangerous, still smiling — the veteran who knows exactly where the goal is." accent={MV.autSoft} />
+        <LowerThird start={170.3} name="MARKO ARNAUTOVIĆ" role="The Old Fox · Striker" accent={MV.autSoft} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -300,11 +300,11 @@ function SceneJordan() {
       {/* line beats: 178 Al-Tamari, 187 Al-Naimat */}
       <Sprite start={178.0} end={187.0}>
         <VideoSprite src="assets/stadium.mp4" start={178} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={178.3} name="MUSA AL-TAMARI" role="The Spark · Winger" line="Quick, fearless — the man who lit up the Asian Cup and made the world look twice." accent={MV.jor} />
+        <LowerThird start={178.3} name="MUSA AL-TAMARI" role="The Spark · Winger" accent={MV.jor} />
       </Sprite>
       <Sprite start={187.0} end={195.0}>
         <VideoSprite src="assets/naimat.mp4" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={187.3} name="YAZAN AL-NAIMAT" role="The Finisher · Striker" line="The striker who scores on the nights that matter most — Korea felt it firsthand." accent={MV.jorGreen} />
+        <LowerThird start={187.3} name="YAZAN AL-NAIMAT" role="The Finisher · Striker" accent={MV.jorGreen} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -348,9 +348,7 @@ function SceneDuel() {
       </div>
       <Sprite start={207.5} end={213.0}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
-          <BigTitle size={66} color={MV.text} style={{ maxWidth: 1400 }}>
-            Our prediction — Austrian steel, a century of hurt, and a debut that refuses to be quiet. Watch.
-          </BigTitle>
+          <BigTitle size={66} color={MV.text} style={{ maxWidth: 1400 }}></BigTitle>
         </div>
       </Sprite>
       <Letterbox />
@@ -428,9 +426,7 @@ function FullTimeCard({ start }) {
             <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>JORDAN</span>
           </div>
         </div>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 34, maxWidth: 1000 }}>
-          Baumgartner strikes, Al-Naimat answers, Alaba heads the winner — pedigree edges it, but the brave walk off to an ovation.
-        </div>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 34, maxWidth: 1000 }}></div>
       </div>
     </div>
   );
@@ -447,17 +443,17 @@ function SceneVerdict() {
     <div style={{ position: 'absolute', inset: 0, background: '#0a0f1c' }}>
       <PitchBackdrop tint="#1a1014" dim={0.45} />
       <div style={{ position: 'absolute', top: 150, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: headP }}>
-        <Kicker size={30} color={MV.text}>Old royalty against the bravest debut in the world</Kicker>
+        <Kicker size={30} color={MV.text}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 72, color: MV.gold, marginTop: 18, letterSpacing: '0.04em' }}>DO YOU AGREE?</div>
       </div>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 70, zIndex: 26, marginTop: 60 }}>
         <div style={{ opacity: clamp(a, 0, 1), transform: `translateY(${(1 - a) * 50}px) scale(${0.85 + 0.15 * a})`, background: 'rgba(237,41,57,0.12)', border: `2px solid ${MV.aut}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: MV.autSoft, letterSpacing: '0.06em' }}>“WUNDERTEAM”</div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if Austria's class is too much</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}></div>
         </div>
         <div style={{ opacity: clamp(b, 0, 1), transform: `translateY(${(1 - b) * 50}px) scale(${0.85 + 0.15 * b})`, background: 'rgba(0,122,61,0.18)', border: `2px solid ${MV.jorGreen}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: '#3ddc8a', letterSpacing: '0.06em' }}>“NASHAMA”</div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if you back the brave to shock the world</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}></div>
         </div>
       </div>
       <Vignette strength={0.5} />
@@ -522,9 +518,7 @@ function SceneApp() {
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 36, opacity: inP }}>
         <Kicker color="#7fd6b5" size={30}>The Prediction Game</Kicker>
         <BigTitle size={100} color="#fff" glow={MV.green}>worldcup26.world</BigTitle>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 36, color: '#cfe9de', letterSpacing: '0.04em' }}>
-          Pick 3 of the 48 nations. Every goal they score… scores for YOU.
-        </div>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 36, color: '#cfe9de', letterSpacing: '0.04em' }}></div>
         <div style={{ display: 'flex', gap: 36, marginTop: 8 }}>
           {cards.map((c, i) => {
             const cp = Easing.easeOutBack(clamp((lt - 1.2 - i * 0.35) / 0.7, 0, 1));
@@ -563,7 +557,7 @@ function SceneCTA() {
       <AmbientParticles start={S} dur={8} count={28} color="237,41,57" />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={30} color={MV.aut}>The legends are only beginning</Kicker>
+        <Kicker size={30} color={MV.aut}></Kicker>
         <div style={{ marginTop: 24 }}><TitleReveal text="JOIN THE LEGENDS" start={S + 0.5} size={86} color={MV.text} /></div>
       </div>
       <div style={{ position: 'absolute', inset: 0, zIndex: 26 }}>

@@ -117,14 +117,23 @@ Non-negotiables distilled from channel data (details in the playbook):
    what worked in `SERIES_PLAYBOOK.md` and raise the bar for both quality and
    cross-episode CONSISTENCY (voice = Brian, soccer-only, same structure, recap
    the previous episode's prediction).
-10. **NO SUBTITLES / NO ON-SCREEN CAPTION TEXT (hard rule, NO EXCEPTIONS):** the
-    videos must NOT burn in subtitles or sentence captions. Brian's voice carries
-    the story — do NOT mirror the narration as text on screen. This bans the
-    template's `LowerThird` bio sentences, narration captions, and any paragraph
-    text. The ONLY text permitted on screen is minimal graphic furniture: the
-    episode title card, player NAME labels (name only, no sentence), the score
-    bug (e.g. "SWE 2–1 TUN"), the "OUR PREDICTION" watermark, and the
-    worldcup26.world CTA. If in doubt, leave the text OFF.
+10. **NO SUBTITLES / NO ON-SCREEN SENTENCE TEXT (hard rule, NO EXCEPTIONS — the
+    owner has flagged this repeatedly):** videos must NOT show subtitles or ANY
+    sentence/caption text. Brian's voice carries the story — NEVER mirror or
+    paraphrase the narration on screen.
+    - **BANNED in every scene file:** `LowerThird` `line=` bio sentences,
+      `HistoryPlate` `note=` sentences, the cold-open narration paragraph, the
+      "our prediction" sentence, the full-time descriptive sentence, the app
+      descriptive sentence, and ANY `<div>`/`<p>` containing a sentence (a phrase
+      with a verb / multiple words reading like speech).
+    - **ONLY text allowed on screen:** the episode title card (e.g. "IRAQ vs
+      NORWAY", "Episode 22"), short SECTION LABELS (≤4 words, e.g. "Chapter One"),
+      player NAME labels (name + position only, NO sentence), the score bug
+      ("IRQ 1–1 NOR"), the "OUR PREDICTION" watermark, and the worldcup26.world CTA.
+    - **ENFORCEMENT:** before rendering ANY episode, grep the scene file — there
+      must be ZERO `line=` on LowerThird, ZERO `note=` on HistoryPlate, and no
+      narration paragraphs. This applies to EXISTING episodes too: strip them and
+      re-render. A render showing any sentence on screen is REJECTED — re-do it.
 11. **CLIP-BASED ONLY — REAL HIGGSFIELD ANIMATIONS, NEVER STILLS (hard rule, NO
     EXCEPTIONS, NO "SIMPLIFY"):** EVERY episode is built from real Higgsfield
     VIDEO clips. `clips.json` `clips[]` is **always non-empty (≈25–34 clips)** and

@@ -28,7 +28,7 @@ function SceneColdOpen() {
           opacity: line1P,
           fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 46, color: '#d8e8ff',
           letterSpacing: '0.04em', lineHeight: 1.25, textShadow: '0 4px 22px rgba(0,0,0,0.9)',
-        }}>He ran out of the wall and booted the free kick away — and the world laughed.</div>
+        }}></div>
       )}
       <Vignette strength={0.85} />
       {lt > 12.3 && (
@@ -59,7 +59,7 @@ function SceneTitle() {
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22, opacity: recapP }}>
           <Kicker size={26} color={MV.muted}>Last time · our prediction</Kicker>
           <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>AUSTRIA 2 — 1 JORDAN</BigTitle>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}>We predicted Austria would edge it</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}></div>
         </div>
       )}
       {/* TITLE CARD */}
@@ -102,7 +102,7 @@ function SceneTease() {
       <AmbientParticles start={28} dur={18.5} count={26} color="247,214,24" />
       {/* the chase headline */}
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
-        <Kicker size={28} color={MV.civ}>A legend's last chance · a continent's first door</Kicker>
+        <Kicker size={28} color={MV.civ}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 76, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
           THE GOLDEN CHASE
         </div>
@@ -112,7 +112,7 @@ function SceneTease() {
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 210, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: clamp(b, 0, 1), transform: `scale(${0.9 + 0.1 * clamp(b,0,1)})` }}>
           <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '20px 52px', display: 'flex', alignItems: 'center', gap: 18 }}>
             <span style={{ fontSize: 30 }}>⚽</span>
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.04em' }}>At the death — the oldest man on the pitch settles it</span>
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.04em' }}></span>
           </div>
         </div>
       )}
@@ -176,11 +176,11 @@ function SceneHistory() {
         <FlagECU w={120} />
       </div>
       {/* beats synced to narration (46.5, 58, 70, 82, 92, 98) — handled with respect */}
-      <HistoryPlate start={S + 0.5}  end={S + 11.0} year="WEST GERMANY · 1974" venue="A NATION THEN CALLED ZAIRE" score="THE LEOPARDS" note="The first Black African team ever to reach a World Cup finals — and reigning African champions." accent={MV.ecu} />
-      <HistoryPlate start={S + 11.0} end={S + 23.0} year="KINGS OF A CONTINENT" venue="AFRICA CUP OF NATIONS" score="1968 · 1974" note="Champions of Africa — first as Congo-Kinshasa, then as Zaire. Two crowns. A team with real pedigree." accent={MV.ecuYellow} />
-      <HistoryPlate start={S + 23.0} end={S + 35.0} year="THE TOURNAMENT TURNED CRUEL" venue="ZAIRE 0 — YUGOSLAVIA 9" score="0 — 9" note="Overwhelmed, humiliated. And back home a dictator, Mobutu, was watching, and seething." accent={MV.ecuRed} />
-      <HistoryPlate start={S + 35.0} end={S + 45.5} year="THE WALL · v BRAZIL, ~78'" venue="MWEPU ILUNGA · MISUNDERSTOOD" score="NOT IGNORANCE" note="Threatened by Mobutu, bonuses withheld, he booted the free kick away on purpose — a frightened man's protest. Courage, not a joke." accent={MV.text} stamp="THE TRUTH" />
-      <HistoryPlate start={S + 45.5} end={S + 51.5} year="TONIGHT · GROUP K" venue="A DOOR, KICKED OPEN" score="POR × COD" note="That is the shirt DR Congo wear — a door opened for a whole continent. Tonight they face Portugal." accent={MV.civ} />
+      <HistoryPlate start={S + 0.5}  end={S + 11.0} year="WEST GERMANY · 1974" venue="A NATION THEN CALLED ZAIRE" score="THE LEOPARDS" accent={MV.ecu} />
+      <HistoryPlate start={S + 11.0} end={S + 23.0} year="KINGS OF A CONTINENT" venue="AFRICA CUP OF NATIONS" score="1968 · 1974" accent={MV.ecuYellow} />
+      <HistoryPlate start={S + 23.0} end={S + 35.0} year="THE TOURNAMENT TURNED CRUEL" venue="ZAIRE 0 — YUGOSLAVIA 9" score="0 — 9" accent={MV.ecuRed} />
+      <HistoryPlate start={S + 35.0} end={S + 45.5} year="THE WALL · v BRAZIL, ~78'" venue="MWEPU ILUNGA · MISUNDERSTOOD" score="NOT IGNORANCE" accent={MV.text} stamp="THE TRUTH" />
+      <HistoryPlate start={S + 45.5} end={S + 51.5} year="TONIGHT · GROUP K" venue="A DOOR, KICKED OPEN" score="POR × COD" accent={MV.civ} />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>
@@ -244,15 +244,15 @@ function SceneIvory() {
       {/* line beats: 108 European champions, 116 Bruno/Bernardo/Leão/Dias, 127 Ronaldo */}
       <Sprite start={108.0} end={116.0}>
         <VideoSprite src="assets/stadium.mp4" start={108} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={108.4} name="EUROPEAN CHAMPIONS" role="Euro 2016 · still chasing" line="Kings of Europe a decade ago — but a World Cup has always slipped through their fingers." accent={MV.civ} />
+        <LowerThird start={108.4} name="EUROPEAN CHAMPIONS" role="Euro 2016 · still chasing" accent={MV.civ} />
       </Sprite>
       <Sprite start={116.0} end={127.0}>
         <VideoSprite src="assets/bruno.mp4" start={116} dur={11} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={116.4} name="BRUNO · BERNARDO · LEÃO · DIAS" role="The Golden Generation" line="Bruno unlocks any door, Bernardo brings the silk, Leão the pace — and Dias, a wall in dark red." accent={MV.civ} />
+        <LowerThird start={116.4} name="BRUNO · BERNARDO · LEÃO · DIAS" role="The Golden Generation" accent={MV.civ} />
       </Sprite>
       <Sprite start={127.0} end={134.0}>
         <VideoSprite src="assets/ronaldo.mp4" start={127} dur={7} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={127.3} name="CRISTIANO RONALDO" role="41 · Sixth & final World Cup" line="One last time. The one trophy the greatest goalscorer alive has never lifted." accent={MV.civGreen} />
+        <LowerThird start={127.3} name="CRISTIANO RONALDO" role="41 · Sixth & final World Cup" accent={MV.civGreen} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -285,15 +285,15 @@ function SceneEcuador() {
       {/* line beats: 134 header, 140 Wissa/Bakambu, 150 Mbemba, 160 Silas/Masuaku */}
       <Sprite start={140.0} end={150.0}>
         <VideoSprite src="assets/wissa.mp4" start={140} dur={10} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={140.3} name="WISSA · BAKAMBU" role="The Front Line" line="Wissa is sharp and fearless; Bakambu has scored on almost every continent he's played." accent={MV.ecu} />
+        <LowerThird start={140.3} name="WISSA · BAKAMBU" role="The Front Line" accent={MV.ecu} />
       </Sprite>
       <Sprite start={150.0} end={160.0}>
         <VideoSprite src="assets/mbemba.mp4" start={150} dur={10} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={150.3} name="CHANCEL MBEMBA" role="The Captain · Defence" line="Marshals the back — a leader who has tamed strikers across Europe." accent={MV.ecu} />
+        <LowerThird start={150.3} name="CHANCEL MBEMBA" role="The Captain · Defence" accent={MV.ecu} />
       </Sprite>
       <Sprite start={160.0} end={169.5}>
         <VideoSprite src="assets/stadium.mp4" start={160} dur={9.5} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={160.3} name="SILAS · MASUAKU" role="Speed & Steel" line="Silas carries it forward, Masuaku gives them grit. A young team with an old, proud soul." accent={MV.ecuBlue} />
+        <LowerThird start={160.3} name="SILAS · MASUAKU" role="Speed & Steel" accent={MV.ecuBlue} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -337,9 +337,7 @@ function SceneDuel() {
       </div>
       <Sprite start={183.5} end={188.5}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
-          <BigTitle size={70} color={MV.text} style={{ maxWidth: 1400 }}>
-            Our prediction — Portuguese class, Congolese pride, and one old king who is not finished yet. Watch.
-          </BigTitle>
+          <BigTitle size={70} color={MV.text} style={{ maxWidth: 1400 }}></BigTitle>
         </div>
       </Sprite>
       <Letterbox />
@@ -445,17 +443,17 @@ function SceneVerdict() {
     <div style={{ position: 'absolute', inset: 0, background: '#0a0f1c' }}>
       <PitchBackdrop tint="#1a0a10" dim={0.45} />
       <div style={{ position: 'absolute', top: 150, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: headP }}>
-        <Kicker size={30} color={MV.text}>The chase goes on — the Leopards walk off proud</Kicker>
+        <Kicker size={30} color={MV.text}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 72, color: MV.gold, marginTop: 18, letterSpacing: '0.04em' }}>DO YOU AGREE?</div>
       </div>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 70, zIndex: 26, marginTop: 60 }}>
         <div style={{ opacity: clamp(a, 0, 1), transform: `translateY(${(1 - a) * 50}px) scale(${0.85 + 0.15 * a})`, background: 'rgba(170,21,27,0.16)', border: `2px solid ${MV.civ}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: '#ff5d63', letterSpacing: '0.06em' }}>“SELEÇÃO”</div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if Ronaldo finally lifts it</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}></div>
         </div>
         <div style={{ opacity: clamp(b, 0, 1), transform: `translateY(${(1 - b) * 50}px) scale(${0.85 + 0.15 * b})`, background: 'rgba(0,127,255,0.18)', border: `2px solid ${MV.ecu}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: MV.ecu, letterSpacing: '0.06em' }}>“LEOPARDS”</div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if the door swings open again</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}></div>
         </div>
       </div>
       <Vignette strength={0.5} />
@@ -520,9 +518,7 @@ function SceneApp() {
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 40, opacity: inP }}>
         <Kicker color="#7fd6b5" size={30}>The Prediction Game</Kicker>
         <BigTitle size={100} color="#fff" glow={MV.green}>worldcup26.world</BigTitle>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 36, color: '#cfe9de', letterSpacing: '0.04em' }}>
-          Pick 3 of the 48 nations. Every goal they score… scores for YOU.
-        </div>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 36, color: '#cfe9de', letterSpacing: '0.04em' }}></div>
         <div style={{ display: 'flex', gap: 36, marginTop: 8 }}>
           {cards.map((c, i) => {
             const cp = Easing.easeOutBack(clamp((lt - 1.2 - i * 0.35) / 0.7, 0, 1));
@@ -561,7 +557,7 @@ function SceneCTA() {
       <AmbientParticles start={S} dur={10} count={28} color="0,127,255" />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={30} color={MV.civ}>The legends are only beginning</Kicker>
+        <Kicker size={30} color={MV.civ}></Kicker>
         <div style={{ marginTop: 24 }}><TitleReveal text="JOIN THE LEGENDS" start={S + 0.5} size={86} color={MV.text} /></div>
       </div>
       <div style={{ position: 'absolute', inset: 0, zIndex: 26 }}>

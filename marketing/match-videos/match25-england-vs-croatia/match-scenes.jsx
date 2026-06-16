@@ -26,7 +26,7 @@ function SceneColdOpen() {
           opacity: line1P,
           fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 46, color: '#f4d9bf',
           letterSpacing: '0.04em', lineHeight: 1.25, textShadow: '0 4px 22px rgba(0,0,0,0.9)',
-        }}>A nation of four million walked out a goal down — and ended a giant's dream.</div>
+        }}></div>
       )}
       <Vignette strength={0.85} />
       {lt > 12.3 && (
@@ -57,7 +57,7 @@ function SceneTitle() {
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22, opacity: recapP }}>
           <Kicker size={26} color={MV.muted}>Last time · our prediction</Kicker>
           <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>PORTUGAL 3 — 1 DR CONGO</BigTitle>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}>The old kings against the rising Leopards</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}></div>
         </div>
       )}
       {/* TITLE CARD */}
@@ -100,7 +100,7 @@ function SceneTease() {
       <AmbientParticles start={28} dur={18.5} count={26} color="213,43,30" />
       {/* the rematch headline */}
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
-        <Kicker size={28} color={MV.ecu}>Eight years later · the rematch</Kicker>
+        <Kicker size={28} color={MV.ecu}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 72, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
           THE GIANT AND THE GHOST
         </div>
@@ -110,7 +110,7 @@ function SceneTease() {
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 210, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: clamp(b, 0, 1), transform: `scale(${0.9 + 0.1 * clamp(b,0,1)})` }}>
           <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '20px 52px', display: 'flex', alignItems: 'center', gap: 18 }}>
             <span style={{ fontSize: 30 }}>⚽</span>
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.04em' }}>Late in this one — the ghost of 2018 walks again</span>
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.04em' }}></span>
           </div>
         </div>
       )}
@@ -174,11 +174,11 @@ function SceneHistory() {
         <FlagECU w={120} />
       </div>
       {/* beats synced to narration (46.5, 58, 70, 82, 92) */}
-      <HistoryPlate start={S + 0.5}  end={S + 11.0} year="MOSCOW · 11 JULY 2018" venue="WORLD CUP SEMI-FINAL" score="ENG 1 — 0" note="A Kieran Trippier free-kick after five minutes. England, dreaming. ‘It's Coming Home’ ringing round the world." accent={MV.civ} />
-      <HistoryPlate start={S + 11.0} end={S + 23.0} year="68th MINUTE" venue="THE CHECKERBOARD ANSWERS" score="1 — 1" note="Ivan Perišić hooked it level. The little nation refused to bow — and the giant began to wobble." accent={MV.ecu} />
-      <HistoryPlate start={S + 23.0} end={S + 35.0} year="EXTRA TIME · 109th MIN" venue="LUZHNIKI STADIUM" score="1 — 2" note="Mario Mandžukić. A nation of four million had broken England's dream — and reached their first World Cup final." accent={MV.ecu} stamp="MANDŽUKIĆ" />
-      <HistoryPlate start={S + 35.0} end={S + 45.5} year="THE GOLDEN BALL" venue="LUKA MODRIĆ · 2018" score="BEST AT THE WORLD" note="Croatia's captain was named the player of the tournament — the heart that dragged a tiny country to the final." accent={MV.gold} />
-      <HistoryPlate start={S + 45.5} end={S + 51.5} year="TONIGHT · GROUP L" venue="THE REMATCH" score="ENG × CRO" note="Eight years on, the giant and the ghost meet again." accent={MV.text} />
+      <HistoryPlate start={S + 0.5}  end={S + 11.0} year="MOSCOW · 11 JULY 2018" venue="WORLD CUP SEMI-FINAL" score="ENG 1 — 0" accent={MV.civ} />
+      <HistoryPlate start={S + 11.0} end={S + 23.0} year="68th MINUTE" venue="THE CHECKERBOARD ANSWERS" score="1 — 1" accent={MV.ecu} />
+      <HistoryPlate start={S + 23.0} end={S + 35.0} year="EXTRA TIME · 109th MIN" venue="LUZHNIKI STADIUM" score="1 — 2" accent={MV.ecu} stamp="MANDŽUKIĆ" />
+      <HistoryPlate start={S + 35.0} end={S + 45.5} year="THE GOLDEN BALL" venue="LUKA MODRIĆ · 2018" score="BEST AT THE WORLD" accent={MV.gold} />
+      <HistoryPlate start={S + 45.5} end={S + 51.5} year="TONIGHT · GROUP L" venue="THE REMATCH" score="ENG × CRO" accent={MV.text} />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>
@@ -242,15 +242,15 @@ function SceneIvory() {
       {/* line beats: 108 Kane, 116 Bellingham/Saka/Foden, 127 only-1966 */}
       <Sprite start={108.0} end={116.0}>
         <VideoSprite src="assets/kane.mp4" start={108} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={108.4} name="HARRY KANE" role="Captain · Striker" line="The record-breaking captain — England's all-time top scorer, chasing the one prize that matters." accent={MV.civ} />
+        <LowerThird start={108.4} name="HARRY KANE" role="Captain · Striker" accent={MV.civ} />
       </Sprite>
       <Sprite start={116.0} end={127.0}>
         <VideoSprite src="assets/bellingham.mp4" start={116} dur={11} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={116.4} name="BELLINGHAM · SAKA · FODEN" role="The New Golden Generation" line="A midfield jewel and two wingers in their prime. This attack can hurt anyone." accent={MV.civ} />
+        <LowerThird start={116.4} name="BELLINGHAM · SAKA · FODEN" role="The New Golden Generation" accent={MV.civ} />
       </Sprite>
       <Sprite start={127.0} end={134.0}>
         <VideoSprite src="assets/stadium.mp4" start={127} dur={7} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={127.3} name="ONE STAR · 1966" role="Sixty years of hurt" line="England have won the World Cup exactly once — and never since. The whole nation aches for more." accent={MV.civGreen} />
+        <LowerThird start={127.3} name="ONE STAR · 1966" role="Sixty years of hurt" accent={MV.civGreen} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -283,15 +283,15 @@ function SceneEcuador() {
       {/* line beats: 134 overachievers, 145 Modric, 154 Kovacic/Gvardiol, 164 Kramaric */}
       <Sprite start={145.0} end={154.0}>
         <VideoSprite src="assets/modric.mp4" start={145} dur={9} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={145.3} name="LUKA MODRIĆ" role="The Maestro · Midfield" line="The 2018 Golden Ball — the heart that has dragged a tiny nation to three podiums." accent={MV.ecu} />
+        <LowerThird start={145.3} name="LUKA MODRIĆ" role="The Maestro · Midfield" accent={MV.ecu} />
       </Sprite>
       <Sprite start={154.0} end={164.0}>
         <VideoSprite src="assets/gvardiol.mp4" start={154} dur={10} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={154.3} name="GVARDIOL · KOVAČIĆ" role="Steel front to back" line="A defender bought for a fortune, a midfield engine who never stops — Croatia run forever." accent={MV.ecu} />
+        <LowerThird start={154.3} name="GVARDIOL · KOVAČIĆ" role="Steel front to back" accent={MV.ecu} />
       </Sprite>
       <Sprite start={164.0} end={169.5}>
         <VideoSprite src="assets/kramaric.mp4" start={164} dur={5.5} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={164.3} name="ANDREJ KRAMARIĆ" role="The Finisher · Striker" line="The cool head in front of goal — the man who punishes a moment's hesitation." accent={MV.ecuBlue} />
+        <LowerThird start={164.3} name="ANDREJ KRAMARIĆ" role="The Finisher · Striker" accent={MV.ecuBlue} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -335,9 +335,7 @@ function SceneDuel() {
       </div>
       <Sprite start={183.5} end={188.5}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
-          <BigTitle size={70} color={MV.text} style={{ maxWidth: 1400 }}>
-            Our prediction — built on England's depth, Croatia's scars, and one young king who refuses to lose. Watch.
-          </BigTitle>
+          <BigTitle size={70} color={MV.text} style={{ maxWidth: 1400 }}></BigTitle>
         </div>
       </Sprite>
       <Letterbox />
@@ -415,9 +413,7 @@ function FullTimeCard({ start }) {
             <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>CROATIA</span>
           </div>
         </div>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 34, maxWidth: 980 }}>
-          Kane heads them ahead, Kramarić answers — then Bellingham settles the ghost of 2018, late.
-        </div>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 34, maxWidth: 980 }}></div>
       </div>
     </div>
   );
@@ -434,17 +430,17 @@ function SceneVerdict() {
     <div style={{ position: 'absolute', inset: 0, background: '#0a0f1c' }}>
       <PitchBackdrop tint="#10202f" dim={0.45} />
       <div style={{ position: 'absolute', top: 150, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: headP }}>
-        <Kicker size={30} color={MV.text}>Revenge for 2018 — or the ghost walks again?</Kicker>
+        <Kicker size={30} color={MV.text}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 72, color: MV.gold, marginTop: 18, letterSpacing: '0.04em' }}>DO YOU AGREE?</div>
       </div>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 70, zIndex: 26, marginTop: 60 }}>
         <div style={{ opacity: clamp(a, 0, 1), transform: `translateY(${(1 - a) * 50}px) scale(${0.85 + 0.15 * a})`, background: 'rgba(27,58,143,0.16)', border: `2px solid ${MV.civ}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: '#9fb6ff', letterSpacing: '0.06em' }}>“THREE LIONS”</div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if England finally lay the ghost to rest</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}></div>
         </div>
         <div style={{ opacity: clamp(b, 0, 1), transform: `translateY(${(1 - b) * 50}px) scale(${0.85 + 0.15 * b})`, background: 'rgba(213,43,30,0.16)', border: `2px solid ${MV.ecu}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: '#ff8a80', letterSpacing: '0.06em' }}>“VATRENI”</div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}>if the little nation breaks them again</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}></div>
         </div>
       </div>
       <Vignette strength={0.5} />
@@ -509,9 +505,7 @@ function SceneApp() {
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 40, opacity: inP }}>
         <Kicker color="#7fd6b5" size={30}>The Prediction Game</Kicker>
         <BigTitle size={100} color="#fff" glow={MV.green}>worldcup26.world</BigTitle>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 36, color: '#cfe9de', letterSpacing: '0.04em' }}>
-          Pick 3 of the 48 nations. Every goal they score… scores for YOU.
-        </div>
+        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 36, color: '#cfe9de', letterSpacing: '0.04em' }}></div>
         <div style={{ display: 'flex', gap: 36, marginTop: 8 }}>
           {cards.map((c, i) => {
             const cp = Easing.easeOutBack(clamp((lt - 1.2 - i * 0.35) / 0.7, 0, 1));
@@ -550,7 +544,7 @@ function SceneCTA() {
       <AmbientParticles start={S} dur={10} count={28} color="213,43,30" />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={30} color={MV.civ}>The legends are only beginning</Kicker>
+        <Kicker size={30} color={MV.civ}></Kicker>
         <div style={{ marginTop: 24 }}><TitleReveal text="JOIN THE LEGENDS" start={S + 0.5} size={86} color={MV.text} /></div>
       </div>
       <div style={{ position: 'absolute', inset: 0, zIndex: 26 }}>
