@@ -1,0 +1,57 @@
+{
+  "provider": "fal.ai",
+  "model": "fal-ai/kling-video/v1.6/standard",
+  "note": "image->video from content/images stills + text->video crowds/stadium/mystery; re-fetch via fal request endpoints",
+  "jobs": [
+    {
+      "name": "alaba",
+      "kind": "i2v",
+      "fal_request_id": "019ecffe-b461-7250-abcb-614ba39ed07a"
+    },
+    {
+      "name": "sabitzer",
+      "kind": "i2v",
+      "fal_request_id": "019ecffe-b4cd-7371-9047-98304469beff"
+    },
+    {
+      "name": "arnautovic",
+      "kind": "i2v",
+      "fal_request_id": "019ecffe-b51b-74a0-9b77-631a94417eb5"
+    },
+    {
+      "name": "taamari",
+      "kind": "i2v",
+      "fal_request_id": "019ecffe-b56d-72d3-aefe-ac19f3cee664"
+    },
+    {
+      "name": "naimat",
+      "kind": "i2v",
+      "fal_request_id": "019ecffe-b5c1-77f3-9907-05de0a99d7f1"
+    },
+    {
+      "name": "dardour",
+      "kind": "i2v",
+      "fal_request_id": "019ecffe-b611-7e41-822c-0a5cfdac99b0"
+    },
+    {
+      "name": "stadium",
+      "kind": "t2v",
+      "fal_request_id": "019ecffe-b65c-75c2-bf23-82c0efd77e8c"
+    },
+    {
+      "name": "jor-joy",
+      "kind": "t2v",
+      "fal_request_id": "019ecffe-b6a6-7f32-a672-af03c3aab9f0"
+    },
+    {
+      "name": "aut-fans",
+      "kind": "t2v",
+      "fal_request_id": "019ecffe-b6f0-7303-8586-710a2a1b8ed5"
+    },
+    {
+      "name": "mystery",
+      "kind": "t2v",
+      "fal_request_id": "019ecffe-b73c-7151-85fe-b9cf67185bb7"
+    }
+  ]
+}
