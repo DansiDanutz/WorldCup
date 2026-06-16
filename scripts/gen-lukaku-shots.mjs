@@ -12,7 +12,7 @@ const T2V = 'fal-ai/kling-video/v1.6/standard/text-to-video';
 const FACE = 'https://raw.githubusercontent.com/DansiDanutz/WorldCup/main/content/images/Belgium/RomeluLukaku.png';
 const OUT = 'marketing/player-films/lukaku-the-promise/assets';
 const CONC = Number(process.env.CONC || 4);
-const DUR = process.env.DUR || '10';
+const DUR = process.env.DUR || '5';
 
 const A = 'Cinematic Pixar-style 3D animation, dramatic film lighting, shallow depth of field, soccer/football only — round-neck shirt, NO helmet, NOT american football. ';
 const L = 'adult Black Belgian soccer striker who looks exactly like the reference (Romelu Lukaku — tall, powerful, short hair, strong jaw), ';

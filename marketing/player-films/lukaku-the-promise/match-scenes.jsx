@@ -29,40 +29,41 @@ function FilmLukaku() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#04060c' }}>
       {/* ── clip timeline (sequential, full-bleed) ───────────────────────────── */}
-      {/* 33 UNIQUE clips, one per narration beat — NO repeats (was 11 clips looping). */}
-      <VideoSprite src="assets/s00-header-goal.mp4"     start={0}     dur={7.2}  fit="cover" dim={0.12} />
-      <VideoSprite src="assets/s01-idol-cameras.mp4"    start={7}     dur={9}    fit="cover" dim={0.12} />
-      <VideoSprite src="assets/s02-portrait.mp4"        start={15.5}  dur={9}    fit="cover" dim={0.14} />
-      <VideoSprite src="assets/s03-boy-fridge.mp4"      start={24}    dur={9}    fit="cover" dim={0.05} />
-      <VideoSprite src="assets/s04-milk-water.mp4"      start={32.5}  dur={9.5}  fit="cover" dim={0.05} />
-      <VideoSprite src="assets/s05-boy-realize.mp4"     start={41.5}  dur={9.5}  fit="cover" dim={0.06} />
-      <VideoSprite src="assets/s06-father-faded.mp4"    start={50.5}  dur={10}   fit="cover" dim={0.07} />
-      <VideoSprite src="assets/s07-social-housing.mp4"  start={60}    dur={12.5} fit="cover" dim={0.07} />
-      <VideoSprite src="assets/s08-grandfather.mp4"     start={72}    dur={10}   fit="cover" dim={0.06} />
-      <VideoSprite src="assets/s09-boy-promise.mp4"     start={81.5}  dur={8.5}  fit="cover" dim={0.07} />
-      <VideoSprite src="assets/s10-boy-mother.mp4"      start={89.5}  dur={10}   fit="cover" dim={0.07} />
-      <VideoSprite src="assets/s11-youth-train.mp4"     start={99}    dur={9.5}  fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s12-academy.mp4"         start={108}   dur={10.5} fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s13-debut-16.mp4"        start={118}   dur={11}   fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s14-promise-kept.mp4"    start={128.5} dur={8.5}  fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s15-epl.mp4"             start={136.5} dur={11.5} fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s16-inter-title.mp4"     start={147.5} dur={12.5} fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s17-belgium.mp4"         start={159.5} dur={9.5}  fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s18-record.mp4"          start={168.5} dur={10}   fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s19-montage.mp4"         start={178}   dur={10.5} fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s20-idol-crowd.mp4"      start={188}   dur={9}    fit="cover" dim={0.12} />
-      <VideoSprite src="assets/s21-tested.mp4"          start={196.5} dur={9}    fit="cover" dim={0.12} />
-      <VideoSprite src="assets/s22-headline-praise.mp4" start={205}   dur={9.5}  fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s23-headline-racism.mp4" start={214}   dur={9.5}  fit="cover" dim={0.1} />
-      <VideoSprite src="assets/s24-answer-goals.mp4"    start={223}   dur={10}   fit="cover" dim={0.1} />
-      <VideoSprite src="assets/s25-point-sky.mp4"       start={232.5} dur={8.5}  fit="cover" dim={0.08} />
-      <VideoSprite src="assets/s26-mother-callback.mp4" start={240.5} dur={11}   fit="cover" dim={0.06} />
-      <VideoSprite src="assets/s27-keep-word.mp4"       start={251}   dur={10}   fit="cover" dim={0.07} />
-      <VideoSprite src="assets/s28-debt.mp4"            start={260.5} dur={10.5} fit="cover" dim={0.1} />
-      <VideoSprite src="assets/s29-roar.mp4"            start={270.5} dur={9}    fit="cover" dim={0.12} />
-      <VideoSprite src="assets/s30-boy-and-man.mp4"     start={279}   dur={9.5}  fit="cover" dim={0.1} />
-      <VideoSprite src="assets/s31-cta.mp4"             start={288}   dur={8.5}  fit="cover" dim={0.16} />
-      <VideoSprite src="assets/s32-outro.mp4"           start={296}   dur={4.2}  fit="cover" dim={0.16} />
+      {/* 33 UNIQUE clips, one per narration beat — NO repeats. 5s clips stretched
+          across each beat via per-clip rate (cinematic slow-mo) so none loops. */}
+      <VideoSprite src="assets/s00-header-goal.mp4"     start={0}     dur={7.2}  rate={0.67} fit="cover" dim={0.12} />
+      <VideoSprite src="assets/s01-idol-cameras.mp4"    start={7}     dur={9}    rate={0.53} fit="cover" dim={0.12} />
+      <VideoSprite src="assets/s02-portrait.mp4"        start={15.5}  dur={9}    rate={0.53} fit="cover" dim={0.14} />
+      <VideoSprite src="assets/s03-boy-fridge.mp4"      start={24}    dur={9}    rate={0.53} fit="cover" dim={0.05} />
+      <VideoSprite src="assets/s04-milk-water.mp4"      start={32.5}  dur={9.5}  rate={0.51} fit="cover" dim={0.05} />
+      <VideoSprite src="assets/s05-boy-realize.mp4"     start={41.5}  dur={9.5}  rate={0.51} fit="cover" dim={0.06} />
+      <VideoSprite src="assets/s06-father-faded.mp4"    start={50.5}  dur={10}   rate={0.48} fit="cover" dim={0.07} />
+      <VideoSprite src="assets/s07-social-housing.mp4"  start={60}    dur={12.5} rate={0.38} fit="cover" dim={0.07} />
+      <VideoSprite src="assets/s08-grandfather.mp4"     start={72}    dur={10}   rate={0.48} fit="cover" dim={0.06} />
+      <VideoSprite src="assets/s09-boy-promise.mp4"     start={81.5}  dur={8.5}  rate={0.56} fit="cover" dim={0.07} />
+      <VideoSprite src="assets/s10-boy-mother.mp4"      start={89.5}  dur={10}   rate={0.48} fit="cover" dim={0.07} />
+      <VideoSprite src="assets/s11-youth-train.mp4"     start={99}    dur={9.5}  rate={0.51} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s12-academy.mp4"         start={108}   dur={10.5} rate={0.46} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s13-debut-16.mp4"        start={118}   dur={11}   rate={0.44} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s14-promise-kept.mp4"    start={128.5} dur={8.5}  rate={0.56} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s15-epl.mp4"             start={136.5} dur={11.5} rate={0.42} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s16-inter-title.mp4"     start={147.5} dur={12.5} rate={0.38} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s17-belgium.mp4"         start={159.5} dur={9.5}  rate={0.51} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s18-record.mp4"          start={168.5} dur={10}   rate={0.48} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s19-montage.mp4"         start={178}   dur={10.5} rate={0.46} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s20-idol-crowd.mp4"      start={188}   dur={9}    rate={0.53} fit="cover" dim={0.12} />
+      <VideoSprite src="assets/s21-tested.mp4"          start={196.5} dur={9}    rate={0.53} fit="cover" dim={0.12} />
+      <VideoSprite src="assets/s22-headline-praise.mp4" start={205}   dur={9.5}  rate={0.51} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s23-headline-racism.mp4" start={214}   dur={9.5}  rate={0.51} fit="cover" dim={0.1} />
+      <VideoSprite src="assets/s24-answer-goals.mp4"    start={223}   dur={10}   rate={0.48} fit="cover" dim={0.1} />
+      <VideoSprite src="assets/s25-point-sky.mp4"       start={232.5} dur={8.5}  rate={0.56} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/s26-mother-callback.mp4" start={240.5} dur={11}   rate={0.44} fit="cover" dim={0.06} />
+      <VideoSprite src="assets/s27-keep-word.mp4"       start={251}   dur={10}   rate={0.48} fit="cover" dim={0.07} />
+      <VideoSprite src="assets/s28-debt.mp4"            start={260.5} dur={10.5} rate={0.46} fit="cover" dim={0.1} />
+      <VideoSprite src="assets/s29-roar.mp4"            start={270.5} dur={9}    rate={0.53} fit="cover" dim={0.12} />
+      <VideoSprite src="assets/s30-boy-and-man.mp4"     start={279}   dur={9.5}  rate={0.51} fit="cover" dim={0.1} />
+      <VideoSprite src="assets/s31-cta.mp4"             start={288}   dur={8.5}  rate={0.56} fit="cover" dim={0.16} />
+      <VideoSprite src="assets/s32-outro.mp4"           start={296}   dur={4.2}  rate={1}    fit="cover" dim={0.16} />
 
       <Vignette strength={0.6} />
 

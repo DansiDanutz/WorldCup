@@ -15,7 +15,7 @@ const T2V = 'fal-ai/kling-video/v1.6/standard/text-to-video';
 const RAW = 'https://raw.githubusercontent.com/DansiDanutz/WorldCup/main/content/images';
 const OUT = path.join('marketing/match-videos', epDir, 'assets');
 const CONC = Number(process.env.CONC || 4);
-const DUR = process.env.DUR || '10';
+const DUR = process.env.DUR || '5';
 const enc = (p) => p.split('/').map(encodeURIComponent).join('/');
 const slug = (f) => f.replace(/\.(png|jpg)$/i, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
