@@ -52,6 +52,9 @@ read ALL of these living knowledge files:
 - **`content/youtube/PRODUCTION_ACCELERATION.md`** — how we stay 48h ahead: the
   rolling 2-episode buffer, the backwards-from-kickoff timebox, batching the
   Higgsfield asset step, and the one-command `build-episode.sh` (render ‖ VO).
+- **`content/youtube/PREUPLOAD_CHECKLIST.md`** — the one-screen checklist to run
+  before EVERY upload (the ⚠️ monetization-safe items: made-for-kids=No, AI
+  disclosure, cleared music, no prize wording, non-affiliation line).
 
 After every published episode, UPDATE the playbook (log results at 48h + new
 learnings) and tick the episode off in the premiere calendar.
