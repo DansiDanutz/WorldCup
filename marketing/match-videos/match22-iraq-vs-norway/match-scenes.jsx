@@ -17,8 +17,8 @@ function SceneColdOpen() {
   const titleP = Easing.easeOutCubic(clamp((lt - 12.3) / 1.4, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <VideoSprite src="assets/iqbal.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
-        dim={0.5} style={{ filter: 'brightness(0.42) contrast(1.18) saturate(1.05) grayscale(0.35)' }} />
+      <VideoSprite src="assets/mystery.mp4" start={0} dur={16}
+        dim={0.26} style={{ filter: 'brightness(0.78) contrast(1.12) saturate(1.06)' }} />
       {/* ember base in Iraq green so the screen never reads as dead air */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 78%, rgba(0,122,61,0.18) 0%, transparent 55%)` }} />
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at center, rgba(0,166,79,${(0.5 * beat).toFixed(3)}) 0%, transparent 62%)` }} />
@@ -53,6 +53,8 @@ function SceneTitle() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, #0a0f1c 0%, #11182b 55%, #0a0f1c 100%)` }}>
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(0,122,61,0.10) 0%, transparent 55%)` }} />
+      <VideoSprite src="assets/mystery.mp4" start={16} dur={14} dim={0.55} fit="cover" style={{ filter: 'brightness(0.7) saturate(1.05)' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(7,10,18,0.45), rgba(7,10,18,0.75))' }} />
       <AmbientParticles start={16} dur={14} count={34} color="0,166,79" />
       {/* RECAP — OUR PREDICTION from Ep21 (never stated as a real result) */}
       {recapP > 0.01 && (
@@ -97,7 +99,7 @@ function SceneTease() {
   const b = Easing.easeOutBack(clamp((lt - 10.5) / 1.0, 0, 1)) * Math.max(0, Math.min(1, (20.0 - lt) / 1.0));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <PitchBackdrop tint="#0a3a1e" dim={0.25} />
+      <VideoSprite src="assets/stadium.mp4" start={30} dur={20} dim={0.42} fit="cover" />
       <Vignette strength={0.5} />
       <AmbientParticles start={30} dur={20} count={26} color="255,255,255" />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
