@@ -48,6 +48,12 @@ async function frameAt(t) {
   }), t);
   // Wait for any video clips on screen to land on their exact frame.
   await page.waitForFunction(() => window.__videosSettled(), { timeout: 5000 }).catch(() => {});
+  // Wait for any on-screen <img> (e.g. squad montage stills) to finish loading,
+  // otherwise freshly-mounted images screenshot blank.
+  await page.waitForFunction(
+    () => Array.from(document.images).every((im) => im.complete && im.naturalWidth > 0),
+    { timeout: 4000 },
+  ).catch(() => {});
   await page.evaluate(() => new Promise((res) => requestAnimationFrame(() => res())));
 }
 

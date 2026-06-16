@@ -208,7 +208,7 @@ function SquadGrid({ start, end, players, accent }) {
             boxShadow: `0 26px 80px rgba(0,0,0,0.6)`,
           }}>
             <div style={{ height: 322, overflow: 'hidden' }}>
-              <img src={p.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.02 + 0.05 * clamp((t - start) / (end - start), 0, 1)})` }} />
+              <VideoSprite src={p.clip} start={start} dur={end - start} fit="cover" />
             </div>
             <div style={{ padding: '18px 16px 20px', textAlign: 'center', borderTop: `4px solid ${accent}` }}>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 25, color: MV.text }}>{p.name}</div>
@@ -237,11 +237,11 @@ function SceneIvory() {
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 9.0} accent={MV.civ} players={[
-        { img: 'assets/squad/por-1-Ronaldo.png',  name: 'C. RONALDO',     role: 'THE LEGEND' },
-        { img: 'assets/squad/por-2-Bruno.png',    name: 'B. FERNANDES',   role: 'THE CREATOR' },
-        { img: 'assets/squad/por-3-Bernardo.png', name: 'BERNARDO SILVA', role: 'THE MAGICIAN' },
-        { img: 'assets/squad/por-4-Leao.png',     name: 'RAFAEL LEÃO',    role: 'THE FLYER' },
-        { img: 'assets/squad/por-5-Dias.png',     name: 'RÚBEN DIAS',     role: 'THE WALL' },
+        { clip: 'assets/ronaldo.mp4', img: 'assets/squad/por-1-Ronaldo.png',  name: 'C. RONALDO',     role: 'THE LEGEND' },
+        { clip: 'assets/bruno.mp4', img: 'assets/squad/por-2-Bruno.png',    name: 'B. FERNANDES',   role: 'THE CREATOR' },
+        { clip: 'assets/bernardo.mp4', img: 'assets/squad/por-3-Bernardo.png', name: 'BERNARDO SILVA', role: 'THE MAGICIAN' },
+        { clip: 'assets/leao.mp4', img: 'assets/squad/por-4-Leao.png',     name: 'RAFAEL LEÃO',    role: 'THE FLYER' },
+        { clip: 'assets/dias.mp4', img: 'assets/squad/por-5-Dias.png',     name: 'RÚBEN DIAS',     role: 'THE WALL' },
       ]} />
       {/* line beats: 108 European champions, 116 Bruno/Bernardo/Leão/Dias, 127 Ronaldo */}
       <Sprite start={108.0} end={116.0}>
@@ -278,11 +278,11 @@ function SceneEcuador() {
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 10.0} accent={MV.ecu} players={[
-        { img: 'assets/squad/cod-1-Wissa.png',    name: 'YOANE WISSA',    role: 'THE FINISHER' },
-        { img: 'assets/squad/cod-2-Bakambu.png',  name: 'CÉDRIC BAKAMBU', role: 'THE GLOBETROTTER' },
-        { img: 'assets/squad/cod-3-Mbemba.png',   name: 'CHANCEL MBEMBA', role: 'CAPTAIN · WALL' },
-        { img: 'assets/squad/cod-4-Silas.png',    name: 'SILAS KATOMPA',  role: 'THE SPARK' },
-        { img: 'assets/squad/cod-5-Masuaku.png',  name: 'A. MASUAKU',     role: 'THE STEEL' },
+        { clip: 'assets/wissa.mp4', img: 'assets/squad/cod-1-Wissa.png',    name: 'YOANE WISSA',    role: 'THE FINISHER' },
+        { clip: 'assets/bakambu.mp4', img: 'assets/squad/cod-2-Bakambu.png',  name: 'CÉDRIC BAKAMBU', role: 'THE GLOBETROTTER' },
+        { clip: 'assets/mbemba.mp4', img: 'assets/squad/cod-3-Mbemba.png',   name: 'CHANCEL MBEMBA', role: 'CAPTAIN · WALL' },
+        { clip: 'assets/silas.mp4', img: 'assets/squad/cod-4-Silas.png',    name: 'SILAS KATOMPA',  role: 'THE SPARK' },
+        { clip: 'assets/masuaku.mp4', img: 'assets/squad/cod-5-Masuaku.png',  name: 'A. MASUAKU',     role: 'THE STEEL' },
       ]} />
       {/* line beats: 134 header, 140 Wissa/Bakambu, 150 Mbemba, 160 Silas/Masuaku */}
       <Sprite start={140.0} end={150.0}>

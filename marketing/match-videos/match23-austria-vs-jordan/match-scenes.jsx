@@ -223,7 +223,7 @@ function SquadGrid({ start, end, players, accent }) {
             boxShadow: `0 26px 80px rgba(0,0,0,0.6)`,
           }}>
             <div style={{ height: 322, overflow: 'hidden' }}>
-              <img src={p.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.02 + 0.05 * clamp((t - start) / (end - start), 0, 1)})` }} />
+              <VideoSprite src={p.clip} start={start} dur={end - start} fit="cover" />
             </div>
             <div style={{ padding: '18px 16px 20px', textAlign: 'center', borderTop: `4px solid ${accent}` }}>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 25, color: MV.text }}>{p.name}</div>
@@ -252,11 +252,11 @@ function SceneAustria() {
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 7.0} accent={MV.aut} players={[
-        { img: 'assets/squad/aut-1-Alaba.png',       name: 'DAVID ALABA',       role: 'CAPTAIN · DEFENDER' },
-        { img: 'assets/squad/aut-2-Sabitzer.png',    name: 'MARCEL SABITZER',   role: 'THE DRIVER' },
-        { img: 'assets/squad/aut-3-Laimer.png',      name: 'KONRAD LAIMER',     role: 'THE ENGINE' },
-        { img: 'assets/squad/aut-5-Baumgartner.png', name: 'C. BAUMGARTNER',    role: 'LATE RUNS' },
-        { img: 'assets/squad/aut-4-Arnautovic.png',  name: 'M. ARNAUTOVIĆ',     role: 'THE OLD FOX' },
+        { clip: 'assets/alaba.mp4', img: 'assets/squad/aut-1-Alaba.png',       name: 'DAVID ALABA',       role: 'CAPTAIN · DEFENDER' },
+        { clip: 'assets/sabitzer.mp4', img: 'assets/squad/aut-2-Sabitzer.png',    name: 'MARCEL SABITZER',   role: 'THE DRIVER' },
+        { clip: 'assets/laimer.mp4', img: 'assets/squad/aut-3-Laimer.png',      name: 'KONRAD LAIMER',     role: 'THE ENGINE' },
+        { clip: 'assets/baumgartner.mp4', img: 'assets/squad/aut-5-Baumgartner.png', name: 'C. BAUMGARTNER',    role: 'LATE RUNS' },
+        { clip: 'assets/arnautovic.mp4', img: 'assets/squad/aut-4-Arnautovic.png',  name: 'M. ARNAUTOVIĆ',     role: 'THE OLD FOX' },
       ]} />
       {/* line beats: 150 Alaba, 160 Sabitzer/Laimer/Baumgartner, 170 Arnautovic */}
       <Sprite start={150.0} end={160.0}>
@@ -293,11 +293,11 @@ function SceneJordan() {
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 8.0} accent={MV.jor} players={[
-        { img: 'assets/squad/jor-1-Tamari.png',   name: 'MUSA AL-TAMARI',    role: 'THE SPARK' },
-        { img: 'assets/squad/jor-2-Naimat.png',   name: 'YAZAN AL-NAIMAT',   role: 'THE FINISHER' },
-        { img: 'assets/squad/jor-3-Dardour.png',  name: 'H. AL-DARDOUR',     role: 'THE STRIKER' },
-        { img: 'assets/squad/jor-4-Rawabdeh.png', name: 'N. AL-RAWABDEH',    role: 'THE RUNNER' },
-        { img: 'assets/squad/jor-5-Arab.png',     name: 'YAZAN AL-ARAB',     role: 'THE WALL' },
+        { clip: 'assets/taamari.mp4', img: 'assets/squad/jor-1-Tamari.png',   name: 'MUSA AL-TAMARI',    role: 'THE SPARK' },
+        { clip: 'assets/naimat.mp4', img: 'assets/squad/jor-2-Naimat.png',   name: 'YAZAN AL-NAIMAT',   role: 'THE FINISHER' },
+        { clip: 'assets/dardour.mp4', img: 'assets/squad/jor-3-Dardour.png',  name: 'H. AL-DARDOUR',     role: 'THE STRIKER' },
+        { clip: 'assets/rawabdeh.mp4', img: 'assets/squad/jor-4-Rawabdeh.png', name: 'N. AL-RAWABDEH',    role: 'THE RUNNER' },
+        { clip: 'assets/arab.mp4', img: 'assets/squad/jor-5-Arab.png',     name: 'YAZAN AL-ARAB',     role: 'THE WALL' },
       ]} />
       {/* line beats: 178 Al-Tamari, 187 Al-Naimat */}
       <Sprite start={178.0} end={187.0}>

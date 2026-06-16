@@ -208,7 +208,7 @@ function SquadGrid({ start, end, players, accent }) {
             boxShadow: `0 26px 80px rgba(0,0,0,0.6)`,
           }}>
             <div style={{ height: 322, overflow: 'hidden' }}>
-              <img src={p.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.02 + 0.05 * clamp((t - start) / (end - start), 0, 1)})` }} />
+              <VideoSprite src={p.clip} start={start} dur={end - start} fit="cover" />
             </div>
             <div style={{ padding: '18px 16px 20px', textAlign: 'center', borderTop: `4px solid ${accent}` }}>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 25, color: MV.text }}>{p.name}</div>
@@ -237,11 +237,11 @@ function SceneIraq() {
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 9.0} accent={MV.civ} players={[
-        { img: 'assets/squad/irq-1-Iqbal.png',   name: 'ZIDANE IQBAL',   role: 'THE BRAIN' },
-        { img: 'assets/squad/irq-2-Hussein.png', name: 'AYMEN HUSSEIN',  role: 'THE STRIKER' },
-        { img: 'assets/squad/irq-3-Hamadi.png',  name: 'ALI AL-HAMADI',  role: 'THE FINISHER' },
-        { img: 'assets/squad/irq-4-Ammari.png',  name: 'AMIR AL-AMMARI', role: 'THE ENGINE' },
-        { img: 'assets/squad/irq-5-Sulaka.png',  name: 'REBIN SULAKA',   role: 'THE WALL' },
+        { clip: 'assets/iqbal.mp4', img: 'assets/squad/irq-1-Iqbal.png',   name: 'ZIDANE IQBAL',   role: 'THE BRAIN' },
+        { clip: 'assets/hussein.mp4', img: 'assets/squad/irq-2-Hussein.png', name: 'AYMEN HUSSEIN',  role: 'THE STRIKER' },
+        { clip: 'assets/hamadi.mp4', img: 'assets/squad/irq-3-Hamadi.png',  name: 'ALI AL-HAMADI',  role: 'THE FINISHER' },
+        { clip: 'assets/ammari.mp4', img: 'assets/squad/irq-4-Ammari.png',  name: 'AMIR AL-AMMARI', role: 'THE ENGINE' },
+        { clip: 'assets/sulaka.mp4', img: 'assets/squad/irq-5-Sulaka.png',  name: 'REBIN SULAKA',   role: 'THE WALL' },
       ]} />
       {/* line beats: 138 Iqbal, 147 Hussein/Hamadi, 156 Ammari/Sulaka */}
       <Sprite start={138.0} end={147.0}>
@@ -278,11 +278,11 @@ function SceneNorway() {
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 11.0} accent={MV.ecu} players={[
-        { img: 'assets/squad/nor-1-Haaland.png',  name: 'ERLING HAALAND',  role: 'THE MACHINE' },
-        { img: 'assets/squad/nor-2-Odegaard.png', name: 'MARTIN ØDEGAARD', role: 'THE CAPTAIN' },
-        { img: 'assets/squad/nor-3-Sorloth.png',  name: 'A. SØRLOTH',      role: 'THE TARGET' },
-        { img: 'assets/squad/nor-4-Nusa.png',     name: 'ANTONIO NUSA',    role: 'THE SPARK' },
-        { img: 'assets/squad/nor-5-Berge.png',    name: 'SANDER BERGE',    role: 'THE METRONOME' },
+        { clip: 'assets/haaland.mp4', img: 'assets/squad/nor-1-Haaland.png',  name: 'ERLING HAALAND',  role: 'THE MACHINE' },
+        { clip: 'assets/odegaard.mp4', img: 'assets/squad/nor-2-Odegaard.png', name: 'MARTIN ØDEGAARD', role: 'THE CAPTAIN' },
+        { clip: 'assets/sorloth.mp4', img: 'assets/squad/nor-3-Sorloth.png',  name: 'A. SØRLOTH',      role: 'THE TARGET' },
+        { clip: 'assets/nusa.mp4', img: 'assets/squad/nor-4-Nusa.png',     name: 'ANTONIO NUSA',    role: 'THE SPARK' },
+        { clip: 'assets/berge.mp4', img: 'assets/squad/nor-5-Berge.png',    name: 'SANDER BERGE',    role: 'THE METRONOME' },
       ]} />
       {/* line beats: 179 Haaland, 188 Odegaard, 197 golden generation */}
       <Sprite start={179.0} end={188.0}>

@@ -206,7 +206,7 @@ function SquadGrid({ start, end, players, accent }) {
             boxShadow: `0 26px 80px rgba(0,0,0,0.6)`,
           }}>
             <div style={{ height: 322, overflow: 'hidden' }}>
-              <img src={p.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.02 + 0.05 * clamp((t - start) / (end - start), 0, 1)})` }} />
+              <VideoSprite src={p.clip} start={start} dur={end - start} fit="cover" />
             </div>
             <div style={{ padding: '18px 16px 20px', textAlign: 'center', borderTop: `4px solid ${accent}` }}>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 25, color: MV.text }}>{p.name}</div>
@@ -235,11 +235,11 @@ function SceneIvory() {
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 9.0} accent={MV.civ} players={[
-        { img: 'assets/squad/eng-2-Kane.png',       name: 'HARRY KANE',        role: 'CAPTAIN · GOALS' },
-        { img: 'assets/squad/eng-1-Bellingham.png', name: 'JUDE BELLINGHAM',   role: 'THE GALÁCTICO' },
-        { img: 'assets/squad/eng-3-Saka.png',       name: 'BUKAYO SAKA',       role: 'THE WINGER' },
-        { img: 'assets/squad/eng-4-Foden.png',      name: 'PHIL FODEN',        role: 'THE MAESTRO' },
-        { img: 'assets/squad/eng-5-Rice.png',       name: 'DECLAN RICE',       role: 'THE SHIELD' },
+        { clip: 'assets/kane.mp4', img: 'assets/squad/eng-2-Kane.png',       name: 'HARRY KANE',        role: 'CAPTAIN · GOALS' },
+        { clip: 'assets/bellingham.mp4', img: 'assets/squad/eng-1-Bellingham.png', name: 'JUDE BELLINGHAM',   role: 'THE GALÁCTICO' },
+        { clip: 'assets/saka.mp4', img: 'assets/squad/eng-3-Saka.png',       name: 'BUKAYO SAKA',       role: 'THE WINGER' },
+        { clip: 'assets/foden.mp4', img: 'assets/squad/eng-4-Foden.png',      name: 'PHIL FODEN',        role: 'THE MAESTRO' },
+        { clip: 'assets/rice.mp4', img: 'assets/squad/eng-5-Rice.png',       name: 'DECLAN RICE',       role: 'THE SHIELD' },
       ]} />
       {/* line beats: 108 Kane, 116 Bellingham/Saka/Foden, 127 only-1966 */}
       <Sprite start={108.0} end={116.0}>
@@ -276,11 +276,11 @@ function SceneEcuador() {
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 10.0} accent={MV.ecu} players={[
-        { img: 'assets/squad/cro-1-Modric.png',     name: 'LUKA MODRIĆ',     role: 'THE MAESTRO' },
-        { img: 'assets/squad/cro-2-Gvardiol.png',   name: 'JOŠKO GVARDIOL',  role: 'STONE WALL' },
-        { img: 'assets/squad/cro-3-Kovacic.png',    name: 'MATEO KOVAČIĆ',   role: 'THE ENGINE' },
-        { img: 'assets/squad/cro-4-Kramaric.png',   name: 'ANDREJ KRAMARIĆ', role: 'THE FINISHER' },
-        { img: 'assets/squad/cro-5-Livakovic.png',  name: 'D. LIVAKOVIĆ',    role: 'THE WALL · KEEPER' },
+        { clip: 'assets/modric.mp4', img: 'assets/squad/cro-1-Modric.png',     name: 'LUKA MODRIĆ',     role: 'THE MAESTRO' },
+        { clip: 'assets/gvardiol.mp4', img: 'assets/squad/cro-2-Gvardiol.png',   name: 'JOŠKO GVARDIOL',  role: 'STONE WALL' },
+        { clip: 'assets/kovacic.mp4', img: 'assets/squad/cro-3-Kovacic.png',    name: 'MATEO KOVAČIĆ',   role: 'THE ENGINE' },
+        { clip: 'assets/kramaric.mp4', img: 'assets/squad/cro-4-Kramaric.png',   name: 'ANDREJ KRAMARIĆ', role: 'THE FINISHER' },
+        { clip: 'assets/livakovic.mp4', img: 'assets/squad/cro-5-Livakovic.png',  name: 'D. LIVAKOVIĆ',    role: 'THE WALL · KEEPER' },
       ]} />
       {/* line beats: 134 overachievers, 145 Modric, 154 Kovacic/Gvardiol, 164 Kramaric */}
       <Sprite start={145.0} end={154.0}>
