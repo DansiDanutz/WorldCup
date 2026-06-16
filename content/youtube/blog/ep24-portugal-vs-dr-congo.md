@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    The Free Kick the World Got Wrong | Portugal vs DR Congo — World Cup 2026
+  Subtitle: Portugal vs DR Congo at World Cup 2026: a 41-year-old Ronaldo's golden chase against the heirs of the Leopards, the team that opened a continent's door. The full story.
+  Tags (max 5): World Cup 2026 · Portugal · DR Congo · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # The Free Kick the World Got Wrong | Portugal vs DR Congo — World Cup 2026
 
 In 1974, a defender ran out of the wall and booted a free kick away — and the whole world laughed at him. They called it ignorance. They were wrong. And tonight his shirt walks out again, with someone in the stands who knows the real story.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 24. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

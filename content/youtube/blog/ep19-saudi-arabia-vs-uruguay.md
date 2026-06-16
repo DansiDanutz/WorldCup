@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    How 3 Million People Silenced 200,000: The Maracanazo | Saudi Arabia vs Uruguay — World Cup 2026
+  Subtitle: Saudi Arabia vs Uruguay at World Cup 2026: the giant-killers meet the smallest giant in football history — the country that silenced the Maracanã in 1950.
+  Tags (max 5): World Cup 2026 · Saudi Arabia · Uruguay · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # How 3 Million People Silenced 200,000: The Maracanazo | Saudi Arabia vs Uruguay — World Cup 2026
 
 Sixteenth of July, 1950. The Maracanã. Two hundred thousand people packed in to watch Brazil be crowned champions of the world. And then a tiny country of three million silenced every single one of them. Tonight, that country walks out again — and in the stands is a man who heard that silence with his own ears.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 19. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

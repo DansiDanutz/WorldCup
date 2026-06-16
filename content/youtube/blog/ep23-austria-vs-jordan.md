@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    The Tiny Kingdom at Its First World Cup | Austria vs Jordan — World Cup 2026
+  Subtitle: Austria vs Jordan at World Cup 2026: old European royalty and the ghosts of the Wunderteam against Al-Nashama, the bravest debutants in the world. The full story.
+  Tags (max 5): World Cup 2026 · Austria · Jordan · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # The Tiny Kingdom at Its First World Cup | Austria vs Jordan — World Cup 2026
 
 For forty years they tried. Nine times Jordan came knocking on the door of the World Cup, and nine times it stayed shut. Tonight, for the very first time, a tiny kingdom walks out onto the biggest stage on Earth. And in the stands, one old dreamer is finally living the day he never thought he'd see.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 23. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

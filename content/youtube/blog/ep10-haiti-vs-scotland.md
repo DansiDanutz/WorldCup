@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    50 Years of Glorious Heartbreak | Haiti vs Scotland | World Cup 2026
+  Subtitle: Scotland has reached more World Cups than almost any nation and never escaped the group. Two brave underdogs fight to survive. Haiti vs Scotland, World Cup 2026.
+  Tags (max 5): World Cup 2026 · Haiti · Scotland · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # 50 Years of Glorious Heartbreak | Haiti vs Scotland | World Cup 2026
 
 Somewhere high in the stands, an old piper has played at every Scotland World Cup since 1974. He has never once played a song of celebration. Tonight, he is praying that changes. This is the battle of the nearly-men — two of football's bravest underdogs, fighting just to survive.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 10. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

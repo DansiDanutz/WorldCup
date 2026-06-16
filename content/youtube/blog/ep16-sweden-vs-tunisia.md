@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    The Team That Opened Africa's Door | Sweden vs Tunisia — World Cup 2026
+  Subtitle: In 1978 Tunisia became the first African nation to win a World Cup match. Sweden vs Tunisia at World Cup 2026 — frost meets fire, our prediction inside.
+  Tags (max 5): World Cup 2026 · Sweden · Tunisia · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # The Team That Opened Africa's Door | Sweden vs Tunisia — World Cup 2026
 
 In 1978, a tiny North African nation walked into a World Cup nobody expected them to trouble — and kicked a door wide open for an entire continent. Tonight, that same shirt walks out again, and in the stands an old man is keeping a small flame alive. Frost meets fire.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 16. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

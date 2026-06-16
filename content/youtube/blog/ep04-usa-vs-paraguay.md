@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    USA vs Paraguay: The 1930 Hat-Trick America Forgot for 76 Years | World Cup 2026
+  Subtitle: The first hat-trick in World Cup history was American — and hidden for 76 years. Now the USA face Paraguay again, and you decide the ending. World Cup 2026.
+  Tags (max 5): World Cup 2026 · USA · Paraguay · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # USA vs Paraguay: The 1930 Hat-Trick America Forgot for 76 Years
 
 Her torch has never gone out. Since 1990, at every American World Cup match, she has been standing there — watching, waiting for this exact night. Tonight, Liberty comes home. Welcome back to WorldCup26 Legends, Episode 4: the United States versus Paraguay, Group D, at AT&T Stadium in Texas, eighty thousand voices under one colossal roof.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 4. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 Hiding inside this fixture is the oldest secret in World Cup history. The year is 1930, the very first World Cup, and in Montevideo the United States face Paraguay. America wins 3-0, and a twenty-year-old named Bert Patenaude scores all three — the first hat-trick in World Cup history. But here is the twist: for seventy-six years the record books gave that honor to an Argentine. Only in 2006 did FIFA finally correct it. The first hat-trick ever belongs to an American — against Paraguay. Ninety-six years later, the rematch comes on the biggest stage on Earth.

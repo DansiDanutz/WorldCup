@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    Canada vs Bosnia: The Maple Leaf Man and Two Lives Football Should Have Made Impossible | World Cup 2026
+  Subtitle: A mystery fan at every Canada match for 40 years, a refugee-camp kid and a son of besieged Sarajevo collide in Toronto. World Cup 2026.
+  Tags (max 5): World Cup 2026 · Canada · Bosnia · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # Canada vs Bosnia: The Maple Leaf Man and Two Lives Football Should Have Made Impossible
 
 Nobody knows his name. But for forty years, at every single Canada match, he has been there — and Toronto whispers that when the Leaf appears, history follows. Tonight, the Leaf is here. Welcome back to WorldCup26 Legends, Episode 3: Canada versus Bosnia, Group B, at BMO Field in Toronto, where fifty thousand Canadians light up the northern night.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 3. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 On this pitch stand two men whose lives should have made football impossible. Alphonso Davies was born in a refugee camp in Ghana, to parents fleeing war — and tonight he walks out at a home World Cup as a Champions League winner. Across the tunnel is Edin Dzeko, forty years old, who grew up in besieged Sarajevo, learning football between air-raid sirens. Canada's own World Cup history is its own kind of miracle: 1986 brought three games, zero goals, goodbye, then a thirty-six-year wait. Until Qatar 2022, when the kid from the camp rose at the far post and headed in Canada's first World Cup goal ever. Davies. Of course. Bosnia has played just one World Cup, ever — and these two nations have never met on this stage, until tonight.

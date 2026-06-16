@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    South Korea vs Czech Republic: Son's Last Dance and the Coach They Called Mister Five-Zero | World Cup 2026
+  Subtitle: Son Heung-min begins his final World Cup against the Czechs — and the brutal 5-0 that secretly built Korea's 2002 miracle. World Cup 2026.
+  Tags (max 5): World Cup 2026 · South Korea · Czech Republic · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # South Korea vs Czech Republic: Son's Last Dance and the Coach They Called Mister Five-Zero
 
 Listen. That is not just a crowd inside the Estadio Akron — that is thirty years of dreams beating inside one man's chest. Tonight the greatest footballer Asia has ever produced begins his goodbye, and trust us, you are not ready for this story. Welcome to WorldCup26 Legends, Episode 2: South Korea versus the Czech Republic, Group A, in Guadalajara.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 2. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 In nearly a century of football, these two nations have NEVER met at a World Cup. Not once. Four meetings, all friendlies, and every one left a mark. A wild 2-2 draw in Seoul in 1998. Then Prague, 2001: Pavel Nedved and the Czechs crushed Korea 5-0. The humiliation cut so deep that Korean newspapers gave their brand-new coach a cruel nickname — Mister Five-Zero. That coach was Guus Hiddink. One year later, those same wounded warriors stunned Italy, shocked Spain, and danced into the semi-finals of their own World Cup. The 5-0 didn't break Korea. It built the miracle. And in 2016, in Prague, Korea finally took its revenge, 2-1. The scar was settled — but the World Cup chapter was never written, until tonight.

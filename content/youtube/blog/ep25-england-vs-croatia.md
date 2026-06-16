@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    The Tiny Nation That Broke England's Dream | England vs Croatia — World Cup 2026
+  Subtitle: England vs Croatia at World Cup 2026: the giant against the ghost of 2018, the deepest squad on Earth against football's greatest overachievers. The full story.
+  Tags (max 5): World Cup 2026 · England · Croatia · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # The Tiny Nation That Broke England's Dream | England vs Croatia — World Cup 2026
 
 Eight years ago, a nation of barely four million people walked out a goal down against a giant — and ended its dream. Tonight, those two meet again. And somewhere in the stands, a figure in a red-and-white checkerboard is watching, and waiting.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 25. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

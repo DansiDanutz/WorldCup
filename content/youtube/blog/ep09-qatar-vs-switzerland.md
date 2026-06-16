@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    The Falcon Always Returns | Qatar vs Switzerland | World Cup 2026
+  Subtitle: Four years ago Qatar lost every game at their own World Cup. Now the wounded host meets the quietest machine in football. Qatar vs Switzerland, World Cup 2026.
+  Tags (max 5): World Cup 2026 · Qatar · Switzerland · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # The Falcon Always Returns | Qatar vs Switzerland | World Cup 2026
 
 In the desert, they say a falcon always returns to the hand that never stopped believing. For one old man, that hand has waited a very long time. Tonight, the falcon flies — a wounded host against a silent machine, the desert fox against the alpine eagle.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 9. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

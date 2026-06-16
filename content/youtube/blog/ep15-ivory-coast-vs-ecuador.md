@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    The Footballer Who Helped Stop a War | Ivory Coast vs Ecuador — World Cup 2026
+  Subtitle: In 2005 an Ivory Coast captain knelt and begged his country to end its war — and it helped. Ivory Coast vs Ecuador at World Cup 2026 — our prediction inside.
+  Tags (max 5): World Cup 2026 · Ivory Coast · Ecuador · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # The Footballer Who Helped Stop a War | Ivory Coast vs Ecuador — World Cup 2026
 
 Once, a footballer grabbed a live camera, fell to his knees, and begged his own country to stop a war. They listened. Tonight, his nation walks out for a World Cup — and someone is kneeling in the stands. Two nations who have never once met collide for the very first time.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 15. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

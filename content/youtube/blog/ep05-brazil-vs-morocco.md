@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    Brazil vs Morocco: The Secret the Five-Time Kings Would Rather Forget | World Cup 2026
+  Subtitle: Five stars, but a 24-year drought — and the night Morocco became the first to beat Brazil. The kings meet the Atlas Lions again. World Cup 2026.
+  Tags (max 5): World Cup 2026 · Brazil · Morocco · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # Brazil vs Morocco: The Secret the Five-Time Kings Would Rather Forget
 
 Deep in the Amazon, there is a man crowned with feathers. They say he saw all five of Brazil's world titles before they happened. Tonight, he has a sixth vision. Welcome back to WorldCup26 Legends, Episode 5: Brazil versus Morocco, Group C — and the whole planet is watching. One hundred ninety-six million Brazilians, thirty-seven million Moroccans, one ball, and a secret the kings of football would rather forget.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 5. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 Five stars — '58, '62, '70, '94, 2002. No nation has more. But look closer at that last star: 2002. Brazil has not touched the trophy in twenty-four years, the longest wait in their history. And Morocco? In 2022 they became the first African and Arab nation ever to reach a World Cup semifinal — Spain gone, Portugal gone. Now the secret. March 2023, Tangier: the last time these two met, Morocco won, 2-1, the first Moroccan victory over Brazil in history. And the man who created the first goal that night is on the pitch again tonight.

@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    The #1 Team That Never Won vs The 7-Time Kings | Belgium vs Egypt — World Cup 2026
+  Subtitle: Belgium vs Egypt at World Cup 2026: two cursed crowns collide — the ranked No.1 who won nothing, and the seven-time African kings who never won a World Cup match.
+  Tags (max 5): World Cup 2026 · Belgium · Egypt · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # The #1 Team That Never Won vs The 7-Time Kings | Belgium vs Egypt — World Cup 2026
 
 Two crowns. Two curses. One was ranked the best team on Earth and never won a thing. The other ruled a whole continent seven times and never won a single World Cup match. Tonight, one of them breaks — and an old scribe is keeping score.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 18. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

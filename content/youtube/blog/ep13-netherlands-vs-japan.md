@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    Total Football Meets the Samurai | Netherlands vs Japan — World Cup 2026
+  Subtitle: The Dutch invented Total Football and never won the cup. Japan beat Germany AND Spain in 2022. Netherlands vs Japan at World Cup 2026 — our prediction inside.
+  Tags (max 5): World Cup 2026 · Netherlands · Japan · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # Total Football Meets the Samurai | Netherlands vs Japan — World Cup 2026
 
 High on a misty hill, an old man in blue armour once taught a nation with no football to build a soul instead. Tonight, that soul reaches the World Cup. And he is watching. Two faiths collide: Total Football, and the Samurai.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 13. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

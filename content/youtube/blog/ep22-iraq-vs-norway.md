@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    The War-Torn Nation That Became Champions of Asia | Iraq vs Norway — World Cup 2026
+  Subtitle: Iraq vs Norway at World Cup 2026: the survivors of war and the most powerful shirt in football against Haaland's Vikings, back after 28 years. The full story.
+  Tags (max 5): World Cup 2026 · Iraq · Norway · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # The War-Torn Nation That Became Champions of Asia | Iraq vs Norway — World Cup 2026
 
 In 2007, a country torn apart by war sent eleven men to play football — and for one afternoon, they made an entire nation forget the fighting. Tonight that same shirt walks out again, against the sons of the north. And somewhere in the crowd, an old man is holding a faded photograph.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 22. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

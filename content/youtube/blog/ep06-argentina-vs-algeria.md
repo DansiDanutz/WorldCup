@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    Argentina vs Algeria: The Night Football Betrayed a Nation | World Cup 2026
+  Subtitle: In 1982 football betrayed Algeria so badly FIFA changed the World Cup forever. 44 years later they meet Messi's champions. World Cup 2026.
+  Tags (max 5): World Cup 2026 · Argentina · Algeria · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # Argentina vs Algeria: The Night Football Betrayed a Nation | World Cup 2026
 
 Two ghosts walk into the stadium tonight. One has haunted Argentina's matches since 1978; the other has blessed Algeria's since independence. Tonight, they finally meet. Welcome to WorldCup26 Legends, Episode 6: Argentina versus Algeria, Group J — the GOAT's last opening night. And stay with us, because in the 83rd minute of our story, something happens you'll want to see twice.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 6. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

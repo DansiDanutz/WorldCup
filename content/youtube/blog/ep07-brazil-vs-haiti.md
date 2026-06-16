@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    The Supermarket Worker Who Shocked Brazil | Brazil vs Haiti | World Cup 2026
+  Subtitle: In 1974 Haiti ended the longest clean sheet in football. 52 years later they face Brazil — and a supermarket worker writes the next chapter. World Cup 2026.
+  Tags (max 5): World Cup 2026 · Brazil · Haiti · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # The Supermarket Worker Who Shocked Brazil | Brazil vs Haiti | World Cup 2026
 
 Listen. Do you hear the drum? It has beaten the same rhythm since 1974, at every single Haiti match, without missing one. Tonight it beats for Brazil — five stars against one unbreakable heart. This is Group C, the kings of football against the nation that refuses to break.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 7. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

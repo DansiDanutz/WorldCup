@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    Two Nations With No Home | Australia vs Turkey | World Cup 2026
+  Subtitle: A supporter who belongs to no country at all watches two nations of wanderers fight for one place in the knockouts. Australia vs Turkey, World Cup 2026.
+  Tags (max 5): World Cup 2026 · Australia · Turkey · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # Two Nations With No Home | Australia vs Turkey | World Cup 2026
 
 Some supporters belong to a city. This one belongs to no country at all — a wanderer with a suitcase of flags, who has stood in every stadium the game has ever known. Tonight, he finds his people. This is the nomads' duel: two nations of wanderers, fighting for one place in the next round.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 11. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 

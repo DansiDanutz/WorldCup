@@ -10,11 +10,24 @@ video_url: "https://youtube.com/@DansLab-Kimi"
 canonical_channel: "@DansLab-Kimi"
 ---
 
+<!-- ============================================================
+  📋 Publish to Medium — copy these into Medium’s fields, then paste the BODY below.
+  Title:    Half a Million People vs Spain: The Island's First-Ever Goal | World Cup 2026
+  Subtitle: Spain vs Cape Verde at World Cup 2026: an empire of 47 million against an archipelago of half a million, on its first-ever World Cup night. The full story.
+  Tags (max 5): World Cup 2026 · Spain · Cape Verde · football · World Cup predictions
+  Video:    paste the episode’s YouTube URL on its OWN LINE where the embed marker is
+            (Medium auto-embeds it). Set the story’s canonical link to that video.
+  Do NOT paste this comment block or the frontmatter above.
+============================================================ -->
+
+
 # Half a Million People vs Spain: The Island's First-Ever Goal | World Cup 2026
 
 Ten volcanic islands in the middle of the Atlantic. Half a million people. For sixty years they sent their sons to play for other people's flags. Tonight, for the very first time, the islands play for themselves — and on a clifftop back home, a keeper is lighting his lamp.
 
-> ▶️ Watch the full story: WorldCup26 Legends — Episode 17. <!-- EMBED: paste the episode YouTube URL here when publishing -->
+> ▶️ **Watch the full episode on YouTube** — when publishing, paste the episode URL on its own blank line right here so Medium auto-embeds the player:
+>
+> <!-- PASTE EPISODE YOUTUBE URL ON ITS OWN LINE -->
 
 ## The secret nobody talks about
 
