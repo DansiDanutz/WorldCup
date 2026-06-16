@@ -16,8 +16,8 @@ function SceneColdOpen() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
       {/* a Leopards defender — the face of that misunderstood night (dark, archival) */}
-      <VideoSprite src="assets/mbemba.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
-        dim={0.5} style={{ filter: 'brightness(0.4) contrast(1.2) saturate(0.9) grayscale(0.55)' }} />
+      <VideoSprite src="assets/mystery.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
+        dim={0.28} style={{ filter: 'brightness(0.4) contrast(1.2) saturate(0.9) grayscale(0)' }} />
       {/* ember base in DR Congo sky-blue so the screen never reads as dead air */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 78%, rgba(0,127,255,0.16) 0%, transparent 55%)` }} />
       {/* heartbeat glow */}
@@ -53,6 +53,8 @@ function SceneTitle() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, #0a0f1c 0%, #11182b 55%, #0a0f1c 100%)` }}>
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(170,21,27,0.12) 0%, transparent 55%)` }} />
+      <VideoSprite src="assets/mystery.mp4" start={16} dur={14} dim={0.55} fit="cover" style={{ filter: "brightness(0.7) saturate(1.05)" }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(7,10,18,0.45), rgba(7,10,18,0.78))" }} />
       <AmbientParticles start={16} dur={12} count={34} color="0,127,255" />
       {/* RECAP — OUR PREDICTION from Ep23 (never stated as a real result) */}
       {recapP > 0.01 && (
@@ -97,7 +99,7 @@ function SceneTease() {
   const b = Easing.easeOutBack(clamp((lt - 8.5) / 1.0, 0, 1)) * Math.max(0, Math.min(1, (18.0 - lt) / 1.0));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <PitchBackdrop tint="#1a0a10" dim={0.25} />
+      <VideoSprite src="assets/stadium.mp4" start={30} dur={20} dim={0.42} fit="cover" />
       <Vignette strength={0.5} />
       <AmbientParticles start={28} dur={18.5} count={26} color="247,214,24" />
       {/* the chase headline */}
