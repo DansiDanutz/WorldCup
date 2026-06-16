@@ -42,6 +42,9 @@ Before producing, editing, or advising on ANY episode of the match-video series,
 read ALL of these living knowledge files:
 - **`content/youtube/SERIES_PLAYBOOK.md`** — DO / DON'T lists, per-episode
   checklist, and the results log.
+- **`content/youtube/EPISODE_PRODUCTION_STANDARD.md`** — the clip-based-ONLY
+  standard (rule #11): real Higgsfield animations from the team images, fans +
+  stadium + Mystery Supporter, gold standard Ep2/Ep6. NEVER image-based/Ken-Burns.
 - **`content/youtube/CHANNEL_GROWTH_ACTION_PLAN.md`** — channel config + the
   growth law, the canonical channel (`@DansLab-Kimi`), and the packaging rules.
 - **`content/youtube/PREMIERE_CALENDAR.md`** — which episode premieres WHEN,
@@ -122,14 +125,22 @@ Non-negotiables distilled from channel data (details in the playbook):
     episode title card, player NAME labels (name only, no sentence), the score
     bug (e.g. "SWE 2–1 TUN"), the "OUR PREDICTION" watermark, and the
     worldcup26.world CTA. If in doubt, leave the text OFF.
-11. **USE THE PAID HIGGSFIELD ANIMATIONS — NOT KEN-BURNS STILLS (hard rule):**
-    every player/crowd/stadium shot must use the already-generated, already-paid
-    Higgsfield VIDEO clips (in `content/videos/<Team>/`, plus the per-episode
-    `jobs-manifest.json` re-downloadable via Higgsfield, and any new clips
-    generated through the Higgsfield MCP). Populate `clips.json` with real video
-    clips; do NOT ship an episode as "IMAGE-BASED (Ken-Burns on stills)". Stills
-    are a last-resort fallback ONLY when no clip exists for that nation/shot —
-    and if so, say it explicitly and generate the missing clip.
+11. **CLIP-BASED ONLY — REAL HIGGSFIELD ANIMATIONS, NEVER STILLS (hard rule, NO
+    EXCEPTIONS, NO "SIMPLIFY"):** EVERY episode is built from real Higgsfield
+    VIDEO clips. `clips.json` `clips[]` is **always non-empty (≈25–34 clips)** and
+    covers **both teams' star players (animated), fans/ultras, the stadium, and the
+    animated Mystery Supporter(s)** — supporters and the story are the SUBJECT, not
+    a photo slideshow. Gold standard = **Ep2 & Ep6**; the next episode matches them
+    or better, never less. Full recipe + pipeline: **`EPISODE_PRODUCTION_STANDARD.md`**.
+    - **How:** reuse the paid library first (`content/videos/<Team>/`, prior-episode
+      `assets/`, `jobs-manifest.json`); for any missing shot, **GENERATE the clip via
+      the Higgsfield MCP from the player image in `content/images/<Team>/`** (image→
+      video, ~22.5 credits/5s). Then populate `clips.json` and render.
+    - **ABSOLUTELY FORBIDDEN:** shipping `clips: []`, "IMAGE-BASED (Ken-Burns on
+      stills)", a photo slideshow, or any "bulk"/simplified episode. There is NO
+      stills fallback — if a clip is missing you GENERATE it, you do not downgrade.
+      Ep15–Ep25 were made this wrong way; **we do not repeat it and do not rebuild
+      them — we move forward, clip-based, every time.**
 
 ## Video production pipeline
 

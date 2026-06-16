@@ -81,6 +81,12 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
 
 ## DON'T (what cost us — never repeat)
 
+0. ❌ **NEVER ship an image-based / "Ken-Burns on stills" / `clips: []` episode.**
+   Ep15–Ep25 were downgraded that way — flat, no emotion, "bulk." Every episode
+   is **clip-based**: real Higgsfield animations made from the team images, with
+   fans/ultras, stadium, and the animated Mystery Supporter. Gold standard = Ep2 &
+   Ep6. Full rule: `EPISODE_PRODUCTION_STANDARD.md`. NO exceptions, no "simplify."
+
 1. ❌ Don't upload after the match the episode is about (Ep2 mistake — lost the
    pre-match search wave).
 2. ❌ Don't publish without a same-day promotion plan (Ep2 had none at launch).
