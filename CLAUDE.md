@@ -186,6 +186,17 @@ reuse or skip a number. Before creating an episode:
 5. **Reuse, don't duplicate:** build on the Ep2 template (content swap), reuse
    the music/SFX library and any existing player/crowd clips for repeat nations.
 
+## Player drama films — "WorldCup26 Bonus" (naming standard)
+
+Standalone player-life films (a player's path from nobody to idol — the drama of
+their life + achievements) are a SEPARATE series from the match episodes. They are
+ALWAYS named **`WorldCup26 Bonus - <Player Name>`** (title card, upload title, and
+output filename, e.g. `WorldCup26_Bonus_Romelu_Lukaku.mp4`). Same rules as episodes:
+clip-based real animation (no Ken-Burns), Brian VO, **NO subtitles**, soccer-only,
+mystery+drama structure, verified facts only (cite sources). Built like an episode
+(`VideoSprite` engine) under `marketing/player-films/<player>/`. Template: the
+Lukaku film (`marketing/player-films/lukaku-the-promise/`).
+
 ## Content library
 
 - `content/<Team>/` — Info/ (overviews, players), Character/ (image prompts), Match/

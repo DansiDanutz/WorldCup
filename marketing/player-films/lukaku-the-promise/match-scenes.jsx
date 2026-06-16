@@ -47,9 +47,9 @@ function FilmLukaku() {
       {/* TITLE CARD (≤4 words) */}
       {titleP > 0.01 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 18, opacity: clamp(titleP, 0, 1), zIndex: 25 }}>
-          <Kicker size={30} color="#cfe9de">A true story</Kicker>
-          <BigTitle size={128} color="#fff" glow="#ffd24a">THE PROMISE</BigTitle>
-          <Kicker size={34} color="#ffd24a">ROMELU LUKAKU</Kicker>
+          <Kicker size={30} color="#ffd24a">WorldCup26 Bonus</Kicker>
+          <BigTitle size={120} color="#fff" glow="#ffd24a">ROMELU LUKAKU</BigTitle>
+          <Kicker size={32} color="#cfe9de">The Promise</Kicker>
         </div>
       )}
 
