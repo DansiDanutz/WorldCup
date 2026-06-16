@@ -1,6 +1,6 @@
 // match-scenes.jsx — the scenes of the Match 22 video (300s timeline).
 // Scene windows must match the SCENES table in match.html and narration.json.
-// IMAGE-BASED: Ken-Burns motion on still PNGs. SOCCER ONLY — round-neck shirts,
+// CLIP-BASED: real fal/Higgsfield video animations (VideoSprite). SOCCER ONLY — round-neck shirts,
 // a pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 1-1 is OUR PREDICTION.
 // HOOK = MYSTERY + HISTORY: Iraq's verified 2007 AFC Asian Cup triumph as a
 // war-torn nation (Sunni/Shia/Kurd as one team; Younis Mahmoud's header beat
@@ -17,7 +17,7 @@ function SceneColdOpen() {
   const titleP = Easing.easeOutCubic(clamp((lt - 12.3) / 1.4, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <KenBurns src="assets/player-iqbal.png" start={0} dur={16} from={1.18} to={1.32} panY={-30}
+      <VideoSprite src="assets/iqbal.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
         dim={0.5} style={{ filter: 'brightness(0.42) contrast(1.18) saturate(1.05) grayscale(0.35)' }} />
       {/* ember base in Iraq green so the screen never reads as dead air */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 78%, rgba(0,122,61,0.18) 0%, transparent 55%)` }} />
@@ -159,7 +159,7 @@ function SceneHistory() {
   const DUR = 72.0;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <KenBurns src="assets/player-hussein.png" start={S} dur={DUR} from={1.1} to={1.24} panX={-20}
+      <VideoSprite src="assets/iraq-joy.mp4" start={S} dur={DUR} from={1.1} to={1.24} panX={-20}
         dim={0.72} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1) grayscale(0.2)' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
       <AmbientParticles start={S} dur={DUR} count={28} color="0,166,79" maxR={4} />
@@ -243,15 +243,15 @@ function SceneIraq() {
       ]} />
       {/* line beats: 138 Iqbal, 147 Hussein/Hamadi, 156 Ammari/Sulaka */}
       <Sprite start={138.0} end={147.0}>
-        <KenBurns src="assets/player-iqbal.png" start={138} dur={9} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/iqbal.mp4" start={138} dur={9} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={138.4} name="ZIDANE IQBAL" role="Midfield · The Brain" line="Named after Zinedine Zidane. Once at Manchester United — now the heartbeat of Iraq." accent={MV.civ} />
       </Sprite>
       <Sprite start={147.0} end={156.0}>
-        <KenBurns src="assets/player-hussein.png" start={147} dur={9} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/hussein.mp4" start={147} dur={9} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={147.4} name="HUSSEIN · AL-HAMADI" role="The Attack" line="Strikers who fight for every ball — exactly as the shirt demands." accent={MV.civ} />
       </Sprite>
       <Sprite start={156.0} end={165.0}>
-        <KenBurns src="assets/player-sulaka.png" start={156} dur={9} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/sulaka.mp4" start={156} dur={9} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={156.3} name="AL-AMMARI · SULAKA" role="Spine · Underdogs" line="Driving from deep, holding the wall. Underdogs — and proud of it." accent={MV.civGreen} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -284,15 +284,15 @@ function SceneNorway() {
       ]} />
       {/* line beats: 179 Haaland, 188 Odegaard, 197 golden generation */}
       <Sprite start={179.0} end={188.0}>
-        <KenBurns src="assets/player-haaland.png" start={179} dur={9} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/haaland.mp4" start={179} dur={9} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={179.3} name="ERLING HAALAND" role="Striker · The Machine" line="Norway's all-time top scorer at 25. Sixteen goals in qualifying alone." accent={MV.ecu} />
       </Sprite>
       <Sprite start={188.0} end={197.0}>
-        <KenBurns src="assets/player-odegaard.png" start={188} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/odegaard.mp4" start={188} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={188.3} name="MARTIN ØDEGAARD" role="Captain · Playmaker" line="All silk and vision — the one who sets the machine running." accent={MV.ecu} />
       </Sprite>
       <Sprite start={197.0} end={206.0}>
-        <KenBurns src="assets/player-sorloth.png" start={197} dur={9} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/sorloth.mp4" start={197} dur={9} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={197.3} name="SØRLOTH · NUSA · BERGE" role="A Golden Generation" line="They beat Italy home and away to get here. This is Norway's best team in a generation." accent={MV.norNavy} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -310,7 +310,7 @@ function SceneDuel() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
-        <img src="assets/player-hussein.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <VideoSprite src="assets/hussein.mp4" start={206} dur={16} fit="cover" style={{ filter: 'saturate(1.15) brightness(0.92)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,122,61,0.34), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE HEART
@@ -318,7 +318,7 @@ function SceneDuel() {
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * 100}%)` }}>
-        <img src="assets/player-haaland.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <VideoSprite src="assets/haaland.mp4" start={206} dur={16} fit="cover" style={{ filter: 'saturate(1.15) brightness(0.92)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(186,12,47,0.42), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE POWER
@@ -355,9 +355,9 @@ function SceneDrama() {
   const S = 222.0;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <KenBurns src="assets/player-haaland.png" start={S} dur={20} from={1.1} to={1.28} panX={-30} dim={0.18} />
+      <VideoSprite src="assets/haaland.mp4" start={S} dur={20} from={1.1} to={1.28} panX={-30} dim={0.18} />
       <Sprite start={241} end={252}>
-        <KenBurns src="assets/player-hussein.png" start={241} dur={11} from={1.08} to={1.24} panX={20} dim={0.16} />
+        <VideoSprite src="assets/hussein.mp4" start={241} dur={11} from={1.08} to={1.24} panX={20} dim={0.16} />
       </Sprite>
       {/* OUR PREDICTION watermark — REAL-RESULTS-ONLY rule */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
@@ -437,7 +437,7 @@ function SceneMystery() {
   const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
-      <KenBurns src="assets/player-iqbal.png" start={S} dur={DUR} from={1.16} to={1.3} panY={-20}
+      <VideoSprite src="assets/mystery.mp4" start={S} dur={DUR} from={1.16} to={1.3} panY={-20}
         dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.1) saturate(1.0) grayscale(0.3)' }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,

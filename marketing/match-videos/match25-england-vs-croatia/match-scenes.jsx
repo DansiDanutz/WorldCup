@@ -1,6 +1,6 @@
 // match-scenes.jsx — the twelve scenes of the Match 25 video (300s timeline).
 // Scene windows must match the SCENES table in match.html and narration.json.
-// IMAGE-BASED: Ken-Burns motion on still PNGs. SOCCER ONLY — round-neck shirts,
+// CLIP-BASED: real fal video animations (VideoSprite). SOCCER ONLY.
 // a pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 2-1 is OUR PREDICTION.
 // NOTE: nested <Sprite> windows are GLOBAL seconds (Sprite reads the timeline clock).
 // Token names civ/ecu kept from the Ep15 template: civ = ENGLAND, ecu = CROATIA.
@@ -14,7 +14,7 @@ function SceneColdOpen() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
       {/* Modrić — the captain who dragged Croatia past England (dark, dramatic) */}
-      <KenBurns src="assets/player-modric.png" start={0} dur={16} from={1.18} to={1.32} panY={-30}
+      <VideoSprite src="assets/modric.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
         dim={0.5} style={{ filter: 'brightness(0.42) contrast(1.18) saturate(1.05) grayscale(0.35)' }} />
       {/* ember base in Croatia red so the screen never reads as dead air */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 78%, rgba(213,43,30,0.16) 0%, transparent 55%)` }} />
@@ -158,7 +158,7 @@ function SceneHistory() {
   const S = 46.5;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <KenBurns src="assets/player-modric.png" start={S} dur={51.5} from={1.1} to={1.24} panX={-20}
+      <VideoSprite src="assets/modric.mp4" start={S} dur={51.5} from={1.1} to={1.24} panX={-20}
         dim={0.72} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1) grayscale(0.2)' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
       <AmbientParticles start={S} dur={51.5} count={28} color="213,43,30" maxR={4} />
@@ -241,15 +241,15 @@ function SceneIvory() {
       ]} />
       {/* line beats: 108 Kane, 116 Bellingham/Saka/Foden, 127 only-1966 */}
       <Sprite start={108.0} end={116.0}>
-        <KenBurns src="assets/player-kane.png" start={108} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/kane.mp4" start={108} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={108.4} name="HARRY KANE" role="Captain · Striker" line="The record-breaking captain — England's all-time top scorer, chasing the one prize that matters." accent={MV.civ} />
       </Sprite>
       <Sprite start={116.0} end={127.0}>
-        <KenBurns src="assets/player-bellingham.png" start={116} dur={11} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/bellingham.mp4" start={116} dur={11} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={116.4} name="BELLINGHAM · SAKA · FODEN" role="The New Golden Generation" line="A midfield jewel and two wingers in their prime. This attack can hurt anyone." accent={MV.civ} />
       </Sprite>
       <Sprite start={127.0} end={134.0}>
-        <KenBurns src="assets/player-rice.png" start={127} dur={7} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/stadium.mp4" start={127} dur={7} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={127.3} name="ONE STAR · 1966" role="Sixty years of hurt" line="England have won the World Cup exactly once — and never since. The whole nation aches for more." accent={MV.civGreen} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -282,15 +282,15 @@ function SceneEcuador() {
       ]} />
       {/* line beats: 134 overachievers, 145 Modric, 154 Kovacic/Gvardiol, 164 Kramaric */}
       <Sprite start={145.0} end={154.0}>
-        <KenBurns src="assets/player-modric.png" start={145} dur={9} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/modric.mp4" start={145} dur={9} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={145.3} name="LUKA MODRIĆ" role="The Maestro · Midfield" line="The 2018 Golden Ball — the heart that has dragged a tiny nation to three podiums." accent={MV.ecu} />
       </Sprite>
       <Sprite start={154.0} end={164.0}>
-        <KenBurns src="assets/player-gvardiol.png" start={154} dur={10} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/gvardiol.mp4" start={154} dur={10} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={154.3} name="GVARDIOL · KOVAČIĆ" role="Steel front to back" line="A defender bought for a fortune, a midfield engine who never stops — Croatia run forever." accent={MV.ecu} />
       </Sprite>
       <Sprite start={164.0} end={169.5}>
-        <KenBurns src="assets/player-kramaric.png" start={164} dur={5.5} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/kramaric.mp4" start={164} dur={5.5} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={164.3} name="ANDREJ KRAMARIĆ" role="The Finisher · Striker" line="The cool head in front of goal — the man who punishes a moment's hesitation." accent={MV.ecuBlue} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -308,7 +308,7 @@ function SceneDuel() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
-        <img src="assets/player-bellingham.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <VideoSprite src="assets/bellingham.mp4" start={0} dur={300} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(27,58,143,0.4), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE GIANT
@@ -316,7 +316,7 @@ function SceneDuel() {
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * 100}%)` }}>
-        <img src="assets/player-modric.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <VideoSprite src="assets/modric.mp4" start={0} dur={300} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(213,43,30,0.42), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE GHOST
@@ -353,12 +353,12 @@ function SceneDrama() {
   const S = 188.5;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <KenBurns src="assets/player-kane.png" start={S} dur={26} from={1.1} to={1.28} panX={-30} dim={0.18} />
+      <VideoSprite src="assets/kane.mp4" start={S} dur={26} from={1.1} to={1.28} panX={-30} dim={0.18} />
       <Sprite start={211} end={225}>
-        <KenBurns src="assets/player-kramaric.png" start={211} dur={14} from={1.08} to={1.2} panX={20} dim={0.16} />
+        <VideoSprite src="assets/kramaric.mp4" start={211} dur={14} from={1.08} to={1.2} panX={20} dim={0.16} />
       </Sprite>
       <Sprite start={225} end={243.5}>
-        <KenBurns src="assets/player-bellingham.png" start={225} dur={18.5} from={1.08} to={1.24} panX={-18} dim={0.16} />
+        <VideoSprite src="assets/bellingham.mp4" start={225} dur={18.5} from={1.08} to={1.24} panX={-18} dim={0.16} />
       </Sprite>
       {/* OUR PREDICTION watermark — REAL-RESULTS-ONLY rule */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
@@ -461,7 +461,7 @@ function SceneMystery() {
   const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
-      <KenBurns src="assets/player-modric.png" start={S} dur={20} from={1.16} to={1.3} panY={-20}
+      <VideoSprite src="assets/mystery.mp4" start={S} dur={20} from={1.16} to={1.3} panY={-20}
         dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.1) saturate(1.0) grayscale(0.3)' }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,

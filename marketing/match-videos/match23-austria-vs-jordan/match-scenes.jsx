@@ -1,6 +1,6 @@
 // match-scenes.jsx — the twelve scenes of the Match 23 video (300s timeline).
 // Scene windows must match the SCENES table in match.html and narration.json.
-// IMAGE-BASED: Ken-Burns motion on still PNGs. SOCCER ONLY — round-neck shirts,
+// CLIP-BASED: real fal video animations (VideoSprite). SOCCER ONLY.
 // a pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 2-1 is OUR PREDICTION.
 // NOTE: nested <Sprite> windows are GLOBAL seconds (Sprite reads the timeline clock).
 // Story spine: Jordan's first-ever World Cup fairytale (Al-Nashama) + their 2023
@@ -18,7 +18,7 @@ function SceneColdOpen() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
       {/* a Jordan star — Al-Tamari as the symbol of the dream (dark, dramatic) */}
-      <KenBurns src="assets/player-tamari.png" start={0} dur={16} from={1.18} to={1.32} panY={-30}
+      <VideoSprite src="assets/stadium.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
         dim={0.5} style={{ filter: 'brightness(0.42) contrast(1.18) saturate(1.05) grayscale(0.3)' }} />
       {/* ember base in Jordan red so the screen never reads as dead air */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 78%, rgba(206,17,38,0.18) 0%, transparent 55%)` }} />
@@ -167,10 +167,10 @@ function SceneHistory() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
       {austriaBg ? (
-        <KenBurns src="assets/player-alaba.png" start={S} dur={54.5} from={1.1} to={1.24} panX={-20}
+        <VideoSprite src="assets/alaba.mp4" start={S} dur={54.5} from={1.1} to={1.24} panX={-20}
           dim={0.72} style={{ filter: 'brightness(0.24) saturate(0.7) contrast(1.1) grayscale(0.35)' }} />
       ) : (
-        <KenBurns src="assets/player-naimat.png" start={101} dur={49} from={1.1} to={1.24} panX={20}
+        <VideoSprite src="assets/naimat.mp4" start={101} dur={49} from={1.1} to={1.24} panX={20}
           dim={0.72} style={{ filter: 'brightness(0.26) saturate(0.85) contrast(1.1) grayscale(0.18)' }} />
       )}
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
@@ -258,15 +258,15 @@ function SceneAustria() {
       ]} />
       {/* line beats: 150 Alaba, 160 Sabitzer/Laimer/Baumgartner, 170 Arnautovic */}
       <Sprite start={150.0} end={160.0}>
-        <KenBurns src="assets/player-alaba.png" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/alaba.mp4" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={150.4} name="DAVID ALABA" role="Captain · Defender" line="A defender who has won everything in the club game — captaining the heirs of the Wunderteam." accent={MV.aut} />
       </Sprite>
       <Sprite start={160.0} end={170.0}>
-        <KenBurns src="assets/player-sabitzer.png" start={160} dur={10} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/sabitzer.mp4" start={160} dur={10} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={160.4} name="SABITZER · LAIMER · BAUMGARTNER" role="The Midfield" line="Sabitzer drives, Laimer never stops running, Baumgartner arrives late in the box." accent={MV.aut} />
       </Sprite>
       <Sprite start={170.0} end={178.0}>
-        <KenBurns src="assets/player-arnautovic.png" start={170} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/arnautovic.mp4" start={170} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={170.3} name="MARKO ARNAUTOVIĆ" role="The Old Fox · Striker" line="Still dangerous, still smiling — the veteran who knows exactly where the goal is." accent={MV.autSoft} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -299,11 +299,11 @@ function SceneJordan() {
       ]} />
       {/* line beats: 178 Al-Tamari, 187 Al-Naimat */}
       <Sprite start={178.0} end={187.0}>
-        <KenBurns src="assets/player-tamari.png" start={178} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/stadium.mp4" start={178} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={178.3} name="MUSA AL-TAMARI" role="The Spark · Winger" line="Quick, fearless — the man who lit up the Asian Cup and made the world look twice." accent={MV.jor} />
       </Sprite>
       <Sprite start={187.0} end={195.0}>
-        <KenBurns src="assets/player-naimat.png" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/naimat.mp4" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={187.3} name="YAZAN AL-NAIMAT" role="The Finisher · Striker" line="The striker who scores on the nights that matter most — Korea felt it firsthand." accent={MV.jorGreen} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -321,7 +321,7 @@ function SceneDuel() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
-        <img src="assets/player-alaba.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <VideoSprite src="assets/alaba.mp4" start={0} dur={300} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(237,41,57,0.34), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE PEDIGREE
@@ -329,7 +329,7 @@ function SceneDuel() {
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * 100}%)` }}>
-        <img src="assets/player-tamari.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <VideoSprite src="assets/stadium.mp4" start={0} dur={300} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(0,122,61,0.4), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE FEARLESS
@@ -366,12 +366,12 @@ function SceneDrama() {
   const S = 213.0;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <KenBurns src="assets/player-baumgartner.png" start={S} dur={19} from={1.1} to={1.28} panX={-30} dim={0.18} />
+      <VideoSprite src="assets/stadium.mp4" start={S} dur={19} from={1.1} to={1.28} panX={-30} dim={0.18} />
       <Sprite start={224} end={236}>
-        <KenBurns src="assets/player-naimat.png" start={224} dur={12} from={1.08} to={1.24} panX={20} dim={0.16} />
+        <VideoSprite src="assets/naimat.mp4" start={224} dur={12} from={1.08} to={1.24} panX={20} dim={0.16} />
       </Sprite>
       <Sprite start={236} end={247}>
-        <KenBurns src="assets/player-alaba.png" start={236} dur={11} from={1.08} to={1.22} panX={-18} dim={0.16} />
+        <VideoSprite src="assets/alaba.mp4" start={236} dur={11} from={1.08} to={1.22} panX={-18} dim={0.16} />
       </Sprite>
       {/* OUR PREDICTION watermark — REAL-RESULTS-ONLY rule */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
@@ -474,7 +474,7 @@ function SceneMystery() {
   const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
-      <KenBurns src="assets/player-naimat.png" start={S} dur={18} from={1.16} to={1.3} panY={-20}
+      <VideoSprite src="assets/mystery.mp4" start={S} dur={18} from={1.16} to={1.3} panY={-20}
         dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.1) saturate(1.0) grayscale(0.28)' }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,

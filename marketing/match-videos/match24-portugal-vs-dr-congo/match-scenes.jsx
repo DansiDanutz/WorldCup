@@ -1,6 +1,6 @@
 // match-scenes.jsx — the twelve scenes of the Match 24 video (300s timeline).
 // Scene windows must match the SCENES table in match.html and narration.json.
-// IMAGE-BASED: Ken-Burns motion on still PNGs. SOCCER ONLY — round-neck shirts,
+// CLIP-BASED: real fal video animations (VideoSprite). SOCCER ONLY.
 // a pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 3-1 is OUR PREDICTION.
 // NOTE: nested <Sprite> windows are GLOBAL seconds (Sprite reads the timeline clock).
 // HISTORY handled with NUANCE/RESPECT: the 1974 Leopards / Mwepu Ilunga story is a
@@ -16,7 +16,7 @@ function SceneColdOpen() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
       {/* a Leopards defender — the face of that misunderstood night (dark, archival) */}
-      <KenBurns src="assets/player-mbemba.png" start={0} dur={16} from={1.18} to={1.32} panY={-30}
+      <VideoSprite src="assets/mbemba.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
         dim={0.5} style={{ filter: 'brightness(0.4) contrast(1.2) saturate(0.9) grayscale(0.55)' }} />
       {/* ember base in DR Congo sky-blue so the screen never reads as dead air */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 78%, rgba(0,127,255,0.16) 0%, transparent 55%)` }} />
@@ -160,7 +160,7 @@ function SceneHistory() {
   const S = 46.5;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <KenBurns src="assets/player-mbemba.png" start={S} dur={51.5} from={1.1} to={1.24} panX={-20}
+      <VideoSprite src="assets/mbemba.mp4" start={S} dur={51.5} from={1.1} to={1.24} panX={-20}
         dim={0.72} style={{ filter: 'brightness(0.24) saturate(0.6) contrast(1.12) grayscale(0.4)' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
       <AmbientParticles start={S} dur={51.5} count={28} color="0,127,255" maxR={4} />
@@ -243,15 +243,15 @@ function SceneIvory() {
       ]} />
       {/* line beats: 108 European champions, 116 Bruno/Bernardo/Leão/Dias, 127 Ronaldo */}
       <Sprite start={108.0} end={116.0}>
-        <KenBurns src="assets/player-dias.png" start={108} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/stadium.mp4" start={108} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={108.4} name="EUROPEAN CHAMPIONS" role="Euro 2016 · still chasing" line="Kings of Europe a decade ago — but a World Cup has always slipped through their fingers." accent={MV.civ} />
       </Sprite>
       <Sprite start={116.0} end={127.0}>
-        <KenBurns src="assets/player-bruno.png" start={116} dur={11} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/bruno.mp4" start={116} dur={11} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={116.4} name="BRUNO · BERNARDO · LEÃO · DIAS" role="The Golden Generation" line="Bruno unlocks any door, Bernardo brings the silk, Leão the pace — and Dias, a wall in dark red." accent={MV.civ} />
       </Sprite>
       <Sprite start={127.0} end={134.0}>
-        <KenBurns src="assets/player-ronaldo.png" start={127} dur={7} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/ronaldo.mp4" start={127} dur={7} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={127.3} name="CRISTIANO RONALDO" role="41 · Sixth & final World Cup" line="One last time. The one trophy the greatest goalscorer alive has never lifted." accent={MV.civGreen} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -284,15 +284,15 @@ function SceneEcuador() {
       ]} />
       {/* line beats: 134 header, 140 Wissa/Bakambu, 150 Mbemba, 160 Silas/Masuaku */}
       <Sprite start={140.0} end={150.0}>
-        <KenBurns src="assets/player-wissa.png" start={140} dur={10} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/wissa.mp4" start={140} dur={10} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={140.3} name="WISSA · BAKAMBU" role="The Front Line" line="Wissa is sharp and fearless; Bakambu has scored on almost every continent he's played." accent={MV.ecu} />
       </Sprite>
       <Sprite start={150.0} end={160.0}>
-        <KenBurns src="assets/player-mbemba.png" start={150} dur={10} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/mbemba.mp4" start={150} dur={10} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={150.3} name="CHANCEL MBEMBA" role="The Captain · Defence" line="Marshals the back — a leader who has tamed strikers across Europe." accent={MV.ecu} />
       </Sprite>
       <Sprite start={160.0} end={169.5}>
-        <KenBurns src="assets/player-silas.png" start={160} dur={9.5} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/stadium.mp4" start={160} dur={9.5} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={160.3} name="SILAS · MASUAKU" role="Speed & Steel" line="Silas carries it forward, Masuaku gives them grit. A young team with an old, proud soul." accent={MV.ecuBlue} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -310,7 +310,7 @@ function SceneDuel() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
-        <img src="assets/player-ronaldo.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <VideoSprite src="assets/ronaldo.mp4" start={0} dur={300} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(170,21,27,0.4), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE CHASE
@@ -318,7 +318,7 @@ function SceneDuel() {
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * 100}%)` }}>
-        <img src="assets/player-wissa.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
+        <VideoSprite src="assets/wissa.mp4" start={0} dur={300} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(0,127,255,0.42), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE PRIDE
@@ -355,12 +355,12 @@ function SceneDrama() {
   const S = 188.5;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <KenBurns src="assets/player-leao.png" start={S} dur={20} from={1.1} to={1.26} panX={-30} dim={0.18} />
+      <VideoSprite src="assets/leao.mp4" start={S} dur={20} from={1.1} to={1.26} panX={-30} dim={0.18} />
       <Sprite start={S + 16} end={S + 30}>
-        <KenBurns src="assets/player-wissa.png" start={S + 16} dur={14} from={1.08} to={1.22} panX={20} dim={0.16} />
+        <VideoSprite src="assets/wissa.mp4" start={S + 16} dur={14} from={1.08} to={1.22} panX={20} dim={0.16} />
       </Sprite>
       <Sprite start={S + 30} end={S + 55}>
-        <KenBurns src="assets/player-ronaldo.png" start={S + 30} dur={25} from={1.08} to={1.24} panX={-20} dim={0.16} />
+        <VideoSprite src="assets/ronaldo.mp4" start={S + 30} dur={25} from={1.08} to={1.24} panX={-20} dim={0.16} />
       </Sprite>
       {/* OUR PREDICTION watermark — REAL-RESULTS-ONLY rule */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
@@ -472,7 +472,7 @@ function SceneMystery() {
   const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
-      <KenBurns src="assets/player-mbemba.png" start={S} dur={20} from={1.16} to={1.3} panY={-20}
+      <VideoSprite src="assets/mystery.mp4" start={S} dur={20} from={1.16} to={1.3} panY={-20}
         dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.12) saturate(0.95) grayscale(0.4)' }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,

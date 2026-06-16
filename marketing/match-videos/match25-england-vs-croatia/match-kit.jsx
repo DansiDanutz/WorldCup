@@ -31,6 +31,33 @@ const MV = {
 window.__pendingVideoSeeks = 0;
 window.__videosSettled = () => window.__pendingVideoSeeks === 0;
 
+function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0, rate = 1 }) {
+  const t = useTime();
+  const ref = React.useRef(null);
+  const local = t - start;
+  const visible = local >= 0 && local < dur;
+  React.useEffect(() => {
+    const v = ref.current;
+    if (!v || !visible) return;
+    const clipDur = (isFinite(v.duration) && v.duration > 0.2) ? v.duration : 5;
+    const target = Math.min((local * rate) % clipDur, clipDur - 0.07);
+    if (!v.paused) v.pause();
+    if (Math.abs(v.currentTime - target) > 1 / 60) {
+      window.__pendingVideoSeeks++;
+      let done = false;
+      const settle = () => { if (!done) { done = true; window.__pendingVideoSeeks--; } };
+      const onSeeked = () => { if (v.requestVideoFrameCallback) { v.requestVideoFrameCallback(() => settle()); setTimeout(settle, 90); } else setTimeout(settle, 60); };
+      v.addEventListener('seeked', onSeeked, { once: true });
+      v.addEventListener('error', settle, { once: true });
+      setTimeout(settle, 1200);
+      v.currentTime = Math.max(0, target);
+    }
+  }, [local, visible]);
+  if (!visible) return null;
+  return (<video ref={ref} src={src} muted playsInline preload="auto" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: fit, filter: dim ? `brightness(${1 - dim})` : 'none', ...style }} />);
+}
+function ClipSprite({ id, ...rest }) { const c = (window.MV_CLIPS || []).find((x) => x.id === id); if (!c) return null; return <VideoSprite src={c.src} start={c.at} dur={c.dur} rate={c.rate || 1} {...rest} />; }
+
 // ── Ken Burns still (the workhorse of this episode) ──────────────────────────
 function KenBurns({ src, start, dur, from = 1.0, to = 1.12, panX = 0, panY = 0, dim = 0, fit = 'cover', style = {} }) {
   const t = useTime();
