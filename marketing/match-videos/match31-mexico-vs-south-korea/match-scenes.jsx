@@ -305,7 +305,7 @@ function SceneJordan() {
       </Sprite>
       <Sprite start={187.0} end={195.0}>
         <VideoSprite src="assets/hwang-hee-chan-act.mp4" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={187.3} name="LEE KANG-IN" role="The Maestro" accent={MV.jorGreen} />
+        <LowerThird start={187.3} name="HWANG HEE-CHAN" role="The Power" accent={MV.jorGreen} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
