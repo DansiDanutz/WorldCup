@@ -203,3 +203,26 @@ science, YouTube×FIFA WC2026 live-window. Apply to Ep33+ and retro where free.
 **Keep (research-validated):** verified mystery+history hook, ≥48h premiere into the
 WC live-window, Brian VO, clip-based no-repeat animation, soccer-only, ~5-min
 chronological format, Shorts 2–4/day + worldcup26.world funnel.
+
+## EP33+ ENHANCEMENT SET (ADDITIVE — never remove what already works)
+
+Apply FROM Ep33. These are layered ON TOP of the gold standard (Brian VO, clip-based
+no-repeat animation, NO subtitles, verified mystery+history hook, soccer-only, recap
+chain, ~5 min, chronological). Do NOT drop any of those.
+
+NEW, non-destructive additions:
+1. SPEED-RAMP CLIMAX — the winning goal plays slow-mo (rate ~0.4, dread) then SNAPS to
+   1.0 on the net ripple + a GoalFlash. (Ep6 technique, standardised.)
+2. OPEN-LOOP TEASE CHIP (~0:22–0:30) — small gold chip "LEGEND 0NN · STAY TO THE END"
+   foregrounding the Mystery Supporter as a retention loop; paid off at the reveal.
+3. REAL NEXT-FIXTURE END CARD — outro names the actual next match ("NEXT: A vs B") +
+   an "All Episodes" autoplay nudge (drives binge/session watch time).
+4. "PREDICT THE SCORE" engagement chip at the prediction beat (≤4 words, NOT a sentence).
+5. GOAL SFX RISERS — a riser/whoosh into each GoalFlash + a crowd swell (clips.json sfx).
+6. CINEMATIC GRADE PULSE — subtle film-grain + vignette breathe on the drama act only.
+7. THUMBNAIL A/B — generate a phone vs no-phone variant per episode; promote the
+   higher-CTR one in Studio (our own data favours the phone — test, don't assume).
+
+Build + TEST each in the Ep33 render before standardising; if a technique hurts
+clarity or the no-subtitles rule, drop that one (not the whole set). Log CTR/retention
+deltas here after 48h so the set stays evidence-led.
