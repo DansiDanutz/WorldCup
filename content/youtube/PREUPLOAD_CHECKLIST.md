@@ -33,3 +33,23 @@
 
 ## ⏱️ After 48h
 - [ ] Log views **+ retention %** in `SERIES_PLAYBOOK.md`; tick the row in `PREMIERE_CALENDAR.md`; note what worked.
+
+## MONETIZATION-SAFETY CHECKLIST (run for EVERY video — demonetization guard)
+
+Upload-time (YOU set these in YouTube Studio — biggest levers):
+- [ ] **"No, it's not made for kids"** (Pixar style is high-risk if mis-set — disables
+      fan funding + personalised features). MANDATORY every video.
+- [ ] **Altered/synthetic-content (AI) disclosure** = Yes.
+- [ ] Title/description have **no** prize/betting/"win money" wording.
+
+In-video (baked in — verified in source):
+- [x] App/leaderboard shows **free-game points ("N× PER GOAL")**, NOT betting odds
+      (no "coef"/decimal "x2.10"). Reframed Jun 2026.
+- [x] VO + footer say **"free to play, just for fun, no prizes."**
+- [x] Music = **Kevin MacLeod (incompetech) CC-BY 4.0**, credited in description.
+- [x] **All visuals AI-generated** (no copyrighted match footage / logos / broadcast).
+- [x] **Original** — no-repeat clips (not "reused/repetitious content").
+- [x] **Real-results-only** — scorelines labelled OUR PREDICTION.
+- [x] No profanity, no graphic violence, soccer-only (no gambling/NFL imagery).
+
+Re-render trigger: if any in-video item fails, fix source + re-render before upload.
