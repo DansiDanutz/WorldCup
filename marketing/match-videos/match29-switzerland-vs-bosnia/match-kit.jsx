@@ -12,14 +12,14 @@ const MV = {
   muted: '#93a0b4',
   gold: '#ffd24a',
   goldDeep: '#c9942e',
-  // Austria — heirs of the Wunderteam: red / white
-  aut: '#ed2939',
-  autSoft: '#ff5a66',
-  // Jordan — Al-Nashama, the Brave Ones: red / black / green / white
-  jor: '#ce1126',
-  jorGreen: '#007a3d',
-  jorRed: '#ce1126',
-  green: '#106b4f',
+  // Switzerland — the Nati: red / white
+  aut: '#d52b1e',
+  autSoft: '#ff6a5e',
+  // Bosnia & Herzegovina — the Dragons: blue / yellow / white
+  jor: '#002395',
+  jorGreen: '#fecb00',
+  jorRed: '#002395',
+  green: '#1763a8',
   line: 'rgba(255,255,255,0.14)',
 };
 
@@ -95,13 +95,23 @@ function Vignette({ strength = 0.55 }) {
 
 // ── Flags (pure CSS approximations, crisp at any size) ───────────────────────
 // Austria: three horizontal bands — red / white / red.
-function FlagAUT({ w = 120 }) {
-  const h = w * 2 / 3;
+function FlagSUI({ w = 120 }) {
+  const s = w * 0.7;
   return (
-    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
-      <div style={{ flex: 1, background: '#ed2939' }} />
-      <div style={{ flex: 1, background: '#fff' }} />
-      <div style={{ flex: 1, background: '#ed2939' }} />
+    <div style={{ width: s, height: s, borderRadius: w * 0.04, position: 'relative', overflow: 'hidden', background: '#d52b1e', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: s * 0.2, height: s * 0.62, background: '#fff' }} />
+      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: s * 0.62, height: s * 0.2, background: '#fff' }} />
+    </div>
+  );
+}
+function FlagBIH({ w = 120 }) {
+  const h = w / 2;
+  return (
+    <div style={{ width: w, height: h, borderRadius: w * 0.04, position: 'relative', overflow: 'hidden', background: '#002395', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ position: 'absolute', left: w * 0.28, top: -h * 0.12, width: 0, height: 0, borderLeft: `${h * 1.05}px solid transparent`, borderTop: `${h * 1.24}px solid #fecb00` }} />
+      {[0.06, 0.24, 0.42, 0.6, 0.78].map((t, i) => (
+        <span key={i} style={{ position: 'absolute', left: w * (0.16 + t * 0.13), top: h * (t - 0.06), fontSize: h * 0.2, color: '#fff' }}>★</span>
+      ))}
     </div>
   );
 }
@@ -185,9 +195,9 @@ function ScoreBug({ start, aut = 0, jor = 0, minute }) {
       background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 14,
       boxShadow: '0 10px 36px rgba(0,0,0,0.5)', overflow: 'hidden',
     }}>
-      <div style={{ ...cell, background: MV.aut, color: '#fff' }}>AUT</div>
+      <div style={{ ...cell, background: MV.aut, color: '#fff' }}>SUI</div>
       <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{aut} — {jor}</div>
-      <div style={{ ...cell, background: MV.jor, color: '#fff' }}>JOR</div>
+      <div style={{ ...cell, background: MV.jor, color: '#fff' }}>BIH</div>
       {minute && <div style={{ ...cell, fontSize: 26, color: MV.muted, borderLeft: `1px solid ${MV.line}` }}>{minute}</div>}
     </div>
   );
