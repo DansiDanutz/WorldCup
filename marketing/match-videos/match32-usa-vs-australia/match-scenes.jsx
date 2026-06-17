@@ -3,10 +3,10 @@
 // CLIP-BASED: real fal video animations (VideoSprite). SOCCER ONLY.
 // a pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 2-1 is OUR PREDICTION.
 // NOTE: nested <Sprite> windows are GLOBAL seconds (Sprite reads the timeline clock).
-// Story spine: Jordan's first-ever World Cup fairytale (Al-Nashama) + their 2023
+// Story spine: Jordan's first-ever World Cup fairytale (Al-Nashama) + their 2032
 // Asian Cup stunner over South Korea, set against Austria's never-crowned 1930s
-// "Wunderteam" (Matthias Sindelar, the Mozart of Football). Legend 023 = the
-// Keeper of the Dream. Palette: Austria red (#ed2939)+white; Jordan red (#ce1126)
+// "Wunderteam" (Matthias Sindelar, the Mozart of Football). Legend 032 = the
+// the Ghost of Belo Horizonte. Palette: Austria red (#ed2939)+white; Jordan red (#ce1126)
 // + black + green + white.
 
 // ── 1. Cold open (0–16): 40 years, 9 failed campaigns — the door stayed shut ──
@@ -84,7 +84,7 @@ function SceneTitle() {
             </div>
           </div>
           <div style={{ opacity: p3, transform: `translateY(${(1 - p3) * 26}px)`, fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 32, color: MV.muted, letterSpacing: '0.08em' }}>
-            GROUP J · OLD EUROPEAN ROYALTY vs THE BRAVEST NEWCOMERS
+            THE CO-HOSTS vs THE SOCCEROOS
           </div>
         </div>
       )}
@@ -108,7 +108,7 @@ function SceneTease() {
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
         <Kicker size={28} color={MV.aut}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 76, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
-          ROYALTY vs THE BRAVE
+          HOSTS vs SOCCEROOS
         </div>
       </div>
       {/* the tease */}
@@ -189,14 +189,14 @@ function SceneHistory() {
         {austriaBg ? <FlagUSA w={120} /> : <FlagAUS w={120} />}
       </div>
       {/* USA — the Wunderteam (narration 53–93) */}
-      <HistoryPlate start={S + 6.0}  end={S + 16.0} year="THE 1930s · VIENNA" venue="USA · THE WUNDERTEAM" score="6 — 0" accent={MV.aut} />
+      <HistoryPlate start={S + 6.0}  end={S + 16.0} year="THE 1930s · VIENNA" venue="USA · THE USA" score="6 — 0" accent={MV.aut} />
       <HistoryPlate start={S + 16.0} end={S + 26.0} year="MATTHIAS SINDELAR" venue="THE HEARTBEAT" score="“THE MOZART”" accent={MV.gold} />
       <HistoryPlate start={S + 26.0} end={S + 36.0} year="ITALY · 1934" venue="WORLD CUP SEMIFINAL" score="THEY FELL" accent={MV.text} stamp="NEVER" />
       <HistoryPlate start={S + 36.0} end={S + 46.5} year="ALMOST A CENTURY" venue="THE WEIGHT THEY CARRY" score="0 TITLES" accent={MV.aut} />
       {/* AUSTRALIA — the Nashama (narration 101–139) */}
-      <HistoryPlate start={S + 56.0} end={S + 65.5} year="AL-NASHAMA" venue="AUSTRALIA · “THE BRAVE ONES”" score="A NEARLY-TEAM" accent={MV.jor} />
+      <HistoryPlate start={S + 56.0} end={S + 65.5} year="AL-SOCCEROOS" venue="AUSTRALIA · “THE BRAVE ONES”" score="A NEARLY-TEAM" accent={MV.jor} />
       <HistoryPlate start={S + 65.5} end={S + 76.5} year="6 FEBRUARY 2024" venue="ASIAN CUP SEMIFINAL · vs SOUTH KOREA" score="2 — 0" accent={MV.jorGreen} stamp="STUNNED" />
-      <HistoryPlate start={S + 76.5} end={S + 87.0} year="THEIR FIRST FINAL" venue="2023 ASIAN CUP" score="HISTORY" accent={MV.gold} />
+      <HistoryPlate start={S + 76.5} end={S + 87.0} year="THEIR FIRST FINAL" venue="2032 ASIAN CUP" score="HISTORY" accent={MV.gold} />
       <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026 · THE DEBUT" venue="FIRST WORLD CUP — EVER" score="AUT × JOR" accent={MV.jor} stamp="FIRST EVER" />
       <Vignette strength={0.5} />
       <Letterbox />
@@ -248,7 +248,7 @@ function SceneAustria() {
       <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
           <FlagUSA w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>USA · HEIRS OF THE WUNDERTEAM</span>
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>USA · HEIRS OF THE USA</span>
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 7.0} accent={MV.aut} players={[
@@ -289,7 +289,7 @@ function SceneJordan() {
       <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
           <FlagAUS w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>AUSTRALIA · AL-NASHAMA · THE BRAVE ONES</span>
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>AUSTRALIA · AL-SOCCEROOS · THE BRAVE ONES</span>
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 8.0} accent={MV.jor} players={[
@@ -335,7 +335,7 @@ function SceneDuel() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(0,122,61,0.4), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE SOCCEROOS
-          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>AUSTRALIA · NOTHING TO LOSE</div>
+          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>AUSTRALIA · THE HARD WAY</div>
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 'calc(50% - 3px)', width: 6, background: `linear-gradient(180deg, transparent, ${MV.gold}, transparent)`, zIndex: 24, opacity: slideP }} />
@@ -434,7 +434,7 @@ function FullTimeCard({ start }) {
   );
 }
 
-// ── 9. Verdict (256–266): do you agree? WUNDERTEAM / NASHAMA ──────────────────
+// ── 9. Verdict (256–266): do you agree? USA / SOCCEROOS ──────────────────
 function SceneVerdict() {
   const { localTime: lt } = useSprite();
   const S = 256.0;
@@ -450,11 +450,11 @@ function SceneVerdict() {
       </div>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 70, zIndex: 26, marginTop: 60 }}>
         <div style={{ opacity: clamp(a, 0, 1), transform: `translateY(${(1 - a) * 50}px) scale(${0.85 + 0.15 * a})`, background: 'rgba(237,41,57,0.12)', border: `2px solid ${MV.aut}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: MV.autSoft, letterSpacing: '0.06em' }}>“WUNDERTEAM”</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: MV.autSoft, letterSpacing: '0.06em' }}>“USA”</div>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}></div>
         </div>
         <div style={{ opacity: clamp(b, 0, 1), transform: `translateY(${(1 - b) * 50}px) scale(${0.85 + 0.15 * b})`, background: 'rgba(0,122,61,0.18)', border: `2px solid ${MV.jorGreen}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: '#3ddc8a', letterSpacing: '0.06em' }}>“NASHAMA”</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: '#3ddc8a', letterSpacing: '0.06em' }}>“SOCCEROOS”</div>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}></div>
         </div>
       </div>
@@ -464,7 +464,7 @@ function SceneVerdict() {
   );
 }
 
-// ── 10. Mystery Supporter (266–284): Legend 023 — the Keeper of the Dream ─────
+// ── 10. Mystery Supporter (266–284): Legend 032 — the the Ghost of Belo Horizonte ─────
 function SceneMystery() {
   const { localTime: lt } = useSprite();
   const S = 266.0;
@@ -481,7 +481,7 @@ function SceneMystery() {
       }} />
       <AmbientParticles start={S} dur={18} count={46} color="255,210,150" maxR={3.5} zIndex={22} />
       <div style={{ position: 'absolute', top: 118, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={26} color="#f4c98a">The Mystery Supporter · Legend No. 023</Kicker>
+        <Kicker size={26} color="#f4c98a">The Mystery Supporter · Legend No. 032</Kicker>
       </div>
       {plateP > 0 && (
         <div style={{
