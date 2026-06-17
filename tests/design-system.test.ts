@@ -533,8 +533,8 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /const missingEntryTicket =/);
     assert.match(dashboard, /const entryDraftBlocker = getEntryDraftBlocker/);
     assert.match(dashboard, /const entryLockBlocker = getEntryLockBlocker/);
-    assert.match(dashboard, /const entryActionBlocker = hasEntryTicket \? entryLockBlocker : entryDraftBlocker/);
-    assert.match(dashboard, /const entryActionLabel = hasEntryTicket/);
+    assert.match(dashboard, /const entryActionBlocker = funMode \? entryDraftBlocker : hasEntryTicket \? entryLockBlocker : entryDraftBlocker/);
+    assert.match(dashboard, /const entryActionLabel = funMode/);
     assert.match(dashboard, /const entryLockHint =/);
     assert.match(dashboard, /Ticket is ready\. \$\{entryLockBlocker\}/);
     assert.match(dashboard, /selectedTeams\.length === 3 && !hasEntryTicket/);

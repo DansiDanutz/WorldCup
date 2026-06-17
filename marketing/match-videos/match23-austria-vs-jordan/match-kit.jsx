@@ -37,7 +37,10 @@ function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0, rate
     const v = ref.current;
     if (!v || !visible) return;
     const clipDur = (isFinite(v.duration) && v.duration > 0.2) ? v.duration : 5;
-    const target = Math.min((local * rate) % clipDur, clipDur - 0.07);
+    // NO-REPEAT: stretch each clip to play once across its window (slight slow-mo),
+    // clamped at the end — never loop the same animation (CLAUDE.md #11).
+    const autoRate = Math.min(rate, (clipDur - 0.1) / Math.max(dur, 0.1));
+    const target = Math.min(local * autoRate, clipDur - 0.07);
     if (!v.paused) v.pause();
     if (Math.abs(v.currentTime - target) > 1 / 60) {
       window.__pendingVideoSeeks++;

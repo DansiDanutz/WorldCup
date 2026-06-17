@@ -53,7 +53,7 @@ function SceneTitle() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, #0a0f1c 0%, #11182b 55%, #0a0f1c 100%)` }}>
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(170,21,27,0.12) 0%, transparent 55%)` }} />
-      <VideoSprite src="assets/mystery.mp4" start={16} dur={14} dim={0.55} fit="cover" style={{ filter: "brightness(0.7) saturate(1.05)" }} />
+      <VideoSprite src="assets/fans-away2.mp4" start={16} dur={14} dim={0.55} fit="cover" style={{ filter: "brightness(0.7) saturate(1.05)" }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(7,10,18,0.45), rgba(7,10,18,0.78))" }} />
       <AmbientParticles start={16} dur={12} count={34} color="0,127,255" />
       {/* RECAP — OUR PREDICTION from Ep23 (never stated as a real result) */}
@@ -99,7 +99,7 @@ function SceneTease() {
   const b = Easing.easeOutBack(clamp((lt - 8.5) / 1.0, 0, 1)) * Math.max(0, Math.min(1, (18.0 - lt) / 1.0));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <VideoSprite src="assets/stadium.mp4" start={30} dur={20} dim={0.42} fit="cover" />
+      <VideoSprite src="assets/stadium-wide.mp4" start={30} dur={20} dim={0.42} fit="cover" />
       <Vignette strength={0.5} />
       <AmbientParticles start={28} dur={18.5} count={26} color="247,214,24" />
       {/* the chase headline */}
@@ -162,7 +162,7 @@ function SceneHistory() {
   const S = 46.5;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <VideoSprite src="assets/mbemba.mp4" start={S} dur={51.5} from={1.1} to={1.24} panX={-20}
+      <VideoSprite src="assets/chancel-mbemba-act.mp4" start={S} dur={51.5} from={1.1} to={1.24} panX={-20}
         dim={0.72} style={{ filter: 'brightness(0.24) saturate(0.6) contrast(1.12) grayscale(0.4)' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
       <AmbientParticles start={S} dur={51.5} count={28} color="0,127,255" maxR={4} />
@@ -245,15 +245,15 @@ function SceneIvory() {
       ]} />
       {/* line beats: 108 European champions, 116 Bruno/Bernardo/Leão/Dias, 127 Ronaldo */}
       <Sprite start={108.0} end={116.0}>
-        <VideoSprite src="assets/stadium.mp4" start={108} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/stadium-night.mp4" start={108} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={108.4} name="EUROPEAN CHAMPIONS" role="Euro 2016 · still chasing" accent={MV.civ} />
       </Sprite>
       <Sprite start={116.0} end={127.0}>
-        <VideoSprite src="assets/bruno.mp4" start={116} dur={11} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/brunofernandes-act.mp4" start={116} dur={11} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={116.4} name="BRUNO · BERNARDO · LEÃO · DIAS" role="The Golden Generation" accent={MV.civ} />
       </Sprite>
       <Sprite start={127.0} end={134.0}>
-        <VideoSprite src="assets/ronaldo.mp4" start={127} dur={7} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/cristianoronaldo-act.mp4" start={127} dur={7} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={127.3} name="CRISTIANO RONALDO" role="41 · Sixth & final World Cup" accent={MV.civGreen} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -286,15 +286,15 @@ function SceneEcuador() {
       ]} />
       {/* line beats: 134 header, 140 Wissa/Bakambu, 150 Mbemba, 160 Silas/Masuaku */}
       <Sprite start={140.0} end={150.0}>
-        <VideoSprite src="assets/wissa.mp4" start={140} dur={10} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/silas-katompa-act.mp4" start={140} dur={10} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={140.3} name="WISSA · BAKAMBU" role="The Front Line" accent={MV.ecu} />
       </Sprite>
       <Sprite start={150.0} end={160.0}>
-        <VideoSprite src="assets/mbemba.mp4" start={150} dur={10} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/chancel-mbemba-cel.mp4" start={150} dur={10} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={150.3} name="CHANCEL MBEMBA" role="The Captain · Defence" accent={MV.ecu} />
       </Sprite>
       <Sprite start={160.0} end={169.5}>
-        <VideoSprite src="assets/stadium.mp4" start={160} dur={9.5} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/fans-por-joy.mp4" start={160} dur={9.5} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={160.3} name="SILAS · MASUAKU" role="Speed & Steel" accent={MV.ecuBlue} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -312,7 +312,7 @@ function SceneDuel() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
-        <VideoSprite src="assets/ronaldo.mp4" start={0} dur={300} fit="cover" />
+        <VideoSprite src="assets/cristianoronaldo-cel.mp4" start={169.5} dur={19} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(170,21,27,0.4), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE CHASE
@@ -320,7 +320,7 @@ function SceneDuel() {
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * 100}%)` }}>
-        <VideoSprite src="assets/wissa.mp4" start={0} dur={300} fit="cover" />
+        <VideoSprite src="assets/cedric-bakambu-act.mp4" start={169.5} dur={19} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(0,127,255,0.42), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE PRIDE
@@ -355,12 +355,12 @@ function SceneDrama() {
   const S = 188.5;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <VideoSprite src="assets/leao.mp4" start={S} dur={20} from={1.1} to={1.26} panX={-30} dim={0.18} />
+      <VideoSprite src="assets/rafaelleao-act.mp4" start={S} dur={20} from={1.1} to={1.26} panX={-30} dim={0.18} />
       <Sprite start={S + 16} end={S + 30}>
-        <VideoSprite src="assets/wissa.mp4" start={S + 16} dur={14} from={1.08} to={1.22} panX={20} dim={0.16} />
+        <VideoSprite src="assets/arthur-masuaku-act.mp4" start={S + 16} dur={14} from={1.08} to={1.22} panX={20} dim={0.16} />
       </Sprite>
       <Sprite start={S + 30} end={S + 55}>
-        <VideoSprite src="assets/ronaldo.mp4" start={S + 30} dur={25} from={1.08} to={1.24} panX={-20} dim={0.16} />
+        <VideoSprite src="assets/rubendias-act.mp4" start={S + 30} dur={25} from={1.08} to={1.24} panX={-20} dim={0.16} />
       </Sprite>
       {/* OUR PREDICTION watermark — REAL-RESULTS-ONLY rule */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
@@ -472,7 +472,7 @@ function SceneMystery() {
   const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
-      <VideoSprite src="assets/mystery.mp4" start={S} dur={20} from={1.16} to={1.3} panY={-20}
+      <VideoSprite src="assets/mystery2.mp4" start={S} dur={20} from={1.16} to={1.3} panY={-20}
         dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.12) saturate(0.95) grayscale(0.4)' }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,

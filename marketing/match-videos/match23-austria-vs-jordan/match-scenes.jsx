@@ -55,7 +55,7 @@ function SceneTitle() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, #0a0f1c 0%, #11182b 55%, #0a0f1c 100%)` }}>
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(206,17,38,0.10) 0%, transparent 55%)` }} />
-      <VideoSprite src="assets/mystery.mp4" start={16} dur={14} dim={0.55} fit="cover" style={{ filter: "brightness(0.7) saturate(1.05)" }} />
+      <VideoSprite src="assets/fans-away2.mp4" start={16} dur={14} dim={0.55} fit="cover" style={{ filter: "brightness(0.7) saturate(1.05)" }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(7,10,18,0.45), rgba(7,10,18,0.78))" }} />
       <AmbientParticles start={16} dur={12} count={34} color="237,41,57" />
       {/* RECAP — OUR PREDICTION from Ep22 (never stated as a real result) */}
@@ -101,7 +101,7 @@ function SceneTease() {
   const b = Easing.easeOutBack(clamp((lt - 14.0) / 1.0, 0, 1)) * Math.max(0, Math.min(1, (18.5 - lt) / 0.8));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
-      <VideoSprite src="assets/stadium.mp4" start={30} dur={20} dim={0.42} fit="cover" />
+      <VideoSprite src="assets/stadium-wide.mp4" start={30} dur={20} dim={0.42} fit="cover" />
       <Vignette strength={0.5} />
       <AmbientParticles start={28} dur={18.5} count={26} color="255,209,0" />
       {/* royalty vs newcomers headline */}
@@ -169,10 +169,10 @@ function SceneHistory() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
       {austriaBg ? (
-        <VideoSprite src="assets/alaba.mp4" start={S} dur={54.5} from={1.1} to={1.24} panX={-20}
+        <VideoSprite src="assets/david-alaba-act.mp4" start={S} dur={54.5} from={1.1} to={1.24} panX={-20}
           dim={0.72} style={{ filter: 'brightness(0.24) saturate(0.7) contrast(1.1) grayscale(0.35)' }} />
       ) : (
-        <VideoSprite src="assets/naimat.mp4" start={101} dur={49} from={1.1} to={1.24} panX={20}
+        <VideoSprite src="assets/yazan-al-naimat-act.mp4" start={101} dur={49} from={1.1} to={1.24} panX={20}
           dim={0.72} style={{ filter: 'brightness(0.26) saturate(0.85) contrast(1.1) grayscale(0.18)' }} />
       )}
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
@@ -260,15 +260,15 @@ function SceneAustria() {
       ]} />
       {/* line beats: 150 Alaba, 160 Sabitzer/Laimer/Baumgartner, 170 Arnautovic */}
       <Sprite start={150.0} end={160.0}>
-        <VideoSprite src="assets/alaba.mp4" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/david-alaba-cel.mp4" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={150.4} name="DAVID ALABA" role="Captain · Defender" accent={MV.aut} />
       </Sprite>
       <Sprite start={160.0} end={170.0}>
-        <VideoSprite src="assets/sabitzer.mp4" start={160} dur={10} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/marcel-sabitzer-act.mp4" start={160} dur={10} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={160.4} name="SABITZER · LAIMER · BAUMGARTNER" role="The Midfield" accent={MV.aut} />
       </Sprite>
       <Sprite start={170.0} end={178.0}>
-        <VideoSprite src="assets/arnautovic.mp4" start={170} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/marko-arnautovic-act.mp4" start={170} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={170.3} name="MARKO ARNAUTOVIĆ" role="The Old Fox · Striker" accent={MV.autSoft} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -301,11 +301,11 @@ function SceneJordan() {
       ]} />
       {/* line beats: 178 Al-Tamari, 187 Al-Naimat */}
       <Sprite start={178.0} end={187.0}>
-        <VideoSprite src="assets/stadium.mp4" start={178} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/stadium-night.mp4" start={178} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={178.3} name="MUSA AL-TAMARI" role="The Spark · Winger" accent={MV.jor} />
       </Sprite>
       <Sprite start={187.0} end={195.0}>
-        <VideoSprite src="assets/naimat.mp4" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/yazan-al-naimat-cel.mp4" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={187.3} name="YAZAN AL-NAIMAT" role="The Finisher · Striker" accent={MV.jorGreen} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -323,7 +323,7 @@ function SceneDuel() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
-        <VideoSprite src="assets/alaba.mp4" start={0} dur={300} fit="cover" />
+        <VideoSprite src="assets/konrad-laimer-act.mp4" start={195} dur={18.5} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(237,41,57,0.34), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE PEDIGREE
@@ -331,7 +331,7 @@ function SceneDuel() {
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * 100}%)` }}>
-        <VideoSprite src="assets/stadium.mp4" start={0} dur={300} fit="cover" />
+        <VideoSprite src="assets/aut-fans.mp4" start={195} dur={18.5} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(0,122,61,0.4), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
           THE FEARLESS
@@ -366,12 +366,12 @@ function SceneDrama() {
   const S = 213.0;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <VideoSprite src="assets/stadium.mp4" start={S} dur={19} from={1.1} to={1.28} panX={-30} dim={0.18} />
+      <VideoSprite src="assets/fans-aus-joy.mp4" start={S} dur={19} from={1.1} to={1.28} panX={-30} dim={0.18} />
       <Sprite start={224} end={236}>
-        <VideoSprite src="assets/naimat.mp4" start={224} dur={12} from={1.08} to={1.24} panX={20} dim={0.16} />
+        <VideoSprite src="assets/musa-al-taamari-act.mp4" start={224} dur={12} from={1.08} to={1.24} panX={20} dim={0.16} />
       </Sprite>
       <Sprite start={236} end={247}>
-        <VideoSprite src="assets/alaba.mp4" start={236} dur={11} from={1.08} to={1.22} panX={-18} dim={0.16} />
+        <VideoSprite src="assets/christoph-baumgartner-act.mp4" start={236} dur={11} from={1.08} to={1.22} panX={-18} dim={0.16} />
       </Sprite>
       {/* OUR PREDICTION watermark — REAL-RESULTS-ONLY rule */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
@@ -472,7 +472,7 @@ function SceneMystery() {
   const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
-      <VideoSprite src="assets/mystery.mp4" start={S} dur={18} from={1.16} to={1.3} panY={-20}
+      <VideoSprite src="assets/mystery2.mp4" start={S} dur={18} from={1.16} to={1.3} panY={-20}
         dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.1) saturate(1.0) grayscale(0.28)' }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,

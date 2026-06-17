@@ -136,7 +136,14 @@ Non-negotiables distilled from channel data (details in the playbook):
       re-render. A render showing any sentence on screen is REJECTED — re-do it.
 11. **CLIP-BASED ONLY — REAL HIGGSFIELD ANIMATIONS, NEVER STILLS (hard rule, NO
     EXCEPTIONS, NO "SIMPLIFY"):** EVERY episode is built from real Higgsfield
-    VIDEO clips. `clips.json` `clips[]` is **always non-empty (≈25–34 clips)** and
+    VIDEO clips. **NO-REPEAT RULE (hard, owner-mandated): every clip plays at most
+    ONCE in a video — NEVER reuse the same animation file twice, and NEVER stretch a
+    short clip across a long window so it visibly loops. A 5-min (300s) video needs
+    ~33 DISTINCT clips (one per narration beat, ~8–10s each). If you don't have
+    enough unique clips, GENERATE more (distinct shots/poses/emotions, Lukaku-film
+    method in the worldcup-episode skill) — do NOT loop. Before rendering, grep the
+    scene file: no `src=` value may appear more than once.**
+    `clips.json` `clips[]` is **always non-empty (≈25–34 clips)** and
     covers **both teams' star players (animated), fans/ultras, the stadium, and the
     animated Mystery Supporter(s)** — supporters and the story are the SUBJECT, not
     a photo slideshow. Gold standard = **Ep2 & Ep6**; the next episode matches them

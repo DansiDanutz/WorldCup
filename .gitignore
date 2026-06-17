@@ -70,3 +70,9 @@ marketing/player-films/*/assets/*.mp4
 marketing/player-films/*/music/*.mp3
 marketing/player-films/*/*.mp4
 marketing/player-films/*/audio_master.m4a
+
+# Episode render/mux artifacts (ephemeral, regenerable — never track)
+marketing/**/frames/
+marketing/**/filter.txt
+marketing/**/audio_master.*
+marketing/**/*.log

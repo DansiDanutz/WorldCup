@@ -7,6 +7,7 @@ const deploymentDocs = readFileSync("docs/DEPLOYMENT.md", "utf8");
 const cronDocs = readFileSync("docs/CRON.md", "utf8");
 const resultsRoute = readFileSync("src/app/api/cron/results/route.ts", "utf8");
 const applyRoute = readFileSync("src/app/api/cron/apply/route.ts", "utf8");
+const resultsSweep = readFileSync("src/lib/run-results.ts", "utf8");
 
 describe("cron routes", () => {
   it("keeps Vercel scheduled cron endpoints present in source", () => {
@@ -30,14 +31,18 @@ describe("cron routes", () => {
   });
 
   it("keeps result ingestion isolated and point-awarding durable", () => {
-    assert.match(resultsRoute, /worldcup_matches_due_for_result_check/);
-    assert.match(resultsRoute, /fetchExternalResult/);
-    assert.match(resultsRoute, /worldcup_mark_match_result_checked/);
-    assert.match(resultsRoute, /worldcup_apply_match_points/);
-    assert.match(resultsRoute, /applied_existing_result/);
-    assert.match(resultsRoute, /fetched_result_and_applied/);
-    assert.match(resultsRoute, /action: "error"/);
-    assert.match(resultsRoute, /advanceBracket/);
+    // The cron route is a thin authorized wrapper; the durable ingestion +
+    // point-awarding sweep lives in the shared lib so the admin "Run results
+    // now" button and the scheduled cron share one code path.
+    assert.match(resultsRoute, /runResultsSweep/);
+    assert.match(resultsSweep, /worldcup_matches_due_for_result_check/);
+    assert.match(resultsSweep, /fetchExternalResult/);
+    assert.match(resultsSweep, /worldcup_mark_match_result_checked/);
+    assert.match(resultsSweep, /worldcup_apply_match_points/);
+    assert.match(resultsSweep, /applied_existing_result/);
+    assert.match(resultsSweep, /fetched_result_and_applied/);
+    assert.match(resultsSweep, /action: "error"/);
+    assert.match(resultsSweep, /advanceBracket/);
   });
 
   it("keeps the apply endpoint available as a scheduled backstop", () => {
