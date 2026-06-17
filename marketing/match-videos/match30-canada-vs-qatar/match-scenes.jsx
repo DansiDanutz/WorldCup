@@ -190,7 +190,7 @@ function SceneHistory() {
       {/* CANADA — the risers (narration 53–93) */}
       <HistoryPlate start={S + 6.0}  end={S + 16.0} year="1986 · ZERO GOALS" venue="CANADA · MEXICO 86" score="0 — 0 — 0" accent={MV.aut} />
       <HistoryPlate start={S + 16.0} end={S + 26.0} year="36 YEARS AWAY" venue="THE LONG WAIT" score="36 YEARS" accent={MV.gold} />
-      <HistoryPlate start={S + 26.0} end={S + 36.0} year="DAVIES · 68 SECONDS" venue="THE FASTEST GOAL" score="68 SEC" accent={MV.text} stamp="LIFTOFF" />
+      <HistoryPlate start={S + 26.0} end={S + 36.0} year="DAVIES · 68 SECONDS" venue="CANADA'S FIRST GOAL" score="68 SEC" accent={MV.text} stamp="LIFTOFF" />
       <HistoryPlate start={S + 36.0} end={S + 46.5} year="2026 CO-HOSTS" venue="HOME SOIL" score="THE RISERS" accent={MV.aut} />
       {/* QATAR — the champions (narration 101–139) */}
       <HistoryPlate start={S + 56.0} end={S + 65.5} year="2022 HOST" venue="QATAR · THE CHAMPIONS" score="WORST HOST EVER" accent={MV.jor} />
