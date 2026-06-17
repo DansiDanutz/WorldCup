@@ -1,13 +1,12 @@
-// match-scenes.jsx — the twelve scenes of the Match 23 video (300s timeline).
-// Scene windows must match the SCENES table in match.html and narration.json.
-// CLIP-BASED: real fal video animations (VideoSprite). SOCCER ONLY.
-// a pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 2-1 is OUR PREDICTION.
+// match-scenes.jsx — the twelve scenes of the Episode 31 Mexico vs South Korea
+// video (300s timeline). Scene windows must match the SCENES table in match.html
+// and narration.json. CLIP-BASED: real fal video animations (VideoSprite).
+// SOCCER ONLY. A pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 2-1 is
+// OUR PREDICTION.
 // NOTE: nested <Sprite> windows are GLOBAL seconds (Sprite reads the timeline clock).
-// Story spine: Jordan's first-ever World Cup fairytale (Al-Nashama) + their 2031
-// Asian Cup stunner over South Korea, set against Austria's never-crowned 1930s
-// "Wunderteam" (Matthias Sindelar, the Mozart of Football). Legend 031 = the
-// the Ghost of the Champions. Palette: Austria red (#ed2939)+white; Jordan red (#ce1126)
-// + black + green + white.
+// Story spine: Mexico the three-time hosts (1970 · 1986 · 2026, Ochoa's 6th WC)
+// against South Korea, the best of Asia (2002 semi-final, beat Germany 2018).
+// Legend 031 = the Ghost of the Champions. Palette: Mexico green/red; Korea red.
 
 // ── 1. Cold open (0–16): 40 years, 9 failed campaigns — the door stayed shut ──
 function SceneColdOpen() {
@@ -17,10 +16,10 @@ function SceneColdOpen() {
   const titleP = Easing.easeOutCubic(clamp((lt - 12.3) / 1.4, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      {/* a Jordan star — Al-Tamari as the symbol of the dream (dark, dramatic) */}
+      {/* a Korea star — the mystery silhouette (dark, dramatic) */}
       <VideoSprite src="assets/mystery2.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
         dim={0.28} style={{ filter: 'brightness(0.72) contrast(1.18) saturate(1.05) grayscale(0)' }} />
-      {/* ember base in Jordan red so the screen never reads as dead air */}
+      {/* ember base in red so the screen never reads as dead air */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 78%, rgba(206,17,38,0.18) 0%, transparent 55%)` }} />
       {/* heartbeat glow */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at center, rgba(206,17,38,${(0.5 * beat).toFixed(3)}) 0%, transparent 62%)` }} />
@@ -97,7 +96,7 @@ function SceneTitle() {
 function SceneTease() {
   const { localTime: lt } = useSprite();
   const a = Easing.easeOutCubic(clamp((lt - 0.4) / 1.0, 0, 1));
-  // second beat (~44 global → lt ~16): "the story of how Jordan got here is a fairytale"
+  // second beat (~44 global → lt ~16): the underdog-clash tease
   const b = Easing.easeOutBack(clamp((lt - 14.0) / 1.0, 0, 1)) * Math.max(0, Math.min(1, (18.5 - lt) / 0.8));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
@@ -125,7 +124,7 @@ function SceneTease() {
   );
 }
 
-// ── 4. History (46.5–150): the Wunderteam + Jordan's Asian Cup + first WC ─────
+// ── 4. History (46.5–150): Mexico the hosts + South Korea, best of Asia ─────
 function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, stamp }) {
   const t = useTime();
   if (t < start || t > end) return null;
@@ -163,8 +162,8 @@ function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, 
 function SceneHistory() {
   const S = 46.5;
   const t = useTime();
-  // Background switches from an Austria-tinted plate (Wunderteam era) to a
-  // Jordan-tinted one when the narration pivots to the Nashama (~lt 54 → t≈101).
+  // Background switches from a Mexico-tinted plate to a Korea-tinted one when the
+  // narration pivots to South Korea (~lt 54 → t≈101).
   const austriaBg = t < 101;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
@@ -236,7 +235,7 @@ function SquadGrid({ start, end, players, accent }) {
   );
 }
 
-// ── 5. Austria (150–178): heirs of the Wunderteam ────────────────────────────
+// ── 5. Mexico (150–178): the three-time hosts ────────────────────────────
 function SceneAustria() {
   const { localTime: lt } = useSprite();
   const S = 150.0;
@@ -258,7 +257,7 @@ function SceneAustria() {
         { clip: 'assets/guillermo-ochoa.mp4', img: 'assets/squad/mex-4-Ochoa.png', name: 'OCHOA', role: '6TH WORLD CUP' },
         { clip: 'assets/orbelin-pineda.mp4', img: 'assets/squad/mex-5-Pineda.png', name: 'ORBELÍN PINEDA', role: 'THE CREATOR' },
       ]} />
-      {/* line beats: 150 Alaba, 160 Sabitzer/Laimer/Baumgartner, 170 Arnautovic */}
+      {/* line beats: 150 Lozano, 160 Álvarez, 170 Pineda */}
       <Sprite start={150.0} end={160.0}>
         <VideoSprite src="assets/hirving-lozano-cel.mp4" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={150.4} name="HIRVING LOZANO" role="Winger" accent={MV.aut} />
@@ -464,7 +463,7 @@ function SceneVerdict() {
   );
 }
 
-// ── 10. Mystery Supporter (266–284): Legend 031 — the the Ghost of the Champions ─────
+// ── 10. Mystery Supporter (266–284): Legend 031 — the Ghost of the Champions ─────
 function SceneMystery() {
   const { localTime: lt } = useSprite();
   const S = 266.0;
