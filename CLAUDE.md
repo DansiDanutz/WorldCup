@@ -36,6 +36,32 @@ watch-hours velocity won't reach 3,000h within ~60–90 days → escalate (more
 premieres, higher-retention/longer episodes, heavier organic distribution) or
 shift effort to the Shorts-views path. Never keep doing what isn't moving the KPI.
 
+## ⛔ MONETIZATION-SAFETY (HARD RULE #0 — overrides everything; never ship a video that fails this)
+
+The whole point is to monetize. A single demonetization-trigger can void the channel.
+Treat these as non-negotiable on EVERY video, Short, thumbnail, title, description and
+tag — check and re-check before every render and every upload (see
+`content/youtube/PREUPLOAD_CHECKLIST.md`):
+
+1. **NO gambling / betting look.** Never show odds, decimal "coefficients" (x2.10),
+   bookmaker styling, "bet/stake/wager/win money". The prediction game is shown ONLY as
+   free-game points (e.g. "N× PER GOAL") and always labelled **"free to play · just for
+   fun · no prizes"**. No prize/cash/jackpot wording anywhere.
+2. **Made for kids = NO** at upload (Pixar style auto-flags as kids and silently kills
+   fan funding). MANDATORY every upload.
+3. **AI / altered-content disclosure = YES** at upload.
+4. **Music = cleared only** (Kevin MacLeod / incompetech CC-BY 4.0), credited in the
+   description. Never uncleared/copyrighted audio.
+5. **100% AI-generated visuals** — never real match footage, broadcast clips, club/FIFA
+   logos, or copyrighted images.
+6. **Original, non-repetitious** — the no-repeat clip rule (#11) also protects against
+   "reused content" demonetization. Every clip once.
+7. **Real-results-only** — scorelines are OUR PREDICTION, never stated as fact (#7).
+8. No profanity, no graphic violence, SOCCER-ONLY imagery.
+
+If any item fails: fix the source and re-render BEFORE delivery/upload. When in doubt,
+remove the risky element — monetization safety beats every other consideration.
+
 ## YouTube series: WorldCup26 Legends (MANDATORY reading before any video work)
 
 Before producing, editing, or advising on ANY episode of the match-video series,
