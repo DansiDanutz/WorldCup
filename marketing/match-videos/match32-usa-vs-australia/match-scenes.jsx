@@ -1,13 +1,13 @@
-// match-scenes.jsx — the twelve scenes of the Match 23 video (300s timeline).
+// match-scenes.jsx — the twelve scenes of the Episode 32 USA vs Australia video (300s timeline).
 // Scene windows must match the SCENES table in match.html and narration.json.
 // CLIP-BASED: real fal video animations (VideoSprite). SOCCER ONLY.
 // a pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 2-1 is OUR PREDICTION.
 // NOTE: nested <Sprite> windows are GLOBAL seconds (Sprite reads the timeline clock).
-// Story spine: Jordan's first-ever World Cup fairytale (Al-Nashama) + their 2032
-// Asian Cup stunner over South Korea, set against Austria's never-crowned 1930s
-// "Wunderteam" (Matthias Sindelar, the Mozart of Football). Legend 032 = the
-// the Ghost of Belo Horizonte. Palette: Austria red (#ed2939)+white; Jordan red (#ce1126)
-// + black + green + white.
+// Story spine: the USA's 1950 "Miracle on Grass" (beating England 1-0, Gaetjens'
+// goal at Belo Horizonte) and 2026 co-host pedigree, set against Australia's
+// Socceroos — 32 years away, back via Aloisi's 2005 penalty and the 2022 Round
+// of 16. Legend 032 = the Ghost of Belo Horizonte. Palette: USA red+white+blue;
+// Australia green + gold.
 
 // ── 1. Cold open (0–16): 40 years, 9 failed campaigns — the door stayed shut ──
 function SceneColdOpen() {
