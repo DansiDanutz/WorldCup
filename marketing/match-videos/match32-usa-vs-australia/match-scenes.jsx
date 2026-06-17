@@ -510,9 +510,9 @@ function SceneApp() {
   const S = 284.0;
   const inP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const cards = [
-    { name: 'USA', coef: 'x2.10', pts: '+2.10', flag: <FlagUSA w={86} />, hot: true },
-    { name: 'AUSTRALIA', coef: 'x3.00', pts: 'UNDERDOG', flag: <FlagAUS w={86} />, hot: true },
-    { name: 'BRAZIL', coef: 'x1.20', pts: '+0.00', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
+    { name: 'USA', coef: '2× PER GOAL', pts: 'TOP PICK', flag: <FlagUSA w={86} />, hot: true },
+    { name: 'AUSTRALIA', coef: '3× PER GOAL', pts: 'UNDERDOG', flag: <FlagAUS w={86} />, hot: true },
+    { name: 'BRAZIL', coef: '1× PER GOAL', pts: '', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
   ];
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(160deg, #0d2a20 0%, #07090f 70%)` }}>
