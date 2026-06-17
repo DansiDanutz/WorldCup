@@ -338,6 +338,45 @@
       "sub": "SWITZERLAND vs BOSNIA",
       "awayImg": "content/images/Bosnia_and_Herzegovina/Edin-Dzeko.png",
       "awayName": "DŽEKO"
+    },
+    {
+      "ep": 30,
+      "dir": "match30-canada-vs-qatar",
+      "img": "content/images/Canada/Alphonso-Davies.png",
+      "name": "DAVIES",
+      "hook": "TWO HOSTS<br>TWO CURSES",
+      "face": "CAN",
+      "away": "QAT",
+      "marquee": "CAN",
+      "sub": "CANADA vs QATAR",
+      "awayImg": "content/images/Qatar/Akram-Afif.png",
+      "awayName": "AFIF"
+    },
+    {
+      "ep": 31,
+      "dir": "match31-mexico-vs-south-korea",
+      "img": "content/images/South_Korea/Son-Heung-min.png",
+      "name": "SON",
+      "hook": "THEY KILLED<br>THE CHAMPIONS",
+      "face": "KOR",
+      "away": "MEX",
+      "marquee": "KOR",
+      "sub": "MEXICO vs SOUTH KOREA",
+      "awayImg": "content/images/Mexico/Hirving-Lozano.png",
+      "awayName": "LOZANO"
+    },
+    {
+      "ep": 32,
+      "dir": "match32-usa-vs-australia",
+      "img": "content/images/USA/Christian-Pulisic.png",
+      "name": "PULISIC",
+      "hook": "THE MIRACLE<br>ON GRASS",
+      "face": "USA",
+      "away": "AUS",
+      "marquee": "USA",
+      "sub": "USA vs AUSTRALIA",
+      "awayImg": "content/images/Australia/HarrySouttar.png",
+      "awayName": "SOUTTAR"
     }
   ]
 }
