@@ -34,7 +34,7 @@ function SceneColdOpen() {
       {lt > 12.3 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30, opacity: titleP, zIndex: 22 }}>
           <Kicker size={32} color="#f4d9bf">A true story</Kicker>
-          <TitleReveal text="TONIGHT THE DOOR OPENS" start={12.4} size={96} color={MV.jor} />
+          <TitleReveal text="ONE KICK FROM HISTORY" start={12.4} size={92} color={MV.gold} />
         </div>
       )}
       <Letterbox />
@@ -60,7 +60,7 @@ function SceneTitle() {
       {recapP > 0.01 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22, opacity: recapP }}>
           <Kicker size={26} color={MV.muted}>Last time · our prediction</Kicker>
-          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>IRAQ 1 — 1 NORWAY</BigTitle>
+          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>ENGLAND 2 — 1 CROATIA</BigTitle>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}></div>
         </div>
       )}
@@ -68,7 +68,7 @@ function SceneTitle() {
       {lt >= 9.5 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 40 }}>
           <div style={{ opacity: p1, transform: `translateY(${(1 - p1) * -30}px)` }}>
-            <Kicker color={MV.aut}>WorldCup26 Legends · Episode 23</Kicker>
+            <Kicker color={MV.aut}>WorldCup26 Legends · Episode 26</Kicker>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 70, opacity: clamp(p2, 0, 1), transform: `scale(${p2})` }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
@@ -106,7 +106,7 @@ function SceneTease() {
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
         <Kicker size={28} color={MV.aut}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 76, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
-          ROYALTY vs THE BRAVE
+          GIANTS vs DREAMERS
         </div>
       </div>
       {/* the tease */}
@@ -192,7 +192,7 @@ function SceneHistory() {
       <HistoryPlate start={S + 26.0} end={S + 36.0} year="SOCCER CITY · 2010" venue="WORLD CUP QUARTERFINAL" score="SO CLOSE" accent={MV.text} stamp="NEVER" />
       <HistoryPlate start={S + 36.0} end={S + 46.5} year="THE NEARLY-MEN" venue="THE WEIGHT THEY CARRY" score="120th MINUTE" accent={MV.aut} />
       {/* PANAMA — Los Canaleros (narration 101–139) */}
-      <HistoryPlate start={S + 56.0} end={S + 65.5} year="LOS CANALEROS" venue="PANAMA · “THE BRAVE ONES”" score="A NEARLY-TEAM" accent={MV.jor} />
+      <HistoryPlate start={S + 56.0} end={S + 65.5} year="LOS CANALEROS" venue="PANAMA · THE CANAL MEN" score="A NEARLY-TEAM" accent={MV.jor} />
       <HistoryPlate start={S + 65.5} end={S + 76.5} year="FIRST EVER · 2018" venue="A NATIONAL HOLIDAY" score="HISTORY" accent={MV.jorGreen} stamp="STUNNED" />
       <HistoryPlate start={S + 76.5} end={S + 87.0} year="A NATIONAL HOLIDAY" venue="LOS CANALEROS" score="HISTORY" accent={MV.gold} />
       <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026 · SECOND DREAM" venue="FIRST EVER · 2018" score="GHA × PAN" accent={MV.jor} stamp="FIRST EVER" />
@@ -287,7 +287,7 @@ function SceneJordan() {
       <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
           <FlagPAN w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>PANAMA · LOS CANALEROS · THE BRAVE ONES</span>
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>PANAMA · LOS CANALEROS</span>
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 8.0} accent={MV.jor} players={[
