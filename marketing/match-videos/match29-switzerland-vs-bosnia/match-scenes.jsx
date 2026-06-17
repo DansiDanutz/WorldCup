@@ -36,7 +36,7 @@ function SceneColdOpen() {
       {lt > 12.3 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30, opacity: titleP, zIndex: 22 }}>
           <Kicker size={32} color="#f4d9bf">A true story</Kicker>
-          <TitleReveal text="TONIGHT THE DOOR OPENS" start={12.4} size={96} color={MV.jor} />
+          <TitleReveal text="BORN FROM THE SAME WAR" start={12.4} size={84} color={MV.gold} />
         </div>
       )}
       <Letterbox />
@@ -62,7 +62,7 @@ function SceneTitle() {
       {recapP > 0.01 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22, opacity: recapP }}>
           <Kicker size={26} color={MV.muted}>Last time · our prediction</Kicker>
-          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>IRAQ 1 — 1 NORWAY</BigTitle>
+          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>CZECHIA 1 — 1 SOUTH AFRICA</BigTitle>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}></div>
         </div>
       )}
@@ -70,7 +70,7 @@ function SceneTitle() {
       {lt >= 9.5 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 40 }}>
           <div style={{ opacity: p1, transform: `translateY(${(1 - p1) * -30}px)` }}>
-            <Kicker color={MV.aut}>WorldCup26 Legends · Episode 23</Kicker>
+            <Kicker color={MV.aut}>WorldCup26 Legends · Episode 29</Kicker>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 70, opacity: clamp(p2, 0, 1), transform: `scale(${p2})` }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
@@ -84,7 +84,7 @@ function SceneTitle() {
             </div>
           </div>
           <div style={{ opacity: p3, transform: `translateY(${(1 - p3) * 26}px)`, fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 32, color: MV.muted, letterSpacing: '0.08em' }}>
-            GROUP J · THE NATI vs THE DRAGONS
+            THE NATI vs THE DRAGONS
           </div>
         </div>
       )}
@@ -197,7 +197,7 @@ function SceneHistory() {
       <HistoryPlate start={S + 56.0} end={S + 65.5} year="THE DRAGONS" venue="BOSNIA" score="BORN FROM WAR" accent={MV.jor} />
       <HistoryPlate start={S + 65.5} end={S + 76.5} year="BRAZIL · 2014" venue="THEIR DEBUT" score="ONE WORLD CUP" accent={MV.jorGreen} stamp="FIRST" />
       <HistoryPlate start={S + 76.5} end={S + 87.0} year="EDIN DŽEKO" venue="THE CAPTAIN" score="THE DIAMOND" accent={MV.gold} />
-      <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026" venue="SUI × BIH" score="THE DRAGONS" accent={MV.jor} stamp="GROUP J" />
+      <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026" venue="SUI × BIH" score="THE DRAGONS" accent={MV.jor} stamp="ONE WORLD CUP" />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>

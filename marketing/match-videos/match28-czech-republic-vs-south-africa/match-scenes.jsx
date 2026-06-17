@@ -36,7 +36,7 @@ function SceneColdOpen() {
       {lt > 12.3 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30, opacity: titleP, zIndex: 22 }}>
           <Kicker size={32} color="#f4d9bf">A true story</Kicker>
-          <TitleReveal text="TONIGHT THE DOOR OPENS" start={12.4} size={96} color={MV.jor} />
+          <TitleReveal text="THE PENALTY HE NAMED" start={12.4} size={88} color={MV.gold} />
         </div>
       )}
       <Letterbox />
@@ -62,7 +62,7 @@ function SceneTitle() {
       {recapP > 0.01 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22, opacity: recapP }}>
           <Kicker size={26} color={MV.muted}>Last time · our prediction</Kicker>
-          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>IRAQ 1 — 1 NORWAY</BigTitle>
+          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>COLOMBIA 2 — 1 UZBEKISTAN</BigTitle>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}></div>
         </div>
       )}
@@ -84,7 +84,7 @@ function SceneTitle() {
             </div>
           </div>
           <div style={{ opacity: p3, transform: `translateY(${(1 - p3) * 26}px)`, fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 32, color: MV.muted, letterSpacing: '0.08em' }}>
-            GROUP J · OLD EUROPEAN ROYALTY vs THE BRAVEST NEWCOMERS
+            THE INVENTORS vs THE HOSTS
           </div>
         </div>
       )}
@@ -108,7 +108,7 @@ function SceneTease() {
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
         <Kicker size={28} color={MV.aut}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 76, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
-          ROYALTY vs THE BRAVE
+          CRAFT vs SOUL
         </div>
       </div>
       {/* the tease */}
