@@ -92,7 +92,7 @@ function SceneTitle() {
   );
 }
 
-// ── 3. Tease (28–46.5): royalty vs newcomers + "the great fairytale" ─────────
+// ── 3. Tease (28–46.5): hosts vs Asia + "the great clash" ─────────
 function SceneTease() {
   const { localTime: lt } = useSprite();
   const a = Easing.easeOutCubic(clamp((lt - 0.4) / 1.0, 0, 1));
@@ -103,7 +103,7 @@ function SceneTease() {
       <VideoSprite src="assets/stadium-wide.mp4" start={30} dur={20} dim={0.42} fit="cover" />
       <Vignette strength={0.5} />
       <AmbientParticles start={28} dur={18.5} count={26} color="255,209,0" />
-      {/* royalty vs newcomers headline */}
+      {/* hosts vs Asia headline */}
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
         <Kicker size={28} color={MV.aut}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 76, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
@@ -276,7 +276,7 @@ function SceneAustria() {
   );
 }
 
-// ── 6. Jordan (178–195): Al-Tamari & Al-Naimat ───────────────────────────────
+// ── 6. South Korea (178–195): Son & Lee Kang-in ───────────────────────────────
 function SceneJordan() {
   const { localTime: lt } = useSprite();
   const S = 178.0;
@@ -298,7 +298,7 @@ function SceneJordan() {
         { clip: 'assets/hwang-hee-chan.mp4', img: 'assets/squad/kor-4-HwangH.png', name: 'HWANG HEE-CHAN', role: 'THE POWER' },
         { clip: 'assets/hwang-in-beom.mp4', img: 'assets/squad/kor-5-HwangI.png', name: 'HWANG IN-BEOM', role: 'THE ENGINE' },
       ]} />
-      {/* line beats: 178 Al-Tamari, 187 Al-Naimat */}
+      {/* line beats: 178 Son, 187 Lee Kang-in */}
       <Sprite start={178.0} end={187.0}>
         <VideoSprite src="assets/stadium-night.mp4" start={178} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
         <LowerThird start={178.3} name="SON HEUNG-MIN" role="Captain · Star" accent={MV.jor} />
@@ -357,9 +357,9 @@ function SceneDuel() {
   );
 }
 
-// ── 8. Match drama (213–256): OUR PREDICTION Austria 2-1 Jordan ──────────────
-// Sabitzer→Baumgartner (1-0, ~221). Al-Tamari→Al-Naimat answers (1-1, ~232.5).
-// Alaba climbs at a corner for the winner (2-1, ~244). Full-time = OUR PREDICTION.
+// ── 8. Match drama (213–256): OUR PREDICTION Mexico 2-1 South Korea ──────────────
+// Giménez opens (1-0, ~221). Son answers for Korea (1-1, ~232.5).
+// Lozano grabs the winner (2-1, ~244). Full-time = OUR PREDICTION.
 function SceneDrama() {
   const { localTime: lt } = useSprite();
   const S = 213.0;
@@ -377,7 +377,7 @@ function SceneDrama() {
         <Kicker size={24} color={MV.gold}>Our Prediction · Our Story</Kicker>
       </div>
 
-      {/* 0-0 until Austria's opener (~221, lt 8) */}
+      {/* 0-0 until Mexico's opener (~221, lt 8) */}
       <Sprite start={213.0} end={221.0}>
         <ScoreBug start={S + 0.4} aut={0} jor={0} minute="1st half" />
       </Sprite>
@@ -386,13 +386,13 @@ function SceneDrama() {
       <Sprite start={221.0} end={232.5}>
         <ScoreBug start={S + 8.0} aut={1} jor={0} minute="GIMÉNEZ" />
       </Sprite>
-      {/* Jordan equalise (~232.5, lt 19.5) */}
+      {/* South Korea equalise (~232.5, lt 19.5) */}
       <GoalFlash at={S + 19.5} color={MV.jor} />
       <Confetti start={S + 19.7} dur={11} colors={[MV.jor, '#fff', MV.jorGreen, '#000']} />
       <Sprite start={232.5} end={244.0}>
         <ScoreBug start={S + 19.5} aut={1} jor={1} minute="SON" />
       </Sprite>
-      {/* Austria winner (~244, lt 31) */}
+      {/* Mexico winner (~244, lt 31) */}
       <GoalFlash at={S + 31.0} color={MV.aut} />
       <Confetti start={S + 31.2} dur={11} colors={[MV.aut, '#fff', MV.gold]} />
       <Sprite start={244.0} end={250.0}>
