@@ -243,3 +243,28 @@ Lukaku film (`marketing/player-films/lukaku-the-promise/`).
 Next.js app (src/, Supabase, Vercel). The series always advertises
 **worldcup26.world** (pick 3 teams, **free to play for fun** — climb the
 leaderboard, no prizes; never promise money or prizes).
+
+## PRODUCTION PROCESS (mandatory — never render twice for a missed requirement)
+
+**Scaffold a new episode COMPLETELY before anything else.** Copy ALL of these from a
+known-good clip-based episode (gold = match06; recent no-repeat = match26), not a subset:
+`match-kit.jsx, animations.jsx, match.html, render.mjs, serve.mjs, mux.mjs, package.json,
+gen_audio.mjs, clips.json` **AND the `music/` folder (4 cue mp3s)**, plus `node_modules`
+(symlink ok). Then add per-episode: `narration.json`, VO `audio/line_NN.mp3` (gen_audio),
+team clips in `assets/`, squad photos in `assets/squad/`, flags/colours/score-codes in
+match-kit, and the de-duped `match-scenes.jsx`.
+
+**PREFLIGHT GATE — RUN BEFORE EVERY RENDER. No exceptions.** Render only via
+`bash scripts/render-episode.sh <port> <epNum> <dir> <outfile>` which first runs
+`scripts/preflight-episode.mjs`. It FAILS the render if any of these are not met:
+VO complete (one mp3 per line), **music cue files present**, every clip/squad src exists,
+**no clip used twice** (no-repeat), no leftover template text (Wunderteam/Nashama/FlagAUT…),
+correct on-screen episode number, **no betting/odds wording** (monetization), **no
+`line=`/`note=` subtitles**, balanced JS syntax. A render that starts with a red preflight
+is a process failure — fix first.
+
+**Ep33+ PERFECTION BAR (owner-mandated):** everything must be right the first time —
+story, verified mystery+history, Brian VO, music, image/animation quality, no-repeat
+clips, monetization-safety. Enhancements are ADDED on top of the gold standard, never
+replacing what already works (see SERIES_PLAYBOOK "EP33+ ENHANCEMENT SET"). Preflight +
+the playbook checklists are the guardrails; use them every time.

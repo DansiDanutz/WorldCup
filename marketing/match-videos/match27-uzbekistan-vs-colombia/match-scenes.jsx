@@ -509,9 +509,9 @@ function SceneApp() {
   const S = 284.0;
   const inP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const cards = [
-    { name: 'UZBEKISTAN', coef: '2× PER GOAL', pts: 'TOP PICK', flag: <FlagUZB w={86} />, hot: true },
-    { name: 'COLOMBIA', coef: '3× PER GOAL', pts: 'UNDERDOG', flag: <FlagCOL w={86} />, hot: true },
-    { name: 'BRAZIL', coef: '1× PER GOAL', pts: '', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
+    { name: 'UZBEKISTAN', mult: '2× PER GOAL', pts: 'TOP PICK', flag: <FlagUZB w={86} />, hot: true },
+    { name: 'COLOMBIA', mult: '3× PER GOAL', pts: 'UNDERDOG', flag: <FlagCOL w={86} />, hot: true },
+    { name: 'BRAZIL', mult: '1× PER GOAL', pts: '', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
   ];
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(160deg, #0d2a20 0%, #07090f 70%)` }}>
@@ -532,7 +532,7 @@ function SceneApp() {
               }}>
                 {c.flag}
                 <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 30, color: '#fff' }}>{c.name}</div>
-                <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 26, color: MV.gold }}>{c.coef}</div>
+                <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 26, color: MV.gold }}>{c.mult}</div>
                 <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 26, color: c.hot ? '#6ee7a8' : '#9fb2a9' }}>{c.pts}</div>
               </div>
             );
