@@ -197,9 +197,9 @@ function ScoreBug({ start, aut = 0, jor = 0, minute }) {
       background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 14,
       boxShadow: '0 10px 36px rgba(0,0,0,0.5)', overflow: 'hidden',
     }}>
-      <div style={{ ...cell, background: MV.aut, color: '#fff' }}>AUT</div>
+      <div style={{ ...cell, background: MV.aut, color: '#fff' }}>GHA</div>
       <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{aut} — {jor}</div>
-      <div style={{ ...cell, background: MV.jor, color: '#fff' }}>JOR</div>
+      <div style={{ ...cell, background: MV.jor, color: '#fff' }}>PAN</div>
       {minute && <div style={{ ...cell, fontSize: 26, color: MV.muted, borderLeft: `1px solid ${MV.line}` }}>{minute}</div>}
     </div>
   );

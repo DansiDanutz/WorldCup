@@ -12,14 +12,14 @@ const MV = {
   muted: '#93a0b4',
   gold: '#ffd24a',
   goldDeep: '#c9942e',
-  // Austria — heirs of the Wunderteam: red / white
-  aut: '#ed2939',
-  autSoft: '#ff5a66',
-  // Jordan — Al-Nashama, the Brave Ones: red / black / green / white
-  jor: '#ce1126',
-  jorGreen: '#007a3d',
+  // Uzbekistan — the White Wolves: blue / white / green
+  aut: '#0099b5',
+  autSoft: '#1eb53a',
+  // Colombia — Los Cafeteros: yellow / blue / red
+  jor: '#fcd116',
+  jorGreen: '#003893',
   jorRed: '#ce1126',
-  green: '#106b4f',
+  green: '#1eb53a',
   line: 'rgba(255,255,255,0.14)',
 };
 
@@ -95,13 +95,25 @@ function Vignette({ strength = 0.55 }) {
 
 // ── Flags (pure CSS approximations, crisp at any size) ───────────────────────
 // Austria: three horizontal bands — red / white / red.
-function FlagAUT({ w = 120 }) {
+function FlagUZB({ w = 120 }) {
   const h = w * 2 / 3;
   return (
     <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
-      <div style={{ flex: 1, background: '#ed2939' }} />
+      <div style={{ flex: 1, background: '#0099b5', position: 'relative' }}><div style={{ position: 'absolute', left: '12%', top: '50%', transform: 'translateY(-50%)', color: '#fff', fontSize: h * 0.26, lineHeight: 1 }}>☾</div></div>
+      <div style={{ height: '4%', background: '#ce1126' }} />
       <div style={{ flex: 1, background: '#fff' }} />
-      <div style={{ flex: 1, background: '#ed2939' }} />
+      <div style={{ height: '4%', background: '#ce1126' }} />
+      <div style={{ flex: 1, background: '#1eb53a' }} />
+    </div>
+  );
+}
+function FlagCOL({ w = 120 }) {
+  const h = w * 2 / 3;
+  return (
+    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ height: '50%', background: '#fcd116' }} />
+      <div style={{ height: '25%', background: '#003893' }} />
+      <div style={{ height: '25%', background: '#ce1126' }} />
     </div>
   );
 }
@@ -185,9 +197,9 @@ function ScoreBug({ start, aut = 0, jor = 0, minute }) {
       background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 14,
       boxShadow: '0 10px 36px rgba(0,0,0,0.5)', overflow: 'hidden',
     }}>
-      <div style={{ ...cell, background: MV.aut, color: '#fff' }}>AUT</div>
+      <div style={{ ...cell, background: MV.aut, color: '#fff' }}>UZB</div>
       <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{aut} — {jor}</div>
-      <div style={{ ...cell, background: MV.jor, color: '#fff' }}>JOR</div>
+      <div style={{ ...cell, background: MV.jor, color: '#fff' }}>COL</div>
       {minute && <div style={{ ...cell, fontSize: 26, color: MV.muted, borderLeft: `1px solid ${MV.line}` }}>{minute}</div>}
     </div>
   );
