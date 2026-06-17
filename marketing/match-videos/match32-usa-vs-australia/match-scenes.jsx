@@ -18,7 +18,7 @@ function SceneColdOpen() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
       {/* a Jordan star — Al-Tamari as the symbol of the dream (dark, dramatic) */}
-      <VideoSprite src="assets/mystery.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
+      <VideoSprite src="assets/mystery2.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
         dim={0.28} style={{ filter: 'brightness(0.72) contrast(1.18) saturate(1.05) grayscale(0)' }} />
       {/* ember base in Jordan red so the screen never reads as dead air */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 78%, rgba(206,17,38,0.18) 0%, transparent 55%)` }} />
@@ -36,7 +36,7 @@ function SceneColdOpen() {
       {lt > 12.3 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30, opacity: titleP, zIndex: 22 }}>
           <Kicker size={32} color="#f4d9bf">A true story</Kicker>
-          <TitleReveal text="TONIGHT THE DOOR OPENS" start={12.4} size={96} color={MV.jor} />
+          <TitleReveal text="THE MIRACLE ON GRASS" start={12.4} size={96} color={MV.jor} />
         </div>
       )}
       <Letterbox />
@@ -62,7 +62,7 @@ function SceneTitle() {
       {recapP > 0.01 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22, opacity: recapP }}>
           <Kicker size={26} color={MV.muted}>Last time · our prediction</Kicker>
-          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>IRAQ 1 — 1 NORWAY</BigTitle>
+          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>MEXICO 2 — 1 SOUTH KOREA</BigTitle>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}></div>
         </div>
       )}
@@ -70,17 +70,17 @@ function SceneTitle() {
       {lt >= 9.5 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 40 }}>
           <div style={{ opacity: p1, transform: `translateY(${(1 - p1) * -30}px)` }}>
-            <Kicker color={MV.aut}>WorldCup26 Legends · Episode 23</Kicker>
+            <Kicker color={MV.aut}>WorldCup26 Legends · Episode 32</Kicker>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 70, opacity: clamp(p2, 0, 1), transform: `scale(${p2})` }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-              <Waving><FlagAUT w={230} /></Waving>
-              <BigTitle size={62} glow={MV.aut}>AUSTRIA</BigTitle>
+              <Waving><FlagUSA w={230} /></Waving>
+              <BigTitle size={62} glow={MV.aut}>USA</BigTitle>
             </div>
             <BigTitle size={120} color={MV.gold}>VS</BigTitle>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-              <Waving speed={1.9}><FlagJOR w={230} /></Waving>
-              <BigTitle size={62} glow={MV.jor}>JORDAN</BigTitle>
+              <Waving speed={1.9}><FlagAUS w={230} /></Waving>
+              <BigTitle size={62} glow={MV.jor}>AUSTRALIA</BigTitle>
             </div>
           </div>
           <div style={{ opacity: p3, transform: `translateY(${(1 - p3) * 26}px)`, fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 32, color: MV.muted, letterSpacing: '0.08em' }}>
@@ -169,10 +169,10 @@ function SceneHistory() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
       {austriaBg ? (
-        <VideoSprite src="assets/david-alaba-act.mp4" start={S} dur={54.5} from={1.1} to={1.24} panX={-20}
+        <VideoSprite src="assets/christian-pulisic-act.mp4" start={S} dur={54.5} from={1.1} to={1.24} panX={-20}
           dim={0.72} style={{ filter: 'brightness(0.24) saturate(0.7) contrast(1.1) grayscale(0.35)' }} />
       ) : (
-        <VideoSprite src="assets/yazan-al-naimat-act.mp4" start={101} dur={49} from={1.1} to={1.24} panX={20}
+        <VideoSprite src="assets/jacksonirvine-act.mp4" start={101} dur={49} from={1.1} to={1.24} panX={20}
           dim={0.72} style={{ filter: 'brightness(0.26) saturate(0.85) contrast(1.1) grayscale(0.18)' }} />
       )}
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
@@ -186,15 +186,15 @@ function SceneHistory() {
       </div>
       {/* flag, always present, swaps with the story */}
       <div style={{ position: 'absolute', bottom: 124, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: 0.95 }}>
-        {austriaBg ? <FlagAUT w={120} /> : <FlagJOR w={120} />}
+        {austriaBg ? <FlagUSA w={120} /> : <FlagAUS w={120} />}
       </div>
-      {/* AUSTRIA — the Wunderteam (narration 53–93) */}
-      <HistoryPlate start={S + 6.0}  end={S + 16.0} year="THE 1930s · VIENNA" venue="AUSTRIA · THE WUNDERTEAM" score="6 — 0" accent={MV.aut} />
+      {/* USA — the Wunderteam (narration 53–93) */}
+      <HistoryPlate start={S + 6.0}  end={S + 16.0} year="THE 1930s · VIENNA" venue="USA · THE WUNDERTEAM" score="6 — 0" accent={MV.aut} />
       <HistoryPlate start={S + 16.0} end={S + 26.0} year="MATTHIAS SINDELAR" venue="THE HEARTBEAT" score="“THE MOZART”" accent={MV.gold} />
       <HistoryPlate start={S + 26.0} end={S + 36.0} year="ITALY · 1934" venue="WORLD CUP SEMIFINAL" score="THEY FELL" accent={MV.text} stamp="NEVER" />
       <HistoryPlate start={S + 36.0} end={S + 46.5} year="ALMOST A CENTURY" venue="THE WEIGHT THEY CARRY" score="0 TITLES" accent={MV.aut} />
-      {/* JORDAN — the Nashama (narration 101–139) */}
-      <HistoryPlate start={S + 56.0} end={S + 65.5} year="AL-NASHAMA" venue="JORDAN · “THE BRAVE ONES”" score="A NEARLY-TEAM" accent={MV.jor} />
+      {/* AUSTRALIA — the Nashama (narration 101–139) */}
+      <HistoryPlate start={S + 56.0} end={S + 65.5} year="AL-NASHAMA" venue="AUSTRALIA · “THE BRAVE ONES”" score="A NEARLY-TEAM" accent={MV.jor} />
       <HistoryPlate start={S + 65.5} end={S + 76.5} year="6 FEBRUARY 2024" venue="ASIAN CUP SEMIFINAL · vs SOUTH KOREA" score="2 — 0" accent={MV.jorGreen} stamp="STUNNED" />
       <HistoryPlate start={S + 76.5} end={S + 87.0} year="THEIR FIRST FINAL" venue="2023 ASIAN CUP" score="HISTORY" accent={MV.gold} />
       <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026 · THE DEBUT" venue="FIRST WORLD CUP — EVER" score="AUT × JOR" accent={MV.jor} stamp="FIRST EVER" />
@@ -247,28 +247,28 @@ function SceneAustria() {
       <div style={{ position: 'absolute', inset: 0, zIndex: 22, pointerEvents: 'none', background: `linear-gradient(90deg, rgba(237,41,57,0.22) 0%, transparent 30%, transparent 70%, rgba(255,255,255,0.10) 100%)` }} />
       <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
-          <FlagAUT w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>AUSTRIA · HEIRS OF THE WUNDERTEAM</span>
+          <FlagUSA w={74} />
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>USA · HEIRS OF THE WUNDERTEAM</span>
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 7.0} accent={MV.aut} players={[
-        { clip: 'assets/alaba.mp4', img: 'assets/squad/aut-1-Alaba.png',       name: 'DAVID ALABA',       role: 'CAPTAIN · DEFENDER' },
-        { clip: 'assets/sabitzer.mp4', img: 'assets/squad/aut-2-Sabitzer.png',    name: 'MARCEL SABITZER',   role: 'THE DRIVER' },
-        { clip: 'assets/laimer.mp4', img: 'assets/squad/aut-3-Laimer.png',      name: 'KONRAD LAIMER',     role: 'THE ENGINE' },
-        { clip: 'assets/baumgartner.mp4', img: 'assets/squad/aut-5-Baumgartner.png', name: 'C. BAUMGARTNER',    role: 'LATE RUNS' },
-        { clip: 'assets/arnautovic.mp4', img: 'assets/squad/aut-4-Arnautovic.png',  name: 'M. ARNAUTOVIĆ',     role: 'THE OLD FOX' },
+        { clip: 'assets/Christian-Pulisic.mp4', img: 'assets/squad/usa-1-Pulisic.png', name: 'PULISIC', role: 'CAPTAIN · WINGER' },
+        { clip: 'assets/Folarin-Balogun.mp4', img: 'assets/squad/usa-2-Balogun.png', name: 'BALOGUN', role: 'THE STRIKER' },
+        { clip: 'assets/Giovanni-Reyna.mp4', img: 'assets/squad/usa-3-Reyna.png', name: 'GIOVANNI REYNA', role: 'THE MAGIC' },
+        { clip: 'assets/Tyler-Adams.mp4', img: 'assets/squad/usa-4-Adams.png', name: 'TYLER ADAMS', role: 'THE ENGINE' },
+        { clip: 'assets/Weston-McKennie.mp4', img: 'assets/squad/usa-5-McKennie.png', name: 'McKENNIE', role: 'THE DRIVER' },
       ]} />
       {/* line beats: 150 Alaba, 160 Sabitzer/Laimer/Baumgartner, 170 Arnautovic */}
       <Sprite start={150.0} end={160.0}>
-        <VideoSprite src="assets/david-alaba-cel.mp4" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={150.4} name="DAVID ALABA" role="Captain · Defender" accent={MV.aut} />
+        <VideoSprite src="assets/christian-pulisic-cel.mp4" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <LowerThird start={150.4} name="DAVID BALOGUN" role="Captain · Defender" accent={MV.aut} />
       </Sprite>
       <Sprite start={160.0} end={170.0}>
-        <VideoSprite src="assets/marcel-sabitzer-act.mp4" start={160} dur={10} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/giovanni-reyna-act.mp4" start={160} dur={10} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={160.4} name="SABITZER · LAIMER · BAUMGARTNER" role="The Midfield" accent={MV.aut} />
       </Sprite>
       <Sprite start={170.0} end={178.0}>
-        <VideoSprite src="assets/marko-arnautovic-act.mp4" start={170} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <VideoSprite src="assets/tyler-adams-act.mp4" start={170} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
         <LowerThird start={170.3} name="MARKO ARNAUTOVIĆ" role="The Old Fox · Striker" accent={MV.autSoft} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -288,16 +288,16 @@ function SceneJordan() {
       <div style={{ position: 'absolute', inset: 0, zIndex: 22, pointerEvents: 'none', background: `linear-gradient(90deg, rgba(206,17,38,0.24) 0%, transparent 30%, transparent 70%, rgba(0,122,61,0.18) 100%)` }} />
       <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
-          <FlagJOR w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>JORDAN · AL-NASHAMA · THE BRAVE ONES</span>
+          <FlagAUS w={74} />
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>AUSTRALIA · AL-NASHAMA · THE BRAVE ONES</span>
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 8.0} accent={MV.jor} players={[
-        { clip: 'assets/taamari.mp4', img: 'assets/squad/jor-1-Tamari.png',   name: 'MUSA AL-TAMARI',    role: 'THE SPARK' },
-        { clip: 'assets/naimat.mp4', img: 'assets/squad/jor-2-Naimat.png',   name: 'YAZAN AL-NAIMAT',   role: 'THE FINISHER' },
-        { clip: 'assets/dardour.mp4', img: 'assets/squad/jor-3-Dardour.png',  name: 'H. AL-DARDOUR',     role: 'THE STRIKER' },
-        { clip: 'assets/rawabdeh.mp4', img: 'assets/squad/jor-4-Rawabdeh.png', name: 'N. AL-RAWABDEH',    role: 'THE RUNNER' },
-        { clip: 'assets/arab.mp4', img: 'assets/squad/jor-5-Arab.png',     name: 'YAZAN AL-ARAB',     role: 'THE WALL' },
+        { clip: 'assets/mathewryan.mp4', img: 'assets/squad/aus-1-Ryan.png', name: 'MAT RYAN', role: 'CAPTAIN · KEEPER' },
+        { clip: 'assets/harrysouttar.mp4', img: 'assets/squad/aus-2-Souttar.png', name: 'HARRY SOUTTAR', role: 'THE TOWER' },
+        { clip: 'assets/jacksonirvine.mp4', img: 'assets/squad/aus-3-Irvine.png', name: 'JACKSON IRVINE', role: 'THE ENGINE' },
+        { clip: 'assets/cristianvolpato.mp4', img: 'assets/squad/aus-4-Volpato.png', name: 'VOLPATO', role: 'THE SPARK' },
+        { clip: 'assets/nestoryirankunda.mp4', img: 'assets/squad/aus-5-Irankunda.png', name: 'IRANKUNDA', role: 'THE WINGER' },
       ]} />
       {/* line beats: 178 Al-Tamari, 187 Al-Naimat */}
       <Sprite start={178.0} end={187.0}>
@@ -305,8 +305,8 @@ function SceneJordan() {
         <LowerThird start={178.3} name="MUSA AL-TAMARI" role="The Spark · Winger" accent={MV.jor} />
       </Sprite>
       <Sprite start={187.0} end={195.0}>
-        <VideoSprite src="assets/yazan-al-naimat-cel.mp4" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={187.3} name="YAZAN AL-NAIMAT" role="The Finisher · Striker" accent={MV.jorGreen} />
+        <VideoSprite src="assets/nestoryirankunda-act.mp4" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <LowerThird start={187.3} name="YAZAN SOUTTAR" role="The Finisher · Striker" accent={MV.jorGreen} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -323,19 +323,19 @@ function SceneDuel() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
-        <VideoSprite src="assets/konrad-laimer-act.mp4" start={195} dur={18.5} fit="cover" />
+        <VideoSprite src="assets/folarin-balogun-act.mp4" start={195} dur={18.5} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(237,41,57,0.34), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
-          THE PEDIGREE
-          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>AUSTRIA · A CENTURY OF CLASS</div>
+          THE CO-HOSTS
+          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>USA · THE 1950 MIRACLE</div>
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * 100}%)` }}>
-        <VideoSprite src="assets/aut-fans.mp4" start={195} dur={18.5} fit="cover" />
+        <VideoSprite src="assets/fans-usa-anx.mp4" start={195} dur={18.5} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(0,122,61,0.4), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
-          THE FEARLESS
-          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>JORDAN · NOTHING TO LOSE</div>
+          THE SOCCEROOS
+          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>AUSTRALIA · NOTHING TO LOSE</div>
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 'calc(50% - 3px)', width: 6, background: `linear-gradient(180deg, transparent, ${MV.gold}, transparent)`, zIndex: 24, opacity: slideP }} />
@@ -366,12 +366,12 @@ function SceneDrama() {
   const S = 213.0;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <VideoSprite src="assets/fans-aus-joy.mp4" start={S} dur={19} from={1.1} to={1.28} panX={-30} dim={0.18} />
+      <VideoSprite src="assets/fans-usa-joy.mp4" start={S} dur={19} from={1.1} to={1.28} panX={-30} dim={0.18} />
       <Sprite start={224} end={236}>
-        <VideoSprite src="assets/musa-al-taamari-act.mp4" start={224} dur={12} from={1.08} to={1.24} panX={20} dim={0.16} />
+        <VideoSprite src="assets/harrysouttar-act.mp4" start={224} dur={12} from={1.08} to={1.24} panX={20} dim={0.16} />
       </Sprite>
       <Sprite start={236} end={247}>
-        <VideoSprite src="assets/christoph-baumgartner-act.mp4" start={236} dur={11} from={1.08} to={1.22} panX={-18} dim={0.16} />
+        <VideoSprite src="assets/weston-mckennie-act.mp4" start={236} dur={11} from={1.08} to={1.22} panX={-18} dim={0.16} />
       </Sprite>
       {/* OUR PREDICTION watermark — REAL-RESULTS-ONLY rule */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
@@ -385,19 +385,19 @@ function SceneDrama() {
       <GoalFlash at={S + 8.0} color={MV.aut} />
       <Confetti start={S + 8.2} dur={11} colors={[MV.aut, '#fff', MV.gold]} />
       <Sprite start={221.0} end={232.5}>
-        <ScoreBug start={S + 8.0} aut={1} jor={0} minute="BAUMGARTNER" />
+        <ScoreBug start={S + 8.0} aut={1} jor={0} minute="PULISIC" />
       </Sprite>
       {/* Jordan equalise (~232.5, lt 19.5) */}
       <GoalFlash at={S + 19.5} color={MV.jor} />
       <Confetti start={S + 19.7} dur={11} colors={[MV.jor, '#fff', MV.jorGreen, '#000']} />
       <Sprite start={232.5} end={244.0}>
-        <ScoreBug start={S + 19.5} aut={1} jor={1} minute="AL-NAIMAT" />
+        <ScoreBug start={S + 19.5} aut={1} jor={1} minute="SOUTTAR" />
       </Sprite>
       {/* Austria winner (~244, lt 31) */}
       <GoalFlash at={S + 31.0} color={MV.aut} />
       <Confetti start={S + 31.2} dur={11} colors={[MV.aut, '#fff', MV.gold]} />
       <Sprite start={244.0} end={250.0}>
-        <ScoreBug start={S + 31.0} aut={2} jor={1} minute="ALABA" />
+        <ScoreBug start={S + 31.0} aut={2} jor={1} minute="BALOGUN" />
       </Sprite>
 
       <Sprite start={250.0} end={256.0}>
@@ -419,13 +419,13 @@ function FullTimeCard({ start }) {
         <Kicker size={26} color={MV.gold}>Our Prediction · Full Time</Kicker>
         <div style={{ display: 'flex', alignItems: 'center', gap: 56, marginTop: 36 }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-            <FlagAUT w={150} />
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>AUSTRIA</span>
+            <FlagUSA w={150} />
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>USA</span>
           </div>
           <BigTitle size={170} color={MV.gold}>2 — 1</BigTitle>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-            <FlagJOR w={150} />
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>JORDAN</span>
+            <FlagAUS w={150} />
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>AUSTRALIA</span>
           </div>
         </div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 34, maxWidth: 1000 }}></div>
@@ -472,7 +472,7 @@ function SceneMystery() {
   const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
-      <VideoSprite src="assets/mystery2.mp4" start={S} dur={18} from={1.16} to={1.3} panY={-20}
+      <VideoSprite src="assets/cristianvolpato-cel.mp4" start={S} dur={18} from={1.16} to={1.3} panY={-20}
         dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.1) saturate(1.0) grayscale(0.28)' }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,
@@ -510,8 +510,8 @@ function SceneApp() {
   const S = 284.0;
   const inP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const cards = [
-    { name: 'AUSTRIA', coef: 'x2.10', pts: '+2.10', flag: <FlagAUT w={86} />, hot: true },
-    { name: 'JORDAN', coef: 'x3.00', pts: 'UNDERDOG', flag: <FlagJOR w={86} />, hot: true },
+    { name: 'USA', coef: 'x2.10', pts: '+2.10', flag: <FlagUSA w={86} />, hot: true },
+    { name: 'AUSTRALIA', coef: 'x3.00', pts: 'UNDERDOG', flag: <FlagAUS w={86} />, hot: true },
     { name: 'BRAZIL', coef: 'x1.20', pts: '+0.00', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
   ];
   return (
