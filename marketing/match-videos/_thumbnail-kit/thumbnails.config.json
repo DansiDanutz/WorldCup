@@ -286,6 +286,58 @@
       "sub": "ENGLAND vs CROATIA",
       "awayImg": "content/images/England/Jude-Bellingham.png",
       "awayName": "BELLINGHAM"
+    },
+    {
+      "ep": 26,
+      "dir": "match26-ghana-vs-panama",
+      "img": "content/images/Ghana/Jordan-Ayew.png",
+      "name": "AYEW",
+      "hook": "ONE KICK<br>FROM HISTORY",
+      "face": "GHA",
+      "away": "PAN",
+      "marquee": "GHA",
+      "sub": "GHANA vs PANAMA",
+      "awayImg": "content/images/Panama/Adalberto-Carrasquilla.png",
+      "awayName": "CARRASQUILLA"
+    },
+    {
+      "ep": 27,
+      "dir": "match27-uzbekistan-vs-colombia",
+      "img": "content/images/Colombia/Luis-Diaz.png",
+      "name": "LUIS DÍAZ",
+      "hook": "20 YEARS<br>IN THE COLD",
+      "face": "COL",
+      "away": "UZB",
+      "marquee": "COL",
+      "sub": "UZBEKISTAN vs COLOMBIA",
+      "awayImg": "content/images/Uzbekistan/Eldor-Shomurodov.png",
+      "awayName": "SHOMURODOV"
+    },
+    {
+      "ep": 28,
+      "dir": "match28-czech-republic-vs-south-africa",
+      "img": "content/images/Czech_Republic/Patrik-Schick.png",
+      "name": "SCHICK",
+      "hook": "THE PENALTY<br>HE NAMED",
+      "face": "CZE",
+      "away": "RSA",
+      "marquee": "CZE",
+      "sub": "CZECHIA vs SOUTH AFRICA",
+      "awayImg": "content/images/South_Africa/Percy-Tau.png",
+      "awayName": "TAU"
+    },
+    {
+      "ep": 29,
+      "dir": "match29-switzerland-vs-bosnia",
+      "img": "content/images/Switzerland/Granit-Xhaka.png",
+      "name": "XHAKA",
+      "hook": "BORN FROM<br>THE SAME WAR",
+      "face": "SUI",
+      "away": "BIH",
+      "marquee": "SUI",
+      "sub": "SWITZERLAND vs BOSNIA",
+      "awayImg": "content/images/Bosnia_and_Herzegovina/Edin-Dzeko.png",
+      "awayName": "DŽEKO"
     }
   ]
 }
