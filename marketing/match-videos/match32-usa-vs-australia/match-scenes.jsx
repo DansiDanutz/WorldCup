@@ -181,7 +181,7 @@ function SceneHistory() {
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 26 }}>
         <Kicker size={28} color={austriaBg ? MV.aut : MV.jor}>Chapter One · The True History</Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 50, color: MV.text, letterSpacing: '0.04em', marginTop: 16, textShadow: '0 4px 22px rgba(0,0,0,0.8)' }}>
-          {austriaBg ? 'THE WONDER TEAM THAT NEVER WON' : 'THE BRAVE ONES WHO FINALLY DID'}
+          {austriaBg ? 'THE CO-HOSTS' : 'THE SOCCEROOS'}
         </div>
       </div>
       {/* flag, always present, swaps with the story */}
@@ -189,15 +189,15 @@ function SceneHistory() {
         {austriaBg ? <FlagUSA w={120} /> : <FlagAUS w={120} />}
       </div>
       {/* USA — the Wunderteam (narration 53–93) */}
-      <HistoryPlate start={S + 6.0}  end={S + 16.0} year="THE 1930s · VIENNA" venue="USA · THE USA" score="6 — 0" accent={MV.aut} />
-      <HistoryPlate start={S + 16.0} end={S + 26.0} year="MATTHIAS SINDELAR" venue="THE HEARTBEAT" score="“THE MOZART”" accent={MV.gold} />
-      <HistoryPlate start={S + 26.0} end={S + 36.0} year="ITALY · 1934" venue="WORLD CUP SEMIFINAL" score="THEY FELL" accent={MV.text} stamp="NEVER" />
-      <HistoryPlate start={S + 36.0} end={S + 46.5} year="ALMOST A CENTURY" venue="THE WEIGHT THEY CARRY" score="0 TITLES" accent={MV.aut} />
+      <HistoryPlate start={S + 6.0}  end={S + 16.0} year="1950 · MIRACLE ON GRASS" venue="USA" score="BEAT ENGLAND 1-0" accent={MV.aut} />
+      <HistoryPlate start={S + 16.0} end={S + 26.0} year="GAETJENS' GOAL" venue="THE MIRACLE" score="1 — 0" accent={MV.gold} />
+      <HistoryPlate start={S + 26.0} end={S + 36.0} year="2002 · QUARTER-FINAL" venue="WORLD CUP" score="THE RUN" accent={MV.text} stamp="2002" />
+      <HistoryPlate start={S + 36.0} end={S + 46.5} year="2026 CO-HOSTS" venue="USA" score="HOME SOIL" accent={MV.aut} />
       {/* AUSTRALIA — the Nashama (narration 101–139) */}
-      <HistoryPlate start={S + 56.0} end={S + 65.5} year="AL-SOCCEROOS" venue="AUSTRALIA · “THE BRAVE ONES”" score="A NEARLY-TEAM" accent={MV.jor} />
-      <HistoryPlate start={S + 65.5} end={S + 76.5} year="6 FEBRUARY 2024" venue="ASIAN CUP SEMIFINAL · vs SOUTH KOREA" score="2 — 0" accent={MV.jorGreen} stamp="STUNNED" />
-      <HistoryPlate start={S + 76.5} end={S + 87.0} year="THEIR FIRST FINAL" venue="2032 ASIAN CUP" score="HISTORY" accent={MV.gold} />
-      <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026 · THE DEBUT" venue="FIRST WORLD CUP — EVER" score="AUT × JOR" accent={MV.jor} stamp="FIRST EVER" />
+      <HistoryPlate start={S + 56.0} end={S + 65.5} year="THE SOCCEROOS" venue="AUSTRALIA" score="32 YEARS AWAY" accent={MV.jor} />
+      <HistoryPlate start={S + 65.5} end={S + 76.5} year="2005 · ALOISI'S PENALTY" venue="THE NIGHT" score="THE RETURN" accent={MV.jorGreen} stamp="2005" />
+      <HistoryPlate start={S + 76.5} end={S + 87.0} year="JOINED ASIA · 2006" venue="THE SOCCEROOS" score="THE HARD WAY" accent={MV.gold} />
+      <HistoryPlate start={S + 87.0} end={S + 103.5} year="2022 · ROUND OF 16" venue="AUSTRALIA" score="THE BEST RUN" accent={MV.jor} stamp="2022" />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>
