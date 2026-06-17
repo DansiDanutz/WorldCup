@@ -248,7 +248,7 @@ function SceneAustria() {
       <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
           <FlagUSA w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>USA · HEIRS OF THE USA</span>
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>USA · THE CO-HOSTS</span>
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 7.0} accent={MV.aut} players={[
@@ -258,18 +258,18 @@ function SceneAustria() {
         { clip: 'assets/Tyler-Adams.mp4', img: 'assets/squad/usa-4-Adams.png', name: 'TYLER ADAMS', role: 'THE ENGINE' },
         { clip: 'assets/Weston-McKennie.mp4', img: 'assets/squad/usa-5-McKennie.png', name: 'McKENNIE', role: 'THE DRIVER' },
       ]} />
-      {/* line beats: 150 Alaba, 160 Sabitzer/Laimer/Baumgartner, 170 Arnautovic */}
+      {/* line beats: 150 Pulisic, 160 Reyna, 170 Adams */}
       <Sprite start={150.0} end={160.0}>
         <VideoSprite src="assets/christian-pulisic-cel.mp4" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={150.4} name="DAVID BALOGUN" role="Captain · Defender" accent={MV.aut} />
+        <LowerThird start={150.4} name="CHRISTIAN PULISIC" role="Captain · Winger" accent={MV.aut} />
       </Sprite>
       <Sprite start={160.0} end={170.0}>
         <VideoSprite src="assets/giovanni-reyna-act.mp4" start={160} dur={10} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={160.4} name="SABITZER · LAIMER · BAUMGARTNER" role="The Midfield" accent={MV.aut} />
+        <LowerThird start={160.4} name="GIOVANNI REYNA" role="The Magic" accent={MV.aut} />
       </Sprite>
       <Sprite start={170.0} end={178.0}>
         <VideoSprite src="assets/tyler-adams-act.mp4" start={170} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={170.3} name="MARKO ARNAUTOVIĆ" role="The Old Fox · Striker" accent={MV.autSoft} />
+        <LowerThird start={170.3} name="TYLER ADAMS" role="The Engine" accent={MV.autSoft} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -289,7 +289,7 @@ function SceneJordan() {
       <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
           <FlagAUS w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>AUSTRALIA · AL-SOCCEROOS · THE BRAVE ONES</span>
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>AUSTRALIA · THE SOCCEROOS</span>
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 8.0} accent={MV.jor} players={[
@@ -299,14 +299,14 @@ function SceneJordan() {
         { clip: 'assets/cristianvolpato.mp4', img: 'assets/squad/aus-4-Volpato.png', name: 'VOLPATO', role: 'THE SPARK' },
         { clip: 'assets/nestoryirankunda.mp4', img: 'assets/squad/aus-5-Irankunda.png', name: 'IRANKUNDA', role: 'THE WINGER' },
       ]} />
-      {/* line beats: 178 Al-Tamari, 187 Al-Naimat */}
+      {/* line beats: 178 Ryan, 187 Irankunda */}
       <Sprite start={178.0} end={187.0}>
         <VideoSprite src="assets/stadium-night.mp4" start={178} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={178.3} name="MUSA AL-TAMARI" role="The Spark · Winger" accent={MV.jor} />
+        <LowerThird start={178.3} name="MAT RYAN" role="Captain · Keeper" accent={MV.jor} />
       </Sprite>
       <Sprite start={187.0} end={195.0}>
         <VideoSprite src="assets/nestoryirankunda-act.mp4" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={187.3} name="YAZAN SOUTTAR" role="The Finisher · Striker" accent={MV.jorGreen} />
+        <LowerThird start={187.3} name="NESTORY IRANKUNDA" role="The Winger" accent={MV.jorGreen} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -489,8 +489,8 @@ function SceneMystery() {
           opacity: clamp(plateP, 0, 1), transform: `translateY(${(1 - plateP) * 50}px)`,
         }}>
           <div style={{ background: 'rgba(14,12,8,0.9)', border: '1px solid rgba(255,200,120,0.4)', borderRadius: 18, padding: '28px 44px', backdropFilter: 'blur(6px)' }}>
-            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#fff3e2', letterSpacing: '0.02em' }}>THE KEEPER OF THE DREAM</div>
-            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 24, color: '#f4c98a', letterSpacing: '0.14em', marginTop: 8, maxWidth: 820 }}>FORTY YEARS HE WAITED — A TICKET FROM EVERY CAMPAIGN THAT FAILED, AND TONIGHT, THE ONE THAT DIDN'T</div>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#fff3e2', letterSpacing: '0.02em' }}>THE GHOST OF BELO HORIZONTE</div>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 24, color: '#f4c98a', letterSpacing: '0.14em', marginTop: 8, maxWidth: 820 }}>1950 · MIRACLE ON GRASS</div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginTop: 18, background: 'rgba(255,210,74,0.12)', border: '1px solid rgba(255,210,74,0.5)', borderRadius: 999, padding: '10px 24px' }}>
               <span style={{ fontSize: 26 }}>✦</span>
               <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 24, color: MV.gold, letterSpacing: '0.08em' }}>COLLECT HIM INSIDE THE GAME · worldcup26.world</span>
