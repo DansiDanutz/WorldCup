@@ -190,14 +190,14 @@ function SceneHistory() {
       </div>
       {/* CZECHIA — the Panenka nation (narration 53–93) */}
       <HistoryPlate start={S + 6.0}  end={S + 16.0} year="EURO 1976 · CHAMPIONS" venue="CZECHIA · THE PANENKA NATION" score="2 — 2" accent={MV.aut} stamp="CHAMPIONS" />
-      <HistoryPlate start={S + 16.0} end={S + 26.0} year="THE PANENKA" venue="THE PENALTY THAT CHANGED FOOTBALL" score="✦" accent={MV.gold} />
+      <HistoryPlate start={S + 16.0} end={S + 26.0} year="THE PANENKA" venue="THE CHIPPED PENALTY" score="✦" accent={MV.gold} />
       <HistoryPlate start={S + 26.0} end={S + 36.0} year="TWO WC FINALS" venue="1934 · 1962" score="SO CLOSE" accent={MV.text} />
       <HistoryPlate start={S + 36.0} end={S + 46.5} year="PANENKA'S NATION" venue="THE WEIGHT THEY CARRY" score="ONE CROWN" accent={MV.aut} />
       {/* SOUTH AFRICA — Bafana Bafana (narration 101–139) */}
       <HistoryPlate start={S + 56.0} end={S + 65.5} year="2010 · FIRST IN AFRICA" venue="SOUTH AFRICA · BAFANA BAFANA" score="HOSTS" accent={MV.jor} stamp="FIRST EVER" />
       <HistoryPlate start={S + 65.5} end={S + 76.5} year="TSHABALALA'S GOAL" venue="JOHANNESBURG · 11 JUNE 2010" score="1 — 0" accent={MV.jorGreen} stamp="ICONIC" />
       <HistoryPlate start={S + 76.5} end={S + 87.0} year="1996 · CHAMPIONS" venue="AFRICA CUP OF NATIONS" score="CROWNED" accent={MV.gold} />
-      <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026 · THE RETURN" venue="BACK ON THE BIG STAGE" score="CZE × RSA" accent={MV.jor} />
+      <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026 · THE RETURN" venue="SIXTEEN YEARS LATER" score="CZE × RSA" accent={MV.jor} />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>

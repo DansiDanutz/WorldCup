@@ -190,7 +190,7 @@ function SceneHistory() {
       {/* UZBEKISTAN — the White Wolves (narration 53–93) */}
       <HistoryPlate start={S + 6.0}  end={S + 16.0} year="THE WHITE WOLVES" venue="UZBEKISTAN" score="FIRST EVER" accent={MV.aut} />
       <HistoryPlate start={S + 16.0} end={S + 26.0} year="THE 2005 REPLAY" venue="THE LONG WAIT" score="SO CLOSE" accent={MV.gold} />
-      <HistoryPlate start={S + 26.0} end={S + 36.0} year="FIRST IN ASIA" venue="THE QUALIFICATION" score="HISTORY" accent={MV.text} stamp="FIRST" />
+      <HistoryPlate start={S + 26.0} end={S + 36.0} year="FIRST CENTRAL ASIANS" venue="THE QUALIFICATION" score="HISTORY" accent={MV.text} stamp="FIRST" />
       <HistoryPlate start={S + 36.0} end={S + 46.5} year="THE LONG WAIT" venue="THE WEIGHT THEY CARRY" score="0 TITLES" accent={MV.aut} />
       {/* COLOMBIA — Los Cafeteros (narration 101–139) */}
       <HistoryPlate start={S + 56.0} end={S + 65.5} year="LOS CAFETEROS" venue="COLOMBIA · THE DANCERS" score="THE DANCERS" accent={MV.jor} />
