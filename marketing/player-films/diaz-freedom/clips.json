@@ -1,0 +1,11 @@
+{
+  "comment": "Music bed for the Lukaku film. Video comes from VideoSprite (scene file). Kevin MacLeod (incompetech) CC-BY 4.0 — credit in description.",
+  "clips": [],
+  "music": { "cues": [
+    { "src": "music/cue-tense.mp3",  "at": 0,   "dur": 52,  "vol": 0.42, "fadeIn": 0.5, "fadeOut": 4 },
+    { "src": "music/cue-epic.mp3",   "at": 50,  "dur": 90,  "vol": 0.34, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+    { "src": "music/cue-andes.mp3",  "at": 136, "dur": 96,  "vol": 0.38, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+    { "src": "music/cue-heroic.mp3", "at": 230, "dur": 70,  "vol": 0.44, "fadeIn": 2.5, "fadeOut": 5, "loop": true }
+  ] },
+  "sfx": { "hits": [] }
+}
