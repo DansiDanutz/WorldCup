@@ -377,6 +377,17 @@
       "sub": "USA vs AUSTRALIA",
       "awayImg": "content/images/Australia/HarrySouttar.png",
       "awayName": "SOUTTAR"
+    },
+    {
+      "ep": 99,
+      "dir": null,
+      "img": "content/images/Colombia/Luis-Diaz.png",
+      "name": "LUIS DÍAZ",
+      "hook": "FREEDOM FOR<br>MY FATHER",
+      "face": "COL",
+      "away": "COL",
+      "marquee": "COL",
+      "sub": "WorldCup26 Bonus"
     }
   ]
 }
