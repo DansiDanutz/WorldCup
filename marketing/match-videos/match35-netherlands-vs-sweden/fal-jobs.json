@@ -1,0 +1,18 @@
+{
+  "comment": "Higgsfield Kling 3.0 Turbo text-to-video jobs for Ep35. Player clips reused from content/videos/{Netherlands,Sweden}. (vandijk-block cf037d85 stayed queued; the drama build uses player-vandijk instead.)",
+  "model": "kling3_0_turbo",
+  "jobs": {
+    "cruyff-ghost": "3ccf1415-ded4-48fd-9742-18e918bcb426",
+    "netherlands-hopeful": "2e59ee07-0875-4e0e-b286-5f70279e98b3",
+    "sweden-hopeful": "2f32c90a-05a3-4b3e-bfe6-d9818ec8634d",
+    "history-1974": "df4ba692-3782-4120-bff5-f423f80db037",
+    "history-1958": "1849f5be-0aa0-465d-b632-11e39712cb19",
+    "gakpo-goal": "8364a54e-6fc1-496a-9921-922533fe8d7e",
+    "gyokeres-goal": "419a1848-d83d-4496-84b6-1f6ab04495ce",
+    "depay-winner": "9524329f-1c4c-4f8d-9123-da3a76662fae",
+    "netherlands-joy": "e74bea25-e026-4614-826f-e557806563df",
+    "sweden-anxious": "741e626b-75f0-49ca-bbe5-8c18120df2a4",
+    "handshake": "63ca65b9-c46e-484b-aace-9739d3e1f678",
+    "legend-035": "ccc2d4d5-9d5b-42b0-ab55-7080464ab7ed"
+  }
+}
