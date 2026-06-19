@@ -1,0 +1,22 @@
+{
+  "comment": "Higgsfield Kling 3.0 Turbo (kling3_0_turbo) text-to-video jobs for Ep33 distinct clip set (no-repeat). 7.5 credits/clip. Player clips reused from content/videos/{Scotland,Morocco}.",
+  "model": "kling3_0_turbo",
+  "jobs": {
+    "ghost-74":        "5636e3f9-7c64-4c6f-973b-3d45f7d21044",
+    "ghost-atlas":     "e9d35f7c-e2f8-462d-9d47-9052bcd3edb0",
+    "stadium-night":   "dd775626-0f3e-40c6-9d07-b38f9166cb18",
+    "tartan-hopeful":  "381d17d8-6330-4d58-bd4b-9003f0981ae6",
+    "tartan-anxious":  "f4361a70-8065-4caf-abaf-743ed9c5378d",
+    "tartan-jubilant": "da870334-c63b-488d-a577-c62fc6023b61",
+    "atlas-hopeful":   "37420804-d4a3-4222-8296-c3f1ce1b29ab",
+    "atlas-anxious":   "687adeb7-1105-4724-9b87-a5f2e21f1062",
+    "atlas-jubilant":  "3af9a3f5-8d01-4172-aabe-a1b09f8bdb83",
+    "keeper-save-mor": "e1588880-124f-4db7-9521-328b527ded06",
+    "keeper-save-scot":"68240649-30e3-4d29-ac17-65e831756349",
+    "history-1974":    "e5d405d5-feee-48a3-bee3-105074fba37c",
+    "history-2022":    "13ca0262-e21b-4aeb-87e0-83fe043aaef9",
+    "corner-swing":    "5d5846a0-f547-426a-983d-6e405873d092",
+    "handshake":       "f3fa6f14-ecbe-4961-80b5-e40a34a4089a",
+    "legend-033":      "3145b73e-ad73-4811-8ebb-3210fd7d0d93"
+  }
+}

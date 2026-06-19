@@ -12,14 +12,14 @@ const MV = {
   muted: '#93a0b4',
   gold: '#ffd24a',
   goldDeep: '#c9942e',
-  // USA: navy / red / white
-  aut: '#3c3b6e',
-  autSoft: '#b22234',
-  // Australia: navy / gold / green
-  jor: '#00843d',
-  jorGreen: '#ffcd00',
-  jorRed: '#00247d',
-  green: '#00843d',
+  // Scotland: royal/navy blue + white saltire (team A = aut/autSoft slots)
+  aut: '#0065BF',
+  autSoft: '#4f93dd',
+  // Morocco: red + green (team B = jor/jorGreen slots)
+  jor: '#c1272d',
+  jorGreen: '#006233',
+  jorRed: '#c1272d',
+  green: '#006233',
   line: 'rgba(255,255,255,0.14)',
 };
 
@@ -134,6 +134,27 @@ function FlagJOR({ w = 120 }) {
         borderLeft: `${w * 0.42}px solid #ce1126` }} />
       {/* white seven-point star token */}
       <div style={{ position: 'absolute', left: w * 0.13, top: '50%', transform: 'translateY(-50%)', color: '#fff', fontSize: h * 0.34, lineHeight: 1, fontWeight: 900 }}>✦</div>
+    </div>
+  );
+}
+
+// Scotland: the Saltire — white diagonal cross (St Andrew's) on a blue field.
+function FlagSCO({ w = 120 }) {
+  const h = w * 0.6;
+  const arm = h * 0.22;
+  return (
+    <div style={{ width: w, height: h, borderRadius: w * 0.04, position: 'relative', overflow: 'hidden', background: '#0065BF', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ position: 'absolute', top: '50%', left: '-10%', width: '120%', height: arm, background: '#fff', transform: 'translateY(-50%) rotate(31deg)' }} />
+      <div style={{ position: 'absolute', top: '50%', left: '-10%', width: '120%', height: arm, background: '#fff', transform: 'translateY(-50%) rotate(-31deg)' }} />
+    </div>
+  );
+}
+// Morocco: red field with a green five-pointed pentagram (the Seal of Solomon).
+function FlagMAR({ w = 120 }) {
+  const h = w * 2 / 3;
+  return (
+    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', background: '#c1272d', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <span style={{ color: 'transparent', fontSize: h * 0.5, lineHeight: 1, WebkitTextStroke: `${h * 0.03}px #006233`, textShadow: 'none' }}>★</span>
     </div>
   );
 }

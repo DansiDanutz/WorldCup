@@ -1,0 +1,38 @@
+{
+  "comment": "Ep33 Scotland vs Morocco (300s). CLIP-BASED: the scene file references the real Higgsfield (Kling 3.0 Turbo) animations in assets/ directly via VideoSprite, so clips[] (the ClipSprite registry) is intentionally empty. This file is the music score + SFX track that mux.mjs mixes under Brian's VO. Music = Kevin MacLeod (incompetech.com), CC-BY 4.0 — credit required in the YouTube description. mux.mjs skips any music/sfx file that is missing, so a VO-only mux still works.",
+  "clips": [],
+  "music": {
+    "comment": "Four-cue film score, ducked under Brian. cue-open = spectral/mystery; cue-history = epic build under the 1974/2022 chapters; cue-squads = anthemic for the line-ups + duel; cue-climax = heroic under the two saves, full time, mystery and CTA.",
+    "cues": [
+      { "src": "music/cue-open.mp3",    "at": 0,   "dur": 46,  "vol": 0.42, "fadeIn": 0.5, "fadeOut": 4 },
+      { "src": "music/cue-history.mp3", "at": 44,  "dur": 108, "vol": 0.38, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-squads.mp3",  "at": 150, "dur": 65,  "vol": 0.40, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-climax.mp3",  "at": 213, "dur": 87,  "vol": 0.46, "fadeIn": 2.5, "fadeOut": 4, "loop": true }
+    ]
+  },
+  "sfx": {
+    "comment": "ElevenLabs sound-design hits. heartbeat under the two ghosts; braam on title; whoosh on transitions; the SAVE hits (crowd gasp/roar) ride the two speed-ramped saves (221 Bounou, 233 Gordon); whistle at full time; mystic under Legend 033.",
+    "hits": [
+      { "src": "sfx/heartbeat.mp3", "at": 0.3,   "vol": 0.95 },
+      { "src": "sfx/heartbeat.mp3", "at": 6.0,   "vol": 0.85 },
+      { "src": "sfx/mystic.mp3",    "at": 8.1,   "vol": 0.75 },
+      { "src": "sfx/braam.mp3",     "at": 12.3,  "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 15.7,  "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 27.7,  "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 46.3,  "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 149.7, "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 177.7, "vol": 0.55 },
+      { "src": "sfx/braam.mp3",     "at": 195.0, "vol": 0.80 },
+      { "src": "sfx/whoosh.mp3",    "at": 212.7, "vol": 0.55 },
+      { "src": "sfx/save.mp3",      "at": 221.0, "vol": 0.95 },
+      { "src": "sfx/save.mp3",      "at": 233.0, "vol": 0.95 },
+      { "src": "sfx/whistle.mp3",   "at": 250.0, "vol": 0.70 },
+      { "src": "sfx/whoosh.mp3",    "at": 255.7, "vol": 0.55 },
+      { "src": "sfx/mystic.mp3",    "at": 266.1, "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 283.7, "vol": 0.55 },
+      { "src": "sfx/pop.mp3",       "at": 292.5, "vol": 0.70 },
+      { "src": "sfx/pop.mp3",       "at": 292.9, "vol": 0.70 },
+      { "src": "sfx/pop.mp3",       "at": 293.3, "vol": 0.70 }
+    ]
+  }
+}

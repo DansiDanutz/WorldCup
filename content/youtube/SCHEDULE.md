@@ -22,6 +22,18 @@ Status: ✅ live · 🎬 rendered (master ready) · 🛠️ building/rendering �
 | 23 | Wed 17/06 07:00 | Austria vs Jordan | 🛠️ rendering | predicted AUT 2–1 JOR · Jordan FIRST-EVER World Cup (40 yrs, 9 failed campaigns) + 2023 Asian Cup stunner (beat South Korea 2-0 in semi, Al-Naimat & Al-Tamari, first-ever final, lost to Qatar) / Austria's 1930s Wunderteam & Sindelar "Mozart of football" — never won a World Cup · Legend 023 the Keeper of the Dream |
 | 24 | Wed 17/06 20:00 | Portugal vs DR Congo | ⏳ queued | |
 | 25 | Wed 17/06 23:00 | England vs Croatia | 🛠️ rendering | predicted ENG 2–1 · 2018 Moscow semi (Croatia 2-1 AET, Mandžukić 109') / Modrić 2018 Golden Ball · Legend 025 the Ghost of 2018 |
+| 26 | Thu 18/06 | Ghana vs Panama | 🎬 rendered | image-based build (pre-#11 method); do NOT rebuild — move forward clip-based |
+| 27 | Thu 18/06 | Uzbekistan vs Colombia | 🎬 rendered | image-based build |
+| 28 | Thu 18/06 | Czech Republic vs South Africa | 🎬 rendered | image-based build |
+| 29 | Thu 18/06 | Switzerland vs Bosnia | 🎬 rendered | image-based build |
+| 30 | Fri 19/06 | Canada vs Qatar | 🎬 rendered | image-based build |
+| 31 | Fri 19/06 | Mexico vs South Korea | 🎬 rendered | image-based build · predicted MEX 2–1 |
+| 32 | Fri 19/06 22:00 | USA vs Australia | 🎬 rendered | image-based build · predicted USA 2–1 · Legend 032 Ghost of Belo Horizonte |
+| 33 | Sat 20/06 01:00 | **Scotland vs Morocco** | 🛠️ rendering | **CLIP-BASED (Ep6 standard, Higgsfield Kling)** · predicted 0–0 (two saves) · hook: Scotland 1974 unbeaten-yet-eliminated (first ever) / Morocco 2022 first African semifinal · Legend 033 the Ghost of Goal Difference |
+| 34 | Sat 20/06 03:30 | Brazil vs Haiti | ⏳ queued | NEXT — big-audience (Brazil); MD2 (Ep7 was the MD1 pairing) |
+| 35 | Sat 20/06 06:00 | Turkey vs Paraguay | ⏳ queued | |
+| 36 | Sat 20/06 20:00 | Netherlands vs Sweden | ⏳ queued | big-audience (Netherlands) |
+| 37 | Sat 20/06 23:00 | Germany vs Ivory Coast | ⏳ queued | big-audience (Germany) |
 
 ## Held / out-of-order (do NOT publish before its TV slot)
 - **France vs Iraq** — France's Matchday 2 (later in the calendar). Scaffold + narration exist

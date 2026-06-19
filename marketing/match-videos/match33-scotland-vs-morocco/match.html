@@ -31,16 +31,16 @@ const { useEffect } = React;
 // Scene timeline (global seconds) — 300s. Kept in sync with narration.json
 // (Brian VO slots) and clips.json (music/SFX placements).
 const SCENES = [
-  { c: SceneColdOpen, start: 0,     end: 16.0 },   // 40 years / 9 failed campaigns — "the door stayed shut"
-  { c: SceneTitle,    start: 16.0,  end: 28.0 },   // Ep22 recap line + Ep.23 title card
-  { c: SceneTease,    start: 28.0,  end: 46.5 },   // royalty vs newcomers + "the great fairytale"
-  { c: SceneHistory,  start: 46.5,  end: 150.0 },  // Wunderteam/Sindelar + Jordan's Asian Cup stunner + first WC
-  { c: SceneAustria,  start: 150.0, end: 178.0 },  // Austria line-up — heirs of the Wunderteam
-  { c: SceneJordan,   start: 178.0, end: 195.0 },  // Jordan line-up — Al-Tamari & Al-Naimat
-  { c: SceneDuel,     start: 195.0, end: 213.0 },  // pedigree vs fearless
-  { c: SceneDrama,    start: 213.0, end: 256.0 },  // OUR PREDICTION 2-1 (Baumgartner 1-0, Al-Naimat 1-1, Alaba 2-1)
-  { c: SceneVerdict,  start: 256.0, end: 266.0 },  // do you agree? WUNDERTEAM / NASHAMA
-  { c: SceneMystery,  start: 266.0, end: 284.0 },  // Legend 023 — the Keeper of the Dream
+  { c: SceneColdOpen, start: 0,     end: 16.0 },   // two ghosts of glorious heartbreak
+  { c: SceneTitle,    start: 16.0,  end: 28.0 },   // Ep32 recap (USA 2-1 AUS) + Ep.33 title card
+  { c: SceneTease,    start: 28.0,  end: 46.5 },   // Tartan vs Atlas
+  { c: SceneHistory,  start: 46.5,  end: 150.0 },  // Scotland 1974 unbeaten-out + Morocco 2022 semifinal
+  { c: SceneScotland, start: 150.0, end: 178.0 },  // Scotland line-up — the Tartan Army
+  { c: SceneMorocco,  start: 178.0, end: 195.0 },  // Morocco line-up — the Atlas Lions
+  { c: SceneDuel,     start: 195.0, end: 213.0 },  // Highland fire vs Desert wind
+  { c: SceneDrama,    start: 213.0, end: 256.0 },  // OUR PREDICTION 0-0 (Bounou save, Gordon save)
+  { c: SceneVerdict,  start: 256.0, end: 266.0 },  // do you agree? SCOTLAND / MOROCCO
+  { c: SceneMystery,  start: 266.0, end: 284.0 },  // Legend 033 — the Ghost of Goal Difference
   { c: SceneApp,      start: 284.0, end: 292.0 },  // worldcup26.world
   { c: SceneCTA,      start: 292.0, end: 300.0 },  // like / subscribe outro
 ];
