@@ -1,0 +1,19 @@
+{
+  "comment": "Higgsfield Kling 3.0 Turbo text-to-video jobs for Ep36. Player clips reused from content/videos/{Germany,Ivory_Coast}.",
+  "model": "kling3_0_turbo",
+  "jobs": {
+    "drogba-ghost": "dbe38a68-3df1-4011-950c-b16fbcf81c36",
+    "germany-hopeful": "57308897-b7ed-4a5a-aab9-b18ff475f6e8",
+    "ivory-hopeful": "6de55890-16fb-4163-b8b0-e3a410c83514",
+    "history-peace": "382963d2-ba09-4245-88d8-de8e43e83bac",
+    "history-germany": "88c7c56b-2a0b-4a9e-90dc-1139f13619cd",
+    "musiala-goal": "89277fa5-a040-490a-806b-ee1a5e49e457",
+    "diallo-goal": "6512d834-dd6a-4658-a973-1132dcf53b42",
+    "havertz-winner": "d17978c5-9c96-4429-9c73-90455d1b93ce",
+    "germany-joy": "ecde6227-f1b5-4c60-9300-5b52a96ba26b",
+    "ivory-anxious": "02b76108-828c-46e1-9e62-1c363eb65600",
+    "stadium-night": "bf803118-bf5d-4694-b278-61602e846a60",
+    "handshake": "688005c4-dcee-4229-805b-3683271cf96e",
+    "legend-036": "cb7833d7-25ec-4af8-92a8-ea3a32cbcb8c"
+  }
+}
