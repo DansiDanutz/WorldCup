@@ -94,6 +94,17 @@ the highest-quality episode. Read `CLAUDE.md` rules #6–#11 and
 - Validate cheaply first: a SEQUENTIAL smoke (`FPS=2 DURATION=50`) — confirm frames
   are non-black. (A `SHOTS=` jump-around smoke shows false black because videos
   don't preload — not a real failure.)
+- **VO↔SCENE ALIGNMENT GATE (mandatory before EVERY mux — the Ep33 lesson):** the
+  narration `at` times MUST line up with the scene windows in `match.html`, or the
+  words describe things the viewer hasn't reached yet (Ep33 v1 named the squad players
+  at t≈124s while the 1974/2022 history montage was still on screen — squad scene
+  doesn't start until 150s). Run `node scripts/check-vo-alignment.mjs <epDir>` — it
+  FAILS on any VO line that overruns the next line or runs past 300s, and prints the
+  scene each line lands in so you can confirm squad lines are in *Squad, save lines in
+  Drama, recap in Title, etc. When you write/borrow narration, set each `at` from the
+  TARGET scene window (history fills its whole long window; squads start exactly when
+  the squad scene does), not from the previous episode's pacing. Fixing this needs only
+  a re-time + re-mux — NOT a re-render (the frames are correct).
 
 ## 6. Definition of done
 Final MP4 exists & fresh; clips animate (file is tens of MB, not a tiny black-frame
