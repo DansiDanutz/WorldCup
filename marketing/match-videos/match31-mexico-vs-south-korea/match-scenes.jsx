@@ -1,13 +1,12 @@
-// match-scenes.jsx — the twelve scenes of the Match 23 video (300s timeline).
-// Scene windows must match the SCENES table in match.html and narration.json.
-// CLIP-BASED: real fal video animations (VideoSprite). SOCCER ONLY.
-// a pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 2-1 is OUR PREDICTION.
+// match-scenes.jsx — the twelve scenes of the Episode 31 Mexico vs South Korea
+// video (300s timeline). Scene windows must match the SCENES table in match.html
+// and narration.json. CLIP-BASED: real fal video animations (VideoSprite).
+// SOCCER ONLY. A pitch with goals, never gridiron. REAL-RESULTS-ONLY: the 2-1 is
+// OUR PREDICTION.
 // NOTE: nested <Sprite> windows are GLOBAL seconds (Sprite reads the timeline clock).
-// Story spine: Jordan's first-ever World Cup fairytale (Al-Nashama) + their 2023
-// Asian Cup stunner over South Korea, set against Austria's never-crowned 1930s
-// "Wunderteam" (Matthias Sindelar, the Mozart of Football). Legend 023 = the
-// Keeper of the Dream. Palette: Austria red (#ed2939)+white; Jordan red (#ce1126)
-// + black + green + white.
+// Story spine: Mexico the three-time hosts (1970 · 1986 · 2026, Ochoa's 6th WC)
+// against South Korea, the best of Asia (2002 semi-final, beat Germany 2018).
+// Legend 031 = the Ghost of the Champions. Palette: Mexico green/red; Korea red.
 
 // ── 1. Cold open (0–16): 40 years, 9 failed campaigns — the door stayed shut ──
 function SceneColdOpen() {
@@ -17,10 +16,10 @@ function SceneColdOpen() {
   const titleP = Easing.easeOutCubic(clamp((lt - 12.3) / 1.4, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      {/* a Jordan star — Al-Tamari as the symbol of the dream (dark, dramatic) */}
-      <VideoSprite src="assets/mystery.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
+      {/* a Korea star — the mystery silhouette (dark, dramatic) */}
+      <VideoSprite src="assets/mystery2.mp4" start={0} dur={16} from={1.18} to={1.32} panY={-30}
         dim={0.28} style={{ filter: 'brightness(0.72) contrast(1.18) saturate(1.05) grayscale(0)' }} />
-      {/* ember base in Jordan red so the screen never reads as dead air */}
+      {/* ember base in red so the screen never reads as dead air */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 78%, rgba(206,17,38,0.18) 0%, transparent 55%)` }} />
       {/* heartbeat glow */}
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at center, rgba(206,17,38,${(0.5 * beat).toFixed(3)}) 0%, transparent 62%)` }} />
@@ -36,7 +35,7 @@ function SceneColdOpen() {
       {lt > 12.3 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30, opacity: titleP, zIndex: 22 }}>
           <Kicker size={32} color="#f4d9bf">A true story</Kicker>
-          <TitleReveal text="TONIGHT THE DOOR OPENS" start={12.4} size={96} color={MV.jor} />
+          <TitleReveal text="WHO KILLED THE CHAMPIONS" start={12.4} size={96} color={MV.jor} />
         </div>
       )}
       <Letterbox />
@@ -62,7 +61,7 @@ function SceneTitle() {
       {recapP > 0.01 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22, opacity: recapP }}>
           <Kicker size={26} color={MV.muted}>Last time · our prediction</Kicker>
-          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>IRAQ 1 — 1 NORWAY</BigTitle>
+          <BigTitle size={62} color={MV.text} glow={MV.gold} style={{ maxWidth: 1500 }}>CANADA 2 — 1 QATAR</BigTitle>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, letterSpacing: '0.06em' }}></div>
         </div>
       )}
@@ -70,21 +69,21 @@ function SceneTitle() {
       {lt >= 9.5 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 40 }}>
           <div style={{ opacity: p1, transform: `translateY(${(1 - p1) * -30}px)` }}>
-            <Kicker color={MV.aut}>WorldCup26 Legends · Episode 23</Kicker>
+            <Kicker color={MV.aut}>WorldCup26 Legends · Episode 31</Kicker>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 70, opacity: clamp(p2, 0, 1), transform: `scale(${p2})` }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-              <Waving><FlagAUT w={230} /></Waving>
-              <BigTitle size={62} glow={MV.aut}>AUSTRIA</BigTitle>
+              <Waving><FlagMEX w={230} /></Waving>
+              <BigTitle size={62} glow={MV.aut}>MEXICO</BigTitle>
             </div>
             <BigTitle size={120} color={MV.gold}>VS</BigTitle>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-              <Waving speed={1.9}><FlagJOR w={230} /></Waving>
-              <BigTitle size={62} glow={MV.jor}>JORDAN</BigTitle>
+              <Waving speed={1.9}><FlagKOR w={230} /></Waving>
+              <BigTitle size={62} glow={MV.jor}>SOUTH KOREA</BigTitle>
             </div>
           </div>
           <div style={{ opacity: p3, transform: `translateY(${(1 - p3) * 26}px)`, fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 32, color: MV.muted, letterSpacing: '0.08em' }}>
-            GROUP J · OLD EUROPEAN ROYALTY vs THE BRAVEST NEWCOMERS
+            THE HOSTS vs THE GIANT-KILLERS
           </div>
         </div>
       )}
@@ -93,22 +92,22 @@ function SceneTitle() {
   );
 }
 
-// ── 3. Tease (28–46.5): royalty vs newcomers + "the great fairytale" ─────────
+// ── 3. Tease (28–46.5): hosts vs Asia + "the great clash" ─────────
 function SceneTease() {
   const { localTime: lt } = useSprite();
   const a = Easing.easeOutCubic(clamp((lt - 0.4) / 1.0, 0, 1));
-  // second beat (~44 global → lt ~16): "the story of how Jordan got here is a fairytale"
+  // second beat (~44 global → lt ~16): the underdog-clash tease
   const b = Easing.easeOutBack(clamp((lt - 14.0) / 1.0, 0, 1)) * Math.max(0, Math.min(1, (18.5 - lt) / 0.8));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
       <VideoSprite src="assets/stadium-wide.mp4" start={30} dur={20} dim={0.42} fit="cover" />
       <Vignette strength={0.5} />
       <AmbientParticles start={28} dur={18.5} count={26} color="255,209,0" />
-      {/* royalty vs newcomers headline */}
+      {/* hosts vs Asia headline */}
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
         <Kicker size={28} color={MV.aut}></Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 76, color: MV.text, letterSpacing: '0.03em', marginTop: 18, textShadow: '0 4px 22px rgba(0,0,0,0.85)' }}>
-          ROYALTY vs THE BRAVE
+          HOSTS vs ASIA
         </div>
       </div>
       {/* the tease */}
@@ -125,7 +124,7 @@ function SceneTease() {
   );
 }
 
-// ── 4. History (46.5–150): the Wunderteam + Jordan's Asian Cup + first WC ─────
+// ── 4. History (46.5–150): Mexico the hosts + South Korea, best of Asia ─────
 function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, stamp }) {
   const t = useTime();
   if (t < start || t > end) return null;
@@ -163,16 +162,16 @@ function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, 
 function SceneHistory() {
   const S = 46.5;
   const t = useTime();
-  // Background switches from an Austria-tinted plate (Wunderteam era) to a
-  // Jordan-tinted one when the narration pivots to the Nashama (~lt 54 → t≈101).
+  // Background switches from a Mexico-tinted plate to a Korea-tinted one when the
+  // narration pivots to South Korea (~lt 54 → t≈101).
   const austriaBg = t < 101;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
       {austriaBg ? (
-        <VideoSprite src="assets/david-alaba-act.mp4" start={S} dur={54.5} from={1.1} to={1.24} panX={-20}
+        <VideoSprite src="assets/hirving-lozano-act.mp4" start={S} dur={54.5} from={1.1} to={1.24} panX={-20}
           dim={0.72} style={{ filter: 'brightness(0.24) saturate(0.7) contrast(1.1) grayscale(0.35)' }} />
       ) : (
-        <VideoSprite src="assets/yazan-al-naimat-act.mp4" start={101} dur={49} from={1.1} to={1.24} panX={20}
+        <VideoSprite src="assets/kim-min-jae-act.mp4" start={101} dur={49} from={1.1} to={1.24} panX={20}
           dim={0.72} style={{ filter: 'brightness(0.26) saturate(0.85) contrast(1.1) grayscale(0.18)' }} />
       )}
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
@@ -181,23 +180,23 @@ function SceneHistory() {
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 26 }}>
         <Kicker size={28} color={austriaBg ? MV.aut : MV.jor}>Chapter One · The True History</Kicker>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 50, color: MV.text, letterSpacing: '0.04em', marginTop: 16, textShadow: '0 4px 22px rgba(0,0,0,0.8)' }}>
-          {austriaBg ? 'THE WONDER TEAM THAT NEVER WON' : 'THE BRAVE ONES WHO FINALLY DID'}
+          {austriaBg ? 'THREE-TIME HOSTS' : 'BEST IN ASIA'}
         </div>
       </div>
       {/* flag, always present, swaps with the story */}
       <div style={{ position: 'absolute', bottom: 124, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: 0.95 }}>
-        {austriaBg ? <FlagAUT w={120} /> : <FlagJOR w={120} />}
+        {austriaBg ? <FlagMEX w={120} /> : <FlagKOR w={120} />}
       </div>
-      {/* AUSTRIA — the Wunderteam (narration 53–93) */}
-      <HistoryPlate start={S + 6.0}  end={S + 16.0} year="THE 1930s · VIENNA" venue="AUSTRIA · THE WUNDERTEAM" score="6 — 0" accent={MV.aut} />
-      <HistoryPlate start={S + 16.0} end={S + 26.0} year="MATTHIAS SINDELAR" venue="THE HEARTBEAT" score="“THE MOZART”" accent={MV.gold} />
-      <HistoryPlate start={S + 26.0} end={S + 36.0} year="ITALY · 1934" venue="WORLD CUP SEMIFINAL" score="THEY FELL" accent={MV.text} stamp="NEVER" />
-      <HistoryPlate start={S + 36.0} end={S + 46.5} year="ALMOST A CENTURY" venue="THE WEIGHT THEY CARRY" score="0 TITLES" accent={MV.aut} />
-      {/* JORDAN — the Nashama (narration 101–139) */}
-      <HistoryPlate start={S + 56.0} end={S + 65.5} year="AL-NASHAMA" venue="JORDAN · “THE BRAVE ONES”" score="A NEARLY-TEAM" accent={MV.jor} />
-      <HistoryPlate start={S + 65.5} end={S + 76.5} year="6 FEBRUARY 2024" venue="ASIAN CUP SEMIFINAL · vs SOUTH KOREA" score="2 — 0" accent={MV.jorGreen} stamp="STUNNED" />
-      <HistoryPlate start={S + 76.5} end={S + 87.0} year="THEIR FIRST FINAL" venue="2023 ASIAN CUP" score="HISTORY" accent={MV.gold} />
-      <HistoryPlate start={S + 87.0} end={S + 103.5} year="2026 · THE DEBUT" venue="FIRST WORLD CUP — EVER" score="AUT × JOR" accent={MV.jor} stamp="FIRST EVER" />
+      {/* MEXICO — the hosts (narration 53–93) */}
+      <HistoryPlate start={S + 6.0}  end={S + 16.0} year="1970 · 1986 · 2026" venue="MEXICO" score="THREE-TIME HOSTS" accent={MV.aut} />
+      <HistoryPlate start={S + 16.0} end={S + 26.0} year="OCHOA · 6TH WC" venue="MEXICO" score="GUILLERMO OCHOA" accent={MV.gold} />
+      <HistoryPlate start={S + 26.0} end={S + 36.0} year="BEAT GERMANY · 2018" venue="MEXICO" score="2 — 1" accent={MV.text} stamp="UPSET" />
+      <HistoryPlate start={S + 36.0} end={S + 46.5} year="THE R16 CURSE" venue="MEXICO" score="0 TITLES" accent={MV.aut} />
+      {/* SOUTH KOREA — best in Asia (narration 101–139) */}
+      <HistoryPlate start={S + 56.0} end={S + 65.5} year="BEST IN ASIA" venue="SOUTH KOREA" score="SON HEUNG-MIN" accent={MV.jor} />
+      <HistoryPlate start={S + 65.5} end={S + 76.5} year="2002 SEMI-FINAL" venue="SOUTH KOREA" score="HISTORY" accent={MV.jorGreen} stamp="LEGENDS" />
+      <HistoryPlate start={S + 76.5} end={S + 87.0} year="BEAT GERMANY · 2018" venue="SOUTH KOREA" score="2 — 0" accent={MV.gold} stamp="STUNNED" />
+      <HistoryPlate start={S + 87.0} end={S + 103.5} year="MEX × KOR" venue="2026 WORLD CUP" score="THE CLASH" accent={MV.jor} />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>
@@ -236,7 +235,7 @@ function SquadGrid({ start, end, players, accent }) {
   );
 }
 
-// ── 5. Austria (150–178): heirs of the Wunderteam ────────────────────────────
+// ── 5. Mexico (150–178): the three-time hosts ────────────────────────────
 function SceneAustria() {
   const { localTime: lt } = useSprite();
   const S = 150.0;
@@ -247,29 +246,29 @@ function SceneAustria() {
       <div style={{ position: 'absolute', inset: 0, zIndex: 22, pointerEvents: 'none', background: `linear-gradient(90deg, rgba(237,41,57,0.22) 0%, transparent 30%, transparent 70%, rgba(255,255,255,0.10) 100%)` }} />
       <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
-          <FlagAUT w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>AUSTRIA · HEIRS OF THE WUNDERTEAM</span>
+          <FlagMEX w={74} />
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>MEXICO · THREE-TIME HOSTS</span>
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 7.0} accent={MV.aut} players={[
-        { clip: 'assets/alaba.mp4', img: 'assets/squad/aut-1-Alaba.png',       name: 'DAVID ALABA',       role: 'CAPTAIN · DEFENDER' },
-        { clip: 'assets/sabitzer.mp4', img: 'assets/squad/aut-2-Sabitzer.png',    name: 'MARCEL SABITZER',   role: 'THE DRIVER' },
-        { clip: 'assets/laimer.mp4', img: 'assets/squad/aut-3-Laimer.png',      name: 'KONRAD LAIMER',     role: 'THE ENGINE' },
-        { clip: 'assets/baumgartner.mp4', img: 'assets/squad/aut-5-Baumgartner.png', name: 'C. BAUMGARTNER',    role: 'LATE RUNS' },
-        { clip: 'assets/arnautovic.mp4', img: 'assets/squad/aut-4-Arnautovic.png',  name: 'M. ARNAUTOVIĆ',     role: 'THE OLD FOX' },
+        { clip: 'assets/hirving-lozano.mp4', img: 'assets/squad/mex-1-Lozano.png', name: 'HIRVING LOZANO', role: 'THE WINGER' },
+        { clip: 'assets/santiago-gimenez.mp4', img: 'assets/squad/mex-2-Gimenez.png', name: 'S. GIMÉNEZ', role: 'THE STRIKER' },
+        { clip: 'assets/edson-alvarez.mp4', img: 'assets/squad/mex-3-Alvarez.png', name: 'EDSON ÁLVAREZ', role: 'CAPTAIN' },
+        { clip: 'assets/guillermo-ochoa.mp4', img: 'assets/squad/mex-4-Ochoa.png', name: 'OCHOA', role: '6TH WORLD CUP' },
+        { clip: 'assets/orbelin-pineda.mp4', img: 'assets/squad/mex-5-Pineda.png', name: 'ORBELÍN PINEDA', role: 'THE CREATOR' },
       ]} />
-      {/* line beats: 150 Alaba, 160 Sabitzer/Laimer/Baumgartner, 170 Arnautovic */}
+      {/* line beats: 150 Lozano, 160 Álvarez, 170 Pineda */}
       <Sprite start={150.0} end={160.0}>
-        <VideoSprite src="assets/david-alaba-cel.mp4" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={150.4} name="DAVID ALABA" role="Captain · Defender" accent={MV.aut} />
+        <VideoSprite src="assets/hirving-lozano-cel.mp4" start={150} dur={10} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <LowerThird start={150.4} name="HIRVING LOZANO" role="Winger" accent={MV.aut} />
       </Sprite>
       <Sprite start={160.0} end={170.0}>
-        <VideoSprite src="assets/marcel-sabitzer-act.mp4" start={160} dur={10} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={160.4} name="SABITZER · LAIMER · BAUMGARTNER" role="The Midfield" accent={MV.aut} />
+        <VideoSprite src="assets/edson-alvarez-act.mp4" start={160} dur={10} from={1.04} to={1.16} panX={20} dim={0.18} style={{ zIndex: 10 }} />
+        <LowerThird start={160.4} name="EDSON ÁLVAREZ" role="Captain" accent={MV.aut} />
       </Sprite>
       <Sprite start={170.0} end={178.0}>
-        <VideoSprite src="assets/marko-arnautovic-act.mp4" start={170} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
-        <LowerThird start={170.3} name="MARKO ARNAUTOVIĆ" role="The Old Fox · Striker" accent={MV.autSoft} />
+        <VideoSprite src="assets/orbelin-pineda-act.mp4" start={170} dur={8} from={1.04} to={1.14} dim={0.18} style={{ zIndex: 10 }} />
+        <LowerThird start={170.3} name="ORBELÍN PINEDA" role="The Creator" accent={MV.autSoft} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -277,7 +276,7 @@ function SceneAustria() {
   );
 }
 
-// ── 6. Jordan (178–195): Al-Tamari & Al-Naimat ───────────────────────────────
+// ── 6. South Korea (178–195): Son & Lee Kang-in ───────────────────────────────
 function SceneJordan() {
   const { localTime: lt } = useSprite();
   const S = 178.0;
@@ -288,25 +287,25 @@ function SceneJordan() {
       <div style={{ position: 'absolute', inset: 0, zIndex: 22, pointerEvents: 'none', background: `linear-gradient(90deg, rgba(206,17,38,0.24) 0%, transparent 30%, transparent 70%, rgba(0,122,61,0.18) 100%)` }} />
       <div style={{ position: 'absolute', top: 108, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 26, opacity: headerP, transform: `translateY(${(1 - headerP) * -24}px)` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 26, background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 999, padding: '16px 44px' }}>
-          <FlagJOR w={74} />
-          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>JORDAN · AL-NASHAMA · THE BRAVE ONES</span>
+          <FlagKOR w={74} />
+          <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 40, color: MV.text, letterSpacing: '0.10em' }}>SOUTH KOREA · BEST IN ASIA</span>
         </div>
       </div>
       <SquadGrid start={S + 0.4} end={S + 8.0} accent={MV.jor} players={[
-        { clip: 'assets/taamari.mp4', img: 'assets/squad/jor-1-Tamari.png',   name: 'MUSA AL-TAMARI',    role: 'THE SPARK' },
-        { clip: 'assets/naimat.mp4', img: 'assets/squad/jor-2-Naimat.png',   name: 'YAZAN AL-NAIMAT',   role: 'THE FINISHER' },
-        { clip: 'assets/dardour.mp4', img: 'assets/squad/jor-3-Dardour.png',  name: 'H. AL-DARDOUR',     role: 'THE STRIKER' },
-        { clip: 'assets/rawabdeh.mp4', img: 'assets/squad/jor-4-Rawabdeh.png', name: 'N. AL-RAWABDEH',    role: 'THE RUNNER' },
-        { clip: 'assets/arab.mp4', img: 'assets/squad/jor-5-Arab.png',     name: 'YAZAN AL-ARAB',     role: 'THE WALL' },
+        { clip: 'assets/son-heung-min.mp4', img: 'assets/squad/kor-1-Son.png', name: 'SON HEUNG-MIN', role: 'CAPTAIN · STAR' },
+        { clip: 'assets/lee-kang-in.mp4', img: 'assets/squad/kor-2-Lee.png', name: 'LEE KANG-IN', role: 'THE MAESTRO' },
+        { clip: 'assets/kim-min-jae.mp4', img: 'assets/squad/kor-3-Kim.png', name: 'KIM MIN-JAE', role: 'THE WALL' },
+        { clip: 'assets/hwang-hee-chan.mp4', img: 'assets/squad/kor-4-HwangH.png', name: 'HWANG HEE-CHAN', role: 'THE POWER' },
+        { clip: 'assets/hwang-in-beom.mp4', img: 'assets/squad/kor-5-HwangI.png', name: 'HWANG IN-BEOM', role: 'THE ENGINE' },
       ]} />
-      {/* line beats: 178 Al-Tamari, 187 Al-Naimat */}
+      {/* line beats: 178 Son, 187 Lee Kang-in */}
       <Sprite start={178.0} end={187.0}>
         <VideoSprite src="assets/stadium-night.mp4" start={178} dur={9} from={1.04} to={1.16} panX={-20} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={178.3} name="MUSA AL-TAMARI" role="The Spark · Winger" accent={MV.jor} />
+        <LowerThird start={178.3} name="SON HEUNG-MIN" role="Captain · Star" accent={MV.jor} />
       </Sprite>
       <Sprite start={187.0} end={195.0}>
-        <VideoSprite src="assets/yazan-al-naimat-cel.mp4" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
-        <LowerThird start={187.3} name="YAZAN AL-NAIMAT" role="The Finisher · Striker" accent={MV.jorGreen} />
+        <VideoSprite src="assets/hwang-hee-chan-act.mp4" start={187} dur={8} from={1.04} to={1.14} dim={0.2} style={{ zIndex: 10 }} />
+        <LowerThird start={187.3} name="HWANG HEE-CHAN" role="The Power" accent={MV.jorGreen} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -323,19 +322,19 @@ function SceneDuel() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
-        <VideoSprite src="assets/konrad-laimer-act.mp4" start={195} dur={18.5} fit="cover" />
+        <VideoSprite src="assets/santiago-gimenez-act.mp4" start={195} dur={18.5} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(237,41,57,0.34), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, left: 90, fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
-          THE PEDIGREE
-          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>AUSTRIA · A CENTURY OF CLASS</div>
+          THE HOSTS
+          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>MEXICO · THREE-TIME HOSTS</div>
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * 100}%)` }}>
-        <VideoSprite src="assets/aut-fans.mp4" start={195} dur={18.5} fit="cover" />
+        <VideoSprite src="assets/fans-mex-anx.mp4" start={195} dur={18.5} fit="cover" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(0,122,61,0.4), transparent 65%)' }} />
         <div style={{ position: 'absolute', bottom: 150, right: 90, textAlign: 'right', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>
-          THE FEARLESS
-          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>JORDAN · NOTHING TO LOSE</div>
+          THE PRIDE OF ASIA
+          <div style={{ fontSize: 27, fontWeight: 700, color: MV.gold, letterSpacing: '0.2em', marginTop: 8 }}>SOUTH KOREA · GIANT-KILLERS</div>
         </div>
       </div>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 'calc(50% - 3px)', width: 6, background: `linear-gradient(180deg, transparent, ${MV.gold}, transparent)`, zIndex: 24, opacity: slideP }} />
@@ -358,46 +357,46 @@ function SceneDuel() {
   );
 }
 
-// ── 8. Match drama (213–256): OUR PREDICTION Austria 2-1 Jordan ──────────────
-// Sabitzer→Baumgartner (1-0, ~221). Al-Tamari→Al-Naimat answers (1-1, ~232.5).
-// Alaba climbs at a corner for the winner (2-1, ~244). Full-time = OUR PREDICTION.
+// ── 8. Match drama (213–256): OUR PREDICTION Mexico 2-1 South Korea ──────────────
+// Giménez opens (1-0, ~221). Son answers for Korea (1-1, ~232.5).
+// Lozano grabs the winner (2-1, ~244). Full-time = OUR PREDICTION.
 function SceneDrama() {
   const { localTime: lt } = useSprite();
   const S = 213.0;
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <VideoSprite src="assets/fans-aus-joy.mp4" start={S} dur={19} from={1.1} to={1.28} panX={-30} dim={0.18} />
+      <VideoSprite src="assets/fans-mex-joy.mp4" start={S} dur={19} from={1.1} to={1.28} panX={-30} dim={0.18} />
       <Sprite start={224} end={236}>
-        <VideoSprite src="assets/musa-al-taamari-act.mp4" start={224} dur={12} from={1.08} to={1.24} panX={20} dim={0.16} />
+        <VideoSprite src="assets/son-heung-min-act.mp4" start={224} dur={12} from={1.08} to={1.24} panX={20} dim={0.16} />
       </Sprite>
       <Sprite start={236} end={247}>
-        <VideoSprite src="assets/christoph-baumgartner-act.mp4" start={236} dur={11} from={1.08} to={1.22} panX={-18} dim={0.16} />
+        <VideoSprite src="assets/guillermo-ochoa-act.mp4" start={236} dur={11} from={1.08} to={1.22} panX={-18} dim={0.16} />
       </Sprite>
       {/* OUR PREDICTION watermark — REAL-RESULTS-ONLY rule */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 25 }}>
         <Kicker size={24} color={MV.gold}>Our Prediction · Our Story</Kicker>
       </div>
 
-      {/* 0-0 until Austria's opener (~221, lt 8) */}
+      {/* 0-0 until Mexico's opener (~221, lt 8) */}
       <Sprite start={213.0} end={221.0}>
         <ScoreBug start={S + 0.4} aut={0} jor={0} minute="1st half" />
       </Sprite>
       <GoalFlash at={S + 8.0} color={MV.aut} />
       <Confetti start={S + 8.2} dur={11} colors={[MV.aut, '#fff', MV.gold]} />
       <Sprite start={221.0} end={232.5}>
-        <ScoreBug start={S + 8.0} aut={1} jor={0} minute="BAUMGARTNER" />
+        <ScoreBug start={S + 8.0} aut={1} jor={0} minute="GIMÉNEZ" />
       </Sprite>
-      {/* Jordan equalise (~232.5, lt 19.5) */}
+      {/* South Korea equalise (~232.5, lt 19.5) */}
       <GoalFlash at={S + 19.5} color={MV.jor} />
       <Confetti start={S + 19.7} dur={11} colors={[MV.jor, '#fff', MV.jorGreen, '#000']} />
       <Sprite start={232.5} end={244.0}>
-        <ScoreBug start={S + 19.5} aut={1} jor={1} minute="AL-NAIMAT" />
+        <ScoreBug start={S + 19.5} aut={1} jor={1} minute="SON" />
       </Sprite>
-      {/* Austria winner (~244, lt 31) */}
+      {/* Mexico winner (~244, lt 31) */}
       <GoalFlash at={S + 31.0} color={MV.aut} />
       <Confetti start={S + 31.2} dur={11} colors={[MV.aut, '#fff', MV.gold]} />
       <Sprite start={244.0} end={250.0}>
-        <ScoreBug start={S + 31.0} aut={2} jor={1} minute="ALABA" />
+        <ScoreBug start={S + 31.0} aut={2} jor={1} minute="LOZANO" />
       </Sprite>
 
       <Sprite start={250.0} end={256.0}>
@@ -419,13 +418,13 @@ function FullTimeCard({ start }) {
         <Kicker size={26} color={MV.gold}>Our Prediction · Full Time</Kicker>
         <div style={{ display: 'flex', alignItems: 'center', gap: 56, marginTop: 36 }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-            <FlagAUT w={150} />
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>AUSTRIA</span>
+            <FlagMEX w={150} />
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>MEXICO</span>
           </div>
           <BigTitle size={170} color={MV.gold}>2 — 1</BigTitle>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-            <FlagJOR w={150} />
-            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>JORDAN</span>
+            <FlagKOR w={150} />
+            <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>SOUTH KOREA</span>
           </div>
         </div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 34, maxWidth: 1000 }}></div>
@@ -434,7 +433,7 @@ function FullTimeCard({ start }) {
   );
 }
 
-// ── 9. Verdict (256–266): do you agree? WUNDERTEAM / NASHAMA ──────────────────
+// ── 9. Verdict (256–266): do you agree? MEXICO / KOREA ──────────────────
 function SceneVerdict() {
   const { localTime: lt } = useSprite();
   const S = 256.0;
@@ -450,11 +449,11 @@ function SceneVerdict() {
       </div>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 70, zIndex: 26, marginTop: 60 }}>
         <div style={{ opacity: clamp(a, 0, 1), transform: `translateY(${(1 - a) * 50}px) scale(${0.85 + 0.15 * a})`, background: 'rgba(237,41,57,0.12)', border: `2px solid ${MV.aut}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: MV.autSoft, letterSpacing: '0.06em' }}>“WUNDERTEAM”</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: MV.autSoft, letterSpacing: '0.06em' }}>“MEXICO”</div>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}></div>
         </div>
         <div style={{ opacity: clamp(b, 0, 1), transform: `translateY(${(1 - b) * 50}px) scale(${0.85 + 0.15 * b})`, background: 'rgba(0,122,61,0.18)', border: `2px solid ${MV.jorGreen}`, borderRadius: 22, padding: '34px 60px', textAlign: 'center', minWidth: 420 }}>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: '#3ddc8a', letterSpacing: '0.06em' }}>“NASHAMA”</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 52, color: '#3ddc8a', letterSpacing: '0.06em' }}>“KOREA”</div>
           <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 26, color: MV.muted, marginTop: 12 }}></div>
         </div>
       </div>
@@ -464,7 +463,7 @@ function SceneVerdict() {
   );
 }
 
-// ── 10. Mystery Supporter (266–284): Legend 023 — the Keeper of the Dream ─────
+// ── 10. Mystery Supporter (266–284): Legend 031 — the Ghost of the Champions ─────
 function SceneMystery() {
   const { localTime: lt } = useSprite();
   const S = 266.0;
@@ -472,7 +471,7 @@ function SceneMystery() {
   const plateP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
-      <VideoSprite src="assets/mystery2.mp4" start={S} dur={18} from={1.16} to={1.3} panY={-20}
+      <VideoSprite src="assets/orbelin-pineda-cel.mp4" start={S} dur={18} from={1.16} to={1.3} panY={-20}
         dim={0.32} style={{ filter: 'brightness(0.4) contrast(1.1) saturate(1.0) grayscale(0.28)' }} />
       <div style={{
         position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,
@@ -481,7 +480,7 @@ function SceneMystery() {
       }} />
       <AmbientParticles start={S} dur={18} count={46} color="255,210,150" maxR={3.5} zIndex={22} />
       <div style={{ position: 'absolute', top: 118, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={26} color="#f4c98a">The Mystery Supporter · Legend No. 023</Kicker>
+        <Kicker size={26} color="#f4c98a">The Mystery Supporter · Legend No. 031</Kicker>
       </div>
       {plateP > 0 && (
         <div style={{
@@ -489,8 +488,7 @@ function SceneMystery() {
           opacity: clamp(plateP, 0, 1), transform: `translateY(${(1 - plateP) * 50}px)`,
         }}>
           <div style={{ background: 'rgba(14,12,8,0.9)', border: '1px solid rgba(255,200,120,0.4)', borderRadius: 18, padding: '28px 44px', backdropFilter: 'blur(6px)' }}>
-            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#fff3e2', letterSpacing: '0.02em' }}>THE KEEPER OF THE DREAM</div>
-            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 24, color: '#f4c98a', letterSpacing: '0.14em', marginTop: 8, maxWidth: 820 }}>FORTY YEARS HE WAITED — A TICKET FROM EVERY CAMPAIGN THAT FAILED, AND TONIGHT, THE ONE THAT DIDN'T</div>
+            <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#fff3e2', letterSpacing: '0.02em' }}>THE GHOST OF THE CHAMPIONS</div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginTop: 18, background: 'rgba(255,210,74,0.12)', border: '1px solid rgba(255,210,74,0.5)', borderRadius: 999, padding: '10px 24px' }}>
               <span style={{ fontSize: 26 }}>✦</span>
               <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 24, color: MV.gold, letterSpacing: '0.08em' }}>COLLECT HIM INSIDE THE GAME · worldcup26.world</span>
@@ -510,8 +508,8 @@ function SceneApp() {
   const S = 284.0;
   const inP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const cards = [
-    { name: 'AUSTRIA', mult: '2× PER GOAL', pts: 'TOP PICK', flag: <FlagAUT w={86} />, hot: true },
-    { name: 'JORDAN', mult: '3× PER GOAL', pts: 'UNDERDOG', flag: <FlagJOR w={86} />, hot: true },
+    { name: 'MEXICO', mult: '2× PER GOAL', pts: 'TOP PICK', flag: <FlagMEX w={86} />, hot: true },
+    { name: 'SOUTH KOREA', mult: '3× PER GOAL', pts: 'UNDERDOG', flag: <FlagKOR w={86} />, hot: true },
     { name: 'BRAZIL', mult: '1× PER GOAL', pts: '', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
   ];
   return (
