@@ -76,3 +76,9 @@ marketing/**/frames/
 marketing/**/filter.txt
 marketing/**/audio_master.*
 marketing/**/*.log
+
+# WorldCup episode build artifacts (regenerable; masters delivered via file-send)
+marketing/match-videos/**/node_modules
+marketing/match-videos/**/frames/
+marketing/match-videos/**/audio/
+marketing/match-videos/**/music/
