@@ -1,0 +1,18 @@
+{
+  "comment": "Higgsfield Kling 3.0 Turbo (kling3_0_turbo) text-to-video jobs for Ep34. Player clips reused from content/videos/{Turkey,Paraguay}.",
+  "model": "kling3_0_turbo",
+  "jobs": {
+    "sukur-ghost": "b056b48e-de5c-49d0-8194-b13b52643720",
+    "turkey-hopeful": "e49d15fb-7615-4f8b-812a-5dbe60e63110",
+    "paraguay-hopeful": "6c22c946-3d30-422c-9b27-f2c98d836a83",
+    "history-2002": "ff5f9edb-68af-4dff-9946-a0b8387cf5fd",
+    "guler-goal": "f5076e0f-bd03-4042-b010-73823c190f6c",
+    "enciso-counter": "3869a971-f0b8-47e0-bace-3c27a60ce556",
+    "turkey-joy": "0e293ced-5e3e-4c33-82bd-b859ed406a87",
+    "paraguay-anxious": "4285aec3-8938-4505-952e-1a886c56cda2",
+    "stadium-night": "ba2a3216-9857-4368-9a79-eeda7f7388f2",
+    "gomez-block": "c3baee2f-7a9a-46d0-b513-ce028631600d",
+    "handshake": "53241d5f-a1c7-4600-b2c6-658dab3c1eaa",
+    "legend-034": "cc2bd23b-6b82-4099-a50b-3f8f232c4b74"
+  }
+}
