@@ -31,6 +31,23 @@ const dur = (f) => {
 };
 
 let hard = 0;
+
+// GUARD (the Ep35 lesson): the ScoreBug team codes are hardcoded in match-kit.jsx and are
+// inherited verbatim when an episode is cloned from another. If they still read the template
+// values for a different matchup, the score bug shows the WRONG nations (Ep33/34/35 all shipped
+// "USA"/"AUS" once). Flag any score-bug code that isn't one of this episode's two teams.
+try {
+  const kit = fs.readFileSync(path.join(dir, 'match-kit.jsx'), 'utf8');
+  const codes = [...kit.matchAll(/}}>([A-Z]{3})<\/div>/g)].map((m) => m[1]);
+  if (codes.length) {
+    // derive expected codes from the folder name (matchNN-teama-vs-teamb) is unreliable; just
+    // surface the codes so they can be eyeballed, and HARD-FAIL on the known template leftovers.
+    const template = codes.filter((c) => ['USA', 'AUS', 'JOR'].includes(c));
+    console.log(`# ScoreBug team codes in match-kit.jsx: ${codes.join(' / ')}`);
+    if (template.length) { console.error(`❌ ScoreBug still has template code(s) ${template.join(',')} — set them to THIS episode's teams.`); hard++; }
+  }
+} catch {}
+
 console.log(`# ${path.resolve(dir).split('/').pop()} — VO ↔ scene alignment`);
 console.log('  L   at    end   scene        note');
 for (let i = 0; i < lines.length; i++) {

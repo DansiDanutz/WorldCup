@@ -12,6 +12,7 @@ const FPS = Number(process.env.FPS || 30);
 const DURATION = Number(process.env.DURATION || 300);
 const OUT = process.env.OUT || 'frames';
 const START = Number(process.env.START || 0); // resume support: first frame index
+const END = Number(process.env.END || 0); // 0 = render to the end; else stop before this frame
 const SHOTS = process.env.SHOTS ? process.env.SHOTS.split(',').map(Number) : null;
 const QUALITY = Number(process.env.QUALITY || 92);
 
@@ -67,7 +68,7 @@ if (SHOTS) {
 } else {
   const total = Math.round(DURATION * FPS);
   const t0 = Date.now();
-  for (let i = START; i < total; i++) {
+  for (let i = START; i < (END || total); i++) {
     const t = Math.min(DURATION - 1e-3, i / FPS);
     await frameAt(t);
     await canvas.screenshot({

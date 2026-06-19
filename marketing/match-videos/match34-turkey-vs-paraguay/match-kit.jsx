@@ -242,9 +242,9 @@ function ScoreBug({ start, aut = 0, jor = 0, minute }) {
       background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 14,
       boxShadow: '0 10px 36px rgba(0,0,0,0.5)', overflow: 'hidden',
     }}>
-      <div style={{ ...cell, background: MV.aut, color: '#fff' }}>USA</div>
+      <div style={{ ...cell, background: MV.aut, color: '#fff' }}>TUR</div>
       <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{aut} — {jor}</div>
-      <div style={{ ...cell, background: MV.jor, color: '#fff' }}>AUS</div>
+      <div style={{ ...cell, background: MV.jor, color: '#fff' }}>PAR</div>
       {minute && <div style={{ ...cell, fontSize: 26, color: MV.muted, borderLeft: `1px solid ${MV.line}` }}>{minute}</div>}
     </div>
   );
