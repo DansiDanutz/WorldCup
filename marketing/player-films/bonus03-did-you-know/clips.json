@@ -1,0 +1,33 @@
+{
+  "comment": "WorldCup26 Bonus: DID YOU KNOW? (300s). CLIP-BASED via VideoSprite. Music = AI-generated original score (Higgsfield Sonilo). SFX = ElevenLabs. mux skips missing files.",
+  "clips": [],
+  "music": {
+    "cues": [
+      { "src": "music/cue-open.mp3",    "at": 0,   "dur": 46,  "vol": 0.42, "fadeIn": 0.5, "fadeOut": 4 },
+      { "src": "music/cue-history.mp3", "at": 44,  "dur": 142, "vol": 0.36, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-climax.mp3",  "at": 184, "dur": 116, "vol": 0.44, "fadeIn": 2.5, "fadeOut": 4, "loop": true }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      { "src": "sfx/heartbeat.mp3", "at": 0.4,   "vol": 0.9 },
+      { "src": "sfx/braam.mp3",     "at": 12.4,  "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3",    "at": 27.8,  "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3",    "at": 45.8,  "vol": 0.55 },
+      { "src": "sfx/mystic.mp3",    "at": 46.6,  "vol": 0.8 },
+      { "src": "sfx/mystic.mp3",    "at": 79.1,  "vol": 0.8 },
+      { "src": "sfx/whoosh.mp3",    "at": 91.8,  "vol": 0.55 },
+      { "src": "sfx/mystic.mp3",    "at": 100.1, "vol": 0.8 },
+      { "src": "sfx/whoosh.mp3",    "at": 123.8, "vol": 0.55 },
+      { "src": "sfx/mystic.mp3",    "at": 143.1, "vol": 0.75 },
+      { "src": "sfx/mystic.mp3",    "at": 165.1, "vol": 0.75 },
+      { "src": "sfx/whoosh.mp3",    "at": 183.8, "vol": 0.55 },
+      { "src": "sfx/mystic.mp3",    "at": 192.1, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3",    "at": 219.8, "vol": 0.55 },
+      { "src": "sfx/braam.mp3",     "at": 221.1, "vol": 0.8 },
+      { "src": "sfx/whoosh.mp3",    "at": 261.8, "vol": 0.55 },
+      { "src": "sfx/pop.mp3",       "at": 288.5, "vol": 0.7 },
+      { "src": "sfx/pop.mp3",       "at": 288.9, "vol": 0.7 }
+    ]
+  }
+}
