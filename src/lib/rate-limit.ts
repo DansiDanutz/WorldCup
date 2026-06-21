@@ -15,8 +15,12 @@ export type RateLimitResult = {
   retryAfterSeconds: number;
 };
 
-export function checkRateLimit(key: string, limit: number, windowMs: number): RateLimitResult {
-  const now = Date.now();
+export function checkRateLimit(
+  key: string,
+  limit: number,
+  windowMs: number,
+  now: number = Date.now(),
+): RateLimitResult {
   const windowStart = now - windowMs;
   const bucket = buckets.get(key) ?? { hits: [] };
 

@@ -1,0 +1,111 @@
+/* ============================================================================
+   WorldCup 2026 — Color & Type Foundations
+   Source of truth: DansiDanutz/WorldCup → src/app/globals.css + layout.tsx
+   A team-picking leaderboard game for the FIFA World Cup 2026.
+   ----------------------------------------------------------------------------
+   The brand reads like a calm, trustworthy sports product: pitch-green primary,
+   trophy-gold accent, on a light "paper" mint background. Inter throughout,
+   with unusually fine-grained heavy weights (650 / 720 / 760 / 820 / 850).
+   ============================================================================ */
+
+:root {
+  /* ---- Brand palette (verbatim from globals.css :root) ------------------ */
+  --background: #f7faf9;      /* app canvas — faint mint-tinted off-white   */
+  --surface: #ffffff;         /* cards / panels                              */
+  --surface-strong: #f0f5f2;  /* table heads, sticky column headers          */
+  --paper-soft: #fbfdfc;      /* nested rows / inset wells                    */
+
+  --text: #0c1d1a;            /* near-black with a green undertone (ink)      */
+  --muted: #5d6f69;           /* secondary text, labels, meta                 */
+
+  --border: #d8e3df;          /* hairline dividers, default borders           */
+  --border-strong: #b8c7c1;   /* dashed empty states, select rings            */
+
+  --green: #106b4f;           /* PRIMARY — pitch green; buttons, brand mark   */
+  --green-soft: #e5f3ee;      /* primary tint — selected rows, chips, formula */
+  --gold: #c9942e;            /* prize / money accent, "due" status           */
+  --red: #b84a45;             /* destructive, errors                          */
+
+  --shadow: 0 16px 45px rgba(17, 43, 36, 0.08); /* panel elevation            */
+
+  /* ---- Pick accent system (three player picks are color-coded) ---------- */
+  --pick-one-accent: #106b4f; --pick-one-bg: #e5f3ee; --pick-one-border: #9ac9b8; --pick-one-text: #0b513b;
+  --pick-two-accent: #2f5fbd; --pick-two-bg: #e9effb; --pick-two-border: #a9c0ec; --pick-two-text: #244c96;
+  --pick-three-accent: #b66b16; --pick-three-bg: #fff0dd; --pick-three-border: #e4bd86; --pick-three-text: #81500f;
+
+  /* ---- Type family ------------------------------------------------------ */
+  /* The app loads Inter via next/font. No webfont files ship in the repo,
+     so we load Inter from Google Fonts (see @import in HTML / link tag).    */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* ---- Type scale (derived from observed component sizes) --------------- */
+  --display: 800 clamp(38px, 6vw, 76px) / 0.95 var(--font-sans); /* auth h1  */
+  --h1: 800 clamp(28px, 4vw, 42px) / 1.05 var(--font-sans);       /* page h1  */
+  --h2: 800 24px / 1.15 var(--font-sans);                          /* section  */
+  --panel-title: 700 18px / 1.2 var(--font-sans);                  /* card h2  */
+  --stat-value: 800 28px / 1 var(--font-sans);                     /* big nums */
+  --body: 400 14px / 1.5 var(--font-sans);
+  --body-lg: 400 17px / 1.6 var(--font-sans);                      /* hero p   */
+  --meta: 700 12px / 1.35 var(--font-sans);                        /* labels   */
+  --eyebrow: 850 12px / 1 var(--font-sans);                        /* uppercase*/
+
+  /* ---- Distinctive weight ladder (used literally in the source) --------- */
+  --w-regular: 400;
+  --w-medium: 650;   /* nav links, message text          */
+  --w-semi: 720;     /* chips                            */
+  --w-bold: 760;     /* team names, buttons, stat labels */
+  --w-heavy: 800;    /* brand, headings, coefficients    */
+  --w-black: 850;    /* points, eyebrows, big values     */
+
+  /* ---- Radii ------------------------------------------------------------ */
+  --radius-sm: 6px;   /* nav link, inner search           */
+  --radius: 7px;      /* inputs, buttons, cells           */
+  --radius-md: 8px;   /* panels, cards, stats             */
+  --radius-pill: 999px;
+  --radius-round: 50%;
+
+  /* ---- Spacing (the layout breathes on an 8-ish grid) ------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 10px;
+  --space-4: 12px;
+  --space-5: 14px;
+  --space-6: 18px;
+  --space-7: 24px;
+  --space-8: 28px;
+  --space-9: 32px;
+
+  /* ---- Letter spacing --------------------------------------------------- */
+  --tracking-eyebrow: 0.08em;
+  --tracking-label: 0.04em;
+}
+
+/* ============================================================================
+   Semantic type helpers — apply these classes or @extend the patterns.
+   ============================================================================ */
+
+.ds-display { font: var(--display); letter-spacing: 0; color: var(--text); margin: 0; }
+.ds-h1      { font: var(--h1); color: var(--text); margin: 0; }
+.ds-h2      { font: var(--h2); color: var(--text); margin: 0; }
+.ds-panel-title { font: var(--panel-title); color: var(--text); margin: 0; }
+.ds-body    { font: var(--body); color: var(--text); }
+.ds-body-lg { font: var(--body-lg); color: var(--muted); }
+
+.ds-eyebrow {
+  font: var(--eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.ds-label {
+  font: var(--meta);
+  font-weight: var(--w-bold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ds-stat-value { font: var(--stat-value); color: var(--text); }
+.ds-points     { font-weight: var(--w-black); font-size: 20px; color: var(--text); }
+.ds-coefficient{ font-weight: var(--w-heavy); color: var(--green); }
