@@ -1058,6 +1058,13 @@ export function Dashboard({
     window.setTimeout(() => setInviteMessage(null), 1800);
   }
 
+  function compactAllDataCards() {
+    setShowAllTeams(false);
+    setLeaderboardExpanded(false);
+    setRulesExpanded(false);
+    setMatchScheduleExpanded(false);
+  }
+
   return (
     <main className={`app-shell app-shell--landing ${showPickWorkflow ? "" : "app-shell--post-entry"}`}>
       <header className="topbar">
@@ -1096,7 +1103,7 @@ export function Dashboard({
           </div>
           <small>{participantCount >= 100 ? "Free to play" : `${teams.length} nations`}</small>
         </div>
-        <SmartMenu>
+        <SmartMenu label="Menu" summary="Browse app">
           <nav className="nav nav--app" aria-label="Primary navigation">
             <a className="nav-item nav-item--primary" href={showPickWorkflow ? "#pick" : "#me"}>
               {showPickWorkflow ? <Users size={16} /> : <UserRound size={16} />}
@@ -1155,6 +1162,10 @@ export function Dashboard({
                 </span>
               </summary>
               <div className="nav-more__menu">
+                <a href="#browse">
+                  <GitBranch size={16} />
+                  Browse
+                </a>
                 <a href="#rules">
                   <BookOpen size={16} />
                   Rules
@@ -1282,6 +1293,91 @@ export function Dashboard({
           <div className="stat">
             <div className="stat-label">Entry</div>
             <div className="stat-value">Free</div>
+          </div>
+        </section>
+
+        <section className="browse-hub" id="browse" aria-labelledby="browse-title">
+          <div className="browse-hub__head">
+            <div>
+              <h2 id="browse-title">Browse</h2>
+              <p>Jump to the right card. Open full data only when you need it.</p>
+            </div>
+            <button className="browse-hub__compact" onClick={compactAllDataCards} type="button">
+              <ChevronUp size={16} />
+              Compact all cards
+            </button>
+          </div>
+          <div className="browse-hub__grid" aria-label="Dashboard sections">
+            <a className="browse-tile browse-tile--primary" href={showPickWorkflow ? "#pick" : "#me"}>
+              <span className="browse-tile__icon" aria-hidden="true">
+                {showPickWorkflow ? <Users size={18} /> : <UserRound size={18} />}
+              </span>
+              <span className="browse-tile__copy">
+                <strong>{showPickWorkflow ? "Play" : "Account"}</strong>
+                <small>{showPickWorkflow ? pickInstruction : "Your locked teams and rank"}</small>
+              </span>
+              <span className="browse-tile__metric">
+                {showPickWorkflow ? `${selectedTeams.length}/3` : accountInPoolUi ? "Pool" : "Free"}
+              </span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="browse-tile" href={signedInWithGoogle ? "#me" : "/login"}>
+              <span className="browse-tile__icon" aria-hidden="true">
+                <UserRound size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>My account</strong>
+                <small>{signedInWithGoogle ? "Standing, referrals, agent code" : "Login or start free"}</small>
+              </span>
+              <span className="browse-tile__metric">{signedInWithGoogle ? "Open" : "Login"}</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="browse-tile" href="#leaderboard">
+              <span className="browse-tile__icon" aria-hidden="true">
+                <Trophy size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Leaderboard</strong>
+                <small>Top players first, full board on demand</small>
+              </span>
+              <span className="browse-tile__metric">{publicLeaderboard.length}</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="browse-tile" href="#invite">
+              <span className="browse-tile__icon" aria-hidden="true">
+                <LinkIcon size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Invite</strong>
+                <small>Share your code and track friends</small>
+              </span>
+              <span className="browse-tile__metric">{myReferrals.length}</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="browse-tile" href="#matches">
+              <span className="browse-tile__icon" aria-hidden="true">
+                <CalendarClock size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Matches</strong>
+                <small>Compact schedule, all fixtures on demand</small>
+              </span>
+              <span className="browse-tile__metric">
+                {completedCount}/{matches.length}
+              </span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="browse-tile" href="#rules">
+              <span className="browse-tile__icon" aria-hidden="true">
+                <BookOpen size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Rules</strong>
+                <small>Points, coefficients, lock times</small>
+              </span>
+              <span className="browse-tile__metric">Guide</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
           </div>
         </section>
 

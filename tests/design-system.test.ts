@@ -132,6 +132,11 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /leaderboardExpanded, setLeaderboardExpanded/);
     assert.match(dashboard, /rulesExpanded, setRulesExpanded/);
     assert.match(dashboard, /matchScheduleExpanded, setMatchScheduleExpanded/);
+    assert.match(dashboard, /function compactAllDataCards\(\)/);
+    assert.match(dashboard, /setShowAllTeams\(false\);/);
+    assert.match(dashboard, /setLeaderboardExpanded\(false\);/);
+    assert.match(dashboard, /setRulesExpanded\(false\);/);
+    assert.match(dashboard, /setMatchScheduleExpanded\(false\);/);
     assert.match(dashboard, /className="card-disclosure card-disclosure--leaderboard"/);
     assert.match(dashboard, /className="card-disclosure card-disclosure--rules"/);
     assert.match(dashboard, /className="card-disclosure card-disclosure--matches"/);
@@ -155,6 +160,30 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.leaderboard-list--expanded,[\s\S]*?\.match-list--expanded\s*{[\s\S]*?max-height:\s*min\(760px,\s*74vh\);/);
     assert.match(globalsCss, /\.rules-content--minimized\s*{[\s\S]*?max-height:\s*min\(360px,\s*48vh\);/);
     assert.match(globalsCss, /\.rules-content--expanded\s*{[\s\S]*?overflow-y:\s*auto;/);
+  });
+
+  it("adds a smart browse hub so users can jump between grouped app cards", () => {
+    assert.match(dashboard, /<SmartMenu label="Menu" summary="Browse app">/);
+    assert.match(dashboard, /<a href="#browse">[\s\S]*?Browse/);
+    assert.match(dashboard, /<section className="browse-hub" id="browse" aria-labelledby="browse-title">/);
+    assert.match(dashboard, /<h2 id="browse-title">Browse<\/h2>/);
+    assert.match(dashboard, /Jump to the right card\. Open full data only when you need it\./);
+    assert.match(dashboard, /className="browse-hub__compact" onClick=\{compactAllDataCards\}/);
+    assert.match(dashboard, /Compact all cards/);
+    assert.equal(dashboard.match(/<a className="browse-tile/g)?.length, 6);
+    for (const target of ["#pick", "#me", "#leaderboard", "#invite", "#matches", "#rules"]) {
+      assert.match(dashboard, new RegExp(`href=\\{?[^\\n]*${target.replace("#", "#")}|href="${target}"`));
+    }
+    assert.match(dashboard, /Top players first, full board on demand/);
+    assert.match(dashboard, /Compact schedule, all fixtures on demand/);
+    assert.match(dashboard, /Points, coefficients, lock times/);
+    assert.match(globalsCss, /\.browse-hub\s*{[\s\S]*?linear-gradient\(145deg,\s*rgba\(5,\s*30,\s*23,\s*0\.98\)/);
+    assert.match(globalsCss, /\.browse-hub__grid\s*{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /\.browse-tile\s*{[\s\S]*?grid-template-columns:\s*auto minmax\(0,\s*1fr\) auto auto;/);
+    assert.match(globalsCss, /\.browse-tile--primary\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a/);
+    assert.match(globalsCss, /@media \(max-width:\s*1180px\)\s*{[\s\S]*?\.browse-hub__grid,[\s\S]*?grid-template-columns:\s*1fr 1fr;/);
+    assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.browse-hub__grid,[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
+    assert.match(globalsCss, /@media \(max-width:\s*760px\)\s*{[\s\S]*?\.browse-tile__copy small\s*{[\s\S]*?white-space:\s*normal;/);
   });
 
   it("keeps the root layout from forcing mobile horizontal overflow", () => {
