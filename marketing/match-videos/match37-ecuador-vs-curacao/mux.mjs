@@ -145,7 +145,9 @@ execFileSync(ffmpegPath, [
   '-y',
   '-framerate', String(FPS), '-start_number', '0', '-i', 'frames/f_%05d.jpg',
   '-i', 'audio_master.m4a',
-  '-filter_complex', `[0:v]crop=1920:1080:0:0,fps=${FPS},format=yuv420p[vout]`,
+  // Research-driven finish: subtle cinematic grade + vignette + fine film grain
+  // to unify clips from different AI models and kill the spliced "AI look".
+  '-filter_complex', `[0:v]crop=1920:1080:0:0,fps=${FPS},eq=contrast=1.06:saturation=1.07:gamma=0.98,vignette=angle=PI/6,noise=alls=5:allf=t,format=yuv420p[vout]`,
   '-map', '[vout]', '-map', '1:a',
   '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-preset', 'medium',
   '-r', String(FPS),

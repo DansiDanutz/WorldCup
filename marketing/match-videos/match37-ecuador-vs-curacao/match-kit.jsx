@@ -19,6 +19,10 @@ const MV = {
   sen: '#16a34a',          // Senegal green
   senLight: '#22c55e',
   senGold: '#fcd116',      // Senegal flag yellow
+  ecu: '#FFD100',          // Ecuador bright yellow
+  ecuLight: '#ffe04d',
+  cur: '#002B7F',          // Curaçao royal blue
+  curLight: '#2a55b8',
   green: '#106b4f',
   line: 'rgba(255,255,255,0.14)',
 };
@@ -200,6 +204,30 @@ function FlagSEN({ w = 120 }) {
   );
 }
 
+// Ecuador — horizontal yellow (top, double height) / blue / red
+function FlagECU({ w = 120 }) {
+  const h = w * 2 / 3;
+  return (
+    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ flex: 2, background: '#ffd100' }} />
+      <div style={{ flex: 1, background: '#0052a5' }} />
+      <div style={{ flex: 1, background: '#ed1c24' }} />
+    </div>
+  );
+}
+
+// Curaçao — blue field, a horizontal yellow stripe across the lower third, two white five-point stars upper-left
+function FlagCUR({ w = 120 }) {
+  const h = w * 2 / 3;
+  return (
+    <div style={{ width: w, height: h, borderRadius: w * 0.05, position: 'relative', overflow: 'hidden', background: '#002b7f', boxShadow: '0 6px 18px rgba(0,0,0,0.45)' }}>
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: h * 0.22, height: h * 0.16, background: '#f9d90f' }} />
+      <span style={{ position: 'absolute', left: w * 0.16, top: h * 0.20, transform: 'translate(-50%,-50%)', color: '#fff', fontSize: h * 0.30, lineHeight: 1, fontFamily: SANS }}>★</span>
+      <span style={{ position: 'absolute', left: w * 0.30, top: h * 0.40, transform: 'translate(-50%,-50%)', color: '#fff', fontSize: h * 0.22, lineHeight: 1, fontFamily: SANS }}>★</span>
+    </div>
+  );
+}
+
 // ── Type & cards ─────────────────────────────────────────────────────────────
 function BigTitle({ children, size = 110, color = MV.text, spacing = '0.02em', glow = MV.gold, style = {} }) {
   return (
@@ -245,13 +273,14 @@ function LowerThird({ start, name, role, line, accent = MV.kor }) {
   );
 }
 
-// Match scoreboard chip (top center). Scores are OUR PREDICTION — the badge says so.
-function ScoreBug({ start, fra = 0, sen = 0, minute }) {
+// Match scoreboard chip (top center). Ep37 scores are REAL (the match was played) —
+// the badge reads LIVE / the match minute, never a prediction.
+function ScoreBug({ start, ecu = 0, cur = 0, minute, badge = "LIVE" }) {
   const t = useTime();
   const local = t - start;
   if (local < 0) return null;
   const inP = Easing.easeOutBack(clamp(local / 0.7, 0, 1));
-  const cell = { fontFamily: SANS, fontWeight: 900, fontSize: 34, color: MV.text, padding: '10px 18px' };
+  const cell = { fontFamily: SANS, fontWeight: 900, fontSize: 34, color: '#0a0c14', padding: '10px 18px' };
   return (
     <div style={{
       position: 'absolute', top: 118, left: '50%', zIndex: 26,
@@ -263,15 +292,15 @@ function ScoreBug({ start, fra = 0, sen = 0, minute }) {
         background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 14,
         boxShadow: '0 10px 36px rgba(0,0,0,0.5)', overflow: 'hidden',
       }}>
-        <div style={{ ...cell, background: MV.fra }}>FRA</div>
-        <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{fra} — {sen}</div>
-        <div style={{ ...cell, background: MV.sen }}>SEN</div>
+        <div style={{ ...cell, background: MV.ecu }}>ECU</div>
+        <div style={{ ...cell, fontSize: 38, color: MV.gold }}>{ecu} — {cur}</div>
+        <div style={{ ...cell, background: MV.cur, color: '#fff' }}>CUR</div>
         {minute && <div style={{ ...cell, fontSize: 26, color: MV.muted, borderLeft: `1px solid ${MV.line}` }}>{minute}</div>}
       </div>
       <div style={{
         fontFamily: SANS, fontWeight: 800, fontSize: 16, color: MV.gold, letterSpacing: '0.22em',
         background: 'rgba(255,210,74,0.12)', border: '1px solid rgba(255,210,74,0.5)', borderRadius: 999, padding: '4px 16px',
-      }}>OUR PREDICTION</div>
+      }}>{badge}</div>
     </div>
   );
 }
@@ -326,7 +355,7 @@ function Confetti({ start, dur, count = 90, zIndex = 24 }) {
     const speed = 220 + seed2 * 260;
     const y = ((local * speed) + seed2 * H) % (H + 60) - 30;
     const rot = (local * (120 + seed * 240) + seed * 360) % 360;
-    const colors = [MV.gold, '#fff', MV.kor, MV.korBlue];
+    const colors = [MV.gold, '#fff', MV.ecu, MV.cur];
     pieces.push(
       <div key={i} style={{
         position: 'absolute', left: x, top: y, width: 12 + seed * 10, height: 7 + seed2 * 8,
