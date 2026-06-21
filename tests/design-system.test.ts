@@ -205,6 +205,12 @@ describe("WorldCup design system integration", () => {
 
     assert.match(legendCardCollection, /worldcup_legend_unlocked_cards/);
     assert.match(legendCardCollection, /worldcup_legend_opened_cards/);
+    assert.match(legendCardCollection, /worldcup_legend_watched_cards/);
+    assert.match(legendCardCollection, /watchUnlockSeconds = 45/);
+    assert.match(legendCardCollection, /getYouTubeVideoId/);
+    assert.match(legendCardCollection, /loadYouTubeIframeApi/);
+    assert.match(legendCardCollection, /onYouTubeIframeAPIReady/);
+    assert.match(legendCardCollection, /new window\.YT\.Player/);
     assert.match(legendCardCollection, /createBrowserSupabaseClient/);
     assert.match(legendCardCollection, /readAccountUnlockedIds/);
     assert.match(legendCardCollection, /saveAccountUnlockedId/);
@@ -213,11 +219,15 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /accountSyncLabel/);
     assert.match(legendCardCollection, /speechSynthesis/);
     assert.match(legendCardCollection, /new SpeechSynthesisUtterance/);
-    assert.match(legendCardCollection, /Watch on YouTube/);
+    assert.match(legendCardCollection, /Watch to unlock/);
+    assert.match(legendCardCollection, /legend-watch-modal/);
     assert.match(legendCardCollection, /Unlock card/);
     assert.match(legendCardCollection, /Enable voice/);
     assert.match(legendCardCollection, /isUnlocked \? "is-unlocked" : "is-locked"/);
     assert.match(globalsCss, /\.legend-card-grid/);
+    assert.match(globalsCss, /\.legend-watch-modal\s*{/);
+    assert.match(globalsCss, /\.legend-watch-modal__player\s*{[\s\S]*?aspect-ratio:\s*16 \/ 9;/);
+    assert.match(globalsCss, /\.legend-watch-modal__progress\s*{/);
     assert.match(globalsCss, /\.legend-card\.is-locked \.legend-card__image img\s*{[\s\S]*?filter:\s*blur\(7px\)/);
     assert.match(globalsCss, /\.legend-card__actions\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\) 40px;/);
     assert.match(globalsCss, /\.legend-card__watch,\s*[\s\S]*?\.legend-card__disabled\s*{[\s\S]*?grid-column:\s*1 \/ -1;/);
