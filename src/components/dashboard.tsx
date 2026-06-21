@@ -1220,7 +1220,7 @@ export function Dashboard({
 
         <a
           className="series-banner"
-          href="https://www.youtube.com/channel/UC7j29XhArv5tlRqQj2qAb4Q?sub_confirmation=1"
+          href="https://www.youtube.com/@DansLab-WorldCup"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Watch the WorldCup26 Legends story series on YouTube"
@@ -1230,7 +1230,7 @@ export function Dashboard({
           </span>
           <span className="series-banner__copy">
             <strong>WorldCup26 Legends — the story series</strong>
-            <small>A Pixar-style episode before every match. New: Brazil vs Haiti.</small>
+            <small>A Pixar-style episode before every match. Subscribe for the next prediction.</small>
           </span>
           <span className="series-banner__cta">Watch on YouTube</span>
         </a>
