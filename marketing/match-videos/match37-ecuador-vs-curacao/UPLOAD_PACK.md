@@ -22,7 +22,7 @@ Episode 37: Ecuador vs Curaçao, Group E. A continent of 18 million against a Ca
 
 🎬 Full time: Ecuador 0–0 Curaçao — a historic first World Cup point for the smallest nation in the tournament.
 
-🏆 Think you can call the next shock before it happens? Play FREE at worldcup26.world — pick 3 teams, back the underdogs (they pay triple), and climb the live prize pool.
+🏆 Think you can call the next shock before it happens? Play FREE at worldcup26.world — pick 3 of the 48 nations, and every goal they score scores for you. Free to play, just for fun, no prizes.
 
 👉 Comment "KÒRSOU" for Curaçao, or "LA TRI" for Ecuador.
 🃏 Collect Legend 037 — The Island Elder.
@@ -46,12 +46,12 @@ Episode 37: Ecuador vs Curaçao, Group E. A continent of 18 million against a Ca
 
 ## TAGS (comma-separated, paste into YouTube tags)
 ```
-world cup 2026, ecuador vs curacao, curacao vs ecuador, curacao football, ecuador la tri, eloy room, moises caicedo, enner valencia, gonzalo plata, worldcup26 legends, world cup story, world cup animation, pixar football, soccer animation, group e world cup, curacao world cup, smallest country world cup, underdog story, football mystery, world cup 2026 highlights, world cup 2026 group e, soccer story, worldcup26, daslab kimi
+world cup 2026, ecuador vs curacao, curacao vs ecuador, curacao football, ecuador la tri, eloy room, moises caicedo, enner valencia, gonzalo plata, worldcup26 legends, world cup story, world cup animation, pixar football, soccer animation, group e world cup, curacao world cup, smallest country world cup, comeback story, football mystery, world cup 2026 highlights, world cup 2026 group e, soccer story, worldcup26, daslab kimi
 ```
 
 ## PINNED COMMENT
 ```
-🃏 Legend 037 — The Island Elder is now collectible. KÒRSOU for Curaçao, LA TRI for Ecuador — who impressed you more? Play free + back the next underdog at worldcup26.world ⚽
+🃏 Legend 037 — The Island Elder is now collectible. KÒRSOU for Curaçao, LA TRI for Ecuador — who impressed you more? Play free at worldcup26.world — pick 3 nations, every goal scores for you. Just for fun, no prizes. ⚽
 ```
 
 ## NOTES
