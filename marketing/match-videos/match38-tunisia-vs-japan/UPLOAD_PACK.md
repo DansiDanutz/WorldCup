@@ -23,7 +23,7 @@ Episode 38: Japan vs Tunisia, Group F. Two nations remade by football — the Bl
 
 🔮 OUR PREDICTION: Japan 3–0 Tunisia — Japan led 2–0 at the break (Japan scored twice); in our story Kubo adds a 91st-minute third to seal a statement win. The real result is yours to watch.
 
-🏆 Think you can call it before kickoff? Play FREE at worldcup26.world — pick 3 teams, back the underdogs (they pay triple), climb the live prize pool.
+🏆 Think you can call it before kickoff? Play FREE at worldcup26.world — pick 3 of the 48 nations, and every goal they score scores for you. Free to play, just for fun, no prizes.
 
 👉 Comment "NIPPON" for Japan, or "TOUNES" for Tunisia.
 🃏 Collect Legend 038 — The Eagle-Keeper.
@@ -52,7 +52,7 @@ world cup 2026, japan vs tunisia, tunisia vs japan, japan football, tunisia foot
 
 ## PINNED COMMENT
 ```
-🃏 Legend 038 — The Eagle-Keeper is now collectible. We predict Japan 2–1 (91' Kubo) — do you agree? NIPPON or TOUNES? Play free + back the next underdog at worldcup26.world ⚽
+🃏 Legend 038 — The Eagle-Keeper is now collectible. We predict Japan 3–0 (a late Kubo third) — do you agree? NIPPON or TOUNES? Play free at worldcup26.world — pick 3 nations, every goal scores for you. Just for fun, no prizes. ⚽
 ```
 
 ## NOTES
