@@ -206,6 +206,7 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /worldcup_legend_unlocked_cards/);
     assert.match(legendCardCollection, /worldcup_legend_opened_cards/);
     assert.match(legendCardCollection, /worldcup_legend_watched_cards/);
+    assert.match(legendCardCollection, /unlockableCardIds/);
     assert.match(legendCardCollection, /id="legend-cards"/);
     assert.match(legendCardCollection, /legend-card-\$\{card\.id\}/);
     assert.match(legendCardCollection, /watchUnlockSeconds = 45/);
@@ -216,6 +217,9 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /createBrowserSupabaseClient/);
     assert.match(legendCardCollection, /readAccountUnlockedIds/);
     assert.match(legendCardCollection, /saveAccountUnlockedId/);
+    assert.match(legendCardCollection, /supabase\.auth\.onAuthStateChange/);
+    assert.match(legendCardCollection, /syncAccountCollection\(nextSession\?\.access_token \?\? null\)/);
+    assert.match(legendCardCollection, /data\.subscription\.unsubscribe\(\)/);
     assert.match(legendCardCollection, /\/api\/legend-cards/);
     assert.match(legendCardCollection, /Authorization: `Bearer \$\{token\}`/);
     assert.match(legendCardCollection, /accountSyncLabel/);

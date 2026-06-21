@@ -14,6 +14,7 @@ const storageEventName = "worldcup:legend-card-storage";
 const youtubeApiReadyEvent = "worldcup:youtube-api-ready";
 const watchUnlockSeconds = 45;
 const validCardIds = new Set(LEGEND_CARDS.map((card) => card.id));
+const unlockableCardIds = new Set(LEGEND_CARDS.filter((card) => card.youtube).map((card) => card.id));
 
 type YouTubePlayerState = {
   ENDED: number;
@@ -258,20 +259,19 @@ export function LegendCardCollection() {
 
   useEffect(() => {
     let cancelled = false;
+    const supabase = createBrowserSupabaseClient();
 
-    async function syncAccountCollection() {
-      try {
-        const supabase = createBrowserSupabaseClient();
-        const sessionResult = await supabase.auth.getSession();
-        const token = sessionResult.data.session?.access_token ?? null;
-
-        if (cancelled) {
-          return;
-        }
-
-        if (!token) {
+    async function syncAccountCollection(token: string | null) {
+      if (!token) {
+        if (!cancelled) {
           setAccountToken(null);
           setAccountSyncLabel("Saved on this device");
+        }
+        return;
+      }
+
+      try {
+        if (cancelled) {
           return;
         }
 
@@ -280,7 +280,9 @@ export function LegendCardCollection() {
 
         const remoteIds = await readAccountUnlockedIds(token);
         const localIds = readCurrentStoredIds(unlockedStorageKey);
-        const localOnlyIds = [...localIds].filter((cardId) => !remoteIds.has(cardId));
+        const localOnlyIds = [...localIds].filter(
+          (cardId) => !remoteIds.has(cardId) && unlockableCardIds.has(cardId),
+        );
 
         for (const cardId of localOnlyIds) {
           await saveAccountUnlockedId(cardId, token);
@@ -304,10 +306,18 @@ export function LegendCardCollection() {
       }
     }
 
-    syncAccountCollection();
+    supabase.auth
+      .getSession()
+      .then(({ data }) => syncAccountCollection(data.session?.access_token ?? null))
+      .catch(() => syncAccountCollection(null));
+
+    const { data } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+      void syncAccountCollection(nextSession?.access_token ?? null);
+    });
 
     return () => {
       cancelled = true;
+      data.subscription.unsubscribe();
     };
   }, []);
 
