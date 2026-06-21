@@ -10,8 +10,11 @@ const loginOgImage = readFileSync("src/app/login/opengraph-image.tsx", "utf8");
 const coefficientsPage = readFileSync("src/app/coefficients/page.tsx", "utf8");
 const schemaPage = readFileSync("src/app/schema/page.tsx", "utf8");
 const previewPage = readFileSync("src/app/preview/page.tsx", "utf8");
+const predictionsPage = readFileSync("src/app/predictions/page.tsx", "utf8");
 const loginRegister = readFileSync("src/components/login-register.tsx", "utf8");
 const dashboard = readFileSync("src/components/dashboard.tsx", "utf8");
+const legendCardCollection = readFileSync("src/components/legend-card-collection.tsx", "utf8");
+const legendCardsRoute = readFileSync("src/app/api/legend-cards/route.ts", "utf8");
 const rootLayout = readFileSync("src/app/layout.tsx", "utf8");
 const appLaunchSplash = readFileSync("src/components/app-launch-splash.tsx", "utf8");
 const heroCard = readFileSync("src/components/hero-card.tsx", "utf8");
@@ -21,7 +24,13 @@ const myStanding = readFileSync("src/components/my-standing.tsx", "utf8");
 const cardViewControl = readFileSync("src/components/card-view-control.tsx", "utf8");
 const smartMenu = readFileSync("src/components/smart-menu.tsx", "utf8");
 const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
+const legendCardRegistry = readFileSync("src/lib/legend-card-registry.ts", "utf8");
+const legendCards = readFileSync("src/lib/legend-cards.ts", "utf8");
 const support = readFileSync("src/lib/support.ts", "utf8");
+const legendCardsMigration = readFileSync(
+  "supabase/migrations/20260621150000_worldcup_legend_card_unlocks.sql",
+  "utf8",
+);
 const appIcon = readFileSync("src/app/icon.svg", "utf8");
 const brandMark = readFileSync("public/brand-mark.svg", "utf8");
 const logoLockup = readFileSync("public/logo-lockup.svg", "utf8");
@@ -167,6 +176,73 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.leaderboard-list--expanded,[\s\S]*?\.match-list--expanded\s*{[\s\S]*?max-height:\s*min\(760px,\s*74vh\);/);
     assert.match(globalsCss, /\.rules-content--minimized\s*{[\s\S]*?max-height:\s*min\(360px,\s*48vh\);/);
     assert.match(globalsCss, /\.rules-content--expanded\s*{[\s\S]*?overflow-y:\s*auto;/);
+  });
+
+  it("turns Legends episode assets into collectible cards unlocked from YouTube", () => {
+    assert.match(predictionsPage, /<LegendCardCollection \/>/);
+    assert.match(predictionsPage, /new card unlocks appear here as videos go\s+public/);
+    assert.match(legendCardRegistry, /export const LEGEND_CARD_DEFINITIONS: LegendCardDefinition\[\]/);
+    assert.equal(legendCardRegistry.match(/id:\s*"/g)?.length, 10);
+    assert.match(legendCardRegistry, /youtubeForEpisode\(1\)/);
+    assert.match(legendCardRegistry, /youtubeForEpisode\(7\)/);
+    assert.match(legendCardRegistry, /youtubeForEpisode\(9\)/);
+    assert.match(legendCardRegistry, /findLegendCardDefinition/);
+    assert.match(legendCardRegistry, /isUnlockableLegendCard/);
+    assert.match(legendCards, /LEGEND_CARD_DEFINITIONS/);
+    assert.match(legendCards, /legendCardImages: Record<string, StaticImageData>/);
+
+    for (const asset of [
+      "content/images/Supporters/Mexico/Mystery-Supporter.png",
+      "content/images/Supporters/South_Africa/Mystery-Supporter.png",
+      "content/images/Supporters/South_Korea/Mystery-Supporter.png",
+      "content/images/Supporters/Argentina/El-Abuelo-de-la-Bombonera.png",
+      "content/images/Supporters/Algeria/Le-Vieux-Fennec.png",
+      "content/images/Supporters/Haiti/Le-Tambouye-de-74.png",
+      "content/images/Supporters/Qatar/The-Falconer-of-the-Desert.png",
+    ]) {
+      assert.equal(existsSync(asset), true);
+    }
+
+    assert.match(legendCardCollection, /worldcup_legend_unlocked_cards/);
+    assert.match(legendCardCollection, /worldcup_legend_opened_cards/);
+    assert.match(legendCardCollection, /createBrowserSupabaseClient/);
+    assert.match(legendCardCollection, /readAccountUnlockedIds/);
+    assert.match(legendCardCollection, /saveAccountUnlockedId/);
+    assert.match(legendCardCollection, /\/api\/legend-cards/);
+    assert.match(legendCardCollection, /Authorization: `Bearer \$\{token\}`/);
+    assert.match(legendCardCollection, /accountSyncLabel/);
+    assert.match(legendCardCollection, /speechSynthesis/);
+    assert.match(legendCardCollection, /new SpeechSynthesisUtterance/);
+    assert.match(legendCardCollection, /Watch on YouTube/);
+    assert.match(legendCardCollection, /Unlock card/);
+    assert.match(legendCardCollection, /Enable voice/);
+    assert.match(legendCardCollection, /isUnlocked \? "is-unlocked" : "is-locked"/);
+    assert.match(globalsCss, /\.legend-card-grid/);
+    assert.match(globalsCss, /\.legend-card\.is-locked \.legend-card__image img\s*{[\s\S]*?filter:\s*blur\(7px\)/);
+    assert.match(globalsCss, /\.legend-card__actions\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\) 40px;/);
+    assert.match(globalsCss, /\.legend-card__watch,\s*[\s\S]*?\.legend-card__disabled\s*{[\s\S]*?grid-column:\s*1 \/ -1;/);
+    assert.match(globalsCss, /@media \(max-width:\s*640px\)\s*{[\s\S]*?\.legend-card__actions\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
+  });
+
+  it("persists collected Legend cards as owner-readable account data", () => {
+    assert.match(legendCardsMigration, /create table if not exists public\.worldcup_legend_card_unlocks/);
+    assert.match(legendCardsMigration, /primary key \(user_id, card_id\)/);
+    assert.match(legendCardsMigration, /alter table public\.worldcup_legend_card_unlocks enable row level security/);
+    assert.match(legendCardsMigration, /worldcup_legend_card_unlocks_owner_read/);
+    assert.match(legendCardsMigration, /using \(auth\.uid\(\) = user_id\)/);
+    assert.match(legendCardsMigration, /revoke all on public\.worldcup_legend_card_unlocks from anon, authenticated/);
+    assert.match(legendCardsMigration, /grant select on public\.worldcup_legend_card_unlocks to authenticated/);
+
+    assert.match(legendCardsRoute, /getBearerToken\(request\)/);
+    assert.match(legendCardsRoute, /createServiceSupabaseClient/);
+    assert.match(legendCardsRoute, /supabase\.auth\.getUser\(token\)/);
+    assert.match(legendCardsRoute, /getAuthProvider\(userResult\.data\.user\) !== "google"/);
+    assert.match(legendCardsRoute, /findLegendCardDefinition\(cardId\)/);
+    assert.match(legendCardsRoute, /if \(!card\.youtube\)/);
+    assert.match(legendCardsRoute, /\.from\("worldcup_legend_card_unlocks"\)\.upsert/);
+    assert.match(legendCardsRoute, /ignoreDuplicates:\s*true/);
+    assert.match(legendCardsRoute, /\.eq\("user_id", userId\)/);
+    assert.match(legendCardsRoute, /unlockedCardIds/);
   });
 
   it("keeps long admin operation lists compact until maximized", () => {

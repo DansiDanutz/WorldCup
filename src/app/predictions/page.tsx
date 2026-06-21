@@ -1,10 +1,13 @@
+import { ArrowLeft, PlayCircle } from "lucide-react";
 import Link from "next/link";
+
+import { LegendCardCollection } from "@/components/legend-card-collection";
 import { PREDICTIONS } from "@/lib/predictions";
 
 export const metadata = {
-  title: "Predictions · WorldCup26 Legends",
+  title: "Legend Cards · WorldCup26 Legends",
   description:
-    "Our story prediction for every WorldCup26 match — watch the matching episode of the WorldCup26 Legends series.",
+    "Collect WorldCup26 Legends episode cards by watching the matching YouTube stories.",
 };
 
 export default function PredictionsPage() {
@@ -13,141 +16,77 @@ export default function PredictionsPage() {
 
   return (
     <main className="app-shell">
-      <div className="page">
-        <article className="panel" style={{ maxWidth: 980, margin: "0 auto" }}>
-          <p className="wc-card-eyebrow" style={{ color: "var(--green)" }}>
-            WorldCup26 Legends
-          </p>
-          <h1 className="panel-title" style={{ fontSize: 28 }}>
-            Match Predictions
-          </h1>
-          <p className="panel-subtitle">
-            One cinematic episode per match — our <strong>story prediction</strong> for how it
-            could unfold. These are predictions from our series, not real results. {liveCount} of{" "}
-            {PREDICTIONS.length} episodes are live; the rest premiere before kickoff.
-          </p>
+      <div className="page predictions-page">
+        <LegendCardCollection />
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-              gap: "var(--space-5)",
-              marginTop: "var(--space-7)",
-            }}
-          >
-            {episodes.map((p) => {
-              const isLive = Boolean(p.youtube);
+        <section className="episode-library" aria-labelledby="episode-library-title">
+          <div className="episode-library__header">
+            <div>
+              <p className="wc-card-eyebrow">Episode library</p>
+              <h2 id="episode-library-title">Match Predictions</h2>
+              <p>
+                Story predictions from the WorldCup26 Legends series. {liveCount} of{" "}
+                {PREDICTIONS.length} episodes are live; new card unlocks appear here as videos go
+                public.
+              </p>
+            </div>
+            <Link className="button secondary episode-library__back" href={{ pathname: "/" }}>
+              <ArrowLeft size={16} />
+              Back to game
+            </Link>
+          </div>
+
+          <div className="episode-grid">
+            {episodes.map((prediction) => {
+              const isLive = Boolean(prediction.youtube);
+
               return (
-                <section
-                  key={p.ep}
-                  className="wc-card"
-                  style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)" }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "baseline",
-                      gap: "var(--space-3)",
-                    }}
-                  >
-                    <span className="wc-card-eyebrow" style={{ color: "var(--green)" }}>
-                      Episode {p.ep}
-                    </span>
-                    {p.stage ? (
-                      <span style={{ font: "var(--meta)", color: "var(--muted)", textAlign: "right" }}>
-                        {p.stage}
-                      </span>
-                    ) : null}
+                <article key={prediction.ep} className="episode-card">
+                  <div className="episode-card__topline">
+                    <span>Episode {prediction.ep}</span>
+                    {prediction.stage ? <small>{prediction.stage}</small> : null}
                   </div>
 
-                  <h2 style={{ font: "var(--h2)", margin: 0 }}>
-                    {p.home} <span style={{ color: "var(--muted)", fontWeight: 600 }}>vs</span>{" "}
-                    {p.away}
-                  </h2>
+                  <h3>
+                    {prediction.home} <span>vs</span> {prediction.away}
+                  </h3>
 
-                  <div style={{ display: "flex", alignItems: "center", gap: "var(--space-3)" }}>
-                    {p.score ? (
-                      <span
-                        style={{
-                          font: "var(--h1)",
-                          fontSize: 30,
-                          color: "var(--text)",
-                          letterSpacing: "0.02em",
-                        }}
-                        aria-label={`Predicted score ${p.score}`}
-                      >
-                        {p.score}
-                      </span>
+                  <div className="episode-card__score">
+                    {prediction.score ? (
+                      <strong aria-label={`Predicted score ${prediction.score}`}>
+                        {prediction.score}
+                      </strong>
                     ) : (
-                      <span
-                        style={{
-                          font: "var(--meta)",
-                          color: "var(--gold)",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.06em",
-                        }}
-                      >
-                        Score left open
-                      </span>
+                      <strong>Open</strong>
                     )}
-                    <span style={{ font: "var(--meta)", color: "var(--muted)" }}>our prediction</span>
+                    <span>story prediction</span>
                   </div>
 
-                  <p style={{ font: "var(--body)", color: "var(--text)", margin: 0 }}>{p.hook}</p>
+                  <p>{prediction.hook}</p>
 
-                  <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
-                    {p.date ? (
-                      <span style={{ font: "var(--meta)", color: "var(--muted)" }}>{p.date}</span>
-                    ) : null}
+                  <div className="episode-card__footer">
+                    {prediction.date ? <small>{prediction.date}</small> : null}
                     {isLive ? (
                       <a
-                        className="button"
-                        href={p.youtube as string}
+                        className="button episode-card__watch"
+                        href={prediction.youtube as string}
                         target="_blank"
                         rel="noreferrer"
-                        style={{ textAlign: "center" }}
                       >
-                        ▶ Watch episode
+                        <PlayCircle size={16} />
+                        Watch episode
                       </a>
                     ) : (
-                      <span
-                        className="button secondary"
-                        aria-disabled="true"
-                        style={{ textAlign: "center", opacity: 0.7, cursor: "default" }}
-                      >
+                      <span className="button secondary episode-card__pending" aria-disabled="true">
                         Premieres before kickoff
                       </span>
                     )}
                   </div>
-                </section>
+                </article>
               );
             })}
           </div>
-
-          <div
-            style={{
-              marginTop: "var(--space-8)",
-              padding: "var(--space-6)",
-              background: "var(--green-soft)",
-              borderRadius: "var(--radius-md)",
-              textAlign: "center",
-            }}
-          >
-            <p style={{ font: "var(--body-lg)", margin: 0, color: "var(--text)" }}>
-              Think you can call them better? Pick 3 teams free and play along.
-            </p>
-            <Link className="button" href={{ pathname: "/" }} style={{ marginTop: "var(--space-4)" }}>
-              Play WorldCup26
-            </Link>
-          </div>
-
-          <div style={{ marginTop: "var(--space-7)" }}>
-            <Link className="button secondary" href={{ pathname: "/" }}>
-              ← Back to game
-            </Link>
-          </div>
-        </article>
+        </section>
       </div>
     </main>
   );
