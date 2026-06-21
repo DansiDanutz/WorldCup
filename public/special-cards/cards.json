@@ -1,6 +1,6 @@
 {
   "collection": "WorldCup26 Legends — The Mystery Supporters",
-  "note": "Each episode hides one collectible Legend (the Mystery Supporter). Both landscape (16:9) and portrait (9:16) art per card. Every Legend is a unique character. Backfilling 001-036; 037+ current.",
+  "note": "Each episode hides one collectible Legend (the Mystery Supporter). Both landscape (16:9) and portrait (9:16) art per card. Every Legend is a unique character. Complete for Ep1-43, plus BONUS player-film cards.",
   "cards": [
     { "number": "001", "name": "The Mariachi",         "nation": "Mexico",       "episode": 1,  "match": "Mexico vs South Africa",        "portrait": "/special-cards/legend-001-portrait.png", "landscape": "/special-cards/legend-001-landscape.png" },
     { "number": "002", "name": "The Mountain Sage",    "nation": "South Korea",  "episode": 2,  "match": "South Korea vs Czech Republic", "portrait": "/special-cards/legend-002-portrait.png", "landscape": "/special-cards/legend-002-landscape.png" },
@@ -44,6 +44,8 @@
     { "number": "040", "name": "The Spirit of Persia", "nation": "Iran",         "episode": 40, "match": "Belgium vs Iran",        "portrait": "/special-cards/legend-040-portrait.png", "landscape": "/special-cards/legend-040-landscape.png" },
     { "number": "041", "name": "The Charrúa",          "nation": "Uruguay",      "episode": 41, "match": "Uruguay vs Cape Verde",  "portrait": "/special-cards/legend-041-portrait.png", "landscape": "/special-cards/legend-041-landscape.png" },
     { "number": "042", "name": "The Navigator",        "nation": "New Zealand",  "episode": 42, "match": "Egypt vs New Zealand",   "portrait": "/special-cards/legend-042-portrait.png", "landscape": "/special-cards/legend-042-landscape.png" },
-    { "number": "043", "name": "The Clockmaker",       "nation": "Austria",      "episode": 43, "match": "Argentina vs Austria",  "portrait": "/special-cards/legend-043-portrait.png", "landscape": "/special-cards/legend-043-landscape.png" }
+    { "number": "043", "name": "The Clockmaker",       "nation": "Austria",      "episode": 43, "match": "Argentina vs Austria",  "portrait": "/special-cards/legend-043-portrait.png", "landscape": "/special-cards/legend-043-landscape.png" },
+    { "number": "BONUS-1", "name": "The Freedom Run",  "nation": "Colombia",     "episode": 0,  "match": "Bonus film · Luis Díaz",  "portrait": "/special-cards/legend-bonus-diaz-portrait.png",   "landscape": "/special-cards/legend-bonus-diaz-landscape.png" },
+    { "number": "BONUS-2", "name": "The Promise",      "nation": "Belgium",      "episode": 0,  "match": "Bonus film · Romelu Lukaku", "portrait": "/special-cards/legend-bonus-lukaku-portrait.png", "landscape": "/special-cards/legend-bonus-lukaku-landscape.png" }
   ]
 }

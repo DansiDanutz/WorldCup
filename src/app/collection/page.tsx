@@ -57,6 +57,8 @@ const CARDS: Card[] = [
   { number: '041', name: 'The Charrúa',           nation: 'Uruguay',      episode: 41, match: 'Uruguay vs Cape Verde',  portrait: '/special-cards/legend-041-portrait.png', landscape: '/special-cards/legend-041-landscape.png' },
   { number: '042', name: 'The Navigator',         nation: 'New Zealand',  episode: 42, match: 'Egypt vs New Zealand',   portrait: '/special-cards/legend-042-portrait.png', landscape: '/special-cards/legend-042-landscape.png' },
   { number: '043', name: 'The Clockmaker',        nation: 'Austria',      episode: 43, match: 'Argentina vs Austria',  portrait: '/special-cards/legend-043-portrait.png', landscape: '/special-cards/legend-043-landscape.png' },
+  { number: 'BONUS-1', name: 'The Freedom Run',   nation: 'Colombia',     episode: 0,  match: 'Bonus film · Luis Díaz',     portrait: '/special-cards/legend-bonus-diaz-portrait.png',   landscape: '/special-cards/legend-bonus-diaz-landscape.png' },
+  { number: 'BONUS-2', name: 'The Promise',       nation: 'Belgium',      episode: 0,  match: 'Bonus film · Romelu Lukaku', portrait: '/special-cards/legend-bonus-lukaku-portrait.png', landscape: '/special-cards/legend-bonus-lukaku-landscape.png' },
 ];
 
 export default function CollectionPage() {
@@ -91,7 +93,7 @@ export default function CollectionPage() {
                   <strong style={{ fontSize: 16 }}>{c.name}</strong>
                   <span style={{ color: '#e9c46a', fontWeight: 800, fontSize: 13 }}>#{c.number}</span>
                 </div>
-                <div style={{ color: '#9aa6c2', fontSize: 12, marginTop: 3 }}>{c.nation} · Ep.{c.episode} · {c.match}</div>
+                <div style={{ color: '#9aa6c2', fontSize: 12, marginTop: 3 }}>{c.nation} · {c.episode > 0 ? `Ep.${c.episode} · ` : ''}{c.match}</div>
               </figcaption>
             </figure>
           ))}
