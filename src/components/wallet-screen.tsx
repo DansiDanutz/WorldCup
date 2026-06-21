@@ -23,6 +23,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from "react";
 
+import { CardViewControl } from "@/components/card-view-control";
 import { SmartMenu } from "@/components/smart-menu";
 import {
   formatMaskedWalletAddress,
@@ -117,6 +118,9 @@ type WalletScreenProps = {
 
 const ownerAdminEmail = "semebitcoin@gmail.com";
 const depositNetworkOptions: DepositNetwork[] = ["trc20", "erc20"];
+const compactDepositClaimCount = 3;
+const compactAgentCodeCount = 6;
+const compactAgentRequestCount = 4;
 
 function toDepositNetwork(value: string): DepositNetwork {
   return value === "erc20" ? "erc20" : "trc20";
@@ -150,6 +154,9 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const [transferEmail, setTransferEmail] = useState("");
   const [transferRecipient, setTransferRecipient] = useState<TicketTransferRecipient | null>(null);
   const [walletView, setWalletView] = useState<"user" | "agent">("user");
+  const [depositClaimsExpanded, setDepositClaimsExpanded] = useState(false);
+  const [agentCodesExpanded, setAgentCodesExpanded] = useState(false);
+  const [agentRequestsExpanded, setAgentRequestsExpanded] = useState(false);
   const [agentTransferEmail, setAgentTransferEmail] = useState("");
   const [agentTransferRecipient, setAgentTransferRecipient] = useState<TicketTransferRecipient | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -232,6 +239,18 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
   const whatsappPassiveIncomeHelpUrl = buildSupportWhatsAppUrl(
     "Hi, I want help understanding WorldCup26 passive income, referrals, and agent commissions.",
   );
+  const visibleDepositClaims = depositClaimsExpanded
+    ? depositClaims
+    : depositClaims.slice(0, compactDepositClaimCount);
+  const agentAvailableCodes = agent?.availableCodes ?? [];
+  const visibleAgentAvailableCodes = agentCodesExpanded
+    ? agentAvailableCodes
+    : agentAvailableCodes.slice(0, compactAgentCodeCount);
+  const pendingAgentTicketRequests =
+    agent?.ticketRequests.filter((request) => request.status === "pending") ?? [];
+  const visiblePendingAgentTicketRequests = agentRequestsExpanded
+    ? pendingAgentTicketRequests
+    : pendingAgentTicketRequests.slice(0, compactAgentRequestCount);
 
   const applyAccountStatus = useCallback((me: Partial<MyAccountStatus>) => {
     setStatus({
@@ -1457,66 +1476,83 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                     <CircleDollarSign size={18} color="var(--green)" />
                   </div>
                   {depositClaims.length > 0 ? (
-                    <div className="deposit-claim-list">
-                      {depositClaims.map((claim) => {
-                        const explorerUrl = getDepositExplorerTxUrl(claim.network, claim.txHash);
-                        const receiveWalletUrl = getDepositExplorerAddressUrl(claim.network, claim.address);
-                        const senderWalletUrl = claim.senderWalletAddress
-                          ? getDepositExplorerAddressUrl(claim.network, claim.senderWalletAddress)
-                          : null;
+                    <>
+                      {depositClaims.length > compactDepositClaimCount ? (
+                        <CardViewControl
+                          compactText={`Latest ${Math.min(compactDepositClaimCount, depositClaims.length)} of ${depositClaims.length} claims`}
+                          controlsId="wallet-deposit-claim-list"
+                          expanded={depositClaimsExpanded}
+                          expandedText={`All ${depositClaims.length} deposit claims`}
+                          label="deposit review history"
+                          onToggle={() => setDepositClaimsExpanded((current) => !current)}
+                        />
+                      ) : null}
+                      <div
+                        className={`deposit-claim-list ${
+                          depositClaimsExpanded ? "deposit-claim-list--expanded" : "deposit-claim-list--compact"
+                        }`}
+                        id="wallet-deposit-claim-list"
+                      >
+                        {visibleDepositClaims.map((claim) => {
+                          const explorerUrl = getDepositExplorerTxUrl(claim.network, claim.txHash);
+                          const receiveWalletUrl = getDepositExplorerAddressUrl(claim.network, claim.address);
+                          const senderWalletUrl = claim.senderWalletAddress
+                            ? getDepositExplorerAddressUrl(claim.network, claim.senderWalletAddress)
+                            : null;
 
-                        return (
-                          <div className="deposit-claim-row" key={claim.id}>
-                            <div>
-                              <strong>
-                                {formatLedgerAmount(claim.amount)} {claim.currency} · {claim.network.toUpperCase()}
-                              </strong>
-                              {claim.senderWalletAddress ? (
-                                <>
-                                  <span>Sent from</span>
-                                  <code>{claim.senderWalletAddress}</code>
-                                  {senderWalletUrl ? (
-                                    <a
-                                      className="deposit-explorer-link"
-                                      href={senderWalletUrl}
-                                      rel="noreferrer"
-                                      target="_blank"
-                                    >
-                                      View sending wallet
-                                    </a>
-                                  ) : null}
-                                </>
-                              ) : null}
-                              <span>Received by WorldCup</span>
-                              <code>{claim.address}</code>
-                              {receiveWalletUrl ? (
-                                <a
-                                  className="deposit-explorer-link"
-                                  href={receiveWalletUrl}
-                                  rel="noreferrer"
-                                  target="_blank"
-                                >
-                                  View receive wallet
-                                </a>
-                              ) : null}
-                              <code>{claim.txHash}</code>
-                              {explorerUrl ? (
-                                <a
-                                  className="deposit-explorer-link"
-                                  href={explorerUrl}
-                                  rel="noreferrer"
-                                  target="_blank"
-                                >
-                                  View transaction
-                                </a>
-                              ) : null}
-                              {claim.adminNote ? <small>{claim.adminNote}</small> : null}
+                          return (
+                            <div className="deposit-claim-row" key={claim.id}>
+                              <div>
+                                <strong>
+                                  {formatLedgerAmount(claim.amount)} {claim.currency} · {claim.network.toUpperCase()}
+                                </strong>
+                                {claim.senderWalletAddress ? (
+                                  <>
+                                    <span>Sent from</span>
+                                    <code>{claim.senderWalletAddress}</code>
+                                    {senderWalletUrl ? (
+                                      <a
+                                        className="deposit-explorer-link"
+                                        href={senderWalletUrl}
+                                        rel="noreferrer"
+                                        target="_blank"
+                                      >
+                                        View sending wallet
+                                      </a>
+                                    ) : null}
+                                  </>
+                                ) : null}
+                                <span>Received by WorldCup</span>
+                                <code>{claim.address}</code>
+                                {receiveWalletUrl ? (
+                                  <a
+                                    className="deposit-explorer-link"
+                                    href={receiveWalletUrl}
+                                    rel="noreferrer"
+                                    target="_blank"
+                                  >
+                                    View receive wallet
+                                  </a>
+                                ) : null}
+                                <code>{claim.txHash}</code>
+                                {explorerUrl ? (
+                                  <a
+                                    className="deposit-explorer-link"
+                                    href={explorerUrl}
+                                    rel="noreferrer"
+                                    target="_blank"
+                                  >
+                                    View transaction
+                                  </a>
+                                ) : null}
+                                {claim.adminNote ? <small>{claim.adminNote}</small> : null}
+                              </div>
+                              <span className={`claim-status ${claim.status}`}>{claim.status}</span>
                             </div>
-                            <span className={`claim-status ${claim.status}`}>{claim.status}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
+                          );
+                        })}
+                      </div>
+                    </>
                   ) : null}
                 </div>
               ) : null}
@@ -1978,37 +2014,66 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                           </div>
                         ) : null}
                       </div>
-                      {agent.availableCodes.length === 0 ? (
+                      {agentAvailableCodes.length === 0 ? (
                         <div className="field-note">No available codes assigned right now.</div>
                       ) : (
-                        <div className="code-list">
-                          {agent.availableCodes.map((entry) => (
-                            <div className="code-row" key={entry.code}>
-                              <span className="code-value">{entry.code}</span>
-                              <span className="code-tag">{entry.kind}</span>
-                              <button
-                                className="button secondary"
-                                onClick={() => copyText(entry.code, "Code")}
-                                type="button"
-                              >
-                                <Copy size={16} />
-                              </button>
-                            </div>
-                          ))}
-                        </div>
+                        <>
+                          {agentAvailableCodes.length > compactAgentCodeCount ? (
+                            <CardViewControl
+                              compactText={`Next ${Math.min(compactAgentCodeCount, agentAvailableCodes.length)} of ${agentAvailableCodes.length} codes`}
+                              controlsId="agent-code-inventory"
+                              expanded={agentCodesExpanded}
+                              expandedText={`All ${agentAvailableCodes.length} sellable codes`}
+                              label="agent code inventory"
+                              onToggle={() => setAgentCodesExpanded((current) => !current)}
+                            />
+                          ) : null}
+                          <div
+                            className={`code-list ${agentCodesExpanded ? "code-list--expanded" : "code-list--compact"}`}
+                            id="agent-code-inventory"
+                          >
+                            {visibleAgentAvailableCodes.map((entry) => (
+                              <div className="code-row" key={entry.code}>
+                                <span className="code-value">{entry.code}</span>
+                                <span className="code-tag">{entry.kind}</span>
+                                <button
+                                  className="button secondary"
+                                  onClick={() => copyText(entry.code, "Code")}
+                                  type="button"
+                                >
+                                  <Copy size={16} />
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                        </>
                       )}
                       <div className="agent-request-section">
                         <div>
                           <strong>Agent Call requests</strong>
                           <span>Accept only after you received the player payment. Requests expire after 24 hours.</span>
                         </div>
-                        {agent.ticketRequests.filter((request) => request.status === "pending").length === 0 ? (
+                        {pendingAgentTicketRequests.length === 0 ? (
                           <div className="field-note">No pending Agent Call requests.</div>
                         ) : (
-                          <div className="agent-request-list">
-                            {agent.ticketRequests
-                              .filter((request) => request.status === "pending")
-                              .map((request) => (
+                          <>
+                            {pendingAgentTicketRequests.length > compactAgentRequestCount ? (
+                              <CardViewControl
+                                compactText={`Next ${Math.min(compactAgentRequestCount, pendingAgentTicketRequests.length)} of ${pendingAgentTicketRequests.length} requests`}
+                                controlsId="agent-call-request-list"
+                                expanded={agentRequestsExpanded}
+                                expandedText={`All ${pendingAgentTicketRequests.length} pending requests`}
+                                label="Agent Call requests"
+                                onToggle={() => setAgentRequestsExpanded((current) => !current)}
+                              />
+                            ) : null}
+                            <div
+                              className={`agent-request-list ${
+                                agentRequestsExpanded ? "agent-request-list--expanded" : "agent-request-list--compact"
+                              }`}
+                              id="agent-call-request-list"
+                            >
+                              {visiblePendingAgentTicketRequests.map((request) => (
                                 <div className="agent-request-row" key={request.id}>
                                   <div>
                                     <strong>{request.requesterDisplayName}</strong>
@@ -2026,7 +2091,8 @@ export function WalletScreen({ publicPaidActionGates }: WalletScreenProps) {
                                   </button>
                                 </div>
                               ))}
-                          </div>
+                            </div>
+                          </>
                         )}
                         {agent.availableCount < 1 ? (
                           <div className="message error">

@@ -8403,6 +8403,38 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
+.wallet-workspace .card-view-control {
+  margin: 0;
+  border-color: rgba(16, 107, 79, 0.18);
+  background:
+    linear-gradient(135deg, rgba(16, 107, 79, 0.075), rgba(238, 177, 61, 0.1)),
+    rgba(255, 255, 255, 0.78);
+}
+
+.wallet-workspace .card-view-control__copy strong {
+  white-space: normal;
+}
+
+.wallet-workspace .card-view-control__button {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.code-list--compact,
+.deposit-claim-list--compact,
+.agent-request-list--compact {
+  max-height: none;
+  overflow: visible;
+}
+
+.code-list--expanded,
+.deposit-claim-list--expanded,
+.agent-request-list--expanded {
+  max-height: min(540px, 64vh);
+  overflow: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
 .code-row {
   display: flex;
   align-items: center;

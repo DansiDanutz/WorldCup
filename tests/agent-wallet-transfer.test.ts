@@ -44,6 +44,27 @@ describe("agent wallet direct transfers", () => {
     assert.match(globalsCss, /\.next-agent-code-card__actions/);
   });
 
+  it("keeps long wallet operation lists compact until maximized", () => {
+    assert.match(walletScreen, /import \{ CardViewControl \} from "@\/components\/card-view-control";/);
+    assert.match(walletScreen, /compactDepositClaimCount = 3/);
+    assert.match(walletScreen, /compactAgentCodeCount = 6/);
+    assert.match(walletScreen, /compactAgentRequestCount = 4/);
+    assert.match(walletScreen, /depositClaimsExpanded, setDepositClaimsExpanded/);
+    assert.match(walletScreen, /agentCodesExpanded, setAgentCodesExpanded/);
+    assert.match(walletScreen, /agentRequestsExpanded, setAgentRequestsExpanded/);
+    assert.match(walletScreen, /visibleDepositClaims = depositClaimsExpanded[\s\S]*?depositClaims\.slice\(0, compactDepositClaimCount\)/);
+    assert.match(walletScreen, /visibleAgentAvailableCodes = agentCodesExpanded[\s\S]*?agentAvailableCodes\.slice\(0, compactAgentCodeCount\)/);
+    assert.match(walletScreen, /visiblePendingAgentTicketRequests = agentRequestsExpanded[\s\S]*?pendingAgentTicketRequests\.slice\(0, compactAgentRequestCount\)/);
+    assert.match(walletScreen, /controlsId="wallet-deposit-claim-list"/);
+    assert.match(walletScreen, /controlsId="agent-code-inventory"/);
+    assert.match(walletScreen, /controlsId="agent-call-request-list"/);
+    assert.match(walletScreen, /visibleDepositClaims\.map/);
+    assert.match(walletScreen, /visibleAgentAvailableCodes\.map/);
+    assert.match(walletScreen, /visiblePendingAgentTicketRequests\.map/);
+    assert.match(globalsCss, /\.wallet-workspace \.card-view-control\s*{/);
+    assert.match(globalsCss, /\.code-list--expanded,[\s\S]*?\.agent-request-list--expanded\s*{[\s\S]*?max-height:\s*min\(540px,\s*64vh\);/);
+  });
+
   it("shows the next available agent code on the dashboard standing card", () => {
     assert.match(standingRoute, /\.select\("code,kind,assigned_at", \{ count: "exact" \}\)/);
     assert.match(standingRoute, /function formatAgentCodeRecord/);
