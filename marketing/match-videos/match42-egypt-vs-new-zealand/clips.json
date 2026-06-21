@@ -1,0 +1,373 @@
+{
+  "comment": "Ep42 Egypt vs New Zealand (Group G, Houston). Story 'The Pharaoh Meets the All Whites'. Salah's last dance vs Chris Wood chasing his first WC goal. MATCH UNPLAYED -> OUR PREDICTION Egypt 2-1 (Wood 89' header gives NZ the lead, Salah equaliser, Marmoush 90+ winner). vol=0 on every clip (silent reused/AI clips; audio = VO + music + sfx). Atmosphere library: egy-fans, nz-fans, stadium-houston, mystery-navigator, egy-anxious + 10 player clips, reused via distinct ids. Scenes reference these ids via <ClipSprite id=...>. Legend 042 = The Navigator. Brian VO.",
+  "clips": [
+    {
+      "id": "glimpse-stad",
+      "src": "assets/stadium-houston.mp4",
+      "at": 0.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-salah",
+      "src": "assets/player-salah.mp4",
+      "at": 4,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-wood",
+      "src": "assets/player-wood.mp4",
+      "at": 6.5,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-nz",
+      "src": "assets/nz-fans.mp4",
+      "at": 11.47,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-ext",
+      "src": "assets/stadium-houston.mp4",
+      "at": 28.06,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/stadium-houston.mp4",
+      "at": 36,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "history-bg",
+      "src": "assets/stadium-houston.mp4",
+      "at": 44,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-egy",
+      "src": "assets/egy-fans.mp4",
+      "at": 55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-nzl",
+      "src": "assets/nz-fans.mp4",
+      "at": 66,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-salah",
+      "src": "assets/player-salah.mp4",
+      "at": 76.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-wood",
+      "src": "assets/player-wood.mp4",
+      "at": 88.13,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "egy-bg",
+      "src": "assets/egy-fans.mp4",
+      "at": 98.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "salah",
+      "src": "assets/player-salah.mp4",
+      "at": 106.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "marmoush",
+      "src": "assets/player-marmoush.mp4",
+      "at": 116.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "trezeguet",
+      "src": "assets/player-trezeguet.mp4",
+      "at": 116.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "elshenawy",
+      "src": "assets/player-elshenawy.mp4",
+      "at": 125,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "abdelkarim",
+      "src": "assets/player-abdelkarim.mp4",
+      "at": 128,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "nzl-bg",
+      "src": "assets/nz-fans.mp4",
+      "at": 133.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "wood",
+      "src": "assets/player-wood.mp4",
+      "at": 144.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "barbarouses",
+      "src": "assets/player-barbarouses.mp4",
+      "at": 154.5,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "cacace",
+      "src": "assets/player-cacace.mp4",
+      "at": 154.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stamenic",
+      "src": "assets/player-stamenic.mp4",
+      "at": 163.86,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "singh",
+      "src": "assets/player-singh.mp4",
+      "at": 166.86,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "drama-nz1",
+      "src": "assets/nz-fans.mp4",
+      "at": 186.4,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-wood",
+      "src": "assets/player-wood.mp4",
+      "at": 196,
+      "dur": 8.5,
+      "vol": 0
+    },
+    {
+      "id": "drama-nz-cel",
+      "src": "assets/nz-fans.mp4",
+      "at": 204.5,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "drama-salah",
+      "src": "assets/player-salah.mp4",
+      "at": 213,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "drama-marmoush",
+      "src": "assets/player-marmoush.mp4",
+      "at": 223,
+      "dur": 8.5,
+      "vol": 0
+    },
+    {
+      "id": "drama-egy-cel",
+      "src": "assets/egy-fans.mp4",
+      "at": 231.5,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "drama-stad",
+      "src": "assets/stadium-houston.mp4",
+      "at": 237.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "verdict-bg",
+      "src": "assets/egy-anxious.mp4",
+      "at": 242,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mystery",
+      "src": "assets/mystery-navigator.mp4",
+      "at": 260.77,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "mystery-close",
+      "src": "assets/mystery-navigator.mp4",
+      "at": 271.67,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "cta-bg",
+      "src": "assets/egy-fans.mp4",
+      "at": 294.46,
+      "dur": 9,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 28.06,
+        "dur": 280.97999999999996,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 282.2,
+        "dur": 32,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.47,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 16.32,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 28.06,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44.3,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 98.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 106.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 116.6,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 133.4,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 144.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 171.82,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 204.5,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 213.4,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 231.8,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 242.1,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 260.87,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 279.8,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 294.66,
+        "vol": 0.6
+      }
+    ]
+  }
+}
