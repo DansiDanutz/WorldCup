@@ -45,7 +45,9 @@ describe("responsible play controls", () => {
     );
   });
 
-  it("blocks new paid participation while self-exclusion is active", () => {
+  it("imposes no restriction even when a legacy self-exclusion row exists", () => {
+    // worldcup26 has no self-exclusion: a leftover self_excluded_until row must
+    // never block deposits, tickets, or entries.
     const status = formatResponsiblePlayStatus(
       {
         max_entries: null,
@@ -56,13 +58,14 @@ describe("responsible play controls", () => {
       { now: new Date("2026-06-02T00:00:00.000Z") },
     );
 
-    assert.match(getResponsiblePlayRestriction(status, "deposit") ?? "", /account ticket actions are paused/i);
-    assert.match(getResponsiblePlayRestriction(status, "ticket") ?? "", /ticket transfers/);
-    assert.match(getResponsiblePlayRestriction(status, "entry") ?? "", /entries are paused/);
+    assert.equal(getResponsiblePlayRestriction(status, "deposit"), null);
+    assert.equal(getResponsiblePlayRestriction(status, "ticket"), null);
+    assert.equal(getResponsiblePlayRestriction(status, "entry"), null);
     assert.equal(getResponsiblePlayRestriction(status, "withdrawal"), null);
   });
 
-  it("enforces entry-ticket limits without blocking deposits", () => {
+  it("imposes no entry-ticket or entry limit", () => {
+    // No per-account limits in worldcup26 — any quantity is allowed.
     const status = formatResponsiblePlayStatus(
       {
         max_entries: 2,
@@ -70,15 +73,13 @@ describe("responsible play controls", () => {
         self_exclusion_reason: null,
         updated_at: null,
       },
-      { ticketsReserved: 1, entriesUsed: 0 },
+      { ticketsReserved: 1, entriesUsed: 5 },
     );
 
     assert.equal(getResponsiblePlayRestriction(status, "deposit"), null);
     assert.equal(getResponsiblePlayRestriction(status, "ticket", { requestedTickets: 1 }), null);
-    assert.match(
-      getResponsiblePlayRestriction(status, "ticket", { requestedTickets: 2 }) ?? "",
-      /account entry-ticket limit is 2/,
-    );
+    assert.equal(getResponsiblePlayRestriction(status, "ticket", { requestedTickets: 99 }), null);
+    assert.equal(getResponsiblePlayRestriction(status, "entry"), null);
   });
 
   it("keeps responsible play state private and server-written", () => {
