@@ -236,7 +236,7 @@ export function Dashboard({
         : "Your 3 teams are ready. Lock them free forever, or save a draft first to watch the private points preview."
       : `Choose ${remainingPickCount} more ${remainingPickCount === 1 ? "team" : "teams"}.`;
 
-  const visibleMatches = matches.slice(0, 24);
+  const visibleMatches = matches;
   const completedCount = matches.filter((match) => match.status === "completed").length;
   const netPrizePool = calculateNetPrizePool(
     tournament.prize_pool_amount,
@@ -2281,7 +2281,9 @@ export function Dashboard({
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Match Schedule</h2>
-                <p className="panel-subtitle">First 24 matches shown for fast operations.</p>
+                <p className="panel-subtitle">
+                  All {matches.length} matches shown. Scores and points update automatically after full-time.
+                </p>
               </div>
               <RefreshCw size={18} color="var(--green)" />
             </div>

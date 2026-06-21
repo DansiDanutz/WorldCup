@@ -126,6 +126,14 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.auth-connected-card strong\s*{[\s\S]*?color:\s*#ffffff;/);
   });
 
+  it("shows the full match schedule instead of capping at the first 24 matches", () => {
+    assert.match(dashboard, /const visibleMatches = matches;/);
+    assert.doesNotMatch(dashboard, /matches\.slice\(0,\s*24\)/);
+    assert.doesNotMatch(dashboard, /First 24 matches shown/);
+    assert.match(dashboard, /All \{matches\.length\} matches shown/);
+    assert.match(dashboard, /Scores and points update automatically after full-time/);
+  });
+
   it("keeps the root layout from forcing mobile horizontal overflow", () => {
     assert.match(globalsCss, /html\s*{[\s\S]*?min-width:\s*0;/);
     assert.doesNotMatch(globalsCss, /html\s*{[\s\S]*?min-width:\s*320px;/);
