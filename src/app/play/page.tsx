@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { KickoffCountdown } from "@/components/kickoff-countdown";
+
+// First whistle: Mexico vs South Africa, Estadio Azteca, June 11 2026, 13:00 UTC-6.
+const FIRST_KICKOFF_AT = "2026-06-11T19:00:00.000Z";
+
 export const metadata: Metadata = {
   title: "World Cup 2026 Prediction Game · WorldCup26",
   description:
@@ -133,14 +138,19 @@ export default function PlayPage() {
         </Link>
 
         <p style={{ marginTop: 14, fontSize: 13, color: "var(--muted, #5d6f69)" }}>
-          Kicks off June 11 · 48 matches · 32 nations
+          Kicks off June 11 · 104 matches · 48 nations
         </p>
+      </section>
+
+      {/* COUNTDOWN */}
+      <section style={{ maxWidth: 760, margin: "0 auto 48px", padding: "0 24px" }}>
+        <KickoffCountdown kickoffAt={FIRST_KICKOFF_AT} ctaHref="/login" />
       </section>
 
       {/* TEAM GRID */}
       <section style={{ maxWidth: 760, margin: "0 auto 56px", padding: "0 24px" }}>
         <p style={{ textAlign: "center", fontWeight: 700, fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--muted, #5d6f69)", marginBottom: 20 }}>
-          32 Nations Competing
+          48 Nations Competing
         </p>
         <div style={{
           display: "grid",
@@ -165,7 +175,7 @@ export default function PlayPage() {
           ))}
         </div>
         <p style={{ textAlign: "center", fontSize: 13, color: "var(--muted, #5d6f69)", marginTop: 14 }}>
-          + 24 more nations
+          + 40 more nations
         </p>
       </section>
 
@@ -208,10 +218,10 @@ export default function PlayPage() {
       <section style={{ maxWidth: 760, margin: "0 auto", padding: "56px 24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 20 }}>
           {[
-            { value: "32", label: "Nations" },
-            { value: "48", label: "Matches" },
+            { value: "48", label: "Nations" },
+            { value: "104", label: "Matches" },
             { value: "3", label: "Picks per player" },
-            { value: "Global", label: "Leaderboard" },
+            { value: "Free", label: "Entry" },
           ].map((stat) => (
             <div key={stat.label} style={{
               background: "#fff",
@@ -254,7 +264,7 @@ export default function PlayPage() {
           Start Predicting →
         </Link>
         <p style={{ marginTop: 14, fontSize: 13, color: "var(--muted, #5d6f69)" }}>
-          Join thousands of football fans worldwide
+          Free to join · No card needed · Takes 2 minutes
         </p>
       </section>
 

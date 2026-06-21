@@ -1,0 +1,18 @@
+{
+  "name": "worldcup26-inaugural-video",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Render the 3-minute WorldCup26 inaugural-match story film (Mexico vs South Africa) with an ElevenLabs Brian voiceover.",
+  "scripts": {
+    "serve": "python3 -m http.server 8098",
+    "render": "URL=http://127.0.0.1:8098/ad.html FPS=30 DURATION=180 OUT=frames node render.mjs",
+    "shots": "URL=http://127.0.0.1:8098/ad.html SHOTS=2,20,40,62,82,100,118,140,158,174 OUT=shots node render.mjs",
+    "voice": "node gen_audio.mjs",
+    "mux": "FPS=30 DURATION=180 OUTFILE=WorldCup26_Inaugural.mp4 node mux.mjs"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "playwright": "^1.60.0"
+  }
+}

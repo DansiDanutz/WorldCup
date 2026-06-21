@@ -29,6 +29,7 @@ import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 
 import { HeroSwiper } from "@/components/hero-swiper";
 import { isFunMode } from "@/lib/fun-mode";
+import { KickoffCountdown } from "@/components/kickoff-countdown";
 import { MyStanding } from "@/components/my-standing";
 import { SmartMenu } from "@/components/smart-menu";
 import { formatLedgerAmount, formatMoneyAmount } from "@/lib/economy";
@@ -263,6 +264,25 @@ export function Dashboard({
     () => getTeamEligibility(teams.map((team) => team.id), matches),
     [matches, teams],
   );
+  const firstKickoffAt = useMemo(() => {
+    let earliestTime: number | null = null;
+    let earliestIso: string | null = null;
+    for (const match of matches) {
+      const time = Date.parse(match.kickoff_at);
+      if (Number.isFinite(time) && (earliestTime === null || time < earliestTime)) {
+        earliestTime = time;
+        earliestIso = match.kickoff_at;
+      }
+    }
+    return earliestIso;
+  }, [matches]);
+  const kickoffDateLabel = firstKickoffAt
+    ? new Date(firstKickoffAt).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        timeZone: "UTC",
+      })
+    : "Jun 11";
   const signedInWithGoogle = Boolean(session?.access_token && session.user.email);
   const funMode = isFunMode();
   // In fun mode there is no prize pool, so a "locked" entry must never read as
@@ -1047,13 +1067,25 @@ export function Dashboard({
             2026
           </span>
         </Link>
-        <div className="prize-pool" aria-label="Players">
+        <div
+          className="prize-pool"
+          aria-label={participantCount >= 100 ? "Players" : "Free to play"}
+        >
           <Users size={18} />
           <div>
-            <span>Players</span>
-            <strong>{participantCount > 0 ? participantCount : "—"}</strong>
+            {participantCount >= 100 ? (
+              <>
+                <span>Players</span>
+                <strong>{participantCount.toLocaleString()}</strong>
+              </>
+            ) : (
+              <>
+                <span>Entry</span>
+                <strong>Free</strong>
+              </>
+            )}
           </div>
-          <small>Free to play</small>
+          <small>{participantCount >= 100 ? "Free to play" : `${teams.length} nations`}</small>
         </div>
         <SmartMenu>
           <nav className="nav nav--app" aria-label="Primary navigation">
@@ -1175,10 +1207,13 @@ export function Dashboard({
 
       <div className={`page page--landing ${showPickWorkflow ? "" : "page--post-entry"}`}>
         {showPickWorkflow ? (
-          <HeroSwiper
-            prizePool={funMode ? undefined : netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
-            playerCount={participantCount}
-          />
+          <>
+            {firstKickoffAt ? <KickoffCountdown kickoffAt={firstKickoffAt} /> : null}
+            <HeroSwiper
+              prizePool={funMode ? undefined : netPrizePool > 0 ? formatPrizeAmount(netPrizePool) : "TBA"}
+              playerCount={participantCount}
+            />
+          </>
         ) : null}
 
         <MyStanding />
@@ -1224,13 +1259,20 @@ export function Dashboard({
             <div className="stat-label">Matches</div>
             <div className="stat-value">{matches.length}</div>
           </div>
+          {completedCount > 0 ? (
+            <div className="stat">
+              <div className="stat-label">Completed</div>
+              <div className="stat-value">{completedCount}</div>
+            </div>
+          ) : (
+            <div className="stat">
+              <div className="stat-label">Kickoff</div>
+              <div className="stat-value">{kickoffDateLabel}</div>
+            </div>
+          )}
           <div className="stat">
-            <div className="stat-label">Completed</div>
-            <div className="stat-value">{completedCount}</div>
-          </div>
-          <div className="stat">
-            <div className="stat-label">Due Checks</div>
-            <div className="stat-value">{dueMatches.length}</div>
+            <div className="stat-label">Entry</div>
+            <div className="stat-value">Free</div>
           </div>
         </section>
 

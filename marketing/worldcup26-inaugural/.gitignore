@@ -1,0 +1,9 @@
+node_modules/
+frames/
+audio/
+shots/
+shots2/
+*.log
+filter.txt
+WorldCup26_Inaugural.mp4
+WorldCup26_Inaugural_silent.mp4
