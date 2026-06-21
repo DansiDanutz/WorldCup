@@ -24,8 +24,13 @@ export const metadata: Metadata = {
   },
 };
 
+type LoginPageSearchParams = {
+  ref?: string | string[];
+  returnTo?: string | string[];
+};
+
 type LoginPageProps = {
-  searchParams?: Promise<{ ref?: string | string[] }> | { ref?: string | string[] };
+  searchParams?: Promise<LoginPageSearchParams> | LoginPageSearchParams;
 };
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
@@ -33,10 +38,14 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   const refParam = Array.isArray(resolvedSearchParams.ref)
     ? resolvedSearchParams.ref[0]
     : resolvedSearchParams.ref;
+  const returnToParam = Array.isArray(resolvedSearchParams.returnTo)
+    ? resolvedSearchParams.returnTo[0]
+    : resolvedSearchParams.returnTo;
 
   return (
     <LoginRegister
       initialReferralCode={refParam ?? null}
+      returnTo={returnToParam ?? null}
       publicPaidActionGates={LOGIN_ACCOUNT_SETUP_GATES}
     />
   );

@@ -10167,7 +10167,8 @@ html {
 }
 
 .legend-collection__meter,
-.legend-voice-toggle {
+.legend-voice-toggle,
+.legend-sync-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -10179,10 +10180,17 @@ html {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
   font: 800 13px / 1 var(--font-sans);
+  text-decoration: none;
 }
 
 .legend-voice-toggle {
   cursor: pointer;
+}
+
+.legend-sync-link {
+  border-color: rgba(255, 207, 102, 0.72);
+  color: #1b1308;
+  background: linear-gradient(180deg, #ffe29a, #ffcf66);
 }
 
 .legend-voice-toggle.is-on {

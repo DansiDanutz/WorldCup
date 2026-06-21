@@ -17,6 +17,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { getCampaignReferralCode, normalizeCampaignReferralCode } from "@/lib/campaign-attribution";
 import { isFunMode } from "@/lib/fun-mode";
+import { normalizePostLoginRedirect, POST_LOGIN_REDIRECT_KEY } from "@/lib/post-login-redirect";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import type { PaidActionGate, PaidActionGates } from "@/lib/types";
@@ -79,11 +80,13 @@ const flagTeams = [
 
 type LoginRegisterProps = {
   initialReferralCode?: string | null;
+  returnTo?: string | null;
   publicPaidActionGates?: PaidActionGates;
 };
 
-export function LoginRegister({ initialReferralCode, publicPaidActionGates }: LoginRegisterProps) {
+export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionGates }: LoginRegisterProps) {
   const normalizedInitialReferralCode = normalizeReferralCode(initialReferralCode ?? "");
+  const postLoginRedirect = useMemo(() => normalizePostLoginRedirect(returnTo), [returnTo]);
   const [session, setSession] = useState<Session | null>(null);
   const [referralCode, setReferralCode] = useState(normalizedInitialReferralCode);
   const [referralInviter, setReferralInviter] = useState<string | null>(null);
@@ -204,6 +207,12 @@ export function LoginRegister({ initialReferralCode, publicPaidActionGates }: Lo
       window.localStorage.removeItem("worldcup_referral_code");
       window.localStorage.removeItem("worldcup_referral_accepted");
       window.localStorage.removeItem(SIGNUP_ATTRIBUTION_KEY);
+    }
+
+    if (postLoginRedirect) {
+      window.localStorage.setItem(POST_LOGIN_REDIRECT_KEY, postLoginRedirect);
+    } else {
+      window.localStorage.removeItem(POST_LOGIN_REDIRECT_KEY);
     }
 
     const { error: authError } = await supabase.auth.signInWithOAuth({

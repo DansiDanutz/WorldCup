@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Check, ExternalLink, LockKeyhole, PlayCircle, Sparkles, Volume2, VolumeX, X } from "lucide-react";
+import Link from "next/link";
+import { Check, ExternalLink, LockKeyhole, LogIn, PlayCircle, Sparkles, Volume2, VolumeX, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 
 import { LEGEND_CARDS, type LegendCard } from "@/lib/legend-cards";
@@ -459,6 +460,15 @@ export function LegendCardCollection() {
           </span>
           <span className="legend-collection__meter">{liveCount} live now</span>
           <span className="legend-collection__meter">{accountSyncLabel}</span>
+          {!accountToken ? (
+            <Link
+              className="legend-sync-link"
+              href={{ pathname: "/login", query: { returnTo: "/predictions#legend-cards" } }}
+            >
+              <LogIn size={16} />
+              Sign in to save
+            </Link>
+          ) : null}
           <button
             type="button"
             className={`legend-voice-toggle ${voiceEnabled ? "is-on" : ""}`}

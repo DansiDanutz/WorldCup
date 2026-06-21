@@ -41,6 +41,7 @@ import {
   formatPrizeAmount,
 } from "@/lib/prize-pool";
 import { getCampaignReferralCode, normalizeCampaignReferralCode } from "@/lib/campaign-attribution";
+import { consumePostLoginRedirect } from "@/lib/post-login-redirect";
 import {
   formatCoefficient,
   formatKickoff,
@@ -422,6 +423,10 @@ export function Dashboard({
         const nextSession = data.session;
         setSession(nextSession);
 
+        if (nextSession && redirectToPostLoginPath()) {
+          return;
+        }
+
         if (!nextSession) {
           const campaignLoginHref = getCampaignLoginRedirectHref();
           if (campaignLoginHref) {
@@ -433,6 +438,9 @@ export function Dashboard({
 
     const { data } = supabase.auth.onAuthStateChange((_event, nextSession) => {
       setSession(nextSession);
+      if (nextSession) {
+        redirectToPostLoginPath();
+      }
     });
 
     return () => data.subscription.unsubscribe();
@@ -2667,6 +2675,22 @@ function getCampaignLoginRedirectHref() {
 
   params.set("ref", referralCode);
   return `/login?${params.toString()}`;
+}
+
+function redirectToPostLoginPath() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const nextPath = consumePostLoginRedirect(window.localStorage);
+  const currentPath = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+
+  if (!nextPath || nextPath === currentPath) {
+    return false;
+  }
+
+  window.location.replace(nextPath);
+  return true;
 }
 
 function formatDateTime(value: string) {

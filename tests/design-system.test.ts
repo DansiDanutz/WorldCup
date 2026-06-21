@@ -26,6 +26,7 @@ const smartMenu = readFileSync("src/components/smart-menu.tsx", "utf8");
 const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
 const legendCardRegistry = readFileSync("src/lib/legend-card-registry.ts", "utf8");
 const legendCards = readFileSync("src/lib/legend-cards.ts", "utf8");
+const postLoginRedirect = readFileSync("src/lib/post-login-redirect.ts", "utf8");
 const support = readFileSync("src/lib/support.ts", "utf8");
 const legendCardsMigration = readFileSync(
   "supabase/migrations/20260621150000_worldcup_legend_card_unlocks.sql",
@@ -223,6 +224,23 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /\/api\/legend-cards/);
     assert.match(legendCardCollection, /Authorization: `Bearer \$\{token\}`/);
     assert.match(legendCardCollection, /accountSyncLabel/);
+    assert.match(legendCardCollection, /Sign in to save/);
+    assert.match(legendCardCollection, /returnTo:\s*"\/predictions#legend-cards"/);
+    assert.match(legendCardCollection, /className="legend-sync-link"/);
+    assert.match(globalsCss, /\.legend-sync-link\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a/);
+    assert.match(loginPage, /returnToParam/);
+    assert.match(loginPage, /returnTo=\{returnToParam \?\? null\}/);
+    assert.match(loginRegister, /normalizePostLoginRedirect\(returnTo\)/);
+    assert.match(loginRegister, /POST_LOGIN_REDIRECT_KEY/);
+    assert.match(loginRegister, /window\.localStorage\.setItem\(POST_LOGIN_REDIRECT_KEY,\s*postLoginRedirect\)/);
+    assert.match(dashboard, /consumePostLoginRedirect/);
+    assert.match(dashboard, /redirectToPostLoginPath\(\)/);
+    assert.match(dashboard, /window\.location\.replace\(nextPath\)/);
+    assert.match(postLoginRedirect, /POST_LOGIN_REDIRECT_KEY = "worldcup_post_login_redirect"/);
+    assert.match(postLoginRedirect, /normalizePostLoginRedirect/);
+    assert.match(postLoginRedirect, /candidate\.startsWith\("\/\/"\)/);
+    assert.match(postLoginRedirect, /blockedRedirectPrefixes/);
+    assert.match(postLoginRedirect, /storage\.removeItem\(POST_LOGIN_REDIRECT_KEY\)/);
     assert.match(legendCardCollection, /speechSynthesis/);
     assert.match(legendCardCollection, /new SpeechSynthesisUtterance/);
     assert.match(legendCardCollection, /Watch to unlock/);
