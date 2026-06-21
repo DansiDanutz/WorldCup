@@ -1,0 +1,78 @@
+{
+  "comment": "Ep40 Belgium vs Iran (Group G, Miami). Story 'The Assassin and the Architect'. MATCH UNPLAYED -> OUR PREDICTION Belgium 2-1 (62' Taremi, 74' Lukaku, 84' Doku). vol=0 on every clip (silent reused/AI clips; audio = VO + music + sfx). Atmosphere library is lean (belgium-fans, iran-fans, stadium-miami, mystery-persia) + 10 player clips, reused via distinct ids. Scenes reference these ids via <ClipSprite id=...>.",
+  "clips": [
+    {"id": "glimpse-stad",     "src": "assets/stadium-miami.mp4",     "at": 0.5,   "dur": 3.5,  "vol": 0},
+    {"id": "glimpse-taremi",   "src": "assets/player-taremi.mp4",     "at": 4.0,   "dur": 2.5,  "vol": 0},
+    {"id": "glimpse-debruyne", "src": "assets/player-debruyne.mp4",   "at": 6.5,   "dur": 2.5,  "vol": 0},
+    {"id": "glimpse-irn",      "src": "assets/iran-fans.mp4",         "at": 9.0,   "dur": 5.0,  "vol": 0},
+
+    {"id": "stadium-ext",      "src": "assets/stadium-miami.mp4",     "at": 28.0,  "dur": 8.0,  "vol": 0},
+    {"id": "stadium-aerial",   "src": "assets/stadium-miami.mp4",     "at": 36.0,  "dur": 8.0,  "vol": 0},
+
+    {"id": "history-bg",       "src": "assets/stadium-miami.mp4",     "at": 44.0,  "dur": 11.0, "vol": 0},
+    {"id": "hist-bel",         "src": "assets/belgium-fans.mp4",      "at": 55.0,  "dur": 11.0, "vol": 0},
+    {"id": "hist-irn",         "src": "assets/iran-fans.mp4",         "at": 66.0,  "dur": 10.5, "vol": 0},
+    {"id": "hist-debruyne",    "src": "assets/player-debruyne.mp4",   "at": 76.5,  "dur": 11.0, "vol": 0},
+    {"id": "hist-taremi",      "src": "assets/player-taremi.mp4",     "at": 87.5,  "dur": 11.0, "vol": 0},
+
+    {"id": "irn-bg",           "src": "assets/iran-fans.mp4",         "at": 98.5,  "dur": 8.0,  "vol": 0},
+    {"id": "taremi",           "src": "assets/player-taremi.mp4",     "at": 106.5, "dur": 10.0, "vol": 0},
+    {"id": "jahanbakhsh",      "src": "assets/player-jahanbakhsh.mp4", "at": 116.5, "dur": 8.0,  "vol": 0},
+    {"id": "ghoddos",          "src": "assets/player-ghoddos.mp4",    "at": 124.5, "dur": 3.0,  "vol": 0},
+    {"id": "ezatolahi",        "src": "assets/player-ezatolahi.mp4",  "at": 127.5, "dur": 3.5,  "vol": 0},
+    {"id": "ghaedi",           "src": "assets/player-ghaedi.mp4",     "at": 131.0, "dur": 2.5,  "vol": 0},
+
+    {"id": "bel-bg",           "src": "assets/belgium-fans.mp4",      "at": 133.5, "dur": 8.0,  "vol": 0},
+    {"id": "debruyne",         "src": "assets/player-debruyne.mp4",   "at": 144.5, "dur": 10.0, "vol": 0},
+    {"id": "lukaku",           "src": "assets/player-lukaku.mp4",     "at": 154.5, "dur": 4.5,  "vol": 0},
+    {"id": "doku",             "src": "assets/player-doku.mp4",       "at": 159.0, "dur": 3.0,  "vol": 0},
+    {"id": "trossard",         "src": "assets/player-trossard.mp4",   "at": 161.0, "dur": 2.0,  "vol": 0},
+    {"id": "courtois",         "src": "assets/player-courtois.mp4",   "at": 159.0, "dur": 5.5,  "vol": 0},
+
+    {"id": "drama-irn1",       "src": "assets/iran-fans.mp4",         "at": 186.5, "dur": 8.0,  "vol": 0},
+    {"id": "drama-taremi",     "src": "assets/player-taremi.mp4",     "at": 196.0, "dur": 8.5,  "vol": 0},
+    {"id": "drama-courtois",   "src": "assets/player-courtois.mp4",   "at": 204.5, "dur": 4.0,  "vol": 0},
+    {"id": "drama-lukaku",     "src": "assets/player-lukaku.mp4",     "at": 213.0, "dur": 6.0,  "vol": 0},
+    {"id": "drama-doku",       "src": "assets/player-doku.mp4",       "at": 223.0, "dur": 8.0,  "vol": 0},
+    {"id": "drama-bel-cel",    "src": "assets/belgium-fans.mp4",      "at": 231.0, "dur": 6.0,  "vol": 0},
+    {"id": "drama-stad",       "src": "assets/stadium-miami.mp4",     "at": 237.0, "dur": 5.0,  "vol": 0},
+
+    {"id": "verdict-bg",       "src": "assets/belgium-fans.mp4",      "at": 242.5, "dur": 13.5, "vol": 0},
+
+    {"id": "mystery",          "src": "assets/mystery-persia.mp4",    "at": 256.0, "dur": 8.0,  "vol": 0},
+    {"id": "mystery-close",    "src": "assets/mystery-persia.mp4",    "at": 264.0, "dur": 6.0,  "vol": 0},
+
+    {"id": "cta-bg",           "src": "assets/belgium-fans.mp4",      "at": 288.0, "dur": 12.0, "vol": 0}
+  ],
+  "music": {
+    "cues": [
+      {"src": "music/cue-tense.mp3",  "at": 0,   "dur": 30,  "vol": 0.5, "fadeIn": 0.5, "fadeOut": 3, "loop": false},
+      {"src": "music/cue-epic.mp3",   "at": 28,  "dur": 228, "vol": 0.4, "fadeIn": 2.5, "fadeOut": 4, "loop": true},
+      {"src": "music/cue-heroic.mp3", "at": 268, "dur": 32,  "vol": 0.48, "fadeIn": 2.5, "fadeOut": 3, "loop": false}
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {"src": "sfx/heartbeat.mp3", "at": 0.3,   "vol": 0.95},
+      {"src": "sfx/heartbeat.mp3", "at": 6.0,   "vol": 0.8},
+      {"src": "sfx/braam.mp3",     "at": 9.0,   "vol": 0.85},
+      {"src": "sfx/whoosh.mp3",    "at": 16.3,  "vol": 0.6},
+      {"src": "sfx/stamp.mp3",     "at": 16.8,  "vol": 0.6},
+      {"src": "sfx/whoosh.mp3",    "at": 28.2,  "vol": 0.55},
+      {"src": "sfx/braam.mp3",     "at": 44.3,  "vol": 0.6},
+      {"src": "sfx/whoosh.mp3",    "at": 98.4,  "vol": 0.55},
+      {"src": "sfx/pop.mp3",       "at": 106.4, "vol": 0.55},
+      {"src": "sfx/pop.mp3",       "at": 116.6, "vol": 0.55},
+      {"src": "sfx/whoosh.mp3",    "at": 133.4, "vol": 0.6},
+      {"src": "sfx/pop.mp3",       "at": 144.4, "vol": 0.55},
+      {"src": "sfx/whoosh.mp3",    "at": 164.4, "vol": 0.7},
+      {"src": "sfx/goal.mp3",      "at": 204.5, "vol": 0.9},
+      {"src": "sfx/goal.mp3",      "at": 223.5, "vol": 0.9},
+      {"src": "sfx/goal.mp3",      "at": 231.8, "vol": 0.9},
+      {"src": "sfx/braam.mp3",     "at": 242.6, "vol": 0.7},
+      {"src": "sfx/mystic.mp3",    "at": 256.1, "vol": 0.85},
+      {"src": "sfx/pop.mp3",       "at": 266.0, "vol": 0.7},
+      {"src": "sfx/whoosh.mp3",    "at": 288.2, "vol": 0.6}
+    ]
+  }
+}
