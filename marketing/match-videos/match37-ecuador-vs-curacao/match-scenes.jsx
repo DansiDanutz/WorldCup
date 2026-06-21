@@ -13,8 +13,8 @@ function SceneColdOpen() {
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
       {/* moving flash-glimpses of what's coming (video, not stills) */}
       <ClipSprite id="glimpse-stad" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
-      <ClipSprite id="glimpse-room" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
-      <ClipSprite id="glimpse-caicedo" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
+      <ClipSprite id="glimpse-island" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
+      <ClipSprite id="glimpse-andes" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
       <ClipSprite id="glimpse-cur" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
       {/* ember base so the screen never reads as dead air */}
       <div style={{
@@ -26,14 +26,6 @@ function SceneColdOpen() {
         position: 'absolute', inset: 0,
         background: `radial-gradient(ellipse at center, rgba(255,209,0,${(0.5 * beat).toFixed(3)}) 0%, transparent 62%)`,
       }} />
-      {lt > 1.2 && lt < 12.2 && (
-        <div style={{
-          position: 'absolute', left: 0, right: 0, bottom: 170, textAlign: 'center', zIndex: 22,
-          opacity: Math.min(1, (lt - 1.2) / 1.5) * (lt > 11.0 ? Math.max(0, (12.2 - lt) / 1.2) : 1) * (0.55 + 0.45 * beat),
-          fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 30, color: '#cdb98a',
-          letterSpacing: '0.5em', textTransform: 'uppercase',
-        }}>150,000 souls · one island · one impossible dream</div>
-      )}
       <Vignette strength={0.8} />
       {lt > 12.6 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 34, opacity: titleP, zIndex: 22 }}>
@@ -86,7 +78,8 @@ function SceneStadium() {
   const stripP = Easing.easeOutCubic(clamp((lt - 1.2) / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
-      <ClipSprite id="stadium" dim={0.08} />
+      <ClipSprite id="stadium-ext" dim={0.08} />
+      <ClipSprite id="stadium-aerial" dim={0.08} />
       <Vignette strength={0.45} />
       <div style={{
         position: 'absolute', left: 0, right: 0, bottom: 130, display: 'flex', justifyContent: 'center', zIndex: 25,
@@ -147,14 +140,15 @@ function SceneHistory() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05060a' }}>
       <ClipSprite id="history-bg" dim={0.72} style={{ filter: 'brightness(0.28) saturate(0.65) contrast(1.1)' }} />
+      <ClipSprite id="hist-island" dim={0.78} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1)' }} />
+      <ClipSprite id="hist-andes" dim={0.78} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1)' }} />
+      <ClipSprite id="hist-tifo" dim={0.78} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1)' }} />
+      <ClipSprite id="hist-drummers" dim={0.78} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1)' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
       <AmbientParticles start={44} dur={54.5} count={30} maxR={4} />
       {/* chapter header */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 26 }}>
-        <Kicker size={28}>Chapter One · The Story</Kicker>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: MV.text, letterSpacing: '0.05em', marginTop: 16, textShadow: '0 4px 22px rgba(0,0,0,0.8)' }}>
-          HOW DO YOU MEASURE A DREAM?
-        </div>
+        <Kicker size={28}>Chapter One · The History</Kicker>
       </div>
       {/* flag pair, always present */}
       <div style={{ position: 'absolute', bottom: 132, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 40, zIndex: 26, opacity: 0.95 }}>
@@ -163,11 +157,11 @@ function SceneHistory() {
         <FlagCUR w={108} />
       </div>
       {/* beats synced to the narration */}
-      <HistoryPlate start={S + 1.0} end={S + 12} year="THE QUESTION" venue="ONE NIGHT · TWO WORLDS" score="HEART?" note="By the size of the country that dreams it… or the size of the heart that carries it? The game has its own answer." accent={MV.gold} />
-      <HistoryPlate start={S + 12} end={S + 23} year="KÒRSOU" venue="A SPECK IN THE OCEAN" score="CURAÇAO" note="Total Football flowing in its veins — a Caribbean body wrapped around a Dutch brain. They were never supposed to be here." accent={MV.cur} />
-      <HistoryPlate start={S + 23} end={S + 33.5} year="LA TRI" venue="FORGED IN THE ANDES" score="ECUADOR" note="The thin air of altitude, hardened in the brutality of South American qualifying. They arrive as giants — and giants are expected to win." accent={MV.ecu} />
-      <HistoryPlate start={S + 33.5} end={S + 44} year="THE SECRET" venue="THE WORLD CUP KEEPS" score="UPSETS" note="It has humbled giants before. And the smallest hearts… have a habit of beating the loudest." accent={MV.gold} stamp="DEFIANCE" />
-      <HistoryPlate start={S + 44} end={S + 54} year="2026" venue="EVERYTHING TO PROVE" score="TONIGHT" note="Two nations. One night. Everything to prove… and nothing to lose. The island and the mountain finally meet." accent={MV.gold} />
+      <HistoryPlate start={S + 1.0} end={S + 12} year="THE QUESTION" venue="ONE NIGHT · TWO WORLDS" score="HEART?" accent={MV.gold} />
+      <HistoryPlate start={S + 12} end={S + 23} year="KÒRSOU" venue="A SPECK IN THE OCEAN" score="CURAÇAO" accent={MV.cur} />
+      <HistoryPlate start={S + 23} end={S + 33.5} year="LA TRI" venue="FORGED IN THE ANDES" score="ECUADOR" accent={MV.ecu} />
+      <HistoryPlate start={S + 33.5} end={S + 44} year="THE SECRET" venue="THE WORLD CUP KEEPS" score="UPSETS" accent={MV.gold} stamp="DEFIANCE" />
+      <HistoryPlate start={S + 44} end={S + 54} year="2026" venue="EVERYTHING TO PROVE" score="TONIGHT" accent={MV.gold} />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>
@@ -214,6 +208,8 @@ function SceneEcuador() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#0a0c14' }}>
       <ClipSprite id="ecu-bg" dim={0.55} />
+      <ClipSprite id="ecu-tifo" dim={0.5} />
+      <ClipSprite id="ecu-fans-close" dim={0.5} />
       <ClipSprite id="caicedo" dim={0.12} />
       <ClipSprite id="valencia" dim={0.12} />
       <ClipSprite id="plata" dim={0.12} />
@@ -234,13 +230,13 @@ function SceneEcuador() {
         { img: 'assets/squad/ecu-pacho.png', name: 'WILLIAN PACHO', role: 'THE WALL' },
       ]} />
       <Sprite start={106.0} end={116.0}>
-        <LowerThird start={106.5} name="MOISÉS CAICEDO" role="£115M Anchor · Midfield" line="A hundred and fifteen million pounds of authority, patrolling the center like a man justifying every penny." accent={MV.ecu} />
+        <LowerThird start={106.5} name="MOISÉS CAICEDO" role="£115M Anchor · Midfield" accent={MV.ecu} />
       </Sprite>
       <Sprite start={116.0} end={125.0}>
-        <LowerThird start={116.5} name="ENNER VALENCIA" role="The Ageless · Forward" line="A striker who carries a nation's hopes in a body that simply refuses to grow old." accent={MV.ecu} />
+        <LowerThird start={116.5} name="ENNER VALENCIA" role="The Ageless · Forward" accent={MV.ecu} />
       </Sprite>
       <Sprite start={125.0} end={133.5}>
-        <LowerThird start={125.3} name="GONZALO PLATA" role="The Winger · Pace & Poise" line="Plata, Hincapié, Pacho — pace, poise, and a wall at the back. On paper, a mismatch." accent={MV.ecu} />
+        <LowerThird start={125.3} name="GONZALO PLATA" role="The Winger · Pace & Poise" accent={MV.ecu} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -256,6 +252,7 @@ function SceneCuracao() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#0a0c14' }}>
       <ClipSprite id="cur-bg" dim={0.55} />
+      <ClipSprite id="cur-drummers" dim={0.5} />
       <ClipSprite id="room" dim={0.12} />
       <ClipSprite id="janga" dim={0.12} />
       <ClipSprite id="lbacuna" dim={0.12} />
@@ -280,13 +277,13 @@ function SceneCuracao() {
         { img: 'assets/squad/cur-zeefuik.png', name: 'GENERO ZEEFUIK', role: 'THE FIGHTER' },
       ]} />
       <Sprite start={144.5} end={154.5}>
-        <LowerThird start={144.8} name="ELOY ROOM" role="The Guardian Angel · Goalkeeper" line="The Columbus Crew legend whose saves carried a Caribbean rock all the way to the World Cup." accent={MV.curLight} />
+        <LowerThird start={144.8} name="ELOY ROOM" role="The Guardian Angel · Goalkeeper" accent={MV.curLight} />
       </Sprite>
       <Sprite start={154.5} end={159.0}>
-        <LowerThird start={154.7} name="RANGELO JANGA" role="Journeyman of Nine Countries · Forward" line="Eleven men playing for a hundred and fifty thousand — with no fear left to lose." accent={MV.curLight} />
+        <LowerThird start={154.7} name="RANGELO JANGA" role="Journeyman of Nine Countries · Forward" accent={MV.curLight} />
       </Sprite>
       <Sprite start={159.0} end={164.5}>
-        <LowerThird start={159.2} name="THE BACUNA BROTHERS" role="The Heartbeat · Midfield" line="They spent all their fear just getting here. The heartbeat of an island that dares." accent={MV.curLight} />
+        <LowerThird start={159.2} name="THE BACUNA BROTHERS" role="The Heartbeat · Midfield" accent={MV.curLight} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -330,9 +327,7 @@ function SceneDuel() {
       </div>
       <Sprite start={180} end={186}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
-          <BigTitle size={74} color={MV.text} style={{ maxWidth: 1400 }}>
-            “THE PRICE TAG vs THE GUARDIAN”
-          </BigTitle>
+          <Kicker size={40}>The Duel</Kicker>
         </div>
       </Sprite>
       <Letterbox />
@@ -428,9 +423,6 @@ function FullTimeCard({ start }) {
             <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>CURAÇAO</span>
           </div>
         </div>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 36 }}>
-          The continent threw everything; the dot refused to break. Eloy Room had the night of his life — and an island of 150,000 takes a historic first World Cup point.
-        </div>
       </div>
     </div>
   );
@@ -445,15 +437,12 @@ function SceneVerdict() {
       <ClipSprite id="verdict-bg" dim={0.6} />
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 25 }}>
         <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 24, padding: '52px 84px', minWidth: 900, backdropFilter: 'blur(6px)' }}>
-          <Kicker size={26}>Group E · After The Final Whistle</Kicker>
+          <Kicker size={26}>Group E · Full Time</Kicker>
           <div style={{ marginTop: 26 }}>
-            <StatLine start={S + 0.8} delay={0.0} label="Ecuador" value="1 pt · frustration for a continent" accent={MV.ecu} />
-            <StatLine start={S + 0.8} delay={0.25} label="Curaçao" value="1 pt · a point that feels like a parade" accent={MV.curLight} />
-            <StatLine start={S + 0.8} delay={0.5} label="FULL TIME" value="Ecuador 0 — 0 Curaçao" accent={MV.text} />
-            <StatLine start={S + 0.8} delay={0.75} label="HISTORY" value="Curaçao's first-ever World Cup point" accent={MV.gold} />
-          </div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 30, color: MV.gold, marginTop: 38, textAlign: 'center' }}>
-            The smallest team in Group E just rewrote what's possible.
+            <StatLine start={S + 0.8} delay={0.0} label="ECUADOR" value="1 PT" accent={MV.ecu} />
+            <StatLine start={S + 0.8} delay={0.25} label="CURAÇAO" value="1 PT" accent={MV.curLight} />
+            <StatLine start={S + 0.8} delay={0.5} label="FULL TIME" value="ECU 0 — 0 CUR" accent={MV.text} />
+            <StatLine start={S + 0.8} delay={0.75} label="CURAÇAO" value="FIRST WC POINT" accent={MV.gold} />
           </div>
         </div>
       </div>
@@ -474,6 +463,7 @@ function SceneMystery() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
       <ClipSprite id="mystery" dim={0.12} />
+      <ClipSprite id="mystery-close" dim={0.18} />
       {/* drifting fog layers */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 21, pointerEvents: 'none', opacity: 0.5,
@@ -514,9 +504,6 @@ function SceneMystery() {
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 22, color: '#e8c97a', letterSpacing: '0.28em' }}>LEGEND 037</div>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 64, color: '#f6f9ff', letterSpacing: '0.01em', marginTop: 8, lineHeight: 1.05, maxWidth: 540 }}>THE ISLAND ELDER</div>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 22, color: '#9fb6e0', letterSpacing: '0.16em', marginTop: 14, textTransform: 'uppercase' }}>The Old Tambú Spirit · Curaçao</div>
-              <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 500, fontSize: 22, color: '#c9d6ef', marginTop: 16, maxWidth: 560, lineHeight: 1.4 }}>
-                Said to carry the ancestors onto the pitch. While his drum beats, the island cannot fall — and tonight, it never missed a note.
-              </div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginTop: 24, background: 'rgba(255,210,74,0.14)', border: '1px solid rgba(255,210,74,0.55)', borderRadius: 999, padding: '12px 28px' }}>
                 <span style={{ fontSize: 26 }}>✦</span>
                 <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 24, color: MV.gold, letterSpacing: '0.08em' }}>COLLECT IT · worldcup26.world</span>
@@ -543,9 +530,9 @@ function SceneApp() {
   const S = 270;
   const inP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const cards = [
-    { name: 'CURAÇAO', coef: 'x3.00', pts: '+3.00', flag: <FlagCUR w={86} /> },
-    { name: 'ECUADOR', coef: 'x1.40', pts: '+0.00', flag: <FlagECU w={86} /> },
-    { name: 'BRAZIL', coef: 'x1.20', pts: '+0.00', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
+    { name: 'CURAÇAO', mult: '3× PER GOAL', flag: <FlagCUR w={86} /> },
+    { name: 'ECUADOR', mult: '2× PER GOAL', flag: <FlagECU w={86} /> },
+    { name: 'BRAZIL', mult: '1× PER GOAL', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
   ];
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(160deg, #0d2a20 0%, #07090f 70%)` }}>
@@ -553,9 +540,7 @@ function SceneApp() {
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 46, opacity: inP }}>
         <Kicker color="#7fd6b5" size={30}>The Prediction Game</Kicker>
         <BigTitle size={104} color="#fff" glow={MV.green}>worldcup26.world</BigTitle>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 38, color: '#cfe9de', letterSpacing: '0.04em' }}>
-          Pick 3 teams. Every goal they score… scores for YOU.
-        </div>
+        <Kicker color="#cfe9de" size={30}>Pick 3 Teams</Kicker>
         <div style={{ display: 'flex', gap: 36, marginTop: 12 }}>
           {cards.map((c, i) => {
             const cp = Easing.easeOutBack(clamp((lt - 1.2 - i * 0.35) / 0.7, 0, 1));
@@ -568,14 +553,13 @@ function SceneApp() {
               }}>
                 {c.flag}
                 <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 32, color: '#fff' }}>{c.name}</div>
-                <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 26, color: MV.gold }}>{c.coef}</div>
-                <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 30, color: i === 0 ? '#6ee7a8' : '#9fb2a9' }}>{c.pts}</div>
+                <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 26, color: MV.gold }}>{c.mult}</div>
               </div>
             );
           })}
         </div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.06em', marginTop: 8 }}>
-          FREE TO PLAY · UNDERDOGS PAY TRIPLE · LIVE PRIZE POOL
+          free · just for fun · no prizes
         </div>
       </div>
       <Letterbox />
@@ -594,7 +578,7 @@ function SceneCTA() {
       <AmbientParticles start={288} dur={12} count={28} />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={30}>The dot in the sea moved you?</Kicker>
+        <Kicker size={30}>WorldCup26 Legends</Kicker>
         <div style={{ marginTop: 24 }}><TitleReveal text="JOIN THE LEGENDS" start={S + 0.5} size={92} color={MV.text} /></div>
       </div>
       <div style={{ position: 'absolute', inset: 0, zIndex: 26 }}>

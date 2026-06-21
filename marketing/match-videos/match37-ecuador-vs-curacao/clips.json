@@ -1,20 +1,24 @@
 {
   "comment": "Ep37 Ecuador vs Curacao. Dense visual cut: all 12 player animations + 5 generated atmosphere clips + reused stadium. vol=0 on every clip (silent reused/AI clips; audio = VO + music + sfx). REAL result 0-0. Scenes reference these ids via <ClipSprite id=...>.",
   "clips": [
-    {"id": "glimpse-stad",   "src": "assets/stadium-sofi.mp4",      "at": 0.5,   "dur": 3.5,  "vol": 0},
-    {"id": "glimpse-room",   "src": "assets/player-room.mp4",       "at": 4.0,   "dur": 0.5,  "vol": 0},
-    {"id": "glimpse-caicedo","src": "assets/player-caicedo.mp4",    "at": 4.6,   "dur": 0.5,  "vol": 0},
+    {"id": "glimpse-stad",   "src": "assets/stadium-ext.mp4",       "at": 0.5,   "dur": 3.5,  "vol": 0},
+    {"id": "glimpse-island", "src": "assets/island-dot.mp4",        "at": 4.0,   "dur": 2.5,  "vol": 0},
+    {"id": "glimpse-andes",  "src": "assets/andes-mountain.mp4",    "at": 6.5,   "dur": 2.5,  "vol": 0},
     {"id": "glimpse-cur",    "src": "assets/cur-fans-hopeful.mp4",  "at": 9.0,   "dur": 5.0,  "vol": 0},
 
     {"id": "title-bg",       "src": "assets/stadium-sofi.mp4",      "at": 16.0,  "dur": 12.0, "vol": 0},
-    {"id": "stadium",        "src": "assets/stadium-sofi.mp4",      "at": 28.0,  "dur": 16.0, "vol": 0},
+    {"id": "stadium-ext",    "src": "assets/stadium-ext.mp4",       "at": 28.0,  "dur": 8.0,  "vol": 0},
+    {"id": "stadium-aerial", "src": "assets/stadium-aerial.mp4",    "at": 36.0,  "dur": 8.0,  "vol": 0},
 
-    {"id": "history-bg",     "src": "assets/stadium-sofi.mp4",      "at": 44.0,  "dur": 12.0, "vol": 0},
-    {"id": "hist-cur",       "src": "assets/cur-fans-hopeful.mp4",  "at": 56.0,  "dur": 11.0, "vol": 0},
-    {"id": "hist-ecu",       "src": "assets/ecu-fans-fervent.mp4",  "at": 67.0,  "dur": 11.0, "vol": 0},
-    {"id": "hist-stad",      "src": "assets/stadium-sofi.mp4",      "at": 88.0,  "dur": 10.5, "vol": 0},
+    {"id": "history-bg",     "src": "assets/stadium-sofi.mp4",      "at": 44.0,  "dur": 11.0, "vol": 0},
+    {"id": "hist-island",    "src": "assets/island-dot.mp4",        "at": 55.0,  "dur": 11.0, "vol": 0},
+    {"id": "hist-andes",     "src": "assets/andes-mountain.mp4",    "at": 66.0,  "dur": 10.5, "vol": 0},
+    {"id": "hist-tifo",      "src": "assets/ecu-tifo.mp4",          "at": 76.5,  "dur": 11.0, "vol": 0},
+    {"id": "hist-drummers",  "src": "assets/cur-drummers.mp4",      "at": 87.5,  "dur": 11.0, "vol": 0},
 
     {"id": "ecu-bg",         "src": "assets/ecu-fans-fervent.mp4",  "at": 98.5,  "dur": 8.0,  "vol": 0},
+    {"id": "ecu-tifo",       "src": "assets/ecu-tifo.mp4",          "at": 106.5, "dur": 13.0, "vol": 0},
+    {"id": "ecu-fans-close", "src": "assets/ecu-fans-close.mp4",    "at": 119.5, "dur": 14.0, "vol": 0},
     {"id": "caicedo",        "src": "assets/player-caicedo.mp4",    "at": 106.5, "dur": 9.0,  "vol": 0},
     {"id": "valencia",       "src": "assets/player-valencia.mp4",   "at": 116.5, "dur": 8.0,  "vol": 0},
     {"id": "plata",          "src": "assets/player-plata.mp4",      "at": 125.0, "dur": 4.0,  "vol": 0},
@@ -22,6 +26,7 @@
     {"id": "pacho",          "src": "assets/player-pacho.mp4",      "at": 131.5, "dur": 2.0,  "vol": 0},
 
     {"id": "cur-bg",         "src": "assets/cur-fans-hopeful.mp4",  "at": 133.5, "dur": 8.0,  "vol": 0},
+    {"id": "cur-drummers",   "src": "assets/cur-drummers.mp4",      "at": 141.5, "dur": 14.0, "vol": 0},
     {"id": "room",           "src": "assets/player-room.mp4",       "at": 144.5, "dur": 9.0,  "vol": 0},
     {"id": "janga",          "src": "assets/player-janga.mp4",      "at": 154.5, "dur": 3.0,  "vol": 0},
     {"id": "lbacuna",        "src": "assets/player-lbacuna.mp4",    "at": 157.5, "dur": 2.0,  "vol": 0},
@@ -44,7 +49,8 @@
     {"id": "drama-stad",     "src": "assets/stadium-sofi.mp4",      "at": 237.0, "dur": 5.0,  "vol": 0},
 
     {"id": "verdict-bg",     "src": "assets/cur-fans-euphoric.mp4", "at": 242.5, "dur": 13.5, "vol": 0},
-    {"id": "mystery",        "src": "assets/mystery-legend.mp4",    "at": 256.0, "dur": 14.0, "vol": 0},
+    {"id": "mystery",        "src": "assets/mystery-legend.mp4",    "at": 256.0, "dur": 8.0,  "vol": 0},
+    {"id": "mystery-close",  "src": "assets/mystery-close.mp4",     "at": 264.0, "dur": 6.0,  "vol": 0},
     {"id": "app-bg",         "src": "assets/cur-fans-euphoric.mp4", "at": 270.0, "dur": 18.0, "vol": 0},
     {"id": "cta-bg",         "src": "assets/cur-fans-euphoric.mp4", "at": 288.0, "dur": 12.0, "vol": 0}
   ],
