@@ -1,0 +1,373 @@
+{
+  "comment": "Ep43 Argentina vs Austria (Group J). Story 'The Emperor's New Rivals' — Messi's genius vs Rangnick's pressing machine. MATCH UNPLAYED -> OUR PREDICTION Argentina 2-1 (Sabitzer 67' for Austria's press, Alvarez 82' equaliser, Messi 90' free-kick winner). vol=0 on every clip (silent reused/AI clips; audio = VO + music + sfx). Atmosphere library: arg-fans, aut-fans, stadium-night, mystery-clockmaker, arg-euphoric + 10 player clips, reused via distinct ids. Scenes reference these ids via <ClipSprite id=...>. Legend 043 = The Clockmaker. Brian VO.",
+  "clips": [
+    {
+      "id": "glimpse-stad",
+      "src": "assets/stadium-night.mp4",
+      "at": 0.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-messi",
+      "src": "assets/player-messi.mp4",
+      "at": 4,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-sabitzer",
+      "src": "assets/player-sabitzer.mp4",
+      "at": 6.5,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-aut",
+      "src": "assets/aut-fans.mp4",
+      "at": 11.39,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-ext",
+      "src": "assets/stadium-night.mp4",
+      "at": 29.73,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/stadium-night.mp4",
+      "at": 36,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "history-bg",
+      "src": "assets/stadium-night.mp4",
+      "at": 44,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-arg",
+      "src": "assets/arg-fans.mp4",
+      "at": 55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-aut",
+      "src": "assets/aut-fans.mp4",
+      "at": 66,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-messi",
+      "src": "assets/player-messi.mp4",
+      "at": 76.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-sabitzer",
+      "src": "assets/player-sabitzer.mp4",
+      "at": 87.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "arg-bg",
+      "src": "assets/arg-fans.mp4",
+      "at": 98.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "messi",
+      "src": "assets/player-messi.mp4",
+      "at": 106.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "alvarez",
+      "src": "assets/player-alvarez.mp4",
+      "at": 116.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "enzo",
+      "src": "assets/player-enzo.mp4",
+      "at": 124.5,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "macallister",
+      "src": "assets/player-macallister.mp4",
+      "at": 127.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "martinez",
+      "src": "assets/player-martinez.mp4",
+      "at": 131,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "aut-bg",
+      "src": "assets/aut-fans.mp4",
+      "at": 133.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "alaba",
+      "src": "assets/player-alaba.mp4",
+      "at": 144.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "arnautovic",
+      "src": "assets/player-arnautovic.mp4",
+      "at": 154.5,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "sabitzer",
+      "src": "assets/player-sabitzer.mp4",
+      "at": 161.95,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "laimer",
+      "src": "assets/player-laimer.mp4",
+      "at": 165.95,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "baumgartner",
+      "src": "assets/player-baumgartner.mp4",
+      "at": 168.26,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "drama-aut1",
+      "src": "assets/aut-fans.mp4",
+      "at": 186,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-sabitzer",
+      "src": "assets/player-sabitzer.mp4",
+      "at": 196,
+      "dur": 8.5,
+      "vol": 0
+    },
+    {
+      "id": "drama-aut-press",
+      "src": "assets/player-laimer.mp4",
+      "at": 205.46,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "drama-alvarez",
+      "src": "assets/player-alvarez.mp4",
+      "at": 213,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "drama-messi",
+      "src": "assets/player-messi.mp4",
+      "at": 223,
+      "dur": 8.5,
+      "vol": 0
+    },
+    {
+      "id": "drama-arg-cel",
+      "src": "assets/arg-euphoric.mp4",
+      "at": 231.5,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "drama-stad",
+      "src": "assets/stadium-night.mp4",
+      "at": 237.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "verdict-bg",
+      "src": "assets/arg-fans.mp4",
+      "at": 242,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mystery",
+      "src": "assets/mystery-clockmaker.mp4",
+      "at": 259.48,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "mystery-close",
+      "src": "assets/mystery-clockmaker.mp4",
+      "at": 270.02,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "cta-bg",
+      "src": "assets/arg-fans.mp4",
+      "at": 293.8,
+      "dur": 9,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 28,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 29.73,
+        "dur": 279.50999999999993,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 277.86,
+        "dur": 32,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.39,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 12.89,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 29.93,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44.3,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 98.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 106.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 116.6,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 133.4,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 144.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 171.06,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 205.46,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 223.5,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 231.8,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 242.1,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 259.58,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 278.93,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 294,
+        "vol": 0.6
+      }
+    ]
+  }
+}
