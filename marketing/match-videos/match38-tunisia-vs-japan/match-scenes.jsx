@@ -346,15 +346,15 @@ function SceneDrama() {
       <ClipSprite id="drama-jpn-cel" dim={0.05} />
       <ClipSprite id="drama-stad" dim={0.08} />
 
-      {/* Locked at one apiece — both exhausted, neither breaking */}
+      {/* Real half-time: Japan 2-0 (Japan scored twice before the break) */}
       <Sprite start={186} end={231}>
-        <ScoreBug start={S + 0.4} jpn={1} tun={1} minute="90'" badge="OUR PREDICTION" />
+        <ScoreBug start={S + 0.4} jpn={2} tun={0} minute="HALF-TIME" badge="HALF-TIME" />
       </Sprite>
 
-      {/* 91st minute — Mitoma's burst, the cut-back, Kubo's left foot */}
+      {/* 91st minute — predicted third: Mitoma's burst, cut-back, Kubo's left foot */}
       <GoalFlash at={S + 45.5} />
       <Sprite start={231} end={242}>
-        <ScoreBug start={S + 46.2} jpn={2} tun={1} minute="91'" badge="OUR PREDICTION" />
+        <ScoreBug start={S + 46.2} jpn={3} tun={0} minute="91'" badge="OUR PREDICTION" />
       </Sprite>
 
       {/* The predicted final — clearly stamped OUR PREDICTION, never FULL TIME */}
@@ -390,7 +390,7 @@ function PredictionCard({ start }) {
             <FlagJPN w={150} />
             <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>JAPAN</span>
           </div>
-          <BigTitle size={170} color={MV.gold}>2 — 1</BigTitle>
+          <BigTitle size={170} color={MV.gold}>3 — 0</BigTitle>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <FlagTUN w={150} />
             <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>TUNISIA</span>
@@ -414,8 +414,8 @@ function SceneVerdict() {
           <div style={{ marginTop: 26 }}>
             <StatLine start={S + 0.8} delay={0.0} label="JAPAN" value="THROUGH" accent={MV.jpnLight} />
             <StatLine start={S + 0.8} delay={0.25} label="TUNISIA" value="JUST SHORT" accent={MV.tunLight} />
-            <StatLine start={S + 0.8} delay={0.5} label="OUR PREDICTION" value="JPN 2 — 1 TUN" accent={MV.text} />
-            <StatLine start={S + 0.8} delay={0.75} label="91' KUBO" value="THE WINNER" accent={MV.gold} />
+            <StatLine start={S + 0.8} delay={0.5} label="OUR PREDICTION" value="JPN 3 — 0 TUN" accent={MV.text} />
+            <StatLine start={S + 0.8} delay={0.75} label="91' KUBO" value="SEALS IT" accent={MV.gold} />
           </div>
         </div>
       </div>

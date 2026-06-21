@@ -12,7 +12,7 @@ The Samurai and the Eagle: One Door, One 91st Minute | Japan vs Tunisia — Worl
 ```
 **A/B variant:**
 ```
-We Called the 91st-Minute Winner — Japan vs Tunisia Preview | World Cup 2026 (Ep.38)
+We Called Japan's Statement Win — Japan vs Tunisia Preview | World Cup 2026 (Ep.38)
 ```
 
 ## DESCRIPTION
@@ -21,7 +21,7 @@ We Called the 91st-Minute Winner — Japan vs Tunisia Preview | World Cup 2026 (
 
 Episode 38: Japan vs Tunisia, Group F. Two nations remade by football — the Blue Samurai who built a footballing power from nothing in 40 years, and the Carthage Eagles, the most consistent African qualifier in World Cup history. Both have reached the very edge of the knockout rounds. Both have fallen just short. Tonight the door is right there — and only one walks through.
 
-🔮 OUR PREDICTION: Japan 2–1 Tunisia — a 91st-minute Takefusa Kubo winner, set up by Kaoru Mitoma's unstoppable burst. This is our story... the real one is yours to watch.
+🔮 OUR PREDICTION: Japan 3–0 Tunisia — Japan led 2–0 at the break (Japan scored twice); in our story Kubo adds a 91st-minute third to seal a statement win. The real result is yours to watch.
 
 🏆 Think you can call it before kickoff? Play FREE at worldcup26.world — pick 3 teams, back the underdogs (they pay triple), climb the live prize pool.
 
@@ -35,7 +35,7 @@ Episode 38: Japan vs Tunisia, Group F. Two nations remade by football — the Bl
 1:38 Japan — The Blue Samurai
 2:13 Tunisia — The Carthage Eagles
 2:44 Precision vs Passion
-3:06 The 91st Minute (Our Prediction)
+3:06 The 91st Minute — Japan 3–0 (Our Prediction)
 4:02 The Verdict — Group F
 4:16 Legend 038 — The Eagle-Keeper
 4:30 Play Free at worldcup26.world
