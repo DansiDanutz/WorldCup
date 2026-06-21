@@ -4389,6 +4389,35 @@ svg {
   gap: 8px;
 }
 
+.admin-form .card-view-control,
+.admin-sweep-report .card-view-control {
+  margin: 8px 0;
+  border-color: color-mix(in srgb, var(--gold) 34%, transparent);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.admin-form .card-view-control__copy strong,
+.admin-sweep-report .card-view-control__copy strong {
+  white-space: normal;
+}
+
+.admin-form .card-view-control__button,
+.admin-sweep-report .card-view-control__button {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.admin-data-list--compact {
+  max-height: none;
+  overflow: visible;
+}
+
+.admin-data-list--expanded {
+  max-height: min(680px, 72vh);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  padding-right: 4px;
+}
+
 .admin-referral-row {
   padding: 12px;
   border: 1px solid var(--border);
@@ -9942,6 +9971,15 @@ html {
   max-height: 240px;
   overflow-y: auto;
 }
+
+.admin-sweep-report__list.admin-data-list--compact {
+  max-height: none;
+}
+
+.admin-sweep-report__list.admin-data-list--expanded {
+  max-height: min(520px, 64vh);
+}
+
 .admin-sweep-row {
   display: flex;
   justify-content: space-between;
@@ -9974,6 +10012,8 @@ html {
   padding: 10px 12px;
   margin: 6px 0 0;
   line-height: 1.4;
+}
+
 /* Kickoff countdown urgency strip */
 .kickoff-strip {
   display: flex;

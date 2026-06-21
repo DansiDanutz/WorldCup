@@ -169,6 +169,36 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.rules-content--expanded\s*{[\s\S]*?overflow-y:\s*auto;/);
   });
 
+  it("keeps long admin operation lists compact until maximized", () => {
+    assert.match(adminConsole, /import \{ CardViewControl \} from "@\/components\/card-view-control";/);
+    assert.match(adminConsole, /compactAdminSweepCount = 6/);
+    assert.match(adminConsole, /compactAdminAccountCount = 5/);
+    assert.match(adminConsole, /compactAdminDepositClaimCount = 4/);
+    assert.match(adminConsole, /compactAdminWithdrawalCount = 4/);
+    assert.match(adminConsole, /compactAdminAgeVerificationCount = 4/);
+    assert.match(adminConsole, /compactAdminAgentCount = 6/);
+    assert.match(adminConsole, /compactAdminFinancialMovementCount = 6/);
+    assert.match(adminConsole, /compactAdminReferralCount = 6/);
+    assert.equal(adminConsole.match(/<CardViewControl/g)?.length, 9);
+    assert.match(adminConsole, /visibleSweepRows = sweepReportExpanded \? sweepRows : sweepRows\.slice\(0, compactAdminSweepCount\)/);
+    assert.match(adminConsole, /visibleAccounts = accountsExpanded \? accounts : accounts\.slice\(0, compactAdminAccountCount\)/);
+    assert.match(adminConsole, /visibleDepositClaims = depositClaimsExpanded[\s\S]*?depositClaims\.slice\(0, compactAdminDepositClaimCount\)/);
+    assert.match(adminConsole, /visibleWithdrawals = withdrawalsExpanded[\s\S]*?withdrawals\.slice\(0, compactAdminWithdrawalCount\)/);
+    assert.match(adminConsole, /visibleAgents = agentsExpanded \? agents : agents\.slice\(0, compactAdminAgentCount\)/);
+    assert.match(adminConsole, /visibleFinancialMovements = financialMovementsExpanded[\s\S]*?financialMovements\.slice\(0, compactAdminFinancialMovementCount\)/);
+    assert.match(adminConsole, /controlsId="admin-deposit-claim-list"/);
+    assert.match(adminConsole, /controlsId="admin-withdrawal-list"/);
+    assert.match(adminConsole, /controlsId="admin-financial-movement-list"/);
+    assert.match(adminConsole, /controlsId="admin-referral-report-list"/);
+    assert.match(adminConsole, /visibleDepositClaims\.map/);
+    assert.match(adminConsole, /visibleWithdrawals\.map/);
+    assert.match(adminConsole, /visibleFinancialMovements\.map/);
+    assert.match(globalsCss, /\.admin-form \.card-view-control,[\s\S]*?\.admin-sweep-report \.card-view-control/);
+    assert.match(globalsCss, /\.admin-data-list--compact\s*{[\s\S]*?overflow:\s*visible;/);
+    assert.match(globalsCss, /\.admin-data-list--expanded\s*{[\s\S]*?max-height:\s*min\(680px,\s*72vh\);/);
+    assert.match(globalsCss, /\.admin-sweep-report__list\.admin-data-list--expanded\s*{[\s\S]*?max-height:\s*min\(520px,\s*64vh\);/);
+  });
+
   it("adds a smart browse hub so users can jump between grouped app cards", () => {
     assert.match(dashboard, /<SmartMenu label="Menu" summary="Browse app">/);
     assert.match(dashboard, /<a href="#browse">[\s\S]*?Browse/);
