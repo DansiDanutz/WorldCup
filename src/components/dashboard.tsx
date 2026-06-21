@@ -104,6 +104,42 @@ type AgentTicketRequest = {
   ticketId: string | null;
 };
 
+function CardViewControl({
+  controlsId,
+  expanded,
+  label,
+  compactText,
+  expandedText,
+  onToggle,
+}: {
+  controlsId: string;
+  expanded: boolean;
+  label: string;
+  compactText: string;
+  expandedText: string;
+  onToggle: () => void;
+}) {
+  return (
+    <div className={`card-view-control ${expanded ? "is-expanded" : "is-compact"}`}>
+      <div className="card-view-control__copy">
+        <span>{expanded ? "Full view" : "Compact view"}</span>
+        <strong>{expanded ? expandedText : compactText}</strong>
+      </div>
+      <button
+        aria-controls={controlsId}
+        aria-expanded={expanded}
+        aria-label={`${expanded ? "Minimize" : "Maximize"} ${label}`}
+        className="card-view-control__button"
+        onClick={onToggle}
+        type="button"
+      >
+        {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        {expanded ? "Minimize" : "Maximize"}
+      </button>
+    </div>
+  );
+}
+
 const pickColorClasses = ["pick-color-one", "pick-color-two", "pick-color-three"] as const;
 const ownerAdminEmail = "semebitcoin@gmail.com";
 const referralAgreementText =
@@ -1619,6 +1655,16 @@ export function Dashboard({
                 </div>
               </div>
             </div>
+            {showTeamDisclosure ? (
+              <CardViewControl
+                compactText={`${Math.min(compactTeamCount, filteredTeams.length)} of ${filteredTeams.length} teams visible`}
+                controlsId="team-list"
+                expanded={showAllTeams}
+                expandedText={`All ${filteredTeams.length} teams visible`}
+                label="team list"
+                onToggle={() => setShowAllTeams((current) => !current)}
+              />
+            ) : null}
             <div
               className={`team-list ${teamListExpanded ? "team-list--expanded" : "team-list--compact"}`}
               id="team-list"
@@ -1703,22 +1749,6 @@ export function Dashboard({
                 </div>
               ) : null}
             </div>
-            {showTeamDisclosure ? (
-              <div className="card-disclosure card-disclosure--teams">
-                <button
-                  aria-controls="team-list"
-                  aria-expanded={showAllTeams}
-                  className="card-disclosure__button"
-                  onClick={() => setShowAllTeams((current) => !current)}
-                  type="button"
-                >
-                  {showAllTeams ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                  {showAllTeams
-                    ? `Show first ${compactTeamCount} teams`
-                    : `Show all ${filteredTeams.length} teams`}
-                </button>
-              </div>
-            ) : null}
           </div>
           )}
 
@@ -2231,6 +2261,16 @@ export function Dashboard({
                 </a>
               </div>
             ) : null}
+            {publicLeaderboard.length > compactLeaderboardCount ? (
+              <CardViewControl
+                compactText={`Top ${Math.min(compactLeaderboardCount, publicLeaderboard.length)} of ${publicLeaderboard.length} entries`}
+                controlsId="leaderboard-list"
+                expanded={leaderboardExpanded}
+                expandedText={`All ${publicLeaderboard.length} entries`}
+                label="leaderboard"
+                onToggle={() => setLeaderboardExpanded((current) => !current)}
+              />
+            ) : null}
             <div
               className={`leaderboard-list ${
                 leaderboardExpanded ? "leaderboard-list--expanded" : "leaderboard-list--compact"
@@ -2305,22 +2345,6 @@ export function Dashboard({
                 ))
               )}
             </div>
-            {publicLeaderboard.length > compactLeaderboardCount ? (
-              <div className="card-disclosure card-disclosure--leaderboard">
-                <button
-                  aria-controls="leaderboard-list"
-                  aria-expanded={leaderboardExpanded}
-                  className="card-disclosure__button"
-                  onClick={() => setLeaderboardExpanded((current) => !current)}
-                  type="button"
-                >
-                  {leaderboardExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                  {leaderboardExpanded
-                    ? `Show top ${compactLeaderboardCount}`
-                    : `Show all ${publicLeaderboard.length}`}
-                </button>
-              </div>
-            ) : null}
           </div>
 
           <div className={`panel rules-panel${rulesExpanded ? " is-expanded" : " is-minimized"}`} id="rules">
@@ -2333,6 +2357,14 @@ export function Dashboard({
                 <BookOpen className="panel-card-icon" size={18} aria-hidden="true" />
               </div>
             </div>
+            <CardViewControl
+              compactText="Quick rules view"
+              controlsId="rules-content"
+              expanded={rulesExpanded}
+              expandedText="Full rules guide"
+              label="rules card"
+              onToggle={() => setRulesExpanded((current) => !current)}
+            />
             <div
               className={`rules-content ${rulesExpanded ? "rules-content--expanded" : "rules-content--minimized"}`}
               id="rules-content"
@@ -2413,18 +2445,6 @@ export function Dashboard({
                 ))}
               </div>
             </div>
-            <div className="card-disclosure card-disclosure--rules">
-              <button
-                aria-controls="rules-content"
-                aria-expanded={rulesExpanded}
-                className="card-disclosure__button"
-                onClick={() => setRulesExpanded((current) => !current)}
-                type="button"
-              >
-                {rulesExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                {rulesExpanded ? "Show less rules" : "Show full rules"}
-              </button>
-            </div>
           </div>
         </section>
 
@@ -2441,6 +2461,16 @@ export function Dashboard({
                 <RefreshCw className="panel-card-icon" size={18} aria-hidden="true" />
               </div>
             </div>
+            {matches.length > compactMatchCount ? (
+              <CardViewControl
+                compactText={`First ${Math.min(compactMatchCount, matches.length)} of ${matches.length} matches`}
+                controlsId="match-list"
+                expanded={matchScheduleExpanded}
+                expandedText={`All ${matches.length} matches`}
+                label="match schedule"
+                onToggle={() => setMatchScheduleExpanded((current) => !current)}
+              />
+            ) : null}
             <div
               className={`match-list ${matchScheduleExpanded ? "match-list--expanded" : "match-list--compact"}`}
               id="match-list"
@@ -2467,22 +2497,6 @@ export function Dashboard({
                 );
               })}
             </div>
-            {matches.length > compactMatchCount ? (
-              <div className="card-disclosure card-disclosure--matches">
-                <button
-                  aria-controls="match-list"
-                  aria-expanded={matchScheduleExpanded}
-                  className="card-disclosure__button"
-                  onClick={() => setMatchScheduleExpanded((current) => !current)}
-                  type="button"
-                >
-                  {matchScheduleExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                  {matchScheduleExpanded
-                    ? `Show first ${compactMatchCount} matches`
-                    : `Show all ${matches.length} matches`}
-                </button>
-              </div>
-            ) : null}
           </div>
         </section>
       </div>
