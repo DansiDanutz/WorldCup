@@ -67,7 +67,9 @@ describe("agent wallet direct transfers", () => {
     assert.match(myStanding, /Last bought/);
     assert.match(myStanding, /Last bonus/);
     assert.match(myStanding, /agentCodeOpen, setAgentCodeOpen/);
-    assert.match(myStanding, /agent-gift-trigger/);
+    assert.match(myStanding, /standing-card-icon-badge standing-card-icon-badge--orange/);
+    assert.match(myStanding, /Show sellable code/);
+    assert.match(myStanding, /Hide sellable code/);
     assert.match(myStanding, /aria-expanded=\{agentCodeOpen\}/);
     assert.match(myStanding, /standing-agent-code--revealed/);
     assert.match(myStanding, /Next code to sell/);
@@ -76,8 +78,8 @@ describe("agent wallet direct transfers", () => {
     assert.doesNotMatch(myStanding, /refreshAgentStanding/);
     assert.match(myStanding, /window\.setInterval\(refreshStanding, 15_000\)/);
     assert.match(myStanding, /visibilitychange/);
-    assert.match(globalsCss, /\.agent-gift-trigger/);
-    assert.match(globalsCss, /@keyframes wc-agent-gift-breathe/);
+    assert.match(globalsCss, /\.standing-card-icon-badge--orange/);
+    assert.match(globalsCss, /\.card-disclosure--standing \.card-disclosure__button/);
     assert.match(globalsCss, /@keyframes wc-agent-code-reveal/);
     assert.match(globalsCss, /\.standing-agent-code/);
     assert.match(globalsCss, /\.standing-agent-code__actions/);

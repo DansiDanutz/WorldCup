@@ -4,15 +4,15 @@ import {
   BookOpen,
   CalendarClock,
   Check,
+  ChevronDown,
+  ChevronUp,
   ArrowRight,
   ClipboardCopy,
   GitBranch,
   LinkIcon,
   Lock,
   LogOut,
-  Maximize2,
   MessageCircle,
-  Minimize2,
   PlayCircle,
   RefreshCw,
   Search,
@@ -215,7 +215,7 @@ export function Dashboard({
   const visibleTeams = teamListExpanded
     ? filteredTeams
     : filteredTeams.slice(0, compactTeamCount);
-  const hiddenTeamCount = Math.max(0, filteredTeams.length - visibleTeams.length);
+  const showTeamDisclosure = !query.trim() && filteredTeams.length > compactTeamCount;
 
   const selectedTeamRecords = selectedTeams
     .map((teamId) => teamsById.get(teamId))
@@ -1498,13 +1498,13 @@ export function Dashboard({
               <div className="field team-search-field">
                 <div className="team-search-head">
                   <label htmlFor="team-search">Search teams</label>
-                  <button
-                    className={`all-teams-toggle ${showAllTeams ? "active" : ""}`}
-                    onClick={() => setShowAllTeams((current) => !current)}
-                    type="button"
-                  >
-                    {showAllTeams ? "Compact" : `All Teams (${filteredTeams.length})`}
-                  </button>
+                  <span className="team-search-count">
+                    {query.trim()
+                      ? `${filteredTeams.length} result${filteredTeams.length === 1 ? "" : "s"}`
+                      : showAllTeams
+                        ? `${filteredTeams.length} teams shown`
+                        : `${visibleTeams.length} shown`}
+                  </span>
                 </div>
                 <div style={{ position: "relative" }}>
                   <Search
@@ -1525,6 +1525,7 @@ export function Dashboard({
             </div>
             <div
               className={`team-list ${teamListExpanded ? "team-list--expanded" : "team-list--compact"}`}
+              id="team-list"
               onTouchCancel={handleTeamListTouchEnd}
               onTouchEnd={handleTeamListTouchEnd}
               onTouchMove={handleTeamListTouchMove}
@@ -1596,16 +1597,6 @@ export function Dashboard({
                   </div>
                 );
               })}
-              {hiddenTeamCount > 0 ? (
-                <button
-                  className="team-list-expand-card"
-                  onClick={() => setShowAllTeams(true)}
-                  type="button"
-                >
-                  Show all {filteredTeams.length} teams
-                  <ArrowRight size={16} />
-                </button>
-              ) : null}
               {filteredTeams.length === 0 ? (
                 <div className="empty-list-state">
                   <strong>No teams found</strong>
@@ -1616,6 +1607,22 @@ export function Dashboard({
                 </div>
               ) : null}
             </div>
+            {showTeamDisclosure ? (
+              <div className="card-disclosure card-disclosure--teams">
+                <button
+                  aria-controls="team-list"
+                  aria-expanded={showAllTeams}
+                  className="card-disclosure__button"
+                  onClick={() => setShowAllTeams((current) => !current)}
+                  type="button"
+                >
+                  {showAllTeams ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                  {showAllTeams
+                    ? `Show first ${compactTeamCount} teams`
+                    : `Show all ${filteredTeams.length} teams`}
+                </button>
+              </div>
+            ) : null}
           </div>
           )}
 
@@ -2071,20 +2078,7 @@ export function Dashboard({
                 </p>
               </div>
               <div className="panel-header-actions">
-                <span className="panel-count-chip">
-                  {visiblePublicLeaderboard.length}/{publicLeaderboard.length || 0}
-                </span>
-                <button
-                  aria-controls="leaderboard-list"
-                  aria-expanded={leaderboardExpanded}
-                  aria-label={leaderboardExpanded ? "Minimize leaderboard card" : "Maximize leaderboard card"}
-                  className="panel-size-toggle"
-                  onClick={() => setLeaderboardExpanded((current) => !current)}
-                  title={leaderboardExpanded ? "Minimize" : "Maximize"}
-                  type="button"
-                >
-                  {leaderboardExpanded ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
-                </button>
+                <Trophy className="panel-card-icon" size={18} aria-hidden="true" />
               </div>
             </div>
             {!funMode && payoutPlan.length > 0 ? (
@@ -2215,6 +2209,22 @@ export function Dashboard({
                 ))
               )}
             </div>
+            {publicLeaderboard.length > compactLeaderboardCount ? (
+              <div className="card-disclosure card-disclosure--leaderboard">
+                <button
+                  aria-controls="leaderboard-list"
+                  aria-expanded={leaderboardExpanded}
+                  className="card-disclosure__button"
+                  onClick={() => setLeaderboardExpanded((current) => !current)}
+                  type="button"
+                >
+                  {leaderboardExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                  {leaderboardExpanded
+                    ? `Show top ${compactLeaderboardCount}`
+                    : `Show all ${publicLeaderboard.length}`}
+                </button>
+              </div>
+            ) : null}
           </div>
 
           <div className={`panel rules-panel${rulesExpanded ? " is-expanded" : " is-minimized"}`} id="rules">
@@ -2225,17 +2235,6 @@ export function Dashboard({
               </div>
               <div className="panel-header-actions">
                 <BookOpen className="panel-card-icon" size={18} aria-hidden="true" />
-                <button
-                  aria-controls="rules-content"
-                  aria-expanded={rulesExpanded}
-                  aria-label={rulesExpanded ? "Minimize rules card" : "Maximize rules card"}
-                  className="panel-size-toggle"
-                  onClick={() => setRulesExpanded((current) => !current)}
-                  title={rulesExpanded ? "Minimize" : "Maximize"}
-                  type="button"
-                >
-                  {rulesExpanded ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
-                </button>
               </div>
             </div>
             <div
@@ -2318,6 +2317,18 @@ export function Dashboard({
                 ))}
               </div>
             </div>
+            <div className="card-disclosure card-disclosure--rules">
+              <button
+                aria-controls="rules-content"
+                aria-expanded={rulesExpanded}
+                className="card-disclosure__button"
+                onClick={() => setRulesExpanded((current) => !current)}
+                type="button"
+              >
+                {rulesExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                {rulesExpanded ? "Show less rules" : "Show full rules"}
+              </button>
+            </div>
           </div>
         </section>
 
@@ -2331,20 +2342,7 @@ export function Dashboard({
                 </p>
               </div>
               <div className="panel-header-actions">
-                <span className="panel-count-chip">
-                  {visibleMatches.length}/{matches.length}
-                </span>
-                <button
-                  aria-controls="match-list"
-                  aria-expanded={matchScheduleExpanded}
-                  aria-label={matchScheduleExpanded ? "Minimize match schedule card" : "Maximize match schedule card"}
-                  className="panel-size-toggle"
-                  onClick={() => setMatchScheduleExpanded((current) => !current)}
-                  title={matchScheduleExpanded ? "Minimize" : "Maximize"}
-                  type="button"
-                >
-                  {matchScheduleExpanded ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
-                </button>
+                <RefreshCw className="panel-card-icon" size={18} aria-hidden="true" />
               </div>
             </div>
             <div
@@ -2373,6 +2371,22 @@ export function Dashboard({
                 );
               })}
             </div>
+            {matches.length > compactMatchCount ? (
+              <div className="card-disclosure card-disclosure--matches">
+                <button
+                  aria-controls="match-list"
+                  aria-expanded={matchScheduleExpanded}
+                  className="card-disclosure__button"
+                  onClick={() => setMatchScheduleExpanded((current) => !current)}
+                  type="button"
+                >
+                  {matchScheduleExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                  {matchScheduleExpanded
+                    ? `Show first ${compactMatchCount} matches`
+                    : `Show all ${matches.length} matches`}
+                </button>
+              </div>
+            ) : null}
           </div>
         </section>
       </div>

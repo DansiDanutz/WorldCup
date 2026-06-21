@@ -1,6 +1,17 @@
 "use client";
 
-import { ArrowRight, ClipboardCopy, Crown, Gift, LogOut, Trophy, Users, X } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronDown,
+  ChevronUp,
+  ClipboardCopy,
+  Crown,
+  Gift,
+  LogOut,
+  Trophy,
+  Users,
+  X,
+} from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 import { formatMoneyAmount } from "@/lib/economy";
@@ -233,17 +244,9 @@ export function MyStanding() {
               </p>
             </div>
             <div className="panel-header-actions standing-card-actions">
-              <button
-                aria-controls="standing-leaderboard-modal"
-                aria-expanded={standingModalOpen}
-                aria-label="Open standing leaderboard popup"
-                className={`standing-trophy-trigger${standingModalOpen ? " is-open" : ""}`}
-                disabled={!data}
-                onClick={() => setStandingModalOpen(true)}
-                type="button"
-              >
+              <span className="standing-card-icon-badge standing-card-icon-badge--gold" aria-hidden="true">
                 <Trophy size={20} aria-hidden="true" />
-              </button>
+              </span>
               <button className="button secondary standing-signout" onClick={signOut} type="button">
                 <LogOut size={16} />
                 Sign out
@@ -336,6 +339,21 @@ export function MyStanding() {
               </div>
             )}
           </div>
+          {data ? (
+            <div className="card-disclosure card-disclosure--standing">
+              <button
+                aria-controls="standing-leaderboard-modal"
+                aria-haspopup="dialog"
+                className="card-disclosure__button"
+                onClick={() => setStandingModalOpen(true)}
+                type="button"
+              >
+                <Trophy size={16} />
+                Open leaderboard details
+                <ChevronDown size={16} />
+              </button>
+            </div>
+          ) : null}
         </div>
 
         <div className="panel standing-card standing-card--referrals">
@@ -348,24 +366,19 @@ export function MyStanding() {
                     ? `${data.referrals.length} invited · climbing the free leaderboard`
                     : "Invite friends to the free leaderboard"
                   : data && data.referrals.length > 0
-                  ? `${data.referrals.length} invited · your cut so far ${formatMoneyAmount(data.referralCutTotal)}`
-                  : "Earn a cut of everyone you invite"}
+                    ? `${data.referrals.length} invited · your cut so far ${formatMoneyAmount(data.referralCutTotal)}`
+                    : "Earn a cut of everyone you invite"}
               </p>
             </div>
-            <button
-              aria-controls="standing-referrals-list"
-              aria-expanded={referralsListOpen}
-              aria-label={hasReferrals ? "Show referral leaderboard list" : "No referrals yet"}
-              className={`referrals-trigger${hasReferrals ? " has-referrals" : ""}${
-                referralsListOpen ? " is-open" : ""
+            <span
+              className={`standing-card-icon-badge standing-card-icon-badge--green${
+                hasReferrals ? " has-count" : ""
               }`}
-              disabled={!hasReferrals}
-              onClick={() => setReferralsOpen((current) => !current)}
-              type="button"
+              aria-hidden="true"
             >
               <Users size={20} aria-hidden="true" />
-              {hasReferrals ? <span className="referrals-trigger__count">{referralCount}</span> : null}
-            </button>
+              {hasReferrals ? <span className="standing-card-icon-badge__count">{referralCount}</span> : null}
+            </span>
           </div>
           <div className="panel-body">
             {!data ? (
@@ -449,6 +462,22 @@ export function MyStanding() {
               </div>
             )}
           </div>
+          {hasReferrals ? (
+            <div className="card-disclosure card-disclosure--standing">
+              <button
+                aria-controls="standing-referrals-list"
+                aria-expanded={referralsListOpen}
+                className="card-disclosure__button"
+                onClick={() => setReferralsOpen((current) => !current)}
+                type="button"
+              >
+                {referralsListOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                {referralsListOpen
+                  ? "Show referral summary"
+                  : `Show ${referralCount} referral position${referralCount === 1 ? "" : "s"}`}
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
 
@@ -459,16 +488,9 @@ export function MyStanding() {
               <h2 className="panel-title">Agent — tickets &amp; commission</h2>
               <p className="panel-subtitle">Codes you can sell and the free tickets you&#39;ve earned.</p>
             </div>
-            <button
-              aria-controls="standing-agent-code"
-              aria-expanded={agentCodeOpen}
-              aria-label={agentCodeOpen ? "Hide next agent code" : "Show next agent code"}
-              className={`agent-gift-trigger${agentCodeOpen ? " is-open" : ""}`}
-              onClick={() => setAgentCodeOpen((current) => !current)}
-              type="button"
-            >
+            <span className="standing-card-icon-badge standing-card-icon-badge--orange" aria-hidden="true">
               <Gift size={20} aria-hidden="true" />
-            </button>
+            </span>
           </div>
           <div className="panel-body">
             {agentCodeOpen ? (
@@ -532,6 +554,18 @@ export function MyStanding() {
               Sell <b>{data.agent.toNextFree}</b> more {data.agent.toNextFree === 1 ? "ticket" : "tickets"} to
               earn your next free one.
             </p>
+          </div>
+          <div className="card-disclosure card-disclosure--standing">
+            <button
+              aria-controls="standing-agent-code"
+              aria-expanded={agentCodeOpen}
+              className="card-disclosure__button"
+              onClick={() => setAgentCodeOpen((current) => !current)}
+              type="button"
+            >
+              {agentCodeOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+              {agentCodeOpen ? "Hide sellable code" : "Show sellable code"}
+            </button>
           </div>
         </div>
       ) : null}
