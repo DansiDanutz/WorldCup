@@ -226,3 +226,24 @@ NEW, non-destructive additions:
 Build + TEST each in the Ep33 render before standardising; if a technique hurts
 clarity or the no-subtitles rule, drop that one (not the whole set). Log CTR/retention
 deltas here after 48h so the set stays evidence-led.
+
+## Research-driven upgrades (2026-06-21)
+
+Full 2026 web research + the per-episode improvement plan now lives in
+**`content/youtube/CHANNEL_IMPROVEMENT_RESEARCH.md`** (retention, packaging, AI
+video, motion graphics, audio — each item cited and tied to our React→Higgsfield→
+ElevenLabs→ffmpeg stack, with a prioritized DO-NEXT checklist). Read it alongside
+this file before producing.
+
+**Top 3 to adopt immediately (highest watch-hours-per-effort):**
+1. **Build a chronological "All Episodes" autoplay playlist + point every
+   end-screen video element at the next episode** (2-element layout). Banks
+   session/binge watch-hours across the WHOLE back catalog with no new render —
+   our cheapest watch-hours lever. (research §1c)
+2. **Submit BOTH thumbnail variants to Studio "Test & Compare" every episode** —
+   in 2026 it picks the winner by watch-time share, not raw CTR, so let YouTube
+   choose; aim 4%+ CTR; tighten thumbnail text to ≤3 words. (research §2d/§2a)
+3. **Two-pass ffmpeg `loudnorm=I=-14:TP=-1.0:LRA=11` + sidechain duck −3 dB/2:1/
+   <2ms under Brian, and one shared LUT + grain across all clips** in the mux —
+   instant audio/visual polish that kills the "AI look" and meets YouTube
+   loudness. (research §5a/§5b/§3e)
