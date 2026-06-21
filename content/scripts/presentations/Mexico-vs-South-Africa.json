@@ -1,0 +1,39 @@
+{
+  "match": "Mexico-vs-South-Africa",
+  "competition": "FIFA WORLD CUP 2026",
+  "title": "MEXICO vs SOUTH AFRICA",
+  "subtitle": "Group A · Matchday 1 · Estadio Azteca, Mexico City · June 11, 2026",
+  "tagline": "THE INAUGURAL MATCH",
+  "story_quote": "Sixteen years after a 1-1 draw opened a World Cup in Johannesburg, the same two nations meet again on opening night. Some ghosts take more than sixteen years to exorcise.",
+  "story_quote_label": "THE GHOST OF 2010",
+  "cta_title": "WHO SCORES FIRST?",
+  "cta_subtitle": "Pick your 3 teams · WorldCup26.world",
+  "team_a": {
+    "name": "MEXICO",
+    "nickname": "EL TRI",
+    "folder": "Mexico",
+    "players": [
+      { "file": "Santiago-Gimenez.mp4", "name": "Santiago Gimenez", "role": "Striker · 'Bebelo'" },
+      { "file": "Hirving-Lozano.mp4", "name": "Hirving Lozano", "role": "Winger · The Germany Silencer" },
+      { "file": "Edson-Alvarez.mp4", "name": "Edson Alvarez", "role": "Midfield Anchor" },
+      { "file": "Guillermo-Ochoa.mp4", "name": "Guillermo Ochoa", "role": "Goalkeeper · 6 World Cups" },
+      { "file": "Orbelin-Pineda.mp4", "name": "Orbelin Pineda", "role": "Playmaker" }
+    ],
+    "supporter_image": "Ultra-Fan.png",
+    "supporter_caption": "The Azteca Faithful · El Tri Ultras"
+  },
+  "team_b": {
+    "name": "SOUTH AFRICA",
+    "nickname": "BAFANA BAFANA",
+    "folder": "South_Africa",
+    "players": [
+      { "file": "Percy-Tau.mp4", "name": "Percy Tau", "role": "Forward · 'Lion of Judah'" },
+      { "file": "Lyle-Foster.mp4", "name": "Lyle Foster", "role": "Striker" },
+      { "file": "Ronwen-Williams.mp4", "name": "Ronwen Williams", "role": "Goalkeeper · Captain" },
+      { "file": "Teboho-Mokoena.mp4", "name": "Teboho Mokoena", "role": "Midfielder" },
+      { "file": "Evidence-Makgopa.mp4", "name": "Evidence Makgopa", "role": "Striker" }
+    ],
+    "supporter_image": "Ultra-Fan.png",
+    "supporter_caption": "Vuvuzelas in the Azteca · Bafana Bafana Faithful"
+  }
+}
