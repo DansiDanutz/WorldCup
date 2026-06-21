@@ -252,7 +252,7 @@ describe("WorldCup design system integration", () => {
     );
     assert.match(
       globalsCss,
-      /@media \(max-width:\s*700px\)\s*{[\s\S]*?\.admin-referral-row > div:last-child\s*{[\s\S]*?justify-items:\s*start;/,
+      /@media \(max-width:\s*700px\)\s*{[\s\S]*?\.admin-referral-row > div:last-child(?::not\(\.deposit-review\))?\s*{[\s\S]*?justify-items:\s*start;/,
     );
     assert.doesNotMatch(
       globalsCss,
