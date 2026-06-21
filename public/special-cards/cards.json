@@ -1,10 +1,19 @@
 {
   "collection": "WorldCup26 Legends — The Mystery Supporters",
-  "note": "Each episode hides one collectible Legend (the Mystery Supporter). Both landscape (16:9) and portrait (9:16) art per card.",
+  "note": "Each episode hides one collectible Legend (the Mystery Supporter). Both landscape (16:9) and portrait (9:16) art per card. Every Legend is a unique character. Backfilling 001-036; 037+ current.",
   "cards": [
-    { "number": "037", "name": "The Island Elder",   "nation": "Curaçao",      "episode": 37, "match": "Ecuador vs Curaçao",     "portrait": "/special-cards/legend-037-portrait.png", "landscape": "/special-cards/legend-037-landscape.png" },
-    { "number": "038", "name": "The Eagle-Keeper",   "nation": "Tunisia",      "episode": 38, "match": "Japan vs Tunisia",       "portrait": "/special-cards/legend-038-portrait.png", "landscape": "/special-cards/legend-038-landscape.png" },
-    { "number": "039", "name": "The Falconer",       "nation": "Saudi Arabia", "episode": 39, "match": "Spain vs Saudi Arabia",  "portrait": "/special-cards/legend-039-portrait.png", "landscape": "/special-cards/legend-039-landscape.png" },
-    { "number": "040", "name": "The Spirit of Persia","nation": "Iran",        "episode": 40, "match": "Belgium vs Iran",        "portrait": "/special-cards/legend-040-portrait.png", "landscape": "/special-cards/legend-040-landscape.png" }
+    { "number": "008", "name": "The Elder",            "nation": "Ghana",        "episode": 8,  "match": "England vs Ghana",       "portrait": "/special-cards/legend-008-portrait.png", "landscape": "/special-cards/legend-008-landscape.png" },
+    { "number": "009", "name": "The Falconer",         "nation": "Qatar",        "episode": 9,  "match": "Qatar vs Switzerland",   "portrait": "/special-cards/legend-009-portrait.png", "landscape": "/special-cards/legend-009-landscape.png" },
+    { "number": "010", "name": "The Lone Piper",       "nation": "Scotland",     "episode": 10, "match": "Haiti vs Scotland",      "portrait": "/special-cards/legend-010-portrait.png", "landscape": "/special-cards/legend-010-landscape.png" },
+    { "number": "011", "name": "The Wanderer",         "nation": "Australia",    "episode": 11, "match": "Australia vs Turkey",    "portrait": "/special-cards/legend-011-portrait.png", "landscape": "/special-cards/legend-011-landscape.png" },
+    { "number": "012", "name": "The Beach Keeper",     "nation": "Curaçao",      "episode": 12, "match": "Germany vs Curaçao",     "portrait": "/special-cards/legend-012-portrait.png", "landscape": "/special-cards/legend-012-landscape.png" },
+    { "number": "013", "name": "The Blue Samurai Elder","nation": "Japan",       "episode": 13, "match": "Netherlands vs Japan",   "portrait": "/special-cards/legend-013-portrait.png", "landscape": "/special-cards/legend-013-landscape.png" },
+    { "number": "015", "name": "The Peacemaker",       "nation": "Ivory Coast",  "episode": 15, "match": "Ivory Coast vs Ecuador", "portrait": "/special-cards/legend-015-portrait.png", "landscape": "/special-cards/legend-015-landscape.png" },
+    { "number": "016", "name": "The Firekeeper",       "nation": "Sweden",       "episode": 16, "match": "Sweden vs Tunisia",      "portrait": "/special-cards/legend-016-portrait.png", "landscape": "/special-cards/legend-016-landscape.png" },
+    { "number": "017", "name": "The Lighthouse Keeper","nation": "Cape Verde",   "episode": 17, "match": "Spain vs Cape Verde",    "portrait": "/special-cards/legend-017-portrait.png", "landscape": "/special-cards/legend-017-landscape.png" },
+    { "number": "037", "name": "The Island Elder",     "nation": "Curaçao",      "episode": 37, "match": "Ecuador vs Curaçao",     "portrait": "/special-cards/legend-037-portrait.png", "landscape": "/special-cards/legend-037-landscape.png" },
+    { "number": "038", "name": "The Eagle-Keeper",     "nation": "Tunisia",      "episode": 38, "match": "Japan vs Tunisia",       "portrait": "/special-cards/legend-038-portrait.png", "landscape": "/special-cards/legend-038-landscape.png" },
+    { "number": "039", "name": "The Falconer",         "nation": "Saudi Arabia", "episode": 39, "match": "Spain vs Saudi Arabia",  "portrait": "/special-cards/legend-039-portrait.png", "landscape": "/special-cards/legend-039-landscape.png" },
+    { "number": "040", "name": "The Spirit of Persia", "nation": "Iran",         "episode": 40, "match": "Belgium vs Iran",        "portrait": "/special-cards/legend-040-portrait.png", "landscape": "/special-cards/legend-040-landscape.png" }
   ]
 }
