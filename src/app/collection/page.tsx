@@ -32,6 +32,9 @@ const CARDS: Card[] = [
   { number: '038', name: 'The Eagle-Keeper',      nation: 'Tunisia',      episode: 38, match: 'Japan vs Tunisia',       portrait: '/special-cards/legend-038-portrait.png', landscape: '/special-cards/legend-038-landscape.png' },
   { number: '039', name: 'The Falconer',          nation: 'Saudi Arabia', episode: 39, match: 'Spain vs Saudi Arabia',  portrait: '/special-cards/legend-039-portrait.png', landscape: '/special-cards/legend-039-landscape.png' },
   { number: '040', name: 'The Spirit of Persia',  nation: 'Iran',         episode: 40, match: 'Belgium vs Iran',        portrait: '/special-cards/legend-040-portrait.png', landscape: '/special-cards/legend-040-landscape.png' },
+  { number: '041', name: 'The Charrúa',           nation: 'Uruguay',      episode: 41, match: 'Uruguay vs Cape Verde',  portrait: '/special-cards/legend-041-portrait.png', landscape: '/special-cards/legend-041-landscape.png' },
+  { number: '042', name: 'The Navigator',         nation: 'New Zealand',  episode: 42, match: 'Egypt vs New Zealand',   portrait: '/special-cards/legend-042-portrait.png', landscape: '/special-cards/legend-042-landscape.png' },
+  { number: '043', name: 'The Clockmaker',        nation: 'Austria',      episode: 43, match: 'Argentina vs Austria',  portrait: '/special-cards/legend-043-portrait.png', landscape: '/special-cards/legend-043-landscape.png' },
 ];
 
 export default function CollectionPage() {
