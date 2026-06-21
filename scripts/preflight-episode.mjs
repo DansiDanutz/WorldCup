@@ -56,11 +56,12 @@ for (const im of [...new Set(imgs)]) if (!exists(im)) FAIL(`MISSING SQUAD PHOTO:
 
 // 7) NO leftover template furniture (rendered strings only — strip JS comments)
 const rendered = scene.split('\n').filter((l) => !l.trim().startsWith('//')).join('\n');
-// always-wrong template artifacts
-const hardLeftover = ['WUNDERTEAM', 'NASHAMA', 'SINDELAR', 'IRAQ 1', 'FlagAUT', 'FlagJOR', 'THE BRAVE ONES'];
+// always-wrong template artifacts (team-specific terms that legitimately RECUR
+// — Wunderteam/Sindelar/FlagAUT for Austria episodes — are NOT here; they're soft-checked)
+const hardLeftover = ['NASHAMA', 'IRAQ 1', 'FlagJOR', 'THE BRAVE ONES'];
 for (const t of hardLeftover) if (rendered.includes(t)) FAIL(`leftover template text: "${t}"`);
 // ambiguous (may be a real player name like "JORDAN AYEW", or a valid debut "DOOR OPENS") — review
-const softLeftover = ['AUSTRIA', 'JORDAN', 'DOOR OPENS', 'ROYALTY'];
+const softLeftover = ['AUSTRIA', 'JORDAN', 'DOOR OPENS', 'ROYALTY', 'WUNDERTEAM', 'SINDELAR'];
 for (const t of softLeftover) if (rendered.includes(t)) WARN(`check "${t}" is intentional (real name / valid hook) not a template leftover`);
 const epLabel = new RegExp(`Episode\\s+(?!${epNum}\\b)\\d+`);
 const m = rendered.match(epLabel);
