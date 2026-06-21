@@ -183,6 +183,17 @@ Non-negotiables distilled from channel data (details in the playbook):
       stills fallback — if a clip is missing you GENERATE it, you do not downgrade.
       Ep15–Ep25 were made this wrong way; **we do not repeat it and do not rebuild
       them — we move forward, clip-based, every time.**
+12. **NARRATION PACING — never rush the VO (owner-mandated, hard rule):** Brian's
+    narration must ALWAYS be delivered at a natural, unhurried, cinematic pace.
+    NEVER speed up, time-stretch, or compress the narration audio, and NEVER cram
+    lines together to force the video into exactly 300s. **~5:00 is a target, not a
+    hard cap** — if the story needs more time, EXTEND the video: lengthen the scene
+    windows and the total timeline `DURATION` (e.g. 330s, 360s) so every line and
+    pause breathes. Set the timeline length to fit the natural VO, not the other way
+    round. A slightly longer video that sounds calm and premium always beats a
+    rushed 5-minute one. (When extending: bump `DURATION` in render/mux, widen the
+    `SCENES` windows in match.html, and shift the later `narration.json`/`clips.json`
+    timestamps to match — keep the same beats, just give them room.)
 
 ## Video production pipeline
 
