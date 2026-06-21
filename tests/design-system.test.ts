@@ -126,12 +126,25 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.auth-connected-card strong\s*{[\s\S]*?color:\s*#ffffff;/);
   });
 
-  it("shows the full match schedule instead of capping at the first 24 matches", () => {
-    assert.match(dashboard, /const visibleMatches = matches;/);
-    assert.doesNotMatch(dashboard, /matches\.slice\(0,\s*24\)/);
+  it("lets dense dashboard cards minimize and maximize without losing full data access", () => {
+    assert.match(dashboard, /compactLeaderboardCount = 5/);
+    assert.match(dashboard, /compactMatchCount = 24/);
+    assert.match(dashboard, /leaderboardExpanded, setLeaderboardExpanded/);
+    assert.match(dashboard, /rulesExpanded, setRulesExpanded/);
+    assert.match(dashboard, /matchScheduleExpanded, setMatchScheduleExpanded/);
+    assert.match(dashboard, /aria-label=\{leaderboardExpanded \? "Minimize leaderboard card" : "Maximize leaderboard card"\}/);
+    assert.match(dashboard, /aria-label=\{rulesExpanded \? "Minimize rules card" : "Maximize rules card"\}/);
+    assert.match(dashboard, /aria-label=\{matchScheduleExpanded \? "Minimize match schedule card" : "Maximize match schedule card"\}/);
+    assert.match(dashboard, /visiblePublicLeaderboard = leaderboardExpanded[\s\S]*?publicLeaderboard[\s\S]*?publicLeaderboard\.slice\(0, compactLeaderboardCount\)/);
+    assert.match(dashboard, /visibleMatches = matchScheduleExpanded \? matches : matches\.slice\(0, compactMatchCount\)/);
     assert.doesNotMatch(dashboard, /First 24 matches shown/);
-    assert.match(dashboard, /All \{matches\.length\} matches shown/);
+    assert.match(dashboard, /\{visibleMatches\.length\} of \{matches\.length\} matches shown/);
     assert.match(dashboard, /Scores and points update automatically after full-time/);
+    assert.match(globalsCss, /\.panel-size-toggle\s*{[\s\S]*?width:\s*36px;/);
+    assert.match(globalsCss, /\.leaderboard-list--compact,[\s\S]*?\.match-list--compact\s*{[\s\S]*?overflow:\s*visible;/);
+    assert.match(globalsCss, /\.leaderboard-list--expanded,[\s\S]*?\.match-list--expanded\s*{[\s\S]*?max-height:\s*min\(760px,\s*74vh\);/);
+    assert.match(globalsCss, /\.rules-content--minimized\s*{[\s\S]*?max-height:\s*min\(360px,\s*48vh\);/);
+    assert.match(globalsCss, /\.rules-content--expanded\s*{[\s\S]*?overflow-y:\s*auto;/);
   });
 
   it("keeps the root layout from forcing mobile horizontal overflow", () => {
@@ -716,12 +729,12 @@ describe("WorldCup design system integration", () => {
   });
 
   it("keeps the rules panel in the same dark app card system", () => {
-    assert.match(dashboard, /<div className="panel rules-panel" id="rules">/);
+    assert.match(dashboard, /className=\{`panel rules-panel\$\{rulesExpanded \? " is-expanded" : " is-minimized"\}`\}/);
     assert.match(dashboard, /<h2 className="panel-title">Rules<\/h2>/);
     assert.match(dashboard, /Points formula/);
     assert.match(globalsCss, /\.rules-panel\s*{[\s\S]*?linear-gradient\(145deg,\s*rgba\(5,\s*42,\s*32,\s*0\.98\)/);
     assert.match(globalsCss, /\.rules-panel::before\s*{[\s\S]*?repeating-linear-gradient\(90deg/);
-    assert.match(globalsCss, /\.rules-panel \.panel-header > svg\s*{[\s\S]*?color:\s*#ffe29a;/);
+    assert.match(globalsCss, /\.rules-panel \.panel-card-icon\s*{[\s\S]*?color:\s*#ffe29a;/);
     assert.match(globalsCss, /\.rules-content\s*{[\s\S]*?rgba\(255,\s*226,\s*154,\s*0\.055\)/);
     assert.match(globalsCss, /\.formula\s*{[\s\S]*?color:\s*#ffe29a;/);
     assert.match(globalsCss, /\.rule-card,\s*[\s\S]*?\.stage-rule\s*{[\s\S]*?--rule-accent:\s*#54e0b3;/);

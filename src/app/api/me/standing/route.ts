@@ -108,9 +108,13 @@ export async function GET(request: Request) {
   }
   const tournamentId = tournament.data.id;
 
-  const [participantHead, myEntry, referrals, agent, topLeaderboard] = await Promise.all([
+  const [participantHead, publicParticipantHead, myEntry, referrals, agent, topLeaderboard] = await Promise.all([
     supabase
       .from("worldcup_awarded_leaderboard")
+      .select("entry_id", { count: "exact", head: true })
+      .eq("tournament_id", tournamentId),
+    supabase
+      .from("worldcup_public_leaderboard")
       .select("entry_id", { count: "exact", head: true })
       .eq("tournament_id", tournamentId),
     supabase
@@ -143,11 +147,12 @@ export async function GET(request: Request) {
       .limit(10),
   ]);
 
-  if (participantHead.error || topLeaderboard.error) {
+  if (participantHead.error || publicParticipantHead.error || topLeaderboard.error) {
     return jsonError("Could not load the leaderboard.", 500);
   }
 
   const participants = participantHead.count ?? 0;
+  const leaderboardParticipants = publicParticipantHead.count ?? 0;
   const netPrizePool = calculateNetPrizePool(
     tournament.data.prize_pool_amount,
     tournament.data.prize_pool_fee_percent,
@@ -173,15 +178,21 @@ export async function GET(request: Request) {
     }
   }
 
-  const leaderboardById = new Map<string, LeaderboardRow>();
+  const paidLeaderboardById = new Map<string, LeaderboardRow>();
+  const publicLeaderboardById = new Map<string, LeaderboardRow>();
   const entriesById = new Map<string, EntryRow>();
   const teamTotalsByEntryId = new Map<string, EntryTeamTotalRow[]>();
   if (entryIds.size > 0) {
     const entryIdList = Array.from(entryIds);
-    const [rows, entryRows, teamTotals] = await Promise.all([
+    const [paidRows, publicRows, entryRows, teamTotals] = await Promise.all([
       supabase
         .from("worldcup_awarded_leaderboard")
         .select("entry_id,display_name,total_points,teams,leaderboard_rank")
+        .eq("tournament_id", tournamentId)
+        .in("entry_id", entryIdList),
+      supabase
+        .from("worldcup_public_leaderboard")
+        .select("entry_id,display_name,total_points,teams,leaderboard_rank,is_paid")
         .eq("tournament_id", tournamentId)
         .in("entry_id", entryIdList),
       supabase
@@ -195,11 +206,14 @@ export async function GET(request: Request) {
         .eq("tournament_id", tournamentId)
         .in("entry_id", entryIdList),
     ]);
-    if (rows.error || entryRows.error || teamTotals.error) {
+    if (paidRows.error || publicRows.error || entryRows.error || teamTotals.error) {
       return jsonError("Could not load standings.", 500);
     }
-    for (const row of (rows.data ?? []) as LeaderboardRow[]) {
-      leaderboardById.set(row.entry_id, row);
+    for (const row of (paidRows.data ?? []) as LeaderboardRow[]) {
+      paidLeaderboardById.set(row.entry_id, row);
+    }
+    for (const row of (publicRows.data ?? []) as LeaderboardRow[]) {
+      publicLeaderboardById.set(row.entry_id, row);
     }
     for (const row of (entryRows.data ?? []) as EntryRow[]) {
       entriesById.set(row.id, row);
@@ -242,27 +256,33 @@ export async function GET(request: Request) {
     }
   }
 
-  const myRow = myEntry.data?.id ? leaderboardById.get(myEntry.data.id as string) : undefined;
-  const myRank = myEntryStatus === "locked" ? (myRow?.leaderboard_rank ?? null) : myShadowRank;
+  const myPaidRow = myEntry.data?.id ? paidLeaderboardById.get(myEntry.data.id as string) : undefined;
+  const myPublicRow = myEntry.data?.id ? publicLeaderboardById.get(myEntry.data.id as string) : undefined;
+  const myDisplayRow = myPublicRow ?? myPaidRow;
+  const myEntryIsPublic = myEntryStatus === "committed" || myEntryStatus === "locked";
+  const myPaidRank = myPaidRow?.leaderboard_rank ?? null;
+  const myRank = myEntryIsPublic
+    ? (myPublicRow?.leaderboard_rank ?? myPaidRow?.leaderboard_rank ?? null)
+    : myShadowRank;
   const myShareAmount =
-    myEntryStatus === "locked" ? shareForRank(myRank) : shareForShadowRank(myRank);
+    myEntryStatus === "locked" ? shareForRank(myPaidRank) : shareForShadowRank(myShadowRank);
 
   const me = myEntry.data
     ? {
         hasEntry: true,
         // `locked` means "in the paid pool" (a ticket was consumed). `committed`
-        // is a free permanent lock: picks are final but the entry is not in the
-        // pool and shows a shadow ("if you were paying") rank instead.
+        // is a free permanent lock: picks are final, public rank comes from the
+        // community board, and prize math still stays on the paid board.
         locked: myEntryStatus === "locked",
         committed: myEntryStatus === "committed",
         picksLocked: myEntryStatus === "committed" || myEntryStatus === "locked",
-        displayName: (myRow?.display_name ?? myEntry.data.display_name) as string,
-        totalPoints: myRow ? Number(myRow.total_points) : myTotalFromTeams,
+        displayName: (myDisplayRow?.display_name ?? myEntry.data.display_name) as string,
+        totalPoints: myDisplayRow ? Number(myDisplayRow.total_points) : myTotalFromTeams,
         rank: myRank,
         teams:
           myEntryTeamTotals.length > 0
             ? formatTeamsFromTotals(myEntryTeamTotals)
-            : (myRow?.teams ?? []).map((team) => ({
+            : (myDisplayRow?.teams ?? []).map((team) => ({
                 name: team.team_name ?? "",
                 points: Number(team.total_points ?? 0),
               })),
@@ -273,18 +293,21 @@ export async function GET(request: Request) {
 
   const referralStandings = referralRows
     .map((referral) => {
-      const row = referral.entry_id ? leaderboardById.get(referral.entry_id) : undefined;
+      const paidRow = referral.entry_id ? paidLeaderboardById.get(referral.entry_id) : undefined;
+      const publicRow = referral.entry_id ? publicLeaderboardById.get(referral.entry_id) : undefined;
+      const row = publicRow ?? paidRow;
       const entry = referral.entry_id ? entriesById.get(referral.entry_id) : undefined;
       const teamTotals = referral.entry_id ? teamTotalsByEntryId.get(referral.entry_id) ?? [] : [];
       const totalPoints = row ? Number(row.total_points) : sumTeamTotals(teamTotals);
       const rank = row?.leaderboard_rank ?? null;
-      const share = shareForRank(rank);
+      const share = shareForRank(paidRow?.leaderboard_rank ?? null);
       const feePercent = Number(referral.referral_fee_percent ?? 0);
       return {
         displayName: row?.display_name ?? entry?.display_name ?? "Referred player",
         totalPoints,
         rank,
         locked: entry?.status === "locked",
+        committed: entry?.status === "committed",
         inPaidPlaces: share != null,
         share: share != null ? round2(share) : null,
         feePercent,
@@ -370,6 +393,7 @@ export async function GET(request: Request) {
     me,
     tournament: {
       participants,
+      leaderboardParticipants,
       paidPlaces,
       netPrizePool: round2(netPrizePool),
     },

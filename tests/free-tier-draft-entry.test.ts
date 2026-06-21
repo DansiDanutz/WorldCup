@@ -121,4 +121,18 @@ describe("free draft entry tier", () => {
     assert.match(dashboard, /draftPreviewDisplay = accountHasDraftEntry/);
     assert.match(dashboard, /draftPreviewFallback/);
   });
+
+  it("uses the public leaderboard for displayed standing rank while keeping paid math separate", () => {
+    assert.match(standingRoute, /publicParticipantHead/);
+    assert.match(standingRoute, /leaderboardParticipants/);
+    assert.match(standingRoute, /const publicLeaderboardById = new Map<string, LeaderboardRow>\(\);/);
+    assert.match(standingRoute, /const paidLeaderboardById = new Map<string, LeaderboardRow>\(\);/);
+    assert.match(standingRoute, /myPublicRow\?\.leaderboard_rank/);
+    assert.match(standingRoute, /myEntryStatus === "locked" \? shareForRank\(myPaidRank\) : shareForShadowRank\(myShadowRank\)/);
+    assert.match(standingRoute, /const row = publicRow \?\? paidRow/);
+    assert.match(standingRoute, /const share = shareForRank\(paidRow\?\.leaderboard_rank \?\? null\)/);
+    assert.match(myStanding, /meShowsPublicRank/);
+    assert.match(myStanding, /data\.tournament\.leaderboardParticipants/);
+    assert.match(myStanding, /Free leaderboard/);
+  });
 });

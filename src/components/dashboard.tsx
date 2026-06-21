@@ -4,14 +4,15 @@ import {
   BookOpen,
   CalendarClock,
   Check,
-  CircleDollarSign,
   ArrowRight,
   ClipboardCopy,
   GitBranch,
   LinkIcon,
   Lock,
   LogOut,
+  Maximize2,
   MessageCircle,
+  Minimize2,
   PlayCircle,
   RefreshCw,
   Search,
@@ -108,6 +109,8 @@ const ownerAdminEmail = "semebitcoin@gmail.com";
 const referralAgreementText =
   "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
 const compactTeamCount = 8;
+const compactLeaderboardCount = 5;
+const compactMatchCount = 24;
 const SIGNUP_ATTRIBUTION_KEY = "worldcup_signup_attribution";
 
 const teamFlagColors: Record<string, readonly [string, string, string?]> = {
@@ -190,6 +193,9 @@ export function Dashboard({
   const [agentRequestError, setAgentRequestError] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
+  const [leaderboardExpanded, setLeaderboardExpanded] = useState(false);
+  const [rulesExpanded, setRulesExpanded] = useState(false);
+  const [matchScheduleExpanded, setMatchScheduleExpanded] = useState(false);
   const [isPending, startTransition] = useTransition();
   const teamListRef = useRef<HTMLDivElement | null>(null);
   const teamListTouchStart = useRef<{ scrollTop: number; y: number } | null>(null);
@@ -236,7 +242,10 @@ export function Dashboard({
         : "Your 3 teams are ready. Lock them free forever, or save a draft first to watch the private points preview."
       : `Choose ${remainingPickCount} more ${remainingPickCount === 1 ? "team" : "teams"}.`;
 
-  const visibleMatches = matches;
+  const visiblePublicLeaderboard = leaderboardExpanded
+    ? publicLeaderboard
+    : publicLeaderboard.slice(0, compactLeaderboardCount);
+  const visibleMatches = matchScheduleExpanded ? matches : matches.slice(0, compactMatchCount);
   const completedCount = matches.filter((match) => match.status === "completed").length;
   const netPrizePool = calculateNetPrizePool(
     tournament.prize_pool_amount,
@@ -2061,7 +2070,22 @@ export function Dashboard({
                     )}
                 </p>
               </div>
-              {funMode ? <Trophy size={18} color="var(--gold)" /> : <CircleDollarSign size={18} color="var(--gold)" />}
+              <div className="panel-header-actions">
+                <span className="panel-count-chip">
+                  {visiblePublicLeaderboard.length}/{publicLeaderboard.length || 0}
+                </span>
+                <button
+                  aria-controls="leaderboard-list"
+                  aria-expanded={leaderboardExpanded}
+                  aria-label={leaderboardExpanded ? "Minimize leaderboard card" : "Maximize leaderboard card"}
+                  className="panel-size-toggle"
+                  onClick={() => setLeaderboardExpanded((current) => !current)}
+                  title={leaderboardExpanded ? "Minimize" : "Maximize"}
+                  type="button"
+                >
+                  {leaderboardExpanded ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
+                </button>
+              </div>
             </div>
             {!funMode && payoutPlan.length > 0 ? (
               <div className="payout-strip" aria-label="Prize payout preview">
@@ -2117,7 +2141,12 @@ export function Dashboard({
                 </a>
               </div>
             ) : null}
-            <div className="leaderboard-list">
+            <div
+              className={`leaderboard-list ${
+                leaderboardExpanded ? "leaderboard-list--expanded" : "leaderboard-list--compact"
+              }`}
+              id="leaderboard-list"
+            >
               {publicLeaderboard.length === 0 ? (
                 <div className="leaderboard-empty">
                   <div className="empty-icon">
@@ -2137,7 +2166,7 @@ export function Dashboard({
                   </a>
                 </div>
               ) : (
-                publicLeaderboard.map((row) => (
+                visiblePublicLeaderboard.map((row) => (
                   <div className="leaderboard-row" key={row.entry_id}>
                     <div className="leaderboard-main">
                       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -2188,15 +2217,31 @@ export function Dashboard({
             </div>
           </div>
 
-          <div className="panel rules-panel" id="rules">
+          <div className={`panel rules-panel${rulesExpanded ? " is-expanded" : " is-minimized"}`} id="rules">
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Rules</h2>
                 <p className="panel-subtitle">How picks, coefficients, and points work.</p>
               </div>
-              <BookOpen size={18} color="var(--green)" />
+              <div className="panel-header-actions">
+                <BookOpen className="panel-card-icon" size={18} aria-hidden="true" />
+                <button
+                  aria-controls="rules-content"
+                  aria-expanded={rulesExpanded}
+                  aria-label={rulesExpanded ? "Minimize rules card" : "Maximize rules card"}
+                  className="panel-size-toggle"
+                  onClick={() => setRulesExpanded((current) => !current)}
+                  title={rulesExpanded ? "Minimize" : "Maximize"}
+                  type="button"
+                >
+                  {rulesExpanded ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
+                </button>
+              </div>
             </div>
-            <div className="rules-content">
+            <div
+              className={`rules-content ${rulesExpanded ? "rules-content--expanded" : "rules-content--minimized"}`}
+              id="rules-content"
+            >
               <div className="rule-block">
                 <h3>How to join</h3>
                 <p>
@@ -2282,12 +2327,30 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Match Schedule</h2>
                 <p className="panel-subtitle">
-                  All {matches.length} matches shown. Scores and points update automatically after full-time.
+                  {visibleMatches.length} of {matches.length} matches shown. Scores and points update automatically after full-time.
                 </p>
               </div>
-              <RefreshCw size={18} color="var(--green)" />
+              <div className="panel-header-actions">
+                <span className="panel-count-chip">
+                  {visibleMatches.length}/{matches.length}
+                </span>
+                <button
+                  aria-controls="match-list"
+                  aria-expanded={matchScheduleExpanded}
+                  aria-label={matchScheduleExpanded ? "Minimize match schedule card" : "Maximize match schedule card"}
+                  className="panel-size-toggle"
+                  onClick={() => setMatchScheduleExpanded((current) => !current)}
+                  title={matchScheduleExpanded ? "Minimize" : "Maximize"}
+                  type="button"
+                >
+                  {matchScheduleExpanded ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
+                </button>
+              </div>
             </div>
-            <div className="match-list">
+            <div
+              className={`match-list ${matchScheduleExpanded ? "match-list--expanded" : "match-list--compact"}`}
+              id="match-list"
+            >
               {visibleMatches.map((match) => {
                 const stage = stagesById.get(match.stage_id);
 

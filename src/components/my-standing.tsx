@@ -27,12 +27,18 @@ type Standing = {
         inPaidPlaces: boolean;
         share: number | null;
       };
-  tournament: { participants: number; paidPlaces: number; netPrizePool: number };
+  tournament: {
+    participants: number;
+    leaderboardParticipants: number;
+    paidPlaces: number;
+    netPrizePool: number;
+  };
   referrals: Array<{
     displayName: string;
     totalPoints: number;
     rank: number | null;
     locked: boolean;
+    committed: boolean;
     inPaidPlaces: boolean;
     share: number | null;
     feePercent: number;
@@ -209,6 +215,7 @@ export function MyStanding() {
   const modalMe = me && me.hasEntry ? me : null;
   const leaderboardTop = data?.leaderboardTop ?? [];
   const funMode = isFunMode();
+  const meShowsPublicRank = Boolean(me && me.hasEntry && (me.locked || me.committed));
 
   return (
     <section
@@ -250,12 +257,12 @@ export function MyStanding() {
               <>
                 <div className="standing-rank">
                   <div className="standing-rank__big">
-                    <span>{me.locked ? "Rank" : "Preview rank"}</span>
+                    <span>{meShowsPublicRank ? "Rank" : "Preview rank"}</span>
                     <strong>{me.rank ? `#${me.rank}` : "TBA"}</strong>
                     <small>
-                      {me.locked
+                      {meShowsPublicRank
                         ? me.rank
-                          ? `of ${data.tournament.participants}`
+                          ? `of ${data.tournament.leaderboardParticipants}`
                           : "ranking pending"
                         : me.rank
                           ? me.committed
@@ -267,7 +274,7 @@ export function MyStanding() {
                   <div className="standing-rank__big">
                     <span>Points</span>
                     <strong>{formatPoints(me.totalPoints)}</strong>
-                    <small>{me.locked ? "total" : "private preview"}</small>
+                    <small>{meShowsPublicRank ? "total" : "private preview"}</small>
                   </div>
                 </div>
 
@@ -306,7 +313,7 @@ export function MyStanding() {
                 ) : (
                   <p className="field-note">
                     {me.committed
-                      ? "Your 3 teams are locked. You're playing for fun — buy a ticket to enter the prize pool. This preview shows where you'd place if you were paying."
+                      ? "Your 3 teams are locked in the free leaderboard. Buy a ticket to enter the prize pool; prize math still uses the paid board."
                       : !me.locked
                       ? "Free preview only. Your points are live here; lock your teams, then add a ticket to enter the paid prize pool."
                       : me.rank
@@ -392,7 +399,13 @@ export function MyStanding() {
                     <div className="referral-position-row" key={`${referral.displayName}-${index}`}>
                       <div className="referral-player">
                         <strong>{referral.displayName}</strong>
-                        <small>{referral.locked ? "Locked entry" : "Waiting for locked entry"}</small>
+                        <small>
+                          {referral.locked
+                            ? "Prize pool"
+                            : referral.committed
+                              ? "Free leaderboard"
+                              : "Waiting for locked entry"}
+                        </small>
                       </div>
                       <div className="referral-stat-cell">
                         <span>Rank</span>
@@ -554,7 +567,7 @@ export function MyStanding() {
 
             <div className="standing-modal__body">
               <section className="standing-modal-current" aria-label="Your current leaderboard position">
-                <span>{modalMe?.locked ? "Your position" : "Your free preview"}</span>
+                <span>{modalMe?.picksLocked ? "Your position" : "Your free preview"}</span>
                 {modalMe ? (
                   <>
                     <div>
@@ -563,11 +576,9 @@ export function MyStanding() {
                     </div>
                     <small>
                       {formatPoints(modalMe.totalPoints)} points
-                      {modalMe.locked
+                      {modalMe.locked || modalMe.committed
                         ? ""
-                        : modalMe.committed
-                          ? " · if you were paying"
-                          : " · if locked now"}
+                        : " · if locked now"}
                       {modalMe.teams.length > 0
                         ? ` · ${modalMe.teams.map((team) => team.name).join(", ")}`
                         : ""}
@@ -631,7 +642,13 @@ export function MyStanding() {
                         <span className="standing-modal-rank">{referral.rank ? `#${referral.rank}` : "TBA"}</span>
                         <div>
                           <strong>{referral.displayName}</strong>
-                          <small>{referral.locked ? "Locked entry" : "Waiting for locked entry"}</small>
+                          <small>
+                            {referral.locked
+                              ? "Prize pool"
+                              : referral.committed
+                                ? "Free leaderboard"
+                                : "Waiting for locked entry"}
+                          </small>
                         </div>
                         <b>{formatPoints(referral.totalPoints)}</b>
                       </div>
