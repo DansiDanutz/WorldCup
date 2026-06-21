@@ -31,7 +31,7 @@ function SceneColdOpen() {
       {lt > 12.6 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 34, opacity: titleP, zIndex: 22 }}>
           <Kicker size={34}>The Architect vs The Assassin</Kicker>
-          <TitleReveal text="ONE CHANCE" start={12.7} size={150} color={MV.gold} />
+          <TitleReveal text="ONE CHANCE" start={12.89} size={150} color={MV.gold} />
         </div>
       )}
       <Letterbox />
@@ -48,7 +48,7 @@ function SceneTitle() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, #0a0f1c 0%, #11182b 55%, #0a0f1c 100%)` }}>
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(255,210,74,0.10) 0%, transparent 55%)` }} />
-      <AmbientParticles start={16} dur={12} count={34} />
+      <AmbientParticles start={16.24} dur={12} count={34} />
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 44 }}>
         <div style={{ opacity: p1, transform: `translateY(${(1 - p1) * -30}px)` }}>
           <Kicker>WorldCup26 Legends · Episode 40</Kicker>
@@ -145,7 +145,7 @@ function SceneHistory() {
       <ClipSprite id="hist-debruyne" dim={0.78} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1)' }} />
       <ClipSprite id="hist-taremi" dim={0.78} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1)' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
-      <AmbientParticles start={44} dur={54.5} count={30} maxR={4} />
+      <AmbientParticles start={44.00} dur={54.5} count={30} maxR={4} />
       {/* chapter header */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 26 }}>
         <Kicker size={28}>Chapter One · The Story</Kicker>
@@ -227,14 +227,14 @@ function SceneIran() {
         { img: 'assets/squad/irn-ezatolahi.png', name: 'SAEID EZATOLAHI', role: 'THE IRON' },
         { img: 'assets/squad/irn-ghaedi.png', name: 'AMIR GHAEDI', role: 'THE SPARK' },
       ]} />
-      <Sprite start={106.0} end={116.5}>
-        <LowerThird start={106.5} name="MEHDI TAREMI" role="The Assassin · Forward" accent={MV.irnLight} />
+      <Sprite start={106.00} end={116.50}>
+        <LowerThird start={106.50} name="MEHDI TAREMI" role="The Assassin · Forward" accent={MV.irnLight} />
       </Sprite>
-      <Sprite start={116.5} end={125.0}>
-        <LowerThird start={116.8} name="ALIREZA JAHANBAKHSH" role="The Flair · Winger" accent={MV.irnLight} />
+      <Sprite start={116.50} end={125.00}>
+        <LowerThird start={116.80} name="ALIREZA JAHANBAKHSH" role="The Flair · Winger" accent={MV.irnLight} />
       </Sprite>
-      <Sprite start={125.0} end={133.5}>
-        <LowerThird start={125.3} name="SAEID EZATOLAHI" role="The Iron · Midfield" accent={MV.irnLight} />
+      <Sprite start={125.00} end={133.50}>
+        <LowerThird start={125.30} name="SAEID EZATOLAHI" role="The Iron · Midfield" accent={MV.irnLight} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -269,14 +269,14 @@ function SceneBelgium() {
         { img: 'assets/squad/bel-trossard.png', name: 'LEANDRO TROSSARD', role: 'THE SPARK' },
         { img: 'assets/squad/bel-courtois.png', name: 'THIBAUT COURTOIS', role: 'THE WALL' },
       ]} />
-      <Sprite start={144.5} end={154.5}>
-        <LowerThird start={144.8} name="KEVIN DE BRUYNE" role="The Architect · Midfield" accent={MV.belLight} />
+      <Sprite start={146.06} end={157.48}>
+        <LowerThird start={146.40} name="KEVIN DE BRUYNE" role="The Architect · Midfield" accent={MV.belLight} />
       </Sprite>
-      <Sprite start={154.5} end={159.0}>
-        <LowerThird start={154.7} name="ROMELU LUKAKU" role="The Power · Forward" accent={MV.belLight} />
+      <Sprite start={157.48} end={162.62}>
+        <LowerThird start={157.71} name="ROMELU LUKAKU" role="The Power · Forward" accent={MV.belLight} />
       </Sprite>
-      <Sprite start={159.0} end={164.5}>
-        <LowerThird start={159.2} name="THIBAUT COURTOIS" role="The Wall · Goalkeeper" accent={MV.belLight} />
+      <Sprite start={162.62} end={168.90}>
+        <LowerThird start={162.85} name="THIBAUT COURTOIS" role="The Wall · Goalkeeper" accent={MV.belLight} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -318,7 +318,7 @@ function SceneDuel() {
       }}>
         <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 92, color: MV.gold }}>VS</span>
       </div>
-      <Sprite start={180} end={186}>
+      <Sprite start={181.23} end={186.00}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
           <Kicker size={40}>The Architect vs The Assassin</Kicker>
         </div>
@@ -346,24 +346,24 @@ function SceneDrama() {
 
       {/* 62nd minute — predicted: Courtois save spills, Taremi buries the rebound */}
       <GoalFlash at={S + 18.5} />
-      <Sprite start={186} end={213}>
+      <Sprite start={186.00} end={213.00}>
         <ScoreBug start={S + 0.4} bel={0} irn={1} minute="62'" badge="OUR PREDICTION" />
       </Sprite>
 
       {/* Belgium reply — De Bruyne to Lukaku, level */}
       <GoalFlash at={S + 37.5} />
-      <Sprite start={213} end={231}>
+      <Sprite start={213.00} end={231.00}>
         <ScoreBug start={S + 27.4} bel={1} irn={1} minute="74'" badge="OUR PREDICTION" />
       </Sprite>
 
       {/* The winner — De Bruyne pass, Doku finishes */}
       <GoalFlash at={S + 45.8} />
-      <Sprite start={231} end={234}>
+      <Sprite start={231.00} end={234.00}>
         <ScoreBug start={S + 46.2} bel={2} irn={1} minute="84'" badge="OUR PREDICTION" />
       </Sprite>
 
       {/* The predicted final — clearly stamped OUR PREDICTION, never FULL TIME */}
-      <Sprite start={233} end={242}>
+      <Sprite start={233.00} end={242.00}>
         <PredictionCard start={S + 47.5} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -553,7 +553,7 @@ function SceneCTA() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#07090f' }}>
       <ClipSprite id="cta-bg" dim={0.68} />
-      <AmbientParticles start={288} dur={12} count={28} />
+      <AmbientParticles start={290.46} dur={12} count={28} />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
         <Kicker size={30}>WorldCup26 Legends</Kicker>
@@ -564,7 +564,7 @@ function SceneCTA() {
         <CtaButton start={S} delay={1.6} label="LIKE" icon="👍" accent="#1e3a8a" x={960} />
         <CtaButton start={S} delay={2.0} label="SHARE" icon="📣" accent="#106b4f" x={1400} />
       </div>
-      <Sprite start={292.6} end={300}>
+      <Sprite start={295.19} end={302.80}>
         <NextMatchTease start={S + 4.6} />
       </Sprite>
       <Letterbox />

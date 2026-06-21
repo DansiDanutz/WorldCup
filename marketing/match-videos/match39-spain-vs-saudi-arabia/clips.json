@@ -1,83 +1,418 @@
 {
   "comment": "Ep39 Spain vs Saudi Arabia (Group H, Rose Bowl). Story: The Ghost of 2022 (Al-Dawsari's curling left foot that felled Argentina here). MATCH UNPLAYED -> OUR PREDICTION Spain 2-1 (55' Al-Dawsari ghost goal for Saudi 0-1, Pedri equalises, Yamal wins it). Monetization-safe (no gambling words). Legend 039 = The Falconer. vol=0 on every clip (silent reused/AI clips; audio = VO + music + sfx). Scenes reference these ids via <ClipSprite id=...>. The ghost-2022 clip is the recurring motif: cold-open, history, the 55' drama.",
   "clips": [
-    {"id": "glimpse-ghost",  "src": "assets/ghost-2022.mp4",        "at": 0.5,   "dur": 4.0,  "vol": 0},
-    {"id": "glimpse-stad",   "src": "assets/stadium-rosebowl.mp4",  "at": 4.5,   "dur": 3.5,  "vol": 0},
-    {"id": "glimpse-saudi",  "src": "assets/saudi-fans.mp4",        "at": 8.0,   "dur": 3.0,  "vol": 0},
-    {"id": "glimpse-spain",  "src": "assets/spain-fans.mp4",        "at": 11.0,  "dur": 3.0,  "vol": 0},
-
-    {"id": "title-bg",       "src": "assets/stadium-rosebowl.mp4",  "at": 16.0,  "dur": 12.0, "vol": 0},
-    {"id": "stadium-ext",    "src": "assets/stadium-rosebowl.mp4",  "at": 28.0,  "dur": 8.0,  "vol": 0},
-    {"id": "stadium-aerial", "src": "assets/spain-fans.mp4",        "at": 36.0,  "dur": 8.0,  "vol": 0},
-
-    {"id": "history-bg",     "src": "assets/ghost-2022.mp4",        "at": 44.0,  "dur": 13.0, "vol": 0},
-    {"id": "hist-ghost",     "src": "assets/ghost-2022.mp4",        "at": 57.0,  "dur": 10.0, "vol": 0},
-    {"id": "hist-dawsari",   "src": "assets/player-dawsari.mp4",    "at": 67.0,  "dur": 10.5, "vol": 0},
-    {"id": "hist-yamal",     "src": "assets/player-yamal.mp4",      "at": 77.5,  "dur": 11.0, "vol": 0},
-    {"id": "hist-stad",      "src": "assets/stadium-rosebowl.mp4",  "at": 88.5,  "dur": 10.0, "vol": 0},
-
-    {"id": "esp-bg",         "src": "assets/spain-fans.mp4",        "at": 98.5,  "dur": 8.0,  "vol": 0},
-    {"id": "esp-fans-close", "src": "assets/spain-fans.mp4",        "at": 119.5, "dur": 14.0, "vol": 0},
-    {"id": "yamal",          "src": "assets/player-yamal.mp4",      "at": 106.5, "dur": 9.0,  "vol": 0},
-    {"id": "pedri",          "src": "assets/player-pedri.mp4",      "at": 116.5, "dur": 8.0,  "vol": 0},
-    {"id": "rodri",          "src": "assets/player-rodri.mp4",      "at": 125.0, "dur": 4.0,  "vol": 0},
-    {"id": "nico",           "src": "assets/player-nico.mp4",       "at": 129.0, "dur": 2.5,  "vol": 0},
-    {"id": "carvajal",       "src": "assets/player-carvajal.mp4",   "at": 131.5, "dur": 2.0,  "vol": 0},
-
-    {"id": "ksa-bg",         "src": "assets/saudi-fans.mp4",        "at": 133.5, "dur": 8.0,  "vol": 0},
-    {"id": "ksa-fans-close", "src": "assets/saudi-fans.mp4",        "at": 141.5, "dur": 14.0, "vol": 0},
-    {"id": "dawsari",        "src": "assets/player-dawsari.mp4",    "at": 144.5, "dur": 9.0,  "vol": 0},
-    {"id": "buraikan",       "src": "assets/player-buraikan.mp4",   "at": 154.5, "dur": 3.0,  "vol": 0},
-    {"id": "faraj",          "src": "assets/player-faraj.mp4",      "at": 157.5, "dur": 2.5,  "vol": 0},
-    {"id": "owais",          "src": "assets/player-owais.mp4",      "at": 160.0, "dur": 2.5,  "vol": 0},
-    {"id": "shahrani",       "src": "assets/player-shahrani.mp4",   "at": 162.5, "dur": 2.0,  "vol": 0},
-
-    {"id": "duel-esp",       "src": "assets/player-yamal.mp4",      "at": 164.5, "dur": 11.0, "vol": 0},
-    {"id": "duel-ksa",       "src": "assets/player-dawsari.mp4",    "at": 164.5, "dur": 11.0, "vol": 0},
-
-    {"id": "drama-ghost",    "src": "assets/ghost-2022.mp4",        "at": 186.5, "dur": 8.0,  "vol": 0},
-    {"id": "drama-dawsari",  "src": "assets/player-dawsari.mp4",    "at": 196.0, "dur": 7.0,  "vol": 0},
-    {"id": "drama-saudi",    "src": "assets/saudi-fans.mp4",        "at": 203.0, "dur": 8.0,  "vol": 0},
-    {"id": "drama-pedri",    "src": "assets/player-pedri.mp4",      "at": 213.0, "dur": 5.0,  "vol": 0},
-    {"id": "drama-yamal",    "src": "assets/player-yamal.mp4",      "at": 218.0, "dur": 6.0,  "vol": 0},
-    {"id": "drama-spain",    "src": "assets/spain-fans.mp4",        "at": 224.0, "dur": 7.0,  "vol": 0},
-    {"id": "drama-stad",     "src": "assets/stadium-rosebowl.mp4",  "at": 231.5, "dur": 10.5, "vol": 0},
-
-    {"id": "verdict-bg",     "src": "assets/spain-fans.mp4",        "at": 242.0, "dur": 14.0, "vol": 0},
-    {"id": "mystery",        "src": "assets/mystery-falconer.mp4",  "at": 256.0, "dur": 14.0, "vol": 0},
-    {"id": "app-bg",         "src": "assets/spain-fans.mp4",        "at": 270.0, "dur": 18.0, "vol": 0},
-    {"id": "cta-bg",         "src": "assets/saudi-fans.mp4",        "at": 288.0, "dur": 12.0, "vol": 0}
+    {
+      "id": "glimpse-ghost",
+      "src": "assets/ghost-2022.mp4",
+      "at": 0.5,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-stad",
+      "src": "assets/stadium-rosebowl.mp4",
+      "at": 4.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-saudi",
+      "src": "assets/saudi-fans.mp4",
+      "at": 8,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-spain",
+      "src": "assets/spain-fans.mp4",
+      "at": 11,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "title-bg",
+      "src": "assets/stadium-rosebowl.mp4",
+      "at": 16,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "stadium-ext",
+      "src": "assets/stadium-rosebowl.mp4",
+      "at": 28,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/spain-fans.mp4",
+      "at": 36,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "history-bg",
+      "src": "assets/ghost-2022.mp4",
+      "at": 44,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-ghost",
+      "src": "assets/ghost-2022.mp4",
+      "at": 57,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-dawsari",
+      "src": "assets/player-dawsari.mp4",
+      "at": 67.08,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-yamal",
+      "src": "assets/player-yamal.mp4",
+      "at": 77.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-stad",
+      "src": "assets/stadium-rosebowl.mp4",
+      "at": 88.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "esp-bg",
+      "src": "assets/spain-fans.mp4",
+      "at": 98.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "esp-fans-close",
+      "src": "assets/spain-fans.mp4",
+      "at": 119.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "yamal",
+      "src": "assets/player-yamal.mp4",
+      "at": 106.94,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "pedri",
+      "src": "assets/player-pedri.mp4",
+      "at": 116.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "rodri",
+      "src": "assets/player-rodri.mp4",
+      "at": 125,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "nico",
+      "src": "assets/player-nico.mp4",
+      "at": 129,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "carvajal",
+      "src": "assets/player-carvajal.mp4",
+      "at": 131.5,
+      "dur": 2,
+      "vol": 0
+    },
+    {
+      "id": "ksa-bg",
+      "src": "assets/saudi-fans.mp4",
+      "at": 133.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "ksa-fans-close",
+      "src": "assets/saudi-fans.mp4",
+      "at": 141.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "dawsari",
+      "src": "assets/player-dawsari.mp4",
+      "at": 144.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "buraikan",
+      "src": "assets/player-buraikan.mp4",
+      "at": 154.5,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "faraj",
+      "src": "assets/player-faraj.mp4",
+      "at": 157.5,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "owais",
+      "src": "assets/player-owais.mp4",
+      "at": 163.65,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "shahrani",
+      "src": "assets/player-shahrani.mp4",
+      "at": 166.15,
+      "dur": 2,
+      "vol": 0
+    },
+    {
+      "id": "duel-esp",
+      "src": "assets/player-yamal.mp4",
+      "at": 168.06,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "duel-ksa",
+      "src": "assets/player-dawsari.mp4",
+      "at": 168.06,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-ghost",
+      "src": "assets/ghost-2022.mp4",
+      "at": 186.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-dawsari",
+      "src": "assets/player-dawsari.mp4",
+      "at": 196,
+      "dur": 7,
+      "vol": 0
+    },
+    {
+      "id": "drama-saudi",
+      "src": "assets/saudi-fans.mp4",
+      "at": 203,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-pedri",
+      "src": "assets/player-pedri.mp4",
+      "at": 213,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "drama-yamal",
+      "src": "assets/player-yamal.mp4",
+      "at": 218,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "drama-spain",
+      "src": "assets/spain-fans.mp4",
+      "at": 224,
+      "dur": 7,
+      "vol": 0
+    },
+    {
+      "id": "drama-stad",
+      "src": "assets/stadium-rosebowl.mp4",
+      "at": 231.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "verdict-bg",
+      "src": "assets/spain-fans.mp4",
+      "at": 242,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mystery",
+      "src": "assets/mystery-falconer.mp4",
+      "at": 258.46,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "app-bg",
+      "src": "assets/spain-fans.mp4",
+      "at": 271.51,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "cta-bg",
+      "src": "assets/saudi-fans.mp4",
+      "at": 291,
+      "dur": 9,
+      "vol": 0
+    }
   ],
   "music": {
     "cues": [
-      {"src": "music/cue-tense.mp3",  "at": 0,   "dur": 30,  "vol": 0.5, "fadeIn": 0.5, "fadeOut": 3, "loop": false},
-      {"src": "music/cue-epic.mp3",   "at": 28,  "dur": 228, "vol": 0.4, "fadeIn": 2.5, "fadeOut": 4, "loop": true},
-      {"src": "music/cue-heroic.mp3", "at": 268, "dur": 32,  "vol": 0.48,"fadeIn": 2.5, "fadeOut": 3, "loop": false}
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 28,
+        "dur": 277.06,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 269.51,
+        "dur": 32,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
     ]
   },
   "sfx": {
     "hits": [
-      {"src": "sfx/heartbeat.mp3", "at": 0.3,   "vol": 0.95},
-      {"src": "sfx/heartbeat.mp3", "at": 6.0,   "vol": 0.8},
-      {"src": "sfx/braam.mp3",     "at": 9.0,   "vol": 0.85},
-      {"src": "sfx/whoosh.mp3",    "at": 16.3,  "vol": 0.6},
-      {"src": "sfx/stamp.mp3",     "at": 16.8,  "vol": 0.6},
-      {"src": "sfx/whoosh.mp3",    "at": 28.2,  "vol": 0.55},
-      {"src": "sfx/braam.mp3",     "at": 44.3,  "vol": 0.6},
-      {"src": "sfx/mystic.mp3",    "at": 57.0,  "vol": 0.6},
-      {"src": "sfx/whoosh.mp3",    "at": 98.4,  "vol": 0.55},
-      {"src": "sfx/pop.mp3",       "at": 106.4, "vol": 0.55},
-      {"src": "sfx/pop.mp3",       "at": 116.4, "vol": 0.55},
-      {"src": "sfx/whoosh.mp3",    "at": 133.4, "vol": 0.6},
-      {"src": "sfx/pop.mp3",       "at": 144.4, "vol": 0.55},
-      {"src": "sfx/whoosh.mp3",    "at": 164.4, "vol": 0.7},
-      {"src": "sfx/goal.mp3",      "at": 196.0, "vol": 0.9},
-      {"src": "sfx/goal.mp3",      "at": 213.2, "vol": 0.9},
-      {"src": "sfx/goal.mp3",      "at": 231.5, "vol": 0.95},
-      {"src": "sfx/braam.mp3",     "at": 242.6, "vol": 0.7},
-      {"src": "sfx/mystic.mp3",    "at": 256.1, "vol": 0.85},
-      {"src": "sfx/pop.mp3",       "at": 266.0, "vol": 0.7},
-      {"src": "sfx/whoosh.mp3",    "at": 288.2, "vol": 0.6}
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 9,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 16.3,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 16.8,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 28.2,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44.3,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 57,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 98.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 106.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 116.84,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 133.4,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 144.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 168.05,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 196,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 213.2,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 231.5,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 242.6,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 258.56,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 267.51,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 291.2,
+        "vol": 0.6
+      }
     ]
   }
 }

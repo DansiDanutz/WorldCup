@@ -53,9 +53,7 @@ if (!NO_VO) {
     const at = lines[i].at;
     const nextAt = i < lines.length - 1 ? lines[i + 1].at : DURATION;
     const budget = (nextAt - at) - 0.25;
-    let tempo = budget > 0.3 ? durs[i] / budget : 1;
-    tempo = Math.min(1.4, Math.max(0.95, tempo)); // only fit when spilling; keep Brian natural
-    if (tempo < 1) tempo = 1;                      // never slow him down on a 300s bed
+    let tempo = 1; // RULE #12: never speed up Brian (timeline retimed so each line fits)
     const ms = Math.round(at * 1000);
     const idx = i;
     let c = `[${idx}:a]`;

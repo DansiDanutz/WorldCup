@@ -32,7 +32,7 @@ function SceneColdOpen() {
       {lt > 12.6 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 34, opacity: titleP, zIndex: 22 }}>
           <Kicker size={34}>The Ghost of 2022</Kicker>
-          <TitleReveal text="GHOST vs MACHINE" start={12.7} size={138} color={MV.gold} />
+          <TitleReveal text="GHOST vs MACHINE" start={12.70} size={138} color={MV.gold} />
         </div>
       )}
       <Letterbox />
@@ -49,7 +49,7 @@ function SceneTitle() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, #0a0f1c 0%, #11182b 55%, #0a0f1c 100%)` }}>
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(255,210,74,0.10) 0%, transparent 55%)` }} />
-      <AmbientParticles start={16} dur={12} count={34} />
+      <AmbientParticles start={16.00} dur={12} count={34} />
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 44 }}>
         <div style={{ opacity: p1, transform: `translateY(${(1 - p1) * -30}px)` }}>
           <Kicker>WorldCup26 Legends · Episode 39</Kicker>
@@ -146,7 +146,7 @@ function SceneHistory() {
       <ClipSprite id="hist-yamal" dim={0.78} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1)' }} />
       <ClipSprite id="hist-stad" dim={0.78} style={{ filter: 'brightness(0.26) saturate(0.7) contrast(1.1)' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 30%, rgba(5,6,10,0.82) 100%)' }} />
-      <AmbientParticles start={44} dur={54.5} count={30} maxR={4} />
+      <AmbientParticles start={44.00} dur={54.5} count={30} maxR={4} />
       {/* chapter header */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 26 }}>
         <Kicker size={28}>Chapter One · The Ghost</Kicker>
@@ -229,14 +229,14 @@ function SceneSpain() {
         { img: 'assets/squad/esp-nico.png', name: 'NICO WILLIAMS', role: 'THE FLYER' },
         { img: 'assets/squad/esp-carvajal.png', name: 'DANI CARVAJAL', role: 'THE MARAUDER' },
       ]} />
-      <Sprite start={106.0} end={116.0}>
-        <LowerThird start={106.5} name="LAMINE YAMAL" role="The Wonderkid · Winger" accent={MV.esp} />
+      <Sprite start={106.00} end={116.00}>
+        <LowerThird start={106.50} name="LAMINE YAMAL" role="The Wonderkid · Winger" accent={MV.esp} />
       </Sprite>
-      <Sprite start={116.0} end={125.0}>
-        <LowerThird start={116.5} name="PEDRI" role="The Metronome · Midfield" accent={MV.esp} />
+      <Sprite start={116.00} end={125.00}>
+        <LowerThird start={116.50} name="PEDRI" role="The Metronome · Midfield" accent={MV.esp} />
       </Sprite>
-      <Sprite start={125.0} end={133.5}>
-        <LowerThird start={125.3} name="RODRI" role="Ballon d'Or · Midfield" accent={MV.esp} />
+      <Sprite start={125.00} end={133.50}>
+        <LowerThird start={125.30} name="RODRI" role="Ballon d'Or · Midfield" accent={MV.esp} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -272,14 +272,14 @@ function SceneSaudi() {
         { img: 'assets/squad/ksa-owais.png', name: 'MOHAMMED AL-OWAIS', role: 'THE KEEPER' },
         { img: 'assets/squad/ksa-shahrani.png', name: 'YASIR AL-SHAHRANI', role: 'THE FLANK' },
       ]} />
-      <Sprite start={144.5} end={154.5}>
-        <LowerThird start={144.8} name="SALEM AL-DAWSARI" role="The Ghost of 2022 · Winger" accent={MV.ksaLight} />
+      <Sprite start={145.76} end={156.91}>
+        <LowerThird start={146.10} name="SALEM AL-DAWSARI" role="The Ghost of 2022 · Winger" accent={MV.ksaLight} />
       </Sprite>
-      <Sprite start={154.5} end={159.0}>
-        <LowerThird start={154.7} name="FIRAS AL-BURAIKAN" role="The Spearhead · Forward" accent={MV.ksaLight} />
+      <Sprite start={156.91} end={161.93}>
+        <LowerThird start={157.13} name="FIRAS AL-BURAIKAN" role="The Spearhead · Forward" accent={MV.ksaLight} />
       </Sprite>
-      <Sprite start={159.0} end={164.5}>
-        <LowerThird start={159.2} name="SALMAN AL-FARAJ" role="The Conductor · Midfield" accent={MV.ksaLight} />
+      <Sprite start={161.93} end={168.06}>
+        <LowerThird start={162.15} name="SALMAN AL-FARAJ" role="The Conductor · Midfield" accent={MV.ksaLight} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -321,7 +321,7 @@ function SceneDuel() {
       }}>
         <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 92, color: MV.gold }}>VS</span>
       </div>
-      <Sprite start={180} end={186}>
+      <Sprite start={181.13} end={186.19}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
           <Kicker size={40}>The Ghost vs The Machine</Kicker>
         </div>
@@ -349,24 +349,24 @@ function SceneDrama() {
 
       {/* 55' — the ghost strikes: Al-Dawsari curls it home, Saudi 0–1 (predicted) */}
       <GoalFlash at={S + 10.0} accent={MV.ksaLight} />
-      <Sprite start={186} end={213}>
+      <Sprite start={186.19} end={213.10}>
         <ScoreBug start={S + 0.6} esp={0} ksa={1} minute="55'" badge="OUR PREDICTION" />
       </Sprite>
 
       {/* Spain answer — Pedri sweeps it level, ESP 1–1 (predicted) */}
       <GoalFlash at={S + 27.5} accent={MV.gold} />
-      <Sprite start={213} end={231}>
+      <Sprite start={213.10} end={231.04}>
         <ScoreBug start={S + 28.2} esp={1} ksa={1} minute="74'" badge="OUR PREDICTION" />
       </Sprite>
 
       {/* Yamal wins it — ESP 2–1 (predicted) */}
       <GoalFlash at={S + 45.5} accent={MV.gold} />
-      <Sprite start={231} end={242}>
+      <Sprite start={231.04} end={242.00}>
         <ScoreBug start={S + 46.0} esp={2} ksa={1} minute="86'" badge="OUR PREDICTION" />
       </Sprite>
 
       {/* The predicted final — clearly stamped OUR PREDICTION, never FULL TIME */}
-      <Sprite start={234} end={242}>
+      <Sprite start={234.03} end={242.00}>
         <PredictionCard start={S + 48.0} />
       </Sprite>
       <Vignette strength={0.42} />
@@ -555,7 +555,7 @@ function SceneCTA() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#07090f' }}>
       <ClipSprite id="cta-bg" dim={0.68} />
-      <AmbientParticles start={288} dur={12} count={28} />
+      <AmbientParticles start={291.00} dur={12} count={28} />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
         <Kicker size={30}>WorldCup26 Legends</Kicker>
@@ -566,7 +566,7 @@ function SceneCTA() {
         <CtaButton start={S} delay={1.6} label="LIKE" icon="👍" accent="#1e3a8a" x={960} />
         <CtaButton start={S} delay={2.0} label="SHARE" icon="📣" accent="#106b4f" x={1400} />
       </div>
-      <Sprite start={292.6} end={300}>
+      <Sprite start={295.62} end={303.06}>
         <NextMatchTease start={S + 4.6} />
       </Sprite>
       <Letterbox />

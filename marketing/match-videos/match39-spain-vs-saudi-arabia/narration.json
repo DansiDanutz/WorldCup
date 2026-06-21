@@ -2,38 +2,137 @@
   "comment": "Ep39 Spain vs Saudi Arabia (Group H, Rose Bowl). Story: The Ghost of 2022 (Al-Dawsari's upset of Argentina). Match unplayed -> OUR PREDICTION Spain 2-1 (Al-Dawsari ghost goal, Spain comeback via Pedri + Yamal). Monetization-safe (no gambling words). Legend 039 = The Falconer. Brian VO, 300s.",
   "voice": "Brian",
   "lines": [
-    {"at": 0.8, "text": "Listen. On this very pitch, the world once cracked open. The night the desert humbled a king."},
-    {"at": 9, "text": "Tonight, Spain return to the scene of the crime. And the ghost of two thousand twenty-two... is waiting on the grass."},
-    {"at": 16.5, "text": "Welcome back to WorldCup twenty-six Legends — episode thirty-nine. Spain versus Saudi Arabia. Group H, at the Rose Bowl."},
-    {"at": 28.5, "text": "The same stadium. The same green. The same impossible memory that still haunts a giant."},
-    {"at": 44.5, "text": "Two thousand twenty-two. Saudi Arabia beat Argentina, two to one — the greatest shock the World Cup had seen in a generation."},
-    {"at": 56, "text": "And the man who lit the fuse? Salem Al-Dawsari. A curling left foot, past Martínez, into history. Tonight... he stands on this pitch again."},
-    {"at": 67, "text": "Older. Calmer. No less dangerous. A falconer who hunts with patience — and remembers exactly how giants fall."},
-    {"at": 77.5, "text": "Across the line, a boy who was only fifteen the night that goal went in — watching from La Masia, dreaming."},
-    {"at": 88, "text": "That boy is now the brightest light in world football. The past and the future, on the same square of grass."},
-    {"at": 98.5, "text": "First, La Roja. Spain — the masters of the ball, champions of Europe, a machine of a thousand passes."},
-    {"at": 106.5, "text": "Lamine Yamal. Sixteen when he conquered a continent. The youngest the game has ever feared this much."},
-    {"at": 116.5, "text": "Pedri, the metronome. And Rodri — the Ballon d'Or, a man who simply does not lose."},
-    {"at": 125, "text": "Williams flying, Carvajal marauding. On paper... it should not even be close."},
-    {"at": 133.5, "text": "But this pitch does not care for paper. Saudi Arabia — Al-Akhdar, the Green — have humbled giants here before."},
-    {"at": 144.5, "text": "Salem Al-Dawsari, the Al-Hilal legend, carrying the memory of a nation that already shocked the world once."},
-    {"at": 154.5, "text": "Firas Al-Buraikan, young and fearless. Salman Al-Faraj, two World Cups of calm. Eleven green falcons who fear no name."},
-    {"at": 159, "text": "They have done the impossible before. Why not again, on the very same grass?"},
-    {"at": 164.5, "text": "So here it is. The ghost against the machine. The veteran's memory... against the teenager's dawn."},
-    {"at": 176, "text": "Rodri's control... against Al-Dawsari's left foot. The exorcism, against the haunting."},
-    {"at": 182, "text": "And ninety minutes to decide whether a ghost can strike twice."},
-    {"at": 186.5, "text": "Here is how we see it. The fifty-fifth minute. Al-Dawsari receives on the left — and the whole stadium remembers."},
-    {"at": 196, "text": "He cuts inside, that same motion... and this time, he curls it home. The ghost has struck again. Saudi Arabia, one to nil."},
-    {"at": 204.5, "text": "The Rose Bowl erupts in green. Spain, stunned, staring down the very same nightmare twice."},
-    {"at": 213, "text": "But champions answer. Yamal collects on the right, the burst, the cut-back — and Pedri sweeps it level."},
-    {"at": 223, "text": "Then, the ferocity of the wounded. Spain pour forward, wave after wave, the falcons pinned deep."},
-    {"at": 231.5, "text": "And in our story — Yamal again. A teenager's moment. Spain, two. Saudi Arabia, one. The ghost, exorcised at last."},
-    {"at": 242.5, "text": "That is our prediction — Spain surviving the haunting, the Green Falcons proud but heartbroken. The real one is yours to watch."},
-    {"at": 250, "text": "In Group H, the past came back for one more night. That is the beauty — and the cruelty — of the World Cup."},
-    {"at": 256.5, "text": "And on the desert wind, one figure watched it all. Legend number thirty-nine — the Falconer. The old keeper of the Green."},
-    {"at": 266, "text": "They say while his falcon still flies... the desert never forgets how to shock the world. Collect him inside the game."},
-    {"at": 270.5, "text": "Which brings us to you. At worldcup twenty-six dot world, pick three of the forty-eight nations — and every goal they score, scores for you."},
-    {"at": 281, "text": "Free to play. Climb the leaderboard, just for fun. No prizes."},
-    {"at": 288.5, "text": "If the ghost of the Rose Bowl moved you tonight, send it to a friend who still believes the giants always win. Hit like, subscribe — and collect Legend number thirty-nine, before the next legend steps from the shadows."}
+    {
+      "at": 0.8,
+      "text": "Listen. On this very pitch, the world once cracked open. The night the desert humbled a king."
+    },
+    {
+      "at": 9,
+      "text": "Tonight, Spain return to the scene of the crime. And the ghost of two thousand twenty-two... is waiting on the grass."
+    },
+    {
+      "at": 16.5,
+      "text": "Welcome back to WorldCup twenty-six Legends — episode thirty-nine. Spain versus Saudi Arabia. Group H, at the Rose Bowl."
+    },
+    {
+      "at": 28.5,
+      "text": "The same stadium. The same green. The same impossible memory that still haunts a giant."
+    },
+    {
+      "at": 44.5,
+      "text": "Two thousand twenty-two. Saudi Arabia beat Argentina, two to one — the greatest shock the World Cup had seen in a generation."
+    },
+    {
+      "at": 56,
+      "text": "And the man who lit the fuse? Salem Al-Dawsari. A curling left foot, past Martínez, into history. Tonight... he stands on this pitch again."
+    },
+    {
+      "at": 67.08,
+      "text": "Older. Calmer. No less dangerous. A falconer who hunts with patience — and remembers exactly how giants fall."
+    },
+    {
+      "at": 77.5,
+      "text": "Across the line, a boy who was only fifteen the night that goal went in — watching from La Masia, dreaming."
+    },
+    {
+      "at": 88,
+      "text": "That boy is now the brightest light in world football. The past and the future, on the same square of grass."
+    },
+    {
+      "at": 98.5,
+      "text": "First, La Roja. Spain — the masters of the ball, champions of Europe, a machine of a thousand passes."
+    },
+    {
+      "at": 106.94,
+      "text": "Lamine Yamal. Sixteen when he conquered a continent. The youngest the game has ever feared this much."
+    },
+    {
+      "at": 116.5,
+      "text": "Pedri, the metronome. And Rodri — the Ballon d'Or, a man who simply does not lose."
+    },
+    {
+      "at": 125,
+      "text": "Williams flying, Carvajal marauding. On paper... it should not even be close."
+    },
+    {
+      "at": 133.5,
+      "text": "But this pitch does not care for paper. Saudi Arabia — Al-Akhdar, the Green — have humbled giants here before."
+    },
+    {
+      "at": 144.5,
+      "text": "Salem Al-Dawsari, the Al-Hilal legend, carrying the memory of a nation that already shocked the world once."
+    },
+    {
+      "at": 154.5,
+      "text": "Firas Al-Buraikan, young and fearless. Salman Al-Faraj, two World Cups of calm. Eleven green falcons who fear no name."
+    },
+    {
+      "at": 162.65,
+      "text": "They have done the impossible before. Why not again, on the very same grass?"
+    },
+    {
+      "at": 168.06,
+      "text": "So here it is. The ghost against the machine. The veteran's memory... against the teenager's dawn."
+    },
+    {
+      "at": 176,
+      "text": "Rodri's control... against Al-Dawsari's left foot. The exorcism, against the haunting."
+    },
+    {
+      "at": 182.19,
+      "text": "And ninety minutes to decide whether a ghost can strike twice."
+    },
+    {
+      "at": 186.5,
+      "text": "Here is how we see it. The fifty-fifth minute. Al-Dawsari receives on the left — and the whole stadium remembers."
+    },
+    {
+      "at": 196,
+      "text": "He cuts inside, that same motion... and this time, he curls it home. The ghost has struck again. Saudi Arabia, one to nil."
+    },
+    {
+      "at": 204.5,
+      "text": "The Rose Bowl erupts in green. Spain, stunned, staring down the very same nightmare twice."
+    },
+    {
+      "at": 213,
+      "text": "But champions answer. Yamal collects on the right, the burst, the cut-back — and Pedri sweeps it level."
+    },
+    {
+      "at": 223,
+      "text": "Then, the ferocity of the wounded. Spain pour forward, wave after wave, the falcons pinned deep."
+    },
+    {
+      "at": 231.5,
+      "text": "And in our story — Yamal again. A teenager's moment. Spain, two. Saudi Arabia, one. The ghost, exorcised at last."
+    },
+    {
+      "at": 242.5,
+      "text": "That is our prediction — Spain surviving the haunting, the Green Falcons proud but heartbroken. The real one is yours to watch."
+    },
+    {
+      "at": 252.46,
+      "text": "In Group H, the past came back for one more night. That is the beauty — and the cruelty — of the World Cup."
+    },
+    {
+      "at": 259.54,
+      "text": "And on the desert wind, one figure watched it all. Legend number thirty-nine — the Falconer. The old keeper of the Green."
+    },
+    {
+      "at": 267.51,
+      "text": "They say while his falcon still flies... the desert never forgets how to shock the world. Collect him inside the game."
+    },
+    {
+      "at": 274.72,
+      "text": "Which brings us to you. At worldcup twenty-six dot world, pick three of the forty-eight nations — and every goal they score, scores for you."
+    },
+    {
+      "at": 284,
+      "text": "Free to play. Climb the leaderboard, just for fun. No prizes."
+    },
+    {
+      "at": 288.5,
+      "text": "If the ghost of the Rose Bowl moved you tonight, send it to a friend who still believes the giants always win. Hit like, subscribe — and collect Legend number thirty-nine, before the next legend steps from the shadows."
+    }
   ]
 }

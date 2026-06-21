@@ -31,18 +31,18 @@ const { useEffect } = React;
 // Scene timeline (global seconds) — 300s. Keep in sync with narration.json
 // (VO slots) and clips.json (video clip placements).
 const SCENES = [
-  { c: SceneColdOpen, start: 0,     end: 16.0 },
-  { c: SceneTitle,    start: 16.0,  end: 28.0 },
-  { c: SceneStadium,  start: 28.0,  end: 44.0 },
-  { c: SceneHistory,  start: 44.0,  end: 98.5 },
-  { c: SceneIran,     start: 98.5,  end: 133.5 },
-  { c: SceneBelgium,  start: 133.5, end: 164.5 },
-  { c: SceneDuel,     start: 164.5, end: 186.0 },
-  { c: SceneDrama,    start: 186.0, end: 242.0 },
-  { c: SceneVerdict,  start: 242.0, end: 256.0 },
-  { c: SceneMystery,  start: 256.0, end: 270.0 },
-  { c: SceneApp,      start: 270.0, end: 288.0 },
-  { c: SceneCTA,      start: 288.0, end: 300.0 },
+  { c: SceneColdOpen, start: 0.00, end: 16.24 },
+  { c: SceneTitle, start: 16.24, end: 28.06 },
+  { c: SceneStadium, start: 28.06, end: 44.00 },
+  { c: SceneHistory, start: 44.00, end: 98.50 },
+  { c: SceneIran, start: 98.50, end: 133.50 },
+  { c: SceneBelgium, start: 133.50, end: 168.90 },
+  { c: SceneDuel, start: 168.90, end: 186.00 },
+  { c: SceneDrama, start: 186.00, end: 242.00 },
+  { c: SceneVerdict, start: 242.00, end: 256.32 },
+  { c: SceneMystery, start: 256.32, end: 271.57 },
+  { c: SceneApp, start: 271.57, end: 290.46 },
+  { c: SceneCTA, start: 290.46, end: 302.80 },
 ];
 
 // Cinematic cut treatment per scene boundary (read by TransitionLayer).
@@ -59,7 +59,7 @@ window.MV_TRANSITIONS = [
   { at: 270.0, type: 'flash' },
   { at: 288.0, type: 'flash' },
 ];
-const DURATION = 300.0;
+const DURATION = 302.80;
 
 function ScreenLabeler() {
   const time = useTime();

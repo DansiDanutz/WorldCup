@@ -2,38 +2,137 @@
   "comment": "Ep40 Belgium vs Iran (Group G, Miami). Story: The Assassin (Taremi) and the Architect (De Bruyne); Courtois the wall. Match unplayed -> OUR PREDICTION Belgium 2-1 (Taremi scores, De Bruyne + Lukaku + Doku win it). Monetization-safe (no gambling, no 'underdog'). Legend 040 = The Spirit of Persia. Brian VO, 300s.",
   "voice": "Brian",
   "lines": [
-    {"at": 0.8, "text": "Listen. One nation has everything but the trophy. The other has nothing... but a refusal to know its place."},
-    {"at": 9, "text": "Tonight, under the Miami sun, the architect meets the assassin. And somebody's certainty is about to break."},
-    {"at": 16.5, "text": "Welcome back to WorldCup twenty-six Legends — episode forty. Belgium versus Iran. Group G, in Miami."},
-    {"at": 28.5, "text": "Florida trembles in the heat. Two teams with everything to prove, and nowhere left to hide."},
-    {"at": 44.5, "text": "Belgium — the golden generation that never won the gold. Stung, wounded, and desperate for an answer."},
-    {"at": 56, "text": "Iran — Team Melli. The pride of eighty-eight million, who refuse, again and again, to accept their appointed place."},
-    {"at": 67, "text": "They nearly knocked out Portugal in two thousand eighteen. Three straight World Cups. Nobody tells them they don't belong."},
-    {"at": 77.5, "text": "And they carry an assassin. A man who needs only one chance — and has always, only ever, needed one."},
-    {"at": 88, "text": "Two nations. One Miami afternoon. Everything to prove, and a thread about to fray."},
-    {"at": 98.5, "text": "First, the assassin. Mehdi Taremi — the Iranian Ronaldo. Patient, lethal, and utterly fearless."},
-    {"at": 106.5, "text": "A late bloomer who once worked at a gas station... then scored a bicycle kick against Chelsea in the Champions League."},
-    {"at": 116.5, "text": "Jahanbakhsh, the flair. Ghoddos, the craft. Ezatolahi, the iron. Eleven men who play with nothing to lose."},
-    {"at": 125, "text": "They have always thrived under pressure. Tonight, the pressure is theirs to enjoy."},
-    {"at": 133.5, "text": "Across from them — the architect. Belgium, the Red Devils, builders of a hundred chances."},
-    {"at": 144.5, "text": "Kevin De Bruyne. The man Guardiola called one of the best he has ever seen. A general who reads the battlefield at a glance."},
-    {"at": 154.5, "text": "Romelu Lukaku, the power. Jeremy Doku, the lightning. And Courtois — the Wall — between the posts."},
-    {"at": 159, "text": "Every resource imaginable. And one ghost they cannot shake: they have never turned it into glory."},
-    {"at": 164.5, "text": "So here it is. The architect against the assassin. A hundred chances... against the one that kills."},
-    {"at": 176, "text": "De Bruyne's vision... against Taremi's patience. The wall, against the one shot."},
-    {"at": 182, "text": "And ninety minutes in the Miami heat to decide whose refusal is stronger."},
-    {"at": 186.5, "text": "Here is how we see it. The sixty-second minute. Taremi finds a pocket that should not even exist."},
-    {"at": 196, "text": "One touch to set, one swing of that lethal right foot — and Courtois, full stretch, claws it onto the post."},
-    {"at": 204.5, "text": "The save of the tournament. But the rebound falls... and Taremi, the assassin, does not miss twice. Iran, one to nil."},
-    {"at": 213, "text": "Miami erupts in red and white. The golden generation staring, once more, into the abyss."},
-    {"at": 223, "text": "But the architect answers. De Bruyne, one look, one pass — and Lukaku rises to head Belgium level."},
-    {"at": 231.5, "text": "And in our story — De Bruyne again, the killer ball, Doku to finish. Belgium, two. Iran, one. The architect builds the escape."},
-    {"at": 242.5, "text": "That is our prediction — Belgium surviving, Team Melli unbowed and unbroken. The real one is yours to watch."},
-    {"at": 250, "text": "In Group G, two nations refused to die. That is the beauty — and the cruelty — of the World Cup."},
-    {"at": 256.5, "text": "And beneath the heat haze, one figure watched, unmoving. Legend number forty — the Spirit of Persia. The old lion of Team Melli."},
-    {"at": 266, "text": "They say while his lion still breathes... Iran will never, ever know its place. Collect him inside the game."},
-    {"at": 270.5, "text": "Which brings us to you. At worldcup twenty-six dot world, pick three of the forty-eight nations — and every goal they score, scores for you."},
-    {"at": 281, "text": "Free to play. Climb the leaderboard, just for fun. No prizes."},
-    {"at": 288.5, "text": "If the assassin and the architect moved you tonight, send it to a friend who lives for the impossible. Hit like, subscribe — and collect Legend number forty, before the next legend steps from the shadows."}
+    {
+      "at": 0.8,
+      "text": "Listen. One nation has everything but the trophy. The other has nothing... but a refusal to know its place."
+    },
+    {
+      "at": 9.24,
+      "text": "Tonight, under the Miami sun, the architect meets the assassin. And somebody's certainty is about to break."
+    },
+    {
+      "at": 16.56,
+      "text": "Welcome back to WorldCup twenty-six Legends — episode forty. Belgium versus Iran. Group G, in Miami."
+    },
+    {
+      "at": 28.5,
+      "text": "Florida trembles in the heat. Two teams with everything to prove, and nowhere left to hide."
+    },
+    {
+      "at": 44.5,
+      "text": "Belgium — the golden generation that never won the gold. Stung, wounded, and desperate for an answer."
+    },
+    {
+      "at": 56,
+      "text": "Iran — Team Melli. The pride of eighty-eight million, who refuse, again and again, to accept their appointed place."
+    },
+    {
+      "at": 67,
+      "text": "They nearly knocked out Portugal in two thousand eighteen. Three straight World Cups. Nobody tells them they don't belong."
+    },
+    {
+      "at": 77.5,
+      "text": "And they carry an assassin. A man who needs only one chance — and has always, only ever, needed one."
+    },
+    {
+      "at": 88,
+      "text": "Two nations. One Miami afternoon. Everything to prove, and a thread about to fray."
+    },
+    {
+      "at": 98.5,
+      "text": "First, the assassin. Mehdi Taremi — the Iranian Ronaldo. Patient, lethal, and utterly fearless."
+    },
+    {
+      "at": 106.52,
+      "text": "A late bloomer who once worked at a gas station... then scored a bicycle kick against Chelsea in the Champions League."
+    },
+    {
+      "at": 116.5,
+      "text": "Jahanbakhsh, the flair. Ghoddos, the craft. Ezatolahi, the iron. Eleven men who play with nothing to lose."
+    },
+    {
+      "at": 125,
+      "text": "They have always thrived under pressure. Tonight, the pressure is theirs to enjoy."
+    },
+    {
+      "at": 133.5,
+      "text": "Across from them — the architect. Belgium, the Red Devils, builders of a hundred chances."
+    },
+    {
+      "at": 144.5,
+      "text": "Kevin De Bruyne. The man Guardiola called one of the best he has ever seen. A general who reads the battlefield at a glance."
+    },
+    {
+      "at": 154.5,
+      "text": "Romelu Lukaku, the power. Jeremy Doku, the lightning. And Courtois — the Wall — between the posts."
+    },
+    {
+      "at": 162.55,
+      "text": "Every resource imaginable. And one ghost they cannot shake: they have never turned it into glory."
+    },
+    {
+      "at": 168.9,
+      "text": "So here it is. The architect against the assassin. A hundred chances... against the one that kills."
+    },
+    {
+      "at": 176,
+      "text": "De Bruyne's vision... against Taremi's patience. The wall, against the one shot."
+    },
+    {
+      "at": 182,
+      "text": "And ninety minutes in the Miami heat to decide whose refusal is stronger."
+    },
+    {
+      "at": 186.5,
+      "text": "Here is how we see it. The sixty-second minute. Taremi finds a pocket that should not even exist."
+    },
+    {
+      "at": 196,
+      "text": "One touch to set, one swing of that lethal right foot — and Courtois, full stretch, claws it onto the post."
+    },
+    {
+      "at": 204.5,
+      "text": "The save of the tournament. But the rebound falls... and Taremi, the assassin, does not miss twice. Iran, one to nil."
+    },
+    {
+      "at": 213.07,
+      "text": "Miami erupts in red and white. The golden generation staring, once more, into the abyss."
+    },
+    {
+      "at": 223,
+      "text": "But the architect answers. De Bruyne, one look, one pass — and Lukaku rises to head Belgium level."
+    },
+    {
+      "at": 231.5,
+      "text": "And in our story — De Bruyne again, the killer ball, Doku to finish. Belgium, two. Iran, one. The architect builds the escape."
+    },
+    {
+      "at": 242.71,
+      "text": "That is our prediction — Belgium surviving, Team Melli unbowed and unbroken. The real one is yours to watch."
+    },
+    {
+      "at": 250.32,
+      "text": "In Group G, two nations refused to die. That is the beauty — and the cruelty — of the World Cup."
+    },
+    {
+      "at": 257.69,
+      "text": "And beneath the heat haze, one figure watched, unmoving. Legend number forty — the Spirit of Persia. The old lion of Team Melli."
+    },
+    {
+      "at": 267.57,
+      "text": "They say while his lion still breathes... Iran will never, ever know its place. Collect him inside the game."
+    },
+    {
+      "at": 274.57,
+      "text": "Which brings us to you. At worldcup twenty-six dot world, pick three of the forty-eight nations — and every goal they score, scores for you."
+    },
+    {
+      "at": 283.46,
+      "text": "Free to play. Climb the leaderboard, just for fun. No prizes."
+    },
+    {
+      "at": 288.5,
+      "text": "If the assassin and the architect moved you tonight, send it to a friend who lives for the impossible. Hit like, subscribe — and collect Legend number forty, before the next legend steps from the shadows."
+    }
   ]
 }
