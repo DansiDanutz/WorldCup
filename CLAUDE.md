@@ -194,6 +194,21 @@ Non-negotiables distilled from channel data (details in the playbook):
     rushed 5-minute one. (When extending: bump `DURATION` in render/mux, widen the
     `SCENES` windows in match.html, and shift the later `narration.json`/`clips.json`
     timestamps to match — keep the same beats, just give them room.)
+13. **RENDER ONE EPISODE AT A TIME — never in parallel (owner-mandated, hard rule):**
+    episodes render strictly SEQUENTIALLY — one fully finished, pushed, and
+    delivered for review before the next starts. NEVER run two renders at once
+    (it splits the throttled CPU and, worse, risks duplicate/colliding renders).
+    Each episode is produced, committed and checkable on its own, so a failure in
+    one NEVER cascades to the others: isolate it, surface it, fix that single
+    episode, then continue the queue. Always hand over each finished video so the
+    owner can check it individually.
+14. **QUALITY BAR = Ep37 "close to perfection" (owner-set):** every episode must
+    match or beat Ep37 on ALL of: real Higgsfield ANIMATIONS (dense, not stills),
+    smooth motion / "hyperframe" feel, pro UI/UX (clean lower-thirds, score bug,
+    section labels, the app scene), the MYSTERY beat, the collectible **Legend 0NN
+    card**, the cinematic grade + film grain, music, and the EP-NN gold-seal
+    thumbnail. Enhancements are ADDED on top of this bar, never traded away for
+    speed. Reference master: Ep37 (Ecuador–Curaçao).
 
 ## Video production pipeline
 
