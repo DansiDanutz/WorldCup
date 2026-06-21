@@ -270,6 +270,28 @@ Next.js app (src/, Supabase, Vercel). The series always advertises
 **worldcup26.world** (pick 3 teams, **free to play for fun** — climb the
 leaderboard, no prizes; never promise money or prizes).
 
+## Special Cards — the Legends collection (owner-mandated)
+
+Every episode hides one **Mystery Supporter = Legend 0NN**. Each Legend is a
+**collectible card** that lives in the app, in BOTH **landscape (16:9)** and
+**portrait (9:16)**:
+- Art + manifest in **`public/special-cards/`** (`legend-0NN-portrait.png`,
+  `legend-0NN-landscape.png`, `cards.json`); gallery page at **`/collection`**
+  (`src/app/collection/page.tsx`) — keep `cards.json` and the page's `CARDS`
+  array in sync when adding a card.
+- **EVERY card must be a UNIQUE character — no two cards share the same person,
+  face, or archetype (hard rule).** Derive each from its Legend name + the
+  match's nation/history and deliberately VARY age, gender, ethnicity and type
+  (elders, youths, women, ghosts/spectres, dancers, musicians, animal-spirits,
+  keepers…). Never default everyone to "an old male elder." Two same-named
+  legends (e.g. both called "The Falconer") must still be visibly different people.
+- Premium look: ornate gold art-deco frame, holographic foil, deep-navy ground,
+  gold "LEGEND 0NN" banner + nameplate (name + nation), a soccer ball motif,
+  SOCCER-only. Style reference = Legend 037–040.
+- Per new episode: generate the two orientations, drop them in the folder, add the
+  `cards.json` + page entry. Backfill earlier Legends the same way. Bonus player
+  films (`WorldCup26 Bonus`) get their own Legend cards too.
+
 ## PRODUCTION PROCESS (mandatory — never render twice for a missed requirement)
 
 **Scaffold a new episode COMPLETELY before anything else.** Copy ALL of these from a
