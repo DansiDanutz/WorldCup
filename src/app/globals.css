@@ -10094,6 +10094,17 @@ html {
     width: 100%;
     justify-content: center;
   }
+
+  .series-banner {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .series-banner__cta {
+    grid-column: 2;
+    justify-self: start;
+  }
 }
 
 /* WorldCup26 Legends collection */
@@ -10116,6 +10127,7 @@ html {
 .legend-collection {
   padding: var(--space-6);
   color: #ffffff;
+  scroll-margin-top: 120px;
 }
 
 .legend-collection__hero,
@@ -10202,6 +10214,7 @@ html {
   min-width: 0;
   min-height: 100%;
   flex-direction: column;
+  scroll-margin-top: 120px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 8px;

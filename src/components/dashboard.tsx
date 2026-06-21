@@ -1123,7 +1123,7 @@ export function Dashboard({
               <Sparkles size={16} />
               <span className="nav-item__copy">
                 <strong>Predictions</strong>
-                <small>Match videos</small>
+                <small>Cards & videos</small>
               </span>
             </Link>
             {!funMode ? (
@@ -1238,22 +1238,20 @@ export function Dashboard({
 
         <MyStanding />
 
-        <a
+        <Link
           className="series-banner"
-          href="https://www.youtube.com/@DansLab-WorldCup"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Watch the WorldCup26 Legends story series on YouTube"
+          href="/predictions#legend-cards"
+          aria-label="Open the WorldCup26 Legends card collection"
         >
           <span className="series-banner__icon" aria-hidden="true">
             <PlayCircle size={22} />
           </span>
           <span className="series-banner__copy">
             <strong>WorldCup26 Legends — the story series</strong>
-            <small>A Pixar-style episode before every match. Subscribe for the next prediction.</small>
+            <small>Watch in the app, listen to the story, and collect the matching Legend cards.</small>
           </span>
-          <span className="series-banner__cta">Watch on YouTube</span>
-        </a>
+          <span className="series-banner__cta">Watch & collect</span>
+        </Link>
 
         {!funMode && launchEvidenceMode ? (
           <section className="launch-notice" aria-label="Launch evidence mode">

@@ -206,6 +206,8 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /worldcup_legend_unlocked_cards/);
     assert.match(legendCardCollection, /worldcup_legend_opened_cards/);
     assert.match(legendCardCollection, /worldcup_legend_watched_cards/);
+    assert.match(legendCardCollection, /id="legend-cards"/);
+    assert.match(legendCardCollection, /legend-card-\$\{card\.id\}/);
     assert.match(legendCardCollection, /watchUnlockSeconds = 45/);
     assert.match(legendCardCollection, /getYouTubeVideoId/);
     assert.match(legendCardCollection, /loadYouTubeIframeApi/);
@@ -224,7 +226,18 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /Unlock card/);
     assert.match(legendCardCollection, /Enable voice/);
     assert.match(legendCardCollection, /isUnlocked \? "is-unlocked" : "is-locked"/);
+    assert.match(dashboard, /href="\/predictions#legend-cards"/);
+    assert.match(dashboard, /Watch & collect/);
+    assert.doesNotMatch(dashboard, /Watch on YouTube/);
+    assert.doesNotMatch(dashboard, /https:\/\/www\.youtube\.com\/@DansLab-WorldCup/);
+    assert.match(globalsCss, /@media \(max-width:\s*640px\)\s*{[\s\S]*?\.series-banner\s*{[\s\S]*?grid-template-columns:\s*40px minmax\(0,\s*1fr\);/);
+    assert.match(predictionsPage, /LEGEND_CARDS/);
+    assert.match(predictionsPage, /legendCardAnchorByEpisode/);
+    assert.match(predictionsPage, /href=\{`\/predictions#\$\{legendCardAnchor\}`\}/);
+    assert.match(predictionsPage, /Watch & collect/);
     assert.match(globalsCss, /\.legend-card-grid/);
+    assert.match(globalsCss, /\.legend-collection\s*{[\s\S]*?scroll-margin-top:\s*120px;/);
+    assert.match(globalsCss, /\.legend-card\s*{[\s\S]*?scroll-margin-top:\s*120px;/);
     assert.match(globalsCss, /\.legend-watch-modal\s*{/);
     assert.match(globalsCss, /\.legend-watch-modal__player\s*{[\s\S]*?aspect-ratio:\s*16 \/ 9;/);
     assert.match(globalsCss, /\.legend-watch-modal__progress\s*{/);
@@ -310,6 +323,7 @@ describe("WorldCup design system integration", () => {
   });
 
   it("keeps the root layout from forcing mobile horizontal overflow", () => {
+    assert.match(rootLayout, /<html lang="en" data-scroll-behavior="smooth">/);
     assert.match(globalsCss, /html\s*{[\s\S]*?min-width:\s*0;/);
     assert.doesNotMatch(globalsCss, /html\s*{[\s\S]*?min-width:\s*320px;/);
   });

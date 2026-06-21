@@ -431,7 +431,7 @@ export function LegendCardCollection() {
   }
 
   return (
-    <section className="legend-collection" aria-labelledby="legend-collection-title">
+    <section id="legend-cards" className="legend-collection" aria-labelledby="legend-collection-title">
       <div className="legend-collection__hero">
         <div>
           <p className="wc-card-eyebrow">WorldCup26 Legends</p>
@@ -475,6 +475,7 @@ export function LegendCardCollection() {
           return (
             <article
               key={card.id}
+              id={`legend-card-${card.id}`}
               className={`legend-card ${isUnlocked ? "is-unlocked" : "is-locked"} ${
                 canUnlock ? "is-ready" : ""
               }`}

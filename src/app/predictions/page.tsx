@@ -2,6 +2,7 @@ import { ArrowLeft, PlayCircle } from "lucide-react";
 import Link from "next/link";
 
 import { LegendCardCollection } from "@/components/legend-card-collection";
+import { LEGEND_CARDS } from "@/lib/legend-cards";
 import { PREDICTIONS } from "@/lib/predictions";
 
 export const metadata = {
@@ -13,6 +14,13 @@ export const metadata = {
 export default function PredictionsPage() {
   const episodes = [...PREDICTIONS].sort((a, b) => b.ep - a.ep);
   const liveCount = PREDICTIONS.filter((p) => p.youtube).length;
+  const legendCardAnchorByEpisode = new Map<number, string>();
+
+  for (const card of LEGEND_CARDS) {
+    if (!legendCardAnchorByEpisode.has(card.episode)) {
+      legendCardAnchorByEpisode.set(card.episode, `legend-card-${card.id}`);
+    }
+  }
 
   return (
     <main className="app-shell">
@@ -39,6 +47,7 @@ export default function PredictionsPage() {
           <div className="episode-grid">
             {episodes.map((prediction) => {
               const isLive = Boolean(prediction.youtube);
+              const legendCardAnchor = legendCardAnchorByEpisode.get(prediction.ep);
 
               return (
                 <article key={prediction.ep} className="episode-card">
@@ -66,7 +75,15 @@ export default function PredictionsPage() {
 
                   <div className="episode-card__footer">
                     {prediction.date ? <small>{prediction.date}</small> : null}
-                    {isLive ? (
+                    {isLive && legendCardAnchor ? (
+                      <Link
+                        className="button episode-card__watch"
+                        href={`/predictions#${legendCardAnchor}`}
+                      >
+                        <PlayCircle size={16} />
+                        Watch & collect
+                      </Link>
+                    ) : isLive ? (
                       <a
                         className="button episode-card__watch"
                         href={prediction.youtube as string}
