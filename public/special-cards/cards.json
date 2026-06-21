@@ -1,0 +1,10 @@
+{
+  "collection": "WorldCup26 Legends — The Mystery Supporters",
+  "note": "Each episode hides one collectible Legend (the Mystery Supporter). Both landscape (16:9) and portrait (9:16) art per card.",
+  "cards": [
+    { "number": "037", "name": "The Island Elder",   "nation": "Curaçao",      "episode": 37, "match": "Ecuador vs Curaçao",     "portrait": "/special-cards/legend-037-portrait.png", "landscape": "/special-cards/legend-037-landscape.png" },
+    { "number": "038", "name": "The Eagle-Keeper",   "nation": "Tunisia",      "episode": 38, "match": "Japan vs Tunisia",       "portrait": "/special-cards/legend-038-portrait.png", "landscape": "/special-cards/legend-038-landscape.png" },
+    { "number": "039", "name": "The Falconer",       "nation": "Saudi Arabia", "episode": 39, "match": "Spain vs Saudi Arabia",  "portrait": "/special-cards/legend-039-portrait.png", "landscape": "/special-cards/legend-039-landscape.png" },
+    { "number": "040", "name": "The Spirit of Persia","nation": "Iran",        "episode": 40, "match": "Belgium vs Iran",        "portrait": "/special-cards/legend-040-portrait.png", "landscape": "/special-cards/legend-040-landscape.png" }
+  ]
+}

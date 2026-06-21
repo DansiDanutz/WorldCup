@@ -1,0 +1,67 @@
+'use client';
+
+import { useState } from 'react';
+
+type Card = {
+  number: string;
+  name: string;
+  nation: string;
+  episode: number;
+  match: string;
+  portrait: string;
+  landscape: string;
+};
+
+// Mirrors public/special-cards/cards.json — the WorldCup26 Legends collection.
+const CARDS: Card[] = [
+  { number: '037', name: 'The Island Elder',    nation: 'Curaçao',      episode: 37, match: 'Ecuador vs Curaçao',    portrait: '/special-cards/legend-037-portrait.png', landscape: '/special-cards/legend-037-landscape.png' },
+  { number: '038', name: 'The Eagle-Keeper',    nation: 'Tunisia',      episode: 38, match: 'Japan vs Tunisia',      portrait: '/special-cards/legend-038-portrait.png', landscape: '/special-cards/legend-038-landscape.png' },
+  { number: '039', name: 'The Falconer',        nation: 'Saudi Arabia', episode: 39, match: 'Spain vs Saudi Arabia', portrait: '/special-cards/legend-039-portrait.png', landscape: '/special-cards/legend-039-landscape.png' },
+  { number: '040', name: 'The Spirit of Persia',nation: 'Iran',         episode: 40, match: 'Belgium vs Iran',       portrait: '/special-cards/legend-040-portrait.png', landscape: '/special-cards/legend-040-landscape.png' },
+];
+
+export default function CollectionPage() {
+  const [orientation, setOrientation] = useState<'portrait' | 'landscape'>('portrait');
+
+  return (
+    <main style={{ minHeight: '100vh', background: 'radial-gradient(1200px 600px at 50% -10%, #11204a 0%, #060814 60%)', color: '#f5f3ee', padding: '48px 20px 80px' }}>
+      <div style={{ maxWidth: 1180, margin: '0 auto' }}>
+        <p style={{ letterSpacing: 4, fontSize: 13, color: '#e9c46a', textTransform: 'uppercase', margin: 0 }}>WorldCup26 Legends</p>
+        <h1 style={{ fontSize: 42, fontWeight: 800, margin: '6px 0 4px' }}>The Collection</h1>
+        <p style={{ color: '#a9b2c7', maxWidth: 640, margin: '0 0 22px' }}>
+          Every episode hides one Mystery Supporter — a Legend. Collect them all.
+        </p>
+
+        <div style={{ display: 'inline-flex', gap: 6, background: '#0e1430', border: '1px solid #243056', borderRadius: 999, padding: 4, marginBottom: 28 }}>
+          {(['portrait', 'landscape'] as const).map((o) => (
+            <button key={o} onClick={() => setOrientation(o)}
+              style={{ border: 'none', cursor: 'pointer', padding: '8px 18px', borderRadius: 999, fontSize: 13, fontWeight: 700, textTransform: 'capitalize',
+                background: orientation === o ? '#e9c46a' : 'transparent', color: orientation === o ? '#0a0e1f' : '#cdd5e6' }}>
+              {o}
+            </button>
+          ))}
+        </div>
+
+        <div style={{ display: 'grid', gap: 22, gridTemplateColumns: orientation === 'portrait' ? 'repeat(auto-fill, minmax(220px, 1fr))' : 'repeat(auto-fill, minmax(360px, 1fr))' }}>
+          {CARDS.map((c) => (
+            <figure key={c.number} style={{ margin: 0, background: '#0c1124', border: '1px solid #26315a', borderRadius: 16, overflow: 'hidden', boxShadow: '0 16px 40px rgba(0,0,0,.45)' }}>
+              <img src={orientation === 'portrait' ? c.portrait : c.landscape} alt={`Legend ${c.number} — ${c.name}`} loading="lazy"
+                style={{ width: '100%', aspectRatio: orientation === 'portrait' ? '9 / 16' : '16 / 9', objectFit: 'cover', display: 'block' }} />
+              <figcaption style={{ padding: '12px 14px 14px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                  <strong style={{ fontSize: 16 }}>{c.name}</strong>
+                  <span style={{ color: '#e9c46a', fontWeight: 800, fontSize: 13 }}>#{c.number}</span>
+                </div>
+                <div style={{ color: '#9aa6c2', fontSize: 12, marginTop: 3 }}>{c.nation} · Ep.{c.episode} · {c.match}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <p style={{ color: '#7d87a3', fontSize: 13, marginTop: 32 }}>
+          New Legend every matchday at <a href="https://worldcup26.world" style={{ color: '#e9c46a' }}>worldcup26.world</a> — free, just for fun, no prizes.
+        </p>
+      </div>
+    </main>
+  );
+}
