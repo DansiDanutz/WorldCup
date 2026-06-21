@@ -4,7 +4,6 @@ import {
   BookOpen,
   CalendarClock,
   Check,
-  ChevronDown,
   ChevronUp,
   ArrowRight,
   ClipboardCopy,
@@ -28,6 +27,7 @@ import {
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 
+import { CardViewControl } from "@/components/card-view-control";
 import { HeroSwiper } from "@/components/hero-swiper";
 import { isFunMode } from "@/lib/fun-mode";
 import { KickoffCountdown } from "@/components/kickoff-countdown";
@@ -103,42 +103,6 @@ type AgentTicketRequest = {
   acceptedAt: string | null;
   ticketId: string | null;
 };
-
-function CardViewControl({
-  controlsId,
-  expanded,
-  label,
-  compactText,
-  expandedText,
-  onToggle,
-}: {
-  controlsId: string;
-  expanded: boolean;
-  label: string;
-  compactText: string;
-  expandedText: string;
-  onToggle: () => void;
-}) {
-  return (
-    <div className={`card-view-control ${expanded ? "is-expanded" : "is-compact"}`}>
-      <div className="card-view-control__copy">
-        <span>{expanded ? "Full view" : "Compact view"}</span>
-        <strong>{expanded ? expandedText : compactText}</strong>
-      </div>
-      <button
-        aria-controls={controlsId}
-        aria-expanded={expanded}
-        aria-label={`${expanded ? "Minimize" : "Maximize"} ${label}`}
-        className="card-view-control__button"
-        onClick={onToggle}
-        type="button"
-      >
-        {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-        {expanded ? "Minimize" : "Maximize"}
-      </button>
-    </div>
-  );
-}
 
 const pickColorClasses = ["pick-color-one", "pick-color-two", "pick-color-three"] as const;
 const ownerAdminEmail = "semebitcoin@gmail.com";

@@ -2,8 +2,6 @@
 
 import {
   ArrowRight,
-  ChevronDown,
-  ChevronUp,
   ClipboardCopy,
   Crown,
   Gift,
@@ -14,6 +12,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
+import { CardViewControl } from "@/components/card-view-control";
 import { formatMoneyAmount } from "@/lib/economy";
 import { isFunMode } from "@/lib/fun-mode";
 import { formatPoints } from "@/lib/scoring";
@@ -340,19 +339,15 @@ export function MyStanding() {
             )}
           </div>
           {data ? (
-            <div className="card-disclosure card-disclosure--standing">
-              <button
-                aria-controls="standing-leaderboard-modal"
-                aria-haspopup="dialog"
-                className="card-disclosure__button"
-                onClick={() => setStandingModalOpen(true)}
-                type="button"
-              >
-                <Trophy size={16} />
-                Open leaderboard details
-                <ChevronDown size={16} />
-              </button>
-            </div>
+            <CardViewControl
+              compactText="Rank and points summary"
+              controlsId="standing-leaderboard-modal"
+              expanded={standingModalOpen}
+              expandedText="Leaderboard details open"
+              hasPopup="dialog"
+              label="standing details"
+              onToggle={() => setStandingModalOpen((current) => !current)}
+            />
           ) : null}
         </div>
 
@@ -463,20 +458,14 @@ export function MyStanding() {
             )}
           </div>
           {hasReferrals ? (
-            <div className="card-disclosure card-disclosure--standing">
-              <button
-                aria-controls="standing-referrals-list"
-                aria-expanded={referralsListOpen}
-                className="card-disclosure__button"
-                onClick={() => setReferralsOpen((current) => !current)}
-                type="button"
-              >
-                {referralsListOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                {referralsListOpen
-                  ? "Show referral summary"
-                  : `Show ${referralCount} referral position${referralCount === 1 ? "" : "s"}`}
-              </button>
-            </div>
+            <CardViewControl
+              compactText={`${referralCount} invited summary`}
+              controlsId="standing-referrals-list"
+              expanded={referralsListOpen}
+              expandedText={`${referralCount} referral position${referralCount === 1 ? "" : "s"} visible`}
+              label="referral positions"
+              onToggle={() => setReferralsOpen((current) => !current)}
+            />
           ) : null}
         </div>
       </div>
@@ -555,18 +544,14 @@ export function MyStanding() {
               earn your next free one.
             </p>
           </div>
-          <div className="card-disclosure card-disclosure--standing">
-            <button
-              aria-controls="standing-agent-code"
-              aria-expanded={agentCodeOpen}
-              className="card-disclosure__button"
-              onClick={() => setAgentCodeOpen((current) => !current)}
-              type="button"
-            >
-              {agentCodeOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-              {agentCodeOpen ? "Hide sellable code" : "Show sellable code"}
-            </button>
-          </div>
+          <CardViewControl
+            compactText="Code hidden; stats still visible"
+            controlsId="standing-agent-code"
+            expanded={agentCodeOpen}
+            expandedText="Sellable code visible"
+            label="agent sellable code"
+            onToggle={() => setAgentCodeOpen((current) => !current)}
+          />
         </div>
       ) : null}
 
