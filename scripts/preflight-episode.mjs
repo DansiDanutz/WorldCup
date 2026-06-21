@@ -4,6 +4,8 @@
 // Usage: node scripts/preflight-episode.mjs <episodeDir> <epNumber>
 import fs from 'node:fs';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
+import { createRequire } from 'node:module';
 
 const dir = process.argv[2];
 const epNum = process.argv[3]; // e.g. "33"
@@ -72,6 +74,24 @@ if (/x\d\.\d{2}\b|\bodds\b|\bbet(ting)?\b|\bwager\b|\bstake\b|\bcoef\b/i.test(sh
 // 9) NO SUBTITLES — banned sentence props (rule #10)
 if (/<LowerThird[^>]*\sline=/.test(scene)) FAIL('LowerThird line= sentence (no-subtitles rule)');
 if (/<HistoryPlate[^>]*\snote=/.test(scene)) FAIL('HistoryPlate note= sentence (no-subtitles rule)');
+
+// 11) NO VO OVERLAP / NO SPEED-UP (rule #12) — each line's audio must finish before the next starts
+try {
+  const req = createRequire(import.meta.url);
+  let ff = 'ffmpeg';
+  for (const p of [path.join(dir, 'node_modules/ffmpeg-static'), 'ffmpeg-static']) { try { ff = req(p); break; } catch {} }
+  const durOf = (f) => { try { const o = execSync(`"${ff}" -i "${path.join(dir, f)}" 2>&1 || true`).toString(); const mm = o.match(/Duration: (\d+):(\d+):([\d.]+)/); return mm ? (+mm[1] * 3600 + +mm[2] * 60 + +mm[3]) : 0; } catch { return 0; } };
+  const DUR = +((r('match.html').match(/const DURATION = ([\d.]+)/) || [])[1] || 300);
+  let over = 0;
+  for (let i = 0; i < nLines; i++) {
+    const d = durOf(`audio/line_${String(i).padStart(2, '0')}.mp3`);
+    const next = i < nLines - 1 ? lines[i + 1].at : DUR;
+    if (lines[i].at + d > next + 0.15) { over++; if (over <= 4) FAIL(`VO OVERLAP/speed-up: line ${i} (${d.toFixed(1)}s @${lines[i].at}s) runs past next @${next}s — run scripts/retime-episode.mjs`); }
+  }
+} catch (e) { WARN('could not measure VO durations (ffmpeg): ' + e.message); }
+
+// 12) NO CLIP LOOP (rule #11) — a ~5s source must not be stretched into a long looping window
+for (const c of clips.clips || []) if ((c.dur || 0) > 10.5) FAIL(`clip LOOPS >1×: ${c.id || c.src} dur ${c.dur}s (cap <=9s — run retimer)`);
 
 // 10) Syntax sanity — balanced braces/parens
 let b = 0, p = 0; for (const ch of scene) { if (ch === '{') b++; else if (ch === '}') b--; else if (ch === '(') p++; else if (ch === ')') p--; }

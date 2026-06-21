@@ -286,8 +286,17 @@ match-kit, and the de-duped `match-scenes.jsx`.
 VO complete (one mp3 per line), **music cue files present**, every clip/squad src exists,
 **no clip used twice** (no-repeat), no leftover template text (Wunderteam/Nashama/FlagAUT…),
 correct on-screen episode number, **no betting/odds wording** (monetization), **no
-`line=`/`note=` subtitles**, balanced JS syntax. A render that starts with a red preflight
-is a process failure — fix first.
+`line=`/`note=` subtitles**, **no VO overlap / VO speed-up** (rule #12), **no clip looping
+>1×** (rule #11, any clip `dur`>~10s fails), balanced JS syntax. A render that starts with
+a red preflight is a process failure — fix first.
+
+**MANDATORY RETIME STEP (after VO, before render):** run
+`node scripts/retime-episode.mjs <dir> <ffmpeg>`. It measures each VO line, re-spaces the
+narration so NO line overlaps the next (Brian is NEVER sped up — `mux.mjs` keeps `tempo=1`),
+**extends `DURATION` past 300s as needed** (writes `DURATION.txt`; render/mux read it), then
+piecewise-remaps the scene timings (`scripts/remap-scenes.mjs`) and caps every clip `dur`≤9s
+so nothing loops more than once. This is why Ep38 (sped-up + overlapping VO, looping clips)
+was wrong; Ep39+ run this step and the preflight enforces it.
 
 **Ep33+ PERFECTION BAR (owner-mandated):** everything must be right the first time —
 story, verified mystery+history, Brian VO, music, image/animation quality, no-repeat
