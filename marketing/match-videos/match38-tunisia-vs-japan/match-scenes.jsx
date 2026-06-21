@@ -27,14 +27,6 @@ function SceneColdOpen() {
         position: 'absolute', inset: 0,
         background: `radial-gradient(ellipse at center, rgba(231,0,19,${(0.45 * beat).toFixed(3)}) 0%, transparent 62%)`,
       }} />
-      {lt > 1.2 && lt < 12.2 && (
-        <div style={{
-          position: 'absolute', left: 0, right: 0, bottom: 170, textAlign: 'center', zIndex: 22,
-          opacity: Math.min(1, (lt - 1.2) / 1.5) * (lt > 11.0 ? Math.max(0, (12.2 - lt) / 1.2) : 1) * (0.55 + 0.45 * beat),
-          fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 30, color: '#cdb98a',
-          letterSpacing: '0.5em', textTransform: 'uppercase',
-        }}>one samurai · one eagle · one door</div>
-      )}
       <Vignette strength={0.8} />
       {lt > 12.6 && (
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 34, opacity: titleP, zIndex: 22 }}>
@@ -108,7 +100,7 @@ function SceneStadium() {
 }
 
 // ── 4. History (44–98.5): the real story between the two nations ────────────
-function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, stamp }) {
+function HistoryPlate({ start, end, year, venue, score, accent = MV.gold, stamp }) {
   const t = useTime();
   if (t < start || t > end) return null;
   const p = Easing.easeOutBack(clamp((t - start) / 0.8, 0, 1));
@@ -128,7 +120,6 @@ function HistoryPlate({ start, end, year, venue, score, note, accent = MV.gold, 
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 30, color: MV.muted, letterSpacing: '0.34em' }}>{venue}</div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 130, color: accent, lineHeight: 1.05, margin: '14px 0 6px', textShadow: `0 0 60px ${accent}44` }}>{score}</div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 44, color: MV.text, letterSpacing: '0.08em' }}>{year}</div>
-        {note && <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 27, color: MV.muted, marginTop: 14, maxWidth: 760 }}>{note}</div>}
         {stamp && stampP > 0 && (
           <div style={{
             position: 'absolute', top: -34, right: -60, transform: `rotate(-12deg) scale(${stampP})`,
@@ -156,9 +147,6 @@ function SceneHistory() {
       {/* chapter header */}
       <div style={{ position: 'absolute', top: 116, left: 0, right: 0, textAlign: 'center', zIndex: 26 }}>
         <Kicker size={28}>Chapter One · The Story</Kicker>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: MV.text, letterSpacing: '0.05em', marginTop: 16, textShadow: '0 4px 22px rgba(0,0,0,0.8)' }}>
-          HOW DO YOU REMAKE A NATION?
-        </div>
       </div>
       {/* flag pair, always present */}
       <div style={{ position: 'absolute', bottom: 132, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 40, zIndex: 26, opacity: 0.95 }}>
@@ -167,11 +155,11 @@ function SceneHistory() {
         <FlagTUN w={108} />
       </div>
       {/* beats synced to the narration */}
-      <HistoryPlate start={S + 1.0} end={S + 12} year="THE QUESTION" venue="ONE NIGHT · TWO WORLDS" score="REMADE" note="Two nations that built themselves from almost nothing — through football. Tonight, the door to the knockouts stands open for just one of them." accent={MV.gold} />
-      <HistoryPlate start={S + 12} end={S + 23} year="THE SAMURAI" venue="FROM NO TRADITION" score="JAPAN" note="Forty years ago, no football culture at all. Now sons play in Madrid, Liverpool, Cologne — a whole nation remade in a single generation." accent={MV.jpnLight} />
-      <HistoryPlate start={S + 23} end={S + 33.5} year="THE EAGLES" venue="MOST CONSISTENT IN AFRICA" score="TUNISIA" note="Twelve million people, the most reliable African qualifier in World Cup history. Eight times on the grandest stage." accent={MV.tun} />
-      <HistoryPlate start={S + 33.5} end={S + 44} year="THE SCAR" venue="THE SAME WOUND" score="SO CLOSE" note="Both have reached the very edge of the knockouts. Both have fallen, agonisingly, just short. Tonight that ghost is watching." accent={MV.gold} stamp="JUST SHORT" />
-      <HistoryPlate start={S + 44} end={S + 54} year="2026" venue="THE DOOR IS RIGHT THERE" score="TONIGHT" note="Precision against passion. A match that defies prediction. And the door, for just one of them, is wide open." accent={MV.gold} />
+      <HistoryPlate start={S + 1.0} end={S + 12} year="THE QUESTION" venue="ONE NIGHT · TWO WORLDS" score="REMADE" accent={MV.gold} />
+      <HistoryPlate start={S + 12} end={S + 23} year="THE SAMURAI" venue="FROM NO TRADITION" score="JAPAN" accent={MV.jpnLight} />
+      <HistoryPlate start={S + 23} end={S + 33.5} year="THE EAGLES" venue="MOST CONSISTENT IN AFRICA" score="TUNISIA" accent={MV.tun} />
+      <HistoryPlate start={S + 33.5} end={S + 44} year="THE SCAR" venue="THE SAME WOUND" score="SO CLOSE" accent={MV.gold} stamp="JUST SHORT" />
+      <HistoryPlate start={S + 44} end={S + 54} year="2026" venue="THE DOOR IS RIGHT THERE" score="TONIGHT" accent={MV.gold} />
       <Vignette strength={0.5} />
       <Letterbox />
     </div>
@@ -239,13 +227,13 @@ function SceneJapan() {
         { img: 'assets/squad/jpn-tomiyasu.png', name: 'TAKEHIRO TOMIYASU', role: 'THE STEEL' },
       ]} />
       <Sprite start={106.0} end={116.0}>
-        <LowerThird start={106.5} name="KAORU MITOMA" role="The Burst · Winger" line="The winger with the burst that leaves defenders grasping at air. One yard is all he needs." accent={MV.jpnLight} />
+        <LowerThird start={106.5} name="KAORU MITOMA" role="The Burst · Winger" accent={MV.jpnLight} />
       </Sprite>
       <Sprite start={116.0} end={125.0}>
-        <LowerThird start={116.5} name="TAKEFUSA KUBO" role="The Left Foot · Forward" line="A left foot that can end a match in a single instant." accent={MV.jpnLight} />
+        <LowerThird start={116.5} name="TAKEFUSA KUBO" role="The Left Foot · Forward" accent={MV.jpnLight} />
       </Sprite>
       <Sprite start={125.0} end={133.5}>
-        <LowerThird start={125.3} name="WATARU ENDO" role="The Foundation · Midfield" line="The quiet foundation who does the work no one else will — Ueda, Minamino, Tomiyasu behind him: pace, craft, and steel." accent={MV.jpnLight} />
+        <LowerThird start={125.3} name="WATARU ENDO" role="The Foundation · Midfield" accent={MV.jpnLight} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -282,13 +270,13 @@ function SceneTunisia() {
         { img: 'assets/squad/tun-talbi.png', name: 'MONTASSAR TALBI', role: 'THE ROCK' },
       ]} />
       <Sprite start={144.5} end={154.5}>
-        <LowerThird start={144.8} name="HANNIBAL MEJBRI" role="The Tornado · Midfield" line="A Manchester United academy son who chose Tunisia — controlled chaos, pressing and harrying until something breaks." accent={MV.tunLight} />
+        <LowerThird start={144.8} name="HANNIBAL MEJBRI" role="The Tornado · Midfield" accent={MV.tunLight} />
       </Sprite>
       <Sprite start={154.5} end={159.0}>
-        <LowerThird start={154.7} name="ELIAS ACHOURI" role="The Engine · Winger" line="The tireless engine who shadows his man step for step — eleven men who fear absolutely no one." accent={MV.tunLight} />
+        <LowerThird start={154.7} name="ELIAS ACHOURI" role="The Engine · Winger" accent={MV.tunLight} />
       </Sprite>
       <Sprite start={159.0} end={164.5}>
-        <LowerThird start={159.2} name="ELLYES SKHIRI" role="The Heartbeat · Midfield" line="The heartbeat of Carthage. Bronn and Talbi the wall. They have beaten giants before — tonight, they smell another." accent={MV.tunLight} />
+        <LowerThird start={159.2} name="ELLYES SKHIRI" role="The Heartbeat · Midfield" accent={MV.tunLight} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -408,9 +396,6 @@ function PredictionCard({ start }) {
             <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.text }}>TUNISIA</span>
           </div>
         </div>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 600, fontSize: 30, color: MV.muted, marginTop: 36 }}>
-          In our story: the 91st minute. Mitoma's burst beats Achouri to the byline, the cut-back finds Kubo unmarked — and the left foot swings it in. The door opens for the Samurai. The real one is yours to watch.
-        </div>
       </div>
     </div>
   );
@@ -427,13 +412,10 @@ function SceneVerdict() {
         <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 24, padding: '52px 84px', minWidth: 900, backdropFilter: 'blur(6px)' }}>
           <Kicker size={26}>Group F · Our Prediction</Kicker>
           <div style={{ marginTop: 26 }}>
-            <StatLine start={S + 0.8} delay={0.0} label="Japan" value="through · the door swings open" accent={MV.jpnLight} />
-            <StatLine start={S + 0.8} delay={0.25} label="Tunisia" value="heartbroken · just short once more" accent={MV.tunLight} />
-            <StatLine start={S + 0.8} delay={0.5} label="OUR PREDICTION" value="Japan 2 — 1 Tunisia (91' Kubo)" accent={MV.text} />
-            <StatLine start={S + 0.8} delay={0.75} label="THE REAL ONE" value="is yours to watch" accent={MV.gold} />
-          </div>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 30, color: MV.gold, marginTop: 38, textAlign: 'center' }}>
-            One swing of a left foot can decide everything. That is the cruelty — and the beauty — of the World Cup.
+            <StatLine start={S + 0.8} delay={0.0} label="JAPAN" value="THROUGH" accent={MV.jpnLight} />
+            <StatLine start={S + 0.8} delay={0.25} label="TUNISIA" value="JUST SHORT" accent={MV.tunLight} />
+            <StatLine start={S + 0.8} delay={0.5} label="OUR PREDICTION" value="JPN 2 — 1 TUN" accent={MV.text} />
+            <StatLine start={S + 0.8} delay={0.75} label="91' KUBO" value="THE WINNER" accent={MV.gold} />
           </div>
         </div>
       </div>
@@ -494,9 +476,6 @@ function SceneMystery() {
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 22, color: '#e8c97a', letterSpacing: '0.28em' }}>LEGEND 038</div>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 64, color: '#f6f9ff', letterSpacing: '0.01em', marginTop: 8, lineHeight: 1.05, maxWidth: 540 }}>THE EAGLE-KEEPER</div>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 22, color: '#9fb6e0', letterSpacing: '0.16em', marginTop: 14, textTransform: 'uppercase' }}>The Old Desert Spirit · Tunisia</div>
-              <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 500, fontSize: 22, color: '#c9d6ef', marginTop: 16, maxWidth: 560, lineHeight: 1.4 }}>
-                An old Carthage elder with an eagle on his arm and a darbouka in his hands. They say while his eagle still circles, the Eagles never truly fall — and tonight he never stopped drumming.
-              </div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginTop: 24, background: 'rgba(255,210,74,0.14)', border: '1px solid rgba(255,210,74,0.55)', borderRadius: 999, padding: '12px 28px' }}>
                 <span style={{ fontSize: 26 }}>✦</span>
                 <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 24, color: MV.gold, letterSpacing: '0.08em' }}>COLLECT IT · worldcup26.world</span>
@@ -523,9 +502,9 @@ function SceneApp() {
   const S = 270;
   const inP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const cards = [
-    { name: 'TUNISIA', coef: 'x3.00', pts: '+3.00', flag: <FlagTUN w={86} /> },
-    { name: 'JAPAN', coef: 'x1.40', pts: '+0.00', flag: <FlagJPN w={86} /> },
-    { name: 'BRAZIL', coef: 'x1.20', pts: '+0.00', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
+    { name: 'TUNISIA', mult: '3× PER GOAL', flag: <FlagTUN w={86} /> },
+    { name: 'JAPAN', mult: '2× PER GOAL', flag: <FlagJPN w={86} /> },
+    { name: 'BRAZIL', mult: '1× PER GOAL', flag: <div style={{ width: 86, height: 57, borderRadius: 6, background: 'linear-gradient(135deg,#159b46 55%,#ffd24a 55%)' }} /> },
   ];
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(160deg, #0d2a20 0%, #07090f 70%)` }}>
@@ -533,9 +512,7 @@ function SceneApp() {
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 46, opacity: inP }}>
         <Kicker color="#7fd6b5" size={30}>The Prediction Game</Kicker>
         <BigTitle size={104} color="#fff" glow={MV.green}>worldcup26.world</BigTitle>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 38, color: '#cfe9de', letterSpacing: '0.04em' }}>
-          Pick 3 teams. Every goal they score… scores for YOU.
-        </div>
+        <Kicker color="#cfe9de" size={30}>Pick 3 Teams</Kicker>
         <div style={{ display: 'flex', gap: 36, marginTop: 12 }}>
           {cards.map((c, i) => {
             const cp = Easing.easeOutBack(clamp((lt - 1.2 - i * 0.35) / 0.7, 0, 1));
@@ -548,14 +525,13 @@ function SceneApp() {
               }}>
                 {c.flag}
                 <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 32, color: '#fff' }}>{c.name}</div>
-                <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 26, color: MV.gold }}>{c.coef}</div>
-                <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 30, color: i === 0 ? '#6ee7a8' : '#9fb2a9' }}>{c.pts}</div>
+                <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 26, color: MV.gold }}>{c.mult}</div>
               </div>
             );
           })}
         </div>
         <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: MV.gold, letterSpacing: '0.06em', marginTop: 8 }}>
-          FREE TO PLAY · UNDERDOGS PAY TRIPLE · LIVE PRIZE POOL
+          free · just for fun · no prizes
         </div>
       </div>
       <Letterbox />
@@ -574,7 +550,7 @@ function SceneCTA() {
       <AmbientParticles start={288} dur={12} count={28} />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
-        <Kicker size={30}>The samurai and the eagle moved you?</Kicker>
+        <Kicker size={30}>WorldCup26 Legends</Kicker>
         <div style={{ marginTop: 24 }}><TitleReveal text="JOIN THE LEGENDS" start={S + 0.5} size={92} color={MV.text} /></div>
       </div>
       <div style={{ position: 'absolute', inset: 0, zIndex: 26 }}>
