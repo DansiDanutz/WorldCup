@@ -1,0 +1,11 @@
+# Large / regenerable media (final video delivered separately; rebuild via README)
+node_modules/
+prep/
+clips/
+assets/
+audio/
+music/
+sfx/
+*.mp4
+*.m4a
+*.log
