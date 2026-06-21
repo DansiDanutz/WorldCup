@@ -206,7 +206,7 @@ async function fetchStylesheetsFromHtml(html, contextPath) {
 
 async function checkPublicUiShell() {
   const routeLandmarks = [
-    ["/", ["Choose 3 Teams", "Pick Teams", "Rules", "Schema", "Leaderboard", "Wallet", "Matches"]],
+    ["/", ["Choose 3 Teams", "Pick Teams", "Rules", "Schema", "Leaderboard", "Login", "Matches"]],
     ["/login", ["Register first", "Continue with Google", "I have an inviter", "Direct signup"]],
     ["/wallet", ["WorldCup Wallet", "Wallet", "Sign in with Google", "USDT"]],
     [
@@ -257,7 +257,7 @@ async function checkPublicUiShell() {
 
     if (path === "/") {
       assert(text.includes("Choose 3 Teams"), `${path} public launch copy did not include the campaign CTA`);
-      assert(text.includes("Agent Deal"), `${path} public launch copy did not include the agent offer`);
+      assert(text.includes("agent+tickets"), `${path} public launch copy did not include the agent offer`);
     }
 
     if (path === "/") {
@@ -586,6 +586,17 @@ async function checkApiRejection(path, init, expectedText) {
   assert(text.includes(expectedText), `${path} rejection body changed unexpectedly`);
 }
 
+async function checkPaidApiRejection(path, init, expectedText) {
+  const { response, text } = await fetchText(path, init);
+
+  if (response.status === 403 && text.includes("free-play mode")) {
+    return;
+  }
+
+  assert(response.status === 401, `${path} expected 401 or free-play 403, got ${response.status}`);
+  assert(text.includes(expectedText), `${path} rejection body changed unexpectedly`);
+}
+
 async function checkSecurityHeaders(response) {
   const requiredHeaders = [
     "content-security-policy",
@@ -603,10 +614,10 @@ async function checkSecurityHeaders(response) {
 
 async function checkDepositReadiness() {
   await checkPage("/wallet", "Wallet");
-  await checkApiRejection("/api/deposits/address", undefined, "Sign in with Google first.");
-  await checkApiRejection("/api/deposits/claims", undefined, "Sign in with Google first.");
-  await checkApiRejection("/api/withdrawals", undefined, "Sign in with Google first.");
-  await checkApiRejection(
+  await checkPaidApiRejection("/api/deposits/address", undefined, "Sign in with Google first.");
+  await checkPaidApiRejection("/api/deposits/claims", undefined, "Sign in with Google first.");
+  await checkPaidApiRejection("/api/withdrawals", undefined, "Sign in with Google first.");
+  await checkPaidApiRejection(
     "/api/deposits/check",
     {
       method: "POST",
@@ -625,7 +636,7 @@ async function checkDepositReadiness() {
     undefined,
     "Unauthorized.",
   );
-  await checkApiRejection(
+  await checkPaidApiRejection(
     "/api/tickets/purchase",
     {
       method: "POST",
