@@ -11,3 +11,6 @@ sfx/
 *.log
 thumb_A.png
 thumb_B.png
+
+.env.local
+.env
