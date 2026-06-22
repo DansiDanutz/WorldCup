@@ -1,5 +1,9 @@
 # Upload Pack — The Legends' Monopoly Cup (Round One)
 
+**FINAL ASSETS (V5 — the pro cut):**
+- Video: `LegendsMonopolyCup_v5_web.mp4` (3:31, 1080p) — Summons + Round-One + Round-Two teaser, real Brian VO, frame-synced.
+- Thumbnail: `assets/THUMBNAIL.png` (1280×720 — WORLD CUP MONOPOLY, 4 stars, WORLDCUP26 BONUS seal)
+
 ## 🎬 TITLE (pick one)
 1. **Messi, Ronaldo, Mbappé & Haaland Play MONOPOLY 🎲 (Ronaldo's in JAIL?!)**
 2. Ronaldo's in JAIL?! 😱 Messi vs Mbappé vs Haaland — World Cup MONOPOLY
@@ -31,8 +35,8 @@ Round two decides everything — and the man behind bars has the most to prove.
 Pick your 3 teams, climb the leaderboard, and collect the legends + rare
 collectible cards. Free to play, just for fun — no prizes, only glory. 🏆
 
-🔔 Subscribe for the WorldCup26 Legends series — a new episode before every big
-World Cup fixture.
+🔔 LIKE · SHARE · SUBSCRIBE for Round Two — the cell is open, and a cornered
+legend with nothing to lose is the most dangerous player on the board.
 
 —
 ℹ️ This is an original AI-animated story for entertainment. 100% AI-generated
@@ -56,7 +60,7 @@ football funny animation, who wins the world cup 2026
 - [ ] Made for kids: **NO** (Pixar style auto-flags as kids → kills fan funding)
 - [ ] Altered/synthetic content disclosure: **YES**
 - [ ] Visibility: Public · Category: Sports (or Film & Animation)
-- [ ] Thumbnail: `thumbnail.jpg` (1 face + ≤4 words)
+- [ ] Thumbnail: `assets/THUMBNAIL.png` (WORLD CUP MONOPOLY + 4 stars + BONUS seal)
 - [ ] Pinned comment: "⚽🎲 Score = buy, assist = move, do nothing = JAIL.
       Ronaldo's locked up after Round 1 — does he escape? Play at worldcup26.world
       (free, no prizes). Who do you want freed first? 👇"
