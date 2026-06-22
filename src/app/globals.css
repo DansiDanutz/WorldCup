@@ -1965,7 +1965,8 @@ svg {
 }
 
 #leaderboard .card-view-control,
-.rules-panel .card-view-control {
+.rules-panel .card-view-control,
+.legend-collection .card-view-control {
   border-color: rgba(255, 226, 154, 0.18);
   background:
     linear-gradient(135deg, rgba(255, 226, 154, 0.1), rgba(84, 224, 179, 0.055)),
@@ -1974,17 +1975,20 @@ svg {
 }
 
 #leaderboard .card-view-control__copy span,
-.rules-panel .card-view-control__copy span {
+.rules-panel .card-view-control__copy span,
+.legend-collection .card-view-control__copy span {
   color: rgba(236, 244, 238, 0.62);
 }
 
 #leaderboard .card-view-control__copy strong,
-.rules-panel .card-view-control__copy strong {
+.rules-panel .card-view-control__copy strong,
+.legend-collection .card-view-control__copy strong {
   color: #ffffff;
 }
 
 #leaderboard .card-view-control__button,
-.rules-panel .card-view-control__button {
+.rules-panel .card-view-control__button,
+.legend-collection .card-view-control__button {
   border-color: rgba(255, 226, 154, 0.28);
   color: #ffe29a;
   background:
@@ -1995,7 +1999,9 @@ svg {
 #leaderboard .card-view-control__button:hover,
 #leaderboard .card-view-control__button:focus-visible,
 .rules-panel .card-view-control__button:hover,
-.rules-panel .card-view-control__button:focus-visible {
+.rules-panel .card-view-control__button:focus-visible,
+.legend-collection .card-view-control__button:hover,
+.legend-collection .card-view-control__button:focus-visible {
   border-color: rgba(255, 226, 154, 0.52);
   background:
     linear-gradient(180deg, rgba(255, 226, 154, 0.18), rgba(84, 224, 179, 0.08)),
@@ -10215,6 +10221,240 @@ html {
   font: 700 13px / 1.35 var(--font-sans);
 }
 
+.legend-album {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+
+.legend-feature-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 207, 102, 0.2);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 207, 102, 0.12), rgba(255, 255, 255, 0.05)),
+    rgba(0, 0, 0, 0.14);
+}
+
+.legend-feature-card__image {
+  position: relative;
+  min-height: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #061911;
+}
+
+.legend-feature-card__image img {
+  object-fit: cover;
+}
+
+.legend-feature-card.is-locked .legend-feature-card__image img {
+  filter: blur(5px) grayscale(0.42) brightness(0.62);
+  transform: scale(1.04);
+}
+
+.legend-feature-card__state {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.48);
+  font: 900 12px / 1 var(--font-sans);
+}
+
+.legend-feature-card__state.is-collected {
+  color: #10311f;
+  background: linear-gradient(180deg, #d8ffe7, #69dfad);
+}
+
+.legend-feature-card__body {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  min-width: 0;
+  padding: var(--space-5);
+}
+
+.legend-feature-card__body h2 {
+  margin: 0;
+  color: #ffffff;
+  font: 900 26px / 1.08 var(--font-sans);
+}
+
+.legend-feature-card__body p:not(.wc-card-eyebrow),
+.legend-feature-card__body small {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font: 750 14px / 1.35 var(--font-sans);
+}
+
+.legend-feature-card__body small {
+  color: #a8ebd2;
+}
+
+.legend-feature-card__actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.legend-feature-card__actions .button {
+  justify-content: center;
+  min-width: 0;
+  white-space: normal;
+}
+
+.legend-progress-panel {
+  display: grid;
+  align-content: space-between;
+  gap: var(--space-4);
+  min-width: 0;
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.17);
+}
+
+.legend-progress-panel p,
+.legend-progress-panel strong,
+.legend-progress-panel span,
+.legend-progress-panel dt,
+.legend-progress-panel dd {
+  margin: 0;
+}
+
+.legend-progress-panel strong {
+  display: block;
+  margin-top: 5px;
+  color: #ffffff;
+  font: 900 32px / 1 var(--font-sans);
+}
+
+.legend-progress-panel > div:first-child > span {
+  display: block;
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.72);
+  font: 750 13px / 1.35 var(--font-sans);
+}
+
+.legend-progress-panel__bar {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.legend-progress-panel__bar span {
+  display: block;
+  height: 100%;
+  min-width: 4px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #69dfad, #ffcf66);
+}
+
+.legend-progress-panel__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.legend-progress-panel__stats div {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.legend-progress-panel__stats dt {
+  color: rgba(255, 255, 255, 0.62);
+  font: 900 11px / 1 var(--font-sans);
+  text-transform: uppercase;
+}
+
+.legend-progress-panel__stats dd {
+  color: #ffffff;
+  font: 900 22px / 1 var(--font-sans);
+}
+
+.legend-filter-bar {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: var(--space-5);
+}
+
+.legend-collection .card-view-control {
+  margin: var(--space-5) 0 0;
+}
+
+.legend-filter-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+  min-height: 42px;
+  padding: 9px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.74);
+  background: rgba(255, 255, 255, 0.07);
+  cursor: pointer;
+  font: 850 13px / 1 var(--font-sans);
+}
+
+.legend-filter-button span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.legend-filter-button strong {
+  flex: 0 0 auto;
+  min-width: 28px;
+  padding: 5px 7px;
+  border-radius: 999px;
+  color: #10241f;
+  background: rgba(255, 255, 255, 0.82);
+  text-align: center;
+}
+
+.legend-filter-button.is-active {
+  border-color: rgba(255, 207, 102, 0.72);
+  color: #1b1308;
+  background: linear-gradient(180deg, #ffe29a, #ffcf66);
+}
+
+.legend-filter-button.is-active strong {
+  color: #ffffff;
+  background: rgba(16, 36, 31, 0.72);
+}
+
+.legend-card-empty {
+  margin: var(--space-5) 0 0;
+  padding: var(--space-5);
+  border: 1px dashed rgba(255, 207, 102, 0.28);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.74);
+  text-align: center;
+  font: 750 14px / 1.45 var(--font-sans);
+}
+
 .legend-card-grid,
 .episode-grid {
   display: grid;
@@ -10455,9 +10695,17 @@ html {
     display: grid;
   }
 
+  .legend-album {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .legend-collection__controls {
     justify-content: flex-start;
     min-width: 0;
+  }
+
+  .legend-filter-bar {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .episode-library__back {
@@ -10478,6 +10726,24 @@ html {
   .legend-collection__hero h1,
   .episode-library__header h2 {
     font-size: 25px;
+  }
+
+  .legend-feature-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .legend-feature-card__body {
+    padding: var(--space-4);
+  }
+
+  .legend-feature-card__body h2 {
+    font-size: 23px;
+  }
+
+  .legend-feature-card__actions,
+  .legend-filter-bar,
+  .legend-progress-panel__stats {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .legend-card-grid,

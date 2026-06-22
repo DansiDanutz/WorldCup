@@ -182,7 +182,7 @@ describe("WorldCup design system integration", () => {
 
   it("turns Legends episode assets into collectible cards unlocked from YouTube", () => {
     assert.match(predictionsPage, /<LegendCardCollection \/>/);
-    assert.match(predictionsPage, /each live episode links to a Legend\s+card/);
+    assert.match(predictionsPage, /Every YouTube story becomes a collectible Legend card/);
     assert.match(youtubeLegendEpisodes, /export const YOUTUBE_LEGEND_EPISODES/);
     assert.match(youtubeLegendEpisodes, /export const YOUTUBE_LEGEND_BONUS_VIDEOS/);
     assert.equal(youtubeLegendEpisodes.match(/\bep:\s*\d+/g)?.length, 42);
@@ -224,7 +224,27 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /worldcup_legend_opened_cards/);
     assert.match(legendCardCollection, /worldcup_legend_watched_cards/);
     assert.match(legendCardCollection, /unlockableCardIds/);
+    assert.match(legendCardCollection, /import \{ CardViewControl \} from "@\/components\/card-view-control";/);
+    assert.match(legendCardCollection, /compactLegendCardCount = 12/);
+    assert.match(legendCardCollection, /type LegendCardFilter = "all" \| "stories" \| "bonus" \| "ready" \| "collected" \| "locked"/);
+    assert.match(legendCardCollection, /const legendCardFilters/);
+    assert.match(legendCardCollection, /function getEpisodeLabel\(card: LegendCard\)/);
+    assert.match(legendCardCollection, /const focusCard =/);
+    assert.match(legendCardCollection, /const filteredCards = useMemo/);
+    assert.match(legendCardCollection, /const visibleCards = collectionExpanded/);
+    assert.match(legendCardCollection, /function chooseCardFilter\(nextFilter: LegendCardFilter\)/);
     assert.match(legendCardCollection, /id="legend-cards"/);
+    assert.match(legendCardCollection, /className="legend-album"/);
+    assert.match(legendCardCollection, /className=\{`legend-feature-card/);
+    assert.match(legendCardCollection, /Latest from YouTube/);
+    assert.match(legendCardCollection, /Album progress/);
+    assert.match(legendCardCollection, /className="legend-filter-bar"/);
+    assert.match(legendCardCollection, /className=\{`legend-filter-button/);
+    assert.match(legendCardCollection, /<CardViewControl/);
+    assert.match(legendCardCollection, /controlsId="legend-card-grid"/);
+    assert.match(legendCardCollection, /label="Legend card album"/);
+    assert.match(legendCardCollection, /id="legend-card-grid"/);
+    assert.match(legendCardCollection, /visibleCards\.map/);
     assert.match(legendCardCollection, /legend-card-\$\{card\.id\}/);
     assert.match(legendCardCollection, /window\.open\(card\.youtube,\s*"_blank"/);
     assert.match(legendCardCollection, /Open YouTube/);
@@ -250,6 +270,19 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /returnTo:\s*"\/predictions#legend-cards"/);
     assert.match(legendCardCollection, /className="legend-sync-link"/);
     assert.match(globalsCss, /\.legend-sync-link\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a/);
+    assert.match(globalsCss, /\.legend-album\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1\.35fr\)\s*minmax\(280px,\s*0\.65fr\);/);
+    assert.match(globalsCss, /\.legend-feature-card\s*{[\s\S]*?grid-template-columns:\s*minmax\(180px,\s*260px\)\s*minmax\(0,\s*1fr\);/);
+    assert.match(globalsCss, /\.legend-feature-card\.is-locked \.legend-feature-card__image img\s*{[\s\S]*?filter:\s*blur\(5px\)/);
+    assert.match(globalsCss, /\.legend-progress-panel\s*{[\s\S]*?align-content:\s*space-between;/);
+    assert.match(globalsCss, /\.legend-progress-panel__bar span\s*{[\s\S]*?background:\s*linear-gradient\(90deg,\s*#69dfad,\s*#ffcf66\);/);
+    assert.match(globalsCss, /\.legend-filter-bar\s*{[\s\S]*?grid-template-columns:\s*repeat\(6,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /\.legend-collection \.card-view-control\s*{[\s\S]*?margin:\s*var\(--space-5\)\s*0\s*0;/);
+    assert.match(globalsCss, /\.legend-filter-button\.is-active\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#ffcf66\)/);
+    assert.match(globalsCss, /\.legend-card-empty\s*{/);
+    assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-album\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
+    assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-filter-bar\s*{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /@media \(max-width:\s*640px\)\s*{[\s\S]*?\.legend-feature-card\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
+    assert.match(globalsCss, /@media \(max-width:\s*640px\)\s*{[\s\S]*?\.legend-feature-card__actions,[\s\S]*?\.legend-filter-bar,[\s\S]*?\.legend-progress-panel__stats\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
     assert.match(loginPage, /returnToParam/);
     assert.match(loginPage, /returnTo=\{returnToParam \?\? null\}/);
     assert.match(loginRegister, /normalizePostLoginRedirect\(returnTo\)/);
@@ -269,6 +302,9 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /Unlock card/);
     assert.match(legendCardCollection, /Enable voice/);
     assert.match(legendCardCollection, /isUnlocked \? "is-unlocked" : "is-locked"/);
+    assert.match(dashboard, /<strong>Cards<\/strong>/);
+    assert.match(dashboard, /<small>Legend album<\/small>/);
+    assert.match(dashboard, /Collect cards/);
     assert.match(dashboard, /href="\/predictions#legend-cards"/);
     assert.match(dashboard, /Open & collect/);
     assert.match(dashboard, /Open YouTube, listen to the story in the app/);
@@ -278,6 +314,8 @@ describe("WorldCup design system integration", () => {
     assert.match(predictionsPage, /LEGEND_CARDS/);
     assert.match(predictionsPage, /legendCardAnchorByEpisode/);
     assert.match(predictionsPage, /href=\{`\/predictions#\$\{legendCardAnchor\}`\}/);
+    assert.match(predictionsPage, /Legend Story Cards/);
+    assert.match(predictionsPage, /Every YouTube story becomes a collectible Legend card/);
     assert.match(predictionsPage, /Open & collect/);
     assert.match(globalsCss, /\.legend-card-grid/);
     assert.match(globalsCss, /\.legend-collection\s*{[\s\S]*?scroll-margin-top:\s*120px;/);

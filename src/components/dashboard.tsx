@@ -1126,8 +1126,8 @@ export function Dashboard({
             <Link className="nav-item" href={{ pathname: "/predictions" }}>
               <Sparkles size={16} />
               <span className="nav-item__copy">
-                <strong>Predictions</strong>
-                <small>Cards & videos</small>
+                <strong>Cards</strong>
+                <small>Legend album</small>
               </span>
             </Link>
             {!funMode ? (
@@ -1180,7 +1180,7 @@ export function Dashboard({
                 </Link>
                 <Link href={{ pathname: "/predictions" }}>
                   <Sparkles size={16} />
-                  Predictions
+                  Collect cards
                 </Link>
                 <a href="#invite">
                   <Users size={16} />

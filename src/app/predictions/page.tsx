@@ -31,11 +31,11 @@ export default function PredictionsPage() {
           <div className="episode-library__header">
             <div>
               <p className="wc-card-eyebrow">Episode library</p>
-              <h2 id="episode-library-title">Match Predictions</h2>
+              <h2 id="episode-library-title">Legend Story Cards</h2>
               <p>
-                Story predictions from the WorldCup26 Legends series. {liveCount} of{" "}
-                {PREDICTIONS.length} episodes are live, and each live episode links to a Legend
-                card.
+                Every YouTube story becomes a collectible Legend card. {liveCount} of{" "}
+                {PREDICTIONS.length} episodes are live, and each live episode links straight to
+                the card it unlocks.
               </p>
             </div>
             <Link className="button secondary episode-library__back" href={{ pathname: "/" }}>

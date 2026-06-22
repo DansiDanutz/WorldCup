@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check, ExternalLink, LockKeyhole, LogIn, Sparkles, Volume2, VolumeX } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
+import { CardViewControl } from "@/components/card-view-control";
 import { LEGEND_CARDS, type LegendCard } from "@/lib/legend-cards";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 
@@ -12,8 +13,33 @@ const unlockedStorageKey = "worldcup_legend_unlocked_cards";
 const openedStorageKey = "worldcup_legend_opened_cards";
 const watchedStorageKey = "worldcup_legend_watched_cards";
 const storageEventName = "worldcup:legend-card-storage";
+const compactLegendCardCount = 12;
 const validCardIds = new Set(LEGEND_CARDS.map((card) => card.id));
 const unlockableCardIds = new Set(LEGEND_CARDS.filter((card) => card.youtube).map((card) => card.id));
+
+type LegendCardFilter = "all" | "stories" | "bonus" | "ready" | "collected" | "locked";
+
+const legendCardFilterLabels: Record<LegendCardFilter, string> = {
+  all: "All cards",
+  stories: "Stories",
+  bonus: "Bonus",
+  ready: "Ready",
+  collected: "Collected",
+  locked: "Locked",
+};
+
+const legendCardFilters: Array<{ id: LegendCardFilter; label: string }> = [
+  { id: "all", label: "All" },
+  { id: "stories", label: "Stories" },
+  { id: "bonus", label: "Bonus" },
+  { id: "ready", label: "Ready" },
+  { id: "collected", label: "Collected" },
+  { id: "locked", label: "Locked" },
+];
+
+function getEpisodeLabel(card: LegendCard) {
+  return card.episodeLabel ?? `Episode ${card.episode}`;
+}
 
 function parseStoredIds(snapshot: string | null) {
   try {
@@ -129,6 +155,8 @@ export function LegendCardCollection() {
   const [accountSyncLabel, setAccountSyncLabel] = useState("Saved on this device");
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [speakingCardId, setSpeakingCardId] = useState<string | null>(null);
+  const [cardFilter, setCardFilter] = useState<LegendCardFilter>("all");
+  const [collectionExpanded, setCollectionExpanded] = useState(false);
   const [status, setStatus] = useState(
     "Open a YouTube story to collect its card. Use Listen story for in-app voice playback.",
   );
@@ -207,6 +235,60 @@ export function LegendCardCollection() {
 
   const collectedCount = LEGEND_CARDS.filter((card) => unlockedIds.has(card.id)).length;
   const liveCount = useMemo(() => LEGEND_CARDS.filter((card) => card.youtube).length, []);
+  const storyCount = useMemo(() => LEGEND_CARDS.filter((card) => card.kind === "episode-special").length, []);
+  const bonusCount = useMemo(() => LEGEND_CARDS.filter((card) => card.kind === "legend-bonus").length, []);
+  const newestEpisodeCard = useMemo(
+    () => LEGEND_CARDS.find((card) => card.kind === "episode-special" && card.youtube) ?? LEGEND_CARDS[0],
+    [],
+  );
+  const readyCount = LEGEND_CARDS.filter(
+    (card) => Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id)),
+  ).length;
+  const lockedCount = LEGEND_CARDS.length - collectedCount;
+  const progressPercent = LEGEND_CARDS.length
+    ? Math.round((collectedCount / LEGEND_CARDS.length) * 100)
+    : 0;
+  const focusCard =
+    LEGEND_CARDS.find((card) => Boolean(card.youtube && !unlockedIds.has(card.id))) ??
+    newestEpisodeCard;
+  const filteredCards = useMemo(() => {
+    return LEGEND_CARDS.filter((card) => {
+      if (cardFilter === "stories") {
+        return card.kind === "episode-special";
+      }
+      if (cardFilter === "bonus") {
+        return card.kind === "legend-bonus";
+      }
+      if (cardFilter === "ready") {
+        return Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id));
+      }
+      if (cardFilter === "collected") {
+        return unlockedIds.has(card.id);
+      }
+      if (cardFilter === "locked") {
+        return !unlockedIds.has(card.id);
+      }
+
+      return true;
+    });
+  }, [cardFilter, unlockedIds, watchedIds]);
+  const visibleCards = collectionExpanded
+    ? filteredCards
+    : filteredCards.slice(0, compactLegendCardCount);
+  const selectedFilterLabel = legendCardFilterLabels[cardFilter].toLowerCase();
+  const compactCardsText =
+    filteredCards.length <= compactLegendCardCount
+      ? `All ${filteredCards.length} ${selectedFilterLabel}`
+      : `First ${Math.min(compactLegendCardCount, filteredCards.length)} of ${filteredCards.length} ${selectedFilterLabel}`;
+  const expandedCardsText = `All ${filteredCards.length} ${selectedFilterLabel}`;
+  const filterCounts: Record<LegendCardFilter, number> = {
+    all: LEGEND_CARDS.length,
+    stories: storyCount,
+    bonus: bonusCount,
+    ready: readyCount,
+    collected: collectedCount,
+    locked: lockedCount,
+  };
 
   const markCardOpened = useCallback((card: LegendCard) => {
     if (!card.youtube) {
@@ -325,6 +407,11 @@ export function LegendCardCollection() {
     window.speechSynthesis.speak(utterance);
   }
 
+  function chooseCardFilter(nextFilter: LegendCardFilter) {
+    setCardFilter(nextFilter);
+    setCollectionExpanded(false);
+  }
+
   return (
     <section id="legend-cards" className="legend-collection" aria-labelledby="legend-collection-title">
       <div className="legend-collection__hero">
@@ -369,8 +456,129 @@ export function LegendCardCollection() {
         {status}
       </p>
 
-      <div className="legend-card-grid">
-        {LEGEND_CARDS.map((card) => {
+      {focusCard ? (
+        <div className="legend-album" aria-label="Legend card album command center">
+          <article
+            className={`legend-feature-card ${
+              unlockedIds.has(focusCard.id) ? "is-unlocked" : "is-locked"
+            }`}
+          >
+            <div className="legend-feature-card__image">
+              <Image
+                src={focusCard.image}
+                alt={`${focusCard.title} featured Legend card`}
+                fill
+                sizes="(max-width: 760px) 92vw, 260px"
+                priority
+              />
+              {!unlockedIds.has(focusCard.id) ? (
+                <span className="legend-feature-card__state">
+                  <LockKeyhole size={16} />
+                  Next to collect
+                </span>
+              ) : (
+                <span className="legend-feature-card__state is-collected">
+                  <Check size={16} />
+                  Collected
+                </span>
+              )}
+            </div>
+            <div className="legend-feature-card__body">
+              <p className="wc-card-eyebrow">Latest from YouTube</p>
+              <h2>{focusCard.title}</h2>
+              <p>{focusCard.teams}</p>
+              <small>{getEpisodeLabel(focusCard)} · {focusCard.subtitle}</small>
+              <div className="legend-feature-card__actions">
+                <button
+                  type="button"
+                  className="button"
+                  onClick={() => startWatch(focusCard)}
+                >
+                  <ExternalLink size={16} />
+                  Open YouTube
+                </button>
+                <button
+                  type="button"
+                  className="button secondary"
+                  onClick={() => speakStory(focusCard)}
+                >
+                  {speakingCardId === focusCard.id ? <VolumeX size={16} /> : <Volume2 size={16} />}
+                  {speakingCardId === focusCard.id ? "Stop story" : "Listen story"}
+                </button>
+                <button
+                  type="button"
+                  className="button secondary"
+                  disabled={
+                    unlockedIds.has(focusCard.id) ||
+                    !Boolean(focusCard.youtube && watchedIds.has(focusCard.id))
+                  }
+                  onClick={() => unlockCard(focusCard)}
+                >
+                  {unlockedIds.has(focusCard.id) ? "Unlocked" : "Unlock card"}
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <div className="legend-progress-panel">
+            <div>
+              <p className="wc-card-eyebrow">Album progress</p>
+              <strong>{progressPercent}% collected</strong>
+              <span>{collectedCount} of {LEGEND_CARDS.length} cards saved</span>
+            </div>
+            <div className="legend-progress-panel__bar" aria-hidden="true">
+              <span style={{ width: `${progressPercent}%` }} />
+            </div>
+            <dl className="legend-progress-panel__stats">
+              <div>
+                <dt>Stories</dt>
+                <dd>{storyCount}</dd>
+              </div>
+              <div>
+                <dt>Bonus</dt>
+                <dd>{bonusCount}</dd>
+              </div>
+              <div>
+                <dt>Ready</dt>
+                <dd>{readyCount}</dd>
+              </div>
+              <div>
+                <dt>Locked</dt>
+                <dd>{lockedCount}</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      ) : null}
+
+      <div className="legend-filter-bar" aria-label="Filter Legend cards">
+        {legendCardFilters.map((filter) => (
+          <button
+            key={filter.id}
+            type="button"
+            className={`legend-filter-button ${cardFilter === filter.id ? "is-active" : ""}`}
+            onClick={() => chooseCardFilter(filter.id)}
+            aria-pressed={cardFilter === filter.id}
+          >
+            <span>{filter.label}</span>
+            <strong>{filterCounts[filter.id]}</strong>
+          </button>
+        ))}
+      </div>
+
+      {filteredCards.length > compactLegendCardCount ? (
+        <CardViewControl
+          controlsId="legend-card-grid"
+          expanded={collectionExpanded}
+          label="Legend card album"
+          compactText={compactCardsText}
+          expandedText={expandedCardsText}
+          onToggle={() => setCollectionExpanded((expanded) => !expanded)}
+        />
+      ) : null}
+
+      <div id="legend-card-grid" className="legend-card-grid">
+        {visibleCards.map((card, index) => {
           const isUnlocked = unlockedIds.has(card.id);
           const hasWatchedEpisode = watchedIds.has(card.id);
           const canUnlock = Boolean(card.youtube && hasWatchedEpisode && !isUnlocked);
@@ -390,7 +598,7 @@ export function LegendCardCollection() {
                   alt={`${card.title} collectible card`}
                   fill
                   sizes="(max-width: 760px) 92vw, (max-width: 1180px) 45vw, 320px"
-                  priority={card.episode <= 1}
+                  priority={index < 2}
                 />
                 {!isUnlocked ? (
                   <div className="legend-card__lock" aria-hidden="true">
@@ -407,7 +615,7 @@ export function LegendCardCollection() {
 
               <div className="legend-card__body">
                 <div className="legend-card__meta">
-                  <span>{card.episodeLabel ?? `Episode ${card.episode}`}</span>
+                  <span>{getEpisodeLabel(card)}</span>
                   <span>{card.rarity}</span>
                 </div>
                 <h2>{card.title}</h2>
@@ -456,6 +664,12 @@ export function LegendCardCollection() {
           );
         })}
       </div>
+
+      {filteredCards.length === 0 ? (
+        <p className="legend-card-empty">
+          No cards in this view yet. Open a story on YouTube, return here, then unlock it.
+        </p>
+      ) : null}
     </section>
   );
 }
