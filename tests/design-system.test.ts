@@ -237,8 +237,12 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /const validPulseIds = new Set\(legendPulseItems\.map/);
     assert.match(legendCardCollection, /import \{ CardViewControl \} from "@\/components\/card-view-control";/);
     assert.match(legendCardCollection, /compactLegendCardCount = 12/);
-    assert.match(legendCardCollection, /type LegendCardFilter = "all" \| "stories" \| "bonus" \| "ready" \| "collected" \| "locked"/);
+    assert.match(legendCardCollection, /type LegendCardFilter =/);
+    assert.match(legendCardCollection, /\| "need-story"/);
+    assert.match(legendCardCollection, /\| "need-youtube"/);
     assert.match(legendCardCollection, /const legendCardFilters/);
+    assert.match(legendCardCollection, /Need story/);
+    assert.match(legendCardCollection, /Need YouTube/);
     assert.match(legendCardCollection, /function getEpisodeLabel\(card: LegendCard\)/);
     assert.match(legendCardCollection, /const focusCard =/);
     assert.match(legendCardCollection, /const filteredCards = useMemo/);
@@ -248,6 +252,8 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /const visibleCards = collectionExpanded/);
     assert.match(legendCardCollection, /function updateCardSearch\(nextSearch: string\)/);
     assert.match(legendCardCollection, /setCardSearch\(nextSearch\)/);
+    assert.match(legendCardCollection, /function resetAlbumFilters\(\)/);
+    assert.match(legendCardCollection, /setCardFilter\("all"\)/);
     assert.match(legendCardCollection, /function chooseCardFilter\(nextFilter: LegendCardFilter\)/);
     assert.match(legendCardCollection, /const collectorQuestSteps = collectorQuestCard/);
     assert.match(legendCardCollection, /const collectorQuestProgressPercent/);
@@ -255,6 +261,8 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /pulseReadCount/);
     assert.match(legendCardCollection, /listenedCount/);
     assert.match(legendCardCollection, /watchedCount/);
+    assert.match(legendCardCollection, /needStoryCount/);
+    assert.match(legendCardCollection, /needYouTubeCount/);
     assert.match(legendCardCollection, /function continueCollectorPath\(\)/);
     assert.match(legendCardCollection, /completedQuestCardId/);
     assert.match(legendCardCollection, /setCompletedQuestCardId\(card\.id\)/);
@@ -305,6 +313,7 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /placeholder="Search teams or cards"/);
     assert.match(legendCardCollection, /Clear Legend card search/);
     assert.match(legendCardCollection, /No cards match this view yet/);
+    assert.match(legendCardCollection, /Reset album/);
     assert.match(legendCardCollection, /className=\{`legend-filter-button/);
     assert.match(legendCardCollection, /<CardViewControl/);
     assert.match(legendCardCollection, /controlsId="legend-card-grid"/);
@@ -364,7 +373,7 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.legend-feature-card\.is-locked \.legend-feature-card__image img\s*{[\s\S]*?filter:\s*blur\(5px\)/);
     assert.match(globalsCss, /\.legend-progress-panel\s*{[\s\S]*?align-content:\s*space-between;/);
     assert.match(globalsCss, /\.legend-progress-panel__bar span\s*{[\s\S]*?background:\s*linear-gradient\(90deg,\s*#69dfad,\s*#ffcf66\);/);
-    assert.match(globalsCss, /\.legend-filter-bar\s*{[\s\S]*?grid-template-columns:\s*repeat\(6,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /\.legend-filter-bar\s*{[\s\S]*?grid-template-columns:\s*repeat\(auto-fit,\s*minmax\(132px,\s*1fr\)\);/);
     assert.match(globalsCss, /\.sr-only\s*{[\s\S]*?clip-path:\s*inset\(50%\);/);
     assert.match(globalsCss, /\.legend-search\s*{[\s\S]*?grid-template-columns:\s*auto minmax\(0,\s*1fr\) auto;/);
     assert.match(globalsCss, /\.legend-search input\s*{[\s\S]*?background:\s*transparent;/);
@@ -373,6 +382,7 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.legend-collection \.card-view-control\s*{[\s\S]*?margin:\s*var\(--space-5\)\s*0\s*0;/);
     assert.match(globalsCss, /\.legend-filter-button\.is-active\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#ffcf66\)/);
     assert.match(globalsCss, /\.legend-card-empty\s*{/);
+    assert.match(globalsCss, /\.legend-card-empty button\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#ffcf66\)/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-album\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-quest__header,[\s\S]*?\.legend-quest__grid,[\s\S]*?\.legend-pulse__grid\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-roadmap__track\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
@@ -418,6 +428,7 @@ describe("WorldCup design system integration", () => {
     assert.match(predictionsPage, /Open & collect/);
     assert.match(globalsCss, /\.legend-card-grid/);
     assert.match(globalsCss, /\.legend-collection\s*{[\s\S]*?scroll-margin-top:\s*120px;/);
+    assert.match(globalsCss, /\.legend-search,\s*[\s\S]*?#legend-card-search\s*{[\s\S]*?scroll-margin-top:\s*clamp\(190px,\s*28vh,\s*280px\);/);
     assert.match(globalsCss, /\.legend-card\s*{[\s\S]*?scroll-margin-top:\s*120px;/);
     assert.doesNotMatch(globalsCss, /\.legend-watch-modal/);
     assert.match(globalsCss, /\.legend-card\.is-locked \.legend-card__image img\s*{[\s\S]*?filter:\s*blur\(7px\)/);

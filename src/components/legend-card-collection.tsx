@@ -35,12 +35,22 @@ const validCardIds = new Set(LEGEND_CARDS.map((card) => card.id));
 const unlockableCardIds = new Set(LEGEND_CARDS.filter((card) => card.youtube).map((card) => card.id));
 const legendCardById = new Map(LEGEND_CARDS.map((card) => [card.id, card]));
 
-type LegendCardFilter = "all" | "stories" | "bonus" | "ready" | "collected" | "locked";
+type LegendCardFilter =
+  | "all"
+  | "stories"
+  | "bonus"
+  | "need-story"
+  | "need-youtube"
+  | "ready"
+  | "collected"
+  | "locked";
 
 const legendCardFilterLabels: Record<LegendCardFilter, string> = {
   all: "All cards",
   stories: "Stories",
   bonus: "Bonus",
+  "need-story": "Need story",
+  "need-youtube": "Need YouTube",
   ready: "Ready",
   collected: "Collected",
   locked: "Locked",
@@ -50,6 +60,8 @@ const legendCardFilters: Array<{ id: LegendCardFilter; label: string }> = [
   { id: "all", label: "All" },
   { id: "stories", label: "Stories" },
   { id: "bonus", label: "Bonus" },
+  { id: "need-story", label: "Need story" },
+  { id: "need-youtube", label: "Need YouTube" },
   { id: "ready", label: "Ready" },
   { id: "collected", label: "Collected" },
   { id: "locked", label: "Locked" },
@@ -506,6 +518,8 @@ export function LegendCardCollection() {
   ).length;
   const listenedCount = LEGEND_CARDS.filter((card) => listenedIds.has(card.id)).length;
   const watchedCount = LEGEND_CARDS.filter((card) => Boolean(card.youtube && watchedIds.has(card.id))).length;
+  const needStoryCount = LEGEND_CARDS.filter((card) => !listenedIds.has(card.id)).length;
+  const needYouTubeCount = LEGEND_CARDS.filter((card) => Boolean(card.youtube && !watchedIds.has(card.id))).length;
   const pulseReadCount = legendPulseItems.filter((item) => readPulseIds.has(item.id)).length;
   const lockedCount = LEGEND_CARDS.length - collectedCount;
   const progressPercent = LEGEND_CARDS.length
@@ -523,6 +537,12 @@ export function LegendCardCollection() {
         }
       }
       if (cardFilter === "bonus" && card.kind !== "legend-bonus") {
+        return false;
+      }
+      if (cardFilter === "need-story" && listenedIds.has(card.id)) {
+        return false;
+      }
+      if (cardFilter === "need-youtube" && !Boolean(card.youtube && !watchedIds.has(card.id))) {
         return false;
       }
       if (cardFilter === "ready") {
@@ -553,7 +573,7 @@ export function LegendCardCollection() {
         .toLowerCase()
         .includes(normalizedCardSearch);
     });
-  }, [cardFilter, normalizedCardSearch, unlockedIds, watchedIds]);
+  }, [cardFilter, listenedIds, normalizedCardSearch, unlockedIds, watchedIds]);
   const visibleCards = collectionExpanded
     ? filteredCards
     : filteredCards.slice(0, compactLegendCardCount);
@@ -569,6 +589,8 @@ export function LegendCardCollection() {
     all: LEGEND_CARDS.length,
     stories: storyCount,
     bonus: bonusCount,
+    "need-story": needStoryCount,
+    "need-youtube": needYouTubeCount,
     ready: readyCount,
     collected: collectedCount,
     locked: lockedCount,
@@ -820,6 +842,13 @@ export function LegendCardCollection() {
   function updateCardSearch(nextSearch: string) {
     setCardSearch(nextSearch);
     setCollectionExpanded(false);
+  }
+
+  function resetAlbumFilters() {
+    setCardFilter("all");
+    setCardSearch("");
+    setCollectionExpanded(false);
+    setStatus("Album filters reset. Continue the card loop from any story.");
   }
 
   function scrollToLegendSection(sectionId: string) {
@@ -1426,9 +1455,12 @@ export function LegendCardCollection() {
       </div>
 
       {filteredCards.length === 0 ? (
-        <p className="legend-card-empty">
-          No cards match this view yet. Try another team, story, or filter.
-        </p>
+        <div className="legend-card-empty">
+          <p>No cards match this view yet. Try another team, story, or filter.</p>
+          <button type="button" onClick={resetAlbumFilters}>
+            Reset album
+          </button>
+        </div>
       ) : null}
     </section>
   );

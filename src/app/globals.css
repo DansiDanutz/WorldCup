@@ -10987,6 +10987,11 @@ html {
   background: rgba(0, 0, 0, 0.16);
 }
 
+.legend-search,
+#legend-card-search {
+  scroll-margin-top: clamp(190px, 28vh, 280px);
+}
+
 .legend-search input {
   min-width: 0;
   border: 0;
@@ -11020,7 +11025,7 @@ html {
 
 .legend-filter-bar {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
   gap: 8px;
   margin-top: var(--space-5);
 }
@@ -11076,6 +11081,9 @@ html {
 }
 
 .legend-card-empty {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
   margin: var(--space-5) 0 0;
   padding: var(--space-5);
   border: 1px dashed rgba(255, 207, 102, 0.28);
@@ -11083,6 +11091,21 @@ html {
   color: rgba(255, 255, 255, 0.74);
   text-align: center;
   font: 750 14px / 1.45 var(--font-sans);
+}
+
+.legend-card-empty p {
+  margin: 0;
+}
+
+.legend-card-empty button {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 207, 102, 0.72);
+  border-radius: 8px;
+  color: #1b1308;
+  background: linear-gradient(180deg, #ffe29a, #ffcf66);
+  cursor: pointer;
+  font: 900 12px / 1 var(--font-sans);
 }
 
 .legend-card-grid,
