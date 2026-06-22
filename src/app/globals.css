@@ -9714,6 +9714,19 @@ html {
   white-space: nowrap;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: clip;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* Leaderboard header as a cinematic banner with a darkened photo behind the
    title. The dark overlay stays a clean green banner if the image is absent. */
 .leaderboard-head {
@@ -10959,11 +10972,61 @@ html {
   font: 900 22px / 1 var(--font-sans);
 }
 
+.legend-search {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  min-height: 48px;
+  margin-top: var(--space-5);
+  padding: 7px 9px 7px 12px;
+  border: 1px solid rgba(255, 207, 102, 0.18);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.legend-search input {
+  min-width: 0;
+  border: 0;
+  color: #ffffff;
+  background: transparent;
+  font: 850 14px / 1.2 var(--font-sans);
+  outline: none;
+}
+
+.legend-search input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.legend-search button {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.legend-search span {
+  color: #ffcf66;
+  font: 900 12px / 1 var(--font-sans);
+  white-space: nowrap;
+}
+
 .legend-filter-bar {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 8px;
   margin-top: var(--space-5);
+}
+
+.legend-search + .legend-filter-bar {
+  margin-top: var(--space-3);
 }
 
 .legend-collection .card-view-control {

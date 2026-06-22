@@ -242,7 +242,12 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /function getEpisodeLabel\(card: LegendCard\)/);
     assert.match(legendCardCollection, /const focusCard =/);
     assert.match(legendCardCollection, /const filteredCards = useMemo/);
+    assert.match(legendCardCollection, /const \[cardSearch, setCardSearch\] = useState\(""\)/);
+    assert.match(legendCardCollection, /const normalizedCardSearch = cardSearch\.trim\(\)\.toLowerCase\(\)/);
+    assert.match(legendCardCollection, /\.includes\(normalizedCardSearch\)/);
     assert.match(legendCardCollection, /const visibleCards = collectionExpanded/);
+    assert.match(legendCardCollection, /function updateCardSearch\(nextSearch: string\)/);
+    assert.match(legendCardCollection, /setCardSearch\(nextSearch\)/);
     assert.match(legendCardCollection, /function chooseCardFilter\(nextFilter: LegendCardFilter\)/);
     assert.match(legendCardCollection, /const collectorQuestSteps = collectorQuestCard/);
     assert.match(legendCardCollection, /const collectorQuestProgressPercent/);
@@ -294,6 +299,12 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /Latest from YouTube/);
     assert.match(legendCardCollection, /Album progress/);
     assert.match(legendCardCollection, /className="legend-filter-bar"/);
+    assert.match(legendCardCollection, /className="legend-search"/);
+    assert.match(legendCardCollection, /role="search"/);
+    assert.match(legendCardCollection, /id="legend-card-search"/);
+    assert.match(legendCardCollection, /placeholder="Search teams or cards"/);
+    assert.match(legendCardCollection, /Clear Legend card search/);
+    assert.match(legendCardCollection, /No cards match this view yet/);
     assert.match(legendCardCollection, /className=\{`legend-filter-button/);
     assert.match(legendCardCollection, /<CardViewControl/);
     assert.match(legendCardCollection, /controlsId="legend-card-grid"/);
@@ -354,6 +365,11 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.legend-progress-panel\s*{[\s\S]*?align-content:\s*space-between;/);
     assert.match(globalsCss, /\.legend-progress-panel__bar span\s*{[\s\S]*?background:\s*linear-gradient\(90deg,\s*#69dfad,\s*#ffcf66\);/);
     assert.match(globalsCss, /\.legend-filter-bar\s*{[\s\S]*?grid-template-columns:\s*repeat\(6,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /\.sr-only\s*{[\s\S]*?clip-path:\s*inset\(50%\);/);
+    assert.match(globalsCss, /\.legend-search\s*{[\s\S]*?grid-template-columns:\s*auto minmax\(0,\s*1fr\) auto;/);
+    assert.match(globalsCss, /\.legend-search input\s*{[\s\S]*?background:\s*transparent;/);
+    assert.match(globalsCss, /\.legend-search button\s*{[\s\S]*?place-items:\s*center;/);
+    assert.match(globalsCss, /\.legend-search \+ \.legend-filter-bar\s*{[\s\S]*?margin-top:\s*var\(--space-3\);/);
     assert.match(globalsCss, /\.legend-collection \.card-view-control\s*{[\s\S]*?margin:\s*var\(--space-5\)\s*0\s*0;/);
     assert.match(globalsCss, /\.legend-filter-button\.is-active\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#ffcf66\)/);
     assert.match(globalsCss, /\.legend-card-empty\s*{/);

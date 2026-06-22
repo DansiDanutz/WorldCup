@@ -9,9 +9,11 @@ import {
   LockKeyhole,
   LogIn,
   Newspaper,
+  Search,
   Sparkles,
   Volume2,
   VolumeX,
+  X,
 } from "lucide-react";
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
@@ -334,6 +336,7 @@ export function LegendCardCollection() {
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [speakingCardId, setSpeakingCardId] = useState<string | null>(null);
   const [cardFilter, setCardFilter] = useState<LegendCardFilter>("all");
+  const [cardSearch, setCardSearch] = useState("");
   const [collectionExpanded, setCollectionExpanded] = useState(false);
   const [completedQuestCardId, setCompletedQuestCardId] = useState<string | null>(null);
   const [previewSecondsRemaining, setPreviewSecondsRemaining] = useState(() =>
@@ -511,31 +514,52 @@ export function LegendCardCollection() {
   const focusCard =
     LEGEND_CARDS.find((card) => Boolean(card.youtube && !unlockedIds.has(card.id))) ??
     newestEpisodeCard;
+  const normalizedCardSearch = cardSearch.trim().toLowerCase();
   const filteredCards = useMemo(() => {
     return LEGEND_CARDS.filter((card) => {
       if (cardFilter === "stories") {
-        return card.kind === "episode-special";
+        if (card.kind !== "episode-special") {
+          return false;
+        }
       }
-      if (cardFilter === "bonus") {
-        return card.kind === "legend-bonus";
+      if (cardFilter === "bonus" && card.kind !== "legend-bonus") {
+        return false;
       }
       if (cardFilter === "ready") {
-        return Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id));
+        if (!Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id))) {
+          return false;
+        }
       }
-      if (cardFilter === "collected") {
-        return unlockedIds.has(card.id);
+      if (cardFilter === "collected" && !unlockedIds.has(card.id)) {
+        return false;
       }
-      if (cardFilter === "locked") {
-        return !unlockedIds.has(card.id);
+      if (cardFilter === "locked" && unlockedIds.has(card.id)) {
+        return false;
       }
 
-      return true;
+      if (!normalizedCardSearch) {
+        return true;
+      }
+
+      return [
+        getEpisodeLabel(card),
+        card.title,
+        card.subtitle,
+        card.teams,
+        card.story,
+        card.rarity,
+      ]
+        .join(" ")
+        .toLowerCase()
+        .includes(normalizedCardSearch);
     });
-  }, [cardFilter, unlockedIds, watchedIds]);
+  }, [cardFilter, normalizedCardSearch, unlockedIds, watchedIds]);
   const visibleCards = collectionExpanded
     ? filteredCards
     : filteredCards.slice(0, compactLegendCardCount);
-  const selectedFilterLabel = legendCardFilterLabels[cardFilter].toLowerCase();
+  const selectedFilterLabel = normalizedCardSearch
+    ? "matching cards"
+    : legendCardFilterLabels[cardFilter].toLowerCase();
   const compactCardsText =
     filteredCards.length <= compactLegendCardCount
       ? `All ${filteredCards.length} ${selectedFilterLabel}`
@@ -793,12 +817,18 @@ export function LegendCardCollection() {
     setCollectionExpanded(false);
   }
 
+  function updateCardSearch(nextSearch: string) {
+    setCardSearch(nextSearch);
+    setCollectionExpanded(false);
+  }
+
   function scrollToLegendSection(sectionId: string) {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function continueCollectorPath() {
     if (readyCount > 0) {
+      setCardSearch("");
       chooseCardFilter("ready");
       scrollToLegendSection("legend-card-grid");
       return;
@@ -823,6 +853,7 @@ export function LegendCardCollection() {
     writeStoredPulsePreview(nextPreview);
     setPreviewSecondsRemaining(pulsePreviewDurationMs / 1000);
     setCardFilter("all");
+    setCardSearch("");
     setCollectionExpanded(false);
     setStatus(
       `${card.title} preview unlocked for 60 seconds. Watch the YouTube episode to collect it permanently.`,
@@ -1241,6 +1272,28 @@ export function LegendCardCollection() {
         </div>
       ) : null}
 
+      <div className="legend-search" role="search">
+        <label className="sr-only" htmlFor="legend-card-search">
+          Search Legend cards
+        </label>
+        <Search size={17} aria-hidden="true" />
+        <input
+          id="legend-card-search"
+          type="search"
+          value={cardSearch}
+          onChange={(event) => updateCardSearch(event.target.value)}
+          placeholder="Search teams or cards"
+          autoComplete="off"
+        />
+        {normalizedCardSearch ? (
+          <button type="button" onClick={() => updateCardSearch("")} aria-label="Clear Legend card search">
+            <X size={16} aria-hidden="true" />
+          </button>
+        ) : (
+          <span>{filteredCards.length} cards</span>
+        )}
+      </div>
+
       <div className="legend-filter-bar" aria-label="Filter Legend cards">
         {legendCardFilters.map((filter) => (
           <button
@@ -1374,7 +1427,7 @@ export function LegendCardCollection() {
 
       {filteredCards.length === 0 ? (
         <p className="legend-card-empty">
-          No cards in this view yet. Open a story on YouTube, return here, then unlock it.
+          No cards match this view yet. Try another team, story, or filter.
         </p>
       ) : null}
     </section>
