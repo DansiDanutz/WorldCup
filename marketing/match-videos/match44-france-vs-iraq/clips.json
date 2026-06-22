@@ -1,0 +1,298 @@
+{
+  "comment": "Ep44 France vs Iraq (Group I, Stanford). Story 'The Namesake' — Iraq's Zidane Iqbal, born in Manchester, named by his father after Zinedine Zidane, now faces France. MATCH UNPLAYED -> OUR PREDICTION France 2-1 (Iraq shock lead via Hussein 34', Mbappe equaliser 61', Mbappe winner 87'). vol=0 on every clip (silent reused/AI clips; audio = VO + music + sfx). Atmosphere library: fra-fans, irq-fans, stadium, celebration, mystery-namesake + 10 player clips, reused via distinct ids. Scenes reference these ids via <ClipSprite id=...>. Legend 044 = The Namesake. Brian VO.",
+  "clips": [
+    {
+      "id": "glimpse-stad",
+      "src": "assets/stadium.mp4",
+      "at": 0.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-namesake",
+      "src": "assets/mystery-namesake.mp4",
+      "at": 4,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-iqbal",
+      "src": "assets/irq-iqbal.mp4",
+      "at": 8.5,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-mbappe",
+      "src": "assets/fra-mbappe.mp4",
+      "at": 11.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-ext",
+      "src": "assets/stadium.mp4",
+      "at": 31.39,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/celebration.mp4",
+      "at": 36,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "history-bg",
+      "src": "assets/stadium.mp4",
+      "at": 44,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-fra",
+      "src": "assets/fra-fans.mp4",
+      "at": 55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-irq",
+      "src": "assets/irq-fans.mp4",
+      "at": 66,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-mbappe",
+      "src": "assets/fra-mbappe.mp4",
+      "at": 76.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hist-iqbal",
+      "src": "assets/irq-iqbal.mp4",
+      "at": 87.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "fra-bg",
+      "src": "assets/fra-fans.mp4",
+      "at": 98.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "mbappe",
+      "src": "assets/fra-mbappe.mp4",
+      "at": 106.52,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "olise",
+      "src": "assets/fra-olise.mp4",
+      "at": 116.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "dembele",
+      "src": "assets/fra-dembele.mp4",
+      "at": 124.5,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "tchouameni",
+      "src": "assets/fra-tchouameni.mp4",
+      "at": 127.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "saliba",
+      "src": "assets/fra-saliba.mp4",
+      "at": 131,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "irq-bg",
+      "src": "assets/irq-fans.mp4",
+      "at": 133.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "iqbal",
+      "src": "assets/irq-iqbal.mp4",
+      "at": 144.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hussein",
+      "src": "assets/irq-hussein.mp4",
+      "at": 154.5,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "hamadi",
+      "src": "assets/irq-hamadi.mp4",
+      "at": 163.31,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "ammari",
+      "src": "assets/irq-ammari.mp4",
+      "at": 166.31,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "sulaka",
+      "src": "assets/irq-sulaka.mp4",
+      "at": 163.31,
+      "dur": 5.5,
+      "vol": 0
+    },
+    {
+      "id": "drama-irq1",
+      "src": "assets/irq-fans.mp4",
+      "at": 187.34,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-hussein",
+      "src": "assets/irq-hussein.mp4",
+      "at": 196,
+      "dur": 8.5,
+      "vol": 0
+    },
+    {
+      "id": "drama-iqbal",
+      "src": "assets/irq-iqbal.mp4",
+      "at": 205.64,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "drama-olise",
+      "src": "assets/fra-olise.mp4",
+      "at": 213.07,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "drama-mbappe",
+      "src": "assets/fra-mbappe.mp4",
+      "at": 223,
+      "dur": 8.5,
+      "vol": 0
+    },
+    {
+      "id": "drama-fra-cel",
+      "src": "assets/fra-fans.mp4",
+      "at": 231.5,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "drama-stad",
+      "src": "assets/celebration.mp4",
+      "at": 237.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "verdict-bg",
+      "src": "assets/fra-fans.mp4",
+      "at": 242.71,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mystery",
+      "src": "assets/mystery-namesake.mp4",
+      "at": 257.39,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "mystery-close",
+      "src": "assets/irq-fans.mp4",
+      "at": 268.04,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "cta-bg",
+      "src": "assets/fra-fans.mp4",
+      "at": 292.46,
+      "dur": 9,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 31.39,
+        "dur": 276.74,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 274.05,
+        "dur": 32,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      { "src": "sfx/heartbeat.mp3", "at": 0.3, "vol": 0.95 },
+      { "src": "sfx/heartbeat.mp3", "at": 6, "vol": 0.8 },
+      { "src": "sfx/braam.mp3", "at": 11.5, "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3", "at": 19.87, "vol": 0.6 },
+      { "src": "sfx/stamp.mp3", "at": 20.19, "vol": 0.6 },
+      { "src": "sfx/whoosh.mp3", "at": 31.59, "vol": 0.55 },
+      { "src": "sfx/braam.mp3", "at": 44.3, "vol": 0.6 },
+      { "src": "sfx/whoosh.mp3", "at": 98.4, "vol": 0.55 },
+      { "src": "sfx/pop.mp3", "at": 106.4, "vol": 0.55 },
+      { "src": "sfx/pop.mp3", "at": 116.6, "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3", "at": 133.4, "vol": 0.6 },
+      { "src": "sfx/pop.mp3", "at": 144.4, "vol": 0.55 },
+      { "src": "sfx/whoosh.mp3", "at": 171.34, "vol": 0.7 },
+      { "src": "sfx/goal.mp3", "at": 205.64, "vol": 0.9 },
+      { "src": "sfx/goal.mp3", "at": 223.5, "vol": 0.9 },
+      { "src": "sfx/goal.mp3", "at": 231.8, "vol": 0.9 },
+      { "src": "sfx/braam.mp3", "at": 242.81, "vol": 0.7 },
+      { "src": "sfx/mystic.mp3", "at": 257.49, "vol": 0.85 },
+      { "src": "sfx/pop.mp3", "at": 272.05, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 292.66, "vol": 0.6 }
+    ]
+  }
+}
