@@ -83,6 +83,7 @@ function MatchVideo() {
     <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26ep44">
       <ScreenLabeler />
       <SeekBridge />
+      <Backdrop />
       {SCENES.map((s, i) => (
         <Sprite key={i} start={s.start} end={s.end}>
           <s.c />

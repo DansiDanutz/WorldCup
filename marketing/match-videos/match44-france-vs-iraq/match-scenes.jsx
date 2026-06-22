@@ -63,13 +63,27 @@ function ScoreBug({ start, fra = 0, irq = 0, minute, badge = "OUR PREDICTION" })
   );
 }
 
+// ── Persistent cinematic B-roll backdrop (0–308): continuous tiled footage so
+// the frame is NEVER black behind a scene; scenes render their own clips on top.
+function Backdrop() {
+  const clips = (window.MV_CLIPS || []).filter((c) => c.id && c.id.indexOf('bd-') === 0);
+  return (
+    <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+      {clips.map((c) => (
+        <ClipSprite key={c.id} id={c.id} dim={0.34} style={{ filter: 'brightness(0.66) saturate(1.1) contrast(1.05)' }} />
+      ))}
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 42%, rgba(5,6,12,0.18) 25%, rgba(2,3,8,0.6) 100%)' }} />
+    </div>
+  );
+}
+
 // ── 1. Cold open (0–24): heartbeat in the dark, flash glimpses, hook line ────
 function SceneColdOpen() {
   const { localTime: lt } = useSprite();
   const beat = Math.pow(Math.max(0, Math.sin(lt * Math.PI * 1.15)), 8);
   const titleP = Easing.easeOutCubic(clamp((lt - 18.6) / 1.4, 0, 1));
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,7,0.46)' }}>
       {/* moving flash-glimpses of what's coming (video, not stills) */}
       <ClipSprite id="glimpse-stad" style={{ filter: 'brightness(0.78) contrast(1.15) saturate(1.2)' }} />
       <ClipSprite id="glimpse-namesake" style={{ filter: 'brightness(0.74) contrast(1.12) saturate(1.05)' }} />
@@ -136,7 +150,7 @@ function SceneStadium() {
   const { localTime: lt } = useSprite();
   const stripP = Easing.easeOutCubic(clamp((lt - 1.2) / 0.9, 0, 1));
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,7,0.46)' }}>
       <ClipSprite id="stadium-ext" dim={0.08} />
       <ClipSprite id="stadium-aerial" dim={0.08} />
       <Vignette strength={0.45} />
@@ -210,8 +224,10 @@ function SquadGrid({ start, end, players, accent }) {
             borderRadius: 22, overflow: 'hidden', background: MV.panel, border: `1px solid ${MV.line}`,
             boxShadow: `0 26px 80px rgba(0,0,0,0.6)`,
           }}>
-            <div style={{ height: 280, overflow: 'hidden' }}>
-              <img src={p.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.02 + 0.05 * clamp((t - start) / (end - start), 0, 1)})` }} />
+            <div style={{ height: 280, overflow: 'hidden', position: 'relative' }}>
+              <img src={p.img} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.02 + 0.05 * clamp((t - start) / (end - start), 0, 1)})` }} />
+              {p.vid && <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}><ClipSprite id={p.vid} style={{ objectFit: 'cover' }} /></div>}
+              <div style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', boxShadow: `inset 0 -60px 60px -30px rgba(0,0,0,0.55)` }} />
             </div>
             <div style={{ padding: '16px 14px 18px', textAlign: 'center', borderTop: `4px solid ${accent}` }}>
               <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 23, color: MV.text }}>{p.name}</div>
@@ -230,7 +246,7 @@ function SceneFrance() {
   const S = 45;
   const headerP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1));
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#0a0c14' }}>
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,12,20,0.46)' }}>
       <ClipSprite id="hist-fra" dim={0.5} style={{ filter: 'brightness(0.34) saturate(0.8) contrast(1.1)' }} />
       <ClipSprite id="fra-bg" dim={0.55} />
       <ClipSprite id="mbappe" dim={0.12} />
@@ -246,11 +262,11 @@ function SceneFrance() {
         </div>
       </div>
       <SquadGrid start={S + 19.5} end={S + 29.5} accent={FRA} players={[
-        { img: 'assets/squad/fra-mbappe.png', name: 'K. MBAPPÉ', role: 'THE CAPTAIN' },
-        { img: 'assets/squad/fra-olise.png', name: 'MICHAEL OLISE', role: 'THE MAGICIAN' },
-        { img: 'assets/squad/fra-dembele.png', name: 'O. DEMBÉLÉ', role: 'ELECTRIC' },
-        { img: 'assets/squad/fra-tchouameni.png', name: 'TCHOUAMÉNI', role: 'THE SHIELD' },
-        { img: 'assets/squad/fra-saliba.png', name: 'W. SALIBA', role: 'THE WALL' },
+        { img: 'assets/squad/fra-mbappe.png', vid: 'sqf-mbappe', name: 'K. MBAPPÉ', role: 'THE CAPTAIN' },
+        { img: 'assets/squad/fra-olise.png', vid: 'sqf-olise', name: 'MICHAEL OLISE', role: 'THE MAGICIAN' },
+        { img: 'assets/squad/fra-dembele.png', vid: 'sqf-dembele', name: 'O. DEMBÉLÉ', role: 'ELECTRIC' },
+        { img: 'assets/squad/fra-tchouameni.png', vid: 'sqf-tchouameni', name: 'TCHOUAMÉNI', role: 'THE SHIELD' },
+        { img: 'assets/squad/fra-saliba.png', vid: 'sqf-saliba', name: 'W. SALIBA', role: 'THE WALL' },
       ]} />
       <Sprite start={55.50} end={64.50}>
         <LowerThird start={55.80} name="KYLIAN MBAPPÉ" role="The Captain · Forward" accent={FRA_LIGHT} />
@@ -273,7 +289,7 @@ function SceneIraq() {
   const S = 75;
   const headerP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1));
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#0a0c14' }}>
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,12,20,0.46)' }}>
       <ClipSprite id="hist-irq" dim={0.5} style={{ filter: 'brightness(0.34) saturate(0.8) contrast(1.1)' }} />
       <ClipSprite id="irq-bg" dim={0.55} />
       <ClipSprite id="iqbal" dim={0.12} />
@@ -289,11 +305,11 @@ function SceneIraq() {
         </div>
       </div>
       <SquadGrid start={S + 11.5} end={S + 22} accent={IRQ} players={[
-        { img: 'assets/squad/irq-iqbal.png', name: 'ZIDANE IQBAL', role: 'THE HEART' },
-        { img: 'assets/squad/irq-hussein.png', name: 'A. HUSSEIN', role: 'THE POWER' },
-        { img: 'assets/squad/irq-hamadi.png', name: 'AL-HAMADI', role: 'THE EDGE' },
-        { img: 'assets/squad/irq-ammari.png', name: 'AL-AMMARI', role: 'THE ENGINE' },
-        { img: 'assets/squad/irq-sulaka.png', name: 'SULAKA', role: 'THE STONE' },
+        { img: 'assets/squad/irq-iqbal.png', vid: 'sqi-iqbal', name: 'ZIDANE IQBAL', role: 'THE HEART' },
+        { img: 'assets/squad/irq-hussein.png', vid: 'sqi-hussein', name: 'A. HUSSEIN', role: 'THE POWER' },
+        { img: 'assets/squad/irq-hamadi.png', vid: 'sqi-hamadi', name: 'AL-HAMADI', role: 'THE EDGE' },
+        { img: 'assets/squad/irq-ammari.png', vid: 'sqi-ammari', name: 'AL-AMMARI', role: 'THE ENGINE' },
+        { img: 'assets/squad/irq-sulaka.png', vid: 'sqi-sulaka', name: 'SULAKA', role: 'THE STONE' },
       ]} />
       <Sprite start={86.00} end={97.50}>
         <LowerThird start={86.30} name="ZIDANE IQBAL" role="The Heart · Midfield" accent={IRQ_LIGHT} />
@@ -317,7 +333,7 @@ function SceneDuel() {
   const vsP = Easing.easeOutBack(clamp((lt - 0.9) / 0.8, 0, 1));
   const shake = lt > 0.9 && lt < 1.25 ? Math.sin(lt * 160) * 7 * (1.25 - lt) / 0.35 : 0;
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#05060a', transform: `translate(${shake}px, ${-shake}px)` }}>
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(5,6,10,0.46)', transform: `translate(${shake}px, ${-shake}px)` }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '50%', overflow: 'hidden', transform: `translateX(${(1 - slideP) * -100}%)` }}>
         <img src="assets/squad/fra-mbappe.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'saturate(1.15) brightness(0.92)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(30,58,138,0.36), transparent 65%)' }} />
@@ -361,7 +377,7 @@ function SceneDrama() {
   const { localTime: lt } = useSprite();
   const S = 136;
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#000' }}>
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,7,0.46)' }}>
       <ClipSprite id="drama-irq1" dim={0.06} />
       <ClipSprite id="drama-hussein" dim={0.1} />
       <ClipSprite id="drama-iqbal" dim={0.1} />
@@ -440,7 +456,7 @@ function SceneVerdict() {
   const discP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const discFade = lt > 20 ? clamp((22 - lt) / 1.0, 0, 1) : 1;
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#0a0f1c' }}>
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,15,28,0.46)' }}>
       <ClipSprite id="verdict-bg" dim={0.6} />
       {/* disclaimer beat — our prediction, real one yours to watch */}
       <Sprite start={216.00} end={238.00}>
@@ -478,7 +494,7 @@ function SceneEngage() {
     { label: 'COMMENT IRAQ', sub: 'THE NAMESAKE', flag: <FlagIRQ w={80} />, accent: IRQ_LIGHT },
   ];
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#0a0f1c' }}>
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,15,28,0.46)' }}>
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(255,210,74,0.10) 0%, transparent 55%)` }} />
       <div style={{ position: 'absolute', top: 150, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: headP }}>
         <Kicker size={30}>Do You Agree?</Kicker>
@@ -512,9 +528,12 @@ function SceneMystery() {
   const S = 258;
   const inP = Easing.easeOutCubic(clamp((lt - 0.6) / 1.4, 0, 1));
   const cardP = Easing.easeOutBack(clamp((lt - 4.2) / 0.9, 0, 1));
-  const shine = -40 + clamp((lt - 6.0) / 2.0, 0, 1) * 180;
+  // repeating holo sweep across the card so it never sits dead
+  const shine = lt > 5 ? -40 + (((lt - 5) * 26) % 240) : -60;
+  const floatY = Math.sin(lt * 1.05) * 5; // continuous gentle float once card is in
+  const floatR = Math.sin(lt * 0.6) * 0.6;
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#02030a' }}>
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,10,0.46)' }}>
       <ClipSprite id="mystery" dim={0.12} />
       <ClipSprite id="mystery-close" dim={0.18} />
       {/* drifting fog layers */}
@@ -532,7 +551,7 @@ function SceneMystery() {
         <div style={{
           position: 'absolute', left: '50%', top: '52%', zIndex: 25,
           opacity: clamp(cardP, 0, 1),
-          transform: `translate(-50%,-50%) translateY(${(1 - cardP) * 50}px) scale(${0.9 + 0.1 * cardP})`,
+          transform: `translate(-50%,-50%) translateY(${(1 - cardP) * 50 + cardP * floatY}px) rotate(${cardP * floatR}deg) scale(${0.9 + 0.1 * cardP})`,
         }}>
           <div style={{
             position: 'relative', width: 760, borderRadius: 26, overflow: 'hidden',
@@ -625,7 +644,7 @@ function SceneCTA() {
   const S = 293;
   const inP = Easing.easeOutCubic(clamp(lt / 0.8, 0, 1));
   return (
-    <div style={{ position: 'absolute', inset: 0, background: '#07090f' }}>
+    <div style={{ position: 'absolute', inset: 0, background: 'rgba(7,9,15,0.46)' }}>
       <ClipSprite id="cta-bg" dim={0.68} />
       <AmbientParticles start={295.24} dur={6} count={28} />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
