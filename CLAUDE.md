@@ -291,6 +291,11 @@ Every episode hides one **Mystery Supporter = Legend 0NN**. Each Legend is a
 - Per new episode: generate the two orientations, drop them in the folder, add the
   `cards.json` + page entry. Backfill earlier Legends the same way. Bonus player
   films (`WorldCup26 Bonus`) get their own Legend cards too.
+- **MANDATORY (owner rule): EVERY time you finish a video, add that episode's
+  Legend special card into the collection in the SAME pass — generate both
+  orientations, save to `public/special-cards/`, update `cards.json` AND the
+  `/collection` page's `CARDS` array, then commit + push.** A finished episode is
+  NOT done until its Legend card is in the collection. No exceptions, every episode.
 
 ## PRODUCTION PROCESS (mandatory — never render twice for a missed requirement)
 
