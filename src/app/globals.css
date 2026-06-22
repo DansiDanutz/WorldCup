@@ -10450,6 +10450,116 @@ html {
   white-space: nowrap;
 }
 
+.legend-roadmap {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(105, 223, 173, 0.1), rgba(255, 207, 102, 0.08)),
+    rgba(0, 0, 0, 0.16);
+}
+
+.legend-roadmap__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.legend-roadmap__header h2,
+.legend-roadmap__header p {
+  margin: 0;
+}
+
+.legend-roadmap__header h2 {
+  color: #ffffff;
+  font: 900 22px / 1.08 var(--font-sans);
+}
+
+.legend-roadmap__header p:not(.wc-card-eyebrow) {
+  margin-top: var(--space-2);
+  color: rgba(255, 255, 255, 0.72);
+  font: 750 13px / 1.35 var(--font-sans);
+}
+
+.legend-roadmap__action {
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 207, 102, 0.72);
+  border-radius: 8px;
+  color: #1b1308;
+  background: linear-gradient(180deg, #ffe29a, #ffcf66);
+  cursor: pointer;
+  font: 900 12px / 1 var(--font-sans);
+}
+
+.legend-roadmap__track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.legend-roadmap-card {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.legend-roadmap-card__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+}
+
+.legend-roadmap-card__top span,
+.legend-roadmap-card small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.legend-roadmap-card__top span {
+  color: #ffcf66;
+  font: 900 11px / 1 var(--font-sans);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.legend-roadmap-card__top strong {
+  flex: 0 0 auto;
+  color: #ffffff;
+  font: 900 18px / 1 var(--font-sans);
+}
+
+.legend-roadmap-card__bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.legend-roadmap-card__bar span {
+  display: block;
+  height: 100%;
+  min-width: 4px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #69dfad, #ffcf66);
+}
+
+.legend-roadmap-card small {
+  color: rgba(255, 255, 255, 0.68);
+  font: 750 12px / 1.25 var(--font-sans);
+}
+
 .legend-pulse {
   margin-top: var(--space-5);
   padding: var(--space-5);
@@ -11178,14 +11288,24 @@ html {
 
   .legend-pulse__header,
   .legend-quest__header,
+  .legend-roadmap__header,
   .legend-quest__grid,
   .legend-pulse__grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .legend-pulse__header,
-  .legend-quest__header {
+  .legend-quest__header,
+  .legend-roadmap__header {
     display: grid;
+  }
+
+  .legend-roadmap__action {
+    justify-self: start;
+  }
+
+  .legend-roadmap__track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .legend-quest__progress {
@@ -11233,7 +11353,8 @@ html {
     padding: var(--space-4);
   }
 
-  .legend-quest {
+  .legend-quest,
+  .legend-roadmap {
     padding: var(--space-4);
   }
 
@@ -11262,6 +11383,7 @@ html {
   .legend-feature-card__actions,
   .legend-pulse__preview-actions,
   .legend-filter-bar,
+  .legend-roadmap__track,
   .legend-progress-panel__stats {
     grid-template-columns: minmax(0, 1fr);
   }

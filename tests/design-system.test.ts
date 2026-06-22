@@ -242,6 +242,11 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /function chooseCardFilter\(nextFilter: LegendCardFilter\)/);
     assert.match(legendCardCollection, /const collectorQuestSteps = collectorQuestCard/);
     assert.match(legendCardCollection, /const collectorQuestProgressPercent/);
+    assert.match(legendCardCollection, /const collectorRoadmapItems = \[/);
+    assert.match(legendCardCollection, /pulseReadCount/);
+    assert.match(legendCardCollection, /listenedCount/);
+    assert.match(legendCardCollection, /watchedCount/);
+    assert.match(legendCardCollection, /function continueCollectorPath\(\)/);
     assert.match(legendCardCollection, /completedQuestCardId/);
     assert.match(legendCardCollection, /setCompletedQuestCardId\(card\.id\)/);
     assert.match(legendCardCollection, /function markCardListened\(card: LegendCard\)/);
@@ -266,6 +271,13 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /aria-label="Collector quest steps"/);
     assert.match(legendCardCollection, /legend-quest-step/);
     assert.match(legendCardCollection, /Next quest/);
+    assert.match(legendCardCollection, /className="legend-roadmap"/);
+    assert.match(legendCardCollection, /Collector path/);
+    assert.match(legendCardCollection, /Your album loop/);
+    assert.match(legendCardCollection, /aria-label="Legend album collection path"/);
+    assert.match(legendCardCollection, /legend-roadmap-card/);
+    assert.match(legendCardCollection, /Collect ready cards/);
+    assert.match(legendCardCollection, /Continue quest/);
     assert.match(legendCardCollection, /id="legend-cards"/);
     assert.match(legendCardCollection, /className="legend-album"/);
     assert.match(legendCardCollection, /className=\{`legend-feature-card/);
@@ -309,6 +321,10 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.legend-quest-step\.is-complete\s*{[\s\S]*?rgba\(105,\s*223,\s*173,\s*0\.12\)/);
     assert.match(globalsCss, /\.legend-quest-step__action\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#ffcf66\)/);
     assert.match(globalsCss, /\.legend-quest__next\s*{[\s\S]*?linear-gradient\(180deg,\s*#d8ffe7,\s*#69dfad\)/);
+    assert.match(globalsCss, /\.legend-roadmap\s*{[\s\S]*?linear-gradient\(135deg,\s*rgba\(105,\s*223,\s*173,\s*0\.1\)/);
+    assert.match(globalsCss, /\.legend-roadmap__track\s*{[\s\S]*?grid-template-columns:\s*repeat\(4,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /\.legend-roadmap-card\s*{[\s\S]*?background:\s*rgba\(255,\s*255,\s*255,\s*0\.06\);/);
+    assert.match(globalsCss, /\.legend-roadmap-card__bar span\s*{[\s\S]*?background:\s*linear-gradient\(90deg,\s*#69dfad,\s*#ffcf66\);/);
     assert.match(globalsCss, /\.legend-pulse\s*{[\s\S]*?linear-gradient\(135deg,\s*rgba\(105,\s*223,\s*173,\s*0\.13\)/);
     assert.match(globalsCss, /\.legend-pulse__grid\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*0\.9fr\)\s*minmax\(0,\s*1\.1fr\);/);
     assert.match(globalsCss, /\.legend-notification-button\.is-on,[\s\S]*?\.legend-pulse__signin\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#ffcf66\)/);
@@ -327,6 +343,7 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.legend-card-empty\s*{/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-album\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-quest__header,[\s\S]*?\.legend-quest__grid,[\s\S]*?\.legend-pulse__grid\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
+    assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-roadmap__track\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-pulse__header,[\s\S]*?\.legend-pulse__grid\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-filter-bar\s*{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\);/);
     assert.match(globalsCss, /@media \(max-width:\s*640px\)\s*{[\s\S]*?\.legend-feature-card\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);

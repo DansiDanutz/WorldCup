@@ -239,6 +239,10 @@ function createPulsePreview(cardId: string): PulsePreview {
   };
 }
 
+function getCompletionPercent(count: number, total: number) {
+  return total > 0 ? Math.round((count / total) * 100) : 0;
+}
+
 async function readAccountUnlockedIds(token: string) {
   const response = await fetch("/api/legend-cards", {
     headers: { Authorization: `Bearer ${token}` },
@@ -401,9 +405,12 @@ export function LegendCardCollection() {
   const readyCount = LEGEND_CARDS.filter(
     (card) => Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id)),
   ).length;
+  const listenedCount = LEGEND_CARDS.filter((card) => listenedIds.has(card.id)).length;
+  const watchedCount = LEGEND_CARDS.filter((card) => Boolean(card.youtube && watchedIds.has(card.id))).length;
+  const pulseReadCount = legendPulseItems.filter((item) => readPulseIds.has(item.id)).length;
   const lockedCount = LEGEND_CARDS.length - collectedCount;
   const progressPercent = LEGEND_CARDS.length
-    ? Math.round((collectedCount / LEGEND_CARDS.length) * 100)
+    ? getCompletionPercent(collectedCount, LEGEND_CARDS.length)
     : 0;
   const focusCard =
     LEGEND_CARDS.find((card) => Boolean(card.youtube && !unlockedIds.has(card.id))) ??
@@ -512,6 +519,47 @@ export function LegendCardCollection() {
         return Boolean(card && card.id !== collectorQuestCard.id && !unlockedIds.has(card.id));
       })
     : false;
+  const collectorRoadmapItems = [
+    {
+      id: "pulse",
+      label: "Pulse",
+      value: pulseReadCount,
+      total: legendPulseItems.length,
+      detail: "story previews read",
+      percent: getCompletionPercent(pulseReadCount, legendPulseItems.length),
+    },
+    {
+      id: "listen",
+      label: "Listen",
+      value: listenedCount,
+      total: LEGEND_CARDS.length,
+      detail: "card stories heard",
+      percent: getCompletionPercent(listenedCount, LEGEND_CARDS.length),
+    },
+    {
+      id: "youtube",
+      label: "YouTube",
+      value: watchedCount,
+      total: liveCount,
+      detail: "episodes opened",
+      percent: getCompletionPercent(watchedCount, liveCount),
+    },
+    {
+      id: "collect",
+      label: "Collect",
+      value: collectedCount,
+      total: LEGEND_CARDS.length,
+      detail: "cards saved",
+      percent: progressPercent,
+    },
+  ];
+  const roadmapActionLabel = readyCount > 0 ? "Collect ready cards" : "Continue quest";
+  const roadmapActionDetail =
+    readyCount > 0
+      ? `${readyCount} card${readyCount === 1 ? "" : "s"} waiting after YouTube`
+      : collectorQuestCard
+        ? `Next card: ${collectorQuestCard.title}`
+        : "Open the album";
 
   const markCardOpened = useCallback((card: LegendCard) => {
     if (!card.youtube) {
@@ -642,6 +690,20 @@ export function LegendCardCollection() {
   function chooseCardFilter(nextFilter: LegendCardFilter) {
     setCardFilter(nextFilter);
     setCollectionExpanded(false);
+  }
+
+  function scrollToLegendSection(sectionId: string) {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function continueCollectorPath() {
+    if (readyCount > 0) {
+      chooseCardFilter("ready");
+      scrollToLegendSection("legend-card-grid");
+      return;
+    }
+
+    scrollToLegendSection("collector-quest");
   }
 
   function readPulse(item: LegendPulseItem) {
@@ -835,6 +897,36 @@ export function LegendCardCollection() {
           </div>
         </section>
       ) : null}
+
+      <section className="legend-roadmap" aria-labelledby="legend-roadmap-title">
+        <div className="legend-roadmap__header">
+          <div>
+            <p className="wc-card-eyebrow">Collector path</p>
+            <h2 id="legend-roadmap-title">Your album loop</h2>
+            <p>{roadmapActionDetail}</p>
+          </div>
+          <button type="button" className="legend-roadmap__action" onClick={continueCollectorPath}>
+            {roadmapActionLabel}
+          </button>
+        </div>
+
+        <div className="legend-roadmap__track" aria-label="Legend album collection path">
+          {collectorRoadmapItems.map((item) => (
+            <article key={item.id} className="legend-roadmap-card">
+              <div className="legend-roadmap-card__top">
+                <span>{item.label}</span>
+                <strong>
+                  {item.value} / {item.total}
+                </strong>
+              </div>
+              <div className="legend-roadmap-card__bar" aria-hidden="true">
+                <span style={{ width: `${item.percent}%` }} />
+              </div>
+              <small>{item.detail}</small>
+            </article>
+          ))}
+        </div>
+      </section>
 
       {pulseDisplayCard ? (
         <section id="news" className="legend-pulse" aria-labelledby="legend-pulse-title">
