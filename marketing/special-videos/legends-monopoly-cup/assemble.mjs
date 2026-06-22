@@ -36,7 +36,7 @@ function prepClips() {
 // ---------- STAGE 2: xfade chain -> silent master ----------
 function concatXfade() {
   const inputs = [];
-  M.clips.forEach((c) => inputs.push('-i', DIR + c.file));
+  M.clips.forEach((c, i) => inputs.push('-i', `${PREP}${String(i).padStart(2,'0')}_${c.id}.mp4`));
   // normalize every input (SAR/fps/timebase/format) so xfade never rejects a mismatch
   let filter = M.clips.map((_, i) => `[${i}:v]settb=AVTB,fps=30,setsar=1,format=yuv420p[n${i}]`).join(';') + ';';
   let prev = '[n0]', offset = 0;
