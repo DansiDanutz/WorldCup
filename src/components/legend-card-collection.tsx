@@ -13,7 +13,7 @@ import {
   Volume2,
   VolumeX,
 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
 import { CardViewControl } from "@/components/card-view-control";
 import { LEGEND_CARDS, type LegendCard } from "@/lib/legend-cards";
@@ -66,6 +66,16 @@ type PulsePreview = {
   expiresAt: number;
 };
 
+type AccountLegendEvent = "pulse_read" | "listened" | "youtube_opened" | "unlocked";
+
+type AccountLegendState = {
+  unlockedIds: Set<string>;
+  watchedIds: Set<string>;
+  listenedIds: Set<string>;
+  readPulseIds: Set<string>;
+  progressSyncAvailable: boolean;
+};
+
 const pulseLabels = ["Fresh drop", "Watchlist", "Story beat", "Collector note", "Bonus hook"];
 const legendPulseItems: LegendPulseItem[] = LEGEND_CARDS.filter(
   (card) => Boolean(card.youtube && card.kind === "episode-special"),
@@ -79,6 +89,7 @@ const legendPulseItems: LegendPulseItem[] = LEGEND_CARDS.filter(
     summary: card.story,
   }));
 const validPulseIds = new Set(legendPulseItems.map((item) => item.id));
+const pulseItemById = new Map(legendPulseItems.map((item) => [item.id, item]));
 
 function getEpisodeLabel(card: LegendCard) {
   return card.episodeLabel ?? `Episode ${card.episode}`;
@@ -150,14 +161,28 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function idsFromApiPayload(payload: unknown) {
-  if (!isRecord(payload) || !Array.isArray(payload.unlockedCardIds)) {
+function idsFromApiPayload(payload: unknown, key: string, allowedIds = validCardIds) {
+  if (!isRecord(payload) || !Array.isArray(payload[key])) {
     return new Set<string>();
   }
 
-  return new Set(
-    payload.unlockedCardIds.filter((id) => typeof id === "string" && validCardIds.has(id)),
-  );
+  return new Set(payload[key].filter((id) => typeof id === "string" && allowedIds.has(id)));
+}
+
+function accountLegendStateFromApiPayload(payload: unknown): AccountLegendState {
+  const pulseReadCardIds = idsFromApiPayload(payload, "pulseReadCardIds");
+
+  return {
+    unlockedIds: idsFromApiPayload(payload, "unlockedCardIds"),
+    watchedIds: idsFromApiPayload(payload, "watchedCardIds"),
+    listenedIds: idsFromApiPayload(payload, "listenedCardIds"),
+    readPulseIds: new Set(
+      legendPulseItems
+        .filter((item) => pulseReadCardIds.has(item.cardId))
+        .map((item) => item.id),
+    ),
+    progressSyncAvailable: isRecord(payload) ? payload.progressSyncAvailable !== false : false,
+  };
 }
 
 function parseStoredPulsePreview(snapshot: string | null) {
@@ -243,7 +268,26 @@ function getCompletionPercent(count: number, total: number) {
   return total > 0 ? Math.round((count / total) * 100) : 0;
 }
 
-async function readAccountUnlockedIds(token: string) {
+function mergeAccountLegendState(state: AccountLegendState) {
+  writeStoredIds(
+    unlockedStorageKey,
+    new Set([...readCurrentStoredIds(unlockedStorageKey), ...state.unlockedIds]),
+  );
+  writeStoredIds(
+    watchedStorageKey,
+    new Set([...readCurrentStoredIds(watchedStorageKey), ...state.watchedIds]),
+  );
+  writeStoredIds(
+    listenedStorageKey,
+    new Set([...readCurrentStoredIds(listenedStorageKey), ...state.listenedIds]),
+  );
+  writeStoredIds(
+    pulseReadStorageKey,
+    new Set([...readCurrentStoredIds(pulseReadStorageKey, validPulseIds), ...state.readPulseIds]),
+  );
+}
+
+async function readAccountLegendState(token: string) {
   const response = await fetch("/api/legend-cards", {
     headers: { Authorization: `Bearer ${token}` },
   });
@@ -253,17 +297,17 @@ async function readAccountUnlockedIds(token: string) {
     throw new Error(isRecord(payload) && typeof payload.error === "string" ? payload.error : "Sync failed.");
   }
 
-  return idsFromApiPayload(payload);
+  return accountLegendStateFromApiPayload(payload);
 }
 
-async function saveAccountUnlockedId(cardId: string, token: string) {
+async function saveAccountLegendCardEvent(cardId: string, event: AccountLegendEvent, token: string) {
   const response = await fetch("/api/legend-cards", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ cardId }),
+    body: JSON.stringify({ cardId, event }),
   });
   const payload: unknown = await response.json().catch(() => ({}));
 
@@ -271,7 +315,11 @@ async function saveAccountUnlockedId(cardId: string, token: string) {
     throw new Error(isRecord(payload) && typeof payload.error === "string" ? payload.error : "Save failed.");
   }
 
-  return idsFromApiPayload(payload);
+  return accountLegendStateFromApiPayload(payload);
+}
+
+async function saveAccountUnlockedId(cardId: string, token: string) {
+  return saveAccountLegendCardEvent(cardId, "unlocked", token);
 }
 
 export function LegendCardCollection() {
@@ -297,6 +345,23 @@ export function LegendCardCollection() {
   );
   const notificationStatus =
     notificationStatusOverride ?? (notificationPreference === "on" ? "Card alerts on" : "Card alerts off");
+
+  function syncAccountLegendEvent(cardId: string, event: AccountLegendEvent) {
+    if (!accountToken) {
+      return;
+    }
+
+    setAccountSyncLabel("Saving account");
+
+    void saveAccountLegendCardEvent(cardId, event, accountToken)
+      .then((state) => {
+        mergeAccountLegendState(state);
+        setAccountSyncLabel(state.progressSyncAvailable ? "Saved to account" : "Cards saved; progress local");
+      })
+      .catch(() => {
+        setAccountSyncLabel("Device saved; account sync paused");
+      });
+  }
 
   useEffect(() => {
     return () => {
@@ -351,13 +416,38 @@ export function LegendCardCollection() {
         setAccountToken(token);
         setAccountSyncLabel("Syncing account");
 
-        const remoteIds = await readAccountUnlockedIds(token);
-        const localIds = readCurrentStoredIds(unlockedStorageKey);
-        const localOnlyIds = [...localIds].filter(
-          (cardId) => !remoteIds.has(cardId) && unlockableCardIds.has(cardId),
+        const remoteState = await readAccountLegendState(token);
+        const localUnlockedIds = readCurrentStoredIds(unlockedStorageKey);
+        const localWatchedIds = readCurrentStoredIds(watchedStorageKey);
+        const localListenedIds = readCurrentStoredIds(listenedStorageKey);
+        const localReadPulseIds = readCurrentStoredIds(pulseReadStorageKey, validPulseIds);
+        const localOnlyUnlockedIds = [...localUnlockedIds].filter(
+          (cardId) => !remoteState.unlockedIds.has(cardId) && unlockableCardIds.has(cardId),
         );
+        const localOnlyWatchedIds = [...localWatchedIds].filter(
+          (cardId) => !remoteState.watchedIds.has(cardId) && unlockableCardIds.has(cardId),
+        );
+        const localOnlyListenedIds = [...localListenedIds].filter(
+          (cardId) => !remoteState.listenedIds.has(cardId) && validCardIds.has(cardId),
+        );
+        const localOnlyReadPulseItems = [...localReadPulseIds]
+          .filter((pulseId) => !remoteState.readPulseIds.has(pulseId))
+          .map((pulseId) => pulseItemById.get(pulseId))
+          .filter((item): item is LegendPulseItem => Boolean(item));
 
-        for (const cardId of localOnlyIds) {
+        for (const item of localOnlyReadPulseItems) {
+          await saveAccountLegendCardEvent(item.cardId, "pulse_read", token);
+        }
+
+        for (const cardId of localOnlyListenedIds) {
+          await saveAccountLegendCardEvent(cardId, "listened", token);
+        }
+
+        for (const cardId of localOnlyWatchedIds) {
+          await saveAccountLegendCardEvent(cardId, "youtube_opened", token);
+        }
+
+        for (const cardId of localOnlyUnlockedIds) {
           await saveAccountUnlockedId(cardId, token);
         }
 
@@ -365,12 +455,18 @@ export function LegendCardCollection() {
           return;
         }
 
-        const syncedIds = new Set([...remoteIds, ...localIds]);
-        writeStoredIds(unlockedStorageKey, syncedIds);
-        setAccountSyncLabel("Saved to account");
+        mergeAccountLegendState({
+          unlockedIds: new Set([...remoteState.unlockedIds, ...localUnlockedIds]),
+          watchedIds: new Set([...remoteState.watchedIds, ...localWatchedIds]),
+          listenedIds: new Set([...remoteState.listenedIds, ...localListenedIds]),
+          readPulseIds: new Set([...remoteState.readPulseIds, ...localReadPulseIds]),
+          progressSyncAvailable: remoteState.progressSyncAvailable,
+        });
+        setAccountSyncLabel(remoteState.progressSyncAvailable ? "Saved to account" : "Cards saved; progress local");
 
-        if (syncedIds.size > 0) {
-          setStatus(`${syncedIds.size} Legend cards synced to your account.`);
+        const syncedUnlockedCount = new Set([...remoteState.unlockedIds, ...localUnlockedIds]).size;
+        if (syncedUnlockedCount > 0) {
+          setStatus(`${syncedUnlockedCount} Legend cards synced to your account.`);
         }
       } catch {
         if (!cancelled) {
@@ -561,7 +657,7 @@ export function LegendCardCollection() {
         ? `Next card: ${collectorQuestCard.title}`
         : "Open the album";
 
-  const markCardOpened = useCallback((card: LegendCard) => {
+  function markCardOpened(card: LegendCard) {
     if (!card.youtube) {
       return;
     }
@@ -574,13 +670,15 @@ export function LegendCardCollection() {
     nextOpened.add(card.id);
     writeStoredIds(openedStorageKey, nextOpened);
 
+    syncAccountLegendEvent(card.id, "youtube_opened");
     setStatus(`${card.title} opened on YouTube. You can unlock the card now.`);
-  }, []);
+  }
 
   function markCardListened(card: LegendCard) {
     const nextListened = new Set(readCurrentStoredIds(listenedStorageKey));
     nextListened.add(card.id);
     writeStoredIds(listenedStorageKey, nextListened);
+    syncAccountLegendEvent(card.id, "listened");
   }
 
   function startWatch(card: LegendCard) {
@@ -624,9 +722,12 @@ export function LegendCardCollection() {
     setAccountSyncLabel("Saving account");
 
     try {
-      const accountIds = await saveAccountUnlockedId(card.id, accountToken);
-      writeStoredIds(unlockedStorageKey, new Set([...next, ...accountIds]));
-      setAccountSyncLabel("Saved to account");
+      const accountState = await saveAccountUnlockedId(card.id, accountToken);
+      mergeAccountLegendState({
+        ...accountState,
+        unlockedIds: new Set([...next, ...accountState.unlockedIds]),
+      });
+      setAccountSyncLabel(accountState.progressSyncAvailable ? "Saved to account" : "Cards saved; progress local");
       setStatus(`${card.title} collected and saved to your account.`);
     } catch {
       setAccountSyncLabel("Device saved; account sync paused");
@@ -716,6 +817,7 @@ export function LegendCardCollection() {
     const nextReadIds = new Set(readCurrentStoredIds(pulseReadStorageKey, validPulseIds));
     nextReadIds.add(item.id);
     writeStoredIds(pulseReadStorageKey, nextReadIds);
+    syncAccountLegendEvent(card.id, "pulse_read");
 
     const nextPreview = createPulsePreview(card.id);
     writeStoredPulsePreview(nextPreview);

@@ -33,6 +33,10 @@ const legendCardsMigration = readFileSync(
   "supabase/migrations/20260621150000_worldcup_legend_card_unlocks.sql",
   "utf8",
 );
+const legendCardProgressMigration = readFileSync(
+  "supabase/migrations/20260622143000_worldcup_legend_card_progress.sql",
+  "utf8",
+);
 const appIcon = readFileSync("src/app/icon.svg", "utf8");
 const brandMark = readFileSync("public/brand-mark.svg", "utf8");
 const logoLockup = readFileSync("public/logo-lockup.svg", "utf8");
@@ -303,8 +307,14 @@ describe("WorldCup design system integration", () => {
     assert.doesNotMatch(legendCardCollection, /LegendWatchModal/);
     assert.doesNotMatch(legendCardCollection, /legend-watch-modal/);
     assert.match(legendCardCollection, /createBrowserSupabaseClient/);
-    assert.match(legendCardCollection, /readAccountUnlockedIds/);
+    assert.match(legendCardCollection, /readAccountLegendState/);
+    assert.match(legendCardCollection, /saveAccountLegendCardEvent/);
     assert.match(legendCardCollection, /saveAccountUnlockedId/);
+    assert.match(legendCardCollection, /accountLegendStateFromApiPayload/);
+    assert.match(legendCardCollection, /mergeAccountLegendState/);
+    assert.match(legendCardCollection, /syncAccountLegendEvent\(card\.id,\s*"youtube_opened"\)/);
+    assert.match(legendCardCollection, /syncAccountLegendEvent\(card\.id,\s*"listened"\)/);
+    assert.match(legendCardCollection, /syncAccountLegendEvent\(card\.id,\s*"pulse_read"\)/);
     assert.match(legendCardCollection, /supabase\.auth\.onAuthStateChange/);
     assert.match(legendCardCollection, /syncAccountCollection\(nextSession\?\.access_token \?\? null\)/);
     assert.match(legendCardCollection, /data\.subscription\.unsubscribe\(\)/);
@@ -409,11 +419,36 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardsRoute, /supabase\.auth\.getUser\(token\)/);
     assert.match(legendCardsRoute, /getAuthProvider\(userResult\.data\.user\) !== "google"/);
     assert.match(legendCardsRoute, /findLegendCardDefinition\(cardId\)/);
-    assert.match(legendCardsRoute, /if \(!card\.youtube\)/);
+    assert.match(legendCardsRoute, /event === "unlocked" \|\| event === "youtube_opened" \|\| event === "pulse_read"/);
     assert.match(legendCardsRoute, /\.from\("worldcup_legend_card_unlocks"\)\.upsert/);
     assert.match(legendCardsRoute, /ignoreDuplicates:\s*true/);
     assert.match(legendCardsRoute, /\.eq\("user_id", userId\)/);
     assert.match(legendCardsRoute, /unlockedCardIds/);
+  });
+
+  it("persists Legend card progress as owner-readable account data", () => {
+    assert.match(legendCardProgressMigration, /create table if not exists public\.worldcup_legend_card_progress/);
+    assert.match(legendCardProgressMigration, /primary key \(user_id, card_id\)/);
+    assert.match(legendCardProgressMigration, /pulse_read_at timestamptz/);
+    assert.match(legendCardProgressMigration, /listened_at timestamptz/);
+    assert.match(legendCardProgressMigration, /youtube_opened_at timestamptz/);
+    assert.match(legendCardProgressMigration, /worldcup_legend_card_progress_has_event/);
+    assert.match(legendCardProgressMigration, /alter table public\.worldcup_legend_card_progress enable row level security/);
+    assert.match(legendCardProgressMigration, /worldcup_legend_card_progress_owner_read/);
+    assert.match(legendCardProgressMigration, /using \(auth\.uid\(\) = user_id\)/);
+    assert.match(legendCardProgressMigration, /revoke all on public\.worldcup_legend_card_progress from anon, authenticated/);
+    assert.match(legendCardProgressMigration, /grant select on public\.worldcup_legend_card_progress to authenticated/);
+
+    assert.match(legendCardsRoute, /type LegendCardEvent = "pulse_read" \| "listened" \| "youtube_opened" \| "unlocked"/);
+    assert.match(legendCardsRoute, /progressColumnByEvent/);
+    assert.match(legendCardsRoute, /readLegendCardEvent\(body\.event\)/);
+    assert.match(legendCardsRoute, /isMissingProgressTableError/);
+    assert.match(legendCardsRoute, /\.from\("worldcup_legend_card_progress"\)\.upsert/);
+    assert.match(legendCardsRoute, /\.from\("worldcup_legend_card_progress"\)/);
+    assert.match(legendCardsRoute, /progressSyncAvailable/);
+    assert.match(legendCardsRoute, /listenedCardIds/);
+    assert.match(legendCardsRoute, /watchedCardIds/);
+    assert.match(legendCardsRoute, /pulseReadCardIds/);
   });
 
   it("keeps long admin operation lists compact until maximized", () => {
