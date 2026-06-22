@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "You are invited to WorldCup26",
     description:
-      "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+      "Pick 3 teams free and track your points from your signup time.",
     url: "/login",
     type: "website",
   },
@@ -53,8 +53,8 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
 
 const accountSetupGate = {
   allowed: false,
-  missing: ["account setup window"],
-  message: "Account setup is open until June 18, 2026.",
+  missing: ["paid launch"],
+  message: "Free account setup is open. Paid actions are not live yet.",
 };
 
 const LOGIN_ACCOUNT_SETUP_GATES: PaidActionGates = {

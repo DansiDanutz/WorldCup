@@ -101,8 +101,8 @@ describe("WorldCup design system integration", () => {
     assert.match(loginPage, /title:\s*"Join WorldCup26"/);
     assert.match(loginPage, /You are invited to WorldCup26/);
     assert.match(loginOgImage, /Referral invite/);
-    assert.match(loginOgImage, /Pick 3 teams free before kickoff\./);
-    assert.match(loginOgImage, /Track your private points preview, then use a ticket for the paid leaderboard\./);
+    assert.match(loginOgImage, /Pick 3 teams free\./);
+    assert.match(loginOgImage, /Your score starts from your signup time; earlier matches do not count\./);
   });
 
   it("keeps WhatsApp support reachable from user-facing app surfaces", () => {
@@ -408,10 +408,10 @@ describe("WorldCup design system integration", () => {
     assert.match(loginRegister, /Agent Wanted/);
     assert.match(loginRegister, /Every 10 paid ticket codes unlock 1 extra free ticket code/);
     assert.match(loginRegister, /Register as an agent in Wallet/);
-    assert.match(loginRegister, /All 48 teams/);
-    assert.match(loginRegister, /All 48 teams can still be chosen/);
-    assert.match(loginRegister, /The event has not started yet, so every team is still available for new entries/);
-    assert.match(dashboard, /The event has not started yet, so all 48 teams are still available/);
+    assert.match(loginRegister, /Any 3 teams/);
+    assert.match(loginRegister, /Any 3 teams can still be chosen/);
+    assert.match(loginRegister, /Past matches do not score for late signups/);
+    assert.match(dashboard, /Pick any 3 teams, even after kickoff/);
     assert.match(loginRegister, /disabled=\{!canContinue\}/);
     assert.doesNotMatch(globalsCss, /\.referral-consent/);
     assert.match(globalsCss, /\.auth-card\s*{[\s\S]*?linear-gradient\(155deg/);
@@ -699,21 +699,22 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /function handleTeamRowPointerMove/);
     assert.match(dashboard, /suppressTeamRowClick/);
     assert.match(dashboard, /role="button"/);
-    assert.match(dashboard, /aria-disabled=\{unavailable\}/);
+    assert.match(dashboard, /aria-disabled=\{atPickLimit && !selected\}/);
     assert.match(dashboard, /className="panel pick-panel"/);
     assert.match(dashboard, /const atPickLimit = selectedTeams\.length >= 3 && !selected;/);
     assert.match(dashboard, /const firstMatchStart = formatPickDeadline/);
     assert.match(dashboard, /function formatDateTime[\s\S]*?timeZone:\s*"UTC"/);
     assert.match(dashboard, /function formatPickDeadline[\s\S]*?timeZone:\s*"UTC"/);
     assert.doesNotMatch(dashboard, /new Date\(pendingAgentTicketRequest\.expiresAt\)\.toLocaleString\(\)/);
-    assert.match(dashboard, /Pick before first match/);
+    assert.match(dashboard, /First match:/);
+    assert.match(dashboard, /Past matches do not score for late signups/);
     assert.match(dashboard, /getTeamColorStyle/);
     assert.equal(
       dashboard.match(/style=\{team \? getTeamColorStyle\(team\.id\) : undefined\}/g)?.length,
       3,
     );
-    assert.match(dashboard, /one-minute-before-first-match lock time/);
-    assert.match(dashboard, /Matchday 1 runs 11-17 June 2026/);
+    assert.match(dashboard, /Your entry scores only matches that kick off after your signup time/);
+    assert.doesNotMatch(dashboard, /one-minute-before-first-match lock time/);
     assert.match(dashboard, /className="team-row-action"/);
     assert.match(dashboard, /className="team-coef-badge"/);
     assert.match(dashboard, /className="team-deadline"/);
@@ -970,7 +971,7 @@ describe("WorldCup design system integration", () => {
     assert.match(dashboard, /assign paid ticket codes\s+manually from the Admin panel/);
     assert.match(dashboard, /paidActionGates: result\.paidActionGates/);
     assert.match(dashboard, /myAccountStatus\?\.paidActionGates/);
-    assert.match(dashboard, /The event has not started yet, so all 48 teams are still available/);
+    assert.match(dashboard, /Pick any 3 teams, even after kickoff/);
     assert.doesNotMatch(dashboard, /Entry locking opens after launch approvals are complete/);
     assert.doesNotMatch(dashboard, /Operator policy is configured/);
     assert.match(globalsCss, /\.launch-notice/);
@@ -1010,14 +1011,14 @@ describe("WorldCup design system integration", () => {
     assert.doesNotMatch(walletScreen, /Boolean\(withdrawalPolicyPause\)/);
 
     assert.match(loginRegister, /paidActionsPaused/);
-    assert.match(loginRegister, /Account setup is open until June 18, 2026/);
+    assert.match(loginRegister, /Free account setup is open/);
     assert.match(
       loginRegister,
       /Create the free account first\. Tickets and payment can be handled later\./,
     );
     assert.match(
       loginRegister,
-      /All 48 teams are still available to choose because the event has not started yet\./,
+      /Pick any 3 teams\. Your points start from your signup time, so earlier matches do\s+not count\./,
     );
   });
 });

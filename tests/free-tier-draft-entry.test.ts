@@ -18,6 +18,10 @@ const freeLockedMigration = readFileSync(
   "supabase/migrations/20260610120000_worldcup_free_locked_entries.sql",
   "utf8",
 );
+const latePickSignupScoringMigration = readFileSync(
+  "supabase/migrations/20260622100000_worldcup_late_pick_signup_scoring.sql",
+  "utf8",
+);
 const entryRoute = readFileSync("src/app/api/entries/route.ts", "utf8");
 const referralsMeRoute = readFileSync("src/app/api/referrals/me/route.ts", "utf8");
 const standingRoute = readFileSync("src/app/api/me/standing/route.ts", "utf8");
@@ -48,19 +52,21 @@ describe("free draft entry tier", () => {
     );
     // Free permanent lock sets the committed tier without consuming a ticket.
     assert.match(freeLockedMigration, /status = 'committed'/);
-    // A committed entry can enter the paid pool any time during the tournament:
-    // the kickoff cutoff in lock only applies while still a draft.
+    // A committed entry can enter the paid pool any time during the tournament.
     assert.match(freeLockedMigration, /create or replace function public\.worldcup_lock_draft_entry/);
-    assert.match(freeLockedMigration, /v_entry\.status = 'draft' and exists/);
+    assert.match(latePickSignupScoringMigration, /create or replace function public\.worldcup_lock_draft_entry/);
+    assert.doesNotMatch(latePickSignupScoringMigration, /first_match\.kickoff_at/);
+    assert.doesNotMatch(latePickSignupScoringMigration, /v_entry\.status = 'draft' and exists/);
     // Picks are immutable once committed or locked.
     assert.match(freeLockedMigration, /raise exception 'TEAMS_LOCKED'/);
     assert.match(
       freeLockedMigration,
       /check \(status in \('draft', 'committed', 'locked'\)\)/,
     );
-    // Point snapshots accrue for committed entries too, so a later ticket keeps
-    // the full history.
+    // Point snapshots accrue for committed entries too, but only from the
+    // entry signup window forward.
     assert.match(freeLockedMigration, /e\.status in \('draft', 'committed', 'locked'\)/);
+    assert.match(latePickSignupScoringMigration, /m\.kickoff_at >= e\.created_at/);
     assert.match(
       freeLockedMigration,
       /grant execute on function public\.worldcup_commit_entry\(uuid, uuid\)\s+to service_role;/,

@@ -258,12 +258,13 @@ export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionG
           {paidActionsPaused ? (
             <div className="launch-notice" aria-label="Launch status">
               <div>
-                <strong>Account setup is open until June 18, 2026</strong>
+                <strong>Free account setup is open</strong>
                 <span>
                   Create the free account first. Tickets and payment can be handled later.
                 </span>
                 <span>
-                  All 48 teams are still available to choose because the event has not started yet.
+                  Pick any 3 teams. Your points start from your signup time, so earlier matches do
+                  not count.
                 </span>
               </div>
             </div>
@@ -544,10 +545,11 @@ export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionG
                 </summary>
                 <div className="flag-wall" aria-label="All 48 qualified nations">
                   <div className="flag-wall-head">
-                    <span className="ds-label">All 48 teams can still be chosen</span>
+                    <span className="ds-label">Any 3 teams can still be chosen</span>
                   </div>
                   <p className="flag-wall-note">
-                    The event has not started yet, so every team is still available for new entries.
+                    Past matches do not score for late signups; your points start from your account
+                    entry time.
                   </p>
                   <div className="flag-grid">
                     {flagTeams.map(([id, name, code]) => (

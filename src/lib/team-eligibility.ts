@@ -11,8 +11,6 @@ export type TeamEligibility = {
   lockAt: number | null;
 };
 
-const TEAM_PICK_LOCK_OFFSET_MS = 60_000;
-
 function getFirstGroupKickoff(teamId: string, matches: TeamGroupMatch[]) {
   const teamMatches = matches
     .filter(
@@ -33,19 +31,19 @@ function getFirstGroupKickoff(teamId: string, matches: TeamGroupMatch[]) {
 export function getTeamEligibility(
   teamIds: string[],
   matches: TeamGroupMatch[],
-  now = Date.now(),
 ) {
   return new Map<string, TeamEligibility>(
     teamIds.map((teamId) => {
       const firstKickoff = getFirstGroupKickoff(teamId, matches);
-      const lockAt = firstKickoff === null ? null : firstKickoff - TEAM_PICK_LOCK_OFFSET_MS;
 
       return [
         teamId,
         {
-          available: lockAt === null || now < lockAt,
+          // Late entries can pick any team; scoring starts from the entry
+          // signup timestamp so already-started matches do not award points.
+          available: true,
           firstKickoff,
-          lockAt,
+          lockAt: null,
         },
       ];
     }),
@@ -55,9 +53,8 @@ export function getTeamEligibility(
 export function getLockedTeamIds(
   teamIds: string[],
   matches: TeamGroupMatch[],
-  now = Date.now(),
 ) {
-  const eligibility = getTeamEligibility(teamIds, matches, now);
+  const eligibility = getTeamEligibility(teamIds, matches);
 
   return teamIds.filter((teamId) => eligibility.get(teamId)?.available === false);
 }

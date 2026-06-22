@@ -9,7 +9,6 @@ import {
 import { isPaidActionLaunchTestAdmin } from "@/lib/paid-action-gates";
 import { getAuthProvider, normalizeReferralCode } from "@/lib/referrals";
 import { createServiceSupabaseClient } from "@/lib/supabase";
-import { getLockedTeamIds } from "@/lib/team-eligibility";
 import {
   requireObject,
   requireString,
@@ -59,9 +58,8 @@ export async function POST(request: Request) {
           : "lock";
     displayName = requireString(body.displayName, "Display name", { max: 60 });
     teamIds = requireStringArray(body.teamIds, "teamIds");
-    // Team ids are slug identifiers; restrict the charset before they are
-    // interpolated into the PostgREST `.or()` availability filter below so a
-    // crafted id (with `)`/`,`/quotes) cannot manipulate that query.
+    // Team ids are slug identifiers; restrict the charset before using them in
+    // queries so malformed ids fail before reaching PostgREST.
     if (teamIds.some((id) => !/^[A-Za-z0-9_-]+$/.test(id))) {
       throw new ValidationError("teamIds contains an invalid team identifier.");
     }
@@ -104,14 +102,9 @@ export async function POST(request: Request) {
     return jsonError("Accept the referral agreement before joining with a referral code.", 400);
   }
 
-  const [tournamentResult, teamsResult, groupMatchesResult] = await Promise.all([
+  const [tournamentResult, teamsResult] = await Promise.all([
     supabase.from("worldcup_tournaments").select("id,status").eq("slug", "fifa-world-cup-2026").single(),
     supabase.from("worldcup_teams").select("id,name").in("id", teamIds),
-    supabase
-      .from("worldcup_matches")
-      .select("home_team_id,away_team_id,kickoff_at")
-      .eq("stage_id", "group_stage")
-      .or(`home_team_id.in.(${teamIds.join(",")}),away_team_id.in.(${teamIds.join(",")})`),
   ]);
 
   if (tournamentResult.error || !tournamentResult.data) {
@@ -120,37 +113,6 @@ export async function POST(request: Request) {
 
   if (teamsResult.error || !teamsResult.data || teamsResult.data.length !== 3) {
     return jsonError("Choose exactly 3 valid teams.", 400);
-  }
-
-  if (groupMatchesResult.error) {
-    return jsonError("Could not check team availability.", 500);
-  }
-
-  // A free (committed) or already-paid (locked) entry has finalized its teams,
-  // so buying a ticket to enter the paid pool is allowed any time during the
-  // tournament. The team-pick cutoff below only governs still-editable picks.
-  let enteringPoolWithLockedTeams = false;
-  if (action === "lock") {
-    const existingEntry = await supabase
-      .from("worldcup_entries")
-      .select("status")
-      .eq("tournament_id", tournamentResult.data.id)
-      .eq("user_id", user.id)
-      .maybeSingle();
-    enteringPoolWithLockedTeams =
-      existingEntry.data?.status === "committed" || existingEntry.data?.status === "locked";
-  }
-
-  const lockedTeamIds = getLockedTeamIds(teamIds, groupMatchesResult.data ?? []);
-
-  if (!enteringPoolWithLockedTeams && lockedTeamIds.length > 0) {
-    const namesById = new Map((teamsResult.data ?? []).map((team) => [team.id, team.name]));
-    const lockedTeamNames = lockedTeamIds.map((teamId) => namesById.get(teamId) ?? teamId);
-
-    return jsonError(
-      `${lockedTeamNames.join(", ")} can no longer be selected because the first match starts in less than one minute or already started.`,
-      403,
-    );
   }
 
   let referrerUserId: string | null = null;
@@ -224,13 +186,6 @@ export async function POST(request: Request) {
         return jsonError("You already locked an entry for this tournament.", 409);
       }
 
-      if (/first match|second group-stage match/i.test(draftResult.error.message ?? "")) {
-        return jsonError(
-          "A selected team can no longer be picked; its first match starts in less than one minute or already started.",
-          403,
-        );
-      }
-
       return jsonError("Could not create entry.", 500);
     }
   }
@@ -274,13 +229,6 @@ export async function POST(request: Request) {
         return jsonError(mapped.message, mapped.status);
       }
 
-      if (/first match|second group-stage match/i.test(commitResult.error.message ?? "")) {
-        return jsonError(
-          "A selected team can no longer be picked; its first match starts in less than one minute or already started.",
-          403,
-        );
-      }
-
       return jsonError("Could not lock your teams.", 500);
     }
 
@@ -302,13 +250,6 @@ export async function POST(request: Request) {
 
     if (entryResult.error.code === "23505") {
       return jsonError("You already locked an entry for this tournament.", 409);
-    }
-
-    if (/first match|second group-stage match/i.test(entryResult.error.message ?? "")) {
-      return jsonError(
-        "A selected team can no longer be picked; its first match starts in less than one minute or already started.",
-        403,
-      );
     }
 
     return jsonError("Could not lock entry.", 500);

@@ -28,46 +28,43 @@ const groupMatches = [
 ];
 
 describe("team pick eligibility", () => {
-  it("keeps a team available until one minute before its first group match starts", () => {
+  it("keeps a team available and exposes its first group match for scoring context", () => {
     const eligibility = getTeamEligibility(
       ["spain"],
       groupMatches,
-      new Date("2026-06-11T18:58:59.000Z").getTime(),
     );
 
     assert.equal(eligibility.get("spain")?.available, true);
     assert.equal(eligibility.get("spain")?.firstKickoff, new Date(firstKickoff).getTime());
-    assert.equal(eligibility.get("spain")?.lockAt, new Date(firstKickoff).getTime() - 60_000);
+    assert.equal(eligibility.get("spain")?.lockAt, null);
   });
 
-  it("locks a team exactly one minute before its first group match starts", () => {
+  it("does not lock a team after its first group match starts", () => {
     const lockedTeamIds = getLockedTeamIds(
       ["spain"],
       groupMatches,
-      new Date(firstKickoff).getTime() - 60_000,
     );
 
-    assert.deepEqual(lockedTeamIds, ["spain"]);
+    assert.deepEqual(lockedTeamIds, []);
   });
 
-  it("ignores knockout matches when deciding late-pick availability", () => {
+  it("ignores knockout matches when surfacing the first group match", () => {
     const eligibility = getTeamEligibility(
       ["runner_up"],
       groupMatches,
-      new Date("2026-07-01T00:00:00.000Z").getTime(),
     );
 
     assert.equal(eligibility.get("runner_up")?.available, true);
+    assert.equal(eligibility.get("runner_up")?.firstKickoff, null);
     assert.equal(eligibility.get("runner_up")?.lockAt, null);
   });
 
-  it("can evaluate multiple selected teams together", () => {
+  it("keeps multiple selected teams available after kickoff", () => {
     const lockedTeamIds = getLockedTeamIds(
       ["spain", "cabo_verde"],
       groupMatches,
-      new Date("2026-06-11T18:59:00.000Z").getTime(),
     );
 
-    assert.deepEqual(lockedTeamIds, ["spain", "cabo_verde"]);
+    assert.deepEqual(lockedTeamIds, []);
   });
 });

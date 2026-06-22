@@ -198,7 +198,7 @@ function HowToPoster() {
             </span>
             <span className="hero-feature__body">
               <strong>2 · Pick 3 teams</strong>
-              <small>Choose before kickoff on June 11.</small>
+              <small>Any nation. Earlier matches score 0.</small>
             </span>
           </div>
 

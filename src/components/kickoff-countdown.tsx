@@ -15,8 +15,8 @@ function formatRemaining(ms: number) {
   return `${hours}h ${String(minutes).padStart(2, "0")}m ${String(seconds).padStart(2, "0")}s`;
 }
 
-// Live urgency strip: counts down to the first kickoff, then flips to
-// "tournament live" mode (teams keep locking one by one at their own kickoff).
+// Live urgency strip: counts down to the first kickoff, then flips to the
+// late-entry rule once the tournament is live.
 export function KickoffCountdown({
   kickoffAt,
   ctaHref = "#pick",
@@ -57,15 +57,15 @@ export function KickoffCountdown({
         </span>
         <strong className="kickoff-strip__clock">
           {live
-            ? "Teams lock at their first match"
+            ? "Late entries score from signup"
             : remaining == null
               ? "—"
               : formatRemaining(remaining)}
         </strong>
         <small>
           {live
-            ? "You can still join free with teams that have not played yet."
-            : "Free entry. Every team locks at its own kickoff — pick while all 48 are open."}
+            ? "Pick any 3 teams free. Matches before you joined do not count for your score."
+            : "Free entry. Pick any 3 teams; scoring begins from your signup time."}
         </small>
       </div>
       <a className="kickoff-strip__cta" href={ctaHref}>

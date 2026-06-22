@@ -781,10 +781,6 @@ export function Dashboard({
       return;
     }
 
-    if (teamEligibility.get(teamId)?.available === false) {
-      return;
-    }
-
     setEntryError(null);
     setEntryMessage(null);
     setSelectedTeams((current) => {
@@ -1508,8 +1504,8 @@ export function Dashboard({
               <div>
                 <h1 className="panel-title">Choose 3 Teams</h1>
                 <p className="panel-subtitle">
-                  The event has not started yet, so all 48 teams are still available. A team locks
-                  1 minute before its first World Cup 2026 match.
+                  Pick any 3 teams, even after kickoff. Your score starts from your signup time,
+                  so earlier matches do not count.
                 </p>
               </div>
               <span className="status-pill">{selectedTeams.length}/3 selected</span>
@@ -1648,7 +1644,6 @@ export function Dashboard({
                 const selected = selectedTeams.includes(team.id);
                 const selectedIndex = selectedTeams.indexOf(team.id);
                 const eligibility = teamEligibility.get(team.id);
-                const unavailable = eligibility?.available === false;
                 const firstMatchStart = formatPickDeadline(eligibility?.firstKickoff ?? null);
                 const atPickLimit = selectedTeams.length >= 3 && !selected;
                 const nextPickNumber = selected ? selectedIndex + 1 : selectedTeams.length + 1;
@@ -1656,10 +1651,10 @@ export function Dashboard({
                 return (
                   <div
                     className={`team-row ${selected ? "selected" : ""} ${getPickColorClass(selectedIndex)} ${
-                      unavailable ? "unavailable" : ""
-                    } ${atPickLimit ? "at-limit" : ""}`}
+                      atPickLimit ? "at-limit" : ""
+                    }`}
                     style={getTeamColorStyle(team.id)}
-                    aria-disabled={unavailable}
+                    aria-disabled={atPickLimit && !selected}
                     aria-pressed={selected}
                     key={team.id}
                     onClick={() => handleTeamRowClick(team.id)}
@@ -1669,12 +1664,10 @@ export function Dashboard({
                     onPointerMove={handleTeamRowPointerMove}
                     onPointerUp={handleTeamRowPointerUp}
                     role="button"
-                    tabIndex={unavailable ? -1 : 0}
+                    tabIndex={0}
                     title={
-                      unavailable
-                        ? "This team can no longer be selected because its first match starts in less than one minute or already started."
-                        : atPickLimit
-                          ? "You already selected 3 teams. Remove one pick before adding another."
+                      atPickLimit
+                        ? "You already selected 3 teams. Remove one pick before adding another."
                         : undefined
                     }
                   >
@@ -1688,13 +1681,10 @@ export function Dashboard({
                       </span>
                       <span className="team-meta">
                         Group {team.group_code ?? "-"} · {team.confederation}
-                        {unavailable ? " · Locked" : ""}
                       </span>
                       <span className="team-deadline">
                         {firstMatchStart
-                          ? unavailable
-                            ? `First match started ${firstMatchStart}`
-                            : `Pick before first match: ${firstMatchStart}`
+                          ? `First match: ${firstMatchStart}. Past matches do not score for late signups.`
                           : "First match schedule pending"}
                       </span>
                     </span>
@@ -2342,12 +2332,12 @@ export function Dashboard({
               <div className="rule-block">
                 <h3>How to join</h3>
                 <p>
-                  Choose exactly 3 teams. You may join even after the tournament starts, but only
-                  with teams that have not reached the one-minute-before-first-match lock time.
+                  Choose exactly 3 teams. You may join even after the tournament starts, and any
+                  nation can still be selected.
                 </p>
                 <p>
-                  Matchday 1 runs 11-17 June 2026. Matchday 2 runs 18-23 June 2026.
-                  Each team row shows the exact last selectable time before its first match.
+                  Your entry scores only matches that kick off after your signup time. Completed
+                  matches before you joined stay at 0 points for your entry.
                 </p>
               </div>
 

@@ -17,8 +17,8 @@ export default function WalletPage() {
 
 const accountSetupGate = {
   allowed: false,
-  missing: ["account setup window"],
-  message: "Account setup is open until June 18, 2026.",
+  missing: ["paid launch"],
+  message: "Free account setup is open. Paid actions are not live yet.",
 };
 
 const WALLET_ACCOUNT_SETUP_GATES: PaidActionGates = {
