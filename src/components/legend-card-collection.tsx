@@ -2,7 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ExternalLink, LockKeyhole, LogIn, Sparkles, Volume2, VolumeX } from "lucide-react";
+import {
+  Bell,
+  Check,
+  ExternalLink,
+  LockKeyhole,
+  LogIn,
+  Newspaper,
+  Sparkles,
+  Volume2,
+  VolumeX,
+} from "lucide-react";
 import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
 import { CardViewControl } from "@/components/card-view-control";
@@ -12,10 +22,15 @@ import { createBrowserSupabaseClient } from "@/lib/supabase";
 const unlockedStorageKey = "worldcup_legend_unlocked_cards";
 const openedStorageKey = "worldcup_legend_opened_cards";
 const watchedStorageKey = "worldcup_legend_watched_cards";
+const pulseReadStorageKey = "worldcup_legend_pulse_reads";
+const pulsePreviewStorageKey = "worldcup_legend_pulse_preview";
+const notificationStorageKey = "worldcup_legend_notifications";
 const storageEventName = "worldcup:legend-card-storage";
 const compactLegendCardCount = 12;
+const pulsePreviewDurationMs = 60_000;
 const validCardIds = new Set(LEGEND_CARDS.map((card) => card.id));
 const unlockableCardIds = new Set(LEGEND_CARDS.filter((card) => card.youtube).map((card) => card.id));
+const legendCardById = new Map(LEGEND_CARDS.map((card) => [card.id, card]));
 
 type LegendCardFilter = "all" | "stories" | "bonus" | "ready" | "collected" | "locked";
 
@@ -37,16 +52,43 @@ const legendCardFilters: Array<{ id: LegendCardFilter; label: string }> = [
   { id: "locked", label: "Locked" },
 ];
 
+type LegendPulseItem = {
+  id: string;
+  cardId: string;
+  label: string;
+  headline: string;
+  summary: string;
+};
+
+type PulsePreview = {
+  cardId: string;
+  expiresAt: number;
+};
+
+const pulseLabels = ["Fresh drop", "Watchlist", "Story beat", "Collector note", "Bonus hook"];
+const legendPulseItems: LegendPulseItem[] = LEGEND_CARDS.filter(
+  (card) => Boolean(card.youtube && card.kind === "episode-special"),
+)
+  .slice(0, 5)
+  .map((card, index) => ({
+    id: `pulse-${card.id}`,
+    cardId: card.id,
+    label: pulseLabels[index] ?? "Pulse",
+    headline: `${card.teams}: ${card.title}`,
+    summary: card.story,
+  }));
+const validPulseIds = new Set(legendPulseItems.map((item) => item.id));
+
 function getEpisodeLabel(card: LegendCard) {
   return card.episodeLabel ?? `Episode ${card.episode}`;
 }
 
-function parseStoredIds(snapshot: string | null) {
+function parseStoredIds(snapshot: string | null, allowedIds = validCardIds) {
   try {
     const parsed = snapshot ? JSON.parse(snapshot) : [];
     return new Set(
       Array.isArray(parsed)
-        ? parsed.filter((id) => typeof id === "string" && validCardIds.has(id))
+        ? parsed.filter((id) => typeof id === "string" && allowedIds.has(id))
         : [],
     );
   } catch {
@@ -80,14 +122,14 @@ function getStoredIdsServerSnapshot() {
   return null;
 }
 
-function useStoredIds(key: string) {
+function useStoredIds(key: string, allowedIds = validCardIds) {
   const snapshot = useSyncExternalStore(
     subscribeToStoredIds,
     () => getStoredIdsSnapshot(key),
     getStoredIdsServerSnapshot,
   );
 
-  return useMemo(() => parseStoredIds(snapshot), [snapshot]);
+  return useMemo(() => parseStoredIds(snapshot, allowedIds), [allowedIds, snapshot]);
 }
 
 function writeStoredIds(key: string, ids: Set<string>) {
@@ -99,8 +141,8 @@ function writeStoredIds(key: string, ids: Set<string>) {
   }
 }
 
-function readCurrentStoredIds(key: string) {
-  return parseStoredIds(getStoredIdsSnapshot(key));
+function readCurrentStoredIds(key: string, allowedIds = validCardIds) {
+  return parseStoredIds(getStoredIdsSnapshot(key), allowedIds);
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -115,6 +157,78 @@ function idsFromApiPayload(payload: unknown) {
   return new Set(
     payload.unlockedCardIds.filter((id) => typeof id === "string" && validCardIds.has(id)),
   );
+}
+
+function parseStoredPulsePreview(snapshot: string | null) {
+  try {
+    const parsed: unknown = snapshot ? JSON.parse(snapshot) : null;
+
+    if (!isRecord(parsed)) {
+      return null;
+    }
+
+    const { cardId, expiresAt } = parsed;
+    if (
+      typeof cardId !== "string" ||
+      typeof expiresAt !== "number" ||
+      !validCardIds.has(cardId) ||
+      expiresAt <= Date.now()
+    ) {
+      return null;
+    }
+
+    return { cardId, expiresAt };
+  } catch {
+    return null;
+  }
+}
+
+function readStoredPulsePreview() {
+  return parseStoredPulsePreview(getStoredIdsSnapshot(pulsePreviewStorageKey));
+}
+
+function useStoredPulsePreview() {
+  const snapshot = useSyncExternalStore(
+    subscribeToStoredIds,
+    () => getStoredIdsSnapshot(pulsePreviewStorageKey),
+    getStoredIdsServerSnapshot,
+  );
+
+  return useMemo(() => parseStoredPulsePreview(snapshot), [snapshot]);
+}
+
+function useStoredNotificationPreference() {
+  return useSyncExternalStore(
+    subscribeToStoredIds,
+    () => getStoredIdsSnapshot(notificationStorageKey),
+    getStoredIdsServerSnapshot,
+  );
+}
+
+function writeStoredPulsePreview(preview: PulsePreview) {
+  try {
+    window.localStorage.setItem(pulsePreviewStorageKey, JSON.stringify(preview));
+    window.dispatchEvent(new Event(storageEventName));
+  } catch {
+    // Pulse previews are a lightweight engagement layer; card collection still works without them.
+  }
+}
+
+function clearStoredPulsePreview() {
+  try {
+    window.localStorage.removeItem(pulsePreviewStorageKey);
+    window.dispatchEvent(new Event(storageEventName));
+  } catch {
+    // Ignore storage failures; the timer state remains in memory for this session.
+  }
+}
+
+function getPulsePreviewSecondsRemaining(preview: PulsePreview | null) {
+  if (!preview) {
+    return 0;
+  }
+
+  return Math.max(0, Math.ceil((preview.expiresAt - Date.now()) / 1000));
 }
 
 async function readAccountUnlockedIds(token: string) {
@@ -151,15 +265,24 @@ async function saveAccountUnlockedId(cardId: string, token: string) {
 export function LegendCardCollection() {
   const unlockedIds = useStoredIds(unlockedStorageKey);
   const watchedIds = useStoredIds(watchedStorageKey);
+  const readPulseIds = useStoredIds(pulseReadStorageKey, validPulseIds);
+  const pulsePreview = useStoredPulsePreview();
+  const notificationPreference = useStoredNotificationPreference();
   const [accountToken, setAccountToken] = useState<string | null>(null);
   const [accountSyncLabel, setAccountSyncLabel] = useState("Saved on this device");
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [speakingCardId, setSpeakingCardId] = useState<string | null>(null);
   const [cardFilter, setCardFilter] = useState<LegendCardFilter>("all");
   const [collectionExpanded, setCollectionExpanded] = useState(false);
+  const [previewSecondsRemaining, setPreviewSecondsRemaining] = useState(() =>
+    getPulsePreviewSecondsRemaining(readStoredPulsePreview()),
+  );
+  const [notificationStatusOverride, setNotificationStatusOverride] = useState<string | null>(null);
   const [status, setStatus] = useState(
     "Open a YouTube story to collect its card. Use Listen story for in-app voice playback.",
   );
+  const notificationStatus =
+    notificationStatusOverride ?? (notificationPreference === "on" ? "Card alerts on" : "Card alerts off");
 
   useEffect(() => {
     return () => {
@@ -168,6 +291,30 @@ export function LegendCardCollection() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (!pulsePreview) {
+      return undefined;
+    }
+
+    function syncPreviewTimer() {
+      const nextSeconds = getPulsePreviewSecondsRemaining(pulsePreview);
+      setPreviewSecondsRemaining(nextSeconds);
+
+      if (nextSeconds <= 0) {
+        clearStoredPulsePreview();
+        setStatus("Pulse preview expired. Watch the YouTube episode to collect the card.");
+      }
+    }
+
+    const timeout = window.setTimeout(syncPreviewTimer, 0);
+    const interval = window.setInterval(syncPreviewTimer, 1000);
+
+    return () => {
+      window.clearTimeout(timeout);
+      window.clearInterval(interval);
+    };
+  }, [pulsePreview]);
 
   useEffect(() => {
     let cancelled = false;
@@ -289,6 +436,13 @@ export function LegendCardCollection() {
     collected: collectedCount,
     locked: lockedCount,
   };
+  const nextPulseItem = legendPulseItems.find((item) => !readPulseIds.has(item.id)) ?? legendPulseItems[0];
+  const activePreviewCard =
+    pulsePreview && previewSecondsRemaining > 0
+      ? legendCardById.get(pulsePreview.cardId) ?? null
+      : null;
+  const nextPulseCard = nextPulseItem ? legendCardById.get(nextPulseItem.cardId) ?? null : null;
+  const pulseDisplayCard = activePreviewCard ?? nextPulseCard ?? focusCard;
 
   const markCardOpened = useCallback((card: LegendCard) => {
     if (!card.youtube) {
@@ -412,6 +566,71 @@ export function LegendCardCollection() {
     setCollectionExpanded(false);
   }
 
+  function readPulse(item: LegendPulseItem) {
+    const card = legendCardById.get(item.cardId);
+    if (!card) {
+      return;
+    }
+
+    const nextReadIds = new Set(readCurrentStoredIds(pulseReadStorageKey, validPulseIds));
+    nextReadIds.add(item.id);
+    writeStoredIds(pulseReadStorageKey, nextReadIds);
+
+    const nextPreview = {
+      cardId: card.id,
+      expiresAt: Date.now() + pulsePreviewDurationMs,
+    };
+    writeStoredPulsePreview(nextPreview);
+    setPreviewSecondsRemaining(pulsePreviewDurationMs / 1000);
+    setCardFilter("all");
+    setCollectionExpanded(false);
+    setStatus(
+      `${card.title} preview unlocked for 60 seconds. Watch the YouTube episode to collect it permanently.`,
+    );
+  }
+
+  async function enableCardNotifications() {
+    const notificationApi = typeof window === "undefined" ? undefined : window.Notification;
+
+    if (!notificationApi) {
+      try {
+        window.localStorage.setItem(notificationStorageKey, "on");
+        window.dispatchEvent(new Event(storageEventName));
+      } catch {
+        // Preference text can still update for this session.
+      }
+      setNotificationStatusOverride("In-app alerts on");
+      setStatus("Browser notifications are unavailable here; in-app Pulse alerts are on.");
+      return;
+    }
+
+    if (notificationApi.permission === "denied") {
+      setNotificationStatusOverride("Alerts blocked");
+      setStatus("Browser notifications are blocked. You can still use the Pulse feed in the app.");
+      return;
+    }
+
+    const permission =
+      notificationApi.permission === "granted"
+        ? "granted"
+        : await notificationApi.requestPermission();
+
+    if (permission === "granted") {
+      try {
+        window.localStorage.setItem(notificationStorageKey, "on");
+        window.dispatchEvent(new Event(storageEventName));
+      } catch {
+        // A granted browser permission is still useful without persisted local state.
+      }
+      setNotificationStatusOverride("Card alerts on");
+      setStatus("Card alerts enabled. New Pulse reads can open a 60-second card preview.");
+      return;
+    }
+
+    setNotificationStatusOverride("Card alerts off");
+    setStatus("Notifications stayed off. You can still read Pulse items anytime.");
+  }
+
   return (
     <section id="legend-cards" className="legend-collection" aria-labelledby="legend-collection-title">
       <div className="legend-collection__hero">
@@ -455,6 +674,122 @@ export function LegendCardCollection() {
       <p className="legend-collection__status" aria-live="polite">
         {status}
       </p>
+
+      {pulseDisplayCard ? (
+        <section id="news" className="legend-pulse" aria-labelledby="legend-pulse-title">
+          <div className="legend-pulse__header">
+            <div>
+              <p className="wc-card-eyebrow">News / Pulse</p>
+              <h2 id="legend-pulse-title">Read the Pulse, preview a card</h2>
+              <p>
+                Short daily story drops open a temporary 60-second card preview. Permanent
+                collection still requires the matching YouTube episode.
+              </p>
+            </div>
+            <div className="legend-pulse__actions">
+              {!accountToken ? (
+                <Link
+                  className="legend-pulse__signin"
+                  href={{ pathname: "/login", query: { returnTo: "/predictions#news" } }}
+                >
+                  <LogIn size={16} />
+                  Sign in for saved cards
+                </Link>
+              ) : null}
+              <button
+                type="button"
+                className={`legend-notification-button ${
+                  notificationStatus === "Card alerts on" || notificationStatus === "In-app alerts on"
+                    ? "is-on"
+                    : ""
+                }`}
+                onClick={enableCardNotifications}
+              >
+                <Bell size={16} />
+                {notificationStatus}
+              </button>
+            </div>
+          </div>
+
+          <div className="legend-pulse__grid">
+            <article className={`legend-pulse__preview ${activePreviewCard ? "is-open" : ""}`}>
+              <div className="legend-pulse__preview-image">
+                <Image
+                  src={pulseDisplayCard.image}
+                  alt={`${pulseDisplayCard.title} Pulse preview card`}
+                  fill
+                  sizes="(max-width: 760px) 92vw, 260px"
+                />
+                <span>
+                  {activePreviewCard ? `${previewSecondsRemaining}s preview` : "Preview reward"}
+                </span>
+              </div>
+              <div className="legend-pulse__preview-body">
+                <p className="wc-card-eyebrow">
+                  {activePreviewCard ? "Temporary card preview" : "Next reader reward"}
+                </p>
+                <h3>{pulseDisplayCard.title}</h3>
+                <p>{pulseDisplayCard.teams}</p>
+                <small>
+                  {activePreviewCard
+                    ? "Preview is open now. Watch the episode to keep the card."
+                    : "Read a Pulse item to open this card for 60 seconds."}
+                </small>
+                <div className="legend-pulse__preview-actions">
+                  {activePreviewCard ? (
+                    <button type="button" className="button" onClick={() => startWatch(activePreviewCard)}>
+                      <ExternalLink size={16} />
+                      Watch to collect
+                    </button>
+                  ) : nextPulseItem ? (
+                    <button type="button" className="button" onClick={() => readPulse(nextPulseItem)}>
+                      <Newspaper size={16} />
+                      Read for preview
+                    </button>
+                  ) : null}
+                  <button
+                    type="button"
+                    className="button secondary"
+                    onClick={() => speakStory(pulseDisplayCard)}
+                  >
+                    <Volume2 size={16} />
+                    Listen story
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <div className="legend-pulse__feed" aria-label="WorldCup26 Legends Pulse items">
+              {legendPulseItems.map((item) => {
+                const hasRead = readPulseIds.has(item.id);
+                const card = legendCardById.get(item.cardId);
+                const hasActivePreview = activePreviewCard?.id === item.cardId;
+
+                return (
+                  <article
+                    key={item.id}
+                    className={`legend-pulse-item ${hasActivePreview ? "is-active" : ""}`}
+                  >
+                    <button type="button" onClick={() => readPulse(item)}>
+                      <span className="legend-pulse-item__label">{item.label}</span>
+                      <strong>{item.headline}</strong>
+                      <span>{item.summary}</span>
+                      <em>
+                        {hasActivePreview
+                          ? `${previewSecondsRemaining}s preview open`
+                          : hasRead
+                            ? "Preview again"
+                            : `Read for ${pulsePreviewDurationMs / 1000}s preview`}
+                      </em>
+                    </button>
+                    {card ? <a href={`#legend-card-${card.id}`}>View card</a> : null}
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {focusCard ? (
         <div className="legend-album" aria-label="Legend card album command center">
@@ -580,6 +915,7 @@ export function LegendCardCollection() {
       <div id="legend-card-grid" className="legend-card-grid">
         {visibleCards.map((card, index) => {
           const isUnlocked = unlockedIds.has(card.id);
+          const isPreviewing = activePreviewCard?.id === card.id;
           const hasWatchedEpisode = watchedIds.has(card.id);
           const canUnlock = Boolean(card.youtube && hasWatchedEpisode && !isUnlocked);
           const isSpeaking = speakingCardId === card.id;
@@ -590,7 +926,7 @@ export function LegendCardCollection() {
               id={`legend-card-${card.id}`}
               className={`legend-card ${isUnlocked ? "is-unlocked" : "is-locked"} ${
                 canUnlock ? "is-ready" : ""
-              }`}
+              } ${isPreviewing ? "is-previewing" : ""}`}
             >
               <div className="legend-card__image">
                 <Image
@@ -602,8 +938,8 @@ export function LegendCardCollection() {
                 />
                 {!isUnlocked ? (
                   <div className="legend-card__lock" aria-hidden="true">
-                    <LockKeyhole size={26} />
-                    <span>Locked</span>
+                    {isPreviewing ? <Newspaper size={26} /> : <LockKeyhole size={26} />}
+                    <span>{isPreviewing ? `Preview ${previewSecondsRemaining}s` : "Locked"}</span>
                   </div>
                 ) : (
                   <div className="legend-card__collected" aria-hidden="true">
