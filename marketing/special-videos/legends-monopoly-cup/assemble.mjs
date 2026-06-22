@@ -39,12 +39,14 @@ function concatXfade() {
   M.clips.forEach((c, i) => inputs.push('-i', `${PREP}${String(i).padStart(2,'0')}_${c.id}.mp4`));
   // normalize every input (SAR/fps/timebase/format) so xfade never rejects a mismatch
   let filter = M.clips.map((_, i) => `[${i}:v]settb=AVTB,fps=30,setsar=1,format=yuv420p[n${i}]`).join(';') + ';';
-  let prev = '[n0]', offset = 0;
+  let prev = '[n0]', accDur = M.clips[0].screen;
   for (let i = 1; i < M.clips.length; i++) {
-    offset += M.clips[i-1].screen - XF;
+    const xf = M.clips[i].xf ?? XF;            // per-clip transition (hard-cut intro vs smooth body)
+    const offset = accDur - xf;
     const out = (i === M.clips.length - 1) ? '[v]' : `[x${i}]`;
-    filter += `${prev}[n${i}]xfade=transition=fade:duration=${XF}:offset=${offset.toFixed(3)}${out};`;
+    filter += `${prev}[n${i}]xfade=transition=fade:duration=${xf}:offset=${offset.toFixed(3)}${out};`;
     prev = out;
+    accDur = offset + M.clips[i].screen;
   }
   filter = filter.replace(/;$/, '');
   ff([...inputs, '-filter_complex', filter, '-map', '[v]',

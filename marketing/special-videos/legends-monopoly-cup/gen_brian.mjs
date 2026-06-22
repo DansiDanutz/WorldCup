@@ -7,12 +7,13 @@ const env = readFileSync(DIR + '.env.local', 'utf8');
 const KEY = (env.match(/ELEVENLABS_API_KEY=(.+)/) || [])[1]?.trim();
 if (!KEY) { console.error('no ELEVENLABS_API_KEY'); process.exit(1); }
 const VOICE = 'nPczCjzI2devNBz1zQrb'; // Brian (series canon)
-const nar = JSON.parse(readFileSync(DIR + 'narration_v2.json', 'utf8'));
-mkdirSync(DIR + 'audio_v2', { recursive: true });
+const nar = JSON.parse(readFileSync(DIR + (process.argv[2] || 'narration_v2.json'), 'utf8'));
+const OUT = DIR + (process.argv[3] || 'audio_v2');
+mkdirSync(OUT, { recursive: true });
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 for (const l of nar.lines) {
-  const out = `${DIR}audio_v2/line_${String(l.id).padStart(2,'0')}.mp3`;
+  const out = `${OUT}/line_${String(l.id).padStart(2,'0')}.mp3`;
   if (existsSync(out)) { console.log(`skip ${l.id}`); continue; }
   const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE}`, {
     method: 'POST',
