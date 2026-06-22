@@ -1272,6 +1272,7 @@ export function LegendCardCollection() {
           const isUnlocked = unlockedIds.has(card.id);
           const isPreviewing = activePreviewCard?.id === card.id;
           const hasWatchedEpisode = watchedIds.has(card.id);
+          const hasListenedStory = listenedIds.has(card.id);
           const canUnlock = Boolean(card.youtube && hasWatchedEpisode && !isUnlocked);
           const isSpeaking = speakingCardId === card.id;
 
@@ -1313,6 +1314,21 @@ export function LegendCardCollection() {
                 <p className="legend-card__subtitle">{card.subtitle}</p>
                 <p className="legend-card__teams">{card.teams}</p>
                 <p className="legend-card__story">{card.story}</p>
+
+                <div className="legend-card__journey" aria-label={`${card.title} collection progress`}>
+                  <span className={hasListenedStory ? "is-done" : ""}>
+                    <Check size={13} aria-hidden="true" />
+                    Story
+                  </span>
+                  <span className={hasWatchedEpisode ? "is-done" : card.youtube ? "is-next" : ""}>
+                    <ExternalLink size={13} aria-hidden="true" />
+                    YouTube
+                  </span>
+                  <span className={isUnlocked ? "is-done" : canUnlock ? "is-next" : ""}>
+                    <Sparkles size={13} aria-hidden="true" />
+                    Collect
+                  </span>
+                </div>
 
                 <div className="legend-card__actions">
                   {card.youtube ? (

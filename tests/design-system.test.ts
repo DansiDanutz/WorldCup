@@ -255,6 +255,12 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /setCompletedQuestCardId\(card\.id\)/);
     assert.match(legendCardCollection, /function markCardListened\(card: LegendCard\)/);
     assert.match(legendCardCollection, /markCardListened\(card\)/);
+    assert.match(legendCardCollection, /const hasListenedStory = listenedIds\.has\(card\.id\)/);
+    assert.match(legendCardCollection, /className="legend-card__journey"/);
+    assert.match(legendCardCollection, /aria-label=\{`\$\{card\.title\} collection progress`\}/);
+    assert.match(legendCardCollection, /hasListenedStory \? "is-done" : ""/);
+    assert.match(legendCardCollection, /hasWatchedEpisode \? "is-done" : card\.youtube \? "is-next" : ""/);
+    assert.match(legendCardCollection, /isUnlocked \? "is-done" : canUnlock \? "is-next" : ""/);
     assert.match(legendCardCollection, /function readPulse\(item: LegendPulseItem\)/);
     assert.match(legendCardCollection, /async function enableCardNotifications\(\)/);
     assert.match(legendCardCollection, /notificationApi\.requestPermission/);
@@ -399,9 +405,13 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.legend-card\s*{[\s\S]*?scroll-margin-top:\s*120px;/);
     assert.doesNotMatch(globalsCss, /\.legend-watch-modal/);
     assert.match(globalsCss, /\.legend-card\.is-locked \.legend-card__image img\s*{[\s\S]*?filter:\s*blur\(7px\)/);
+    assert.match(globalsCss, /\.legend-card__journey\s*{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\);/);
+    assert.match(globalsCss, /\.legend-card__journey span\.is-next\s*{[\s\S]*?rgba\(255,\s*207,\s*102,\s*0\.1\)/);
+    assert.match(globalsCss, /\.legend-card__journey span\.is-done\s*{[\s\S]*?linear-gradient\(180deg,\s*#d8ffe7,\s*#69dfad\)/);
     assert.match(globalsCss, /\.legend-card__actions\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
     assert.match(globalsCss, /\.legend-card__watch,\s*[\s\S]*?\.legend-card__disabled\s*{[\s\S]*?grid-column:\s*1 \/ -1;/);
     assert.match(globalsCss, /\.legend-card__voice\s*{[\s\S]*?width:\s*100%;/);
+    assert.match(globalsCss, /@media \(max-width:\s*640px\)\s*{[\s\S]*?\.legend-card__journey\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
     assert.match(globalsCss, /@media \(max-width:\s*640px\)\s*{[\s\S]*?\.legend-card__actions\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
   });
 
