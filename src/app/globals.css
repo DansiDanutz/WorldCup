@@ -10221,6 +10221,235 @@ html {
   font: 700 13px / 1.35 var(--font-sans);
 }
 
+.legend-quest {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  scroll-margin-top: 120px;
+  border: 1px solid rgba(255, 207, 102, 0.22);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 207, 102, 0.18), transparent 35%),
+    linear-gradient(135deg, rgba(255, 207, 102, 0.11), rgba(105, 223, 173, 0.08)),
+    rgba(3, 18, 15, 0.48);
+}
+
+.legend-quest__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.legend-quest__header h2,
+.legend-quest__header p {
+  margin: 0;
+}
+
+.legend-quest__header h2 {
+  color: #ffffff;
+  font: 900 24px / 1.08 var(--font-sans);
+}
+
+.legend-quest__header p:not(.wc-card-eyebrow) {
+  max-width: 720px;
+  margin-top: var(--space-2);
+  color: rgba(255, 255, 255, 0.76);
+  font: 750 14px / 1.4 var(--font-sans);
+}
+
+.legend-quest__progress {
+  display: grid;
+  flex: 0 0 auto;
+  justify-items: end;
+  gap: 4px;
+  min-width: 116px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 207, 102, 0.24);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.legend-quest__progress strong {
+  color: #ffffff;
+  font: 900 22px / 1 var(--font-sans);
+}
+
+.legend-quest__progress span {
+  color: #a8ebd2;
+  font: 850 11px / 1.1 var(--font-sans);
+  text-transform: uppercase;
+}
+
+.legend-quest__next {
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid rgba(105, 223, 173, 0.46);
+  border-radius: 8px;
+  color: #10311f;
+  background: linear-gradient(180deg, #d8ffe7, #69dfad);
+  cursor: pointer;
+  font: 900 11px / 1 var(--font-sans);
+}
+
+.legend-quest__bar {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.legend-quest__bar span {
+  display: block;
+  height: 100%;
+  min-width: 5px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #69dfad, #ffcf66);
+}
+
+.legend-quest__grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+  gap: var(--space-4);
+}
+
+.legend-quest__target {
+  display: grid;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.legend-quest__image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #061911;
+}
+
+.legend-quest__image img {
+  object-fit: cover;
+}
+
+.legend-quest__copy {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  padding: 14px;
+}
+
+.legend-quest__copy span {
+  color: #ffcf66;
+  font: 900 11px / 1.1 var(--font-sans);
+  text-transform: uppercase;
+}
+
+.legend-quest__copy h3,
+.legend-quest__copy p {
+  margin: 0;
+}
+
+.legend-quest__copy h3 {
+  color: #ffffff;
+  font: 900 20px / 1.12 var(--font-sans);
+}
+
+.legend-quest__copy p {
+  color: #a8ebd2;
+  font: 900 13px / 1.25 var(--font-sans);
+}
+
+.legend-quest__steps {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.legend-quest-step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 64px;
+  padding: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+  cursor: pointer;
+  text-align: left;
+}
+
+.legend-quest-step:disabled {
+  cursor: default;
+  opacity: 0.64;
+}
+
+.legend-quest-step.is-complete {
+  border-color: rgba(105, 223, 173, 0.48);
+  background: rgba(105, 223, 173, 0.12);
+}
+
+.legend-quest-step.is-complete:disabled {
+  opacity: 1;
+}
+
+.legend-quest-step__mark {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 207, 102, 0.28);
+  border-radius: 8px;
+  color: #ffcf66;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.legend-quest-step.is-complete .legend-quest-step__mark {
+  border-color: rgba(105, 223, 173, 0.64);
+  color: #10311f;
+  background: linear-gradient(180deg, #d8ffe7, #69dfad);
+}
+
+.legend-quest-step__copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.legend-quest-step__copy strong,
+.legend-quest-step__copy small,
+.legend-quest-step__action {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.legend-quest-step__copy strong {
+  color: #ffffff;
+  font: 900 14px / 1.15 var(--font-sans);
+  white-space: nowrap;
+}
+
+.legend-quest-step__copy small {
+  color: rgba(255, 255, 255, 0.68);
+  font: 700 12px / 1.25 var(--font-sans);
+}
+
+.legend-quest-step__action {
+  max-width: 128px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #1b1308;
+  background: linear-gradient(180deg, #ffe29a, #ffcf66);
+  font: 900 12px / 1 var(--font-sans);
+  text-align: center;
+  white-space: nowrap;
+}
+
 .legend-pulse {
   margin-top: var(--space-5);
   padding: var(--space-5);
@@ -10948,12 +11177,19 @@ html {
   }
 
   .legend-pulse__header,
+  .legend-quest__header,
+  .legend-quest__grid,
   .legend-pulse__grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .legend-pulse__header {
+  .legend-pulse__header,
+  .legend-quest__header {
     display: grid;
+  }
+
+  .legend-quest__progress {
+    justify-items: start;
   }
 
   .legend-pulse__actions {
@@ -10997,9 +11233,18 @@ html {
     padding: var(--space-4);
   }
 
+  .legend-quest {
+    padding: var(--space-4);
+  }
+
   .legend-pulse__preview,
+  .legend-quest-step,
   .legend-pulse-item {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .legend-quest-step__action {
+    max-width: none;
   }
 
   .legend-pulse-item a {

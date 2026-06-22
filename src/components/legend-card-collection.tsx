@@ -22,6 +22,7 @@ import { createBrowserSupabaseClient } from "@/lib/supabase";
 const unlockedStorageKey = "worldcup_legend_unlocked_cards";
 const openedStorageKey = "worldcup_legend_opened_cards";
 const watchedStorageKey = "worldcup_legend_watched_cards";
+const listenedStorageKey = "worldcup_legend_listened_cards";
 const pulseReadStorageKey = "worldcup_legend_pulse_reads";
 const pulsePreviewStorageKey = "worldcup_legend_pulse_preview";
 const notificationStorageKey = "worldcup_legend_notifications";
@@ -231,6 +232,13 @@ function getPulsePreviewSecondsRemaining(preview: PulsePreview | null) {
   return Math.max(0, Math.ceil((preview.expiresAt - Date.now()) / 1000));
 }
 
+function createPulsePreview(cardId: string): PulsePreview {
+  return {
+    cardId,
+    expiresAt: Date.now() + pulsePreviewDurationMs,
+  };
+}
+
 async function readAccountUnlockedIds(token: string) {
   const response = await fetch("/api/legend-cards", {
     headers: { Authorization: `Bearer ${token}` },
@@ -265,6 +273,7 @@ async function saveAccountUnlockedId(cardId: string, token: string) {
 export function LegendCardCollection() {
   const unlockedIds = useStoredIds(unlockedStorageKey);
   const watchedIds = useStoredIds(watchedStorageKey);
+  const listenedIds = useStoredIds(listenedStorageKey);
   const readPulseIds = useStoredIds(pulseReadStorageKey, validPulseIds);
   const pulsePreview = useStoredPulsePreview();
   const notificationPreference = useStoredNotificationPreference();
@@ -274,6 +283,7 @@ export function LegendCardCollection() {
   const [speakingCardId, setSpeakingCardId] = useState<string | null>(null);
   const [cardFilter, setCardFilter] = useState<LegendCardFilter>("all");
   const [collectionExpanded, setCollectionExpanded] = useState(false);
+  const [completedQuestCardId, setCompletedQuestCardId] = useState<string | null>(null);
   const [previewSecondsRemaining, setPreviewSecondsRemaining] = useState(() =>
     getPulsePreviewSecondsRemaining(readStoredPulsePreview()),
   );
@@ -443,6 +453,65 @@ export function LegendCardCollection() {
       : null;
   const nextPulseCard = nextPulseItem ? legendCardById.get(nextPulseItem.cardId) ?? null : null;
   const pulseDisplayCard = activePreviewCard ?? nextPulseCard ?? focusCard;
+  const completedQuestCard =
+    completedQuestCardId && unlockedIds.has(completedQuestCardId)
+      ? legendCardById.get(completedQuestCardId) ?? null
+      : null;
+  const completedQuestItem = completedQuestCard
+    ? legendPulseItems.find((item) => item.cardId === completedQuestCard.id) ?? null
+    : null;
+  const collectorQuestItem =
+    completedQuestItem ??
+    legendPulseItems.find((item) => {
+      const card = legendCardById.get(item.cardId);
+      return Boolean(card && !unlockedIds.has(card.id));
+    }) ??
+    legendPulseItems[0] ??
+    null;
+  const collectorQuestCard = completedQuestCard ??
+    (collectorQuestItem ? legendCardById.get(collectorQuestItem.cardId) ?? focusCard : focusCard);
+  const collectorQuestSteps = collectorQuestCard
+    ? [
+        {
+          id: "read",
+          label: "Read Pulse",
+          detail: "Open the 60-second card preview.",
+          complete: collectorQuestItem ? readPulseIds.has(collectorQuestItem.id) : false,
+          actionLabel: collectorQuestItem && readPulseIds.has(collectorQuestItem.id) ? "Preview again" : "Read Pulse",
+        },
+        {
+          id: "listen",
+          label: "Listen story",
+          detail: "Play the card story inside the app.",
+          complete: listenedIds.has(collectorQuestCard.id),
+          actionLabel: speakingCardId === collectorQuestCard.id ? "Stop story" : "Listen story",
+        },
+        {
+          id: "watch",
+          label: "Open YouTube",
+          detail: "Watch the matching episode on the channel.",
+          complete: watchedIds.has(collectorQuestCard.id),
+          actionLabel: watchedIds.has(collectorQuestCard.id) ? "Open again" : "Open YouTube",
+        },
+        {
+          id: "collect",
+          label: "Collect card",
+          detail: "Return here after YouTube and save it.",
+          complete: unlockedIds.has(collectorQuestCard.id),
+          actionLabel: unlockedIds.has(collectorQuestCard.id) ? "Collected" : "Collect card",
+        },
+      ]
+    : [];
+  const collectorQuestCompletedCount = collectorQuestSteps.filter((step) => step.complete).length;
+  const collectorQuestProgressPercent = collectorQuestSteps.length
+    ? Math.round((collectorQuestCompletedCount / collectorQuestSteps.length) * 100)
+    : 0;
+  const hasNextCollectorQuest = collectorQuestCard
+    ? legendPulseItems.some((item) => {
+        const card = legendCardById.get(item.cardId);
+        return Boolean(card && card.id !== collectorQuestCard.id && !unlockedIds.has(card.id));
+      })
+    : false;
 
   const markCardOpened = useCallback((card: LegendCard) => {
     if (!card.youtube) {
@@ -459,6 +528,12 @@ export function LegendCardCollection() {
 
     setStatus(`${card.title} opened on YouTube. You can unlock the card now.`);
   }, []);
+
+  function markCardListened(card: LegendCard) {
+    const nextListened = new Set(readCurrentStoredIds(listenedStorageKey));
+    nextListened.add(card.id);
+    writeStoredIds(listenedStorageKey, nextListened);
+  }
 
   function startWatch(card: LegendCard) {
     if (!card.youtube) {
@@ -491,6 +566,7 @@ export function LegendCardCollection() {
     const next = new Set(unlockedIds);
     next.add(card.id);
     writeStoredIds(unlockedStorageKey, next);
+    setCompletedQuestCardId(card.id);
 
     if (!accountToken) {
       setStatus(`${card.title} collected on this device.`);
@@ -546,6 +622,7 @@ export function LegendCardCollection() {
       setVoiceEnabled(true);
     }
 
+    markCardListened(card);
     const utterance = new SpeechSynthesisUtterance(
       `${card.title}. ${card.episodeLabel ?? `Episode ${card.episode}`}. ${card.teams}. ${card.story}`,
     );
@@ -558,6 +635,7 @@ export function LegendCardCollection() {
     };
 
     setSpeakingCardId(card.id);
+    setStatus(`${card.title} story is playing. Open the YouTube episode to collect the card.`);
     window.speechSynthesis.speak(utterance);
   }
 
@@ -572,14 +650,12 @@ export function LegendCardCollection() {
       return;
     }
 
+    setCompletedQuestCardId((cardId) => (cardId === card.id ? cardId : null));
     const nextReadIds = new Set(readCurrentStoredIds(pulseReadStorageKey, validPulseIds));
     nextReadIds.add(item.id);
     writeStoredIds(pulseReadStorageKey, nextReadIds);
 
-    const nextPreview = {
-      cardId: card.id,
-      expiresAt: Date.now() + pulsePreviewDurationMs,
-    };
+    const nextPreview = createPulsePreview(card.id);
     writeStoredPulsePreview(nextPreview);
     setPreviewSecondsRemaining(pulsePreviewDurationMs / 1000);
     setCardFilter("all");
@@ -674,6 +750,91 @@ export function LegendCardCollection() {
       <p className="legend-collection__status" aria-live="polite">
         {status}
       </p>
+
+      {collectorQuestCard ? (
+        <section id="collector-quest" className="legend-quest" aria-labelledby="collector-quest-title">
+          <div className="legend-quest__header">
+            <div>
+              <p className="wc-card-eyebrow">Today&apos;s Collector Quest</p>
+              <h2 id="collector-quest-title">Finish the card loop</h2>
+              <p>
+                Read the Pulse, listen to the story, open the YouTube episode, then collect the card.
+              </p>
+            </div>
+            <div className="legend-quest__progress" aria-label={`${collectorQuestProgressPercent}% complete`}>
+              <strong>{collectorQuestCompletedCount} / {collectorQuestSteps.length}</strong>
+              <span>{collectorQuestProgressPercent}% complete</span>
+              {collectorQuestCompletedCount === collectorQuestSteps.length && hasNextCollectorQuest ? (
+                <button type="button" className="legend-quest__next" onClick={() => setCompletedQuestCardId(null)}>
+                  Next quest
+                </button>
+              ) : null}
+            </div>
+          </div>
+
+          <div className="legend-quest__bar" aria-hidden="true">
+            <span style={{ width: `${collectorQuestProgressPercent}%` }} />
+          </div>
+
+          <div className="legend-quest__grid">
+            <article className="legend-quest__target">
+              <div className="legend-quest__image">
+                <Image
+                  src={collectorQuestCard.image}
+                  alt={`${collectorQuestCard.title} collector quest card`}
+                  fill
+                  sizes="(max-width: 760px) 92vw, 260px"
+                />
+              </div>
+              <div className="legend-quest__copy">
+                <span>{getEpisodeLabel(collectorQuestCard)}</span>
+                <h3>{collectorQuestCard.title}</h3>
+                <p>{collectorQuestCard.teams}</p>
+              </div>
+            </article>
+
+            <div className="legend-quest__steps" aria-label="Collector quest steps">
+              {collectorQuestSteps.map((step) => {
+                const stepDisabled =
+                  step.id === "read"
+                    ? !collectorQuestItem
+                    : step.id === "collect"
+                      ? unlockedIds.has(collectorQuestCard.id) || !watchedIds.has(collectorQuestCard.id)
+                      : false;
+
+                return (
+                  <button
+                    key={step.id}
+                    type="button"
+                    className={`legend-quest-step ${step.complete ? "is-complete" : ""}`}
+                    disabled={stepDisabled}
+                    onClick={() => {
+                      if (step.id === "read" && collectorQuestItem) {
+                        readPulse(collectorQuestItem);
+                      } else if (step.id === "listen") {
+                        speakStory(collectorQuestCard);
+                      } else if (step.id === "watch") {
+                        startWatch(collectorQuestCard);
+                      } else if (step.id === "collect") {
+                        void unlockCard(collectorQuestCard);
+                      }
+                    }}
+                  >
+                    <span className="legend-quest-step__mark" aria-hidden="true">
+                      {step.complete ? <Check size={16} /> : <Sparkles size={16} />}
+                    </span>
+                    <span className="legend-quest-step__copy">
+                      <strong>{step.label}</strong>
+                      <small>{step.detail}</small>
+                    </span>
+                    <span className="legend-quest-step__action">{step.actionLabel}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {pulseDisplayCard ? (
         <section id="news" className="legend-pulse" aria-labelledby="legend-pulse-title">

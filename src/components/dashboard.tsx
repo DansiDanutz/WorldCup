@@ -1123,11 +1123,11 @@ export function Dashboard({
                 <small>Ranking</small>
               </span>
             </a>
-            <Link className="nav-item" href={{ pathname: "/predictions" }}>
+            <Link className="nav-item" href={{ pathname: "/predictions", hash: "collector-quest" }}>
               <Sparkles size={16} />
               <span className="nav-item__copy">
                 <strong>Cards</strong>
-                <small>Album & news</small>
+                <small>Daily quest</small>
               </span>
             </Link>
             {!funMode ? (
@@ -1244,7 +1244,7 @@ export function Dashboard({
 
         <Link
           className="series-banner"
-          href="/predictions#legend-cards"
+          href="/predictions#collector-quest"
           aria-label="Open the WorldCup26 Legends card collection"
         >
           <span className="series-banner__icon" aria-hidden="true">
@@ -1252,9 +1252,9 @@ export function Dashboard({
           </span>
           <span className="series-banner__copy">
             <strong>WorldCup26 Legends — the story series</strong>
-            <small>Open YouTube, listen to the story in the app, and collect Legend cards.</small>
+            <small>Read, listen, open YouTube, and finish today&apos;s card quest.</small>
           </span>
-          <span className="series-banner__cta">Open & collect</span>
+          <span className="series-banner__cta">Start quest</span>
         </Link>
 
         {!funMode && launchEvidenceMode ? (
