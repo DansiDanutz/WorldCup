@@ -1252,9 +1252,9 @@ export function Dashboard({
           </span>
           <span className="series-banner__copy">
             <strong>WorldCup26 Legends — the story series</strong>
-            <small>Watch in the app, listen to the story, and collect the matching Legend cards.</small>
+            <small>Open YouTube, listen to the story in the app, and collect Legend cards.</small>
           </span>
-          <span className="series-banner__cta">Watch & collect</span>
+          <span className="series-banner__cta">Open & collect</span>
         </Link>
 
         {!funMode && launchEvidenceMode ? (

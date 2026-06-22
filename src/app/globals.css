@@ -10340,7 +10340,7 @@ html {
 
 .legend-card__actions {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 40px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   align-items: center;
   margin-top: 3px;
@@ -10376,153 +10376,24 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  gap: 7px;
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0 12px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
   color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
+  font: 800 13px / 1 var(--font-sans);
+  white-space: nowrap;
 }
 
 .legend-card__voice.is-speaking {
   border-color: rgba(255, 207, 102, 0.72);
   color: #1b1308;
   background: #ffcf66;
-}
-
-.legend-watch-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 90;
-  display: grid;
-  place-items: center;
-  padding: var(--space-4);
-  background: rgba(2, 10, 8, 0.74);
-  backdrop-filter: blur(12px);
-}
-
-.legend-watch-modal__panel {
-  display: grid;
-  gap: var(--space-4);
-  width: min(760px, 100%);
-  max-height: min(92vh, 820px);
-  overflow-y: auto;
-  border: 1px solid rgba(255, 226, 154, 0.22);
-  border-radius: 8px;
-  color: #ffffff;
-  background:
-    radial-gradient(circle at 10% 0%, rgba(255, 207, 102, 0.18), transparent 32%),
-    linear-gradient(145deg, rgba(5, 30, 23, 0.98), rgba(12, 23, 44, 0.98));
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.48);
-  padding: var(--space-5);
-}
-
-.legend-watch-modal__header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-4);
-}
-
-.legend-watch-modal__header h2,
-.legend-watch-modal__header p {
-  margin: 0;
-}
-
-.legend-watch-modal__header h2 {
-  color: #ffffff;
-  font: 900 24px / 1.08 var(--font-sans);
-}
-
-.legend-watch-modal__header p:not(.wc-card-eyebrow) {
-  margin-top: 5px;
-  color: #a8ebd2;
-  font: 850 13px / 1.25 var(--font-sans);
-}
-
-.legend-watch-modal__close {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 8px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  cursor: pointer;
-}
-
-.legend-watch-modal__close:hover,
-.legend-watch-modal__close:focus-visible {
-  border-color: rgba(255, 207, 102, 0.52);
-  background: rgba(255, 207, 102, 0.12);
-}
-
-.legend-watch-modal__player {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 8px;
-  background: #030706;
-}
-
-.legend-watch-modal__player > div,
-.legend-watch-modal__player iframe {
-  width: 100%;
-  height: 100%;
-}
-
-.legend-watch-modal__fallback {
-  display: grid;
-  place-items: center;
-  align-content: center;
-  gap: var(--space-3);
-  height: 100%;
-  padding: var(--space-5);
-  text-align: center;
-}
-
-.legend-watch-modal__fallback strong {
-  color: rgba(255, 255, 255, 0.86);
-  font: 850 14px / 1.35 var(--font-sans);
-}
-
-.legend-watch-modal__progress {
-  display: grid;
-  gap: 10px;
-  padding: 12px;
-  border: 1px solid rgba(255, 207, 102, 0.18);
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.18);
-}
-
-.legend-watch-modal__progress > div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.legend-watch-modal__progress strong {
-  color: #ffcf66;
-  font: 900 13px / 1.2 var(--font-sans);
-  white-space: nowrap;
-}
-
-.legend-watch-modal__progress span {
-  color: rgba(255, 255, 255, 0.74);
-  font: 700 13px / 1.3 var(--font-sans);
-  text-align: right;
-}
-
-.legend-watch-modal__progress progress {
-  width: 100%;
-  height: 12px;
-  accent-color: #ffcf66;
 }
 
 .episode-library {
@@ -10622,23 +10493,6 @@ html {
     width: 100%;
   }
 
-  .legend-watch-modal {
-    align-items: end;
-    padding: var(--space-3);
-  }
-
-  .legend-watch-modal__panel {
-    max-height: 94vh;
-    padding: var(--space-4);
-  }
-
-  .legend-watch-modal__progress > div {
-    display: grid;
-  }
-
-  .legend-watch-modal__progress span {
-    text-align: left;
-  }
 }
 
 /* =========================================================================

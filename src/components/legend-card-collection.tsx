@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ExternalLink, LockKeyhole, LogIn, PlayCircle, Sparkles, Volume2, VolumeX, X } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { Check, ExternalLink, LockKeyhole, LogIn, Sparkles, Volume2, VolumeX } from "lucide-react";
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
 import { LEGEND_CARDS, type LegendCard } from "@/lib/legend-cards";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
@@ -12,54 +12,8 @@ const unlockedStorageKey = "worldcup_legend_unlocked_cards";
 const openedStorageKey = "worldcup_legend_opened_cards";
 const watchedStorageKey = "worldcup_legend_watched_cards";
 const storageEventName = "worldcup:legend-card-storage";
-const youtubeApiReadyEvent = "worldcup:youtube-api-ready";
-const watchUnlockSeconds = 45;
 const validCardIds = new Set(LEGEND_CARDS.map((card) => card.id));
 const unlockableCardIds = new Set(LEGEND_CARDS.filter((card) => card.youtube).map((card) => card.id));
-
-type YouTubePlayerState = {
-  ENDED: number;
-  PLAYING: number;
-};
-
-type YouTubePlayer = {
-  destroy: () => void;
-  getDuration: () => number;
-  getCurrentTime: () => number;
-  stopVideo: () => void;
-};
-
-type YouTubePlayerEvent = {
-  data: number;
-  target: YouTubePlayer;
-};
-
-type YouTubePlayerConstructor = new (
-  element: HTMLElement,
-  options: {
-    videoId: string;
-    playerVars: Record<string, string | number>;
-    events: {
-      onReady: () => void;
-      onStateChange: (event: YouTubePlayerEvent) => void;
-      onError: () => void;
-    };
-  },
-) => YouTubePlayer;
-
-type YouTubeApi = {
-  Player: YouTubePlayerConstructor;
-  PlayerState: YouTubePlayerState;
-};
-
-declare global {
-  interface Window {
-    YT?: YouTubeApi;
-    onYouTubeIframeAPIReady?: () => void;
-  }
-}
-
-let youtubeApiPromise: Promise<void> | null = null;
 
 function parseStoredIds(snapshot: string | null) {
   try {
@@ -123,78 +77,6 @@ function readCurrentStoredIds(key: string) {
   return parseStoredIds(getStoredIdsSnapshot(key));
 }
 
-function getYouTubeVideoId(url: string | null) {
-  if (!url) {
-    return null;
-  }
-
-  try {
-    const parsed = new URL(url);
-    const host = parsed.hostname.replace(/^www\./, "");
-
-    if (host === "youtu.be") {
-      return parsed.pathname.split("/").filter(Boolean)[0] ?? null;
-    }
-
-    if (host === "youtube.com" || host.endsWith(".youtube.com")) {
-      const watchId = parsed.searchParams.get("v");
-      if (watchId) {
-        return watchId;
-      }
-
-      const pathParts = parsed.pathname.split("/").filter(Boolean);
-      const embedIndex = pathParts.findIndex((part) => part === "embed" || part === "shorts");
-      if (embedIndex >= 0) {
-        return pathParts[embedIndex + 1] ?? null;
-      }
-    }
-  } catch {
-    return null;
-  }
-
-  return null;
-}
-
-function loadYouTubeIframeApi() {
-  if (typeof window === "undefined") {
-    return Promise.reject(new Error("YouTube player is only available in the browser."));
-  }
-
-  if (window.YT?.Player) {
-    return Promise.resolve();
-  }
-
-  if (youtubeApiPromise) {
-    return youtubeApiPromise;
-  }
-
-  youtubeApiPromise = new Promise<void>((resolve) => {
-    const previousReady = window.onYouTubeIframeAPIReady;
-
-    window.addEventListener(
-      youtubeApiReadyEvent,
-      () => {
-        resolve();
-      },
-      { once: true },
-    );
-
-    window.onYouTubeIframeAPIReady = () => {
-      previousReady?.();
-      window.dispatchEvent(new Event(youtubeApiReadyEvent));
-    };
-
-    if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
-      const script = document.createElement("script");
-      script.src = "https://www.youtube.com/iframe_api";
-      script.async = true;
-      document.head.appendChild(script);
-    }
-  });
-
-  return youtubeApiPromise;
-}
-
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -247,8 +129,9 @@ export function LegendCardCollection() {
   const [accountSyncLabel, setAccountSyncLabel] = useState("Saved on this device");
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [speakingCardId, setSpeakingCardId] = useState<string | null>(null);
-  const [watchingCard, setWatchingCard] = useState<LegendCard | null>(null);
-  const [status, setStatus] = useState("Cards unlock after a verified in-app YouTube watch.");
+  const [status, setStatus] = useState(
+    "Open a YouTube story to collect its card. Use Listen story for in-app voice playback.",
+  );
 
   useEffect(() => {
     return () => {
@@ -325,7 +208,7 @@ export function LegendCardCollection() {
   const collectedCount = LEGEND_CARDS.filter((card) => unlockedIds.has(card.id)).length;
   const liveCount = useMemo(() => LEGEND_CARDS.filter((card) => card.youtube).length, []);
 
-  const markCardWatched = useCallback((card: LegendCard) => {
+  const markCardOpened = useCallback((card: LegendCard) => {
     if (!card.youtube) {
       return;
     }
@@ -338,7 +221,7 @@ export function LegendCardCollection() {
     nextOpened.add(card.id);
     writeStoredIds(openedStorageKey, nextOpened);
 
-    setStatus(`${card.title} verified. You can unlock the card now.`);
+    setStatus(`${card.title} opened on YouTube. You can unlock the card now.`);
   }, []);
 
   function startWatch(card: LegendCard) {
@@ -347,13 +230,15 @@ export function LegendCardCollection() {
       return;
     }
 
-    if (!getYouTubeVideoId(card.youtube)) {
-      setStatus(`This ${card.teams} episode needs a valid YouTube link before it can verify.`);
-      return;
-    }
+    markCardOpened(card);
+    const opened = window.open(card.youtube, "_blank", "noopener,noreferrer");
 
-    setWatchingCard(card);
-    setStatus(`Watch ${card.teams} inside the app to verify this card.`);
+    if (opened) {
+      opened.opener = null;
+      setStatus(`Opened ${card.teams} on YouTube. Return here to unlock ${card.title}.`);
+    } else {
+      setStatus(`Popup blocked. Use the YouTube link, then unlock ${card.title}.`);
+    }
   }
 
   async function unlockCard(card: LegendCard) {
@@ -363,7 +248,7 @@ export function LegendCardCollection() {
     }
 
     if (!watchedIds.has(card.id)) {
-      setStatus(`Watch the ${card.teams} episode in the app first.`);
+      setStatus(`Open the ${card.teams} YouTube story first.`);
       return;
     }
 
@@ -412,11 +297,6 @@ export function LegendCardCollection() {
       return;
     }
 
-    if (!voiceEnabled) {
-      setStatus("Enable voice first, then tap a card story.");
-      return;
-    }
-
     if (speakingCardId === card.id) {
       window.speechSynthesis.cancel();
       setSpeakingCardId(null);
@@ -426,8 +306,12 @@ export function LegendCardCollection() {
 
     window.speechSynthesis.cancel();
 
+    if (!voiceEnabled) {
+      setVoiceEnabled(true);
+    }
+
     const utterance = new SpeechSynthesisUtterance(
-      `${card.title}. ${card.subtitle}. ${card.teams}. ${card.story}`,
+      `${card.title}. ${card.episodeLabel ?? `Episode ${card.episode}`}. ${card.teams}. ${card.story}`,
     );
     utterance.rate = 0.92;
     utterance.pitch = 1;
@@ -448,8 +332,8 @@ export function LegendCardCollection() {
           <p className="wc-card-eyebrow">WorldCup26 Legends</p>
           <h1 id="legend-collection-title">Legend Card Collection</h1>
           <p>
-            Collect the episode specials and bonus legends by watching the matching YouTube story.
-            Locked cards stay foggy until the episode opens.
+            Collect the episode specials and bonus legends by opening the matching YouTube story.
+            Every card can read its story aloud inside the app, without video playback here.
           </p>
         </div>
 
@@ -523,7 +407,7 @@ export function LegendCardCollection() {
 
               <div className="legend-card__body">
                 <div className="legend-card__meta">
-                  <span>Episode {card.episode}</span>
+                  <span>{card.episodeLabel ?? `Episode ${card.episode}`}</span>
                   <span>{card.rarity}</span>
                 </div>
                 <h2>{card.title}</h2>
@@ -538,8 +422,8 @@ export function LegendCardCollection() {
                       className="button legend-card__watch"
                       onClick={() => startWatch(card)}
                     >
-                      <PlayCircle size={16} />
-                      {hasWatchedEpisode ? "Watch again" : "Watch to unlock"}
+                      <ExternalLink size={16} />
+                      {hasWatchedEpisode ? "Open again" : "Open YouTube"}
                     </button>
                   ) : (
                     <span className="button secondary legend-card__disabled" aria-disabled="true">
@@ -564,6 +448,7 @@ export function LegendCardCollection() {
                     title={`${isSpeaking ? "Stop" : "Listen to"} story`}
                   >
                     {isSpeaking ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                    <span>{isSpeaking ? "Stop story" : "Listen story"}</span>
                   </button>
                 </div>
               </div>
@@ -571,176 +456,6 @@ export function LegendCardCollection() {
           );
         })}
       </div>
-
-      {watchingCard ? (
-        <LegendWatchModal
-          card={watchingCard}
-          onClose={() => setWatchingCard(null)}
-          onVerified={markCardWatched}
-        />
-      ) : null}
     </section>
-  );
-}
-
-function LegendWatchModal({
-  card,
-  onClose,
-  onVerified,
-}: {
-  card: LegendCard;
-  onClose: () => void;
-  onVerified: (card: LegendCard) => void;
-}) {
-  const videoId = getYouTubeVideoId(card.youtube);
-  const playerHostRef = useRef<HTMLDivElement | null>(null);
-  const playerRef = useRef<YouTubePlayer | null>(null);
-  const verifiedRef = useRef(false);
-  const watchedSecondsRef = useRef(0);
-  const [isPlayerReady, setIsPlayerReady] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isVerified, setIsVerified] = useState(false);
-  const [watchedSeconds, setWatchedSeconds] = useState(0);
-  const [playerError, setPlayerError] = useState<string | null>(null);
-
-  const progress = Math.min(100, Math.round((watchedSeconds / watchUnlockSeconds) * 100));
-
-  const verifyCard = useCallback(() => {
-    if (verifiedRef.current) {
-      return;
-    }
-
-    verifiedRef.current = true;
-    watchedSecondsRef.current = watchUnlockSeconds;
-    setIsVerified(true);
-    setIsPlaying(false);
-    setWatchedSeconds(watchUnlockSeconds);
-    onVerified(card);
-  }, [card, onVerified]);
-
-  useEffect(() => {
-    if (!videoId || !playerHostRef.current) {
-      setPlayerError("This card needs a valid YouTube video before it can verify.");
-      return;
-    }
-
-    let cancelled = false;
-    const host = playerHostRef.current;
-
-    loadYouTubeIframeApi()
-      .then(() => {
-        if (cancelled || !window.YT?.Player || !host) {
-          return;
-        }
-
-        playerRef.current = new window.YT.Player(host, {
-          videoId,
-          playerVars: {
-            autoplay: 0,
-            controls: 1,
-            modestbranding: 1,
-            origin: window.location.origin,
-            playsinline: 1,
-            rel: 0,
-          },
-          events: {
-            onReady: () => setIsPlayerReady(true),
-            onStateChange: (event) => {
-              const playerState = window.YT?.PlayerState;
-              if (!playerState) {
-                return;
-              }
-
-              setIsPlaying(event.data === playerState.PLAYING);
-
-              if (event.data === playerState.ENDED) {
-                verifyCard();
-              }
-            },
-            onError: () => {
-              setPlayerError("YouTube could not play this episode here. Try again in a moment.");
-            },
-          },
-        });
-      })
-      .catch(() => {
-        if (!cancelled) {
-          setPlayerError("YouTube player could not load in this browser.");
-        }
-      });
-
-    return () => {
-      cancelled = true;
-      setIsPlaying(false);
-      playerRef.current?.destroy();
-      playerRef.current = null;
-    };
-  }, [verifyCard, videoId]);
-
-  useEffect(() => {
-    if (!isPlaying || verifiedRef.current) {
-      return;
-    }
-
-    const interval = window.setInterval(() => {
-      const next = Math.min(watchUnlockSeconds, watchedSecondsRef.current + 1);
-      watchedSecondsRef.current = next;
-      setWatchedSeconds(next);
-
-      if (next >= watchUnlockSeconds) {
-        verifyCard();
-      }
-    }, 1000);
-
-    return () => window.clearInterval(interval);
-  }, [isPlaying, verifyCard]);
-
-  return (
-    <div className="legend-watch-modal" role="dialog" aria-modal="true" aria-labelledby="legend-watch-title">
-      <div className="legend-watch-modal__panel">
-        <div className="legend-watch-modal__header">
-          <div>
-            <p className="wc-card-eyebrow">Verified watch</p>
-            <h2 id="legend-watch-title">{card.title}</h2>
-            <p>{card.teams}</p>
-          </div>
-          <button className="legend-watch-modal__close" onClick={onClose} type="button" aria-label="Close watch player">
-            <X size={19} />
-          </button>
-        </div>
-
-        <div className="legend-watch-modal__player">
-          {playerError ? (
-            <div className="legend-watch-modal__fallback">
-              <strong>{playerError}</strong>
-              {card.youtube ? (
-                <a className="button secondary" href={card.youtube} rel="noreferrer" target="_blank">
-                  <ExternalLink size={16} />
-                  Open on YouTube
-                </a>
-              ) : null}
-            </div>
-          ) : (
-            <div ref={playerHostRef} />
-          )}
-        </div>
-
-        <div className="legend-watch-modal__progress" aria-label="Watch verification progress">
-          <div>
-            <strong>{progress}% verified</strong>
-            <span>
-              {isVerified
-                ? "Card ready to unlock."
-                : isPlayerReady
-                  ? "Keep the episode playing here to verify."
-                  : "Loading YouTube player."}
-            </span>
-          </div>
-          <progress value={watchedSeconds} max={watchUnlockSeconds}>
-            {progress}%
-          </progress>
-        </div>
-      </div>
-    </div>
   );
 }

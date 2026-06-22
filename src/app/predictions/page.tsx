@@ -8,7 +8,7 @@ import { PREDICTIONS } from "@/lib/predictions";
 export const metadata = {
   title: "Legend Cards · WorldCup26 Legends",
   description:
-    "Collect WorldCup26 Legends episode cards by watching the matching YouTube stories.",
+    "Collect WorldCup26 Legends episode cards by opening the matching YouTube stories.",
 };
 
 export default function PredictionsPage() {
@@ -34,8 +34,8 @@ export default function PredictionsPage() {
               <h2 id="episode-library-title">Match Predictions</h2>
               <p>
                 Story predictions from the WorldCup26 Legends series. {liveCount} of{" "}
-                {PREDICTIONS.length} episodes are live; new card unlocks appear here as videos go
-                public.
+                {PREDICTIONS.length} episodes are live, and each live episode links to a Legend
+                card.
               </p>
             </div>
             <Link className="button secondary episode-library__back" href={{ pathname: "/" }}>
@@ -81,7 +81,7 @@ export default function PredictionsPage() {
                         href={`/predictions#${legendCardAnchor}`}
                       >
                         <PlayCircle size={16} />
-                        Watch & collect
+                        Open & collect
                       </Link>
                     ) : isLive ? (
                       <a
@@ -91,7 +91,7 @@ export default function PredictionsPage() {
                         rel="noreferrer"
                       >
                         <PlayCircle size={16} />
-                        Watch episode
+                        Open episode
                       </a>
                     ) : (
                       <span className="button secondary episode-card__pending" aria-disabled="true">

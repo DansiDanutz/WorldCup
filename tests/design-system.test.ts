@@ -26,6 +26,7 @@ const smartMenu = readFileSync("src/components/smart-menu.tsx", "utf8");
 const adminConsole = readFileSync("src/components/admin-console.tsx", "utf8");
 const legendCardRegistry = readFileSync("src/lib/legend-card-registry.ts", "utf8");
 const legendCards = readFileSync("src/lib/legend-cards.ts", "utf8");
+const youtubeLegendEpisodes = readFileSync("src/lib/youtube-legend-episodes.ts", "utf8");
 const postLoginRedirect = readFileSync("src/lib/post-login-redirect.ts", "utf8");
 const support = readFileSync("src/lib/support.ts", "utf8");
 const legendCardsMigration = readFileSync(
@@ -181,9 +182,21 @@ describe("WorldCup design system integration", () => {
 
   it("turns Legends episode assets into collectible cards unlocked from YouTube", () => {
     assert.match(predictionsPage, /<LegendCardCollection \/>/);
-    assert.match(predictionsPage, /new card unlocks appear here as videos go\s+public/);
+    assert.match(predictionsPage, /each live episode links to a Legend\s+card/);
+    assert.match(youtubeLegendEpisodes, /export const YOUTUBE_LEGEND_EPISODES/);
+    assert.match(youtubeLegendEpisodes, /export const YOUTUBE_LEGEND_BONUS_VIDEOS/);
+    assert.equal(youtubeLegendEpisodes.match(/\bep:\s*\d+/g)?.length, 42);
+    assert.equal(youtubeLegendEpisodes.match(/id:\s*"bonus/g)?.length, 4);
+    assert.match(youtubeLegendEpisodes, /SmHGZMbrOv4/);
+    assert.match(youtubeLegendEpisodes, /qicbV-pTVdM/);
+    assert.match(youtubeLegendEpisodes, /Yo4q-_iHoKM/);
+    assert.match(youtubeLegendEpisodes, /youtubeForEpisode/);
     assert.match(legendCardRegistry, /export const LEGEND_CARD_DEFINITIONS: LegendCardDefinition\[\]/);
-    assert.equal(legendCardRegistry.match(/id:\s*"/g)?.length, 10);
+    assert.match(legendCardRegistry, /handMadeLegendCards/);
+    assert.match(legendCardRegistry, /generatedEpisodeCards/);
+    assert.match(legendCardRegistry, /channelBonusCards/);
+    assert.match(legendCardRegistry, /YOUTUBE_LEGEND_EPISODES/);
+    assert.match(legendCardRegistry, /YOUTUBE_LEGEND_BONUS_VIDEOS/);
     assert.match(legendCardRegistry, /youtubeForEpisode\(1\)/);
     assert.match(legendCardRegistry, /youtubeForEpisode\(7\)/);
     assert.match(legendCardRegistry, /youtubeForEpisode\(9\)/);
@@ -191,6 +204,9 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardRegistry, /isUnlockableLegendCard/);
     assert.match(legendCards, /LEGEND_CARD_DEFINITIONS/);
     assert.match(legendCards, /legendCardImages: Record<string, StaticImageData>/);
+    assert.match(legendCards, /teamLegendImages: Record<string, StaticImageData>/);
+    assert.match(legendCards, /resolveLegendCardImage/);
+    assert.match(legendCards, /"\/hero-matchup\.png"/);
 
     for (const asset of [
       "content/images/Supporters/Mexico/Mystery-Supporter.png",
@@ -210,11 +226,17 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /unlockableCardIds/);
     assert.match(legendCardCollection, /id="legend-cards"/);
     assert.match(legendCardCollection, /legend-card-\$\{card\.id\}/);
-    assert.match(legendCardCollection, /watchUnlockSeconds = 45/);
-    assert.match(legendCardCollection, /getYouTubeVideoId/);
-    assert.match(legendCardCollection, /loadYouTubeIframeApi/);
-    assert.match(legendCardCollection, /onYouTubeIframeAPIReady/);
-    assert.match(legendCardCollection, /new window\.YT\.Player/);
+    assert.match(legendCardCollection, /window\.open\(card\.youtube,\s*"_blank"/);
+    assert.match(legendCardCollection, /Open YouTube/);
+    assert.match(legendCardCollection, /Listen story/);
+    assert.match(legendCardCollection, /without video playback here/);
+    assert.doesNotMatch(legendCardCollection, /watchUnlockSeconds/);
+    assert.doesNotMatch(legendCardCollection, /getYouTubeVideoId/);
+    assert.doesNotMatch(legendCardCollection, /loadYouTubeIframeApi/);
+    assert.doesNotMatch(legendCardCollection, /onYouTubeIframeAPIReady/);
+    assert.doesNotMatch(legendCardCollection, /window\.YT/);
+    assert.doesNotMatch(legendCardCollection, /LegendWatchModal/);
+    assert.doesNotMatch(legendCardCollection, /legend-watch-modal/);
     assert.match(legendCardCollection, /createBrowserSupabaseClient/);
     assert.match(legendCardCollection, /readAccountUnlockedIds/);
     assert.match(legendCardCollection, /saveAccountUnlockedId/);
@@ -243,29 +265,28 @@ describe("WorldCup design system integration", () => {
     assert.match(postLoginRedirect, /storage\.removeItem\(POST_LOGIN_REDIRECT_KEY\)/);
     assert.match(legendCardCollection, /speechSynthesis/);
     assert.match(legendCardCollection, /new SpeechSynthesisUtterance/);
-    assert.match(legendCardCollection, /Watch to unlock/);
-    assert.match(legendCardCollection, /legend-watch-modal/);
+    assert.match(legendCardCollection, /setVoiceEnabled\(true\)/);
     assert.match(legendCardCollection, /Unlock card/);
     assert.match(legendCardCollection, /Enable voice/);
     assert.match(legendCardCollection, /isUnlocked \? "is-unlocked" : "is-locked"/);
     assert.match(dashboard, /href="\/predictions#legend-cards"/);
-    assert.match(dashboard, /Watch & collect/);
+    assert.match(dashboard, /Open & collect/);
+    assert.match(dashboard, /Open YouTube, listen to the story in the app/);
     assert.doesNotMatch(dashboard, /Watch on YouTube/);
     assert.doesNotMatch(dashboard, /https:\/\/www\.youtube\.com\/@DansLab-WorldCup/);
     assert.match(globalsCss, /@media \(max-width:\s*640px\)\s*{[\s\S]*?\.series-banner\s*{[\s\S]*?grid-template-columns:\s*40px minmax\(0,\s*1fr\);/);
     assert.match(predictionsPage, /LEGEND_CARDS/);
     assert.match(predictionsPage, /legendCardAnchorByEpisode/);
     assert.match(predictionsPage, /href=\{`\/predictions#\$\{legendCardAnchor\}`\}/);
-    assert.match(predictionsPage, /Watch & collect/);
+    assert.match(predictionsPage, /Open & collect/);
     assert.match(globalsCss, /\.legend-card-grid/);
     assert.match(globalsCss, /\.legend-collection\s*{[\s\S]*?scroll-margin-top:\s*120px;/);
     assert.match(globalsCss, /\.legend-card\s*{[\s\S]*?scroll-margin-top:\s*120px;/);
-    assert.match(globalsCss, /\.legend-watch-modal\s*{/);
-    assert.match(globalsCss, /\.legend-watch-modal__player\s*{[\s\S]*?aspect-ratio:\s*16 \/ 9;/);
-    assert.match(globalsCss, /\.legend-watch-modal__progress\s*{/);
+    assert.doesNotMatch(globalsCss, /\.legend-watch-modal/);
     assert.match(globalsCss, /\.legend-card\.is-locked \.legend-card__image img\s*{[\s\S]*?filter:\s*blur\(7px\)/);
-    assert.match(globalsCss, /\.legend-card__actions\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\) 40px;/);
+    assert.match(globalsCss, /\.legend-card__actions\s*{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);/);
     assert.match(globalsCss, /\.legend-card__watch,\s*[\s\S]*?\.legend-card__disabled\s*{[\s\S]*?grid-column:\s*1 \/ -1;/);
+    assert.match(globalsCss, /\.legend-card__voice\s*{[\s\S]*?width:\s*100%;/);
     assert.match(globalsCss, /@media \(max-width:\s*640px\)\s*{[\s\S]*?\.legend-card__actions\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
   });
 
