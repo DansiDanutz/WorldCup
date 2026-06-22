@@ -1,0 +1,33 @@
+{
+  "comment": "V2 edit blueprint. 27 clips, no repeats. Player hero shots = Kling i2v from likeness anchors (clips_v2/). Atmosphere = reused V1 Seedance (clips/). Slow-mo + xfade to ~296s. Maps to narration_v2 (Brian).",
+  "sequence": [
+    { "v": "v01", "src": "clips/c01.mp4",        "raw": 10, "screen": 14, "beat": "coin spins, board ignites",        "lines": [1,2] },
+    { "v": "v02", "src": "clips/c26.mp4",        "raw": 5,  "screen": 10, "beat": "World Cup trophy at center (stakes)","lines": [3,4] },
+    { "v": "v03", "src": "clips/c02.mp4",        "raw": 5,  "screen": 10, "beat": "Keeper reveal, four thrones light", "lines": [5] },
+    { "v": "v04", "src": "clips/c04.mp4",        "raw": 5,  "screen": 9,  "beat": "RULE: goal = own",                  "lines": [6,7] },
+    { "v": "v05", "src": "clips/c05.mp4",        "raw": 5,  "screen": 9,  "beat": "RULE: assist = move",               "lines": [8] },
+    { "v": "v06", "src": "clips/c06.mp4",        "raw": 5,  "screen": 10, "beat": "RULE: nothing = jail",              "lines": [9] },
+    { "v": "v07", "src": "clips/c03.mp4",        "raw": 5,  "screen": 9,  "beat": "board crowns first king",           "lines": [10] },
+    { "v": "v08", "src": "clips_v2/M1_hattrick.mp4","raw": 5,"screen": 11,"beat": "MESSI hat-trick, 3 fingers",         "lines": [11] },
+    { "v": "v09", "src": "clips_v2/M2_houses.mp4","raw": 5, "screen": 10, "beat": "MESSI places houses, collects",     "lines": [12] },
+    { "v": "v10", "src": "clips_v2/M3_throne.mp4","raw": 5, "screen": 10, "beat": "MESSI quiet king leads",            "lines": [13] },
+    { "v": "v11", "src": "clips_v2/K1_sprint.mp4","raw": 5, "screen": 10, "beat": "MBAPPE sprint",                     "lines": [14] },
+    { "v": "v12", "src": "clips_v2/K2_card.mp4", "raw": 5,  "screen": 11, "beat": "MBAPPE golden record card (58)",    "lines": [15,16] },
+    { "v": "v13", "src": "clips_v2/H1_slams.mp4","raw": 5,  "screen": 10, "beat": "HAALAND slams houses",              "lines": [17] },
+    { "v": "v14", "src": "clips_v2/H2_wall.mp4", "raw": 5,  "screen": 10, "beat": "HAALAND wall rising",               "lines": [18] },
+    { "v": "v15", "src": "clips_v2/R1_down.mp4", "raw": 5,  "screen": 11, "beat": "RONALDO head down, the fallen king","lines": [19,20] },
+    { "v": "v16", "src": "clips/c15.mp4",        "raw": 5,  "screen": 9,  "beat": "jail corner glide",                "lines": [21] },
+    { "v": "v17", "src": "clips_v2/R2_grips.mp4","raw": 5,  "screen": 12, "beat": "RONALDO grips bars (emotional core)","lines": [22,23] },
+    { "v": "v18", "src": "clips_v2/R3_defiant.mp4","raw": 5,"screen": 11, "beat": "RONALDO defiant, counted out before","lines": [24] },
+    { "v": "v19", "src": "clips_v2/R4_dice.mp4", "raw": 5,  "screen": 11, "beat": "RONALDO waiting, eyes up",          "lines": [25] },
+    { "v": "v20", "src": "clips/c20.mp4",        "raw": 10, "screen": 14, "beat": "standings aerial",                 "lines": [26,27] },
+    { "v": "v21", "src": "clips/c24.mp4",        "raw": 5,  "screen": 10, "beat": "round-two dice rise",              "lines": [28,29] },
+    { "v": "v22", "src": "clips_v2/R5_corner.mp4","raw": 5, "screen": 11, "beat": "RONALDO cornered, most dangerous",  "lines": [30] },
+    { "v": "v23", "src": "clips/c27.mp4",        "raw": 10, "screen": 13, "beat": "Keeper hood turns (mystery)",       "lines": [31] },
+    { "v": "v24", "src": "clips/c23.mp4",        "raw": 5,  "screen": 9,  "beat": "cards swept, round two",            "lines": [32] },
+    { "v": "v25", "src": "clips/c22.mp4",        "raw": 5,  "screen": 10, "beat": "board glow, collect the legends",   "lines": [33,34] },
+    { "v": "v26", "src": "clips/c21.mp4",        "raw": 5,  "screen": 10, "beat": "Keeper tally, chase the cup",       "lines": [35] },
+    { "v": "v27", "src": "clips/c28.mp4",        "raw": 5,  "screen": 9,  "beat": "coin cut to black",                "lines": [36] }
+  ],
+  "kling_to_generate": ["M1_hattrick","M2_houses","M3_throne","K1_sprint","K2_card","H1_slams","H2_wall","R1_down","R3_defiant","R4_dice","R5_corner (+ R2_grips done)"]
+}

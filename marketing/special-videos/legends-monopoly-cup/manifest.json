@@ -3,346 +3,350 @@
   "H": 1080,
   "fps": 30,
   "xfade": 0.5,
-  "outfile": "LegendsMonopolyCup.mp4",
+  "outfile": "LegendsMonopolyCup_v2.mp4",
   "clips": [
     {
-      "id": "c01",
-      "file": "prep/c01.mp4",
+      "id": "v01",
+      "file": "clips/c01.mp4",
       "raw": 10,
       "screen": 15
     },
     {
-      "id": "c02",
-      "file": "prep/c02.mp4",
+      "id": "v02",
+      "file": "clips/c26.mp4",
+      "raw": 5,
+      "screen": 11
+    },
+    {
+      "id": "v03",
+      "file": "clips/c02.mp4",
+      "raw": 5,
+      "screen": 11
+    },
+    {
+      "id": "v04",
+      "file": "clips/c04.mp4",
       "raw": 5,
       "screen": 10
     },
     {
-      "id": "c03",
-      "file": "prep/c03.mp4",
+      "id": "v05",
+      "file": "clips/c05.mp4",
       "raw": 5,
       "screen": 10
     },
     {
-      "id": "c04",
-      "file": "prep/c04.mp4",
+      "id": "v06",
+      "file": "clips/c06.mp4",
+      "raw": 5,
+      "screen": 11
+    },
+    {
+      "id": "v07",
+      "file": "clips/c03.mp4",
       "raw": 5,
       "screen": 10
     },
     {
-      "id": "c05",
-      "file": "prep/c05.mp4",
+      "id": "v08",
+      "file": "clips_v2/M1_hattrick.mp4",
+      "raw": 5,
+      "screen": 12
+    },
+    {
+      "id": "v09",
+      "file": "clips_v2/M2_houses.mp4",
+      "raw": 5,
+      "screen": 11
+    },
+    {
+      "id": "v10",
+      "file": "clips_v2/M3_throne.mp4",
+      "raw": 5,
+      "screen": 11
+    },
+    {
+      "id": "v11",
+      "file": "clips_v2/K1_sprint.mp4",
+      "raw": 5,
+      "screen": 11
+    },
+    {
+      "id": "v12",
+      "file": "clips_v2/K2_card.mp4",
+      "raw": 5,
+      "screen": 12
+    },
+    {
+      "id": "v13",
+      "file": "clips_v2/H1_slams.mp4",
+      "raw": 5,
+      "screen": 11
+    },
+    {
+      "id": "v14",
+      "file": "clips_v2/H2_wall.mp4",
+      "raw": 5,
+      "screen": 11
+    },
+    {
+      "id": "v15",
+      "file": "clips_v2/R1_down.mp4",
+      "raw": 5,
+      "screen": 12
+    },
+    {
+      "id": "v16",
+      "file": "clips/c15.mp4",
       "raw": 5,
       "screen": 10
     },
     {
-      "id": "c06",
-      "file": "prep/c06.mp4",
+      "id": "v17",
+      "file": "clips_v2/R2_grips.mp4",
       "raw": 5,
-      "screen": 10
+      "screen": 13
     },
     {
-      "id": "c07",
-      "file": "prep/c07.mp4",
+      "id": "v18",
+      "file": "clips_v2/R3_defiant.mp4",
       "raw": 5,
-      "screen": 10
+      "screen": 12
     },
     {
-      "id": "c08",
-      "file": "prep/c08.mp4",
+      "id": "v19",
+      "file": "clips_v2/R4_dice.mp4",
+      "raw": 5,
+      "screen": 12
+    },
+    {
+      "id": "v20",
+      "file": "clips/c20.mp4",
       "raw": 10,
       "screen": 15
     },
     {
-      "id": "c09",
-      "file": "prep/c09.mp4",
+      "id": "v21",
+      "file": "clips/c24.mp4",
       "raw": 5,
-      "screen": 10
+      "screen": 11
     },
     {
-      "id": "c10",
-      "file": "prep/c10.mp4",
+      "id": "v22",
+      "file": "clips_v2/R5_corner.mp4",
       "raw": 5,
-      "screen": 10
+      "screen": 12
     },
     {
-      "id": "c11",
-      "file": "prep/c11.mp4",
-      "raw": 5,
-      "screen": 10
-    },
-    {
-      "id": "c12",
-      "file": "prep/c12.mp4",
-      "raw": 5,
-      "screen": 10
-    },
-    {
-      "id": "c13",
-      "file": "prep/c13.mp4",
-      "raw": 5,
-      "screen": 10
-    },
-    {
-      "id": "c14",
-      "file": "prep/c14.mp4",
-      "raw": 5,
-      "screen": 10
-    },
-    {
-      "id": "c15",
-      "file": "prep/c15.mp4",
-      "raw": 5,
-      "screen": 10
-    },
-    {
-      "id": "c16",
-      "file": "prep/c16.mp4",
+      "id": "v23",
+      "file": "clips/c27.mp4",
       "raw": 10,
-      "screen": 15
+      "screen": 14
     },
     {
-      "id": "c17",
-      "file": "prep/c17.mp4",
-      "raw": 10,
-      "screen": 15
-    },
-    {
-      "id": "c18",
-      "file": "prep/c18.mp4",
+      "id": "v24",
+      "file": "clips/c23.mp4",
       "raw": 5,
       "screen": 10
     },
     {
-      "id": "c19",
-      "file": "prep/c19.mp4",
+      "id": "v25",
+      "file": "clips/c22.mp4",
       "raw": 5,
-      "screen": 10
+      "screen": 11
     },
     {
-      "id": "c20",
-      "file": "prep/c20.mp4",
-      "raw": 10,
-      "screen": 15
-    },
-    {
-      "id": "c21",
-      "file": "prep/c21.mp4",
+      "id": "v26",
+      "file": "clips/c21.mp4",
       "raw": 5,
-      "screen": 10
+      "screen": 11
     },
     {
-      "id": "c22",
-      "file": "prep/c22.mp4",
-      "raw": 5,
-      "screen": 10
-    },
-    {
-      "id": "c23",
-      "file": "prep/c23.mp4",
-      "raw": 5,
-      "screen": 10
-    },
-    {
-      "id": "c24",
-      "file": "prep/c24.mp4",
-      "raw": 5,
-      "screen": 10
-    },
-    {
-      "id": "c25",
-      "file": "prep/c25.mp4",
-      "raw": 5,
-      "screen": 10
-    },
-    {
-      "id": "c26",
-      "file": "prep/c26.mp4",
-      "raw": 5,
-      "screen": 10
-    },
-    {
-      "id": "c27",
-      "file": "prep/c27.mp4",
-      "raw": 10,
-      "screen": 15
-    },
-    {
-      "id": "c28",
-      "file": "prep/c28.mp4",
+      "id": "v27",
+      "file": "clips/c28.mp4",
       "raw": 5,
       "screen": 10
     }
   ],
   "vo": [
     {
-      "file": "audio/line_01.mp3",
+      "file": "audio_v2/line_01.mp3",
       "at": 1,
       "vol": 1
     },
     {
-      "file": "audio/line_02.mp3",
-      "at": 6,
+      "file": "audio_v2/line_02.mp3",
+      "at": 5,
       "vol": 1
     },
     {
-      "file": "audio/line_03.mp3",
-      "at": 20,
+      "file": "audio_v2/line_03.mp3",
+      "at": 9,
       "vol": 1
     },
     {
-      "file": "audio/line_04.mp3",
-      "at": 34,
+      "file": "audio_v2/line_04.mp3",
+      "at": 16,
       "vol": 1
     },
     {
-      "file": "audio/line_05.mp3",
-      "at": 42,
+      "file": "audio_v2/line_05.mp3",
+      "at": 22,
       "vol": 1
     },
     {
-      "file": "audio/line_06.mp3",
-      "at": 49,
+      "file": "audio_v2/line_06.mp3",
+      "at": 32,
       "vol": 1
     },
     {
-      "file": "audio/line_07.mp3",
-      "at": 56,
+      "file": "audio_v2/line_07.mp3",
+      "at": 38,
       "vol": 1
     },
     {
-      "file": "audio/line_08.mp3",
+      "file": "audio_v2/line_08.mp3",
+      "at": 45,
+      "vol": 1
+    },
+    {
+      "file": "audio_v2/line_09.mp3",
+      "at": 52,
+      "vol": 1
+    },
+    {
+      "file": "audio_v2/line_10.mp3",
       "at": 63,
       "vol": 1
     },
     {
-      "file": "audio/line_09.mp3",
-      "at": 71,
+      "file": "audio_v2/line_11.mp3",
+      "at": 73,
       "vol": 1
     },
     {
-      "file": "audio/line_10.mp3",
-      "at": 80,
+      "file": "audio_v2/line_12.mp3",
+      "at": 82,
       "vol": 1
     },
     {
-      "file": "audio/line_11.mp3",
-      "at": 88,
+      "file": "audio_v2/line_13.mp3",
+      "at": 89,
       "vol": 1
     },
     {
-      "file": "audio/line_12.mp3",
-      "at": 96,
+      "file": "audio_v2/line_14.mp3",
+      "at": 98,
       "vol": 1
     },
     {
-      "file": "audio/line_13.mp3",
+      "file": "audio_v2/line_15.mp3",
       "at": 105,
       "vol": 1
     },
     {
-      "file": "audio/line_14.mp3",
+      "file": "audio_v2/line_16.mp3",
       "at": 112,
       "vol": 1
     },
     {
-      "file": "audio/line_15.mp3",
-      "at": 119,
+      "file": "audio_v2/line_17.mp3",
+      "at": 120,
       "vol": 1
     },
     {
-      "file": "audio/line_16.mp3",
-      "at": 125,
+      "file": "audio_v2/line_18.mp3",
+      "at": 127,
       "vol": 1
     },
     {
-      "file": "audio/line_17.mp3",
-      "at": 131,
+      "file": "audio_v2/line_19.mp3",
+      "at": 137,
       "vol": 1
     },
     {
-      "file": "audio/line_18.mp3",
-      "at": 138,
+      "file": "audio_v2/line_20.mp3",
+      "at": 146,
       "vol": 1
     },
     {
-      "file": "audio/line_19.mp3",
-      "at": 144,
-      "vol": 1
-    },
-    {
-      "file": "audio/line_20.mp3",
+      "file": "audio_v2/line_21.mp3",
       "at": 153,
       "vol": 1
     },
     {
-      "file": "audio/line_21.mp3",
+      "file": "audio_v2/line_22.mp3",
       "at": 162,
       "vol": 1
     },
     {
-      "file": "audio/line_22.mp3",
-      "at": 170,
+      "file": "audio_v2/line_23.mp3",
+      "at": 169,
       "vol": 1
     },
     {
-      "file": "audio/line_23.mp3",
+      "file": "audio_v2/line_24.mp3",
       "at": 178,
       "vol": 1
     },
     {
-      "file": "audio/line_24.mp3",
+      "file": "audio_v2/line_25.mp3",
       "at": 187,
       "vol": 1
     },
     {
-      "file": "audio/line_25.mp3",
-      "at": 201,
+      "file": "audio_v2/line_26.mp3",
+      "at": 197,
       "vol": 1
     },
     {
-      "file": "audio/line_26.mp3",
-      "at": 208,
+      "file": "audio_v2/line_27.mp3",
+      "at": 204,
       "vol": 1
     },
     {
-      "file": "audio/line_27.mp3",
-      "at": 216,
+      "file": "audio_v2/line_28.mp3",
+      "at": 215,
       "vol": 1
     },
     {
-      "file": "audio/line_28.mp3",
-      "at": 235,
+      "file": "audio_v2/line_29.mp3",
+      "at": 222,
       "vol": 1
     },
     {
-      "file": "audio/line_29.mp3",
-      "at": 243,
+      "file": "audio_v2/line_30.mp3",
+      "at": 229,
       "vol": 1
     },
     {
-      "file": "audio/line_30.mp3",
-      "at": 251,
+      "file": "audio_v2/line_31.mp3",
+      "at": 241,
       "vol": 1
     },
     {
-      "file": "audio/line_31.mp3",
-      "at": 263,
+      "file": "audio_v2/line_32.mp3",
+      "at": 252,
       "vol": 1
     },
     {
-      "file": "audio/line_32.mp3",
-      "at": 270,
+      "file": "audio_v2/line_33.mp3",
+      "at": 260,
       "vol": 1
     },
     {
-      "file": "audio/line_33.mp3",
-      "at": 278,
+      "file": "audio_v2/line_34.mp3",
+      "at": 266,
       "vol": 1
     },
     {
-      "file": "audio/line_34.mp3",
-      "at": 286,
+      "file": "audio_v2/line_35.mp3",
+      "at": 276,
+      "vol": 1
+    },
+    {
+      "file": "audio_v2/line_36.mp3",
+      "at": 285,
       "vol": 1
     }
   ],
@@ -350,30 +354,30 @@
     {
       "file": "music/score-mystery.m4a",
       "at": 0,
-      "dur": 42,
-      "vol": 0.24,
+      "dur": 44,
+      "vol": 0.23,
       "fadeIn": 1,
       "fadeOut": 5
     },
     {
       "file": "music/score-anthem.m4a",
-      "at": 40,
-      "dur": 58,
-      "vol": 0.22,
+      "at": 58,
+      "dur": 60,
+      "vol": 0.21,
       "fadeIn": 3,
       "fadeOut": 5
     },
     {
       "file": "music/score-build.m4a",
-      "at": 96,
-      "dur": 52,
-      "vol": 0.22,
-      "fadeIn": 3,
-      "fadeOut": 5
+      "at": 112,
+      "dur": 30,
+      "vol": 0.21,
+      "fadeIn": 2,
+      "fadeOut": 4
     },
     {
       "file": "music/score-jail.m4a",
-      "at": 146,
+      "at": 138,
       "dur": 35,
       "vol": 0.27,
       "fadeIn": 2,
@@ -381,23 +385,23 @@
     },
     {
       "file": "music/score-mystery.m4a",
-      "at": 178,
-      "dur": 24,
+      "at": 170,
+      "dur": 30,
       "vol": 0.24,
       "fadeIn": 2,
       "fadeOut": 4
     },
     {
       "file": "music/score-build.m4a",
-      "at": 200,
-      "dur": 40,
+      "at": 198,
+      "dur": 44,
       "vol": 0.22,
       "fadeIn": 3,
-      "fadeOut": 4
+      "fadeOut": 5
     },
     {
       "file": "music/score-finale.m4a",
-      "at": 236,
+      "at": 240,
       "dur": 35,
       "vol": 0.25,
       "fadeIn": 2,
@@ -405,8 +409,8 @@
     },
     {
       "file": "music/score-anthem.m4a",
-      "at": 268,
-      "dur": 30,
+      "at": 272,
+      "dur": 28,
       "vol": 0.22,
       "fadeIn": 2,
       "fadeOut": 7
@@ -416,7 +420,7 @@
     {
       "file": "sfx/whistle.mp3",
       "at": 0.3,
-      "vol": 0.3
+      "vol": 0.28
     },
     {
       "file": "sfx/braam.mp3",
@@ -426,41 +430,46 @@
     {
       "file": "sfx/mystic.mp3",
       "at": 14,
+      "vol": 0.42
+    },
+    {
+      "file": "sfx/braam.mp3",
+      "at": 22,
       "vol": 0.4
     },
     {
       "file": "sfx/whoosh.mp3",
-      "at": 33,
+      "at": 32,
       "vol": 0.4
     },
     {
       "file": "sfx/pop.mp3",
-      "at": 42,
+      "at": 38,
       "vol": 0.4
     },
     {
       "file": "sfx/whoosh.mp3",
-      "at": 49,
+      "at": 45,
       "vol": 0.35
     },
     {
       "file": "sfx/braam.mp3",
-      "at": 56,
+      "at": 52,
       "vol": 0.45
     },
     {
       "file": "sfx/goal.mp3",
-      "at": 72,
+      "at": 73,
       "vol": 0.5
     },
     {
       "file": "sfx/stamp.mp3",
-      "at": 86,
+      "at": 84,
       "vol": 0.5
     },
     {
       "file": "sfx/whoosh.mp3",
-      "at": 96,
+      "at": 98,
       "vol": 0.4
     },
     {
@@ -469,79 +478,64 @@
       "vol": 0.45
     },
     {
-      "file": "sfx/whoosh.mp3",
-      "at": 118,
-      "vol": 0.35
-    },
-    {
       "file": "sfx/stamp.mp3",
-      "at": 125,
+      "at": 120,
       "vol": 0.5
     },
     {
       "file": "sfx/stamp.mp3",
-      "at": 133,
+      "at": 128,
       "vol": 0.45
     },
     {
       "file": "sfx/whoosh.mp3",
-      "at": 143,
+      "at": 137,
       "vol": 0.4
     },
     {
       "file": "sfx/heartbeat.mp3",
-      "at": 152,
+      "at": 146,
+      "vol": 0.5
+    },
+    {
+      "file": "sfx/braam.mp3",
+      "at": 169,
       "vol": 0.5
     },
     {
       "file": "sfx/heartbeat.mp3",
-      "at": 162,
-      "vol": 0.45
-    },
-    {
-      "file": "sfx/heartbeat.mp3",
-      "at": 172,
+      "at": 170,
       "vol": 0.45
     },
     {
       "file": "sfx/heartbeat.mp3",
       "at": 182,
-      "vol": 0.4
+      "vol": 0.42
     },
     {
       "file": "sfx/braam.mp3",
-      "at": 200,
-      "vol": 0.5
-    },
-    {
-      "file": "sfx/mystic.mp3",
-      "at": 216,
-      "vol": 0.4
-    },
-    {
-      "file": "sfx/whoosh.mp3",
-      "at": 234,
-      "vol": 0.4
-    },
-    {
-      "file": "sfx/braam.mp3",
-      "at": 243,
-      "vol": 0.45
-    },
-    {
-      "file": "sfx/mystic.mp3",
-      "at": 253,
-      "vol": 0.4
-    },
-    {
-      "file": "sfx/braam.mp3",
-      "at": 262,
+      "at": 197,
       "vol": 0.5
     },
     {
       "file": "sfx/whoosh.mp3",
-      "at": 286,
-      "vol": 0.45
+      "at": 222,
+      "vol": 0.4
+    },
+    {
+      "file": "sfx/mystic.mp3",
+      "at": 241,
+      "vol": 0.42
+    },
+    {
+      "file": "sfx/whoosh.mp3",
+      "at": 260,
+      "vol": 0.4
+    },
+    {
+      "file": "sfx/braam.mp3",
+      "at": 285,
+      "vol": 0.5
     }
   ]
 }
