@@ -57,6 +57,7 @@ const CARDS: Card[] = [
   { number: '041', name: 'The Charrúa',           nation: 'Uruguay',      episode: 41, match: 'Uruguay vs Cape Verde',  portrait: '/special-cards/legend-041-portrait.png', landscape: '/special-cards/legend-041-landscape.png' },
   { number: '042', name: 'The Navigator',         nation: 'New Zealand',  episode: 42, match: 'Egypt vs New Zealand',   portrait: '/special-cards/legend-042-portrait.png', landscape: '/special-cards/legend-042-landscape.png' },
   { number: '043', name: 'The Clockmaker',        nation: 'Austria',      episode: 43, match: 'Argentina vs Austria',  portrait: '/special-cards/legend-043-portrait.png', landscape: '/special-cards/legend-043-landscape.png' },
+  { number: '044', name: 'The Namesake',          nation: 'Iraq',         episode: 44, match: 'France vs Iraq',        portrait: '/special-cards/legend-044-portrait.png', landscape: '/special-cards/legend-044-landscape.png' },
   { number: 'BONUS-1', name: 'The Freedom Run',   nation: 'Colombia',     episode: 0,  match: 'Bonus film · Luis Díaz',     portrait: '/special-cards/legend-bonus-diaz-portrait.png',   landscape: '/special-cards/legend-bonus-diaz-landscape.png' },
   { number: 'BONUS-2', name: 'The Promise',       nation: 'Belgium',      episode: 0,  match: 'Bonus film · Romelu Lukaku', portrait: '/special-cards/legend-bonus-lukaku-portrait.png', landscape: '/special-cards/legend-bonus-lukaku-landscape.png' },
 ];
