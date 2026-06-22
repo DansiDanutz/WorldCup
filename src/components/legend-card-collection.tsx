@@ -525,9 +525,62 @@ export function LegendCardCollection() {
   const progressPercent = LEGEND_CARDS.length
     ? getCompletionPercent(collectedCount, LEGEND_CARDS.length)
     : 0;
+  const readyFocusCard = LEGEND_CARDS.find(
+    (card) => Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id)),
+  );
+  const storyFocusCard = LEGEND_CARDS.find(
+    (card) => Boolean(card.youtube && !unlockedIds.has(card.id) && !listenedIds.has(card.id)),
+  );
+  const youtubeFocusCard = LEGEND_CARDS.find(
+    (card) => Boolean(card.youtube && !unlockedIds.has(card.id) && listenedIds.has(card.id) && !watchedIds.has(card.id)),
+  );
   const focusCard =
+    readyFocusCard ??
+    youtubeFocusCard ??
+    storyFocusCard ??
     LEGEND_CARDS.find((card) => Boolean(card.youtube && !unlockedIds.has(card.id))) ??
     newestEpisodeCard;
+  const focusCardAction = focusCard
+    ? unlockedIds.has(focusCard.id)
+      ? {
+          step: "collected",
+          eyebrow: "Collected card",
+          badge: "Collected",
+          detail: "This card is saved. You can replay the story or find another card in the album.",
+          ctaLabel: speakingCardId === focusCard.id ? "Stop story" : "Listen story",
+        }
+      : Boolean(focusCard.youtube && watchedIds.has(focusCard.id))
+        ? {
+            step: "collect",
+            eyebrow: "Ready to collect",
+            badge: "Ready now",
+            detail: "You opened the matching YouTube episode. Save the card to your album.",
+            ctaLabel: "Collect card",
+          }
+        : !listenedIds.has(focusCard.id)
+          ? {
+              step: "listen",
+              eyebrow: "Next best action",
+              badge: "Listen next",
+              detail: "Start with the in-app voice story, then open YouTube to unlock the card.",
+              ctaLabel: speakingCardId === focusCard.id ? "Stop story" : "Listen story",
+            }
+          : focusCard.youtube
+            ? {
+                step: "watch",
+                eyebrow: "YouTube next",
+                badge: "Open episode",
+                detail: "Story heard. Open the matching YouTube episode, then return to collect.",
+                ctaLabel: watchedIds.has(focusCard.id) ? "Open again" : "Open YouTube",
+              }
+            : {
+                step: "locked",
+                eyebrow: "Coming soon",
+                badge: "Episode pending",
+                detail: "This card unlocks when its matching YouTube episode is live.",
+                ctaLabel: "Coming soon",
+              }
+    : null;
   const normalizedCardSearch = cardSearch.trim().toLowerCase();
   const filteredCards = useMemo(() => {
     return LEGEND_CARDS.filter((card) => {
@@ -849,6 +902,32 @@ export function LegendCardCollection() {
     setCardSearch("");
     setCollectionExpanded(false);
     setStatus("Album filters reset. Continue the card loop from any story.");
+  }
+
+  function runFocusCardAction() {
+    if (!focusCard || !focusCardAction || focusCardAction.step === "locked") {
+      return;
+    }
+
+    if (focusCardAction.step === "collect") {
+      void unlockCard(focusCard);
+      return;
+    }
+
+    if (focusCardAction.step === "watch") {
+      startWatch(focusCard);
+      return;
+    }
+
+    speakStory(focusCard);
+  }
+
+  function showFocusCardInAlbum(card: LegendCard) {
+    setCardFilter("all");
+    setCardSearch(card.title);
+    setCollectionExpanded(false);
+    setStatus(`${card.title} is selected in the album.`);
+    window.setTimeout(() => scrollToLegendSection("legend-card-grid"), 0);
   }
 
   function scrollToLegendSection(sectionId: string) {
@@ -1223,48 +1302,49 @@ export function LegendCardCollection() {
               />
               {!unlockedIds.has(focusCard.id) ? (
                 <span className="legend-feature-card__state">
-                  <LockKeyhole size={16} />
-                  Next to collect
+                  {focusCardAction?.step === "listen" ? <Volume2 size={16} /> : null}
+                  {focusCardAction?.step === "watch" ? <ExternalLink size={16} /> : null}
+                  {focusCardAction?.step === "collect" ? <Sparkles size={16} /> : null}
+                  {focusCardAction?.step === "locked" ? <LockKeyhole size={16} /> : null}
+                  {focusCardAction?.badge ?? "Next to collect"}
                 </span>
               ) : (
                 <span className="legend-feature-card__state is-collected">
                   <Check size={16} />
-                  Collected
+                  {focusCardAction?.badge ?? "Collected"}
                 </span>
               )}
             </div>
             <div className="legend-feature-card__body">
-              <p className="wc-card-eyebrow">Latest from YouTube</p>
+              <p className="wc-card-eyebrow">{focusCardAction?.eyebrow ?? "Next best action"}</p>
               <h2>{focusCard.title}</h2>
               <p>{focusCard.teams}</p>
               <small>{getEpisodeLabel(focusCard)} · {focusCard.subtitle}</small>
-              <div className="legend-feature-card__actions">
+              <p className="legend-feature-card__guidance">
+                {focusCardAction?.detail ?? "Continue the card loop from this episode."}
+              </p>
+              <div className="legend-feature-card__actions legend-feature-card__actions--guided">
                 <button
                   type="button"
-                  className="button"
-                  onClick={() => startWatch(focusCard)}
+                  className="button legend-feature-card__primary-action"
+                  disabled={focusCardAction?.step === "locked"}
+                  onClick={runFocusCardAction}
                 >
-                  <ExternalLink size={16} />
-                  Open YouTube
+                  {focusCardAction?.step === "collect" ? <Sparkles size={16} /> : null}
+                  {focusCardAction?.step === "watch" ? <ExternalLink size={16} /> : null}
+                  {focusCardAction?.step === "listen" || focusCardAction?.step === "collected" ? (
+                    speakingCardId === focusCard.id ? <VolumeX size={16} /> : <Volume2 size={16} />
+                  ) : null}
+                  {focusCardAction?.step === "locked" ? <LockKeyhole size={16} /> : null}
+                  {focusCardAction?.ctaLabel ?? "Continue"}
                 </button>
                 <button
                   type="button"
                   className="button secondary"
-                  onClick={() => speakStory(focusCard)}
+                  onClick={() => showFocusCardInAlbum(focusCard)}
                 >
-                  {speakingCardId === focusCard.id ? <VolumeX size={16} /> : <Volume2 size={16} />}
-                  {speakingCardId === focusCard.id ? "Stop story" : "Listen story"}
-                </button>
-                <button
-                  type="button"
-                  className="button secondary"
-                  disabled={
-                    unlockedIds.has(focusCard.id) ||
-                    !Boolean(focusCard.youtube && watchedIds.has(focusCard.id))
-                  }
-                  onClick={() => unlockCard(focusCard)}
-                >
-                  {unlockedIds.has(focusCard.id) ? "Unlocked" : "Unlock card"}
+                  <Search size={16} />
+                  Find in album
                 </button>
               </div>
             </div>

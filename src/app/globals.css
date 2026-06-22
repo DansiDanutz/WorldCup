@@ -10822,10 +10822,20 @@ html {
 
 .legend-feature-card__image {
   position: relative;
+  width: 100%;
+  min-width: 0;
   min-height: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #061911;
+}
+
+@media (min-width: 641px) {
+  .legend-feature-card__image {
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
 }
 
 .legend-feature-card__image img {
@@ -10883,6 +10893,10 @@ html {
   color: #a8ebd2;
 }
 
+.legend-feature-card__guidance {
+  max-width: 640px;
+}
+
 .legend-feature-card__actions {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -10890,10 +10904,18 @@ html {
   margin-top: 5px;
 }
 
+.legend-feature-card__actions--guided {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+}
+
 .legend-feature-card__actions .button {
   justify-content: center;
   min-width: 0;
   white-space: normal;
+}
+
+.legend-feature-card__primary-action {
+  min-height: 44px;
 }
 
 .legend-progress-panel {
