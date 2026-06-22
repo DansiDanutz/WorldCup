@@ -1,117 +1,111 @@
 ---
 name: worldcup-episode
 description: >-
-  Produce or rebuild a WorldCup26 Legends match episode (or a "WorldCup26 Bonus -
-  <Player>" player drama film) to the Ep6 GOLD STANDARD. Use whenever building,
-  rendering, re-rendering, or fixing any episode/player film. Covers the clip-based
-  Higgsfield/fal animation pipeline, Brian VO, the NO-SUBTITLES rule, the cinematic
-  technique set, and the crash-proof managed-task render that actually completes in
-  this sandbox. Gold reference: marketing/match-videos/match06-argentina-vs-algeria.
+  Produce or fix a WorldCup26 Legends animated match episode to the Ep44 GOLD
+  STANDARD. Use whenever asked to build, render, re-render, or fix the next
+  WorldCup26 Legends episode. Covers scaffold, narration, Higgsfield assets,
+  scenes with a continuous B-roll backdrop (never black), animated squad cards
+  (player clips) + animated Legend card, Brian VO, preflight, a mandatory
+  SPOT-TEST before the full render, render, QA, deliver, and adding the Legend
+  card to the collection. Gold reference: marketing/match-videos/match44-france-vs-iraq.
 ---
 
-# WorldCup26 episode production (Ep6 gold standard)
+# WorldCup26 Legends — Episode Production (Ep44 gold standard)
 
-Reverse-engineered from **Ep6 — Argentina vs Algeria** (`match06-argentina-vs-algeria/`),
-the highest-quality episode. Read `CLAUDE.md` rules #6–#11 and
-`content/youtube/EPISODE_PRODUCTION_STANDARD.md` first; this skill is the HOW.
+Ep44 (France–Iraq) is the reference. Always-on `CLAUDE.md` rules: no
+gambling/odds/underdog/prize wording; short on-screen LABELS only, never sentence
+props (`line=`/`note=`); Brian narrates; SOCCER only (NO helmet/pads/gridiron);
+scorelines are OUR PREDICTION, never stated as real; NEVER speed up the VO (extend
+duration instead); render ONE episode at a time; a finished video is NOT done until
+its Legend card is in the collection. The **message** matters as much as the visuals.
 
-## 0. Non-negotiables (reject the render if any fail)
-- **CLIP-BASED ONLY** — `clips.json` `clips[]` is non-empty (~25–34) of real VIDEO
-  clips. NEVER Ken-Burns stills / `clips: []` / a photo slideshow.
-- **NO SUBTITLES / NO sentence text on screen** (rule #10). Strip every `line=` on
-  LowerThird, `note=` on HistoryPlate, and any narration paragraph `<div>`. Only
-  allowed furniture: title card, ≤4-word section labels, player NAME labels, the
-  score bug, the "OUR PREDICTION" watermark, the worldcup26.world CTA.
-- **Brian VO** (ElevenLabs voice id `nPczCjzI2devNBz1zQrb`, model `eleven_multilingual_v2`).
-- **Soccer only** (round-neck shirts, pitch with goals; NO helmet/pads/gridiron).
-- **Real-results-only**: scorelines are OUR PREDICTION, never stated as fact.
-- Player drama films are named **`WorldCup26 Bonus - <Player Name>`** (title card,
-  outro VO, output filename).
+## 0. Setup
+- Work in the active worktree (e.g. `/tmp/ep38git`). Determine the next Ep number from
+  highest Ep across `content/youtube/PRODUCTION_LOG.md` + all branches + `match-videos/`,
+  +1. Check collision: `git ls-tree -d --name-only HEAD marketing/match-videos/ | grep matchNN`.
+- Read canon `content/Stories/<A>-vs-<B>.md` for the SPINE / message / a score.
 
-## 1. The Ep6 quality bar — what makes it "perfection"
-1. **Mystery-FIRST cold open** — open on the animated Mystery Supporter(s) in the
-   first ~30s (Ep6 used TWO ghosts). Hook = mystery + verified history.
-2. **Both teams' star players ANIMATED** (image→video), plus **fan crowds in
-   distinct emotional states** (hopeful / anxious / jubilant), **stadium**, and the
-   **animated Mystery Supporter** — supporters & story are the SUBJECT.
-3. **ChapterBar** progress pill with chapter labels (open loop, holds retention).
-4. **"Coming up" flash (~37s)** — a 2–3s flash of the climax (the mid-roll promise).
-5. **Speed-ramp climax** — slow-mo dread (rate ~0.35) then a hard snap to rate 1.0.
-6. **FilmGrain** overlay on the drama act; Vignette + Letterbox throughout.
-7. **Motivated OUR PREDICTION card**, comment bait, a named share trigger.
-8. Reuse the paid clip library first — Ep6 did ZERO new player generations.
+## 1. Scaffold from the latest gold episode (do NOT hand-build)
+```
+cp -r marketing/match-videos/match44-france-vs-iraq marketing/match-videos/matchNN-a-vs-b
+cd marketing/match-videos/matchNN-a-vs-b
+rm -rf frames audio/*.mp3 audio_master.m4a WorldCup26_*.mp4 assets/*.mp4 assets/squad/*.png thumbnail.jpg UPLOAD_PACK.md
+```
+- Copy 5 player clips/side from `content/videos/<Team>/<Player>.mp4` → `assets/<abbr>-<surname>.mp4`.
+- Reuse `stadium.mp4` + `celebration.mp4` from a prior episode's `assets/`.
 
-## 2. Assets — reuse first, then generate
-- **Reuse:** `content/videos/<Team>/`, prior-episode `assets/`, and the per-episode
-  `jobs-manifest.json` (re-fetch with `npm run fetch-assets`).
-- **Generate what's missing.** Higgsfield MCP is the canonical tool, BUT it
-  IP-blocks this sandbox ("IP detected") — so use **fal.ai** (needs `FAL_KEY`):
-  - Player shots = **image→video** from `content/images/<Team>/<Player>.png`. Feed
-    the **public GitHub raw URL** (`https://raw.githubusercontent.com/DansiDanutz/WorldCup/main/content/images/<Team>/<file>.png`)
-    as `image_url` to `fal-ai/kling-video/v1.6/standard/image-to-video`.
-  - Crowds / stadium / mystery-supporter = **text→video** Pixar-style via
-    `fal-ai/kling-video/v1.6/standard/text-to-video`.
-  - POST to `https://queue.fal.run/<model>` (`Authorization: Key $FAL_KEY`,
-    `{prompt, image_url?, duration:"5", aspect_ratio:"16:9"}`) → poll
-    `…/requests/<id>/status` → GET `…/requests/<id>` → download `video.url`.
-  - Save into the episode `assets/<name>.mp4` and write a `fal-jobs.json` manifest.
-- Engine: `VideoSprite`/`ClipSprite` in `match-kit.jsx` plays clips frame-exact
-  (the renderer waits on `window.__videosSettled`). Copy match-kit/animations/
-  match.html/render.mjs/serve.mjs/mux.mjs from a clip-based episode for new projects.
+## 2. Narration (`narration.json`)
+~30 Brian lines, ~308s: punchy cold-open hook + a mid-roll retention hook
+("stay with me, because…"); team intros; the duel; predicted goals (clearly OUR
+PREDICTION); group recap; engagement (Comment X / Comment Y); the Legend reveal;
+compliant app CTA ("pick three of the 48 nations, every goal scores for you; free,
+just for fun, no prizes"); outro + tease the next Ep. Legend 0NN = a UNIQUE character
+tied to the match's emotional core.
 
-## 3. Script + VO
-- Script = `narration.json` (~30 short lines, `at` timings, spelled-out numbers for
-  TTS). Use the LOCKED prompt in `PRODUCTION_ACCELERATION.md` fix #4 (≤7s hook,
-  mystery+history, prediction labeled, CTA "free to play, no prizes").
-- VO: per-line `audio/line_NN.mp3` via ElevenLabs (`gen_audio.mjs` or a fetch loop).
-  Set the key as an ENV var (`ELEVENLABS_API_KEY=… node …`), not an arg.
+## 3. Higgsfield assets (`mcp__Higgsfield__*` — it WORKS now; nano_banana_pro / kling3_0_turbo)
+- **Thumbnail** 16:9: curiosity-gap hook text + "EP NN" gold seal, SOCCER (NO helmet/pads).
+  If it returns `status:"nsfw"` (false positive), reword (drop flag-color descriptions) and retry.
+- **Legend card**: portrait 9:16 + landscape 16:9, premium gold art-deco collectible.
+- **2 story clips** (5s): the nation's fans + the **mystery/Legend** shot (also used in the cold open).
+- Download via `curl` from the rawUrl. Reuse stadium/celebration to save credits.
 
-## 4. clips.json + scenes (clip-based)
-- `clips.json`: `clips[]` (id/src/at/dur/vol/rate placements — reuse one source mp4
-  across many windows like Ep6), plus `music.cues` (Kevin MacLeod CC-BY, credit it)
-  and `sfx.hits`.
-- `match-scenes.jsx`: use `VideoSprite`/`ClipSprite`, NOT `<img>`/`KenBurns`. Verify
-  with: `grep -c 'KenBurns src=\"assets/player' scene` → must be 0; `grep ' line=\"'`
-  and `' note=\"'` → must be 0.
+## 4. Squad stills (fallback posters)
+`ffmpeg -ss 1.2 -i assets/<clip>.mp4 -frames:v 1 -q:v 3 assets/squad/<abbr>-<name>.png` for each player.
 
-## 5. RENDER — the part that bites (lessons learned the hard way)
-- **Server crashes on aborted video range requests** → use the crash-proof
-  `serve.mjs` (guards stream/socket errors + `uncaughtException`). Already fixed in
-  the episode folders; copy it to any new project.
-- **Run the render as a HARNESS-MANAGED background task** (`run_in_background: true`).
-  **Do NOT `nohup`-detach** — this sandbox reaps detached processes between turns,
-  which silently kills long renders mid-way. The managed task survives (it ran the
-  first 9000-frame Ep22 render to completion; the nohup ones all died ~frame 6k).
-- Pipeline per project dir:
-  `PORT=<p> node serve.mjs &` → wait for `curl localhost:<p>` →
-  `FPS=30 DURATION=300 OUT=frames node render.mjs` (1920×1080, 9000 frames, ~70 min
-  solo) → `node mux.mjs` (places VO at `at` times + music ducked → MP4).
-  For a player film: `OUTFILE=WorldCup26_Bonus_<Player>.mp4 node mux.mjs`.
-- **Resume, don't restart:** render.mjs honors `START=<frame>` — if interrupted,
-  resume from the last good frame instead of re-rendering 0.
-- Render two in parallel only on a 4-core box (serve on distinct ports 8098/8101);
-  for speed, prefer SOLO (each ~70 min vs ~2×90 min shared).
-- Validate cheaply first: a SEQUENTIAL smoke (`FPS=2 DURATION=50`) — confirm frames
-  are non-black. (A `SHOTS=` jump-around smoke shows false black because videos
-  don't preload — not a real failure.)
-- **VO↔SCENE ALIGNMENT GATE (mandatory before EVERY mux — the Ep33 lesson):** the
-  narration `at` times MUST line up with the scene windows in `match.html`, or the
-  words describe things the viewer hasn't reached yet (Ep33 v1 named the squad players
-  at t≈124s while the 1974/2022 history montage was still on screen — squad scene
-  doesn't start until 150s). Run `node scripts/check-vo-alignment.mjs <epDir>` — it
-  FAILS on any VO line that overruns the next line or runs past 300s, and prints the
-  scene each line lands in so you can confirm squad lines are in *Squad, save lines in
-  Drama, recap in Title, etc. When you write/borrow narration, set each `at` from the
-  TARGET scene window (history fills its whole long window; squads start exactly when
-  the squad scene does), not from the previous episode's pacing. Fixing this needs only
-  a re-time + re-mux — NOT a re-render (the frames are correct).
+## 5. Scenes + clips.json — the THREE things that make it gold (already in the match44 template)
+1. **Backdrop (never black):** a `Backdrop()` component renders ~65 tiled `bd-*` clips
+   (dur 5.0, step 4.8, cycling all srcs, `dim≈0.34`, brightness≈0.66) covering the full
+   0–DUR timeline, rendered FIRST in `match.html` (`<Backdrop/>` before the SCENES map).
+   EVERY scene-root background must be semi-transparent (`rgba(...,0.46)`), never opaque
+   `#000`, so footage shows through clip gaps. (Letterbox bars stay `#000`.)
+2. **Animated squad cards:** each `SquadGrid` player has a `vid:` clip id; the card image
+   box is `position:relative` with the player `ClipSprite` over the photo poster. Add
+   `sqX-<name>` clips to `clips.json` at the grid window, dur 5.
+3. **Animated Legend card:** continuous float (`Math.sin(lt*…)`) + a REPEATING holo shine
+   sweep over the mystery clip — never static.
+- Keep scene windows aligned to narration `at` times (SCENES table in match.html). May be
+  delegated to a subagent using match44 as the EXACT template, but the three items above
+  are mandatory and verified by the spot-test (step 8).
 
-## 6. Definition of done
-Final MP4 exists & fresh; clips animate (file is tens of MB, not a tiny black-frame
-file); zero on-screen sentences; soccer-only; prediction labeled; music credited;
-"No, not made for kids" + "Altered/synthetic content" set at upload
-(`PREUPLOAD_CHECKLIST.md`). Deliver via file-send + a public link.
+## 6. VO
+`ELEVENLABS_API_KEY=<key> node gen_audio.mjs` — key supplied by the user; pass inline,
+NEVER write it to disk or commit it. One mp3/line, none zero-byte.
 
-## 7. After
-Log results + retention% in `SERIES_PLAYBOOK.md`; tick `PREMIERE_CALENDAR.md`;
-update this skill if a better technique is found (self-improving).
+## 7. Sync + preflight + VO↔scene alignment
+- `DURATION.txt` must equal match.html `const DURATION`.
+- `node scripts/preflight-episode.mjs <dir> NN` → `PREFLIGHT PASS` (also enforces no VO
+  overlap / no speed-up). Each VO line must land in the scene that talks about it — set
+  each `at` from the TARGET scene window, not the previous episode's pacing.
+
+## 8. SPOT-TEST BEFORE THE FULL RENDER (non-negotiable — never ship unseen; this caught Ep44's black gaps)
+Serve + Playwright-screenshot the risky timestamps, then measure brightness AND VIEW a few.
+Browser MUST use render.mjs's flags (`--ignore-certificate-errors`, `ignoreHTTPSErrors:true`,
+viewport 1920×1124) or the React/Babel CDN fails and `window.__seek` never appears.
+```
+PORT=8099 node serve.mjs &        # kill by PID — NEVER pkill -f 'serve.mjs' (self-kill, exit 144)
+node spotcheck.mjs                # seek [10,66,89,120,145,170,205,238,265,300], screenshot each
+```
+Every sampled frame's avg luminance must be > 0 (no pure black); VIEW the stadium/squad/legend
+frames. Tune Backdrop brightness if gaps are too dark. Delete spotcheck.mjs before committing.
+
+## 9. Render (one at a time)
+```
+WT=/tmp/ep38git nohup bash /tmp/render_ep.sh <abs epDir> NN WorldCup26_MatchNN_AAA_BBB_upload.mp4 <port> > /tmp/qNN.log 2>&1 &
+```
+Arm a Monitor on `/tmp/qNN.log` for `[epNN] DONE` / `EXIT [1-9]` (re-arm if it times out —
+persistent monitors can expire ~30 min). render_ep.sh re-encodes if >96 MiB, commits, pushes,
+frees frames. If `/tmp` gets tight, `rm -rf` finished sibling worktrees (commits persist in shared `.git`).
+
+## 10. QA the FINAL master (graded → darker than the raw spot-test)
+- mp4 `Duration` == `audio_master.m4a` `Duration` (no speed-up).
+- Extract + VIEW frames at the goal + Legend timestamps: real imagery not black, correct
+  teams, "OUR PREDICTION" stamp. Judge moody graded shots by VIEWING, not the lum number.
+
+## 11. Deliver + finish (a video isn't done until ALL of this is done)
+- SendUserFile the mp4 + a prediction frame; give the GitHub raw link:
+  `https://github.com/DansiDanutz/WorldCup/raw/<branch>/marketing/match-videos/matchNN-.../WorldCup26_MatchNN_AAA_BBB_upload.mp4`
+- Write `UPLOAD_PACK.md` (title / description / tags) and present it in chat.
+- **Add the Legend card to the collection (same pass):** download both orientations to
+  `public/special-cards/legend-0NN-*.png`; add the entry to `public/special-cards/cards.json`
+  AND the CARDS array in `src/app/collection/page.tsx`; commit + push.
+- Improve every episode over the last — update this skill when a better technique is found.
