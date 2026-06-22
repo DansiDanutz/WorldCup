@@ -748,6 +748,12 @@ svg {
   padding: 0 clamp(12px, 2.2vw, 32px) 48px;
 }
 
+@media (min-width: 901px) {
+  .app-shell--landing .page--landing {
+    padding-top: 108px;
+  }
+}
+
 .app-shell--landing .page--post-entry {
   padding-top: 112px;
 }
@@ -7956,7 +7962,7 @@ html {
   margin-top: 0;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .wallet-workspace,
   .wallet-grid {
     grid-template-columns: 1fr;
@@ -10632,5 +10638,479 @@ html {
 
   .legend-watch-modal__progress span {
     text-align: left;
+  }
+}
+
+/* =========================================================================
+   Responsive card polish pass.
+
+   Older mobile rules intentionally capped many surfaces at 300-340px. That
+   kept tiny phones safe, but it makes modern mobile browsers look clipped and
+   leaves cards floating with awkward gutters. These final-source-order rules
+   make shared app cards fluid while keeping comfortable gutters.
+   ========================================================================= */
+@media (max-width: 900px) {
+  .app-shell--landing {
+    overflow-x: clip;
+  }
+
+  .page,
+  .app-shell--landing .page--landing,
+  .app-shell--landing.app-shell--post-entry .page--post-entry {
+    width: 100%;
+    max-width: none;
+    padding-inline: clamp(10px, 3.8vw, 16px);
+  }
+
+  .app-shell--landing .page--landing {
+    padding-inline: 0;
+  }
+
+  .topbar,
+  .app-shell--landing .topbar {
+    right: clamp(10px, 3.2vw, 14px);
+    left: clamp(10px, 3.2vw, 14px);
+    width: auto;
+    max-width: none;
+    transform: none;
+  }
+
+  .topbar,
+  .launch-notice,
+  .panel,
+  .wallet-solo,
+  .wallet-grid,
+  .wallet-workspace,
+  .my-standing,
+  .standing-grid,
+  .auth-hero,
+  .auth-copy,
+  .flag-wall,
+  .auth-steps,
+  .auth-benefits,
+  .auth-info-grid,
+  .auth-choice-grid,
+  .auth-card {
+    max-width: none;
+  }
+
+  .app-shell--landing .topbar {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .landing-brand-lockup {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .landing-brand-copy strong,
+  .landing-brand-copy small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .landing-brand-copy strong {
+    max-width: 100%;
+    font-size: clamp(17px, 5.3vw, 20px);
+  }
+
+  .smart-menu.is-closed .smart-menu__panel {
+    display: none !important;
+  }
+
+  .app-shell--landing .smart-menu__toggle {
+    min-height: 44px;
+    padding: 8px 10px;
+  }
+
+  .app-shell--landing .smart-menu__panel {
+    top: 122px;
+  }
+
+  .hero-swiper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 24px;
+  }
+
+  .hero-swiper__slide {
+    min-height: auto;
+    padding-inline: clamp(10px, 3.4vw, 16px);
+  }
+
+  .hero-swiper__slide:first-child {
+    min-height: min(790px, 100svh);
+    padding: 0;
+  }
+
+  .hero-swiper__slide:first-child .hero-card {
+    width: 100%;
+    height: min(790px, 100svh);
+    min-height: min(790px, 100svh);
+  }
+
+  .hero-swiper__slide:first-child .hero-card__photo {
+    background-position: 48% center;
+  }
+
+  .hero-swiper__slide:first-child .hero-card__content {
+    width: 100%;
+    padding-inline: clamp(14px, 4vw, 18px);
+    padding-top: clamp(148px, 19svh, 168px);
+    padding-bottom: 78px;
+  }
+
+  .hero-swiper__slide:first-child .hero-card__cards {
+    width: 100%;
+    max-width: none;
+    gap: 8px;
+  }
+
+  .hero-mini {
+    border-radius: 10px;
+  }
+
+  .hero-feature {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .hero-feature__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .hero-feature__body strong {
+    font-size: 16px;
+    line-height: 1.12;
+  }
+
+  .hero-feature__body small {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .hero-cta,
+  .hero-cta-row .hero-cta {
+    min-height: 46px;
+    border-radius: 10px;
+  }
+
+  .hero-swiper__controls {
+    bottom: 10px;
+  }
+
+  .panel-header,
+  .panel-tools,
+  .entry-form,
+  .invite-content,
+  .panel-body,
+  .admin-form,
+  .rules-content,
+  .responsible-play-content {
+    padding: 12px;
+  }
+
+  .panel-header {
+    gap: 10px;
+  }
+
+  .panel-title {
+    font-size: 16px;
+  }
+
+  .panel-subtitle {
+    line-height: 1.35;
+  }
+
+  .status-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat {
+    min-height: 86px;
+  }
+
+  .browse-hub,
+  .invite-preview-card,
+  .leaderboard-private-preview,
+  .ticket-requirement-card,
+  .wallet-ticket-math,
+  .ticket-transfer-box,
+  .agent-revenue-box,
+  .agent-deposit-box,
+  .sender-wallet-lock-box,
+  .policy-gate-preview,
+  .readiness-action-plan,
+  .launch-evidence-snapshot {
+    border-radius: 8px;
+  }
+
+  .browse-tile,
+  .leaderboard-row,
+  .match-row,
+  .rule-block,
+  .rule-card,
+  .stage-rule,
+  .selected-team,
+  .pick-slot-card,
+  .team-row,
+  .auth-box,
+  .auth-connected-card,
+  .ticket-option-grid div,
+  .wallet-balance-card,
+  .agent-request-row,
+  .deposit-row,
+  .deposit-claim-row {
+    border-radius: 8px;
+  }
+
+  .team-list,
+  .leaderboard-list,
+  .match-list {
+    padding: 12px;
+  }
+
+  .team-row {
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+
+  .team-row .coefficient,
+  .team-row .odds {
+    display: none;
+  }
+
+  .team-row-action {
+    min-width: 52px;
+    padding-inline: 8px;
+  }
+
+  .leaderboard-main,
+  .match-main {
+    width: 100%;
+  }
+
+  .leaderboard-team-chip {
+    min-width: 0;
+  }
+
+  .wallet-balance-grid,
+  .leaderboard-preview-stats,
+  .account-status-grid,
+  .hero-login-stats,
+  .ticket-admin-preview__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wallet-grid,
+  .wallet-workspace,
+  .wallet-wide,
+  .wallet-solo {
+    width: 100%;
+  }
+
+  .wallet-view-switch {
+    border-radius: 10px;
+  }
+
+  .wallet-view-tab {
+    min-height: 64px;
+    border-radius: 8px;
+  }
+
+  .auth-page {
+    width: 100%;
+    max-width: none;
+  }
+
+  .auth-copy h1,
+  .auth-copy p {
+    max-width: none;
+  }
+
+  .series-banner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .series-banner__cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .page,
+  .app-shell--landing .page--landing,
+  .app-shell--landing.app-shell--post-entry .page--post-entry {
+    max-width: none;
+    padding-inline: 10px;
+  }
+
+  .topbar,
+  .app-shell--landing .topbar {
+    right: 8px;
+    left: 8px;
+    width: auto;
+    max-width: none;
+    padding: 9px;
+  }
+
+  .landing-brand-copy strong {
+    font-size: clamp(16px, 5.2vw, 19px);
+  }
+
+  .landing-brand-year {
+    padding-inline: 6px;
+  }
+
+  .app-shell--landing .smart-menu__panel {
+    top: 118px;
+    right: 8px;
+    left: 8px;
+  }
+
+  .hero-swiper__slide:first-child .hero-card__content {
+    padding-top: clamp(142px, 18svh, 160px);
+    padding-inline: 12px;
+  }
+
+  .hero-swiper__slide:first-child .hero-card__cards {
+    gap: 7px;
+  }
+
+  .hero-feature {
+    padding: 9px;
+  }
+
+  .hero-feature__icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .status-row {
+    gap: 8px;
+  }
+
+  .stat {
+    min-height: 80px;
+  }
+
+  .panel-header,
+  .panel-tools,
+  .entry-form,
+  .invite-content,
+  .panel-body,
+  .admin-form,
+  .rules-content,
+  .responsible-play-content,
+  .team-list,
+  .leaderboard-list,
+  .match-list {
+    padding: 10px;
+  }
+
+  .team-row {
+    min-height: 68px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-shell--landing .topbar {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    width: calc(100% - 16px);
+    margin: 8px auto 10px;
+    transform: none;
+  }
+
+  .app-shell--landing .smart-menu__panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
+  }
+
+  .app-shell--landing .kickoff-strip {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    width: calc(100% - 28px);
+    max-width: calc(100% - 28px);
+    margin: 0 auto 14px;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .kickoff-strip__copy {
+    justify-items: start;
+    max-width: 100%;
+  }
+
+  .kickoff-strip__label {
+    font-size: 10px;
+    line-height: 1.1;
+  }
+
+  .kickoff-strip__clock,
+  .kickoff-strip--live .kickoff-strip__clock {
+    font-size: clamp(16px, 4.8vw, 20px);
+    line-height: 1.15;
+  }
+
+  .kickoff-strip__copy small {
+    display: block;
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .kickoff-strip__cta {
+    justify-content: center;
+    width: 100%;
+    min-height: 42px;
+    padding: 0 12px;
+    border-radius: 10px;
+  }
+
+  .hero-swiper__slide:first-child {
+    min-height: min(700px, 82svh);
+  }
+
+  .hero-swiper__slide:first-child .hero-card {
+    height: min(700px, 82svh);
+    min-height: min(700px, 82svh);
+  }
+
+  .hero-swiper__slide:first-child .hero-card__content {
+    padding-top: clamp(18px, 4vw, 24px);
+    padding-bottom: 72px;
+  }
+}
+
+@media (max-width: 420px) {
+  .app-shell--landing .topbar {
+    width: calc(100% - 16px);
+  }
+
+  .app-shell--landing .kickoff-strip {
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+  }
+
+  .hero-swiper__slide:first-child .hero-card__content {
+    padding-top: 16px;
   }
 }
