@@ -426,6 +426,15 @@
       "landscape": "/special-cards/legend-047-landscape.png"
     },
     {
+      "number": "048",
+      "name": "The Beefeater",
+      "nation": "England",
+      "episode": 48,
+      "match": "England vs Ghana",
+      "portrait": "/special-cards/legend-048-portrait.png",
+      "landscape": "/special-cards/legend-048-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
