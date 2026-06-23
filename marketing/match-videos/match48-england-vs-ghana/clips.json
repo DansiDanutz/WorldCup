@@ -1,0 +1,877 @@
+{
+  "comment": "Ep48 England vs Ghana (Group L). Story 'The Beefeater' / colonial power vs former colony — the empire has to listen. MATCH UNPLAYED -> OUR PREDICTION England 2-1 (Ghana shock lead via Inaki Williams 31', Kane equaliser 64', Saka redemption winner 84'; Partey clears off the line ~67'). vol=0 on every clip (silent reused/AI clips; audio = VO + music + sfx). Atmosphere library: eng-fans, gha-fans, stadium, celebration, mystery-beefeater + 10 player clips, reused via distinct ids. Scenes reference these ids via <ClipSprite id=...>. Legend 048 = The Beefeater. Brian VO.",
+  "clips": [
+    {
+      "id": "glimpse-stad",
+      "src": "assets/stadium.mp4",
+      "at": 0.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-beefeater",
+      "src": "assets/mystery-beefeater.mp4",
+      "at": 4,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-williams",
+      "src": "assets/gha-williams.mp4",
+      "at": 8.5,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-saka",
+      "src": "assets/eng-saka.mp4",
+      "at": 11.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-ext",
+      "src": "assets/stadium.mp4",
+      "at": 34,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/celebration.mp4",
+      "at": 36,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "hist-eng",
+      "src": "assets/stadium.mp4",
+      "at": 44,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "eng-bg",
+      "src": "assets/eng-fans.mp4",
+      "at": 45,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "eng-kane",
+      "src": "assets/eng-kane.mp4",
+      "at": 64.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "eng-bellingham",
+      "src": "assets/eng-bellingham.mp4",
+      "at": 64.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "eng-foden",
+      "src": "assets/eng-foden.mp4",
+      "at": 64.5,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "eng-rice",
+      "src": "assets/eng-rice.mp4",
+      "at": 64.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "eng-saka-h",
+      "src": "assets/eng-saka.mp4",
+      "at": 45,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "hist-gha",
+      "src": "assets/gha-fans.mp4",
+      "at": 75,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "gha-bg",
+      "src": "assets/gha-fans.mp4",
+      "at": 84,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "gha-williams",
+      "src": "assets/gha-williams.mp4",
+      "at": 86.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "gha-partey",
+      "src": "assets/gha-partey.mp4",
+      "at": 86.5,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "gha-semenyo",
+      "src": "assets/gha-semenyo.mp4",
+      "at": 86.5,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "gha-ayew",
+      "src": "assets/gha-ayew.mp4",
+      "at": 86.5,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "gha-issahaku",
+      "src": "assets/gha-issahaku.mp4",
+      "at": 86.5,
+      "dur": 5.5,
+      "vol": 0
+    },
+    {
+      "id": "drama-gha1",
+      "src": "assets/gha-fans.mp4",
+      "at": 136,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-williams",
+      "src": "assets/gha-williams.mp4",
+      "at": 144.5,
+      "dur": 8.5,
+      "vol": 0
+    },
+    {
+      "id": "drama-partey",
+      "src": "assets/gha-partey.mp4",
+      "at": 185,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "drama-kane",
+      "src": "assets/eng-kane.mp4",
+      "at": 165,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "drama-saka",
+      "src": "assets/eng-saka.mp4",
+      "at": 196,
+      "dur": 8.5,
+      "vol": 0
+    },
+    {
+      "id": "drama-eng-cel",
+      "src": "assets/eng-fans.mp4",
+      "at": 196,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "drama-stad",
+      "src": "assets/celebration.mp4",
+      "at": 196,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "verdict-bg",
+      "src": "assets/eng-fans.mp4",
+      "at": 216,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mystery",
+      "src": "assets/mystery-beefeater.mp4",
+      "at": 258,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "mystery-close",
+      "src": "assets/gha-fans.mp4",
+      "at": 268,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "cta-bg",
+      "src": "assets/eng-fans.mp4",
+      "at": 293,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "sqe-kane",
+      "src": "assets/eng-kane.mp4",
+      "at": 64.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqe-bellingham",
+      "src": "assets/eng-bellingham.mp4",
+      "at": 64.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqe-saka",
+      "src": "assets/eng-saka.mp4",
+      "at": 64.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqe-foden",
+      "src": "assets/eng-foden.mp4",
+      "at": 64.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqe-rice",
+      "src": "assets/eng-rice.mp4",
+      "at": 64.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqg-williams",
+      "src": "assets/gha-williams.mp4",
+      "at": 86.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqg-partey",
+      "src": "assets/gha-partey.mp4",
+      "at": 86.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqg-semenyo",
+      "src": "assets/gha-semenyo.mp4",
+      "at": 86.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqg-ayew",
+      "src": "assets/gha-ayew.mp4",
+      "at": 86.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqg-issahaku",
+      "src": "assets/gha-issahaku.mp4",
+      "at": 86.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-0",
+      "src": "assets/stadium.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-1",
+      "src": "assets/gha-fans.mp4",
+      "at": 4.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-2",
+      "src": "assets/eng-fans.mp4",
+      "at": 9.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-3",
+      "src": "assets/celebration.mp4",
+      "at": 14.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-4",
+      "src": "assets/mystery-beefeater.mp4",
+      "at": 19.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-5",
+      "src": "assets/gha-williams.mp4",
+      "at": 24,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-6",
+      "src": "assets/eng-saka.mp4",
+      "at": 28.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-7",
+      "src": "assets/gha-partey.mp4",
+      "at": 33.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-8",
+      "src": "assets/eng-kane.mp4",
+      "at": 38.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-9",
+      "src": "assets/gha-issahaku.mp4",
+      "at": 43.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-10",
+      "src": "assets/eng-bellingham.mp4",
+      "at": 48,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-11",
+      "src": "assets/gha-ayew.mp4",
+      "at": 52.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-12",
+      "src": "assets/eng-foden.mp4",
+      "at": 57.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-13",
+      "src": "assets/gha-semenyo.mp4",
+      "at": 62.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-14",
+      "src": "assets/eng-rice.mp4",
+      "at": 67.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-15",
+      "src": "assets/stadium.mp4",
+      "at": 72,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-16",
+      "src": "assets/gha-fans.mp4",
+      "at": 76.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-17",
+      "src": "assets/eng-fans.mp4",
+      "at": 81.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-18",
+      "src": "assets/celebration.mp4",
+      "at": 86.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-19",
+      "src": "assets/mystery-beefeater.mp4",
+      "at": 91.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-20",
+      "src": "assets/gha-williams.mp4",
+      "at": 96,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-21",
+      "src": "assets/eng-saka.mp4",
+      "at": 100.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-22",
+      "src": "assets/gha-partey.mp4",
+      "at": 105.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-23",
+      "src": "assets/eng-kane.mp4",
+      "at": 110.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-24",
+      "src": "assets/gha-issahaku.mp4",
+      "at": 115.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-25",
+      "src": "assets/eng-bellingham.mp4",
+      "at": 120,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-26",
+      "src": "assets/gha-ayew.mp4",
+      "at": 124.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-27",
+      "src": "assets/eng-foden.mp4",
+      "at": 129.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-28",
+      "src": "assets/gha-semenyo.mp4",
+      "at": 134.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-29",
+      "src": "assets/eng-rice.mp4",
+      "at": 139.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-30",
+      "src": "assets/stadium.mp4",
+      "at": 144,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-31",
+      "src": "assets/gha-fans.mp4",
+      "at": 148.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-32",
+      "src": "assets/eng-fans.mp4",
+      "at": 153.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-33",
+      "src": "assets/celebration.mp4",
+      "at": 158.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-34",
+      "src": "assets/mystery-beefeater.mp4",
+      "at": 163.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-35",
+      "src": "assets/gha-williams.mp4",
+      "at": 168,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-36",
+      "src": "assets/eng-saka.mp4",
+      "at": 172.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-37",
+      "src": "assets/gha-partey.mp4",
+      "at": 177.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-38",
+      "src": "assets/eng-kane.mp4",
+      "at": 182.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-39",
+      "src": "assets/gha-issahaku.mp4",
+      "at": 187.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-40",
+      "src": "assets/eng-bellingham.mp4",
+      "at": 192,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-41",
+      "src": "assets/gha-ayew.mp4",
+      "at": 196.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-42",
+      "src": "assets/eng-foden.mp4",
+      "at": 201.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-43",
+      "src": "assets/gha-semenyo.mp4",
+      "at": 206.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-44",
+      "src": "assets/eng-rice.mp4",
+      "at": 211.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-45",
+      "src": "assets/stadium.mp4",
+      "at": 216,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-46",
+      "src": "assets/gha-fans.mp4",
+      "at": 220.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-47",
+      "src": "assets/eng-fans.mp4",
+      "at": 225.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-48",
+      "src": "assets/celebration.mp4",
+      "at": 230.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-49",
+      "src": "assets/mystery-beefeater.mp4",
+      "at": 235.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-50",
+      "src": "assets/gha-williams.mp4",
+      "at": 240,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-51",
+      "src": "assets/eng-saka.mp4",
+      "at": 244.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-52",
+      "src": "assets/gha-partey.mp4",
+      "at": 249.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-53",
+      "src": "assets/eng-kane.mp4",
+      "at": 254.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-54",
+      "src": "assets/gha-issahaku.mp4",
+      "at": 259.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-55",
+      "src": "assets/eng-bellingham.mp4",
+      "at": 264,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-56",
+      "src": "assets/gha-ayew.mp4",
+      "at": 268.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-57",
+      "src": "assets/eng-foden.mp4",
+      "at": 273.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-58",
+      "src": "assets/gha-semenyo.mp4",
+      "at": 278.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-59",
+      "src": "assets/eng-rice.mp4",
+      "at": 283.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-60",
+      "src": "assets/stadium.mp4",
+      "at": 288,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-61",
+      "src": "assets/gha-fans.mp4",
+      "at": 292.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-62",
+      "src": "assets/eng-fans.mp4",
+      "at": 297.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-63",
+      "src": "assets/celebration.mp4",
+      "at": 302.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-64",
+      "src": "assets/mystery-beefeater.mp4",
+      "at": 307.2,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 31.39,
+        "dur": 276.74,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 274.05,
+        "dur": 32,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 19.87,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 20.19,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 31.59,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44.3,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 98.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 106.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 116.6,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 133.4,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 144.4,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 144.6,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 174.1,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 196.1,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 242.81,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 257.49,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 272.05,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 292.66,
+        "vol": 0.6
+      }
+    ]
+  }
+}
