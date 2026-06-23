@@ -823,10 +823,13 @@ export function LegendCardCollection() {
       percent: progressPercent,
     },
   ];
-  const roadmapActionLabel = readyCount > 0 ? "Collect ready cards" : "Continue quest";
+  const roadmapActionLabel =
+    readyCount > 0 ? "Collect ready cards" : needYouTubeCount > 0 ? "Open YouTube next" : "Continue quest";
   const roadmapActionDetail =
     readyCount > 0
       ? `${readyCount} card${readyCount === 1 ? "" : "s"} waiting after YouTube`
+      : needYouTubeCount > 0
+        ? `${needYouTubeCount} heard card${needYouTubeCount === 1 ? "" : "s"} waiting for YouTube`
       : collectorQuestCard
         ? `Next card: ${collectorQuestCard.title}`
         : "Open the album";
@@ -1067,6 +1070,14 @@ export function LegendCardCollection() {
     if (readyCount > 0) {
       setCardSearch("");
       chooseCardFilter("ready");
+      scrollToLegendSection("legend-card-grid");
+      return;
+    }
+
+    if (needYouTubeCount > 0) {
+      setCardSearch("");
+      chooseCardFilter("need-youtube");
+      setStatus("Story heard. Open the matching YouTube episode, then return to collect.");
       scrollToLegendSection("legend-card-grid");
       return;
     }

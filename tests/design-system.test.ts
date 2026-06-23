@@ -284,6 +284,7 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /function runFocusCardAction\(\)/);
     assert.match(legendCardCollection, /function showFocusCardInAlbum\(card: LegendCard\)/);
     assert.match(legendCardCollection, /function continueCollectorPath\(\)/);
+    assert.match(legendCardCollection, /function continueCollectorPath\(\)[\s\S]*?if \(needYouTubeCount > 0\)[\s\S]*?chooseCardFilter\("need-youtube"\)/);
     assert.match(legendCardCollection, /completedQuestCardId/);
     assert.match(legendCardCollection, /setCompletedQuestCardId\(card\.id\)/);
     assert.match(legendCardCollection, /function markCardListened\(card: LegendCard\)/);
@@ -320,6 +321,8 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /aria-label="Legend album collection path"/);
     assert.match(legendCardCollection, /legend-roadmap-card/);
     assert.match(legendCardCollection, /Collect ready cards/);
+    assert.match(legendCardCollection, /Open YouTube next/);
+    assert.match(legendCardCollection, /waiting for YouTube/);
     assert.match(legendCardCollection, /Continue quest/);
     assert.match(legendCardCollection, /id="legend-cards"/);
     assert.match(legendCardCollection, /className="legend-album"/);
