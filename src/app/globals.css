@@ -11334,6 +11334,12 @@ html {
   width: 100%;
 }
 
+.legend-card__watch.is-speaking {
+  border-color: rgba(255, 207, 102, 0.72);
+  color: #1b1308;
+  background: #ffcf66;
+}
+
 .legend-card__unlock {
   width: 100%;
   white-space: nowrap;
