@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WorldCup26 Legends — Ep47: Portugal vs Uzbekistan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #050608; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="WC26 Ep47 · t=0s"></div>
+
+<!-- React + Babel (pinned, same stack as the worldcup26 ad) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="match-kit.jsx"></script>
+<script type="text/babel" src="match-scenes.jsx"></script>
+
+<script type="text/babel">
+const { useEffect } = React;
+
+// Scene timeline (global seconds) — 300s. Keep in sync with narration.json
+// (VO slots) and clips.json (video clip placements).
+const SCENES = [
+  { c: SceneColdOpen, start: 0.00, end: 24.00 },
+  { c: SceneTitle, start: 24.00, end: 34.00 },
+  { c: SceneStadium, start: 34.00, end: 45.00 },
+  { c: ScenePortugal, start: 45.00, end: 75.00 },
+  { c: SceneUzbekistan, start: 75.00, end: 109.00 },
+  { c: SceneDuel, start: 109.00, end: 136.00 },
+  { c: SceneDrama, start: 136.00, end: 216.00 },
+  { c: SceneVerdict, start: 216.00, end: 248.00 },
+  { c: SceneEngage, start: 248.00, end: 258.00 },
+  { c: SceneMystery, start: 258.00, end: 279.00 },
+  { c: SceneApp, start: 279.00, end: 293.00 },
+  { c: SceneCTA, start: 293.00, end: 308.00 },
+];
+
+// Cinematic cut treatment per scene boundary (read by TransitionLayer).
+window.MV_TRANSITIONS = [
+  { at: 24.0,  type: 'flash' },
+  { at: 34.0,  type: 'flash' },
+  { at: 45.0,  type: 'dip' },
+  { at: 75.0,  type: 'flash' },
+  { at: 109.0, type: 'flash' },
+  { at: 136.0, type: 'dip' },
+  { at: 216.0, type: 'dip' },
+  { at: 248.0, type: 'flash' },
+  { at: 258.0, type: 'dip' },
+  { at: 279.0, type: 'flash' },
+  { at: 293.0, type: 'flash' },
+];
+const DURATION = 308.00;
+
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root) root.dataset.screenLabel = `WC26 Ep47 · t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+
+function MatchVideo() {
+  return (
+    <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26ep47">
+      <ScreenLabeler />
+      <SeekBridge />
+      <Backdrop />
+      {SCENES.map((s, i) => (
+        <Sprite key={i} start={s.start} end={s.end}>
+          <s.c />
+        </Sprite>
+      ))}
+      <TransitionLayer />
+    </Stage>
+  );
+}
+
+function boot() {
+  ReactDOM.createRoot(document.getElementById('root')).render(<MatchVideo />);
+}
+// Load clip placements first so ClipSprite/mux can never drift apart.
+fetch('./clips.json')
+  .then((r) => r.json())
+  .then((d) => { window.MV_CLIPS = d.clips || []; })
+  .catch((e) => { console.warn('clips.json load failed', e); window.MV_CLIPS = []; })
+  .finally(boot);
+</script>
+</body>
+</html>
