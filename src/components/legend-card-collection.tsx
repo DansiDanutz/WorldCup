@@ -51,7 +51,7 @@ const legendCardFilterLabels: Record<LegendCardFilter, string> = {
   stories: "Stories",
   bonus: "Bonus",
   "need-story": "Need story",
-  "need-youtube": "Need YouTube",
+  "need-youtube": "YouTube next",
   ready: "Ready",
   collected: "Collected",
   locked: "Locked",
@@ -62,7 +62,7 @@ const legendCardFilters: Array<{ id: LegendCardFilter; label: string }> = [
   { id: "stories", label: "Stories" },
   { id: "bonus", label: "Bonus" },
   { id: "need-story", label: "Need story" },
-  { id: "need-youtube", label: "Need YouTube" },
+  { id: "need-youtube", label: "YouTube next" },
   { id: "ready", label: "Ready" },
   { id: "collected", label: "Collected" },
   { id: "locked", label: "Locked" },
@@ -108,6 +108,19 @@ const pulseItemById = new Map(legendPulseItems.map((item) => [item.id, item]));
 
 function getEpisodeLabel(card: LegendCard) {
   return card.episodeLabel ?? `Episode ${card.episode}`;
+}
+
+function needsStoryStep(card: LegendCard, unlockedIds: ReadonlySet<string>, listenedIds: ReadonlySet<string>) {
+  return Boolean(card.youtube && !unlockedIds.has(card.id) && !listenedIds.has(card.id));
+}
+
+function needsYoutubeStep(
+  card: LegendCard,
+  unlockedIds: ReadonlySet<string>,
+  listenedIds: ReadonlySet<string>,
+  watchedIds: ReadonlySet<string>,
+) {
+  return Boolean(card.youtube && !unlockedIds.has(card.id) && listenedIds.has(card.id) && !watchedIds.has(card.id));
 }
 
 function parseStoredIds(snapshot: string | null, allowedIds = validCardIds) {
@@ -536,8 +549,10 @@ export function LegendCardCollection() {
   ).length;
   const listenedCount = LEGEND_CARDS.filter((card) => listenedIds.has(card.id)).length;
   const watchedCount = LEGEND_CARDS.filter((card) => Boolean(card.youtube && watchedIds.has(card.id))).length;
-  const needStoryCount = LEGEND_CARDS.filter((card) => !listenedIds.has(card.id)).length;
-  const needYouTubeCount = LEGEND_CARDS.filter((card) => Boolean(card.youtube && !watchedIds.has(card.id))).length;
+  const needStoryCount = LEGEND_CARDS.filter((card) => needsStoryStep(card, unlockedIds, listenedIds)).length;
+  const needYouTubeCount = LEGEND_CARDS.filter((card) =>
+    needsYoutubeStep(card, unlockedIds, listenedIds, watchedIds),
+  ).length;
   const pulseReadCount = legendPulseItems.filter((item) => readPulseIds.has(item.id)).length;
   const lockedCount = LEGEND_CARDS.length - collectedCount;
   const progressPercent = LEGEND_CARDS.length
@@ -546,11 +561,9 @@ export function LegendCardCollection() {
   const readyFocusCard = LEGEND_CARDS.find(
     (card) => Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id)),
   );
-  const storyFocusCard = LEGEND_CARDS.find(
-    (card) => Boolean(card.youtube && !unlockedIds.has(card.id) && !listenedIds.has(card.id)),
-  );
-  const youtubeFocusCard = LEGEND_CARDS.find(
-    (card) => Boolean(card.youtube && !unlockedIds.has(card.id) && listenedIds.has(card.id) && !watchedIds.has(card.id)),
+  const storyFocusCard = LEGEND_CARDS.find((card) => needsStoryStep(card, unlockedIds, listenedIds));
+  const youtubeFocusCard = LEGEND_CARDS.find((card) =>
+    needsYoutubeStep(card, unlockedIds, listenedIds, watchedIds),
   );
   const focusCard =
     readyFocusCard ??
@@ -610,10 +623,10 @@ export function LegendCardCollection() {
       if (cardFilter === "bonus" && card.kind !== "legend-bonus") {
         return false;
       }
-      if (cardFilter === "need-story" && listenedIds.has(card.id)) {
+      if (cardFilter === "need-story" && !needsStoryStep(card, unlockedIds, listenedIds)) {
         return false;
       }
-      if (cardFilter === "need-youtube" && !Boolean(card.youtube && !watchedIds.has(card.id))) {
+      if (cardFilter === "need-youtube" && !needsYoutubeStep(card, unlockedIds, listenedIds, watchedIds)) {
         return false;
       }
       if (cardFilter === "ready") {

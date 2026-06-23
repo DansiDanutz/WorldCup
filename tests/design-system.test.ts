@@ -243,7 +243,7 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /\| "need-youtube"/);
     assert.match(legendCardCollection, /const legendCardFilters/);
     assert.match(legendCardCollection, /Need story/);
-    assert.match(legendCardCollection, /Need YouTube/);
+    assert.match(legendCardCollection, /YouTube next/);
     assert.match(legendCardCollection, /function getEpisodeLabel\(card: LegendCard\)/);
     assert.match(legendCardCollection, /const focusCard =/);
     assert.match(legendCardCollection, /const filteredCards = useMemo/);
@@ -264,6 +264,15 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /watchedCount/);
     assert.match(legendCardCollection, /needStoryCount/);
     assert.match(legendCardCollection, /needYouTubeCount/);
+    assert.match(legendCardCollection, /function needsStoryStep/);
+    assert.match(legendCardCollection, /function needsYoutubeStep/);
+    assert.match(legendCardCollection, /card\.youtube && !unlockedIds\.has\(card\.id\) && !listenedIds\.has\(card\.id\)/);
+    assert.match(
+      legendCardCollection,
+      /card\.youtube && !unlockedIds\.has\(card\.id\) && listenedIds\.has\(card\.id\) && !watchedIds\.has\(card\.id\)/,
+    );
+    assert.match(legendCardCollection, /needsStoryStep\(card, unlockedIds, listenedIds\)/);
+    assert.match(legendCardCollection, /needsYoutubeStep\(card, unlockedIds, listenedIds, watchedIds\)/);
     assert.match(legendCardCollection, /const readyFocusCard = LEGEND_CARDS\.find/);
     assert.match(legendCardCollection, /const storyFocusCard = LEGEND_CARDS\.find/);
     assert.match(legendCardCollection, /const youtubeFocusCard = LEGEND_CARDS\.find/);
