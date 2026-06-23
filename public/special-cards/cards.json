@@ -453,6 +453,15 @@
       "landscape": "/special-cards/legend-050-landscape.png"
     },
     {
+      "number": "051",
+      "name": "The Bridge Keeper",
+      "nation": "Bosnia & Herzegovina",
+      "episode": 51,
+      "match": "Bosnia & Herzegovina vs Qatar",
+      "portrait": "/special-cards/legend-051-portrait.png",
+      "landscape": "/special-cards/legend-051-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
