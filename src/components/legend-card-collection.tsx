@@ -679,6 +679,50 @@ export function LegendCardCollection() {
     collected: collectedCount,
     locked: lockedCount,
   };
+  const albumEmptyState = normalizedCardSearch
+    ? {
+        title: "No card matches that search",
+        detail: "Clear the search to return to the current album step.",
+        actionLabel: "Clear search",
+      }
+    : cardFilter === "need-youtube"
+      ? {
+          title: "Listen to a story first",
+          detail:
+            needStoryCount > 0
+              ? "This view fills after a card story is heard. Start with the cards that still need story playback."
+              : "No heard stories are waiting for YouTube. Continue from a ready or collected card.",
+          actionLabel: needStoryCount > 0 ? "Show story cards" : readyCount > 0 ? "Show ready cards" : "Reset album",
+        }
+      : cardFilter === "ready"
+        ? {
+            title: "No cards ready to collect",
+            detail:
+              needYouTubeCount > 0
+                ? "Open the YouTube episode for a heard story, then return here to collect."
+                : needStoryCount > 0
+                  ? "Listen to a card story, open its YouTube episode, then collect it here."
+                  : "No collection steps are waiting. Check your collected cards or reset the album.",
+            actionLabel:
+              needYouTubeCount > 0 ? "Show YouTube next" : needStoryCount > 0 ? "Show story cards" : "Show collected",
+          }
+        : cardFilter === "need-story"
+          ? {
+              title: "All live stories are heard",
+              detail:
+                needYouTubeCount > 0
+                  ? "Move to YouTube next and open the matching episodes."
+                  : readyCount > 0
+                    ? "Collect the cards that are already ready."
+                    : "Check collected cards or reset the album.",
+              actionLabel:
+                needYouTubeCount > 0 ? "Show YouTube next" : readyCount > 0 ? "Show ready cards" : "Show collected",
+            }
+          : {
+              title: "No cards in this view yet",
+              detail: "Reset the album view and continue from the next best card.",
+              actionLabel: "Reset album",
+            };
   const nextPulseItem = legendPulseItems.find((item) => !readPulseIds.has(item.id)) ?? legendPulseItems[0];
   const activePreviewCard =
     pulsePreview && previewSecondsRemaining > 0
@@ -942,6 +986,51 @@ export function LegendCardCollection() {
     setCardSearch("");
     setCollectionExpanded(false);
     setStatus("Album filters reset. Continue the card loop from any story.");
+  }
+
+  function runAlbumEmptyAction() {
+    if (normalizedCardSearch) {
+      setCardSearch("");
+      setCollectionExpanded(false);
+      setStatus("Legend card search cleared. Continue from the current album step.");
+      return;
+    }
+
+    if (cardFilter === "need-youtube") {
+      chooseCardFilter(needStoryCount > 0 ? "need-story" : readyCount > 0 ? "ready" : "all");
+      setStatus(
+        needStoryCount > 0
+          ? "Pick a story card to hear first. YouTube next fills after the story plays."
+          : "No YouTube-next cards are waiting. Continue from the available album cards.",
+      );
+      return;
+    }
+
+    if (cardFilter === "ready") {
+      chooseCardFilter(needYouTubeCount > 0 ? "need-youtube" : needStoryCount > 0 ? "need-story" : "collected");
+      setStatus(
+        needYouTubeCount > 0
+          ? "Open YouTube for a heard story, then return to collect."
+          : needStoryCount > 0
+            ? "Start with a story card, then open YouTube to make it collectible."
+            : "No ready cards are waiting. Showing collected cards.",
+      );
+      return;
+    }
+
+    if (cardFilter === "need-story") {
+      chooseCardFilter(needYouTubeCount > 0 ? "need-youtube" : readyCount > 0 ? "ready" : "collected");
+      setStatus(
+        needYouTubeCount > 0
+          ? "Story heard. Open the matching YouTube episode next."
+          : readyCount > 0
+            ? "No more story cards in this view. Collect the ready cards next."
+            : "No more story cards in this view. Showing collected cards.",
+      );
+      return;
+    }
+
+    resetAlbumFilters();
   }
 
   function runFocusCardAction() {
@@ -1576,9 +1665,10 @@ export function LegendCardCollection() {
 
       {filteredCards.length === 0 ? (
         <div className="legend-card-empty">
-          <p>No cards match this view yet. Try another team, story, or filter.</p>
-          <button type="button" onClick={resetAlbumFilters}>
-            Reset album
+          <strong>{albumEmptyState.title}</strong>
+          <p>{albumEmptyState.detail}</p>
+          <button type="button" onClick={runAlbumEmptyAction}>
+            {albumEmptyState.actionLabel}
           </button>
         </div>
       ) : null}

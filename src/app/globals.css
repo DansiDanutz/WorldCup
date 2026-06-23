@@ -11119,6 +11119,11 @@ html {
   margin: 0;
 }
 
+.legend-card-empty strong {
+  color: #ffffff;
+  font: 950 17px / 1.15 var(--font-sans);
+}
+
 .legend-card-empty button {
   min-height: 38px;
   padding: 0 14px;

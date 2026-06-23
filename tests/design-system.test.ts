@@ -334,8 +334,14 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /id="legend-card-search"/);
     assert.match(legendCardCollection, /placeholder="Search teams or cards"/);
     assert.match(legendCardCollection, /Clear Legend card search/);
-    assert.match(legendCardCollection, /No cards match this view yet/);
-    assert.match(legendCardCollection, /Reset album/);
+    assert.match(legendCardCollection, /const albumEmptyState = normalizedCardSearch/);
+    assert.match(legendCardCollection, /No card matches that search/);
+    assert.match(legendCardCollection, /Listen to a story first/);
+    assert.match(legendCardCollection, /function runAlbumEmptyAction\(\)/);
+    assert.match(legendCardCollection, /Pick a story card to hear first/);
+    assert.match(legendCardCollection, /No YouTube-next cards are waiting/);
+    assert.match(legendCardCollection, /No ready cards are waiting\. Showing collected cards/);
+    assert.match(legendCardCollection, /albumEmptyState\.actionLabel/);
     assert.match(legendCardCollection, /className=\{`legend-filter-button/);
     assert.match(legendCardCollection, /<CardViewControl/);
     assert.match(legendCardCollection, /controlsId="legend-card-grid"/);
@@ -409,6 +415,7 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.legend-collection \.card-view-control\s*{[\s\S]*?margin:\s*var\(--space-5\)\s*0\s*0;/);
     assert.match(globalsCss, /\.legend-filter-button\.is-active\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#ffcf66\)/);
     assert.match(globalsCss, /\.legend-card-empty\s*{/);
+    assert.match(globalsCss, /\.legend-card-empty strong\s*{[\s\S]*?font:\s*950 17px \/ 1\.15 var\(--font-sans\);/);
     assert.match(globalsCss, /\.legend-card-empty button\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a,\s*#ffcf66\)/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-album\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
     assert.match(globalsCss, /@media \(max-width:\s*980px\)\s*{[\s\S]*?\.legend-quest__header,[\s\S]*?\.legend-quest__grid,[\s\S]*?\.legend-pulse__grid\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
