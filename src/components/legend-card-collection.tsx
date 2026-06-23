@@ -19,6 +19,7 @@ import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
 import { CardViewControl } from "@/components/card-view-control";
 import { LEGEND_CARDS, type LegendCard } from "@/lib/legend-cards";
+import { getStoryVoiceDisplayName, selectEnglishStoryVoice, storyVoiceLanguage } from "@/lib/story-voice";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 
 const unlockedStorageKey = "worldcup_legend_unlocked_cards";
@@ -356,7 +357,7 @@ export function LegendCardCollection() {
   );
   const [notificationStatusOverride, setNotificationStatusOverride] = useState<string | null>(null);
   const [status, setStatus] = useState(
-    "Open a YouTube story to collect its card. Use Listen story for in-app voice playback.",
+    "Open a YouTube story to collect its card. Use Listen story for English voice playback.",
   );
   const notificationStatus =
     notificationStatusOverride ?? (notificationPreference === "on" ? "Card alerts on" : "Card alerts off");
@@ -383,6 +384,23 @@ export function LegendCardCollection() {
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
         window.speechSynthesis.cancel();
       }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+      return undefined;
+    }
+
+    const loadAvailableVoices = () => {
+      window.speechSynthesis.getVoices();
+    };
+
+    loadAvailableVoices();
+    window.speechSynthesis.addEventListener("voiceschanged", loadAvailableVoices);
+
+    return () => {
+      window.speechSynthesis.removeEventListener("voiceschanged", loadAvailableVoices);
     };
   }, []);
 
@@ -846,7 +864,7 @@ export function LegendCardCollection() {
         window.speechSynthesis.cancel();
         setSpeakingCardId(null);
       }
-      setStatus(next ? "Voice enabled. Pick any story card to listen." : "Voice disabled.");
+      setStatus(next ? "Voice enabled. Stories play in English with Brian when available." : "Voice disabled.");
       return next;
     });
   }
@@ -871,10 +889,17 @@ export function LegendCardCollection() {
     }
 
     markCardListened(card);
+    const storyVoice = selectEnglishStoryVoice(window.speechSynthesis.getVoices());
+    const storyVoiceDisplayName = getStoryVoiceDisplayName(storyVoice);
+    const storyVoiceStatus = storyVoice ? ` with ${storyVoiceDisplayName}` : "";
     const utterance = new SpeechSynthesisUtterance(
       `${card.title}. ${card.episodeLabel ?? `Episode ${card.episode}`}. ${card.teams}. ${card.story}`,
     );
-    utterance.rate = 0.92;
+    utterance.lang = storyVoice?.lang ?? storyVoiceLanguage;
+    if (storyVoice) {
+      utterance.voice = storyVoice;
+    }
+    utterance.rate = storyVoiceDisplayName === "Brian" ? 0.95 : 0.9;
     utterance.pitch = 1;
     utterance.onend = () => setSpeakingCardId(null);
     utterance.onerror = () => {
@@ -883,7 +908,9 @@ export function LegendCardCollection() {
     };
 
     setSpeakingCardId(card.id);
-    setStatus(`${card.title} story is playing. Open the YouTube episode to collect the card.`);
+    setStatus(
+      `${card.title} story is playing in English${storyVoiceStatus}. Open the YouTube episode to collect the card.`,
+    );
     window.speechSynthesis.speak(utterance);
   }
 
