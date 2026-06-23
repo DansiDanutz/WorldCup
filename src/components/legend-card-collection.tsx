@@ -1499,22 +1499,22 @@ export function LegendCardCollection() {
             <div className="legend-progress-panel__bar" aria-hidden="true">
               <span style={{ width: `${progressPercent}%` }} />
             </div>
-            <dl className="legend-progress-panel__stats">
+            <dl className="legend-progress-panel__stats" aria-label="Legend card action counts">
               <div>
-                <dt>Stories</dt>
-                <dd>{storyCount}</dd>
+                <dt>Need story</dt>
+                <dd>{needStoryCount}</dd>
               </div>
               <div>
-                <dt>Bonus</dt>
-                <dd>{bonusCount}</dd>
+                <dt>YouTube next</dt>
+                <dd>{needYouTubeCount}</dd>
               </div>
               <div>
                 <dt>Ready</dt>
                 <dd>{readyCount}</dd>
               </div>
               <div>
-                <dt>Locked</dt>
-                <dd>{lockedCount}</dd>
+                <dt>Collected</dt>
+                <dd>{collectedCount}</dd>
               </div>
             </dl>
           </div>

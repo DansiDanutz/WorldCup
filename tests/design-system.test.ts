@@ -331,6 +331,11 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /legend-feature-card__primary-action/);
     assert.match(legendCardCollection, /Find in album/);
     assert.match(legendCardCollection, /Album progress/);
+    assert.match(legendCardCollection, /aria-label="Legend card action counts"/);
+    assert.match(legendCardCollection, /<dt>Need story<\/dt>[\s\S]*?<dd>\{needStoryCount\}<\/dd>/);
+    assert.match(legendCardCollection, /<dt>YouTube next<\/dt>[\s\S]*?<dd>\{needYouTubeCount\}<\/dd>/);
+    assert.match(legendCardCollection, /<dt>Ready<\/dt>[\s\S]*?<dd>\{readyCount\}<\/dd>/);
+    assert.match(legendCardCollection, /<dt>Collected<\/dt>[\s\S]*?<dd>\{collectedCount\}<\/dd>/);
     assert.match(legendCardCollection, /className="legend-filter-bar"/);
     assert.match(legendCardCollection, /className="legend-search"/);
     assert.match(legendCardCollection, /role="search"/);
