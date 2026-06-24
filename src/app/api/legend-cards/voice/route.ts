@@ -14,6 +14,7 @@ export const runtime = "nodejs";
 
 const elevenLabsApiBase = "https://api.elevenlabs.io";
 const brianVoiceIdEnv = "ELEVENLABS_BRIAN_VOICE_ID";
+const voiceIdEnv = "ELEVENLABS_VOICE_ID";
 const apiKeyEnv = "ELEVENLABS_API_KEY";
 const modelEnv = "ELEVENLABS_MODEL";
 
@@ -25,7 +26,7 @@ type ElevenLabsVoice = {
 let cachedBrianVoiceId: string | null = null;
 
 function getConfiguredBrianVoiceId() {
-  return process.env[brianVoiceIdEnv]?.trim() || null;
+  return process.env[brianVoiceIdEnv]?.trim() || process.env[voiceIdEnv]?.trim() || null;
 }
 
 function getElevenLabsApiKey() {
@@ -79,7 +80,7 @@ export async function POST(request: Request) {
 
   const apiKey = getElevenLabsApiKey();
   if (!apiKey) {
-    return jsonError("ElevenLabs Brian voice is not configured.", 503);
+    return jsonError(`ElevenLabs Brian voice is not configured. Set ${apiKeyEnv} on the server.`, 503);
   }
 
   let cardId: string;
