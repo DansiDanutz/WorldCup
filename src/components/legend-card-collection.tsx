@@ -426,7 +426,16 @@ export function LegendCardCollection() {
 
   useEffect(() => {
     return () => {
-      clearStoryAudio();
+      const currentAudio = storyAudioRef.current;
+
+      if (currentAudio) {
+        currentAudio.pause();
+        if (currentAudio.src.startsWith("blob:")) {
+          URL.revokeObjectURL(currentAudio.src);
+        }
+        storyAudioRef.current = null;
+      }
+
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
         window.speechSynthesis.cancel();
       }
