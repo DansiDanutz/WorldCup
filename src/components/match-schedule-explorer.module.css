@@ -148,8 +148,6 @@
 
 .matchList {
   display: grid;
-  max-height: min(760px, 74vh);
-  overflow: auto;
   overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
 }
@@ -160,8 +158,8 @@
 }
 
 .matchListExpanded {
-  max-height: min(760px, 74vh);
-  overflow: auto;
+  max-height: none;
+  overflow: visible;
 }
 
 .matchRow {
