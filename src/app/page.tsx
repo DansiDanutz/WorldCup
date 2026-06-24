@@ -1,4 +1,5 @@
 import { Dashboard } from "@/components/dashboard";
+import { DashboardMatchScheduleUpgrade } from "@/components/dashboard-match-schedule-upgrade";
 import { getPublicPaidActionGates } from "@/lib/paid-action-gates";
 import { createServerReadSupabaseClient } from "@/lib/supabase";
 import { getDashboardData } from "@/lib/worldcup-data";
@@ -13,9 +14,16 @@ export default async function Home() {
   ]);
 
   return (
-    <Dashboard
-      {...data}
-      publicPaidActionGates={publicPaidActionGates}
-    />
+    <>
+      <Dashboard
+        {...data}
+        publicPaidActionGates={publicPaidActionGates}
+      />
+      <DashboardMatchScheduleUpgrade
+        matches={data.matches}
+        stages={data.stages}
+        teams={data.teams}
+      />
+    </>
   );
 }
