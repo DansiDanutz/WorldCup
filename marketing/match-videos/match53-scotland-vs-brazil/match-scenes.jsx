@@ -137,7 +137,7 @@ function SceneTitle() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, #0a0f1c 0%, #11182b 55%, #0a0f1c 100%)` }}>
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 30%, rgba(255,210,74,0.10) 0%, transparent 55%)` }} />
-      <AmbientParticles start={26.65} dur={8} count={34} />
+      <AmbientParticles start={23.48} dur={8} count={34} />
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 44 }}>
         <div style={{ opacity: p1, transform: `translateY(${(1 - p1) * -30}px)` }}>
           <Kicker>WorldCup26 Legends · Episode 53</Kicker>
@@ -292,14 +292,14 @@ function SceneScotland() {
         { img: 'assets/squad/sco-shankland.png', vid: 'sqo-shankland', name: 'L. SHANKLAND', role: 'THE STRIKER' },
         { img: 'assets/squad/sco-gunn.png', vid: 'sqo-gunn', name: 'A. GUNN', role: 'THE KEEPER' },
       ]} />
-      <Sprite start={57.12} end={69.50}>
+      <Sprite start={57.12} end={69.5}>
         <LowerThird start={57.42} name="ANDY ROBERTSON" role="The Captain · Left-back" accent={SCO} />
       </Sprite>
-      <Sprite start={73.82} end={79.20}>
+      <Sprite start={73.82} end={79.2}>
         <LowerThird start={74.12} name="SCOTT McTOMINAY" role="The Engine · Midfielder" accent={SCO_LIGHT} />
       </Sprite>
-      <Sprite start={79.20} end={83.55}>
-        <LowerThird start={79.40} name="JOHN McGINN" role="The Heart · Midfielder" accent={SCO_LIGHT} />
+      <Sprite start={79.2} end={79.5}>
+        <LowerThird start={79.4} name="JOHN McGINN" role="The Heart · Midfielder" accent={SCO_LIGHT} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -310,7 +310,7 @@ function SceneScotland() {
 // ── 5. Brazil (77–109): a Seleção, the yellow and green ──────────────────────
 function SceneBrazil() {
   const { localTime: lt } = useSprite();
-  const S = 83.55;
+  const S = 79.50;
   const headerP = Easing.easeOutCubic(clamp(lt / 0.9, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,12,20,0.46)' }}>
@@ -335,14 +335,14 @@ function SceneBrazil() {
         { img: 'assets/squad/bra-bruno.png', vid: 'sqz-bruno', name: 'B. GUIMARÃES', role: 'THE METRONOME' },
         { img: 'assets/squad/bra-alisson.png', vid: 'sqz-alisson', name: 'ALISSON', role: 'THE KEEPER' },
       ]} />
-      <Sprite start={94.55} end={103.20}>
-        <LowerThird start={94.85} name="VINÍCIUS JÚNIOR" role="The Phenomenon · Forward" accent={BRA} />
+      <Sprite start={90.5} end={99.15}>
+        <LowerThird start={90.8} name="VINÍCIUS JÚNIOR" role="The Phenomenon · Forward" accent={BRA} />
       </Sprite>
-      <Sprite start={103.20} end={108.50}>
-        <LowerThird start={103.50} name="NEYMAR" role="The Maestro · Forward" accent={BRA_LIGHT} />
+      <Sprite start={99.15} end={104.45}>
+        <LowerThird start={99.45} name="NEYMAR" role="The Maestro · Forward" accent={BRA_LIGHT} />
       </Sprite>
-      <Sprite start={108.50} end={113.25}>
-        <LowerThird start={108.70} name="RAPHINHA" role="The Finisher · Forward" accent={BRA_LIGHT} />
+      <Sprite start={104.45} end={103}>
+        <LowerThird start={104.65} name="RAPHINHA" role="The Finisher · Forward" accent={BRA_LIGHT} />
       </Sprite>
       <Vignette strength={0.4} />
       <Letterbox />
@@ -384,7 +384,7 @@ function SceneDuel() {
       }}>
         <span style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 92, color: MV.gold }}>VS</span>
       </div>
-      <Sprite start={130.00} end={138.53}>
+      <Sprite start={119.75} end={138.53}>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, top: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 27, background: 'rgba(0,0,0,0.55)' }}>
           <Kicker size={40}>Heart vs History</Kicker>
         </div>
@@ -400,7 +400,7 @@ function SceneDuel() {
 //      "OUR PREDICTION" badge, never "FULL TIME"/anything as fact.
 function SceneDrama() {
   const { localTime: lt } = useSprite();
-  const S = 138.53;
+  const S = 132.00;
   return (
     <div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,7,0.46)' }}>
       <ClipSprite id="drama-sco1" dim={0.06} />
@@ -413,33 +413,33 @@ function SceneDrama() {
 
       {/* 15' — predicted: Neymar volleys home off a Vinícius cross. SCO 0 – 1 BRA.
           The oldest fear, made real. */}
-      <GoalFlash at={S + 13.5} />
+      <GoalFlash at={S + 20.0} />
       <Sprite start={146.00} end={163.61}>
-        <ScoreBug start={S + 13.6} sco={0} bra={1} minute="15'" badge="OUR PREDICTION" />
+        <ScoreBug start={S + 20.1} sco={0} bra={1} minute="15'" badge="OUR PREDICTION" />
       </Sprite>
 
       {/* 39' — predicted: McTominay finds McGinn, whose shot draws a world-class
           Alisson save. NO goal, score stays 0–1. A drama beat only. */}
       <Sprite start={163.61} end={183.00}>
-        <ScoreBug start={S + 25.08} sco={0} bra={1} minute="39'" badge="OUR PREDICTION · ALISSON SAVES" />
+        <ScoreBug start={S + 31.61} sco={0} bra={1} minute="39'" badge="OUR PREDICTION · ALISSON SAVES" />
       </Sprite>
 
       {/* 72' — predicted: Vinícius solo from the halfway line, past four defenders.
           SCO 0 – 2 BRA. The moment only he could conjure. */}
-      <GoalFlash at={S + 53.47} />
+      <GoalFlash at={S + 60.0} />
       <Sprite start={183.00} end={195.00}>
-        <ScoreBug start={S + 53.57} sco={0} bra={2} minute="72'" badge="OUR PREDICTION" />
+        <ScoreBug start={S + 60.1} sco={0} bra={2} minute="72'" badge="OUR PREDICTION" />
       </Sprite>
 
       {/* 85' — predicted: Raphinha finishes. SCO 0 – 3 BRA. The Seleção in full flow. */}
-      <GoalFlash at={S + 65.47} />
-      <Sprite start={195.00} end={216.25}>
-        <ScoreBug start={S + 65.57} sco={0} bra={3} minute="85'" badge="OUR PREDICTION" />
+      <GoalFlash at={S + 72.0} />
+      <Sprite start={195.00} end={217}>
+        <ScoreBug start={S + 72.1} sco={0} bra={3} minute="85'" badge="OUR PREDICTION" />
       </Sprite>
 
       {/* The predicted final — clearly stamped OUR PREDICTION, never FULL TIME */}
-      <Sprite start={207.50} end={216.25}>
-        <PredictionCard start={S + 68.97} />
+      <Sprite start={207.50} end={217}>
+        <PredictionCard start={S + 75.5} />
       </Sprite>
       <Vignette strength={0.42} />
       <Letterbox />
@@ -485,14 +485,14 @@ function PredictionCard({ start }) {
 // ── 8. Disclaimer + group recap (216–240): our prediction & what it means ────
 function SceneVerdict() {
   const { localTime: lt } = useSprite();
-  const S = 216.25;
+  const S = 217.00;
   const discP = Easing.easeOutCubic(clamp(lt / 1.0, 0, 1));
   const discFade = lt > 14 ? clamp((16 - lt) / 1.0, 0, 1) : 1;
   return (
     <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,15,28,0.46)' }}>
       <ClipSprite id="verdict-bg" dim={0.6} />
       {/* disclaimer beat — our prediction, real one yours to watch */}
-      <Sprite start={216.25} end={232.00}>
+      <Sprite start={217} end={232.75}>
         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 26, opacity: discP * discFade }}>
           <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 22, padding: '44px 80px', textAlign: 'center', backdropFilter: 'blur(6px)' }}>
             <Kicker size={26} color={MV.gold}>Our Prediction</Kicker>
@@ -558,7 +558,7 @@ function SceneEngage() {
 // ── 10. Mystery Supporter (250–271): the series' signature collectible card ──
 function SceneMystery() {
   const { localTime: lt } = useSprite();
-  const S = 250;
+  const S = 259;
   const inP = Easing.easeOutCubic(clamp((lt - 0.6) / 1.4, 0, 1));
   const cardP = Easing.easeOutCubic(clamp((lt - 4.2) / 1.0, 0, 1));
   // ADVANCED REVEAL: 3D flip-in from the edge, then settle & float
@@ -720,12 +720,12 @@ function SceneApp() {
 // ── 12. CTA outro (286–308) ──────────────────────────────────────────────────
 function SceneCTA() {
   const { localTime: lt } = useSprite();
-  const S = 288.45;
+  const S = 307.80;
   const inP = Easing.easeOutCubic(clamp(lt / 0.8, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0, background: 'rgba(7,9,15,0.46)' }}>
       <ClipSprite id="cta-bg" dim={0.68} />
-      <AmbientParticles start={290.69} dur={6} count={28} />
+      <AmbientParticles start={310.04} dur={6} count={28} />
       <div style={{ position: 'absolute', inset: 0, zIndex: 23, background: 'radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(7,9,15,0.88) 75%)' }} />
       <div style={{ position: 'absolute', top: 200, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: inP }}>
         <Kicker size={30}>WorldCup26 Legends</Kicker>
@@ -736,7 +736,7 @@ function SceneCTA() {
         <CtaButton start={S} delay={1.6} label="LIKE" icon="👍" accent="#1e3a8a" x={960} />
         <CtaButton start={S} delay={2.0} label="SHARE" icon="📣" accent="#106b4f" x={1400} />
       </div>
-      <Sprite start={293.00} end={321.11}>
+      <Sprite start={312.35} end={340.46}>
         <NextMatchTease start={S + 4.6} />
       </Sprite>
       <Letterbox />
