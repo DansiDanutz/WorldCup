@@ -4,8 +4,8 @@ import Link from "next/link";
 import { LegendCardCollection } from "@/components/legend-card-collection";
 import { MatchScheduleExplorer } from "@/components/match-schedule-explorer";
 import { LEGEND_CARDS } from "@/lib/legend-cards";
+import { getMatchScheduleData } from "@/lib/match-schedule-data";
 import { PREDICTIONS } from "@/lib/predictions";
-import { getDashboardData } from "@/lib/worldcup-data";
 
 export const dynamic = "force-dynamic";
 
@@ -16,7 +16,7 @@ export const metadata = {
 };
 
 export default async function PredictionsPage() {
-  const [{ teams, stages, matches }] = await Promise.all([getDashboardData()]);
+  const { teams, stages, matches } = await getMatchScheduleData();
   const episodes = [...PREDICTIONS].sort((a, b) => b.ep - a.ep);
   const liveCount = PREDICTIONS.filter((p) => p.youtube).length;
   const legendCardAnchorByEpisode = new Map<number, string>();
