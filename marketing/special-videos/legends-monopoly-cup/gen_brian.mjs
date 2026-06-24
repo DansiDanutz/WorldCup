@@ -13,8 +13,9 @@ mkdirSync(OUT, { recursive: true });
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 for (const l of nar.lines) {
+  if (l.card || l.tbd || !l.text || !l.text.trim()) { console.log(`skip ${l.id} (${l.card?'card':l.tbd?'TBD-round3':'empty'})`); continue; }
   const out = `${OUT}/line_${String(l.id).padStart(2,'0')}.mp3`;
-  if (existsSync(out)) { console.log(`skip ${l.id}`); continue; }
+  if (existsSync(out)) { console.log(`skip ${l.id} (exists)`); continue; }
   const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE}`, {
     method: 'POST',
     headers: { 'xi-api-key': KEY, 'Content-Type': 'application/json' },
