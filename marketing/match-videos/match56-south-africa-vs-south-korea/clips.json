@@ -1,0 +1,910 @@
+{
+  "comment": "Ep56 South Africa vs South Korea (Group A, 25/06). OUR PREDICTION RSA 1-0 KOR: 52' Makgopa header parried, Lyle Foster pounces (GOAL, VAR-checked, stands); 89' Son curls, Ronwen Williams SAVES (no goal, 1-0 holds). ONE goal (Foster) + one heroic SAVE (Williams). REAL paid player animations (rsa-*/kor-*). UNIQUE Higgsfield crowds (rsa-crowd green+gold vuvuzela / kor-crowd red), stadium, action (foster-goal/williams-save/makgopa-header/tau-cross/rsa-celeb), mystery-beadwork — none reused from prior episodes (hash-verified). Legend 056 = The Beadworker (Ndebele). vol=0 on every clip (silent; audio = VO + music + sfx). Brian VO, voice-synced.",
+  "clips": [
+    {
+      "id": "glimpse-stad",
+      "src": "assets/stadium.mp4",
+      "at": 0.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-bead",
+      "src": "assets/mystery-beadwork.mp4",
+      "at": 4,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-son",
+      "src": "assets/kor-son.mp4",
+      "at": 8.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-tau",
+      "src": "assets/rsa-tau.mp4",
+      "at": 13.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-ext",
+      "src": "assets/stadium.mp4",
+      "at": 34,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/rsa-crowd.mp4",
+      "at": 38,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "hist-rsa",
+      "src": "assets/rsa-crowd.mp4",
+      "at": 44,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "rsa-bg",
+      "src": "assets/rsa-crowd.mp4",
+      "at": 53,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "foster",
+      "src": "assets/rsa-foster.mp4",
+      "at": 55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "tau",
+      "src": "assets/rsa-tau.mp4",
+      "at": 65.62,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "mokoena",
+      "src": "assets/rsa-mokoena.mp4",
+      "at": 78.03,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "makgopa",
+      "src": "assets/rsa-makgopa.mp4",
+      "at": 65.12,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "williams",
+      "src": "assets/rsa-williams.mp4",
+      "at": 69.33,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "hist-kor",
+      "src": "assets/kor-crowd.mp4",
+      "at": 83.55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "kor-bg",
+      "src": "assets/kor-crowd.mp4",
+      "at": 90.88,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "son",
+      "src": "assets/kor-son.mp4",
+      "at": 92.15,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "kim",
+      "src": "assets/kor-kim.mp4",
+      "at": 100.55,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "lee",
+      "src": "assets/kor-lee.mp4",
+      "at": 107.3,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "hwangib",
+      "src": "assets/kor-hwangib.mp4",
+      "at": 97.55,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "hwanghc",
+      "src": "assets/kor-hwanghc.mp4",
+      "at": 94.55,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "drama-stad",
+      "src": "assets/stadium.mp4",
+      "at": 132,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "drama-tau",
+      "src": "assets/action-tau-cross.mp4",
+      "at": 140.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-makgopa",
+      "src": "assets/action-makgopa-header.mp4",
+      "at": 147,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-foster",
+      "src": "assets/action-foster-goal.mp4",
+      "at": 154,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "drama-celeb",
+      "src": "assets/action-rsa-celeb.mp4",
+      "at": 163.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-fill",
+      "src": "assets/rsa-crowd.mp4",
+      "at": 172,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-son",
+      "src": "assets/kor-son.mp4",
+      "at": 179.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-williams",
+      "src": "assets/action-williams-save.mp4",
+      "at": 187.5,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-end",
+      "src": "assets/action-rsa-celeb.mp4",
+      "at": 196.5,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "verdict-bg",
+      "src": "assets/stadium.mp4",
+      "at": 203.32,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mystery",
+      "src": "assets/mystery-beadwork.mp4",
+      "at": 256,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "mystery-close",
+      "src": "assets/mystery-beadwork.mp4",
+      "at": 267,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "cta-bg",
+      "src": "assets/action-rsa-celeb.mp4",
+      "at": 303.05,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "bd-0",
+      "src": "assets/stadium.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-1",
+      "src": "assets/kor-crowd.mp4",
+      "at": 4.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-2",
+      "src": "assets/rsa-crowd.mp4",
+      "at": 9.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-3",
+      "src": "assets/action-rsa-celeb.mp4",
+      "at": 14.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-4",
+      "src": "assets/mystery-beadwork.mp4",
+      "at": 19.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-5",
+      "src": "assets/kor-son.mp4",
+      "at": 24,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-6",
+      "src": "assets/rsa-foster.mp4",
+      "at": 28.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-7",
+      "src": "assets/kor-kim.mp4",
+      "at": 33.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-8",
+      "src": "assets/rsa-tau.mp4",
+      "at": 38.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-9",
+      "src": "assets/kor-lee.mp4",
+      "at": 43.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-10",
+      "src": "assets/rsa-mokoena.mp4",
+      "at": 48,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-11",
+      "src": "assets/kor-hwangib.mp4",
+      "at": 52.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-12",
+      "src": "assets/rsa-makgopa.mp4",
+      "at": 57.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-13",
+      "src": "assets/kor-hwanghc.mp4",
+      "at": 62.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-14",
+      "src": "assets/rsa-williams.mp4",
+      "at": 67.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-15",
+      "src": "assets/stadium.mp4",
+      "at": 72,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-16",
+      "src": "assets/kor-crowd.mp4",
+      "at": 76.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-17",
+      "src": "assets/rsa-crowd.mp4",
+      "at": 81.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-18",
+      "src": "assets/action-rsa-celeb.mp4",
+      "at": 86.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-19",
+      "src": "assets/mystery-beadwork.mp4",
+      "at": 91.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-20",
+      "src": "assets/kor-son.mp4",
+      "at": 96,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-21",
+      "src": "assets/rsa-foster.mp4",
+      "at": 100.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-22",
+      "src": "assets/kor-kim.mp4",
+      "at": 105.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-23",
+      "src": "assets/rsa-tau.mp4",
+      "at": 110.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-24",
+      "src": "assets/kor-lee.mp4",
+      "at": 115.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-25",
+      "src": "assets/rsa-mokoena.mp4",
+      "at": 120,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-26",
+      "src": "assets/kor-hwangib.mp4",
+      "at": 124.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-27",
+      "src": "assets/rsa-makgopa.mp4",
+      "at": 129.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-28",
+      "src": "assets/kor-hwanghc.mp4",
+      "at": 134.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-29",
+      "src": "assets/rsa-williams.mp4",
+      "at": 139.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-30",
+      "src": "assets/stadium.mp4",
+      "at": 144,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-31",
+      "src": "assets/kor-crowd.mp4",
+      "at": 148.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-32",
+      "src": "assets/rsa-crowd.mp4",
+      "at": 153.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-33",
+      "src": "assets/action-rsa-celeb.mp4",
+      "at": 158.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-34",
+      "src": "assets/mystery-beadwork.mp4",
+      "at": 163.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-35",
+      "src": "assets/kor-son.mp4",
+      "at": 168,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-36",
+      "src": "assets/rsa-foster.mp4",
+      "at": 172.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-37",
+      "src": "assets/kor-kim.mp4",
+      "at": 177.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-38",
+      "src": "assets/rsa-tau.mp4",
+      "at": 182.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-39",
+      "src": "assets/kor-lee.mp4",
+      "at": 187.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-40",
+      "src": "assets/rsa-mokoena.mp4",
+      "at": 192,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-41",
+      "src": "assets/kor-hwangib.mp4",
+      "at": 196.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-42",
+      "src": "assets/rsa-makgopa.mp4",
+      "at": 201.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-43",
+      "src": "assets/kor-hwanghc.mp4",
+      "at": 206.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-44",
+      "src": "assets/rsa-williams.mp4",
+      "at": 211.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-45",
+      "src": "assets/stadium.mp4",
+      "at": 216,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-46",
+      "src": "assets/kor-crowd.mp4",
+      "at": 220.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-47",
+      "src": "assets/rsa-crowd.mp4",
+      "at": 225.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-48",
+      "src": "assets/action-rsa-celeb.mp4",
+      "at": 230.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-49",
+      "src": "assets/mystery-beadwork.mp4",
+      "at": 235.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-50",
+      "src": "assets/kor-son.mp4",
+      "at": 240,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-51",
+      "src": "assets/rsa-foster.mp4",
+      "at": 244.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-52",
+      "src": "assets/kor-kim.mp4",
+      "at": 249.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-53",
+      "src": "assets/rsa-tau.mp4",
+      "at": 254.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-54",
+      "src": "assets/kor-lee.mp4",
+      "at": 259.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-55",
+      "src": "assets/rsa-mokoena.mp4",
+      "at": 264,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-56",
+      "src": "assets/kor-hwangib.mp4",
+      "at": 268.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-57",
+      "src": "assets/rsa-makgopa.mp4",
+      "at": 273.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-58",
+      "src": "assets/kor-hwanghc.mp4",
+      "at": 278.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-59",
+      "src": "assets/rsa-williams.mp4",
+      "at": 283.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-60",
+      "src": "assets/stadium.mp4",
+      "at": 288,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-61",
+      "src": "assets/kor-crowd.mp4",
+      "at": 292.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-62",
+      "src": "assets/rsa-crowd.mp4",
+      "at": 297.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-63",
+      "src": "assets/action-rsa-celeb.mp4",
+      "at": 302.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-64",
+      "src": "assets/mystery-beadwork.mp4",
+      "at": 307.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-65",
+      "src": "assets/kor-son.mp4",
+      "at": 312,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-66",
+      "src": "assets/rsa-foster.mp4",
+      "at": 316.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqx-foster",
+      "src": "assets/rsa-foster.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqx-tau",
+      "src": "assets/rsa-tau.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqx-mokoena",
+      "src": "assets/rsa-mokoena.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqx-makgopa",
+      "src": "assets/rsa-makgopa.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqx-williams",
+      "src": "assets/rsa-williams.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqz-son",
+      "src": "assets/kor-son.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqz-kim",
+      "src": "assets/kor-kim.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqz-hwangib",
+      "src": "assets/kor-hwangib.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqz-lee",
+      "src": "assets/kor-lee.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqz-hwanghc",
+      "src": "assets/kor-hwanghc.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 31.56,
+        "dur": 288,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 34,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.06,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 22.38,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 26.17,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.55,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 92.15,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113.25,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 131.51,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 153,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 154.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 156.5,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 189.5,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 191.2,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 256,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 271,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 304,
+        "vol": 0.6
+      }
+    ]
+  }
+}
