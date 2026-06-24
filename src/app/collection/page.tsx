@@ -68,6 +68,7 @@ const CARDS: Card[] = [
   { number: '052', name: 'The Watchmaker',        nation: 'Switzerland',  episode: 52, match: 'Switzerland vs Canada', portrait: '/special-cards/legend-052-portrait.png', landscape: '/special-cards/legend-052-landscape.png' },
   { number: '053', name: 'The Capoeira Master',   nation: 'Brazil',       episode: 53, match: 'Scotland vs Brazil', portrait: '/special-cards/legend-053-portrait.png', landscape: '/special-cards/legend-053-landscape.png' },
   { number: '054', name: 'The Gnawa Master',      nation: 'Morocco',      episode: 54, match: 'Morocco vs Haiti', portrait: '/special-cards/legend-054-portrait.png', landscape: '/special-cards/legend-054-landscape.png' },
+  { number: '055', name: 'The Glassblower',       nation: 'Czech Republic', episode: 55, match: 'Mexico vs Czech Republic', portrait: '/special-cards/legend-055-portrait.png', landscape: '/special-cards/legend-055-landscape.png' },
   { number: 'BONUS-1', name: 'The Freedom Run',   nation: 'Colombia',     episode: 0,  match: 'Bonus film · Luis Díaz',     portrait: '/special-cards/legend-bonus-diaz-portrait.png',   landscape: '/special-cards/legend-bonus-diaz-landscape.png' },
   { number: 'BONUS-2', name: 'The Promise',       nation: 'Belgium',      episode: 0,  match: 'Bonus film · Romelu Lukaku', portrait: '/special-cards/legend-bonus-lukaku-portrait.png', landscape: '/special-cards/legend-bonus-lukaku-landscape.png' },
 ];

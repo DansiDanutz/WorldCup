@@ -489,6 +489,15 @@
       "landscape": "/special-cards/legend-054-landscape.png"
     },
     {
+      "number": "055",
+      "name": "The Glassblower",
+      "nation": "Czech Republic",
+      "episode": 55,
+      "match": "Mexico vs Czech Republic",
+      "portrait": "/special-cards/legend-055-portrait.png",
+      "landscape": "/special-cards/legend-055-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
