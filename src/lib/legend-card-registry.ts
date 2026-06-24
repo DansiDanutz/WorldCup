@@ -6,7 +6,7 @@ import {
   type YouTubeLegendEpisode,
 } from "@/lib/youtube-legend-episodes";
 
-export type LegendCardKind = "episode-special" | "legend-bonus";
+export type LegendCardKind = "episode-special" | "supporter-card" | "legend-bonus";
 export type LegendCardRarity = "Story" | "Rare" | "Legendary";
 
 export type LegendCardDefinition = {
@@ -171,6 +171,36 @@ const handMadeLegendCards: LegendCardDefinition[] = [
 
 const handMadeEpisodeNumbers = new Set(handMadeLegendCards.map((card) => card.episode));
 
+function getEpisodeTeams(episode: YouTubeLegendEpisode) {
+  return [episode.home, episode.away];
+}
+
+function getUniqueEpisodeTeams() {
+  const seen = new Set<string>();
+  const teams: string[] = [];
+
+  for (const episode of YOUTUBE_LEGEND_EPISODES) {
+    for (const team of getEpisodeTeams(episode)) {
+      const key = slugify(team);
+
+      if (!seen.has(key)) {
+        seen.add(key);
+        teams.push(team);
+      }
+    }
+  }
+
+  return teams;
+}
+
+function firstEpisodeForTeam(team: string) {
+  const key = slugify(team);
+
+  return YOUTUBE_LEGEND_EPISODES.find((episode) =>
+    getEpisodeTeams(episode).some((episodeTeam) => slugify(episodeTeam) === key),
+  ) ?? null;
+}
+
 function createEpisodeCard(episode: YouTubeLegendEpisode): LegendCardDefinition {
   return {
     id: `ep${episode.ep}-${slugify(`${episode.home}-${episode.away}`)}`,
@@ -185,6 +215,51 @@ function createEpisodeCard(episode: YouTubeLegendEpisode): LegendCardDefinition 
     youtube: episode.youtube,
     imageTeam: episode.imageTeam ?? episode.home,
   };
+}
+
+function createSupporterCards(team: string): LegendCardDefinition[] {
+  const episode = firstEpisodeForTeam(team);
+
+  if (!episode) {
+    return [];
+  }
+
+  const episodeLabel = episode.episodeLabel ?? `Episode ${episode.ep}`;
+  const youtube = youtubeForEpisode(episode.ep);
+  const teamSlug = slugify(team);
+
+  return [
+    {
+      id: `supporter-${teamSlug}-mystery`,
+      episode: episode.ep,
+      episodeLabel: `${episodeLabel} supporter`,
+      kind: "supporter-card",
+      title: `${team} Mystery Supporter`,
+      subtitle: "Mystery supporter card",
+      teams: team,
+      rarity: "Legendary",
+      story:
+        `Every nation has a guardian. The ${team} Mystery Supporter appears before the floodlights, ` +
+        "carrying old songs, team colors, and match-day omens into the WorldCup26 Legends album.",
+      youtube,
+      imageTeam: team,
+    },
+    {
+      id: `supporter-${teamSlug}-ultra`,
+      episode: episode.ep,
+      episodeLabel: `${episodeLabel} supporter`,
+      kind: "supporter-card",
+      title: `${team} Ultra Fan`,
+      subtitle: "Ultra supporter card",
+      teams: team,
+      rarity: "Legendary",
+      story:
+        `The ${team} Ultra Fan turns one seat into a whole stand. Scarves rise, chants shake the tunnel, ` +
+        "and the card captures the supporter energy behind the YouTube story.",
+      youtube,
+      imageTeam: team,
+    },
+  ];
 }
 
 function createBonusCard(video: YouTubeLegendBonusVideo): LegendCardDefinition {
@@ -207,6 +282,8 @@ const generatedEpisodeCards = YOUTUBE_LEGEND_EPISODES.filter(
   (episode) => !handMadeEpisodeNumbers.has(episode.ep),
 ).map(createEpisodeCard);
 
+const supporterCards = getUniqueEpisodeTeams().flatMap(createSupporterCards);
+
 const channelBonusCards = YOUTUBE_LEGEND_BONUS_VIDEOS.map(createBonusCard);
 
 function isChannelBonus(card: LegendCardDefinition) {
@@ -216,6 +293,7 @@ function isChannelBonus(card: LegendCardDefinition) {
 export const LEGEND_CARD_DEFINITIONS: LegendCardDefinition[] = [
   ...handMadeLegendCards,
   ...generatedEpisodeCards,
+  ...supporterCards,
   ...channelBonusCards,
 ].sort((a, b) => {
   if (isChannelBonus(a) !== isChannelBonus(b)) {
