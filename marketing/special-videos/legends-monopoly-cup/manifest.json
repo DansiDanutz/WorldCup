@@ -3,475 +3,581 @@
   "H": 1080,
   "fps": 30,
   "xfade": 0.4,
-  "outfile": "LegendsGame_Round2.mp4",
+  "outfile": "LegendsGame_Round2_v2.mp4",
   "clips": [
     {
       "id": "i01",
-      "file": "clips_v3/COIN.mp4",
+      "file": "clips_v5/BOARD_RESET.mp4",
       "raw": 5.04,
-      "screen": 1.95,
+      "screen": 2.16,
       "xf": 0
     },
     {
       "id": "i02",
-      "file": "clips_v5/BOARD_RESET.mp4",
-      "raw": 5.04,
-      "screen": 2.19,
-      "xf": 0.08
-    },
-    {
-      "id": "i03",
       "file": "clips/c22.mp4",
       "raw": 5.09,
       "screen": 2.37,
       "xf": 0.08
     },
     {
+      "id": "i03",
+      "file": "clips/c23.mp4",
+      "raw": 5.06,
+      "screen": 2.71,
+      "xf": 0.08
+    },
+    {
       "id": "i04",
-      "file": "clips_v4/DICE_CLOSEUP.mp4",
+      "file": "clips_r2b/WITCHES_CAST.mp4",
       "raw": 5.04,
-      "screen": 4.69,
+      "screen": 4.47,
       "xf": 0.08
     },
     {
       "id": "tit",
-      "file": "clips_r2/TITLE_R2.mp4",
+      "file": "clips_r2b/TITLE_R2B.mp4",
       "raw": 2.6,
-      "screen": 2.6,
+      "screen": 3.2,
       "xf": 0.2
     },
     {
       "id": "v05",
       "file": "clips_v2/M3_throne.mp4",
       "raw": 5.04,
-      "screen": 4.94,
+      "screen": 5.59,
       "xf": 0.4
     },
     {
       "id": "v06",
       "file": "clips/c20.mp4",
       "raw": 10.1,
-      "screen": 5.76,
+      "screen": 5.59,
       "xf": 0.4
     },
     {
       "id": "v07",
       "file": "clips/c24.mp4",
       "raw": 5.06,
-      "screen": 4.76,
+      "screen": 4.89,
       "xf": 0.3
     },
     {
       "id": "v08",
-      "file": "clips_r2/KANE_NOSCORE.mp4",
+      "file": "clips_v4/DICE_CLOSEUP.mp4",
       "raw": 5.04,
-      "screen": 4.74,
+      "screen": 4.16,
       "xf": 0.4
     },
     {
       "id": "v09",
-      "file": "clips/c18.mp4",
-      "raw": 5.06,
-      "screen": 3.93,
+      "file": "clips_v4/KEEPER_FACE.mp4",
+      "raw": 5.04,
+      "screen": 3.89,
       "xf": 0.4
     },
     {
       "id": "v10",
-      "file": "clips/c21.mp4",
-      "raw": 5.09,
-      "screen": 3.09,
-      "xf": 0.4
-    },
-    {
-      "id": "v11",
-      "file": "clips_r2/KANE_JAIL.mp4",
-      "raw": 5.04,
-      "screen": 4.01,
-      "xf": 0.3
-    },
-    {
-      "id": "v12",
-      "file": "clips_v2/R2_grips.mp4",
-      "raw": 5.04,
-      "screen": 3.77,
-      "xf": 0.4
-    },
-    {
-      "id": "v13",
-      "file": "clips_r2/NEYMAR_LUCKY.mp4",
-      "raw": 5.04,
-      "screen": 5.58,
-      "xf": 0.4
-    },
-    {
-      "id": "v14",
-      "file": "clips_r2/NEYMAR_ADVANCE.mp4",
-      "raw": 5.04,
-      "screen": 4.42,
-      "xf": 0.3
-    },
-    {
-      "id": "v15",
-      "file": "clips/c03.mp4",
-      "raw": 5.09,
-      "screen": 3.87,
-      "xf": 0.4
-    },
-    {
-      "id": "v16",
-      "file": "clips/c23.mp4",
-      "raw": 5.06,
-      "screen": 4.77,
-      "xf": 0.4
-    },
-    {
-      "id": "v17",
-      "file": "clips_v4/RIVALS_WATCH.mp4",
+      "file": "clips_r2b/WITCHES_CAULDRON.mp4",
       "raw": 5.04,
       "screen": 4.97,
       "xf": 0.4
     },
     {
-      "id": "v18",
-      "file": "clips/c04.mp4",
+      "id": "v11",
+      "file": "clips_v4/GOAL_NET.mp4",
+      "raw": 5.04,
+      "screen": 4.47,
+      "xf": 0.4
+    },
+    {
+      "id": "v12",
+      "file": "clips/c27.mp4",
+      "raw": 10.06,
+      "screen": 4.22,
+      "xf": 0.4
+    },
+    {
+      "id": "v13",
+      "file": "clips_r2/KANE_NOSCORE.mp4",
+      "raw": 5.04,
+      "screen": 5.46,
+      "xf": 0.4
+    },
+    {
+      "id": "v14",
+      "file": "clips/c18.mp4",
+      "raw": 5.06,
+      "screen": 3.45,
+      "xf": 0.4
+    },
+    {
+      "id": "v15",
+      "file": "clips/c21.mp4",
       "raw": 5.09,
-      "screen": 2.85,
+      "screen": 4.24,
+      "xf": 0.4
+    },
+    {
+      "id": "v16",
+      "file": "clips_r2/KANE_JAIL.mp4",
+      "raw": 5.04,
+      "screen": 4.24,
       "xf": 0.3
     },
     {
-      "id": "v19",
-      "file": "clips_v4/KEEPER_FACE.mp4",
+      "id": "v17",
+      "file": "clips_r2/CAGES_PLOT.mp4",
       "raw": 5.04,
-      "screen": 4.4,
+      "screen": 5.43,
+      "xf": 0.4
+    },
+    {
+      "id": "v18",
+      "file": "clips_r2/PELE_REVEAL.mp4",
+      "raw": 5.04,
+      "screen": 8.26,
       "xf": 0.4
     },
     {
       "id": "v20",
-      "file": "clips/c27.mp4",
-      "raw": 10.06,
-      "screen": 4.79,
-      "xf": 0.4
+      "file": "clips_r2/PELE_CROWN.mp4",
+      "raw": 5.04,
+      "screen": 3.77,
+      "xf": 0.3
     },
     {
       "id": "v21",
-      "file": "clips_r2/PELE_REVEAL.mp4",
+      "file": "clips_r2b/PELE_LEGEND.mp4",
+      "raw": 405,
+      "screen": 5.4,
+      "xf": 0.3
+    },
+    {
+      "id": "v22",
+      "file": "clips_r2/PELE_POINT.mp4",
       "raw": 5.04,
-      "screen": 7.22,
+      "screen": 4.15,
       "xf": 0.4
     },
     {
       "id": "v23",
-      "file": "clips_r2/PELE_CROWN.mp4",
+      "file": "clips_v2/R2_grips.mp4",
       "raw": 5.04,
-      "screen": 6.81,
+      "screen": 3.99,
+      "xf": 0.4
+    },
+    {
+      "id": "v24",
+      "file": "clips_r2b/PELE_OPENS_CAGE.mp4",
+      "raw": 5.04,
+      "screen": 3.55,
       "xf": 0.3
     },
     {
       "id": "v25",
-      "file": "clips_r2/PELE_POINT.mp4",
+      "file": "clips_v5/RONALDO_BREAKOUT.mp4",
       "raw": 5.04,
-      "screen": 12.38,
+      "screen": 4.82,
+      "xf": 0.3
+    },
+    {
+      "id": "v26",
+      "file": "clips/c02.mp4",
+      "raw": 5.09,
+      "screen": 4.51,
+      "xf": 0.4
+    },
+    {
+      "id": "v27",
+      "file": "clips_v2/R3_defiant.mp4",
+      "raw": 5.04,
+      "screen": 4.42,
       "xf": 0.4
     },
     {
       "id": "v28",
-      "file": "clips_v4/EMPTY_CELL.mp4",
+      "file": "clips_r2b/RONALDO_SCORE.mp4",
       "raw": 5.04,
-      "screen": 5.39,
-      "xf": 0.4
+      "screen": 3.82,
+      "xf": 0.25
     },
     {
       "id": "v29",
-      "file": "clips/c15.mp4",
-      "raw": 5.09,
-      "screen": 4.18,
-      "xf": 0.4
+      "file": "clips_r2b/RONALDO_CELEBRATE.mp4",
+      "raw": 5.04,
+      "screen": 4.62,
+      "xf": 0.25
     },
     {
       "id": "v30",
-      "file": "clips/c28.mp4",
-      "raw": 5.06,
-      "screen": 2.8,
+      "file": "clips_v3/R6_grin.mp4",
+      "raw": 5.04,
+      "screen": 4.73,
       "xf": 0.4
     },
     {
       "id": "v31",
-      "file": "clips_v3/TROPHY.mp4",
+      "file": "clips_v2/R5_corner.mp4",
       "raw": 5.04,
-      "screen": 4.03,
+      "screen": 4.26,
       "xf": 0.4
     },
     {
       "id": "v32",
-      "file": "clips_r2/CAGES_PLOT.mp4",
-      "raw": 5.04,
-      "screen": 7.94,
+      "file": "clips/c04.mp4",
+      "raw": 5.09,
+      "screen": 4.06,
       "xf": 0.4
     },
     {
-      "id": "v34",
-      "file": "clips_r2/REBELLION.mp4",
-      "raw": 5.04,
-      "screen": 4.27,
+      "id": "v33",
+      "file": "clips_r2b/STANDINGS_R2.mp4",
+      "raw": 7,
+      "screen": 12.23,
       "xf": 0.3
-    },
-    {
-      "id": "v35",
-      "file": "clips_v5/RONALDO_BREAKOUT.mp4",
-      "raw": 5.04,
-      "screen": 5.74,
-      "xf": 0.3
-    },
-    {
-      "id": "v36",
-      "file": "clips_v3/R6_grin.mp4",
-      "raw": 5.04,
-      "screen": 3.8,
-      "xf": 0.4
     },
     {
       "id": "v37",
-      "file": "clips_v5/KING_RONALDO.mp4",
-      "raw": 5.04,
-      "screen": 4.04,
+      "file": "clips/c01.mp4",
+      "raw": 10.1,
+      "screen": 4.57,
       "xf": 0.4
     },
     {
       "id": "v38",
       "file": "clips/c26.mp4",
       "raw": 5.06,
-      "screen": 4.24,
+      "screen": 5.69,
       "xf": 0.4
     },
     {
       "id": "v39",
       "file": "clips/c05.mp4",
       "raw": 5.09,
-      "screen": 3.71,
+      "screen": 3.64,
       "xf": 0.4
     },
     {
       "id": "v40",
+      "file": "clips_r2/NEYMAR_LUCKY.mp4",
+      "raw": 5.04,
+      "screen": 4.67,
+      "xf": 0.4
+    },
+    {
+      "id": "v41",
+      "file": "clips/c28.mp4",
+      "raw": 5.06,
+      "screen": 3.37,
+      "xf": 0.4
+    },
+    {
+      "id": "v42",
+      "file": "clips_r2/NEYMAR_ADVANCE.mp4",
+      "raw": 5.04,
+      "screen": 4.86,
+      "xf": 0.3
+    },
+    {
+      "id": "v43",
+      "file": "clips_r2b/VINICIUS_READY.mp4",
+      "raw": 5.04,
+      "screen": 6.16,
+      "xf": 0.3
+    },
+    {
+      "id": "v44",
+      "file": "clips_v4/RIVALS_WATCH.mp4",
+      "raw": 5.04,
+      "screen": 8.05,
+      "xf": 0.4
+    },
+    {
+      "id": "v46",
+      "file": "clips_r2b/ROUND3_Q.mp4",
+      "raw": 7,
+      "screen": 10.61,
+      "xf": 0.3
+    },
+    {
+      "id": "v49",
+      "file": "clips_v3/TROPHY.mp4",
+      "raw": 5.04,
+      "screen": 4.53,
+      "xf": 0.4
+    },
+    {
+      "id": "v50",
       "file": "clips_r2/ENDCARD_R2.mp4",
       "raw": 7,
-      "screen": 17.63,
+      "screen": 16.91,
       "xf": 0.4
     }
   ],
   "vo": [
     {
-      "file": "audio_r2/line_01.mp3",
+      "file": "audio_r2b/line_01.mp3",
       "at": 0.12,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_02.mp3",
-      "at": 1.99,
+      "file": "audio_r2b/line_02.mp3",
+      "at": 2.2,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_03.mp3",
-      "at": 4.1,
+      "file": "audio_r2b/line_03.mp3",
+      "at": 4.49,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_04.mp3",
-      "at": 6.39,
+      "file": "audio_r2b/line_04.mp3",
+      "at": 7.12,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_05.mp3",
-      "at": 13.46,
+      "file": "audio_r2b/line_05.mp3",
+      "at": 14.57,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_06.mp3",
-      "at": 18,
+      "file": "audio_r2b/line_06.mp3",
+      "at": 19.76,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_07.mp3",
-      "at": 23.46,
+      "file": "audio_r2b/line_07.mp3",
+      "at": 25.05,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_08.mp3",
-      "at": 27.82,
+      "file": "audio_r2b/line_08.mp3",
+      "at": 29.54,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_09.mp3",
-      "at": 32.16,
+      "file": "audio_r2b/line_09.mp3",
+      "at": 33.3,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_10.mp3",
-      "at": 35.69,
+      "file": "audio_r2b/line_10.mp3",
+      "at": 36.79,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_11.mp3",
-      "at": 38.48,
+      "file": "audio_r2b/line_11.mp3",
+      "at": 41.36,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_12.mp3",
-      "at": 42.09,
+      "file": "audio_r2b/line_12.mp3",
+      "at": 45.43,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_13.mp3",
-      "at": 45.46,
+      "file": "audio_r2b/line_13.mp3",
+      "at": 49.25,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_14.mp3",
-      "at": 50.74,
+      "file": "audio_r2b/line_14.mp3",
+      "at": 54.31,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_15.mp3",
-      "at": 54.76,
+      "file": "audio_r2b/line_15.mp3",
+      "at": 57.36,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_16.mp3",
-      "at": 58.23,
+      "file": "audio_r2b/line_16.mp3",
+      "at": 61.3,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_17.mp3",
-      "at": 62.6,
+      "file": "audio_r2b/line_17.mp3",
+      "at": 65.14,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_18.mp3",
-      "at": 67.27,
+      "file": "audio_r2b/line_18.mp3",
+      "at": 70.17,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_19.mp3",
-      "at": 69.72,
+      "file": "audio_r2b/line_19.mp3",
+      "at": 72.59,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_20.mp3",
-      "at": 73.72,
+      "file": "audio_r2b/line_20.mp3",
+      "at": 78.13,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_21.mp3",
-      "at": 78.11,
+      "file": "audio_r2b/line_21.mp3",
+      "at": 81.6,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_22.mp3",
-      "at": 81.18,
+      "file": "audio_r2b/line_22.mp3",
+      "at": 86.6,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_23.mp3",
-      "at": 85.03,
+      "file": "audio_r2b/line_23.mp3",
+      "at": 90.35,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_24.mp3",
-      "at": 87.42,
+      "file": "audio_r2b/line_24.mp3",
+      "at": 94.04,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_25.mp3",
-      "at": 91.44,
+      "file": "audio_r2b/line_25.mp3",
+      "at": 97.29,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_26.mp3",
-      "at": 94.69,
+      "file": "audio_r2b/line_26.mp3",
+      "at": 101.71,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_27.mp3",
-      "at": 99.2,
+      "file": "audio_r2b/line_27.mp3",
+      "at": 105.82,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_28.mp3",
-      "at": 103.42,
+      "file": "audio_r2b/line_28.mp3",
+      "at": 109.99,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_29.mp3",
-      "at": 108.41,
+      "file": "audio_r2b/line_29.mp3",
+      "at": 113.56,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_30.mp3",
-      "at": 112.19,
+      "file": "audio_r2b/line_30.mp3",
+      "at": 117.78,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_31.mp3",
-      "at": 114.59,
+      "file": "audio_r2b/line_31.mp3",
+      "at": 122.11,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_32.mp3",
-      "at": 118.22,
+      "file": "audio_r2b/line_32.mp3",
+      "at": 125.97,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_33.mp3",
-      "at": 120.98,
+      "file": "audio_r2b/line_33.mp3",
+      "at": 129.73,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_34.mp3",
-      "at": 125.86,
+      "file": "audio_r2b/line_34.mp3",
+      "at": 131.47,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_35.mp3",
-      "at": 129.83,
+      "file": "audio_r2b/line_35.mp3",
+      "at": 134.82,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_36.mp3",
-      "at": 135.17,
+      "file": "audio_r2b/line_36.mp3",
+      "at": 137.47,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_37.mp3",
-      "at": 138.57,
+      "file": "audio_r2b/line_37.mp3",
+      "at": 141.56,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_38.mp3",
-      "at": 142.21,
+      "file": "audio_r2b/line_38.mp3",
+      "at": 145.73,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_39.mp3",
-      "at": 146.05,
+      "file": "audio_r2b/line_39.mp3",
+      "at": 151.02,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_40.mp3",
-      "at": 149.36,
+      "file": "audio_r2b/line_40.mp3",
+      "at": 154.26,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_41.mp3",
-      "at": 154.28,
+      "file": "audio_r2b/line_41.mp3",
+      "at": 158.53,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_42.mp3",
-      "at": 156.67,
+      "file": "audio_r2b/line_42.mp3",
+      "at": 161.6,
       "vol": 1
     },
     {
-      "file": "audio_r2/line_43.mp3",
-      "at": 159.06,
+      "file": "audio_r2b/line_43.mp3",
+      "at": 166.16,
+      "vol": 1
+    },
+    {
+      "file": "audio_r2b/line_44.mp3",
+      "at": 171.92,
+      "vol": 1
+    },
+    {
+      "file": "audio_r2b/line_45.mp3",
+      "at": 175.56,
+      "vol": 1
+    },
+    {
+      "file": "audio_r2b/line_46.mp3",
+      "at": 179.67,
+      "vol": 1
+    },
+    {
+      "file": "audio_r2b/line_47.mp3",
+      "at": 181.22,
+      "vol": 1
+    },
+    {
+      "file": "audio_r2b/line_48.mp3",
+      "at": 183.38,
+      "vol": 1
+    },
+    {
+      "file": "audio_r2b/line_49.mp3",
+      "at": 189.88,
+      "vol": 1
+    },
+    {
+      "file": "audio_r2b/line_50.mp3",
+      "at": 194.01,
+      "vol": 1
+    },
+    {
+      "file": "audio_r2b/line_51.mp3",
+      "at": 195.75,
+      "vol": 1
+    },
+    {
+      "file": "audio_r2b/line_52.mp3",
+      "at": 200.59,
+      "vol": 1
+    },
+    {
+      "file": "audio_r2b/line_53.mp3",
+      "at": 203.16,
       "vol": 1
     }
   ],
@@ -479,39 +585,39 @@
     {
       "file": "music/score-mystery.m4a",
       "at": 0,
-      "dur": 29.320000000000007,
+      "dur": 50.75000000000001,
       "vol": 0.26,
       "fadeIn": 0.5,
       "fadeOut": 3
     },
     {
       "file": "music/score-jail.m4a",
-      "at": 26.320000000000007,
-      "dur": 20.640000000000015,
+      "at": 47.75000000000001,
+      "dur": 23.92000000000001,
       "vol": 0.27,
       "fadeIn": 1.5,
       "fadeOut": 4
     },
     {
-      "file": "music/score-build.m4a",
-      "at": 43.96000000000002,
-      "dur": 35.650000000000006,
-      "vol": 0.23,
-      "fadeIn": 2,
-      "fadeOut": 4
-    },
-    {
       "file": "music/score-anthem.m4a",
-      "at": 76.61000000000003,
-      "dur": 43.10999999999996,
+      "at": 68.67000000000002,
+      "dur": 38.64999999999999,
       "vol": 0.24,
       "fadeIn": 1.5,
       "fadeOut": 4
     },
     {
+      "file": "music/score-build.m4a",
+      "at": 104.32000000000001,
+      "dur": 38.73999999999997,
+      "vol": 0.23,
+      "fadeIn": 2,
+      "fadeOut": 4
+    },
+    {
       "file": "music/score-finale.m4a",
-      "at": 116.71999999999998,
-      "dur": 49.769999999999996,
+      "at": 140.05999999999997,
+      "dur": 70.35999999999993,
       "vol": 0.25,
       "fadeIn": 1.5,
       "fadeOut": 6
@@ -525,108 +631,123 @@
     },
     {
       "file": "sfx/whoosh.mp3",
-      "at": 1.87,
+      "at": 2.08,
       "vol": 0.4
     },
     {
       "file": "sfx/whoosh.mp3",
-      "at": 3.98,
+      "at": 4.37,
       "vol": 0.4
     },
     {
       "file": "sfx/braam.mp3",
-      "at": 6.47,
+      "at": 7.3,
+      "vol": 0.6
+    },
+    {
+      "file": "sfx/braam.mp3",
+      "at": 11.27,
+      "vol": 0.55
+    },
+    {
+      "file": "sfx/mystic.mp3",
+      "at": 29.24,
+      "vol": 0.42
+    },
+    {
+      "file": "sfx/mystic.mp3",
+      "at": 36.49,
+      "vol": 0.45
+    },
+    {
+      "file": "sfx/braam.mp3",
+      "at": 41.06,
+      "vol": 0.4
+    },
+    {
+      "file": "sfx/mystic.mp3",
+      "at": 45.13,
+      "vol": 0.4
+    },
+    {
+      "file": "sfx/heartbeat.mp3",
+      "at": 48.95,
+      "vol": 0.45
+    },
+    {
+      "file": "sfx/heartbeat.mp3",
+      "at": 54.01,
+      "vol": 0.45
+    },
+    {
+      "file": "sfx/braam.mp3",
+      "at": 61,
+      "vol": 0.6
+    },
+    {
+      "file": "sfx/braam.mp3",
+      "at": 69.97,
       "vol": 0.55
     },
     {
       "file": "sfx/braam.mp3",
-      "at": 10.76,
-      "vol": 0.6
-    },
-    {
-      "file": "sfx/heartbeat.mp3",
-      "at": 31.86,
-      "vol": 0.45
+      "at": 77.93,
+      "vol": 0.7
     },
     {
       "file": "sfx/braam.mp3",
-      "at": 38.18,
+      "at": 81.3,
+      "vol": 0.5
+    },
+    {
+      "file": "sfx/braam.mp3",
+      "at": 93.84,
       "vol": 0.6
-    },
-    {
-      "file": "sfx/heartbeat.mp3",
-      "at": 41.79,
-      "vol": 0.45
-    },
-    {
-      "file": "sfx/pop.mp3",
-      "at": 45.26,
-      "vol": 0.45
     },
     {
       "file": "sfx/whoosh.mp3",
-      "at": 50.34,
+      "at": 96.89,
       "vol": 0.45
     },
     {
+      "file": "sfx/goal.mp3",
+      "at": 109.79,
+      "vol": 0.55
+    },
+    {
+      "file": "sfx/goal.mp3",
+      "at": 113.26,
+      "vol": 0.5
+    },
+    {
       "file": "sfx/braam.mp3",
-      "at": 62.2,
+      "at": 113.46,
+      "vol": 0.55
+    },
+    {
+      "file": "sfx/braam.mp3",
+      "at": 129.33,
       "vol": 0.5
     },
     {
       "file": "sfx/mystic.mp3",
-      "at": 69.42,
+      "at": 141.26,
       "vol": 0.42
     },
     {
       "file": "sfx/whoosh.mp3",
-      "at": 73.22,
+      "at": 161.2,
+      "vol": 0.4
+    },
+    {
+      "file": "sfx/whoosh.mp3",
+      "at": 165.76,
       "vol": 0.4
     },
     {
       "file": "sfx/braam.mp3",
-      "at": 77.91,
+      "at": 179.37,
       "vol": 0.55
-    },
-    {
-      "file": "sfx/braam.mp3",
-      "at": 84.93,
-      "vol": 0.7
-    },
-    {
-      "file": "sfx/whoosh.mp3",
-      "at": 102.92,
-      "vol": 0.4
-    },
-    {
-      "file": "sfx/heartbeat.mp3",
-      "at": 108.11,
-      "vol": 0.4
-    },
-    {
-      "file": "sfx/braam.mp3",
-      "at": 117.92,
-      "vol": 0.55
-    },
-    {
-      "file": "sfx/braam.mp3",
-      "at": 125.56,
-      "vol": 0.65
-    },
-    {
-      "file": "sfx/whoosh.mp3",
-      "at": 129.43,
-      "vol": 0.45
-    },
-    {
-      "file": "sfx/braam.mp3",
-      "at": 134.87,
-      "vol": 0.5
-    },
-    {
-      "file": "sfx/whoosh.mp3",
-      "at": 145.55,
-      "vol": 0.4
     }
   ]
 }
