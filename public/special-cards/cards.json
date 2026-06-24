@@ -462,6 +462,15 @@
       "landscape": "/special-cards/legend-051-landscape.png"
     },
     {
+      "number": "052",
+      "name": "The Watchmaker",
+      "nation": "Switzerland",
+      "episode": 52,
+      "match": "Switzerland vs Canada",
+      "portrait": "/special-cards/legend-052-portrait.png",
+      "landscape": "/special-cards/legend-052-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",

@@ -65,6 +65,7 @@ const CARDS: Card[] = [
   { number: '049', name: 'The Boxer',             nation: 'Panama',       episode: 49, match: 'Panama vs Croatia',    portrait: '/special-cards/legend-049-portrait.png', landscape: '/special-cards/legend-049-landscape.png' },
   { number: '050', name: 'El Dorado',             nation: 'Colombia',     episode: 50, match: 'Colombia vs D.R. Congo', portrait: '/special-cards/legend-050-portrait.png', landscape: '/special-cards/legend-050-landscape.png' },
   { number: '051', name: 'The Bridge Keeper',     nation: 'Bosnia & Herzegovina', episode: 51, match: 'Bosnia & Herzegovina vs Qatar', portrait: '/special-cards/legend-051-portrait.png', landscape: '/special-cards/legend-051-landscape.png' },
+  { number: '052', name: 'The Watchmaker',        nation: 'Switzerland',  episode: 52, match: 'Switzerland vs Canada', portrait: '/special-cards/legend-052-portrait.png', landscape: '/special-cards/legend-052-landscape.png' },
   { number: 'BONUS-1', name: 'The Freedom Run',   nation: 'Colombia',     episode: 0,  match: 'Bonus film · Luis Díaz',     portrait: '/special-cards/legend-bonus-diaz-portrait.png',   landscape: '/special-cards/legend-bonus-diaz-landscape.png' },
   { number: 'BONUS-2', name: 'The Promise',       nation: 'Belgium',      episode: 0,  match: 'Bonus film · Romelu Lukaku', portrait: '/special-cards/legend-bonus-lukaku-portrait.png', landscape: '/special-cards/legend-bonus-lukaku-landscape.png' },
 ];
