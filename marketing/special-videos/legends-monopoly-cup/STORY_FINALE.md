@@ -1,16 +1,17 @@
-# THE LEGENDS' GAME — THE FINAL: THE GOLDEN BOOT WAR
-### Story bible for the ~10-minute finale (after Round Three)
+# THE LEGENDS' GAME — GROUP-STAGE FINALE: THE GOLDEN BOOT WAR
+### Story bible for the ~10-minute video (after Round Three = group stage complete, NO champion yet)
 
 ---
 
 ## LOGLINE
-Three rounds in, the board reveals its true law: the World Cup no longer goes to who
-*owns* the most — it goes to who **SCORES** the most. The cages open, every legend gets
-one last chance, and the game becomes a pure **Golden Boot war**. But the three witches
-who secretly run the board feed on goals — and even Pelé, the King, has lost control. The
-race ends in a five-way tie… and freezes one kick from glory, because the last goal hasn't
-been scored *in real life.* The champion is decided by the **real World Cup 2026 Golden
-Boot** — so the final question is handed to the viewer.
+The group stage is over — and the board reveals its true law: the World Cup will not be won
+by who *owns* the most, but by who **SCORES** the most. The cages open and the game becomes
+a pure **Golden Boot war**. But the three witches who secretly run the board feed on goals —
+and even Pelé, the King, has lost control. The contenders finish the group stage **level at
+the top**; the board folds into the **knockout bracket** and freezes — *no champion can be
+crowned, because the knockouts haven't been played.* It's a mirror of the **real World Cup
+2026**, so the question is handed to the viewer: who tops the Golden Boot, survives the
+knockouts, and lifts the cup?
 
 ## WHERE WE LEFT IT (continuity)
 - **R1:** board crowns Messi (hat-trick), cages Ronaldo. Mystery Keeper.
@@ -20,11 +21,11 @@ Boot** — so the final question is handed to the viewer.
 - **R3 (assumed):** the chosen **son of Brazil** enters the board; the caged legends'
   **rebellion** breaks the cells open. → leads straight into THE FINAL.
 
-## THE NEW LAW (the finale's engine)
-The King burns away the property board. The final round has **one rule**:
-**most goals wins everything.** The Golden Boot lifts the World Cup; everyone else is
-forgotten. All cages open — Kane walks free — every legend gets one last chance. It is now
-a war of goals.
+## THE NEW LAW (the engine)
+With the group stage done, the King burns away the property board and reveals the real rule:
+**most goals wins the Cup — the Golden Boot is the prize.** The group stage only *set the
+board*; all cages open (Kane walks free) and the goal war is on — but the winner is still
+undecided, because the **knockouts** are still to come.
 
 ## THE CONTENDERS (the goal race)
 - **Messi** — the quiet king, leads (5). "He doesn't run. He arrives."
@@ -43,21 +44,25 @@ a war of goals.
   — he reaches for the trophy and they pull it back. "If the King can't crown the winner…
   who can?"
 
-## THE ENDING (the hook that beats a simple winner)
-The race ties **five kings on seven goals**; one kick to decide — and the **board freezes.**
-It can't crown a champion because *the last goal hasn't been scored.* The game is a mirror
-of the **real WC2026 Golden Boot race.** Witches, King and legends all turn **to the
-viewer**: *who wins the Golden Boot — and the Cup?* → predict at worldcup26.world, comment
-your champion. "When the last real goal is scored, the empty throne will have its king."
-(Perfect for engagement + the funnel + a natural lead-in to a real-results follow-up.)
+## THE ENDING (the hook — no champion yet)
+The contenders finish the group stage **level at the top** of the goal race; the board folds
+into the **knockout bracket** and **freezes** — it can't crown a champion because *the
+knockouts haven't been played.* The game is a mirror of the **real WC2026.** Witches, King
+and legends all turn **to the viewer**: *who tops the Golden Boot, survives the knockouts,
+and lifts the cup?* → predict at worldcup26.world, comment your champion. "When the last real
+goal is scored, the empty throne will have its king." (Sets up the knockout videos + a
+real-results follow-up — winner stays open.)
 
 ## STRUCTURE (≈10:00)
-1. Cold-open recap + the silence (0:00–1:00)
-2. The Final Law — cages open (1:00–2:15)
-3. The contenders / war begins (2:15–4:15)
+1. Cold-open recap + "group stage is over" (0:00–1:00)
+2. The Golden-Boot law revealed — cages open (1:00–2:15)
+3. The contenders / the group-stage goal race (2:15–4:15)
 4. The mystery pays off — witches feed, King loses control (4:15–6:00)
-5. The final surge — five-way tie, one kick (6:00–8:15)
-6. The frozen board → prediction hand-off + CTA (8:15–10:00)
+5. Group stage ends level → the board folds into the KNOCKOUT bracket (6:00–8:15)
+6. The frozen bracket → prediction hand-off + CTA (8:15–10:00)
+
+**Hero card:** the **GROUP STAGE LEGENDARY card — THE GOLDEN BOOT**
+(`assets/GOLDENBOOT_LEGEND.png`) drops at the "Golden Boot is the real prize" beat (~line 14).
 
 ## PRODUCTION NOTES (when we build it)
 - Same V5/R2 pipeline: real **Brian** VO, **VO-driven sync**, Kling likenesses, PIL cards.
