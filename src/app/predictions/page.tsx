@@ -2,8 +2,12 @@ import { ArrowLeft, PlayCircle } from "lucide-react";
 import Link from "next/link";
 
 import { LegendCardCollection } from "@/components/legend-card-collection";
+import { MatchScheduleExplorer } from "@/components/match-schedule-explorer";
 import { LEGEND_CARDS } from "@/lib/legend-cards";
 import { PREDICTIONS } from "@/lib/predictions";
+import { getDashboardData } from "@/lib/worldcup-data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Legend Cards · WorldCup26 Legends",
@@ -11,7 +15,8 @@ export const metadata = {
     "Collect WorldCup26 Legends episode cards by opening the matching YouTube stories.",
 };
 
-export default function PredictionsPage() {
+export default async function PredictionsPage() {
+  const [{ teams, stages, matches }] = await Promise.all([getDashboardData()]);
   const episodes = [...PREDICTIONS].sort((a, b) => b.ep - a.ep);
   const liveCount = PREDICTIONS.filter((p) => p.youtube).length;
   const legendCardAnchorByEpisode = new Map<number, string>();
@@ -26,6 +31,8 @@ export default function PredictionsPage() {
     <main className="app-shell">
       <div className="page predictions-page">
         <LegendCardCollection />
+
+        <MatchScheduleExplorer matches={matches} stages={stages} teams={teams} />
 
         <section className="episode-library" aria-labelledby="episode-library-title">
           <div className="episode-library__header">
