@@ -7,6 +7,7 @@ import { CANONICAL_ORIGIN } from "@/lib/canonical-url";
 
 import "./globals.css";
 import "./cards.css";
+import "./legend-card-overrides.css";
 
 const inter = Inter({
   subsets: ["latin"],

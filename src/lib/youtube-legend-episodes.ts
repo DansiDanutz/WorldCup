@@ -16,6 +16,7 @@ export type YouTubeLegendBonusVideo = {
   id: string;
   episode: number;
   episodeLabel: string;
+  kind?: "bonus" | "series";
   title: string;
   subtitle: string;
   teams: string;
@@ -560,19 +561,20 @@ export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
   {
     id: "bonus-world-cup-secrets",
     episode: 903,
-    episodeLabel: "Bonus Facts",
-    title: "Five World Cup Secrets",
-    subtitle: "WorldCup26 facts card",
+    episodeLabel: "Bonus Legend",
+    title: "World Cup Monopoly",
+    subtitle: "Legend bonus card",
     teams: "World Cup history",
     story:
-      "From the Hand of God to AI referees, this facts card gathers the strange truths that make the World Cup bigger than ninety minutes.",
+      "The Monopoly card follows the strange truths, power moves, and hidden football business that make the World Cup bigger than ninety minutes.",
     youtube: "https://www.youtube.com/watch?v=e96tg1mpKHo",
     imageTeam: "Mexico",
   },
   {
     id: "bonus-launch-film",
-    episode: 904,
+    episode: 900,
     episodeLabel: "Launch Film",
+    kind: "series",
     title: "WorldCup26 Launch",
     subtitle: "Series launch card",
     teams: "WorldCup26 Legends",

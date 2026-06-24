@@ -33,7 +33,18 @@ function slugify(value: string) {
 }
 
 function titleFromHook(hook: string) {
-  return hook.replace(/[.!?]+$/, "").slice(0, 58);
+  const cleanHook = hook.replace(/[.!?]+$/, "");
+  const maxTitleLength = 64;
+
+  if (cleanHook.length <= maxTitleLength) {
+    return cleanHook;
+  }
+
+  const truncated = cleanHook.slice(0, maxTitleLength);
+  const lastWordBoundary = truncated.lastIndexOf(" ");
+  const title = lastWordBoundary >= 42 ? truncated.slice(0, lastWordBoundary) : truncated;
+
+  return title.replace(/\s+(a|an|and|at|by|for|from|in|into|of|on|or|the|to|with)$/i, "");
 }
 
 const handMadeLegendCards: LegendCardDefinition[] = [
@@ -53,9 +64,9 @@ const handMadeLegendCards: LegendCardDefinition[] = [
   {
     id: "ep1-mandela-spirit",
     episode: 1,
-    kind: "legend-bonus",
+    kind: "episode-special",
     title: "Mandela Spirit",
-    subtitle: "Legend bonus card",
+    subtitle: "Episode 1 legend card",
     teams: "Mexico vs South Africa",
     rarity: "Legendary",
     story:
@@ -118,9 +129,9 @@ const handMadeLegendCards: LegendCardDefinition[] = [
   {
     id: "ep6-abuelo",
     episode: 6,
-    kind: "legend-bonus",
+    kind: "episode-special",
     title: "El Abuelo de la Bombonera",
-    subtitle: "Legend bonus card",
+    subtitle: "Episode 6 legend card",
     teams: "Argentina vs Algeria",
     rarity: "Legendary",
     story:
@@ -131,9 +142,9 @@ const handMadeLegendCards: LegendCardDefinition[] = [
   {
     id: "ep6-vieux-fennec",
     episode: 6,
-    kind: "legend-bonus",
+    kind: "episode-special",
     title: "Le Vieux Fennec",
-    subtitle: "Legend bonus card",
+    subtitle: "Episode 6 legend card",
     teams: "Argentina vs Algeria",
     rarity: "Legendary",
     story:
@@ -144,9 +155,9 @@ const handMadeLegendCards: LegendCardDefinition[] = [
   {
     id: "ep7-tambouye",
     episode: 7,
-    kind: "legend-bonus",
+    kind: "episode-special",
     title: "Le Tambouye de 74",
-    subtitle: "Legend bonus card",
+    subtitle: "Episode 7 legend card",
     teams: "Brazil vs Haiti",
     rarity: "Legendary",
     story:
@@ -157,9 +168,9 @@ const handMadeLegendCards: LegendCardDefinition[] = [
   {
     id: "ep9-falconer",
     episode: 9,
-    kind: "legend-bonus",
+    kind: "episode-special",
     title: "The Falconer of the Desert",
-    subtitle: "Legend bonus card",
+    subtitle: "Episode 9 legend card",
     teams: "Qatar vs Switzerland",
     rarity: "Legendary",
     story:
@@ -278,13 +289,39 @@ function createBonusCard(video: YouTubeLegendBonusVideo): LegendCardDefinition {
   };
 }
 
+function createSeriesCard(video: YouTubeLegendBonusVideo): LegendCardDefinition {
+  return {
+    id: video.id,
+    episode: video.episode,
+    episodeLabel: video.episodeLabel,
+    kind: "episode-special",
+    title: video.title,
+    subtitle: video.subtitle,
+    teams: video.teams,
+    rarity: "Legendary",
+    story: video.story,
+    youtube: video.youtube,
+    imageTeam: video.imageTeam,
+  };
+}
+
+function isSeriesVideo(video: YouTubeLegendBonusVideo) {
+  return video.kind === "series";
+}
+
+function isStandaloneBonusVideo(video: YouTubeLegendBonusVideo) {
+  return !isSeriesVideo(video);
+}
+
 const generatedEpisodeCards = YOUTUBE_LEGEND_EPISODES.filter(
   (episode) => !handMadeEpisodeNumbers.has(episode.ep),
 ).map(createEpisodeCard);
 
 const supporterCards = getUniqueEpisodeTeams().flatMap(createSupporterCards);
 
-const channelBonusCards = YOUTUBE_LEGEND_BONUS_VIDEOS.map(createBonusCard);
+const channelSeriesCards = YOUTUBE_LEGEND_BONUS_VIDEOS.filter(isSeriesVideo).map(createSeriesCard);
+
+const channelBonusCards = YOUTUBE_LEGEND_BONUS_VIDEOS.filter(isStandaloneBonusVideo).map(createBonusCard);
 
 function isChannelBonus(card: LegendCardDefinition) {
   return card.episode >= 900;
@@ -294,6 +331,7 @@ export const LEGEND_CARD_DEFINITIONS: LegendCardDefinition[] = [
   ...handMadeLegendCards,
   ...generatedEpisodeCards,
   ...supporterCards,
+  ...channelSeriesCards,
   ...channelBonusCards,
 ].sort((a, b) => {
   if (isChannelBonus(a) !== isChannelBonus(b)) {
