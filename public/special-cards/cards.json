@@ -480,6 +480,15 @@
       "landscape": "/special-cards/legend-053-landscape.png"
     },
     {
+      "number": "054",
+      "name": "The Gnawa Master",
+      "nation": "Morocco",
+      "episode": 54,
+      "match": "Morocco vs Haiti",
+      "portrait": "/special-cards/legend-054-portrait.png",
+      "landscape": "/special-cards/legend-054-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
