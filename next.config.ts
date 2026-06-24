@@ -20,6 +20,7 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://flagcdn.com",
   "font-src 'self' data:",
+  "media-src 'self' blob:",
   "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.worldcup26.world wss://api.worldcup26.world",
   "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
   "worker-src 'self' blob:",
