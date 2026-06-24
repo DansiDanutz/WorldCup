@@ -15,11 +15,16 @@ import {
   VolumeX,
   X,
 } from "lucide-react";
-import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 
 import { CardViewControl } from "@/components/card-view-control";
 import { LEGEND_CARDS, type LegendCard } from "@/lib/legend-cards";
-import { getStoryVoiceDisplayName, selectEnglishStoryVoice, storyVoiceLanguage } from "@/lib/story-voice";
+import {
+  createLegendCardVoiceText,
+  elevenLabsBrianVoiceName,
+  selectBrowserBrianStoryVoice,
+  storyVoiceLanguage,
+} from "@/lib/story-voice";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 
 const unlockedStorageKey = "worldcup_legend_unlocked_cards";
@@ -361,6 +366,8 @@ export function LegendCardCollection() {
   const [accountSyncLabel, setAccountSyncLabel] = useState("Saved on this device");
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [speakingCardId, setSpeakingCardId] = useState<string | null>(null);
+  const storyAudioRef = useRef<HTMLAudioElement | null>(null);
+  const voiceRequestIdRef = useRef(0);
   const [cardFilter, setCardFilter] = useState<LegendCardFilter>("all");
   const [cardSearch, setCardSearch] = useState("");
   const [collectionExpanded, setCollectionExpanded] = useState(false);
@@ -374,6 +381,31 @@ export function LegendCardCollection() {
   );
   const notificationStatus =
     notificationStatusOverride ?? (notificationPreference === "on" ? "Card alerts on" : "Card alerts off");
+
+  function clearStoryAudio() {
+    const currentAudio = storyAudioRef.current;
+
+    if (!currentAudio) {
+      return;
+    }
+
+    currentAudio.pause();
+    if (currentAudio.src.startsWith("blob:")) {
+      URL.revokeObjectURL(currentAudio.src);
+    }
+    storyAudioRef.current = null;
+  }
+
+  function stopStoryPlayback() {
+    voiceRequestIdRef.current += 1;
+    clearStoryAudio();
+
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
+
+    setSpeakingCardId(null);
+  }
 
   function syncAccountLegendEvent(cardId: string, event: AccountLegendEvent) {
     if (!accountToken) {
@@ -394,6 +426,7 @@ export function LegendCardCollection() {
 
   useEffect(() => {
     return () => {
+      clearStoryAudio();
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
         window.speechSynthesis.cancel();
       }
@@ -939,68 +972,141 @@ export function LegendCardCollection() {
     }
   }
 
-  function toggleVoice() {
-    if (!("speechSynthesis" in window)) {
-      setStatus("Voice playback is not supported in this browser.");
-      return;
+  async function readVoiceError(response: Response) {
+    const payload: unknown = await response.json().catch(() => ({}));
+
+    return isRecord(payload) && typeof payload.error === "string"
+      ? payload.error
+      : "Brian voice playback failed.";
+  }
+
+  function speakWithBrowserBrianFallback(card: LegendCard, requestId: number) {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+      return false;
     }
 
+    const storyVoice = selectBrowserBrianStoryVoice(window.speechSynthesis.getVoices());
+    if (!storyVoice) {
+      return false;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(createLegendCardVoiceText(card));
+    utterance.lang = storyVoice.lang || storyVoiceLanguage;
+    utterance.voice = storyVoice;
+    utterance.rate = 0.95;
+    utterance.pitch = 1;
+    utterance.onend = () => {
+      if (voiceRequestIdRef.current === requestId) {
+        setSpeakingCardId(null);
+      }
+    };
+    utterance.onerror = () => {
+      if (voiceRequestIdRef.current === requestId) {
+        setSpeakingCardId(null);
+        setStatus("Brian voice playback stopped.");
+      }
+    };
+
+    setStatus(card.title + " story is playing with browser Brian fallback. Open the YouTube episode to collect the card.");
+    window.speechSynthesis.speak(utterance);
+    return true;
+  }
+
+  function toggleVoice() {
     setVoiceEnabled((enabled) => {
       const next = !enabled;
       if (!next) {
-        window.speechSynthesis.cancel();
-        setSpeakingCardId(null);
+        stopStoryPlayback();
       }
-      setStatus(next ? "Voice enabled. Stories play in English with Brian when available." : "Voice disabled.");
+      setStatus(next ? "Brian voice enabled. Stories use ElevenLabs Brian." : "Voice disabled.");
       return next;
     });
   }
 
-  function speakStory(card: LegendCard) {
-    if (!("speechSynthesis" in window)) {
-      setStatus("Voice playback is not supported in this browser.");
-      return;
-    }
-
+  async function speakStory(card: LegendCard) {
     if (speakingCardId === card.id) {
-      window.speechSynthesis.cancel();
-      setSpeakingCardId(null);
+      stopStoryPlayback();
       setStatus("Story stopped.");
       return;
     }
 
-    window.speechSynthesis.cancel();
+    stopStoryPlayback();
 
     if (!voiceEnabled) {
       setVoiceEnabled(true);
     }
 
+    const requestId = voiceRequestIdRef.current + 1;
+    voiceRequestIdRef.current = requestId;
     markCardListened(card);
-    const storyVoice = selectEnglishStoryVoice(window.speechSynthesis.getVoices());
-    const storyVoiceDisplayName = getStoryVoiceDisplayName(storyVoice);
-    const storyVoiceStatus = storyVoice ? ` with ${storyVoiceDisplayName}` : "";
-    const utterance = new SpeechSynthesisUtterance(
-      `${card.title}. ${card.episodeLabel ?? `Episode ${card.episode}`}. ${card.teams}. ${card.story}`,
-    );
-    utterance.lang = storyVoice?.lang ?? storyVoiceLanguage;
-    if (storyVoice) {
-      utterance.voice = storyVoice;
-    }
-    utterance.rate = storyVoiceDisplayName === "Brian" ? 0.95 : 0.9;
-    utterance.pitch = 1;
-    utterance.onend = () => setSpeakingCardId(null);
-    utterance.onerror = () => {
-      setSpeakingCardId(null);
-      setStatus("Voice playback stopped.");
-    };
-
     setSpeakingCardId(card.id);
-    setStatus(
-      `${card.title} story is playing in English${storyVoiceStatus}. Open the YouTube episode to collect the card.`,
-    );
-    window.speechSynthesis.speak(utterance);
-  }
+    setStatus(card.title + " story is loading with " + elevenLabsBrianVoiceName + ".");
 
+    try {
+      const response = await fetch("/api/legend-cards/voice", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cardId: card.id }),
+      });
+
+      if (!response.ok) {
+        throw new Error(await readVoiceError(response));
+      }
+
+      const audioBlob = await response.blob();
+      if (!audioBlob.type.startsWith("audio/")) {
+        throw new Error("Brian voice playback returned invalid audio.");
+      }
+
+      if (voiceRequestIdRef.current !== requestId) {
+        return;
+      }
+
+      const audio = new Audio(URL.createObjectURL(audioBlob));
+      storyAudioRef.current = audio;
+      audio.onended = () => {
+        if (audio.src.startsWith("blob:")) {
+          URL.revokeObjectURL(audio.src);
+        }
+        if (storyAudioRef.current === audio) {
+          storyAudioRef.current = null;
+        }
+        if (voiceRequestIdRef.current === requestId) {
+          setSpeakingCardId(null);
+        }
+      };
+      audio.onerror = () => {
+        if (audio.src.startsWith("blob:")) {
+          URL.revokeObjectURL(audio.src);
+        }
+        if (storyAudioRef.current === audio) {
+          storyAudioRef.current = null;
+        }
+        if (voiceRequestIdRef.current === requestId) {
+          setSpeakingCardId(null);
+          setStatus("Brian voice playback stopped.");
+        }
+      };
+
+      await audio.play();
+      setStatus(card.title + " story is playing with " + elevenLabsBrianVoiceName + ". Open the YouTube episode to collect the card.");
+    } catch (error) {
+      clearStoryAudio();
+
+      if (voiceRequestIdRef.current === requestId && speakWithBrowserBrianFallback(card, requestId)) {
+        return;
+      }
+
+      if (voiceRequestIdRef.current === requestId) {
+        setSpeakingCardId(null);
+        setStatus(error instanceof Error ? "Brian voice is unavailable. " + error.message : "Brian voice is unavailable.");
+      }
+    }
+  }
   function chooseCardFilter(nextFilter: LegendCardFilter) {
     setCardFilter(nextFilter);
     setCollectionExpanded(false);

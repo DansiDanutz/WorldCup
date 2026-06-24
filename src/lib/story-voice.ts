@@ -1,53 +1,55 @@
 export const storyVoiceLanguage = "en-GB";
+export const elevenLabsBrianVoiceName = "Brian";
+export const elevenLabsDefaultModel = "eleven_multilingual_v2";
 
 type StorySpeechVoiceBase = Pick<SpeechSynthesisVoice, "lang" | "name"> &
   Partial<Pick<SpeechSynthesisVoice, "default" | "voiceURI">>;
 
+type ElevenLabsVoiceBase = {
+  name?: string | null;
+  voice_id?: string | null;
+};
+
+type LegendCardVoiceTextSource = {
+  title: string;
+  episode?: number;
+  episodeLabel?: string;
+  teams: string;
+  story: string;
+};
+
 const brianVoicePattern = /\bbrian\b/i;
-const premiumEnglishVoicePattern = /\b(natural|neural|enhanced|premium)\b/i;
-const preferredEnglishFallbacks = [
-  "google uk english male",
-  "google us english",
-  "microsoft",
-  "daniel",
-  "arthur",
-  "oliver",
-  "alex",
-];
 
 function getVoiceSearchText(voice: StorySpeechVoiceBase) {
-  return `${voice.name} ${voice.voiceURI ?? ""}`.toLowerCase();
+  return (voice.name + " " + (voice.voiceURI ?? "")).toLowerCase();
 }
 
 function isEnglishVoice(voice: StorySpeechVoiceBase) {
   return voice.lang.toLowerCase().startsWith("en");
 }
 
-export function selectEnglishStoryVoice<TVoice extends StorySpeechVoiceBase>(
-  voices: readonly TVoice[],
-) {
-  const englishVoices = voices.filter(isEnglishVoice);
+function isBrianVoiceName(name: string | null | undefined) {
+  return Boolean(name && brianVoicePattern.test(name));
+}
 
-  if (englishVoices.length === 0) {
-    return null;
-  }
+export function selectElevenLabsBrianVoice<TVoice extends ElevenLabsVoiceBase>(voices: readonly TVoice[]) {
+  return voices.find((voice) => isBrianVoiceName(voice.name)) ?? null;
+}
 
-  return (
-    englishVoices.find((voice) => brianVoicePattern.test(getVoiceSearchText(voice))) ??
-    englishVoices.find((voice) => premiumEnglishVoicePattern.test(getVoiceSearchText(voice))) ??
-    preferredEnglishFallbacks
-      .map((fallback) => englishVoices.find((voice) => getVoiceSearchText(voice).includes(fallback)))
-      .find((voice): voice is TVoice => Boolean(voice)) ??
-    englishVoices.find((voice) => voice.default) ??
-    englishVoices[0] ??
-    null
-  );
+export function selectBrowserBrianStoryVoice<TVoice extends StorySpeechVoiceBase>(voices: readonly TVoice[]) {
+  return voices.filter(isEnglishVoice).find((voice) => brianVoicePattern.test(getVoiceSearchText(voice))) ?? null;
+}
+
+export function createLegendCardVoiceText(card: LegendCardVoiceTextSource) {
+  const episodeLabel = card.episodeLabel ?? (typeof card.episode === "number" ? "Episode " + card.episode : "Legend card");
+
+  return [card.title, episodeLabel, card.teams, card.story].join(". ");
 }
 
 export function getStoryVoiceDisplayName(voice: StorySpeechVoiceBase | null) {
   if (!voice) {
-    return "English";
+    return elevenLabsBrianVoiceName;
   }
 
-  return brianVoicePattern.test(getVoiceSearchText(voice)) ? "Brian" : voice.name;
+  return brianVoicePattern.test(getVoiceSearchText(voice)) ? elevenLabsBrianVoiceName : voice.name;
 }
