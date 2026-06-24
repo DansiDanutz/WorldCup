@@ -87,6 +87,19 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
    fans/ultras, stadium, and the animated Mystery Supporter. Gold standard = Ep2 &
    Ep6. Full rule: `EPISODE_PRODUCTION_STANDARD.md`. NO exceptions, no "simplify."
 
+0b. ❌ **NEVER reuse crowd/fans/stadium/celebration clips across episodes.**
+   (Caught after Ep55: `stadium.mp4`, `celebration.mp4`, `action-crowd.mp4` were
+   BYTE-IDENTICAL across Ep53/54/55, and the supporter "fans" footage was only
+   TWO clips alternating — the same avatars shown as Scottish, then Moroccan,
+   then Mexican fans. Looks cheap/unprofessional.) From **Ep56 on**: every
+   episode generates its OWN nation-specific crowd, fans, stadium and
+   celebration footage — correct kit colours, flags, supporter looks for THAT
+   match. **Verify by hash before render**: each shared/crowd/fan/stadium/
+   celebration clip MUST differ (md5) from the previous 2 episodes. The Ep2
+   template seeds the build but its shared clips are PLACEHOLDERS to replace,
+   not assets to copy forward. (Player Ken-Burns clips are already per-nation —
+   the gap was the generic crowd/atmosphere layer.)
+
 1. ❌ Don't upload after the match the episode is about (Ep2 mistake — lost the
    pre-match search wave).
 2. ❌ Don't publish without a same-day promotion plan (Ep2 had none at launch).
