@@ -534,6 +534,15 @@
       "landscape": "/special-cards/legend-059-landscape.png"
     },
     {
+      "number": "060",
+      "name": "The Mosaic Master",
+      "nation": "Tunisia",
+      "episode": 60,
+      "match": "Tunisia vs Netherlands",
+      "portrait": "/special-cards/legend-060-portrait.png",
+      "landscape": "/special-cards/legend-060-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
