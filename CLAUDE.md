@@ -269,6 +269,12 @@ Lukaku film (`marketing/player-films/lukaku-the-promise/`).
 Next.js app (src/, Supabase, Vercel). The series always advertises
 **worldcup26.world** (pick 3 teams, **free to play for fun** — climb the
 leaderboard, no prizes; never promise money or prizes).
+Legend card voice must match the movie canon: **Brian (ElevenLabs)**. The card
+"Listen story" action uses the server-only `/api/legend-cards/voice` route with
+`ELEVENLABS_API_KEY`, `ELEVENLABS_BRIAN_VOICE_ID`, and `ELEVENLABS_MODEL`. Never
+put ElevenLabs keys in client code, never use random browser voices, and only use
+browser speech as a last-resort fallback when the installed English voice is
+explicitly named Brian.
 
 ## Special Cards — the Legends collection (owner-mandated)
 

@@ -44,6 +44,27 @@ describe("agent wallet direct transfers", () => {
     assert.match(globalsCss, /\.next-agent-code-card__actions/);
   });
 
+  it("keeps long wallet operation lists compact until maximized", () => {
+    assert.match(walletScreen, /import \{ CardViewControl \} from "@\/components\/card-view-control";/);
+    assert.match(walletScreen, /compactDepositClaimCount = 3/);
+    assert.match(walletScreen, /compactAgentCodeCount = 6/);
+    assert.match(walletScreen, /compactAgentRequestCount = 4/);
+    assert.match(walletScreen, /depositClaimsExpanded, setDepositClaimsExpanded/);
+    assert.match(walletScreen, /agentCodesExpanded, setAgentCodesExpanded/);
+    assert.match(walletScreen, /agentRequestsExpanded, setAgentRequestsExpanded/);
+    assert.match(walletScreen, /visibleDepositClaims = depositClaimsExpanded[\s\S]*?depositClaims\.slice\(0, compactDepositClaimCount\)/);
+    assert.match(walletScreen, /visibleAgentAvailableCodes = agentCodesExpanded[\s\S]*?agentAvailableCodes\.slice\(0, compactAgentCodeCount\)/);
+    assert.match(walletScreen, /visiblePendingAgentTicketRequests = agentRequestsExpanded[\s\S]*?pendingAgentTicketRequests\.slice\(0, compactAgentRequestCount\)/);
+    assert.match(walletScreen, /controlsId="wallet-deposit-claim-list"/);
+    assert.match(walletScreen, /controlsId="agent-code-inventory"/);
+    assert.match(walletScreen, /controlsId="agent-call-request-list"/);
+    assert.match(walletScreen, /visibleDepositClaims\.map/);
+    assert.match(walletScreen, /visibleAgentAvailableCodes\.map/);
+    assert.match(walletScreen, /visiblePendingAgentTicketRequests\.map/);
+    assert.match(globalsCss, /\.wallet-workspace \.card-view-control\s*{/);
+    assert.match(globalsCss, /\.code-list--expanded,[\s\S]*?\.agent-request-list--expanded\s*{[\s\S]*?max-height:\s*min\(540px,\s*64vh\);/);
+  });
+
   it("shows the next available agent code on the dashboard standing card", () => {
     assert.match(standingRoute, /\.select\("code,kind,assigned_at", \{ count: "exact" \}\)/);
     assert.match(standingRoute, /function formatAgentCodeRecord/);
@@ -67,8 +88,11 @@ describe("agent wallet direct transfers", () => {
     assert.match(myStanding, /Last bought/);
     assert.match(myStanding, /Last bonus/);
     assert.match(myStanding, /agentCodeOpen, setAgentCodeOpen/);
-    assert.match(myStanding, /agent-gift-trigger/);
-    assert.match(myStanding, /aria-expanded=\{agentCodeOpen\}/);
+    assert.match(myStanding, /standing-card-icon-badge standing-card-icon-badge--orange/);
+    assert.match(myStanding, /compactText="Code hidden; stats still visible"/);
+    assert.match(myStanding, /expandedText="Sellable code visible"/);
+    assert.match(myStanding, /label="agent sellable code"/);
+    assert.match(myStanding, /expanded=\{agentCodeOpen\}/);
     assert.match(myStanding, /standing-agent-code--revealed/);
     assert.match(myStanding, /Next code to sell/);
     assert.match(myStanding, /Copy code/);
@@ -76,8 +100,8 @@ describe("agent wallet direct transfers", () => {
     assert.doesNotMatch(myStanding, /refreshAgentStanding/);
     assert.match(myStanding, /window\.setInterval\(refreshStanding, 15_000\)/);
     assert.match(myStanding, /visibilitychange/);
-    assert.match(globalsCss, /\.agent-gift-trigger/);
-    assert.match(globalsCss, /@keyframes wc-agent-gift-breathe/);
+    assert.match(globalsCss, /\.standing-card-icon-badge--orange/);
+    assert.match(globalsCss, /\.standing-card \.card-view-control__button/);
     assert.match(globalsCss, /@keyframes wc-agent-code-reveal/);
     assert.match(globalsCss, /\.standing-agent-code/);
     assert.match(globalsCss, /\.standing-agent-code__actions/);

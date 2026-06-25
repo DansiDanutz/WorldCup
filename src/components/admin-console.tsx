@@ -23,6 +23,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState, useTransition } from "react";
 
 import { SmartMenu } from "@/components/smart-menu";
+import { CardViewControl } from "@/components/card-view-control";
 import { CURRENT_TERMS_VERSION } from "@/lib/consent";
 import { getDepositExplorerAddressUrl, getDepositExplorerTxUrl } from "@/lib/deposits";
 import { formatLedgerAmount } from "@/lib/economy";
@@ -213,6 +214,16 @@ const initialResultForm: ResultForm = {
   awayPenalties: "",
   winnerTeamId: "",
 };
+
+const compactAdminSweepCount = 6;
+const compactAdminSettlementCount = 5;
+const compactAdminAccountCount = 5;
+const compactAdminDepositClaimCount = 4;
+const compactAdminWithdrawalCount = 4;
+const compactAdminAgeVerificationCount = 4;
+const compactAdminAgentCount = 6;
+const compactAdminFinancialMovementCount = 6;
+const compactAdminReferralCount = 6;
 
 type AdminAgentRow = {
   userId: string;
@@ -439,6 +450,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
     useState<LaunchEvidenceSnapshot | null>(null);
   const [launchSignoffDrafts, setLaunchSignoffDrafts] = useState<Record<string, LaunchSignoffDraft>>({});
   const [depositClaims, setDepositClaims] = useState<AdminDepositClaimRow[]>([]);
+  const [depositClaimsExpanded, setDepositClaimsExpanded] = useState(false);
   const [depositClaimReviewDrafts, setDepositClaimReviewDrafts] = useState<
     Record<string, DepositClaimReviewDraft>
   >({});
@@ -446,16 +458,20 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
     Record<string, DepositClaimVerification>
   >({});
   const [withdrawals, setWithdrawals] = useState<AdminWithdrawalRequestRow[]>([]);
+  const [withdrawalsExpanded, setWithdrawalsExpanded] = useState(false);
   const [withdrawalReviewDrafts, setWithdrawalReviewDrafts] = useState<
     Record<string, WithdrawalReviewDraft>
   >({});
   const [ageVerifications, setAgeVerifications] = useState<AdminAgeVerificationRow[]>([]);
+  const [ageVerificationsExpanded, setAgeVerificationsExpanded] = useState(false);
   const [ageVerificationNotes, setAgeVerificationNotes] = useState<Record<string, string>>({});
   const [assignMatchId, setAssignMatchId] = useState("");
   const [assignHomeTeamId, setAssignHomeTeamId] = useState("");
   const [assignAwayTeamId, setAssignAwayTeamId] = useState("");
   const [referralRows, setReferralRows] = useState<AdminReferralReportRow[]>([]);
+  const [referralRowsExpanded, setReferralRowsExpanded] = useState(false);
   const [agents, setAgents] = useState<AdminAgentRow[]>([]);
+  const [agentsExpanded, setAgentsExpanded] = useState(false);
   const [agentPool, setAgentPool] = useState<AgentPool>({
     total: 0,
     available: 0,
@@ -470,7 +486,11 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
   const [assignAgentPaymentMethod, setAssignAgentPaymentMethod] = useState<"cash" | "usdt">("cash");
   const [assignAgentNote, setAssignAgentNote] = useState("");
   const [financialMovements, setFinancialMovements] = useState<TicketFinancialMovement[]>([]);
+  const [financialMovementsExpanded, setFinancialMovementsExpanded] = useState(false);
   const [settlementPayouts, setSettlementPayouts] = useState<SettlementPayoutRow[]>([]);
+  const [settlementPayoutsExpanded, setSettlementPayoutsExpanded] = useState(false);
+  const [accountsExpanded, setAccountsExpanded] = useState(false);
+  const [sweepReportExpanded, setSweepReportExpanded] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -1613,6 +1633,29 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
     }
   }
 
+  const sweepRows = sweepReport?.processed ?? [];
+  const visibleSweepRows = sweepReportExpanded ? sweepRows : sweepRows.slice(0, compactAdminSweepCount);
+  const visibleSettlementPayouts = settlementPayoutsExpanded
+    ? settlementPayouts
+    : settlementPayouts.slice(0, compactAdminSettlementCount);
+  const visibleAccounts = accountsExpanded ? accounts : accounts.slice(0, compactAdminAccountCount);
+  const visibleDepositClaims = depositClaimsExpanded
+    ? depositClaims
+    : depositClaims.slice(0, compactAdminDepositClaimCount);
+  const visibleWithdrawals = withdrawalsExpanded
+    ? withdrawals
+    : withdrawals.slice(0, compactAdminWithdrawalCount);
+  const visibleAgeVerifications = ageVerificationsExpanded
+    ? ageVerifications
+    : ageVerifications.slice(0, compactAdminAgeVerificationCount);
+  const visibleAgents = agentsExpanded ? agents : agents.slice(0, compactAdminAgentCount);
+  const visibleFinancialMovements = financialMovementsExpanded
+    ? financialMovements
+    : financialMovements.slice(0, compactAdminFinancialMovementCount);
+  const visibleReferralRows = referralRowsExpanded
+    ? referralRows
+    : referralRows.slice(0, compactAdminReferralCount);
+
   return (
     <main className="app-shell">
       <header className="topbar">
@@ -2649,8 +2692,23 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     {sweepReport.applied ?? 0}, errors {sweepReport.errors ?? 0}, bracket advanced{" "}
                     {sweepReport.bracketAdvanced ?? 0}
                   </div>
-                  <ul className="admin-sweep-report__list">
-                    {sweepReport.processed.map((row) => (
+                  {sweepRows.length > compactAdminSweepCount ? (
+                    <CardViewControl
+                      compactText={`First ${compactAdminSweepCount} of ${sweepRows.length} sweep rows`}
+                      controlsId="admin-sweep-report-list"
+                      expanded={sweepReportExpanded}
+                      expandedText={`All ${sweepRows.length} sweep rows`}
+                      label="results sweep detail"
+                      onToggle={() => setSweepReportExpanded((current) => !current)}
+                    />
+                  ) : null}
+                  <ul
+                    className={`admin-sweep-report__list admin-data-list ${
+                      sweepReportExpanded ? "admin-data-list--expanded" : "admin-data-list--compact"
+                    }`}
+                    id="admin-sweep-report-list"
+                  >
+                    {visibleSweepRows.map((row) => (
                       <li
                         className={`admin-sweep-row admin-sweep-row--${
                           row.action === "error"
@@ -2699,8 +2757,25 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 </button>
               </div>
               {settlementPayouts.length > 0 ? (
-                <div className="admin-referral-list" aria-label="Settlement payout audit rows">
-                  {settlementPayouts.map((payout, index) => (
+                <>
+                  {settlementPayouts.length > compactAdminSettlementCount ? (
+                    <CardViewControl
+                      compactText={`First ${compactAdminSettlementCount} of ${settlementPayouts.length} payouts`}
+                      controlsId="admin-settlement-payout-list"
+                      expanded={settlementPayoutsExpanded}
+                      expandedText={`All ${settlementPayouts.length} settlement payouts`}
+                      label="settlement payouts"
+                      onToggle={() => setSettlementPayoutsExpanded((current) => !current)}
+                    />
+                  ) : null}
+                  <div
+                    className={`admin-referral-list admin-data-list ${
+                      settlementPayoutsExpanded ? "admin-data-list--expanded" : "admin-data-list--compact"
+                    }`}
+                    id="admin-settlement-payout-list"
+                    aria-label="Settlement payout audit rows"
+                  >
+                  {visibleSettlementPayouts.map((payout, index) => (
                     <div
                       className="admin-referral-row"
                       key={`${payout.payout_type}-${payout.user_id}-${payout.rank ?? "none"}-${index}`}
@@ -2719,6 +2794,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     </div>
                   ))}
                 </div>
+                </>
               ) : null}
               <div className="field">
                 <label htmlFor="assign-match">Override match teams</label>
@@ -2935,8 +3011,24 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 Transfer Funds
               </button>
               {accounts.length > 0 ? (
-                <div className="admin-referral-list">
-                  {accounts.map((account) => (
+                <>
+                  {accounts.length > compactAdminAccountCount ? (
+                    <CardViewControl
+                      compactText={`First ${compactAdminAccountCount} of ${accounts.length} accounts`}
+                      controlsId="admin-account-list"
+                      expanded={accountsExpanded}
+                      expandedText={`All ${accounts.length} accounts`}
+                      label="admin account list"
+                      onToggle={() => setAccountsExpanded((current) => !current)}
+                    />
+                  ) : null}
+                  <div
+                    className={`admin-referral-list admin-data-list ${
+                      accountsExpanded ? "admin-data-list--expanded" : "admin-data-list--compact"
+                    }`}
+                    id="admin-account-list"
+                  >
+                  {visibleAccounts.map((account) => (
                     <div className="admin-referral-row" key={account.userId}>
                       <div>
                         <strong>
@@ -2973,6 +3065,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     </div>
                   ))}
                 </div>
+                </>
               ) : (
                 <div className="field-note">Load accounts to assign tickets or transfer funds.</div>
               )}
@@ -3005,8 +3098,24 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 </span>
               </div>
               {depositClaims.length > 0 ? (
-                <div className="admin-referral-list">
-                  {depositClaims.map((claim) => {
+                <>
+                  {depositClaims.length > compactAdminDepositClaimCount ? (
+                    <CardViewControl
+                      compactText={`First ${compactAdminDepositClaimCount} of ${depositClaims.length} transfer claims`}
+                      controlsId="admin-deposit-claim-list"
+                      expanded={depositClaimsExpanded}
+                      expandedText={`All ${depositClaims.length} transfer claims`}
+                      label="incoming transfer claims"
+                      onToggle={() => setDepositClaimsExpanded((current) => !current)}
+                    />
+                  ) : null}
+                  <div
+                    className={`admin-referral-list admin-data-list ${
+                      depositClaimsExpanded ? "admin-data-list--expanded" : "admin-data-list--compact"
+                    }`}
+                    id="admin-deposit-claim-list"
+                  >
+                  {visibleDepositClaims.map((claim) => {
                     const explorerUrl = getDepositExplorerTxUrl(claim.network, claim.txHash);
                     const senderWalletUrl = claim.senderWalletAddress
                       ? getDepositExplorerAddressUrl(claim.network, claim.senderWalletAddress)
@@ -3180,6 +3289,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     );
                   })}
                 </div>
+                </>
               ) : (
                 <div className="field-note">Load claims after a player submits a transaction hash.</div>
               )}
@@ -3207,8 +3317,24 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                 </span>
               </div>
               {withdrawals.length > 0 ? (
-                <div className="admin-referral-list">
-                  {withdrawals.map((withdrawal) => {
+                <>
+                  {withdrawals.length > compactAdminWithdrawalCount ? (
+                    <CardViewControl
+                      compactText={`First ${compactAdminWithdrawalCount} of ${withdrawals.length} withdrawals`}
+                      controlsId="admin-withdrawal-list"
+                      expanded={withdrawalsExpanded}
+                      expandedText={`All ${withdrawals.length} withdrawals`}
+                      label="withdrawal request list"
+                      onToggle={() => setWithdrawalsExpanded((current) => !current)}
+                    />
+                  ) : null}
+                  <div
+                    className={`admin-referral-list admin-data-list ${
+                      withdrawalsExpanded ? "admin-data-list--expanded" : "admin-data-list--compact"
+                    }`}
+                    id="admin-withdrawal-list"
+                  >
+                  {visibleWithdrawals.map((withdrawal) => {
                     const explorerUrl =
                       withdrawal.externalTxHash
                         ? getWithdrawalExplorerTxUrl(withdrawal.network, withdrawal.externalTxHash)
@@ -3344,6 +3470,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     );
                   })}
                 </div>
+                </>
               ) : (
                 <div className="field-note">Load withdrawals after a player submits a payout request.</div>
               )}
@@ -3369,8 +3496,24 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             </div>
             <div className="admin-form">
               {ageVerifications.length > 0 ? (
-                <div className="admin-referral-list">
-                  {ageVerifications.map((row) => {
+                <>
+                  {ageVerifications.length > compactAdminAgeVerificationCount ? (
+                    <CardViewControl
+                      compactText={`First ${compactAdminAgeVerificationCount} of ${ageVerifications.length} checks`}
+                      controlsId="admin-age-verification-list"
+                      expanded={ageVerificationsExpanded}
+                      expandedText={`All ${ageVerifications.length} age checks`}
+                      label="age verification list"
+                      onToggle={() => setAgeVerificationsExpanded((current) => !current)}
+                    />
+                  ) : null}
+                  <div
+                    className={`admin-referral-list admin-data-list ${
+                      ageVerificationsExpanded ? "admin-data-list--expanded" : "admin-data-list--compact"
+                    }`}
+                    id="admin-age-verification-list"
+                  >
+                  {visibleAgeVerifications.map((row) => {
                     const note = ageVerificationNotes[row.userId] ?? row.note ?? "";
                     const canReview = !isPending && Boolean(note.trim());
 
@@ -3428,6 +3571,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     );
                   })}
                 </div>
+                </>
               ) : (
                 <div className="field-note">
                   Load age verifications after a player marks their documents as sent.
@@ -3660,7 +3804,25 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
               </div>
 
               {agents.length > 0 ? (
-                <div className="coefficient-table" role="table" aria-label="Agents">
+                <>
+                  {agents.length > compactAdminAgentCount ? (
+                    <CardViewControl
+                      compactText={`First ${compactAdminAgentCount} of ${agents.length} agents`}
+                      controlsId="admin-agent-list"
+                      expanded={agentsExpanded}
+                      expandedText={`All ${agents.length} agents`}
+                      label="agent table"
+                      onToggle={() => setAgentsExpanded((current) => !current)}
+                    />
+                  ) : null}
+                  <div
+                    className={`coefficient-table admin-data-list ${
+                      agentsExpanded ? "admin-data-list--expanded" : "admin-data-list--compact"
+                    }`}
+                    id="admin-agent-list"
+                    role="table"
+                    aria-label="Agents"
+                  >
                   <div className="coefficient-table-head" role="row">
                     <span role="columnheader">Agent</span>
                     <span role="columnheader">Paid</span>
@@ -3668,7 +3830,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     <span role="columnheader">To give</span>
                     <span role="columnheader">Redeemed</span>
                   </div>
-                  {agents.map((agent) => (
+                  {visibleAgents.map((agent) => (
                     <div className="coefficient-table-row" key={agent.userId} role="row">
                       <strong role="cell">
                         {agent.email ?? agent.displayName ?? agent.userId}
@@ -3685,6 +3847,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     </div>
                   ))}
                 </div>
+                </>
               ) : (
                 <div className="field-note">No agents loaded. Refresh, or add one by email above.</div>
               )}
@@ -3722,7 +3885,24 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                   transfers do not change prize pool or fee pool because those tickets were already recorded.
                 </div>
                 {financialMovements.length > 0 ? (
-                  financialMovements.map((movement) => {
+                  <>
+                    {financialMovements.length > compactAdminFinancialMovementCount ? (
+                      <CardViewControl
+                        compactText={`First ${compactAdminFinancialMovementCount} of ${financialMovements.length} movements`}
+                        controlsId="admin-financial-movement-list"
+                        expanded={financialMovementsExpanded}
+                        expandedText={`All ${financialMovements.length} financial movements`}
+                        label="financial movement list"
+                        onToggle={() => setFinancialMovementsExpanded((current) => !current)}
+                      />
+                    ) : null}
+                    <div
+                      className={`admin-data-list ${
+                        financialMovementsExpanded ? "admin-data-list--expanded" : "admin-data-list--compact"
+                      }`}
+                      id="admin-financial-movement-list"
+                    >
+                  {visibleFinancialMovements.map((movement) => {
                     const accounting = getMovementAccounting(movement);
                     const isMoneyMovement =
                       movement.movementType === "admin_to_agent" || movement.movementType === "admin_to_user";
@@ -3759,6 +3939,9 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                       </div>
                     );
                   })
+                  }
+                    </div>
+                  </>
                 ) : (
                   <div className="field-note">No ticket financial movements loaded yet.</div>
                 )}
@@ -3778,8 +3961,24 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
             </div>
             <div className="admin-form">
               {referralRows.length > 0 ? (
-                <div className="admin-referral-list">
-                  {referralRows.map((row) => (
+                <>
+                  {referralRows.length > compactAdminReferralCount ? (
+                    <CardViewControl
+                      compactText={`First ${compactAdminReferralCount} of ${referralRows.length} referrals`}
+                      controlsId="admin-referral-report-list"
+                      expanded={referralRowsExpanded}
+                      expandedText={`All ${referralRows.length} referral rows`}
+                      label="referral report list"
+                      onToggle={() => setReferralRowsExpanded((current) => !current)}
+                    />
+                  ) : null}
+                  <div
+                    className={`admin-referral-list admin-data-list ${
+                      referralRowsExpanded ? "admin-data-list--expanded" : "admin-data-list--compact"
+                    }`}
+                    id="admin-referral-report-list"
+                  >
+                  {visibleReferralRows.map((row) => (
                     <div className="admin-referral-row" key={row.id}>
                       <div>
                         <strong>{row.invitedDisplayName}</strong>
@@ -3796,6 +3995,7 @@ export function AdminConsole({ tournament, teams, matches, dueMatches }: AdminCo
                     </div>
                   ))}
                 </div>
+                </>
               ) : (
                 <div className="field-note">Load the report to see accepted referral agreements.</div>
               )}

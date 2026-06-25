@@ -1,0 +1,233 @@
+.section {
+  margin-top: 24px;
+}
+
+.panel {
+  overflow: clip;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.header p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.headerIcon {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  border: 1px solid rgba(16, 107, 79, 0.18);
+  border-radius: 8px;
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.filters {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--paper-soft);
+}
+
+.dateField {
+  display: grid;
+  gap: 6px;
+  min-width: min(320px, 100%);
+}
+
+.dateField span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.dateField input {
+  min-height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 12px;
+  color: var(--text);
+  background: #ffffff;
+  font-weight: 760;
+}
+
+.clearButton {
+  min-height: 42px;
+  border: 1px solid rgba(16, 107, 79, 0.22);
+  border-radius: 8px;
+  padding: 0 14px;
+  color: #063f2e;
+  background: #ffffff;
+  font-weight: 850;
+}
+
+.dateStrip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 18px 14px;
+  border-bottom: 1px solid var(--border);
+  overscroll-behavior-x: contain;
+}
+
+.dateChip,
+.activeDateChip {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0 11px;
+  color: var(--text);
+  background: #ffffff;
+  font-weight: 800;
+}
+
+.activeDateChip {
+  border-color: rgba(16, 107, 79, 0.42);
+  color: #ffffff;
+  background: var(--green);
+}
+
+.dateChip strong,
+.activeDateChip strong {
+  display: inline-grid;
+  min-width: 24px;
+  min-height: 24px;
+  place-items: center;
+  border-radius: 999px;
+  color: #063f2e;
+  background: var(--green-soft);
+  font-size: 12px;
+}
+
+.activeDateChip strong {
+  color: #063f2e;
+  background: #ffe29a;
+}
+
+.matchList {
+  display: grid;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.matchListCompact {
+  max-height: none;
+  overflow: visible;
+}
+
+.matchListExpanded {
+  max-height: none;
+  overflow: visible;
+}
+
+.matchRow {
+  display: grid;
+  gap: 8px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.matchRow:last-child {
+  border-bottom: 0;
+}
+
+.matchMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.matchMain strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.matchSub {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.scorePill {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0 11px;
+  color: var(--muted);
+  background: var(--surface-strong);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.scorePillCompleted {
+  border-color: rgba(16, 107, 79, 0.28);
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+@media (max-width: 680px) {
+  .header,
+  .filters,
+  .matchMain {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .clearButton {
+    width: 100%;
+  }
+
+  .scorePill {
+    width: max-content;
+  }
+}

@@ -35,8 +35,11 @@ describe("security headers", () => {
       "base-uri 'self'",
       "frame-ancestors 'none'",
       "form-action 'self'",
+      "script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com",
       "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.worldcup26.world wss://api.worldcup26.world",
       "img-src 'self' data: blob: https://flagcdn.com",
+      "media-src 'self' blob:",
+      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
       "upgrade-insecure-requests",
     ]) {
       assert.ok(csp.includes(directive), `CSP is missing directive: ${directive}`);

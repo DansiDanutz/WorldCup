@@ -4,7 +4,7 @@ import {
   BookOpen,
   CalendarClock,
   Check,
-  CircleDollarSign,
+  ChevronUp,
   ArrowRight,
   ClipboardCopy,
   GitBranch,
@@ -27,6 +27,7 @@ import {
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 
+import { CardViewControl } from "@/components/card-view-control";
 import { HeroSwiper } from "@/components/hero-swiper";
 import { isFunMode } from "@/lib/fun-mode";
 import { KickoffCountdown } from "@/components/kickoff-countdown";
@@ -40,6 +41,7 @@ import {
   formatPrizeAmount,
 } from "@/lib/prize-pool";
 import { getCampaignReferralCode, normalizeCampaignReferralCode } from "@/lib/campaign-attribution";
+import { consumePostLoginRedirect } from "@/lib/post-login-redirect";
 import {
   formatCoefficient,
   formatKickoff,
@@ -108,6 +110,8 @@ const ownerAdminEmail = "semebitcoin@gmail.com";
 const referralAgreementText =
   "If I join through this referral and win a prize, I agree that 5% of my winnings are owed to the inviter.";
 const compactTeamCount = 8;
+const compactLeaderboardCount = 5;
+const compactMatchCount = 24;
 const SIGNUP_ATTRIBUTION_KEY = "worldcup_signup_attribution";
 
 const teamFlagColors: Record<string, readonly [string, string, string?]> = {
@@ -190,6 +194,9 @@ export function Dashboard({
   const [agentRequestError, setAgentRequestError] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryError, setEntryError] = useState<string | null>(null);
+  const [leaderboardExpanded, setLeaderboardExpanded] = useState(false);
+  const [rulesExpanded, setRulesExpanded] = useState(false);
+  const [matchScheduleExpanded, setMatchScheduleExpanded] = useState(false);
   const [isPending, startTransition] = useTransition();
   const teamListRef = useRef<HTMLDivElement | null>(null);
   const teamListTouchStart = useRef<{ scrollTop: number; y: number } | null>(null);
@@ -209,7 +216,7 @@ export function Dashboard({
   const visibleTeams = teamListExpanded
     ? filteredTeams
     : filteredTeams.slice(0, compactTeamCount);
-  const hiddenTeamCount = Math.max(0, filteredTeams.length - visibleTeams.length);
+  const showTeamDisclosure = !query.trim() && filteredTeams.length > compactTeamCount;
 
   const selectedTeamRecords = selectedTeams
     .map((teamId) => teamsById.get(teamId))
@@ -236,7 +243,10 @@ export function Dashboard({
         : "Your 3 teams are ready. Lock them free forever, or save a draft first to watch the private points preview."
       : `Choose ${remainingPickCount} more ${remainingPickCount === 1 ? "team" : "teams"}.`;
 
-  const visibleMatches = matches.slice(0, 24);
+  const visiblePublicLeaderboard = leaderboardExpanded
+    ? publicLeaderboard
+    : publicLeaderboard.slice(0, compactLeaderboardCount);
+  const visibleMatches = matchScheduleExpanded ? matches : matches.slice(0, compactMatchCount);
   const completedCount = matches.filter((match) => match.status === "completed").length;
   const netPrizePool = calculateNetPrizePool(
     tournament.prize_pool_amount,
@@ -413,6 +423,10 @@ export function Dashboard({
         const nextSession = data.session;
         setSession(nextSession);
 
+        if (nextSession && redirectToPostLoginPath()) {
+          return;
+        }
+
         if (!nextSession) {
           const campaignLoginHref = getCampaignLoginRedirectHref();
           if (campaignLoginHref) {
@@ -424,6 +438,9 @@ export function Dashboard({
 
     const { data } = supabase.auth.onAuthStateChange((_event, nextSession) => {
       setSession(nextSession);
+      if (nextSession) {
+        redirectToPostLoginPath();
+      }
     });
 
     return () => data.subscription.unsubscribe();
@@ -764,10 +781,6 @@ export function Dashboard({
       return;
     }
 
-    if (teamEligibility.get(teamId)?.available === false) {
-      return;
-    }
-
     setEntryError(null);
     setEntryMessage(null);
     setSelectedTeams((current) => {
@@ -1049,6 +1062,13 @@ export function Dashboard({
     window.setTimeout(() => setInviteMessage(null), 1800);
   }
 
+  function compactAllDataCards() {
+    setShowAllTeams(false);
+    setLeaderboardExpanded(false);
+    setRulesExpanded(false);
+    setMatchScheduleExpanded(false);
+  }
+
   return (
     <main className={`app-shell app-shell--landing ${showPickWorkflow ? "" : "app-shell--post-entry"}`}>
       <header className="topbar">
@@ -1087,7 +1107,7 @@ export function Dashboard({
           </div>
           <small>{participantCount >= 100 ? "Free to play" : `${teams.length} nations`}</small>
         </div>
-        <SmartMenu>
+        <SmartMenu label="Menu" summary="Browse app">
           <nav className="nav nav--app" aria-label="Primary navigation">
             <a className="nav-item nav-item--primary" href={showPickWorkflow ? "#pick" : "#me"}>
               {showPickWorkflow ? <Users size={16} /> : <UserRound size={16} />}
@@ -1103,11 +1123,11 @@ export function Dashboard({
                 <small>Ranking</small>
               </span>
             </a>
-            <Link className="nav-item" href={{ pathname: "/predictions" }}>
+            <Link className="nav-item" href={{ pathname: "/predictions", hash: "collector-quest" }}>
               <Sparkles size={16} />
               <span className="nav-item__copy">
-                <strong>Predictions</strong>
-                <small>Match videos</small>
+                <strong>Cards</strong>
+                <small>Daily quest</small>
               </span>
             </Link>
             {!funMode ? (
@@ -1146,6 +1166,10 @@ export function Dashboard({
                 </span>
               </summary>
               <div className="nav-more__menu">
+                <a href="#browse">
+                  <GitBranch size={16} />
+                  Browse
+                </a>
                 <a href="#rules">
                   <BookOpen size={16} />
                   Rules
@@ -1156,7 +1180,7 @@ export function Dashboard({
                 </Link>
                 <Link href={{ pathname: "/predictions" }}>
                   <Sparkles size={16} />
-                  Predictions
+                  News & cards
                 </Link>
                 <a href="#invite">
                   <Users size={16} />
@@ -1218,22 +1242,20 @@ export function Dashboard({
 
         <MyStanding />
 
-        <a
+        <Link
           className="series-banner"
-          href="https://www.youtube.com/channel/UC7j29XhArv5tlRqQj2qAb4Q?sub_confirmation=1"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Watch the WorldCup26 Legends story series on YouTube"
+          href="/predictions#collector-quest"
+          aria-label="Open the WorldCup26 Legends card collection"
         >
           <span className="series-banner__icon" aria-hidden="true">
             <PlayCircle size={22} />
           </span>
           <span className="series-banner__copy">
             <strong>WorldCup26 Legends — the story series</strong>
-            <small>A Pixar-style episode before every match. New: Brazil vs Haiti.</small>
+            <small>Read, listen, open YouTube, and finish today&apos;s card quest.</small>
           </span>
-          <span className="series-banner__cta">Watch on YouTube</span>
-        </a>
+          <span className="series-banner__cta">Start quest</span>
+        </Link>
 
         {!funMode && launchEvidenceMode ? (
           <section className="launch-notice" aria-label="Launch evidence mode">
@@ -1273,6 +1295,91 @@ export function Dashboard({
           <div className="stat">
             <div className="stat-label">Entry</div>
             <div className="stat-value">Free</div>
+          </div>
+        </section>
+
+        <section className="browse-hub" id="browse" aria-labelledby="browse-title">
+          <div className="browse-hub__head">
+            <div>
+              <h2 id="browse-title">Browse</h2>
+              <p>Jump to the right card. Open full data only when you need it.</p>
+            </div>
+            <button className="browse-hub__compact" onClick={compactAllDataCards} type="button">
+              <ChevronUp size={16} />
+              Compact all cards
+            </button>
+          </div>
+          <div className="browse-hub__grid" aria-label="Dashboard sections">
+            <a className="browse-tile browse-tile--primary" href={showPickWorkflow ? "#pick" : "#me"}>
+              <span className="browse-tile__icon" aria-hidden="true">
+                {showPickWorkflow ? <Users size={18} /> : <UserRound size={18} />}
+              </span>
+              <span className="browse-tile__copy">
+                <strong>{showPickWorkflow ? "Play" : "Account"}</strong>
+                <small>{showPickWorkflow ? pickInstruction : "Your locked teams and rank"}</small>
+              </span>
+              <span className="browse-tile__metric">
+                {showPickWorkflow ? `${selectedTeams.length}/3` : accountInPoolUi ? "Pool" : "Free"}
+              </span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="browse-tile" href={signedInWithGoogle ? "#me" : "/login"}>
+              <span className="browse-tile__icon" aria-hidden="true">
+                <UserRound size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>My account</strong>
+                <small>{signedInWithGoogle ? "Standing, referrals, agent code" : "Login or start free"}</small>
+              </span>
+              <span className="browse-tile__metric">{signedInWithGoogle ? "Open" : "Login"}</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="browse-tile" href="#leaderboard">
+              <span className="browse-tile__icon" aria-hidden="true">
+                <Trophy size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Leaderboard</strong>
+                <small>Top players first, full board on demand</small>
+              </span>
+              <span className="browse-tile__metric">{publicLeaderboard.length}</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="browse-tile" href="#invite">
+              <span className="browse-tile__icon" aria-hidden="true">
+                <LinkIcon size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Invite</strong>
+                <small>Share your code and track friends</small>
+              </span>
+              <span className="browse-tile__metric">{myReferrals.length}</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="browse-tile" href="#matches">
+              <span className="browse-tile__icon" aria-hidden="true">
+                <CalendarClock size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Matches</strong>
+                <small>Compact schedule, all fixtures on demand</small>
+              </span>
+              <span className="browse-tile__metric">
+                {completedCount}/{matches.length}
+              </span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+            <a className="browse-tile" href="#rules">
+              <span className="browse-tile__icon" aria-hidden="true">
+                <BookOpen size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Rules</strong>
+                <small>Points, coefficients, lock times</small>
+              </span>
+              <span className="browse-tile__metric">Guide</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
           </div>
         </section>
 
@@ -1397,8 +1504,8 @@ export function Dashboard({
               <div>
                 <h1 className="panel-title">Choose 3 Teams</h1>
                 <p className="panel-subtitle">
-                  The event has not started yet, so all 48 teams are still available. A team locks
-                  1 minute before its first World Cup 2026 match.
+                  Pick any 3 teams, even after kickoff. Your score starts from your signup time,
+                  so earlier matches do not count.
                 </p>
               </div>
               <span className="status-pill">{selectedTeams.length}/3 selected</span>
@@ -1489,13 +1596,13 @@ export function Dashboard({
               <div className="field team-search-field">
                 <div className="team-search-head">
                   <label htmlFor="team-search">Search teams</label>
-                  <button
-                    className={`all-teams-toggle ${showAllTeams ? "active" : ""}`}
-                    onClick={() => setShowAllTeams((current) => !current)}
-                    type="button"
-                  >
-                    {showAllTeams ? "Compact" : `All Teams (${filteredTeams.length})`}
-                  </button>
+                  <span className="team-search-count">
+                    {query.trim()
+                      ? `${filteredTeams.length} result${filteredTeams.length === 1 ? "" : "s"}`
+                      : showAllTeams
+                        ? `${filteredTeams.length} teams shown`
+                        : `${visibleTeams.length} shown`}
+                  </span>
                 </div>
                 <div style={{ position: "relative" }}>
                   <Search
@@ -1514,8 +1621,19 @@ export function Dashboard({
                 </div>
               </div>
             </div>
+            {showTeamDisclosure ? (
+              <CardViewControl
+                compactText={`${Math.min(compactTeamCount, filteredTeams.length)} of ${filteredTeams.length} teams visible`}
+                controlsId="team-list"
+                expanded={showAllTeams}
+                expandedText={`All ${filteredTeams.length} teams visible`}
+                label="team list"
+                onToggle={() => setShowAllTeams((current) => !current)}
+              />
+            ) : null}
             <div
               className={`team-list ${teamListExpanded ? "team-list--expanded" : "team-list--compact"}`}
+              id="team-list"
               onTouchCancel={handleTeamListTouchEnd}
               onTouchEnd={handleTeamListTouchEnd}
               onTouchMove={handleTeamListTouchMove}
@@ -1526,7 +1644,6 @@ export function Dashboard({
                 const selected = selectedTeams.includes(team.id);
                 const selectedIndex = selectedTeams.indexOf(team.id);
                 const eligibility = teamEligibility.get(team.id);
-                const unavailable = eligibility?.available === false;
                 const firstMatchStart = formatPickDeadline(eligibility?.firstKickoff ?? null);
                 const atPickLimit = selectedTeams.length >= 3 && !selected;
                 const nextPickNumber = selected ? selectedIndex + 1 : selectedTeams.length + 1;
@@ -1534,10 +1651,10 @@ export function Dashboard({
                 return (
                   <div
                     className={`team-row ${selected ? "selected" : ""} ${getPickColorClass(selectedIndex)} ${
-                      unavailable ? "unavailable" : ""
-                    } ${atPickLimit ? "at-limit" : ""}`}
+                      atPickLimit ? "at-limit" : ""
+                    }`}
                     style={getTeamColorStyle(team.id)}
-                    aria-disabled={unavailable}
+                    aria-disabled={atPickLimit && !selected}
                     aria-pressed={selected}
                     key={team.id}
                     onClick={() => handleTeamRowClick(team.id)}
@@ -1547,12 +1664,10 @@ export function Dashboard({
                     onPointerMove={handleTeamRowPointerMove}
                     onPointerUp={handleTeamRowPointerUp}
                     role="button"
-                    tabIndex={unavailable ? -1 : 0}
+                    tabIndex={0}
                     title={
-                      unavailable
-                        ? "This team can no longer be selected because its first match starts in less than one minute or already started."
-                        : atPickLimit
-                          ? "You already selected 3 teams. Remove one pick before adding another."
+                      atPickLimit
+                        ? "You already selected 3 teams. Remove one pick before adding another."
                         : undefined
                     }
                   >
@@ -1566,13 +1681,10 @@ export function Dashboard({
                       </span>
                       <span className="team-meta">
                         Group {team.group_code ?? "-"} · {team.confederation}
-                        {unavailable ? " · Locked" : ""}
                       </span>
                       <span className="team-deadline">
                         {firstMatchStart
-                          ? unavailable
-                            ? `First match started ${firstMatchStart}`
-                            : `Pick before first match: ${firstMatchStart}`
+                          ? `First match: ${firstMatchStart}. Past matches do not score for late signups.`
                           : "First match schedule pending"}
                       </span>
                     </span>
@@ -1587,16 +1699,6 @@ export function Dashboard({
                   </div>
                 );
               })}
-              {hiddenTeamCount > 0 ? (
-                <button
-                  className="team-list-expand-card"
-                  onClick={() => setShowAllTeams(true)}
-                  type="button"
-                >
-                  Show all {filteredTeams.length} teams
-                  <ArrowRight size={16} />
-                </button>
-              ) : null}
               {filteredTeams.length === 0 ? (
                 <div className="empty-list-state">
                   <strong>No teams found</strong>
@@ -2061,7 +2163,9 @@ export function Dashboard({
                     )}
                 </p>
               </div>
-              {funMode ? <Trophy size={18} color="var(--gold)" /> : <CircleDollarSign size={18} color="var(--gold)" />}
+              <div className="panel-header-actions">
+                <Trophy className="panel-card-icon" size={18} aria-hidden="true" />
+              </div>
             </div>
             {!funMode && payoutPlan.length > 0 ? (
               <div className="payout-strip" aria-label="Prize payout preview">
@@ -2117,7 +2221,22 @@ export function Dashboard({
                 </a>
               </div>
             ) : null}
-            <div className="leaderboard-list">
+            {publicLeaderboard.length > compactLeaderboardCount ? (
+              <CardViewControl
+                compactText={`Top ${Math.min(compactLeaderboardCount, publicLeaderboard.length)} of ${publicLeaderboard.length} entries`}
+                controlsId="leaderboard-list"
+                expanded={leaderboardExpanded}
+                expandedText={`All ${publicLeaderboard.length} entries`}
+                label="leaderboard"
+                onToggle={() => setLeaderboardExpanded((current) => !current)}
+              />
+            ) : null}
+            <div
+              className={`leaderboard-list ${
+                leaderboardExpanded ? "leaderboard-list--expanded" : "leaderboard-list--compact"
+              }`}
+              id="leaderboard-list"
+            >
               {publicLeaderboard.length === 0 ? (
                 <div className="leaderboard-empty">
                   <div className="empty-icon">
@@ -2137,7 +2256,7 @@ export function Dashboard({
                   </a>
                 </div>
               ) : (
-                publicLeaderboard.map((row) => (
+                visiblePublicLeaderboard.map((row) => (
                   <div className="leaderboard-row" key={row.entry_id}>
                     <div className="leaderboard-main">
                       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -2188,24 +2307,37 @@ export function Dashboard({
             </div>
           </div>
 
-          <div className="panel rules-panel" id="rules">
+          <div className={`panel rules-panel${rulesExpanded ? " is-expanded" : " is-minimized"}`} id="rules">
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Rules</h2>
                 <p className="panel-subtitle">How picks, coefficients, and points work.</p>
               </div>
-              <BookOpen size={18} color="var(--green)" />
+              <div className="panel-header-actions">
+                <BookOpen className="panel-card-icon" size={18} aria-hidden="true" />
+              </div>
             </div>
-            <div className="rules-content">
+            <CardViewControl
+              compactText="Quick rules view"
+              controlsId="rules-content"
+              expanded={rulesExpanded}
+              expandedText="Full rules guide"
+              label="rules card"
+              onToggle={() => setRulesExpanded((current) => !current)}
+            />
+            <div
+              className={`rules-content ${rulesExpanded ? "rules-content--expanded" : "rules-content--minimized"}`}
+              id="rules-content"
+            >
               <div className="rule-block">
                 <h3>How to join</h3>
                 <p>
-                  Choose exactly 3 teams. You may join even after the tournament starts, but only
-                  with teams that have not reached the one-minute-before-first-match lock time.
+                  Choose exactly 3 teams. You may join even after the tournament starts, and any
+                  nation can still be selected.
                 </p>
                 <p>
-                  Matchday 1 runs 11-17 June 2026. Matchday 2 runs 18-23 June 2026.
-                  Each team row shows the exact last selectable time before its first match.
+                  Your entry scores only matches that kick off after your signup time. Completed
+                  matches before you joined stay at 0 points for your entry.
                 </p>
               </div>
 
@@ -2281,11 +2413,28 @@ export function Dashboard({
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Match Schedule</h2>
-                <p className="panel-subtitle">First 24 matches shown for fast operations.</p>
+                <p className="panel-subtitle">
+                  {visibleMatches.length} of {matches.length} matches shown. Scores and points update automatically after full-time.
+                </p>
               </div>
-              <RefreshCw size={18} color="var(--green)" />
+              <div className="panel-header-actions">
+                <RefreshCw className="panel-card-icon" size={18} aria-hidden="true" />
+              </div>
             </div>
-            <div className="match-list">
+            {matches.length > compactMatchCount ? (
+              <CardViewControl
+                compactText={`First ${Math.min(compactMatchCount, matches.length)} of ${matches.length} matches`}
+                controlsId="match-list"
+                expanded={matchScheduleExpanded}
+                expandedText={`All ${matches.length} matches`}
+                label="match schedule"
+                onToggle={() => setMatchScheduleExpanded((current) => !current)}
+              />
+            ) : null}
+            <div
+              className={`match-list ${matchScheduleExpanded ? "match-list--expanded" : "match-list--compact"}`}
+              id="match-list"
+            >
               {visibleMatches.map((match) => {
                 const stage = stagesById.get(match.stage_id);
 
@@ -2516,6 +2665,22 @@ function getCampaignLoginRedirectHref() {
 
   params.set("ref", referralCode);
   return `/login?${params.toString()}`;
+}
+
+function redirectToPostLoginPath() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const nextPath = consumePostLoginRedirect(window.localStorage);
+  const currentPath = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+
+  if (!nextPath || nextPath === currentPath) {
+    return false;
+  }
+
+  window.location.replace(nextPath);
+  return true;
 }
 
 function formatDateTime(value: string) {

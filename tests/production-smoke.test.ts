@@ -185,6 +185,8 @@ describe("production smoke coverage", () => {
     assert.match(productionSmoke, /loadSmokeEnv/);
     assert.match(productionSmoke, /SMOKE_ENV_FILE/);
     assert.match(productionSmoke, /checkPublicUiShell/);
+    assert.match(productionSmoke, /checkPaidApiRejection/);
+    assert.match(productionSmoke, /free-play mode/);
     assert.match(productionSmoke, /extractStylesheetHrefs/);
     assert.match(productionSmoke, /fetchStylesheetsFromHtml/);
     assert.match(productionSmoke, /name="viewport" content="width=device-width, initial-scale=1"/);
@@ -194,7 +196,8 @@ describe("production smoke coverage", () => {
     assert.match(productionSmoke, /launch approvals are complete/);
     assert.match(productionSmoke, /leaked internal launch approval copy to public users/);
     assert.match(productionSmoke, /Choose 3 Teams/);
-    assert.match(productionSmoke, /Agent Deal/);
+    assert.match(productionSmoke, /Login/);
+    assert.match(productionSmoke, /agent\+tickets/);
     assert.match(productionSmoke, /public launch copy did not include the campaign CTA/);
     assert.match(productionSmoke, /public launch copy did not include the agent offer/);
     assert.match(productionSmoke, /leaked internal Operator policy setup copy to public users/);

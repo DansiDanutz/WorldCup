@@ -17,6 +17,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { getCampaignReferralCode, normalizeCampaignReferralCode } from "@/lib/campaign-attribution";
 import { isFunMode } from "@/lib/fun-mode";
+import { normalizePostLoginRedirect, POST_LOGIN_REDIRECT_KEY } from "@/lib/post-login-redirect";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
 import { SUPPORT_WHATSAPP_URL } from "@/lib/support";
 import type { PaidActionGate, PaidActionGates } from "@/lib/types";
@@ -79,11 +80,13 @@ const flagTeams = [
 
 type LoginRegisterProps = {
   initialReferralCode?: string | null;
+  returnTo?: string | null;
   publicPaidActionGates?: PaidActionGates;
 };
 
-export function LoginRegister({ initialReferralCode, publicPaidActionGates }: LoginRegisterProps) {
+export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionGates }: LoginRegisterProps) {
   const normalizedInitialReferralCode = normalizeReferralCode(initialReferralCode ?? "");
+  const postLoginRedirect = useMemo(() => normalizePostLoginRedirect(returnTo), [returnTo]);
   const [session, setSession] = useState<Session | null>(null);
   const [referralCode, setReferralCode] = useState(normalizedInitialReferralCode);
   const [referralInviter, setReferralInviter] = useState<string | null>(null);
@@ -206,6 +209,12 @@ export function LoginRegister({ initialReferralCode, publicPaidActionGates }: Lo
       window.localStorage.removeItem(SIGNUP_ATTRIBUTION_KEY);
     }
 
+    if (postLoginRedirect) {
+      window.localStorage.setItem(POST_LOGIN_REDIRECT_KEY, postLoginRedirect);
+    } else {
+      window.localStorage.removeItem(POST_LOGIN_REDIRECT_KEY);
+    }
+
     const { error: authError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
@@ -249,12 +258,13 @@ export function LoginRegister({ initialReferralCode, publicPaidActionGates }: Lo
           {paidActionsPaused ? (
             <div className="launch-notice" aria-label="Launch status">
               <div>
-                <strong>Account setup is open until June 18, 2026</strong>
+                <strong>Free account setup is open</strong>
                 <span>
                   Create the free account first. Tickets and payment can be handled later.
                 </span>
                 <span>
-                  All 48 teams are still available to choose because the event has not started yet.
+                  Pick any 3 teams. Your points start from your signup time, so earlier matches do
+                  not count.
                 </span>
               </div>
             </div>
@@ -535,10 +545,11 @@ export function LoginRegister({ initialReferralCode, publicPaidActionGates }: Lo
                 </summary>
                 <div className="flag-wall" aria-label="All 48 qualified nations">
                   <div className="flag-wall-head">
-                    <span className="ds-label">All 48 teams can still be chosen</span>
+                    <span className="ds-label">Any 3 teams can still be chosen</span>
                   </div>
                   <p className="flag-wall-note">
-                    The event has not started yet, so every team is still available for new entries.
+                    Past matches do not score for late signups; your points start from your account
+                    entry time.
                   </p>
                   <div className="flag-grid">
                     {flagTeams.map(([id, name, code]) => (

@@ -39,6 +39,82 @@
   }
 }
 
+@media (max-width: 640px) {
+  :root {
+    --card-radius: 8px;
+  }
+
+  .wc-card {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .fixture-card-head,
+  .player-card-top,
+  .stat-card-main,
+  .prize-pool-card-main,
+  .payout-card-main {
+    gap: 10px;
+  }
+
+  .fixture-team {
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    gap: 9px;
+  }
+
+  .fixture-team-flag {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .fixture-team-name,
+  .player-name {
+    font-size: 14px;
+  }
+
+  .fixture-team-score,
+  .player-points strong {
+    font-size: 20px;
+  }
+
+  .player-card-top {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+
+  .player-points {
+    grid-column: 1 / -1;
+    justify-items: start;
+    text-align: left;
+  }
+
+  .player-rank {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .player-team {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 6px 10px;
+    padding: 9px 10px;
+    border-radius: 8px;
+  }
+
+  .player-team-label {
+    grid-column: 1 / -1;
+  }
+
+  .fixture-foot {
+    gap: 7px 10px;
+  }
+
+  .fixture-foot-item.match-no {
+    margin-left: 0;
+  }
+}
+
 .wc-card-eyebrow {
   display: inline-flex;
   align-items: center;

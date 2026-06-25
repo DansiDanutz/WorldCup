@@ -1,8 +1,18 @@
 "use client";
 
-import { ArrowRight, ClipboardCopy, Crown, Gift, LogOut, Trophy, Users, X } from "lucide-react";
+import {
+  ArrowRight,
+  ClipboardCopy,
+  Crown,
+  Gift,
+  LogOut,
+  Trophy,
+  Users,
+  X,
+} from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
+import { CardViewControl } from "@/components/card-view-control";
 import { formatMoneyAmount } from "@/lib/economy";
 import { isFunMode } from "@/lib/fun-mode";
 import { formatPoints } from "@/lib/scoring";
@@ -27,12 +37,18 @@ type Standing = {
         inPaidPlaces: boolean;
         share: number | null;
       };
-  tournament: { participants: number; paidPlaces: number; netPrizePool: number };
+  tournament: {
+    participants: number;
+    leaderboardParticipants: number;
+    paidPlaces: number;
+    netPrizePool: number;
+  };
   referrals: Array<{
     displayName: string;
     totalPoints: number;
     rank: number | null;
     locked: boolean;
+    committed: boolean;
     inPaidPlaces: boolean;
     share: number | null;
     feePercent: number;
@@ -209,6 +225,7 @@ export function MyStanding() {
   const modalMe = me && me.hasEntry ? me : null;
   const leaderboardTop = data?.leaderboardTop ?? [];
   const funMode = isFunMode();
+  const meShowsPublicRank = Boolean(me && me.hasEntry && (me.locked || me.committed));
 
   return (
     <section
@@ -226,17 +243,9 @@ export function MyStanding() {
               </p>
             </div>
             <div className="panel-header-actions standing-card-actions">
-              <button
-                aria-controls="standing-leaderboard-modal"
-                aria-expanded={standingModalOpen}
-                aria-label="Open standing leaderboard popup"
-                className={`standing-trophy-trigger${standingModalOpen ? " is-open" : ""}`}
-                disabled={!data}
-                onClick={() => setStandingModalOpen(true)}
-                type="button"
-              >
+              <span className="standing-card-icon-badge standing-card-icon-badge--gold" aria-hidden="true">
                 <Trophy size={20} aria-hidden="true" />
-              </button>
+              </span>
               <button className="button secondary standing-signout" onClick={signOut} type="button">
                 <LogOut size={16} />
                 Sign out
@@ -250,12 +259,12 @@ export function MyStanding() {
               <>
                 <div className="standing-rank">
                   <div className="standing-rank__big">
-                    <span>{me.locked ? "Rank" : "Preview rank"}</span>
+                    <span>{meShowsPublicRank ? "Rank" : "Preview rank"}</span>
                     <strong>{me.rank ? `#${me.rank}` : "TBA"}</strong>
                     <small>
-                      {me.locked
+                      {meShowsPublicRank
                         ? me.rank
-                          ? `of ${data.tournament.participants}`
+                          ? `of ${data.tournament.leaderboardParticipants}`
                           : "ranking pending"
                         : me.rank
                           ? me.committed
@@ -267,7 +276,7 @@ export function MyStanding() {
                   <div className="standing-rank__big">
                     <span>Points</span>
                     <strong>{formatPoints(me.totalPoints)}</strong>
-                    <small>{me.locked ? "total" : "private preview"}</small>
+                    <small>{meShowsPublicRank ? "total" : "private preview"}</small>
                   </div>
                 </div>
 
@@ -306,7 +315,7 @@ export function MyStanding() {
                 ) : (
                   <p className="field-note">
                     {me.committed
-                      ? "Your 3 teams are locked. You're playing for fun — buy a ticket to enter the prize pool. This preview shows where you'd place if you were paying."
+                      ? "Your 3 teams are locked in the free leaderboard. Buy a ticket to enter the prize pool; prize math still uses the paid board."
                       : !me.locked
                       ? "Free preview only. Your points are live here; lock your teams, then add a ticket to enter the paid prize pool."
                       : me.rank
@@ -329,6 +338,17 @@ export function MyStanding() {
               </div>
             )}
           </div>
+          {data ? (
+            <CardViewControl
+              compactText="Rank and points summary"
+              controlsId="standing-leaderboard-modal"
+              expanded={standingModalOpen}
+              expandedText="Leaderboard details open"
+              hasPopup="dialog"
+              label="standing details"
+              onToggle={() => setStandingModalOpen((current) => !current)}
+            />
+          ) : null}
         </div>
 
         <div className="panel standing-card standing-card--referrals">
@@ -341,24 +361,19 @@ export function MyStanding() {
                     ? `${data.referrals.length} invited · climbing the free leaderboard`
                     : "Invite friends to the free leaderboard"
                   : data && data.referrals.length > 0
-                  ? `${data.referrals.length} invited · your cut so far ${formatMoneyAmount(data.referralCutTotal)}`
-                  : "Earn a cut of everyone you invite"}
+                    ? `${data.referrals.length} invited · your cut so far ${formatMoneyAmount(data.referralCutTotal)}`
+                    : "Earn a cut of everyone you invite"}
               </p>
             </div>
-            <button
-              aria-controls="standing-referrals-list"
-              aria-expanded={referralsListOpen}
-              aria-label={hasReferrals ? "Show referral leaderboard list" : "No referrals yet"}
-              className={`referrals-trigger${hasReferrals ? " has-referrals" : ""}${
-                referralsListOpen ? " is-open" : ""
+            <span
+              className={`standing-card-icon-badge standing-card-icon-badge--green${
+                hasReferrals ? " has-count" : ""
               }`}
-              disabled={!hasReferrals}
-              onClick={() => setReferralsOpen((current) => !current)}
-              type="button"
+              aria-hidden="true"
             >
               <Users size={20} aria-hidden="true" />
-              {hasReferrals ? <span className="referrals-trigger__count">{referralCount}</span> : null}
-            </button>
+              {hasReferrals ? <span className="standing-card-icon-badge__count">{referralCount}</span> : null}
+            </span>
           </div>
           <div className="panel-body">
             {!data ? (
@@ -392,7 +407,13 @@ export function MyStanding() {
                     <div className="referral-position-row" key={`${referral.displayName}-${index}`}>
                       <div className="referral-player">
                         <strong>{referral.displayName}</strong>
-                        <small>{referral.locked ? "Locked entry" : "Waiting for locked entry"}</small>
+                        <small>
+                          {referral.locked
+                            ? "Prize pool"
+                            : referral.committed
+                              ? "Free leaderboard"
+                              : "Waiting for locked entry"}
+                        </small>
                       </div>
                       <div className="referral-stat-cell">
                         <span>Rank</span>
@@ -436,6 +457,16 @@ export function MyStanding() {
               </div>
             )}
           </div>
+          {hasReferrals ? (
+            <CardViewControl
+              compactText={`${referralCount} invited summary`}
+              controlsId="standing-referrals-list"
+              expanded={referralsListOpen}
+              expandedText={`${referralCount} referral position${referralCount === 1 ? "" : "s"} visible`}
+              label="referral positions"
+              onToggle={() => setReferralsOpen((current) => !current)}
+            />
+          ) : null}
         </div>
       </div>
 
@@ -446,16 +477,9 @@ export function MyStanding() {
               <h2 className="panel-title">Agent — tickets &amp; commission</h2>
               <p className="panel-subtitle">Codes you can sell and the free tickets you&#39;ve earned.</p>
             </div>
-            <button
-              aria-controls="standing-agent-code"
-              aria-expanded={agentCodeOpen}
-              aria-label={agentCodeOpen ? "Hide next agent code" : "Show next agent code"}
-              className={`agent-gift-trigger${agentCodeOpen ? " is-open" : ""}`}
-              onClick={() => setAgentCodeOpen((current) => !current)}
-              type="button"
-            >
+            <span className="standing-card-icon-badge standing-card-icon-badge--orange" aria-hidden="true">
               <Gift size={20} aria-hidden="true" />
-            </button>
+            </span>
           </div>
           <div className="panel-body">
             {agentCodeOpen ? (
@@ -520,6 +544,14 @@ export function MyStanding() {
               earn your next free one.
             </p>
           </div>
+          <CardViewControl
+            compactText="Code hidden; stats still visible"
+            controlsId="standing-agent-code"
+            expanded={agentCodeOpen}
+            expandedText="Sellable code visible"
+            label="agent sellable code"
+            onToggle={() => setAgentCodeOpen((current) => !current)}
+          />
         </div>
       ) : null}
 
@@ -554,7 +586,7 @@ export function MyStanding() {
 
             <div className="standing-modal__body">
               <section className="standing-modal-current" aria-label="Your current leaderboard position">
-                <span>{modalMe?.locked ? "Your position" : "Your free preview"}</span>
+                <span>{modalMe?.picksLocked ? "Your position" : "Your free preview"}</span>
                 {modalMe ? (
                   <>
                     <div>
@@ -563,11 +595,9 @@ export function MyStanding() {
                     </div>
                     <small>
                       {formatPoints(modalMe.totalPoints)} points
-                      {modalMe.locked
+                      {modalMe.locked || modalMe.committed
                         ? ""
-                        : modalMe.committed
-                          ? " · if you were paying"
-                          : " · if locked now"}
+                        : " · if locked now"}
                       {modalMe.teams.length > 0
                         ? ` · ${modalMe.teams.map((team) => team.name).join(", ")}`
                         : ""}
@@ -631,7 +661,13 @@ export function MyStanding() {
                         <span className="standing-modal-rank">{referral.rank ? `#${referral.rank}` : "TBA"}</span>
                         <div>
                           <strong>{referral.displayName}</strong>
-                          <small>{referral.locked ? "Locked entry" : "Waiting for locked entry"}</small>
+                          <small>
+                            {referral.locked
+                              ? "Prize pool"
+                              : referral.committed
+                                ? "Free leaderboard"
+                                : "Waiting for locked entry"}
+                          </small>
                         </div>
                         <b>{formatPoints(referral.totalPoints)}</b>
                       </div>

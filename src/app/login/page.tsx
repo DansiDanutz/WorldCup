@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "You are invited to WorldCup26",
     description:
-      "Pick 3 teams free before the FIFA World Cup 2026 and track your private points preview.",
+      "Pick 3 teams free and track your points from your signup time.",
     url: "/login",
     type: "website",
   },
@@ -24,8 +24,13 @@ export const metadata: Metadata = {
   },
 };
 
+type LoginPageSearchParams = {
+  ref?: string | string[];
+  returnTo?: string | string[];
+};
+
 type LoginPageProps = {
-  searchParams?: Promise<{ ref?: string | string[] }> | { ref?: string | string[] };
+  searchParams?: Promise<LoginPageSearchParams> | LoginPageSearchParams;
 };
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
@@ -33,10 +38,14 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   const refParam = Array.isArray(resolvedSearchParams.ref)
     ? resolvedSearchParams.ref[0]
     : resolvedSearchParams.ref;
+  const returnToParam = Array.isArray(resolvedSearchParams.returnTo)
+    ? resolvedSearchParams.returnTo[0]
+    : resolvedSearchParams.returnTo;
 
   return (
     <LoginRegister
       initialReferralCode={refParam ?? null}
+      returnTo={returnToParam ?? null}
       publicPaidActionGates={LOGIN_ACCOUNT_SETUP_GATES}
     />
   );
@@ -44,8 +53,8 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
 
 const accountSetupGate = {
   allowed: false,
-  missing: ["account setup window"],
-  message: "Account setup is open until June 18, 2026.",
+  missing: ["paid launch"],
+  message: "Free account setup is open. Paid actions are not live yet.",
 };
 
 const LOGIN_ACCOUNT_SETUP_GATES: PaidActionGates = {

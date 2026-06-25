@@ -175,7 +175,7 @@ export function HeroCard() {
             </span>
             <span className="hero-feature__body">
               <strong>Pick 3 Teams</strong>
-              <small>All 48 nations open until kickoff.</small>
+              <small>Any nation. Points start from signup.</small>
             </span>
           </div>
 

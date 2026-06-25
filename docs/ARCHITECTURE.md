@@ -98,7 +98,7 @@ Shows all 104 matches from group stage through the final. The page includes grou
 
 ### `/api/entries`
 
-Creates and locks a user entry after exactly 3 valid teams are selected. Late entries are allowed, but each selected team must still be before kickoff of its second group-stage match. The database also enforces this cutoff on `worldcup_entry_teams` inserts. The API requires one unused assigned ticket and consumes it when the entry is locked.
+Creates and locks a user entry after exactly 3 valid teams are selected. Late entries may choose any team, but points only accrue for matches that kick off at or after the entry `created_at` signup timestamp. The database removes the old per-team pick cutoff trigger and applies the signup-time scoring window in both match-point snapshots and draft preview totals. Paid pool entry still requires one unused assigned ticket and consumes it when the entry is locked.
 
 ### `/api/admin/results`
 

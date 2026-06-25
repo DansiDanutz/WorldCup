@@ -87,10 +87,10 @@ export default function LoginOpengraphImage() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
             <div style={{ display: "flex", maxWidth: 850, fontSize: 76, lineHeight: 0.95, fontWeight: 950 }}>
-              Pick 3 teams free before kickoff.
+              Pick 3 teams free.
             </div>
             <div style={{ display: "flex", maxWidth: 760, fontSize: 30, color: "rgba(255,255,255,0.82)" }}>
-              Track your private points preview, then use a ticket for the paid leaderboard.
+              Your score starts from your signup time; earlier matches do not count.
             </div>
           </div>
 
