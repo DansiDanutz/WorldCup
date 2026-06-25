@@ -12,3 +12,7 @@ stills/*.png
 audio_master.m4a
 filter.txt
 package-lock.json
+bin/
+mux.log
+r*.log
+serve.log

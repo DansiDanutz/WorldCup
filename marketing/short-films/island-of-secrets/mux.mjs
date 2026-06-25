@@ -10,7 +10,12 @@ import ffmpegInstaller from '@ffmpeg-installer/ffmpeg';
 
 // The bundled ffmpeg-static segfaults in this sandbox; @ffmpeg-installer ships a full
 // John Van Sickle build (libx264 / libvpx-vp9 / aac / loudnorm). Prefer system if present.
-const ffmpegPath = (fs.existsSync('/usr/bin/ffmpeg') && '/usr/bin/ffmpeg') || ffmpegInstaller.path;
+// Prefer a modern static ffmpeg vendored at ./bin/ffmpeg (7.x: supports amix
+// normalize / adelay all / loudnorm). Fallbacks: system, then @ffmpeg-installer.
+const localFf = new URL('./bin/ffmpeg', import.meta.url).pathname;
+const ffmpegPath = (fs.existsSync(localFf) && localFf)
+  || (fs.existsSync('/usr/bin/ffmpeg') && '/usr/bin/ffmpeg')
+  || ffmpegInstaller.path;
 
 const FPS = Number(process.env.FPS || 30);
 const DURATION = Number(process.env.DURATION || 165);
@@ -65,7 +70,7 @@ if (!NO_VO) {
     const idx = i;
     let c = `[${idx}:a]`;
     if (Math.abs(tempo - 1) > 0.02) c += `atempo=${tempo.toFixed(4)},`;
-    c += `adelay=${ms}:all=1,aresample=44100[v${i}]`;
+    c += `aformat=channel_layouts=stereo,adelay=${ms}|${ms},aresample=44100[v${i}]`;
     chains.push(c);
     voLabels.push(`[v${i}]`);
     console.log(`VO ${String(i).padStart(2)}: at ${at}s dur ${durs[i].toFixed(2)}s budget ${budget.toFixed(2)}s tempo ${tempo.toFixed(3)}`);
@@ -79,7 +84,7 @@ clipFiles.forEach((c, k) => {
   const idx = voFiles.length + k;
   const ms = Math.round(c.at * 1000);
   // play the clip's own sound once (5-10s), faded out so loops don't pop
-  chains.push(`[${idx}:a]volume=${(c.vol ?? 0.4).toFixed(2)},afade=t=in:st=0:d=0.3,afade=t=out:st=${Math.max(0.5, Math.min(c.dur, 10) - 1).toFixed(2)}:d=1,adelay=${ms}:all=1,aresample=44100[f${k}]`);
+  chains.push(`[${idx}:a]volume=${(c.vol ?? 0.4).toFixed(2)},afade=t=in:st=0:d=0.3,afade=t=out:st=${Math.max(0.5, Math.min(c.dur, 10) - 1).toFixed(2)}:d=1,aformat=channel_layouts=stereo,adelay=${ms}|${ms},aresample=44100[f${k}]`);
   fxLabels.push(`[f${k}]`);
 });
 if (fxLabels.length) {
@@ -91,7 +96,7 @@ if (hits.length) {
   const hitLabels = [];
   hits.forEach((h, k) => {
     const idx = voFiles.length + clipFiles.length + k;
-    chains.push(`[${idx}:a]volume=${(h.vol ?? 0.6).toFixed(2)},adelay=${Math.round(h.at * 1000)}:all=1,aresample=44100[s${k}]`);
+    chains.push(`[${idx}:a]volume=${(h.vol ?? 0.6).toFixed(2)},aformat=channel_layouts=stereo,adelay=${Math.round(h.at * 1000)}|${Math.round(h.at * 1000)},aresample=44100[s${k}]`);
     hitLabels.push(`[s${k}]`);
   });
   chains.push(`${hitLabels.join('')}amix=inputs=${hitLabels.length}:normalize=0:dropout_transition=0,apad,atrim=0:${DURATION}[sfxmix]`);
@@ -107,7 +112,7 @@ if (cues.length) {
     chains.push(
       `[${idx}:a]atrim=0:${c.dur},volume=${(c.vol ?? 0.4).toFixed(2)},` +
       `afade=t=in:st=0:d=${fi},afade=t=out:st=${(c.dur - fo).toFixed(2)}:d=${fo},` +
-      `adelay=${ms}:all=1,aresample=44100[m${k}]`
+      `aformat=channel_layouts=stereo,adelay=${ms}|${ms},aresample=44100[m${k}]`
     );
     cueLabels.push(`[m${k}]`);
   });
