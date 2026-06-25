@@ -525,6 +525,15 @@
       "landscape": "/special-cards/legend-058-landscape.png"
     },
     {
+      "number": "059",
+      "name": "The Origami Master",
+      "nation": "Japan",
+      "episode": 59,
+      "match": "Japan vs Sweden",
+      "portrait": "/special-cards/legend-059-portrait.png",
+      "landscape": "/special-cards/legend-059-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
