@@ -552,6 +552,15 @@
       "landscape": "/special-cards/legend-061-landscape.png"
     },
     {
+      "number": "062",
+      "name": "The Ebru Master",
+      "nation": "Turkey",
+      "episode": 62,
+      "match": "Turkey vs USA",
+      "portrait": "/special-cards/legend-062-portrait.png",
+      "landscape": "/special-cards/legend-062-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",

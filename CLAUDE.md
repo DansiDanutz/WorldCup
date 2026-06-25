@@ -209,6 +209,16 @@ Non-negotiables distilled from channel data (details in the playbook):
     card**, the cinematic grade + film grain, music, and the EP-NN gold-seal
     thumbnail. Enhancements are ADDED on top of this bar, never traded away for
     speed. Reference master: Ep37 (Ecuador–Curaçao).
+15. **NO "UNDERDOG" WORDING — EVER (owner-mandated, hard rule, NO EXCEPTIONS):**
+    the word "underdog"/"underdogs" (and overt slogans built on it, e.g. "the
+    overlooked", "nobody believes in them") must NEVER appear in ANY script,
+    narration (`narration.json`), on-screen text/title/thumbnail, scene file
+    (`match-scenes.jsx`), upload-pack title/description/tags, or anywhere the
+    audience can see or hear it. Anchor episodes on other emotions (rivalry,
+    history, a ghost/legacy, heartbreak, redemption, craft, hunger, pride) and
+    pick fresh framing per match. **ENFORCEMENT:** before rendering/delivering any
+    episode, grep every text artifact for "underdog" (case-insensitive) — it must
+    return ZERO. This applies to existing episodes too: strip it and re-render.
 
 ## Video production pipeline
 
