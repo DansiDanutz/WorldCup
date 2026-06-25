@@ -74,6 +74,32 @@ function SeekBridge() {
   const tl = useTimeline();
   useEffect(() => {
     window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+    // Deterministic per-frame video seeking driven by the RENDERER (not React
+    // effects, which don't re-fire reliably per seek and leave clips frozen at
+    // currentTime 0). For every on-screen <video data-vat>, compute its looped
+    // source time from the timeline clock and seek it; resolve once all settle.
+    window.__driveVideos = (t) => new Promise((resolve) => {
+      const vids = Array.prototype.slice.call(document.querySelectorAll('video[data-vat]'));
+      let pending = 0, settledCalled = false;
+      const maybeDone = () => { if (pending === 0 && !settledCalled) { settledCalled = true; resolve(); } };
+      vids.forEach((v) => {
+        const at = parseFloat(v.dataset.vat), dur = parseFloat(v.dataset.vdur);
+        const local = t - at;
+        if (local < 0 || local >= dur) return;                 // not on screen now
+        const vd = (isFinite(v.duration) && v.duration > 0.2) ? v.duration : 5;
+        const target = Math.min(local % vd, vd - 0.05);        // loop the short source
+        if (Math.abs(v.currentTime - target) > 1 / 120) {
+          pending++;
+          let done = false;
+          const settle = () => { if (!done) { done = true; pending--; maybeDone(); } };
+          v.addEventListener('seeked', settle, { once: true });
+          v.addEventListener('error', settle, { once: true });
+          setTimeout(settle, 1200);                            // never wedge the renderer
+          try { if (!v.paused) v.pause(); v.currentTime = Math.max(0, target); } catch (e) { settle(); }
+        }
+      });
+      maybeDone();
+    });
   }, [tl.setTime, tl.setPlaying]);
   return null;
 }
@@ -97,12 +123,12 @@ function MatchVideo() {
 function boot() {
   ReactDOM.createRoot(document.getElementById('root')).render(<MatchVideo />);
 }
-// Load clip placements first so ClipSprite/mux can never drift apart.
-fetch('./clips.json')
-  .then((r) => r.json())
-  .then((d) => { window.MV_CLIPS = d.clips || []; })
-  .catch((e) => { console.warn('clips.json load failed', e); window.MV_CLIPS = []; })
-  .finally(boot);
+// Load clip placements + the image-sequence manifest before boot so ClipSprite
+// can render the exact pre-extracted frame per timeline time.
+Promise.all([
+  fetch('./clips.json').then((r) => r.json()).then((d) => { window.MV_CLIPS = d.clips || []; }).catch((e) => { console.warn('clips.json load failed', e); window.MV_CLIPS = []; }),
+  fetch('./assets/seq/manifest.json').then((r) => r.json()).then((m) => { window.MV_SEQ = m || {}; }).catch((e) => { console.warn('seq manifest load failed', e); window.MV_SEQ = {}; }),
+]).finally(boot);
 </script>
 </body>
 </html>
