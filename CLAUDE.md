@@ -219,6 +219,25 @@ Non-negotiables distilled from channel data (details in the playbook):
     pick fresh framing per match. **ENFORCEMENT:** before rendering/delivering any
     episode, grep every text artifact for "underdog" (case-insensitive) — it must
     return ZERO. This applies to existing episodes too: strip it and re-render.
+16. **MYSTERY CARD — DEEPER MYSTERY, STORY-WOVEN, FULLY DESIGNED (owner-mandated,
+    from Ep63 on, hard rule):** the Mystery Supporter / Legend card must carry a
+    STRONGER mystery, and its story must be UNDERLINED and woven through the WHOLE
+    episode — never a tacked-on end card.
+    - **TEASE EARLY → PAY OFF LATE:** plant a hidden clue/question about the Legend
+      in the COLD OPEN (a silhouette, an object, a riddle line — "who really carries
+      this nation?"), echo it at least once mid-episode, and resolve it at the reveal.
+      A real "who/what is it?" arc runs across the full ~5 minutes.
+    - **CONNECT TO THE SPINE:** the card's craft/legend must thematically rhyme with
+      the episode's emotional spine AND the match story, and the reveal narration must
+      STATE that connection out loud (e.g. Turkey "Ghosts of Empires" ↔ the Ebru
+      master "where the ink is never dry"; the metaphor links the football story to
+      the legend). Pick the Legend so this connection is strong, not generic.
+    - **ANIMATE & DESIGN the reveal as a set-piece:** the REAL app-card artwork (the
+      exact card unlocked in the app), a designed build (flip / parallax / glow /
+      sparkle), the craft motion playing behind it, the Legend number, a one-line
+      story stamp, and the sign-up CTA — richer and more cinematic each episode.
+    - **ENFORCEMENT:** every episode's cold open must contain the Legend tease, and
+      the reveal narration must contain the explicit spine↔legend connection line.
 
 ## Video production pipeline
 
