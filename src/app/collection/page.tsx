@@ -76,6 +76,7 @@ const CARDS: Card[] = [
   { number: '060', name: 'The Mosaic Master',       nation: 'Tunisia',      episode: 60, match: 'Tunisia vs Netherlands', portrait: '/special-cards/legend-060-portrait.png', landscape: '/special-cards/legend-060-landscape.png' },
   { number: '061', name: 'The Harpist',             nation: 'Paraguay',     episode: 61, match: 'Paraguay vs Australia', portrait: '/special-cards/legend-061-portrait.png', landscape: '/special-cards/legend-061-landscape.png' },
   { number: '062', name: 'The Ebru Master',         nation: 'Turkey',       episode: 62, match: 'Turkey vs USA', portrait: '/special-cards/legend-062-portrait.png', landscape: '/special-cards/legend-062-landscape.png' },
+  { number: '063', name: 'The Boatbuilder',         nation: 'Norway',       episode: 63, match: 'Norway vs France', portrait: '/special-cards/legend-063-portrait.png', landscape: '/special-cards/legend-063-landscape.png' },
   { number: 'BONUS-1', name: 'The Freedom Run',   nation: 'Colombia',     episode: 0,  match: 'Bonus film · Luis Díaz',     portrait: '/special-cards/legend-bonus-diaz-portrait.png',   landscape: '/special-cards/legend-bonus-diaz-landscape.png' },
   { number: 'BONUS-2', name: 'The Promise',       nation: 'Belgium',      episode: 0,  match: 'Bonus film · Romelu Lukaku', portrait: '/special-cards/legend-bonus-lukaku-portrait.png', landscape: '/special-cards/legend-bonus-lukaku-landscape.png' },
 ];
