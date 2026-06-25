@@ -1,0 +1,840 @@
+{
+  "comment": "Ep57 Curaçao vs Ivory Coast — ANIMATION-FIRST full-motion. OUR PREDICTION CUR 1-1 CIV (Amad Diallo 31, Leandro Bacuna 63 off Juninho reverse pass). Real player animations full-screen + looping. Unique Higgsfield crowds (cur-crowd blue tambú / civ-crowd orange djembe), stadium, action, mystery-drummaker. Legend 057 The Drummaker. vol=0.",
+  "clips": [
+    {
+      "id": "cg-stad",
+      "src": "assets/stadium.mp4",
+      "at": 0,
+      "dur": 6.2,
+      "vol": 0
+    },
+    {
+      "id": "cg-amad",
+      "src": "assets/civ-amad.mp4",
+      "at": 6,
+      "dur": 6.2,
+      "vol": 0
+    },
+    {
+      "id": "cg-juninho",
+      "src": "assets/cur-juninho.mp4",
+      "at": 12,
+      "dur": 6.4,
+      "vol": 0
+    },
+    {
+      "id": "cg-crowd",
+      "src": "assets/civ-crowd.mp4",
+      "at": 18,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "title-bg",
+      "src": "assets/cur-crowd.mp4",
+      "at": 23,
+      "dur": 10.2,
+      "vol": 0
+    },
+    {
+      "id": "stad-a",
+      "src": "assets/stadium.mp4",
+      "at": 33,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "stad-b",
+      "src": "assets/civ-crowd.mp4",
+      "at": 39,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "cur-crowd-bg",
+      "src": "assets/cur-crowd.mp4",
+      "at": 44,
+      "dur": 11.6,
+      "vol": 0
+    },
+    {
+      "id": "s-juninho",
+      "src": "assets/cur-juninho.mp4",
+      "at": 55.5,
+      "dur": 5.6,
+      "vol": 0
+    },
+    {
+      "id": "s-leandro",
+      "src": "assets/cur-leandro.mp4",
+      "at": 61,
+      "dur": 4.1,
+      "vol": 0
+    },
+    {
+      "id": "s-zeefuik",
+      "src": "assets/cur-zeefuik.mp4",
+      "at": 65,
+      "dur": 3.1,
+      "vol": 0
+    },
+    {
+      "id": "s-janga",
+      "src": "assets/cur-janga.mp4",
+      "at": 68,
+      "dur": 5.6,
+      "vol": 0
+    },
+    {
+      "id": "s-locadia",
+      "src": "assets/cur-locadia.mp4",
+      "at": 73.5,
+      "dur": 6.1,
+      "vol": 0
+    },
+    {
+      "id": "civ-crowd-bg",
+      "src": "assets/civ-crowd.mp4",
+      "at": 79.5,
+      "dur": 11.2,
+      "vol": 0
+    },
+    {
+      "id": "s-amad",
+      "src": "assets/civ-amad.mp4",
+      "at": 90.6,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "s-kessie",
+      "src": "assets/civ-kessie.mp4",
+      "at": 95.1,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "s-odiomande",
+      "src": "assets/civ-odiomande.mp4",
+      "at": 98.1,
+      "dur": 2.6,
+      "vol": 0
+    },
+    {
+      "id": "s-adingra",
+      "src": "assets/civ-adingra.mp4",
+      "at": 100.7,
+      "dur": 2.4,
+      "vol": 0
+    },
+    {
+      "id": "duel-amad",
+      "src": "assets/civ-amad.mp4",
+      "at": 103,
+      "dur": 14.6,
+      "vol": 0
+    },
+    {
+      "id": "duel-zeefuik",
+      "src": "assets/cur-zeefuik.mp4",
+      "at": 117.6,
+      "dur": 14.5,
+      "vol": 0
+    },
+    {
+      "id": "dr-stad",
+      "src": "assets/stadium.mp4",
+      "at": 132,
+      "dur": 8.6,
+      "vol": 0
+    },
+    {
+      "id": "dr-amaddrib",
+      "src": "assets/civ-amad.mp4",
+      "at": 140.5,
+      "dur": 9.6,
+      "vol": 0
+    },
+    {
+      "id": "dr-amadgoal",
+      "src": "assets/action-amad-goal.mp4",
+      "at": 150,
+      "dur": 12.1,
+      "vol": 0
+    },
+    {
+      "id": "dr-elephants",
+      "src": "assets/civ-crowd.mp4",
+      "at": 162,
+      "dur": 9.6,
+      "vol": 0
+    },
+    {
+      "id": "dr-juninho",
+      "src": "assets/action-juninho-pass.mp4",
+      "at": 171.6,
+      "dur": 7.1,
+      "vol": 0
+    },
+    {
+      "id": "dr-leandro",
+      "src": "assets/action-leandro-goal.mp4",
+      "at": 178.7,
+      "dur": 18.3,
+      "vol": 0
+    },
+    {
+      "id": "dr-celeb",
+      "src": "assets/action-celeb.mp4",
+      "at": 197,
+      "dur": 7.4,
+      "vol": 0
+    },
+    {
+      "id": "vd-celeb",
+      "src": "assets/action-celeb.mp4",
+      "at": 203.32,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "vd-crowd",
+      "src": "assets/cur-crowd.mp4",
+      "at": 213,
+      "dur": 31,
+      "vol": 0
+    },
+    {
+      "id": "en-crowd",
+      "src": "assets/civ-crowd.mp4",
+      "at": 244,
+      "dur": 11.2,
+      "vol": 0
+    },
+    {
+      "id": "my-drum",
+      "src": "assets/mystery-drummaker.mp4",
+      "at": 255,
+      "dur": 26.5,
+      "vol": 0
+    },
+    {
+      "id": "app-crowd",
+      "src": "assets/civ-crowd.mp4",
+      "at": 281.38,
+      "dur": 21.8,
+      "vol": 0
+    },
+    {
+      "id": "cta-celeb",
+      "src": "assets/action-celeb.mp4",
+      "at": 303.05,
+      "dur": 15.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-0",
+      "src": "assets/stadium.mp4",
+      "at": 0,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-1",
+      "src": "assets/cur-crowd.mp4",
+      "at": 4.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-2",
+      "src": "assets/civ-crowd.mp4",
+      "at": 9.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-3",
+      "src": "assets/action-celeb.mp4",
+      "at": 14.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-4",
+      "src": "assets/stadium.mp4",
+      "at": 19.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-5",
+      "src": "assets/cur-crowd.mp4",
+      "at": 24,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-6",
+      "src": "assets/civ-crowd.mp4",
+      "at": 28.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-7",
+      "src": "assets/action-celeb.mp4",
+      "at": 33.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-8",
+      "src": "assets/stadium.mp4",
+      "at": 38.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-9",
+      "src": "assets/cur-crowd.mp4",
+      "at": 43.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-10",
+      "src": "assets/civ-crowd.mp4",
+      "at": 48,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-11",
+      "src": "assets/action-celeb.mp4",
+      "at": 52.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-12",
+      "src": "assets/stadium.mp4",
+      "at": 57.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-13",
+      "src": "assets/cur-crowd.mp4",
+      "at": 62.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-14",
+      "src": "assets/civ-crowd.mp4",
+      "at": 67.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-15",
+      "src": "assets/action-celeb.mp4",
+      "at": 72,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-16",
+      "src": "assets/stadium.mp4",
+      "at": 76.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-17",
+      "src": "assets/cur-crowd.mp4",
+      "at": 81.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-18",
+      "src": "assets/civ-crowd.mp4",
+      "at": 86.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-19",
+      "src": "assets/action-celeb.mp4",
+      "at": 91.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-20",
+      "src": "assets/stadium.mp4",
+      "at": 96,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-21",
+      "src": "assets/cur-crowd.mp4",
+      "at": 100.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-22",
+      "src": "assets/civ-crowd.mp4",
+      "at": 105.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-23",
+      "src": "assets/action-celeb.mp4",
+      "at": 110.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-24",
+      "src": "assets/stadium.mp4",
+      "at": 115.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-25",
+      "src": "assets/cur-crowd.mp4",
+      "at": 120,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-26",
+      "src": "assets/civ-crowd.mp4",
+      "at": 124.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-27",
+      "src": "assets/action-celeb.mp4",
+      "at": 129.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-28",
+      "src": "assets/stadium.mp4",
+      "at": 134.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-29",
+      "src": "assets/cur-crowd.mp4",
+      "at": 139.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-30",
+      "src": "assets/civ-crowd.mp4",
+      "at": 144,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-31",
+      "src": "assets/action-celeb.mp4",
+      "at": 148.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-32",
+      "src": "assets/stadium.mp4",
+      "at": 153.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-33",
+      "src": "assets/cur-crowd.mp4",
+      "at": 158.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-34",
+      "src": "assets/civ-crowd.mp4",
+      "at": 163.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-35",
+      "src": "assets/action-celeb.mp4",
+      "at": 168,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-36",
+      "src": "assets/stadium.mp4",
+      "at": 172.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-37",
+      "src": "assets/cur-crowd.mp4",
+      "at": 177.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-38",
+      "src": "assets/civ-crowd.mp4",
+      "at": 182.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-39",
+      "src": "assets/action-celeb.mp4",
+      "at": 187.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-40",
+      "src": "assets/stadium.mp4",
+      "at": 192,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-41",
+      "src": "assets/cur-crowd.mp4",
+      "at": 196.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-42",
+      "src": "assets/civ-crowd.mp4",
+      "at": 201.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-43",
+      "src": "assets/action-celeb.mp4",
+      "at": 206.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-44",
+      "src": "assets/stadium.mp4",
+      "at": 211.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-45",
+      "src": "assets/cur-crowd.mp4",
+      "at": 216,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-46",
+      "src": "assets/civ-crowd.mp4",
+      "at": 220.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-47",
+      "src": "assets/action-celeb.mp4",
+      "at": 225.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-48",
+      "src": "assets/stadium.mp4",
+      "at": 230.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-49",
+      "src": "assets/cur-crowd.mp4",
+      "at": 235.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-50",
+      "src": "assets/civ-crowd.mp4",
+      "at": 240,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-51",
+      "src": "assets/action-celeb.mp4",
+      "at": 244.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-52",
+      "src": "assets/stadium.mp4",
+      "at": 249.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-53",
+      "src": "assets/cur-crowd.mp4",
+      "at": 254.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-54",
+      "src": "assets/civ-crowd.mp4",
+      "at": 259.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-55",
+      "src": "assets/action-celeb.mp4",
+      "at": 264,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-56",
+      "src": "assets/stadium.mp4",
+      "at": 268.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-57",
+      "src": "assets/cur-crowd.mp4",
+      "at": 273.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-58",
+      "src": "assets/civ-crowd.mp4",
+      "at": 278.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-59",
+      "src": "assets/action-celeb.mp4",
+      "at": 283.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-60",
+      "src": "assets/stadium.mp4",
+      "at": 288,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-61",
+      "src": "assets/cur-crowd.mp4",
+      "at": 292.8,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-62",
+      "src": "assets/civ-crowd.mp4",
+      "at": 297.6,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-63",
+      "src": "assets/action-celeb.mp4",
+      "at": 302.4,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-64",
+      "src": "assets/stadium.mp4",
+      "at": 307.2,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-65",
+      "src": "assets/cur-crowd.mp4",
+      "at": 312,
+      "dur": 5.2,
+      "vol": 0
+    },
+    {
+      "id": "bd-66",
+      "src": "assets/civ-crowd.mp4",
+      "at": 316.8,
+      "dur": 5.2,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 31.56,
+        "dur": 288,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 34,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.06,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 22.38,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 26.17,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113.25,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 131.51,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 151.5,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 152.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 154,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 188.5,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 190.2,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 256,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 271,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 304,
+        "vol": 0.6
+      }
+    ]
+  }
+}
