@@ -1,0 +1,30 @@
+{
+  "title": "The Island of Secrets",
+  "narrator": "Brian (ElevenLabs)",
+  "voice_id": "nPczCjzI2devNBz1zQrb",
+  "model": "eleven_multilingual_v2",
+  "note": "FAIRYTALE storyteller cadence, heavy on mystery. NO on-screen sentence text (CLAUDE.md #10). Vertical 1080x1920, 177s. She REFUSES the kiss; the prince kisses her at the climax, then hides a gift box as a next-episode teaser.",
+  "lines": [
+    { "at": 2.5,   "text": "Long ago, on an island that the maps had forgotten, there stood a little house of old, weathered wood." },
+    { "at": 11.0,  "text": "And in that house lived a woman whose name no one ever knew." },
+    { "at": 19.0,  "text": "Her hair was dark as the sea at midnight, and they say it moved, even when the wind did not." },
+    { "at": 28.0,  "text": "And her eyes... her eyes held a storm that no living soul could ever read." },
+    { "at": 36.5,  "text": "Every evening she walked to the end of the dock, and waited for something that might never come." },
+    { "at": 45.0,  "text": "For once, long ago, a storm had carried a gift onto her shore." },
+    { "at": 53.0,  "text": "A prince. Famed across every kingdom. The wisest of mind, the strongest of arm, the name on every tongue." },
+    { "at": 63.0,  "text": "She warmed him by the fire, and asked him nothing at all." },
+    { "at": 70.5,  "text": "And somewhere between the rain and the morning, the two of them fell." },
+    { "at": 81.0,  "text": "But when he leaned in to kiss her, she turned away, for she had seen the ring upon his hand." },
+    { "at": 88.5,  "text": "He had walked her shore, and learned every colour hidden in her eyes." },
+    { "at": 95.5,  "text": "Yet the ring was not hers. He belonged to a crown," },
+    { "at": 102.0, "text": "and to a queen who waited in a castle across the cold grey sea." },
+    { "at": 110.0, "text": "And still, this man whom kingdoms obeyed loved her, more than the throne, more than his own name." },
+    { "at": 118.0, "text": "Each season his pale sail returned, thin and trembling on the far horizon." },
+    { "at": 125.5, "text": "And each season, fewer believed he ever truly left." },
+    { "at": 133.0, "text": "Until the morning he held her at last, and finally, gently, he kissed her." },
+    { "at": 142.0, "text": "Then, before the tide could take him, he hid a gift. A small box, tied with ribbon, where only the patient would ever find it." },
+    { "at": 153.5, "text": "She did not see him go. She never saw the box at all." },
+    { "at": 162.0, "text": "Some say it waits there still, and that one day, she will find it." },
+    { "at": 170.0, "text": "Will she? The island, of course, will never tell." }
+  ]
+}

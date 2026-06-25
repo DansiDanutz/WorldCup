@@ -1,0 +1,14 @@
+# Generated / heavy media — regenerable via the pipeline (see README.md). Kept out of git.
+node_modules/
+vendor/
+frames/
+smoke/
+assets/*.mp4
+assets/*.webm
+audio/*.mp3
+music/*.mp3
+stills/*.png
+*.mp4
+audio_master.m4a
+filter.txt
+package-lock.json

@@ -1,0 +1,30 @@
+{
+  "comment": "Sound for 'The Island of Secrets'. Video comes from VideoSprite in match-scenes.jsx (clips:[] on purpose). music.cues + sfx.beds are looped/faded and mixed (ducked under Brian's VO); sfx.hits are one-shot. Missing files are skipped gracefully by mux.mjs.",
+  "clips": [],
+  "music": { "cues": [
+    { "src": "music/cue-open.mp3",   "at": 0,   "dur": 60, "vol": 0.32, "fadeIn": 1.5, "fadeOut": 5, "loop": true },
+    { "src": "music/cue-love.mp3",   "at": 57,  "dur": 78, "vol": 0.32, "fadeIn": 3,   "fadeOut": 5, "loop": true },
+    { "src": "music/cue-finale.mp3", "at": 130, "dur": 47, "vol": 0.40, "fadeIn": 3,   "fadeOut": 7, "loop": true }
+  ] },
+  "sfx": {
+    "beds": [
+      { "src": "sfx/amb-ocean.mp3", "at": 0,   "dur": 177, "vol": 0.17, "fadeIn": 2,   "fadeOut": 6, "loop": true },
+      { "src": "sfx/amb-wind.mp3",  "at": 0,   "dur": 58,  "vol": 0.12, "fadeIn": 2,   "fadeOut": 5, "loop": true },
+      { "src": "sfx/amb-birds.mp3", "at": 8,   "dur": 40,  "vol": 0.14, "fadeIn": 2,   "fadeOut": 5, "loop": true },
+      { "src": "sfx/amb-storm.mp3", "at": 43,  "dur": 9,   "vol": 0.55, "fadeIn": 1,   "fadeOut": 3 },
+      { "src": "sfx/amb-fire.mp3",  "at": 62,  "dur": 38,  "vol": 0.22, "fadeIn": 2,   "fadeOut": 4, "loop": true },
+      { "src": "sfx/amb-fire.mp3",  "at": 139, "dur": 18,  "vol": 0.18, "fadeIn": 2,   "fadeOut": 4, "loop": true }
+    ],
+    "hits": [
+      { "src": "sfx/waves-dock.mp3",     "at": 38.5, "vol": 0.40 },
+      { "src": "sfx/thunder.mp3",        "at": 45.5, "vol": 0.65 },
+      { "src": "sfx/thunder.mp3",        "at": 48.5, "vol": 0.45 },
+      { "src": "sfx/door-open.mp3",      "at": 62.5, "vol": 0.42 },
+      { "src": "sfx/furniture.mp3",      "at": 66.0, "vol": 0.35 },
+      { "src": "sfx/footsteps-wood.mp3", "at": 70.0, "vol": 0.34 },
+      { "src": "sfx/ribbon.mp3",         "at": 149.0,"vol": 0.50 },
+      { "src": "sfx/footsteps-wood.mp3", "at": 151.5,"vol": 0.30 },
+      { "src": "sfx/door-close.mp3",     "at": 153.8,"vol": 0.45 }
+    ]
+  }
+}

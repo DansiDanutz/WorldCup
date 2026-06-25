@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Island of Secrets — vertical short film</title>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #050608; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="Island of Secrets · t=0s"></div>
+
+<script src="./vendor/react.development.js"></script>
+<script src="./vendor/react-dom.development.js"></script>
+<script src="./vendor/babel.min.js"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="match-kit.jsx"></script>
+<script type="text/babel" src="match-scenes.jsx"></script>
+
+<script type="text/babel">
+const { useEffect } = React;
+const DURATION = 177.0;
+
+const SCENES = [
+  { c: FilmIsland, start: 0, end: 177.0 },
+];
+
+// Cinematic cut treatment per scene boundary (read by TransitionLayer).
+window.MV_TRANSITIONS = [
+  { at: 43.5,  type: 'flash' },  // the storm
+  { at: 50.5,  type: 'dip' },    // prince arrives
+  { at: 63.0,  type: 'dip' },    // fireside
+  { at: 81.0,  type: 'dip' },    // the refused kiss
+  { at: 95.0,  type: 'dip' },    // the ring revealed
+  { at: 108.0, type: 'dip' },    // the queen across the sea
+  { at: 141.0, type: 'flash' },  // the kiss
+  { at: 148.0, type: 'dip' },    // he hides the gift
+  { at: 167.5, type: 'dip' },    // pull away / to be continued
+];
+
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root) root.dataset.screenLabel = `Island of Secrets · t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+
+function MovieRoot() {
+  return (
+    <Stage width={1080} height={1920} duration={DURATION} background="#050608" persistKey="island-secrets">
+      <ScreenLabeler />
+      <SeekBridge />
+      {SCENES.map((s, i) => (
+        <Sprite key={i} start={s.start} end={s.end}>
+          <s.c />
+        </Sprite>
+      ))}
+      <TransitionLayer />
+    </Stage>
+  );
+}
+
+function boot() {
+  ReactDOM.createRoot(document.getElementById('root')).render(<MovieRoot />);
+}
+fetch('./clips.json')
+  .then((r) => r.json())
+  .then((d) => { window.MV_CLIPS = d.clips || []; })
+  .catch((e) => { console.warn('clips.json load failed', e); window.MV_CLIPS = []; })
+  .finally(boot);
+</script>
+</body>
+</html>
