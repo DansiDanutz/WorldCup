@@ -15,7 +15,7 @@ import {
   VolumeX,
   X,
 } from "lucide-react";
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 
 import { CardViewControl } from "@/components/card-view-control";
 import { LEGEND_CARDS, type LegendCard } from "@/lib/legend-cards";
@@ -33,10 +33,13 @@ const watchedStorageKey = "worldcup_legend_watched_cards";
 const listenedStorageKey = "worldcup_legend_listened_cards";
 const pulseReadStorageKey = "worldcup_legend_pulse_reads";
 const pulsePreviewStorageKey = "worldcup_legend_pulse_preview";
+const watchProofStorageKey = "worldcup_legend_youtube_watch_proofs";
 const notificationStorageKey = "worldcup_legend_notifications";
 const storageEventName = "worldcup:legend-card-storage";
 const compactLegendCardCount = 12;
 const pulsePreviewDurationMs = 60_000;
+const didYouKnowWatchMinimumMs = 20_000;
+const storyWatchMinimumMs = 45_000;
 const allowBrowserStoryVoiceFallback = process.env.NEXT_PUBLIC_ALLOW_BROWSER_STORY_VOICE_FALLBACK === "true";
 const validCardIds = new Set(LEGEND_CARDS.map((card) => card.id));
 const unlockableCardIds = new Set(LEGEND_CARDS.filter((card) => card.youtube).map((card) => card.id));
@@ -91,6 +94,13 @@ type LegendPulseItem = {
 type PulsePreview = {
   cardId: string;
   expiresAt: number;
+};
+
+type WatchProof = {
+  cardId: string;
+  youtube: string;
+  startedAt: number;
+  eligibleAt: number;
 };
 
 type AccountLegendEvent = "pulse_read" | "listened" | "youtube_opened" | "unlocked";
@@ -195,6 +205,56 @@ function writeStoredIds(key: string, ids: Set<string>) {
 
 function readCurrentStoredIds(key: string, allowedIds = validCardIds) {
   return parseStoredIds(getStoredIdsSnapshot(key), allowedIds);
+}
+
+function parseStoredWatchProofs(snapshot: string | null) {
+  try {
+    const parsed = snapshot ? JSON.parse(snapshot) : [];
+    const entries = Array.isArray(parsed) ? parsed : [];
+    return new Map(
+      entries
+        .filter((entry): entry is WatchProof => {
+          if (!isRecord(entry)) {
+            return false;
+          }
+
+          return (
+            typeof entry.cardId === "string" &&
+            validCardIds.has(entry.cardId) &&
+            typeof entry.youtube === "string" &&
+            typeof entry.startedAt === "number" &&
+            typeof entry.eligibleAt === "number" &&
+            entry.eligibleAt >= entry.startedAt
+          );
+        })
+        .map((entry) => [entry.cardId, entry]),
+    );
+  } catch {
+    return new Map<string, WatchProof>();
+  }
+}
+
+function useStoredWatchProofs() {
+  const snapshot = useSyncExternalStore(
+    subscribeToStoredIds,
+    () => getStoredIdsSnapshot(watchProofStorageKey),
+    getStoredIdsServerSnapshot,
+  );
+
+  return useMemo(() => parseStoredWatchProofs(snapshot), [snapshot]);
+}
+
+function writeStoredWatchProofs(proofs: Map<string, WatchProof>) {
+  try {
+    window.localStorage.setItem(watchProofStorageKey, JSON.stringify([...proofs.values()]));
+    window.dispatchEvent(new Event(storageEventName));
+  } catch {
+    // Watch proof only gates collection; the user can retry the YouTube step.
+  }
+}
+
+function readCurrentStoredWatchProofs() {
+  return parseStoredWatchProofs(getStoredIdsSnapshot(watchProofStorageKey));
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -308,6 +368,37 @@ function getCompletionPercent(count: number, total: number) {
   return total > 0 ? Math.round((count / total) * 100) : 0;
 }
 
+function getWatchMinimumMs(card: LegendCard) {
+  return card.kind === "did-you-know-short" ? didYouKnowWatchMinimumMs : storyWatchMinimumMs;
+}
+
+function getWatchSecondsLabel(seconds: number) {
+  if (seconds <= 0) {
+    return "now";
+  }
+
+  if (seconds < 60) {
+    return `${seconds}s`;
+  }
+
+  const minutes = Math.floor(seconds / 60);
+  const remainder = seconds % 60;
+  return remainder > 0 ? `${minutes}m ${remainder}s` : `${minutes}m`;
+}
+
+function createWatchProof(card: LegendCard, startedAt = Date.now()): WatchProof {
+  return {
+    cardId: card.id,
+    youtube: card.youtube ?? "",
+    startedAt,
+    eligibleAt: startedAt + getWatchMinimumMs(card),
+  };
+}
+
+function getWatchSecondsRemaining(proof: WatchProof | undefined, now: number) {
+  return proof ? Math.max(0, Math.ceil((proof.eligibleAt - now) / 1000)) : 0;
+}
+
 function mergeAccountLegendState(state: AccountLegendState) {
   writeStoredIds(
     unlockedStorageKey,
@@ -368,6 +459,7 @@ export function LegendCardCollection() {
   const listenedIds = useStoredIds(listenedStorageKey);
   const readPulseIds = useStoredIds(pulseReadStorageKey, validPulseIds);
   const pulsePreview = useStoredPulsePreview();
+  const watchProofs = useStoredWatchProofs();
   const notificationPreference = useStoredNotificationPreference();
   const [accountToken, setAccountToken] = useState<string | null>(null);
   const [accountSyncLabel, setAccountSyncLabel] = useState("Saved on this device");
@@ -380,6 +472,7 @@ export function LegendCardCollection() {
   const [previewSecondsRemaining, setPreviewSecondsRemaining] = useState(() =>
     getPulsePreviewSecondsRemaining(readStoredPulsePreview()),
   );
+  const [watchTimerTick, setWatchTimerTick] = useState(() => Date.now());
   const [notificationStatusOverride, setNotificationStatusOverride] = useState<string | null>(null);
   const [status, setStatus] = useState(
     "Open a YouTube story to collect its card. Use Listen story for ElevenLabs Brian playback.",
@@ -421,7 +514,7 @@ export function LegendCardCollection() {
     }
   }
 
-  function syncAccountLegendEvent(cardId: string, event: AccountLegendEvent) {
+  const syncAccountLegendEvent = useCallback((cardId: string, event: AccountLegendEvent) => {
     if (!accountToken) {
       return;
     }
@@ -436,7 +529,49 @@ export function LegendCardCollection() {
       .catch(() => {
         setAccountSyncLabel("Device saved; account sync paused");
       });
-  }
+  }, [accountToken]);
+
+  const markCardWatchReady = useCallback((card: LegendCard, options: { showStatus?: boolean } = {}) => {
+    if (!card.youtube) {
+      return false;
+    }
+
+    const nextWatched = new Set(readCurrentStoredIds(watchedStorageKey));
+    const wasAlreadyReady = nextWatched.has(card.id);
+
+    if (!wasAlreadyReady) {
+      nextWatched.add(card.id);
+      writeStoredIds(watchedStorageKey, nextWatched);
+      syncAccountLegendEvent(card.id, "youtube_opened");
+    }
+
+    const nextProofs = readCurrentStoredWatchProofs();
+    if (nextProofs.delete(card.id)) {
+      writeStoredWatchProofs(nextProofs);
+    }
+
+    if (options.showStatus !== false) {
+      setStatus(`${card.title} is ready. Collect it to save the card to your account.`);
+    }
+
+    return true;
+  }, [syncAccountLegendEvent]);
+
+  const syncReadyWatchProofs = useCallback((showStatus = false) => {
+    const now = Date.now();
+    setWatchTimerTick(now);
+
+    const proofs = readCurrentStoredWatchProofs();
+    const currentWatchedIds = readCurrentStoredIds(watchedStorageKey);
+
+    for (const proof of proofs.values()) {
+      const card = legendCardById.get(proof.cardId);
+
+      if (card && proof.eligibleAt <= now && !currentWatchedIds.has(card.id)) {
+        markCardWatchReady(card, { showStatus });
+      }
+    }
+  }, [markCardWatchReady]);
 
   useEffect(() => {
     return () => {
@@ -459,6 +594,26 @@ export function LegendCardCollection() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const syncSilently = () => syncReadyWatchProofs(false);
+    const syncWithStatus = () => syncReadyWatchProofs(true);
+
+    syncSilently();
+    const interval = window.setInterval(syncSilently, 1000);
+    window.addEventListener("focus", syncWithStatus);
+    document.addEventListener("visibilitychange", syncWithStatus);
+
+    return () => {
+      window.clearInterval(interval);
+      window.removeEventListener("focus", syncWithStatus);
+      document.removeEventListener("visibilitychange", syncWithStatus);
+    };
+  }, [syncReadyWatchProofs]);
 
   useEffect(() => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) {
@@ -633,6 +788,8 @@ export function LegendCardCollection() {
     storyFocusCard ??
     LEGEND_CARDS.find((card) => Boolean(card.youtube && !unlockedIds.has(card.id))) ??
     newestEpisodeCard;
+  const focusWatchProof = focusCard ? watchProofs.get(focusCard.id) : undefined;
+  const focusWatchSecondsRemaining = getWatchSecondsRemaining(focusWatchProof, watchTimerTick);
   const focusCardAction = focusCard
     ? unlockedIds.has(focusCard.id)
       ? {
@@ -642,6 +799,14 @@ export function LegendCardCollection() {
           detail: "This card is saved. You can replay the story or find another card in the album.",
           ctaLabel: speakingCardId === focusCard.id ? "Stop story" : "Listen story",
         }
+      : Boolean(focusCard.youtube && focusWatchSecondsRemaining > 0)
+        ? {
+            step: "watch",
+            eyebrow: "YouTube in progress",
+            badge: `${getWatchSecondsLabel(focusWatchSecondsRemaining)} left`,
+            detail: "Keep the YouTube story open, then return here to collect the card.",
+            ctaLabel: "Open again",
+          }
       : Boolean(focusCard.youtube && watchedIds.has(focusCard.id))
         ? {
             step: "collect",
@@ -904,21 +1069,24 @@ export function LegendCardCollection() {
         ? `Next card: ${collectorQuestCard.title}`
         : "Open the album";
 
-  function markCardOpened(card: LegendCard) {
+  function startCardWatchProof(card: LegendCard) {
     if (!card.youtube) {
-      return;
+      return null;
     }
-
-    const nextWatched = new Set(readCurrentStoredIds(watchedStorageKey));
-    nextWatched.add(card.id);
-    writeStoredIds(watchedStorageKey, nextWatched);
 
     const nextOpened = new Set(readCurrentStoredIds(openedStorageKey));
     nextOpened.add(card.id);
     writeStoredIds(openedStorageKey, nextOpened);
 
-    syncAccountLegendEvent(card.id, "youtube_opened");
-    setStatus(`${card.title} opened on YouTube. You can unlock the card now.`);
+    const now = Date.now();
+    const proofs = readCurrentStoredWatchProofs();
+    const currentProof = proofs.get(card.id);
+    const proof = currentProof && currentProof.eligibleAt > now ? currentProof : createWatchProof(card, now);
+    proofs.set(card.id, proof);
+    writeStoredWatchProofs(proofs);
+    setWatchTimerTick(now);
+
+    return proof;
   }
 
   function markCardListened(card: LegendCard) {
@@ -934,14 +1102,24 @@ export function LegendCardCollection() {
       return;
     }
 
-    markCardOpened(card);
+    const currentWatchedIds = readCurrentStoredIds(watchedStorageKey);
+    const proof = currentWatchedIds.has(card.id) ? null : startCardWatchProof(card);
+    const remainingSeconds = getWatchSecondsRemaining(proof ?? undefined, Date.now());
     const opened = window.open(card.youtube, "_blank", "noopener,noreferrer");
 
     if (opened) {
       opened.opener = null;
-      setStatus(`Opened ${card.teams} on YouTube. Return here to unlock ${card.title}.`);
+      setStatus(
+        remainingSeconds > 0
+          ? `Opened ${card.teams} on YouTube. Return in ${getWatchSecondsLabel(remainingSeconds)} to collect ${card.title}.`
+          : `${card.title} is ready to collect.`,
+      );
     } else {
-      setStatus(`Popup blocked. Use the YouTube link, then unlock ${card.title}.`);
+      setStatus(
+        remainingSeconds > 0
+          ? `Popup blocked. Open YouTube manually and return in ${getWatchSecondsLabel(remainingSeconds)} to collect ${card.title}.`
+          : `${card.title} is ready to collect.`,
+      );
     }
   }
 
@@ -952,6 +1130,23 @@ export function LegendCardCollection() {
     }
 
     if (!watchedIds.has(card.id)) {
+      const proof = readCurrentStoredWatchProofs().get(card.id);
+      const remainingSeconds = getWatchSecondsRemaining(proof, Date.now());
+
+      if (!proof) {
+        setStatus(`Open the ${card.teams} YouTube story first.`);
+        return;
+      }
+
+      if (remainingSeconds > 0) {
+        setStatus(`Keep the YouTube story open. ${getWatchSecondsLabel(remainingSeconds)} left before ${card.title} is ready.`);
+        return;
+      }
+
+      markCardWatchReady(card, { showStatus: false });
+    }
+
+    if (!readCurrentStoredIds(watchedStorageKey).has(card.id)) {
       setStatus(`Open the ${card.teams} YouTube story first.`);
       return;
     }
@@ -1715,6 +1910,9 @@ export function LegendCardCollection() {
           const isPreviewing = activePreviewCard?.id === card.id;
           const hasWatchedEpisode = watchedIds.has(card.id);
           const hasListenedStory = listenedIds.has(card.id);
+          const watchProof = watchProofs.get(card.id);
+          const watchSecondsRemaining = getWatchSecondsRemaining(watchProof, watchTimerTick);
+          const isWatchPending = Boolean(card.youtube && !hasWatchedEpisode && watchSecondsRemaining > 0);
           const canUnlock = Boolean(card.youtube && hasWatchedEpisode && !isUnlocked);
           const isSpeaking = speakingCardId === card.id;
 
@@ -1762,7 +1960,7 @@ export function LegendCardCollection() {
                     <Check size={13} aria-hidden="true" />
                     Story
                   </span>
-                  <span className={hasWatchedEpisode ? "is-done" : card.youtube ? "is-next" : ""}>
+                  <span className={hasWatchedEpisode ? "is-done" : card.youtube || isWatchPending ? "is-next" : ""}>
                     <ExternalLink size={13} aria-hidden="true" />
                     YouTube
                   </span>
@@ -1780,7 +1978,7 @@ export function LegendCardCollection() {
                       onClick={() => startWatch(card)}
                     >
                       <ExternalLink size={16} />
-                      {hasWatchedEpisode ? "Open again" : "Open YouTube"}
+                      {hasWatchedEpisode || isWatchPending ? "Open again" : "Open YouTube"}
                     </button>
                   ) : (
                     <span className="button secondary legend-card__disabled" aria-disabled="true">
@@ -1796,6 +1994,12 @@ export function LegendCardCollection() {
                   >
                     {isUnlocked ? "Unlocked" : "Unlock card"}
                   </button>
+
+                  {isWatchPending ? (
+                    <p className="legend-card__watch-note">
+                      Keep YouTube open. {getWatchSecondsLabel(watchSecondsRemaining)} left before this card is ready.
+                    </p>
+                  ) : null}
 
                   <button
                     type="button"

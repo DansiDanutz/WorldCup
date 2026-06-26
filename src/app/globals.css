@@ -11314,10 +11314,10 @@ html {
 
 .legend-card__actions {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
-  align-items: center;
-  margin-top: 3px;
+  align-items: stretch;
+  margin-top: 5px;
 }
 
 .legend-card__watch,
@@ -11330,19 +11330,25 @@ html {
 
 .legend-card__watch,
 .legend-card__disabled {
-  grid-column: 1 / -1;
   width: 100%;
-}
-
-.legend-card__watch.is-speaking {
-  border-color: rgba(255, 207, 102, 0.72);
-  color: #1b1308;
-  background: #ffcf66;
 }
 
 .legend-card__unlock {
   width: 100%;
-  white-space: nowrap;
+  min-height: 40px;
+  white-space: normal;
+}
+
+.legend-card__watch-note {
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 207, 102, 0.24);
+  border-radius: 8px;
+  color: #ffe29a;
+  background: rgba(255, 207, 102, 0.08);
+  font: 800 12px / 1.35 var(--font-sans);
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .legend-card__disabled,
@@ -11367,7 +11373,9 @@ html {
   background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
   font: 800 13px / 1 var(--font-sans);
-  white-space: nowrap;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .legend-card__voice.is-speaking {
