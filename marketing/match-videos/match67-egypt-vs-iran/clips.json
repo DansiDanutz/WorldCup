@@ -1,0 +1,350 @@
+{
+  "comment": "Ep67 Egypt vs Iran — NO-REPEAT (rule #11): every clip once, 30 distinct. OUR PREDICTION EGY 1-0 IRN (Iran press, Taremi goes close ~40, Salah cuts inside & curls his left foot inside the far post 71). Legend 067 The Ney Player. Rule #16 tease+payoff, #17 holo collectible reveal, #18 premium prediction card. Title+App gradients. vol=0.",
+  "clips": [
+    {
+      "id": "cg-egyfan",
+      "src": "assets/cg-egy-fan.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cg-irnfan",
+      "src": "assets/cg-irn-fan.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cg-tease",
+      "src": "assets/cg-mystery-tease.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cg-stadaerial",
+      "src": "assets/stadium-aerial.mp4",
+      "at": 15,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stad-wide",
+      "src": "assets/stadium-wide.mp4",
+      "at": 33,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "egy-crowd",
+      "src": "assets/egy-crowd.mp4",
+      "at": 44,
+      "dur": 11.5,
+      "vol": 0
+    },
+    {
+      "id": "s-salah",
+      "src": "assets/egy-salah.mp4",
+      "at": 55.5,
+      "dur": 5.6,
+      "vol": 0
+    },
+    {
+      "id": "s-marmoush",
+      "src": "assets/egy-marmoush.mp4",
+      "at": 61.1,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "s-trezeguet",
+      "src": "assets/egy-trezeguet.mp4",
+      "at": 65.1,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "s-zizo",
+      "src": "assets/egy-zizo.mp4",
+      "at": 68.1,
+      "dur": 5.5,
+      "vol": 0
+    },
+    {
+      "id": "s-elneny",
+      "src": "assets/egy-elneny.mp4",
+      "at": 73.6,
+      "dur": 5.9,
+      "vol": 0
+    },
+    {
+      "id": "irn-crowd",
+      "src": "assets/irn-crowd.mp4",
+      "at": 79.5,
+      "dur": 11.1,
+      "vol": 0
+    },
+    {
+      "id": "s-taremi",
+      "src": "assets/irn-taremi.mp4",
+      "at": 90.6,
+      "dur": 4.6,
+      "vol": 0
+    },
+    {
+      "id": "s-azmoun",
+      "src": "assets/irn-azmoun.mp4",
+      "at": 95.2,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "s-jahanbakhsh",
+      "src": "assets/irn-jahanbakhsh.mp4",
+      "at": 98.2,
+      "dur": 2.6,
+      "vol": 0
+    },
+    {
+      "id": "s-gholizadeh",
+      "src": "assets/irn-gholizadeh.mp4",
+      "at": 100.8,
+      "dur": 2.4,
+      "vol": 0
+    },
+    {
+      "id": "duel-egy",
+      "src": "assets/duel-egy.mp4",
+      "at": 103,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/duel-mid.mp4",
+      "at": 113,
+      "dur": 9.5,
+      "vol": 0
+    },
+    {
+      "id": "duel-irn",
+      "src": "assets/duel-irn.mp4",
+      "at": 122.5,
+      "dur": 9.6,
+      "vol": 0
+    },
+    {
+      "id": "dr-irn-attack",
+      "src": "assets/dr-irn-attack.mp4",
+      "at": 132,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-irn-chance",
+      "src": "assets/dr-irn-chance.mp4",
+      "at": 142,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-egy-buildup",
+      "src": "assets/dr-egy-buildup.mp4",
+      "at": 152,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-salah-cutin",
+      "src": "assets/dr-salah-cutin.mp4",
+      "at": 162,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-salah-goal",
+      "src": "assets/dr-salah-goal.mp4",
+      "at": 172,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "dr-egy-celeb",
+      "src": "assets/dr-egy-celeb.mp4",
+      "at": 183,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-taremi-stand",
+      "src": "assets/dr-taremi-stand.mp4",
+      "at": 193,
+      "dur": 10.4,
+      "vol": 0
+    },
+    {
+      "id": "vd-respect",
+      "src": "assets/verdict-respect.mp4",
+      "at": 203.32,
+      "dur": 10.7,
+      "vol": 0
+    },
+    {
+      "id": "en-crowd",
+      "src": "assets/engage-crowd.mp4",
+      "at": 244,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "my-ney",
+      "src": "assets/my-ney.mp4",
+      "at": 255,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "cta-celeb",
+      "src": "assets/cta-celeb.mp4",
+      "at": 303.05,
+      "dur": 11,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 31.56,
+        "dur": 288,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 34,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.06,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 22.38,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 26.17,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113.25,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 131.51,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 146.5,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 162,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 177,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 179,
+        "vol": 0.96
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 180,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 256,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 271,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 304,
+        "vol": 0.6
+      }
+    ]
+  }
+}

@@ -597,6 +597,15 @@
       "landscape": "/special-cards/legend-066-landscape.png"
     },
     {
+      "number": "067",
+      "name": "The Ney Player",
+      "nation": "Egypt",
+      "episode": 67,
+      "match": "Egypt vs Iran",
+      "portrait": "/special-cards/legend-067-portrait.png",
+      "landscape": "/special-cards/legend-067-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
