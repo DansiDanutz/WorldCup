@@ -176,7 +176,7 @@ function SceneEngland() {
       <PlayerShowcase clipId="s-bellingham" name="JUDE BELLINGHAM" role="THE GALÁCTICO" accent={ENG_NAVY} start={61.1} end={65.1} />
       <PlayerShowcase clipId="s-foden" name="PHIL FODEN" role="THE IMAGINATION" accent={ENG} start={65.1} end={68.1} />
       <PlayerShowcase clipId="s-rice" name="DECLAN RICE" role="THE ANCHOR" accent={ENG_NAVY} start={68.1} end={73.6} />
-      <PlayerShowcase clipId="s-pickford" name="JORDAN PICKFORD" role="THE WALL" accent={ENG} start={73.6} end={79.5} />
+      <PlayerShowcase clipId="s-saka" name="BUKAYO SAKA" role="THE FLYER" accent={ENG} start={73.6} end={79.5} />
     </div>
   );
 }

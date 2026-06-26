@@ -14,7 +14,7 @@ const clips = [
   C('eng-crowd', 'eng-crowd.mp4', 44.0, 11.5),
   C('s-kane', 'eng-kane.mp4', 55.5, 5.6), C('s-bellingham', 'eng-bellingham.mp4', 61.1, 4.0),
   C('s-foden', 'eng-foden.mp4', 65.1, 3.0), C('s-rice', 'eng-rice.mp4', 68.1, 5.5),
-  C('s-pickford', 'eng-pickford.mp4', 73.6, 5.9),
+  C('s-saka', 'eng-saka.mp4', 73.6, 5.9),
   C('pan-crowd', 'pan-crowd.mp4', 79.5, 11.1),
   C('s-carrasquilla', 'pan-carrasquilla.mp4', 90.6, 4.6), C('s-barcenas', 'pan-barcenas.mp4', 95.2, 3.0),
   C('s-murillo', 'pan-murillo.mp4', 98.2, 2.6), C('s-waterman', 'pan-waterman.mp4', 100.8, 2.4),
