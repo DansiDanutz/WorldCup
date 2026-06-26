@@ -615,6 +615,15 @@
       "landscape": "/special-cards/legend-068-landscape.png"
     },
     {
+      "number": "069",
+      "name": "The Stonemason",
+      "nation": "Croatia",
+      "episode": 69,
+      "match": "Croatia vs Ghana",
+      "portrait": "/special-cards/legend-069-portrait.png",
+      "landscape": "/special-cards/legend-069-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
