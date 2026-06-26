@@ -79,6 +79,7 @@ const CARDS: Card[] = [
   { number: '063', name: 'The Boatbuilder',         nation: 'Norway',       episode: 63, match: 'Norway vs France', portrait: '/special-cards/legend-063-portrait.png', landscape: '/special-cards/legend-063-landscape.png' },
   { number: '064', name: 'The Griot',               nation: 'Senegal',      episode: 64, match: 'Senegal vs Iraq', portrait: '/special-cards/legend-064-portrait.png', landscape: '/special-cards/legend-064-landscape.png' },
   { number: '065', name: 'The Morna Singer',        nation: 'Cape Verde',   episode: 65, match: 'Cape Verde vs Saudi Arabia', portrait: '/special-cards/legend-065-portrait.png', landscape: '/special-cards/legend-065-landscape.png' },
+  { number: '066', name: 'The Candombe Drummer',    nation: 'Uruguay',      episode: 66, match: 'Uruguay vs Spain', portrait: '/special-cards/legend-066-portrait.png', landscape: '/special-cards/legend-066-landscape.png' },
   { number: 'BONUS-1', name: 'The Freedom Run',   nation: 'Colombia',     episode: 0,  match: 'Bonus film · Luis Díaz',     portrait: '/special-cards/legend-bonus-diaz-portrait.png',   landscape: '/special-cards/legend-bonus-diaz-landscape.png' },
   { number: 'BONUS-2', name: 'The Promise',       nation: 'Belgium',      episode: 0,  match: 'Bonus film · Romelu Lukaku', portrait: '/special-cards/legend-bonus-lukaku-portrait.png', landscape: '/special-cards/legend-bonus-lukaku-landscape.png' },
 ];
