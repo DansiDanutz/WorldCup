@@ -83,6 +83,7 @@ const CARDS: Card[] = [
   { number: '067', name: 'The Ney Player',          nation: 'Egypt',        episode: 67, match: 'Egypt vs Iran', portrait: '/special-cards/legend-067-portrait.png', landscape: '/special-cards/legend-067-landscape.png' },
   { number: '068', name: 'The Carillonneur',        nation: 'Belgium',      episode: 68, match: 'Belgium vs New Zealand', portrait: '/special-cards/legend-068-portrait.png', landscape: '/special-cards/legend-068-landscape.png' },
   { number: '069', name: 'The Stonemason',          nation: 'Croatia',      episode: 69, match: 'Croatia vs Ghana', portrait: '/special-cards/legend-069-portrait.png', landscape: '/special-cards/legend-069-landscape.png' },
+  { number: '070', name: 'The Mola Maker',          nation: 'Panama',       episode: 70, match: 'England vs Panama', portrait: '/special-cards/legend-070-portrait.png', landscape: '/special-cards/legend-070-landscape.png' },
   { number: 'BONUS-1', name: 'The Freedom Run',   nation: 'Colombia',     episode: 0,  match: 'Bonus film · Luis Díaz',     portrait: '/special-cards/legend-bonus-diaz-portrait.png',   landscape: '/special-cards/legend-bonus-diaz-landscape.png' },
   { number: 'BONUS-2', name: 'The Promise',       nation: 'Belgium',      episode: 0,  match: 'Bonus film · Romelu Lukaku', portrait: '/special-cards/legend-bonus-lukaku-portrait.png', landscape: '/special-cards/legend-bonus-lukaku-landscape.png' },
 ];
