@@ -1,12 +1,14 @@
 import {
+  YOUTUBE_DID_YOU_KNOW_SHORTS,
   YOUTUBE_LEGEND_BONUS_VIDEOS,
   YOUTUBE_LEGEND_EPISODES,
   youtubeForEpisode,
+  type YouTubeDidYouKnowShort,
   type YouTubeLegendBonusVideo,
   type YouTubeLegendEpisode,
 } from "@/lib/youtube-legend-episodes";
 
-export type LegendCardKind = "episode-special" | "legend-bonus";
+export type LegendCardKind = "episode-special" | "supporter-card" | "legend-bonus" | "did-you-know-short";
 export type LegendCardRarity = "Story" | "Rare" | "Legendary";
 
 export type LegendCardDefinition = {
@@ -33,7 +35,18 @@ function slugify(value: string) {
 }
 
 function titleFromHook(hook: string) {
-  return hook.replace(/[.!?]+$/, "").slice(0, 58);
+  const cleanHook = hook.replace(/[.!?]+$/, "");
+  const maxTitleLength = 64;
+
+  if (cleanHook.length <= maxTitleLength) {
+    return cleanHook;
+  }
+
+  const truncated = cleanHook.slice(0, maxTitleLength);
+  const lastWordBoundary = truncated.lastIndexOf(" ");
+  const title = lastWordBoundary >= 42 ? truncated.slice(0, lastWordBoundary) : truncated;
+
+  return title.replace(/\s+(a|an|and|at|by|for|from|in|into|of|on|or|the|to|with)$/i, "");
 }
 
 const handMadeLegendCards: LegendCardDefinition[] = [
@@ -53,9 +66,9 @@ const handMadeLegendCards: LegendCardDefinition[] = [
   {
     id: "ep1-mandela-spirit",
     episode: 1,
-    kind: "legend-bonus",
+    kind: "episode-special",
     title: "Mandela Spirit",
-    subtitle: "Legend bonus card",
+    subtitle: "Episode 1 legend card",
     teams: "Mexico vs South Africa",
     rarity: "Legendary",
     story:
@@ -118,9 +131,9 @@ const handMadeLegendCards: LegendCardDefinition[] = [
   {
     id: "ep6-abuelo",
     episode: 6,
-    kind: "legend-bonus",
+    kind: "episode-special",
     title: "El Abuelo de la Bombonera",
-    subtitle: "Legend bonus card",
+    subtitle: "Episode 6 legend card",
     teams: "Argentina vs Algeria",
     rarity: "Legendary",
     story:
@@ -131,9 +144,9 @@ const handMadeLegendCards: LegendCardDefinition[] = [
   {
     id: "ep6-vieux-fennec",
     episode: 6,
-    kind: "legend-bonus",
+    kind: "episode-special",
     title: "Le Vieux Fennec",
-    subtitle: "Legend bonus card",
+    subtitle: "Episode 6 legend card",
     teams: "Argentina vs Algeria",
     rarity: "Legendary",
     story:
@@ -144,9 +157,9 @@ const handMadeLegendCards: LegendCardDefinition[] = [
   {
     id: "ep7-tambouye",
     episode: 7,
-    kind: "legend-bonus",
+    kind: "episode-special",
     title: "Le Tambouye de 74",
-    subtitle: "Legend bonus card",
+    subtitle: "Episode 7 legend card",
     teams: "Brazil vs Haiti",
     rarity: "Legendary",
     story:
@@ -157,9 +170,9 @@ const handMadeLegendCards: LegendCardDefinition[] = [
   {
     id: "ep9-falconer",
     episode: 9,
-    kind: "legend-bonus",
+    kind: "episode-special",
     title: "The Falconer of the Desert",
-    subtitle: "Legend bonus card",
+    subtitle: "Episode 9 legend card",
     teams: "Qatar vs Switzerland",
     rarity: "Legendary",
     story:
@@ -170,6 +183,36 @@ const handMadeLegendCards: LegendCardDefinition[] = [
 ];
 
 const handMadeEpisodeNumbers = new Set(handMadeLegendCards.map((card) => card.episode));
+
+function getEpisodeTeams(episode: YouTubeLegendEpisode) {
+  return [episode.home, episode.away];
+}
+
+function getUniqueEpisodeTeams() {
+  const seen = new Set<string>();
+  const teams: string[] = [];
+
+  for (const episode of YOUTUBE_LEGEND_EPISODES) {
+    for (const team of getEpisodeTeams(episode)) {
+      const key = slugify(team);
+
+      if (!seen.has(key)) {
+        seen.add(key);
+        teams.push(team);
+      }
+    }
+  }
+
+  return teams;
+}
+
+function firstEpisodeForTeam(team: string) {
+  const key = slugify(team);
+
+  return YOUTUBE_LEGEND_EPISODES.find((episode) =>
+    getEpisodeTeams(episode).some((episodeTeam) => slugify(episodeTeam) === key),
+  ) ?? null;
+}
 
 function createEpisodeCard(episode: YouTubeLegendEpisode): LegendCardDefinition {
   return {
@@ -185,6 +228,51 @@ function createEpisodeCard(episode: YouTubeLegendEpisode): LegendCardDefinition 
     youtube: episode.youtube,
     imageTeam: episode.imageTeam ?? episode.home,
   };
+}
+
+function createSupporterCards(team: string): LegendCardDefinition[] {
+  const episode = firstEpisodeForTeam(team);
+
+  if (!episode) {
+    return [];
+  }
+
+  const episodeLabel = episode.episodeLabel ?? `Episode ${episode.ep}`;
+  const youtube = youtubeForEpisode(episode.ep);
+  const teamSlug = slugify(team);
+
+  return [
+    {
+      id: `supporter-${teamSlug}-mystery`,
+      episode: episode.ep,
+      episodeLabel: `${episodeLabel} supporter`,
+      kind: "supporter-card",
+      title: `${team} Mystery Supporter`,
+      subtitle: "Mystery supporter card",
+      teams: team,
+      rarity: "Legendary",
+      story:
+        `Every nation has a guardian. The ${team} Mystery Supporter appears before the floodlights, ` +
+        "carrying old songs, team colors, and match-day omens into the WorldCup26 Legends album.",
+      youtube,
+      imageTeam: team,
+    },
+    {
+      id: `supporter-${teamSlug}-ultra`,
+      episode: episode.ep,
+      episodeLabel: `${episodeLabel} supporter`,
+      kind: "supporter-card",
+      title: `${team} Ultra Fan`,
+      subtitle: "Ultra supporter card",
+      teams: team,
+      rarity: "Legendary",
+      story:
+        `The ${team} Ultra Fan turns one seat into a whole stand. Scarves rise, chants shake the tunnel, ` +
+        "and the card captures the supporter energy behind the YouTube story.",
+      youtube,
+      imageTeam: team,
+    },
+  ];
 }
 
 function createBonusCard(video: YouTubeLegendBonusVideo): LegendCardDefinition {
@@ -203,11 +291,57 @@ function createBonusCard(video: YouTubeLegendBonusVideo): LegendCardDefinition {
   };
 }
 
+function createSeriesCard(video: YouTubeLegendBonusVideo): LegendCardDefinition {
+  return {
+    id: video.id,
+    episode: video.episode,
+    episodeLabel: video.episodeLabel,
+    kind: "episode-special",
+    title: video.title,
+    subtitle: video.subtitle,
+    teams: video.teams,
+    rarity: "Legendary",
+    story: video.story,
+    youtube: video.youtube,
+    imageTeam: video.imageTeam,
+  };
+}
+
+function createDidYouKnowShortCard(short: YouTubeDidYouKnowShort): LegendCardDefinition {
+  return {
+    id: short.id,
+    episode: short.episode,
+    episodeLabel: short.episodeLabel,
+    kind: "did-you-know-short",
+    title: short.title,
+    subtitle: short.subtitle,
+    teams: short.teams,
+    rarity: "Legendary",
+    story: short.story,
+    youtube: short.youtube,
+    imageTeam: short.imageTeam,
+  };
+}
+
+function isSeriesVideo(video: YouTubeLegendBonusVideo) {
+  return video.kind === "series";
+}
+
+function isStandaloneBonusVideo(video: YouTubeLegendBonusVideo) {
+  return !isSeriesVideo(video);
+}
+
 const generatedEpisodeCards = YOUTUBE_LEGEND_EPISODES.filter(
   (episode) => !handMadeEpisodeNumbers.has(episode.ep),
 ).map(createEpisodeCard);
 
-const channelBonusCards = YOUTUBE_LEGEND_BONUS_VIDEOS.map(createBonusCard);
+const supporterCards = getUniqueEpisodeTeams().flatMap(createSupporterCards);
+
+const channelSeriesCards = YOUTUBE_LEGEND_BONUS_VIDEOS.filter(isSeriesVideo).map(createSeriesCard);
+
+const channelBonusCards = YOUTUBE_LEGEND_BONUS_VIDEOS.filter(isStandaloneBonusVideo).map(createBonusCard);
+
+const didYouKnowShortCards = YOUTUBE_DID_YOU_KNOW_SHORTS.map(createDidYouKnowShortCard);
 
 function isChannelBonus(card: LegendCardDefinition) {
   return card.episode >= 900;
@@ -216,6 +350,9 @@ function isChannelBonus(card: LegendCardDefinition) {
 export const LEGEND_CARD_DEFINITIONS: LegendCardDefinition[] = [
   ...handMadeLegendCards,
   ...generatedEpisodeCards,
+  ...supporterCards,
+  ...channelSeriesCards,
+  ...didYouKnowShortCards,
   ...channelBonusCards,
 ].sort((a, b) => {
   if (isChannelBonus(a) !== isChannelBonus(b)) {
