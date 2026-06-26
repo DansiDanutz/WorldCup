@@ -579,6 +579,15 @@
       "landscape": "/special-cards/legend-064-landscape.png"
     },
     {
+      "number": "065",
+      "name": "The Morna Singer",
+      "nation": "Cape Verde",
+      "episode": 65,
+      "match": "Cape Verde vs Saudi Arabia",
+      "portrait": "/special-cards/legend-065-portrait.png",
+      "landscape": "/special-cards/legend-065-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",

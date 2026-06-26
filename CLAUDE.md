@@ -238,6 +238,44 @@ Non-negotiables distilled from channel data (details in the playbook):
       story stamp, and the sign-up CTA — richer and more cinematic each episode.
     - **ENFORCEMENT:** every episode's cold open must contain the Legend tease, and
       the reveal narration must contain the explicit spine↔legend connection line.
+17. **COLLECTIBLE-CARD REVEAL — MAKE THEM ADDICTED TO COLLECT (owner-mandated, from
+    Ep66 on, hard rule):** the Legend card reveal is the funnel's hook — it must look
+    and feel like pulling a RARE HOLOGRAPHIC TRADING CARD, so viewers sign up to
+    collect the whole set. The reveal (SceneMystery) must include ALL of:
+    - **A living, animated card** — not a static image: a continuous slow 3D
+      tilt/parallax PLUS a holographic SHINE-SWEEP bar that travels across the foil
+      on a loop (the classic "tilt-the-holo" shimmer), a glow pulse and rarity
+      sparkle. The card never sits still.
+    - **An UNLOCK beat** — a "LEGEND UNLOCKED" stamp, the Legend number (e.g. "Nº 065"),
+      and a rarity tier (e.g. ✦✦✦ / "ULTRA RARE").
+    - **COLLECTION mechanics (the addiction driver)** — a strip/row of the recent
+      Legend cards (copy the last ~5 `public/special-cards/legend-0NN-portrait.png`
+      into the episode `assets/` and show them as a row) with the NEW one popping in
+      and highlighted, a progress line ("LEGEND 065 OF 65 · COLLECT THEM ALL"), and a
+      "complete your collection" call. The viewer must FEEL the set growing.
+    - **The sign-up CTA** ties unlocking to worldcup26.world (one card per sign-up /
+      per match), reinforcing "create your free account to claim this Legend."
+    - Raise the bar each episode; the app `collection` page should also animate the
+      cards (holo shimmer / hover tilt) so the in-app set feels just as collectible.
+    - **ENFORCEMENT:** every reveal from Ep66 on must show the animated holo card, the
+      UNLOCK beat, and the growing-collection strip with the progress/collect line.
+18. **PREDICTION RESULT CARD — PREMIUM, NOT COMMON (owner-mandated, from Ep66 on,
+    hard rule):** the full-time prediction card (the broadcast scoreline shown after
+    the prediction, `PredictionCard`) must look PREMIUM and distinctly WorldCup26
+    Legends — never a plain/generic scorebox. REDESIGN it to include:
+    - **A branded, layered frame** — split team-colour side panels behind the score,
+      a soft holographic/gloss sheen sweep, an ornate gold accent line, depth and
+      shadow (a designed broadcast graphic, not a flat rectangle).
+    - **Strong hierarchy** — crest-style circular flag badges with team-colour rings,
+      big glowing scoreline with a gold divider, the minute/scorer beats as clean
+      chips with goal/woodwork icons, a one-line story tagline.
+    - **Identity** — the "WorldCup26 Legends" wordmark / gold seal, "OUR PREDICTION ·
+      NOT PLAYED" ribbon (keeps the real-results-only rule #7 visible), the group
+      label, and a subtle worldcup26.world watermark.
+    - **Motion** — the card animates in (scale/settle) and carries a gentle sheen or
+      pulse while on screen, matching the premium feel of the Legend card.
+    - **ENFORCEMENT:** from Ep66 on, the prediction card must be the redesigned
+      premium version; keep raising its quality each episode.
 
 ## Video production pipeline
 
