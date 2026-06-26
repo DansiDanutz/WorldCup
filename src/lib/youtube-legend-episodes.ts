@@ -22,6 +22,7 @@ export type YouTubeLegendBonusVideo = {
   teams: string;
   story: string;
   youtube: string;
+  alternateYoutube?: string[];
   imageTeam?: string;
 };
 
@@ -892,6 +893,7 @@ export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
     story:
       "The Monopoly card follows the strange truths, power moves, and hidden football business that make the World Cup bigger than ninety minutes.",
     youtube: "https://www.youtube.com/watch?v=zb4W9KkVESU",
+    alternateYoutube: ["https://www.youtube.com/watch?v=0oHkstIXqjk"],
     imageTeam: "Mexico",
   },
   {

@@ -32,6 +32,10 @@ describe("Legend card registry", () => {
     assert.equal(supporterCards.every((card) => Boolean(card.youtube)), true);
     assert.equal(didYouKnowCards.filter((card) => Boolean(card.youtube)).length, 1);
     assert.deepEqual(
+      bonusCards.find((card) => card.id === "bonus-world-cup-secrets")?.alternateYoutube,
+      ["https://www.youtube.com/watch?v=0oHkstIXqjk"],
+    );
+    assert.deepEqual(
       bonusCards.map((card) => card.title).sort(),
       ["Luis Diaz", "Lukaku: The Promise", "World Cup Monopoly"].sort(),
     );

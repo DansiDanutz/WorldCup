@@ -208,6 +208,8 @@ describe("WorldCup design system integration", () => {
     assert.match(youtubeLegendEpisodes, /qicbV-pTVdM/);
     assert.match(youtubeLegendEpisodes, /Yo4q-_iHoKM/);
     assert.match(youtubeLegendEpisodes, /World Cup Monopoly/);
+    assert.match(youtubeLegendEpisodes, /alternateYoutube/);
+    assert.match(youtubeLegendEpisodes, /0oHkstIXqjk/);
     assert.match(youtubeLegendEpisodes, /5 World Cup Secrets/);
     assert.match(youtubeLegendEpisodes, /bonus-launch-film/);
     assert.match(youtubeLegendEpisodes, /youtubeForEpisode/);

@@ -22,6 +22,7 @@ export type LegendCardDefinition = {
   rarity: LegendCardRarity;
   story: string;
   youtube: string | null;
+  alternateYoutube?: string[];
   imageTeam?: string;
 };
 
@@ -287,6 +288,7 @@ function createBonusCard(video: YouTubeLegendBonusVideo): LegendCardDefinition {
     rarity: "Legendary",
     story: video.story,
     youtube: video.youtube,
+    alternateYoutube: video.alternateYoutube,
     imageTeam: video.imageTeam,
   };
 }
@@ -303,6 +305,7 @@ function createSeriesCard(video: YouTubeLegendBonusVideo): LegendCardDefinition 
     rarity: "Legendary",
     story: video.story,
     youtube: video.youtube,
+    alternateYoutube: video.alternateYoutube,
     imageTeam: video.imageTeam,
   };
 }
