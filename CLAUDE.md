@@ -277,6 +277,18 @@ Non-negotiables distilled from channel data (details in the playbook):
     - **ENFORCEMENT:** from Ep66 on, the prediction card must be the redesigned
       premium version; keep raising its quality each episode.
 
+20. **15-SECOND MYSTIC INTRO ON EVERY EPISODE (owner-mandated, from Ep69 on, hard
+    rule):** every episode opens with a ~15s mysterious, atmospheric intro that sets
+    up the face-off between the TWO nations playing — mist, embers, a deep braam, the
+    two flags/crests rising from shadow on either side, the nation names, a glowing
+    "VS" igniting between them, the "WorldCup26 Legends" wordmark, then a whoosh into
+    the cold open. Wordless (music + SFX only) — the mood carries it. This is a 15s
+    PRE-ROLL **concatenated to the front of the finished 318s body** (keeps the
+    carefully-timed main timeline untouched → final video ≈ **333s**). Implemented as
+    `intro.html` + `SceneIntro` (in `intro-scenes.jsx`, reusing the kit + the episode's
+    Flag components), rendered to `intro.mp4`, then `ffmpeg concat` intro + body. Apply
+    to ALL stories from Ep69 on; keep raising its quality.
+
 19. **NO LETTERBOX / FULL-FRAME 16:9 (owner-mandated, from Ep69 on, hard rule, NO
     EXCEPTIONS):** the video MUST fill the entire 1920×1080 frame. NEVER render the
     black cinematic top/bottom bars — on YouTube (already 16:9) they read as a broken
@@ -287,6 +299,33 @@ Non-negotiables distilled from channel data (details in the playbook):
     rendered frame are live video, not solid black — check a smoke frame before the
     full render. (Episodes ≤Ep68 shipped with the bars; do NOT re-render them, just
     keep every episode from Ep69 on full-frame.)
+
+21. **NATION-UNIQUE MYSTIC STORY — RESEARCH EVERY NATION BEFORE EVERY SCRIPT
+    (owner-mandated, from Ep71 on, hard rule, NO EXCEPTIONS):** usual narration of
+    usual stories does NOT engage — it bores. Every episode must be a MOTIVATIONAL
+    short film built on something SPECIFIC and UNIQUE to one (or both) of the two
+    nations playing: real history, mythology, mysticism, folklore, a legend, a
+    sacred symbol, a national obsession, an unbelievable-but-true fact. This is what
+    makes the channel unlike anyone else's — it is the addiction engine.
+    - **RESEARCH FIRST, ALWAYS.** Before writing a single narration line, WEB-SEARCH
+      the two nations and find a genuinely special, VERIFIED angle (cite sources in
+      the episode README). Never reuse a generic "they have a point to prove" arc.
+      Each nation gets its OWN researched hook — dig into that nation specifically.
+      (Examples of the bar: Panama's Guna *mola* — identity stitched in layers, never
+      erased; a nation's mythic creature, founding legend, or world-first.)
+    - **WEAVE IT INTO THE MYSTIC INTRO + COLD OPEN.** The 15s mystic intro (rule #20)
+      and the cold open must plant this nation-specific mystery as a question
+      ("what cannot be erased?"), then pay it off at the Legend reveal. The mystery
+      is the spine of the whole script, not a footnote.
+    - **LENGTH IS ALLOWED TO GROW for a better story.** If a richer, more cinematic
+      mystic build needs a few more seconds (longer intro, a deeper cold-open beat),
+      ADD them — engagement/retention beats a fixed runtime. Never cut the mystery
+      short to hit a number.
+    - **TONE = motivational, curiosity-driven, addictive** ("the secret nobody
+      talks about…", "they should never have survived…") — a story you cannot stop
+      watching, not a match preview. Builds on rule #9 (HOOK = MYSTERY + HISTORY) and
+      feeds rule #16 (Mystery Card) + #17 (collectible Legend). Log what landed in
+      `SERIES_PLAYBOOK.md` and raise the bar every episode.
 
 ## Video production pipeline
 
