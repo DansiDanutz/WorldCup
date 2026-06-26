@@ -570,6 +570,15 @@
       "landscape": "/special-cards/legend-063-landscape.png"
     },
     {
+      "number": "064",
+      "name": "The Griot",
+      "nation": "Senegal",
+      "episode": 64,
+      "match": "Senegal vs Iraq",
+      "portrait": "/special-cards/legend-064-portrait.png",
+      "landscape": "/special-cards/legend-064-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
