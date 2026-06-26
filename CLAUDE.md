@@ -277,6 +277,17 @@ Non-negotiables distilled from channel data (details in the playbook):
     - **ENFORCEMENT:** from Ep66 on, the prediction card must be the redesigned
       premium version; keep raising its quality each episode.
 
+19. **NO LETTERBOX / FULL-FRAME 16:9 (owner-mandated, from Ep69 on, hard rule, NO
+    EXCEPTIONS):** the video MUST fill the entire 1920×1080 frame. NEVER render the
+    black cinematic top/bottom bars — on YouTube (already 16:9) they read as a broken
+    "black gap" covering the video, top and bottom (owner flagged this on Ep68). The
+    `Letterbox` component MUST be a no-op (`function Letterbox() { return null; }`) in
+    `match-kit.jsx`; leaving the `<Letterbox/>` calls in the scenes is fine as long as
+    it renders nothing. **VERIFY every episode:** the topmost and bottommost rows of a
+    rendered frame are live video, not solid black — check a smoke frame before the
+    full render. (Episodes ≤Ep68 shipped with the bars; do NOT re-render them, just
+    keep every episode from Ep69 on full-frame.)
+
 ## Video production pipeline
 
 Each episode is a self-contained project under `marketing/match-videos/<epNN-...>/`
