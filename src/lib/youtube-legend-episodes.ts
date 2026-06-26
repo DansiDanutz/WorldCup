@@ -25,6 +25,18 @@ export type YouTubeLegendBonusVideo = {
   imageTeam?: string;
 };
 
+export type YouTubeDidYouKnowShort = {
+  id: string;
+  episode: number;
+  episodeLabel: string;
+  title: string;
+  subtitle: string;
+  teams: string;
+  story: string;
+  youtube: string | null;
+  imageTeam?: string;
+};
+
 export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   {
     ep: 1,
@@ -531,6 +543,318 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
     youtube: "https://www.youtube.com/watch?v=SmHGZMbrOv4",
     imageTeam: "Argentina",
   },
+  {
+    ep: 44,
+    home: "France",
+    away: "Iraq",
+    stage: "Group stage",
+    score: null,
+    hook: "The Boy Named After Zidane.",
+    story:
+      "France and Iraq step into a WorldCup26 Legends chapter called the boy named after Zidane. The card keeps the YouTube story alive inside the album, ready for Brian voice playback and collector unlocks.",
+    youtube: "https://www.youtube.com/watch?v=Snndr8qa0o0",
+    imageTeam: "Morocco",
+  },
+  {
+    ep: 45,
+    home: "Norway",
+    away: "Senegal",
+    stage: "Group stage",
+    score: null,
+    hook: "The Sock-Ball and The Viking.",
+    story:
+      "Norway and Senegal meet inside a story of improvised childhood football and northern force, where the YouTube episode becomes a collectible card for the album.",
+    youtube: "https://www.youtube.com/watch?v=tabIgKf5i9Q",
+    imageTeam: "South Africa",
+  },
+  {
+    ep: 46,
+    home: "Jordan",
+    away: "Algeria",
+    stage: "Group stage",
+    score: null,
+    hook: "Brothers of the Sand.",
+    story:
+      "Jordan and Algeria carry desert pride, first-arrival belief, and old tournament scars into a WorldCup26 Legends chapter built for Brian voice playback.",
+    youtube: "https://www.youtube.com/watch?v=8SDxmuH4_H8",
+    imageTeam: "Qatar",
+  },
+  {
+    ep: 47,
+    home: "Portugal",
+    away: "Uzbekistan",
+    stage: "Group stage",
+    score: null,
+    hook: "The Monument's Last Dance.",
+    story:
+      "Portugal bring the monument's final chapter. Uzbekistan bring first-timer hunger, turning the episode into a card about legacy against arrival.",
+    youtube: "https://www.youtube.com/watch?v=KtBlYBJjN4E",
+    imageTeam: "Portugal",
+  },
+  {
+    ep: 48,
+    home: "England",
+    away: "Ghana",
+    stage: "Group stage",
+    score: null,
+    hook: "The Empire Has to Listen.",
+    story:
+      "England and Ghana return to a story of power, pain, and one continent demanding to be heard. The card unlocks from the matching YouTube episode.",
+    youtube: "https://www.youtube.com/watch?v=duyUYHc5R_I",
+    imageTeam: "South Africa",
+  },
+  {
+    ep: 49,
+    home: "Panama",
+    away: "Croatia",
+    stage: "Group stage",
+    score: null,
+    hook: "Courage Meets Granite.",
+    story:
+      "Panama bring courage into the storm. Croatia answer with granite tournament memory, and the collector card keeps that clash alive in the album.",
+    youtube: "https://www.youtube.com/watch?v=RI69OF9ysxs",
+    imageTeam: "South Africa",
+  },
+  {
+    ep: 50,
+    home: "Colombia",
+    away: "DR Congo",
+    stage: "Group stage",
+    score: null,
+    hook: "Flair Meets Fire.",
+    story:
+      "Colombia move with rhythm and invention. DR Congo answer with fire, power, and the old Leopard roar inside a new WorldCup26 Legends card.",
+    youtube: "https://www.youtube.com/watch?v=oaPz_CMZhbg",
+    imageTeam: "Canada",
+  },
+  {
+    ep: 51,
+    home: "Bosnia & Herzegovina",
+    away: "Qatar",
+    stage: "Group stage",
+    score: null,
+    hook: "The Dragon's Last Fire.",
+    story:
+      "Bosnia carry one more dragon flame into Qatar's careful game, a chapter about age, pride, and the last sparks of a golden striker's story.",
+    youtube: "https://www.youtube.com/watch?v=P4p23g9Z_e8",
+    imageTeam: "Bosnia and Herzegovina",
+  },
+  {
+    ep: 52,
+    home: "Switzerland",
+    away: "Canada",
+    stage: "Group stage",
+    score: null,
+    hook: "The General's Last Campaign.",
+    story:
+      "Switzerland bring tournament discipline. Canada bring home-nation urgency, and the General's last campaign becomes a collectible story beat.",
+    youtube: "https://www.youtube.com/watch?v=C7cmGx_LOCc",
+    imageTeam: "Canada",
+  },
+  {
+    ep: 53,
+    home: "Scotland",
+    away: "Brazil",
+    stage: "Group stage",
+    score: null,
+    hook: "The Tartan Army Meets the Hexa.",
+    story:
+      "Scotland bring the Tartan Army's heartbreak and hope. Brazil bring the Hexa dream, making this card a meeting of noise, beauty, and pressure.",
+    youtube: "https://www.youtube.com/watch?v=BXDntJbpDZI",
+    imageTeam: "Brazil",
+  },
+  {
+    ep: 54,
+    home: "Morocco",
+    away: "Haiti",
+    stage: "Group stage",
+    score: null,
+    hook: "The Lion and the Grenadier.",
+    story:
+      "Morocco's lion meets Haiti's grenadier spirit in a story of defiance, rhythm, and belief that the card album can replay through Brian's voice.",
+    youtube: "https://www.youtube.com/watch?v=NJ9b7bBv4Hc",
+    imageTeam: "Morocco",
+  },
+  {
+    ep: 55,
+    home: "Mexico",
+    away: "Czechia",
+    stage: "Group stage",
+    score: null,
+    hook: "The Diamond of Prague Meets the Aztec Sun.",
+    story:
+      "Mexico's Aztec sun meets Czechia's diamond shape, turning structure and heat into a new live episode card for collectors.",
+    youtube: "https://www.youtube.com/watch?v=QmnrOiwgRs8",
+    imageTeam: "Mexico",
+  },
+  {
+    ep: 56,
+    home: "South Africa",
+    away: "South Korea",
+    stage: "Group stage",
+    score: null,
+    hook: "Two Sons of the Beautiful Game.",
+    story:
+      "South Africa and South Korea share a story of speed, sound, and national memory, with two sons of the game carrying the episode into the album.",
+    youtube: "https://www.youtube.com/watch?v=O1gRDEhtUZM",
+    imageTeam: "South Korea",
+  },
+  {
+    ep: 57,
+    home: "Curacao",
+    away: "Ivory Coast",
+    stage: "Group stage",
+    score: null,
+    hook: "The African-Caribbean Symphony.",
+    story:
+      "Curacao's island miracle meets Ivory Coast's orange force, and the African-Caribbean rhythm becomes a collector story card.",
+    youtube: "https://www.youtube.com/watch?v=94AJ9nrDEJE",
+    imageTeam: "Brazil",
+  },
+  {
+    ep: 58,
+    home: "Ecuador",
+    away: "Germany",
+    stage: "Group stage",
+    score: null,
+    hook: "The Equator's Challenge.",
+    story:
+      "Ecuador bring altitude, speed, and equator nerve. Germany bring the machine, giving collectors a card about a challenge that refuses to bow.",
+    youtube: "https://www.youtube.com/watch?v=NIlS14DVEMU",
+    imageTeam: "Brazil",
+  },
+  {
+    ep: 59,
+    home: "Japan",
+    away: "Sweden",
+    stage: "Group stage",
+    score: null,
+    hook: "The Art of Precision.",
+    story:
+      "Japan and Sweden turn patience, timing, and finishing into a precision story where one clean movement can define the card.",
+    youtube: "https://www.youtube.com/watch?v=LujOwKeqnEU",
+    imageTeam: "South Korea",
+  },
+  {
+    ep: 60,
+    home: "Tunisia",
+    away: "Netherlands",
+    stage: "Group stage",
+    score: null,
+    hook: "The Orange Storm and the Desert Wind.",
+    story:
+      "The Netherlands bring the orange storm. Tunisia bring desert wind, and their collision becomes a live story card for the WorldCup26 album.",
+    youtube: "https://www.youtube.com/watch?v=4MWG1L5JiBE",
+    imageTeam: "Morocco",
+  },
+  {
+    ep: 61,
+    home: "Paraguay",
+    away: "Australia",
+    stage: "Group stage",
+    score: null,
+    hook: "The Waltz and the War.",
+    story:
+      "Paraguay and Australia turn rhythm, distance, and fight into a match story that collectors can hear, open, and save.",
+    youtube: "https://www.youtube.com/watch?v=UJmaemaa-gY",
+    imageTeam: "Paraguay",
+  },
+  {
+    ep: 62,
+    home: "Turkey",
+    away: "USA",
+    stage: "Group stage",
+    score: null,
+    hook: "Ghosts of Empires.",
+    story:
+      "Turkey and the USA meet under ghosts of empires, where history, migration, and home pressure turn into a collectible Legend card.",
+    youtube: "https://www.youtube.com/watch?v=1WLSQDYGsMo",
+    imageTeam: "USA",
+  },
+  {
+    ep: 63,
+    home: "Norway",
+    away: "France",
+    stage: "Group stage",
+    score: null,
+    hook: "The Titans Collide: Mbappe vs Haaland.",
+    story:
+      "Norway and France carry two modern titans into one frame: Haaland waiting for the ball, Mbappe waiting for space, and collectors waiting for the card.",
+    youtube: "https://www.youtube.com/watch?v=u4B2JWTm8pc",
+    imageTeam: "USA",
+  },
+  {
+    ep: 64,
+    home: "Senegal",
+    away: "Iraq",
+    stage: "Group stage",
+    score: null,
+    hook: "Two Lions.",
+    story:
+      "Senegal and Iraq bring two different lions into one episode, each carrying pride, pressure, and a memory bigger than the scoreboard.",
+    youtube: "https://www.youtube.com/watch?v=0llU9z8wc_g",
+    imageTeam: "Morocco",
+  },
+  {
+    ep: 65,
+    home: "Cape Verde",
+    away: "Saudi Arabia",
+    stage: "Group stage",
+    score: null,
+    hook: "The Believers.",
+    story:
+      "Cape Verde and Saudi Arabia meet as believers in different miracles, turning conviction into a live WorldCup26 Legends card.",
+    youtube: "https://www.youtube.com/watch?v=LU9rX0R14hw",
+    imageTeam: "South Africa",
+  },
+  {
+    ep: 66,
+    home: "Uruguay",
+    away: "Spain",
+    stage: "Group stage",
+    score: null,
+    hook: "The Derby of Will vs Art.",
+    story:
+      "Uruguay bring will, edge, and old scars. Spain bring art, control, and pressure, making this episode a derby of opposite football souls.",
+    youtube: "https://www.youtube.com/watch?v=HbxhAFwxv_4",
+    imageTeam: "Mexico",
+  },
+  {
+    ep: 67,
+    home: "Egypt",
+    away: "Iran",
+    stage: "Group stage",
+    score: null,
+    hook: "The Desert Derby.",
+    story:
+      "Egypt and Iran meet in a desert derby where kings, assassins, pride, and patience all wait for one decisive moment.",
+    youtube: "https://www.youtube.com/watch?v=k_UwgDqfqBE",
+    imageTeam: "Qatar",
+  },
+  {
+    ep: 68,
+    home: "Belgium",
+    away: "New Zealand",
+    stage: "Group stage",
+    score: null,
+    hook: "The Last Stand.",
+    story:
+      "Belgium bring the last stand of an old golden story. New Zealand bring the memory of refusing to lose, and the card waits at the end.",
+    youtube: "https://www.youtube.com/watch?v=PRxE6alq_Qg",
+    imageTeam: "Morocco",
+  },
+  {
+    ep: 69,
+    home: "Croatia",
+    away: "Ghana",
+    stage: "Group stage",
+    score: null,
+    hook: "The Warriors.",
+    story:
+      "Croatia and Ghana bring warriors of different kinds: one hardened by tournament granite, one burning with African memory and unfinished business.",
+    youtube: "https://www.youtube.com/watch?v=V_NSSOTMd6w",
+    imageTeam: "South Africa",
+  },
 ];
 
 export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
@@ -567,7 +891,7 @@ export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
     teams: "World Cup history",
     story:
       "The Monopoly card follows the strange truths, power moves, and hidden football business that make the World Cup bigger than ninety minutes.",
-    youtube: "https://www.youtube.com/watch?v=e96tg1mpKHo",
+    youtube: "https://www.youtube.com/watch?v=zb4W9KkVESU",
     imageTeam: "Mexico",
   },
   {
@@ -582,6 +906,93 @@ export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
       "The launch card opens the whole collection: nations, myths, rivalries, and a prediction game built around stories before every match.",
     youtube: "https://www.youtube.com/watch?v=NGyPLObwq4c",
     imageTeam: "USA",
+  },
+];
+
+export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
+  {
+    id: "short-world-cup-secrets",
+    episode: 949,
+    episodeLabel: "Did You Know? Short",
+    title: "5 World Cup Secrets",
+    subtitle: "Did You Know? Short · World Cup secrets",
+    teams: "World Cup history",
+    story:
+      "Five strange World Cup secrets step out from the shadows, from impossible referee stories to myths that still shape how fans remember the tournament.",
+    youtube: "https://www.youtube.com/watch?v=e96tg1mpKHo",
+    imageTeam: "World Cup history",
+  },
+  {
+    id: "short-gaetjens-vanished",
+    episode: 950,
+    episodeLabel: "Did You Know? Short",
+    title: "The Vanished Hero",
+    subtitle: "Did You Know? Short · Joe Gaetjens",
+    teams: "USA 1-0 England · 1950",
+    story:
+      "A part-time American dishwasher named Joe Gaetjens threw himself at a cross and scored the header that beat mighty England. He went home to Haiti a hero. Then the dictatorship made him disappear. No grave. No body. No answers.",
+    youtube: null,
+    imageTeam: "USA",
+  },
+  {
+    id: "short-garrincha-broken-magic",
+    episode: 951,
+    episodeLabel: "Did You Know? Short",
+    title: "The Broken Boy Who Became Magic",
+    subtitle: "Did You Know? Short · Garrincha",
+    teams: "Brazil · World Cup 1962",
+    story:
+      "Doctors thought Garrincha's crooked legs should stop him from walking. Instead, those impossible legs confused defenders, carried Brazil after Pele's injury, and made him the Joy of the People.",
+    youtube: null,
+    imageTeam: "Brazil",
+  },
+  {
+    id: "short-carbajal-five-world-cups",
+    episode: 952,
+    episodeLabel: "Did You Know? Short",
+    title: "The Keeper Who Hid in Goal",
+    subtitle: "Did You Know? Short · Antonio Carbajal",
+    teams: "Mexico · 5 World Cups",
+    story:
+      "Antonio Carbajal became a goalkeeper so he could see his father coming and run before getting caught playing football. That hiding place became the first five-World-Cup career.",
+    youtube: null,
+    imageTeam: "Mexico",
+  },
+  {
+    id: "short-socrates-sunday",
+    episode: 953,
+    episodeLabel: "Did You Know? Short",
+    title: "The Death He Predicted",
+    subtitle: "Did You Know? Short · Socrates",
+    teams: "Brazil · 1982",
+    story:
+      "Socrates said he wanted to die on a Sunday while Corinthians won a title. On December 4, 2011, he passed away, and Corinthians became champions the same day.",
+    youtube: null,
+    imageTeam: "Brazil",
+  },
+  {
+    id: "short-roger-milla-decree",
+    episode: 954,
+    episodeLabel: "Did You Know? Short",
+    title: "The President's Decree",
+    subtitle: "Did You Know? Short · Roger Milla",
+    teams: "Cameroon · Italia 90",
+    story:
+      "Roger Milla was pulled back to the World Cup by presidential order, then scored, danced at the corner flag, and helped Cameroon become Africa's first quarter-finalists.",
+    youtube: null,
+    imageTeam: "Morocco",
+  },
+  {
+    id: "short-lucien-laurent-first-goal",
+    episode: 955,
+    episodeLabel: "Did You Know? Short",
+    title: "The First Goal",
+    subtitle: "Did You Know? Short · Lucien Laurent",
+    teams: "France · World Cup 1930",
+    story:
+      "Lucien Laurent scored the first goal in World Cup history, then returned to factory work, survived war captivity, and lived long enough to see France lift the trophy.",
+    youtube: null,
+    imageTeam: "France",
   },
 ];
 

@@ -8,6 +8,7 @@ import brazilUltra from "../../content/images/Supporters/Brazil/Ultra-Fan.png";
 import canadaMystery from "../../content/images/Supporters/Canada/Mystery-Supporter.png";
 import canadaUltra from "../../content/images/Supporters/Canada/Ultra-Fan.png";
 import haitiTambouye from "../../content/images/Supporters/Haiti/Le-Tambouye-de-74.png";
+import joeGaetjens from "../../content/images/Legends/Joe-Gaetjens.png";
 import mexicoMystery from "../../content/images/Supporters/Mexico/Mystery-Supporter.png";
 import mexicoUltra from "../../content/images/Supporters/Mexico/Ultra-Fan.png";
 import moroccoUltra from "../../content/images/Supporters/Morocco/Ultra-Fan.png";
@@ -32,6 +33,7 @@ export type LegendCard = LegendCardDefinition & {
 };
 
 const legendCardImages: Record<string, StaticImageData> = {
+  "short-gaetjens-vanished": joeGaetjens,
   "ep1-azteca-warrior": mexicoMystery,
   "ep1-mandela-spirit": southAfricaMystery,
   "ep2-mystery-master": southKoreaMystery,

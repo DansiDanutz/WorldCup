@@ -21,7 +21,7 @@ import { CardViewControl } from "@/components/card-view-control";
 import { LEGEND_CARDS, type LegendCard } from "@/lib/legend-cards";
 import {
   createLegendCardVoiceText,
-  elevenLabsBrianVoiceName,
+  getStoryVoiceDisplayName,
   selectBrowserBrianStoryVoice,
   storyVoiceLanguage,
 } from "@/lib/story-voice";
@@ -37,6 +37,7 @@ const notificationStorageKey = "worldcup_legend_notifications";
 const storageEventName = "worldcup:legend-card-storage";
 const compactLegendCardCount = 12;
 const pulsePreviewDurationMs = 60_000;
+const allowBrowserStoryVoiceFallback = process.env.NEXT_PUBLIC_ALLOW_BROWSER_STORY_VOICE_FALLBACK === "true";
 const validCardIds = new Set(LEGEND_CARDS.map((card) => card.id));
 const unlockableCardIds = new Set(LEGEND_CARDS.filter((card) => card.youtube).map((card) => card.id));
 const legendCardById = new Map(LEGEND_CARDS.map((card) => [card.id, card]));
@@ -44,6 +45,8 @@ const legendCardById = new Map(LEGEND_CARDS.map((card) => [card.id, card]));
 type LegendCardFilter =
   | "all"
   | "stories"
+  | "supporters"
+  | "legends"
   | "bonus"
   | "need-story"
   | "need-youtube"
@@ -53,7 +56,9 @@ type LegendCardFilter =
 
 const legendCardFilterLabels: Record<LegendCardFilter, string> = {
   all: "All cards",
-  stories: "Stories",
+  stories: "Series",
+  supporters: "Supporters",
+  legends: "Did You Know Legends",
   bonus: "Bonus",
   "need-story": "Need story",
   "need-youtube": "YouTube next",
@@ -64,7 +69,9 @@ const legendCardFilterLabels: Record<LegendCardFilter, string> = {
 
 const legendCardFilters: Array<{ id: LegendCardFilter; label: string }> = [
   { id: "all", label: "All" },
-  { id: "stories", label: "Stories" },
+  { id: "stories", label: "Series" },
+  { id: "supporters", label: "Supporters" },
+  { id: "legends", label: "Legends" },
   { id: "bonus", label: "Bonus" },
   { id: "need-story", label: "Need story" },
   { id: "need-youtube", label: "YouTube next" },
@@ -366,8 +373,6 @@ export function LegendCardCollection() {
   const [accountSyncLabel, setAccountSyncLabel] = useState("Saved on this device");
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [speakingCardId, setSpeakingCardId] = useState<string | null>(null);
-  const storyAudioRef = useRef<HTMLAudioElement | null>(null);
-  const voiceRequestIdRef = useRef(0);
   const [cardFilter, setCardFilter] = useState<LegendCardFilter>("all");
   const [cardSearch, setCardSearch] = useState("");
   const [collectionExpanded, setCollectionExpanded] = useState(false);
@@ -377,34 +382,43 @@ export function LegendCardCollection() {
   );
   const [notificationStatusOverride, setNotificationStatusOverride] = useState<string | null>(null);
   const [status, setStatus] = useState(
-    "Open a YouTube story to collect its card. Use Listen story for English voice playback.",
+    "Open a YouTube story to collect its card. Use Listen story for ElevenLabs Brian playback.",
   );
+  const storyAudioRef = useRef<HTMLAudioElement | null>(null);
+  const storyAudioUrlRef = useRef<string | null>(null);
+  const storyVoiceRequestIdRef = useRef(0);
   const notificationStatus =
     notificationStatusOverride ?? (notificationPreference === "on" ? "Card alerts on" : "Card alerts off");
 
-  function clearStoryAudio() {
-    const currentAudio = storyAudioRef.current;
-
-    if (!currentAudio) {
-      return;
-    }
-
-    currentAudio.pause();
-    if (currentAudio.src.startsWith("blob:")) {
-      URL.revokeObjectURL(currentAudio.src);
-    }
-    storyAudioRef.current = null;
-  }
-
-  function stopStoryPlayback() {
-    voiceRequestIdRef.current += 1;
-    clearStoryAudio();
-
+  function stopBrowserStoryVoice() {
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
       window.speechSynthesis.cancel();
     }
+  }
 
+  function clearStoryAudio() {
+    if (storyAudioRef.current) {
+      storyAudioRef.current.pause();
+      storyAudioRef.current.removeAttribute("src");
+      storyAudioRef.current.load();
+      storyAudioRef.current = null;
+    }
+
+    if (storyAudioUrlRef.current) {
+      URL.revokeObjectURL(storyAudioUrlRef.current);
+      storyAudioUrlRef.current = null;
+    }
+  }
+
+  function stopStoryPlayback(statusMessage?: string) {
+    storyVoiceRequestIdRef.current += 1;
+    clearStoryAudio();
+    stopBrowserStoryVoice();
     setSpeakingCardId(null);
+
+    if (statusMessage) {
+      setStatus(statusMessage);
+    }
   }
 
   function syncAccountLegendEvent(cardId: string, event: AccountLegendEvent) {
@@ -426,14 +440,18 @@ export function LegendCardCollection() {
 
   useEffect(() => {
     return () => {
-      const currentAudio = storyAudioRef.current;
+      storyVoiceRequestIdRef.current += 1;
 
-      if (currentAudio) {
-        currentAudio.pause();
-        if (currentAudio.src.startsWith("blob:")) {
-          URL.revokeObjectURL(currentAudio.src);
-        }
+      if (storyAudioRef.current) {
+        storyAudioRef.current.pause();
+        storyAudioRef.current.removeAttribute("src");
+        storyAudioRef.current.load();
         storyAudioRef.current = null;
+      }
+
+      if (storyAudioUrlRef.current) {
+        URL.revokeObjectURL(storyAudioUrlRef.current);
+        storyAudioUrlRef.current = null;
       }
 
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
@@ -581,14 +599,15 @@ export function LegendCardCollection() {
   const collectedCount = LEGEND_CARDS.filter((card) => unlockedIds.has(card.id)).length;
   const liveCount = useMemo(() => LEGEND_CARDS.filter((card) => card.youtube).length, []);
   const storyCount = useMemo(() => LEGEND_CARDS.filter((card) => card.kind === "episode-special").length, []);
+  const supporterCount = useMemo(() => LEGEND_CARDS.filter((card) => card.kind === "supporter-card").length, []);
+  const didYouKnowCount = useMemo(() => LEGEND_CARDS.filter((card) => card.kind === "did-you-know-short").length, []);
   const bonusCount = useMemo(() => LEGEND_CARDS.filter((card) => card.kind === "legend-bonus").length, []);
   const newestEpisodeCard = useMemo(
     () => LEGEND_CARDS.find((card) => card.kind === "episode-special" && card.youtube) ?? LEGEND_CARDS[0],
     [],
   );
   const readyCount = LEGEND_CARDS.filter(
-    (card) =>
-      Boolean(card.youtube && listenedIds.has(card.id) && watchedIds.has(card.id) && !unlockedIds.has(card.id)),
+    (card) => Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id)),
   ).length;
   const listenedCount = LEGEND_CARDS.filter((card) => listenedIds.has(card.id)).length;
   const watchedCount = LEGEND_CARDS.filter((card) => Boolean(card.youtube && watchedIds.has(card.id))).length;
@@ -602,8 +621,7 @@ export function LegendCardCollection() {
     ? getCompletionPercent(collectedCount, LEGEND_CARDS.length)
     : 0;
   const readyFocusCard = LEGEND_CARDS.find(
-    (card) =>
-      Boolean(card.youtube && listenedIds.has(card.id) && watchedIds.has(card.id) && !unlockedIds.has(card.id)),
+    (card) => Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id)),
   );
   const storyFocusCard = LEGEND_CARDS.find((card) => needsStoryStep(card, unlockedIds, listenedIds));
   const youtubeFocusCard = LEGEND_CARDS.find((card) =>
@@ -637,7 +655,7 @@ export function LegendCardCollection() {
               step: "listen",
               eyebrow: "Next best action",
               badge: "Listen next",
-              detail: "Start with the in-app voice story, then open YouTube to collect the card.",
+              detail: "Start with the in-app voice story, then open YouTube to unlock the card.",
               ctaLabel: speakingCardId === focusCard.id ? "Stop story" : "Listen story",
             }
           : focusCard.youtube
@@ -667,6 +685,12 @@ export function LegendCardCollection() {
       if (cardFilter === "bonus" && card.kind !== "legend-bonus") {
         return false;
       }
+      if (cardFilter === "supporters" && card.kind !== "supporter-card") {
+        return false;
+      }
+      if (cardFilter === "legends" && card.kind !== "did-you-know-short") {
+        return false;
+      }
       if (cardFilter === "need-story" && !needsStoryStep(card, unlockedIds, listenedIds)) {
         return false;
       }
@@ -674,9 +698,7 @@ export function LegendCardCollection() {
         return false;
       }
       if (cardFilter === "ready") {
-        if (
-          !Boolean(card.youtube && listenedIds.has(card.id) && watchedIds.has(card.id) && !unlockedIds.has(card.id))
-        ) {
+        if (!Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id))) {
           return false;
         }
       }
@@ -718,6 +740,8 @@ export function LegendCardCollection() {
   const filterCounts: Record<LegendCardFilter, number> = {
     all: LEGEND_CARDS.length,
     stories: storyCount,
+    supporters: supporterCount,
+    legends: didYouKnowCount,
     bonus: bonusCount,
     "need-story": needStoryCount,
     "need-youtube": needYouTubeCount,
@@ -774,9 +798,6 @@ export function LegendCardCollection() {
     pulsePreview && previewSecondsRemaining > 0
       ? legendCardById.get(pulsePreview.cardId) ?? null
       : null;
-  const activePreviewNeedsStory = Boolean(
-    activePreviewCard && !unlockedIds.has(activePreviewCard.id) && !listenedIds.has(activePreviewCard.id),
-  );
   const nextPulseCard = nextPulseItem ? legendCardById.get(nextPulseItem.cardId) ?? null : null;
   const pulseDisplayCard = activePreviewCard ?? nextPulseCard ?? focusCard;
   const completedQuestCard =
@@ -817,24 +838,14 @@ export function LegendCardCollection() {
           label: "Open YouTube",
           detail: "Watch the matching episode on the channel.",
           complete: watchedIds.has(collectorQuestCard.id),
-          actionLabel: !listenedIds.has(collectorQuestCard.id)
-            ? "Listen first"
-            : watchedIds.has(collectorQuestCard.id)
-              ? "Open again"
-              : "Open YouTube",
+          actionLabel: watchedIds.has(collectorQuestCard.id) ? "Open again" : "Open YouTube",
         },
         {
           id: "collect",
           label: "Collect card",
           detail: "Return here after YouTube and save it.",
           complete: unlockedIds.has(collectorQuestCard.id),
-          actionLabel: unlockedIds.has(collectorQuestCard.id)
-            ? "Collected"
-            : !listenedIds.has(collectorQuestCard.id)
-              ? "Listen first"
-              : !watchedIds.has(collectorQuestCard.id)
-                ? "Open YouTube first"
-                : "Collect card",
+          actionLabel: unlockedIds.has(collectorQuestCard.id) ? "Collected" : "Collect card",
         },
       ]
     : [];
@@ -907,7 +918,7 @@ export function LegendCardCollection() {
     writeStoredIds(openedStorageKey, nextOpened);
 
     syncAccountLegendEvent(card.id, "youtube_opened");
-    setStatus(`${card.title} opened on YouTube. You can collect the card now.`);
+    setStatus(`${card.title} opened on YouTube. You can unlock the card now.`);
   }
 
   function markCardListened(card: LegendCard) {
@@ -923,30 +934,20 @@ export function LegendCardCollection() {
       return;
     }
 
-    if (!unlockedIds.has(card.id) && !listenedIds.has(card.id)) {
-      setStatus(`Listen to the ${card.teams} story first. YouTube opens after the English voice story.`);
-      return;
-    }
-
     markCardOpened(card);
     const opened = window.open(card.youtube, "_blank", "noopener,noreferrer");
 
     if (opened) {
       opened.opener = null;
-      setStatus(`Opened ${card.teams} on YouTube. Return here to collect ${card.title}.`);
+      setStatus(`Opened ${card.teams} on YouTube. Return here to unlock ${card.title}.`);
     } else {
-      setStatus(`Popup blocked. Use the YouTube link, then collect ${card.title}.`);
+      setStatus(`Popup blocked. Use the YouTube link, then unlock ${card.title}.`);
     }
   }
 
   async function unlockCard(card: LegendCard) {
     if (!card.youtube) {
       setStatus(`${card.title} unlocks when the episode is live on YouTube.`);
-      return;
-    }
-
-    if (!listenedIds.has(card.id)) {
-      setStatus(`Listen to the ${card.teams} story first, then open YouTube to collect ${card.title}.`);
       return;
     }
 
@@ -981,16 +982,19 @@ export function LegendCardCollection() {
     }
   }
 
-  async function readVoiceError(response: Response) {
-    const payload: unknown = await response.json().catch(() => ({}));
+  function toggleVoice() {
+    const next = !voiceEnabled;
 
-    return isRecord(payload) && typeof payload.error === "string"
-      ? payload.error
-      : "Brian voice playback failed.";
+    if (!next) {
+      stopStoryPlayback();
+    }
+
+    setVoiceEnabled(next);
+    setStatus(next ? "Voice enabled. Stories play with ElevenLabs Brian." : "Voice disabled.");
   }
 
-  function speakWithBrowserBrianFallback(card: LegendCard, requestId: number) {
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+  function playBrowserBrianFallback(card: LegendCard, requestId: number) {
+    if (!("speechSynthesis" in window)) {
       return false;
     }
 
@@ -999,45 +1003,36 @@ export function LegendCardCollection() {
       return false;
     }
 
-    window.speechSynthesis.cancel();
-
+    stopBrowserStoryVoice();
+    const storyVoiceDisplayName = getStoryVoiceDisplayName(storyVoice);
     const utterance = new SpeechSynthesisUtterance(createLegendCardVoiceText(card));
-    utterance.lang = storyVoice.lang || storyVoiceLanguage;
+    utterance.lang = storyVoice.lang ?? storyVoiceLanguage;
     utterance.voice = storyVoice;
     utterance.rate = 0.95;
     utterance.pitch = 1;
     utterance.onend = () => {
-      if (voiceRequestIdRef.current === requestId) {
+      if (storyVoiceRequestIdRef.current === requestId) {
         setSpeakingCardId(null);
       }
     };
     utterance.onerror = () => {
-      if (voiceRequestIdRef.current === requestId) {
+      if (storyVoiceRequestIdRef.current === requestId) {
         setSpeakingCardId(null);
         setStatus("Brian voice playback stopped.");
       }
     };
 
-    setStatus(card.title + " story is playing with browser Brian fallback. Open the YouTube episode to collect the card.");
+    setSpeakingCardId(card.id);
+    setStatus(
+      `${card.title} story is playing with browser ${storyVoiceDisplayName}. Set ElevenLabs env vars for the studio Brian voice.`,
+    );
     window.speechSynthesis.speak(utterance);
     return true;
   }
 
-  function toggleVoice() {
-    setVoiceEnabled((enabled) => {
-      const next = !enabled;
-      if (!next) {
-        stopStoryPlayback();
-      }
-      setStatus(next ? "Brian voice enabled. Stories use ElevenLabs Brian." : "Voice disabled.");
-      return next;
-    });
-  }
-
   async function speakStory(card: LegendCard) {
     if (speakingCardId === card.id) {
-      stopStoryPlayback();
-      setStatus("Story stopped.");
+      stopStoryPlayback("Story stopped.");
       return;
     }
 
@@ -1047,11 +1042,10 @@ export function LegendCardCollection() {
       setVoiceEnabled(true);
     }
 
-    const requestId = voiceRequestIdRef.current + 1;
-    voiceRequestIdRef.current = requestId;
-    markCardListened(card);
+    const requestId = storyVoiceRequestIdRef.current + 1;
+    storyVoiceRequestIdRef.current = requestId;
     setSpeakingCardId(card.id);
-    setStatus(card.title + " story is loading with " + elevenLabsBrianVoiceName + ".");
+    setStatus(`${card.title} story is preparing with ElevenLabs Brian.`);
 
     try {
       const response = await fetch("/api/legend-cards/voice", {
@@ -1063,59 +1057,55 @@ export function LegendCardCollection() {
       });
 
       if (!response.ok) {
-        throw new Error(await readVoiceError(response));
+        const payload: unknown = await response.json().catch(() => ({}));
+        throw new Error(isRecord(payload) && typeof payload.error === "string" ? payload.error : "Brian voice failed.");
       }
 
       const audioBlob = await response.blob();
-      if (!audioBlob.type.startsWith("audio/")) {
-        throw new Error("Brian voice playback returned invalid audio.");
-      }
-
-      if (voiceRequestIdRef.current !== requestId) {
+      if (storyVoiceRequestIdRef.current !== requestId) {
         return;
       }
 
-      const audio = new Audio(URL.createObjectURL(audioBlob));
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audio = new Audio(audioUrl);
+      storyAudioUrlRef.current = audioUrl;
       storyAudioRef.current = audio;
+
       audio.onended = () => {
-        if (audio.src.startsWith("blob:")) {
-          URL.revokeObjectURL(audio.src);
-        }
-        if (storyAudioRef.current === audio) {
-          storyAudioRef.current = null;
-        }
-        if (voiceRequestIdRef.current === requestId) {
+        if (storyVoiceRequestIdRef.current === requestId) {
           setSpeakingCardId(null);
         }
       };
       audio.onerror = () => {
-        if (audio.src.startsWith("blob:")) {
-          URL.revokeObjectURL(audio.src);
-        }
-        if (storyAudioRef.current === audio) {
-          storyAudioRef.current = null;
-        }
-        if (voiceRequestIdRef.current === requestId) {
+        if (storyVoiceRequestIdRef.current === requestId) {
           setSpeakingCardId(null);
-          setStatus("Brian voice playback stopped.");
+          setStatus("ElevenLabs Brian playback stopped.");
         }
       };
 
       await audio.play();
-      setStatus(card.title + " story is playing with " + elevenLabsBrianVoiceName + ". Open the YouTube episode to collect the card.");
+      markCardListened(card);
+      setStatus(`${card.title} story is playing with ElevenLabs Brian. Open the YouTube episode to collect the card.`);
     } catch (error) {
-      clearStoryAudio();
-
-      if (voiceRequestIdRef.current === requestId && speakWithBrowserBrianFallback(card, requestId)) {
+      if (storyVoiceRequestIdRef.current !== requestId) {
         return;
       }
 
-      if (voiceRequestIdRef.current === requestId) {
-        setSpeakingCardId(null);
-        setStatus(error instanceof Error ? "Brian voice is unavailable. " + error.message : "Brian voice is unavailable.");
+      clearStoryAudio();
+      if (allowBrowserStoryVoiceFallback && playBrowserBrianFallback(card, requestId)) {
+        markCardListened(card);
+        return;
       }
+
+      setSpeakingCardId(null);
+      setStatus(
+        error instanceof Error
+          ? `${error.message} Add ELEVENLABS_API_KEY and ELEVENLABS_BRIAN_VOICE_ID on the server to use Brian on every card.`
+          : "Could not play ElevenLabs Brian. Add ELEVENLABS_API_KEY and ELEVENLABS_BRIAN_VOICE_ID on the server.",
+      );
     }
   }
+
   function chooseCardFilter(nextFilter: LegendCardFilter) {
     setCardFilter(nextFilter);
     setCollectionExpanded(false);
@@ -1299,8 +1289,8 @@ export function LegendCardCollection() {
           <p className="wc-card-eyebrow">WorldCup26 Legends</p>
           <h1 id="legend-collection-title">Legend Card Collection</h1>
           <p>
-            Collect the episode specials and bonus legends by opening the matching YouTube story.
-            Every card can read its story aloud inside the app, without video playback here.
+            Collect the series cards, supporter cards, three bonus legends, and Did You Know shorts by opening the
+            matching YouTube story. Every card can read its story aloud inside the app, without video playback here.
           </p>
         </div>
 
@@ -1383,12 +1373,8 @@ export function LegendCardCollection() {
                 const stepDisabled =
                   step.id === "read"
                     ? !collectorQuestItem
-                    : step.id === "watch"
-                      ? !listenedIds.has(collectorQuestCard.id)
                     : step.id === "collect"
-                      ? unlockedIds.has(collectorQuestCard.id) ||
-                        !listenedIds.has(collectorQuestCard.id) ||
-                        !watchedIds.has(collectorQuestCard.id)
+                      ? unlockedIds.has(collectorQuestCard.id) || !watchedIds.has(collectorQuestCard.id)
                       : false;
 
                 return (
@@ -1517,15 +1503,9 @@ export function LegendCardCollection() {
                 </small>
                 <div className="legend-pulse__preview-actions">
                   {activePreviewCard ? (
-                    <button
-                      type="button"
-                      className="button"
-                      onClick={() =>
-                        activePreviewNeedsStory ? speakStory(activePreviewCard) : startWatch(activePreviewCard)
-                      }
-                    >
-                      {activePreviewNeedsStory ? <Volume2 size={16} /> : <ExternalLink size={16} />}
-                      {activePreviewNeedsStory ? "Listen story first" : "Watch to collect"}
+                    <button type="button" className="button" onClick={() => startWatch(activePreviewCard)}>
+                      <ExternalLink size={16} />
+                      Watch to collect
                     </button>
                   ) : nextPulseItem ? (
                     <button type="button" className="button" onClick={() => readPulse(nextPulseItem)}>
@@ -1651,22 +1631,30 @@ export function LegendCardCollection() {
             <div className="legend-progress-panel__bar" aria-hidden="true">
               <span style={{ width: `${progressPercent}%` }} />
             </div>
-            <dl className="legend-progress-panel__stats" aria-label="Legend card action counts">
+            <dl className="legend-progress-panel__stats">
               <div>
-                <dt>Need story</dt>
-                <dd>{needStoryCount}</dd>
+                <dt>Series</dt>
+                <dd>{storyCount}</dd>
               </div>
               <div>
-                <dt>YouTube next</dt>
-                <dd>{needYouTubeCount}</dd>
+                <dt>Supporters</dt>
+                <dd>{supporterCount}</dd>
+              </div>
+              <div>
+                <dt>Legends</dt>
+                <dd>{didYouKnowCount}</dd>
+              </div>
+              <div>
+                <dt>Bonus</dt>
+                <dd>{bonusCount}</dd>
               </div>
               <div>
                 <dt>Ready</dt>
                 <dd>{readyCount}</dd>
               </div>
               <div>
-                <dt>Collected</dt>
-                <dd>{collectedCount}</dd>
+                <dt>Locked</dt>
+                <dd>{lockedCount}</dd>
               </div>
             </dl>
           </div>
@@ -1727,56 +1715,8 @@ export function LegendCardCollection() {
           const isPreviewing = activePreviewCard?.id === card.id;
           const hasWatchedEpisode = watchedIds.has(card.id);
           const hasListenedStory = listenedIds.has(card.id);
-          const canUnlock = Boolean(card.youtube && hasListenedStory && hasWatchedEpisode && !isUnlocked);
+          const canUnlock = Boolean(card.youtube && hasWatchedEpisode && !isUnlocked);
           const isSpeaking = speakingCardId === card.id;
-          const primaryCardAction = !card.youtube
-            ? "pending"
-            : isUnlocked
-              ? "replay"
-              : !hasListenedStory
-                ? "listen"
-                : canUnlock
-                  ? "collect"
-                  : "watch";
-          const cardLockLabel = isPreviewing
-            ? `Preview ${previewSecondsRemaining}s`
-            : !card.youtube
-              ? "Coming soon"
-              : canUnlock
-                ? "Ready"
-                : !hasListenedStory
-                  ? "Story first"
-                  : "YouTube next";
-          const primaryCardLabel =
-            primaryCardAction === "pending"
-              ? "Episode coming soon"
-              : primaryCardAction === "collect"
-                ? "Collect card"
-                : primaryCardAction === "listen"
-                  ? isSpeaking
-                    ? "Stop story"
-                    : "Listen story first"
-                  : primaryCardAction === "watch"
-                    ? hasWatchedEpisode
-                      ? "Open again"
-                      : "Open YouTube"
-                    : isSpeaking
-                      ? "Stop story"
-                      : "Replay story";
-          const storyStepClass = hasListenedStory ? "is-done" : !isUnlocked ? "is-next" : "";
-          const youtubeStepClass = hasWatchedEpisode
-            ? "is-done"
-            : card.youtube && hasListenedStory && !isUnlocked
-              ? "is-next"
-              : "";
-          const collectStepClass = isUnlocked ? "is-done" : canUnlock ? "is-next" : "";
-          const secondaryCardLabel = isUnlocked
-            ? "Collected"
-            : canUnlock
-              ? "Open again"
-              : hasListenedStory
-                ? "Collect after YouTube"
-                : "Collect locked";
 
           return (
             <article
@@ -1797,7 +1737,7 @@ export function LegendCardCollection() {
                 {!isUnlocked ? (
                   <div className="legend-card__lock" aria-hidden="true">
                     {isPreviewing ? <Newspaper size={26} /> : <LockKeyhole size={26} />}
-                    <span>{cardLockLabel}</span>
+                    <span>{isPreviewing ? `Preview ${previewSecondsRemaining}s` : "Locked"}</span>
                   </div>
                 ) : (
                   <div className="legend-card__collected" aria-hidden="true">
@@ -1818,15 +1758,15 @@ export function LegendCardCollection() {
                 <p className="legend-card__story">{card.story}</p>
 
                 <div className="legend-card__journey" aria-label={`${card.title} collection progress`}>
-                  <span className={storyStepClass}>
+                  <span className={hasListenedStory ? "is-done" : ""}>
                     <Check size={13} aria-hidden="true" />
                     Story
                   </span>
-                  <span className={youtubeStepClass}>
+                  <span className={hasWatchedEpisode ? "is-done" : card.youtube ? "is-next" : ""}>
                     <ExternalLink size={13} aria-hidden="true" />
                     YouTube
                   </span>
-                  <span className={collectStepClass}>
+                  <span className={isUnlocked ? "is-done" : canUnlock ? "is-next" : ""}>
                     <Sparkles size={13} aria-hidden="true" />
                     Collect
                   </span>
@@ -1836,25 +1776,11 @@ export function LegendCardCollection() {
                   {card.youtube ? (
                     <button
                       type="button"
-                      className={`button legend-card__watch ${
-                        primaryCardAction === "listen" && isSpeaking ? "is-speaking" : ""
-                      }`}
-                      onClick={() => {
-                        if (primaryCardAction === "collect") {
-                          void unlockCard(card);
-                        } else if (primaryCardAction === "listen" || primaryCardAction === "replay") {
-                          speakStory(card);
-                        } else {
-                          startWatch(card);
-                        }
-                      }}
+                      className="button legend-card__watch"
+                      onClick={() => startWatch(card)}
                     >
-                      {primaryCardAction === "collect" ? <Sparkles size={16} /> : null}
-                      {primaryCardAction === "listen" || primaryCardAction === "replay" ? (
-                        isSpeaking ? <VolumeX size={16} /> : <Volume2 size={16} />
-                      ) : null}
-                      {primaryCardAction === "watch" ? <ExternalLink size={16} /> : null}
-                      {primaryCardLabel}
+                      <ExternalLink size={16} />
+                      {hasWatchedEpisode ? "Open again" : "Open YouTube"}
                     </button>
                   ) : (
                     <span className="button secondary legend-card__disabled" aria-disabled="true">
@@ -1866,13 +1792,9 @@ export function LegendCardCollection() {
                     type="button"
                     className="button secondary legend-card__unlock"
                     disabled={isUnlocked || !canUnlock}
-                    onClick={() => {
-                      if (canUnlock) {
-                        startWatch(card);
-                      }
-                    }}
+                    onClick={() => unlockCard(card)}
                   >
-                    {secondaryCardLabel}
+                    {isUnlocked ? "Unlocked" : "Unlock card"}
                   </button>
 
                   <button

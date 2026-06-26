@@ -1,12 +1,14 @@
 import {
+  YOUTUBE_DID_YOU_KNOW_SHORTS,
   YOUTUBE_LEGEND_BONUS_VIDEOS,
   YOUTUBE_LEGEND_EPISODES,
   youtubeForEpisode,
+  type YouTubeDidYouKnowShort,
   type YouTubeLegendBonusVideo,
   type YouTubeLegendEpisode,
 } from "@/lib/youtube-legend-episodes";
 
-export type LegendCardKind = "episode-special" | "supporter-card" | "legend-bonus";
+export type LegendCardKind = "episode-special" | "supporter-card" | "legend-bonus" | "did-you-know-short";
 export type LegendCardRarity = "Story" | "Rare" | "Legendary";
 
 export type LegendCardDefinition = {
@@ -305,6 +307,22 @@ function createSeriesCard(video: YouTubeLegendBonusVideo): LegendCardDefinition 
   };
 }
 
+function createDidYouKnowShortCard(short: YouTubeDidYouKnowShort): LegendCardDefinition {
+  return {
+    id: short.id,
+    episode: short.episode,
+    episodeLabel: short.episodeLabel,
+    kind: "did-you-know-short",
+    title: short.title,
+    subtitle: short.subtitle,
+    teams: short.teams,
+    rarity: "Legendary",
+    story: short.story,
+    youtube: short.youtube,
+    imageTeam: short.imageTeam,
+  };
+}
+
 function isSeriesVideo(video: YouTubeLegendBonusVideo) {
   return video.kind === "series";
 }
@@ -323,6 +341,8 @@ const channelSeriesCards = YOUTUBE_LEGEND_BONUS_VIDEOS.filter(isSeriesVideo).map
 
 const channelBonusCards = YOUTUBE_LEGEND_BONUS_VIDEOS.filter(isStandaloneBonusVideo).map(createBonusCard);
 
+const didYouKnowShortCards = YOUTUBE_DID_YOU_KNOW_SHORTS.map(createDidYouKnowShortCard);
+
 function isChannelBonus(card: LegendCardDefinition) {
   return card.episode >= 900;
 }
@@ -332,6 +352,7 @@ export const LEGEND_CARD_DEFINITIONS: LegendCardDefinition[] = [
   ...generatedEpisodeCards,
   ...supporterCards,
   ...channelSeriesCards,
+  ...didYouKnowShortCards,
   ...channelBonusCards,
 ].sort((a, b) => {
   if (isChannelBonus(a) !== isChannelBonus(b)) {
