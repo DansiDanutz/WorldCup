@@ -606,6 +606,15 @@
       "landscape": "/special-cards/legend-067-landscape.png"
     },
     {
+      "number": "068",
+      "name": "The Carillonneur",
+      "nation": "Belgium",
+      "episode": 68,
+      "match": "Belgium vs New Zealand",
+      "portrait": "/special-cards/legend-068-portrait.png",
+      "landscape": "/special-cards/legend-068-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
