@@ -169,6 +169,20 @@ Non-negotiables distilled from channel data (details in the playbook):
     enough unique clips, GENERATE more (distinct shots/poses/emotions, Lukaku-film
     method in the worldcup-episode skill) — do NOT loop. Before rendering, grep the
     scene file: no `src=` value may appear more than once.**
+    - **NO INTERNAL LOOPING — MECHANICAL GUARD (owner-flagged on Ep70: the verdict
+      handshake clip was stretched to 40.7s and visibly looped ~7×; the owner saw
+      "they shake hands for 35 seconds"). NEVER set a clip's display `dur` in
+      `clips.json` longer than the clip's ACTUAL source length** — `VideoSprite`
+      loops frames (`idx % seq.n`) whenever the window exceeds the source, which is
+      the forbidden visible loop. RULE: for every clip, `dur ≤ realSourceSeconds`
+      (probe with `ffprobe`); a couple of held/again-paused frames at the very end is
+      fine, a re-loop is not. **A long scene (verdict, outro, history, drama) is
+      covered by MULTIPLE DISTINCT clips back-to-back — never one clip held open.**
+      If the verdict/outro needs 40s of backdrop, that is 4–5 distinct ~8–10s clips
+      (different angles/players/crowd), not one looped clip. Pre-render check
+      (MANDATORY): for each clip assert `dur` ≤ `ffprobe` duration of its source — if
+      any clip exceeds it, GENERATE more distinct clips to fill the gap, never widen
+      the window. Dimming a clip behind a panel does NOT exempt it from this rule.
     `clips.json` `clips[]` is **always non-empty (≈25–34 clips)** and
     covers **both teams' star players (animated), fans/ultras, the stadium, and the
     animated Mystery Supporter(s)** — supporters and the story are the SUBJECT, not
