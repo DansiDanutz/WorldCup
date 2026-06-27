@@ -23,7 +23,7 @@ const clips = [
   C('dr-eng-press', 'dr-eng-press.mp4', 152.0, 10.0), C('dr-eng-equalize', 'dr-eng-equalize.mp4', 162.0, 10.0),
   C('dr-pan-defend', 'dr-pan-defend.mp4', 172.0, 11.0), C('dr-eng-chance', 'dr-eng-chance.mp4', 183.0, 10.0),
   C('dr-end-level', 'dr-end-level.mp4', 193.0, 10.4),
-  C('vd-respect', 'verdict-respect.mp4', 203.32, 10.7),
+  C('vd-respect', 'verdict-respect.mp4', 203.32, 40.7), // loops dimmed behind full verdict (no black panel)
   C('en-crowd', 'engage-crowd.mp4', 244.0, 11.0),
   C('my-mola', 'my-mola.mp4', 255.0, 11.0),
   C('cta-celeb', 'cta-celeb.mp4', 303.05, 11.0),

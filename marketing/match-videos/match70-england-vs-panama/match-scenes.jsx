@@ -204,10 +204,21 @@ function SceneDuel() {
 }
 
 function SceneDrama() {
+  // Ep37 standard: clips ride DIMMED as a dark cinematic backdrop; the drama is
+  // carried by ScoreBug / ChanceTag / GoalFlash / narration — never raw blurry
+  // action at full brightness. Sharp i2v goal moments (Waterman, Kane) stay
+  // brighter as the money shots; the generated t2v fill is buried dark.
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
-      <FS id="dr-pan-shock" /><FS id="dr-barcenas-wide" /><FS id="dr-eng-press" /><FS id="dr-eng-equalize" /><FS id="dr-pan-defend" /><FS id="dr-eng-chance" /><FS id="dr-end-level" />
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(2,3,8,0.28) 0%, transparent 24%, transparent 70%, rgba(2,3,8,0.6) 100%)' }} />
+      <ClipSprite id="dr-pan-shock" fit="cover" dim={0.2} />
+      <ClipSprite id="dr-barcenas-wide" fit="cover" dim={0.24} />
+      <ClipSprite id="dr-eng-press" fit="cover" dim={0.52} />
+      <ClipSprite id="dr-eng-equalize" fit="cover" dim={0.2} />
+      <ClipSprite id="dr-pan-defend" fit="cover" dim={0.52} />
+      <ClipSprite id="dr-eng-chance" fit="cover" dim={0.5} />
+      <ClipSprite id="dr-end-level" fit="cover" dim={0.46} />
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 42%, transparent 30%, rgba(2,3,8,0.5) 100%)' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(2,3,8,0.42) 0%, transparent 26%, transparent 64%, rgba(2,3,8,0.72) 100%)' }} />
       {/* Panama shock lead (Waterman), Bárcenas 43' WIDE, England equalize (Kane); a level scoreline */}
       <GoalFlash at={138.5} />
       <Sprite start={139.0} end={162.0}><ScoreBug start={139.5} eng={0} pan={1} minute="25'" badge="OUR PREDICTION" note="WATERMAN" /></Sprite>
@@ -274,8 +285,11 @@ function SceneVerdict() {
   const discFade = lt > 9 ? clamp((11 - lt) / 1.0, 0, 1) : 1;
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
-      <FS id="vd-respect" />
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(6,10,18,0.5)' }} />
+      {/* Ep37 standard: a DIMMED clip lives behind the verdict the WHOLE scene —
+          never a flat black panel for 30s. vd-respect dur is extended to cover
+          203.32→244 in build_clips and loops via VideoSprite. */}
+      <ClipSprite id="vd-respect" fit="cover" dim={0.5} />
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 45%, rgba(2,3,8,0.32) 30%, rgba(2,3,8,0.72) 100%)' }} />
       <Sprite start={203.32} end={214.32}>
         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 26, opacity: discP * discFade }}>
           <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 22, padding: '42px 76px', textAlign: 'center', backdropFilter: 'blur(6px)' }}>
@@ -284,7 +298,6 @@ function SceneVerdict() {
           </div>
         </div>
       </Sprite>
-      <div style={{ position: 'absolute', inset: 0, zIndex: 24, background: `linear-gradient(160deg, #0c0f1c 0%, #05060c 100%)`, opacity: clamp((lt - 10.5) / 1.0, 0, 1) }} />
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 25 }}>
         <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 24, padding: '48px 80px', minWidth: 880, backdropFilter: 'blur(6px)', opacity: clamp((lt - 11) / 1.0, 0, 1) }}>
           <Kicker size={26}>Group L · Our Prediction</Kicker>
