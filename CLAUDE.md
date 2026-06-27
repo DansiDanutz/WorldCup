@@ -341,6 +341,29 @@ Non-negotiables distilled from channel data (details in the playbook):
       feeds rule #16 (Mystery Card) + #17 (collectible Legend). Log what landed in
       `SERIES_PLAYBOOK.md` and raise the bar every episode.
 
+22. **PHOTOREAL FOOTBALL ACTION — NOT CARTOON ANIMATION (owner-mandated, from Ep71
+    on, hard rule):** the owner rejected the Pixar/cartoon look for players in motion
+    ("stupid animation… use real football"). From Ep71 on, ALL player/match/action,
+    duel, goal, crowd, and stadium clips must be generated in a **PHOTOREALISTIC,
+    cinematic live-action style** — looks like a real broadcast match (realistic
+    players, kits, skin, grass, floodlights), NOT a 3D animated cartoon.
+    - **STILL 100% AI — MONETIZATION-SAFE (rule #5 is absolute):** NEVER use real
+      match footage, broadcast clips, or any copyrighted video. "Real football" means
+      photoreal AI generation, not real footage. Every frame is AI-made.
+    - **HOW:** generate photoreal player STILLS first (e.g. `flux-pro/v1.1-ultra`,
+      photoreal not stylized, correct real-player likeness + correct kit), then
+      animate them with **image-to-video** (kling v2.1 master i2v) so motion stays
+      sharp, on-model, and photoreal — the same i2v technique proven on Ep70 but with
+      photoreal source images instead of Pixar stills. Pure text-to-video tends to
+      garble kits/faces — anchor on a still. Build a photoreal still+clip DB under
+      `content/images/<Team>/` (photoreal variants) and `content/videos/<Team>/` and
+      REUSE it across episodes; only generate what's missing.
+    - **REVIEW EVERY ACTION CLIP** before using: correct sport (soccer, no NFL/
+      helmets), correct real-player likeness, clean kit, no melted faces/limbs,
+      photoreal (not cartoon). Reject and regenerate anything that looks animated.
+    - **The Legend collectible card (#17) may stay premium-stylized/illustrated** —
+      this rule governs the MATCH ACTION, not the trading-card art.
+
 ## Video production pipeline
 
 Each episode is a self-contained project under `marketing/match-videos/<epNN-...>/`
