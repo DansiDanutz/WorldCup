@@ -364,6 +364,29 @@ Non-negotiables distilled from channel data (details in the playbook):
     - **The Legend collectible card (#17) may stay premium-stylized/illustrated** —
       this rule governs the MATCH ACTION, not the trading-card art.
 
+23. **PLAYER NAME ↔ IMAGE SYNC (owner-mandated, from Ep72 on, hard rule):** when the
+    narration names players, each player's showcase clip + on-screen NAME label must
+    appear EXACTLY when Brian says that name. If the image on screen does not match the
+    name being spoken, it reads as a BUG (owner flagged on Ep71). Do NOT guess the
+    showcase windows: derive each player's `start` from the VO — find where that
+    surname falls inside the player-intro line (split the line into per-player phrases
+    and sum their rendered mp3 durations, or position by word offset), and set each
+    `PlayerShowcase start/end` to that exact moment. VERIFY on a spot-render: the name
+    shown == the name spoken, for every player.
+
+24. **LEGEND FOOTER = REAL MINI-CARDS + ANIMATED PHONE "COLLECT IN THE APP"
+    (owner-mandated, from Ep72 on, hard rule — this is the app-conversion engine):**
+    the end of every episode must SELL the collection and drive app installs.
+    - **REAL collection strip, never empty boxes.** The strip beside/below the Legend
+      reveal shows the **previous 5 legends' actual card art** (`legend-(NNN-5 …
+      NNN-1)-portrait.png`, copied into the episode `assets/`) as 5 mini-cards with the
+      NEW Legend highlighted — a real, filling collection. (Ep71 shipped empty
+      placeholder squares — NEVER do that again.)
+    - **Animated phone collect.** In the app/CTA footer, animate a phone mockup: the
+      Legend card flies/scales into the phone screen and snaps into a collection grid (a
+      satisfying "collected!" beat), with the worldcup26.world CTA. Show viewers how
+      collecting works so they download the app. ~6–10s, premium, full-frame.
+
 ## Video production pipeline
 
 Each episode is a self-contained project under `marketing/match-videos/<epNN-...>/`

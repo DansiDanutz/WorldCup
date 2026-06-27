@@ -1,111 +1,149 @@
 ---
 name: worldcup-episode
 description: >-
-  Produce or fix a WorldCup26 Legends animated match episode to the Ep44 GOLD
+  Produce or fix a WorldCup26 Legends match episode to the Ep71 PHOTOREAL GOLD
   STANDARD. Use whenever asked to build, render, re-render, or fix the next
-  WorldCup26 Legends episode. Covers scaffold, narration, Higgsfield assets,
-  scenes with a continuous B-roll backdrop (never black), animated squad cards
-  (player clips) + animated Legend card, Brian VO, preflight, a mandatory
-  SPOT-TEST before the full render, render, QA, deliver, and adding the Legend
-  card to the collection. Gold reference: marketing/match-videos/match44-france-vs-iraq.
+  WorldCup26 Legends episode. Covers: nation-unique researched mystic story,
+  PHOTOREAL action (real-look AI, never cartoon), photoreal stills→image-to-video,
+  NO-REPEAT/NO-LOOP clips, scenes, Brian VO with name↔image SYNC, premium
+  prediction card, an animated Legend reveal with a REAL collection strip + an
+  animated phone "collect in the app" footer, render, QA, deliver, collection.
+  Gold reference: marketing/match-videos/match71-colombia-vs-portugal.
 ---
 
-# WorldCup26 Legends — Episode Production (Ep44 gold standard)
+# WorldCup26 Legends — Episode Production (Ep71 PHOTOREAL gold standard)
 
-Ep44 (France–Iraq) is the reference. Always-on `CLAUDE.md` rules: no
-gambling/odds/underdog/prize wording; short on-screen LABELS only, never sentence
-props (`line=`/`note=`); Brian narrates; SOCCER only (NO helmet/pads/gridiron);
-scorelines are OUR PREDICTION, never stated as real; NEVER speed up the VO (extend
-duration instead); render ONE episode at a time; a finished video is NOT done until
-its Legend card is in the collection. The **message** matters as much as the visuals.
+**Ep71 (Colombia–Portugal, "El Dorado") is the reference.** It is photoreal (real
+broadcast look, not cartoon), no-loop, with a researched nation-myth story and a
+premium Legend reveal. Build Ep72+ at this bar or better. Read `CLAUDE.md` rules
+1–24 first — they are all in force. Highlights that matter most here:
+
+- **#22 PHOTOREAL action, never cartoon** — every match/action/crowd/stadium clip
+  looks like real football. Still 100% AI (no real footage; rule #5 absolute).
+- **#11 NO-REPEAT + NO-LOOP** — every clip used once; every clip window ≤ its real
+  source length (ffprobe-checked). Long card/title/verdict scenes are CSS
+  motion-graphics with NO video behind, so nothing ever loops.
+- **#21 nation-unique researched mystic story** — web-research + cite sources.
+- **#23 player name↔image SYNC** and **#24 Legend footer (real mini-cards + animated
+  phone collect)** — the two NEW upgrades; details below.
+- Brian narrates; SOCCER only; scorelines are OUR PREDICTION; short on-screen LABELS
+  only (no sentence subtitles, rule #10); full-frame (#19); 15s mystic intro (#20).
 
 ## 0. Setup
-- Work in the active worktree (e.g. `/tmp/ep38git`). Determine the next Ep number from
-  highest Ep across `content/youtube/PRODUCTION_LOG.md` + all branches + `match-videos/`,
-  +1. Check collision: `git ls-tree -d --name-only HEAD marketing/match-videos/ | grep matchNN`.
-- Read canon `content/Stories/<A>-vs-<B>.md` for the SPINE / message / a score.
+- Work in the active worktree (e.g. `/tmp/ep38git`, branch `claude/episode38-tunisia-japan`).
+  Next Ep number = highest Ep across `content/youtube/PRODUCTION_LOG.md` + all branches
+  + `match-videos/`, +1. Check collision on other branches first.
+- Read canon `content/Stories/<A>-vs-<B>.md` for the SPINE / score (predicted).
 
-## 1. Scaffold from the latest gold episode (do NOT hand-build)
+## 1. Research the nation-myth (rule #21) — BEFORE writing
+Spawn a research agent (WebSearch/WebFetch): find ONE verified, vivid, nation-unique
+mystic/history hook per nation (mythology, folklore, a world-first, a sacred symbol),
+cite a source URL for every claim, flag legend-vs-fact. Pick the Legend NNN character
+from it. Write the findings + sources into the episode `README.md`. (Ep71: Colombia =
+El Dorado / the Muisca gilded king; Portugal = Sebastianism / O Encoberto.)
+
+## 2. Scaffold from Ep71 (don't hand-build)
 ```
-cp -r marketing/match-videos/match44-france-vs-iraq marketing/match-videos/matchNN-a-vs-b
-cd marketing/match-videos/matchNN-a-vs-b
-rm -rf frames audio/*.mp3 audio_master.m4a WorldCup26_*.mp4 assets/*.mp4 assets/squad/*.png thumbnail.jpg UPLOAD_PACK.md
+cp -r marketing/match-videos/match71-colombia-vs-portugal marketing/match-videos/matchNN-a-vs-b
+cd …/matchNN-a-vs-b
+rm -rf frames frames_intro assets/* audio/*.mp3 audio_master.m4a WorldCup26_*.mp4 thumbnail* smoke* clips.json
+ln -sf ../<a-recent-ep>/node_modules node_modules   # reuse node_modules
 ```
-- Copy 5 player clips/side from `content/videos/<Team>/<Player>.mp4` → `assets/<abbr>-<surname>.mp4`.
-- Reuse `stadium.mp4` + `celebration.mp4` from a prior episode's `assets/`.
+Keep: *.mjs, *.html, match-kit.jsx, animations.jsx, intro-scenes.jsx, music/, sfx/, vendor/.
+Then rewrite match-scenes.jsx (colors/flags/players/theme), build_clips.mjs, narration.json.
 
-## 2. Narration (`narration.json`)
-~30 Brian lines, ~308s: punchy cold-open hook + a mid-roll retention hook
-("stay with me, because…"); team intros; the duel; predicted goals (clearly OUR
-PREDICTION); group recap; engagement (Comment X / Comment Y); the Legend reveal;
-compliant app CTA ("pick three of the 48 nations, every goal scores for you; free,
-just for fun, no prizes"); outro + tease the next Ep. Legend 0NN = a UNIQUE character
-tied to the match's emotional core.
+## 3. PHOTOREAL assets (rule #22) — Higgsfield (fal often exhausted)
+Check `mcp__Higgsfield__balance` first. Pipeline:
+1. **Photoreal player STILLS** — `generate_image` model `nano_banana_pro`, 16:9. Prompt:
+   "ultra-photorealistic cinematic sports photograph, real human footballer, 85mm,
+   floodlit night stadium, NOT cartoon, NOT 3d/pixar; <player> resembling … in the
+   <correct kit + number>; soccer, round-neck, no helmet". One per showcased player
+   (5–6/side). Real-celebrity names sometimes fail moderation → retry / reword age +
+   features. Submit with small spacing or you'll get throttled (returns no id).
+2. **Animate each still → i2v** — `generate_video` model `kling3_0_turbo`, duration 5,
+   16:9, `medias:[{value:<still job_id>, role:"start_image"}]`, photoreal motion prompt
+   (~7.5 credits/clip). This keeps likeness sharp and on-model.
+3. **Non-player photoreal clips** (t2v, no still): crowds (each nation), stadium aerial
+   + wide, duels, the goal/near-miss sequence, the mystic atmosphere (the nation myth),
+   verdict B-roll (handshake/applaud/stadium — 3 DISTINCT), CTA celebration. If a prompt
+   trips the "IN THE DARK" preset, resend with
+   `declined_preset_id:"24bae836-2c4a-48e0-89b6-49fcc0b21612"`.
+4. Aim for ~37 clips so the long match section has enough ≤5s footage (no looping).
+5. Poll `show_generations(type:video,size:50)`, download each rawUrl by id→name.
+   **REVIEW every clip**: correct sport, real likeness, clean kit, photoreal not cartoon.
+   Build a contact-sheet montage and gut-check before rendering.
+6. **Legend NNN card art**: `nano_banana_pro` ornate collectible (portrait 3:4 +
+   landscape 16:9), "No text". Save to `public/special-cards/legend-NNN-*.png` AND copy
+   into the episode `assets/` (the reveal uses the portrait as a still).
 
-## 3. Higgsfield assets (`mcp__Higgsfield__*` — it WORKS now; nano_banana_pro / kling3_0_turbo)
-- **Thumbnail** 16:9: curiosity-gap hook text + "EP NN" gold seal, SOCCER (NO helmet/pads).
-  If it returns `status:"nsfw"` (false positive), reword (drop flag-color descriptions) and retry.
-- **Legend card**: portrait 9:16 + landscape 16:9, premium gold art-deco collectible.
-- **2 story clips** (5s): the nation's fans + the **mystery/Legend** shot (also used in the cold open).
-- Download via `curl` from the rawUrl. Reuse stadium/celebration to save credits.
+## 4. Narration (`narration.json`) — Brian, ~28 lines, ~318s body
+Poetic, motivational, curiosity-driven. Mystic hook in the cold open → paid off at the
+Legend reveal. Team intros, the duel/spine, predicted goals (OUR PREDICTION), the
+mystery underlined, engagement (Comment X / Comment Y), Legend reveal, app CTA, outro.
+Generate with `gen_audio.mjs` (`ELEVENLABS_API_KEY=… VOICE_NAME=Brian`). **Check every
+line's duration ≤ its window** (ffmpeg -i); trim + re-record overruns (delete that mp3,
+re-run). Keep the player-intro lines' `at` times — the showcase SYNC (step 5) keys off them.
 
-## 4. Squad stills (fallback posters)
-`ffmpeg -ss 1.2 -i assets/<clip>.mp4 -frames:v 1 -q:v 3 assets/squad/<abbr>-<name>.png` for each player.
+## 5. Scenes (`match-scenes.jsx`) + `build_clips.mjs`
+- **build_clips.mjs**: place the ~37 clips, each window ≤ 5.0s. It MUST ffprobe every
+  clip and FAIL on `dur > source` or any repeat (the no-loop guard). Graphic scenes
+  (title, prediction card, verdict panel, Legend, app, CTA) get NO clip.
+- **Photoreal grade** on clips: subtle (`saturate(1.06) contrast(1.04)`), never the
+  cartoon brighten.
+- **⭐ RULE #23 — PLAYER NAME↔IMAGE SYNC:** each player's showcase clip + name label
+  must appear EXACTLY when Brian says that name, or it reads as a bug (owner flagged).
+  Don't guess windows — open the player-intro VO line, find the offset of each surname
+  inside the line (estimate by word position, or split the line into per-player phrases
+  and sum their mp3 durations), and set each `PlayerShowcase start/end` to that moment.
+  Verify on a spot-render: the name on screen matches the name being spoken.
+- **Verdict (#11 fix):** 3 DISTINCT short clips then a CSS stat panel on a gold gradient
+  — never one held/looped clip.
+- **Legend reveal (#17):** show the REAL `legend-NNN-portrait.png` card big + holo sheen
+  sweep + "Nº NNN · ULTRA RARE" badge + title, on a BRIGHT warm-gold backdrop (not near
+  black, owner flagged the dark dead-air). Card up fast (~2s), no long empty tease.
+- **⭐ RULE #24 — LEGEND FOOTER (the conversion engine):**
+  1. **Real collection strip, never empty boxes.** Render the previous 5 legends' actual
+     art (`legend-(NNN-5..NNN-1)-portrait.png`, copied into `assets/`) as 5 mini-cards in
+     a row with the NEW card highlighted — a real, filling collection, not placeholder
+     squares. (Ep71 shipped empty boxes — do NOT repeat that.)
+  2. **Animated phone "collect in the app".** In the app/CTA footer, animate a CSS phone
+     mockup: the Legend card flies/scales into the phone screen and snaps into a
+     collection grid (a satisfying "collected!" beat), with the worldcup26.world CTA.
+     This shows viewers how collecting works and drives app installs. Keep it ~6–10s,
+     premium, full-frame.
+- match.html SCENES array: update component names + time ranges to match the narration.
 
-## 5. Scenes + clips.json — the THREE things that make it gold (already in the match44 template)
-1. **Backdrop (never black):** a `Backdrop()` component renders ~65 tiled `bd-*` clips
-   (dur 5.0, step 4.8, cycling all srcs, `dim≈0.34`, brightness≈0.66) covering the full
-   0–DUR timeline, rendered FIRST in `match.html` (`<Backdrop/>` before the SCENES map).
-   EVERY scene-root background must be semi-transparent (`rgba(...,0.46)`), never opaque
-   `#000`, so footage shows through clip gaps. (Letterbox bars stay `#000`.)
-2. **Animated squad cards:** each `SquadGrid` player has a `vid:` clip id; the card image
-   box is `position:relative` with the player `ClipSprite` over the photo poster. Add
-   `sqX-<name>` clips to `clips.json` at the grid window, dur 5.
-3. **Animated Legend card:** continuous float (`Math.sin(lt*…)`) + a REPEATING holo shine
-   sweep over the mystery clip — never static.
-- Keep scene windows aligned to narration `at` times (SCENES table in match.html). May be
-  delegated to a subagent using match44 as the EXACT template, but the three items above
-  are mandatory and verified by the spot-test (step 8).
+## 6. Render — ALWAYS spot-test first
+- `extract_frames.mjs` (FPS=30) → `assets/seq/`.
+- **SPOT-TEST** 8–10 key frames (cold open, title, each player at their SYNC moment, the
+  goal, verdict panel, Legend card, the phone-collect footer) via `render.mjs SHOTS=…`.
+  Montage + eyeball: name-sync correct? card present? footer phone animating? No JSX
+  errors? Fix before the full render.
+- **Full body render**: 3 parallel `serve.mjs` (ports 8091/2/3) + 3 `render.mjs` workers
+  splitting the frame range into one `frames/` dir. Verify 9542/9542, MISSING=0 (no gaps).
+  Watch disk — free delivered episodes' `seq`/`frames` if it drops under ~600MB.
 
-## 6. VO
-`ELEVENLABS_API_KEY=<key> node gen_audio.mjs` — key supplied by the user; pass inline,
-NEVER write it to disk or commit it. One mp3/line, none zero-byte.
+## 7. Finish + QA
+- `mux.mjs` (body_raw) → libx264 2-pass `-b:v 1850k` → body.mp4; rm seq+frames to free space.
+- Render the 15s intro (`intro.html`, 450 frames) + intro audio mix → intro.mp4.
+- `ffmpeg concat` intro + body → final (≈333s). Verify decode-clean, <100 MiB, duration 5:33.
+- Pull QA frames from the FINAL file (+15s offset for the intro): confirm photoreal,
+  name-sync, the Legend card, the real mini-cards, and the phone-collect footer.
 
-## 7. Sync + preflight + VO↔scene alignment
-- `DURATION.txt` must equal match.html `const DURATION`.
-- `node scripts/preflight-episode.mjs <dir> NN` → `PREFLIGHT PASS` (also enforces no VO
-  overlap / no speed-up). Each VO line must land in the scene that talks about it — set
-  each `at` from the TARGET scene window, not the previous episode's pacing.
+## 8. Deliver + collection
+- Add Legend NNN to `public/special-cards/cards.json` (after the prior number).
+- Make the "EL DORADO"-style thumbnail (`nano_banana_pro`, the two stars, clean EP NN badge).
+- Commit code + docs + cards.json + legend art; **force-add the mp4 + thumbnail**
+  (`git add -f …upload.mp4 thumbnail.png` — they're gitignored). Push with retries.
+- Verify the raw GitHub link returns HTTP 200, <100 MiB. Deliver: link + title +
+  description + tags + thumbnail. Upload reminders: made-for-kids = No, AI-disclosure = Yes.
+- Update `PRODUCTION_LOG.md` / `PREMIERE_CALENDAR.md` and log learnings in `SERIES_PLAYBOOK.md`.
 
-## 8. SPOT-TEST BEFORE THE FULL RENDER (non-negotiable — never ship unseen; this caught Ep44's black gaps)
-Serve + Playwright-screenshot the risky timestamps, then measure brightness AND VIEW a few.
-Browser MUST use render.mjs's flags (`--ignore-certificate-errors`, `ignoreHTTPSErrors:true`,
-viewport 1920×1124) or the React/Babel CDN fails and `window.__seek` never appears.
-```
-PORT=8099 node serve.mjs &        # kill by PID — NEVER pkill -f 'serve.mjs' (self-kill, exit 144)
-node spotcheck.mjs                # seek [10,66,89,120,145,170,205,238,265,300], screenshot each
-```
-Every sampled frame's avg luminance must be > 0 (no pure black); VIEW the stadium/squad/legend
-frames. Tune Backdrop brightness if gaps are too dark. Delete spotcheck.mjs before committing.
-
-## 9. Render (one at a time)
-```
-WT=/tmp/ep38git nohup bash /tmp/render_ep.sh <abs epDir> NN WorldCup26_MatchNN_AAA_BBB_upload.mp4 <port> > /tmp/qNN.log 2>&1 &
-```
-Arm a Monitor on `/tmp/qNN.log` for `[epNN] DONE` / `EXIT [1-9]` (re-arm if it times out —
-persistent monitors can expire ~30 min). render_ep.sh re-encodes if >96 MiB, commits, pushes,
-frees frames. If `/tmp` gets tight, `rm -rf` finished sibling worktrees (commits persist in shared `.git`).
-
-## 10. QA the FINAL master (graded → darker than the raw spot-test)
-- mp4 `Duration` == `audio_master.m4a` `Duration` (no speed-up).
-- Extract + VIEW frames at the goal + Legend timestamps: real imagery not black, correct
-  teams, "OUR PREDICTION" stamp. Judge moody graded shots by VIEWING, not the lum number.
-
-## 11. Deliver + finish (a video isn't done until ALL of this is done)
-- SendUserFile the mp4 + a prediction frame; give the GitHub raw link:
-  `https://github.com/DansiDanutz/WorldCup/raw/<branch>/marketing/match-videos/matchNN-.../WorldCup26_MatchNN_AAA_BBB_upload.mp4`
-- Write `UPLOAD_PACK.md` (title / description / tags) and present it in chat.
-- **Add the Legend card to the collection (same pass):** download both orientations to
-  `public/special-cards/legend-0NN-*.png`; add the entry to `public/special-cards/cards.json`
-  AND the CARDS array in `src/app/collection/page.tsx`; commit + push.
-- Improve every episode over the last — update this skill when a better technique is found.
+## Gotchas (learned on Ep70–71)
+- fal.ai balance exhausts fast → pivot to Higgsfield (separate credits). A new fal *key*
+  doesn't add balance; the account must be topped up.
+- `gitignore` ignores `*.mp4`/root `*.png` → `git add -f` the upload mp4 + thumbnail.
+- `finish.sh` deletes `frames`/`seq`; re-extract before any re-render.
+- A clip's display `dur` > its source length = a visible loop = rejected (rule #11).
+- The Legend reveal card image must NOT reference a match CLIP (its window is elsewhere
+  in the timeline → renders blank); use the legend-NNN still.
