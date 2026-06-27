@@ -1,0 +1,54 @@
+{
+  "atmosphere": {
+    "jor-petra":"f4741203-07cc-4282-a6da-733e4db02e26",
+    "jor-bedouin":"e782311a-8161-402f-bc3c-b4142c62ee05",
+    "jor-wadirum":"575b4c97-bb51-4831-9f6e-aafa1734bae8",
+    "arg-solmayo":"9a1dcad2-4579-431e-986e-bcd097bc98dd",
+    "arg-tango":"475ddbd0-a43e-4d85-89c0-177fc5dcd24a",
+    "texture-rose-dust":"19ff7cb5-418b-43c3-831f-1616b3e988ad",
+    "texture-gold-light":"35ee3560-32c8-4a0d-84c6-b18a1ea17959",
+    "arg-crowd":"f161b627-362c-43a7-a5a8-a44ee5fa0ac7",
+    "jor-crowd":"dcd7a854-79f8-4107-9673-4fe1159dcc81",
+    "jor-tifo":"d8ab97b6-27cf-45fd-b701-c0ff5fc58cf9",
+    "arg-tifo":"26a9d9f5-a5b2-46e9-aa0e-0734512a1fe4",
+    "crowd-tense":"bc5b6a0b-9f42-45e4-96d3-e0351ce62a94"
+  },
+  "stadium": {
+    "stadium-wide":"0b21c446-28b2-4d4d-a461-fdbfc58cc5da",
+    "stadium-aerial":"d8030b06-3bb0-4bcc-9f8b-979bbf114699",
+    "pitch-walkout":"da1e0a7e-2375-4fe9-a9ee-50dc87c75198",
+    "vd-stadium-night":"24253bda-ac56-4148-a340-22684cc4ab17"
+  },
+  "action": {
+    "duel-mid":"ea96247a-03ee-4d4a-b45b-ba8e6755d8fa",
+    "arg-attack":"9d567958-e50f-41e3-99cd-b7776f20d7ad",
+    "keeper-save":"76106263-2271-471a-b3c3-292eb0df5e3a"
+  },
+  "verdict_cta": {
+    "vd-handshake":"11ef08b7-f5a4-46c5-8a26-a3f0af44e398",
+    "vd-applaud":"4e89840b-4900-4c39-ae00-8e82566e5969",
+    "cta-celebrate":"e6f1b9ae-068b-42d7-8d91-f2f2bf3a93fd"
+  },
+  "players_i2v": {
+    "arg-messi":"5845612b-970f-42a4-bc6f-6c9022ade6b4",
+    "arg-alvarez":"77c4524e-95fb-4868-943f-bb364b9e06d3",
+    "arg-enzo":"25e598e2-ea8a-472d-abf2-bd94ca32ac1a",
+    "arg-macallister":"07a7df3f-e2f7-4833-8a4a-6785f7e21069",
+    "arg-lautaro":"e65d92ce-7d84-4853-a1ef-8a87a93aada7",
+    "jor-altaamari":"26e830d6-c5fb-40fa-8b3b-c1d737f5481e",
+    "jor-olwan":"50ac5997-befb-49d2-a42c-66f993bb9433",
+    "jor-alarab":"9d55381c-c407-45d2-9f48-90a0524a31e4",
+    "jor-rashdan":"567265ba-8942-44fc-82be-24d635ad675f",
+    "jor-keeper":"472a05f4-3818-479c-879d-941e35d3748e"
+  },
+  "drama_i2v": {
+    "alvarez-goal":"94f93a3a-4b4b-4519-a2ed-48a8e4aa71b0",
+    "messi-goal":"6f96d64e-8901-4999-804d-5f1b8e5bcd17",
+    "altaamari-shot":"8259ff5d-04fd-43a7-b627-40770d7d957d",
+    "messi-magic":"17f1a2e9-ee61-48f9-a94b-47e8b2d3a1ef"
+  },
+  "legend_card": {
+    "legend-074-portrait":"fc337f94-c0c9-4663-bdab-a140df6c4b85",
+    "legend-074-landscape":"af607143-fc2d-42ce-8244-ace2331c0775"
+  }
+}
