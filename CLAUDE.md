@@ -387,6 +387,23 @@ Non-negotiables distilled from channel data (details in the playbook):
       satisfying "collected!" beat), with the worldcup26.world CTA. Show viewers how
       collecting works so they download the app. ~6–10s, premium, full-frame.
 
+25. **NO BLANK / DEAD-AIR FRAMES — every frame must carry imagery (owner-mandated, from
+    Ep73 on, hard rule):** the owner flagged a near-black interstitial on Ep72 (the
+    "NOT A DILUTION — AN INVITATION" text beat) — a frame that is mostly empty dark
+    background with only floating text. NEVER ship a frame whose background is basically
+    black with just text/scorebug on it.
+    - Every second of the body must show EITHER a photoreal clip (DIMMED, ~0.4–0.6, when
+      text/graphics overlay it) OR rich FULL-BLEED motion graphics (imagery + drifting
+      particles + a real gradient that fills the frame) — never a flat near-black panel.
+    - The text interstitials that bridge the ≤5s action clips (e.g. "84TH MINUTE",
+      "TRADING BLOWS") must sit OVER a dimmed photoreal clip or a full-bleed atmospheric
+      clip, not empty dark. To respect NO-LOOP, GENERATE enough distinct clips (incl. a
+      few dedicated dimmed "texture/atmosphere" backdrop clips — gold dust, mist, crowd,
+      stadium glow) so text always lands on imagery, never emptiness.
+    - QA EVERY graphic/title/transition/interstitial frame: if the background is mostly
+      black, add a dimmed clip behind it or richer full-frame motion graphics before the
+      full render. (Builds on the Ep37 "never dead air — always a clip behind" principle.)
+
 ## Video production pipeline
 
 Each episode is a self-contained project under `marketing/match-videos/<epNN-...>/`

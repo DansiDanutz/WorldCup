@@ -90,6 +90,10 @@ re-run). Keep the player-intro lines' `at` times — the showcase SYNC (step 5) 
   (title, prediction card, verdict panel, Legend, app, CTA) get NO clip.
 - **Photoreal grade** on clips: subtle (`saturate(1.06) contrast(1.04)`), never the
   cartoon brighten.
+- **NO BLANK FRAMES (rule #25):** never a near-black frame with only floating text. Every
+  interstitial/title/transition text beat sits OVER a dimmed photoreal clip or full-bleed
+  motion graphics (imagery+particles+gradient). Generate a few dedicated dimmed atmosphere
+  backdrop clips so text never floats on emptiness (no-loop still applies). QA every graphic frame.
 - **⭐ RULE #23 — PLAYER NAME↔IMAGE SYNC:** each player's showcase clip + name label
   must appear EXACTLY when Brian says that name, or it reads as a bug (owner flagged).
   Don't guess windows — open the player-intro VO line, find the offset of each surname
