@@ -37,7 +37,8 @@ const browser = await chromium.launch({
 const page = await browser.newPage({ viewport: { width: 1920, height: 1124 }, deviceScaleFactor: 1, ignoreHTTPSErrors: true });
 page.on('pageerror', e => console.error('PAGEERROR:', e.message));
 page.on('console', m => { if (m.type() === 'error') console.error('CONSOLE:', m.text()); });
-await page.goto(`http://127.0.0.1:${PORT}/match.html`, { waitUntil: 'load', timeout: 60000 });
+const PAGE = process.env.PAGE || 'match.html';
+await page.goto(`http://127.0.0.1:${PORT}/${PAGE}`, { waitUntil: 'load', timeout: 60000 });
 await page.waitForFunction(() => typeof window.__seek === 'function', { timeout: 60000 });
 await page.evaluate(() => document.fonts && document.fonts.ready);
 await page.addStyleTag({ content: `#stage-canvas{ transform:none !important; box-shadow:none !important; }` });

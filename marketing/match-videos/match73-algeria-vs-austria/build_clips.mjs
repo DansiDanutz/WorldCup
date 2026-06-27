@@ -27,20 +27,20 @@ const clips = [
   C('alg-crowd', 'alg-crowd.mp4', 44.0, 5.0),
   C('alg-tifo', 'alg-tifo.mp4', 49.0, 5.0),
   C('alg-attack', 'alg-attack.mp4', 54.0, 1.5),
-  C('alg-mahrez', 'alg-mahrez.mp4', 55.5, 4.5),       // "Riyad Mahrez"
-  C('alg-bennacer', 'alg-bennacer.mp4', 60.0, 3.5),   // "Ismael Bennacer"
-  C('alg-gouiri', 'alg-gouiri.mp4', 63.5, 4.5),       // "Amine Gouiri"
-  C('alg-boudaoui', 'alg-boudaoui.mp4', 68.0, 5.0),   // "Hicham Boudaoui"
-  C('alg-mandi', 'alg-mandi.mp4', 73.5, 5.0),         // "Aissa Mandi"
+  C('alg-mahrez', 'alg-mahrez.mp4', 55.5, 4.5),       // "Riyad Mahrez" onset 55.5
+  C('alg-bennacer', 'alg-bennacer.mp4', 60.0, 2.3),   // "Ismael Bennacer" onset ~60.0
+  C('alg-gouiri', 'alg-gouiri.mp4', 62.3, 5.0),       // "Amine Gouiri" onset ~62.3
+  C('alg-boudaoui', 'alg-boudaoui.mp4', 68.0, 2.8),   // "Hicham Boudaoui" onset 68.0
+  C('alg-mandi', 'alg-mandi.mp4', 70.8, 5.0),         // "Aissa Mandi" onset ~70.8
   // ── AUSTRIA 79.5–113 (showcase synced to names) ──
   C('aut-crowd', 'aut-crowd.mp4', 79.5, 5.0),
   C('aut-tifo', 'aut-tifo.mp4', 84.5, 5.0),
   C('aut-attack', 'aut-attack.mp4', 89.6, 1.0),
-  C('aut-alaba', 'aut-alaba.mp4', 90.6, 5.0),         // "David Alaba"
-  C('aut-sabitzer', 'aut-sabitzer.mp4', 96.0, 3.5),   // "Marcel Sabitzer"
-  C('aut-laimer', 'aut-laimer.mp4', 99.5, 3.5),       // "Konrad Laimer"
-  C('aut-arnautovic', 'aut-arnautovic.mp4', 103.0, 5.0), // "Marko Arnautovic"
-  C('aut-baumgartner', 'aut-baumgartner.mp4', 108.0, 5.0), // "Christoph Baumgartner"
+  C('aut-alaba', 'aut-alaba.mp4', 90.6, 5.0),         // "David Alaba" onset 90.6
+  C('aut-sabitzer', 'aut-sabitzer.mp4', 96.0, 4.3),   // "Marcel Sabitzer" onset ~96.0
+  C('aut-laimer', 'aut-laimer.mp4', 100.3, 2.7),      // "Konrad Laimer" onset ~100.3
+  C('aut-arnautovic', 'aut-arnautovic.mp4', 103.0, 4.4), // "Marko Arnautovic" onset 103.0
+  C('aut-baumgartner', 'aut-baumgartner.mp4', 107.4, 5.0), // "Christoph Baumgartner" onset ~107.4
   // ── RIDDLE / DUEL 113–132 ──
   C('duel-mid', 'duel-mid.mp4', 113.0, 5.0),
   C('duel-mahrez-alaba', 'duel-mahrez-alaba.mp4', 118.0, 5.0),

@@ -82,27 +82,27 @@
       "id": "alg-bennacer",
       "src": "assets/clips/alg-bennacer.mp4",
       "at": 60,
-      "dur": 3.5,
+      "dur": 2.3,
       "vol": 0
     },
     {
       "id": "alg-gouiri",
       "src": "assets/clips/alg-gouiri.mp4",
-      "at": 63.5,
-      "dur": 4.5,
+      "at": 62.3,
+      "dur": 5,
       "vol": 0
     },
     {
       "id": "alg-boudaoui",
       "src": "assets/clips/alg-boudaoui.mp4",
       "at": 68,
-      "dur": 5,
+      "dur": 2.8,
       "vol": 0
     },
     {
       "id": "alg-mandi",
       "src": "assets/clips/alg-mandi.mp4",
-      "at": 73.5,
+      "at": 70.8,
       "dur": 5,
       "vol": 0
     },
@@ -138,27 +138,27 @@
       "id": "aut-sabitzer",
       "src": "assets/clips/aut-sabitzer.mp4",
       "at": 96,
-      "dur": 3.5,
+      "dur": 4.3,
       "vol": 0
     },
     {
       "id": "aut-laimer",
       "src": "assets/clips/aut-laimer.mp4",
-      "at": 99.5,
-      "dur": 3.5,
+      "at": 100.3,
+      "dur": 2.7,
       "vol": 0
     },
     {
       "id": "aut-arnautovic",
       "src": "assets/clips/aut-arnautovic.mp4",
       "at": 103,
-      "dur": 5,
+      "dur": 4.4,
       "vol": 0
     },
     {
       "id": "aut-baumgartner",
       "src": "assets/clips/aut-baumgartner.mp4",
-      "at": 108,
+      "at": 107.4,
       "dur": 5,
       "vol": 0
     },

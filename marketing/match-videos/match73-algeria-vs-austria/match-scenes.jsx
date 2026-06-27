@@ -193,10 +193,10 @@ function SceneAlgeria() {
       <Sprite start={49} end={54}><div style={{ position: 'absolute', inset: 0 }}><FS id="alg-tifo" /><div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,8,0.32)' }} /></div></Sprite>
       <Sprite start={54} end={55.5}><div style={{ position: 'absolute', inset: 0 }}><FS id="alg-attack" /><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(15,122,58,0.30), transparent 55%)' }} /></div></Sprite>
       <PlayerShowcase clipId="alg-mahrez" name="RIYAD MAHREZ" role="THE CAPTAIN · 7" accent={ALG_GREEN} start={55.5} end={60.0} />
-      <PlayerShowcase clipId="alg-bennacer" name="ISMAËL BENNACER" role="THE METRONOME" accent={ACC} start={60.0} end={63.5} />
-      <PlayerShowcase clipId="alg-gouiri" name="AMINE GOUIRI" role="THE SPEARHEAD" accent={ALG_GREEN} start={63.5} end={68.0} />
-      <PlayerShowcase clipId="alg-boudaoui" name="HICHAM BOUDAOUI" role="THE ENGINE" accent={ALG_RED} start={68.0} end={73.0} />
-      <PlayerShowcase clipId="alg-mandi" name="AÏSSA MANDI" role="THE WALL" accent={ALG_GREEN} start={73.5} end={78.5} />
+      <PlayerShowcase clipId="alg-bennacer" name="ISMAËL BENNACER" role="THE METRONOME" accent={ACC} start={60.0} end={62.3} />
+      <PlayerShowcase clipId="alg-gouiri" name="AMINE GOUIRI" role="THE SPEARHEAD" accent={ALG_GREEN} start={62.3} end={67.3} />
+      <PlayerShowcase clipId="alg-boudaoui" name="HICHAM BOUDAOUI" role="THE ENGINE" accent={ALG_RED} start={68.0} end={70.8} />
+      <PlayerShowcase clipId="alg-mandi" name="AÏSSA MANDI" role="THE WALL" accent={ALG_GREEN} start={70.8} end={75.8} />
     </div>
   );
 }
@@ -209,10 +209,10 @@ function SceneAustria() {
       <Sprite start={84.5} end={89.6}><div style={{ position: 'absolute', inset: 0 }}><FS id="aut-tifo" /><div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,8,0.32)' }} /></div></Sprite>
       <Sprite start={89.6} end={90.6}><div style={{ position: 'absolute', inset: 0 }}><FS id="aut-attack" /><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, rgba(228,0,43,0.30), transparent 55%)' }} /></div></Sprite>
       <PlayerShowcase clipId="aut-alaba" name="DAVID ALABA" role="THE AUSTRIAN MESSI" accent={AUT_RED} start={90.6} end={95.6} />
-      <PlayerShowcase clipId="aut-sabitzer" name="MARCEL SABITZER" role="THE ENGINE" accent={ACC} start={96.0} end={99.5} />
-      <PlayerShowcase clipId="aut-laimer" name="KONRAD LAIMER" role="THE RELENTLESS" accent={AUT_RED} start={99.5} end={103.0} />
-      <PlayerShowcase clipId="aut-arnautovic" name="MARKO ARNAUTOVIĆ" role="THE TALISMAN · 9" accent={ACC} start={103.0} end={108.0} />
-      <PlayerShowcase clipId="aut-baumgartner" name="CHRISTOPH BAUMGARTNER" role="THE LATE RUN" accent={AUT_RED} start={108.0} end={113.0} />
+      <PlayerShowcase clipId="aut-sabitzer" name="MARCEL SABITZER" role="THE ENGINE" accent={ACC} start={96.0} end={100.3} />
+      <PlayerShowcase clipId="aut-laimer" name="KONRAD LAIMER" role="THE RELENTLESS" accent={AUT_RED} start={100.3} end={103.0} />
+      <PlayerShowcase clipId="aut-arnautovic" name="MARKO ARNAUTOVIĆ" role="THE TALISMAN · 9" accent={ACC} start={103.0} end={107.4} />
+      <PlayerShowcase clipId="aut-baumgartner" name="CHRISTOPH BAUMGARTNER" role="THE LATE RUN" accent={AUT_RED} start={107.4} end={112.4} />
     </div>
   );
 }
