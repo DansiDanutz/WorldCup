@@ -147,3 +147,8 @@ re-run). Keep the player-intro lines' `at` times — the showcase SYNC (step 5) 
 - A clip's display `dur` > its source length = a visible loop = rejected (rule #11).
 - The Legend reveal card image must NOT reference a match CLIP (its window is elsewhere
   in the timeline → renders blank); use the legend-NNN still.
+- For the #24 mini-cards + phone-grid images use a plain `<img data-seq alt="" src="assets/..">`
+  (objectFit:cover) — NOT the kit `ImageSprite` (it is an absolute full-frame Ken-Burns
+  component → escapes grid cells and fills the nearest positioned ancestor, and isn't
+  awaited by the renderer). Give phone grid cells an explicit `height` (CSS `aspectRatio`
+  collapses in the render). Spot-test the footer frames before the full render.

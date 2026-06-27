@@ -352,11 +352,11 @@ function MiniStrip() {
     <div style={{ display: 'flex', alignItems: 'flex-end', gap: 12 }}>
       {prev.map((id) => (
         <div key={id} style={{ width: 64, height: 86, borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.22)', boxShadow: '0 8px 20px rgba(0,0,0,0.5)', opacity: 0.82 }}>
-          <ImageSprite src={`assets/${id}.png`} fit="cover" style={{ width: '100%', height: '100%' }} />
+          <img data-seq alt="" src={`assets/${id}.png`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
         </div>
       ))}
       <div style={{ width: 78, height: 104, borderRadius: 9, overflow: 'hidden', border: `2px solid ${ACC}`, boxShadow: `0 10px 28px rgba(0,0,0,0.6), 0 0 26px ${ACC}66` }}>
-        <ImageSprite src="assets/legend-072-portrait.png" fit="cover" style={{ width: '100%', height: '100%' }} />
+        <img data-seq alt="" src="assets/legend-072-portrait.png" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
       </div>
     </div>
   );
@@ -422,22 +422,22 @@ function PhoneCollect({ start }) {
           <div style={{ textAlign: 'center', fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 10, color: '#7fa0b4', letterSpacing: '0.1em', marginTop: 2, marginBottom: 14 }}>worldcup26.world</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
             {filled.map((id) => (
-              <div key={id} style={{ aspectRatio: '3/4', borderRadius: 6, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.16)' }}>
-                <ImageSprite src={`assets/${id}.png`} fit="cover" style={{ width: '100%', height: '100%' }} />
+              <div key={id} style={{ height: 104, borderRadius: 6, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.16)' }}>
+                <img data-seq alt="" src={`assets/${id}.png`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             ))}
-            <div style={{ aspectRatio: '3/4', borderRadius: 6, overflow: 'hidden', border: snapped ? `2px solid ${ACC}` : '1px dashed rgba(111,214,224,0.6)', position: 'relative', boxShadow: flash > 0 ? `0 0 ${20 * flash}px ${ACC}` : 'none' }}>
-              {snapped && <ImageSprite src="assets/legend-072-portrait.png" fit="cover" style={{ width: '100%', height: '100%' }} />}
+            <div style={{ height: 104, borderRadius: 6, overflow: 'hidden', border: snapped ? `2px solid ${ACC}` : '1px dashed rgba(111,214,224,0.6)', position: 'relative', boxShadow: flash > 0 ? `0 0 ${20 * flash}px ${ACC}` : 'none' }}>
+              {snapped && <img data-seq alt="" src="assets/legend-072-portrait.png" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />}
               {flash > 0 && <div style={{ position: 'absolute', inset: 0, background: ACC, opacity: flash * 0.6 }} />}
             </div>
-            <div style={{ aspectRatio: '3/4', borderRadius: 6, border: '1px dashed rgba(255,255,255,0.14)' }} />
+            <div style={{ height: 104, borderRadius: 6, border: '1px dashed rgba(255,255,255,0.14)' }} />
           </div>
           {snapped && local < 4.4 && <div style={{ position: 'absolute', left: 0, right: 0, bottom: 30, textAlign: 'center', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 16, color: ACC, letterSpacing: '0.16em', opacity: clamp(1 - (local - 3.6), 0, 1) }}>COLLECTED!</div>}
         </div>
       </div>
       {!snapped && local > 0.4 && (
         <div style={{ position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%,-50%) translate(${cardX}px, ${cardY}px) scale(${cardS})`, width: 200, height: 267, borderRadius: 12, overflow: 'hidden', border: `2px solid ${ACC}`, boxShadow: `0 30px 80px rgba(0,0,0,0.7), 0 0 40px ${ACC}88`, zIndex: 30 }}>
-          <ImageSprite src="assets/legend-072-portrait.png" fit="cover" style={{ width: '100%', height: '100%' }} />
+          <img data-seq alt="" src="assets/legend-072-portrait.png" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
         </div>
       )}
     </div>
