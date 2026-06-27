@@ -3,7 +3,7 @@
 **Prediction (OUR STORY, not played):** England 1–1 Panama (Cecilio Waterman's shock career goal ~25' for PAN; Edgar Bárcenas 'El Mago' cuts inside on 43' and curls inches WIDE — nearly 2-0; Harry Kane equalizes ~65'; a level scoreline)
 **Theme:** THE GHOST OF 2018 — eight years on from the 6–1, Panama return with a memory to exorcise. They don't erase 2018; they make the world stop talking about it.
 **Legend 070:** The Mola Maker (the Guna textile artisan of Panama who builds identity in layer upon layer of stitched cloth — "you never unpick the past, you sew a new story over it")
-**Engine:** generated via **fal.ai** (kling v1.6) — full-motion, NO-REPEAT (30 distinct clips, each used once)
+**Engine:** generated via **fal.ai** — kling v2.1 **master** (text-to-video for crowds/stadium) + **image-to-video anchored on the content/ player-still database** for all player/duel/goal action (sharp, on-model likeness, no garbled kits). Full-motion, NO-REPEAT (30 distinct clips, each used once).
 **Rule #16:** the Legend is teased in the cold open ("WHAT CANNOT BE ERASED?"), echoed mid-episode, and the reveal states the spine↔legend connection (the mola = layers you cannot unpick, a people who refuse to be erased). Real app-card artwork.
 **Rule #17:** animated holo collectible reveal — living tilted card, holo shine-sweep, UNLOCK beat ("Nº 070 · ✦✦✦ ULTRA RARE"), collection strip + "LEGEND 070 OF 66 · COLLECT THEM ALL".
 **Rule #18:** premium prediction card (ENG 1-1 PAN, crest badges, scorer chips, "PANAMA MADE THE WORLD STOP TALKING" + gold OUR STORY seal).
