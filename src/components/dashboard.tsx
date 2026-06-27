@@ -12,11 +12,13 @@ import {
   Lock,
   LogOut,
   MessageCircle,
+  Newspaper,
   PlayCircle,
   RefreshCw,
   Search,
   ShieldCheck,
   Sparkles,
+  Smartphone,
   Ticket,
   Trophy,
   UserRound,
@@ -196,7 +198,8 @@ export function Dashboard({
   const [entryError, setEntryError] = useState<string | null>(null);
   const [leaderboardExpanded, setLeaderboardExpanded] = useState(false);
   const [rulesExpanded, setRulesExpanded] = useState(false);
-  const [matchScheduleExpanded, setMatchScheduleExpanded] = useState(false);
+  const [matchScheduleExpanded, setMatchScheduleExpanded] = useState(true);
+  const [matchDateFilter, setMatchDateFilter] = useState("");
   const [isPending, startTransition] = useTransition();
   const teamListRef = useRef<HTMLDivElement | null>(null);
   const teamListTouchStart = useRef<{ scrollTop: number; y: number } | null>(null);
@@ -246,8 +249,31 @@ export function Dashboard({
   const visiblePublicLeaderboard = leaderboardExpanded
     ? publicLeaderboard
     : publicLeaderboard.slice(0, compactLeaderboardCount);
-  const visibleMatches = matchScheduleExpanded ? matches : matches.slice(0, compactMatchCount);
-  const completedCount = matches.filter((match) => match.status === "completed").length;
+  const matchDateOptions = useMemo(() => {
+    const countsByDate = new Map<string, number>();
+
+    for (const match of matches) {
+      const matchDate = getMatchCalendarDate(match.kickoff_at);
+      countsByDate.set(matchDate, (countsByDate.get(matchDate) ?? 0) + 1);
+    }
+
+    return [...countsByDate.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([date, count]) => ({ date, count }));
+  }, [matches]);
+  const filteredMatches = useMemo(() => {
+    if (!matchDateFilter) {
+      return matches;
+    }
+
+    return matches.filter((match) => getMatchCalendarDate(match.kickoff_at) === matchDateFilter);
+  }, [matchDateFilter, matches]);
+  const visibleMatches = matchScheduleExpanded
+    ? filteredMatches
+    : filteredMatches.slice(0, compactMatchCount);
+  const completedCount = filteredMatches.filter((match) => match.status === "completed").length;
+  const minMatchDate = matchDateOptions[0]?.date ?? "";
+  const maxMatchDate = matchDateOptions[matchDateOptions.length - 1]?.date ?? "";
   const netPrizePool = calculateNetPrizePool(
     tournament.prize_pool_amount,
     tournament.prize_pool_fee_percent,
@@ -1109,11 +1135,18 @@ export function Dashboard({
         </div>
         <SmartMenu label="Menu" summary="Browse app">
           <nav className="nav nav--app" aria-label="Primary navigation">
-            <a className="nav-item nav-item--primary" href={showPickWorkflow ? "#pick" : "#me"}>
+            <Link className="nav-item nav-item--primary" href={{ pathname: "/predictions", hash: "collector-quest" }}>
+              <Sparkles size={16} />
+              <span className="nav-item__copy">
+                <strong>Collect Cards</strong>
+                <small>Main journey</small>
+              </span>
+            </Link>
+            <a className="nav-item" href={showPickWorkflow ? "#pick" : "#me"}>
               {showPickWorkflow ? <Users size={16} /> : <UserRound size={16} />}
               <span className="nav-item__copy">
                 <strong>{showPickWorkflow ? "Pick Teams" : "Account"}</strong>
-                <small>{showPickWorkflow ? "Main task" : "Your entry"}</small>
+                <small>{showPickWorkflow ? "Game entry" : "Your entry"}</small>
               </span>
             </a>
             <a className="nav-item" href="#leaderboard">
@@ -1123,13 +1156,6 @@ export function Dashboard({
                 <small>Ranking</small>
               </span>
             </a>
-            <Link className="nav-item" href={{ pathname: "/predictions", hash: "collector-quest" }}>
-              <Sparkles size={16} />
-              <span className="nav-item__copy">
-                <strong>Cards</strong>
-                <small>Daily quest</small>
-              </span>
-            </Link>
             {!funMode ? (
               <Link className="nav-item" href={{ pathname: "/wallet" }}>
                 <Wallet size={16} />
@@ -1181,6 +1207,14 @@ export function Dashboard({
                 <Link href={{ pathname: "/predictions" }}>
                   <Sparkles size={16} />
                   News & cards
+                </Link>
+                <Link href={{ pathname: "/predictions", hash: "legend-card-grid" }}>
+                  <Search size={16} />
+                  Card album
+                </Link>
+                <Link href={{ pathname: "/predictions", hash: "matches" }}>
+                  <CalendarClock size={16} />
+                  Full schedule
                 </Link>
                 <a href="#invite">
                   <Users size={16} />
@@ -1302,7 +1336,7 @@ export function Dashboard({
           <div className="browse-hub__head">
             <div>
               <h2 id="browse-title">Browse</h2>
-              <p>Jump to the right card. Open full data only when you need it.</p>
+              <p>Start, collect, track, and check fixtures from one place.</p>
             </div>
             <button className="browse-hub__compact" onClick={compactAllDataCards} type="button">
               <ChevronUp size={16} />
@@ -1310,6 +1344,17 @@ export function Dashboard({
             </button>
           </div>
           <div className="browse-hub__grid" aria-label="Dashboard sections">
+            <Link className="browse-tile browse-tile--cards" href={{ pathname: "/predictions", hash: "collector-quest" }}>
+              <span className="browse-tile__icon" aria-hidden="true">
+                <Sparkles size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Collect Cards</strong>
+                <small>Main journey: listen, watch, collect, download</small>
+              </span>
+              <span className="browse-tile__metric">124</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
             <a className="browse-tile browse-tile--primary" href={showPickWorkflow ? "#pick" : "#me"}>
               <span className="browse-tile__icon" aria-hidden="true">
                 {showPickWorkflow ? <Users size={18} /> : <UserRound size={18} />}
@@ -1369,6 +1414,28 @@ export function Dashboard({
               </span>
               <ArrowRight size={16} aria-hidden="true" />
             </a>
+            <Link className="browse-tile" href={{ pathname: "/predictions", hash: "legend-wallpapers" }}>
+              <span className="browse-tile__icon" aria-hidden="true">
+                <Smartphone size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Wallpapers</strong>
+                <small>HD portrait supporter cards</small>
+              </span>
+              <span className="browse-tile__metric">48</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+            <Link className="browse-tile" href={{ pathname: "/predictions", hash: "episode-library-title" }}>
+              <span className="browse-tile__icon" aria-hidden="true">
+                <Newspaper size={18} />
+              </span>
+              <span className="browse-tile__copy">
+                <strong>Stories</strong>
+                <small>YouTube episodes linked to cards</small>
+              </span>
+              <span className="browse-tile__metric">YouTube</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
             <a className="browse-tile" href="#rules">
               <span className="browse-tile__icon" aria-hidden="true">
                 <BookOpen size={18} />
@@ -2414,19 +2481,71 @@ export function Dashboard({
               <div>
                 <h2 className="panel-title">Match Schedule</h2>
                 <p className="panel-subtitle">
-                  {visibleMatches.length} of {matches.length} matches shown. Scores and points update automatically after full-time.
+                  {visibleMatches.length} of {filteredMatches.length} matches shown
+                  {matchDateFilter ? ` for ${formatMatchDateLabel(matchDateFilter)}` : ""}.{" "}
+                  {completedCount} completed in this view. Scores and points update automatically after full-time.
                 </p>
               </div>
               <div className="panel-header-actions">
                 <RefreshCw className="panel-card-icon" size={18} aria-hidden="true" />
               </div>
             </div>
-            {matches.length > compactMatchCount ? (
+            <div className="panel-tools" aria-label="Match schedule filters">
+              <label className="field" htmlFor="dashboard-match-date-filter">
+                <span className="field-label">
+                  <CalendarClock size={16} aria-hidden="true" />
+                  Match date
+                </span>
+                <input
+                  id="dashboard-match-date-filter"
+                  max={maxMatchDate}
+                  min={minMatchDate}
+                  onChange={(event) => {
+                    setMatchDateFilter(event.target.value);
+                    setMatchScheduleExpanded(true);
+                  }}
+                  type="date"
+                  value={matchDateFilter}
+                />
+              </label>
+              <button
+                className="button secondary"
+                onClick={() => {
+                  setMatchDateFilter("");
+                  setMatchScheduleExpanded(true);
+                }}
+                type="button"
+              >
+                All dates
+              </button>
+            </div>
+            <div className="leaderboard-teams" aria-label="Quick match date filters">
+              {matchDateOptions.map((option) => (
+                <button
+                  aria-pressed={matchDateFilter === option.date}
+                  className={
+                    matchDateFilter === option.date
+                      ? "leaderboard-team-chip pick-color-one"
+                      : "leaderboard-team-chip"
+                  }
+                  key={option.date}
+                  onClick={() => {
+                    setMatchDateFilter(option.date);
+                    setMatchScheduleExpanded(true);
+                  }}
+                  type="button"
+                >
+                  <span>{formatMatchDateLabel(option.date)}</span>
+                  <strong>{option.count} matches</strong>
+                </button>
+              ))}
+            </div>
+            {filteredMatches.length > compactMatchCount ? (
               <CardViewControl
-                compactText={`First ${Math.min(compactMatchCount, matches.length)} of ${matches.length} matches`}
+                compactText={`${Math.min(compactMatchCount, filteredMatches.length)} of ${filteredMatches.length} matches visible`}
                 controlsId="match-list"
                 expanded={matchScheduleExpanded}
-                expandedText={`All ${matches.length} matches`}
+                expandedText={`All ${filteredMatches.length} matches visible`}
                 label="match schedule"
                 onToggle={() => setMatchScheduleExpanded((current) => !current)}
               />
@@ -2462,6 +2581,19 @@ export function Dashboard({
       </div>
     </main>
   );
+}
+
+function getMatchCalendarDate(value: string) {
+  return new Date(value).toISOString().slice(0, 10);
+}
+
+function formatMatchDateLabel(value: string) {
+  return new Intl.DateTimeFormat("en", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${value}T00:00:00.000Z`));
 }
 
 function getPickColorClass(index: number) {

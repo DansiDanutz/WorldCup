@@ -1,12 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Check, Download, ExternalLink, Headphones, Sparkles } from "lucide-react";
 
 import { LEGEND_CARDS } from "@/lib/legend-cards";
 
 import "./legend-cards-promo.css";
 
 const FEATURED_CARD_ID = "short-gaetjens-vanished";
-const STACK_SIZE = 3;
+const STACK_SIZE = 4;
+
+const collectorSteps = [
+  {
+    icon: Headphones,
+    title: "Listen",
+    detail: "Hear the story with Brian inside the app.",
+  },
+  {
+    icon: ExternalLink,
+    title: "Watch",
+    detail: "Open the exact YouTube episode when a card needs video.",
+  },
+  {
+    icon: Sparkles,
+    title: "Collect",
+    detail: "Save the unlocked card to your album.",
+  },
+  {
+    icon: Download,
+    title: "Download",
+    detail: "Keep supporter cards as phone wallpapers.",
+  },
+];
 
 export function LegendCardsPromo() {
   const featured = LEGEND_CARDS.find((card) => card.id === FEATURED_CARD_ID) ?? LEGEND_CARDS[0];
@@ -17,30 +41,49 @@ export function LegendCardsPromo() {
 
   const stack = LEGEND_CARDS.filter((card) => card.id !== featured.id).slice(0, STACK_SIZE);
   const totalCards = LEGEND_CARDS.length;
+  const seriesCount = LEGEND_CARDS.filter((card) => card.kind === "episode-special").length;
+  const supporterCount = LEGEND_CARDS.filter((card) => card.kind === "supporter-card").length;
+  const shortsCount = LEGEND_CARDS.filter((card) => card.kind === "did-you-know-short").length;
+  const bonusCount = LEGEND_CARDS.filter((card) => card.kind === "legend-bonus").length;
 
   return (
     <section className="legend-promo" aria-labelledby="legend-promo-title">
       <div className="legend-promo__inner">
         <div className="legend-promo__copy">
-          <span className="legend-promo__eyebrow">WorldCup26 · Legendary Cards</span>
+          <span className="legend-promo__eyebrow">Main app experience</span>
           <h2 id="legend-promo-title" className="legend-promo__title">
-            Collect the legends. Unlock the stories they never told you.
+            Collect every WorldCup26 card.
           </h2>
           <p className="legend-promo__lead">
-            Every legendary card hides a true, untold World Cup story — read it, hear it in the
-            legend&apos;s voice, and keep it in your album. Free to collect.
+            Every card is unique. No duplicate rewards, no reused unlocks: listen to the story,
+            open YouTube only when the card asks for it, then save the card to your album.
           </p>
           <div className="legend-promo__actions">
             <Link className="legend-promo__cta" href="/predictions#collector-quest">
-              Start collecting — free
+              Start today&apos;s quest
             </Link>
-            <Link className="legend-promo__ghost" href="/signup">
-              Create free account
+            <Link className="legend-promo__ghost" href="/predictions#legend-card-grid">
+              Open full album
             </Link>
           </div>
-          <p className="legend-promo__meta">
-            <strong>{totalCards}</strong> legendary cards and counting
-          </p>
+          <div className="legend-promo__stats" aria-label="Card collection totals">
+            <span>
+              <strong>{totalCards}</strong>
+              Cards
+            </span>
+            <span>
+              <strong>{seriesCount}</strong>
+              Series
+            </span>
+            <span>
+              <strong>{supporterCount}</strong>
+              Nations
+            </span>
+            <span>
+              <strong>{shortsCount + bonusCount}</strong>
+              Specials
+            </span>
+          </div>
         </div>
 
         <div className="legend-promo__showcase">
@@ -59,8 +102,28 @@ export function LegendCardsPromo() {
             <div className="legend-promo__cardbody">
               <strong className="legend-promo__cardtitle">{featured.title}</strong>
               <span className="legend-promo__cardteams">{featured.teams}</span>
+              <span className="legend-promo__unique">
+                <Check size={14} aria-hidden="true" />
+                Unique unlock
+              </span>
             </div>
           </article>
+
+          <ol className="legend-promo__steps" aria-label="How to collect cards">
+            {collectorSteps.map((step) => {
+              const Icon = step.icon;
+
+              return (
+                <li key={step.title}>
+                  <span aria-hidden="true">
+                    <Icon size={16} />
+                  </span>
+                  <strong>{step.title}</strong>
+                  <small>{step.detail}</small>
+                </li>
+              );
+            })}
+          </ol>
 
           <ul className="legend-promo__stack" aria-label="More legendary cards">
             {stack.map((card) => (

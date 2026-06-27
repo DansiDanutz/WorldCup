@@ -16,11 +16,11 @@ export default async function Home() {
 
   return (
     <>
+      <LegendCardsPromo />
       <Dashboard
         {...data}
         publicPaidActionGates={publicPaidActionGates}
       />
-      <LegendCardsPromo />
       <DashboardMatchScheduleUpgrade
         matches={data.matches}
         stages={data.stages}
