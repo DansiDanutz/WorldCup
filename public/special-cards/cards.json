@@ -669,6 +669,15 @@
       "landscape": "/special-cards/legend-074-landscape.png"
     },
     {
+      "number": "075",
+      "name": "The Curupira, Guardian of the Wild Green",
+      "nation": "Brazil",
+      "episode": 75,
+      "match": "Brazil vs Japan",
+      "portrait": "/special-cards/legend-075-portrait.png",
+      "landscape": "/special-cards/legend-075-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
