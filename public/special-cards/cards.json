@@ -633,6 +633,15 @@
       "landscape": "/special-cards/legend-070-landscape.png"
     },
     {
+      "number": "071",
+      "name": "The Gilded King",
+      "nation": "Colombia",
+      "episode": 71,
+      "match": "Colombia vs Portugal",
+      "portrait": "/special-cards/legend-071-portrait.png",
+      "landscape": "/special-cards/legend-071-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
