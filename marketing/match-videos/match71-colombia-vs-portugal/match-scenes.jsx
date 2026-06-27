@@ -362,46 +362,49 @@ function SceneEngage() {
 // ════════ RULE #16 + #17 — STORY-WOVEN HOLO COLLECTIBLE: LEGEND 071 THE GILDED KING ════════
 function SceneMystery() {
   const { localTime: lt } = useSprite();
-  const inP = Easing.easeOutCubic(clamp((lt - 0.6) / 1.4, 0, 1));
-  const teaseP = clamp((lt - 1.0) / 0.8, 0, 1) * clamp((4.0 - lt) / 0.6, 0, 1);
-  const cardP = Easing.easeOutCubic(clamp((lt - 4.2) / 1.0, 0, 1));
-  const tilt = Math.sin(lt * 0.8) * 6;
-  const sheenX = ((lt * 22) % 170) - 35;
-  const stripP = Easing.easeOutCubic(clamp((lt - 18.0) / 1.2, 0, 1));
+  // bright warm-gold reveal: card comes up FAST and BIG (no long dark dead air)
+  const teaseP = clamp((lt - 0.3) / 0.5, 0, 1) * clamp((2.4 - lt) / 0.5, 0, 1);
+  const cardP = Easing.easeOutBack(clamp((lt - 2.0) / 1.1, 0, 1));
+  const tilt = Math.sin(lt * 0.7) * 4;
+  const sheenX = ((lt * 26) % 200) - 50;
+  const glow = 0.5 + 0.5 * Math.sin(lt * 1.3);
+  const txtP = Easing.easeOutCubic(clamp((lt - 3.2) / 1.0, 0, 1));
+  const stripP = Easing.easeOutCubic(clamp((lt - 4.6) / 1.0, 0, 1));
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
-      <GoldField o={1} />
-      <AmbientParticles start={255} dur={26} count={40} color="243,197,74" />
+      {/* brighter warm-gold backdrop (not the near-black GoldField) */}
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 46%, #4a360f 0%, #221805 48%, #0c0a06 100%)' }} />
+      <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at 50% 44%, rgba(246,206,96,${(0.34 * glow).toFixed(3)}) 0%, transparent 55%)` }} />
+      <AmbientParticles start={255} dur={26} count={60} color="246,210,120" maxR={4.2} />
       {teaseP > 0.01 && (
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: teaseP, zIndex: 20 }}>
-          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 34, color: '#e8c97a', letterSpacing: '0.24em' }}>THE GOLD WAS A PRAYER</div>
+        <div style={{ position: 'absolute', left: 0, right: 0, top: 90, textAlign: 'center', opacity: teaseP, zIndex: 20 }}>
+          <div style={{ display: 'inline-block', fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 30, color: '#ffe6a0', letterSpacing: '0.24em', textShadow: '0 2px 18px rgba(0,0,0,0.7)' }}>THE GOLD WAS A PRAYER</div>
         </div>
       )}
-      {lt > 4.2 && (
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 22, opacity: cardP }}>
-          <div style={{ width: 560, borderRadius: 26, overflow: 'hidden', position: 'relative', transform: `perspective(1400px) rotateY(${tilt}deg) scale(${0.9 + 0.1 * cardP})`, boxShadow: '0 40px 120px rgba(0,0,0,0.8), 0 0 60px rgba(243,197,74,0.35)', border: '2px solid rgba(243,197,74,0.7)' }}>
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(150deg, #2a2008 0%, #0a0a0f 45%, #1a1407 100%)' }} />
-            <div style={{ position: 'absolute', top: 0, bottom: 0, left: `${sheenX}%`, width: '26%', background: 'linear-gradient(105deg, transparent, rgba(255,225,150,0.18), transparent)', transform: 'skewX(-18deg)', zIndex: 6 }} />
-            <div style={{ position: 'relative', zIndex: 3 }}>
-              <ClipSprite id="eldorado-lake" fit="cover" style={{ height: 360, ...GRADE }} />
-              <div style={{ position: 'absolute', left: 0, right: 0, top: 0, height: 360, background: 'linear-gradient(180deg, transparent 55%, rgba(10,8,4,0.96) 100%)' }} />
-              <div style={{ position: 'absolute', top: 16, left: 16, background: 'rgba(243,197,74,0.92)', color: '#1a1407', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 18, letterSpacing: '0.12em', padding: '5px 14px', borderRadius: 8 }}>Nº 071 · ✦✦✦ ULTRA RARE</div>
-            </div>
-            <div style={{ position: 'relative', zIndex: 3, padding: '6px 28px 26px', background: 'linear-gradient(180deg, #0a0a0f 0%, #15110a 100%)' }}>
-              <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 44, color: AU, letterSpacing: '0.02em', textShadow: '0 2px 20px rgba(243,197,74,0.4)' }}>THE GILDED KING</div>
-              <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 19, color: '#cbb78a', letterSpacing: '0.16em', marginTop: 6 }}>EL DORADO · COLOMBIA · LEGEND 071</div>
-            </div>
+      {/* the REAL ornate Gilded King collectible card, large + tilted + holo sheen */}
+      {lt > 1.6 && (
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 22, opacity: clamp(cardP, 0, 1) }}>
+          <div style={{ position: 'relative', transform: `perspective(1500px) rotateY(${tilt}deg) scale(${0.92 + 0.08 * Math.min(cardP, 1)})`, marginTop: -28 }}>
+            <img data-seq src="assets/legend-071-portrait.png" alt="" style={{ height: 660, display: 'block', borderRadius: 16, boxShadow: '0 50px 130px rgba(0,0,0,0.85), 0 0 80px rgba(246,206,96,0.45)' }} />
+            <div style={{ position: 'absolute', top: 0, bottom: 0, left: `${sheenX}%`, width: '22%', background: 'linear-gradient(105deg, transparent, rgba(255,235,170,0.30), transparent)', transform: 'skewX(-18deg)', borderRadius: 16, pointerEvents: 'none', zIndex: 6 }} />
+            <div style={{ position: 'absolute', top: 18, left: '50%', transform: 'translateX(-50%)', background: 'rgba(246,206,96,0.95)', color: '#221805', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 17, letterSpacing: '0.14em', padding: '5px 16px', borderRadius: 8, boxShadow: '0 6px 20px rgba(0,0,0,0.5)' }}>Nº 071 · ✦✦✦ ULTRA RARE</div>
           </div>
         </div>
       )}
-      {/* collection strip */}
-      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 56, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, zIndex: 24, opacity: stripP }}>
-        <div style={{ display: 'flex', gap: 10 }}>
-          {[0, 1, 2, 3, 4, 5].map((i) => (
-            <div key={i} style={{ width: 44, height: 60, borderRadius: 7, border: `1px solid ${i === 5 ? AU : 'rgba(255,255,255,0.18)'}`, background: i === 5 ? 'rgba(243,197,74,0.22)' : 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 14, color: i === 5 ? AU : 'rgba(255,255,255,0.4)' }}>{i === 5 ? '071' : ''}</div>
-          ))}
+      {/* title + collection strip */}
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 64, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, zIndex: 24 }}>
+        <div style={{ textAlign: 'center', opacity: txtP, transform: `translateY(${(1 - txtP) * 16}px)` }}>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 50, color: AU, letterSpacing: '0.04em', textShadow: '0 2px 24px rgba(246,206,96,0.5)' }}>THE GILDED KING</div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 700, fontSize: 20, color: '#e9d4a0', letterSpacing: '0.18em', marginTop: 6 }}>EL DORADO · COLOMBIA · LEGEND 071</div>
         </div>
-        <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 22, color: '#fff', letterSpacing: '0.2em' }}>LEGEND 071 OF 66 · COLLECT THEM ALL</div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12, opacity: stripP }}>
+          <div style={{ display: 'flex', gap: 9 }}>
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <div key={i} style={{ width: 40, height: 54, borderRadius: 6, border: `1px solid ${i === 5 ? AU : 'rgba(255,255,255,0.2)'}`, background: i === 5 ? 'rgba(246,206,96,0.26)' : 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 13, color: i === 5 ? AU : 'rgba(255,255,255,0.4)' }}>{i === 5 ? '071' : ''}</div>
+            ))}
+          </div>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 20, color: '#fff', letterSpacing: '0.2em' }}>COLLECT THEM ALL</div>
+        </div>
       </div>
     </div>
   );
