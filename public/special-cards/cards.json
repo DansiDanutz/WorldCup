@@ -1,5 +1,5 @@
 {
-  "collection": "WorldCup26 Legends \u2014 The Mystery Supporters",
+  "collection": "WorldCup26 Legends — The Mystery Supporters",
   "note": "Each episode hides one collectible Legend (the Mystery Supporter). Both landscape (16:9) and portrait (9:16) art per card. Every Legend is a unique character. Complete for Ep1-43, plus BONUS player-film cards.",
   "cards": [
     {
@@ -104,9 +104,9 @@
     {
       "number": "012",
       "name": "The Beach Keeper",
-      "nation": "Cura\u00e7ao",
+      "nation": "Curaçao",
       "episode": 12,
-      "match": "Germany vs Cura\u00e7ao",
+      "match": "Germany vs Curaçao",
       "portrait": "/special-cards/legend-012-portrait.png",
       "landscape": "/special-cards/legend-012-landscape.png"
     },
@@ -166,7 +166,7 @@
     },
     {
       "number": "019",
-      "name": "The Ghost of the Maracan\u00e1",
+      "name": "The Ghost of the Maracaná",
       "nation": "Uruguay",
       "episode": 19,
       "match": "Saudi Arabia vs Uruguay",
@@ -329,9 +329,9 @@
     {
       "number": "037",
       "name": "The Island Elder",
-      "nation": "Cura\u00e7ao",
+      "nation": "Curaçao",
       "episode": 37,
-      "match": "Ecuador vs Cura\u00e7ao",
+      "match": "Ecuador vs Curaçao",
       "portrait": "/special-cards/legend-037-portrait.png",
       "landscape": "/special-cards/legend-037-landscape.png"
     },
@@ -364,7 +364,7 @@
     },
     {
       "number": "041",
-      "name": "The Charr\u00faa",
+      "name": "The Charrúa",
       "nation": "Uruguay",
       "episode": 41,
       "match": "Uruguay vs Cape Verde",
@@ -511,7 +511,7 @@
       "name": "The Drummaker",
       "nation": "Ivory Coast",
       "episode": 57,
-      "match": "Cura\u00e7ao vs Ivory Coast",
+      "match": "Curaçao vs Ivory Coast",
       "portrait": "/special-cards/legend-057-portrait.png",
       "landscape": "/special-cards/legend-057-landscape.png"
     },
@@ -687,11 +687,20 @@
       "landscape": "/special-cards/legend-076-landscape.png"
     },
     {
+      "number": "077",
+      "name": "The Impundulu, the Lightning Bird",
+      "nation": "South Africa",
+      "episode": 77,
+      "match": "South Africa vs Canada",
+      "portrait": "/special-cards/legend-077-portrait.png",
+      "landscape": "/special-cards/legend-077-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
       "episode": 0,
-      "match": "Bonus film \u00b7 Luis D\u00edaz",
+      "match": "Bonus film · Luis Díaz",
       "portrait": "/special-cards/legend-bonus-diaz-portrait.png",
       "landscape": "/special-cards/legend-bonus-diaz-landscape.png"
     },
@@ -700,7 +709,7 @@
       "name": "The Promise",
       "nation": "Belgium",
       "episode": 0,
-      "match": "Bonus film \u00b7 Romelu Lukaku",
+      "match": "Bonus film · Romelu Lukaku",
       "portrait": "/special-cards/legend-bonus-lukaku-portrait.png",
       "landscape": "/special-cards/legend-bonus-lukaku-landscape.png"
     }

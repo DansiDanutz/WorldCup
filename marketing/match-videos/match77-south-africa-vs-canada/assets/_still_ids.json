@@ -1,0 +1,38 @@
+{
+  "comment": "Ep77 South Africa vs Canada — nano_banana_pro 16:9 stills for i2v. SA gold kit, Canada red kit. Theme STORM BIRDS (Canada Thunderbird vs SA Impundulu). Legend 077 Impundulu.",
+  "players": {
+    "can-davies": "a1fd30c9-1648-4eec-b52e-4cdf7f4c54d7",
+    "can-david": "8f2ff5ee-b410-40f6-9506-1d5b69e52159",
+    "can-larin": "7d55f279-2362-4c5b-ade6-fddf9e68c6f3",
+    "can-eustaquio": "7937b305-1dee-426f-9427-62633592bcb3",
+    "can-buchanan": "e5ae773e-d013-45ad-9888-d83dfedc4bc0",
+    "rsa-williams": "b4902314-f3d4-45b9-aec0-b1f5a1c493cb",
+    "rsa-foster": "c337081f-93c0-4f2a-b5b7-e5c691c54959",
+    "rsa-mokoena": "0a8aad04-23d8-4524-8b44-31cbfdd5eeeb",
+    "rsa-zwane": "944fe50b-dda7-441d-a8ac-a04263ae9b4d",
+    "rsa-mofokeng": "18210cc1-075f-4711-842b-c4596af2f421"
+  },
+  "scenes": {
+    "pitch-walkout": "1dcf3fa9-6827-4ecb-a451-9191be328283",
+    "can-crowd": "60b15fb1-95cf-4702-a22b-3361b119929c",
+    "can-attack": "bde304f9-5ee2-450d-a6c8-66f8e5bf5b33",
+    "rsa-crowd": "90db54b0-69ef-4069-8f2f-e452993b8bb5",
+    "duel-mid": "fb184a1a-fc5a-4954-b239-742ab6b19893",
+    "goal-red": "c9af9119-06e2-412c-b623-5c4aea771d93",
+    "goal-gold": "48e3a3a8-5596-4c5f-a032-91c9adf297df",
+    "pen-spot": "8c360831-03ff-423d-bafc-6b9ade675ba6",
+    "vd-handshake": "f51252d3-b88e-45e6-86f7-42b86fc47d08",
+    "crowd-tense": "da420c02-aa3e-447b-b381-4513185c2d4c",
+    "cta-celebrate": "13fcdd60-98fc-4faa-b52d-9c3eddc2553a"
+  },
+  "motifs": {
+    "can-thunderbird": "9155a693-691d-4069-969d-e90603704300",
+    "rsa-impundulu": "21d49960-d4f1-476d-bfc6-7e503d11a41e",
+    "texture-storm": "f98cd556-50bb-4022-bf68-78601d62b290",
+    "texture-aurora": "06705e56-aaee-4540-bff9-e0f40fa783da"
+  },
+  "card": {
+    "legend-077-portrait": "9274bf9c-aee7-4a5d-92fa-60afd3003e53",
+    "legend-077-landscape": "3d2b9e76-e9fa-4efe-bed4-be1272806233"
+  }
+}
