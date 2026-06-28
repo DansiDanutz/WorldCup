@@ -705,6 +705,15 @@
       "landscape": "/special-cards/legend-078-landscape.png"
     },
     {
+      "number": "079",
+      "name": "Rübezahl, Lord of the Mountains",
+      "nation": "Germany",
+      "episode": 79,
+      "match": "Germany vs Paraguay (R32)",
+      "portrait": "/special-cards/legend-079-portrait.png",
+      "landscape": "/special-cards/legend-079-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",

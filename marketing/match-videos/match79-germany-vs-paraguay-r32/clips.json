@@ -1,0 +1,356 @@
+{
+  "comment": "Ep76 Germany vs Paraguay PHOTOREAL, NO-REPEAT+NO-LOOP, showcase SYNCED to VO names (#23). OUR PREDICTION GER 1-0 PAR (Havertz 88, rhyming the real 2002 Neuville 88). Legend 076 The Pombero Lord of the Night. vol=0.",
+  "clips": [
+    {
+      "id": "ger-barbarossa",
+      "src": "assets/clips/ger-barbarossa.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "par-pombero",
+      "src": "assets/clips/par-pombero.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ger-blackforest",
+      "src": "assets/clips/ger-blackforest.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-ravens",
+      "src": "assets/clips/texture-ravens.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ger-crowd",
+      "src": "assets/clips/ger-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ger-tifo",
+      "src": "assets/clips/ger-tifo.mp4",
+      "at": 49,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ger-attack",
+      "src": "assets/clips/ger-attack.mp4",
+      "at": 54,
+      "dur": 1.5,
+      "vol": 0
+    },
+    {
+      "id": "ger-wirtz",
+      "src": "assets/clips/ger-wirtz.mp4",
+      "at": 55.5,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "ger-musiala",
+      "src": "assets/clips/ger-musiala.mp4",
+      "at": 59.5,
+      "dur": 4.4,
+      "vol": 0
+    },
+    {
+      "id": "ger-havertz",
+      "src": "assets/clips/ger-havertz.mp4",
+      "at": 63.9,
+      "dur": 4.1,
+      "vol": 0
+    },
+    {
+      "id": "ger-kimmich",
+      "src": "assets/clips/ger-kimmich.mp4",
+      "at": 68,
+      "dur": 2.8,
+      "vol": 0
+    },
+    {
+      "id": "ger-rudiger",
+      "src": "assets/clips/ger-rudiger.mp4",
+      "at": 70.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "par-crowd",
+      "src": "assets/clips/par-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "par-tifo",
+      "src": "assets/clips/par-tifo.mp4",
+      "at": 84.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "par-gomez",
+      "src": "assets/clips/par-gomez.mp4",
+      "at": 90.6,
+      "dur": 4.3,
+      "vol": 0
+    },
+    {
+      "id": "par-almiron",
+      "src": "assets/clips/par-almiron.mp4",
+      "at": 94.9,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "par-enciso",
+      "src": "assets/clips/par-enciso.mp4",
+      "at": 97.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "par-diego",
+      "src": "assets/clips/par-diego.mp4",
+      "at": 103,
+      "dur": 2.9,
+      "vol": 0
+    },
+    {
+      "id": "par-sanabria",
+      "src": "assets/clips/par-sanabria.mp4",
+      "at": 105.9,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/clips/duel-mid.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "keeper-save",
+      "src": "assets/clips/keeper-save.mp4",
+      "at": 132,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "enciso-shot",
+      "src": "assets/clips/enciso-shot.mp4",
+      "at": 152.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gomez-block",
+      "src": "assets/clips/gomez-block.mp4",
+      "at": 172,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "wirtz-magic",
+      "src": "assets/clips/wirtz-magic.mp4",
+      "at": 178.46,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "havertz-goal",
+      "src": "assets/clips/havertz-goal.mp4",
+      "at": 189.58,
+      "dur": 4.4,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-applaud",
+      "src": "assets/clips/vd-applaud.mp4",
+      "at": 208.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-stadium-night",
+      "src": "assets/clips/vd-stadium-night.mp4",
+      "at": 213.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 244,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cta-celebrate",
+      "src": "assets/clips/cta-celebrate.mp4",
+      "at": 303.05,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 152.7,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 178.46,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 191,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}
