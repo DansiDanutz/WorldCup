@@ -2116,6 +2116,7 @@ export function LegendCardCollection() {
           const downloadHref = getSupporterWallpaperHref(card);
           const downloadApiHref = getSupporterWallpaperDownloadHref(card);
           const isSupporterCard = Boolean(downloadHref);
+          const isRealLegendCardAsset = card.image.startsWith("/legend-cards/");
           const canDownloadWallpaper = Boolean(downloadHref && unlockedWallpaperHrefs.has(downloadHref));
           const downloadFileName = downloadHref?.split("/").pop();
 
@@ -2125,7 +2126,9 @@ export function LegendCardCollection() {
               id={`legend-card-${card.id}`}
               className={`legend-card ${isUnlocked ? "is-unlocked" : "is-locked"} ${
                 canUnlock ? "is-ready" : ""
-              } ${isPreviewing ? "is-previewing" : ""} ${isSupporterCard ? "legend-card--supporter" : ""}`}
+              } ${isPreviewing ? "is-previewing" : ""} ${isSupporterCard ? "legend-card--supporter" : ""} ${
+                isRealLegendCardAsset ? "legend-card--real-asset" : ""
+              }`}
             >
               <div className="legend-card__image">
                 <Image
