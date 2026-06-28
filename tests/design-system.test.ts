@@ -235,7 +235,7 @@ describe("WorldCup design system integration", () => {
     assert.match(youtubeLegendEpisodes, /kind:\s*"series"/);
     assert.equal(youtubeLegendEpisodes.match(/\bep:\s*\d+/g)?.length, 68);
     assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Bonus Legend"/g)?.length, 3);
-    assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Did You Know\? Short"/g)?.length, 4);
+    assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Did You Know\? Short"/g)?.length, 10);
     assert.equal(youtubeLegendEpisodes.match(/kind:\s*"series"/g)?.length, 1);
     assert.match(youtubeLegendEpisodes, /SmHGZMbrOv4/);
     assert.match(youtubeLegendEpisodes, /V_NSSOTMd6w/);
@@ -248,6 +248,11 @@ describe("WorldCup design system integration", () => {
     assert.match(youtubeLegendEpisodes, /0rmcr7dmwSc/);
     assert.match(youtubeLegendEpisodes, /rqQ_xVUzic8/);
     assert.match(youtubeLegendEpisodes, /e3-SVYS33xk/);
+    assert.match(youtubeLegendEpisodes, /a4Za3AjOeEE/);
+    assert.match(youtubeLegendEpisodes, /Wj-k6syhVcY/);
+    assert.match(youtubeLegendEpisodes, /N7wiebdbI-E/);
+    assert.match(youtubeLegendEpisodes, /VeB_RKVhPv0/);
+    assert.match(youtubeLegendEpisodes, /KZ15CaO-y4E/);
     assert.match(youtubeLegendEpisodes, /bonus-launch-film/);
     assert.match(youtubeLegendEpisodes, /youtubeForEpisode/);
     assert.match(legendCardRegistry, /export const LEGEND_CARD_DEFINITIONS: LegendCardDefinition\[\]/);
