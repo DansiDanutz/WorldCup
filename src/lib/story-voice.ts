@@ -44,10 +44,20 @@ export function createLegendCardVoiceText(card: {
   title: string;
   episode: number;
   episodeLabel?: string;
+  kind?: string;
   teams: string;
   story: string;
+  voiceStory?: string;
 }) {
-  return `${card.title}. ${card.episodeLabel ?? `Episode ${card.episode}`}. ${card.teams}. ${card.story}`;
+  const voiceStoryIntro =
+    card.kind === "supporter-card"
+      ? "This is a WorldCup26 supporter card story."
+      : "This is a WorldCup26 card story.";
+  const narration = card.voiceStory
+    ? `${voiceStoryIntro} ${card.voiceStory}`
+    : card.story;
+
+  return `${card.title}. ${card.episodeLabel ?? `Episode ${card.episode}`}. ${card.teams}. ${narration}`;
 }
 
 export function selectElevenLabsBrianVoice<TVoice extends ElevenLabsVoiceBase>(voices: readonly TVoice[]) {
