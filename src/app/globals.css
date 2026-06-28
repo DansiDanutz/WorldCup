@@ -11410,6 +11410,7 @@ html {
 .legend-card {
   display: flex;
   min-width: 0;
+  height: 100%;
   min-height: 100%;
   flex-direction: column;
   scroll-margin-top: 120px;
@@ -11493,7 +11494,10 @@ html {
 }
 
 .legend-card__body {
-  display: grid;
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  flex-direction: column;
   gap: 9px;
   padding: 15px;
   color: #ffffff;
@@ -11524,6 +11528,14 @@ html {
   font: 900 20px / 1.12 var(--font-sans);
 }
 
+.legend-card h2 {
+  display: -webkit-box;
+  min-height: 45px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .legend-card__subtitle,
 .legend-card__teams,
 .legend-card__story,
@@ -11532,24 +11544,40 @@ html {
 }
 
 .legend-card__subtitle {
+  display: -webkit-box;
+  min-height: 33px;
+  overflow: hidden;
   color: rgba(255, 255, 255, 0.74);
   font: 800 13px / 1.25 var(--font-sans);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .legend-card__teams {
+  display: -webkit-box;
+  min-height: 17px;
+  overflow: hidden;
   color: #a8ebd2;
   font: 900 13px / 1.25 var(--font-sans);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 .legend-card__story {
+  display: -webkit-box;
+  min-height: 122px;
+  overflow: hidden;
   color: rgba(255, 255, 255, 0.8);
   font: 500 14px / 1.45 var(--font-sans);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
 }
 
 .legend-card__journey {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 6px;
+  margin-top: auto;
 }
 
 .legend-card__journey span {
@@ -11585,7 +11613,7 @@ html {
   grid-template-columns: minmax(0, 1fr);
   gap: 8px;
   align-items: stretch;
-  margin-top: 5px;
+  margin-top: 0;
 }
 
 .legend-card__watch,
@@ -11599,6 +11627,7 @@ html {
 .legend-card__watch,
 .legend-card__disabled {
   width: 100%;
+  min-height: 40px;
 }
 
 .legend-card__unlock,
