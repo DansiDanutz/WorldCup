@@ -418,6 +418,30 @@ timeline plays these clips; it does NOT pan-and-zoom stills (see hard rules 10 &
 stills). Ep2 (the canonical template) is clip-based — copy that, not the
 later image-only shortcuts.
 
+### Rule #26 — REUSE the Higgsfield asset library FIRST (credit discipline)
+
+Higgsfield credits are finite and an episode generated from scratch costs ~285–340.
+**Before generating ANY new still or clip, search the existing Higgsfield library and
+reuse what is already there.** The account already holds a large, labelled catalogue of
+per-nation assets (every player still + finished motion clip from prior episodes — Brazil,
+Japan, Germany, Paraguay, etc.), browsable via the Higgsfield MCP:
+`show_generations` (image/video history, each labelled by its prompt — the richest source),
+`show_medias` (uploaded reference media), `show_reference_elements` (saved Elements).
+
+Two reuse modes, in order of preference:
+1. **Reuse a FINISHED clip → 0 credits.** Download its existing CloudFront `rawUrl`
+   straight into the new episode's `assets/clips/<name>.mp4`. No generation at all.
+2. **Reuse an existing STILL as the i2v seed → ~7.5 credits** (skip the still, pay only
+   the 5s animation): pass the still's `job_id` as `medias[].value` role `start_image`.
+
+ONLY generate from scratch what is genuinely missing for THIS match: a brand-new player not
+in the library, the nation-unique Legend card (#21), and the match-specific drama beats
+(the exact goals/saves in the predicted scoreline). For a REPEAT matchup or repeat nation
+(e.g. a knockout re-run of a group game), this typically cuts an episode from ~300 credits
+to ~30–60. Each episode's `assets/_vid_manifest.json` / `_still_ids.json` are the index of
+which job IDs map to which clip — consult prior episodes' manifests to find reusable IDs
+fast. Log roughly how many credits were saved by reuse in the episode README.
+
 ### Series versioning & insertion (CHECK BEFORE building any episode)
 
 The series is numbered and growing — insert new work in the RIGHT place, never
