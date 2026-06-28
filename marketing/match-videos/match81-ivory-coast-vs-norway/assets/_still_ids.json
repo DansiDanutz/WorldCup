@@ -1,0 +1,40 @@
+{
+  "comment": "Ep81 Ivory Coast vs Norway (R32) — nano_banana stills for i2v. IC orange kit (green/white trim), Norway red kit (white/blue trim). Theme: THE WOLF AND THE ELEPHANT — Les Elephants vs Fenrir the Great Wolf. Legend 081 Fenrir. OUR PREDICTION Norway 2-1 Ivory Coast (Haller early, Haaland brace).",
+  "players": {
+    "ci-pepe": "ce000ba5-5c9d-4c36-8550-d78bea43d732",
+    "ci-haller": "eb575e56-f5e4-463c-883d-87ff07e9956d",
+    "ci-kessie": "fa2abdf1-3abd-4af3-b69f-4782540b3678",
+    "ci-singo": "9ad85bed-366d-42fc-afd5-eb33d7ac7c20",
+    "ci-adingra": "f7b03d72-3435-4f84-b97a-78d310ad92eb",
+    "no-haaland": "bfa4cc23-b98e-4c60-9208-a1dd34269a84",
+    "no-odegaard": "2dc5da37-a41a-45ba-b2cc-5bfeafa67d2d",
+    "no-sorloth": "3aa3de0c-daf5-4b7b-bf88-c578be7556b9",
+    "no-nusa": "aee0641b-a76b-4a9d-b26e-92515b6c4f28",
+    "no-berge": "5017661c-023c-4013-b915-04be39935ef8"
+  },
+  "motifs": {
+    "no-fenrir": "2bfe26b0-fa4d-42a6-a216-2b08f946b1fd",
+    "ci-elephant": "c4da5777-ab36-4f4f-987b-5502dc3bf5c0",
+    "texture-fjord": "b6058760-fca9-4448-a21b-8e4c1ca1faf3",
+    "texture-savanna": "43c66072-8072-47f0-8454-0634578926ce"
+  },
+  "scenes": {
+    "ci-crowd": "53838220-5c29-49d8-ab27-6dd6ee2c8014",
+    "no-crowd": "3b00fb6f-2321-442f-8f99-6d5d70127ccd",
+    "ci-attack": "bbcf3355-55ec-4b81-94c6-458b0bb79aad",
+    "duel-mid": "5cf451a0-da80-4330-aa08-79b645dd7205",
+    "no-press": "4c482c6d-5f8c-48db-9d9a-b8ce5925dc41",
+    "ci-surge": "016a5b75-8700-43ce-8ec6-8189ed3dc160",
+    "ci-goal": "e0a98237-bf37-469e-9b29-8082111c5583",
+    "keeper-save": "6b856692-ce4e-42dc-8299-78dbc3c8448a",
+    "no-goal-1": "3b078549-c4fb-4a23-a980-b07314fa6db0",
+    "no-goal-2": "73bcfa2a-86c2-4511-af9e-bc1b15d90bf6",
+    "vd-handshake": "58521478-41d9-4657-b114-7acffe286414",
+    "crowd-tense": "5da68a1f-0a6a-4722-93c3-932c73977c9f",
+    "cta-celebrate": "a6c118f3-4277-449f-aa9c-1718ce36787f"
+  },
+  "card": {
+    "legend-081-portrait": "4e949721-1341-40bf-8928-32e97b8c5fcd",
+    "legend-081-landscape": "44798a89-32d5-4ade-a861-c644d043f511"
+  }
+}
