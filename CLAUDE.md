@@ -418,29 +418,39 @@ timeline plays these clips; it does NOT pan-and-zoom stills (see hard rules 10 &
 stills). Ep2 (the canonical template) is clip-based — copy that, not the
 later image-only shortcuts.
 
-### Rule #26 — REUSE the Higgsfield asset library FIRST (credit discipline)
+### Rule #26 — CHECK the asset libraries FIRST, then get sign-off before generating (HARD GATE)
 
-Higgsfield credits are finite and an episode generated from scratch costs ~285–340.
-**Before generating ANY new still or clip, search the existing Higgsfield library and
-reuse what is already there.** The account already holds a large, labelled catalogue of
-per-nation assets (every player still + finished motion clip from prior episodes — Brazil,
-Japan, Germany, Paraguay, etc.), browsable via the Higgsfield MCP:
-`show_generations` (image/video history, each labelled by its prompt — the richest source),
-`show_medias` (uploaded reference media), `show_reference_elements` (saved Elements).
+**MANDATORY, every episode, before generating a single image or clip.** We do NOT
+generate blindly for every new video — credits are finite (a from-scratch episode costs
+~285–340) and we already own a large catalogue of per-nation art. The order is fixed:
 
-Two reuse modes, in order of preference:
-1. **Reuse a FINISHED clip → 0 credits.** Download its existing CloudFront `rawUrl`
-   straight into the new episode's `assets/clips/<name>.mp4`. No generation at all.
-2. **Reuse an existing STILL as the i2v seed → ~7.5 credits** (skip the still, pay only
-   the 5s animation): pass the still's `job_id` as `medias[].value` role `start_image`.
+1. **SEARCH BOTH LIBRARIES FIRST (mandatory, non-skippable).**
+   - **Higgsfield** via MCP: `show_generations` (image+video history, each labelled by its
+     prompt — the richest source), `show_medias` (uploaded reference media),
+     `show_reference_elements` (saved Elements). Also consult prior episodes'
+     `assets/_vid_manifest.json` / `_still_ids.json` — they index which job IDs map to which clip.
+   - **fal.ai** library: check our fal.ai stored/generated assets too. Both libraries must be
+     reviewed before concluding anything is "missing".
+   - **Same-team reuse:** if a team/nation already appeared in a prior episode, its player
+     stills, motion clips, crowd, motif and texture art likely already exist — REUSE them.
+     A repeat nation should reuse most of its assets, not regenerate them.
 
-ONLY generate from scratch what is genuinely missing for THIS match: a brand-new player not
-in the library, the nation-unique Legend card (#21), and the match-specific drama beats
-(the exact goals/saves in the predicted scoreline). For a REPEAT matchup or repeat nation
-(e.g. a knockout re-run of a group game), this typically cuts an episode from ~300 credits
-to ~30–60. Each episode's `assets/_vid_manifest.json` / `_still_ids.json` are the index of
-which job IDs map to which clip — consult prior episodes' manifests to find reusable IDs
-fast. Log roughly how many credits were saved by reuse in the episode README.
+2. **BUILD A REUSE-vs-MISSING PLAN and GET AGREEMENT before generating.** List exactly which
+   assets are being reused (from which library/job IDs) and which are genuinely missing and
+   would need generating, with a rough credit estimate. **Only AFTER we agree to generate the
+   missing artefacts** do you call any `generate_*` tool. Never fan out a full new asset set
+   on autopilot.
+
+3. **Reuse modes, in order of preference:**
+   - **Reuse a FINISHED clip → 0 credits.** Download its existing CloudFront `rawUrl` straight
+     into the new episode's `assets/clips/<name>.mp4`. No generation at all.
+   - **Reuse an existing STILL as the i2v seed → ~7.5 credits** (skip the still, pay only the
+     5s animation): pass the still's `job_id` as `medias[].value` role `start_image`.
+
+Genuinely-missing-only generation = a brand-new player not in either library, the nation-unique
+Legend card (#21), and the match-specific drama beats (the exact goals/saves in the predicted
+scoreline). For a repeat matchup or repeat nation this typically cuts an episode from ~300
+credits to ~30–60. Log roughly how many credits were saved by reuse in the episode README.
 
 ### Series versioning & insertion (CHECK BEFORE building any episode)
 
