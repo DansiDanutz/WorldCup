@@ -1708,7 +1708,7 @@ svg {
 
 .browse-hub__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -1756,6 +1756,18 @@ svg {
 .browse-tile--primary:focus-visible {
   color: #08241a;
   background: linear-gradient(180deg, #fff0b8, #ebc46c);
+}
+
+.browse-tile--cards {
+  border-color: rgba(84, 224, 179, 0.34);
+  background:
+    linear-gradient(135deg, rgba(84, 224, 179, 0.14), rgba(255, 226, 154, 0.09)),
+    rgba(255, 255, 255, 0.07);
+}
+
+.browse-tile--cards .browse-tile__icon {
+  color: #062c20;
+  background: linear-gradient(180deg, #d8ffe7, #69dfad);
 }
 
 .browse-tile__icon {
@@ -10133,6 +10145,55 @@ html {
 }
 
 /* WorldCup26 Legends collection */
+.predictions-shell {
+  padding-top: 12px;
+}
+
+.predictions-topbar {
+  position: sticky;
+  top: 12px;
+  z-index: 45;
+  width: min(1560px, calc(100% - 32px));
+  margin: 0 auto 18px;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 217, 128, 0.18), transparent 30%),
+    radial-gradient(circle at 84% 0%, rgba(38, 150, 109, 0.2), transparent 32%),
+    linear-gradient(135deg, rgba(8, 25, 20, 0.98), rgba(17, 60, 45, 0.97) 52%, rgba(7, 19, 16, 0.99));
+}
+
+@media (min-width: 1181px) {
+  .predictions-topbar .smart-menu__toggle {
+    display: none;
+  }
+
+  .predictions-topbar .smart-menu__panel[hidden] {
+    display: block;
+  }
+
+  .predictions-topbar .nav {
+    overflow: hidden;
+  }
+
+  .predictions-topbar .nav a,
+  .predictions-topbar .nav button,
+  .predictions-topbar .nav-more summary {
+    flex: 0 1 auto;
+    min-width: 118px;
+    max-width: 168px;
+  }
+
+  .predictions-topbar .nav-item__copy {
+    overflow: hidden;
+  }
+
+  .predictions-topbar .nav-item__copy strong,
+  .predictions-topbar .nav-item__copy small {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 .predictions-page {
   display: grid;
   gap: var(--space-7);
@@ -10232,6 +10293,99 @@ html {
   color: rgba(255, 255, 255, 0.82);
   background: rgba(0, 0, 0, 0.18);
   font: 700 13px / 1.35 var(--font-sans);
+}
+
+.legend-section-menu {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: var(--space-4);
+}
+
+.legend-section-menu__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 58px;
+  padding: 9px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.07);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  text-align: left;
+}
+
+.legend-section-menu__item:hover,
+.legend-section-menu__item:focus-visible {
+  border-color: rgba(255, 207, 102, 0.38);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.legend-section-menu__item:focus-visible {
+  outline: 2px solid rgba(255, 207, 102, 0.62);
+  outline-offset: 2px;
+}
+
+.legend-section-menu__item.is-primary {
+  border-color: rgba(255, 207, 102, 0.5);
+  color: #1b1308;
+  background: linear-gradient(180deg, #ffe29a, #ffcf66);
+}
+
+.legend-section-menu__item > svg {
+  flex: 0 0 auto;
+}
+
+.legend-section-menu__item span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.legend-section-menu__item strong {
+  overflow: hidden;
+  color: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.05;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.legend-section-menu__item small {
+  overflow: hidden;
+  color: currentColor;
+  font-size: 10px;
+  font-weight: 850;
+  line-height: 1.1;
+  opacity: 0.72;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.legend-section-menu__item em {
+  display: inline-grid;
+  min-width: 28px;
+  min-height: 28px;
+  place-items: center;
+  border-radius: 999px;
+  color: #10241f;
+  background: rgba(255, 255, 255, 0.86);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.legend-section-menu__item.is-primary em {
+  color: #ffffff;
+  background: rgba(16, 36, 31, 0.72);
 }
 
 .legend-quest {
@@ -10571,6 +10725,103 @@ html {
 .legend-roadmap-card small {
   color: rgba(255, 255, 255, 0.68);
   font: 750 12px / 1.25 var(--font-sans);
+}
+
+.legend-wallpaper {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(180px, 0.42fr) auto;
+  align-items: center;
+  gap: var(--space-4);
+  min-width: 0;
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  scroll-margin-top: 120px;
+  border: 1px solid rgba(105, 223, 173, 0.22);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(105, 223, 173, 0.13), rgba(255, 207, 102, 0.08)),
+    rgba(0, 0, 0, 0.17);
+}
+
+.legend-wallpaper__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 207, 102, 0.38);
+  border-radius: 8px;
+  color: #123127;
+  background: linear-gradient(180deg, #ffe29a, #69dfad);
+}
+
+.legend-wallpaper__copy {
+  min-width: 0;
+}
+
+.legend-wallpaper__copy h2,
+.legend-wallpaper__copy p,
+.legend-wallpaper__stats,
+.legend-wallpaper__stats dt,
+.legend-wallpaper__stats dd {
+  margin: 0;
+}
+
+.legend-wallpaper__copy h2 {
+  margin-top: 4px;
+  color: #ffffff;
+  font: 900 23px / 1.1 var(--font-sans);
+}
+
+.legend-wallpaper__copy p:not(.wc-card-eyebrow) {
+  margin-top: 7px;
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.74);
+  font: 750 13px / 1.4 var(--font-sans);
+}
+
+.legend-wallpaper__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 0;
+}
+
+.legend-wallpaper__stats div {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.legend-wallpaper__stats dt {
+  color: rgba(255, 255, 255, 0.62);
+  font: 900 11px / 1 var(--font-sans);
+  text-transform: uppercase;
+}
+
+.legend-wallpaper__stats dd {
+  margin-top: 5px;
+  color: #ffffff;
+  font: 900 24px / 1 var(--font-sans);
+}
+
+.legend-wallpaper__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 0;
+  min-height: 42px;
+  padding: 0 15px;
+  border: 1px solid rgba(255, 207, 102, 0.72);
+  border-radius: 8px;
+  color: #1b1308;
+  background: linear-gradient(180deg, #ffe29a, #ffcf66);
+  cursor: pointer;
+  font: 900 13px / 1 var(--font-sans);
+  text-align: center;
+  white-space: normal;
 }
 
 .legend-pulse {
@@ -11091,6 +11342,19 @@ html {
   text-align: center;
 }
 
+.legend-filter-button--legends {
+  border-color: rgba(255, 207, 102, 0.36);
+  color: #ffe29a;
+  background:
+    linear-gradient(135deg, rgba(255, 207, 102, 0.12), rgba(105, 223, 173, 0.08)),
+    rgba(255, 255, 255, 0.07);
+}
+
+.legend-filter-button--legends strong {
+  color: #123127;
+  background: linear-gradient(180deg, #ffe29a, #69dfad);
+}
+
 .legend-filter-button.is-active {
   border-color: rgba(255, 207, 102, 0.72);
   color: #1b1308;
@@ -11163,14 +11427,32 @@ html {
 
 .legend-card__image {
   position: relative;
+  flex: 0 0 auto;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #061911;
 }
 
+.legend-card--supporter .legend-card__image {
+  aspect-ratio: 9 / 16;
+}
+
+.legend-card--real-asset .legend-card__image {
+  aspect-ratio: 8 / 11;
+  background: radial-gradient(circle at 50% 18%, rgba(255, 207, 102, 0.16), transparent 42%), #041510;
+}
+
+.legend-card--wide-asset .legend-card__image {
+  aspect-ratio: 16 / 9;
+}
+
 .legend-card__image img {
   object-fit: cover;
   transition: filter 220ms ease, transform 220ms ease;
+}
+
+.legend-card--real-asset .legend-card__image img {
+  object-fit: contain;
 }
 
 .legend-card.is-locked .legend-card__image img {
@@ -11225,7 +11507,10 @@ html {
 }
 
 .legend-card__body {
-  display: grid;
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  flex-direction: column;
   gap: 9px;
   padding: 15px;
   color: #ffffff;
@@ -11256,6 +11541,14 @@ html {
   font: 900 20px / 1.12 var(--font-sans);
 }
 
+.legend-card h2 {
+  display: -webkit-box;
+  min-height: 45px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .legend-card__subtitle,
 .legend-card__teams,
 .legend-card__story,
@@ -11264,24 +11557,40 @@ html {
 }
 
 .legend-card__subtitle {
+  display: -webkit-box;
+  min-height: 33px;
+  overflow: hidden;
   color: rgba(255, 255, 255, 0.74);
   font: 800 13px / 1.25 var(--font-sans);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .legend-card__teams {
+  display: -webkit-box;
+  min-height: 17px;
+  overflow: hidden;
   color: #a8ebd2;
   font: 900 13px / 1.25 var(--font-sans);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 .legend-card__story {
+  display: -webkit-box;
+  min-height: 102px;
+  overflow: hidden;
   color: rgba(255, 255, 255, 0.8);
   font: 500 14px / 1.45 var(--font-sans);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
 }
 
 .legend-card__journey {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 6px;
+  margin-top: auto;
 }
 
 .legend-card__journey span {
@@ -11314,10 +11623,10 @@ html {
 
 .legend-card__actions {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
-  align-items: center;
-  margin-top: 3px;
+  align-items: stretch;
+  margin-top: 5px;
 }
 
 .legend-card__watch,
@@ -11330,20 +11639,44 @@ html {
 
 .legend-card__watch,
 .legend-card__disabled {
-  grid-column: 1 / -1;
   width: 100%;
 }
 
-.legend-card__unlock {
+.legend-card__unlock,
+.legend-card__download {
   width: 100%;
-  white-space: nowrap;
+  min-height: 40px;
+  white-space: normal;
+}
+
+.legend-card__download {
+  gap: 7px;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.legend-card__watch-note {
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 207, 102, 0.24);
+  border-radius: 8px;
+  color: #ffe29a;
+  background: rgba(255, 207, 102, 0.08);
+  font: 800 12px / 1.35 var(--font-sans);
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .legend-card__disabled,
+.legend-card__download.is-disabled,
 .episode-card__pending {
   justify-content: center;
   cursor: default;
   opacity: 0.72;
+}
+
+.legend-card__download.is-disabled {
+  pointer-events: none;
 }
 
 .legend-card__voice {
@@ -11361,7 +11694,9 @@ html {
   background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
   font: 800 13px / 1 var(--font-sans);
-  white-space: nowrap;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .legend-card__voice.is-speaking {
@@ -11433,6 +11768,19 @@ html {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .legend-wallpaper {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .legend-wallpaper__stats,
+  .legend-wallpaper__action {
+    grid-column: 1 / -1;
+  }
+
+  .legend-wallpaper__action {
+    justify-self: start;
+  }
+
   .legend-pulse__header,
   .legend-quest__header,
   .legend-roadmap__header,
@@ -11468,7 +11816,8 @@ html {
     min-width: 0;
   }
 
-  .legend-filter-bar {
+  .legend-filter-bar,
+  .legend-section-menu {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -11501,8 +11850,22 @@ html {
   }
 
   .legend-quest,
-  .legend-roadmap {
+  .legend-roadmap,
+  .legend-wallpaper {
     padding: var(--space-4);
+  }
+
+  .legend-wallpaper {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .legend-wallpaper__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .legend-wallpaper__action {
+    width: 100%;
   }
 
   .legend-pulse__preview,
@@ -11527,10 +11890,12 @@ html {
     font-size: 23px;
   }
 
-  .legend-feature-card__actions,
-  .legend-pulse__preview-actions,
-  .legend-filter-bar,
-  .legend-roadmap__track,
+    .legend-feature-card__actions,
+    .legend-pulse__preview-actions,
+    .legend-section-menu,
+    .legend-filter-bar,
+    .legend-roadmap__track,
+    .legend-wallpaper__stats,
   .legend-progress-panel__stats {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -12025,5 +12390,39 @@ html {
 
   .hero-swiper__slide:first-child .hero-card__content {
     padding-top: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .predictions-shell {
+    padding-top: 0;
+  }
+
+  .predictions-topbar {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    width: calc(100% - 16px);
+    max-width: none;
+    margin: 8px auto 10px;
+    transform: none;
+  }
+
+  .predictions-topbar .smart-menu__panel {
+    position: static;
+    width: 100%;
+    margin-top: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .predictions-topbar {
+    width: calc(100% - 16px);
+    padding: 9px;
   }
 }

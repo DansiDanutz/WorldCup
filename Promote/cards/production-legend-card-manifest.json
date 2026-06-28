@@ -1,0 +1,838 @@
+{
+  "generatedAt": "2026-06-28T02:10:00Z",
+  "source": "Higgsfield history plus local Did You Know production folders",
+  "didYouKnowCards": [
+    "/legend-cards/did-you-know/01-gaetjens-the-vanished-hero.png",
+    "/legend-cards/did-you-know/02-garrincha-the-joy-of-the-people.png",
+    "/legend-cards/did-you-know/03-carbajal-the-eternal-keeper.png",
+    "/legend-cards/did-you-know/04-socrates-the-doctor.png",
+    "/legend-cards/did-you-know/05-milla-the-dancing-lion.png",
+    "/legend-cards/did-you-know/06-laurent-the-first-goal.png",
+    "/legend-cards/did-you-know/07-escobar-the-gentleman.png",
+    "/legend-cards/did-you-know/08-yashin-the-black-spider.png",
+    "/legend-cards/did-you-know/09-monti-two-nations.png",
+    "/legend-cards/did-you-know/10-tostao-eyes-of-a-champion.png"
+  ],
+  "assets": [
+    {
+      "cardId": "bonus-lukaku-promise",
+      "source": "higgsfield-history",
+      "jobId": "6a99152d-2e17-480b-bb5b-3e164ed9e524",
+      "displayNumber": 399,
+      "publicPath": "/legend-cards/bonus/lukaku-the-promise.png",
+      "width": 768,
+      "height": 1376,
+      "prompt": "Premium collectible BONUS trading card PORTRAIT, ornate gold-and-red art-deco frame on deep navy, holographic foil, a small 'BONUS' ribbon in the corner. Hero: a Pixar-style 3D powerful tall Belgian soccer striker in a red number 9 jersey, pointing both hands to the sky in a heartfelt tribute pose, broad and strong, warm golden aura, a floodlit stadium behind, a soccer ball at his feet. Gold banner TOP 'BONUS LEGEND'. Gold nameplate BOTTOM 'THE PROMISE' and smaller 'ROMELU LUKAKU \u00b7 BELGIUM'. Cinematic, luxurious, inspirational. Soccer theme, round-neck football shirt, NO helmet, NO shoulder pads, not american football."
+    },
+    {
+      "cardId": "bonus-luis-diaz",
+      "source": "higgsfield-history",
+      "jobId": "35401cc8-e765-40ae-9c45-f6a7dca48528",
+      "displayNumber": 401,
+      "publicPath": "/legend-cards/bonus/luis-diaz.png",
+      "width": 768,
+      "height": 1376,
+      "prompt": "Premium collectible BONUS trading card PORTRAIT, ornate gold-and-emerald art-deco frame on deep navy, holographic foil, a small 'BONUS' ribbon in the corner. Hero: a Pixar-style 3D lean swift Colombian soccer forward in a bright red number 7 jersey, arms spread wide in triumphant celebration, indigenous Wayuu motifs woven into a golden aura, the desert and sea of La Guajira behind at sunset, a soccer ball at his feet. Gold banner TOP 'BONUS LEGEND'. Gold nameplate BOTTOM 'THE FREEDOM RUN' and smaller 'LUIS D\u00cdAZ \u00b7 COLOMBIA'. Cinematic, luxurious, inspirational. Soccer theme, round-neck football shirt, NO helmet, not american football."
+    },
+    {
+      "cardId": "bonus-world-cup-secrets",
+      "source": "higgsfield-history",
+      "jobId": "4e5a35a4-743f-4946-905d-267827764f40",
+      "displayNumber": 249,
+      "publicPath": "/legend-cards/bonus/world-cup-monopoly.png",
+      "width": 1376,
+      "height": 768,
+      "prompt": "Pixar-style 3D cinematic. A vast glowing Monopoly-style property board game burning away \u2014 the little houses and streets dissolve into golden fire and embers, revealing a single radiant golden football boot rising at the very center on a beam of light, dramatic god-rays, teal-and-gold, epic transformation, dark cathedral hall, 16:9. Soccer theme, NO people. NO text, letters, numbers or logos."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "c3a5825f-76e9-4cfa-b4ee-0dc50b603965",
+      "displayNumber": 22,
+      "publicPath": "/legend-cards/higgsfield/hf-0022-ornate-premium-collectible-trading-card-artwork-portrait-the-pomb-ro-l-c3a5825f.png",
+      "width": 896,
+      "height": 1200,
+      "aspectRatio": "3:4",
+      "prompt": "Ornate premium collectible trading card artwork, portrait. The Pomb\u00e9ro \u2014 'lord of the night', a mythic Guaran\u00ed guardian-spirit: a short stocky figure covered head to foot in thick dark hair, glowing amber eyes, a wide-brimmed straw hat, holding a wooden staff, standing among moonlit Paraguayan jungle trees with fireflies and pale mist, protective and watchful and mythic. Cinematic, dramatic rim light, red-and-gold filigree ornamental border, holographic sheen, ultra-detailed fantasy illustration, NO text, NO words, NO letters."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "7d4ac384-d150-4435-b88b-ab747edf2cf3",
+      "displayNumber": 36,
+      "publicPath": "/legend-cards/higgsfield/hf-0036-ornate-premium-collectible-trading-card-artwork-portrait-the-curupira--7d4ac384.png",
+      "width": 896,
+      "height": 1200,
+      "aspectRatio": "3:4",
+      "prompt": "Ornate premium collectible trading card artwork, portrait. The Curupira \u2014 a mythic Brazilian forest-guardian spirit: a wild youthful figure with flaming red-orange hair, glowing green eyes, bronze-green skin, his FEET turned backwards, standing amid colossal moonlit Amazon rainforest trees, holding a gnarled wooden staff, surrounded by glowing fireflies and emerald mist, fierce and protective and mythic. Cinematic, dramatic rim light, green-and-gold filigree ornamental border, holographic sheen, ultra-detailed fantasy illustration, NO text, NO words, NO letters."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "fc337f94-c0c9-4663-bdab-a140df6c4b85",
+      "displayNumber": 59,
+      "publicPath": "/legend-cards/higgsfield/hf-0059-ornate-premium-collectible-trading-card-artwork-portrait-a-majestic-na-fc337f94.png",
+      "width": 896,
+      "height": 1200,
+      "aspectRatio": "3:4",
+      "prompt": "Ornate premium collectible trading card artwork, portrait. A majestic Nabataean king-guardian of Petra \u2014 a regal robed desert sentinel with a flowing keffiyeh and bronze ceremonial armour, holding a curved khanjar dagger, standing before the towering rose-red carved facade of Al-Khazneh the Treasury at golden dawn, glowing dust, mythic and proud. Cinematic, dramatic rim light, gold filigree ornamental border, holographic sheen, ultra-detailed fantasy illustration, NO text, NO words, NO letters."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "2492e5bb-cd19-4ad0-8a1c-cd91a6dacfbb",
+      "displayNumber": 93,
+      "publicPath": "/legend-cards/higgsfield/hf-0093-ornate-premium-collectible-trading-card-artwork-portrait-a-mythic-alpi-2492e5bb.png",
+      "width": 896,
+      "height": 1200,
+      "aspectRatio": "3:4",
+      "prompt": "Ornate premium collectible trading card artwork, portrait. A mythic Alpine Krampus figure \u2014 a towering horned dark folklore creature with shaggy fur, long curling ram horns, glowing embers, holding rusted chains, emerging from a snowy moonlit Austrian mountain pass. Cinematic, dramatic rim light, gold filigree ornamental border, holographic sheen, ultra-detailed fantasy illustration, NO text, NO words, NO letters."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "9ec9fa1e-cb66-4e9f-9f63-3dde64d44338",
+      "displayNumber": 114,
+      "publicPath": "/legend-cards/higgsfield/hf-0114-ornate-collectible-legend-trading-card-vertical-portrait-cinematic-the-9ec9fa1e.png",
+      "width": 896,
+      "height": 1200,
+      "aspectRatio": "3:4",
+      "prompt": "Ornate collectible legend trading card, vertical portrait, cinematic. THE WHITE WOLF OF SAMARKAND \u2014 a majestic silver-white wolf with piercing pale eyes standing proud on ancient stone under moonlight, behind it the glowing turquoise-blue tiled domes and minarets of Samarkand's Registan, drifting mist, stars, Silk Road mystique. Ornate silver-and-turquoise ornamental frame with holographic foil sheen, mythical Legend collectible aesthetic, ultra detailed, moonlit palette. No text."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "a3dafd8d-f93a-41bc-83dc-c5929789888d",
+      "displayNumber": 127,
+      "publicPath": "/legend-cards/higgsfield/hf-0127-ornate-collectible-legend-trading-card-vertical-portrait-cinematic-a-m-a3dafd8d.png",
+      "width": 896,
+      "height": 1200,
+      "aspectRatio": "3:4",
+      "prompt": "Ornate collectible legend trading card, vertical portrait, cinematic. A mythical EL DORADO 'Gilded King' \u2014 a dignified Muisca (pre-Columbian Colombian) ruler entirely coated in shimmering gold dust, standing on a reed raft on a still sacred Andean mountain lake at dawn, mist rising, holding small golden offerings, reverent and mysterious, warm golden light. Ornate gold ornamental frame with holographic foil sheen, mythical Legend collectible aesthetic, ultra detailed, museum-gold palette. No text."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "0c06f425-1dbb-4956-a2b4-a3e107067b40",
+      "displayNumber": 160,
+      "publicPath": "/legend-cards/higgsfield/hf-0160-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-0c06f425.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly Croatian stonemason, warm proud luminous face, chisel and mallet in hand, carving an intricate pattern into a block of white Dalmatian limestone, fine stone dust drifting. Behind him, the ancient white stone walls and red rooftops of a Croatian coastal town glowing at golden dusk. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "465a4f31-6ebd-4f5f-9172-ee09c6794fd6",
+      "displayNumber": 163,
+      "publicPath": "/legend-cards/higgsfield/hf-0163-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-465a4f31.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly Belgian carillonneur, warm proud luminous face, seated at the wooden baton keyboard of a carillon, both hands on the keys, great bronze bells hanging above him. Behind him, an old Belgian belfry arch opening onto a medieval town and golden dusk sky. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "1f9f6e20-b66d-4455-b2c0-b8e3fee733be",
+      "displayNumber": 166,
+      "publicPath": "/legend-cards/higgsfield/hf-0166-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-1f9f6e20.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly Egyptian ney player, warm proud luminous face, playing a long slender reed flute (a ney) held to his lips, wearing a simple elegant galabeya. Behind him, a warm Cairo rooftop at dusk with the Nile, glowing minarets and drifting golden haze. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "62e626b0-680a-490d-b9a7-1749092ebda5",
+      "displayNumber": 169,
+      "publicPath": "/legend-cards/higgsfield/hf-0169-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-62e626b0.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly Afro-Uruguayan candombe drummer, warm proud luminous face, a tall slung wooden tamboril drum across his body, hands mid-strike, wearing colourful comparsa attire. Behind him, a warm Montevideo street at night with fire-heater glow and drifting sparks. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "1ac578ca-5555-455d-9005-3bafca4a89ad",
+      "displayNumber": 172,
+      "publicPath": "/legend-cards/higgsfield/hf-0172-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-1ac578ca.jpeg",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified barefoot elderly Cape Verdean morna singer, warm soulful luminous face, eyes closed mid-song, one hand on her heart, in a simple elegant flowing dress, a small cavaquinho guitar beside her. Behind her, a moonlit Atlantic shore and volcanic island with a single lantern glowing. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "b46019c7-7ac7-4eb1-a2ca-b376182bb6f5",
+      "displayNumber": 175,
+      "publicPath": "/legend-cards/higgsfield/hf-0175-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-b46019c7.jpeg",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly West African griot storyteller, warm proud luminous face, in flowing colourful boubou robes, one hand on the strings of a beautiful kora harp-lute, the other raised mid-song. Behind him, a warm sunlit Senegalese village at golden hour with a sacred baobab tree. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "2a3b94fd-9e8a-43cd-9972-f423dce9116b",
+      "displayNumber": 184,
+      "publicPath": "/legend-cards/higgsfield/hf-0184-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-2a3b94fd.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly Norwegian master boatbuilder, warm proud weathered face, strong hands resting on the curved oak prow of a beautiful clinker-built wooden Viking longship, wearing a rugged wool sweater. Behind him, a sunlit fjord-side workshop with timber, tools and the glinting sea. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "a7316fab-5f15-4a11-886a-bdba2dcc0e84",
+      "displayNumber": 212,
+      "publicPath": "/legend-cards/higgsfield/hf-0212-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-a7316fab.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly Turkish Ebru marbling master, warm proud face, hands holding a freshly lifted sheet of paper swirling with a marbled tulip pattern in brilliant blues, reds and gold, a tray of floating inks before him. Behind him, a sunlit Istanbul workshop with brushes, ink pots and marbled papers drying. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "9676d170-c777-464a-8905-e5f87d3f5388",
+      "displayNumber": 222,
+      "publicPath": "/legend-cards/higgsfield/hf-0222-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-9676d170.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly Paraguayan master harpist, warm proud face, hands poised on the strings of a beautiful hand-carved wooden Paraguayan harp, wearing an elegant traditional white shirt with \u00f1andut\u00ed lace trim. Behind him, a warm sunlit workshop with wood and harps. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "787c6d5c-e219-44f0-b1b8-3ceeaeb3410a",
+      "displayNumber": 226,
+      "publicPath": "/legend-cards/higgsfield/hf-0226-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-787c6d5c.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly Tunisian master mosaic artisan, warm proud weathered face, holding a small intricate Carthaginian-style geometric mosaic panel in blues and golds, wearing simple earth-toned North African robes. Behind him, a sunlit Carthage workshop with mosaic tiles and tools. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "143a3e5c-facc-4856-a4d8-9a408a0d42dc",
+      "displayNumber": 230,
+      "publicPath": "/legend-cards/higgsfield/hf-0230-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-143a3e5c.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly Japanese origami master, serene proud face, holding a perfectly folded white paper crane in his hands, wearing an elegant indigo kimono. Behind him, a serene sunlit washi-paper studio with folded paper cranes hanging. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "70c36e5f-0dca-42d7-8734-866c3bcd9b5a",
+      "displayNumber": 234,
+      "publicPath": "/legend-cards/higgsfield/hf-0234-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-70c36e5f.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly Ecuadorian master hat-weaver, warm proud face, weathered hands holding a finely woven pale toquilla-straw Panama hat, wearing simple coastal Montecristi clothing. Behind him, a warm sunlit workshop with straw, looms and finished hats. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "b51827ce-b0f6-4adf-b238-601fae7884af",
+      "displayNumber": 238,
+      "publicPath": "/legend-cards/higgsfield/hf-0238-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-b51827ce.jpeg",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly West African master drum-maker, warm proud face, hands resting on a beautifully carved traditional djembe drum with taut goatskin head and rope tuning, wearing rich orange and earth-toned West African robes with kente-pattern trim. Behind him, a warm sunlit workshop with drums and wood shavings. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "0735136f-21e9-4543-a67a-46197fc7b873",
+      "displayNumber": 242,
+      "publicPath": "/legend-cards/higgsfield/hf-0242-collectible-legend-trading-card-portrait-orientation-pixar-style-3d-ch-0735136f.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Collectible legend trading card, portrait orientation, Pixar-style 3D character. A dignified elderly South African Ndebele beadwork master, warm proud face, adorned with vivid traditional Ndebele beaded neck rings, colourful geometric beaded collar and headband in red, blue, green, yellow and white, holding a glowing strand of tiny beads. Behind her, bold geometric Ndebele wall-art patterns in brilliant colours. Ornate gold ornamental card frame, premium holographic foil sheen, dramatic warm rim lighting, ultra detailed, cinematic. Mythical 'Legend' collectible aesthetic. Title space at the bottom."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "97300503-1b62-4489-ba77-c21838527e10",
+      "displayNumber": 263,
+      "publicPath": "/legend-cards/higgsfield/hf-0263-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-97300503.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D Czech master Glassblower shaping a glowing molten crystal on an iron pipe in a warm Bohemian workshop, furnace sparks, shelves of gleaming cut crystal sparkling like diamonds, radiant golden aura, a soccer ball nearby. Gold banner TOP 'LEGEND 055'. Gold nameplate BOTTOM 'THE GLASSBLOWER' and smaller 'CZECH REPUBLIC'. Cinematic, luxurious, precise. Soccer theme, a master craftsman, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "0813c974-6882-4aab-9367-4bbf6a6020d6",
+      "displayNumber": 293,
+      "publicPath": "/legend-cards/higgsfield/hf-0293-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-0813c974.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D Moroccan Gnawa Master musician in a flowing indigo-blue robe and an embroidered cap with a long tasseled cowrie-shell, playing a three-string guembri bass lute, metal qraqeb castanets in hand, warm lamplit Marrakech courtyard, incense smoke, radiant golden aura, a soccer ball nearby. Gold banner TOP 'LEGEND 054'. Gold nameplate BOTTOM 'THE GNAWA MASTER' and smaller 'MOROCCO'. Cinematic, luxurious, hypnotic. Soccer theme, a master musician, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "503c321b-23a8-4a89-94ab-2d17025d3ab6",
+      "displayNumber": 307,
+      "publicPath": "/legend-cards/higgsfield/hf-0307-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-503c321b.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D Brazilian Capoeira Master mid-ginga, a lean athletic figure in flowing white capoeira trousers with a green-and-yellow sash, performing a graceful sweeping kick on a sunlit Bahian beach, a berimbau instrument beside him, radiant golden aura, a soccer ball in the sand. Gold banner TOP 'LEGEND 053'. Gold nameplate BOTTOM 'THE CAPOEIRA MASTER' and smaller 'BRAZIL'. Cinematic, luxurious, fluid. Soccer theme, a master of rhythm, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "6be9c698-f18f-41a7-b898-7c6e841a0aa2",
+      "displayNumber": 321,
+      "publicPath": "/legend-cards/higgsfield/hf-0321-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-6be9c698.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D dignified elderly Swiss Watchmaker with a jeweler's loupe, at his lamplit alpine workbench surrounded by intricate golden clockwork gears and antique timepieces, snow-capped Alps through the window, warm golden light, radiant golden aura, a soccer ball by the bench. Gold banner TOP 'LEGEND 052'. Gold nameplate BOTTOM 'THE WATCHMAKER' and smaller 'SWITZERLAND'. Cinematic, luxurious, precise. Soccer theme, a master craftsman, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "ed683926-144f-4d02-9a32-1d80f125aefc",
+      "displayNumber": 335,
+      "publicPath": "/legend-cards/higgsfield/hf-0335-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-ed683926.jpeg",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D stoic Bridge Keeper of Mostar, a dignified Bosnian man in a simple traditional vest standing guard on the ancient white stone Stari Most arch bridge over the emerald Neretva river at dusk, the old town and minaret of Mostar behind him, warm lantern light and a drifting ember, radiant golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 051'. Gold nameplate BOTTOM 'THE BRIDGE KEEPER' and smaller 'BOSNIA & HERZEGOVINA'. Cinematic, luxurious, timeless. Soccer theme, a guardian, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "a62c7d64-a07e-4926-89b0-a83bd1a323e9",
+      "displayNumber": 339,
+      "publicPath": "/legend-cards/higgsfield/hf-0339-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-a62c7d64.jpeg",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D regal El Dorado, the golden king of the ancient Muisca, his skin shimmering with gold dust, wearing a golden headdress and ornaments, standing on a ceremonial raft on a misty sacred mountain lake at dawn, radiant golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 050'. Gold nameplate BOTTOM 'EL DORADO' and smaller 'COLOMBIA'. Cinematic, luxurious, mythical. Soccer theme, a golden king, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "f21886e2-0cc4-4401-a889-099c36c00276",
+      "displayNumber": 343,
+      "publicPath": "/legend-cards/higgsfield/hf-0343-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-f21886e2.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D proud Panamanian boxer rising from one knee with red boxing gloves raised, defiant and dignified, sweat-glistened, in a warm worn boxing gym with golden light, a championship belt and a soccer ball nearby, radiant golden aura of resilience. Gold banner TOP 'LEGEND 049'. Gold nameplate BOTTOM 'THE BOXER' and smaller 'PANAMA'. Cinematic, luxurious, heroic. Soccer theme, a fighter spirit, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "ae7055dd-95a7-4294-a84f-a97af1df467f",
+      "displayNumber": 347,
+      "publicPath": "/legend-cards/higgsfield/hf-0347-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-ae7055dd.jpeg",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D stoic Beefeater, a Yeoman Warder of the Tower of London, a dignified older man in the iconic red-and-gold Tudor state uniform with a round black hat and white ruff, holding a partisan staff, the ancient Tower of London and a raven behind him at dusk, regal golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 048'. Gold nameplate BOTTOM 'THE BEEFEATER' and smaller 'ENGLAND'. Cinematic, luxurious, timeless. Soccer theme, a guardian, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "4b3f2a54-29fd-446a-b783-34f36a71b7a7",
+      "displayNumber": 352,
+      "publicPath": "/legend-cards/higgsfield/hf-0352-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-4b3f2a54.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D elegant Portuguese fado singer, a woman in a black lace shawl with her eyes closed mid-song, deep emotion on her face, holding a teardrop-shaped Portuguese guitar, in a warm candlelit old Lisbon alley with azulejo tiles, golden melancholic aura, a soccer ball resting at her feet. Gold banner TOP 'LEGEND 047'. Gold nameplate BOTTOM 'THE FADO SINGER' and smaller 'PORTUGAL'. Cinematic, luxurious, soulful. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "e9c3fb06-35a0-46b7-92fe-fba6fdd0dc81",
+      "displayNumber": 356,
+      "publicPath": "/legend-cards/higgsfield/hf-0356-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-e9c3fb06.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D ethereal desert wind spirit \u2014 a tall robed figure formed of swirling golden sand and light, hood and flowing robes dissolving into glowing sand streams, drifting over vast moonlit Sahara dunes under a huge starry shared sky, a soccer ball half-buried in the sand below. Gold banner TOP 'LEGEND 046'. Gold nameplate BOTTOM 'THE DESERT WIND' and smaller 'THE SHARED SKY'. Cinematic, luxurious, mystical. Soccer theme, a sand spirit, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "58ff0359-383f-4b69-9113-76d778e428be",
+      "displayNumber": 357,
+      "publicPath": "/legend-cards/higgsfield/hf-0357-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-58ff0359.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D ethereal desert wind spirit, a tall robed figure formed of swirling golden sand and light, hood and flowing robes dissolving into glowing sand streams, drifting over vast moonlit Sahara dunes under a huge starry shared sky, a soccer ball half-buried in the sand below. Gold banner TOP 'LEGEND 046'. Gold nameplate BOTTOM 'THE DESERT WIND' and smaller 'THE SHARED SKY'. Cinematic, luxurious, mystical. Soccer theme, a sand spirit, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "a48042a8-caf6-45a1-a1dd-63d1b8a1eb9c",
+      "displayNumber": 360,
+      "publicPath": "/legend-cards/higgsfield/hf-0360-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-a48042a8.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D barefoot young Senegalese village boy, maybe ten years old, beaming with joy, holding a homemade soccer ball made of rolled-up socks and string, on a dusty red village pitch at golden sunset, warm hopeful golden aura. Gold banner TOP 'LEGEND 045'. Gold nameplate BOTTOM 'THE SOCK-BALL' and smaller 'SENEGAL'. Cinematic, luxurious, deeply heartwarming. Soccer theme, a hopeful child, NOT a pro player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "e8558a73-a34c-494b-8186-707444ee8949",
+      "displayNumber": 361,
+      "publicPath": "/legend-cards/higgsfield/hf-0361-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-e8558a73.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D barefoot young Senegalese village boy, about ten years old, beaming with pure joy, holding a homemade soccer ball made of rolled-up socks and string, on a dusty red village pitch at golden sunset, warm hopeful golden aura. Gold banner TOP 'LEGEND 045'. Gold nameplate BOTTOM 'THE SOCK-BALL' and smaller 'SENEGAL'. Cinematic, luxurious, deeply heartwarming. Soccer theme, a hopeful child, NOT a pro player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "7cd40c68-5598-4cf0-83fd-5f5860044a54",
+      "displayNumber": 390,
+      "publicPath": "/legend-cards/higgsfield/hf-0390-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-7cd40c68.jpeg",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D kindly older Iraqi-British father in his sixties with a grey beard and a modest cardigan, sitting in a warm modest Manchester flat, one hand pressed over his heart, watching a glowing old television, a framed family photo beside him, soft golden emotional aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 044'. Gold nameplate BOTTOM 'THE NAMESAKE' and smaller 'IRAQ'. Cinematic, luxurious, deeply emotional. Soccer theme, an elder father, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "6a99152d-2e17-480b-bb5b-3e164ed9e524",
+      "displayNumber": 399,
+      "publicPath": "/legend-cards/higgsfield/hf-0399-premium-collectible-bonus-trading-card-portrait-ornate-gold-and-red-ar-6a99152d.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible BONUS trading card PORTRAIT, ornate gold-and-red art-deco frame on deep navy, holographic foil, a small 'BONUS' ribbon in the corner. Hero: a Pixar-style 3D powerful tall Belgian soccer striker in a red number 9 jersey, pointing both hands to the sky in a heartfelt tribute pose, broad and strong, warm golden aura, a floodlit stadium behind, a soccer ball at his feet. Gold banner TOP 'BONUS LEGEND'. Gold nameplate BOTTOM 'THE PROMISE' and smaller 'ROMELU LUKAKU \u00b7 BELGIUM'. Cinematic, luxurious, inspirational. Soccer theme, round-neck football shirt, NO helmet, NO shoulder pads, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "35401cc8-e765-40ae-9c45-f6a7dca48528",
+      "displayNumber": 401,
+      "publicPath": "/legend-cards/higgsfield/hf-0401-premium-collectible-bonus-trading-card-portrait-ornate-gold-and-emeral-35401cc8.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible BONUS trading card PORTRAIT, ornate gold-and-emerald art-deco frame on deep navy, holographic foil, a small 'BONUS' ribbon in the corner. Hero: a Pixar-style 3D lean swift Colombian soccer forward in a bright red number 7 jersey, arms spread wide in triumphant celebration, indigenous Wayuu motifs woven into a golden aura, the desert and sea of La Guajira behind at sunset, a soccer ball at his feet. Gold banner TOP 'BONUS LEGEND'. Gold nameplate BOTTOM 'THE FREEDOM RUN' and smaller 'LUIS D\u00cdAZ \u00b7 COLOMBIA'. Cinematic, luxurious, inspirational. Soccer theme, round-neck football shirt, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "be584536-4ff7-4d19-beed-0878147b364d",
+      "displayNumber": 403,
+      "publicPath": "/legend-cards/higgsfield/hf-0403-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-be584536.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D rugged German Black Forest huntsman in a green loden coat and feathered alpine hat, holding a brass hunting horn, towering misty pine forest behind, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 036'. Gold nameplate BOTTOM 'THE BLACK FOREST HUNTSMAN' and smaller 'GERMANY'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "a9e0e69a-221b-4f53-b1ac-7c71d5f46125",
+      "displayNumber": 405,
+      "publicPath": "/legend-cards/higgsfield/hf-0405-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-a9e0e69a.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D mighty Norse Viking seafarer of Sweden with braided blond beard, fur cloak and round shield, standing at the prow of a dragon-headed longship, fjord and aurora behind, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 035'. Gold nameplate BOTTOM 'THE VIKING SEAFARER' and smaller 'SWEDEN'. Cinematic, luxurious. Soccer theme, a Norse seafarer, NO horned helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "ffcb0294-044a-457f-a885-ff9f54a389d3",
+      "displayNumber": 407,
+      "publicPath": "/legend-cards/higgsfield/hf-0407-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-ffcb0294.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D mighty medieval Highland chieftain of Scotland in a blue-and-green tartan kilt and fur-trimmed cloak, gripping a great claymore sword and round targe shield, misty Highland castle and loch behind, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 033'. Gold nameplate BOTTOM 'THE HIGHLAND CHIEFTAIN' and smaller 'SCOTLAND'. Cinematic, luxurious. Soccer theme, a warrior chieftain, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "0c9d1310-ab21-41fa-977c-fab99f78dc0e",
+      "displayNumber": 409,
+      "publicPath": "/legend-cards/higgsfield/hf-0409-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-0c9d1310.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D serene Turkish whirling dervish in a tall camel-felt hat and flowing white robe caught mid-spin, skirt flaring, soft candlelit Cappadocia hall, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 034'. Gold nameplate BOTTOM 'THE WHIRLING DERVISH' and smaller 'TURKEY'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "a97cff97-8f58-4510-8629-11a686cfa06c",
+      "displayNumber": 411,
+      "publicPath": "/legend-cards/higgsfield/hf-0411-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-a97cff97.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D proud Aboriginal Australian songline keeper, an elder with white-ochre body paint playing a long painted didgeridoo, red desert and dreamtime dot-art aura glowing, starry outback sky, a soccer ball at his feet. Gold banner TOP 'LEGEND 032'. Gold nameplate BOTTOM 'THE SONGLINE KEEPER' and smaller 'AUSTRALIA'. Cinematic, luxurious. Soccer theme, an elder, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "054ddc52-61df-49f4-9f9d-3cdf9bf61485",
+      "displayNumber": 413,
+      "publicPath": "/legend-cards/higgsfield/hf-0413-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-054ddc52.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D flamboyant Mexican lucha libre wrestler in a golden-and-emerald mask, cape and championship belt, striking a heroic pose in a roaring arena spotlight, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 031'. Gold nameplate BOTTOM 'THE LUCHADOR' and smaller 'MEXICO'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "294bdb17-aadd-447b-aecb-7592d7df7d0f",
+      "displayNumber": 414,
+      "publicPath": "/legend-cards/higgsfield/hf-0414-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-294bdb17.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D jubilant South African supporter, a man in a green-and-gold makarapa hat decorated with charms, blowing a long golden vuvuzela, vibrant township colours, sunny stadium glow, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 028'. Gold nameplate BOTTOM 'THE VUVUZELA MAESTRO' and smaller 'SOUTH AFRICA'. Cinematic, luxurious. Soccer theme, NOT a player, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "c2e83995-67d1-4c2d-9752-6ffe4c3359d9",
+      "displayNumber": 416,
+      "publicPath": "/legend-cards/higgsfield/hf-0416-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-c2e83995.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D Qatari pearl diver, a fit man rising from turquoise Gulf water holding aloft a glowing white pearl, a traditional wooden dhow boat behind at sunset, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 030'. Gold nameplate BOTTOM 'THE PEARL DIVER' and smaller 'QATAR'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "c3dcc1d7-e513-41b0-9f2a-7acaf2ba0996",
+      "displayNumber": 418,
+      "publicPath": "/legend-cards/higgsfield/hf-0418-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-c3dcc1d7.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D rugged Swiss alpine mountain guide in a red jacket with a coiled rope and ice axe, standing on a snowy ridge with the Matterhorn peak glowing behind, edelweiss, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 029'. Gold nameplate BOTTOM 'THE ALPINE GUIDE' and smaller 'SWITZERLAND'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "77a2336c-23c5-4575-809f-e13dd469268d",
+      "displayNumber": 422,
+      "publicPath": "/legend-cards/higgsfield/hf-0422-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-77a2336c.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D Silk Road trader of Uzbekistan in a richly embroidered chapan robe and turban, leading a laden camel, the blue-tiled domes and minarets of Samarkand's Registan glowing behind, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 027'. Gold nameplate BOTTOM 'THE SILK ROAD TRADER' and smaller 'UZBEKISTAN'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "65385465-c190-4fca-bc43-ae27e5278c37",
+      "displayNumber": 424,
+      "publicPath": "/legend-cards/higgsfield/hf-0424-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-65385465.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D seasoned Panama Canal pilot in a crisp white uniform and cap, raising a lantern as a great ship passes through the canal locks at dusk, lush tropical hills, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 026'. Gold nameplate BOTTOM 'THE CANAL PILOT' and smaller 'PANAMA'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "f5994ce9-4c75-4e25-956c-3e2651b67b82",
+      "displayNumber": 426,
+      "publicPath": "/legend-cards/higgsfield/hf-0426-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-f5994ce9.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D valiant medieval Croatian knight in a red-and-white checkerboard tabard and polished armour, holding a sword and shield, the Adriatic coast and a stone fortress behind, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 025'. Gold nameplate BOTTOM 'THE CHECKERED KNIGHT' and smaller 'CROATIA'. Cinematic, luxurious. Soccer theme, a medieval knight, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "20c1c080-f3a0-4d3a-8686-13521ae12661",
+      "displayNumber": 428,
+      "publicPath": "/legend-cards/higgsfield/hf-0428-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-20c1c080.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D proud Bedouin guardian of Jordan in a red-and-white shemagh and flowing robe, holding a carved staff, standing before the rose-red carved facade of Petra's Treasury at golden hour, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 023'. Gold nameplate BOTTOM 'THE PETRA GUARDIAN' and smaller 'JORDAN'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "7c93921b-b9ee-44bf-b903-45d0b334757e",
+      "displayNumber": 430,
+      "publicPath": "/legend-cards/higgsfield/hf-0430-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-7c93921b.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D majestic Lamassu, the ancient Mesopotamian winged-bull guardian with a bearded human face and great feathered wings, carved stone and gold, torchlit Babylon gate behind, golden aura, a soccer ball at its hooves. Gold banner TOP 'LEGEND 022'. Gold nameplate BOTTOM 'THE LAMASSU' and smaller 'IRAQ'. Cinematic, luxurious. Soccer theme, a mythic stone guardian, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "dadbb0c3-4a40-4d6f-a15b-b1eb358ac8a6",
+      "displayNumber": 432,
+      "publicPath": "/legend-cards/higgsfield/hf-0432-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-dadbb0c3.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D cheerful old Dutch windmill keeper in an orange scarf and wooden clogs, leaning on a golden traditional windmill amid bright tulip fields under a big sky, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 014'. Gold nameplate BOTTOM 'THE WINDMILL KEEPER' and smaller 'NETHERLANDS'. Cinematic, luxurious. Soccer theme, an elder, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "c4f3785f-6c5f-4ab4-8cf7-0b0c89c0c1b8",
+      "displayNumber": 434,
+      "publicPath": "/legend-cards/higgsfield/hf-0434-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-c4f3785f.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D proud 1804 Haitian independence sentinel in a blue-and-red uniform coat and bicorne hat, holding a sabre, standing before the mountaintop Citadelle Laferri\u00e8re fortress at dawn, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 007'. Gold nameplate BOTTOM 'THE CITADELLE SENTINEL' and smaller 'HAITI'. Cinematic, luxurious. Soccer theme, NOT a modern player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "018e24d5-3b27-4130-8980-3e0d415b51e0",
+      "displayNumber": 436,
+      "publicPath": "/legend-cards/higgsfield/hf-0436-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-018e24d5.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D clever desert fennec fox spirit with huge ears and glowing amber eyes, radiant golden aura, perched on a moonlit Saharan dune, a soccer ball half-buried in the sand. Gold banner TOP 'LEGEND 006'. Gold nameplate BOTTOM 'THE FENNEC' and smaller 'ALGERIA'. Cinematic, luxurious. Soccer theme, an animal spirit, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "3af5536c-847c-4170-932e-838813054e7a",
+      "displayNumber": 438,
+      "publicPath": "/legend-cards/higgsfield/hf-0438-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-3af5536c.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D proud Berber Atlas horseman in flowing white robes and a hooded burnous raising a long ornate musket, mounted on a rearing Arabian horse, red Atlas Mountains and kasbah behind (fantasia), golden aura, a soccer ball at the hooves. Gold banner TOP 'LEGEND 005'. Gold nameplate BOTTOM 'THE ATLAS HORSEMAN' and smaller 'MOROCCO'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "d2d64dd9-8b77-40ad-8501-05c1482b6bbc",
+      "displayNumber": 440,
+      "publicPath": "/legend-cards/higgsfield/hf-0440-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-d2d64dd9.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D charismatic New Orleans jazz trumpeter, a Black American man in a sharp suit and fedora playing a gleaming golden trumpet, vibrant French Quarter street at night with warm lights, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 004'. Gold nameplate BOTTOM 'THE JAZZ TRUMPETER' and smaller 'USA'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "347fd773-af57-4e3b-8713-2ebe0a584514",
+      "displayNumber": 442,
+      "publicPath": "/legend-cards/higgsfield/hf-0442-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-347fd773.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D Inuit elder guardian in a fur-trimmed parka standing beside a glowing stone inuksuk on snowy tundra, brilliant green aurora overhead, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 003'. Gold nameplate BOTTOM 'THE NORTHERN GUARDIAN' and smaller 'CANADA'. Cinematic, luxurious. Soccer theme, an elder, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "98e15a2d-3e8f-4565-a773-9c23b7f7976f",
+      "displayNumber": 444,
+      "publicPath": "/legend-cards/higgsfield/hf-0444-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-98e15a2d.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D dignified old Korean seonbi scholar in a white-and-blue hanbok and black gat hat, holding a calligraphy brush, misty Seoraksan mountains and pine behind, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 002'. Gold nameplate BOTTOM 'THE MOUNTAIN SAGE' and smaller 'SOUTH KOREA'. Cinematic, luxurious. Soccer theme, an elder scholar, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "ca7e4071-86dc-4f33-9441-26b42d899fe4",
+      "displayNumber": 446,
+      "publicPath": "/legend-cards/higgsfield/hf-0446-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-ca7e4071.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D joyful Mexican mariachi, a man in an ornate black-and-gold charro suit and wide sombrero strumming a golden guitarr\u00f3n, festive plaza with papel picado at dusk, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 001'. Gold nameplate BOTTOM 'THE MARIACHI' and smaller 'MEXICO'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "4d8ef01b-99a5-404e-b277-73f95dad5de8",
+      "displayNumber": 448,
+      "publicPath": "/legend-cards/higgsfield/hf-0448-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-4d8ef01b.jpeg",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D old Viennese clockmaker, a distinguished elderly man with round spectacles and a leather apron, winding an ornate golden pocket-watch, surrounded by floating brass gears and clock faces in a candlelit workshop, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 043'. Gold nameplate BOTTOM 'THE CLOCKMAKER' and smaller 'AUSTRIA'. Cinematic, luxurious. Soccer theme, an old craftsman elder, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "737aaaa6-5699-49f9-9636-fdf08b563f39",
+      "displayNumber": 450,
+      "publicPath": "/legend-cards/higgsfield/hf-0450-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-737aaaa6.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D old Polynesian Pacific wayfinder elder from New Zealand, weathered tattooed skin, woven flax cloak, holding a glowing star-compass, reading the night sky full of constellations above an ocean voyaging canoe, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 042'. Gold nameplate BOTTOM 'THE NAVIGATOR' and smaller 'NEW ZEALAND'. Cinematic, luxurious. Soccer theme, an old wayfinder elder, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "910ed7b9-5453-4a65-a518-2b6a4efbf75b",
+      "displayNumber": 452,
+      "publicPath": "/legend-cards/higgsfield/hf-0452-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-910ed7b9.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D fierce indigenous Charr\u00faa warrior spirit of Uruguay, bare-chested with ochre and white body paint, feathered headband, one clawed hand raised defiantly, glowing sky-blue ancestral aura, the moonlit River Plate shore behind, a soccer ball at his feet. Gold banner TOP 'LEGEND 041'. Gold nameplate BOTTOM 'THE CHARRUA' and smaller 'URUGUAY'. Cinematic, luxurious. Soccer theme, an ancestral warrior spirit, NOT a modern player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "639752d1-391a-4304-a6f6-765a6849290f",
+      "displayNumber": 461,
+      "publicPath": "/legend-cards/higgsfield/hf-0461-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-639752d1.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D majestic powerful leopard with glowing golden eyes and a radiant aura, prowling through a lush Congo rainforest at dusk, dramatic, a soccer ball resting beside it. Gold banner TOP 'LEGEND 024'. Gold nameplate BOTTOM 'THE LEOPARD' and smaller 'DR CONGO'. Cinematic, luxurious. Soccer theme, an animal spirit, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "2e9f3d05-1e27-4424-a943-43bd5a3e2391",
+      "displayNumber": 462,
+      "publicPath": "/legend-cards/higgsfield/hf-0462-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-2e9f3d05.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D joyful young Senegalese man mid-dance in flowing green-yellow-red robes, arms raised in celebration, a spectral golden lion spirit glowing behind him, warm West-African dusk, a soccer ball at his feet. Gold banner TOP 'LEGEND 021'. Gold nameplate BOTTOM 'THE DANCING LION' and smaller 'SENEGAL'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "d8068d26-bf19-4811-b9ff-2fb062c83c8e",
+      "displayNumber": 463,
+      "publicPath": "/legend-cards/higgsfield/hf-0463-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-d8068d26.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D proud M\u0101ori warrior elder with a traditional facial moko tattoo, a woven korowai feather cloak, performing a fierce haka pose, misty New Zealand fern forest behind, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 020'. Gold nameplate BOTTOM 'THE UNBEATEN' and smaller 'NEW ZEALAND'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "91c14dd4-13df-44a2-a996-800428eeb937",
+      "displayNumber": 464,
+      "publicPath": "/legend-cards/higgsfield/hf-0464-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-91c14dd4.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D translucent glowing-blue GHOST of a 1950s Uruguayan footballer in a vintage sky-blue kit, ethereal spectral trail, an old empty Maracana stadium behind in moonlight, eerie and beautiful, a soccer ball at his feet. Gold banner TOP 'LEGEND 019'. Gold nameplate BOTTOM 'THE GHOST OF THE MARACANA' and smaller 'URUGUAY'. Cinematic, luxurious. Soccer theme, a spectre, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "754454d2-63e1-456b-8521-e56ef6525c80",
+      "displayNumber": 465,
+      "publicPath": "/legend-cards/higgsfield/hf-0465-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-754454d2.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D ancient Egyptian pharaoh figure in a golden nemes headdress and ornate collar holding two small crowns, the pyramids and Nile at dusk behind, regal golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 018'. Gold nameplate BOTTOM 'KEEPER OF THE TWO CROWNS' and smaller 'EGYPT'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "61790c1c-acd6-464b-888c-23a45400e081",
+      "displayNumber": 471,
+      "publicPath": "/legend-cards/higgsfield/hf-0471-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-61790c1c.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D weathered Cape Verdean lighthouse keeper, an older Black man with a short grey beard in a navy keeper's coat and cap, a tall striped lighthouse with a glowing beam on a volcanic island at dusk, golden aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 017'. Gold nameplate BOTTOM 'THE LIGHTHOUSE KEEPER' and smaller 'CAPE VERDE'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "3281acba-1313-4f63-b62b-e9f8c9289c35",
+      "displayNumber": 472,
+      "publicPath": "/legend-cards/higgsfield/hf-0472-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-3281acba.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D strong young Nordic Swedish woman with braided blonde hair holding a glowing golden torch flame, a blue-and-yellow cloak, snowy northern night with aurora behind, golden aura, a soccer ball at her feet. Gold banner TOP 'LEGEND 016'. Gold nameplate BOTTOM 'THE FIREKEEPER' and smaller 'SWEDEN'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "6247eddf-b6b4-4533-9dd9-b4c80738707b",
+      "displayNumber": 473,
+      "publicPath": "/legend-cards/higgsfield/hf-0473-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-6247eddf.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D dignified Ivorian woman in an elegant orange, white and green robe and headwrap, a white dove resting on her open hand, warm West-African light, golden aura, a soccer ball at her feet. Gold banner TOP 'LEGEND 015'. Gold nameplate BOTTOM 'THE PEACEMAKER' and smaller 'IVORY COAST'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "c0c703db-b7b9-4b2a-81fc-abc2f50055b3",
+      "displayNumber": 474,
+      "publicPath": "/legend-cards/higgsfield/hf-0474-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-c0c703db.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D dignified old Japanese samurai in ornate deep-blue lacquered armour with a grey topknot, cherry blossoms and a moonlit castle behind, a sheathed katana, golden ancestral aura, a soccer ball at his feet. Gold banner TOP 'LEGEND 013'. Gold nameplate BOTTOM 'THE BLUE SAMURAI ELDER' and smaller 'JAPAN'. Cinematic, luxurious. Soccer theme, NOT a modern player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "83a77946-4809-4457-b728-2d3fc09ba074",
+      "displayNumber": 475,
+      "publicPath": "/legend-cards/higgsfield/hf-0475-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-83a77946.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D middle-aged Caribbean beach man with long dreadlocks and a colourful open shirt, standing on a sunny Curacao beach by turquoise sea, a soccer ball in the sand, golden glow. Gold banner TOP 'LEGEND 012'. Gold nameplate BOTTOM 'THE BEACH KEEPER' and smaller 'CURACAO'. Cinematic, luxurious. Soccer theme, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "c5acd2df-61f7-491d-9608-d7f99ac02a18",
+      "displayNumber": 476,
+      "publicPath": "/legend-cards/higgsfield/hf-0476-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-c5acd2df.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card, PORTRAIT, ornate gold art-deco frame on deep navy background, holographic foil. Hero: a Pixar-style 3D kindly old Arabian gentleman from Qatar in a crisp white robe and headscarf, a falcon resting on his gloved arm, warm desert dunes behind, maroon accents, golden glow, a soccer ball at his feet. Gold banner across the TOP reads 'LEGEND 009'. Gold nameplate near the BOTTOM reads 'THE FALCONER' and beneath smaller 'QATAR'. Cinematic, luxurious. Soccer theme, a kindly old elder, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "efb91606-c222-4af0-8d9e-41c8dd86bbcd",
+      "displayNumber": 481,
+      "publicPath": "/legend-cards/higgsfield/hf-0481-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-efb91606.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card, PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D kindly old Australian outback elder in a weathered akubra hat and dusty coat, red desert outback behind, green-and-gold scarf, golden ancestral aura, a soccer ball at his feet. Gold banner TOP reads 'LEGEND 011'. Gold nameplate BOTTOM reads 'THE WANDERER' and beneath smaller 'AUSTRALIA'. Cinematic, luxurious. Soccer theme, kindly old elder NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "1d38bdd7-170b-40ef-b811-189d8cb35ea3",
+      "displayNumber": 482,
+      "publicPath": "/legend-cards/higgsfield/hf-0482-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-1d38bdd7.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card, PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D kindly old Scottish elder in a tartan kilt and sporran playing the bagpipes, misty green Highlands behind, golden ancestral aura, a soccer ball at his feet. Gold banner TOP reads 'LEGEND 010'. Gold nameplate BOTTOM reads 'THE LONE PIPER' and beneath smaller 'SCOTLAND'. Cinematic, luxurious. Soccer theme, kindly old elder NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "be563275-7909-4db7-9690-780e5677b55d",
+      "displayNumber": 484,
+      "publicPath": "/legend-cards/higgsfield/hf-0484-premium-collectible-trading-card-portrait-ornate-gold-art-deco-frame-o-be563275.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card, PORTRAIT, ornate gold art-deco frame on deep navy, holographic foil. Hero: a Pixar-style 3D kindly old Ghanaian elder in a colourful kente cloth robe, holding a carved talking drum, a black star emblem glowing, warm African sunset, golden ancestral aura, a soccer ball at his feet. Gold banner TOP reads 'LEGEND 008'. Gold nameplate BOTTOM reads 'THE ELDER' and beneath smaller 'GHANA'. Cinematic, luxurious. Soccer theme, kindly old elder NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "b8ee6312-88dd-48f7-9c38-3759948d2332",
+      "displayNumber": 485,
+      "publicPath": "/legend-cards/higgsfield/hf-0485-premium-collectible-trading-card-portrait-orientation-ornate-gold-art--b8ee6312.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card, PORTRAIT orientation, ornate gold art-deco card frame with decorative corners on a deep navy background, holographic foil look. Centered hero: a Pixar-style 3D old island elder from Curacao in a faded blue cap holding a worn tambu hand drum, kind weathered face, glowing golden ancestral aura, moonlit Caribbean shore behind, a soccer ball at his feet. A gold banner across the TOP reads 'LEGEND 037'. A gold nameplate near the BOTTOM reads 'THE ISLAND ELDER' and beneath it smaller 'CURACAO'. Cinematic, luxurious, ultra detailed. Soccer theme, he is a kindly old elder, NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "cb6fb25a-eff7-4f80-9d81-281c74ed5697",
+      "displayNumber": 490,
+      "publicPath": "/legend-cards/higgsfield/hf-0490-premium-collectible-trading-card-portrait-orientation-ornate-gold-art--cb6fb25a.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card, PORTRAIT orientation, ornate gold art-deco card frame with decorative corners on a deep navy background, holographic foil look. Centered hero: a Pixar-style 3D old Persian Iranian elder in embroidered traditional robes with a noble lion resting calmly beside him, kind weathered face, glowing golden ancestral aura, ancient Persepolis stone columns in moonlight behind, a soccer ball at his feet. A gold banner across the TOP reads 'LEGEND 040'. A gold nameplate near the BOTTOM reads 'THE SPIRIT OF PERSIA' and beneath it smaller 'IRAN'. Cinematic, luxurious, ultra detailed. SOCCER theme, he is an elder NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "b1cc54e2-afd9-4dce-aa77-9fb756a661d0",
+      "displayNumber": 491,
+      "publicPath": "/legend-cards/higgsfield/hf-0491-premium-collectible-trading-card-portrait-orientation-ornate-gold-art--b1cc54e2.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card, PORTRAIT orientation, ornate gold art-deco card frame with decorative corners on a deep navy background, holographic foil look. Centered hero: a Pixar-style 3D old Saudi desert elder in flowing white robes and a red-checkered headscarf with a white falcon perched on his gloved arm, kind weathered face, glowing golden ancestral aura, moonlit sand dunes behind, a soccer ball at his feet. A gold banner across the TOP reads 'LEGEND 039'. A gold nameplate near the BOTTOM reads 'THE FALCONER' and beneath it smaller 'SAUDI ARABIA'. Cinematic, luxurious, ultra detailed. SOCCER theme, he is an elder NOT a player, NO helmet, not american football."
+    },
+    {
+      "source": "higgsfield-history",
+      "jobId": "ae7626ae-8bca-408b-98b3-64c08c4e05e9",
+      "displayNumber": 492,
+      "publicPath": "/legend-cards/higgsfield/hf-0492-premium-collectible-trading-card-portrait-orientation-ornate-gold-art--ae7626ae.png",
+      "width": 768,
+      "height": 1376,
+      "aspectRatio": "9:16",
+      "prompt": "Premium collectible trading card, PORTRAIT orientation, ornate gold art-deco card frame with decorative corners on a deep navy background, holographic foil look. Centered hero: a Pixar-style 3D old Tunisian elder in a flowing white jebba robe and red chechia cap with a majestic eagle perched on his arm, kind weathered face, glowing golden ancestral aura, ancient Carthage ruins in a moonlit desert behind, a soccer ball at his feet. A gold banner across the TOP reads 'LEGEND 038'. A gold nameplate near the BOTTOM reads 'THE EAGLE-KEEPER' and beneath it smaller 'TUNISIA'. Cinematic, luxurious, ultra detailed. SOCCER theme, he is an elder NOT a player, NO helmet, not american football."
+    }
+  ]
+}

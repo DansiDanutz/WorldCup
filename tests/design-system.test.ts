@@ -233,9 +233,9 @@ describe("WorldCup design system integration", () => {
     assert.match(youtubeLegendEpisodes, /export const YOUTUBE_LEGEND_BONUS_VIDEOS/);
     assert.match(youtubeLegendEpisodes, /export const YOUTUBE_DID_YOU_KNOW_SHORTS/);
     assert.match(youtubeLegendEpisodes, /kind:\s*"series"/);
-    assert.equal(youtubeLegendEpisodes.match(/\bep:\s*\d+/g)?.length, 68);
+    assert.equal(youtubeLegendEpisodes.match(/\bep:\s*\d+/g)?.length, 79);
     assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Bonus Legend"/g)?.length, 3);
-    assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Did You Know\? Short"/g)?.length, 4);
+    assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Did You Know\? Short"/g)?.length, 10);
     assert.equal(youtubeLegendEpisodes.match(/kind:\s*"series"/g)?.length, 1);
     assert.match(youtubeLegendEpisodes, /SmHGZMbrOv4/);
     assert.match(youtubeLegendEpisodes, /V_NSSOTMd6w/);
@@ -248,6 +248,10 @@ describe("WorldCup design system integration", () => {
     assert.match(youtubeLegendEpisodes, /0rmcr7dmwSc/);
     assert.match(youtubeLegendEpisodes, /rqQ_xVUzic8/);
     assert.match(youtubeLegendEpisodes, /e3-SVYS33xk/);
+    assert.match(youtubeLegendEpisodes, /JnKwpBDpKSI/);
+    assert.match(youtubeLegendEpisodes, /iWAJytToqUU/);
+    assert.match(youtubeLegendEpisodes, /ZUsFa2mNki0/);
+    assert.match(youtubeLegendEpisodes, /KZ15CaO-y4E/);
     assert.match(youtubeLegendEpisodes, /bonus-launch-film/);
     assert.match(youtubeLegendEpisodes, /youtubeForEpisode/);
     assert.match(legendCardRegistry, /export const LEGEND_CARD_DEFINITIONS: LegendCardDefinition\[\]/);
@@ -268,6 +272,7 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardRegistry, /findLegendCardDefinition/);
     assert.match(legendCardRegistry, /isUnlockableLegendCard/);
     assert.match(legendCards, /LEGEND_CARD_DEFINITIONS/);
+    assert.match(legendCards, /getLegendCardAssetImagePath/);
     assert.match(legendCards, /createGeneratedLegendCardImage/);
     assert.match(legendCards, /data:image\/svg\+xml/);
     assert.match(legendCards, /getSupporterCardImagePath/);
@@ -580,11 +585,16 @@ describe("WorldCup design system integration", () => {
     assert.doesNotMatch(globalsCss, /\.legend-watch-modal/);
     assert.match(globalsCss, /\.legend-card\.is-locked \.legend-card__image img\s*{[\s\S]*?filter:\s*blur\(7px\)/);
     assert.match(globalsCss, /\.legend-card--supporter \.legend-card__image\s*{[\s\S]*?aspect-ratio:\s*9\s*\/\s*16;/);
+    assert.match(globalsCss, /\.legend-card--real-asset \.legend-card__image\s*{[\s\S]*?aspect-ratio:\s*8\s*\/\s*11;/);
+    assert.match(globalsCss, /\.legend-card--wide-asset \.legend-card__image\s*{[\s\S]*?aspect-ratio:\s*16\s*\/\s*9;/);
+    assert.match(globalsCss, /\.legend-card h2\s*{[\s\S]*?-webkit-line-clamp:\s*2;/);
+    assert.match(globalsCss, /\.legend-card__story\s*{[\s\S]*?-webkit-line-clamp:\s*5;/);
     assert.match(globalsCss, /\.legend-card__journey\s*{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\);/);
     assert.match(globalsCss, /\.legend-card__journey span\.is-next\s*{[\s\S]*?rgba\(255,\s*207,\s*102,\s*0\.1\)/);
     assert.match(globalsCss, /\.legend-card__journey span\.is-done\s*{[\s\S]*?linear-gradient\(180deg,\s*#d8ffe7,\s*#69dfad\)/);
     assert.match(globalsCss, /\.legend-card__actions\s*{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\);/);
     assert.match(legendCardCollection, /legend-card--supporter/);
+    assert.match(legendCardCollection, /legend-card--wide-asset/);
     assert.match(legendCardCollection, /canDownloadWallpaper/);
     assert.match(legendCardCollection, /unlockedWallpaperHrefs\.has\(downloadHref\)/);
     assert.match(legendCardCollection, /Download HD/);
@@ -719,7 +729,7 @@ describe("WorldCup design system integration", () => {
     assert.match(predictionsPage, /href="#episode-library-title"/);
     assert.match(legendCardCollection, /className="legend-section-menu"/);
     assert.match(legendCardCollection, /aria-label="Legend collection shortcuts"/);
-    assert.match(legendCardCollection, /Showing the 4 Did You Know shorts cards/);
+    assert.match(legendCardCollection, /Showing the 10 Did You Know shorts cards/);
     assert.match(legendCardCollection, /Showing the YouTube story series cards/);
     assert.match(legendCardCollection, /Showing cards ready to collect/);
     assert.match(legendCardCollection, /Showing cards waiting for YouTube/);

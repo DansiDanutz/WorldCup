@@ -22,6 +22,7 @@ export type YouTubeLegendBonusVideo = {
   teams: string;
   story: string;
   youtube: string;
+  alternateYoutube?: string[];
   imageTeam?: string;
 };
 
@@ -855,6 +856,138 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
     youtube: "https://www.youtube.com/watch?v=V_NSSOTMd6w",
     imageTeam: "South Africa",
   },
+  {
+    ep: 70,
+    home: "England",
+    away: "Panama",
+    stage: "Group stage",
+    score: null,
+    hook: "The Ghost of 2018.",
+    story:
+      "England and Panama meet with the memory of a six-goal night still floating over the pitch, turning old humiliation and new courage into a rare Legend card.",
+    youtube: "https://www.youtube.com/watch?v=iWAJytToqUU",
+    imageTeam: "England",
+  },
+  {
+    ep: 71,
+    home: "Colombia",
+    away: "Portugal",
+    stage: "Group stage",
+    score: null,
+    hook: "El Dorado and the two number tens.",
+    story:
+      "Colombia bring gold, rhythm, and Luis Diaz. Portugal bring monuments, control, and old pressure, turning this episode into a duel of football treasure and pride.",
+    youtube: "https://www.youtube.com/watch?v=r0aLa-fTI_Y",
+    imageTeam: "Colombia",
+  },
+  {
+    ep: 72,
+    home: "DR Congo",
+    away: "Uzbekistan",
+    stage: "Group stage",
+    score: null,
+    hook: "The Outsiders' Revolt.",
+    story:
+      "DR Congo and Uzbekistan arrive as outsiders with different fires: one built from power and diaspora, the other from patience and a first great rebellion.",
+    youtube: "https://www.youtube.com/watch?v=PPIfQUZNnsc",
+    imageTeam: "DR Congo",
+  },
+  {
+    ep: 73,
+    home: "Algeria",
+    away: "Austria",
+    stage: "Group stage",
+    score: null,
+    hook: "The Reckoning.",
+    story:
+      "Algeria carry an old World Cup wound into a match against Austria, where memory, pressure, and tactical steel turn the episode into a reckoning.",
+    youtube: "https://www.youtube.com/watch?v=QGPXwabOoL4",
+    imageTeam: "Algeria",
+  },
+  {
+    ep: 74,
+    home: "Argentina",
+    away: "Jordan",
+    stage: "Group stage",
+    score: null,
+    hook: "The First Chapter.",
+    story:
+      "Argentina bring the weight of champions. Jordan bring the thrill of a first chapter, walking into the story with nothing to lose and everything to collect.",
+    youtube: "https://www.youtube.com/watch?v=avVv7YnW8O4",
+    imageTeam: "Argentina",
+  },
+  {
+    ep: 75,
+    home: "Brazil",
+    away: "Japan",
+    stage: "Group stage",
+    score: null,
+    hook: "Samba vs the Samurai.",
+    story:
+      "Brazil's rhythm meets Japan's discipline in a card built from beauty, precision, and the feeling that one clean counterattack can silence a giant.",
+    youtube: "https://www.youtube.com/watch?v=3ANz7zN_TZI",
+    imageTeam: "Brazil",
+  },
+  {
+    ep: 76,
+    home: "Germany",
+    away: "Paraguay",
+    stage: "Group stage",
+    score: null,
+    hook: "The Sleeping Giant Wakes.",
+    story:
+      "Germany bring machinery and memory. Paraguay bring bite and resistance, waiting to find out whether the giant wakes angry or wakes afraid.",
+    youtube: "https://www.youtube.com/watch?v=k_n91Jk30-M",
+    imageTeam: "Germany",
+  },
+  {
+    ep: 77,
+    home: "South Africa",
+    away: "Canada",
+    stage: "Group stage",
+    score: null,
+    hook: "The Storm Birds.",
+    story:
+      "South Africa and Canada turn speed, sky, and belief into a storm, with two football cultures chasing a card that feels bigger than a group match.",
+    youtube: "https://www.youtube.com/watch?v=J0J_4IWae3I",
+    imageTeam: "South Africa",
+  },
+  {
+    ep: 78,
+    home: "Brazil",
+    away: "Japan",
+    stage: "Group stage",
+    score: null,
+    hook: "The Rising Sun.",
+    story:
+      "Brazil meet Japan again under a different symbol: the rising sun, a card about discipline, pride, and the moment a precise team refuses to blink.",
+    youtube: "https://www.youtube.com/watch?v=YEELViNi2KY",
+    imageTeam: "Japan",
+  },
+  {
+    ep: 79,
+    home: "Germany",
+    away: "Paraguay",
+    stage: "Group stage",
+    score: null,
+    hook: "The Mountain King.",
+    story:
+      "Germany and Paraguay climb into a darker myth, where the Mountain King waits above the match and the rare card belongs to the team that survives the height.",
+    youtube: "https://www.youtube.com/watch?v=rAb99m2Sf_0",
+    imageTeam: "Germany",
+  },
+  {
+    ep: 80,
+    home: "Netherlands",
+    away: "Morocco",
+    stage: "Group stage",
+    score: null,
+    hook: "The Atlas Lions.",
+    story:
+      "The Netherlands face Morocco in a story of orange geometry against mountain pride, where the Atlas Lion guards the final rare card of the current run.",
+    youtube: "https://www.youtube.com/watch?v=JnKwpBDpKSI",
+    imageTeam: "Morocco",
+  },
 ];
 
 export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
@@ -892,6 +1025,7 @@ export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
     story:
       "The Monopoly card follows the strange truths, power moves, and hidden football business that make the World Cup bigger than ninety minutes.",
     youtube: "https://www.youtube.com/watch?v=zb4W9KkVESU",
+    alternateYoutube: ["https://www.youtube.com/watch?v=0oHkstIXqjk"],
     imageTeam: "Mexico",
   },
   {
@@ -911,18 +1045,6 @@ export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
 
 export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
   {
-    id: "short-world-cup-secrets",
-    episode: 949,
-    episodeLabel: "Did You Know? Short",
-    title: "5 World Cup Secrets",
-    subtitle: "Did You Know? Short · World Cup secrets",
-    teams: "World Cup history",
-    story:
-      "Five strange World Cup secrets step out from the shadows, from impossible referee stories to myths that still shape how fans remember the tournament.",
-    youtube: "https://www.youtube.com/watch?v=e96tg1mpKHo",
-    imageTeam: "World Cup history",
-  },
-  {
     id: "short-gaetjens-vanished",
     episode: 950,
     episodeLabel: "Did You Know? Short",
@@ -931,7 +1053,7 @@ export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
     teams: "USA 1-0 England · 1950",
     story:
       "A part-time American dishwasher named Joe Gaetjens threw himself at a cross and scored the header that beat mighty England. He went home to Haiti a hero. Then the dictatorship made him disappear. No grave. No body. No answers.",
-    youtube: null,
+    youtube: "https://www.youtube.com/shorts/bSFDrewxg9s",
     imageTeam: "USA",
   },
   {
@@ -943,7 +1065,7 @@ export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
     teams: "Brazil · World Cup 1962",
     story:
       "Doctors thought Garrincha's crooked legs should stop him from walking. Instead, those impossible legs confused defenders, carried Brazil after Pele's injury, and made him the Joy of the People.",
-    youtube: null,
+    youtube: "https://www.youtube.com/shorts/0rmcr7dmwSc",
     imageTeam: "Brazil",
   },
   {
@@ -955,7 +1077,7 @@ export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
     teams: "Mexico · 5 World Cups",
     story:
       "Antonio Carbajal became a goalkeeper so he could see his father coming and run before getting caught playing football. That hiding place became the first five-World-Cup career.",
-    youtube: null,
+    youtube: "https://www.youtube.com/shorts/rqQ_xVUzic8",
     imageTeam: "Mexico",
   },
   {
@@ -967,32 +1089,80 @@ export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
     teams: "Brazil · 1982",
     story:
       "Socrates said he wanted to die on a Sunday while Corinthians won a title. On December 4, 2011, he passed away, and Corinthians became champions the same day.",
-    youtube: null,
+    youtube: "https://www.youtube.com/shorts/e3-SVYS33xk",
     imageTeam: "Brazil",
   },
   {
-    id: "short-roger-milla-decree",
+    id: "short-milla-corner-flag",
     episode: 954,
     episodeLabel: "Did You Know? Short",
-    title: "The President's Decree",
+    title: "The Dancing Lion",
     subtitle: "Did You Know? Short · Roger Milla",
-    teams: "Cameroon · Italia 90",
+    teams: "Cameroon · 1990",
     story:
-      "Roger Milla was pulled back to the World Cup by presidential order, then scored, danced at the corner flag, and helped Cameroon become Africa's first quarter-finalists.",
-    youtube: null,
-    imageTeam: "Morocco",
+      "Roger Milla was supposed to be too old for a World Cup comeback. Instead, at thirty-eight, he danced by the corner flag and made Cameroon feel like the center of football.",
+    youtube: "https://www.youtube.com/shorts/a4Za3AjOeEE",
+    imageTeam: "Cameroon",
   },
   {
-    id: "short-lucien-laurent-first-goal",
+    id: "short-laurent-first-goal",
     episode: 955,
     episodeLabel: "Did You Know? Short",
     title: "The First Goal",
     subtitle: "Did You Know? Short · Lucien Laurent",
-    teams: "France · World Cup 1930",
+    teams: "France · 1930",
     story:
-      "Lucien Laurent scored the first goal in World Cup history, then returned to factory work, survived war captivity, and lived long enough to see France lift the trophy.",
-    youtube: null,
+      "Lucien Laurent was a factory worker who became the first goal scorer in World Cup history. One swing of his boot made him the first name in the tournament's story.",
+    youtube: "https://www.youtube.com/shorts/Wj-k6syhVcY",
     imageTeam: "France",
+  },
+  {
+    id: "short-escobar-own-goal",
+    episode: 956,
+    episodeLabel: "Did You Know? Short",
+    title: "The Gentleman",
+    subtitle: "Did You Know? Short · Andres Escobar",
+    teams: "Colombia · 1994",
+    story:
+      "Andres Escobar scored an own goal at the World Cup and answered with grace instead of excuses. Days later, football learned how cruel a story can become.",
+    youtube: "https://www.youtube.com/shorts/ZUsFa2mNki0",
+    imageTeam: "Colombia",
+  },
+  {
+    id: "short-yashin-black-spider",
+    episode: 957,
+    episodeLabel: "Did You Know? Short",
+    title: "The Black Spider",
+    subtitle: "Did You Know? Short · Lev Yashin",
+    teams: "Soviet Union · Ballon d'Or",
+    story:
+      "Lev Yashin nearly chose ice hockey, then became the only goalkeeper to win the Ballon d'Or. They called him the Black Spider because his saves seemed to come from everywhere.",
+    youtube: "https://www.youtube.com/shorts/N7wiebdbI-E",
+    imageTeam: "Russia",
+  },
+  {
+    id: "short-monti-two-finals",
+    episode: 958,
+    episodeLabel: "Did You Know? Short",
+    title: "Two Nations",
+    subtitle: "Did You Know? Short · Luis Monti",
+    teams: "Argentina and Italy · 1930/1934",
+    story:
+      "Luis Monti played World Cup finals for two different countries. One final ended in fear and defeat; the next ended with a winner's medal for another nation.",
+    youtube: "https://www.youtube.com/shorts/VeB_RKVhPv0",
+    imageTeam: "Argentina",
+  },
+  {
+    id: "short-tostao-eyes",
+    episode: 959,
+    episodeLabel: "Did You Know? Short",
+    title: "Eyes of a Champion",
+    subtitle: "Did You Know? Short · Tostao",
+    teams: "Brazil · 1970",
+    story:
+      "Tostao nearly lost his sight before the 1970 World Cup. He came back anyway, helped Brazil win the most beautiful title, and turned fragile vision into genius.",
+    youtube: "https://www.youtube.com/shorts/KZ15CaO-y4E",
+    imageTeam: "Brazil",
   },
 ];
 
