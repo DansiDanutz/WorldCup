@@ -116,7 +116,7 @@ export async function POST(request: Request) {
     return jsonError("Unknown Legend card.", 404);
   }
 
-  if ((event === "unlocked" || event === "youtube_opened" || event === "pulse_read") && !card.youtube) {
+  if ((event === "youtube_opened" || event === "pulse_read") && !card.youtube) {
     return jsonError("This Legend card unlocks when its YouTube episode is live.", 409);
   }
 
@@ -140,8 +140,8 @@ export async function POST(request: Request) {
       user_id: auth.user.id,
       card_id: card.id,
       episode: card.episode,
-      unlock_source: "youtube",
-      video_url: card.youtube,
+      unlock_source: card.youtube ? "youtube" : "story",
+      video_url: card.youtube ?? null,
       unlocked_at: now,
       updated_at: now,
     },
@@ -152,7 +152,7 @@ export async function POST(request: Request) {
     return jsonError("Could not save Legend card.", 500);
   }
 
-  await saveLegendCardProgress(auth.supabase, auth.user.id, card, "youtube_opened");
+  await saveLegendCardProgress(auth.supabase, auth.user.id, card, card.youtube ? "youtube_opened" : "listened");
 
   return getLegendCardsResponse(auth.supabase, auth.user.id);
 }

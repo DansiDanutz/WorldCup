@@ -5,12 +5,14 @@ import Link from "next/link";
 import {
   Bell,
   Check,
+  Download,
   ExternalLink,
   LockKeyhole,
   LogIn,
   Newspaper,
   Search,
   Sparkles,
+  Smartphone,
   Volume2,
   VolumeX,
   X,
@@ -48,6 +50,7 @@ const legendCardById = new Map(LEGEND_CARDS.map((card) => [card.id, card]));
 type LegendCardFilter =
   | "all"
   | "stories"
+  | "wallpapers"
   | "supporters"
   | "legends"
   | "bonus"
@@ -60,6 +63,7 @@ type LegendCardFilter =
 const legendCardFilterLabels: Record<LegendCardFilter, string> = {
   all: "All cards",
   stories: "Series",
+  wallpapers: "Wallpapers",
   supporters: "Supporters",
   legends: "Did You Know Legends",
   bonus: "Bonus",
@@ -72,9 +76,10 @@ const legendCardFilterLabels: Record<LegendCardFilter, string> = {
 
 const legendCardFilters: Array<{ id: LegendCardFilter; label: string }> = [
   { id: "all", label: "All" },
-  { id: "stories", label: "Series" },
-  { id: "supporters", label: "Supporters" },
   { id: "legends", label: "Legends" },
+  { id: "stories", label: "Series" },
+  { id: "wallpapers", label: "Wallpapers" },
+  { id: "supporters", label: "Supporters" },
   { id: "bonus", label: "Bonus" },
   { id: "need-story", label: "Need story" },
   { id: "need-youtube", label: "YouTube next" },
@@ -133,7 +138,7 @@ function getEpisodeLabel(card: LegendCard) {
 }
 
 function needsStoryStep(card: LegendCard, unlockedIds: ReadonlySet<string>, listenedIds: ReadonlySet<string>) {
-  return Boolean(card.youtube && !unlockedIds.has(card.id) && !listenedIds.has(card.id));
+  return Boolean(!unlockedIds.has(card.id) && !listenedIds.has(card.id));
 }
 
 function needsYoutubeStep(
@@ -143,6 +148,19 @@ function needsYoutubeStep(
   watchedIds: ReadonlySet<string>,
 ) {
   return Boolean(card.youtube && !unlockedIds.has(card.id) && listenedIds.has(card.id) && !watchedIds.has(card.id));
+}
+
+function canCollectLegendCard(
+  card: LegendCard,
+  unlockedIds: ReadonlySet<string>,
+  listenedIds: ReadonlySet<string>,
+  watchedIds: ReadonlySet<string>,
+) {
+  if (unlockedIds.has(card.id)) {
+    return false;
+  }
+
+  return card.youtube ? watchedIds.has(card.id) : listenedIds.has(card.id);
 }
 
 function parseStoredIds(snapshot: string | null, allowedIds = validCardIds) {
@@ -368,6 +386,57 @@ function getCompletionPercent(count: number, total: number) {
   return total > 0 ? Math.round((count / total) * 100) : 0;
 }
 
+function getSupporterWallpaperHref(card: LegendCard) {
+  return card.kind === "supporter-card" && typeof card.image === "string" && card.image.startsWith("/supporter-cards/")
+    ? card.image
+    : null;
+}
+
+function getSupporterWallpaperDownloadHref(card: LegendCard) {
+  const href = getSupporterWallpaperHref(card);
+  const fileName = href?.split("/").pop();
+
+  return fileName ? `/api/supporter-cards/download/${encodeURIComponent(fileName)}` : null;
+}
+
+function matchesLegendCardSearch(card: LegendCard, normalizedCardSearch: string) {
+  if (!normalizedCardSearch) {
+    return true;
+  }
+
+  return [
+    getEpisodeLabel(card),
+    card.title,
+    card.subtitle,
+    card.teams,
+    card.story,
+    card.rarity,
+  ]
+    .join(" ")
+    .toLowerCase()
+    .includes(normalizedCardSearch);
+}
+
+function getWallpaperGalleryCards(cards: LegendCard[], unlockedIds: ReadonlySet<string>, normalizedCardSearch: string) {
+  const galleryCardsByHref = new Map<string, LegendCard>();
+
+  for (const card of cards) {
+    const href = getSupporterWallpaperHref(card);
+
+    if (!href || !matchesLegendCardSearch(card, normalizedCardSearch)) {
+      continue;
+    }
+
+    const current = galleryCardsByHref.get(href);
+
+    if (!current || (!unlockedIds.has(current.id) && unlockedIds.has(card.id))) {
+      galleryCardsByHref.set(href, card);
+    }
+  }
+
+  return [...galleryCardsByHref.values()];
+}
+
 function getWatchMinimumMs(card: LegendCard) {
   return card.kind === "did-you-know-short" ? didYouKnowWatchMinimumMs : storyWatchMinimumMs;
 }
@@ -475,7 +544,7 @@ export function LegendCardCollection() {
   const [watchTimerTick, setWatchTimerTick] = useState(() => Date.now());
   const [notificationStatusOverride, setNotificationStatusOverride] = useState<string | null>(null);
   const [status, setStatus] = useState(
-    "Open a YouTube story to collect its card. Use Listen story for ElevenLabs Brian playback.",
+    "Each card has one unique unlock path. Listen to supporter stories, or open the matching YouTube video for episode cards.",
   );
   const storyAudioRef = useRef<HTMLAudioElement | null>(null);
   const storyAudioUrlRef = useRef<string | null>(null);
@@ -755,14 +824,18 @@ export function LegendCardCollection() {
   const liveCount = useMemo(() => LEGEND_CARDS.filter((card) => card.youtube).length, []);
   const storyCount = useMemo(() => LEGEND_CARDS.filter((card) => card.kind === "episode-special").length, []);
   const supporterCount = useMemo(() => LEGEND_CARDS.filter((card) => card.kind === "supporter-card").length, []);
+  const wallpaperCount = useMemo(
+    () => new Set(LEGEND_CARDS.map(getSupporterWallpaperHref).filter((href): href is string => Boolean(href))).size,
+    [],
+  );
   const didYouKnowCount = useMemo(() => LEGEND_CARDS.filter((card) => card.kind === "did-you-know-short").length, []);
   const bonusCount = useMemo(() => LEGEND_CARDS.filter((card) => card.kind === "legend-bonus").length, []);
   const newestEpisodeCard = useMemo(
     () => LEGEND_CARDS.find((card) => card.kind === "episode-special" && card.youtube) ?? LEGEND_CARDS[0],
     [],
   );
-  const readyCount = LEGEND_CARDS.filter(
-    (card) => Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id)),
+  const readyCount = LEGEND_CARDS.filter((card) =>
+    canCollectLegendCard(card, unlockedIds, listenedIds, watchedIds),
   ).length;
   const listenedCount = LEGEND_CARDS.filter((card) => listenedIds.has(card.id)).length;
   const watchedCount = LEGEND_CARDS.filter((card) => Boolean(card.youtube && watchedIds.has(card.id))).length;
@@ -772,11 +845,30 @@ export function LegendCardCollection() {
   ).length;
   const pulseReadCount = legendPulseItems.filter((item) => readPulseIds.has(item.id)).length;
   const lockedCount = LEGEND_CARDS.length - collectedCount;
+  const unlockedWallpaperHrefs = useMemo(() => {
+    const wallpaperHrefs = new Set<string>();
+
+    for (const card of LEGEND_CARDS) {
+      if (!unlockedIds.has(card.id)) {
+        continue;
+      }
+
+      const href = getSupporterWallpaperHref(card);
+
+      if (href) {
+        wallpaperHrefs.add(href);
+      }
+    }
+
+    return wallpaperHrefs;
+  }, [unlockedIds]);
+  const unlockedWallpaperCount = unlockedWallpaperHrefs.size;
+  const remainingWallpaperCount = Math.max(wallpaperCount - unlockedWallpaperCount, 0);
   const progressPercent = LEGEND_CARDS.length
     ? getCompletionPercent(collectedCount, LEGEND_CARDS.length)
     : 0;
-  const readyFocusCard = LEGEND_CARDS.find(
-    (card) => Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id)),
+  const readyFocusCard = LEGEND_CARDS.find((card) =>
+    canCollectLegendCard(card, unlockedIds, listenedIds, watchedIds),
   );
   const storyFocusCard = LEGEND_CARDS.find((card) => needsStoryStep(card, unlockedIds, listenedIds));
   const youtubeFocusCard = LEGEND_CARDS.find((card) =>
@@ -807,12 +899,14 @@ export function LegendCardCollection() {
             detail: "Keep the YouTube story open, then return here to collect the card.",
             ctaLabel: "Open again",
           }
-      : Boolean(focusCard.youtube && watchedIds.has(focusCard.id))
+      : canCollectLegendCard(focusCard, unlockedIds, listenedIds, watchedIds)
         ? {
             step: "collect",
             eyebrow: "Ready to collect",
             badge: "Ready now",
-            detail: "You opened the matching YouTube episode. Save the card to your album.",
+            detail: focusCard.youtube
+              ? "You opened the matching YouTube episode. Save the card to your album."
+              : "You heard the card story. Save this unique supporter card to your album.",
             ctaLabel: "Collect card",
           }
         : !listenedIds.has(focusCard.id)
@@ -832,15 +926,19 @@ export function LegendCardCollection() {
                 ctaLabel: watchedIds.has(focusCard.id) ? "Open again" : "Open YouTube",
               }
             : {
-                step: "locked",
-                eyebrow: "Coming soon",
-                badge: "Episode pending",
-                detail: "This card unlocks when its matching YouTube episode is live.",
-                ctaLabel: "Coming soon",
+                step: "listen",
+                eyebrow: "Story card",
+                badge: "Listen next",
+                detail: "This card belongs to its own tab. Hear the story, then collect it.",
+                ctaLabel: speakingCardId === focusCard.id ? "Stop story" : "Listen story",
               }
     : null;
   const normalizedCardSearch = cardSearch.trim().toLowerCase();
   const filteredCards = useMemo(() => {
+    if (cardFilter === "wallpapers") {
+      return getWallpaperGalleryCards(LEGEND_CARDS, unlockedIds, normalizedCardSearch);
+    }
+
     return LEGEND_CARDS.filter((card) => {
       if (cardFilter === "stories") {
         if (card.kind !== "episode-special") {
@@ -863,7 +961,7 @@ export function LegendCardCollection() {
         return false;
       }
       if (cardFilter === "ready") {
-        if (!Boolean(card.youtube && watchedIds.has(card.id) && !unlockedIds.has(card.id))) {
+        if (!canCollectLegendCard(card, unlockedIds, listenedIds, watchedIds)) {
           return false;
         }
       }
@@ -874,21 +972,7 @@ export function LegendCardCollection() {
         return false;
       }
 
-      if (!normalizedCardSearch) {
-        return true;
-      }
-
-      return [
-        getEpisodeLabel(card),
-        card.title,
-        card.subtitle,
-        card.teams,
-        card.story,
-        card.rarity,
-      ]
-        .join(" ")
-        .toLowerCase()
-        .includes(normalizedCardSearch);
+      return matchesLegendCardSearch(card, normalizedCardSearch);
     });
   }, [cardFilter, listenedIds, normalizedCardSearch, unlockedIds, watchedIds]);
   const visibleCards = collectionExpanded
@@ -905,6 +989,7 @@ export function LegendCardCollection() {
   const filterCounts: Record<LegendCardFilter, number> = {
     all: LEGEND_CARDS.length,
     stories: storyCount,
+    wallpapers: wallpaperCount,
     supporters: supporterCount,
     legends: didYouKnowCount,
     bonus: bonusCount,
@@ -936,7 +1021,7 @@ export function LegendCardCollection() {
               needYouTubeCount > 0
                 ? "Open the YouTube episode for a heard story, then return here to collect."
                 : needStoryCount > 0
-                  ? "Listen to a card story, open its YouTube episode, then collect it here."
+                  ? "Listen to a card story. Video cards continue to YouTube; supporter cards become ready after the story."
                   : "No collection steps are waiting. Check your collected cards or reset the album.",
             actionLabel:
               needYouTubeCount > 0 ? "Show YouTube next" : needStoryCount > 0 ? "Show story cards" : "Show collected",
@@ -1412,6 +1497,21 @@ export function LegendCardCollection() {
     scrollToLegendSection("collector-quest");
   }
 
+  function browseWallpaperCards() {
+    setCardSearch("");
+    chooseCardFilter("wallpapers");
+    setCollectionExpanded(true);
+    setStatus("Showing one HD supporter wallpaper per nation.");
+    window.setTimeout(() => scrollToLegendSection("legend-card-grid"), 0);
+  }
+
+  function browseCollectionFilter(nextFilter: LegendCardFilter, nextStatus: string) {
+    setCardSearch("");
+    chooseCardFilter(nextFilter);
+    setStatus(nextStatus);
+    window.setTimeout(() => scrollToLegendSection("legend-card-grid"), 0);
+  }
+
   function readPulse(item: LegendPulseItem) {
     const card = legendCardById.get(item.cardId);
     if (!card) {
@@ -1484,8 +1584,8 @@ export function LegendCardCollection() {
           <p className="wc-card-eyebrow">WorldCup26 Legends</p>
           <h1 id="legend-collection-title">Legend Card Collection</h1>
           <p>
-            Collect the series cards, supporter cards, three bonus legends, and Did You Know shorts by opening the
-            matching YouTube story. Every card can read its story aloud inside the app, without video playback here.
+            Collect one unique card per series video, supporter nation, bonus legend, and Did You Know short. Video
+            cards use the matching YouTube story; supporter cards unlock from their own in-app Brian story.
           </p>
         </div>
 
@@ -1521,6 +1621,73 @@ export function LegendCardCollection() {
         {status}
       </p>
 
+      <nav className="legend-section-menu" aria-label="Legend collection shortcuts">
+        <button type="button" className="legend-section-menu__item is-primary" onClick={continueCollectorPath}>
+          <Sparkles size={17} aria-hidden="true" />
+          <span>
+            <strong>Next step</strong>
+            <small>{roadmapActionLabel}</small>
+          </span>
+          <em>{collectorQuestProgressPercent}%</em>
+        </button>
+        <button
+          type="button"
+          className="legend-section-menu__item"
+          onClick={() => browseCollectionFilter("legends", "Showing the 4 Did You Know shorts cards.")}
+        >
+          <Newspaper size={17} aria-hidden="true" />
+          <span>
+            <strong>Legends</strong>
+            <small>Did You Know shorts</small>
+          </span>
+          <em>{didYouKnowCount}</em>
+        </button>
+        <button
+          type="button"
+          className="legend-section-menu__item"
+          onClick={() => browseCollectionFilter("stories", "Showing the YouTube story series cards.")}
+        >
+          <ExternalLink size={17} aria-hidden="true" />
+          <span>
+            <strong>Series</strong>
+            <small>Episode cards</small>
+          </span>
+          <em>{storyCount}</em>
+        </button>
+        <button type="button" className="legend-section-menu__item" onClick={browseWallpaperCards}>
+          <Smartphone size={17} aria-hidden="true" />
+          <span>
+            <strong>Wallpapers</strong>
+            <small>Phone portraits</small>
+          </span>
+          <em>{wallpaperCount}</em>
+        </button>
+        <button
+          type="button"
+          className="legend-section-menu__item"
+          onClick={() => browseCollectionFilter("ready", "Showing cards ready to collect.")}
+        >
+          <Check size={17} aria-hidden="true" />
+          <span>
+            <strong>Ready</strong>
+            <small>Collect now</small>
+          </span>
+          <em>{readyCount}</em>
+        </button>
+        <button
+          type="button"
+          className="legend-section-menu__item"
+          onClick={() => browseCollectionFilter("need-youtube", "Showing cards waiting for YouTube.")}
+        >
+          <Search size={17} aria-hidden="true" />
+          <span>
+            <strong>YouTube next</strong>
+            <small>Open episode</small>
+          </span>
+          <em>{needYouTubeCount}</em>
+        </button>
+      </nav>
+
       {collectorQuestCard ? (
         <section id="collector-quest" className="legend-quest" aria-labelledby="collector-quest-title">
           <div className="legend-quest__header">
@@ -1553,6 +1720,7 @@ export function LegendCardCollection() {
                   src={collectorQuestCard.image}
                   alt={`${collectorQuestCard.title} collector quest card`}
                   fill
+                  loading="eager"
                   sizes="(max-width: 760px) 92vw, 260px"
                 />
               </div>
@@ -1634,6 +1802,34 @@ export function LegendCardCollection() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section id="legend-wallpapers" className="legend-wallpaper" aria-labelledby="legend-wallpaper-title">
+        <div className="legend-wallpaper__icon" aria-hidden="true">
+          <Smartphone size={24} />
+        </div>
+        <div className="legend-wallpaper__copy">
+          <p className="wc-card-eyebrow">Supporter wallpapers</p>
+          <h2 id="legend-wallpaper-title">Phone portrait cards</h2>
+          <p>
+            {wallpaperCount} nation cards are exported as 1080 x 1920 portraits. Collect the supporter card, then save
+            the HD version to your phone.
+          </p>
+        </div>
+        <dl className="legend-wallpaper__stats" aria-label="Supporter wallpaper progress">
+          <div>
+            <dt>Unlocked</dt>
+            <dd>{unlockedWallpaperCount}</dd>
+          </div>
+          <div>
+            <dt>Left</dt>
+            <dd>{remainingWallpaperCount}</dd>
+          </div>
+        </dl>
+        <button type="button" className="legend-wallpaper__action" onClick={browseWallpaperCards}>
+          <Download size={16} />
+          Browse wallpapers
+        </button>
       </section>
 
       {pulseDisplayCard ? (
@@ -1764,8 +1960,8 @@ export function LegendCardCollection() {
                 src={focusCard.image}
                 alt={`${focusCard.title} featured Legend card`}
                 fill
+                loading="eager"
                 sizes="(max-width: 760px) 92vw, 260px"
-                priority
               />
               {!unlockedIds.has(focusCard.id) ? (
                 <span className="legend-feature-card__state">
@@ -1883,7 +2079,9 @@ export function LegendCardCollection() {
           <button
             key={filter.id}
             type="button"
-            className={`legend-filter-button ${cardFilter === filter.id ? "is-active" : ""}`}
+            className={`legend-filter-button ${filter.id === "legends" ? "legend-filter-button--legends" : ""} ${
+              cardFilter === filter.id ? "is-active" : ""
+            }`}
             onClick={() => chooseCardFilter(filter.id)}
             aria-pressed={cardFilter === filter.id}
           >
@@ -1913,8 +2111,13 @@ export function LegendCardCollection() {
           const watchProof = watchProofs.get(card.id);
           const watchSecondsRemaining = getWatchSecondsRemaining(watchProof, watchTimerTick);
           const isWatchPending = Boolean(card.youtube && !hasWatchedEpisode && watchSecondsRemaining > 0);
-          const canUnlock = Boolean(card.youtube && hasWatchedEpisode && !isUnlocked);
+          const canUnlock = canCollectLegendCard(card, unlockedIds, listenedIds, watchedIds);
           const isSpeaking = speakingCardId === card.id;
+          const downloadHref = getSupporterWallpaperHref(card);
+          const downloadApiHref = getSupporterWallpaperDownloadHref(card);
+          const isSupporterCard = Boolean(downloadHref);
+          const canDownloadWallpaper = Boolean(downloadHref && unlockedWallpaperHrefs.has(downloadHref));
+          const downloadFileName = downloadHref?.split("/").pop();
 
           return (
             <article
@@ -1922,15 +2125,15 @@ export function LegendCardCollection() {
               id={`legend-card-${card.id}`}
               className={`legend-card ${isUnlocked ? "is-unlocked" : "is-locked"} ${
                 canUnlock ? "is-ready" : ""
-              } ${isPreviewing ? "is-previewing" : ""}`}
+              } ${isPreviewing ? "is-previewing" : ""} ${isSupporterCard ? "legend-card--supporter" : ""}`}
             >
               <div className="legend-card__image">
                 <Image
                   src={card.image}
                   alt={`${card.title} collectible card`}
                   fill
+                  loading={index < 2 ? "eager" : "lazy"}
                   sizes="(max-width: 760px) 92vw, (max-width: 1180px) 45vw, 320px"
-                  priority={index < 2}
                 />
                 {!isUnlocked ? (
                   <div className="legend-card__lock" aria-hidden="true">
@@ -1960,9 +2163,21 @@ export function LegendCardCollection() {
                     <Check size={13} aria-hidden="true" />
                     Story
                   </span>
-                  <span className={hasWatchedEpisode ? "is-done" : card.youtube || isWatchPending ? "is-next" : ""}>
+                  <span
+                    className={
+                      card.youtube
+                        ? hasWatchedEpisode
+                          ? "is-done"
+                          : isWatchPending
+                            ? "is-next"
+                            : ""
+                        : hasListenedStory
+                          ? "is-done"
+                          : ""
+                    }
+                  >
                     <ExternalLink size={13} aria-hidden="true" />
-                    YouTube
+                    {card.youtube ? "YouTube" : "Own story"}
                   </span>
                   <span className={isUnlocked ? "is-done" : canUnlock ? "is-next" : ""}>
                     <Sparkles size={13} aria-hidden="true" />
@@ -1982,7 +2197,7 @@ export function LegendCardCollection() {
                     </button>
                   ) : (
                     <span className="button secondary legend-card__disabled" aria-disabled="true">
-                      Episode coming soon
+                      Story unlock
                     </span>
                   )}
 
@@ -1994,6 +2209,25 @@ export function LegendCardCollection() {
                   >
                     {isUnlocked ? "Unlocked" : "Unlock card"}
                   </button>
+
+                  {downloadHref ? (
+                    canDownloadWallpaper ? (
+                      <a
+                        className="button secondary legend-card__download"
+                        href={downloadApiHref ?? downloadHref}
+                        download={downloadFileName}
+                        aria-label={`Download ${card.title} HD phone card`}
+                      >
+                        <Download size={16} />
+                        Download HD
+                      </a>
+                    ) : (
+                      <span className="button secondary legend-card__download is-disabled" aria-disabled="true">
+                        <Download size={16} />
+                        Collect one to download
+                      </span>
+                    )
+                  ) : null}
 
                   {isWatchPending ? (
                     <p className="legend-card__watch-note">
