@@ -1,0 +1,39 @@
+{
+  "comment": "Ep78 Brazil vs Japan (R32) — nano_banana_pro 16:9 stills for i2v. Brazil yellow kit, Japan samurai blue. Theme THE RISING SUN (Brazil Amazon/Redeemer spirit vs Japan Tengu). Legend 078 The Tengu.",
+  "players": {
+    "bra-vinicius": "6ea567ea-ceda-4746-9003-ed65457cb64a",
+    "bra-rodrygo": "0eb83584-e00d-4d13-b49a-e174b8748eaa",
+    "bra-raphinha": "f59e1925-7dce-4b38-bb10-89c18f8ee183",
+    "bra-bruno": "1eb53c97-9df7-4033-ad51-20f130c91842",
+    "bra-marquinhos": "e56fa14b-e881-41f1-b659-63abd88188bb",
+    "jpn-mitoma": "4cbff517-3ee0-4c88-b054-0e64b46803ff",
+    "jpn-doan": "6da944ea-729a-4994-9c1c-978b90be38f5",
+    "jpn-endo": "6bb342d9-b38d-4d14-8dc5-a8b1c6fd5b5a",
+    "jpn-kubo": "1a427644-62e8-40b3-aa31-47837855f945",
+    "jpn-kamada": "81250d6e-6abf-478d-8c88-e00c9f777473"
+  },
+  "motifs": {
+    "jpn-tengu": "a127146a-2956-4c7b-a5a6-93237b693b0c",
+    "bra-spirit": "83e79d94-ba22-4388-81e8-c0cc667c4f63",
+    "texture-fuji": "27b873a1-fc1a-48de-8d80-8566edb301c4",
+    "texture-redeemer": "2aa55bf4-4a26-4e6d-bf03-ac86114d9d58"
+  },
+  "scenes": {
+    "pitch-walkout": "e3652d19-bf42-434a-a0c8-4ae5d9fcef87",
+    "bra-crowd": "7df0e3e8-cabe-420d-9bf1-0b511e275caa",
+    "jpn-crowd": "4c91e3f6-bfcc-4258-b7c2-91e27a8b716e",
+    "duel-mid": "36e216dc-a209-4ee9-b067-7538fad8d4b0",
+    "bra-attack": "411207dc-275a-425b-b62a-ce6274ed3f66",
+    "jpn-surge": "91e13cb9-39b8-4ccd-a02c-617d2e15093f",
+    "vini-goal": "ed8a5595-1ff7-4372-8a0f-8ccdf6f3f57a",
+    "mitoma-goal": "291ac4ca-02b6-4ce8-a0db-283fbcce6911",
+    "kubo-goal": "4bc5b9bb-e26c-4655-9ff4-64cff3e7a0a8",
+    "vd-handshake": "8f2aeb45-bd60-4022-890f-197055bdd4ba",
+    "crowd-tense": "11f1f16f-49d7-4bd3-8b19-7a559f9310ee",
+    "cta-celebrate": "fada983d-c9d2-484e-86d9-095a8d95a9ec"
+  },
+  "card": {
+    "legend-078-portrait": "f6cd8b31-0e84-400d-a4b1-d4f30c293280",
+    "legend-078-landscape": "dfeb169f-e3c0-4a81-bcfb-f871c6c3f6fb"
+  }
+}
