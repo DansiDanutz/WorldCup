@@ -1,0 +1,41 @@
+{
+  "comment": "Ep80 Netherlands vs Morocco (R32) — nano_banana_pro 16:9 stills for i2v. NL orange kit, Morocco red kit. Theme: THE GHOST SHIP (Flying Dutchman) vs THE ATLAS LIONS. Legend 080 The Atlas Lion. OUR PREDICTION Morocco 2-1 Netherlands.",
+  "players": {
+    "nl-depay": "c05263bf-4805-4834-b743-ecc427a73dec",
+    "nl-gakpo": "8dab3671-9240-4d2a-95ed-23a91e32545f",
+    "nl-xavisimons": "ca79dd81-0695-49ab-ae7a-4727cba62cba",
+    "nl-dejong": "7e0fa25b-8e34-4270-b04b-c5572a906296",
+    "nl-vandijk": "421228d9-8b93-4298-bc34-4b3b34a66389",
+    "ma-hakimi": "b17cb20b-0a77-417b-b5bd-360527c912b0",
+    "ma-ziyech": "03282548-b67e-4be8-9bc2-d8869f4fc269",
+    "ma-ennesyri": "47f7c652-68f1-4764-ae81-2f36f1364322",
+    "ma-amrabat": "9aee7a65-79bd-46ae-af17-e9bffb3e8ff0",
+    "ma-brahim": "76b44f7f-dc27-4265-ae00-b287ec0dcc40"
+  },
+  "motifs": {
+    "nl-dutchman": "18a31e04-8b3e-4fe5-af23-f711f5c60e9d",
+    "ma-atlaslion": "39ccd9f1-9050-4257-87b0-2e0348473539",
+    "texture-sea": "402d602d-8535-42e6-ab80-b88d5b7cc93b",
+    "texture-atlas": "1fe6a6be-a01e-429f-94c0-4e7b496b60e9"
+  },
+  "scenes": {
+    "pitch-walkout": "5b3206fb-6d0d-459e-ac0e-22a15a0e085d",
+    "nl-crowd": "3f3bbe19-7190-473a-b734-a70e57a271f5",
+    "ma-crowd": "8118bd94-7213-44ce-8b0b-edcf481e2174",
+    "nl-attack": "923a1cbe-5460-464f-8092-0828a4ea66a3",
+    "duel-mid": "549b13d9-8fd7-40cf-b079-19369d931fc9",
+    "nl-press": "5c506d88-7da4-4714-a8d6-e6d3f1677075",
+    "ma-surge": "fbe34bd2-534c-419a-9093-8ffc8ab489f8",
+    "nl-goal": "c260aa32-b96a-44b7-bef5-6ef0baeac467",
+    "ma-goal-1": "199cb434-09e6-4b9d-9439-3606daa5b3ef",
+    "bono-save": "2cb80a01-81e2-4be2-a53a-b3f9a3b1ac2c",
+    "ma-goal-2": "f80d839c-688c-4217-b98e-d9fb8916ee05",
+    "vd-handshake": "efdad7db-14ac-41c1-95d2-c465e22ae889",
+    "crowd-tense": "6f26b853-dd58-47fb-ab23-ba8083e53722",
+    "cta-celebrate": "b8a4f979-2ae8-42f4-bc76-06830c26c798"
+  },
+  "card": {
+    "legend-080-portrait": "b6edc685-071c-4cd8-8852-b923b1948717",
+    "legend-080-landscape": "eda62615-77ea-4ae8-ab5e-db72efbd79f4"
+  }
+}

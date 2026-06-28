@@ -714,6 +714,15 @@
       "landscape": "/special-cards/legend-079-landscape.png"
     },
     {
+      "number": "080",
+      "name": "The Atlas Lion, Guardian of the Mountains",
+      "nation": "Morocco",
+      "episode": 80,
+      "match": "Netherlands vs Morocco (R32)",
+      "portrait": "/special-cards/legend-080-portrait.png",
+      "landscape": "/special-cards/legend-080-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
