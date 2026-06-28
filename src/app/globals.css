@@ -11437,14 +11437,29 @@ html {
   aspect-ratio: 9 / 16;
 }
 
+.legend-card--real-asset .legend-card__image {
+  aspect-ratio: 3 / 4;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 207, 102, 0.16), transparent 42%),
+    #06110f;
+}
+
 .legend-card__image img {
   object-fit: cover;
   transition: filter 220ms ease, transform 220ms ease;
 }
 
+.legend-card--real-asset .legend-card__image img {
+  object-fit: contain;
+}
+
 .legend-card.is-locked .legend-card__image img {
   filter: blur(7px) grayscale(0.58) brightness(0.56);
   transform: scale(1.05);
+}
+
+.legend-card.is-locked.legend-card--real-asset .legend-card__image img {
+  transform: none;
 }
 
 .legend-card.is-previewing {

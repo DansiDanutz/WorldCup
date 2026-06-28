@@ -960,6 +960,78 @@ export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
     youtube: "https://www.youtube.com/shorts/e3-SVYS33xk",
     imageTeam: "Brazil",
   },
+  {
+    id: "short-milla-dancing-lion",
+    episode: 954,
+    episodeLabel: "Did You Know? Short",
+    title: "The Dancing Lion",
+    subtitle: "Did You Know? Short · Roger Milla",
+    teams: "Cameroon · Italia 90",
+    story:
+      "Roger Milla had retired to play for fun on a small island. Then Cameroon called him back by presidential order. At thirty-eight, he danced at the corner flag, scored four goals, and carried Cameroon into World Cup history.",
+    youtube: "https://www.youtube.com/shorts/a4Za3AjOeEE",
+    imageTeam: "Cameroon",
+  },
+  {
+    id: "short-laurent-first-goal",
+    episode: 955,
+    episodeLabel: "Did You Know? Short",
+    title: "The First Goal",
+    subtitle: "Did You Know? Short · Lucien Laurent",
+    teams: "France · 1930",
+    story:
+      "Lucien Laurent scored the first goal in World Cup history, then returned to work in a Peugeot factory. War took his shirt, but not his place in football memory.",
+    youtube: "https://www.youtube.com/shorts/Wj-k6syhVcY",
+    imageTeam: "France",
+  },
+  {
+    id: "short-escobar-gentleman",
+    episode: 956,
+    episodeLabel: "Did You Know? Short",
+    title: "The Gentleman",
+    subtitle: "Did You Know? Short · Andres Escobar",
+    teams: "Colombia · 1967-1994",
+    story:
+      "Andres Escobar was called the Gentleman of Football. After an own goal at USA 94, he faced a country's grief with dignity, then was killed at home in Colombia. This card keeps the tribute respectful.",
+    youtube: null,
+    imageTeam: "Colombia",
+  },
+  {
+    id: "short-yashin-black-spider",
+    episode: 957,
+    episodeLabel: "Did You Know? Short",
+    title: "The Black Spider",
+    subtitle: "Did You Know? Short · Lev Yashin",
+    teams: "USSR · 1963",
+    story:
+      "Lev Yashin almost left football for ice hockey. Instead, dressed in black, he became the only goalkeeper ever to win the Ballon d'Or and the keeper every legend still chases.",
+    youtube: "https://www.youtube.com/shorts/N7wiebdbI-E",
+    imageTeam: "USSR",
+  },
+  {
+    id: "short-monti-two-nations",
+    episode: 958,
+    episodeLabel: "Did You Know? Short",
+    title: "Two Nations",
+    subtitle: "Did You Know? Short · Luis Monti",
+    teams: "Argentina & Italy",
+    story:
+      "Luis Monti played World Cup finals for two different countries: Argentina in 1930 and Italy in 1934. One player, two flags, and a football story no one else has repeated.",
+    youtube: "https://www.youtube.com/shorts/VeB_RKVhPv0",
+    imageTeam: "Argentina",
+  },
+  {
+    id: "short-tostao-eyes-champion",
+    episode: 959,
+    episodeLabel: "Did You Know? Short",
+    title: "Eyes of a Champion",
+    subtitle: "Did You Know? Short · Tostao",
+    teams: "Brazil · 1970",
+    story:
+      "Tostao nearly lost his sight before the 1970 World Cup. Surgery saved one eye, he helped Brazil win the most beautiful title, then gave his medal to the doctor who saved him.",
+    youtube: "https://www.youtube.com/shorts/KZ15CaO-y4E",
+    imageTeam: "Brazil",
+  },
 ];
 
 export function youtubeForEpisode(episode: number) {
