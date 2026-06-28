@@ -913,18 +913,6 @@ export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
 
 export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
   {
-    id: "short-world-cup-secrets",
-    episode: 949,
-    episodeLabel: "Did You Know? Short",
-    title: "5 World Cup Secrets",
-    subtitle: "Did You Know? Short · World Cup secrets",
-    teams: "World Cup history",
-    story:
-      "Five strange World Cup secrets step out from the shadows, from impossible referee stories to myths that still shape how fans remember the tournament.",
-    youtube: "https://www.youtube.com/watch?v=e96tg1mpKHo",
-    imageTeam: "World Cup history",
-  },
-  {
     id: "short-gaetjens-vanished",
     episode: 950,
     episodeLabel: "Did You Know? Short",
@@ -933,7 +921,7 @@ export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
     teams: "USA 1-0 England · 1950",
     story:
       "A part-time American dishwasher named Joe Gaetjens threw himself at a cross and scored the header that beat mighty England. He went home to Haiti a hero. Then the dictatorship made him disappear. No grave. No body. No answers.",
-    youtube: null,
+    youtube: "https://www.youtube.com/shorts/bSFDrewxg9s",
     imageTeam: "USA",
   },
   {
@@ -945,7 +933,7 @@ export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
     teams: "Brazil · World Cup 1962",
     story:
       "Doctors thought Garrincha's crooked legs should stop him from walking. Instead, those impossible legs confused defenders, carried Brazil after Pele's injury, and made him the Joy of the People.",
-    youtube: null,
+    youtube: "https://www.youtube.com/shorts/0rmcr7dmwSc",
     imageTeam: "Brazil",
   },
   {
@@ -957,7 +945,7 @@ export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
     teams: "Mexico · 5 World Cups",
     story:
       "Antonio Carbajal became a goalkeeper so he could see his father coming and run before getting caught playing football. That hiding place became the first five-World-Cup career.",
-    youtube: null,
+    youtube: "https://www.youtube.com/shorts/rqQ_xVUzic8",
     imageTeam: "Mexico",
   },
   {
@@ -969,32 +957,8 @@ export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
     teams: "Brazil · 1982",
     story:
       "Socrates said he wanted to die on a Sunday while Corinthians won a title. On December 4, 2011, he passed away, and Corinthians became champions the same day.",
-    youtube: null,
+    youtube: "https://www.youtube.com/shorts/e3-SVYS33xk",
     imageTeam: "Brazil",
-  },
-  {
-    id: "short-roger-milla-decree",
-    episode: 954,
-    episodeLabel: "Did You Know? Short",
-    title: "The President's Decree",
-    subtitle: "Did You Know? Short · Roger Milla",
-    teams: "Cameroon · Italia 90",
-    story:
-      "Roger Milla was pulled back to the World Cup by presidential order, then scored, danced at the corner flag, and helped Cameroon become Africa's first quarter-finalists.",
-    youtube: null,
-    imageTeam: "Morocco",
-  },
-  {
-    id: "short-lucien-laurent-first-goal",
-    episode: 955,
-    episodeLabel: "Did You Know? Short",
-    title: "The First Goal",
-    subtitle: "Did You Know? Short · Lucien Laurent",
-    teams: "France · World Cup 1930",
-    story:
-      "Lucien Laurent scored the first goal in World Cup history, then returned to factory work, survived war captivity, and lived long enough to see France lift the trophy.",
-    youtube: null,
-    imageTeam: "France",
   },
 ];
 
