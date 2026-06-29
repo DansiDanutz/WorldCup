@@ -1,0 +1,32 @@
+{
+  "comment": "Ep82 France vs Sweden — kling3_0_turbo 5s i2v clips from stills. Establishing (pitch-walkout/stadium-wide/stadium-aerial) reused from Ep80/81 library (0 credits).",
+  "clips": {
+    "fr-mbappe": "c0572839-c22f-4996-a91a-3bdb356a2f92",
+    "fr-griezmann": "8ba99223-92ea-4801-9d7d-bd1861456fbb",
+    "fr-dembele": "bbbb0187-6219-437c-b83a-8979827b5b60",
+    "fr-tchouameni": "f7bd9a71-20eb-4d92-9a23-37caddbbaf1e",
+    "fr-saliba": "63aa7cd1-0fbd-4aa8-8df9-42ef127d6de0",
+    "sw-isak": "cdfe7a46-712a-48ae-a51c-fa83ff863926",
+    "sw-gyokeres": "55908e4e-85c7-41c4-8ed5-696fe109a8aa",
+    "sw-kulusevski": "9732b5c2-f6bd-410c-aaef-db7391f978b3",
+    "sw-elanga": "28cabd87-b3bd-4fc8-92b5-ad2ccbe44670",
+    "sw-lindelof": "68b90614-4ac7-4bf7-8c28-0f490fc35fb2",
+    "fr-rooster": "7879e80b-fe78-435a-9c7f-71d82a86434f",
+    "sw-lindworm": "79437c5e-625c-4098-b322-6ddac01c2190",
+    "texture-france": "ed35f83e-a49e-45d5-9377-56017f0b46b4",
+    "texture-sweden": "641f0318-bf55-4d24-a25c-b5e99faeecc5",
+    "fr-crowd": "b370ceaa-8885-420e-9bd1-a2f86149813d",
+    "sw-crowd": "4b81149d-d29a-4fdf-9406-529a2cf28442",
+    "fr-attack": "e0af8b7d-42b6-43d7-8390-8085e40b491f",
+    "duel-mid": "83a36a11-3df9-4e8d-85c1-1ce949a13103",
+    "sw-press": "3c0755e8-03eb-47fd-9cbe-ca4d72300a17",
+    "fr-surge": "8916ed0e-aaf0-4de0-96f5-aab67d73ac8e",
+    "sw-goal": "d79aba57-70fb-491e-a291-0137584c9cc6",
+    "keeper-save": "930c11c5-f2c6-4733-989a-2bfcbeb3b57f",
+    "fr-goal-1": "76f13113-c417-4fc3-9631-f9c791b30008",
+    "fr-goal-2": "3615ead9-7095-477e-8018-8ed63665f4f4",
+    "vd-handshake": "d346c1ff-e2cd-4681-9dc5-92f2b1167588",
+    "crowd-tense": "d09375b0-7a44-4780-94d1-77355844e6c9",
+    "cta-celebrate": "2ffe1414-bdbf-41d7-b81a-20ae9c5fd2d1"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "comment": "Ep82 France vs Sweden (R32) — nano_banana stills for i2v. France BLUE kit (rooster crest), Sweden YELLOW kit (blue trim). Theme: THE ROOSTER AND THE DRAGON — le Coq Gaulois vs the Lindworm. Legend 082 the Gallic Rooster. OUR PREDICTION France 2-1 Sweden (Gyokeres early, Mbappe brace).",
+  "players": {
+    "fr-mbappe": "4be7b9f8-d64c-4886-9967-6962532dd458",
+    "fr-griezmann": "71101242-b64d-4c08-8913-37d12b886dea",
+    "fr-dembele": "f7cb265e-de56-46b4-a48e-4340a88ed383",
+    "fr-tchouameni": "8f4990ff-5987-4c72-b0e8-7ee07de215fc",
+    "fr-saliba": "1bea57d5-92c2-497e-adf9-963bbf7113eb",
+    "sw-isak": "4df4fc78-f729-464c-b755-0e70feb29d75",
+    "sw-gyokeres": "512bbc76-b9a9-4215-a937-42172c7e245e",
+    "sw-kulusevski": "5be9234c-8b2d-4888-9a99-53f6e007cf81",
+    "sw-elanga": "b73930e0-8c57-4e5e-8498-35696a58b12c",
+    "sw-lindelof": "d97cec40-c0a4-4da7-88e9-eeb8f098623d"
+  },
+  "motifs": {
+    "fr-rooster": "475639b5-d099-491b-92df-d2f2640d83b4",
+    "sw-lindworm": "64d4373d-7442-407d-90d3-347b7f8d79c0",
+    "texture-france": "8cf5af25-92cc-48d6-9a2c-cb1c0164e030",
+    "texture-sweden": "77115696-74e7-4e21-8256-9ff9d62cce0c"
+  },
+  "scenes": {
+    "fr-crowd": "e6c7b812-aa40-43d2-86d3-cf9f620f2194",
+    "sw-crowd": "c3085e36-7ff4-4637-9c34-c2a35bc8cfe4",
+    "fr-attack": "857f7651-4e44-4f9b-888c-1c0694881c41",
+    "duel-mid": "575ed343-1590-42d2-b0bb-548513283fa4",
+    "sw-press": "2f1557ab-3028-4b9b-af5e-569ba19522b2",
+    "fr-surge": "40203460-4548-4ca3-8bd7-d3f201d20ea2",
+    "sw-goal": "6484d7af-621f-4900-ba9a-1fe7f2c7b7e3",
+    "keeper-save": "acd31185-2eaa-4b39-8a76-da1c5d9dabe8",
+    "fr-goal-1": "b504369d-ee04-4cf4-8b6b-967bc87d25d4",
+    "fr-goal-2": "5763d846-9de7-4f56-9a06-0cad7e33860d",
+    "vd-handshake": "effc8075-d34d-4165-810b-eae9778a771f",
+    "crowd-tense": "c7df3854-78d9-42cd-8171-9ee1521e5655",
+    "cta-celebrate": "d4b75a22-9228-44c2-ad47-f36c9507abbc"
+  },
+  "card": {
+    "legend-082-portrait": "7b1302a2-95dc-42cd-aa3f-ec61bb0ab133",
+    "legend-082-landscape": "60e21b60-c717-4716-b0f8-1fd5e60c1c4e"
+  }
+}
