@@ -5,7 +5,6 @@ import {
   type LegendCardRarity,
 } from "@/lib/legend-card-registry";
 import { getLegendCardAssetImagePath } from "@/lib/legend-card-image-assets";
-import { getSupporterCardImagePath } from "@/lib/supporter-card-assets";
 
 export type { LegendCardKind, LegendCardRarity };
 
@@ -130,14 +129,6 @@ function resolveLegendCardImage(card: LegendCardDefinition) {
 
   if (assetImage) {
     return assetImage;
-  }
-
-  if (card.kind === "supporter-card") {
-    const supporterImage = getSupporterCardImagePath(card.imageTeam ?? card.teams);
-
-    if (supporterImage) {
-      return supporterImage;
-    }
   }
 
   return createGeneratedLegendCardImage(card);
