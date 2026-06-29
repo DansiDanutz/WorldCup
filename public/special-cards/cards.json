@@ -741,6 +741,15 @@
       "landscape": "/special-cards/legend-082-landscape.png"
     },
     {
+      "number": "083",
+      "name": "The Andean Condor, Guardian of the Heights",
+      "nation": "Ecuador",
+      "episode": 83,
+      "match": "Mexico vs Ecuador (R32)",
+      "portrait": "/special-cards/legend-083-portrait.png",
+      "landscape": "/special-cards/legend-083-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
