@@ -24,6 +24,8 @@ const didYouKnowCardImagePaths: Record<string, string> = {
   "short-yashin-black-spider": "/legend-cards/did-you-know/08-yashin-the-black-spider.png",
   "short-monti-two-finals": "/legend-cards/did-you-know/09-monti-two-nations.png",
   "short-tostao-eyes": "/legend-cards/did-you-know/10-tostao-eyes-of-a-champion.png",
+  "short-castro-one-armed-champion": "/legend-cards/did-you-know/11-castro-the-one-armed-champion.png",
+  "short-pak-secret-hero": "/legend-cards/did-you-know/12-pak-the-secret-hero.png",
 };
 
 const bonusCardImagePaths: Record<string, string> = {

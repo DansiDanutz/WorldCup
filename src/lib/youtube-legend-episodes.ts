@@ -1164,6 +1164,30 @@ export const YOUTUBE_DID_YOU_KNOW_SHORTS: YouTubeDidYouKnowShort[] = [
     youtube: "https://www.youtube.com/shorts/KZ15CaO-y4E",
     imageTeam: "Brazil",
   },
+  {
+    id: "short-castro-one-armed-champion",
+    episode: 960,
+    episodeLabel: "Did You Know? Short",
+    title: "The One-Armed Champion",
+    subtitle: "Did You Know? Short · Hector Castro",
+    teams: "Uruguay · 1930",
+    story:
+      "Hector Castro lost his right hand as a boy, then helped Uruguay win the first World Cup. He scored in the 1930 final against Argentina and became the champion no one could write off.",
+    youtube: "https://www.youtube.com/shorts/Mv-GBCDS-EQ",
+    imageTeam: "Uruguay",
+  },
+  {
+    id: "short-pak-secret-hero",
+    episode: 961,
+    episodeLabel: "Did You Know? Short",
+    title: "The Secret Hero",
+    subtitle: "Did You Know? Short · Pak Doo-ik",
+    teams: "North Korea 1-0 Italy · 1966",
+    story:
+      "Pak Doo-ik was a print-factory worker when North Korea arrived at the 1966 World Cup as outsiders. His goal beat Italy, sent shock through football, and made Middlesbrough fall in love with a team that vanished from the world stage.",
+    youtube: "https://www.youtube.com/shorts/_kbLwv0R38k",
+    imageTeam: "North Korea",
+  },
 ];
 
 export function youtubeForEpisode(episode: number) {

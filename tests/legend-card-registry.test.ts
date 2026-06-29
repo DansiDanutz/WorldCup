@@ -22,13 +22,13 @@ describe("Legend card registry", () => {
     assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.length, 4);
     assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.filter((video) => video.kind === "series").length, 1);
     assert.equal(YOUTUBE_LEGEND_EPISODES.length, 79);
-    assert.equal(YOUTUBE_DID_YOU_KNOW_SHORTS.length, 10);
+    assert.equal(YOUTUBE_DID_YOU_KNOW_SHORTS.length, 12);
     assert.equal(episodeCards.length, 80);
     assert.equal(supporterCards.length, uniqueEpisodeTeams.size);
     assert.equal(supporterCards.length, 48);
-    assert.equal(didYouKnowCards.length, 10);
+    assert.equal(didYouKnowCards.length, 12);
     assert.equal(bonusCards.length, 3);
-    assert.equal(LEGEND_CARD_DEFINITIONS.length, 141);
+    assert.equal(LEGEND_CARD_DEFINITIONS.length, 143);
     assert.equal(new Set(LEGEND_CARD_DEFINITIONS.map((card) => card.id)).size, LEGEND_CARD_DEFINITIONS.length);
     assert.equal(supporterCards.every((card) => card.youtube === null), true);
     assert.equal(didYouKnowCards.every((card) => Boolean(card.youtube)), true);
@@ -36,12 +36,14 @@ describe("Legend card registry", () => {
       didYouKnowCards.map((card) => card.id).sort(),
       [
         "short-carbajal-five-world-cups",
+        "short-castro-one-armed-champion",
         "short-escobar-own-goal",
         "short-gaetjens-vanished",
         "short-garrincha-broken-magic",
         "short-laurent-first-goal",
         "short-milla-corner-flag",
         "short-monti-two-finals",
+        "short-pak-secret-hero",
         "short-socrates-sunday",
         "short-tostao-eyes",
         "short-yashin-black-spider",

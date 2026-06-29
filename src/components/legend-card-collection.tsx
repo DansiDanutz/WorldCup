@@ -1633,7 +1633,7 @@ export function LegendCardCollection() {
         <button
           type="button"
           className="legend-section-menu__item"
-          onClick={() => browseCollectionFilter("legends", "Showing the 10 Did You Know shorts cards.")}
+          onClick={() => browseCollectionFilter("legends", `Showing the ${didYouKnowCount} Did You Know shorts cards.`)}
         >
           <Newspaper size={17} aria-hidden="true" />
           <span>
