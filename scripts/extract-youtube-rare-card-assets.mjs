@@ -13,6 +13,49 @@ const INCLUDE_SHORTS = process.env.WC26_RARE_INCLUDE_SHORTS === "1";
 const DOWNLOAD_SECONDS = 45;
 const ANIMATION_SECONDS = 8;
 
+const manualRevealSecondByEpisode = new Map([
+  [1, 65],
+  [2, 265],
+  [3, 270],
+  [4, 270],
+  [5, 270],
+  [6, 270],
+  [7, 270],
+  [9, 270],
+  [10, 270],
+  [11, 270],
+  [12, 270],
+  [13, 270],
+  [14, 270],
+  [15, 270],
+  [16, 270],
+  [17, 265],
+  [18, 270],
+  [19, 270],
+  [20, 270],
+  [21, 280],
+  [22, 270],
+  [23, 275],
+  [24, 265],
+  [25, 265],
+  [26, 275],
+  [27, 275],
+  [28, 275],
+  [29, 275],
+  [30, 275],
+  [31, 275],
+  [32, 275],
+  [33, 275],
+  [34, 275],
+  [35, 275],
+  [36, 275],
+  [37, 265],
+  [38, 265],
+  [39, 265],
+  [67, 20],
+  [68, 20],
+]);
+
 const manualEpisodeById = new Map([
   ["myNgytIwZ0U", 1],
   ["53d_4pQcY_8", 2],
@@ -190,6 +233,30 @@ function downloadTail(entry, target) {
   }
 }
 
+function downloadFullVideo(entry, target) {
+  ensureDir(dirname(target));
+  rmSync(target, { force: true });
+
+  const commonArgs = [
+    "-q",
+    "--force-overwrites",
+    "--no-part",
+    "-o",
+    target,
+    entry.youtube,
+  ];
+
+  try {
+    run("yt-dlp", ["-f", "bv*[height<=720]/b[height<=720]/18", ...commonArgs], { stdio: "inherit" });
+  } catch (error) {
+    try {
+      run("yt-dlp", ["-f", "18/b[height<=720]/best", ...commonArgs], { stdio: "inherit" });
+    } catch {
+      run("yt-dlp", ["-f", "95/94/93/best", "--hls-use-mpegts", ...commonArgs], { stdio: "inherit" });
+    }
+  }
+}
+
 function classifyAssetForApp(entry, imagePath, revealPath) {
   if (entry.kind === "bonus") {
     return {
@@ -230,6 +297,14 @@ function classifyAssetForApp(entry, imagePath, revealPath) {
     };
   }
 
+  if (episode < 40 || episode === 67 || episode === 68) {
+    return {
+      layout: "wide-reveal",
+      appImagePath: revealPath,
+      appImageNote: "Exact story-card or title-card reveal frame from the YouTube video.",
+    };
+  }
+
   return {
     layout: "archive-only",
     appImagePath: null,
@@ -237,7 +312,7 @@ function classifyAssetForApp(entry, imagePath, revealPath) {
   };
 }
 
-function extractAssets(entry, clipPath) {
+function extractAssets(entry, clipPath, revealSecond = null) {
   const publicReveal = join(PUBLIC_OUT, "reveal-frames", `${entry.slug}.jpg`);
   const publicCard = join(PUBLIC_OUT, "cards", `${entry.slug}.jpg`);
   const promoteReveal = join(PROMOTE_OUT, "reveal-frames", `${entry.slug}.jpg`);
@@ -248,23 +323,33 @@ function extractAssets(entry, clipPath) {
     ensureDir(dirname(path));
   }
 
-  run("ffmpeg", [
-    "-hide_banner",
-    "-loglevel",
-    "error",
-    "-y",
-    "-i",
-    clipPath,
-    "-frames:v",
-    "1",
-    "-q:v",
-    "2",
-    publicReveal,
-  ]);
+  run(
+    "ffmpeg",
+    [
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-y",
+      ...(revealSecond === null ? [] : ["-ss", String(revealSecond)]),
+      "-i",
+      clipPath,
+      "-frames:v",
+      "1",
+      "-q:v",
+      "2",
+      publicReveal,
+    ],
+  );
 
-  execFileSync("python3", [
-    "-c",
-    `
+  const episode = entry.episode ?? 0;
+  const shouldKeepRevealAsCard = entry.kind === "episode-special" && (episode < 40 || episode === 67 || episode === 68);
+
+  if (shouldKeepRevealAsCard) {
+    run("cp", [publicReveal, publicCard]);
+  } else {
+    execFileSync("python3", [
+      "-c",
+      `
 import sys
 from PIL import Image
 source, target = sys.argv[1], sys.argv[2]
@@ -285,15 +370,17 @@ card = im.crop((x, y, x + crop_w, y + crop_h))
 card = card.resize((640, 880), Image.Resampling.LANCZOS)
 card.save(target, quality=92)
 `,
-    publicReveal,
-    publicCard,
-  ]);
+      publicReveal,
+      publicCard,
+    ]);
+  }
 
   run("ffmpeg", [
     "-hide_banner",
     "-loglevel",
     "error",
     "-y",
+    ...(revealSecond === null ? [] : ["-ss", String(Math.max(0, revealSecond - 2))]),
     "-i",
     clipPath,
     "-t",
@@ -423,11 +510,17 @@ function main() {
 
   for (const [index, entry] of selectedEntries.entries()) {
     const clipPath = join(TMP_OUT, `${entry.slug}.mp4`);
+    const revealSecond = entry.kind === "episode-special" ? manualRevealSecondByEpisode.get(entry.episode) ?? null : null;
     console.log(`[${index + 1}/${selectedEntries.length}] ${entry.title}`);
 
     try {
-      downloadTail(entry, clipPath);
-      extracted.push(extractAssets(entry, clipPath));
+      if (revealSecond === null) {
+        downloadTail(entry, clipPath);
+      } else {
+        downloadFullVideo(entry, clipPath);
+      }
+
+      extracted.push(extractAssets(entry, clipPath, revealSecond));
     } catch (error) {
       console.error(`Failed ${entry.youtube}`);
       console.error(error.message);

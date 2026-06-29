@@ -16,9 +16,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep001-mexico-vs-south-myngytiwz0u.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep001-mexico-vs-south-myngytiwz0u.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep001-mexico-vs-south-myngytiwz0u.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep001-mexico-vs-south-myngytiwz0u.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "53d_4pQcY_8",
@@ -34,9 +35,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep002-south-korea-vs-czech-53d-4pqcy-8.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep002-south-korea-vs-czech-53d-4pqcy-8.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep002-south-korea-vs-czech-53d-4pqcy-8.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep002-south-korea-vs-czech-53d-4pqcy-8.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "qicbV-pTVdM",
@@ -52,9 +54,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep003-canada-vs-bosnia-qicbv-ptvdm.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep003-canada-vs-bosnia-qicbv-ptvdm.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep003-canada-vs-bosnia-qicbv-ptvdm.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep003-canada-vs-bosnia-qicbv-ptvdm.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "Rzi_0xhjrF4",
@@ -70,9 +73,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep004-usa-vs-paraguay-rzi-0xhjrf4.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep004-usa-vs-paraguay-rzi-0xhjrf4.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep004-usa-vs-paraguay-rzi-0xhjrf4.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep004-usa-vs-paraguay-rzi-0xhjrf4.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "hoOs2h5Jzms",
@@ -88,9 +92,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep005-brazil-vs-morocco-hoos2h5jzms.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep005-brazil-vs-morocco-hoos2h5jzms.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep005-brazil-vs-morocco-hoos2h5jzms.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep005-brazil-vs-morocco-hoos2h5jzms.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "j57_mVzWGXg",
@@ -106,9 +111,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep006-argentina-vs-algeria-j57-mvzwgxg.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep006-argentina-vs-algeria-j57-mvzwgxg.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep006-argentina-vs-algeria-j57-mvzwgxg.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep006-argentina-vs-algeria-j57-mvzwgxg.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "4RxCyLtIccs",
@@ -124,9 +130,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep007-brazil-vs-haiti-4rxcylticcs.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep007-brazil-vs-haiti-4rxcylticcs.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep007-brazil-vs-haiti-4rxcylticcs.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep007-brazil-vs-haiti-4rxcylticcs.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "8Pf-oRROUyk",
@@ -142,9 +149,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep009-qatar-vs-switzerland-8pf-orrouyk.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep009-qatar-vs-switzerland-8pf-orrouyk.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep009-qatar-vs-switzerland-8pf-orrouyk.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep009-qatar-vs-switzerland-8pf-orrouyk.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "x5N4LiIgXRo",
@@ -160,9 +168,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep010-haiti-vs-scotland-x5n4liigxro.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep010-haiti-vs-scotland-x5n4liigxro.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep010-haiti-vs-scotland-x5n4liigxro.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep010-haiti-vs-scotland-x5n4liigxro.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "zWAcb4CLOWs",
@@ -178,9 +187,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep011-england-s-secret-vs-ghana-zwacb4clows.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep011-england-s-secret-vs-ghana-zwacb4clows.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep011-england-s-secret-vs-ghana-zwacb4clows.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep011-england-s-secret-vs-ghana-zwacb4clows.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "gGOqgKEG10o",
@@ -196,9 +206,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep012-australia-vs-turkey-ggoqgkeg10o.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep012-australia-vs-turkey-ggoqgkeg10o.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep012-australia-vs-turkey-ggoqgkeg10o.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep012-australia-vs-turkey-ggoqgkeg10o.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "uKZ5R7vlBi8",
@@ -214,9 +225,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep013-germany-vs-curacao-ukz5r7vlbi8.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep013-germany-vs-curacao-ukz5r7vlbi8.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep013-germany-vs-curacao-ukz5r7vlbi8.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep013-germany-vs-curacao-ukz5r7vlbi8.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "vKJ1O2sNV1Y",
@@ -232,9 +244,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep014-netherlands-vs-japan-vkj1o2snv1y.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep014-netherlands-vs-japan-vkj1o2snv1y.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep014-netherlands-vs-japan-vkj1o2snv1y.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep014-netherlands-vs-japan-vkj1o2snv1y.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "3GRncnYwQVw",
@@ -250,9 +263,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep015-ivory-coast-vs-ecuador-3grncnywqvw.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep015-ivory-coast-vs-ecuador-3grncnywqvw.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep015-ivory-coast-vs-ecuador-3grncnywqvw.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep015-ivory-coast-vs-ecuador-3grncnywqvw.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "gGZPOt2H_0s",
@@ -268,9 +282,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep016-sweden-vs-tunisia-ggzpot2h-0s.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep016-sweden-vs-tunisia-ggzpot2h-0s.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep016-sweden-vs-tunisia-ggzpot2h-0s.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep016-sweden-vs-tunisia-ggzpot2h-0s.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "_vHQqJxt6G4",
@@ -286,9 +301,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep017-spain-vs-cape-vhqqjxt6g4.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep017-spain-vs-cape-vhqqjxt6g4.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep017-spain-vs-cape-vhqqjxt6g4.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep017-spain-vs-cape-vhqqjxt6g4.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "R1r8n4D7BTg",
@@ -304,9 +320,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep018-belgium-vs-egypt-r1r8n4d7btg.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep018-belgium-vs-egypt-r1r8n4d7btg.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep018-belgium-vs-egypt-r1r8n4d7btg.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep018-belgium-vs-egypt-r1r8n4d7btg.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "a8xvaJWZhrs",
@@ -322,9 +339,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep019-saudi-arabia-vs-uruguay-a8xvajwzhrs.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep019-saudi-arabia-vs-uruguay-a8xvajwzhrs.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep019-saudi-arabia-vs-uruguay-a8xvajwzhrs.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep019-saudi-arabia-vs-uruguay-a8xvajwzhrs.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "0NFA-yDOlf4",
@@ -340,9 +358,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep020-iran-vs-new-0nfa-ydolf4.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep020-iran-vs-new-0nfa-ydolf4.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep020-iran-vs-new-0nfa-ydolf4.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep020-iran-vs-new-0nfa-ydolf4.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "dRK7UPQGzFQ",
@@ -358,9 +377,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep021-france-vs-senegal-drk7upqgzfq.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep021-france-vs-senegal-drk7upqgzfq.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep021-france-vs-senegal-drk7upqgzfq.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep021-france-vs-senegal-drk7upqgzfq.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "tEURjCad3aY",
@@ -376,9 +396,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep022-iraq-vs-norway-teurjcad3ay.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep022-iraq-vs-norway-teurjcad3ay.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep022-iraq-vs-norway-teurjcad3ay.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep022-iraq-vs-norway-teurjcad3ay.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "sbW4Vjt89XY",
@@ -394,9 +415,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep023-austria-vs-jordan-sbw4vjt89xy.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep023-austria-vs-jordan-sbw4vjt89xy.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep023-austria-vs-jordan-sbw4vjt89xy.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep023-austria-vs-jordan-sbw4vjt89xy.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "uYP2OQxkyA4",
@@ -412,9 +434,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep024-portugal-vs-dr-uyp2oqxkya4.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep024-portugal-vs-dr-uyp2oqxkya4.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep024-portugal-vs-dr-uyp2oqxkya4.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep024-portugal-vs-dr-uyp2oqxkya4.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "XthcG-jo4nc",
@@ -430,9 +453,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep025-england-vs-croatia-xthcg-jo4nc.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep025-england-vs-croatia-xthcg-jo4nc.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep025-england-vs-croatia-xthcg-jo4nc.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep025-england-vs-croatia-xthcg-jo4nc.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "q5FyP7kqn_Y",
@@ -448,9 +472,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep026-ghana-vs-panama-q5fyp7kqn-y.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep026-ghana-vs-panama-q5fyp7kqn-y.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep026-ghana-vs-panama-q5fyp7kqn-y.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep026-ghana-vs-panama-q5fyp7kqn-y.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "RfZIdYYQMF0",
@@ -466,9 +491,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep027-uzbekistan-vs-colombia-rfzidyyqmf0.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep027-uzbekistan-vs-colombia-rfzidyyqmf0.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep027-uzbekistan-vs-colombia-rfzidyyqmf0.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep027-uzbekistan-vs-colombia-rfzidyyqmf0.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "MvIh3oTqD8U",
@@ -484,9 +510,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep028-czechia-vs-south-mvih3otqd8u.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep028-czechia-vs-south-mvih3otqd8u.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep028-czechia-vs-south-mvih3otqd8u.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep028-czechia-vs-south-mvih3otqd8u.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "tC_s4X28xIo",
@@ -502,9 +529,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep029-switzerland-vs-bosnia-tc-s4x28xio.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep029-switzerland-vs-bosnia-tc-s4x28xio.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep029-switzerland-vs-bosnia-tc-s4x28xio.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep029-switzerland-vs-bosnia-tc-s4x28xio.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "aDHiYekaNSE",
@@ -520,9 +548,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep030-canada-vs-qatar-adhiyekanse.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep030-canada-vs-qatar-adhiyekanse.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep030-canada-vs-qatar-adhiyekanse.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep030-canada-vs-qatar-adhiyekanse.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "uWC0hQVGYSQ",
@@ -538,9 +567,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep031-mexico-vs-south-uwc0hqvgysq.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep031-mexico-vs-south-uwc0hqvgysq.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep031-mexico-vs-south-uwc0hqvgysq.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep031-mexico-vs-south-uwc0hqvgysq.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "6Y0tMk7FqmE",
@@ -556,9 +586,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep032-usa-vs-australia-6y0tmk7fqme.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep032-usa-vs-australia-6y0tmk7fqme.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep032-usa-vs-australia-6y0tmk7fqme.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep032-usa-vs-australia-6y0tmk7fqme.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "VCJPzek1eQE",
@@ -574,9 +605,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep033-scotland-vs-morocco-vcjpzek1eqe.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep033-scotland-vs-morocco-vcjpzek1eqe.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep033-scotland-vs-morocco-vcjpzek1eqe.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep033-scotland-vs-morocco-vcjpzek1eqe.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "pfebz7jf3ts",
@@ -592,9 +624,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep034-turkey-vs-paraguay-pfebz7jf3ts.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep034-turkey-vs-paraguay-pfebz7jf3ts.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep034-turkey-vs-paraguay-pfebz7jf3ts.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep034-turkey-vs-paraguay-pfebz7jf3ts.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "JqDq9e_khdY",
@@ -610,9 +643,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep035-netherlands-vs-sweden-jqdq9e-khdy.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep035-netherlands-vs-sweden-jqdq9e-khdy.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep035-netherlands-vs-sweden-jqdq9e-khdy.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep035-netherlands-vs-sweden-jqdq9e-khdy.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "ZsYk3qXKaw0",
@@ -628,9 +662,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep036-germany-vs-ivory-zsyk3qxkaw0.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep036-germany-vs-ivory-zsyk3qxkaw0.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep036-germany-vs-ivory-zsyk3qxkaw0.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep036-germany-vs-ivory-zsyk3qxkaw0.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "5wMJTGeEF7E",
@@ -646,9 +681,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep037-the-smallest-nation-ever-at-a-world-cup-just-held-a-whole-continen.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep037-the-smallest-nation-ever-at-a-world-cup-just-held-a-whole-continen.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep037-the-smallest-nation-ever-at-a-world-cup-just-held-a-whole-continen.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep037-the-smallest-nation-ever-at-a-world-cup-just-held-a-whole-continen.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "ZhZfuu3T2yc",
@@ -664,9 +700,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep038-japan-vs-tunisia-zhzfuu3t2yc.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep038-japan-vs-tunisia-zhzfuu3t2yc.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep038-japan-vs-tunisia-zhzfuu3t2yc.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep038-japan-vs-tunisia-zhzfuu3t2yc.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "FGKu0WJ0lp0",
@@ -682,9 +719,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep039-spain-vs-saudi-fgku0wj0lp0.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep039-spain-vs-saudi-fgku0wj0lp0.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep039-spain-vs-saudi-fgku0wj0lp0.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep039-spain-vs-saudi-fgku0wj0lp0.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "Lt-3gH1Ssm4",
@@ -1186,9 +1224,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep067-egypt-vs-iran-k-uwgdqfqbe.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep067-egypt-vs-iran-k-uwgdqfqbe.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep067-egypt-vs-iran-k-uwgdqfqbe.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep067-egypt-vs-iran-k-uwgdqfqbe.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "PRxE6alq_Qg",
@@ -1204,9 +1243,10 @@
       "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep068-belgium-vs-new-prxe6alq-qg.jpg",
       "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep068-belgium-vs-new-prxe6alq-qg.jpg",
       "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep068-belgium-vs-new-prxe6alq-qg.mp4",
-      "layout": "archive-only",
-      "appImagePath": null,
-      "appImageNote": "The video tail is a score, prediction, player, or CTA frame rather than a card."
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep068-belgium-vs-new-prxe6alq-qg.jpg",
+      "appImageNote": "Exact story-card or title-card reveal frame from the YouTube video.",
+      "assetStatus": "app-ready"
     },
     {
       "id": "V_NSSOTMd6w",
