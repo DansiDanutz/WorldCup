@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T22:02:56.402Z",
+  "generatedAt": "2026-06-29T11:38:54.446Z",
   "source": "YouTube end-screen rare-card extraction",
   "assets": [
     {
@@ -1423,6 +1423,60 @@
       "layout": "portrait-card",
       "appImagePath": "/legend-cards/youtube-rare/cards/ep080-netherlands-vs-morocco-jnkwpbdpksi.jpg",
       "appImageNote": "Clean portrait-style end-card crop from the YouTube video."
+    },
+    {
+      "id": "BBM9frfQMLs",
+      "youtube": "https://www.youtube.com/watch?v=BBM9frfQMLs",
+      "episode": 81,
+      "kind": "episode-special",
+      "title": "Ivory Coast vs Norway: The Wolf and the Elephant \u2014 WorldCup26 Legends Ep.81",
+      "teams": "Ivory Coast vs Norway",
+      "source": "youtube-videos",
+      "slug": "ep081-ivory-coast-vs-norway-bbm9frfqmls",
+      "imagePath": "/legend-cards/youtube-rare/cards/ep081-ivory-coast-vs-norway-bbm9frfqmls.jpg",
+      "revealPath": "/legend-cards/youtube-rare/reveal-frames/ep081-ivory-coast-vs-norway-bbm9frfqmls.jpg",
+      "layout": "portrait-card",
+      "appImagePath": "/legend-cards/youtube-rare/cards/ep081-ivory-coast-vs-norway-bbm9frfqmls.jpg",
+      "appImageNote": "Clean portrait-style end-card crop from the YouTube video.",
+      "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep081-ivory-coast-vs-norway-bbm9frfqmls.jpg",
+      "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep081-ivory-coast-vs-norway-bbm9frfqmls.jpg",
+      "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep081-ivory-coast-vs-norway-bbm9frfqmls.mp4"
+    },
+    {
+      "id": "01LkHboUrBg",
+      "youtube": "https://www.youtube.com/watch?v=01LkHboUrBg",
+      "episode": 82,
+      "kind": "episode-special",
+      "title": "France vs Sweden: The Rooster and the Dragon \u2014 WorldCup26 Legends Ep.82",
+      "teams": "France vs Sweden",
+      "source": "youtube-videos",
+      "slug": "ep082-france-vs-sweden-01lkhbourbg",
+      "imagePath": "/legend-cards/youtube-rare/cards/ep082-france-vs-sweden-01lkhbourbg.jpg",
+      "revealPath": "/legend-cards/youtube-rare/reveal-frames/ep082-france-vs-sweden-01lkhbourbg.jpg",
+      "layout": "portrait-card",
+      "appImagePath": "/legend-cards/youtube-rare/cards/ep082-france-vs-sweden-01lkhbourbg.jpg",
+      "appImageNote": "Clean portrait-style end-card crop from the YouTube video.",
+      "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep082-france-vs-sweden-01lkhbourbg.jpg",
+      "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep082-france-vs-sweden-01lkhbourbg.jpg",
+      "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep082-france-vs-sweden-01lkhbourbg.mp4"
+    },
+    {
+      "id": "n15qQsmdlbc",
+      "youtube": "https://www.youtube.com/watch?v=n15qQsmdlbc",
+      "episode": 83,
+      "kind": "episode-special",
+      "title": "Mexico vs Ecuador: The Serpent and the Condor \u2014 WorldCup26 Legends Ep.83",
+      "teams": "Mexico vs Ecuador",
+      "source": "youtube-videos",
+      "slug": "ep083-mexico-vs-ecuador-n15qqsmdlbc",
+      "imagePath": "/legend-cards/youtube-rare/cards/ep083-mexico-vs-ecuador-n15qqsmdlbc.jpg",
+      "revealPath": "/legend-cards/youtube-rare/reveal-frames/ep083-mexico-vs-ecuador-n15qqsmdlbc.jpg",
+      "layout": "portrait-card",
+      "appImagePath": "/legend-cards/youtube-rare/cards/ep083-mexico-vs-ecuador-n15qqsmdlbc.jpg",
+      "appImageNote": "Clean portrait-style end-card crop from the YouTube video.",
+      "promoteImagePath": "Promote/cards/youtube-rare-end-cards/cards/ep083-mexico-vs-ecuador-n15qqsmdlbc.jpg",
+      "promoteRevealPath": "Promote/cards/youtube-rare-end-cards/reveal-frames/ep083-mexico-vs-ecuador-n15qqsmdlbc.jpg",
+      "promoteAnimatedPath": "Promote/cards/youtube-rare-end-cards/animated/ep083-mexico-vs-ecuador-n15qqsmdlbc.mp4"
     },
     {
       "id": "NGyPLObwq4c",

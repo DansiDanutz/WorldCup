@@ -21,14 +21,14 @@ describe("Legend card registry", () => {
 
     assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.length, 4);
     assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.filter((video) => video.kind === "series").length, 1);
-    assert.equal(YOUTUBE_LEGEND_EPISODES.length, 79);
+    assert.equal(YOUTUBE_LEGEND_EPISODES.length, 82);
     assert.equal(YOUTUBE_DID_YOU_KNOW_SHORTS.length, 12);
-    assert.equal(episodeCards.length, 80);
+    assert.equal(episodeCards.length, 83);
     assert.equal(supporterCards.length, uniqueEpisodeTeams.size);
     assert.equal(supporterCards.length, 48);
     assert.equal(didYouKnowCards.length, 12);
     assert.equal(bonusCards.length, 3);
-    assert.equal(LEGEND_CARD_DEFINITIONS.length, 143);
+    assert.equal(LEGEND_CARD_DEFINITIONS.length, 146);
     assert.equal(new Set(LEGEND_CARD_DEFINITIONS.map((card) => card.id)).size, LEGEND_CARD_DEFINITIONS.length);
     assert.equal(supporterCards.every((card) => card.youtube === null), true);
     assert.equal(didYouKnowCards.every((card) => Boolean(card.youtube)), true);
@@ -68,9 +68,12 @@ describe("Legend card registry", () => {
 
     assert.equal(new Set(youtubeCards.map((card) => card.youtube)).size, youtubeCards.length);
     assert.equal(new Set(LEGEND_CARDS.map((card) => card.image)).size, LEGEND_CARDS.length);
-    assert.equal(appReadyEpisodeCards.length, 39);
-    assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/cards/")).length, 22);
+    assert.equal(appReadyEpisodeCards.length, 42);
+    assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/cards/")).length, 25);
     assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/reveal-frames/")).length, 17);
+    assert.equal(episodeCards.find((card) => card.episode === 83)?.image.includes("ep083-mexico-vs-ecuador"), true);
+    assert.equal(episodeCards.find((card) => card.episode === 82)?.image.includes("ep082-france-vs-sweden"), true);
+    assert.equal(episodeCards.find((card) => card.episode === 81)?.image.includes("ep081-ivory-coast-vs-norway"), true);
     assert.equal(episodeCards.find((card) => card.episode === 80)?.image.includes("ep080-netherlands-vs-morocco"), true);
     assert.equal(episodeCards.find((card) => card.episode === 44)?.image.includes("/reveal-frames/ep044-"), true);
     assert.equal(episodeCards.find((card) => card.episode === 36)?.image.startsWith("data:image/svg+xml"), true);

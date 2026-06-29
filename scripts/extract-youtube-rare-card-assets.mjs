@@ -39,6 +39,8 @@ const didYouKnowShorts = new Map([
   ["N7wiebdbI-E", "short-yashin-black-spider"],
   ["VeB_RKVhPv0", "short-monti-two-finals"],
   ["KZ15CaO-y4E", "short-tostao-eyes"],
+  ["Mv-GBCDS-EQ", "short-castro-one-armed-champion"],
+  ["_kbLwv0R38k", "short-pak-secret-hero"],
 ]);
 
 function run(command, args, options = {}) {

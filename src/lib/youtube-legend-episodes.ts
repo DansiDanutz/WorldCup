@@ -988,6 +988,42 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
     youtube: "https://www.youtube.com/watch?v=JnKwpBDpKSI",
     imageTeam: "Morocco",
   },
+  {
+    ep: 81,
+    home: "Ivory Coast",
+    away: "Norway",
+    stage: "Group stage",
+    score: null,
+    hook: "The Wolf and the Elephant.",
+    story:
+      "Ivory Coast carry the memory of football that once helped quiet a nation, while Norway arrive with northern force and Haaland's shadow. The Elephant and the Wolf turn one match into a test of power, patience, and pride.",
+    youtube: "https://www.youtube.com/watch?v=BBM9frfQMLs",
+    imageTeam: "Ivory Coast",
+  },
+  {
+    ep: 82,
+    home: "France",
+    away: "Sweden",
+    stage: "Group stage",
+    score: null,
+    hook: "The Rooster and the Dragon.",
+    story:
+      "France bring champions' gravity and a blue shirt that expects the world to bend. Sweden answer with old tournament steel and a dragon story built for the coldest moments.",
+    youtube: "https://www.youtube.com/watch?v=01LkHboUrBg",
+    imageTeam: "France",
+  },
+  {
+    ep: 83,
+    home: "Mexico",
+    away: "Ecuador",
+    stage: "Group stage",
+    score: null,
+    hook: "The Serpent and the Condor.",
+    story:
+      "Mexico bring the serpent, the stadium thunder, and a history that refuses quiet nights. Ecuador answer with the condor's height, speed, and belief that pressure can become flight.",
+    youtube: "https://www.youtube.com/watch?v=n15qQsmdlbc",
+    imageTeam: "Mexico",
+  },
 ];
 
 export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
