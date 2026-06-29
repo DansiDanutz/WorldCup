@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 
 import { enforceRateLimit, jsonError } from "@/lib/http";
 import { findLegendCardDefinition } from "@/lib/legend-card-registry";
@@ -6,6 +8,7 @@ import {
   createLegendCardVoiceText,
   elevenLabsBrianVoiceName,
   elevenLabsDefaultModel,
+  getSavedLegendCardVoiceFileName,
   selectElevenLabsBrianVoice,
 } from "@/lib/story-voice";
 import { requireObject, requireString, ValidationError } from "@/lib/validation";
@@ -24,6 +27,7 @@ type ElevenLabsVoice = {
 };
 
 let cachedBrianVoiceId: string | null = null;
+const savedVoiceDirectory = path.join(process.cwd(), "public", "legend-cards", "voices");
 
 function getConfiguredBrianVoiceId() {
   return process.env[brianVoiceIdEnv]?.trim() || process.env[voiceIdEnv]?.trim() || null;
@@ -69,6 +73,21 @@ async function resolveBrianVoiceId(apiKey: string) {
   return cachedBrianVoiceId;
 }
 
+async function readSavedBrianVoice(cardId: string) {
+  const fileName = getSavedLegendCardVoiceFileName(cardId);
+  const filePath = path.join(savedVoiceDirectory, fileName);
+
+  try {
+    return await readFile(filePath);
+  } catch (error) {
+    if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") {
+      return null;
+    }
+
+    throw error;
+  }
+}
+
 export async function POST(request: Request) {
   const limited = await enforceRateLimit(request, "legend-card-elevenlabs-voice", {
     limit: 20,
@@ -76,11 +95,6 @@ export async function POST(request: Request) {
   });
   if (limited) {
     return limited;
-  }
-
-  const apiKey = getElevenLabsApiKey();
-  if (!apiKey) {
-    return jsonError(`ElevenLabs Brian voice is not configured. Set ${apiKeyEnv} on the server.`, 503);
   }
 
   let cardId: string;
@@ -99,6 +113,27 @@ export async function POST(request: Request) {
   }
 
   try {
+    const savedVoice = await readSavedBrianVoice(card.id);
+
+    if (savedVoice) {
+      return new NextResponse(savedVoice, {
+        status: 200,
+        headers: {
+          "Cache-Control": "public, max-age=31536000, immutable",
+          "Content-Type": "audio/mpeg",
+          "X-WorldCup26-Voice": `${elevenLabsBrianVoiceName}; saved`,
+        },
+      });
+    }
+
+    const apiKey = getElevenLabsApiKey();
+    if (!apiKey) {
+      return jsonError(
+        `ElevenLabs Brian voice is not configured and no saved voice file exists for this card. Set ${apiKeyEnv} on the server or generate saved card voices.`,
+        503,
+      );
+    }
+
     const voiceId = await resolveBrianVoiceId(apiKey);
     const response = await fetch(`${elevenLabsApiBase}/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`, {
       method: "POST",

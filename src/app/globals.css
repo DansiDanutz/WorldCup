@@ -10727,103 +10727,6 @@ html {
   font: 750 12px / 1.25 var(--font-sans);
 }
 
-.legend-wallpaper {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) minmax(180px, 0.42fr) auto;
-  align-items: center;
-  gap: var(--space-4);
-  min-width: 0;
-  margin-top: var(--space-5);
-  padding: var(--space-5);
-  scroll-margin-top: 120px;
-  border: 1px solid rgba(105, 223, 173, 0.22);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(105, 223, 173, 0.13), rgba(255, 207, 102, 0.08)),
-    rgba(0, 0, 0, 0.17);
-}
-
-.legend-wallpaper__icon {
-  display: inline-grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border: 1px solid rgba(255, 207, 102, 0.38);
-  border-radius: 8px;
-  color: #123127;
-  background: linear-gradient(180deg, #ffe29a, #69dfad);
-}
-
-.legend-wallpaper__copy {
-  min-width: 0;
-}
-
-.legend-wallpaper__copy h2,
-.legend-wallpaper__copy p,
-.legend-wallpaper__stats,
-.legend-wallpaper__stats dt,
-.legend-wallpaper__stats dd {
-  margin: 0;
-}
-
-.legend-wallpaper__copy h2 {
-  margin-top: 4px;
-  color: #ffffff;
-  font: 900 23px / 1.1 var(--font-sans);
-}
-
-.legend-wallpaper__copy p:not(.wc-card-eyebrow) {
-  margin-top: 7px;
-  max-width: 720px;
-  color: rgba(255, 255, 255, 0.74);
-  font: 750 13px / 1.4 var(--font-sans);
-}
-
-.legend-wallpaper__stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  min-width: 0;
-}
-
-.legend-wallpaper__stats div {
-  min-width: 0;
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.07);
-}
-
-.legend-wallpaper__stats dt {
-  color: rgba(255, 255, 255, 0.62);
-  font: 900 11px / 1 var(--font-sans);
-  text-transform: uppercase;
-}
-
-.legend-wallpaper__stats dd {
-  margin-top: 5px;
-  color: #ffffff;
-  font: 900 24px / 1 var(--font-sans);
-}
-
-.legend-wallpaper__action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  min-width: 0;
-  min-height: 42px;
-  padding: 0 15px;
-  border: 1px solid rgba(255, 207, 102, 0.72);
-  border-radius: 8px;
-  color: #1b1308;
-  background: linear-gradient(180deg, #ffe29a, #ffcf66);
-  cursor: pointer;
-  font: 900 13px / 1 var(--font-sans);
-  text-align: center;
-  white-space: normal;
-}
-
 .legend-pulse {
   margin-top: var(--space-5);
   padding: var(--space-5);
@@ -11410,7 +11313,6 @@ html {
 .legend-card {
   display: flex;
   min-width: 0;
-  height: 100%;
   min-height: 100%;
   flex-direction: column;
   scroll-margin-top: 120px;
@@ -11428,20 +11330,19 @@ html {
 
 .legend-card__image {
   position: relative;
+  flex: 0 0 auto;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #061911;
 }
 
-.legend-card--supporter .legend-card__image {
-  aspect-ratio: 9 / 16;
+.legend-card--real-asset .legend-card__image {
+  aspect-ratio: 8 / 11;
+  background: radial-gradient(circle at 50% 18%, rgba(255, 207, 102, 0.16), transparent 42%), #041510;
 }
 
-.legend-card--real-asset .legend-card__image {
-  aspect-ratio: 3 / 4;
-  background:
-    radial-gradient(circle at 50% 20%, rgba(255, 207, 102, 0.16), transparent 42%),
-    #06110f;
+.legend-card--wide-asset .legend-card__image {
+  aspect-ratio: 16 / 9;
 }
 
 .legend-card__image img {
@@ -11456,10 +11357,6 @@ html {
 .legend-card.is-locked .legend-card__image img {
   filter: blur(7px) grayscale(0.58) brightness(0.56);
   transform: scale(1.05);
-}
-
-.legend-card.is-locked.legend-card--real-asset .legend-card__image img {
-  transform: none;
 }
 
 .legend-card.is-previewing {
@@ -11580,12 +11477,12 @@ html {
 
 .legend-card__story {
   display: -webkit-box;
-  min-height: 122px;
+  min-height: 102px;
   overflow: hidden;
   color: rgba(255, 255, 255, 0.8);
   font: 500 14px / 1.45 var(--font-sans);
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 5;
 }
 
 .legend-card__journey {
@@ -11628,7 +11525,7 @@ html {
   grid-template-columns: minmax(0, 1fr);
   gap: 8px;
   align-items: stretch;
-  margin-top: 0;
+  margin-top: 5px;
 }
 
 .legend-card__watch,
@@ -11642,20 +11539,12 @@ html {
 .legend-card__watch,
 .legend-card__disabled {
   width: 100%;
-  min-height: 40px;
 }
 
-.legend-card__unlock,
-.legend-card__download {
+.legend-card__unlock {
   width: 100%;
   min-height: 40px;
   white-space: normal;
-}
-
-.legend-card__download {
-  gap: 7px;
-  justify-content: center;
-  text-decoration: none;
 }
 
 .legend-card__watch-note {
@@ -11671,15 +11560,10 @@ html {
 }
 
 .legend-card__disabled,
-.legend-card__download.is-disabled,
 .episode-card__pending {
   justify-content: center;
   cursor: default;
   opacity: 0.72;
-}
-
-.legend-card__download.is-disabled {
-  pointer-events: none;
 }
 
 .legend-card__voice {
@@ -11771,19 +11655,6 @@ html {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .legend-wallpaper {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
-
-  .legend-wallpaper__stats,
-  .legend-wallpaper__action {
-    grid-column: 1 / -1;
-  }
-
-  .legend-wallpaper__action {
-    justify-self: start;
-  }
-
   .legend-pulse__header,
   .legend-quest__header,
   .legend-roadmap__header,
@@ -11853,22 +11724,8 @@ html {
   }
 
   .legend-quest,
-  .legend-roadmap,
-  .legend-wallpaper {
+  .legend-roadmap {
     padding: var(--space-4);
-  }
-
-  .legend-wallpaper {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .legend-wallpaper__icon {
-    width: 44px;
-    height: 44px;
-  }
-
-  .legend-wallpaper__action {
-    width: 100%;
   }
 
   .legend-pulse__preview,
@@ -11898,7 +11755,6 @@ html {
     .legend-section-menu,
     .legend-filter-bar,
     .legend-roadmap__track,
-    .legend-wallpaper__stats,
   .legend-progress-panel__stats {
     grid-template-columns: minmax(0, 1fr);
   }

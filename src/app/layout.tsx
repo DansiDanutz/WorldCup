@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 
 import { AppLaunchSplash } from "@/components/app-launch-splash";
 import { AppViewTracker } from "@/components/app-view-tracker";
@@ -6,7 +7,11 @@ import { CANONICAL_ORIGIN } from "@/lib/canonical-url";
 
 import "./globals.css";
 import "./cards.css";
-import "./legend-card-overrides.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || CANONICAL_ORIGIN;
 
@@ -123,7 +128,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body>
+      <body className={inter.className}>
         <script
           type="application/ld+json"
           // Static, build-time brand metadata — no user input is interpolated.

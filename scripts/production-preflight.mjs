@@ -147,11 +147,18 @@ async function main() {
 
   await runNodeScript("Vercel domain guard", "scripts/vercel-domain-guard.mjs");
   await runNodeScript("Production smoke", "scripts/production-smoke.mjs");
-  await runNodeScript("Full launch smoke", "scripts/production-smoke.mjs", [
-    "--auth-flow-probe",
-    "--deposit-credit-probe",
-    "--kucoin-live-probe",
-  ]);
+
+  if (strictLaunchReady) {
+    await runNodeScript("Full launch smoke", "scripts/production-smoke.mjs", [
+      "--auth-flow-probe",
+      "--deposit-credit-probe",
+      "--kucoin-live-probe",
+    ]);
+  } else {
+    console.log("\n== Full launch smoke ==");
+    console.log("Skipped for standard preflight. Run npm run preflight:prod:launch before enabling paid launch.");
+  }
+
   await checkReadiness();
 
   console.log(`\n${passMessage}`);

@@ -293,17 +293,16 @@ launch sign-off evidence state into one audit-friendly report.
 
 ## Production Smoke Test
 
-Run the full production preflight before launch sign-off or after any Vercel
-production deployment:
+Run the standard production preflight after any Vercel production deployment:
 
 ```bash
 npm run preflight:prod
 ```
 
 This loads `.env.local` when present, verifies the Vercel custom-domain guard,
-runs the regular smoke checks, runs the full launch smoke, then prints the live
-Production readiness summary. It fails on hard launch blockers and leaves
-warnings visible for real-world operator, payment, and legal sign-offs.
+runs the regular non-destructive smoke checks, skips the paid launch probes, then
+prints the live Production readiness summary. It fails on hard blockers and
+leaves warnings visible for real-world operator, payment, and legal sign-offs.
 
 Run the strict final launch gate only when the operator, payment, and legal
 evidence has been completed:
@@ -312,8 +311,8 @@ evidence has been completed:
 npm run preflight:prod:launch
 ```
 
-This runs the same checks as `preflight:prod`, then fails unless Production
-readiness is fully green with zero warnings.
+This runs the same checks as `preflight:prod`, also runs the full launch smoke,
+then fails unless Production readiness is fully green with zero warnings.
 
 Run the non-destructive production smoke checks after each deploy:
 

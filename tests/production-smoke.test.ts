@@ -21,6 +21,7 @@ describe("production smoke coverage", () => {
     assert.match(deploymentDocs, /npm run smoke:prod:launch/);
     assert.match(deploymentDocs, /Production readiness summary/);
     assert.match(deploymentDocs, /full launch smoke/);
+    assert.match(deploymentDocs, /skips the paid launch probes/);
     assert.match(deploymentDocs, /authenticated user flow/);
     assert.match(deploymentDocs, /KuCoin read-only verification/);
   });
@@ -33,6 +34,8 @@ describe("production smoke coverage", () => {
     assert.match(productionPreflight, /--auth-flow-probe/);
     assert.match(productionPreflight, /--deposit-credit-probe/);
     assert.match(productionPreflight, /--kucoin-live-probe/);
+    assert.match(productionPreflight, /if \(strictLaunchReady\)/);
+    assert.match(productionPreflight, /Skipped for standard preflight/);
     assert.match(productionPreflight, /\/api\/admin\/readiness/);
     assert.match(productionPreflight, /data\.summary\?\.fail === 0/);
     assert.match(productionPreflight, /strictLaunchReady/);

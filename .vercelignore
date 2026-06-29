@@ -4,6 +4,10 @@
 .omx/
 .playwright-mcp/
 marketing/
+Promote/
+content/videos/
+content/match_videos/
+test-results/
 supabase/
 .vercel/
 node_modules/
@@ -16,6 +20,3 @@ node_modules/
 /*.jpg
 /*.jpeg
 /*.zip
-content/videos/
-content/match_videos/
-test-results/
