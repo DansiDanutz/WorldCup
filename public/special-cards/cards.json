@@ -750,6 +750,15 @@
       "landscape": "/special-cards/legend-083-landscape.png"
     },
     {
+      "number": "084",
+      "name": "The Three Lions, Keepers of the Crown",
+      "nation": "England",
+      "episode": 84,
+      "match": "England vs DR Congo (R32)",
+      "portrait": "/special-cards/legend-084-portrait.png",
+      "landscape": "/special-cards/legend-084-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",

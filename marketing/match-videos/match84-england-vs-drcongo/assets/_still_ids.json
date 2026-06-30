@@ -1,0 +1,28 @@
+{
+  "comment": "Ep84 England vs DR Congo (R32). England GENERATED fresh (white kit, Three Lions). DR Congo REUSED from Ep72 (Rule #26, 0 credits). Theme: THE LIONS AND THE LEOPARD. Legend 084 the Three Lions. OUR PREDICTION England 2-1 DR Congo (Bakambu shock early, Kane equalize, Bellingham late winner).",
+  "england_players": {
+    "eng-kane": "9e5f32ae-0278-49ac-9de7-fc53ee357444",
+    "eng-bellingham": "8601fc40-c6e2-4201-945a-a965bb56bb93",
+    "eng-saka": "80513fba-3358-422b-878a-02561a46e430",
+    "eng-foden": "7989ddf9-c53d-44c7-8364-bad068b2ba35",
+    "eng-rice": "95f7fdba-95b0-4304-9269-a620d009a684"
+  },
+  "england_motifs": { "eng-lions": "07f10ccc-4abc-45a1-a962-01f1aa6604d3", "texture-england": "60b98318-094f-476c-997b-415ad8e1334d" },
+  "england_scenes": {
+    "eng-crowd": "2d03da1b-3705-4dd3-af46-29165c0cca38",
+    "eng-attack": "bccfa03e-c006-4a76-b278-2b1787b41b8c",
+    "eng-surge": "ed1bc84c-6c91-4543-88fa-80adf74ba24b",
+    "duel-mid": "9fef3474-8f80-4ba7-adc0-7bd36a1e1ce4",
+    "cd-goal": "5cf60029-75e2-4617-b450-d322feaf4f74",
+    "eng-goal-1": "b36bfe82-c3bb-49c9-88c2-414784f915f2",
+    "eng-goal-2": "91a007e5-93e7-4989-a895-4956f28a55f2",
+    "crowd-tense": "01eb2310-9366-4354-bdc1-acdb991f8a5f",
+    "vd-handshake": "03288a34-29fc-4a3d-bed8-8a50da4fce9d",
+    "cta-celebrate": "c5526f87-e4b2-4d39-aa16-4932388011a2"
+  },
+  "card": { "legend-084-portrait": "6671f7e2-7f62-4d5b-ab5d-dd2a06d121a9", "legend-084-landscape": "2a123503-7851-4a43-99aa-1228906b44f0" },
+  "drcongo_REUSED_from_Ep72_clips_0cr": {
+    "dc-wissa": "a095f24e-89c2-436c-9fc4-6a8ada748fcd", "dc-silas": "747bbbc1-6314-4f6f-a97c-a37eced7595f", "dc-mbemba": "bcc73d4a-ecd5-41d7-94e1-13971309d13b", "dc-bakambu": "78bb2212-dbe3-4707-970f-c3d2cdd421ff", "dc-wanbissaka": "eb746974-62a9-4b24-b29c-ae5093986348",
+    "cod-leopard": "eeceef80-f0d8-4fca-8dc9-b5312e49411b", "cod-kinshasa": "e91b8768-9bbb-4d6b-b981-361c5c0ff076", "cod-crowd": "ad4fc3ac-9537-4fe2-80cb-2e07c80c6c88", "cod-attack": "94578c97-3843-4d95-8f11-ed814620ebef", "keeper-save": "dc73e6e4-fd59-47bd-b4fb-af9951dc2576"
+  }
+}
