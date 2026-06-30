@@ -759,6 +759,15 @@
       "landscape": "/special-cards/legend-084-landscape.png"
     },
     {
+      "number": "085",
+      "name": "The Lion of Teranga, King of the Savanna",
+      "nation": "Senegal",
+      "episode": 85,
+      "match": "Belgium vs Senegal (R32)",
+      "portrait": "/special-cards/legend-085-portrait.png",
+      "landscape": "/special-cards/legend-085-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
