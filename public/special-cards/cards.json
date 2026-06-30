@@ -768,6 +768,15 @@
       "landscape": "/special-cards/legend-085-landscape.png"
     },
     {
+      "number": "086",
+      "name": "The American Eagle, Spirit of the Free",
+      "nation": "USA",
+      "episode": 86,
+      "match": "USA vs Bosnia (R32)",
+      "portrait": "/special-cards/legend-086-portrait.png",
+      "landscape": "/special-cards/legend-086-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",

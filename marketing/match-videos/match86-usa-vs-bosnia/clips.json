@@ -1,0 +1,333 @@
+{
+  "comment": "Ep86 USA vs Bosnia ASSET-REUSE (Rule #26), NO-REPEAT+NO-LOOP, showcase SYNCED. OUR PREDICTION USA 2-1 Bosnia (Balogun late winner). Legend 086 the American Eagle. 0 new Higgsfield generation. vol=0.",
+  "clips": [
+    {
+      "id": "texture-usa",
+      "src": "assets/clips/texture-usa.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bos-dragon",
+      "src": "assets/clips/bos-dragon.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-bosnia",
+      "src": "assets/clips/texture-bosnia.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "us-crowd",
+      "src": "assets/clips/us-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "us-attack",
+      "src": "assets/clips/us-attack.mp4",
+      "at": 49,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "us-surge",
+      "src": "assets/clips/us-surge.mp4",
+      "at": 54,
+      "dur": 1.5,
+      "vol": 0
+    },
+    {
+      "id": "us-pulisic",
+      "src": "assets/clips/us-pulisic.mp4",
+      "at": 55.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "us-weah",
+      "src": "assets/clips/us-weah.mp4",
+      "at": 62.15,
+      "dur": 3.29,
+      "vol": 0
+    },
+    {
+      "id": "us-balogun",
+      "src": "assets/clips/us-balogun.mp4",
+      "at": 65.44,
+      "dur": 2.56,
+      "vol": 0
+    },
+    {
+      "id": "us-mckennie",
+      "src": "assets/clips/us-mckennie.mp4",
+      "at": 68,
+      "dur": 2.89,
+      "vol": 0
+    },
+    {
+      "id": "us-adams",
+      "src": "assets/clips/us-adams.mp4",
+      "at": 70.89,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bos-crowd",
+      "src": "assets/clips/bos-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bos-attack",
+      "src": "assets/clips/bos-attack.mp4",
+      "at": 84.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bos-dzeko",
+      "src": "assets/clips/bos-dzeko.mp4",
+      "at": 90.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bos-pjanic",
+      "src": "assets/clips/bos-pjanic.mp4",
+      "at": 96.88,
+      "dur": 3.01,
+      "vol": 0
+    },
+    {
+      "id": "bos-demirovic",
+      "src": "assets/clips/bos-demirovic.mp4",
+      "at": 99.89,
+      "dur": 3.11,
+      "vol": 0
+    },
+    {
+      "id": "bos-tabakovic",
+      "src": "assets/clips/bos-tabakovic.mp4",
+      "at": 103,
+      "dur": 2.68,
+      "vol": 0
+    },
+    {
+      "id": "bos-kolasinac",
+      "src": "assets/clips/bos-kolasinac.mp4",
+      "at": 105.68,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/clips/duel-mid.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "keeper-save",
+      "src": "assets/clips/keeper-save.mp4",
+      "at": 137,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bos-goal",
+      "src": "assets/clips/bos-goal.mp4",
+      "at": 152.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "us-goal-1",
+      "src": "assets/clips/us-goal-1.mp4",
+      "at": 178.46,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "us-goal-2",
+      "src": "assets/clips/us-goal-2.mp4",
+      "at": 189.58,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 244,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cta-celebrate",
+      "src": "assets/clips/cta-celebrate.mp4",
+      "at": 303.05,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 153.6,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 164.37,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 179.9,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 191,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}
