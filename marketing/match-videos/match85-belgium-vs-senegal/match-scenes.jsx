@@ -194,11 +194,11 @@ function SceneBelgium() {
       <Sprite start={44} end={49}><div style={{ position: 'absolute', inset: 0 }}><FS id="be-crowd" /><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(2,3,8,0.30) 0%, transparent 40%, rgba(2,3,8,0.55) 100%)' }} /><TeamBanner flag={<FlagBE w={64} />} label="RED DEVILS · BELGIUM" accent={BEL_RED} /></div></Sprite>
       <Sprite start={49} end={54}><div style={{ position: 'absolute', inset: 0 }}><FS id="be-attack" /><div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,8,0.32)' }} /></div></Sprite>
       <Sprite start={54} end={55.5}><div style={{ position: 'absolute', inset: 0 }}><FS id="be-surge" /><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(227,6,19,0.30), transparent 55%)' }} /></div></Sprite>
-      <PlayerShowcase clipId="be-debruyne" name="KEVIN DE BRUYNE" role="CAPTAIN · THE MAESTRO · 7" accent={BEL_RED} start={55.5} end={61.1} />
-      <PlayerShowcase clipId="be-lukaku" name="ROMELU LUKAKU" role="THE FINISHER · 9" accent={BEL_YELLOW} start={61.1} end={65.7} />
-      <PlayerShowcase clipId="be-doku" name="JÉRÉMY DOKU" role="THE ELECTRIC · 11" accent={BEL_RED} start={65.7} end={68.0} />
-      <PlayerShowcase clipId="be-tielemans" name="YOURI TIELEMANS" role="THE METRONOME · 8" accent={BEL_YELLOW} start={68.0} end={71.8} />
-      <PlayerShowcase clipId="be-onana" name="AMADOU ONANA" role="THE ENGINE · 4" accent={BEL_RED} start={71.8} end={79.5} />
+      <PlayerShowcase clipId="be-debruyne" name="KEVIN DE BRUYNE" role="CAPTAIN · THE MAESTRO · 7" accent={BEL_RED} start={55.5} end={61.5} />
+      <PlayerShowcase clipId="be-lukaku" name="ROMELU LUKAKU" role="THE FINISHER · 9" accent={BEL_YELLOW} start={61.5} end={65.46} />
+      <PlayerShowcase clipId="be-doku" name="JÉRÉMY DOKU" role="THE ELECTRIC · 11" accent={BEL_RED} start={65.46} end={68.0} />
+      <PlayerShowcase clipId="be-tielemans" name="YOURI TIELEMANS" role="THE METRONOME · 8" accent={BEL_YELLOW} start={68.0} end={71.07} />
+      <PlayerShowcase clipId="be-onana" name="AMADOU ONANA" role="THE ENGINE · 4" accent={BEL_RED} start={71.07} end={79.5} />
     </div>
   );
 }
@@ -209,11 +209,11 @@ function SceneSenegal() {
       <NightField o={0.5} />
       <Sprite start={79.5} end={84.5}><div style={{ position: 'absolute', inset: 0 }}><FS id="sn-crowd" /><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(2,3,8,0.30) 0%, transparent 40%, rgba(2,3,8,0.55) 100%)' }} /><TeamBanner flag={<FlagSN w={64} />} label="LIONS OF TERANGA · SENEGAL" accent={SEN_GREEN} /></div></Sprite>
       <Sprite start={84.5} end={90.6}><div style={{ position: 'absolute', inset: 0 }}><FS id="sn-attack" /><div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,8,0.32)' }} /></div></Sprite>
-      <PlayerShowcase clipId="sn-mane" name="SADIO MANÉ" role="CAPTAIN · THE KING · 10" accent={SEN_GREEN} start={90.6} end={93.6} />
-      <PlayerShowcase clipId="sn-jackson" name="NICOLAS JACKSON" role="THE MENACE · 9" accent={SEN_RED} start={93.6} end={96.6} />
-      <PlayerShowcase clipId="sn-koulibaly" name="KALIDOU KOULIBALY" role="THE ROCK · 3" accent={SEN_GREEN} start={96.6} end={103.0} />
-      <PlayerShowcase clipId="sn-papesarr" name="PAPE MATAR SARR" role="THE ENGINE · 17" accent={SEN_YELLOW} start={103.0} end={106.6} />
-      <PlayerShowcase clipId="sn-ismailasarr" name="ISMAÏLA SARR" role="THE FLYER · 18" accent={SEN_GREEN} start={106.6} end={113.0} />
+      <PlayerShowcase clipId="sn-mane" name="SADIO MANÉ" role="CAPTAIN · THE KING · 10" accent={SEN_GREEN} start={90.6} end={95.31} />
+      <PlayerShowcase clipId="sn-jackson" name="NICOLAS JACKSON" role="THE MENACE · 9" accent={SEN_RED} start={95.31} end={98.56} />
+      <PlayerShowcase clipId="sn-koulibaly" name="KALIDOU KOULIBALY" role="THE ROCK · 3" accent={SEN_GREEN} start={98.56} end={103.0} />
+      <PlayerShowcase clipId="sn-papesarr" name="PAPE MATAR SARR" role="THE ENGINE · 17" accent={SEN_YELLOW} start={103.0} end={106.51} />
+      <PlayerShowcase clipId="sn-ismailasarr" name="ISMAÏLA SARR" role="THE FLYER · 18" accent={SEN_GREEN} start={106.51} end={113.0} />
     </div>
   );
 }
