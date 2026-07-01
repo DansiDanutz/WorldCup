@@ -27,3 +27,12 @@ us-goal-2 https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/
 vd-handshake https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260630_005327_ec8ce6c0-5ac5-4ede-a337-179968ff86dc.mp4
 crowd-tense https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260630_005317_b6ef30f9-4df2-48f2-b1ed-992258fad54a.mp4
 cta-celebrate https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260630_005336_327f86b2-ddf9-482e-b0ea-2b4564bbf677.mp4
+bg-riddle https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260629_000213_3615ead9-7095-477e-8018-8ed63665f4f4.mp4
+bg-firing https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_124024_94578c97-3843-4d95-8f11-ed814620ebef.mp4
+bg-shaken https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260629_000117_3c0755e8-03eb-47fd-9cbe-ca4d72300a17.mp4
+bg-rise https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_123930_ad4fc3ac-9537-4fe2-80cb-2e07c80c6c88.mp4
+bg-believe https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260629_000131_8916ed0e-aaf0-4de0-96f5-aab67d73ac8e.mp4
+bg-roar https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260629_000045_4b81149d-d29a-4fdf-9406-529a2cf28442.mp4
+bg-verdict https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_123919_e91b8768-9bbb-4d6b-b981-361c5c0ff076.mp4
+bg-winner https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260629_000000_ed35f83e-a49e-45d5-9377-56017f0b46b4.mp4
+bg-stats https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260629_000140_d79aba57-70fb-491e-a291-0137584c9cc6.mp4

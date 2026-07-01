@@ -404,6 +404,28 @@ Non-negotiables distilled from channel data (details in the playbook):
       black, add a dimmed clip behind it or richer full-frame motion graphics before the
       full render. (Builds on the Ep37 "never dead air — always a clip behind" principle.)
 
+27. **PROFESSIONAL BEAT CARDS — no bare text on a dark gradient; keep text time short
+    (owner-mandated, from Ep87 on, HARD RULE — supersedes the old `SunBeat`/`NightField`-only
+    text beats):** the owner flagged the drama "beat" cards (e.g. "AND THEN — THE ROAR",
+    "THE TIDE TURNS") rendered as gold text floating on a near-black `SunBeat` gradient —
+    "too dark, looks unprofessional, we lose too much time with only text." This is BANNED.
+    - **Every narrative beat/caption sits OVER real football footage**, broadcast-style — a
+      dimmed (`brightness ~0.5`), lightly graded reused clip (crowd / attack / duel / surge /
+      stadium / goal-reaction) with a top+bottom gradient scrim and a thin accent rule, then
+      the text as a lower-third-style caption. NEVER `SunBeat`/`NightField` + text alone.
+      Use the shared **`BeatCard({ clipId, start, end, text, sub, accent })`** component (see
+      `match86-usa-vs-bosnia/match-scenes.jsx`) for ALL drama/verdict beats — do not hand-roll
+      dark-gradient text panels.
+    - **Cut the text-only time.** Prefer overlaying the caption ON the action/goal clip and
+      letting the footage play, rather than cutting to a separate card. Keep each beat's text
+      to ≤2 short lines and give the picture the screen. Fewer, footage-backed beats > many
+      text cards.
+    - **Reuse, don't generate, the beat backdrops.** Per Rule #26, pull extra dimmed
+      atmosphere/crowd/stadium clips from the library (0 credits) so every beat has live
+      pictures behind it while respecting NO-REPEAT/NO-LOOP.
+    - QA gate: scan every beat/interstitial frame before the full render — if any beat shows
+      text on a mostly-dark gradient (no footage behind it), it FAILS; fix before rendering.
+
 ## Video production pipeline
 
 Each episode is a self-contained project under `marketing/match-videos/<epNN-...>/`

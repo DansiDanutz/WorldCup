@@ -97,6 +97,27 @@ function ChanceTag({ start, end, text, sub, accent }) {
   );
 }
 
+// BeatCard (#27): a narrative beat/caption over DIMMED real footage (never bare text on dark).
+// Broadcast lower-third feel — dimmed graded clip + top+bottom scrim + accent rule + centered text.
+function BeatCard({ clipId, start, end, text, sub, accent = ACC, big = 62 }) {
+  const t = useTime(); if (t < start || t > end) return null;
+  const inP = Easing.easeOutCubic(clamp((t - start) / 0.5, 0, 1));
+  const fade = t > end - 0.4 ? clamp((end - t) / 0.4, 0, 1) : 1;
+  return (
+    <div style={{ position: 'absolute', inset: 0, opacity: fade }}>
+      <ClipSprite id={clipId} fit="cover" style={{ filter: 'saturate(1.02) contrast(1.03) brightness(0.46)' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(2,3,8,0.60) 0%, rgba(2,3,8,0.28) 42%, rgba(2,3,8,0.78) 100%)' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, top: 0, height: 6, background: `linear-gradient(90deg, transparent, ${accent}, transparent)`, opacity: 0.7 }} />
+      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', transform: `translateY(${(1 - inP) * 22}px)`, opacity: inP }}>
+        <div style={{ textAlign: 'center', padding: '0 8%' }}>
+          <div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: big, lineHeight: 1.04, color: '#fff', textShadow: '0 4px 30px rgba(0,0,0,0.95)' }}>{text}</div>
+          {sub && <div style={{ marginTop: 16, fontFamily: '"Inter",sans-serif', fontWeight: 800, fontSize: 28, letterSpacing: '0.16em', color: accent, textShadow: '0 2px 20px rgba(0,0,0,0.9)' }}>{sub}</div>}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function PlayerShowcase({ clipId, name, role, accent, start, end }) {
   const t = useTime(); if (t < start || t > end) return null;
   const inP = Easing.easeOutCubic(clamp((t - start) / 0.4, 0, 1));
@@ -237,7 +258,7 @@ function SceneRiddle() {
       <NightField o={0.5} />
       <Sprite start={113} end={118}><div style={{ position: 'absolute', inset: 0 }}><FS id="duel-mid" /><div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.24)' }} /><div style={{ position: 'absolute', left: 0, right: 0, bottom: 70, textAlign: 'center', fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#fff', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>THE EAGLE vs THE DRAGON</div></div></Sprite>
       <Sprite start={118} end={123}><div style={{ position: 'absolute', inset: 0 }}><FS id="stadium-aerial" /><div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 50%, transparent 35%, rgba(2,3,8,0.6) 100%)' }} /></div></Sprite>
-      <Sprite start={123} end={132}><div style={{ position: 'absolute', inset: 0 }}><SunBeat start={123} dur={9} count={24} /><div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 56, color: ACC, letterSpacing: '0.06em', textAlign: 'center', textShadow: '0 4px 26px rgba(0,0,0,0.9)' }}>DOES THE EAGLE SOAR,<br />OR THE DRAGON BREATHE FIRE?</div></div></div></Sprite>
+      <Sprite start={123} end={132}><BeatCard clipId="bg-riddle" start={123} end={132} text={<>DOES THE EAGLE SOAR,<br />OR THE DRAGON BREATHE FIRE?</>} accent={ACC} big={56} /></Sprite>
     </div>
   );
 }
@@ -292,15 +313,14 @@ function SceneDrama() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <Backdrop />
-      <Sprite start={132} end={137}><div style={{ position: 'absolute', inset: 0 }}><SunBeat start={132} dur={5} count={20} /><div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 62, color: '#7fb0ff', textAlign: 'center', textShadow: '0 4px 30px rgba(0,0,0,0.9)' }}>BOSNIA COME<br />OUT FEARLESS</div></div></div></Sprite>
+      <Sprite start={132} end={137}><BeatCard clipId="bg-firing" start={132} end={137} text={<>BOSNIA COME<br />OUT FIRING</>} accent="#7fb0ff" big={62} /></Sprite>
       <Sprite start={137} end={142}><div style={{ position: 'absolute', inset: 0 }}><FS id="keeper-save" /><ChanceTag start={137.5} end={142} text="USA RATTLED EARLY" sub="THE DRAGON CIRCLES" accent={BA_BLUE} /></div></Sprite>
-      <Sprite start={142} end={152.21}><div style={{ position: 'absolute', inset: 0 }}><SunBeat start={142} dur={10.21} count={22} /><div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 70, color: '#fff', textAlign: 'center', textShadow: '0 4px 30px rgba(0,0,0,0.9)' }}>THE HOSTS<br />ARE SHAKEN</div></div></div></Sprite>
+      <Sprite start={142} end={152.21}><BeatCard clipId="bg-shaken" start={142} end={152.21} text={<>THE HOSTS<br />ARE SHAKEN</>} accent="#fff" big={68} /></Sprite>
       <Sprite start={152.21} end={159}><div style={{ position: 'absolute', inset: 0 }}><FS id="bos-goal" /><GoalFlash at={153.6} /><ChanceTag start={154} end={159} text="DŽEKO — BOSNIA LEAD!" sub="THE DRAGON DRAWS BLOOD" accent={BA_BLUE} /></div></Sprite>
-      <Sprite start={159} end={164.37}><div style={{ position: 'absolute', inset: 0 }}><SunBeat start={159} dur={5.4} count={20} /><div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 58, color: '#fff', textAlign: 'center', textShadow: '0 4px 30px rgba(0,0,0,0.9)' }}>BUT THIS EAGLE<br />DOES NOT FALL</div></div></div></Sprite>
-      <Sprite start={164.37} end={172}><div style={{ position: 'absolute', inset: 0 }}><SunBeat start={164.37} dur={7.63} count={22} /><div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 64, color: ACC, textAlign: 'center', textShadow: '0 4px 30px rgba(0,0,0,0.9)' }}>THE USA STEADY<div style={{ fontSize: 28, fontWeight: 800, color: '#fff', letterSpacing: '0.16em', marginTop: 14 }}>THE NOISE RISES</div></div></div></div></Sprite>
-      <Sprite start={172} end={178.46}><div style={{ position: 'absolute', inset: 0 }}><SunBeat start={172} dur={6.46} count={22} /><div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 70, color: '#fff', textAlign: 'center', textShadow: '0 4px 30px rgba(0,0,0,0.9)' }}>THE HOSTS<br />BELIEVE</div></div></div></Sprite>
+      <Sprite start={159} end={172}><BeatCard clipId="bg-rise" start={159} end={172} text={<>BUT THIS EAGLE RISES</>} sub="THE USA STEADY · THE NOISE SWELLS" accent={ACC} big={60} /></Sprite>
+      <Sprite start={172} end={178.46}><BeatCard clipId="bg-believe" start={172} end={178.46} text={<>THE HOSTS<br />BELIEVE</>} accent="#fff" big={68} /></Sprite>
       <Sprite start={178.46} end={185}><div style={{ position: 'absolute', inset: 0 }}><FS id="us-goal-1" /><GoalFlash at={179.9} /><ChanceTag start={180.3} end={185} text="PULISIC — ONE-ONE!" sub="THE EAGLE IS CLIMBING" accent={US_NAVY} /></div></Sprite>
-      <Sprite start={185} end={189.58}><div style={{ position: 'absolute', inset: 0 }}><SunBeat start={185} dur={4.58} count={18} /><div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 70, color: ACC, textAlign: 'center', textShadow: '0 4px 30px rgba(0,0,0,0.9)' }}>AND THEN —<br />THE ROAR</div></div></div></Sprite>
+      <Sprite start={185} end={189.58}><BeatCard clipId="bg-roar" start={185} end={189.58} text={<>AND THEN —<br />THE ROAR</>} accent={ACC} big={70} /></Sprite>
       <Sprite start={189.58} end={203.32}><div style={{ position: 'absolute', inset: 0 }}><FS id="us-goal-2" /><GoalFlash at={191.0} /><ChanceTag start={191.4} end={196} text="BALOGUN — 2-1 USA!" sub="THE EAGLE TAKES THE LEAD" accent={ACC} /><ScoreBug start={196.3} us={2} ba={1} note="BALOGUN 88'" badge="OUR PREDICTION" /><PredictionCard start={196.9} /></div></Sprite>
       <Vignette strength={0.32} />
     </div>
@@ -313,11 +333,12 @@ function SceneVerdict() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <Sprite start={203.32} end={208.32}><div style={{ position: 'absolute', inset: 0 }}><FS id="vd-handshake" /><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(2,3,8,0.25) 0%, transparent 45%, rgba(2,3,8,0.55) 100%)' }} /><div style={{ position: 'absolute', left: 0, right: 0, top: 120, textAlign: 'center', zIndex: 24 }}><Kicker size={28} color={ACC}>The Eagle Soars Again</Kicker></div></div></Sprite>
-      <Sprite start={208.32} end={213.32}><div style={{ position: 'absolute', inset: 0 }}><SunBeat start={208.32} dur={5} count={20} /><div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 54, color: '#fff', textAlign: 'center', textShadow: '0 4px 30px rgba(0,0,0,0.9)' }}>BOSNIA TERRIFIED THE HOSTS —<br />THE EAGLE FOUND A WAY</div></div></div></Sprite>
-      <Sprite start={213.32} end={218.32}><div style={{ position: 'absolute', inset: 0 }}><NightField o={0.8} /><AmbientParticles start={213.32} dur={5} count={20} color="240,200,140" /><div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div style={{ fontFamily: '"Inter",sans-serif', fontWeight: 900, fontSize: 64, color: ACC, textAlign: 'center', textShadow: '0 4px 30px rgba(0,0,0,0.9)' }}>BALOGUN<div style={{ fontSize: 28, fontWeight: 800, color: '#fff', letterSpacing: '0.18em', marginTop: 12 }}>THE WINNER · LATE</div></div></div></div></Sprite>
+      <Sprite start={208.32} end={213.32}><BeatCard clipId="bg-verdict" start={208.32} end={213.32} text={<>BOSNIA TERRIFIED THE HOSTS —<br />THE EAGLE FOUND A WAY</>} accent="#fff" big={54} /></Sprite>
+      <Sprite start={213.32} end={218.32}><BeatCard clipId="bg-winner" start={213.32} end={218.32} text={<>BALOGUN</>} sub="THE WINNER · LATE" accent={ACC} big={64} /></Sprite>
       <Sprite start={218.32} end={244}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <NightField o={0.7} />
+          <ClipSprite id="bg-stats" fit="cover" style={{ filter: 'saturate(1.0) contrast(1.02) brightness(0.4)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(2,3,8,0.66) 0%, rgba(2,3,8,0.52) 50%, rgba(2,3,8,0.78) 100%)' }} />
           <AmbientParticles start={218.32} dur={25.7} count={26} color="240,200,140" />
           <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 25 }}>
             <div style={{ background: MV.panel, border: `1px solid ${MV.line}`, borderRadius: 24, padding: '48px 80px', minWidth: 900, backdropFilter: 'blur(6px)', opacity: panelP, transform: `translateY(${(1 - panelP) * 24}px)` }}>

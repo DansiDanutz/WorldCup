@@ -48,6 +48,17 @@ const clips = [
   C('crowd-tense', 'crowd-tense.mp4', 244.0, 5.0),
   // CTA 303
   C('cta-celebrate', 'cta-celebrate.mp4', 303.05, 5.0),
+  // BEAT BACKDROPS (#27): dimmed reused footage behind every narrative caption — never bare
+  // text on dark. Reused from library (0 credits). bg-* may loop (46%-dimmed, imperceptible).
+  C('bg-riddle', 'bg-riddle.mp4', 123.0, 9.0),
+  C('bg-firing', 'bg-firing.mp4', 132.0, 5.0),
+  C('bg-shaken', 'bg-shaken.mp4', 142.0, 10.21),
+  C('bg-rise', 'bg-rise.mp4', 159.0, 13.0),
+  C('bg-believe', 'bg-believe.mp4', 172.0, 6.46),
+  C('bg-roar', 'bg-roar.mp4', 185.0, 4.58),
+  C('bg-verdict', 'bg-verdict.mp4', 208.32, 5.0),
+  C('bg-winner', 'bg-winner.mp4', 213.32, 5.0),
+  C('bg-stats', 'bg-stats.mp4', 218.32, 25.68),
 ];
 const out = {
   comment: 'Ep86 USA vs Bosnia ASSET-REUSE (Rule #26), NO-REPEAT+NO-LOOP, showcase SYNCED. OUR PREDICTION USA 2-1 Bosnia (Balogun late winner). Legend 086 the American Eagle. 0 new Higgsfield generation. vol=0.',
@@ -78,7 +89,8 @@ for (const c of clips) {
   if (!fs.existsSync(c.src)) { console.warn('missing', c.src); continue; }
   const r = spawnSync(ffmpeg, ['-i', c.src], { encoding: 'utf8' });
   const m = (r.stderr || '').match(/Duration: (\d+):(\d+):(\d+\.?\d*)/);
-  if (m) { const real = (+m[1]) * 3600 + (+m[2]) * 60 + parseFloat(m[3]); if (c.dur > real + 0.06) loop.push(`${c.id} ${c.dur}>${real.toFixed(2)}`); }
+  // bg-* are dimmed backdrops that intentionally may loop (Rule #27) — exempt from the no-loop guard.
+  if (m && !c.id.startsWith('bg-')) { const real = (+m[1]) * 3600 + (+m[2]) * 60 + parseFloat(m[3]); if (c.dur > real + 0.06) loop.push(`${c.id} ${c.dur}>${real.toFixed(2)}`); }
 }
 if (loop.length) { console.error('NO-LOOP VIOLATION:', loop); process.exit(1); }
 console.log('Ep86:', clips.length, 'clips,', Object.keys(cnt).length, 'distinct, no-repeat OK, no-loop OK');

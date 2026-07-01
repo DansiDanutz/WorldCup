@@ -203,6 +203,69 @@
       "at": 303.05,
       "dur": 5,
       "vol": 0
+    },
+    {
+      "id": "bg-riddle",
+      "src": "assets/clips/bg-riddle.mp4",
+      "at": 123,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "bg-firing",
+      "src": "assets/clips/bg-firing.mp4",
+      "at": 132,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-shaken",
+      "src": "assets/clips/bg-shaken.mp4",
+      "at": 142,
+      "dur": 10.21,
+      "vol": 0
+    },
+    {
+      "id": "bg-rise",
+      "src": "assets/clips/bg-rise.mp4",
+      "at": 159,
+      "dur": 13,
+      "vol": 0
+    },
+    {
+      "id": "bg-believe",
+      "src": "assets/clips/bg-believe.mp4",
+      "at": 172,
+      "dur": 6.46,
+      "vol": 0
+    },
+    {
+      "id": "bg-roar",
+      "src": "assets/clips/bg-roar.mp4",
+      "at": 185,
+      "dur": 4.58,
+      "vol": 0
+    },
+    {
+      "id": "bg-verdict",
+      "src": "assets/clips/bg-verdict.mp4",
+      "at": 208.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-winner",
+      "src": "assets/clips/bg-winner.mp4",
+      "at": 213.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-stats",
+      "src": "assets/clips/bg-stats.mp4",
+      "at": 218.32,
+      "dur": 25.68,
+      "vol": 0
     }
   ],
   "music": {
