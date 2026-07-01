@@ -1,0 +1,396 @@
+{
+  "comment": "Ep88 Portugal vs Croatia PHOTOREAL, nation-correct (#28), NO-REPEAT+NO-LOOP, showcase SYNCED. OUR PREDICTION Portugal 2-1 Croatia (Bruno late winner). Legend 088 the Navigator. Portugal reused Ep71; Croatia fresh; atmo backdrops reused Ep86. vol=0.",
+  "clips": [
+    {
+      "id": "portugal-fog",
+      "src": "assets/clips/portugal-fog.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cro-fire",
+      "src": "assets/clips/cro-fire.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-croatia",
+      "src": "assets/clips/texture-croatia.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-crowd",
+      "src": "assets/clips/por-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-attack",
+      "src": "assets/clips/por-attack.mp4",
+      "at": 49,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-surge",
+      "src": "assets/clips/por-surge.mp4",
+      "at": 54,
+      "dur": 1.5,
+      "vol": 0
+    },
+    {
+      "id": "por-ronaldo",
+      "src": "assets/clips/por-ronaldo.mp4",
+      "at": 55.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-bruno",
+      "src": "assets/clips/por-bruno.mp4",
+      "at": 60.84,
+      "dur": 3.91,
+      "vol": 0
+    },
+    {
+      "id": "por-leao",
+      "src": "assets/clips/por-leao.mp4",
+      "at": 64.75,
+      "dur": 3.25,
+      "vol": 0
+    },
+    {
+      "id": "por-dias",
+      "src": "assets/clips/por-dias.mp4",
+      "at": 68,
+      "dur": 2.82,
+      "vol": 0
+    },
+    {
+      "id": "por-bernardo",
+      "src": "assets/clips/por-bernardo.mp4",
+      "at": 70.82,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cro-crowd",
+      "src": "assets/clips/cro-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cro-attack",
+      "src": "assets/clips/cro-attack.mp4",
+      "at": 84.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cro-modric",
+      "src": "assets/clips/cro-modric.mp4",
+      "at": 90.6,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "cro-gvardiol",
+      "src": "assets/clips/cro-gvardiol.mp4",
+      "at": 95.1,
+      "dur": 3.06,
+      "vol": 0
+    },
+    {
+      "id": "cro-kramaric",
+      "src": "assets/clips/cro-kramaric.mp4",
+      "at": 98.16,
+      "dur": 4.84,
+      "vol": 0
+    },
+    {
+      "id": "cro-kovacic",
+      "src": "assets/clips/cro-kovacic.mp4",
+      "at": 103,
+      "dur": 3.2,
+      "vol": 0
+    },
+    {
+      "id": "cro-perisic",
+      "src": "assets/clips/cro-perisic.mp4",
+      "at": 106.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/clips/duel-mid.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "keeper-save",
+      "src": "assets/clips/keeper-save.mp4",
+      "at": 137,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cro-goal",
+      "src": "assets/clips/cro-goal.mp4",
+      "at": 152.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-goal-1",
+      "src": "assets/clips/por-goal-1.mp4",
+      "at": 178.46,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-goal-2",
+      "src": "assets/clips/por-goal-2.mp4",
+      "at": 189.58,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 244,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cta-celebrate",
+      "src": "assets/clips/cta-celebrate.mp4",
+      "at": 303.05,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-riddle",
+      "src": "assets/clips/bg-riddle.mp4",
+      "at": 123,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "bg-firing",
+      "src": "assets/clips/bg-firing.mp4",
+      "at": 132,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-shaken",
+      "src": "assets/clips/bg-shaken.mp4",
+      "at": 142,
+      "dur": 10.21,
+      "vol": 0
+    },
+    {
+      "id": "bg-rise",
+      "src": "assets/clips/bg-rise.mp4",
+      "at": 159,
+      "dur": 13,
+      "vol": 0
+    },
+    {
+      "id": "bg-believe",
+      "src": "assets/clips/bg-believe.mp4",
+      "at": 172,
+      "dur": 6.46,
+      "vol": 0
+    },
+    {
+      "id": "bg-roar",
+      "src": "assets/clips/bg-roar.mp4",
+      "at": 185,
+      "dur": 4.58,
+      "vol": 0
+    },
+    {
+      "id": "bg-verdict",
+      "src": "assets/clips/bg-verdict.mp4",
+      "at": 208.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-winner",
+      "src": "assets/clips/bg-winner.mp4",
+      "at": 213.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-stats",
+      "src": "assets/clips/bg-stats.mp4",
+      "at": 218.32,
+      "dur": 25.68,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 153.6,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 164.37,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 179.9,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 191,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}

@@ -786,6 +786,15 @@
       "landscape": "/special-cards/legend-087-landscape.png"
     },
     {
+      "number": "088",
+      "name": "The Navigator, Master of the Unknown",
+      "nation": "Portugal",
+      "episode": 88,
+      "match": "Portugal vs Croatia (R32)",
+      "portrait": "/special-cards/legend-088-portrait.png",
+      "landscape": "/special-cards/legend-088-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
