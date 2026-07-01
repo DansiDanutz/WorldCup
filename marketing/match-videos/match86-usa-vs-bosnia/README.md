@@ -9,16 +9,20 @@ and Folarin Balogun strikes the late winner. The Eagle soars.
 - **BOSNIA & HERZEGOVINA** — the **Dragons** (*Zmajevi*), the national-team nickname after the
   "Dragon of Bosnia" Husein Gradaščević; the golden lily heritage.
 
-## Asset-reuse build (Rule #26 — user directive: reuse, do not generate)
-**0 new Higgsfield generation** for the video. Neither USA nor Bosnia had photoreal assets, so the
-episode is built entirely from the existing library, colour-matched:
-- **USA (white kit)** ← England white-kit clips from Ep84 (crowd, attack, surge, 5 player showcases,
-  2 goals, celebrate).
-- **Bosnia (blue kit)** ← France blue-kit clips from Ep82 (crowd, attack, 5 player showcases, early goal).
-- **Dragon motif** ← Sweden "lindworm" clip (Ep82); **Eagle motif** ← the Legend 086 card art (cropped
-  to remove an AI-added gridiron goalpost — SOCCER-ONLY rule #6).
-- **Neutral b-roll** ← keeper-save, duel-mid, vd-handshake, crowd-tense, establishing (shared library).
-Only the **Legend 086 rare card** (portrait + landscape) was generated with Higgsfield.
+## Photoreal build — REAL USA + Bosnia assets (Rule #28 nation-identity integrity)
+An earlier version wrongly reused England/France clips under USA/Bosnia captions — that was scrapped.
+This build generates **real, nation-correct** assets (Higgsfield nano_banana_2 → kling3_0_turbo i2v):
+- **USA (white, US Soccer crest):** 5 player showcases (Pulisic captain, Weah, Balogun, McKennie,
+  Adams), US crowd (stars-and-stripes), attack, surge, 2 goals, team celebration, US-flag texture.
+- **Bosnia (royal blue/yellow, Bosnian crest):** 5 player showcases (Džeko captain, Pjanić, Demirović,
+  Tabaković, Kolašinac), Bosnia crowd (blue/yellow), attack, early goal, Bosnia-flag texture, a
+  blue DRAGON motif (Zmajevi).
+- **Match generics (correct kits):** USA-vs-Bosnia duel, keeper save, captains' handshake, tense fans.
+- **Beat backdrops (#27):** 9 ANONYMOUS atmosphere clips (mist, floodlights, embers, silhouetted
+  crowd, empty pitch, tunnel light, night sky, goal net, aerial) — no national identity, reusable.
+- **Eagle motif:** the Legend 086 card art (cropped to remove an AI-added gridiron goalpost, rule #6).
+Every clip was QA'd against its captioned nation before render (Rule #28). ~35 fresh clips + 3
+anonymous establishing.
 
 ## Real statable facts (the 2026 result is PREDICTION only)
 USA = co-hosts of WC2026, a young hungry side. Bosnia = the Dragons, dangerous and proud, led by the

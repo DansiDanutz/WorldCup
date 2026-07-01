@@ -5,11 +5,11 @@
 crowd roars, **Christian Pulisic** levels it, and late, **Folarin Balogun** strikes the winner.
 **Theme:** THE EAGLE AND THE DRAGON — the USA's Bald Eagle vs Bosnia's Dragons (Zmajevi).
 **Legend 086:** the American Eagle, Spirit of the Free.
-**Engine:** ASSET-REUSE build (Rule #26) — 0 new Higgsfield generation. USA half reuses England
-white-kit clips, Bosnia half reuses France blue-kit clips, the dragon motif is the Sweden lindworm,
-neutral b-roll reused; only the Legend 086 card was generated. 29 distinct reused clips, NO-REPEAT +
-NO-LOOP. **#23 names synced.** Footer real mini-cards 081–085 + phone collect. 15s mystic intro → ~333s.
-Brian VO.
+**Engine:** PHOTOREAL — REAL, nation-correct assets (Rule #28). USA in white with the US Soccer crest;
+Bosnia in royal blue/yellow with the Bosnian crest; correct crowds/flags; a blue dragon motif for the
+Zmajevi; 9 ANONYMOUS atmosphere backdrops behind the beat captions (#27). Every clip QA'd against its
+nation before render. ~35 fresh Higgsfield clips + 3 anonymous establishing, NO-REPEAT + NO-LOOP.
+**#23 names synced.** Footer real mini-cards 081–085 + phone collect. 15s mystic intro → ~333s. Brian VO.
 
 ## TITLE
 USA vs Bosnia: The Eagle and the Dragon — WorldCup26 Legends Ep.86
