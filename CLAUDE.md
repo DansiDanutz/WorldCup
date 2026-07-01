@@ -426,6 +426,30 @@ Non-negotiables distilled from channel data (details in the playbook):
     - QA gate: scan every beat/interstitial frame before the full render — if any beat shows
       text on a mostly-dark gradient (no footage behind it), it FAILS; fix before rendering.
 
+28. **NATION-IDENTITY INTEGRITY — never represent a nation with another nation's identity
+    (owner-mandated, from Ep87 on, HARD RULE #0-LEVEL — a video that violates this is a
+    mistake, not an episode; NEVER ship it):** the owner flagged Ep86 for showing England
+    players (Foden, Kane) and England / DR Congo / Sweden crowds and flags captioned as
+    "USA" and "Bosnia". This is BANNED, absolutely.
+    - **Every on-screen player, face, kit, crest, flag, and identifiable crowd MUST belong to
+      the nation it represents.** A player showcase captioned "CHRISTIAN PULISIC" must show a
+      USA player in a USA kit — never an England player in an England shirt. A "USA crowd"
+      must not wave St George or DR Congo flags. The prediction card / intro / banners already
+      use correct CSS flags — the CLIPS must match them too.
+    - **Reuse is allowed ONLY for:** (a) the **SAME nation's own** assets from a prior episode
+      (e.g. DR Congo Ep72 → DR Congo Ep84 — correct), or (b) **truly ANONYMOUS footage with no
+      visible national identity** — empty/wide stadium, generic pitch/goal-net, night sky,
+      abstract textures, gold dust, particles. A crowd/kit/crest/flag of ANOTHER nation is
+      NEVER anonymous — it is that nation's identity and must not stand in.
+    - **If a nation has no matching assets, you MUST generate its real players / crowd / motifs.**
+      If that isn't possible (no credits, etc.), **do NOT fake it with another nation** — STOP,
+      say so, and get a decision. "Use the assets we have" means the assets that ACTUALLY MATCH
+      the team, used accordingly — never grab another nation's assets randomly.
+    - QA gate (mandatory, before render AND on the finished video): check EVERY clip against the
+      captioned nation — squad showcases, crowds, goal/attack/celebration, beat backdrops, cold-
+      open motifs. If any flag / crest / kit / face / fan does not match the nation it is labelled
+      as, it FAILS. Do not render, do not mux, do not ship. This overrides speed and credit-saving.
+
 ## Video production pipeline
 
 Each episode is a self-contained project under `marketing/match-videos/<epNN-...>/`
