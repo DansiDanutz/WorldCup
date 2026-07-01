@@ -10,8 +10,14 @@ game: Mbappé scores, and Dembélé answers with a **hat-trick** — two Frenchm
 law is *one nation, one seat*, so the witches settle it with a **coin flip** → **Mbappé wins,
 Dembélé is erased from the board**. Twist: was it fate, or did the witches weight the coin?
 Conclusion: **no legend is truly out** — every team qualified, so the real World Cup carries
-them all forward. Leaderboard (Golden Boot): **Messi 6, Mbappé 5, Haaland 5, Ronaldo 4**,
-Dembélé 3 (off the board), Kane jailed. Rivals hunt first place. Cliffhanger → the knockouts.
+them all forward. Golden Boot leaderboard (GROUP STAGE ONLY — Round of 32 NOT counted):
+**Messi 6; Mbappé 4, Dembélé 4, Vinícius 4, Haaland 4 (four-way tie for 2nd); Kane 3**
+(Ronaldo 2, off the leaderboard). Rivals hunt first place. Cliffhanger → the knockouts.
+
+Data verified against real WC2026 group-stage Golden Boot tables (R32 excluded):
+World Soccer Talk & Goal.com. If R32 counted, Mbappé=6 and Haaland=5 — so 4/4 confirms
+group-stage-only. Dembélé stays at 4 on the REAL race even though the board's coin flip
+erased him (the board is a mirror, not the truth).
 
 ## ✅ Done (committed / on disk)
 - `narration_p3.json` — 56 lines (3 silent card markers). Line 1 already voiced (`audio_p3/line_01.mp3`).

@@ -3,7 +3,7 @@
 ## Title (pick one)
 - **The Coin of Fate ⚽ Legends' Monopoly — Round 3 | WorldCup26 Bonus**
 - A Hat-Trick Hero ERASED by a Coin Flip 😱 | Legends' Monopoly Round 3
-- Messi 6, Mbappé 5, Haaland 5 — The Golden Boot War Begins | Round 3
+- Messi 6, Four Level on 4 — The Golden Boot War Begins | Round 3
 
 ## Description
 The group stage reaches its final round — and the board breaks its own rule.
@@ -14,8 +14,8 @@ one seat. The witches settle it with a single coin flip — and a hat-trick hero
 the board. Was it fate… or was the coin rigged from the start?
 
 But here's the twist: no legend is truly out. Every team qualified, so the real World Cup
-carries them all forward. The Golden Boot war is on: Messi 6, Mbappé 5, Haaland 5, Ronaldo 4 —
-and the knockouts are next.
+carries them all forward. The group-stage Golden Boot war is on: Messi 6, then four men level
+on 4 — Mbappé, Dembélé, Vinícius and Haaland — with Kane on 3, and the knockouts next.
 
 🎮 Play free at worldcup26.world — pick your three legends, predict the Golden Boot, climb the
 leaderboard. Free to play, just for fun, no prizes.
