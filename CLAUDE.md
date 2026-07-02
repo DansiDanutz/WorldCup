@@ -450,6 +450,25 @@ Non-negotiables distilled from channel data (details in the playbook):
       open motifs. If any flag / crest / kit / face / fan does not match the nation it is labelled
       as, it FAILS. Do not render, do not mux, do not ship. This overrides speed and credit-saving.
 
+29. **PLAYER-LIKENESS INTEGRITY — when a player is presented BY NAME, the image must show THAT
+    player, not another one (owner-mandated, from Ep89 on, HARD RULE — extends #28 from nation
+    level to player level):** the owner flagged Ep88 showcases where a named caption (e.g.
+    "BRUNO FERNANDES") sat over footage of a different, generic player. BANNED.
+    - **Every named PlayerShowcase must depict that specific player's recognizable likeness** —
+      face, hair, build, age, skin tone, and their real shirt number — in their nation's kit.
+      A caption with a real player's name over a random same-kit player is misrepresentation.
+    - **When GENERATING a player still:** the prompt must describe the actual player's distinctive
+      physical features (e.g. "late 30s, slim, shoulder-length hair" for Modrić; "muscular,
+      chiselled, short dark hair" for Ronaldo) AND the correct shirt number. Never prompt a
+      generic "a midfielder" for a named showcase.
+    - **When REUSING a player clip (Rule #26):** reuse it ONLY under the SAME player's name it was
+      made for. A clip generated as a generic squad player must not be promoted to a named
+      showcase; a clip made as "Bruno Fernandes" is only ever "Bruno Fernandes".
+    - **QA gate (per showcase, before animating AND before render):** open each player still and
+      ask "would a fan of this team recognize this as the named player?" If the face/hair/build/
+      number doesn't credibly match, REGENERATE the still before spending i2v credits. Log the
+      check per player in the episode README.
+
 ## Video production pipeline
 
 Each episode is a self-contained project under `marketing/match-videos/<epNN-...>/`
