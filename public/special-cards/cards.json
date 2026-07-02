@@ -804,6 +804,15 @@
       "landscape": "/special-cards/legend-089-landscape.png"
     },
     {
+      "number": "090",
+      "name": "The Sphinx, Guardian of the Pharaohs",
+      "nation": "Egypt",
+      "episode": 90,
+      "match": "Australia vs Egypt (R32)",
+      "portrait": "/special-cards/legend-090-portrait.png",
+      "landscape": "/special-cards/legend-090-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
