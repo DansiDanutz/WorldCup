@@ -822,6 +822,15 @@
       "landscape": "/special-cards/legend-091-landscape.png"
     },
     {
+      "number": "092",
+      "name": "El Dorado, the Golden King",
+      "nation": "Colombia",
+      "episode": 92,
+      "match": "Colombia vs Ghana (R32)",
+      "portrait": "/special-cards/legend-092-portrait.png",
+      "landscape": "/special-cards/legend-092-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
