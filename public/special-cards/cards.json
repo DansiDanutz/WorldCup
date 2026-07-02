@@ -804,6 +804,15 @@
       "landscape": "/special-cards/legend-089-landscape.png"
     },
     {
+      "number": "090",
+      "name": "The Golden Canary, Spirit of the Beautiful Game",
+      "nation": "Brazil",
+      "episode": 90,
+      "match": "Brazil vs Germany (R32)",
+      "portrait": "/special-cards/legend-090-portrait.png",
+      "landscape": "/special-cards/legend-090-landscape.png"
+    },
+    {
       "number": "BONUS-1",
       "name": "The Freedom Run",
       "nation": "Colombia",
