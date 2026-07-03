@@ -7,7 +7,7 @@ Rodríguez levels it, and Luis Díaz strikes the late winner. The golden king st
 ## Bracket note
 This completes the **last** Round-of-32 tie (Colombia and Ghana had not yet played their R32 match).
 Colombia advances to the Round of 16. With Ep92 the Round of 32 is complete — next up is the Round
-of 16 (Canada vs Morocco, Ep93).
+of 16 (South Africa vs Japan, Ep93 — the winners of Ep77 and Ep78).
 
 ## Nation-myth (#21, sourced)
 - **COLOMBIA** — **Los Cafeteros**, heirs of the legend of **El Dorado**, the gilded king of the
