@@ -1,0 +1,396 @@
+{
+  "comment": "Ep93 Canada vs Morocco PHOTOREAL, nation-correct (#28) + likeness (#29), NO-REPEAT+NO-LOOP, showcase SYNCED. OUR PREDICTION Morocco 2-1 Canada (Canada score first, Morocco comeback; En-Nesyri late winner). Legend 093 Atlas Lion. Canada reused Ep77, Morocco reused Ep80 (Rule #26); Atlas Lion card + handshake fresh; atmo backdrops reused. vol=0.",
+  "clips": [
+    {
+      "id": "can-thunderbird",
+      "src": "assets/clips/can-thunderbird.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-atlaslion",
+      "src": "assets/clips/ma-atlaslion.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-atlas",
+      "src": "assets/clips/texture-atlas.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "can-crowd",
+      "src": "assets/clips/can-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "can-tifo",
+      "src": "assets/clips/can-tifo.mp4",
+      "at": 49,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "can-wave",
+      "src": "assets/clips/can-wave.mp4",
+      "at": 54,
+      "dur": 1.5,
+      "vol": 0
+    },
+    {
+      "id": "can-davies",
+      "src": "assets/clips/can-davies.mp4",
+      "at": 55.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "can-david",
+      "src": "assets/clips/can-david.mp4",
+      "at": 60.5,
+      "dur": 3.24,
+      "vol": 0
+    },
+    {
+      "id": "can-larin",
+      "src": "assets/clips/can-larin.mp4",
+      "at": 63.74,
+      "dur": 4.26,
+      "vol": 0
+    },
+    {
+      "id": "can-eustaquio",
+      "src": "assets/clips/can-eustaquio.mp4",
+      "at": 68,
+      "dur": 2.99,
+      "vol": 0
+    },
+    {
+      "id": "can-buchanan",
+      "src": "assets/clips/can-buchanan.mp4",
+      "at": 70.99,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-crowd",
+      "src": "assets/clips/ma-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-tifo",
+      "src": "assets/clips/ma-tifo.mp4",
+      "at": 84.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-hakimi",
+      "src": "assets/clips/ma-hakimi.mp4",
+      "at": 90.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-ziyech",
+      "src": "assets/clips/ma-ziyech.mp4",
+      "at": 96.8,
+      "dur": 3.15,
+      "vol": 0
+    },
+    {
+      "id": "ma-ennesyri",
+      "src": "assets/clips/ma-ennesyri.mp4",
+      "at": 99.95,
+      "dur": 3.05,
+      "vol": 0
+    },
+    {
+      "id": "ma-amrabat",
+      "src": "assets/clips/ma-amrabat.mp4",
+      "at": 103,
+      "dur": 2.71,
+      "vol": 0
+    },
+    {
+      "id": "ma-brahim",
+      "src": "assets/clips/ma-brahim.mp4",
+      "at": 105.71,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-stadium-night",
+      "src": "assets/clips/vd-stadium-night.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "can-attack",
+      "src": "assets/clips/can-attack.mp4",
+      "at": 137,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bono-save",
+      "src": "assets/clips/bono-save.mp4",
+      "at": 142,
+      "dur": 10.21,
+      "vol": 0
+    },
+    {
+      "id": "david-goal",
+      "src": "assets/clips/david-goal.mp4",
+      "at": 152.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-goal-1",
+      "src": "assets/clips/ma-goal-1.mp4",
+      "at": 178.46,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-goal-2",
+      "src": "assets/clips/ma-goal-2.mp4",
+      "at": 189.58,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 244,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cta-celebrate",
+      "src": "assets/clips/cta-celebrate.mp4",
+      "at": 303.05,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-riddle",
+      "src": "assets/clips/bg-riddle.mp4",
+      "at": 123,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "bg-firing",
+      "src": "assets/clips/bg-firing.mp4",
+      "at": 132,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-rise",
+      "src": "assets/clips/bg-rise.mp4",
+      "at": 159,
+      "dur": 13,
+      "vol": 0
+    },
+    {
+      "id": "ma-surge",
+      "src": "assets/clips/ma-surge.mp4",
+      "at": 172,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-roar",
+      "src": "assets/clips/bg-roar.mp4",
+      "at": 185,
+      "dur": 4.58,
+      "vol": 0
+    },
+    {
+      "id": "bg-verdict",
+      "src": "assets/clips/bg-verdict.mp4",
+      "at": 208.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-winner",
+      "src": "assets/clips/bg-winner.mp4",
+      "at": 213.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-stats",
+      "src": "assets/clips/bg-stats.mp4",
+      "at": 218.32,
+      "dur": 25.68,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 153.6,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 164.37,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 179.9,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 191,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}
