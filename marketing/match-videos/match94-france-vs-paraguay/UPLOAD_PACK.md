@@ -20,9 +20,9 @@ since the days of the Gauls. And deep in the moonlit forests of Paraguay a guard
 Pombéro, the night spirit of the Guaraní, protector of those the world counts out. Tonight, in the
 play-offs, the rooster meets the night.
 
-France arrive as world champions — a storm of blue talent led by Kylian Mbappé and Antoine
-Griezmann. Paraguay arrive as La Albirroja — organised, ferocious, and unafraid of anyone, led by
-Gustavo Gómez and Miguel Almirón.
+France arrive as world champions — a storm of blue talent led by Kylian Mbappé. Paraguay arrive as
+La Albirroja — organised, ferocious, and unafraid of anyone, led by Gustavo Gómez and Miguel
+Almirón.
 
 ⚽ THE RESULT: France 1–0 Paraguay. France dominate; Paraguay defend heroically; and late, Kylian
 Mbappé settles it from the penalty spot. Ice cold. The champions march on.
@@ -34,14 +34,14 @@ people who stand together, and never bow, can never truly be conquered.
 sign up. Pick three of the 48 nations; every goal they score, scores for you. Free, no prizes — only
 glory. 🔔 Subscribe for a new Legend every match. Brian narrates. Soccer only. ⚽
 
-#WorldCup26 #France #Paraguay #Mbappe #Griezmann #LesBleus #Albirroja #Vercingetorix #WorldCup #Football #Soccer
+#WorldCup26 #France #Paraguay #Mbappe #LesBleus #Albirroja #Vercingetorix #WorldCup #Football #Soccer
 
 ## TAGS
-worldcup26, world cup 2026, france, paraguay, kylian mbappe, antoine griezmann, ousmane dembele, aurelien tchouameni, william saliba, gustavo gomez, miguel almiron, julio enciso, diego gomez, antonio sanabria, les bleus, la albirroja, vercingetorix, gallic rooster, pombero, play-offs, world cup play-offs, world championship play-offs, world cup legends, france vs paraguay, worldcup26.world
+worldcup26, world cup 2026, france, paraguay, kylian mbappe, ousmane dembele, aurelien tchouameni, william saliba, gustavo gomez, miguel almiron, julio enciso, diego gomez, antonio sanabria, les bleus, la albirroja, vercingetorix, gallic rooster, pombero, play-offs, world cup play-offs, world championship play-offs, world cup legends, france vs paraguay, worldcup26.world
 
 ## SYNC ANCHORS (QA — all +15s vs body, intro pre-roll)
 - 0–15s mystic intro (The Rooster and the Night Spirit) · ~38s "FRANCE vs PARAGUAY" title
-- ~70s France squad (SYNCED: Mbappé, Griezmann, Dembélé, Tchouaméni, Saliba)
+- ~70s France squad (SYNCED: Mbappé, Dembélé, Tchouaméni, Saliba)
 - ~106s Paraguay squad (SYNCED: Gómez, Almirón, Enciso, Diego Gómez, Sanabria)
 - ~167s Gómez block / ~170s Enciso inches wide · ~194s MBAPPÉ — FROM THE SPOT! (1-0) · ~205s France hold on
 - ~212s prediction card (FRA 1-0 PAR · MBAPPÉ, THE PENALTY WINNER) · ~218s the handshake
