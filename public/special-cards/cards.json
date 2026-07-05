@@ -858,6 +858,15 @@
    "landscape": "/special-cards/legend-095-landscape.png"
   },
   {
+   "number": "096",
+   "name": "Quetzalcoatl, the Feathered Serpent",
+   "nation": "Mexico",
+   "episode": 96,
+   "match": "Mexico vs England (Play-Offs)",
+   "portrait": "/special-cards/legend-096-portrait.png",
+   "landscape": "/special-cards/legend-096-landscape.png"
+  },
+  {
    "number": "BONUS-1",
    "name": "The Freedom Run",
    "nation": "Colombia",

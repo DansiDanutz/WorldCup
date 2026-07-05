@@ -1,0 +1,305 @@
+{
+  "comment": "Ep96 Mexico vs England PHOTOREAL, nation-correct (#28), NO-REPEAT+NO-LOOP, showcase SYNCED. OUR PREDICTION England 2-1 Mexico (Bellingham late winner). Legend 096 Quetzalcoatl the Feathered Serpent. Mexico reused Ep83, England reused Ep84 (Rule #26); Giménez re-animated fresh from a corrected still, Vega regenerated a second time after this episode QA caught a #18-vs-#10 mismatch; walkout + handshake + Quetzalcoatl card fresh; Ecuador-contaminated Ep83 generic clips (duel-mid/crowd-tense/cta-celebrate) dropped, not reused. vol=0.",
+  "clips": [
+    {
+      "id": "mx-quetzal",
+      "src": "assets/clips/mx-quetzal.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "eng-lions",
+      "src": "assets/clips/eng-lions.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-mexico",
+      "src": "assets/clips/texture-mexico.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "mx-crowd",
+      "src": "assets/clips/mx-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "mx-gimenez",
+      "src": "assets/clips/mx-gimenez.mp4",
+      "at": 55.5,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "mx-lozano",
+      "src": "assets/clips/mx-lozano.mp4",
+      "at": 60.3,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "mx-alvarez",
+      "src": "assets/clips/mx-alvarez.mp4",
+      "at": 65.1,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "mx-vega",
+      "src": "assets/clips/mx-vega.mp4",
+      "at": 69.9,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "mx-montes",
+      "src": "assets/clips/mx-montes.mp4",
+      "at": 74.7,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "eng-crowd",
+      "src": "assets/clips/eng-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "eng-kane",
+      "src": "assets/clips/eng-kane.mp4",
+      "at": 90.6,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "eng-bellingham",
+      "src": "assets/clips/eng-bellingham.mp4",
+      "at": 95.08,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "eng-saka",
+      "src": "assets/clips/eng-saka.mp4",
+      "at": 99.56,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "eng-rice",
+      "src": "assets/clips/eng-rice.mp4",
+      "at": 104.04,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-england",
+      "src": "assets/clips/texture-england.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "mx-attack",
+      "src": "assets/clips/mx-attack.mp4",
+      "at": 138,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "mx-goal",
+      "src": "assets/clips/mx-goal.mp4",
+      "at": 148.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "eng-attack",
+      "src": "assets/clips/eng-attack.mp4",
+      "at": 160,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "eng-goal-1",
+      "src": "assets/clips/eng-goal-1.mp4",
+      "at": 170,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "eng-surge",
+      "src": "assets/clips/eng-surge.mp4",
+      "at": 182,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "eng-goal-2",
+      "src": "assets/clips/eng-goal-2.mp4",
+      "at": 192,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 148.7,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 160,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 170.5,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 192.4,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}
