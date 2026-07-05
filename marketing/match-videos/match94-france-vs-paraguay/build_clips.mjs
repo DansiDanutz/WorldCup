@@ -22,7 +22,7 @@ const clips = [
   C('fr-attack', 'fr-attack.mp4', 49.0, 5.0),
   C('fr-surge', 'fr-surge.mp4', 54.0, 1.5),
   C('fr-mbappe', 'fr-mbappe.mp4', 55.5, 5.0),
-  C('fr-griezmann', 'fr-griezmann.mp4', 60.5, 3.24),
+  C('fr-collective', 'fr-collective.mp4', 60.5, 3.24),
   C('fr-dembele', 'fr-dembele.mp4', 63.74, 4.26),
   C('fr-tchouameni', 'fr-tchouameni.mp4', 68.0, 2.99),
   C('fr-saliba', 'fr-saliba.mp4', 70.99, 5.0),

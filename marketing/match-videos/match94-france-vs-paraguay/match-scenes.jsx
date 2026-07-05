@@ -219,7 +219,7 @@ function SceneFrance() {
       <Sprite start={49} end={54}><div style={{ position: 'absolute', inset: 0 }}><FS id="fr-attack" /><div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,8,0.32)' }} /></div></Sprite>
       <Sprite start={54} end={55.5}><div style={{ position: 'absolute', inset: 0 }}><FS id="fr-surge" /><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(35,80,200,0.30), transparent 55%)' }} /></div></Sprite>
       <PlayerShowcase clipId="fr-mbappe" name="KYLIAN MBAPPÉ" role="CAPTAIN · THE LIGHTNING · 10" accent={FR_BLUE} start={55.5} end={60.5} />
-      <PlayerShowcase clipId="fr-griezmann" name="ANTOINE GRIEZMANN" role="THE BRAIN · 7" accent={ACC} start={60.5} end={63.74} />
+      <Sprite start={60.5} end={63.74}><div style={{ position: 'absolute', inset: 0 }}><FS id="fr-collective" /><div style={{ position: 'absolute', inset: 0, background: 'rgba(2,3,8,0.30)' }} /></div></Sprite>
       <PlayerShowcase clipId="fr-dembele" name="OUSMANE DEMBÉLÉ" role="THE TORMENTOR · 11" accent={FR_BLUE} start={63.74} end={68.0} />
       <PlayerShowcase clipId="fr-tchouameni" name="AURÉLIEN TCHOUAMÉNI" role="THE COLOSSUS · 8" accent={ACC} start={68.0} end={70.99} />
       <PlayerShowcase clipId="fr-saliba" name="WILLIAM SALIBA" role="THE ICE · 17" accent={FR_BLUE} start={70.99} end={79.5} />
