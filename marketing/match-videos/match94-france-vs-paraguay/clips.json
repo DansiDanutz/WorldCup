@@ -1,0 +1,396 @@
+{
+  "comment": "Ep94 France vs Paraguay PHOTOREAL, nation-correct (#28) + likeness (#29), NO-REPEAT+NO-LOOP, showcase SYNCED. France 1-0 Paraguay (Mbappe penalty, real result). Legend 094 Vercingetorix. France reused Ep82, Paraguay reused Ep79 (Rule #26); Vercingetorix card + handshake + siege fresh; atmo backdrops reused. vol=0.",
+  "clips": [
+    {
+      "id": "fr-rooster",
+      "src": "assets/clips/fr-rooster.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "par-pombero",
+      "src": "assets/clips/par-pombero.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-france",
+      "src": "assets/clips/texture-france.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "fr-crowd",
+      "src": "assets/clips/fr-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "fr-attack",
+      "src": "assets/clips/fr-attack.mp4",
+      "at": 49,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "fr-surge",
+      "src": "assets/clips/fr-surge.mp4",
+      "at": 54,
+      "dur": 1.5,
+      "vol": 0
+    },
+    {
+      "id": "fr-mbappe",
+      "src": "assets/clips/fr-mbappe.mp4",
+      "at": 55.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "fr-griezmann",
+      "src": "assets/clips/fr-griezmann.mp4",
+      "at": 60.5,
+      "dur": 3.24,
+      "vol": 0
+    },
+    {
+      "id": "fr-dembele",
+      "src": "assets/clips/fr-dembele.mp4",
+      "at": 63.74,
+      "dur": 4.26,
+      "vol": 0
+    },
+    {
+      "id": "fr-tchouameni",
+      "src": "assets/clips/fr-tchouameni.mp4",
+      "at": 68,
+      "dur": 2.99,
+      "vol": 0
+    },
+    {
+      "id": "fr-saliba",
+      "src": "assets/clips/fr-saliba.mp4",
+      "at": 70.99,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "par-crowd",
+      "src": "assets/clips/par-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "par-tifo",
+      "src": "assets/clips/par-tifo.mp4",
+      "at": 84.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "par-gomez",
+      "src": "assets/clips/par-gomez.mp4",
+      "at": 90.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "par-almiron",
+      "src": "assets/clips/par-almiron.mp4",
+      "at": 96.8,
+      "dur": 3.15,
+      "vol": 0
+    },
+    {
+      "id": "par-enciso",
+      "src": "assets/clips/par-enciso.mp4",
+      "at": 99.95,
+      "dur": 3.05,
+      "vol": 0
+    },
+    {
+      "id": "par-diego",
+      "src": "assets/clips/par-diego.mp4",
+      "at": 103,
+      "dur": 2.71,
+      "vol": 0
+    },
+    {
+      "id": "par-sanabria",
+      "src": "assets/clips/par-sanabria.mp4",
+      "at": 105.71,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-stadium-night",
+      "src": "assets/clips/vd-stadium-night.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "fr-siege",
+      "src": "assets/clips/fr-siege.mp4",
+      "at": 137,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gomez-block",
+      "src": "assets/clips/gomez-block.mp4",
+      "at": 142,
+      "dur": 10.21,
+      "vol": 0
+    },
+    {
+      "id": "enciso-shot",
+      "src": "assets/clips/enciso-shot.mp4",
+      "at": 152.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "fr-goal-2",
+      "src": "assets/clips/fr-goal-2.mp4",
+      "at": 178.46,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "fr-goal-1",
+      "src": "assets/clips/fr-goal-1.mp4",
+      "at": 189.58,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 244,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cta-celebrate",
+      "src": "assets/clips/cta-celebrate.mp4",
+      "at": 303.05,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-riddle",
+      "src": "assets/clips/bg-riddle.mp4",
+      "at": 123,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "bg-firing",
+      "src": "assets/clips/bg-firing.mp4",
+      "at": 132,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-rise",
+      "src": "assets/clips/bg-rise.mp4",
+      "at": 159,
+      "dur": 13,
+      "vol": 0
+    },
+    {
+      "id": "bg-believe",
+      "src": "assets/clips/bg-believe.mp4",
+      "at": 172,
+      "dur": 6.46,
+      "vol": 0
+    },
+    {
+      "id": "bg-roar",
+      "src": "assets/clips/bg-roar.mp4",
+      "at": 185,
+      "dur": 4.58,
+      "vol": 0
+    },
+    {
+      "id": "bg-verdict",
+      "src": "assets/clips/bg-verdict.mp4",
+      "at": 208.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-winner",
+      "src": "assets/clips/bg-winner.mp4",
+      "at": 213.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bg-stats",
+      "src": "assets/clips/bg-stats.mp4",
+      "at": 218.32,
+      "dur": 25.68,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 153.6,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 164.37,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 179.9,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 191,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}
