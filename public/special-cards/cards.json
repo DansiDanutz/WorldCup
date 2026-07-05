@@ -849,6 +849,15 @@
    "landscape": "/special-cards/legend-094-landscape.png"
   },
   {
+   "number": "095",
+   "name": "Fenrir, the Unbound Wolf",
+   "nation": "Norway",
+   "episode": 95,
+   "match": "Norway vs Brazil (Play-Offs)",
+   "portrait": "/special-cards/legend-095-portrait.png",
+   "landscape": "/special-cards/legend-095-landscape.png"
+  },
+  {
    "number": "BONUS-1",
    "name": "The Freedom Run",
    "nation": "Colombia",
