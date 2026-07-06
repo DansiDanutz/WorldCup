@@ -1,0 +1,298 @@
+{
+  "comment": "Ep100 Switzerland vs Colombia PHOTOREAL, nation-correct (#28), NO-REPEAT+NO-LOOP, showcase SYNCED. MILESTONE 100TH EPISODE. OUR PREDICTION Switzerland 2-1 Colombia (Xhaka late winner). Legend 100 Wilhelm Tell the Marksman. Switzerland showcases + generics freshly generated this episode (no recoverable manifest for Ep89 originals, independently audited and regenerated per Rule #29); Colombia reused Ep92 (Rule #26, audited and found correct as-is); walkout + handshake + Wilhelm Tell card fresh. vol=0.",
+  "clips": [
+    {
+      "id": "texture-switzerland",
+      "src": "assets/clips/texture-switzerland.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-colombia",
+      "src": "assets/clips/texture-colombia.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sui-crowd",
+      "src": "assets/clips/sui-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sui-xhaka",
+      "src": "assets/clips/sui-xhaka.mp4",
+      "at": 55.5,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "sui-embolo",
+      "src": "assets/clips/sui-embolo.mp4",
+      "at": 60.3,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "sui-akanji",
+      "src": "assets/clips/sui-akanji.mp4",
+      "at": 65.1,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "sui-vargas",
+      "src": "assets/clips/sui-vargas.mp4",
+      "at": 69.9,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "sui-sommer",
+      "src": "assets/clips/sui-sommer.mp4",
+      "at": 74.7,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "co-crowd",
+      "src": "assets/clips/co-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "co-james",
+      "src": "assets/clips/co-james.mp4",
+      "at": 90.6,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "co-diaz",
+      "src": "assets/clips/co-diaz.mp4",
+      "at": 95.08,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "co-duran",
+      "src": "assets/clips/co-duran.mp4",
+      "at": 99.56,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "co-rios",
+      "src": "assets/clips/co-rios.mp4",
+      "at": 104.04,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "co-davinson",
+      "src": "assets/clips/co-davinson.mp4",
+      "at": 108.52,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "co-attack",
+      "src": "assets/clips/co-attack.mp4",
+      "at": 138,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "co-goal-1",
+      "src": "assets/clips/co-goal-1.mp4",
+      "at": 148.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sui-attack",
+      "src": "assets/clips/sui-attack.mp4",
+      "at": 160,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "sui-goal-1",
+      "src": "assets/clips/sui-goal-1.mp4",
+      "at": 170,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "sui-surge",
+      "src": "assets/clips/sui-surge.mp4",
+      "at": 182,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "sui-goal-2",
+      "src": "assets/clips/sui-goal-2.mp4",
+      "at": 192,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 148.7,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 160,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 170.5,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 192.4,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}

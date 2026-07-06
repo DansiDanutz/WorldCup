@@ -885,6 +885,15 @@
    "landscape": "/special-cards/legend-098-landscape.png"
   },
   {
+   "number": "100",
+   "name": "Wilhelm Tell, the Marksman",
+   "nation": "Switzerland",
+   "episode": 100,
+   "match": "Switzerland vs Colombia (Play-Offs)",
+   "portrait": "/special-cards/legend-100-portrait.png",
+   "landscape": "/special-cards/legend-100-landscape.png"
+  },
+  {
    "number": "BONUS-1",
    "name": "The Freedom Run",
    "nation": "Colombia",
