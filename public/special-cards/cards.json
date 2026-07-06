@@ -1,5 +1,5 @@
 {
- "collection": "WorldCup26 Legends — The Mystery Supporters",
+ "collection": "WorldCup26 Legends \u2014 The Mystery Supporters",
  "note": "Each episode hides one collectible Legend (the Mystery Supporter). Both landscape (16:9) and portrait (9:16) art per card. Every Legend is a unique character. Complete for Ep1-43, plus BONUS player-film cards.",
  "cards": [
   {
@@ -104,9 +104,9 @@
   {
    "number": "012",
    "name": "The Beach Keeper",
-   "nation": "Curaçao",
+   "nation": "Cura\u00e7ao",
    "episode": 12,
-   "match": "Germany vs Curaçao",
+   "match": "Germany vs Cura\u00e7ao",
    "portrait": "/special-cards/legend-012-portrait.png",
    "landscape": "/special-cards/legend-012-landscape.png"
   },
@@ -166,7 +166,7 @@
   },
   {
    "number": "019",
-   "name": "The Ghost of the Maracaná",
+   "name": "The Ghost of the Maracan\u00e1",
    "nation": "Uruguay",
    "episode": 19,
    "match": "Saudi Arabia vs Uruguay",
@@ -329,9 +329,9 @@
   {
    "number": "037",
    "name": "The Island Elder",
-   "nation": "Curaçao",
+   "nation": "Cura\u00e7ao",
    "episode": 37,
-   "match": "Ecuador vs Curaçao",
+   "match": "Ecuador vs Cura\u00e7ao",
    "portrait": "/special-cards/legend-037-portrait.png",
    "landscape": "/special-cards/legend-037-landscape.png"
   },
@@ -364,7 +364,7 @@
   },
   {
    "number": "041",
-   "name": "The Charrúa",
+   "name": "The Charr\u00faa",
    "nation": "Uruguay",
    "episode": 41,
    "match": "Uruguay vs Cape Verde",
@@ -511,7 +511,7 @@
    "name": "The Drummaker",
    "nation": "Ivory Coast",
    "episode": 57,
-   "match": "Curaçao vs Ivory Coast",
+   "match": "Cura\u00e7ao vs Ivory Coast",
    "portrait": "/special-cards/legend-057-portrait.png",
    "landscape": "/special-cards/legend-057-landscape.png"
   },
@@ -679,7 +679,7 @@
   },
   {
    "number": "076",
-   "name": "The Pombéro, Lord of the Night",
+   "name": "The Pomb\u00e9ro, Lord of the Night",
    "nation": "Paraguay",
    "episode": 76,
    "match": "Germany vs Paraguay",
@@ -706,7 +706,7 @@
   },
   {
    "number": "079",
-   "name": "Rübezahl, Lord of the Mountains",
+   "name": "R\u00fcbezahl, Lord of the Mountains",
    "nation": "Germany",
    "episode": 79,
    "match": "Germany vs Paraguay (R32)",
@@ -868,7 +868,7 @@
   },
   {
    "number": "097",
-   "name": "Dom Sebastião, the Hidden King",
+   "name": "Dom Sebasti\u00e3o, the Hidden King",
    "nation": "Portugal",
    "episode": 97,
    "match": "Portugal vs Spain (Play-Offs)",
@@ -885,6 +885,15 @@
    "landscape": "/special-cards/legend-098-landscape.png"
   },
   {
+   "number": "099",
+   "name": "Anubis, Warden of the Scales",
+   "nation": "Egypt",
+   "episode": 99,
+   "match": "Argentina vs Egypt (Play-Offs)",
+   "portrait": "/special-cards/legend-099-portrait.png",
+   "landscape": "/special-cards/legend-099-landscape.png"
+  },
+  {
    "number": "100",
    "name": "Wilhelm Tell, the Marksman",
    "nation": "Switzerland",
@@ -898,7 +907,7 @@
    "name": "The Freedom Run",
    "nation": "Colombia",
    "episode": 0,
-   "match": "Bonus film · Luis Díaz",
+   "match": "Bonus film \u00b7 Luis D\u00edaz",
    "portrait": "/special-cards/legend-bonus-diaz-portrait.png",
    "landscape": "/special-cards/legend-bonus-diaz-landscape.png"
   },
@@ -907,7 +916,7 @@
    "name": "The Promise",
    "nation": "Belgium",
    "episode": 0,
-   "match": "Bonus film · Romelu Lukaku",
+   "match": "Bonus film \u00b7 Romelu Lukaku",
    "portrait": "/special-cards/legend-bonus-lukaku-portrait.png",
    "landscape": "/special-cards/legend-bonus-lukaku-landscape.png"
   }

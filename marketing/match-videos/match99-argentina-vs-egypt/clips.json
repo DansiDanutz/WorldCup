@@ -1,0 +1,291 @@
+{
+  "comment": "Ep99 Argentina vs Egypt PHOTOREAL, nation-correct (#28), NO-REPEAT+NO-LOOP, showcase SYNCED. OUR PREDICTION Argentina 2-1 Egypt (Messi late winner). Legend 099 Anubis, Warden of the Scales. Argentina reused Ep91 (Rule #26); Álvarez re-animated fresh after a broadcast-graphic hallucination audit; Messi/Enzo/Mac Allister/Lautaro reused as-is (confirmed correct). Egypt entirely fresh-generated this episode (no recoverable Ep90/Ep67 job URLs); Elneny cut on squad-accuracy grounds. Walkout + handshake + Anubis card + Nile motif + 2 thumbnail stills fresh. vol=0.",
+  "clips": [
+    {
+      "id": "arg-tango",
+      "src": "assets/clips/arg-tango.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "egy-nile",
+      "src": "assets/clips/egy-nile.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "arg-crowd",
+      "src": "assets/clips/arg-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "arg-messi",
+      "src": "assets/clips/arg-messi.mp4",
+      "at": 55.5,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "arg-alvarez",
+      "src": "assets/clips/arg-alvarez.mp4",
+      "at": 60.3,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "arg-enzo",
+      "src": "assets/clips/arg-enzo.mp4",
+      "at": 65.1,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "arg-macallister",
+      "src": "assets/clips/arg-macallister.mp4",
+      "at": 69.9,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "arg-lautaro",
+      "src": "assets/clips/arg-lautaro.mp4",
+      "at": 74.7,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "egy-crowd",
+      "src": "assets/clips/egy-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "egy-salah",
+      "src": "assets/clips/egy-salah.mp4",
+      "at": 93.8,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "egy-marmoush",
+      "src": "assets/clips/egy-marmoush.mp4",
+      "at": 98.6,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "egy-trezeguet",
+      "src": "assets/clips/egy-trezeguet.mp4",
+      "at": 103.4,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "egy-cb",
+      "src": "assets/clips/egy-cb.mp4",
+      "at": 108.2,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "arg-attack",
+      "src": "assets/clips/arg-attack.mp4",
+      "at": 138,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "alvarez-goal",
+      "src": "assets/clips/alvarez-goal.mp4",
+      "at": 148.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "egy-attack",
+      "src": "assets/clips/egy-attack.mp4",
+      "at": 160,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "egy-goal-1",
+      "src": "assets/clips/egy-goal-1.mp4",
+      "at": 170,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "messi-magic",
+      "src": "assets/clips/messi-magic.mp4",
+      "at": 182,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "messi-goal",
+      "src": "assets/clips/messi-goal.mp4",
+      "at": 192,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 93.8,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 148.7,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 160,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 170.5,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 192.4,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}

@@ -42,6 +42,15 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 23 | Austria vs Jordan | [WorldCup26_Match23_AUT_JOR.mp4](https://github.com/DansiDanutz/WorldCup/raw/main/marketing/match-videos/match23-austria-vs-jordan/WorldCup26_Match23_AUT_JOR.mp4) | 68 MB | "40 YEARS, ONE NIGHT" | _paste after upload_ |
 | 24 | Portugal vs DR Congo | [WorldCup26_Match24_POR_COD.mp4](https://github.com/DansiDanutz/WorldCup/raw/main/marketing/match-videos/match24-portugal-vs-dr-congo/WorldCup26_Match24_POR_COD.mp4) | 75 MB | "THE FREE KICK THEY GOT WRONG" | _paste after upload_ |
 | 25 | England vs Croatia | [WorldCup26_Match25_ENG_CRO.mp4](https://github.com/DansiDanutz/WorldCup/raw/main/marketing/match-videos/match25-england-vs-croatia/WorldCup26_Match25_ENG_CRO.mp4) | 72 MB | "THEY ENDED THE DREAM" | _paste after upload_ |
+| 99 | Argentina vs Egypt (Play-Offs) | [WorldCup26_Ep99_Argentina_Egypt.mp4](https://github.com/DansiDanutz/WorldCup/raw/claude/episode38-tunisia-japan/marketing/match-videos/match99-argentina-vs-egypt/WorldCup26_Ep99_Argentina_Egypt.mp4) | 56 MB | [thumbnail.png](https://github.com/DansiDanutz/WorldCup/raw/claude/episode38-tunisia-japan/marketing/match-videos/match99-argentina-vs-egypt/thumbnail.png) | _paste after upload_ |
+
+> **Numbering gap 26–98:** this log was last actively maintained through Ep25 on this
+> branch — Play-Offs-bracket episodes (Ep87–Ep99, folders `match87`–`match99`) were
+> produced in parallel sessions and are not yet backfilled here. Ep99 is added above
+> as a placeholder single-row entry rather than silently omitted; a full reconciliation
+> of rows 26–98 is out of scope for a single-episode build and should be done as its
+> own pass across all branches per the `PRODUCTION_LOG.md` Ep↔folder↔URL mapping rule
+> in `CLAUDE.md`.
 
 ### Shorts (new from Ep6 — upload as YouTube Shorts, link to the full episode)
 

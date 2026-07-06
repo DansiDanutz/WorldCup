@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1920px; height:1080px; overflow:hidden; background:#05060c; font-family:'Inter','Arial Black',sans-serif; }
+  #t { position:relative; width:1920px; height:1080px; overflow:hidden; }
+  .half { position:absolute; top:0; height:100%; width:62%; background-size:cover; filter:saturate(1.25) contrast(1.18) brightness(1.03); }
+  #L { left:0; background-image:url('thumb_messi.png'); background-position:50% 20%; clip-path:polygon(0 0, 100% 0, 76% 100%, 0 100%); }
+  #R { right:0; background-image:url('thumb_salah.png'); background-position:50% 20%; clip-path:polygon(24% 0, 100% 0, 100% 100%, 0 100%); }
+  .glow { position:absolute; top:0; height:100%; width:46%; }
+  #gL { left:0; background:linear-gradient(90deg, rgba(28,63,110,0.55), transparent 82%); }
+  #gR { right:0; background:linear-gradient(270deg, rgba(206,17,38,0.5), transparent 82%); }
+  #seam { position:absolute; top:-6%; left:50%; width:14px; height:112%; transform:translateX(-50%) rotate(9deg);
+    background:linear-gradient(180deg, transparent, #ffe9a8, #fff, #ffe9a8, transparent); box-shadow:0 0 90px 30px rgba(255,196,40,0.65); z-index:5; }
+  #vig { position:absolute; inset:0; z-index:6;
+    background:radial-gradient(ellipse at 50% 44%, transparent 34%, rgba(2,3,8,0.68) 100%),
+      linear-gradient(180deg, rgba(2,3,8,0.4) 0%, transparent 24%, transparent 48%, rgba(2,3,8,0.94) 100%); }
+  #vs { position:absolute; left:50%; top:41%; transform:translate(-50%,-50%) rotate(-4deg); z-index:9; font-weight:900; font-size:200px;
+    background:linear-gradient(180deg, #fff 0%, #ffdb70 55%, #ff9d1a 100%); -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:none; filter:drop-shadow(0 0 46px rgba(255,170,20,0.95)) drop-shadow(0 10px 22px rgba(0,0,0,0.9)); -webkit-text-stroke:5px rgba(20,10,0,0.55); }
+  #kick { position:absolute; top:40px; left:54px; z-index:9; font-weight:900; font-size:48px; line-height:0.96; letter-spacing:0.02em; color:#fff; text-shadow:0 3px 16px #000, 0 0 30px rgba(0,0,0,0.9); }
+  #ep { position:absolute; top:34px; right:48px; z-index:9; text-align:center; font-weight:900; color:#1a1306; background:linear-gradient(180deg,#ffe9a8,#f6c94a); border:4px solid #fff; border-radius:18px; padding:8px 22px 10px; box-shadow:0 10px 30px rgba(0,0,0,0.7); }
+  #ep .l { font-size:24px; letter-spacing:0.18em; display:block; } #ep .n { font-size:56px; line-height:0.9; display:block; }
+  #tag { position:absolute; left:0; right:0; bottom:164px; text-align:center; z-index:9; font-weight:800; font-size:46px; letter-spacing:0.11em; color:#ffe9a8; text-shadow:0 3px 18px #000, 0 2px 0 #3a2a06; }
+  #title { position:absolute; left:0; right:0; bottom:52px; text-align:center; z-index:9; font-weight:900; font-size:96px; line-height:0.95; color:#fffaf0; letter-spacing:0.005em;
+    text-shadow:0 8px 6px #000, 0 0 60px rgba(255,170,20,0.7), 0 2px 0 #3a2a06; -webkit-text-stroke:4px #180d02; }
+  .badge { position:absolute; bottom:262px; z-index:9; width:132px; height:88px; border-radius:9px; box-shadow:0 10px 28px rgba(0,0,0,0.8); overflow:hidden; border:2px solid rgba(255,255,255,0.35); }
+  #fL { left:130px; } #fR { right:130px; }
+</style></head><body><div id="t">
+  <div class="half" id="L"></div><div class="half" id="R"></div>
+  <div class="glow" id="gL"></div><div class="glow" id="gR"></div>
+  <div id="seam"></div><div id="vig"></div>
+  <div id="kick">WORLDCUP26<br>LEGENDS</div>
+  <div id="ep"><span class="l">EP</span><span class="n">99</span></div>
+  <div id="vs">VS</div>
+  <div class="badge" id="fL"><div style="position:relative;width:100%;height:100%;display:flex;flex-direction:column">
+    <span style="flex:1;background:#74acdf"></span><span style="flex:1;background:#f3f4f7"></span><span style="flex:1;background:#74acdf"></span></div></div>
+  <div class="badge" id="fR"><div style="position:relative;width:100%;height:100%;display:flex;flex-direction:column">
+    <span style="flex:1;background:#ce1126"></span><span style="flex:1;background:#f3f4f7"></span><span style="flex:1;background:#0a0a0a"></span></div></div>
+  <div id="title">THE GENIUS</div>
+  <div id="tag">CAN THE PHARAOH RISE?</div>
+</div></body></html>
