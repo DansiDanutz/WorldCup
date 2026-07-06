@@ -468,6 +468,18 @@ Non-negotiables distilled from channel data (details in the playbook):
       ask "would a fan of this team recognize this as the named player?" If the face/hair/build/
       number doesn't credibly match, REGENERATE the still before spending i2v credits. Log the
       check per player in the episode README.
+30. **PREDICTION SCORELINE VARIETY (owner-mandated, from Ep101 on, hard rule):** the
+    owner flagged that nearly every recent prediction landed on 2–1 — it "makes no
+    sense" for that many matches in a row to share one scoreline. **Before writing
+    any episode's prediction, check the scorelines of the last ~10 published
+    episodes (`SERIES_PLAYBOOK.md` / `PRODUCTION_LOG.md`) and pick a DIFFERENT
+    outcome shape** — vary the margin (1-0, 2-0, 3-1, 3-2, 2-2 draw, 1-1 draw,
+    0-0), the total-goals count, and whether the match is decided early, late, or
+    stays level. Do not default to "2-1, winner scores late" as the house style.
+    The outcome must still fit the episode's story/theme, but pick the scoreline
+    FIRST from what hasn't been used recently, then build the narrative beats to
+    match it — not the reverse. Log each episode's final score in
+    `SERIES_PLAYBOOK.md` so the next build can check the recent-scoreline list.
 
 ## Video production pipeline
 
