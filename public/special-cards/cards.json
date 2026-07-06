@@ -876,6 +876,15 @@
    "landscape": "/special-cards/legend-097-landscape.png"
   },
   {
+   "number": "098",
+   "name": "The Red Devil, Belgium's Diables Rouges",
+   "nation": "Belgium",
+   "episode": 98,
+   "match": "USA vs Belgium (Play-Offs)",
+   "portrait": "/special-cards/legend-098-portrait.png",
+   "landscape": "/special-cards/legend-098-landscape.png"
+  },
+  {
    "number": "BONUS-1",
    "name": "The Freedom Run",
    "nation": "Colombia",
