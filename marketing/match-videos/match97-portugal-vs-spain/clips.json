@@ -1,0 +1,298 @@
+{
+  "comment": "Ep97 Portugal vs Spain PHOTOREAL, nation-correct (#28), NO-REPEAT+NO-LOOP, showcase SYNCED. OUR PREDICTION Spain 2-1 Portugal (Yamal late winner). Legend 097 Dom Sebastião the Hidden King. Portugal reused Ep71/88, Spain reused Ep87 (Rule #26); Leão/Dias/Bernardo Silva and Yamal/Pedri/Rodri/Nico Williams re-animated fresh from corrected stills after a likeness/number audit; Ronaldo/Bruno/Morata reused as-is (confirmed correct); walkout + handshake + Dom Sebastião card fresh. vol=0.",
+  "clips": [
+    {
+      "id": "portugal-fog",
+      "src": "assets/clips/portugal-fog.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-spain",
+      "src": "assets/clips/texture-spain.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-crowd",
+      "src": "assets/clips/por-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-ronaldo",
+      "src": "assets/clips/por-ronaldo.mp4",
+      "at": 55.5,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "por-bruno",
+      "src": "assets/clips/por-bruno.mp4",
+      "at": 60.3,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "por-leao",
+      "src": "assets/clips/por-leao.mp4",
+      "at": 65.1,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "por-dias",
+      "src": "assets/clips/por-dias.mp4",
+      "at": 69.9,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "por-bernardo",
+      "src": "assets/clips/por-bernardo.mp4",
+      "at": 74.7,
+      "dur": 4.8,
+      "vol": 0
+    },
+    {
+      "id": "spa-crowd",
+      "src": "assets/clips/spa-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "spa-morata",
+      "src": "assets/clips/spa-morata.mp4",
+      "at": 90.6,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "spa-yamal",
+      "src": "assets/clips/spa-yamal.mp4",
+      "at": 95.08,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "spa-pedri",
+      "src": "assets/clips/spa-pedri.mp4",
+      "at": 99.56,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "spa-rodri",
+      "src": "assets/clips/spa-rodri.mp4",
+      "at": 104.04,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "spa-nicowilliams",
+      "src": "assets/clips/spa-nicowilliams.mp4",
+      "at": 108.52,
+      "dur": 4.48,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "spa-attack",
+      "src": "assets/clips/spa-attack.mp4",
+      "at": 138,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "spa-goal-1",
+      "src": "assets/clips/spa-goal-1.mp4",
+      "at": 148.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-attack",
+      "src": "assets/clips/por-attack.mp4",
+      "at": 160,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "por-goal-1",
+      "src": "assets/clips/por-goal-1.mp4",
+      "at": 170,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "spa-surge",
+      "src": "assets/clips/spa-surge.mp4",
+      "at": 182,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "spa-goal-2",
+      "src": "assets/clips/spa-goal-2.mp4",
+      "at": 192,
+      "dur": 5.04,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 148.7,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 160,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 170.5,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 192.4,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}

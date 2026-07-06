@@ -867,6 +867,15 @@
    "landscape": "/special-cards/legend-096-landscape.png"
   },
   {
+   "number": "097",
+   "name": "Dom Sebastião, the Hidden King",
+   "nation": "Portugal",
+   "episode": 97,
+   "match": "Portugal vs Spain (Play-Offs)",
+   "portrait": "/special-cards/legend-097-portrait.png",
+   "landscape": "/special-cards/legend-097-landscape.png"
+  },
+  {
    "number": "BONUS-1",
    "name": "The Freedom Run",
    "nation": "Colombia",

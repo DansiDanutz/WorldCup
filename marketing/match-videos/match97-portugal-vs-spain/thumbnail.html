@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1920px; height:1080px; overflow:hidden; background:#05060c; font-family:'Inter','Arial Black',sans-serif; }
+  #t { position:relative; width:1920px; height:1080px; overflow:hidden; }
+  .half { position:absolute; top:0; height:100%; width:58%; background-size:cover; filter:saturate(1.12) contrast(1.08); }
+  #L { left:0; background-image:url('thumb_ronaldo.png'); background-position:44% 18%; clip-path:polygon(0 0, 100% 0, 82% 100%, 0 100%); }
+  #R { right:0; background-image:url('thumb_yamal.png'); background-position:50% 18%; clip-path:polygon(18% 0, 100% 0, 100% 100%, 0 100%); }
+  .glow { position:absolute; top:0; height:100%; width:42%; }
+  #gL { left:0; background:linear-gradient(90deg, rgba(139,21,56,0.48), transparent 78%); }
+  #gR { right:0; background:linear-gradient(270deg, rgba(198,11,30,0.44), transparent 78%); }
+  #seam { position:absolute; top:-6%; left:50%; width:11px; height:112%; transform:translateX(-50%) rotate(6deg);
+    background:linear-gradient(180deg, transparent, #f0dca6, #fff, #f0dca6, transparent); box-shadow:0 0 65px 20px rgba(224,162,38,0.55); z-index:5; }
+  #vig { position:absolute; inset:0; z-index:6;
+    background:radial-gradient(ellipse at 50% 46%, transparent 40%, rgba(2,3,8,0.6) 100%),
+      linear-gradient(180deg, rgba(2,3,8,0.34) 0%, transparent 28%, transparent 50%, rgba(2,3,8,0.9) 100%); }
+  #vs { position:absolute; left:50%; top:42%; transform:translate(-50%,-50%); z-index:9; font-weight:900; font-size:165px; color:#fff; text-shadow:0 0 52px rgba(224,162,38,0.9), 0 8px 30px #000; }
+  #kick { position:absolute; top:42px; left:54px; z-index:9; font-weight:900; font-size:46px; line-height:0.98; letter-spacing:0.02em; color:#fff; text-shadow:0 3px 16px #000, 0 0 26px rgba(0,0,0,0.8); }
+  #ep { position:absolute; top:36px; right:48px; z-index:9; text-align:center; font-weight:900; color:#1a1306; background:#f6dfa0; border:4px solid #fff; border-radius:18px; padding:8px 20px 10px; box-shadow:0 8px 26px rgba(0,0,0,0.6); }
+  #ep .l { font-size:24px; letter-spacing:0.18em; display:block; } #ep .n { font-size:52px; line-height:0.9; display:block; }
+  #tag { position:absolute; left:0; right:0; bottom:158px; text-align:center; z-index:9; font-weight:800; font-size:44px; letter-spacing:0.10em; color:#f6dfa0; text-shadow:0 3px 16px #000, 0 2px 0 #3a2a06; }
+  #title { position:absolute; left:0; right:0; bottom:54px; text-align:center; z-index:9; font-weight:900; font-size:82px; line-height:0.96; color:#fdf6e6; letter-spacing:0.005em;
+    text-shadow:0 6px 4px #000, 0 0 44px rgba(224,162,38,0.55), 0 2px 0 #3a2a06; -webkit-text-stroke:3px #201404; }
+  .badge { position:absolute; bottom:252px; z-index:9; width:120px; height:80px; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,0.7); overflow:hidden; }
+  #fL { left:150px; } #fR { right:150px; }
+</style></head><body><div id="t">
+  <div class="half" id="L"></div><div class="half" id="R"></div>
+  <div class="glow" id="gL"></div><div class="glow" id="gR"></div>
+  <div id="seam"></div><div id="vig"></div>
+  <div id="kick">WORLDCUP26<br>LEGENDS</div>
+  <div id="ep"><span class="l">EP</span><span class="n">97</span></div>
+  <div id="vs">VS</div>
+  <div class="badge" id="fL"><div style="position:relative;width:100%;height:100%;display:flex"><span style="flex:2;background:#046a38"></span><span style="flex:3;background:#8b1538"></span></div></div>
+  <div class="badge" id="fR"><div style="position:relative;width:100%;height:100%;background:#c60b1e"><span style="position:absolute;top:25%;left:0;right:0;height:50%;background:#ffc400"></span></div></div>
+  <div id="title">THE HIDDEN KING</div>
+  <div id="tag">CAN THE BULL CHARGE PAST HIM?</div>
+</div></body></html>

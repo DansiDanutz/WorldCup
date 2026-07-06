@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>WorldCup26 Legends — Ep97 Intro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #05060c; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="WC26 Ep97 Intro · t=0s"></div>
+
+<script src="vendor/react.development.js" crossorigin="anonymous"></script>
+<script src="vendor/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="vendor/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="match-kit.jsx"></script>
+<script type="text/babel" src="match-scenes.jsx"></script>
+<script type="text/babel" src="intro-scenes.jsx"></script>
+
+<script type="text/babel">
+const { useEffect } = React;
+const DURATION = 15.0;
+
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root) root.dataset.screenLabel = `WC26 Ep97 Intro · t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+    window.__driveVideos = () => Promise.resolve();
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+function IntroVideo() {
+  return (
+    <Stage width={1920} height={1080} duration={DURATION} background="#05060c" persistKey="wc26ep97intro">
+      <ScreenLabeler />
+      <SeekBridge />
+      <SceneIntro />
+    </Stage>
+  );
+}
+function boot() { ReactDOM.createRoot(document.getElementById('root')).render(<IntroVideo />); }
+fetch('./assets/seq/manifest.json').then((r) => r.json()).then((m) => { window.MV_SEQ = m || {}; }).catch(() => { window.MV_SEQ = {}; }).finally(() => { window.MV_CLIPS = window.MV_CLIPS || []; boot(); });
+</script>
+</body>
+</html>
