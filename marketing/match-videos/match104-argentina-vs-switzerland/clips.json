@@ -1,0 +1,67 @@
+{
+  "comment": "Ep104 Argentina vs Switzerland PHOTOREAL, nation-correct (#28), NO-REPEAT + dimmed beat re-entries (#27), showcase SYNCED (#23). OUR PREDICTION Argentina 3-2 Switzerland — a FIVE-GOAL end-to-end thriller decided late (Rule #30 variety vs Ep101 3-1 / Ep102 1-0 / Ep103 1-1 draw): Alvarez 1-0, Embolo 1-1, Lautaro 2-1, Vargas 2-2, Messi 3-2 last-breath winner. Legend 104 = Gauchito Gil, the Gaucho Saint (Argentina folk-legend) — novel vs Argentina's Legend 091 (Sun of May). ARGENTINA showcases + crowd/attack + THREE distinct goal clips (arg-goal-1 Alvarez / arg-goal-2 Lautaro / arg-goal-3 Messi) REUSED 0-credit and frame-verified from match99-argentina-vs-egypt (Messi 10 / Alvarez 9 / Lautaro 22 / Enzo 24 / Mac Allister 20). SWITZERLAND showcases (Xhaka 10 / Embolo 7 / Akanji 5 / Vargas 17 / Sommer 1 GK) + sui-crowd/sui-attack + TWO goal clips (sui-goal-1 Embolo / sui-goal-2 Vargas) + texture-switzerland generated FRESH this episode via nano_banana_pro stills + kling3_0_turbo i2v/t2v (no committed manifest existed for match100's Switzerland clips). Story-unique fresh: Argentina-vs-Switzerland pitch-walkout + captains' handshake. Generic atmosphere (stadium-wide/stadium-aerial/bg-roar/crowd-tense) reused 0-credit. Dimmed beat-backdrop re-entries (#27): texture-argentina-b, arg-crowd-b, sui-crowd-b, stadium-wide-b carry drama-beat cards on real footage. vol=0 throughout (VO+music+SFX only).",
+  "clips": [
+    { "id": "texture-argentina", "src": "assets/clips/texture-argentina.mp4", "at": 5, "dur": 5, "vol": 0 },
+    { "id": "texture-switzerland", "src": "assets/clips/texture-switzerland.mp4", "at": 10, "dur": 5, "vol": 0 },
+    { "id": "pitch-walkout", "src": "assets/clips/pitch-walkout.mp4", "at": 33, "dur": 5, "vol": 0 },
+    { "id": "stadium-wide", "src": "assets/clips/stadium-wide.mp4", "at": 38.8, "dur": 5, "vol": 0 },
+    { "id": "arg-crowd", "src": "assets/clips/arg-crowd.mp4", "at": 44, "dur": 5, "vol": 0 },
+    { "id": "arg-messi", "src": "assets/clips/arg-messi.mp4", "at": 55.5, "dur": 4.8, "vol": 0 },
+    { "id": "arg-alvarez", "src": "assets/clips/arg-alvarez.mp4", "at": 60.3, "dur": 4.8, "vol": 0 },
+    { "id": "arg-lautaro", "src": "assets/clips/arg-lautaro.mp4", "at": 65.1, "dur": 4.8, "vol": 0 },
+    { "id": "arg-enzo", "src": "assets/clips/arg-enzo.mp4", "at": 69.9, "dur": 4.8, "vol": 0 },
+    { "id": "arg-macallister", "src": "assets/clips/arg-macallister.mp4", "at": 74.7, "dur": 4.8, "vol": 0 },
+    { "id": "sui-crowd", "src": "assets/clips/sui-crowd.mp4", "at": 79.5, "dur": 5, "vol": 0 },
+    { "id": "sui-xhaka", "src": "assets/clips/sui-xhaka.mp4", "at": 90.6, "dur": 4.48, "vol": 0 },
+    { "id": "sui-embolo", "src": "assets/clips/sui-embolo.mp4", "at": 95.08, "dur": 4.48, "vol": 0 },
+    { "id": "sui-akanji", "src": "assets/clips/sui-akanji.mp4", "at": 99.56, "dur": 4.48, "vol": 0 },
+    { "id": "sui-vargas", "src": "assets/clips/sui-vargas.mp4", "at": 104.04, "dur": 4.48, "vol": 0 },
+    { "id": "sui-sommer", "src": "assets/clips/sui-sommer.mp4", "at": 108.52, "dur": 4.48, "vol": 0 },
+    { "id": "stadium-aerial", "src": "assets/clips/stadium-aerial.mp4", "at": 113, "dur": 5, "vol": 0 },
+    { "id": "texture-argentina-b", "src": "assets/clips/texture-argentina.mp4", "at": 132, "dur": 5, "vol": 0 },
+    { "id": "arg-attack", "src": "assets/clips/arg-attack.mp4", "at": 138, "dur": 5, "vol": 0 },
+    { "id": "arg-goal-1", "src": "assets/clips/arg-goal-1.mp4", "at": 146.5, "dur": 5, "vol": 0 },
+    { "id": "sui-attack", "src": "assets/clips/sui-attack.mp4", "at": 155, "dur": 5, "vol": 0 },
+    { "id": "sui-goal-1", "src": "assets/clips/sui-goal-1.mp4", "at": 162.5, "dur": 5, "vol": 0 },
+    { "id": "arg-crowd-b", "src": "assets/clips/arg-crowd.mp4", "at": 171, "dur": 5, "vol": 0 },
+    { "id": "arg-goal-2", "src": "assets/clips/arg-goal-2.mp4", "at": 178.5, "dur": 5, "vol": 0 },
+    { "id": "sui-crowd-b", "src": "assets/clips/sui-crowd.mp4", "at": 187, "dur": 5, "vol": 0 },
+    { "id": "sui-goal-2", "src": "assets/clips/sui-goal-2.mp4", "at": 195.5, "dur": 5, "vol": 0 },
+    { "id": "bg-roar", "src": "assets/clips/bg-roar.mp4", "at": 204, "dur": 5, "vol": 0 },
+    { "id": "crowd-tense", "src": "assets/clips/crowd-tense.mp4", "at": 213, "dur": 5, "vol": 0 },
+    { "id": "arg-goal-3", "src": "assets/clips/arg-goal-3.mp4", "at": 221.5, "dur": 5, "vol": 0 },
+    { "id": "stadium-wide-b", "src": "assets/clips/stadium-wide.mp4", "at": 231, "dur": 5, "vol": 0 },
+    { "id": "vd-handshake", "src": "assets/clips/vd-handshake.mp4", "at": 241, "dur": 5, "vol": 0 }
+  ],
+  "music": {
+    "cues": [
+      { "src": "music/cue-tense.mp3", "at": 0, "dur": 33, "vol": 0.5, "fadeIn": 0.5, "fadeOut": 3, "loop": false },
+      { "src": "music/cue-epic.mp3", "at": 33, "dur": 259.68, "vol": 0.4, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-heroic.mp3", "at": 292.68, "dur": 63.05, "vol": 0.46, "fadeIn": 2.5, "fadeOut": 3, "loop": true }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      { "src": "sfx/heartbeat.mp3", "at": 0.3, "vol": 0.9 },
+      { "src": "sfx/braam.mp3", "at": 5.2, "vol": 0.8 },
+      { "src": "sfx/mystic.mp3", "at": 10.2, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 22.6, "vol": 0.6 },
+      { "src": "sfx/braam.mp3", "at": 33, "vol": 0.55 },
+      { "src": "sfx/pop.mp3", "at": 55.5, "vol": 0.5 },
+      { "src": "sfx/whoosh.mp3", "at": 79.5, "vol": 0.5 },
+      { "src": "sfx/pop.mp3", "at": 90.6, "vol": 0.5 },
+      { "src": "sfx/whoosh.mp3", "at": 113, "vol": 0.55 },
+      { "src": "sfx/goal.mp3", "at": 147, "vol": 0.92 },
+      { "src": "sfx/goal.mp3", "at": 163, "vol": 0.9 },
+      { "src": "sfx/goal.mp3", "at": 179, "vol": 0.92 },
+      { "src": "sfx/goal.mp3", "at": 196, "vol": 0.9 },
+      { "src": "sfx/goal.mp3", "at": 222, "vol": 0.96 },
+      { "src": "sfx/whistle.mp3", "at": 231.4, "vol": 0.85 },
+      { "src": "sfx/stamp.mp3", "at": 236, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 241, "vol": 0.55 },
+      { "src": "sfx/mystic.mp3", "at": 292.68, "vol": 0.85 },
+      { "src": "sfx/pop.mp3", "at": 300, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 340.73, "vol": 0.55 }
+    ]
+  }
+}
