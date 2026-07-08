@@ -1,0 +1,65 @@
+{
+  "comment": "Ep102 France vs Morocco PHOTOREAL, nation-correct (#28), NO-REPEAT + dimmed beat re-entries (#27), showcase SYNCED (#23). OUR PREDICTION France 1-0 Morocco (Mbappe 34'; then a Moroccan siege France survive to the final whistle). Rule #30 scoreline variety: a single-goal knockout (not 2-1, not 3-1). Legend 102 = Roland, the Paladin of Roncevaux (The Horn That Never Yields), France — fresh vs Legend 082 (Gallic Rooster) and Legend 094 (Vercingetorix). FRANCE (12 clips) REUSED 0-credit from match94-france-vs-paraguay (Mbappe 10 / Dembele 11 / Tchouameni 8 / Saliba 17 showcases + fr-collective as the 5th 'French collective' slot + fr-crowd/fr-attack/fr-surge/fr-goal-1/texture-france/stadium-wide/stadium-aerial), independently frame-checked this episode (all PASSED, correct likeness+number). Griezmann NOT reused (removed from the France squad in Ep94). MOROCCO (8 clips: Hakimi 2 / En-Nesyri 19 / Amrabat 4 / Ounahi 8 / Brahim Diaz 7 showcases + mor-crowd + mor-attack + texture-morocco) generated FRESH this episode (no Morocco clip sequences survived on disk in any sibling episode) via nano_banana_pro stills + kling3_0_turbo i2v, verified frame-by-frame. Ziyech OMITTED (uncertain current squad status, Rule #7 spirit). Story-unique fresh clips: France-vs-Morocco pitch-walkout + captains' handshake. Dimmed beat-backdrop re-entries (#27): fr-crowd-b, mor-crowd-b, mor-attack-b, texture-morocco-b, stadium-aerial-b, mor-crowd-c, stadium-wide-b carry the siege drama-beat cards on real footage. vol=0 throughout (VO+music+SFX only).",
+  "clips": [
+    { "id": "texture-france", "src": "assets/clips/texture-france.mp4", "at": 5, "dur": 5, "vol": 0 },
+    { "id": "texture-morocco", "src": "assets/clips/texture-morocco.mp4", "at": 10, "dur": 5, "vol": 0 },
+    { "id": "pitch-walkout", "src": "assets/clips/pitch-walkout.mp4", "at": 33, "dur": 5, "vol": 0 },
+    { "id": "stadium-wide", "src": "assets/clips/stadium-wide.mp4", "at": 38.8, "dur": 5, "vol": 0 },
+    { "id": "fr-crowd", "src": "assets/clips/fr-crowd.mp4", "at": 44, "dur": 5, "vol": 0 },
+    { "id": "fr-mbappe", "src": "assets/clips/fr-mbappe.mp4", "at": 55.5, "dur": 4.8, "vol": 0 },
+    { "id": "fr-dembele", "src": "assets/clips/fr-dembele.mp4", "at": 60.3, "dur": 4.8, "vol": 0 },
+    { "id": "fr-tchouameni", "src": "assets/clips/fr-tchouameni.mp4", "at": 65.1, "dur": 4.8, "vol": 0 },
+    { "id": "fr-saliba", "src": "assets/clips/fr-saliba.mp4", "at": 69.9, "dur": 4.8, "vol": 0 },
+    { "id": "fr-collective", "src": "assets/clips/fr-collective.mp4", "at": 74.7, "dur": 4.8, "vol": 0 },
+    { "id": "mor-crowd", "src": "assets/clips/mor-crowd.mp4", "at": 79.5, "dur": 5, "vol": 0 },
+    { "id": "mor-hakimi", "src": "assets/clips/mor-hakimi.mp4", "at": 90.6, "dur": 4.48, "vol": 0 },
+    { "id": "mor-ennesyri", "src": "assets/clips/mor-ennesyri.mp4", "at": 95.08, "dur": 4.48, "vol": 0 },
+    { "id": "mor-amrabat", "src": "assets/clips/mor-amrabat.mp4", "at": 99.56, "dur": 4.48, "vol": 0 },
+    { "id": "mor-ounahi", "src": "assets/clips/mor-ounahi.mp4", "at": 104.04, "dur": 4.48, "vol": 0 },
+    { "id": "mor-brahim", "src": "assets/clips/mor-brahim.mp4", "at": 108.52, "dur": 4.48, "vol": 0 },
+    { "id": "stadium-aerial", "src": "assets/clips/stadium-aerial.mp4", "at": 113, "dur": 5, "vol": 0 },
+    { "id": "fr-attack", "src": "assets/clips/fr-attack.mp4", "at": 138, "dur": 5, "vol": 0 },
+    { "id": "fr-goal-1", "src": "assets/clips/fr-goal-1.mp4", "at": 148.21, "dur": 5, "vol": 0 },
+    { "id": "fr-crowd-b", "src": "assets/clips/fr-crowd.mp4", "at": 159, "dur": 5, "vol": 0 },
+    { "id": "mor-attack", "src": "assets/clips/mor-attack.mp4", "at": 169, "dur": 5, "vol": 0 },
+    { "id": "mor-crowd-b", "src": "assets/clips/mor-crowd.mp4", "at": 180, "dur": 5, "vol": 0 },
+    { "id": "mor-attack-b", "src": "assets/clips/mor-attack.mp4", "at": 190, "dur": 5, "vol": 0 },
+    { "id": "texture-morocco-b", "src": "assets/clips/texture-morocco.mp4", "at": 199, "dur": 5, "vol": 0 },
+    { "id": "stadium-aerial-b", "src": "assets/clips/stadium-aerial.mp4", "at": 210, "dur": 5, "vol": 0 },
+    { "id": "mor-crowd-c", "src": "assets/clips/mor-crowd.mp4", "at": 221, "dur": 5, "vol": 0 },
+    { "id": "stadium-wide-b", "src": "assets/clips/stadium-wide.mp4", "at": 230, "dur": 5, "vol": 0 },
+    { "id": "vd-handshake", "src": "assets/clips/vd-handshake.mp4", "at": 241, "dur": 5, "vol": 0 }
+  ],
+  "music": {
+    "cues": [
+      { "src": "music/cue-tense.mp3", "at": 0, "dur": 33, "vol": 0.5, "fadeIn": 0.5, "fadeOut": 3, "loop": false },
+      { "src": "music/cue-epic.mp3", "at": 33, "dur": 259.68, "vol": 0.4, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-heroic.mp3", "at": 292.68, "dur": 63.05, "vol": 0.46, "fadeIn": 2.5, "fadeOut": 3, "loop": true }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      { "src": "sfx/heartbeat.mp3", "at": 0.3, "vol": 0.9 },
+      { "src": "sfx/braam.mp3", "at": 5.2, "vol": 0.8 },
+      { "src": "sfx/mystic.mp3", "at": 10.2, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 22.6, "vol": 0.6 },
+      { "src": "sfx/braam.mp3", "at": 33, "vol": 0.55 },
+      { "src": "sfx/pop.mp3", "at": 55.5, "vol": 0.5 },
+      { "src": "sfx/whoosh.mp3", "at": 79.5, "vol": 0.5 },
+      { "src": "sfx/pop.mp3", "at": 90.6, "vol": 0.5 },
+      { "src": "sfx/whoosh.mp3", "at": 113, "vol": 0.55 },
+      { "src": "sfx/goal.mp3", "at": 148.7, "vol": 0.92 },
+      { "src": "sfx/whoosh.mp3", "at": 169, "vol": 0.55 },
+      { "src": "sfx/braam.mp3", "at": 180.3, "vol": 0.6 },
+      { "src": "sfx/whoosh.mp3", "at": 190, "vol": 0.55 },
+      { "src": "sfx/braam.mp3", "at": 210.3, "vol": 0.6 },
+      { "src": "sfx/whoosh.mp3", "at": 221, "vol": 0.55 },
+      { "src": "sfx/whistle.mp3", "at": 230.4, "vol": 0.85 },
+      { "src": "sfx/stamp.mp3", "at": 235, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 241, "vol": 0.55 },
+      { "src": "sfx/mystic.mp3", "at": 292.68, "vol": 0.85 },
+      { "src": "sfx/pop.mp3", "at": 300, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 340.73, "vol": 0.55 }
+    ]
+  }
+}
