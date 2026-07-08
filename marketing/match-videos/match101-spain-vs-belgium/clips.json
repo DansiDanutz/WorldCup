@@ -1,0 +1,65 @@
+{
+  "comment": "Ep101 Spain vs Belgium PHOTOREAL, nation-correct (#28), NO-REPEAT+NO-LOOP, showcase SYNCED. OUR PREDICTION Spain 3-1 Belgium (Yamal 20', Morata 45', Lukaku 78' for Belgium, Nico Williams 84' seals it). Legend 101 El Cid Campeador, The Undefeated. Spain (13 clips: 5 showcases + crowd + attack + surge + goal-1 + goal-2 + texture + stadium-wide + stadium-aerial) REUSED 0-credit from match97-portugal-vs-spain (independently spot-checked frame-by-frame this episode, all PASSED). Belgium (5 showcases + crowd + attack + texture, 8 clips) regenerated fresh this episode via nano_banana_pro+kling3_0_turbo — match98/match85's local extracted frame sequences no longer existed on disk (already cleaned as build scratch) and no clean recoverable manifest was found in Higgsfield generation history, so per Rule #26's fallback (same precedent as Ep100's Switzerland) fresh generation was the safer, verifiable choice. Fresh story-unique clips (4): pitch-walkout, vd-handshake, spa-goal-3 (Yamal's goal, shows #19), bel-goal-1 (Lukaku's consolation goal) — neither prior episode had this exact Spain-vs-Belgium pairing. 3 dimmed beat-backdrop re-entries (spa-crowd-b, bel-crowd-b, stadium-aerial-b) reuse already-owned footage per Rule #27 so every drama-beat caption sits on real footage, never bare text. vol=0 throughout (no embedded clip audio; VO+music+SFX only).",
+  "clips": [
+    { "id": "texture-spain", "src": "assets/clips/texture-spain.mp4", "at": 5, "dur": 5, "vol": 0 },
+    { "id": "texture-belgium", "src": "assets/clips/texture-belgium.mp4", "at": 10, "dur": 5, "vol": 0 },
+    { "id": "pitch-walkout", "src": "assets/clips/pitch-walkout.mp4", "at": 33, "dur": 5, "vol": 0 },
+    { "id": "stadium-wide", "src": "assets/clips/stadium-wide.mp4", "at": 38.8, "dur": 5, "vol": 0 },
+    { "id": "spa-crowd", "src": "assets/clips/spa-crowd.mp4", "at": 44, "dur": 5, "vol": 0 },
+    { "id": "spa-yamal", "src": "assets/clips/spa-yamal.mp4", "at": 55.5, "dur": 4.8, "vol": 0 },
+    { "id": "spa-pedri", "src": "assets/clips/spa-pedri.mp4", "at": 60.3, "dur": 4.8, "vol": 0 },
+    { "id": "spa-rodri", "src": "assets/clips/spa-rodri.mp4", "at": 65.1, "dur": 4.8, "vol": 0 },
+    { "id": "spa-nicowilliams", "src": "assets/clips/spa-nicowilliams.mp4", "at": 69.9, "dur": 4.8, "vol": 0 },
+    { "id": "spa-morata", "src": "assets/clips/spa-morata.mp4", "at": 74.7, "dur": 4.8, "vol": 0 },
+    { "id": "bel-crowd", "src": "assets/clips/bel-crowd.mp4", "at": 79.5, "dur": 5, "vol": 0 },
+    { "id": "bel-debruyne", "src": "assets/clips/bel-debruyne.mp4", "at": 90.6, "dur": 4.48, "vol": 0 },
+    { "id": "bel-lukaku", "src": "assets/clips/bel-lukaku.mp4", "at": 95.08, "dur": 4.48, "vol": 0 },
+    { "id": "bel-doku", "src": "assets/clips/bel-doku.mp4", "at": 99.56, "dur": 4.48, "vol": 0 },
+    { "id": "bel-tielemans", "src": "assets/clips/bel-tielemans.mp4", "at": 104.04, "dur": 4.48, "vol": 0 },
+    { "id": "bel-onana", "src": "assets/clips/bel-onana.mp4", "at": 108.52, "dur": 4.48, "vol": 0 },
+    { "id": "stadium-aerial", "src": "assets/clips/stadium-aerial.mp4", "at": 113, "dur": 5, "vol": 0 },
+    { "id": "spa-attack", "src": "assets/clips/spa-attack.mp4", "at": 138, "dur": 5, "vol": 0 },
+    { "id": "spa-goal-3", "src": "assets/clips/spa-goal-3.mp4", "at": 148.21, "dur": 5, "vol": 0 },
+    { "id": "spa-crowd-b", "src": "assets/clips/spa-crowd.mp4", "at": 159, "dur": 5, "vol": 0 },
+    { "id": "spa-surge", "src": "assets/clips/spa-surge.mp4", "at": 169, "dur": 5.04, "vol": 0 },
+    { "id": "spa-goal-1", "src": "assets/clips/spa-goal-1.mp4", "at": 180, "dur": 5.04, "vol": 0 },
+    { "id": "bel-crowd-b", "src": "assets/clips/bel-crowd.mp4", "at": 190, "dur": 5, "vol": 0 },
+    { "id": "bel-attack", "src": "assets/clips/bel-attack.mp4", "at": 199, "dur": 5, "vol": 0 },
+    { "id": "bel-goal-1", "src": "assets/clips/bel-goal-1.mp4", "at": 210, "dur": 5, "vol": 0 },
+    { "id": "stadium-aerial-b", "src": "assets/clips/stadium-aerial.mp4", "at": 221, "dur": 5, "vol": 0 },
+    { "id": "spa-goal-2", "src": "assets/clips/spa-goal-2.mp4", "at": 230, "dur": 5.04, "vol": 0 },
+    { "id": "vd-handshake", "src": "assets/clips/vd-handshake.mp4", "at": 241, "dur": 5, "vol": 0 }
+  ],
+  "music": {
+    "cues": [
+      { "src": "music/cue-tense.mp3", "at": 0, "dur": 33, "vol": 0.5, "fadeIn": 0.5, "fadeOut": 3, "loop": false },
+      { "src": "music/cue-epic.mp3", "at": 33, "dur": 259.68, "vol": 0.4, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-heroic.mp3", "at": 292.68, "dur": 63.05, "vol": 0.46, "fadeIn": 2.5, "fadeOut": 3, "loop": true }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      { "src": "sfx/heartbeat.mp3", "at": 0.3, "vol": 0.9 },
+      { "src": "sfx/braam.mp3", "at": 5.2, "vol": 0.8 },
+      { "src": "sfx/mystic.mp3", "at": 10.2, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 22.6, "vol": 0.6 },
+      { "src": "sfx/braam.mp3", "at": 33, "vol": 0.55 },
+      { "src": "sfx/pop.mp3", "at": 55.5, "vol": 0.5 },
+      { "src": "sfx/whoosh.mp3", "at": 79.5, "vol": 0.5 },
+      { "src": "sfx/pop.mp3", "at": 90.6, "vol": 0.5 },
+      { "src": "sfx/whoosh.mp3", "at": 113, "vol": 0.55 },
+      { "src": "sfx/goal.mp3", "at": 148.7, "vol": 0.9 },
+      { "src": "sfx/whoosh.mp3", "at": 169, "vol": 0.55 },
+      { "src": "sfx/goal.mp3", "at": 180.5, "vol": 0.92 },
+      { "src": "sfx/whoosh.mp3", "at": 199, "vol": 0.55 },
+      { "src": "sfx/goal.mp3", "at": 210.5, "vol": 0.85 },
+      { "src": "sfx/whoosh.mp3", "at": 221, "vol": 0.6 },
+      { "src": "sfx/goal.mp3", "at": 230.5, "vol": 0.95 },
+      { "src": "sfx/stamp.mp3", "at": 235, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 241, "vol": 0.55 },
+      { "src": "sfx/mystic.mp3", "at": 292.68, "vol": 0.85 },
+      { "src": "sfx/pop.mp3", "at": 300, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 340.73, "vol": 0.55 }
+    ]
+  }
+}
