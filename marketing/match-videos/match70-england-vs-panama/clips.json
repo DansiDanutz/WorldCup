@@ -1,0 +1,350 @@
+{
+  "comment": "Ep70 England vs Panama — NO-REPEAT (rule #11): every clip once, 30 distinct. OUR PREDICTION ENG 1-1 PAN (Waterman shock goal ~25 PAN 0-1; Bárcenas 43 cuts inside and curls WIDE; Kane equalizes ~65 1-1; a level scoreline). Legend 070 The Mola Maker. Rule #16 tease+payoff, #17 holo reveal, #18 premium prediction card, #19 full-frame, #20 mystic intro. vol=0.",
+  "clips": [
+    {
+      "id": "cg-engfan",
+      "src": "assets/cg-eng-fan.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cg-panfan",
+      "src": "assets/cg-pan-fan.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cg-tease",
+      "src": "assets/cg-mystery-tease.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cg-stadaerial",
+      "src": "assets/stadium-aerial.mp4",
+      "at": 15,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stad-wide",
+      "src": "assets/stadium-wide.mp4",
+      "at": 33,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "eng-crowd",
+      "src": "assets/eng-crowd.mp4",
+      "at": 44,
+      "dur": 11.5,
+      "vol": 0
+    },
+    {
+      "id": "s-kane",
+      "src": "assets/eng-kane.mp4",
+      "at": 55.5,
+      "dur": 5.6,
+      "vol": 0
+    },
+    {
+      "id": "s-bellingham",
+      "src": "assets/eng-bellingham.mp4",
+      "at": 61.1,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "s-foden",
+      "src": "assets/eng-foden.mp4",
+      "at": 65.1,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "s-rice",
+      "src": "assets/eng-rice.mp4",
+      "at": 68.1,
+      "dur": 5.5,
+      "vol": 0
+    },
+    {
+      "id": "s-saka",
+      "src": "assets/eng-saka.mp4",
+      "at": 73.6,
+      "dur": 5.9,
+      "vol": 0
+    },
+    {
+      "id": "pan-crowd",
+      "src": "assets/pan-crowd.mp4",
+      "at": 79.5,
+      "dur": 11.1,
+      "vol": 0
+    },
+    {
+      "id": "s-carrasquilla",
+      "src": "assets/pan-carrasquilla.mp4",
+      "at": 90.6,
+      "dur": 4.6,
+      "vol": 0
+    },
+    {
+      "id": "s-barcenas",
+      "src": "assets/pan-barcenas.mp4",
+      "at": 95.2,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "s-murillo",
+      "src": "assets/pan-murillo.mp4",
+      "at": 98.2,
+      "dur": 2.6,
+      "vol": 0
+    },
+    {
+      "id": "s-waterman",
+      "src": "assets/pan-waterman.mp4",
+      "at": 100.8,
+      "dur": 2.4,
+      "vol": 0
+    },
+    {
+      "id": "duel-eng",
+      "src": "assets/duel-eng.mp4",
+      "at": 103,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/duel-mid.mp4",
+      "at": 113,
+      "dur": 9.5,
+      "vol": 0
+    },
+    {
+      "id": "duel-pan",
+      "src": "assets/duel-pan.mp4",
+      "at": 122.5,
+      "dur": 9.6,
+      "vol": 0
+    },
+    {
+      "id": "dr-pan-shock",
+      "src": "assets/dr-pan-shock.mp4",
+      "at": 132,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-barcenas-wide",
+      "src": "assets/dr-barcenas-wide.mp4",
+      "at": 142,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-eng-press",
+      "src": "assets/dr-eng-press.mp4",
+      "at": 152,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-eng-equalize",
+      "src": "assets/dr-eng-equalize.mp4",
+      "at": 162,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-pan-defend",
+      "src": "assets/dr-pan-defend.mp4",
+      "at": 172,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "dr-eng-chance",
+      "src": "assets/dr-eng-chance.mp4",
+      "at": 183,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-end-level",
+      "src": "assets/dr-end-level.mp4",
+      "at": 193,
+      "dur": 10.4,
+      "vol": 0
+    },
+    {
+      "id": "vd-respect",
+      "src": "assets/verdict-respect.mp4",
+      "at": 203.32,
+      "dur": 40.7,
+      "vol": 0
+    },
+    {
+      "id": "en-crowd",
+      "src": "assets/engage-crowd.mp4",
+      "at": 244,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "my-mola",
+      "src": "assets/my-mola.mp4",
+      "at": 255,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "cta-celeb",
+      "src": "assets/cta-celeb.mp4",
+      "at": 303.05,
+      "dur": 11,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 31.56,
+        "dur": 288,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 34,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.06,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 22.38,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 26.17,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113.25,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 131.51,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 138.5,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 147,
+        "vol": 0.65
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 149.5,
+        "vol": 0.75
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 168.5,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 186,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 256,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 271,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 304,
+        "vol": 0.6
+      }
+    ]
+  }
+}

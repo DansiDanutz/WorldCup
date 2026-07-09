@@ -1,0 +1,896 @@
+{
+  "comment": "Ep54 Morocco vs Haiti (Group C). CANON: content/Stories/Morocco-vs-Haiti.md \u2014 'The Lion and the Grenadier'. SPINE: two diaspora teams whose best players chose the ancestral homeland over an easier flag. MATCH UNPLAYED -> OUR PREDICTION Morocco 2-1 Haiti. THREE goals: En-Nesyri 38' header off a Hakimi cross from a Ziyech pass (MAR 1-0); El-Khannouss 56' curler past Placide (MAR 2-0); Ricardo Ade 81' header off a corner past Bounou for HAITI (MAR 2-1). NO 4th goal, NO save beat. vol=0 on every clip (silent reused/AI clips; audio = VO + music + sfx). Atmosphere library: mar-fans, hai-fans, stadium, celebration, mystery-gnawa (the Gnawa Master) + 10 player clips, reused via distinct ids. Scenes reference these ids via <ClipSprite id=...>. Legend 054 = The Gnawa Master (Morocco's spiritual trance musicians \u2014 guembri + qraqeb, the soul of Moroccan music). Brian VO.",
+  "clips": [
+    {
+      "id": "glimpse-stad",
+      "src": "assets/stadium.mp4",
+      "at": 0.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-gnawa",
+      "src": "assets/mystery-gnawa.mp4",
+      "at": 4.0,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-hakimi",
+      "src": "assets/action-duel.mp4",
+      "at": 8.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-etienne",
+      "src": "assets/hai-etienne.mp4",
+      "at": 11.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-ext",
+      "src": "assets/stadium.mp4",
+      "at": 34,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/celebration.mp4",
+      "at": 38,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "hist-mar",
+      "src": "assets/mar-fans.mp4",
+      "at": 44,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mar-bg",
+      "src": "assets/mar-fans.mp4",
+      "at": 53,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "hakimi",
+      "src": "assets/mar-hakimi.mp4",
+      "at": 55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "ziyech",
+      "src": "assets/mar-ziyech.mp4",
+      "at": 65.62,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "ennesyri",
+      "src": "assets/mar-ennesyri.mp4",
+      "at": 78.03,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "khannouss",
+      "src": "assets/mar-khannouss.mp4",
+      "at": 65.12,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "bounou",
+      "src": "assets/mar-bounou.mp4",
+      "at": 69.33,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "hist-hai",
+      "src": "assets/hai-fans.mp4",
+      "at": 83.55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "hai-bg",
+      "src": "assets/hai-fans.mp4",
+      "at": 90.88,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "ade",
+      "src": "assets/hai-ade.mp4",
+      "at": 92.15,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "nazon",
+      "src": "assets/hai-nazon.mp4",
+      "at": 100.55,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "etienne",
+      "src": "assets/hai-etienne.mp4",
+      "at": 107.3,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "arcus",
+      "src": "assets/hai-arcus.mp4",
+      "at": 97.55,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "placide",
+      "src": "assets/hai-placide.mp4",
+      "at": 94.55,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "drama-mar1",
+      "src": "assets/action-mar-celeb.mp4",
+      "at": 157,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-hakimi",
+      "src": "assets/action-duel.mp4",
+      "at": 141.0,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-ennesyri",
+      "src": "assets/action-mar-header.mp4",
+      "at": 149.0,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-khannouss",
+      "src": "assets/action-mar-shot.mp4",
+      "at": 161,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-ade",
+      "src": "assets/action-hai-header.mp4",
+      "at": 188.4,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-hai-cel",
+      "src": "assets/action-hai-celeb.mp4",
+      "at": 197,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-stad",
+      "src": "assets/action-crowd.mp4",
+      "at": 132,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "verdict-bg",
+      "src": "assets/action-mar-celeb.mp4",
+      "at": 211.64,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mystery",
+      "src": "assets/mystery-gnawa.mp4",
+      "at": 256,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "mystery-close",
+      "src": "assets/mystery-gnawa.mp4",
+      "at": 267,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "cta-bg",
+      "src": "assets/action-crowd.mp4",
+      "at": 303.33,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "bd-0",
+      "src": "assets/stadium.mp4",
+      "at": 0.0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-1",
+      "src": "assets/hai-fans.mp4",
+      "at": 4.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-2",
+      "src": "assets/mar-fans.mp4",
+      "at": 9.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-3",
+      "src": "assets/celebration.mp4",
+      "at": 14.59,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-4",
+      "src": "assets/mystery-gnawa.mp4",
+      "at": 19.39,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-5",
+      "src": "assets/hai-etienne.mp4",
+      "at": 24.17,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-6",
+      "src": "assets/mar-hakimi.mp4",
+      "at": 28.97,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-7",
+      "src": "assets/hai-ade.mp4",
+      "at": 33.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-8",
+      "src": "assets/mar-ziyech.mp4",
+      "at": 38.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-9",
+      "src": "assets/hai-nazon.mp4",
+      "at": 43.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-10",
+      "src": "assets/mar-ennesyri.mp4",
+      "at": 48,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-11",
+      "src": "assets/hai-arcus.mp4",
+      "at": 52.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-12",
+      "src": "assets/mar-khannouss.mp4",
+      "at": 59.22,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-13",
+      "src": "assets/hai-placide.mp4",
+      "at": 64.02,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-14",
+      "src": "assets/mar-bounou.mp4",
+      "at": 69.03,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-15",
+      "src": "assets/stadium.mp4",
+      "at": 78.03,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-16",
+      "src": "assets/hai-fans.mp4",
+      "at": 82.62,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-17",
+      "src": "assets/mar-fans.mp4",
+      "at": 86.48,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-18",
+      "src": "assets/celebration.mp4",
+      "at": 91.28,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-19",
+      "src": "assets/mystery-gnawa.mp4",
+      "at": 94.75,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-20",
+      "src": "assets/hai-etienne.mp4",
+      "at": 99.55,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-21",
+      "src": "assets/mar-hakimi.mp4",
+      "at": 104.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-22",
+      "src": "assets/hai-ade.mp4",
+      "at": 109.9,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-23",
+      "src": "assets/mar-ziyech.mp4",
+      "at": 116.84,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-24",
+      "src": "assets/hai-nazon.mp4",
+      "at": 122.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-25",
+      "src": "assets/mar-ennesyri.mp4",
+      "at": 126.98,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-26",
+      "src": "assets/hai-arcus.mp4",
+      "at": 130.48,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-27",
+      "src": "assets/mar-khannouss.mp4",
+      "at": 133.11,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-28",
+      "src": "assets/hai-placide.mp4",
+      "at": 136.93,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-29",
+      "src": "assets/mar-bounou.mp4",
+      "at": 141.73,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-30",
+      "src": "assets/stadium.mp4",
+      "at": 144.0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-31",
+      "src": "assets/hai-fans.mp4",
+      "at": 148.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-32",
+      "src": "assets/mar-fans.mp4",
+      "at": 153.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-33",
+      "src": "assets/celebration.mp4",
+      "at": 158.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-34",
+      "src": "assets/mystery-gnawa.mp4",
+      "at": 163.65,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-35",
+      "src": "assets/hai-etienne.mp4",
+      "at": 168.45,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-36",
+      "src": "assets/mar-hakimi.mp4",
+      "at": 173.25,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-37",
+      "src": "assets/hai-ade.mp4",
+      "at": 177.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-38",
+      "src": "assets/mar-ziyech.mp4",
+      "at": 182.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-39",
+      "src": "assets/hai-nazon.mp4",
+      "at": 187.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-40",
+      "src": "assets/mar-ennesyri.mp4",
+      "at": 192,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-41",
+      "src": "assets/hai-arcus.mp4",
+      "at": 196.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-42",
+      "src": "assets/mar-khannouss.mp4",
+      "at": 201.65,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-43",
+      "src": "assets/hai-placide.mp4",
+      "at": 208.86,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-44",
+      "src": "assets/mar-bounou.mp4",
+      "at": 214.25,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-45",
+      "src": "assets/stadium.mp4",
+      "at": 216.89,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-46",
+      "src": "assets/hai-fans.mp4",
+      "at": 221.05,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-47",
+      "src": "assets/mar-fans.mp4",
+      "at": 225.85,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-48",
+      "src": "assets/celebration.mp4",
+      "at": 230.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-49",
+      "src": "assets/mystery-gnawa.mp4",
+      "at": 235.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-50",
+      "src": "assets/hai-etienne.mp4",
+      "at": 240,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-51",
+      "src": "assets/mar-hakimi.mp4",
+      "at": 244.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-52",
+      "src": "assets/hai-ade.mp4",
+      "at": 249.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-53",
+      "src": "assets/mar-ziyech.mp4",
+      "at": 254.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-54",
+      "src": "assets/hai-nazon.mp4",
+      "at": 259.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-55",
+      "src": "assets/mar-ennesyri.mp4",
+      "at": 265.19,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-56",
+      "src": "assets/hai-arcus.mp4",
+      "at": 269.99,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-57",
+      "src": "assets/mar-khannouss.mp4",
+      "at": 273.87,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-58",
+      "src": "assets/hai-placide.mp4",
+      "at": 280.24,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-59",
+      "src": "assets/mar-bounou.mp4",
+      "at": 285.65,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-60",
+      "src": "assets/stadium.mp4",
+      "at": 290.45,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-61",
+      "src": "assets/hai-fans.mp4",
+      "at": 295.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-62",
+      "src": "assets/mar-fans.mp4",
+      "at": 301.3,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-63",
+      "src": "assets/celebration.mp4",
+      "at": 308.53,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-64",
+      "src": "assets/mystery-gnawa.mp4",
+      "at": 313.33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqm-hakimi",
+      "src": "assets/mar-hakimi.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqm-ziyech",
+      "src": "assets/mar-ziyech.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqm-ennesyri",
+      "src": "assets/mar-ennesyri.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqm-khannouss",
+      "src": "assets/mar-khannouss.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqm-bounou",
+      "src": "assets/mar-bounou.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqh-ade",
+      "src": "assets/hai-ade.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqh-nazon",
+      "src": "assets/hai-nazon.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqh-etienne",
+      "src": "assets/hai-etienne.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqh-arcus",
+      "src": "assets/hai-arcus.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqh-placide",
+      "src": "assets/hai-placide.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "drama-fill1",
+      "src": "assets/action-crowd.mp4",
+      "at": 170.0,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-fill2",
+      "src": "assets/action-mar-celeb.mp4",
+      "at": 179.0,
+      "dur": 9,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 31.56,
+        "dur": 288,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 34,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.06,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 22.38,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 26.17,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 83.55,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 92.15,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113.25,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 131.51,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 138.53,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 152.03,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 163.64,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 192.03,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 216.25,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 256,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 271,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 304,
+        "vol": 0.6
+      }
+    ]
+  }
+}

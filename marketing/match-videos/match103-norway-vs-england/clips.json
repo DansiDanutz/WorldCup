@@ -1,0 +1,66 @@
+{
+  "comment": "Ep103 Norway vs England PHOTOREAL, nation-correct (#28), NO-REPEAT + dimmed beat re-entries (#27), showcase SYNCED (#23). OUR PREDICTION Norway 1-1 England — the run's FIRST DRAW (Rule #30 variety vs Ep99 2-1 / Ep100 2-1 / Ep101 3-1 / Ep102 1-0): England lead through Kane in the first half, Haaland equalises for Norway, and neither side breaks the other again (honours even to the whistle). Legend 103 = Jormungandr, the World Serpent (Norway/Norse) — fresh vs Legend 081/095 (Fenrir the Wolf). NORWAY (5 showcases + no-crowd + no-goal-2) REUSED 0-credit from match95-norway-vs-brazil (Haaland 9 / Odegaard 10 / Sorloth 11 / Nusa 20 / Berge 6), independently frame-verified this episode (all PASSED, correct likeness+number+red home kit). Foden NOT featured (removed from the England squad in Ep96, kept out for squad-accuracy). ENGLAND (Kane 9 / Bellingham 10 / Rice 4 / Saka 7 showcases + eng-collective 'Three Lions' 5th slot + eng-crowd/eng-attack/eng-goal/texture-england) generated FRESH this episode (no England clip sequences survived on disk in any sibling — all England folders had assets/*.mp4 gitignored) via nano_banana_pro stills + kling3_0_turbo i2v, verified frame-by-frame (identity+number stable, no warping). Story-unique fresh clips: Norway-vs-England pitch-walkout + captains' handshake + Haaland equaliser (nor-goal). Dimmed beat-backdrop re-entries (#27): texture-england-b, no-crowd-b, eng-crowd-b, stadium-wide-b carry drama-beat cards on real footage; bg-rise/bg-roar/crowd-tense are dimmed atmosphere backdrops for the two-way-deadlock beats. vol=0 throughout (VO+music+SFX only).",
+  "clips": [
+    { "id": "texture-norway", "src": "assets/clips/texture-norway.mp4", "at": 5, "dur": 5, "vol": 0 },
+    { "id": "texture-england", "src": "assets/clips/texture-england.mp4", "at": 10, "dur": 5, "vol": 0 },
+    { "id": "pitch-walkout", "src": "assets/clips/pitch-walkout.mp4", "at": 33, "dur": 5, "vol": 0 },
+    { "id": "stadium-wide", "src": "assets/clips/stadium-wide.mp4", "at": 38.8, "dur": 5, "vol": 0 },
+    { "id": "no-crowd", "src": "assets/clips/no-crowd.mp4", "at": 44, "dur": 5, "vol": 0 },
+    { "id": "no-haaland", "src": "assets/clips/no-haaland.mp4", "at": 55.5, "dur": 4.8, "vol": 0 },
+    { "id": "no-odegaard", "src": "assets/clips/no-odegaard.mp4", "at": 60.3, "dur": 4.8, "vol": 0 },
+    { "id": "no-sorloth", "src": "assets/clips/no-sorloth.mp4", "at": 65.1, "dur": 4.8, "vol": 0 },
+    { "id": "no-nusa", "src": "assets/clips/no-nusa.mp4", "at": 69.9, "dur": 4.8, "vol": 0 },
+    { "id": "no-berge", "src": "assets/clips/no-berge.mp4", "at": 74.7, "dur": 4.8, "vol": 0 },
+    { "id": "eng-crowd", "src": "assets/clips/eng-crowd.mp4", "at": 79.5, "dur": 5, "vol": 0 },
+    { "id": "eng-kane", "src": "assets/clips/eng-kane.mp4", "at": 90.6, "dur": 4.48, "vol": 0 },
+    { "id": "eng-bellingham", "src": "assets/clips/eng-bellingham.mp4", "at": 95.08, "dur": 4.48, "vol": 0 },
+    { "id": "eng-rice", "src": "assets/clips/eng-rice.mp4", "at": 99.56, "dur": 4.48, "vol": 0 },
+    { "id": "eng-saka", "src": "assets/clips/eng-saka.mp4", "at": 104.04, "dur": 4.48, "vol": 0 },
+    { "id": "eng-collective", "src": "assets/clips/eng-collective.mp4", "at": 108.52, "dur": 4.48, "vol": 0 },
+    { "id": "stadium-aerial", "src": "assets/clips/stadium-aerial.mp4", "at": 113, "dur": 5, "vol": 0 },
+    { "id": "texture-england-b", "src": "assets/clips/texture-england.mp4", "at": 132, "dur": 5, "vol": 0 },
+    { "id": "eng-attack", "src": "assets/clips/eng-attack.mp4", "at": 138, "dur": 5, "vol": 0 },
+    { "id": "eng-goal", "src": "assets/clips/eng-goal.mp4", "at": 148.21, "dur": 5, "vol": 0 },
+    { "id": "no-crowd-b", "src": "assets/clips/no-crowd.mp4", "at": 159, "dur": 5, "vol": 0 },
+    { "id": "no-goal-2", "src": "assets/clips/no-goal-2.mp4", "at": 169, "dur": 5, "vol": 0 },
+    { "id": "nor-goal", "src": "assets/clips/nor-goal.mp4", "at": 180, "dur": 5, "vol": 0 },
+    { "id": "eng-crowd-b", "src": "assets/clips/eng-crowd.mp4", "at": 190, "dur": 5, "vol": 0 },
+    { "id": "bg-rise", "src": "assets/clips/bg-rise.mp4", "at": 199, "dur": 5, "vol": 0 },
+    { "id": "bg-roar", "src": "assets/clips/bg-roar.mp4", "at": 210, "dur": 5, "vol": 0 },
+    { "id": "crowd-tense", "src": "assets/clips/crowd-tense.mp4", "at": 221, "dur": 5, "vol": 0 },
+    { "id": "stadium-wide-b", "src": "assets/clips/stadium-wide.mp4", "at": 230, "dur": 5, "vol": 0 },
+    { "id": "vd-handshake", "src": "assets/clips/vd-handshake.mp4", "at": 241, "dur": 5, "vol": 0 }
+  ],
+  "music": {
+    "cues": [
+      { "src": "music/cue-tense.mp3", "at": 0, "dur": 33, "vol": 0.5, "fadeIn": 0.5, "fadeOut": 3, "loop": false },
+      { "src": "music/cue-epic.mp3", "at": 33, "dur": 259.68, "vol": 0.4, "fadeIn": 2.5, "fadeOut": 4, "loop": true },
+      { "src": "music/cue-heroic.mp3", "at": 292.68, "dur": 63.05, "vol": 0.46, "fadeIn": 2.5, "fadeOut": 3, "loop": true }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      { "src": "sfx/heartbeat.mp3", "at": 0.3, "vol": 0.9 },
+      { "src": "sfx/braam.mp3", "at": 5.2, "vol": 0.8 },
+      { "src": "sfx/mystic.mp3", "at": 10.2, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 22.6, "vol": 0.6 },
+      { "src": "sfx/braam.mp3", "at": 33, "vol": 0.55 },
+      { "src": "sfx/pop.mp3", "at": 55.5, "vol": 0.5 },
+      { "src": "sfx/whoosh.mp3", "at": 79.5, "vol": 0.5 },
+      { "src": "sfx/pop.mp3", "at": 90.6, "vol": 0.5 },
+      { "src": "sfx/whoosh.mp3", "at": 113, "vol": 0.55 },
+      { "src": "sfx/goal.mp3", "at": 148.7, "vol": 0.92 },
+      { "src": "sfx/whoosh.mp3", "at": 169, "vol": 0.55 },
+      { "src": "sfx/goal.mp3", "at": 180.4, "vol": 0.95 },
+      { "src": "sfx/whoosh.mp3", "at": 190, "vol": 0.55 },
+      { "src": "sfx/braam.mp3", "at": 210.3, "vol": 0.6 },
+      { "src": "sfx/whoosh.mp3", "at": 221, "vol": 0.55 },
+      { "src": "sfx/whistle.mp3", "at": 230.4, "vol": 0.85 },
+      { "src": "sfx/stamp.mp3", "at": 235, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 241, "vol": 0.55 },
+      { "src": "sfx/mystic.mp3", "at": 292.68, "vol": 0.85 },
+      { "src": "sfx/pop.mp3", "at": 300, "vol": 0.7 },
+      { "src": "sfx/whoosh.mp3", "at": 340.73, "vol": 0.55 }
+    ]
+  }
+}

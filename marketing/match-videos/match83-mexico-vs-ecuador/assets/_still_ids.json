@@ -1,0 +1,40 @@
+{
+  "comment": "Ep83 Mexico vs Ecuador (R32) — nano_banana stills for i2v. Mexico GREEN kit (eagle crest), Ecuador YELLOW kit (blue/red). Theme: THE SERPENT AND THE CONDOR — Quetzalcoatl vs the Andean Condor. Legend 083 the Andean Condor. OUR PREDICTION Ecuador 2-1 Mexico (Gimenez early, Valencia equalize, Paez late winner).",
+  "players": {
+    "mx-gimenez": "30838c79-7c1d-49d9-89a5-af4349caa673",
+    "mx-lozano": "5ebd836a-a567-4bc7-af2f-f24b2446d89f",
+    "mx-alvarez": "ba8c620e-f0ac-4546-9dbb-b0b4e7bc7bac",
+    "mx-vega": "059da14b-1c67-480a-b0cb-a10607ee93d9",
+    "mx-montes": "60541760-4cfe-4458-b074-0e79284a5080",
+    "ec-valencia": "790ba485-b604-497b-a592-66ccb409d516",
+    "ec-caicedo": "6313d6fd-fbe1-481e-9138-51b43ea60337",
+    "ec-paez": "8dc82e0b-ed4a-4ae9-8b80-723b6627c592",
+    "ec-estupinan": "706ecb47-a659-41f0-aea8-441f25f04c19",
+    "ec-hincapie": "0361c4bd-b3d9-4c6e-ab8a-77ee3adab7df"
+  },
+  "motifs": {
+    "mx-quetzal": "cc8318da-de79-4c55-ae12-948f8a1034be",
+    "ec-condor": "05a1ead8-2403-43a2-9bba-9c4bcfe074d0",
+    "texture-mexico": "ee8fb456-5fdb-4a11-9c09-488042c10968",
+    "texture-ecuador": "23209efc-3fb1-41ea-9094-84efafa93aad"
+  },
+  "scenes": {
+    "mx-crowd": "730bed5e-2551-46e1-8e95-5b39cf6aff4f",
+    "ec-crowd": "0f1b6f15-20a8-4b01-ae8f-a9a68cf911cf",
+    "mx-attack": "7b65ba30-79e3-4330-bd66-b8f095c9019a",
+    "duel-mid": "21c23ca7-db06-42b1-b456-a01ee37a5475",
+    "ec-press": "b7a9614f-fde3-4b38-bd1d-bc3b7de4213d",
+    "mx-surge": "79df9ee1-d9ec-442b-9caf-86654662314a",
+    "mx-goal": "add9c936-5637-4192-9776-04d04129c491",
+    "keeper-save": "5ad43f20-e9b0-4a19-abb4-cc59a73dde23",
+    "ec-goal-1": "595ac2b5-0ee6-47e3-b8d5-91bd6cc6df89",
+    "ec-goal-2": "3d9aa7be-4a10-4088-9b4b-10214bc28924",
+    "vd-handshake": "4933adac-15ae-4080-875a-74cfd6a495e6",
+    "crowd-tense": "e77a43e1-ba78-4bb2-a37c-0fc1fc412c29",
+    "cta-celebrate": "66c9246e-8c39-4881-a570-abe04e7fd2ae"
+  },
+  "card": {
+    "legend-083-portrait": "62613b4f-adc2-43cf-9152-acfa7ff72158",
+    "legend-083-landscape": "2519cc96-2c45-42cd-a916-3414e80f51c5"
+  }
+}

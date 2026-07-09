@@ -1,0 +1,370 @@
+{
+  "comment": "Ep72 DR Congo vs Uzbekistan PHOTOREAL, NO-REPEAT+NO-LOOP, showcase SYNCED to VO names (#23). OUR PREDICTION COD 0-1 UZB (Shomurodov 62 header). Legend 072 The White Wolf of Samarkand. vol=0.",
+  "clips": [
+    {
+      "id": "cod-leopard",
+      "src": "assets/cod-leopard.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "uzb-wolf",
+      "src": "assets/uzb-wolf.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cod-kinshasa",
+      "src": "assets/cod-kinshasa.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "uzb-registan",
+      "src": "assets/uzb-registan.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/stadium-wide.mp4",
+      "at": 38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cod-crowd",
+      "src": "assets/cod-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cod-tifo",
+      "src": "assets/cod-tifo.mp4",
+      "at": 49,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-wissa",
+      "src": "assets/s-wissa.mp4",
+      "at": 55,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cod-attack",
+      "src": "assets/cod-attack.mp4",
+      "at": 60,
+      "dur": 2.6,
+      "vol": 0
+    },
+    {
+      "id": "s-silas",
+      "src": "assets/s-silas.mp4",
+      "at": 62.6,
+      "dur": 2.9,
+      "vol": 0
+    },
+    {
+      "id": "s-bakambu",
+      "src": "assets/s-bakambu.mp4",
+      "at": 65.5,
+      "dur": 1.7,
+      "vol": 0
+    },
+    {
+      "id": "s-wanbissaka",
+      "src": "assets/s-wanbissaka.mp4",
+      "at": 67.2,
+      "dur": 2.8,
+      "vol": 0
+    },
+    {
+      "id": "s-mbemba",
+      "src": "assets/s-mbemba.mp4",
+      "at": 70,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cod-defend",
+      "src": "assets/cod-defend.mp4",
+      "at": 75,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "uzb-crowd",
+      "src": "assets/uzb-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "uzb-tifo",
+      "src": "assets/uzb-tifo.mp4",
+      "at": 84.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-fayzullaev",
+      "src": "assets/s-fayzullaev.mp4",
+      "at": 90.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-shomurodov",
+      "src": "assets/s-shomurodov.mp4",
+      "at": 96,
+      "dur": 2.1,
+      "vol": 0
+    },
+    {
+      "id": "s-masharipov",
+      "src": "assets/s-masharipov.mp4",
+      "at": 98.1,
+      "dur": 1.4,
+      "vol": 0
+    },
+    {
+      "id": "s-khamdamov",
+      "src": "assets/s-khamdamov.mp4",
+      "at": 99.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "s-khusanov",
+      "src": "assets/s-khusanov.mp4",
+      "at": 103,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "uzb-cross-build",
+      "src": "assets/uzb-cross-build.mp4",
+      "at": 108,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/duel-mid.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-wing",
+      "src": "assets/duel-wing.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/stadium-aerial.mp4",
+      "at": 123,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cod-chance",
+      "src": "assets/cod-chance.mp4",
+      "at": 132,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "keeper-save",
+      "src": "assets/keeper-save.mp4",
+      "at": 137,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "goal-fayzullaev-cross",
+      "src": "assets/goal-fayzullaev-cross.mp4",
+      "at": 152.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "goal-shomurodov",
+      "src": "assets/goal-shomurodov.mp4",
+      "at": 164.37,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-applaud",
+      "src": "assets/vd-applaud.mp4",
+      "at": 208.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-stadium-night",
+      "src": "assets/vd-stadium-night.mp4",
+      "at": 213.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/crowd-tense.mp4",
+      "at": 244,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cta-celebrate",
+      "src": "assets/cta-celebrate.mp4",
+      "at": 303.05,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 15.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 159,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 166.5,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 178.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 190,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}

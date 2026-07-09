@@ -1,0 +1,350 @@
+{
+  "comment": "Ep65 Cape Verde vs Saudi Arabia — NO-REPEAT (rule #11): every clip once, 30 distinct. OUR PREDICTION CPV 1-0 KSA (Cape Verde header 40, Mendes free kick off the post 63). Legend 065 The Morna Singer (Cape Verde) teased cold-open + paid off. Real app card artwork in reveal. Title+App gradients. vol=0.",
+  "clips": [
+    {
+      "id": "cg-cpvfan",
+      "src": "assets/cg-cpv-fan.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cg-ksafan",
+      "src": "assets/cg-ksa-fan.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cg-tease",
+      "src": "assets/cg-mystery-tease.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cg-stadaerial",
+      "src": "assets/stadium-aerial.mp4",
+      "at": 15,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stad-wide",
+      "src": "assets/stadium-wide.mp4",
+      "at": 33,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "cpv-crowd",
+      "src": "assets/cpv-crowd.mp4",
+      "at": 44,
+      "dur": 11.5,
+      "vol": 0
+    },
+    {
+      "id": "s-mendes",
+      "src": "assets/cpv-mendes.mp4",
+      "at": 55.5,
+      "dur": 5.6,
+      "vol": 0
+    },
+    {
+      "id": "s-rodrigues",
+      "src": "assets/cpv-rodrigues.mp4",
+      "at": 61.1,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "s-monteiro",
+      "src": "assets/cpv-monteiro.mp4",
+      "at": 65.1,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "s-lopes",
+      "src": "assets/cpv-lopes.mp4",
+      "at": 68.1,
+      "dur": 5.5,
+      "vol": 0
+    },
+    {
+      "id": "s-bebe",
+      "src": "assets/cpv-bebe.mp4",
+      "at": 73.6,
+      "dur": 5.9,
+      "vol": 0
+    },
+    {
+      "id": "ksa-crowd",
+      "src": "assets/ksa-crowd.mp4",
+      "at": 79.5,
+      "dur": 11.1,
+      "vol": 0
+    },
+    {
+      "id": "s-aldawsari",
+      "src": "assets/ksa-aldawsari.mp4",
+      "at": 90.6,
+      "dur": 4.6,
+      "vol": 0
+    },
+    {
+      "id": "s-buraikan",
+      "src": "assets/ksa-buraikan.mp4",
+      "at": 95.2,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "s-owais",
+      "src": "assets/ksa-owais.mp4",
+      "at": 98.2,
+      "dur": 2.6,
+      "vol": 0
+    },
+    {
+      "id": "s-faraj",
+      "src": "assets/ksa-faraj.mp4",
+      "at": 100.8,
+      "dur": 2.4,
+      "vol": 0
+    },
+    {
+      "id": "duel-cpv",
+      "src": "assets/duel-cpv.mp4",
+      "at": 103,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/duel-mid.mp4",
+      "at": 113,
+      "dur": 9.5,
+      "vol": 0
+    },
+    {
+      "id": "duel-ksa",
+      "src": "assets/duel-ksa.mp4",
+      "at": 122.5,
+      "dur": 9.6,
+      "vol": 0
+    },
+    {
+      "id": "dr-cpv-attack",
+      "src": "assets/dr-cpv-attack.mp4",
+      "at": 132,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-goal",
+      "src": "assets/dr-cpv-goal.mp4",
+      "at": 142,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-cpv-celeb",
+      "src": "assets/dr-cpv-celeb.mp4",
+      "at": 152,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-ksa-attack",
+      "src": "assets/dr-ksa-attack.mp4",
+      "at": 162,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-freekick",
+      "src": "assets/dr-mendes-freekick.mp4",
+      "at": 172,
+      "dur": 10,
+      "vol": 0
+    },
+    {
+      "id": "dr-post",
+      "src": "assets/dr-post.mp4",
+      "at": 182,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "dr-defiance",
+      "src": "assets/dr-defiance.mp4",
+      "at": 193,
+      "dur": 10.4,
+      "vol": 0
+    },
+    {
+      "id": "vd-respect",
+      "src": "assets/verdict-respect.mp4",
+      "at": 203.32,
+      "dur": 10.7,
+      "vol": 0
+    },
+    {
+      "id": "en-crowd",
+      "src": "assets/engage-crowd.mp4",
+      "at": 244,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "my-morna",
+      "src": "assets/my-morna.mp4",
+      "at": 255,
+      "dur": 11,
+      "vol": 0
+    },
+    {
+      "id": "cta-celeb",
+      "src": "assets/cta-celeb.mp4",
+      "at": 303.05,
+      "dur": 11,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 31.56,
+        "dur": 288,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 34,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.06,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 22.38,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 26.17,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113.25,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 131.51,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 158.5,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 159.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 161,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 189.5,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 191.2,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 256,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 271,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 304,
+        "vol": 0.6
+      }
+    ]
+  }
+}

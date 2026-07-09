@@ -1,0 +1,62 @@
+{
+  "_note": "Ep73 photoreal clip job IDs (kling3_0_turbo). Pending: download once rendered. mahrez/mandi/alaba player+drama i2v fire after stills regen.",
+  "atmosphere": {
+    "alg-tuareg":"661ff3d0-dae3-48dc-b0d6-d096599a4c91",
+    "aut-krampus":"b70285c3-5b05-4e34-986a-ba72032c7bfa",
+    "alg-tassili":"011edce1-b2ec-40a3-8150-fd1192dcd729",
+    "aut-alps":"fe383e26-c200-44bb-a0e7-f1d1d9c979a4",
+    "texture-desert-heat":"894b6a49-7fd0-4be0-ab5f-e3a2824d04db",
+    "texture-alpine-mist":"3083af16-ce9d-4400-bd78-8fa681f2c47c",
+    "texture-embers":"5a8f0e3e-a4a1-4337-8b62-82f7a79bfe18",
+    "alg-crowd":"25a086fd-bbed-44c9-89a7-0a0fe4a6fd64",
+    "aut-crowd":"e24bc973-cd5d-42a8-b362-a57adb5ed0ec",
+    "crowd-tense":"2c93787b-6391-4e0c-9533-45c7d7724f63",
+    "alg-tifo":"3d297cde-202a-405c-a6f0-3d5f93fb538d",
+    "aut-tifo":"09a0f7e9-12b0-4b61-8599-284b072c5a94"
+  },
+  "stadium": {
+    "stadium-wide":"b272a105-cefe-475c-8f3d-cb05a069bc2d",
+    "stadium-aerial":"71b62fc1-3dc0-4767-8ba5-a64c69d250cd",
+    "pitch-walkout":"bd0fd5de-6d89-4662-8ddf-533ab0cc4ccd",
+    "vd-stadium-night":"1cc49568-fdac-462a-b3b1-5fc4437fb5de"
+  },
+  "duels": {
+    "duel-mid":"8c2d9a8c-5584-4f9f-95cf-1c85c2fed407",
+    "duel-mahrez-alaba":"aa5bb67b-83cf-4896-a1f9-b6eb63952149",
+    "alg-attack":"66543d88-7118-48e2-8f32-66a707e3a526",
+    "aut-attack":"b5d6efa4-52e4-4afb-ba09-c9d336241903",
+    "keeper-save":"0dbd6f3c-c625-4bb1-91a3-e2d801fd930c"
+  },
+  "verdict_cta": {
+    "vd-handshake":"c8869a71-5c4b-4339-b980-f8c0cd8aa31b",
+    "vd-applaud":"20317c56-96f0-4d17-b53d-3251a4f5e128",
+    "cta-celebrate":"9fb992a5-32d0-4efa-a7c8-e78f0c080b5b"
+  },
+  "players_i2v": {
+    "alg-bennacer":"2df7af4a-ed49-43ff-9d47-8f24df6f1e1f",
+    "alg-gouiri":"537da3d4-f0d3-41c8-b773-6351b2a1d4bc",
+    "alg-boudaoui":"9374b520-d1a9-458d-b813-a48c06189998",
+    "aut-sabitzer":"87110765-856c-4b7d-83b9-c3f03f6e93b2",
+    "aut-laimer":"8ce023ce-99a3-47f5-82a1-471931306091",
+    "aut-arnautovic":"5bc7c67a-4169-4c7b-a8f4-043119460e8a",
+    "aut-baumgartner":"78ba5399-9eda-481e-a90f-135065d098ab",
+    "alg-mahrez":"PENDING_STILL_cb772a2a",
+    "alg-mandi":"PENDING_STILL_1f959a4f",
+    "aut-alaba":"PENDING_STILL_b86bfeef"
+  },
+  "drama_i2v": {
+    "aut-sabitzer-shot":"1c0ab088-c701-403c-8c30-1d9bdbff9b4c",
+    "alg-gouiri-goal":"64075b41-3309-4084-b8fc-2ad655c1c0b3",
+    "alg-mahrez-curl":"PENDING_STILL_cb772a2a",
+    "aut-alaba-block":"PENDING_STILL_b86bfeef"
+  },
+  "regen_stills": {
+    "alg-mahrez":"cb772a2a-e9af-4051-a6cd-0dddaba10815",
+    "alg-mandi":"1f959a4f-95a1-4032-b1a2-8ca74d3f1ac3",
+    "aut-alaba":"b86bfeef-798c-414d-be05-22de1e6c74e9"
+  },
+  "legend_card": {
+    "legend-073-portrait":"2492e5bb-cd19-4ad0-8a1c-cd91a6dacfbb",
+    "legend-073-landscape":"6a221c9e-8e05-4567-8175-b962e399e982"
+  }
+}

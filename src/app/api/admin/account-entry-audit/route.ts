@@ -316,7 +316,7 @@ function groupEntryTeams(entryTeams: EntryTeamRow[]) {
   return grouped;
 }
 
-function chooseBestEntry(entries: EntryRow[]) {
+function chooseBestEntry(entries: EntryRow[]): EntryRow | undefined {
   return [...entries].sort((a, b) => {
     const statusDelta = statusPriority[b.status] - statusPriority[a.status];
     if (statusDelta !== 0) {

@@ -1,0 +1,391 @@
+{
+  "comment": "Ep73 Algeria vs Austria PHOTOREAL, NO-REPEAT+NO-LOOP, showcase SYNCED to VO names (#23). OUR PREDICTION ALG 0-0 AUT — climax = 73rd-min Mahrez curl DEFLECTED WIDE by Alaba (NO goal). Legend 073 The Krampus of the Alps. vol=0.",
+  "clips": [
+    {
+      "id": "alg-tuareg",
+      "src": "assets/clips/alg-tuareg.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "aut-krampus",
+      "src": "assets/clips/aut-krampus.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "alg-tassili",
+      "src": "assets/clips/alg-tassili.mp4",
+      "at": 10,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "aut-alps",
+      "src": "assets/clips/aut-alps.mp4",
+      "at": 14.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "texture-embers",
+      "src": "assets/clips/texture-embers.mp4",
+      "at": 18,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "alg-crowd",
+      "src": "assets/clips/alg-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "alg-tifo",
+      "src": "assets/clips/alg-tifo.mp4",
+      "at": 49,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "alg-attack",
+      "src": "assets/clips/alg-attack.mp4",
+      "at": 54,
+      "dur": 1.5,
+      "vol": 0
+    },
+    {
+      "id": "alg-mahrez",
+      "src": "assets/clips/alg-mahrez.mp4",
+      "at": 55.5,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "alg-bennacer",
+      "src": "assets/clips/alg-bennacer.mp4",
+      "at": 60,
+      "dur": 2.3,
+      "vol": 0
+    },
+    {
+      "id": "alg-gouiri",
+      "src": "assets/clips/alg-gouiri.mp4",
+      "at": 62.3,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "alg-boudaoui",
+      "src": "assets/clips/alg-boudaoui.mp4",
+      "at": 68,
+      "dur": 2.8,
+      "vol": 0
+    },
+    {
+      "id": "alg-mandi",
+      "src": "assets/clips/alg-mandi.mp4",
+      "at": 70.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "aut-crowd",
+      "src": "assets/clips/aut-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "aut-tifo",
+      "src": "assets/clips/aut-tifo.mp4",
+      "at": 84.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "aut-attack",
+      "src": "assets/clips/aut-attack.mp4",
+      "at": 89.6,
+      "dur": 1,
+      "vol": 0
+    },
+    {
+      "id": "aut-alaba",
+      "src": "assets/clips/aut-alaba.mp4",
+      "at": 90.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "aut-sabitzer",
+      "src": "assets/clips/aut-sabitzer.mp4",
+      "at": 96,
+      "dur": 4.3,
+      "vol": 0
+    },
+    {
+      "id": "aut-laimer",
+      "src": "assets/clips/aut-laimer.mp4",
+      "at": 100.3,
+      "dur": 2.7,
+      "vol": 0
+    },
+    {
+      "id": "aut-arnautovic",
+      "src": "assets/clips/aut-arnautovic.mp4",
+      "at": 103,
+      "dur": 4.4,
+      "vol": 0
+    },
+    {
+      "id": "aut-baumgartner",
+      "src": "assets/clips/aut-baumgartner.mp4",
+      "at": 107.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/clips/duel-mid.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-mahrez-alaba",
+      "src": "assets/clips/duel-mahrez-alaba.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 123,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-alpine-mist",
+      "src": "assets/clips/texture-alpine-mist.mp4",
+      "at": 128,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "sabitzer-shot",
+      "src": "assets/clips/sabitzer-shot.mp4",
+      "at": 132,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-desert-heat",
+      "src": "assets/clips/texture-desert-heat.mp4",
+      "at": 137,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "keeper-save",
+      "src": "assets/clips/keeper-save.mp4",
+      "at": 142,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gouiri-goal",
+      "src": "assets/clips/gouiri-goal.mp4",
+      "at": 147,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "mahrez-curl",
+      "src": "assets/clips/mahrez-curl.mp4",
+      "at": 164.37,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "alaba-block",
+      "src": "assets/clips/alaba-block.mp4",
+      "at": 178.46,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-applaud",
+      "src": "assets/clips/vd-applaud.mp4",
+      "at": 208.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-stadium-night",
+      "src": "assets/clips/vd-stadium-night.mp4",
+      "at": 213.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 244,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cta-celebrate",
+      "src": "assets/clips/cta-celebrate.mp4",
+      "at": 303.05,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 152.21,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 164.37,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 178.46,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}

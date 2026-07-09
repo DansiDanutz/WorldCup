@@ -1,0 +1,47 @@
+{
+  "comment": "Ep85 Belgium vs Senegal stills (nano_banana_2). 10 players + 4 motifs + 13 scenes + 2 legend-card. i2v seeds for kling3_0_turbo. Establishing (pitch-walkout/stadium-wide/stadium-aerial) reused from library at 0 credits.",
+  "players_belgium": {
+    "be-debruyne": "929c0264-042d-4c56-8e93-7a30bf908a14",
+    "be-lukaku": "695064e0-5c26-40b1-9a80-cb34a0139ec1",
+    "be-doku": "4c0e7307-fc58-4e42-86df-103fd5ed963c",
+    "be-tielemans": "d54a174b-94ee-4caa-8545-48a9be99df14",
+    "be-onana": "140f215d-0abd-4760-8d8c-e32847b3d155"
+  },
+  "players_senegal": {
+    "sn-mane": "3e6beb87-40cb-4c38-be38-21fe8c247a04",
+    "sn-jackson": "cd6bb754-02f9-4073-964d-b982ba3c51db",
+    "sn-papesarr": "c9843e8e-49e8-4f09-a244-1051d9937f3b",
+    "sn-koulibaly": "8a631154-3fa6-4984-9e31-e4b61b532dfc",
+    "sn-ismailasarr": "0f39e10b-2b03-4200-a44e-0df812c3a022"
+  },
+  "motifs": {
+    "be-devil": "005322cd-61ea-4d2a-bc1e-70c919b5cde1",
+    "texture-belgium": "bbda06f6-071c-4259-b869-a343eb4f9107",
+    "sn-lion": "a7fe1808-1823-4d32-9f4b-5994992e49cd",
+    "texture-senegal": "918a0ad5-5185-473a-977e-18a554a7229d"
+  },
+  "scenes": {
+    "be-crowd": "d46602ec-dbb3-49ac-8aa9-87f474b48650",
+    "be-attack": "b650f1e1-b684-48d9-8ad5-24fc0c44990e",
+    "be-surge": "bc0997ee-513b-4f87-bff8-2ba7bfb5ebae",
+    "sn-crowd": "33c78abb-92d1-49f7-8d56-529833aa5738",
+    "sn-attack": "ef0ef1ac-2309-452e-8858-be3823a04abe",
+    "be-goal": "e5a8de52-6c13-4a9e-951a-af20e5e28d6b",
+    "sn-goal-1": "e733004a-6308-4e8d-ad7c-fd78403ada49",
+    "sn-goal-2": "1e58ce21-558e-4536-88a7-b2a594649563",
+    "vd-handshake": "5dff5043-f0b5-47a7-8a99-1bfeee2b6349",
+    "cta-celebrate": "b215dceb-73c4-4994-a380-10d319bbf341",
+    "duel-mid": "688f5a39-aa4a-4b52-a7df-dbe6d194f55b",
+    "crowd-tense": "baa28056-8bc2-4448-9ae7-e5f1a993616e",
+    "keeper-save": "8b8e2ed4-9118-48f7-9ba3-c0681b3a5ca4"
+  },
+  "legend_card": {
+    "legend085-portrait": "8b61645f-de38-4346-8784-6355ead6edec",
+    "legend085-landscape": "3c24f610-d8eb-4f84-9900-58d277bba75c"
+  },
+  "reused_establishing": {
+    "pitch-walkout": "hf_20260628_194116_6be15ee4",
+    "stadium-wide": "hf_20260628_194344_470289a1",
+    "stadium-aerial": "hf_20260628_194359_b4f00cbf"
+  }
+}

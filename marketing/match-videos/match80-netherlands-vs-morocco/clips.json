@@ -1,0 +1,361 @@
+{
+  "comment": "Ep80 Netherlands vs Morocco PHOTOREAL, NO-REPEAT+NO-LOOP, showcase SYNCED. OUR PREDICTION Morocco 2-1 Netherlands (Hakimi late winner). Legend 080 The Atlas Lion. vol=0.",
+  "clips": [
+    {
+      "id": "nl-dutchman",
+      "src": "assets/clips/nl-dutchman.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-sea",
+      "src": "assets/clips/texture-sea.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-atlaslion",
+      "src": "assets/clips/ma-atlaslion.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-atlas",
+      "src": "assets/clips/texture-atlas.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "nl-crowd",
+      "src": "assets/clips/nl-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "nl-tifo",
+      "src": "assets/clips/nl-tifo.mp4",
+      "at": 49,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "nl-attack",
+      "src": "assets/clips/nl-attack.mp4",
+      "at": 54,
+      "dur": 1.5,
+      "vol": 0
+    },
+    {
+      "id": "nl-depay",
+      "src": "assets/clips/nl-depay.mp4",
+      "at": 55.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "nl-gakpo",
+      "src": "assets/clips/nl-gakpo.mp4",
+      "at": 60.5,
+      "dur": 4.3,
+      "vol": 0
+    },
+    {
+      "id": "nl-xavisimons",
+      "src": "assets/clips/nl-xavisimons.mp4",
+      "at": 64.8,
+      "dur": 3.2,
+      "vol": 0
+    },
+    {
+      "id": "nl-dejong",
+      "src": "assets/clips/nl-dejong.mp4",
+      "at": 68,
+      "dur": 3.2,
+      "vol": 0
+    },
+    {
+      "id": "nl-vandijk",
+      "src": "assets/clips/nl-vandijk.mp4",
+      "at": 71.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-crowd",
+      "src": "assets/clips/ma-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-tifo",
+      "src": "assets/clips/ma-tifo.mp4",
+      "at": 84.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-hakimi",
+      "src": "assets/clips/ma-hakimi.mp4",
+      "at": 90.6,
+      "dur": 4.4,
+      "vol": 0
+    },
+    {
+      "id": "ma-ziyech",
+      "src": "assets/clips/ma-ziyech.mp4",
+      "at": 95,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "ma-ennesyri",
+      "src": "assets/clips/ma-ennesyri.mp4",
+      "at": 99,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "ma-amrabat",
+      "src": "assets/clips/ma-amrabat.mp4",
+      "at": 103,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "ma-brahim",
+      "src": "assets/clips/ma-brahim.mp4",
+      "at": 106.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/clips/duel-mid.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "nl-press",
+      "src": "assets/clips/nl-press.mp4",
+      "at": 132,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bono-save",
+      "src": "assets/clips/bono-save.mp4",
+      "at": 142,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "nl-goal",
+      "src": "assets/clips/nl-goal.mp4",
+      "at": 152.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-surge",
+      "src": "assets/clips/ma-surge.mp4",
+      "at": 164.37,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-goal-1",
+      "src": "assets/clips/ma-goal-1.mp4",
+      "at": 178.46,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ma-goal-2",
+      "src": "assets/clips/ma-goal-2.mp4",
+      "at": 189.58,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-stadium-night",
+      "src": "assets/clips/vd-stadium-night.mp4",
+      "at": 213.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 244,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cta-celebrate",
+      "src": "assets/clips/cta-celebrate.mp4",
+      "at": 303.05,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 153.6,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 164.37,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 179.9,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 191,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}

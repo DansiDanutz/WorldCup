@@ -1,0 +1,32 @@
+{
+  "comment": "Ep83 Mexico vs Ecuador — kling3_0_turbo 5s i2v clips from stills. Establishing (pitch-walkout/stadium-wide/stadium-aerial) reused from library (0 credits).",
+  "clips": {
+    "mx-gimenez": "b0eee8e7-1195-4bfd-828b-8071ba97ba18",
+    "mx-lozano": "c7fc886c-bd27-4d25-95c4-590684cd99aa",
+    "mx-alvarez": "756f7fbc-b42b-4e89-8ef9-9c24dafd5e5f",
+    "mx-vega": "f662e7b5-513d-4e7b-abd2-09fa715bb22a",
+    "mx-montes": "d6b008d3-76a7-41d6-911c-f3762b554f10",
+    "ec-valencia": "63f4cdaf-26b0-441e-8d2c-d3e753f5e32a",
+    "ec-caicedo": "0937b044-b082-4657-96c2-f3ea5febe276",
+    "ec-paez": "204b1383-1505-4db5-8fb3-341eb6915e83",
+    "ec-estupinan": "662c1917-f633-41d6-b45a-981d450f0f38",
+    "ec-hincapie": "804c827e-03b9-4953-9909-6482044e547e",
+    "mx-quetzal": "3646709d-ea34-4346-a2e1-5a7d1656a7d2",
+    "ec-condor": "8ef4322e-d19a-458e-af64-380a66ba4019",
+    "texture-mexico": "dd81c232-909d-4908-a4b6-58abb2d6efa8",
+    "texture-ecuador": "399fa41e-f885-4e64-98e4-2b41ee713e04",
+    "mx-crowd": "a0e7650f-121c-4ff7-a8ee-eb63312c7338",
+    "ec-crowd": "1262b310-9552-4b73-9f4e-cd6dea1a2e9f",
+    "mx-attack": "ebbfbd6c-672b-4c77-baa8-de35d1c04975",
+    "duel-mid": "70e56807-32ea-4487-889c-9d405766e0e8",
+    "ec-press": "661ccc3e-0043-48b4-8e08-67730f30b5d2",
+    "mx-surge": "ea2badd8-01c3-45d6-b23b-250119a3da81",
+    "mx-goal": "8c22fca7-c1bc-4f69-bb26-6e758deb3683",
+    "keeper-save": "06ba3c61-0e3f-4325-aea5-aff71d1d9a8a",
+    "ec-goal-1": "af21f374-448f-4342-9044-b639ca968f52",
+    "ec-goal-2": "f9de9774-f196-425e-8766-f6a23754ef85",
+    "vd-handshake": "3d8d561e-26b5-4571-83f2-491585605114",
+    "crowd-tense": "849ecbe8-1eb2-4a14-9ba9-341ed54e9cb6",
+    "cta-celebrate": "b17a397c-df5f-4f8f-a9de-04375adf34f9"
+  }
+}

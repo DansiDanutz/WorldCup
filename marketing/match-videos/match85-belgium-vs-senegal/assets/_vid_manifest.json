@@ -1,0 +1,37 @@
+{
+  "comment": "Ep85 Belgium vs Senegal i2v clips (kling3_0_turbo, 5s). 27 generated + 3 reused establishing (0 credits). job ids -> assets/clips/<clip>.mp4 via fetch.",
+  "clips": {
+    "be-devil": "b1900181-701f-4a6a-9b32-acde230400f0",
+    "texture-belgium": "c8dd520c-7a8c-452f-b2aa-85547556c360",
+    "sn-lion": "c2d147ce-a84d-4a1c-8211-ad27718438c5",
+    "texture-senegal": "4da27e11-7dc9-4cdf-89a1-178d7b2e8c9a",
+    "be-crowd": "d1afa4e1-d93a-40f7-8a35-e0211f694dd7",
+    "be-attack": "963ef90c-8f4b-4998-a85b-9a54705da200",
+    "be-surge": "0a7c0d34-94a4-4135-830d-52824334b4ec",
+    "be-debruyne": "ee97de65-c806-4c28-aaee-1887d3422298",
+    "be-lukaku": "a27e5f3f-7919-46ec-b387-a8a548d98e03",
+    "be-doku": "1c1f6628-a7de-497e-a6da-8ff3937df6ef",
+    "be-tielemans": "505ac815-cdb5-459a-a1ef-d85266a88054",
+    "be-onana": "5f9e522f-583e-43c0-8d39-dec92585672e",
+    "sn-crowd": "a29ede2a-aa06-46e5-8c85-c9ed9f8193a0",
+    "sn-attack": "ba1a8960-153d-4d38-b601-1e0d1619fda5",
+    "sn-mane": "ebb62309-d022-4c21-9c54-b3a2f081e44a",
+    "sn-jackson": "feb4b502-bfa7-4385-b81f-81a563f5a97f",
+    "sn-papesarr": "2057e00b-4c54-4919-a69f-9568280a6ab2",
+    "sn-koulibaly": "42fbd413-e105-4545-810a-109ee399bc01",
+    "sn-ismailasarr": "8def1f31-8ff4-498d-ae33-488cd5c0761e",
+    "duel-mid": "0c63981f-bbda-418b-8af4-ac7154fda0cb",
+    "keeper-save": "4d729dd7-880b-4830-a700-3e483c54e106",
+    "be-goal": "383ad491-991a-4153-b2f9-5b68aadc2d34",
+    "sn-goal-1": "0e81ba95-9e60-4708-a416-05a9d8aad0d4",
+    "sn-goal-2": "bdf5804d-8f3d-4823-b7d2-5956c5190a2d",
+    "vd-handshake": "a04e08cc-ed81-4800-93b5-9630c7ea64ef",
+    "crowd-tense": "2a0c98a5-6d28-413c-8bdb-3360c4404cb2",
+    "cta-celebrate": "6623203d-7e6c-41e9-9c95-d15e209aa5af"
+  },
+  "reused_establishing": {
+    "pitch-walkout": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260628_194116_6be15ee4.mp4",
+    "stadium-wide": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260628_194344_470289a1.mp4",
+    "stadium-aerial": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260628_194359_b4f00cbf.mp4"
+  }
+}

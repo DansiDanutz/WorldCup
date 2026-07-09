@@ -1,0 +1,905 @@
+{
+  "comment": "Ep55 Mexico vs Czech Republic (Group A, final matchday, Estadio Azteca). CANON: content/Stories/Mexico-vs-Czech-Republic.md \u2014 'The Diamond of Prague Meets the Aztec Sun'. SPINE: two nations who touched football's summit in 1962, then 64 years of silence; on the final matchday only one survives. Unplayed -> OUR PREDICTION Mexico 1-0 Czech Republic (Schick's 64' shot saved spectacularly by 40-year-old Ochoa \u2014 NO goal, 0-0 holds; Mexico counter, Lozano crosses, Santiago 'Bebelo' Gimenez throws himself at it to score the winner 67' MEX 1-0; Czech eliminated). ONE goal (Gimenez) + one heroic Ochoa SAVE beat (no goal). NO third goal. Monetization-safe: no gambling/odds/prize wording. Legend 055 = The Glassblower (Bohemian crystal \u2014 'the diamond of Prague', Czech's first Legend). vol=0 on every clip (silent reused/AI clips; audio = VO + music + sfx). Atmosphere library: mex-fans, cze-fans, stadium, celebration, action-crowd, mystery-glass + 10 player clips. drama-* point at player/fan/stadium clips for now; parent repoints to action-*.mp4 footage afterward. Brian VO.",
+  "clips": [
+    {
+      "id": "glimpse-stad",
+      "src": "assets/stadium.mp4",
+      "at": 0.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-glass",
+      "src": "assets/mystery-glass.mp4",
+      "at": 4.0,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-schick",
+      "src": "assets/cze-schick.mp4",
+      "at": 8.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-ochoa",
+      "src": "assets/mex-ochoa.mp4",
+      "at": 13.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-ext",
+      "src": "assets/stadium.mp4",
+      "at": 34,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/celebration.mp4",
+      "at": 38,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "hist-mex",
+      "src": "assets/mex-fans.mp4",
+      "at": 44,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mex-bg",
+      "src": "assets/mex-fans.mp4",
+      "at": 53,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "gimenez",
+      "src": "assets/mex-gimenez.mp4",
+      "at": 55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "lozano",
+      "src": "assets/mex-lozano.mp4",
+      "at": 65.62,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "alvarez",
+      "src": "assets/mex-alvarez.mp4",
+      "at": 78.03,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "montes",
+      "src": "assets/mex-montes.mp4",
+      "at": 65.12,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "ochoa",
+      "src": "assets/mex-ochoa.mp4",
+      "at": 69.33,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "hist-cze",
+      "src": "assets/cze-fans.mp4",
+      "at": 83.55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "cze-bg",
+      "src": "assets/cze-fans.mp4",
+      "at": 90.88,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "schick",
+      "src": "assets/cze-schick.mp4",
+      "at": 92.15,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "soucek",
+      "src": "assets/cze-soucek.mp4",
+      "at": 100.55,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "hlozek",
+      "src": "assets/cze-hlozek.mp4",
+      "at": 107.3,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "coufal",
+      "src": "assets/cze-coufal.mp4",
+      "at": 97.55,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "stanek",
+      "src": "assets/cze-stanek.mp4",
+      "at": 94.55,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "drama-stad",
+      "src": "assets/action-crowd.mp4",
+      "at": 132,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-schick",
+      "src": "assets/action-schick-shot.mp4",
+      "at": 142.0,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-ochoa",
+      "src": "assets/action-ochoa-save.mp4",
+      "at": 148.0,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-lozano",
+      "src": "assets/action-lozano-cross.mp4",
+      "at": 157.21,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-gimenez",
+      "src": "assets/action-gimenez-goal.mp4",
+      "at": 161.21,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-fill1",
+      "src": "assets/action-mex-celeb.mp4",
+      "at": 169.76,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-fill2",
+      "src": "assets/action-crowd.mp4",
+      "at": 180.88,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-mex-cel",
+      "src": "assets/action-mex-celeb.mp4",
+      "at": 189.18,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-cze",
+      "src": "assets/cze-fans.mp4",
+      "at": 196.57,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "verdict-bg",
+      "src": "assets/stadium.mp4",
+      "at": 203.32,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mystery",
+      "src": "assets/mystery-glass.mp4",
+      "at": 256,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "mystery-close",
+      "src": "assets/mystery-glass.mp4",
+      "at": 267,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "cta-bg",
+      "src": "assets/celebration.mp4",
+      "at": 303.05,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "bd-0",
+      "src": "assets/stadium.mp4",
+      "at": 0.0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-1",
+      "src": "assets/cze-fans.mp4",
+      "at": 4.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-2",
+      "src": "assets/mex-fans.mp4",
+      "at": 9.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-3",
+      "src": "assets/celebration.mp4",
+      "at": 14.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-4",
+      "src": "assets/mystery-glass.mp4",
+      "at": 19.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-5",
+      "src": "assets/cze-schick.mp4",
+      "at": 24,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-6",
+      "src": "assets/mex-gimenez.mp4",
+      "at": 28.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-7",
+      "src": "assets/cze-soucek.mp4",
+      "at": 33.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-8",
+      "src": "assets/mex-lozano.mp4",
+      "at": 38.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-9",
+      "src": "assets/cze-hlozek.mp4",
+      "at": 43.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-10",
+      "src": "assets/mex-alvarez.mp4",
+      "at": 48,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-11",
+      "src": "assets/cze-coufal.mp4",
+      "at": 52.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-12",
+      "src": "assets/mex-montes.mp4",
+      "at": 57.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-13",
+      "src": "assets/cze-stanek.mp4",
+      "at": 62.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-14",
+      "src": "assets/mex-ochoa.mp4",
+      "at": 67.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-15",
+      "src": "assets/stadium.mp4",
+      "at": 72,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-16",
+      "src": "assets/cze-fans.mp4",
+      "at": 76.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-17",
+      "src": "assets/mex-fans.mp4",
+      "at": 81.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-18",
+      "src": "assets/celebration.mp4",
+      "at": 86.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-19",
+      "src": "assets/mystery-glass.mp4",
+      "at": 91.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-20",
+      "src": "assets/cze-schick.mp4",
+      "at": 96,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-21",
+      "src": "assets/mex-gimenez.mp4",
+      "at": 100.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-22",
+      "src": "assets/cze-soucek.mp4",
+      "at": 105.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-23",
+      "src": "assets/mex-lozano.mp4",
+      "at": 110.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-24",
+      "src": "assets/cze-hlozek.mp4",
+      "at": 115.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-25",
+      "src": "assets/mex-alvarez.mp4",
+      "at": 120,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-26",
+      "src": "assets/cze-coufal.mp4",
+      "at": 126.46,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-27",
+      "src": "assets/mex-montes.mp4",
+      "at": 131.26,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-28",
+      "src": "assets/cze-stanek.mp4",
+      "at": 134.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-29",
+      "src": "assets/mex-ochoa.mp4",
+      "at": 139.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-30",
+      "src": "assets/stadium.mp4",
+      "at": 144.0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-31",
+      "src": "assets/cze-fans.mp4",
+      "at": 148.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-32",
+      "src": "assets/mex-fans.mp4",
+      "at": 154.81,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-33",
+      "src": "assets/celebration.mp4",
+      "at": 159.61,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-34",
+      "src": "assets/mystery-glass.mp4",
+      "at": 164.41,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-35",
+      "src": "assets/cze-schick.mp4",
+      "at": 168.76,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-36",
+      "src": "assets/mex-gimenez.mp4",
+      "at": 173.56,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-37",
+      "src": "assets/cze-soucek.mp4",
+      "at": 180.48,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-38",
+      "src": "assets/mex-lozano.mp4",
+      "at": 185.28,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-39",
+      "src": "assets/cze-hlozek.mp4",
+      "at": 189.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-40",
+      "src": "assets/mex-alvarez.mp4",
+      "at": 192.57,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-41",
+      "src": "assets/cze-coufal.mp4",
+      "at": 197.37,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-42",
+      "src": "assets/mex-montes.mp4",
+      "at": 203.43,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-43",
+      "src": "assets/cze-stanek.mp4",
+      "at": 208.23,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-44",
+      "src": "assets/mex-ochoa.mp4",
+      "at": 213.03,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-45",
+      "src": "assets/stadium.mp4",
+      "at": 216.52,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-46",
+      "src": "assets/cze-fans.mp4",
+      "at": 221.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-47",
+      "src": "assets/mex-fans.mp4",
+      "at": 225.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-48",
+      "src": "assets/celebration.mp4",
+      "at": 230.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-49",
+      "src": "assets/mystery-glass.mp4",
+      "at": 235.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-50",
+      "src": "assets/cze-schick.mp4",
+      "at": 240,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-51",
+      "src": "assets/mex-gimenez.mp4",
+      "at": 244.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-52",
+      "src": "assets/cze-soucek.mp4",
+      "at": 249.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-53",
+      "src": "assets/mex-lozano.mp4",
+      "at": 254.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-54",
+      "src": "assets/cze-hlozek.mp4",
+      "at": 259.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-55",
+      "src": "assets/mex-alvarez.mp4",
+      "at": 264,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-56",
+      "src": "assets/cze-coufal.mp4",
+      "at": 268.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-57",
+      "src": "assets/mex-montes.mp4",
+      "at": 274.43,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-58",
+      "src": "assets/cze-stanek.mp4",
+      "at": 279.23,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-59",
+      "src": "assets/mex-ochoa.mp4",
+      "at": 283.58,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-60",
+      "src": "assets/stadium.mp4",
+      "at": 288.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-61",
+      "src": "assets/cze-fans.mp4",
+      "at": 293.16,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-62",
+      "src": "assets/mex-fans.mp4",
+      "at": 297.96,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-63",
+      "src": "assets/celebration.mp4",
+      "at": 302.76,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-64",
+      "src": "assets/mystery-glass.mp4",
+      "at": 307.25,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-65",
+      "src": "assets/cze-schick.mp4",
+      "at": 312.05,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-66",
+      "src": "assets/mex-gimenez.mp4",
+      "at": 316.85,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqx-gimenez",
+      "src": "assets/mex-gimenez.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqx-lozano",
+      "src": "assets/mex-lozano.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqx-alvarez",
+      "src": "assets/mex-alvarez.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqx-montes",
+      "src": "assets/mex-montes.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqx-ochoa",
+      "src": "assets/mex-ochoa.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqz-schick",
+      "src": "assets/cze-schick.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqz-soucek",
+      "src": "assets/cze-soucek.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqz-hlozek",
+      "src": "assets/cze-hlozek.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqz-coufal",
+      "src": "assets/cze-coufal.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqz-stanek",
+      "src": "assets/cze-stanek.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 31.56,
+        "dur": 288,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 34,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.06,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 22.38,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 26.17,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 83.55,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 92.15,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113.25,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 131.51,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 151,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 152.03,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 163.64,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 195.5,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 256,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 271,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 304,
+        "vol": 0.6
+      }
+    ]
+  }
+}

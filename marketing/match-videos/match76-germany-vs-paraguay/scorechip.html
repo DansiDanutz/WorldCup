@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1920px;height:1080px;overflow:hidden;background:transparent;font-family:'Inter',Arial,sans-serif}
+  #stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:transparent}
+  /* opaque broadcast score bug, sized to fully occlude the baked GER 1-0 ENG 89:45 */
+  #bug{position:absolute;left:48px;top:34px;display:flex;align-items:stretch;height:64px;
+    border-radius:8px;overflow:hidden;box-shadow:0 8px 26px rgba(0,0,0,0.6);
+    font-weight:900;color:#fff;letter-spacing:1px}
+  .flagstrip{width:12px;background:linear-gradient(180deg,#000 0 33%,#dd0000 33% 66%,#ffce00 66% 100%)}
+  .team{display:flex;align-items:center;padding:0 18px;font-size:30px;background:rgba(12,14,22,0.96)}
+  #ger{background:rgba(12,14,22,0.96)}
+  #par{background:rgba(12,14,22,0.96)}
+  .score{display:flex;align-items:center;padding:0 16px;font-size:30px;background:#0a0c14;color:#ffd24a}
+  .min{display:flex;align-items:center;justify-content:center;width:188px;font-size:28px;background:#c8102e;color:#fff;letter-spacing:2px}
+  .parflag{width:12px;background:linear-gradient(180deg,#d52b1e 0 33%,#fff 33% 66%,#0038a8 66% 100%)}
+</style></head>
+<body><div id="stage">
+  <div id="bug">
+    <div class="flagstrip"></div>
+    <div class="team" id="ger">GER</div>
+    <div class="score">1&nbsp;-&nbsp;0</div>
+    <div class="team" id="par">PAR</div>
+    <div class="parflag"></div>
+    <div class="min">88'</div>
+  </div>
+</div></body></html>

@@ -1,0 +1,79 @@
+{
+  "comment": "Ep38 Japan vs Tunisia. Dense cut: 11 player animations + 5 atmosphere clips + reused stadium. vol=0 on every clip. Predicted result Japan 2-1 (91' Kubo). Scenes reference these ids via <ClipSprite id=...>.",
+  "clips": [
+    {"id": "glimpse-stad",   "src": "assets/stadium-sofi.mp4",      "at": 0.5,   "dur": 3.5,  "vol": 0},
+    {"id": "glimpse-mitoma", "src": "assets/player-mitoma.mp4",     "at": 4.0,   "dur": 0.5,  "vol": 0},
+    {"id": "glimpse-mejbri", "src": "assets/player-mejbri.mp4",     "at": 4.6,   "dur": 0.5,  "vol": 0},
+    {"id": "glimpse-jpn",    "src": "assets/jpn-fans-fervent.mp4",  "at": 9.0,   "dur": 5.0,  "vol": 0},
+
+    {"id": "title-bg",       "src": "assets/stadium-sofi.mp4",      "at": 16.0,  "dur": 12.0, "vol": 0},
+    {"id": "stadium",        "src": "assets/stadium-sofi.mp4",      "at": 28.0,  "dur": 16.0, "vol": 0},
+
+    {"id": "history-bg",     "src": "assets/stadium-sofi.mp4",      "at": 44.0,  "dur": 12.0, "vol": 0},
+    {"id": "hist-jpn",       "src": "assets/jpn-fans-fervent.mp4",  "at": 56.0,  "dur": 11.0, "vol": 0},
+    {"id": "hist-tun",       "src": "assets/tun-fans-fervent.mp4",  "at": 67.0,  "dur": 11.0, "vol": 0},
+    {"id": "hist-stad",      "src": "assets/stadium-sofi.mp4",      "at": 88.0,  "dur": 10.5, "vol": 0},
+
+    {"id": "jpn-bg",         "src": "assets/jpn-fans-fervent.mp4",  "at": 98.5,  "dur": 8.0,  "vol": 0},
+    {"id": "mitoma",         "src": "assets/player-mitoma.mp4",     "at": 106.5, "dur": 9.0,  "vol": 0},
+    {"id": "kubo",           "src": "assets/player-kubo.mp4",       "at": 116.5, "dur": 8.0,  "vol": 0},
+    {"id": "endo",           "src": "assets/player-endo.mp4",       "at": 125.0, "dur": 4.0,  "vol": 0},
+    {"id": "ueda",           "src": "assets/player-ueda.mp4",       "at": 129.0, "dur": 2.5,  "vol": 0},
+    {"id": "minamino",       "src": "assets/player-minamino.mp4",   "at": 131.5, "dur": 2.0,  "vol": 0},
+
+    {"id": "tun-bg",         "src": "assets/tun-fans-euphoric.mp4", "at": 133.5, "dur": 8.0,  "vol": 0},
+    {"id": "mejbri",         "src": "assets/player-mejbri.mp4",     "at": 144.5, "dur": 9.0,  "vol": 0},
+    {"id": "achouri",        "src": "assets/player-achouri.mp4",    "at": 154.5, "dur": 3.0,  "vol": 0},
+    {"id": "skhiri",         "src": "assets/player-skhiri.mp4",     "at": 157.5, "dur": 2.0,  "vol": 0},
+    {"id": "bronn",          "src": "assets/player-bronn.mp4",      "at": 159.5, "dur": 2.0,  "vol": 0},
+    {"id": "talbi",          "src": "assets/player-talbi.mp4",      "at": 161.5, "dur": 2.0,  "vol": 0},
+    {"id": "tomiyasu",       "src": "assets/player-tomiyasu.mp4",   "at": 163.5, "dur": 1.0,  "vol": 0},
+
+    {"id": "duel-jpn",       "src": "assets/player-endo.mp4",       "at": 164.5, "dur": 11.0, "vol": 0},
+    {"id": "duel-tun",       "src": "assets/player-mejbri.mp4",     "at": 164.5, "dur": 11.0, "vol": 0},
+
+    {"id": "drama-tun1",     "src": "assets/tun-fans-fervent.mp4",  "at": 186.5, "dur": 8.0,  "vol": 0},
+    {"id": "drama-mejbri",   "src": "assets/player-mejbri.mp4",     "at": 196.0, "dur": 6.0,  "vol": 0},
+    {"id": "drama-achouri",  "src": "assets/player-achouri.mp4",    "at": 204.5, "dur": 6.0,  "vol": 0},
+    {"id": "drama-mitoma",   "src": "assets/player-mitoma.mp4",     "at": 213.0, "dur": 6.0,  "vol": 0},
+    {"id": "drama-kubo",     "src": "assets/player-kubo.mp4",       "at": 223.0, "dur": 6.0,  "vol": 0},
+    {"id": "drama-jpn-cel",  "src": "assets/jpn-fans-fervent.mp4",  "at": 231.5, "dur": 5.5,  "vol": 0},
+    {"id": "drama-stad",     "src": "assets/stadium-sofi.mp4",      "at": 237.0, "dur": 5.0,  "vol": 0},
+
+    {"id": "verdict-bg",     "src": "assets/jpn-fans-fervent.mp4",  "at": 242.5, "dur": 13.5, "vol": 0},
+    {"id": "mystery",        "src": "assets/mystery-legend.mp4",    "at": 256.0, "dur": 14.0, "vol": 0},
+    {"id": "app-bg",         "src": "assets/jpn-fans-tense.mp4",    "at": 270.0, "dur": 18.0, "vol": 0},
+    {"id": "cta-bg",         "src": "assets/tun-fans-euphoric.mp4", "at": 288.0, "dur": 12.0, "vol": 0}
+  ],
+  "music": {
+    "cues": [
+      {"src": "music/cue-tense.mp3",  "at": 0,   "dur": 30,  "vol": 0.5, "fadeIn": 0.5, "fadeOut": 3, "loop": false},
+      {"src": "music/cue-epic.mp3",   "at": 28,  "dur": 228, "vol": 0.4, "fadeIn": 2.5, "fadeOut": 4, "loop": true},
+      {"src": "music/cue-heroic.mp3", "at": 268, "dur": 32,  "vol": 0.48,"fadeIn": 2.5, "fadeOut": 3, "loop": false}
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {"src": "sfx/heartbeat.mp3", "at": 0.3,   "vol": 0.95},
+      {"src": "sfx/heartbeat.mp3", "at": 6.0,   "vol": 0.8},
+      {"src": "sfx/braam.mp3",     "at": 9.0,   "vol": 0.85},
+      {"src": "sfx/whoosh.mp3",    "at": 16.3,  "vol": 0.6},
+      {"src": "sfx/stamp.mp3",     "at": 16.8,  "vol": 0.6},
+      {"src": "sfx/whoosh.mp3",    "at": 28.2,  "vol": 0.55},
+      {"src": "sfx/braam.mp3",     "at": 44.3,  "vol": 0.6},
+      {"src": "sfx/whoosh.mp3",    "at": 98.4,  "vol": 0.55},
+      {"src": "sfx/pop.mp3",       "at": 106.4, "vol": 0.55},
+      {"src": "sfx/pop.mp3",       "at": 116.4, "vol": 0.55},
+      {"src": "sfx/whoosh.mp3",    "at": 133.4, "vol": 0.6},
+      {"src": "sfx/pop.mp3",       "at": 144.4, "vol": 0.55},
+      {"src": "sfx/whoosh.mp3",    "at": 164.4, "vol": 0.7},
+      {"src": "sfx/heartbeat.mp3", "at": 204.5, "vol": 0.8},
+      {"src": "sfx/whoosh.mp3",    "at": 213.0, "vol": 0.7},
+      {"src": "sfx/goal.mp3",      "at": 231.4, "vol": 0.95},
+      {"src": "sfx/braam.mp3",     "at": 242.6, "vol": 0.7},
+      {"src": "sfx/mystic.mp3",    "at": 256.1, "vol": 0.85},
+      {"src": "sfx/pop.mp3",       "at": 266.0, "vol": 0.7},
+      {"src": "sfx/whoosh.mp3",    "at": 288.2, "vol": 0.6}
+    ]
+  }
+}

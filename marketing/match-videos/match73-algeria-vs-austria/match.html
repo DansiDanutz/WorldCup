@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WorldCup26 Legends — Ep73: Algeria vs Austria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #050608; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="WC26 Ep73 · t=0s"></div>
+
+<script src="vendor/react.development.js" crossorigin="anonymous"></script>
+<script src="vendor/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="vendor/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="match-kit.jsx"></script>
+<script type="text/babel" src="match-scenes.jsx"></script>
+
+<script type="text/babel">
+const { useEffect } = React;
+
+const SCENES = [
+  { c: SceneColdOpen, start: 0.00, end: 23.00 },
+  { c: SceneTitle, start: 23.00, end: 33.00 },
+  { c: SceneStadium, start: 33.00, end: 44.00 },
+  { c: SceneAlgeria, start: 44.00, end: 79.50 },
+  { c: SceneAustria, start: 79.50, end: 113.00 },
+  { c: SceneRiddle, start: 113.00, end: 132.00 },
+  { c: SceneDrama, start: 132.00, end: 203.32 },
+  { c: SceneVerdict, start: 203.32, end: 244.00 },
+  { c: SceneEngage, start: 244.00, end: 255.00 },
+  { c: SceneMystery, start: 255.00, end: 281.38 },
+  { c: SceneApp, start: 281.38, end: 303.05 },
+  { c: SceneCTA, start: 303.05, end: 318.05 },
+];
+
+window.MV_TRANSITIONS = [
+  { at: 23.0,  type: 'flash' },
+  { at: 33.0,  type: 'flash' },
+  { at: 44.0,  type: 'dip' },
+  { at: 79.5,  type: 'flash' },
+  { at: 103.00, type: 'flash' },
+  { at: 132.00, type: 'dip' },
+  { at: 203.32, type: 'dip' },
+  { at: 244.00, type: 'flash' },
+  { at: 255.00, type: 'dip' },
+  { at: 281.38, type: 'flash' },
+  { at: 303.05, type: 'flash' },
+];
+const DURATION = 318.05;
+
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const root = document.getElementById('root');
+    if (root) root.dataset.screenLabel = `WC26 Ep73 · t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+    window.__driveVideos = (t) => new Promise((resolve) => {
+      const vids = Array.prototype.slice.call(document.querySelectorAll('video[data-vat]'));
+      let pending = 0, settledCalled = false;
+      const maybeDone = () => { if (pending === 0 && !settledCalled) { settledCalled = true; resolve(); } };
+      vids.forEach((v) => {
+        const at = parseFloat(v.dataset.vat), dur = parseFloat(v.dataset.vdur);
+        const local = t - at;
+        if (local < 0 || local >= dur) return;
+        const vd = (isFinite(v.duration) && v.duration > 0.2) ? v.duration : 5;
+        const target = Math.min(local % vd, vd - 0.05);
+        if (Math.abs(v.currentTime - target) > 1 / 120) {
+          pending++;
+          let done = false;
+          const settle = () => { if (!done) { done = true; pending--; maybeDone(); } };
+          v.addEventListener('seeked', settle, { once: true });
+          v.addEventListener('error', settle, { once: true });
+          setTimeout(settle, 1200);
+          try { if (!v.paused) v.pause(); v.currentTime = Math.max(0, target); } catch (e) { settle(); }
+        }
+      });
+      maybeDone();
+    });
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+
+function MatchVideo() {
+  return (
+    <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26ep73">
+      <ScreenLabeler />
+      <SeekBridge />
+      <Backdrop />
+      {SCENES.map((s, i) => (
+        <Sprite key={i} start={s.start} end={s.end}>
+          <s.c />
+        </Sprite>
+      ))}
+      <TransitionLayer />
+    </Stage>
+  );
+}
+
+function boot() {
+  ReactDOM.createRoot(document.getElementById('root')).render(<MatchVideo />);
+}
+Promise.all([
+  fetch('./clips.json').then((r) => r.json()).then((d) => { window.MV_CLIPS = d.clips || []; }).catch((e) => { console.warn('clips.json load failed', e); window.MV_CLIPS = []; }),
+  fetch('./assets/seq/manifest.json').then((r) => r.json()).then((m) => { window.MV_SEQ = m || {}; }).catch((e) => { console.warn('seq manifest load failed', e); window.MV_SEQ = {}; }),
+]).finally(boot);
+</script>
+</body>
+</html>

@@ -1,0 +1,882 @@
+{
+  "comment": "Ep52 Switzerland vs Canada (Group B). SPINE 'The General's Last Campaign' — Granit Xhaka, 33, 'The General' (145 caps, 3 World Cups, 3 Euros) marches into his final World Cup; Swiss order against the host nation's fury; Canada young & fearless, roared on by 50,000. MATCH UNPLAYED -> OUR PREDICTION Switzerland 1-1 Canada. TWO goals: Xhaka 38' free kick CRACKS THE CROSSBAR (NO goal, score stays 0-0); Jonathan David 71' off an Alphonso Davies cross (SUI 0-1 CAN, BMO Field erupts); Breel Embolo 88' off a Xhaka 40-yard pass (final SUI 1-1 CAN). vol=0 on every clip (silent reused/AI clips; audio = VO + music + sfx). Atmosphere library: sui-fans, can-fans, stadium, celebration, mystery-watch (Swiss watchmaker) + 10 player clips, reused via distinct ids. Scenes reference these ids via <ClipSprite id=...>. Legend 052 = The Watchmaker (Swiss precision and time — a clock counting down on a career). Brian VO.",
+  "clips": [
+    {
+      "id": "glimpse-stad",
+      "src": "assets/stadium.mp4",
+      "at": 0.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-watch",
+      "src": "assets/mystery-watch.mp4",
+      "at": 4,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-xhaka",
+      "src": "assets/sui-xhaka.mp4",
+      "at": 8.5,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "glimpse-davies",
+      "src": "assets/can-davies.mp4",
+      "at": 11.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-ext",
+      "src": "assets/stadium.mp4",
+      "at": 34,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/celebration.mp4",
+      "at": 38,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "hist-sui",
+      "src": "assets/sui-fans.mp4",
+      "at": 44,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "sui-bg",
+      "src": "assets/sui-fans.mp4",
+      "at": 53,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "xhaka",
+      "src": "assets/sui-xhaka.mp4",
+      "at": 55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "akanji",
+      "src": "assets/sui-akanji.mp4",
+      "at": 65.62,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "embolo",
+      "src": "assets/sui-embolo.mp4",
+      "at": 77.82,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ndoye",
+      "src": "assets/sui-ndoye.mp4",
+      "at": 65.12,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "sommer",
+      "src": "assets/sui-sommer.mp4",
+      "at": 69.12,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "hist-can",
+      "src": "assets/can-fans.mp4",
+      "at": 83.55,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "can-bg",
+      "src": "assets/can-fans.mp4",
+      "at": 90.88,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "davies",
+      "src": "assets/can-davies.mp4",
+      "at": 92.15,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "david",
+      "src": "assets/can-david.mp4",
+      "at": 100.55,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "eustaquio",
+      "src": "assets/can-eustaquio.mp4",
+      "at": 107.25,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "buchanan",
+      "src": "assets/can-buchanan.mp4",
+      "at": 97.55,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "stclair",
+      "src": "assets/can-stclair.mp4",
+      "at": 94.55,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "drama-sui1",
+      "src": "assets/sui-fans.mp4",
+      "at": 138.53,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "drama-xhaka",
+      "src": "assets/sui-xhaka.mp4",
+      "at": 144,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-davies",
+      "src": "assets/can-davies.mp4",
+      "at": 151,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-david",
+      "src": "assets/can-david.mp4",
+      "at": 182,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-sommer",
+      "src": "assets/sui-sommer.mp4",
+      "at": 188,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "drama-can-cel",
+      "src": "assets/celebration.mp4",
+      "at": 162.45,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "drama-stad",
+      "src": "assets/stadium.mp4",
+      "at": 195,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "verdict-bg",
+      "src": "assets/celebration.mp4",
+      "at": 216.25,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "mystery",
+      "src": "assets/mystery-watch.mp4",
+      "at": 250,
+      "dur": 8,
+      "vol": 0
+    },
+    {
+      "id": "mystery-close",
+      "src": "assets/mystery-watch.mp4",
+      "at": 261,
+      "dur": 6,
+      "vol": 0
+    },
+    {
+      "id": "cta-bg",
+      "src": "assets/sui-fans.mp4",
+      "at": 288.45,
+      "dur": 9,
+      "vol": 0
+    },
+    {
+      "id": "bd-0",
+      "src": "assets/stadium.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-1",
+      "src": "assets/can-fans.mp4",
+      "at": 4.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-2",
+      "src": "assets/sui-fans.mp4",
+      "at": 9.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-3",
+      "src": "assets/celebration.mp4",
+      "at": 14.59,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-4",
+      "src": "assets/mystery-watch.mp4",
+      "at": 19.39,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-5",
+      "src": "assets/can-davies.mp4",
+      "at": 24.17,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-6",
+      "src": "assets/sui-xhaka.mp4",
+      "at": 28.97,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-7",
+      "src": "assets/can-david.mp4",
+      "at": 33.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-8",
+      "src": "assets/sui-akanji.mp4",
+      "at": 38.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-9",
+      "src": "assets/can-eustaquio.mp4",
+      "at": 43.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-10",
+      "src": "assets/sui-embolo.mp4",
+      "at": 48,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-11",
+      "src": "assets/can-buchanan.mp4",
+      "at": 52.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-12",
+      "src": "assets/sui-ndoye.mp4",
+      "at": 59.22,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-13",
+      "src": "assets/can-stclair.mp4",
+      "at": 64.02,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-14",
+      "src": "assets/sui-sommer.mp4",
+      "at": 68.82,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-15",
+      "src": "assets/stadium.mp4",
+      "at": 77.82,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-16",
+      "src": "assets/can-fans.mp4",
+      "at": 82.62,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-17",
+      "src": "assets/sui-fans.mp4",
+      "at": 86.48,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-18",
+      "src": "assets/celebration.mp4",
+      "at": 91.28,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-19",
+      "src": "assets/mystery-watch.mp4",
+      "at": 94.75,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-20",
+      "src": "assets/can-davies.mp4",
+      "at": 99.55,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-21",
+      "src": "assets/sui-xhaka.mp4",
+      "at": 104.35,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-22",
+      "src": "assets/can-david.mp4",
+      "at": 109.85,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-23",
+      "src": "assets/sui-akanji.mp4",
+      "at": 114.65,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-24",
+      "src": "assets/can-eustaquio.mp4",
+      "at": 120.01,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-25",
+      "src": "assets/sui-embolo.mp4",
+      "at": 125.11,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-26",
+      "src": "assets/can-buchanan.mp4",
+      "at": 128.61,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-27",
+      "src": "assets/sui-ndoye.mp4",
+      "at": 133.11,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-28",
+      "src": "assets/can-stclair.mp4",
+      "at": 136.93,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-29",
+      "src": "assets/sui-sommer.mp4",
+      "at": 141.73,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-30",
+      "src": "assets/stadium.mp4",
+      "at": 144,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-31",
+      "src": "assets/can-fans.mp4",
+      "at": 148.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-32",
+      "src": "assets/sui-fans.mp4",
+      "at": 153.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-33",
+      "src": "assets/celebration.mp4",
+      "at": 158.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-34",
+      "src": "assets/mystery-watch.mp4",
+      "at": 163.65,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-35",
+      "src": "assets/can-davies.mp4",
+      "at": 168.45,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-36",
+      "src": "assets/sui-xhaka.mp4",
+      "at": 173.25,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-37",
+      "src": "assets/can-david.mp4",
+      "at": 177.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-38",
+      "src": "assets/sui-akanji.mp4",
+      "at": 182.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-39",
+      "src": "assets/can-eustaquio.mp4",
+      "at": 187.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-40",
+      "src": "assets/sui-embolo.mp4",
+      "at": 192,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-41",
+      "src": "assets/can-buchanan.mp4",
+      "at": 196.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-42",
+      "src": "assets/sui-ndoye.mp4",
+      "at": 201.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-43",
+      "src": "assets/can-stclair.mp4",
+      "at": 208.81,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-44",
+      "src": "assets/sui-sommer.mp4",
+      "at": 213.61,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-45",
+      "src": "assets/stadium.mp4",
+      "at": 216.25,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-46",
+      "src": "assets/can-fans.mp4",
+      "at": 221.05,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-47",
+      "src": "assets/sui-fans.mp4",
+      "at": 225.85,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-48",
+      "src": "assets/celebration.mp4",
+      "at": 230.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-49",
+      "src": "assets/mystery-watch.mp4",
+      "at": 235.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-50",
+      "src": "assets/can-davies.mp4",
+      "at": 240,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-51",
+      "src": "assets/sui-xhaka.mp4",
+      "at": 244.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-52",
+      "src": "assets/can-david.mp4",
+      "at": 249.6,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-53",
+      "src": "assets/sui-akanji.mp4",
+      "at": 254.4,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-54",
+      "src": "assets/can-eustaquio.mp4",
+      "at": 259.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-55",
+      "src": "assets/sui-embolo.mp4",
+      "at": 265.19,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-56",
+      "src": "assets/can-buchanan.mp4",
+      "at": 269.99,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-57",
+      "src": "assets/sui-ndoye.mp4",
+      "at": 273.87,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-58",
+      "src": "assets/can-stclair.mp4",
+      "at": 280.24,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-59",
+      "src": "assets/sui-sommer.mp4",
+      "at": 285.65,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-60",
+      "src": "assets/stadium.mp4",
+      "at": 290.45,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-61",
+      "src": "assets/can-fans.mp4",
+      "at": 295.25,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-62",
+      "src": "assets/sui-fans.mp4",
+      "at": 300.95,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-63",
+      "src": "assets/celebration.mp4",
+      "at": 308.2,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "bd-64",
+      "src": "assets/mystery-watch.mp4",
+      "at": 313,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqs-xhaka",
+      "src": "assets/sui-xhaka.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqs-akanji",
+      "src": "assets/sui-akanji.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqs-embolo",
+      "src": "assets/sui-embolo.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqs-ndoye",
+      "src": "assets/sui-ndoye.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqs-sommer",
+      "src": "assets/sui-sommer.mp4",
+      "at": 65.12,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqc-davies",
+      "src": "assets/can-davies.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqc-david",
+      "src": "assets/can-david.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqc-eustaquio",
+      "src": "assets/can-eustaquio.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqc-buchanan",
+      "src": "assets/can-buchanan.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sqc-stclair",
+      "src": "assets/can-stclair.mp4",
+      "at": 93.38,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 30,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 31.56,
+        "dur": 291.55,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 275.89,
+        "dur": 34,
+        "vol": 0.48,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": false
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 6,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 11.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.06,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 22.38,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 26.17,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 44,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 83.55,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 92.15,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113.25,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 131.51,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 138.53,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 146.5,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 162.45,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 192,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 216.25,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 250,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 265.19,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 288.45,
+        "vol": 0.6
+      }
+    ]
+  }
+}

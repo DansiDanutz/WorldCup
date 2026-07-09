@@ -1,0 +1,31 @@
+# Ep104 Argentina vs Switzerland — clip re-fetch manifest (name url). assets/*.mp4 are gitignored; re-download with these.
+# ARGENTINA — REUSED 0-credit from match99-argentina-vs-egypt (Rule #26, frame-verified this session)
+arg-messi https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_190926_5845612b-970f-42a4-bc6f-6c9022ade6b4.mp4
+arg-enzo https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_190931_25e598e2-ea8a-472d-abf2-bd94ca32ac1a.mp4
+arg-macallister https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_190938_07a7df3f-e2f7-4833-8a4a-6785f7e21069.mp4
+arg-lautaro https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_190941_e65d92ce-7d84-4853-a1ef-8a87a93aada7.mp4
+arg-alvarez https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260706_015027_8cec65eb-a156-4cc0-ada0-f2b6d8dc1add.mp4
+arg-crowd https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_190731_f161b627-362c-43a7-a5a8-a44ee5fa0ac7.mp4
+arg-attack https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_190759_9d567958-e50f-41e3-99cd-b7776f20d7ad.mp4
+texture-argentina https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_190722_475ddbd0-a43e-4d85-89c0-177fc5dcd24a.mp4
+arg-goal-1 https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_190944_94f93a3a-4b4b-4519-a2ed-48a8e4aa71b0.mp4
+arg-goal-2 https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_190947_6f96d64e-8901-4999-804d-5f1b8e5bcd17.mp4
+arg-goal-3 https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260627_191018_17f1a2e9-ee61-48f9-a94b-47e8b2d3a1ef.mp4
+stadium-wide https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260628_194344_470289a1-079c-4caf-a997-6a109204bd09.mp4
+stadium-aerial https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260628_194359_b4f00cbf-26c9-4b38-8657-227b08b99f41.mp4
+# GENERIC ATMOSPHERE — reused 0-credit from match89
+bg-roar https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260701_142518_0da8ba51-2e1e-44de-a010-3a0a9e3a0a1b.mp4
+crowd-tense https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260701_142416_6af6afe8-ae1b-451f-95de-c25257f6e207.mp4
+# SWITZERLAND — generated FRESH this episode (nano_banana_pro stills -> kling3_0_turbo i2v/t2v)
+sui-xhaka https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112725_f9792b5a-39f4-4258-9b3e-648cb8904217.mp4
+sui-embolo https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112727_d3eafc7c-475a-40f9-8263-1e34ff306035.mp4
+sui-akanji https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112730_1ed9627c-dc6e-4a93-8876-77cdcbdbf634.mp4
+sui-vargas https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112732_9ed3d58c-3a21-408f-8b59-1d9643bd463a.mp4
+sui-sommer https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112736_e1fa4625-c198-4c53-9bb5-be553fb0c963.mp4
+sui-crowd https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112747_a7ec2679-308e-4898-9f2d-fcbb6391e0d5.mp4
+sui-attack https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112749_d7da278f-9df4-401f-8cf6-4030e2dd6f17.mp4
+sui-goal-1 https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112751_59929a3d-e061-41a0-a98a-b169bb804065.mp4
+sui-goal-2 https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112753_778661d1-2930-4a0d-bcec-4265f990b0d2.mp4
+texture-switzerland https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112755_9408712a-74e1-4946-a960-b22eaafc668c.mp4
+pitch-walkout https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112758_0cffa683-60cb-463d-908f-d3a17665fe50.mp4
+vd-handshake https://d8j0ntlcm91z4.cloudfront.net/user_3CoYJpraTQVSyV508PW6lPWKanC/hf_20260708_112800_ec771631-dda4-4774-94ac-4bf9a07edc0a.mp4

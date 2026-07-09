@@ -1,0 +1,340 @@
+{
+  "comment": "Ep85 Belgium vs Senegal PHOTOREAL, NO-REPEAT+NO-LOOP, showcase SYNCED. OUR PREDICTION Senegal 2-1 Belgium (Mané late winner). Legend 085 the Lion of Teranga. Establishing reused from library (Rule #26). vol=0.",
+  "clips": [
+    {
+      "id": "be-devil",
+      "src": "assets/clips/be-devil.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-belgium",
+      "src": "assets/clips/texture-belgium.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sn-lion",
+      "src": "assets/clips/sn-lion.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "texture-senegal",
+      "src": "assets/clips/texture-senegal.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/clips/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 38.8,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "be-crowd",
+      "src": "assets/clips/be-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "be-attack",
+      "src": "assets/clips/be-attack.mp4",
+      "at": 49,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "be-surge",
+      "src": "assets/clips/be-surge.mp4",
+      "at": 54,
+      "dur": 1.5,
+      "vol": 0
+    },
+    {
+      "id": "be-debruyne",
+      "src": "assets/clips/be-debruyne.mp4",
+      "at": 55.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "be-lukaku",
+      "src": "assets/clips/be-lukaku.mp4",
+      "at": 61.5,
+      "dur": 3.96,
+      "vol": 0
+    },
+    {
+      "id": "be-doku",
+      "src": "assets/clips/be-doku.mp4",
+      "at": 65.46,
+      "dur": 2.54,
+      "vol": 0
+    },
+    {
+      "id": "be-tielemans",
+      "src": "assets/clips/be-tielemans.mp4",
+      "at": 68,
+      "dur": 3.07,
+      "vol": 0
+    },
+    {
+      "id": "be-onana",
+      "src": "assets/clips/be-onana.mp4",
+      "at": 71.07,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sn-crowd",
+      "src": "assets/clips/sn-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sn-attack",
+      "src": "assets/clips/sn-attack.mp4",
+      "at": 84.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sn-mane",
+      "src": "assets/clips/sn-mane.mp4",
+      "at": 90.6,
+      "dur": 4.71,
+      "vol": 0
+    },
+    {
+      "id": "sn-jackson",
+      "src": "assets/clips/sn-jackson.mp4",
+      "at": 95.31,
+      "dur": 3.25,
+      "vol": 0
+    },
+    {
+      "id": "sn-koulibaly",
+      "src": "assets/clips/sn-koulibaly.mp4",
+      "at": 98.56,
+      "dur": 4.44,
+      "vol": 0
+    },
+    {
+      "id": "sn-papesarr",
+      "src": "assets/clips/sn-papesarr.mp4",
+      "at": 103,
+      "dur": 3.51,
+      "vol": 0
+    },
+    {
+      "id": "sn-ismailasarr",
+      "src": "assets/clips/sn-ismailasarr.mp4",
+      "at": 106.51,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/clips/duel-mid.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/clips/stadium-aerial.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "keeper-save",
+      "src": "assets/clips/keeper-save.mp4",
+      "at": 137,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "be-goal",
+      "src": "assets/clips/be-goal.mp4",
+      "at": 152.21,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sn-goal-1",
+      "src": "assets/clips/sn-goal-1.mp4",
+      "at": 178.46,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "sn-goal-2",
+      "src": "assets/clips/sn-goal-2.mp4",
+      "at": 189.58,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/clips/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 244,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cta-celebrate",
+      "src": "assets/clips/cta-celebrate.mp4",
+      "at": 303.05,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 5.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 55.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 90.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 153.6,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 164.37,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 179.9,
+        "vol": 0.92
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 191,
+        "vol": 0.95
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 195,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}

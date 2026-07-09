@@ -1,0 +1,394 @@
+{
+  "comment": "Ep71 Colombia vs Portugal — PHOTOREAL (rule #22), NO-REPEAT + NO-LOOP (rule #11): 37 distinct clips, each used once, every dur<=5.04s source (no internal looping). Long card/title/verdict-panel/legend/app scenes are CSS motion-graphics with no video behind. OUR PREDICTION COL 0-0 POR (James 84 curl off the bar). Legend 071 The Gilded King (El Dorado). vol=0.",
+  "clips": [
+    {
+      "id": "eldorado-lake",
+      "src": "assets/eldorado-lake.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "eldorado-gold",
+      "src": "assets/eldorado-gold.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "portugal-fog",
+      "src": "assets/portugal-fog.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust",
+      "src": "assets/gold-dust.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "pitch-walkout",
+      "src": "assets/pitch-walkout.mp4",
+      "at": 33,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/stadium-wide.mp4",
+      "at": 38,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "col-crowd",
+      "src": "assets/col-crowd.mp4",
+      "at": 44,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "col-tifo",
+      "src": "assets/col-tifo.mp4",
+      "at": 49,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-james",
+      "src": "assets/s-james.mp4",
+      "at": 54,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-diaz",
+      "src": "assets/s-diaz.mp4",
+      "at": 59,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-duran",
+      "src": "assets/s-duran.mp4",
+      "at": 64,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-munoz",
+      "src": "assets/s-munoz.mp4",
+      "at": 69,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-sanchez",
+      "src": "assets/s-sanchez.mp4",
+      "at": 74,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-crowd",
+      "src": "assets/por-crowd.mp4",
+      "at": 79.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-bruno",
+      "src": "assets/s-bruno.mp4",
+      "at": 84.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-bernardo",
+      "src": "assets/s-bernardo.mp4",
+      "at": 89.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-leao",
+      "src": "assets/s-leao.mp4",
+      "at": 94.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-ronaldo",
+      "src": "assets/s-ronaldo.mp4",
+      "at": 99.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "duel-bruno-rios",
+      "src": "assets/duel-bruno-rios.mp4",
+      "at": 103,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-mid",
+      "src": "assets/duel-mid.mp4",
+      "at": 108,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-leao-wing",
+      "src": "assets/duel-leao-wing.mp4",
+      "at": 113,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "duel-rios-tackle",
+      "src": "assets/duel-rios-tackle.mp4",
+      "at": 118,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-aerial",
+      "src": "assets/stadium-aerial.mp4",
+      "at": 123,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "col-attack1",
+      "src": "assets/col-attack1.mp4",
+      "at": 132,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "por-attack1",
+      "src": "assets/por-attack1.mp4",
+      "at": 137,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "s-dias",
+      "src": "assets/s-dias.mp4",
+      "at": 142,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "costa-save2",
+      "src": "assets/costa-save2.mp4",
+      "at": 147,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "james-control",
+      "src": "assets/james-control.mp4",
+      "at": 152,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "goal-james-strike",
+      "src": "assets/goal-james-strike.mp4",
+      "at": 164,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "goal-bar-save",
+      "src": "assets/goal-bar-save.mp4",
+      "at": 169,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "james-sky",
+      "src": "assets/james-sky.mp4",
+      "at": 174,
+      "dur": 4.46,
+      "vol": 0
+    },
+    {
+      "id": "chance-col-header",
+      "src": "assets/chance-col-header.mp4",
+      "at": 189,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-handshake",
+      "src": "assets/vd-handshake.mp4",
+      "at": 203.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-applaud",
+      "src": "assets/vd-applaud.mp4",
+      "at": 208.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "vd-stadium-night",
+      "src": "assets/vd-stadium-night.mp4",
+      "at": 213.32,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/crowd-tense.mp4",
+      "at": 244,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "cta-celebrate",
+      "src": "assets/cta-celebrate.mp4",
+      "at": 303.05,
+      "dur": 5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 33,
+        "vol": 0.5,
+        "fadeIn": 0.5,
+        "fadeOut": 3,
+        "loop": false
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 33,
+        "dur": 256,
+        "vol": 0.4,
+        "fadeIn": 2.5,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 272,
+        "dur": 46,
+        "vol": 0.46,
+        "fadeIn": 2.5,
+        "fadeOut": 3,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.9
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 10.5,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 15.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 22.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 23,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 33,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 54,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 79.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 84.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 113,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 157,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 164,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 169,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 178.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 194.5,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.32,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 255.5,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 264,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 303.05,
+        "vol": 0.55
+      }
+    ]
+  }
+}

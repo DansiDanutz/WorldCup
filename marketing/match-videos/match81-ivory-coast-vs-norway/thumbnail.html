@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1920px; height:1080px; overflow:hidden; background:#05060c;
+    font-family:'Inter','Arial Black',sans-serif; }
+  #t { position:relative; width:1920px; height:1080px; overflow:hidden; }
+  .half { position:absolute; top:0; height:100%; width:58%; background-size:cover;
+    filter:saturate(1.12) contrast(1.08); }
+  #L { left:0; background-image:url('assets/seq/clips/ci-pepe/00001.jpg'); background-position:42% 18%;
+    clip-path:polygon(0 0, 100% 0, 82% 100%, 0 100%); }
+  #R { right:0; background-image:url('assets/seq/clips/no-haaland/00012.jpg'); background-position:58% 20%;
+    clip-path:polygon(18% 0, 100% 0, 100% 100%, 0 100%); }
+  .glow { position:absolute; top:0; height:100%; width:40%; }
+  #gL { left:0; background:linear-gradient(90deg, rgba(255,122,27,0.34), transparent 75%); }
+  #gR { right:0; background:linear-gradient(270deg, rgba(200,16,46,0.40), transparent 75%); }
+  #seam { position:absolute; top:-6%; left:50%; width:10px; height:112%; transform:translateX(-50%) rotate(6deg);
+    background:linear-gradient(180deg, transparent, #ffd86a, #fff, #ffd86a, transparent);
+    box-shadow:0 0 60px 18px rgba(255,200,80,0.55); z-index:5; }
+  #vig { position:absolute; inset:0; z-index:6;
+    background:radial-gradient(ellipse at 50% 46%, transparent 38%, rgba(2,3,8,0.62) 100%),
+      linear-gradient(180deg, rgba(2,3,8,0.30) 0%, transparent 30%, transparent 52%, rgba(2,3,8,0.88) 100%); }
+  #vs { position:absolute; left:50%; top:43%; transform:translate(-50%,-50%); z-index:9;
+    font-weight:900; font-size:170px; color:#fff; text-shadow:0 0 50px rgba(255,210,90,0.9), 0 8px 30px #000; }
+  #kick { position:absolute; top:40px; left:54px; z-index:9; font-weight:800; font-size:30px; letter-spacing:0.20em;
+    color:#ffd86a; text-shadow:0 2px 14px #000; }
+  #ep { position:absolute; top:38px; right:48px; z-index:9; font-weight:900; font-size:34px; color:#fff;
+    background:#c8102e; border:3px solid #fff; border-radius:16px; padding:8px 22px; box-shadow:0 8px 26px rgba(0,0,0,0.6); }
+  #title { position:absolute; left:0; right:0; bottom:120px; text-align:center; z-index:9; font-weight:900;
+    font-size:124px; line-height:0.96; color:#ffce3a; letter-spacing:0.01em;
+    text-shadow:0 6px 4px #000, 0 0 44px rgba(255,160,40,0.55), 0 2px 0 #7a3d00; -webkit-text-stroke:3px #5a2c00; }
+  #tag { position:absolute; left:0; right:0; bottom:64px; text-align:center; z-index:9; font-weight:800;
+    font-size:40px; letter-spacing:0.14em; color:#fff; text-shadow:0 3px 16px #000; }
+  .badge { position:absolute; bottom:250px; z-index:9; width:118px; height:79px; border-radius:8px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.7); overflow:hidden; }
+  #fL { left:150px; } #fR { right:150px; }
+  .badge div { width:100%; height:100%; }
+</style></head><body><div id="t">
+  <div class="half" id="L"></div>
+  <div class="half" id="R"></div>
+  <div class="glow" id="gL"></div>
+  <div class="glow" id="gR"></div>
+  <div id="seam"></div>
+  <div id="vig"></div>
+  <div id="kick">WORLDCUP26 LEGENDS</div>
+  <div id="ep">EP 81</div>
+  <div id="vs">VS</div>
+  <div class="badge" id="fL"><div style="display:flex"><span style="flex:1;background:#f77f00"></span><span style="flex:1;background:#fff"></span><span style="flex:1;background:#009e60"></span></div></div>
+  <div class="badge" id="fR"><div style="position:relative;background:#ba0c2f"><span style="position:absolute;top:0;bottom:0;left:31%;width:24%;background:#fff"></span><span style="position:absolute;left:0;right:0;top:37%;height:26%;background:#fff"></span><span style="position:absolute;top:0;bottom:0;left:36.5%;width:13%;background:#00205b"></span><span style="position:absolute;left:0;right:0;top:43.5%;height:13%;background:#00205b"></span></div></div>
+  <div id="title">THE UNBOUND WOLF</div>
+  <div id="tag">FENRIR vs THE ELEPHANTS</div>
+</div></body></html>
