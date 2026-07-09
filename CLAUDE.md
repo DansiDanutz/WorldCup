@@ -114,6 +114,19 @@ Non-negotiables distilled from channel data (details in the playbook):
    AI image models default US players to NFL gear — always review the output
    for the correct sport before using it (an Ep4 thumbnail shipped a
    helmeted NFL player before review caught it).
+   - **NO HANDS ON THE BALL — feet/head only (hard sub-rule, owner-flagged):**
+     outfield play is with the FEET (and header with the head). The ball is
+     NEVER held, carried, cradled, cupped, or thrown with the hands, and never
+     tucked under an arm — that reads as handball or rugby, not soccer. Every
+     player/action/goal/celebration generation prompt MUST say so explicitly:
+     "the ball is on the ground / at the feet, played only with the feet or
+     head; NObody is holding, carrying or cradling the ball in their hands; NOT
+     handball, NOT rugby" (the ONLY exception is a goalkeeper inside his own box
+     gathering the ball — never an outfield player). AI video models often
+     render a soccer player gripping the ball in both hands, especially in
+     attack/celebration/goal clips — ALWAYS review every generated still AND a
+     frame of the final animated clip and REJECT/regenerate any shot with a
+     hand on the ball, exactly like the NFL-gear review.
 7. **REAL-RESULTS-ONLY RULE (hard rule):** never state a match result as fact
    unless the real match has actually been played. Our episode endings are
    PREDICTIONS — in any later episode they may only be referenced as
