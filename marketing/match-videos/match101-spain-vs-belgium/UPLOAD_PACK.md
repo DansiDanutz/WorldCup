@@ -14,6 +14,12 @@ Belgium builds was found. NO-REPEAT + NO-LOOP. **#23 names synced.** Footer real
 phone collect. Rule #30 scoreline variety honored (3–1, three scorers — not another 2–1). 15s mystic
 intro → 355.73s body (extended per Rule #12 to give the 4-goal arc room). Brian VO.
 
+**RE-SHIP FIX:** owner caught two defects on the first master — (1) the Lamine Yamal showcase clip was
+the wrong person (white, straight-haired); regenerated a correct Yamal likeness (#19, curly hair,
+light-brown skin, ball at feet, no hands on ball), and (2) the 10 squad-showcase VO lines overlapped;
+rewrote them short so each fits its slot with zero overlap. All other showcases re-audited (correct
+likeness/number, no hand-on-ball). Re-encoded master, same runtime/ending.
+
 ## TITLE
 Spain vs Belgium: The Undefeated & The Golden Generation — WorldCup26 Legends Ep.101
 

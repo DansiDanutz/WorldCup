@@ -84,6 +84,27 @@ Rendered in 9 disk-safe /dev/shm frame chunks at CRF 26 (64.5MB final master). A
 (raw clips, extracted frame sequences, render frames, encode chunks, pre-mux body/audio) routed to
 `/dev/shm` (tmpfs), never the constrained project disk; other episodes' files untouched.
 
+## FIX LOG — re-ship (owner caught 2 defects on the shipped master)
+1. **WRONG YAMAL LIKENESS (Rule #29).** The `spa-yamal` showcase clip (body 55.5–60.3s), reused from
+   match97, showed a WHITE, straight-brown-haired player — NOT Lamine Yamal. Regenerated fresh:
+   nano_banana_pro still (light-brown/Black skin, short curly/afro hair, slim, red Spain kit, legible
+   **#19**, ball at his feet — no hands on ball) → kling3_0_turbo i2v → new `assets/clips/spa-yamal.mp4`
+   (5.04s ≥ 4.8s display, no loop). Verified still + clip frames read as the real Yamal before use.
+2. **OVERLAPPING NARRATION (Rule #12).** The 10 squad-showcase VO lines ran 5.9–7.1s in ~4.8s slots, so
+   Brian talked over himself. Rewrote all 10 lines short/punchy (name at onset + number + one trait),
+   kept every "at" onset unchanged. New line durations vs slots (ZERO overlap): Spain (4.8s gap) Yamal
+   3.47 / Pedri 3.00 / Rodri 3.84 / Nico W. 3.16 / Morata 3.89; Belgium (4.48s gap) De Bruyne 4.02 /
+   Lukaku 3.00 / Doku 3.37 / Tielemans 3.34 / Onana 2.93 — every line ≥0.4s shorter than its gap.
+3. **NO-HANDS-ON-BALL audit (Rule #6 sub-rule).** Zero-trust frame-checked EVERY showcase + all
+   action/goal/walkout/handshake clips in the final render: all 9 non-Yamal showcases correct
+   likeness+number; no clip shows a player holding/cradling the ball in the hands (ball at feet or
+   arms-out celebration everywhere). Only `spa-yamal` needed regeneration.
+
+Re-ship pipeline (clips no longer on disk, no manifest): only the visually-changed Yamal window was
+re-rendered (144 frames in /dev/shm) and spliced into the existing master via graded concat; body
+audio rebuilt with the new narration (`mux2.mjs`) and re-attached under the untouched 15s intro. Full
+video re-encoded once at CRF 20 (370.73s master, ~119MB). All scratch stayed in `/dev/shm`.
+
 ## Files
 - **Upload master:** `WorldCup26_Ep101_Spain_Belgium.mp4` (force-added)
 - **Thumbnail:** `thumbnail.png` (1920×1080; "NEVER BEATEN" / "CAN BELGIUM END THE RUN?", EP 101)
