@@ -416,6 +416,18 @@ Non-negotiables distilled from channel data (details in the playbook):
     - QA EVERY graphic/title/transition/interstitial frame: if the background is mostly
       black, add a dimmed clip behind it or richer full-frame motion graphics before the
       full render. (Builds on the Ep37 "never dead air — always a clip behind" principle.)
+    - **HARD 1-SECOND BLACK-FRAME CAP (owner-mandated, effective EVERY video from Ep105
+      on — NO EXCEPTIONS):** no run of black / near-black / empty frames may EVER last
+      longer than 1 second anywhere in the video — not at the start, not between scenes,
+      not on fades/transitions, not before the intro, the Legend reveal, the prediction
+      card, or the outro. Fades to/through black must be kept under 1s; if a beat needs
+      a dark moment, put a dimmed atmospheric clip (mist/crowd/stadium glow) behind it so
+      it is never truly black. **MANDATORY automated QA before every push:** scan the
+      FINAL muxed mp4 for black spans with ffmpeg `blackdetect`
+      (`ffmpeg -i FINAL.mp4 -vf blackdetect=d=1.0:pix_th=0.10 -an -f null -` — any
+      `black_start/black_end` span it reports = a FAIL). If it reports ANY span ≥1s, fix
+      the offending scene window/transition and re-render — do not ship. Log the
+      blackdetect result (zero spans ≥1s) in the episode README.
 
 27. **PROFESSIONAL BEAT CARDS — no bare text on a dark gradient; keep text time short
     (owner-mandated, from Ep87 on, HARD RULE — supersedes the old `SunBeat`/`NightField`-only
