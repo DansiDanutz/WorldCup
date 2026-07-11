@@ -2,7 +2,7 @@
 // CLIP-BASED: Higgsfield animations via VideoSprite. NO SUBTITLES / NO sentence
 // captions (CLAUDE.md #10) — Brian's VO carries the saga. Only furniture: title
 // card, chapter pills, short ≤4-word tags, score bug, OUR PREDICTION watermark,
-// and the worldcup26.world CTA. SOCCER ONLY. 37 UNIQUE clips (no repeats), each
+// and the worldcup26.world CTA. SOCCER ONLY. 30 UNIQUE clips (no repeats; realistic character beats + stylized legend/environment shots), each
 // window sized to its measured VO line (see narration.json) and each clip given a
 // rate = sourceSeconds/window so it never loops. Story: 1066 Stamford Bridge →
 // born in Leeds → father's unfinished dream → Bryne → the prophecy → the rise →
@@ -98,48 +98,41 @@ function FilmHaaland() {
   const dip = clamp((t - 215) / 1.2, 0, 1) * clamp((229 - t) / 0.6, 0, 1); // dread dip
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#04060c' }}>
-      {/* ── ACT I · THE PROPHECY (0–38.5) ── */}
-      <VideoSprite src="assets/v01-seer.webm"          start={0}     dur={13}   rate={0.61} fit="cover" dim={0.12} />
+      {/* ── ACT I · THE PROPHECY (0–38.5) — realistic seer, stylized legend ── */}
+      <VideoSprite src="assets/n01-seer.webm"          start={0}     dur={13}   rate={0.61} fit="cover" dim={0.12} />
       <VideoSprite src="assets/v02-fleet.webm"         start={13}    dur={10}   rate={0.8}  fit="cover" dim={0.1} />
       <VideoSprite src="assets/v03-shore-1066.webm"    start={23}    dur={8.5}  rate={0.94} fit="cover" dim={0.12} />
       <VideoSprite src="assets/v04-ships-return.webm"  start={31.5}  dur={7}    rate={1}    fit="cover" dim={0.14} />
-      {/* ── ACT II · BORN IN ENGLAND (38.5–98.5) ── */}
+      {/* ── ACT II · BORN IN ENGLAND (38.5–98.5) — stylized past ── */}
       <VideoSprite src="assets/v05-leeds-birth.webm"   start={38.5}  dur={10.5} rate={0.76} fit="cover" dim={0.08} />
       <VideoSprite src="assets/v06-father-player.webm" start={49}    dur={9.5}  rate={0.84} fit="cover" dim={0.08} />
       <VideoSprite src="assets/v07-boot-dusk.webm"     start={58.5}  dur={12.5} rate={0.64} fit="cover" dim={0.12} />
       <VideoSprite src="assets/v08-bryne.webm"         start={71}    dur={9}    rate={0.88} fit="cover" dim={0.07} />
       <VideoSprite src="assets/v09-snow-training.webm" start={80}    dur={12.5} rate={0.64} fit="cover" dim={0.07} />
       <VideoSprite src="assets/v10-vision.webm"        start={92.5}  dur={6}    rate={1}    fit="cover" dim={0.1} />
-      {/* ── ACT III · THE RISE (98.5–123) ── */}
-      <VideoSprite src="assets/r02-haaland-strike.webm" start={98.5} dur={9}    rate={0.55} fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r03-haaland-power.webm" start={107.5} dur={8}    rate={0.62} fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r01-haaland-hero.webm"  start={115.5} dur={7.5}  rate={0.67} fit="cover" dim={0.07} />
+      {/* ── ACT III · THE RISE (98.5–123) — realistic Haaland ── */}
+      <VideoSprite src="assets/n02-goals.webm"         start={98.5}  dur={13}   rate={0.61} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/n03-qualify.webm"       start={111.5} dur={11.5} rate={0.69} fit="cover" dim={0.07} />
       {/* ── ACT IV · THE VOYAGE (123–168.3) ── */}
       <VideoSprite src="assets/v11-harbor.webm"        start={123}   dur={8.5}  rate={0.94} fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r04-odegaard.webm"      start={131.5} dur={2.7}  rate={1}    fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r06-sorloth.webm"       start={134.2} dur={2.7}  rate={1}    fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r07-nusa.webm"          start={136.9} dur={2.5}  rate={1}    fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r08-berge.webm"         start={139.4} dur={2.6}  rate={1}    fit="cover" dim={0.08} />
-      <VideoSprite src="assets/v12-rowing-chant.webm"  start={142}   dur={15}   rate={0.53} fit="cover" dim={0.06} />
-      <VideoSprite src="assets/v13-prayer.webm"        start={157}   dur={11.3} rate={0.7}  fit="cover" dim={0.08} />
-      {/* ── ACT V · THE BATTLE (168.3–257.5) ── */}
+      <VideoSprite src="assets/n04-crew.webm"          start={131.5} dur={10.5} rate={0.76} fit="cover" dim={0.07} />
+      <VideoSprite src="assets/n05-rowing.webm"        start={142}   dur={15}   rate={0.53} fit="cover" dim={0.06} />
+      <VideoSprite src="assets/n06-prayer.webm"        start={157}   dur={11.3} rate={0.7}  fit="cover" dim={0.08} />
+      {/* ── ACT V · THE BATTLE (168.3–257.5) — realistic ── */}
       <VideoSprite src="assets/v14-fortress.webm"      start={168.3} dur={5.2}  rate={1}    fit="cover" dim={0.1} />
-      <VideoSprite src="assets/r09-kane-king.webm"     start={173.5} dur={8.8}  rate={0.57} fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r11-bellingham.webm"    start={182.3} dur={2.7}  rate={1}    fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r12-rice.webm"          start={185}   dur={2.6}  rate={1}    fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r13-foden.webm"         start={187.6} dur={2.6}  rate={1}    fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r14-saka.webm"          start={190.2} dur={2.6}  rate={1}    fit="cover" dim={0.08} />
+      <VideoSprite src="assets/n07-kane-king.webm"     start={173.5} dur={8.8}  rate={0.9}  fit="cover" dim={0.08} />
+      <VideoSprite src="assets/n08-wall.webm"          start={182.3} dur={10.5} rate={0.76} fit="cover" dim={0.08} />
       <VideoSprite src="assets/v15-kickoff.webm"       start={192.8} dur={10.7} rate={0.74} fit="cover" dim={0.08} />
-      <VideoSprite src="assets/r10-kane-strike.webm"   start={203.5} dur={11}   rate={0.45} fit="cover" dim={0.1} />
-      <VideoSprite src="assets/v16-haaland-dread.webm" start={214.5} dur={14}   rate={0.57} fit="cover" dim={0.16} />
-      <VideoSprite src="assets/v17-redwall-chant.webm" start={228.5} dur={9.5}  rate={0.84} fit="cover" dim={0.06} />
-      <VideoSprite src="assets/r05-odegaard-pass.webm" start={238}   dur={4.5}  rate={1}    fit="cover" dim={0.08} />
+      <VideoSprite src="assets/n09-kane-strike.webm"   start={203.5} dur={11}   rate={0.72} fit="cover" dim={0.1} />
+      <VideoSprite src="assets/n10-dread.webm"         start={214.5} dur={14}   rate={0.57} fit="cover" dim={0.16} />
+      <VideoSprite src="assets/n11-redwall.webm"       start={228.5} dur={9.5}  rate={0.84} fit="cover" dim={0.06} />
+      <VideoSprite src="assets/n12-pass.webm"          start={238}   dur={4.5}  rate={1}    fit="cover" dim={0.08} />
       <VideoSprite src="assets/v18-net-explosion.webm" start={242.5} dur={4}    rate={1}    fit="cover" dim={0.06} />
-      <VideoSprite src="assets/v19-haaland-roar.webm"  start={246.5} dur={11}   rate={0.72} fit="cover" dim={0.06} />
+      <VideoSprite src="assets/n13-roar.webm"          start={246.5} dur={11}   rate={0.72} fit="cover" dim={0.06} />
       {/* ── ACT VI · THE CONQUEST (257.5–300) ── */}
-      <VideoSprite src="assets/v21-father-tears.webm"  start={257.5} dur={9}    rate={0.88} fit="cover" dim={0.08} />
+      <VideoSprite src="assets/n14-tears.webm"         start={257.5} dur={9}    rate={0.88} fit="cover" dim={0.08} />
       <VideoSprite src="assets/v22-kids-rowing.webm"   start={266.5} dur={8}    rate={0.98} fit="cover" dim={0.06} />
-      <VideoSprite src="assets/v20-flag-planted.webm"  start={274.5} dur={8.5}  rate={0.94} fit="cover" dim={0.07} />
+      <VideoSprite src="assets/n15-flag.webm"          start={274.5} dur={8.5}  rate={0.94} fit="cover" dim={0.07} />
       <VideoSprite src="assets/v23-outro-aurora.webm"  start={283}   dur={17}   rate={0.47} fit="cover" dim={0.14} />
 
       {/* dread dip-to-dark during the 214.5–228.5 slow-mo beat */}
