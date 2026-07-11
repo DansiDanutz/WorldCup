@@ -233,7 +233,7 @@ describe("WorldCup design system integration", () => {
     assert.match(youtubeLegendEpisodes, /export const YOUTUBE_LEGEND_BONUS_VIDEOS/);
     assert.match(youtubeLegendEpisodes, /export const YOUTUBE_DID_YOU_KNOW_SHORTS/);
     assert.match(youtubeLegendEpisodes, /kind:\s*"series"/);
-    assert.equal(youtubeLegendEpisodes.match(/\bep:\s*\d+/g)?.length, 82);
+    assert.equal(youtubeLegendEpisodes.match(/\bep:\s*\d+/g)?.length, 103);
     assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Bonus Legend"/g)?.length, 3);
     assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Did You Know\? Short"/g)?.length, 12);
     assert.equal(youtubeLegendEpisodes.match(/kind:\s*"series"/g)?.length, 1);

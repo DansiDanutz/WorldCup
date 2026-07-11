@@ -1123,6 +1123,11 @@ world cup 2026, worldcup26, Portugal vs DR Congo, Portugal football, DR Congo fo
 
 ---
 
+> **⚠️ PACKS MISSING (flagged 2026-07-11):** the latest pack below is **Ep25**,
+> but episodes exist through **Ep36** (see `SCHEDULE.md`). Write the pack
+> (title/description/tags) for Ep26–36 before each upload — every episode ships
+> with one (CLAUDE.md rule 3).
+
 ## Episode 25 — England vs Croatia
 
 **Title:** `The Tiny Nation That Broke England's Dream | England vs Croatia — World Cup 2026 (Ep.25)`

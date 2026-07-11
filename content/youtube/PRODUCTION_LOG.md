@@ -43,6 +43,13 @@ Base raw link: `https://github.com/DansiDanutz/WorldCup/raw/claude/hopeful-cori-
 | 24 | Portugal vs DR Congo | [WorldCup26_Match24_POR_COD.mp4](https://github.com/DansiDanutz/WorldCup/raw/main/marketing/match-videos/match24-portugal-vs-dr-congo/WorldCup26_Match24_POR_COD.mp4) | 75 MB | "THE FREE KICK THEY GOT WRONG" | _paste after upload_ |
 | 25 | England vs Croatia | [WorldCup26_Match25_ENG_CRO.mp4](https://github.com/DansiDanutz/WorldCup/raw/main/marketing/match-videos/match25-england-vs-croatia/WorldCup26_Match25_ENG_CRO.mp4) | 72 MB | "THEY ENDED THE DREAM" | _paste after upload_ |
 
+> **⚠️ ROWS MISSING (flagged 2026-07-11):** Ep26–32 are marked "🎬 rendered" in
+> `SCHEDULE.md` and Ep33–36 are in progress, but no rows exist here and no
+> masters for them are committed on `main` (masters are gitignored unless
+> force-added). Add one row per episode — master link, size, thumbnail, YouTube
+> URL — as each is force-added/uploaded, so this file stays the single source of
+> truth.
+
 ### Shorts (new from Ep6 — upload as YouTube Shorts, link to the full episode)
 
 | Ep | Short | File | Use |

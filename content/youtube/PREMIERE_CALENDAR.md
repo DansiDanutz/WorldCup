@@ -1,5 +1,16 @@
 # WorldCup26 Legends — Premiere & Shorts Calendar (built 2026-06-14)
 
+> **⚠️ EXPIRED SNAPSHOT (flagged 2026-07-11).** Everything below was written on
+> Jun 14 and its operative window (Jun 14–27) has fully elapsed — the group stage
+> is over and the knockout rounds are underway. Treat this file as a historical
+> record, NOT a plan. Known-stale claims: "13 produced episodes" (folders now run
+> to `match36`, see `SCHEDULE.md`); "France, Spain, Portugal, Belgium have NO
+> episode yet" (they now exist: France = Ep21, Spain = Ep17 — live at
+> youtu.be/_vHQqJxt6G4 —, Belgium = Ep18, Portugal = Ep24). **Next action:** build
+> a new premiere calendar from the REAL knockout bracket (confirm fixtures live),
+> keeping the same iron rule — Premiere posted ≥48h before kickoff; anything whose
+> kickoff has passed is RESCUE mode.
+
 > Maps the 13 produced episodes + 15 rendered Shorts onto the real WC2026
 > group-stage window (June 11–27). **Match windows are derived** from the
 > canonical draw (`content/README.md`) + the real tournament calendar — the

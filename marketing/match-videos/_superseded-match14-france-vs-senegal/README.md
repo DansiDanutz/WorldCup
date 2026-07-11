@@ -1,6 +1,12 @@
-# WorldCup26 Legends — Match 14: France vs Senegal ("The Empire and the Lion")
+# [SUPERSEDED — do not build] France vs Senegal early draft
 
-Series **Episode 14** (folder `match14-france-vs-senegal`, next after `match13`).
+> **⚠️ Abandoned early scaffold** (renamed from `match14-france-vs-senegal` on
+> 2026-07-11). France vs Senegal was actually produced as **Ep21** in
+> `match21-france-vs-senegal` — use that folder. On the channel, **Ep14 =
+> Netherlands vs Japan** (folder `match13-netherlands-vs-japan`, published out of
+> order — see `content/youtube/PRODUCTION_LOG.md`). Kept only for reference.
+
+Series **Episode 14** (original draft heading — superseded, see banner above).
 A 5-minute (300s, 1920×1080, 30fps) cinematic episode built on the **Ep2 template**
 (content-swap model — see `PRODUCTION_ACCELERATION.md`).
 

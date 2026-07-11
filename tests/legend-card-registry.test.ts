@@ -18,12 +18,12 @@ describe("Legend card registry", () => {
 
     assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.length, 4);
     assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.filter((video) => video.kind === "series").length, 1);
-    assert.equal(YOUTUBE_LEGEND_EPISODES.length, 82);
+    assert.equal(YOUTUBE_LEGEND_EPISODES.length, 103);
     assert.equal(YOUTUBE_DID_YOU_KNOW_SHORTS.length, 12);
-    assert.equal(episodeCards.length, 83);
+    assert.equal(episodeCards.length, 104);
     assert.equal(didYouKnowCards.length, 12);
     assert.equal(bonusCards.length, 3);
-    assert.equal(LEGEND_CARD_DEFINITIONS.length, 98);
+    assert.equal(LEGEND_CARD_DEFINITIONS.length, 119);
     assert.equal(new Set(LEGEND_CARD_DEFINITIONS.map((card) => card.id)).size, LEGEND_CARD_DEFINITIONS.length);
     assert.equal(LEGEND_CARD_DEFINITIONS.some((card) => String(card.kind) === "supporter-card"), false);
     assert.equal(didYouKnowCards.every((card) => Boolean(card.youtube)), true);
@@ -46,7 +46,13 @@ describe("Legend card registry", () => {
     );
     assert.deepEqual(
       bonusCards.find((card) => card.id === "bonus-world-cup-secrets")?.alternateYoutube,
-      ["https://www.youtube.com/watch?v=0oHkstIXqjk"],
+      [
+        "https://www.youtube.com/watch?v=0oHkstIXqjk",
+        "https://www.youtube.com/watch?v=9EzJmef1QJI",
+        "https://www.youtube.com/watch?v=Eyr32VpWKdY",
+        "https://www.youtube.com/watch?v=qP2qU-JAr6A",
+        "https://www.youtube.com/watch?v=e96tg1mpKHo",
+      ],
     );
     assert.deepEqual(
       bonusCards.map((card) => card.title).sort(),
@@ -84,9 +90,9 @@ describe("Legend card registry", () => {
     assert.equal(new Set(youtubeCards.map((card) => card.youtube)).size, youtubeCards.length);
     assert.equal(new Set(LEGEND_CARDS.map((card) => card.image)).size, LEGEND_CARDS.length);
     assert.equal(longEpisodeCards.length, YOUTUBE_LEGEND_EPISODES.length);
-    assert.equal(appReadyEpisodeCards.length, 82);
+    assert.equal(appReadyEpisodeCards.length, 103);
     assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/cards/")).length, 25);
-    assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/reveal-frames/")).length, 57);
+    assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/reveal-frames/")).length, 78);
     assert.equal(longEpisodeCards.every((card) => card.image.startsWith("/legend-cards/youtube-rare/")), true);
     assert.equal(episodeCards.find((card) => card.episode === 83)?.image.includes("ep083-mexico-vs-ecuador"), true);
     assert.equal(episodeCards.find((card) => card.episode === 82)?.image.includes("ep082-france-vs-sweden"), true);

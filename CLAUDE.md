@@ -206,7 +206,15 @@ reuse or skip a number. Before creating an episode:
 1. **Find the next number.** Episodes are numbered by **production order**. The
    next number = (highest existing `marketing/match-videos/matchNN-...` folder) + 1.
    Cross-check the `SERIES_PLAYBOOK.md` results log and `UPLOAD_PACKS.md`.
-   **Current state: latest is Ep14 (France vs Senegal) → next is Ep15.**
+   **Current state (2026-07-11): the latest folder-pipeline episode is Ep36
+   (`match36-germany-vs-ivory-coast`), but the PUBLISHED series on the channel
+   has continued past the repo folders — latest upload is Ep.104 (Argentina vs
+   Switzerland, quarter-final).** The live catalogue (links, stages, story
+   predictions) is tracked in `src/lib/youtube-legend-episodes.ts`; the next
+   episode number = highest published channel episode + 1, NOT folder + 1.
+   (Channel/publish numbers can differ from folder numbers for Ep8–14 — see
+   `PRODUCTION_LOG.md`; `_hold-*` and `_superseded-*` folders are outside the
+   numbering scan.)
 2. **Folder name = `matchNN-teama-vs-teamb`** where `NN` is the zero-padded
    episode number (folder number == episode number; the series starts at
    `match02` — Ep1 was the inaugural one-off).

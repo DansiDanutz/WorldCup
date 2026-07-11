@@ -1,6 +1,13 @@
-# Episode 19 — France vs Iraq
+# Episode TBD (HELD) — France vs Iraq
 
-**Group I · Matchday 2 · real kickoff Jun 17, 2026** · Mystery Supporter: **Legend 019 — the Namesake**
+> **⚠️ RENUMBER BEFORE PRODUCING (updated 2026-07-11).** This scaffold was drafted
+> as "Episode 19", but **Ep19 is taken by Saudi Arabia vs Uruguay**
+> (`match19-saudi-arabia-vs-uruguay`) — the number and "Legend 019" below, and the
+> "episode nineteen" line inside `narration.json`, must be reassigned to the next
+> free episode number at production time. The real kickoff (Jun 17, 2026) has
+> PASSED, so per CLAUDE.md this is **RESCUE mode** (Shorts + retitle), not a Premiere.
+
+**Group I · Matchday 2 · real kickoff Jun 17, 2026 (passed)** · Mystery Supporter: **Legend 0NN (was drafted as 019) — the Namesake**
 Canon: `content/Stories/France-vs-Iraq.md` · Script: `narration.json` · Predicted score (OUR PREDICTION): **2–0**
 
 > Packaging status: thumbnail ✅, narration script ✅, upload pack ✅. Video render is the
