@@ -11,7 +11,7 @@
 #   ./build-episode.sh match07-brazil-vs-haiti
 #
 # Build several ahead to fill the rolling buffer (see PRODUCTION_ACCELERATION.md):
-#   for ep in match14-france-vs-senegal match15-spain-vs-uruguay; do
+#   for ep in match21-france-vs-senegal match22-iraq-vs-norway; do
 #     ./build-episode.sh "$ep" || break
 #   done
 #

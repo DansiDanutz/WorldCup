@@ -11,7 +11,7 @@
     ]
   },
   "sfx": {
-    "comment": "heartbeat under the ghost; braam on title; whoosh on transitions; crowd ROAR (save.mp3) on each of the three goals (221/231/244); whistle at full time; mystic under Legend 034.",
+    "comment": "heartbeat under the ghost; braam on title; whoosh on transitions; crowd ROAR (save.mp3) on each of the three goals (221/231/244); whistle at full time; mystic under Legend 036.",
     "hits": [
       { "src": "sfx/heartbeat.mp3", "at": 0.3,   "vol": 0.95 },
       { "src": "sfx/heartbeat.mp3", "at": 6.0,   "vol": 0.85 },

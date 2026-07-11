@@ -156,6 +156,12 @@ NFL quarterback for the Ep4 'USA' thumbnail until the prompt was hardened.
 | 9 | QAT vs SUI | Jun 13 | hook title + mystery thumb | 0 (fresh) | — | just uploaded |
 | 10 | HAI vs SCO | Jun 13 | hook title + mystery thumb | 0 (fresh) | — | just uploaded |
 
+> **⚠️ LOG GAP (flagged 2026-07-11):** nothing has been logged since Jun 13, but
+> production continued through **Ep36** (see `SCHEDULE.md`) and more episodes went
+> live (Ep15 youtu.be/3GRncnYwQVw, Ep17 youtu.be/_vHQqJxt6G4, …). The per-episode
+> 48h results rule was not followed for Ep11+. On next Studio session: backfill
+> one row per published episode (views at 48h + learning), then resume logging.
+
 **KEY LEARNING (Jun 13, real data): star-power teams massively outperform.**
 Argentina/Messi = 979, Brazil = 200-300, vs neutral matchups = 28-108. PRIORITISE
 big-audience nations (Argentina, Brazil, England, Germany, France, Spain, Portugal,

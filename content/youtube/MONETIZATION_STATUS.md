@@ -1,5 +1,16 @@
 # WorldCup26 Legends — Monetization Status & Path (snapshot 2026-06-14)
 
+> **⚠️ STALE SNAPSHOT (flagged 2026-07-11).** All numbers below (1,327 subs ·
+> 0 watch hours · "13 produced episodes" · 3 eps live) are from **Jun 14** and the
+> KPI log has had no rows since, despite the one-row-per-day rule. The catalogue
+> now runs to Ep36 (`SCHEDULE.md`) with several episodes live (e.g. Ep15
+> youtu.be/3GRncnYwQVw, Ep17 youtu.be/_vHQqJxt6G4). **First action on next
+> session: re-pull the real Studio numbers (subs, valid watch hours, Shorts
+> views, eps live on `@DansLab-Kimi`) and resume the KPI log.** The group stage
+> is over — the remaining once-in-4-years discovery window is the knockout
+> rounds through the Jul 19 final, so consolidation + distribution urgency still
+> applies, with less runway than when this was written.
+
 > Real YouTube Partner Program (YPP) eligibility as reported in Studio on
 > `@DansLab-Kimi`. The ONE blocker is watch time / Shorts views — everything in
 > this file is about earning that as fast as possible.

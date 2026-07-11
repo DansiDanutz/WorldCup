@@ -8,20 +8,28 @@
 
 Status: ✅ live · 🎬 rendered (master ready) · 🛠️ building/rendering · ⏳ queued
 
+> **⚠️ STATUS NOTE (2026-07-11):** every group-stage kickoff listed below has now
+> PASSED. Per CLAUDE.md, any episode not yet published is **RESCUE mode**
+> (Shorts + retitle), not a Premiere. Episode numbers below were reconciled with
+> the actual folders + narration on 2026-07-11: there is NO Brazil-vs-Haiti MD2
+> episode — Ep34 = Turkey vs Paraguay, Ep35 = Netherlands vs Sweden,
+> Ep36 = Germany vs Ivory Coast (folders `match34`–`match36`), and **next is
+> Ep37**. Knockout-round episodes need a new fixture list from the real bracket.
+
 | Ep | Kickoff (TV) | Match | Status | Notes / link |
 |----|--------------|-------|--------|--------------|
 | 15 | Mon 15/06 | Ivory Coast vs Ecuador | ✅ live | youtu.be/3GRncnYwQVw (real: CIV 1–0) |
 | 16 | Mon 15/06 | Sweden vs Tunisia | 🎬 rendered | predicted 2–1 Sweden (Gyökeres/Isak) — aligned to the real Sweden win |
-| 17 | Mon 15/06 19:00 | Spain vs Cape Verde | 🛠️ rendering | |
-| 18 | Mon 15/06 22:00 | Belgium vs Egypt | 🛠️ rendering | |
-| 19 | Tue 16/06 01:00 | Saudi Arabia vs Uruguay | ⏳ queued | NEXT |
-| 20 | Tue 16/06 04:00 | Iran vs New Zealand | 🛠️ rendering | predicted 1–1 · NZ only unbeaten team at 2010 WC (3 draws, Italy out) / Iran beat USA '98 · Legend 020 the Unbeaten |
-| 21 | Tue 16/06 22:00 | France vs Senegal | 🛠️ rendering | predicted FRA 2–1 · 2002 Seoul shock / Bouba Diop tribute · Legend 021 the Dancing Lion |
-| 22 | Wed 17/06 01:00 | Iraq vs Norway | 🛠️ rendering | predicted IRQ 1–1 NOR · Iraq 2007 Asian Cup (war-torn champions; Mahmoud header beat KSA 1-0; Sunni/Shia/Kurd as one; bombs hit celebrations) / Norway back since 1998 (Haaland, Odegaard) · Legend 022 the Standard-Bearer |
+| 17 | Mon 15/06 19:00 | Spain vs Cape Verde | ✅ live | youtu.be/_vHQqJxt6G4 |
+| 18 | Mon 15/06 22:00 | Belgium vs Egypt | 🎬 rendered | master WorldCup26_Match18_BEL_EGY.mp4 (77 MB, see PRODUCTION_LOG) |
+| 19 | Tue 16/06 01:00 | Saudi Arabia vs Uruguay | 🎬 rendered | master WorldCup26_Match19_KSA_URU.mp4 (31 MB, see PRODUCTION_LOG) |
+| 20 | Tue 16/06 04:00 | Iran vs New Zealand | 🎬 rendered | predicted 1–1 · NZ only unbeaten team at 2010 WC (3 draws, Italy out) / Iran beat USA '98 · Legend 020 the Unbeaten |
+| 21 | Tue 16/06 22:00 | France vs Senegal | 🎬 rendered | predicted FRA 2–1 · 2002 Seoul shock / Bouba Diop tribute · Legend 021 the Dancing Lion |
+| 22 | Wed 17/06 01:00 | Iraq vs Norway | 🎬 rendered | predicted IRQ 1–1 NOR · Iraq 2007 Asian Cup (war-torn champions; Mahmoud header beat KSA 1-0; Sunni/Shia/Kurd as one; bombs hit celebrations) / Norway back since 1998 (Haaland, Odegaard) · Legend 022 the Standard-Bearer |
 | —  | Wed 17/06 04:00 | Argentina vs Algeria | ✅ live | already covered (Ep6) — skip |
-| 23 | Wed 17/06 07:00 | Austria vs Jordan | 🛠️ rendering | predicted AUT 2–1 JOR · Jordan FIRST-EVER World Cup (40 yrs, 9 failed campaigns) + 2023 Asian Cup stunner (beat South Korea 2-0 in semi, Al-Naimat & Al-Tamari, first-ever final, lost to Qatar) / Austria's 1930s Wunderteam & Sindelar "Mozart of football" — never won a World Cup · Legend 023 the Keeper of the Dream |
-| 24 | Wed 17/06 20:00 | Portugal vs DR Congo | ⏳ queued | |
-| 25 | Wed 17/06 23:00 | England vs Croatia | 🛠️ rendering | predicted ENG 2–1 · 2018 Moscow semi (Croatia 2-1 AET, Mandžukić 109') / Modrić 2018 Golden Ball · Legend 025 the Ghost of 2018 |
+| 23 | Wed 17/06 07:00 | Austria vs Jordan | 🎬 rendered | predicted AUT 2–1 JOR · Jordan FIRST-EVER World Cup (40 yrs, 9 failed campaigns) + 2023 Asian Cup stunner (beat South Korea 2-0 in semi, Al-Naimat & Al-Tamari, first-ever final, lost to Qatar) / Austria's 1930s Wunderteam & Sindelar "Mozart of football" — never won a World Cup · Legend 023 the Keeper of the Dream |
+| 24 | Wed 17/06 20:00 | Portugal vs DR Congo | 🎬 rendered | master WorldCup26_Match24_POR_COD.mp4 (75 MB, see PRODUCTION_LOG) |
+| 25 | Wed 17/06 23:00 | England vs Croatia | 🎬 rendered | predicted ENG 2–1 · 2018 Moscow semi (Croatia 2-1 AET, Mandžukić 109') / Modrić 2018 Golden Ball · Legend 025 the Ghost of 2018 |
 | 26 | Thu 18/06 | Ghana vs Panama | 🎬 rendered | image-based build (pre-#11 method); do NOT rebuild — move forward clip-based |
 | 27 | Thu 18/06 | Uzbekistan vs Colombia | 🎬 rendered | image-based build |
 | 28 | Thu 18/06 | Czech Republic vs South Africa | 🎬 rendered | image-based build |
@@ -29,15 +37,18 @@ Status: ✅ live · 🎬 rendered (master ready) · 🛠️ building/rendering �
 | 30 | Fri 19/06 | Canada vs Qatar | 🎬 rendered | image-based build |
 | 31 | Fri 19/06 | Mexico vs South Korea | 🎬 rendered | image-based build · predicted MEX 2–1 |
 | 32 | Fri 19/06 22:00 | USA vs Australia | 🎬 rendered | image-based build · predicted USA 2–1 · Legend 032 Ghost of Belo Horizonte |
-| 33 | Sat 20/06 01:00 | **Scotland vs Morocco** | 🛠️ rendering | **CLIP-BASED (Ep6 standard, Higgsfield Kling)** · predicted 0–0 (two saves) · hook: Scotland 1974 unbeaten-yet-eliminated (first ever) / Morocco 2022 first African semifinal · Legend 033 the Ghost of Goal Difference |
-| 34 | Sat 20/06 03:30 | Brazil vs Haiti | ⏳ queued | NEXT — big-audience (Brazil); MD2 (Ep7 was the MD1 pairing) |
-| 35 | Sat 20/06 06:00 | Turkey vs Paraguay | ⏳ queued | |
-| 36 | Sat 20/06 20:00 | Netherlands vs Sweden | ⏳ queued | big-audience (Netherlands) |
-| 37 | Sat 20/06 23:00 | Germany vs Ivory Coast | ⏳ queued | big-audience (Germany) |
+| 33 | Sat 20/06 01:00 | **Scotland vs Morocco** | 🛠️ building | **CLIP-BASED (Ep6 standard, Higgsfield Kling)** · predicted 0–0 (two saves) · hook: Scotland 1974 unbeaten-yet-eliminated (first ever) / Morocco 2022 first African semifinal · Legend 033 the Ghost of Goal Difference |
+| —  | Sat 20/06 03:30 | Brazil vs Haiti | ⏭️ skipped | never produced as its own episode (the pairing is covered by Ep7); numbering continued with Turkey vs Paraguay as Ep34 — do NOT reuse 34 for this fixture |
+| 34 | Sat 20/06 06:00 | Turkey vs Paraguay | 🛠️ scaffolded | folder `match34-turkey-vs-paraguay`; narration says "episode thirty-four" · Legend 034 |
+| 35 | Sat 20/06 20:00 | Netherlands vs Sweden | 🛠️ scaffolded | big-audience (Netherlands) · folder `match35-netherlands-vs-sweden` · Legend 035 |
+| 36 | Sat 20/06 23:00 | Germany vs Ivory Coast | 🛠️ scaffolded | big-audience (Germany) · folder `match36-germany-vs-ivory-coast` · Legend 036 |
 
 ## Held / out-of-order (do NOT publish before its TV slot)
-- **France vs Iraq** — France's Matchday 2 (later in the calendar). Scaffold + narration exist
-  in `marketing/match-videos/_hold-france-vs-iraq/`; renumber & finish when its kickoff slot arrives.
+- **France vs Iraq** — France's Matchday 2. Scaffold + narration exist in
+  `marketing/match-videos/_hold-france-vs-iraq/`. Its real kickoff (Jun 17) has now
+  PASSED → if produced, it is **RESCUE mode**, and it must be **renumbered first**:
+  the scaffold's narration still says "episode nineteen"/Legend 019, but **Ep19 is
+  taken by Saudi Arabia vs Uruguay** — assign the next free number at production time.
 
 ## Research hook log (fill as built — keep the "Did you know?" secret per episode)
 - Ep19 Saudi Arabia vs Uruguay — _research the verified hook_

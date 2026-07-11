@@ -78,7 +78,7 @@
 - **Description:** Netherlands vs Japan, World Cup 2026 — Total Football against the Samurai Blue, the hidden history and our prediction, Pixar-style. WorldCup26 Legends. Play free at worldcup26.world. #WorldCup2026 #Netherlands #Japan
 
 ### The Debutants Who Knocked Out the Champions — France vs Senegal
-- **Image:** `marketing/match-videos/match14-france-vs-senegal/thumbnail.jpg`
+- **Image:** `marketing/match-videos/match21-france-vs-senegal/thumbnail.jpg`
 - **Pin title:** The Debutants Who Knocked Out the Champions
 - **Description:** 2002 again? France vs Senegal, World Cup 2026 — the stunning history of the Lions of Teranga, Pixar-style, with our prediction. WorldCup26 Legends. Play free at worldcup26.world. #WorldCup2026 #France #Senegal
 

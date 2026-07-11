@@ -206,7 +206,10 @@ reuse or skip a number. Before creating an episode:
 1. **Find the next number.** Episodes are numbered by **production order**. The
    next number = (highest existing `marketing/match-videos/matchNN-...` folder) + 1.
    Cross-check the `SERIES_PLAYBOOK.md` results log and `UPLOAD_PACKS.md`.
-   **Current state: latest is Ep14 (France vs Senegal) → next is Ep15.**
+   **Current state: latest is Ep36 (Germany vs Ivory Coast, folder
+   `match36-germany-vs-ivory-coast`) → next is Ep37.** (Channel/publish numbers
+   can differ from folder numbers for Ep8–14 — see `PRODUCTION_LOG.md`; the
+   `_hold-*` and `_superseded-*` folders are outside the numbering scan.)
 2. **Folder name = `matchNN-teama-vs-teamb`** where `NN` is the zero-padded
    episode number (folder number == episode number; the series starts at
    `match02` — Ep1 was the inaugural one-off).
