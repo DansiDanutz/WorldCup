@@ -1,0 +1,17 @@
+{
+  "comment": "Brian VO for 'WorldCup26 Bonus - Norway: The Viking Row' (100s motivational team film). VERIFIED real facts (sources in README): the Viking Row chant — Gjallarhorn signal, drumbeat, seated synchronized rowing while shouting 'Ro!' (Norwegian for 'row') — was created by designer Ole Frøystad (Mr. Row Row) for the Oljeberget supporter club in late 2025, first performed at the March 2026 friendly vs Switzerland; Norway are at their first World Cup since 1998 (28 years); Norway beat Brazil on 5 July 2026 and Erling Haaland led the chant after the match; Ødegaard led it after the Senegal and Ivory Coast wins. No scorelines are stated anywhere. Voice: Brian clone (Higgsfield element 857b6dce-40c2-4dbb-88ef-bbab5d24892c cloned from the Lukaku-film Brian ElevenLabs lines). Chant-burst windows (32-36, 44-48, 56-60, 68-72) are deliberately VO-free so the crowd's 'RO! RO!' carries them.",
+  "voice": "Brian",
+  "lines": [
+    { "at": 0.8,  "text": "Listen. That sound is not thunder. That is Norway." },
+    { "at": 8.6,  "text": "One horn. One drum. And a wall of Vikings, ready to row." },
+    { "at": 17.0, "text": "They call it the Viking Row. Ro means row. And when Norway rows, nobody rows alone." },
+    { "at": 24.5, "text": "Erling Haaland. The machine from Bryne. He does not chase history. History runs from him." },
+    { "at": 36.4, "text": "Martin Ødegaard. The captain. He sees the pass before the game even knows it exists." },
+    { "at": 48.4, "text": "Antonio Nusa. Lightning off the fjord. Blink, and he is gone." },
+    { "at": 60.4, "text": "Alexander Sørloth. The tower. When the ball rises, he is already in the sky." },
+    { "at": 72.4, "text": "Sander Berge. The engine room. Every voyage needs a man who never stops rowing." },
+    { "at": 80.6, "text": "Twenty eight years they waited. Then Norway rowed past Brazil. And Haaland led the chant himself." },
+    { "at": 87.6, "text": "So grab an oar, Norway. The longship is moving. And the whole world can hear it coming." },
+    { "at": 93.0, "text": "Pick your three teams at worldcup twenty six dot world. Free to play, just for fun, no prizes. Ro! Ro!" }
+  ]
+}

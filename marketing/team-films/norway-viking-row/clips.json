@@ -1,0 +1,28 @@
+{
+  "comment": "Single source of truth for the 100s 'Norway: The Viking Row' timeline. CLIP-BASED ONLY (CLAUDE.md #11): 14 distinct video clips, every src used exactly once, no loops. Player clips (5s, silent, from content/videos/Norway/) play once, slow-fitted by VideoSprite's autoRate. Crowd/chant clips are Seedance 2.0 generations WITH native audio — the 'RO! RO!' chant sound; mux.mjs mixes each clip's own audio at its slot when vol > 0, which is how the chant lands BETWEEN the players. Music: Kevin MacLeod (incompetech.com), CC-BY 4.0 — credit required in the upload description.",
+  "clips": [
+    { "id": "stadium",     "src": "assets/stadium.webm",           "at": 0,  "dur": 8, "vol": 0.55 },
+    { "id": "horn",        "src": "assets/horn.webm",              "at": 8,  "dur": 8, "vol": 0.80 },
+    { "id": "row1",        "src": "assets/row1.webm",              "at": 16, "dur": 8, "vol": 0.85 },
+    { "id": "haaland",     "src": "assets/Erling-Haaland.webm",    "at": 24, "dur": 8, "vol": 0 },
+    { "id": "drummer",     "src": "assets/drummer.webm",           "at": 32, "dur": 4, "vol": 0.90 },
+    { "id": "odegaard",    "src": "assets/Martin-Odegaard.webm",   "at": 36, "dur": 8, "vol": 0 },
+    { "id": "row2",        "src": "assets/row2.webm",              "at": 44, "dur": 4, "vol": 0.90 },
+    { "id": "nusa",        "src": "assets/Antonio-Nusa.webm",      "at": 48, "dur": 8, "vol": 0 },
+    { "id": "family",      "src": "assets/family.webm",            "at": 56, "dur": 4, "vol": 0.85 },
+    { "id": "sorloth",     "src": "assets/Alexander-Sorloth.webm", "at": 60, "dur": 8, "vol": 0 },
+    { "id": "flares",      "src": "assets/flares.webm",            "at": 68, "dur": 4, "vol": 0.90 },
+    { "id": "berge",       "src": "assets/Sander-Berge.webm",      "at": 72, "dur": 8, "vol": 0 },
+    { "id": "celebration", "src": "assets/celebration.webm",       "at": 80, "dur": 8, "vol": 0.80 },
+    { "id": "finale",      "src": "assets/finale.webm",            "at": 88, "dur": 6, "vol": 0.70 }
+  ],
+  "music": {
+    "comment": "Kevin MacLeod (incompetech.com), CC-BY 4.0. Tense build under the cold open, epic bed under the players, heroic swell for the celebration + CTA. The chant bursts keep the bed low so the crowd's RO! RO! leads.",
+    "cues": [
+      { "src": "music/crossing-the-chasm.mp3", "at": 0,  "dur": 24, "vol": 0.42, "fadeIn": 0.6, "fadeOut": 3 },
+      { "src": "music/five-armies.mp3",        "at": 23, "dur": 56, "vol": 0.32, "fadeIn": 2.5, "fadeOut": 3 },
+      { "src": "music/heroic-finale.mp3",      "at": 78, "dur": 22, "vol": 0.44, "fadeIn": 2,   "fadeOut": 3.5 }
+    ]
+  },
+  "sfx": { "hits": [] }
+}
