@@ -13,8 +13,16 @@ Status: ✅ live · 🎬 rendered (master ready) · 🛠️ building/rendering �
 > (Shorts + retitle), not a Premiere. Episode numbers below were reconciled with
 > the actual folders + narration on 2026-07-11: there is NO Brazil-vs-Haiti MD2
 > episode — Ep34 = Turkey vs Paraguay, Ep35 = Netherlands vs Sweden,
-> Ep36 = Germany vs Ivory Coast (folders `match34`–`match36`), and **next is
-> Ep37**. Knockout-round episodes need a new fixture list from the real bracket.
+> Ep36 = Germany vs Ivory Coast (folders `match34`–`match36`).
+>
+> **⚠️ CHANNEL STATE (2026-07-11):** the published series on the channel has
+> continued far beyond this repo's folder pipeline — the latest upload is
+> **Ep.104 (Argentina vs Switzerland, quarter-final)**, published 2026-07-09.
+> Episodes Ep.37–104 were produced outside `marketing/match-videos/` (no folders
+> exist for them). The complete live catalogue — every episode, link, stage, and
+> story prediction — is tracked in `src/lib/youtube-legend-episodes.ts` (the
+> Legend-cards source, reconciled against the channel on 2026-07-11). This
+> fixture table remains the record of the folder-pipeline era (Ep2–36) only.
 
 | Ep | Kickoff (TV) | Match | Status | Notes / link |
 |----|--------------|-------|--------|--------------|
