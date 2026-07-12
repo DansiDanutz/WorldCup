@@ -1,4 +1,4 @@
-// Frame-perfect renderer for the Match 2 video.
+// Frame-perfect renderer for "WorldCup26 Bonus - Norway: The Viking Row".
 // Drives window.__seek(t) and screenshots #stage-canvas (1920x1080) per frame.
 // Unlike the plain ad renderer, this waits for every mounted <video> clip to
 // finish seeking (window.__videosSettled) so generated clips are frame-exact.
@@ -6,10 +6,10 @@ import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const HTML = process.env.URL || 'http://127.0.0.1:8098/match.html';
+const HTML = process.env.URL || 'http://127.0.0.1:8123/match.html';
 const EXEC = process.env.CHROMIUM_PATH || undefined;
 const FPS = Number(process.env.FPS || 30);
-const DURATION = Number(process.env.DURATION || 300);
+const DURATION = Number(process.env.DURATION || 100);
 const OUT = process.env.OUT || 'frames';
 const START = Number(process.env.START || 0); // resume support: first frame index
 const SHOTS = process.env.SHOTS ? process.env.SHOTS.split(',').map(Number) : null;

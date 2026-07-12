@@ -1,14 +1,14 @@
 {
-  "name": "wc26-match23-video",
+  "name": "wc26-norway-viking-row",
   "private": true,
   "type": "module",
   "version": "1.0.0",
-  "description": "WorldCup26 Legends — Match 23: Austria vs Jordan. 5-minute cinematic match video with Brian (ElevenLabs) narration, Ken-Burns player stills, supporter emotions and background music.",
+  "description": "WorldCup26 Bonus - Norway: The Viking Row. 100-second clip-based motivational film with Brian narration, the real RO! RO! chant between every player, and a worldcup26.world CTA.",
   "scripts": {
     "serve": "PORT=8123 node serve.mjs",
-    "render": "FPS=30 DURATION=300 OUT=frames node render.mjs",
+    "render": "FPS=30 DURATION=100 OUT=frames node render.mjs",
     "voice": "node gen_audio.mjs",
-    "mux": "node mux.mjs",
+    "mux": "FPS=30 DURATION=100 OUTFILE=WorldCup26_Bonus_Norway_The_Viking_Row.mp4 node mux.mjs",
     "fetch-assets": "node fetch_assets.mjs"
   },
   "dependencies": {

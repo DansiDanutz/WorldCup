@@ -1,9 +1,9 @@
-// Final assembly for the Match 23 video:
+// Final assembly for "WorldCup26 Bonus - Norway: The Viking Row":
 //   frames/  (from render.mjs)
-// + audio/line_NN.mp3  (Brian VO from gen_audio.mjs)
+// + audio/line_NN.mp3  (Brian VO)
 // + music cues from clips.json (looped/trimmed, side-chain ducked under the VO)
 // + each placement's own crowd/FX audio at its clips.json timeline slot
-// -> WorldCup26_Match23_AUT_JOR.mp4 (H.264/AAC, 1920x1080)
+// -> WorldCup26_Bonus_Norway_The_Viking_Row.mp4 (H.264/AAC, 1920x1080)
 import fs from 'node:fs';
 import { execFileSync, spawnSync } from 'node:child_process';
 import ffmpegStatic from 'ffmpeg-static';
@@ -12,8 +12,8 @@ import ffmpegStatic from 'ffmpeg-static';
 const ffmpegPath = (fs.existsSync('/usr/bin/ffmpeg') && '/usr/bin/ffmpeg') || ffmpegStatic;
 
 const FPS = Number(process.env.FPS || 30);
-const DURATION = Number(process.env.DURATION || 300);
-const OUT = process.env.OUTFILE || 'WorldCup26_Match23_AUT_JOR.mp4';
+const DURATION = Number(process.env.DURATION || 100);
+const OUT = process.env.OUTFILE || 'WorldCup26_Bonus_Norway_The_Viking_Row.mp4';
 const NO_VO = process.env.NO_VO === '1'; // music+FX preview before the ElevenLabs pass
 
 const { lines } = JSON.parse(fs.readFileSync('narration.json', 'utf8'));
