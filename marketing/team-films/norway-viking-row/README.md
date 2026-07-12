@@ -62,10 +62,14 @@ voice cloning (`Brian Narrator WC26`, element `857b6dce-…`), spoken through
 ## Build
 
 ```bash
-PORT=8140 node serve.mjs &
+PORT=8123 node serve.mjs &
 CHROMIUM_PATH=/opt/pw-browsers/chromium FPS=30 DURATION=100 OUT=frames node render.mjs
 FPS=30 DURATION=100 OUTFILE=WorldCup26_Bonus_Norway_The_Viking_Row.mp4 node mux.mjs
 ```
+
+Or simply `npm run serve` (background it yourself) followed by `npm run render` and
+`npm run mux` — the package scripts already default to port 8123 / 100s / the
+correct output filename, so no env overrides are required.
 
 ## Music (credit in the upload description)
 
