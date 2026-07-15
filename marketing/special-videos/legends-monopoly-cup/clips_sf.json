@@ -1,13 +1,14 @@
 {
-  "comment": "EPISODE 6 - THE UPRISING (semi-finals). VO-driven, no clip repeats (auto-built). New clips_sf/: TWO_KINGS,MESSI_VS_KANE,HAALAND_FALLEN,MBAPPE_DEVOURED,BELLINGHAM_RISES,SPAIN_NO_KING,PELE_VS_MARADONA,THE_UPRISING + cards. Rest reused.",
+  "comment": "EP6 THE UPRISING v2 - enhanced: cinematic intro (fallen-kings battlefield), new statue/board/throne/hand clips replacing fillers, + ENDING MYSTERY sting (coin-eye, fourth hooded figure, shadow champion) after CTA. No repeats.",
   "sequence": [
     {
       "id": "n01",
-      "src": "clips_qf/HAND_OF_GOD.mp4",
+      "src": "clips_sf/INTRO_FALLEN_KINGS.mp4",
       "lines": [
         1
       ],
       "xf": 0,
+      "hold": 0.4,
       "flash": true
     },
     {
@@ -16,16 +17,16 @@
       "lines": [
         2
       ],
-      "xf": 0.3,
-      "hold": 1.4
+      "xf": 0.3
     },
     {
       "id": "n03",
-      "src": "clips_qf/VIKINGS_ROO.mp4",
+      "src": "clips_sf/STATUES_CRUMBLE.mp4",
       "lines": [
         3
       ],
-      "xf": 0.3
+      "xf": 0.3,
+      "hold": 1.2
     },
     {
       "id": "n04",
@@ -49,16 +50,16 @@
       "lines": [
         6
       ],
-      "xf": 0.3,
-      "hold": 1.4
+      "xf": 0.3
     },
     {
       "id": "n07",
-      "src": "clips/c02.mp4",
+      "src": "clips_sf/TWO_STATUES.mp4",
       "lines": [
         7
       ],
-      "xf": 0.3
+      "xf": 0.3,
+      "hold": 1.4
     },
     {
       "id": "n08",
@@ -66,16 +67,16 @@
       "lines": [
         8
       ],
-      "xf": 0.3,
-      "hold": 1.6
+      "xf": 0.3
     },
     {
       "id": "n09",
-      "src": "clips/c03.mp4",
+      "src": "clips_sf/BOARD_CRACKS.mp4",
       "lines": [
         9
       ],
-      "xf": 0.3
+      "xf": 0.3,
+      "hold": 1.4
     },
     {
       "id": "tit",
@@ -87,15 +88,16 @@
     },
     {
       "id": "n11",
-      "src": "clips/c04.mp4",
+      "src": "clips_sf/INTRO_COIN_EYE.mp4",
       "lines": [
         11
       ],
-      "xf": 0.3
+      "xf": 0.3,
+      "hold": 0.6
     },
     {
       "id": "n12",
-      "src": "clips_r2/PELE_REVEAL.mp4",
+      "src": "clips_qf/MARADONA_WITCH.mp4",
       "lines": [
         12
       ],
@@ -111,7 +113,7 @@
     },
     {
       "id": "n14",
-      "src": "clips/c05.mp4",
+      "src": "clips/c02.mp4",
       "lines": [
         14
       ],
@@ -156,7 +158,7 @@
         19
       ],
       "xf": 0.3,
-      "hold": 1.8,
+      "hold": 1.6,
       "card": true
     },
     {
@@ -167,7 +169,7 @@
         21
       ],
       "xf": 0.3,
-      "hold": 2.2,
+      "hold": 1.8,
       "card": true
     },
     {
@@ -176,12 +178,11 @@
       "lines": [
         22
       ],
-      "xf": 0.3,
-      "hold": 1.4
+      "xf": 0.3
     },
     {
       "id": "n23",
-      "src": "clips/c06.mp4",
+      "src": "clips/c03.mp4",
       "lines": [
         23
       ],
@@ -205,7 +206,7 @@
     },
     {
       "id": "n26",
-      "src": "clips/c15.mp4",
+      "src": "clips/c04.mp4",
       "lines": [
         26
       ],
@@ -213,7 +214,7 @@
     },
     {
       "id": "n27",
-      "src": "clips/c18.mp4",
+      "src": "clips/c05.mp4",
       "lines": [
         27
       ],
@@ -225,12 +226,11 @@
       "lines": [
         28
       ],
-      "xf": 0.3,
-      "hold": 1.2
+      "xf": 0.3
     },
     {
       "id": "n29",
-      "src": "clips/c20.mp4",
+      "src": "clips/c06.mp4",
       "lines": [
         29
       ],
@@ -238,16 +238,16 @@
     },
     {
       "id": "n30",
-      "src": "clips_v3/TROPHY.mp4",
+      "src": "clips_sf/THRONE_EMPTY_CLOSE.mp4",
       "lines": [
         30
       ],
       "xf": 0.3,
-      "hold": 0.8
+      "hold": 1
     },
     {
       "id": "n31",
-      "src": "clips/c21.mp4",
+      "src": "clips/c15.mp4",
       "lines": [
         31
       ],
@@ -255,20 +255,21 @@
     },
     {
       "id": "n32",
-      "src": "clips_qf/MARADONA_WITCH.mp4",
+      "src": "clips_sf/MARADONA_HAND_MESSI.mp4",
       "lines": [
         32
       ],
       "xf": 0.3,
-      "hold": 1.4
+      "hold": 1.2
     },
     {
       "id": "n33",
-      "src": "clips/c22.mp4",
+      "src": "clips_qf/HAND_OF_GOD.mp4",
       "lines": [
         33
       ],
-      "xf": 0.3
+      "xf": 0.3,
+      "hold": 1.2
     },
     {
       "id": "n34",
@@ -284,8 +285,7 @@
       "lines": [
         35
       ],
-      "xf": 0.3,
-      "hold": 1.8
+      "xf": 0.3
     },
     {
       "id": "n36",
@@ -297,7 +297,7 @@
     },
     {
       "id": "n37",
-      "src": "clips/c23.mp4",
+      "src": "clips/c18.mp4",
       "lines": [
         37
       ],
@@ -305,7 +305,7 @@
     },
     {
       "id": "n38",
-      "src": "clips/c24.mp4",
+      "src": "clips/c21.mp4",
       "lines": [
         38
       ],
@@ -313,7 +313,7 @@
     },
     {
       "id": "n39",
-      "src": "clips/c26.mp4",
+      "src": "clips/c23.mp4",
       "lines": [
         39
       ],
@@ -321,7 +321,7 @@
     },
     {
       "id": "n40",
-      "src": "clips/c27.mp4",
+      "src": "clips/c24.mp4",
       "lines": [
         40
       ],
@@ -329,7 +329,7 @@
     },
     {
       "id": "n41",
-      "src": "clips/c28.mp4",
+      "src": "clips/c26.mp4",
       "lines": [
         41
       ],
@@ -342,25 +342,23 @@
         42
       ],
       "xf": 0.3,
-      "hold": 2.0
+      "hold": 2
     },
     {
       "id": "n43",
-      "src": "clips_v5/BOARD_RESET.mp4",
+      "src": "clips/c28.mp4",
       "lines": [
         43
       ],
-      "xf": 0.3,
-      "hold": 0.8
+      "xf": 0.3
     },
     {
       "id": "n44",
-      "src": "clips_v4/DICE_CLOSEUP.mp4",
+      "src": "clips_v3/TROPHY.mp4",
       "lines": [
         44
       ],
-      "xf": 0.3,
-      "hold": 1.6
+      "xf": 0.3
     },
     {
       "id": "n45",
@@ -368,26 +366,23 @@
       "lines": [
         45
       ],
-      "xf": 0.3,
-      "hold": 1.0
+      "xf": 0.3
     },
     {
       "id": "n46",
-      "src": "clips_v4/RIVALS_WATCH.mp4",
+      "src": "clips_v5/BOARD_RESET.mp4",
       "lines": [
         46
       ],
-      "xf": 0.3,
-      "hold": 1.0
+      "xf": 0.3
     },
     {
       "id": "n47",
-      "src": "clips_v4/KEEPER_FACE.mp4",
+      "src": "clips_v4/DICE_CLOSEUP.mp4",
       "lines": [
         47
       ],
-      "xf": 0.3,
-      "hold": 1.0
+      "xf": 0.3
     },
     {
       "id": "n48",
@@ -395,12 +390,11 @@
       "lines": [
         48
       ],
-      "xf": 0.3,
-      "hold": 0.8
+      "xf": 0.3
     },
     {
       "id": "n49",
-      "src": "clips_v4/GOAL_NET.mp4",
+      "src": "clips_v4/RIVALS_WATCH.mp4",
       "lines": [
         49
       ],
@@ -408,7 +402,7 @@
     },
     {
       "id": "n50",
-      "src": "clips_v4/EMPTY_CELL.mp4",
+      "src": "clips_v4/KEEPER_FACE.mp4",
       "lines": [
         50
       ],
@@ -416,7 +410,7 @@
     },
     {
       "id": "n51",
-      "src": "clips_r2b/WITCHES_CAULDRON.mp4",
+      "src": "clips_v4/GOAL_NET.mp4",
       "lines": [
         51
       ],
@@ -424,7 +418,7 @@
     },
     {
       "id": "n52",
-      "src": "clips_r2/CAGES_PLOT.mp4",
+      "src": "clips_v4/EMPTY_CELL.mp4",
       "lines": [
         52
       ],
@@ -432,7 +426,7 @@
     },
     {
       "id": "n53",
-      "src": "clips_r2b/PELE_OPENS_CAGE.mp4",
+      "src": "clips_r2/CAGES_PLOT.mp4",
       "lines": [
         53
       ],
@@ -448,8 +442,52 @@
         58
       ],
       "xf": 0.3,
-      "hold": 3.2,
+      "hold": 2.2,
       "card": true
+    },
+    {
+      "id": "n59",
+      "src": "clips_v3/COIN.mp4",
+      "lines": [
+        59
+      ],
+      "xf": 0.3
+    },
+    {
+      "id": "n60",
+      "src": "clips_sf/COIN_LANDS_EYE.mp4",
+      "lines": [
+        60
+      ],
+      "xf": 0.3,
+      "hold": 1.4
+    },
+    {
+      "id": "n61",
+      "src": "clips_r2b/WITCHES_CAULDRON.mp4",
+      "lines": [
+        61
+      ],
+      "xf": 0.3
+    },
+    {
+      "id": "n62",
+      "src": "clips_sf/HOODED_FOURTH.mp4",
+      "lines": [
+        62
+      ],
+      "xf": 0.3,
+      "hold": 1.6
+    },
+    {
+      "id": "n63",
+      "src": "clips_sf/SHADOW_CHAMPION.mp4",
+      "lines": [
+        63,
+        64
+      ],
+      "xf": 0.3,
+      "hold": 2.5
     }
   ]
 }

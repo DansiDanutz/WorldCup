@@ -37,7 +37,8 @@ const sfx=[
   S("braam",at("n02")+0.2,0.55),S("braam",at("n06")+0.2,0.55),S("braam",at("n08")+0.2,0.6),
   S("goal",at("n17")+0.3,0.5),S("braam",at("lb")+0.2,0.55),S("braam",at("brk")+0.2,0.5),
   S("whoosh",at("n22")+0.2,0.5),S("mystic",at("n32")+0.2,0.45),S("braam",at("n35")+0.2,0.6),
-  S("braam",at("n42")+0.2,0.6),S("braam",at("n44")+0.2,0.55),S("whoosh",at("n48")+0.1,0.4),S("braam",at("cta"),0.5)
+  S("braam",at("n42")+0.2,0.6),S("braam",at("n44")+0.2,0.55),S("whoosh",at("n48")+0.1,0.4),S("braam",at("cta"),0.5),
+  S("mystic",at("n60")+0.2,0.5),S("braam",at("n62")+0.2,0.6),S("mystic",at("n63")+0.3,0.5)
 ];
 const music=[
   {file:"music/score-mystery.m4a",at:0,dur:at("n11")+2,vol:0.26,fadeIn:0.5,fadeOut:3},
