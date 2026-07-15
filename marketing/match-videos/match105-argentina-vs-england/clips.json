@@ -101,7 +101,7 @@
     },
     {
       "id": "night-rays-blue",
-      "src": "assets/clips/night-rays-blue.mp4",
+      "src": "assets/clips/arg-crowd.mp4",
       "at": 62,
       "dur": 5,
       "vol": 0
@@ -157,7 +157,7 @@
     },
     {
       "id": "ghost-mist-b",
-      "src": "assets/clips/ghost-mist.mp4",
+      "src": "assets/clips/keeper-hero.mp4",
       "at": 98,
       "dur": 5,
       "vol": 0
@@ -171,21 +171,21 @@
     },
     {
       "id": "crowd-tense",
-      "src": "assets/clips/crowd-tense.mp4",
+      "src": "assets/clips/keeper-hero.mp4",
       "at": 108,
       "dur": 5,
       "vol": 0
     },
     {
       "id": "old-rivalry-b",
-      "src": "assets/clips/old-rivalry.mp4",
+      "src": "assets/clips/eng-march.mp4",
       "at": 113,
       "dur": 3.1,
       "vol": 0
     },
     {
       "id": "gold-dust-c",
-      "src": "assets/clips/gold-dust.mp4",
+      "src": "assets/clips/keeper-hero.mp4",
       "at": 116,
       "dur": 5,
       "vol": 0
@@ -227,14 +227,14 @@
     },
     {
       "id": "arg-crowd-b",
-      "src": "assets/clips/arg-crowd.mp4",
+      "src": "assets/clips/keeper-hero.mp4",
       "at": 146,
       "dur": 5,
       "vol": 0
     },
     {
       "id": "goal-net",
-      "src": "assets/clips/goal-net.mp4",
+      "src": "assets/clips/arg-crowd.mp4",
       "at": 151,
       "dur": 5,
       "vol": 0
@@ -248,42 +248,42 @@
     },
     {
       "id": "embers-b",
-      "src": "assets/clips/embers-rise.mp4",
+      "src": "assets/clips/arg-attack.mp4",
       "at": 161,
       "dur": 5,
       "vol": 0
     },
     {
       "id": "gold-dust-d",
-      "src": "assets/clips/gold-dust.mp4",
+      "src": "assets/clips/keeper-hero.mp4",
       "at": 166,
       "dur": 5,
       "vol": 0
     },
     {
       "id": "ghost-mist2-b",
-      "src": "assets/clips/ghost-mist2.mp4",
+      "src": "assets/clips/crowd-tense.mp4",
       "at": 171,
       "dur": 5,
       "vol": 0
     },
     {
       "id": "pen-spot-b",
-      "src": "assets/clips/pen-spot.mp4",
+      "src": "assets/clips/keeper-hero.mp4",
       "at": 176,
       "dur": 5,
       "vol": 0
     },
     {
       "id": "old-rivalry-c",
-      "src": "assets/clips/old-rivalry.mp4",
+      "src": "assets/clips/eng-march.mp4",
       "at": 181,
       "dur": 5,
       "vol": 0
     },
     {
       "id": "crowd-tense-b",
-      "src": "assets/clips/crowd-tense.mp4",
+      "src": "assets/clips/keeper-hero.mp4",
       "at": 186,
       "dur": 5,
       "vol": 0
@@ -297,7 +297,7 @@
     },
     {
       "id": "night-rays-blue-b",
-      "src": "assets/clips/night-rays-blue.mp4",
+      "src": "assets/clips/keeper-hero.mp4",
       "at": 196,
       "dur": 4.1,
       "vol": 0
@@ -311,14 +311,14 @@
     },
     {
       "id": "stadium-glow-b",
-      "src": "assets/clips/stadium-glow.mp4",
+      "src": "assets/clips/keeper-hero.mp4",
       "at": 205,
       "dur": 5,
       "vol": 0
     },
     {
       "id": "gold-dust-e",
-      "src": "assets/clips/gold-dust.mp4",
+      "src": "assets/clips/crowd-tense.mp4",
       "at": 210,
       "dur": 5,
       "vol": 0
@@ -339,7 +339,7 @@
     },
     {
       "id": "crowd-tense-c",
-      "src": "assets/clips/crowd-tense.mp4",
+      "src": "assets/clips/pitch-walkout.mp4",
       "at": 225,
       "dur": 5,
       "vol": 0
@@ -367,7 +367,7 @@
     },
     {
       "id": "gold-dust-p",
-      "src": "assets/clips/gold-dust.mp4",
+      "src": "assets/clips/eng-pileon.mp4",
       "at": 245,
       "dur": 1.1,
       "vol": 0
@@ -388,14 +388,14 @@
     },
     {
       "id": "destiny-rays-b",
-      "src": "assets/clips/destiny-rays.mp4",
+      "src": "assets/clips/keeper-hero.mp4",
       "at": 256,
       "dur": 5,
       "vol": 0
     },
     {
       "id": "gold-dust-q",
-      "src": "assets/clips/gold-dust.mp4",
+      "src": "assets/clips/arg-crowd.mp4",
       "at": 261,
       "dur": 1.1,
       "vol": 0

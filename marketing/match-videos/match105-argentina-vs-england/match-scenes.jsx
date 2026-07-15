@@ -34,7 +34,13 @@ function FlagENG({ w = 120 }) {
   );
 }
 
-function FS({ id, dim = 0, style }) { return <ClipSprite id={id} fit="cover" dim={dim} style={{ ...GRADE, ...(style || {}) }} />; }
+// br = brightness multiplier for the footage bed (composes with GRADE). br=1 (default) is unchanged;
+// >1 lifts a bed that the BeatCard scrim would otherwise crush below the luma floor (Rule #25/#27).
+// NOTE: the `dim` prop is inert on FS (GRADE.filter overrides it) — use `br` to control bed brightness.
+function FS({ id, dim = 0, br = 1, style }) {
+  const filter = (br && br !== 1) ? `brightness(${br}) ${GRADE.filter}` : GRADE.filter;
+  return <ClipSprite id={id} fit="cover" dim={dim} style={{ ...GRADE, ...(style || {}), filter }} />;
+}
 
 function NightField({ o = 0.6, tone = 'gold' }) {
   const t = useTime();
@@ -197,7 +203,7 @@ function SceneArgentina() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <NightField o={0.5} tone="blue" />
-      <FS id="arg-crowd" /><FS id="stadium-glow" dim={0.32} /><FS id="night-rays-blue" dim={0.3} />
+      <FS id="arg-crowd" /><FS id="stadium-glow" dim={0.32} /><FS id="night-rays-blue" dim={0.2} />
       <Sprite start={47} end={52}><TeamBanner flag={<FlagARG w={58} />} label="THE ALBICELESTE · ARGENTINA" accent={ARG_BLUE} /></Sprite>
       <SectionLabel start={52.4} end={56.8} text="WORLD CHAMPIONS" y={130} />
       <PlayerShowcase clipId="messi-show" name="LIONEL MESSI" role="CAPTAIN · No. 10" accent={ARG_BLUE} start={57} end={62} nameAt={57.2} />
@@ -226,11 +232,11 @@ function SceneRiddle() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <NightField o={0.6} />
-      <FS id="ghost-mist-b" dim={0.5} /><FS id="eng-kane-finish" dim={0.42} /><FS id="crowd-tense" dim={0.5} /><FS id="old-rivalry-b" dim={0.5} />
+      <FS id="ghost-mist-b" br={1.2} /><FS id="eng-kane-finish" /><FS id="crowd-tense" br={1.2} /><FS id="old-rivalry-b" br={1.4} />
       <BeatCard start={98} end={102.9} text={<>THE GHOST OF<br />NINETEEN NINETY-EIGHT</>} sub="TWO-TWO · DECIDED ON PENALTIES" accent={GOLD} big={52} />
       <SectionLabel start={103.4} end={107.8} text="THE PENALTY CURSE" y={140} size={34} />
       <BeatCard start={108} end={116} text={<>WHO BREAKS<br />THE CURSE?</>} sub="90 · 98 · 06 · THE EURO FINAL" accent={GOLD} big={62} />
-      <Vignette strength={0.4} />
+      <Vignette strength={0} />
     </div>
   );
 }
@@ -289,9 +295,9 @@ function SceneDrama() {
     <div style={{ position: 'absolute', inset: 0 }}>
       <Backdrop />
       {/* action / goal beds (full brightness) */}
-      <FS id="eng-attack" /><FS id="kane-goal" /><FS id="arg-attack" /><FS id="messi-goal1" /><FS id="bell-goal" /><FS id="goal-net" /><FS id="messi-goal2" />
+      <FS id="eng-attack" /><FS id="kane-goal" /><FS id="arg-attack" br={1.25} /><FS id="messi-goal1" br={1.25} /><FS id="bell-goal" /><FS id="goal-net" br={1.6} /><FS id="messi-goal2" />
       {/* dimmed beat backdrops */}
-      <FS id="gold-dust-c" dim={0.5} /><FS id="arg-crowd-b" dim={0.5} /><FS id="embers-b" dim={0.5} /><FS id="gold-dust-d" dim={0.5} /><FS id="ghost-mist2-b" dim={0.5} /><FS id="pen-spot-b" dim={0.5} /><FS id="old-rivalry-c" dim={0.5} /><FS id="crowd-tense-b" dim={0.5} /><FS id="stadium-wide-b" dim={0.42} /><FS id="night-rays-blue-b" dim={0.42} />
+      <FS id="gold-dust-c" br={1.2} /><FS id="arg-crowd-b" br={1.2} /><FS id="embers-b" br={1.3} /><FS id="gold-dust-d" br={1.2} /><FS id="ghost-mist2-b" br={1.7} /><FS id="pen-spot-b" br={1.2} /><FS id="old-rivalry-c" br={1.4} /><FS id="crowd-tense-b" br={1.2} /><FS id="stadium-wide-b" br={1.3} /><FS id="night-rays-blue-b" br={1.2} />
       {/* beats + goals */}
       <BeatCard start={116} end={121} text={<>TWO GIANTS,<br />ONE FINAL</>} sub="BLOW FOR BLOW" accent={GOLD} big={58} />
       <ChanceTag start={123} end={126} text="ENGLAND STRIKE FIRST" sub="THREE LIONS ON THE FRONT FOOT" accent={ENG_RED} />
@@ -309,7 +315,7 @@ function SceneDrama() {
       <BeatCard start={186.2} end={191} text={<>UNBEARABLE</>} accent={GOLD} big={62} />
       <ChanceTag start={192.5} end={199} text="TWO–TWO · TO PENALTIES" sub="EXACTLY LIKE 1998" accent={GOLD} />
       <ScoreBug start={192.6} arg={2} eng={2} note="A.E.T." badge="OUR PREDICTION" />
-      <Vignette strength={0.34} />
+      <Vignette strength={0} />
     </div>
   );
 }
@@ -319,19 +325,19 @@ function ScenePens() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <Backdrop />
-      <FS id="pen-spot" dim={0.12} /><FS id="pen-save" /><FS id="keeper-hero" dim={0.08} /><FS id="pen-winner" /><FS id="eng-pileon" /><FS id="stadium-wide-c" dim={0.16} />
-      <FS id="stadium-glow-b" dim={0.5} /><FS id="gold-dust-e" dim={0.5} /><FS id="crowd-tense-c" dim={0.5} /><FS id="gold-dust-p" dim={0.5} />
+      <FS id="pen-spot" br={1.3} /><FS id="pen-save" /><FS id="keeper-hero" dim={0.08} /><FS id="pen-winner" /><FS id="eng-pileon" /><FS id="stadium-wide-c" dim={0.16} />
+      <FS id="stadium-glow-b" br={1.2} /><FS id="gold-dust-e" br={1.7} /><FS id="crowd-tense-c" br={1.45} /><FS id="gold-dust-p" br={1.3} />
       <ChanceTag start={201} end={205} text="THE SHOOTOUT" sub="TWELVE YARDS" accent={GOLD} />
       <BeatCard start={205} end={210} text={<>KICK FOR KICK</>} sub="NERVE FOR NERVE" accent={GOLD} big={60} />
       <BeatCard start={210} end={214.8} text={<>MESSI SCORES · KANE SCORES</>} sub="NOBODY BLINKS" accent={GOLD} big={44} />
-      <GoalFlash at={217} /><ChanceTag start={217.2} end={220} text="THE SAVE!" sub="TURNED AWAY" accent={GOLD} />
+      <ChanceTag start={216.6} end={220.4} text="THE SAVE!" sub="TURNED AWAY" accent={GOLD} />
       <ChanceTag start={223} end={225.5} text="ONE KICK TO WIN" sub="THE CURSE ON THE LINE" accent={GOLD} />
       <BeatCard start={226} end={230} text={<>ONE KICK</>} sub="TO BREAK A GENERATION OF PAIN" accent={GOLD} big={64} />
       <GoalFlash at={233.9} /><ChanceTag start={234.0} end={239} text="AND IT'S IN!" sub="ENGLAND WIN · 4–3" accent={GOLD} />
       <Confetti start={234} dur={10} count={70} />
       <ChanceTag start={240.3} end={245.5} text="THE CURSE IS BROKEN" sub="ENGLAND REACH THE FINAL" accent={GOLD} />
       <ScoreBug start={240.6} arg={2} eng={2} note="4–3 PENS" badge="OUR PREDICTION" />
-      <Vignette strength={0.32} />
+      <Vignette strength={0} />
     </div>
   );
 }
@@ -341,10 +347,10 @@ function SceneGoldenBoot() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <NightField o={0.5} tone="blue" />
-      <FS id="messi-golden" dim={0.1} /><FS id="arg-despair" dim={0.14} /><FS id="destiny-rays-b" dim={0.5} /><FS id="gold-dust-q" dim={0.5} />
+      <FS id="messi-golden" br={1.3} /><FS id="arg-despair" dim={0.14} /><FS id="destiny-rays-b" br={1.2} /><FS id="gold-dust-q" br={1.5} />
       <ChanceTag start={248.8} end={251} text="TWO GOALS · NO FINAL" sub="THE GOLDEN BOOT" accent={GOLD} />
       <BeatCard start={257} end={262} text={<>TOP SCORER ·<br />BEATEN BY THE SPOT</>} sub="THE HEIR, UNLIKE MARADONA, FALLS" accent={GOLD} big={48} />
-      <Vignette strength={0.42} />
+      <Vignette strength={0} />
     </div>
   );
 }
