@@ -1,13 +1,14 @@
 // match-scenes.jsx — Ep105 Argentina vs England · THE SEMIFINAL (special episode).
-// SPINE = ghosts of the rivalry (1986 Hand of God + Goal of the Century; 1998 2-2, Argentina won 4-3
-// on pens, Beckham red; England's penalty curse) → OUR PREDICTION 2-2, ENGLAND WIN 4-3 ON PENS and
-// reach the final; Messi scores BOTH (Golden Boot in defeat), Kane + Bellingham score England's.
-// Legend 105 = EXCALIBUR / the Once-and-Future King — the curse broken, the sword drawn at last.
+// SPINE = ghosts of the rivalry (1986 Hand of God + Goal of the Century) → REAL RESULT (played
+// 2026-07-15): ARGENTINA 2–1 ENGLAND in normal time, NO shootout — Argentina reach the final (vs
+// Spain). England lead Gordon 55'; Enzo Fernández equalizes 85'; Lautaro Martínez heads the 90+2'
+// winner from a MESSI cross — Messi ASSISTED BOTH goals (did not score) and dedicated it to Diego.
+// Legend 105 = EL DIEZ / Diego Maradona — the ghost of '86, the immortal ten, passed to Messi.
 // ARCHITECTURE: every scene lays a CONTIGUOUS clip BED (flat <FS> tiles that render on their
 // clips.json windows) so footage sits behind every second (Rule #25); text overlays are gated by
 // <Sprite start end> (absolute time). PHOTOREAL i2v (#22), nation-correct (#28), name-synced (#23),
-// no on-screen sentences (#10, only ≤4-word labels/scores/names), full-frame (#19), OUR PREDICTION
-// only (#7). Loaded before intro-scenes.jsx.
+// no on-screen sentences (#10, only ≤4-word labels/scores/names), full-frame (#19), REAL RESULT
+// stated as fact (#7 — the match was played). Loaded before intro-scenes.jsx.
 
 const ARG_BLUE = '#6CACE4', ARG_WHITE = '#ffffff';
 const ENG_RED = '#d21f2a', ENG_WHITE = '#ffffff';
@@ -57,7 +58,7 @@ function NightField({ o = 0.6, tone = 'gold' }) {
 }
 function Backdrop() { return <div style={{ position: 'absolute', inset: 0, zIndex: 0, background: 'radial-gradient(ellipse at 50% 45%, #131a30 0%, #070a12 100%)' }} />; }
 
-function ScoreBug({ start, arg = 2, eng = 2, note = '', badge = 'OUR PREDICTION' }) {
+function ScoreBug({ start, arg = 2, eng = 1, note = '', badge = 'FULL-TIME' }) {
   const t = useTime(); const local = t - start; if (local < 0) return null;
   const inP = Easing.easeOutBack(clamp(local / 0.7, 0, 1));
   const cell = { fontFamily: SANS, fontWeight: 900, fontSize: 34, color: '#fff', padding: '10px 18px' };
@@ -208,7 +209,7 @@ function SceneArgentina() {
       <SectionLabel start={52.4} end={56.8} text="WORLD CHAMPIONS" y={130} />
       <PlayerShowcase clipId="messi-show" name="LIONEL MESSI" role="CAPTAIN · No. 10" accent={ARG_BLUE} start={57} end={62} nameAt={57.2} />
       <SectionLabel start={62.4} end={66.8} text="THE HEIR TO MARADONA" y={130} />
-      <PlayerShowcase clipId="alvarez-show" name="JULIÁN ÁLVAREZ" role="THE HUNTER · No. 9" accent={ARG_BLUE} start={67} end={72} nameAt={67.2} />
+      <PlayerShowcase clipId="lautaro-show" name="LAUTARO MARTÍNEZ" role="THE BULL · No. 22" accent={ARG_BLUE} start={67} end={72} nameAt={67.2} />
     </div>
   );
 }
@@ -227,22 +228,22 @@ function SceneEngland() {
   );
 }
 
-// ── RIDDLE / THE CURSE 98–116 ───────────────────────────────────────────────────
+// ── RIDDLE / THE GHOST OF '86 98–116 ────────────────────────────────────────────
 function SceneRiddle() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
-      <NightField o={0.6} />
-      <FS id="ghost-mist-b" br={1.2} /><FS id="eng-kane-finish" /><FS id="crowd-tense" br={1.2} /><FS id="old-rivalry-b" br={1.4} />
-      <BeatCard start={98} end={102.9} text={<>THE GHOST OF<br />NINETEEN NINETY-EIGHT</>} sub="TWO-TWO · DECIDED ON PENALTIES" accent={GOLD} big={52} />
-      <SectionLabel start={103.4} end={107.8} text="THE PENALTY CURSE" y={140} size={34} />
-      <BeatCard start={108} end={116} text={<>WHO BREAKS<br />THE CURSE?</>} sub="90 · 98 · 06 · THE EURO FINAL" accent={GOLD} big={62} />
+      <NightField o={0.6} tone="blue" />
+      <FS id="riddle-a" br={1.4} /><FS id="riddle-b" br={1.3} /><FS id="riddle-c" br={1.2} /><FS id="riddle-d" br={1.4} />
+      <BeatCard start={98} end={102.9} text={<>THE GHOST OF<br />EIGHTY-SIX</>} sub="MARADONA · ALMOST ALONE" accent={GOLD} big={56} />
+      <SectionLabel start={103.4} end={107.8} text="FORTY YEARS ON" y={140} size={34} />
+      <BeatCard start={108} end={116} text={<>ANOTHER<br />NUMBER TEN</>} sub="THE SAME DREAM · THE SAME GHOST" accent={GOLD} big={62} />
       <Vignette strength={0} />
     </div>
   );
 }
 
-// ── Premium prediction card (2–2, England win 4–3 on pens). Rule #18. ──────────
-function PredictionCard({ start }) {
+// ── Premium result card (Argentina 2–1, real semifinal result). Rule #18. ──────
+function ResultCard({ start }) {
   const t = useTime(); const local = t - start; if (local < 0) return null;
   const p = Easing.easeOutCubic(clamp(local / 1.0, 0, 1));
   const stampP = Easing.easeOutBack(clamp((local - 1.0) / 0.6, 0, 1));
@@ -261,7 +262,7 @@ function PredictionCard({ start }) {
         <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(105deg, ${ARG_BLUE}33 0%, #0b1330 38%, #0b1330 62%, ${ENG_RED}44 100%)` }} />
         <div style={{ position: 'absolute', top: 0, bottom: 0, left: `${sheenX}%`, width: '22%', background: 'linear-gradient(105deg, transparent, rgba(255,255,255,0.10), transparent)', transform: 'skewX(-18deg)', pointerEvents: 'none', zIndex: 5 }} />
         <div style={{ position: 'relative', zIndex: 2, background: `linear-gradient(100deg, ${ARG_BLUE} 0%, ${GOLD} 50%, ${ENG_RED} 100%)`, padding: '13px 0', textAlign: 'center' }}>
-          <span style={{ fontFamily: SANS, fontWeight: 900, fontSize: 17, letterSpacing: '0.24em', color: '#0b1330' }}>WORLDCUP26 LEGENDS · EP.105 · OUR PREDICTION · NOT PLAYED</span>
+          <span style={{ fontFamily: SANS, fontWeight: 900, fontSize: 17, letterSpacing: '0.22em', color: '#0b1330' }}>WORLDCUP26 LEGENDS · EP.105 · SEMIFINAL · FULL-TIME</span>
         </div>
         <div style={{ position: 'relative', zIndex: 2, padding: '34px 70px 26px' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 46 }}>
@@ -270,103 +271,100 @@ function PredictionCard({ start }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontFamily: SANS, fontWeight: 900, fontSize: 108, color: '#fff', lineHeight: 1 }}>
                 <span style={{ textShadow: `0 0 36px ${ARG_BLUE}cc` }}>2</span>
                 <span style={{ color: GOLD, fontSize: 54, transform: 'translateY(-6px)' }}>—</span>
-                <span style={{ textShadow: `0 0 36px ${ENG_RED}cc` }}>2</span>
+                <span style={{ textShadow: `0 0 36px ${ENG_RED}cc` }}>1</span>
               </div>
-              <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 22, color: GOLD, letterSpacing: '0.14em', marginTop: 2 }}>ENGLAND WIN 4–3 ON PENS</div>
-              <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 15, color: MV.muted, letterSpacing: '0.28em', marginTop: 4 }}>AFTER EXTRA TIME</div>
+              <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 22, color: GOLD, letterSpacing: '0.12em', marginTop: 2 }}>ARGENTINA REACH THE FINAL</div>
+              <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 15, color: MV.muted, letterSpacing: '0.26em', marginTop: 4 }}>STOPPAGE-TIME WINNER · vs SPAIN</div>
             </div>
             <Badge flag={<FlagENG w={102} />} name="ENGLAND" accent={ENG_RED} />
           </div>
-          <div style={{ textAlign: 'center', marginTop: 14, fontFamily: SANS, fontWeight: 900, fontSize: 25, color: GOLD, letterSpacing: '0.03em', textShadow: `0 0 26px ${GOLD}66` }}>MESSI ×2 · KANE · BELLINGHAM</div>
+          <div style={{ textAlign: 'center', marginTop: 14, fontFamily: SANS, fontWeight: 900, fontSize: 24, color: GOLD, letterSpacing: '0.02em', textShadow: `0 0 26px ${GOLD}66` }}>GORDON 55' · ENZO 85' · LAUTARO 90+2'</div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 12, marginTop: 14, paddingTop: 16, borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-            <span style={{ fontFamily: SANS, fontWeight: 800, fontSize: 20, color: '#f6e6c4', background: 'rgba(233,198,90,0.16)', border: '1px solid rgba(233,198,90,0.45)', borderRadius: 999, padding: '7px 18px' }}>✦ MESSI TAKES THE GOLDEN BOOT · THE CURSE BREAKS</span>
+            <span style={{ fontFamily: SANS, fontWeight: 800, fontSize: 20, color: '#f6e6c4', background: 'rgba(233,198,90,0.16)', border: '1px solid rgba(233,198,90,0.45)', borderRadius: 999, padding: '7px 18px' }}>✦ MESSI · TWO ASSISTS · FOR DIEGO</span>
           </div>
           <div style={{ textAlign: 'center', marginTop: 10, fontFamily: SANS, fontWeight: 700, fontSize: 16, color: MV.muted, letterSpacing: '0.2em' }}>worldcup26.world</div>
         </div>
-        {stampP > 0 && <div style={{ position: 'absolute', top: 62, right: -6, zIndex: 6, transform: `rotate(-12deg) scale(${stampP})`, border: `4px solid ${GOLD}`, color: GOLD, borderRadius: 12, padding: '8px 22px', fontFamily: SANS, fontWeight: 900, fontSize: 24, letterSpacing: '0.14em', background: 'rgba(11,19,48,0.92)' }}>OUR STORY</div>}
+        {stampP > 0 && <div style={{ position: 'absolute', top: 62, right: -6, zIndex: 6, transform: `rotate(-12deg) scale(${stampP})`, border: `4px solid ${GOLD}`, color: GOLD, borderRadius: 12, padding: '8px 22px', fontFamily: SANS, fontWeight: 900, fontSize: 24, letterSpacing: '0.14em', background: 'rgba(11,19,48,0.92)' }}>FULL-TIME</div>}
       </div>
     </div>
   );
 }
 
-// ── DRAMA 116–200 (match to 2–2) ────────────────────────────────────────────────
+// ── DRAMA 116–200 (real match: Gordon 1-0 → Enzo 1-1 → Lautaro 2-1) ──────────────
 function SceneDrama() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <Backdrop />
-      {/* action / goal beds (full brightness) */}
-      <FS id="eng-attack" /><FS id="kane-goal" /><FS id="arg-attack" br={1.25} /><FS id="messi-goal1" br={1.25} /><FS id="bell-goal" /><FS id="goal-net" br={1.6} /><FS id="messi-goal2" />
-      {/* dimmed beat backdrops */}
-      <FS id="gold-dust-c" br={1.2} /><FS id="arg-crowd-b" br={1.2} /><FS id="embers-b" br={1.3} /><FS id="gold-dust-d" br={1.2} /><FS id="ghost-mist2-b" br={1.7} /><FS id="pen-spot-b" br={1.2} /><FS id="old-rivalry-c" br={1.4} /><FS id="crowd-tense-b" br={1.2} /><FS id="stadium-wide-b" br={1.3} /><FS id="night-rays-blue-b" br={1.2} />
+      {/* action / goal beds (full brightness, photoreal) */}
+      <FS id="dr-eng-attack" /><FS id="dr-kane-goal" /><FS id="dr-eng-pileon" /><FS id="dr-arg-attack" /><FS id="dr-messi-assist1" /><FS id="dr-enzo-strike" /><FS id="dr-messi-assist2" /><FS id="dr-lautaro-header" /><FS id="dr-lautaro-celeb" />
+      {/* bright beat / transition backdrops */}
+      <FS id="dr-open" br={1.3} /><FS id="dr-arg-despair" br={1.3} /><FS id="dr-tense1" br={1.3} /><FS id="dr-goalnet" br={1.5} /><FS id="dr-embers" br={1.3} /><FS id="dr-oldriv" br={1.4} /><FS id="dr-stadwide" br={1.3} /><FS id="dr-arg-crowd2" br={1.2} />
       {/* beats + goals */}
       <BeatCard start={116} end={121} text={<>TWO GIANTS,<br />ONE FINAL</>} sub="BLOW FOR BLOW" accent={GOLD} big={58} />
-      <ChanceTag start={123} end={126} text="ENGLAND STRIKE FIRST" sub="THREE LIONS ON THE FRONT FOOT" accent={ENG_RED} />
-      <GoalFlash at={130.5} /><ChanceTag start={130.6} end={135.5} text="KANE!" sub="ENGLAND · 1–0" accent={ENG_RED} />
-      <ChanceTag start={133} end={136} text="THE HEIR ANSWERS" sub="MESSI ON THE BALL" accent={ARG_BLUE} />
-      <GoalFlash at={138.6} /><ChanceTag start={138.7} end={141} text="MESSI!" sub="ARGENTINA · 1–1" accent={ARG_BLUE} />
-      <GoalFlash at={145.5} /><ChanceTag start={145.6} end={150.5} text="BELLINGHAM!" sub="ENGLAND · 2–1" accent={ENG_RED} />
-      <BeatCard start={146.2} end={150.9} text={<>THE YOUNG KING RISES</>} accent={ENG_RED} big={48} />
-      <BeatCard start={151} end={156} text={<>EVERY PRAYER<br />TO THE CAPTAIN</>} sub="ARGENTINA THROW IT FORWARD" accent={ARG_BLUE} big={54} />
-      <GoalFlash at={159.6} /><ChanceTag start={159.7} end={165.5} text="MESSI AGAIN!" sub="ARGENTINA · 2–2" accent={ARG_BLUE} />
-      <BeatCard start={166.2} end={171} text={<>THE GOLDEN BOOT<br />WITHIN REACH</>} sub="ECHOING MARADONA · '86" accent={GOLD} big={50} />
-      <BeatCard start={171.2} end={176} text={<>BUT '86 IS ONLY<br />HALF THE GHOST</>} accent={GOLD} big={50} />
-      <BeatCard start={176.2} end={181} text={<>THE OTHER HALF<br />WAITS ON THE SPOT</>} accent={GOLD} big={50} />
-      <BeatCard start={181.2} end={186} text={<>THE PENALTY GHOST</>} accent={GOLD} big={58} />
-      <BeatCard start={186.2} end={191} text={<>UNBEARABLE</>} accent={GOLD} big={62} />
-      <ChanceTag start={192.5} end={199} text="TWO–TWO · TO PENALTIES" sub="EXACTLY LIKE 1998" accent={GOLD} />
-      <ScoreBug start={192.6} arg={2} eng={2} note="A.E.T." badge="OUR PREDICTION" />
+      <ChanceTag start={122.5} end={126} text="ENGLAND ON THE FRONT FOOT" sub="THREE LIONS PRESS" accent={ENG_RED} />
+      <GoalFlash at={130.5} /><ChanceTag start={130.6} end={135.5} text="ENGLAND LEAD" sub="GORDON · 55'" accent={ENG_RED} />
+      <ChanceTag start={136.5} end={140.5} text="ARGENTINA RESPOND" sub="WAVE AFTER WAVE" accent={ARG_BLUE} />
+      <BeatCard start={141.5} end={146} text={<>THE CLOCK,<br />THE ENEMY</>} sub="EIGHTY MINUTES GONE" accent={GOLD} big={54} />
+      <ChanceTag start={151.5} end={155.5} text="MESSI · THE MAKER" sub="HE ROLLS IT SQUARE" accent={ARG_BLUE} />
+      <GoalFlash at={159.6} /><ChanceTag start={159.7} end={165.5} text="ENZO FERNÁNDEZ!" sub="ARGENTINA · 1–1 · 85'" accent={ARG_BLUE} />
+      <BeatCard start={166.2} end={171} text={<>A THUNDERBOLT</>} sub="LEVEL — ONE, ALL" accent={GOLD} big={58} />
+      <BeatCard start={171.2} end={176} text={<>STOPPAGE TIME</>} sub="NINETY PLUS TWO" accent={GOLD} big={58} />
+      <BeatCard start={176.2} end={180.8} text={<>IT FALLS TO<br />THE CAPTAIN</>} accent={ARG_BLUE} big={54} />
+      <ChanceTag start={181.5} end={185.6} text="MESSI TO THE BYLINE" sub="HE FLOATS IT IN" accent={ARG_BLUE} />
+      <GoalFlash at={187} /><ChanceTag start={187.1} end={192} text="LAUTARO!" sub="ARGENTINA · 2–1 · 90+2'" accent={ARG_BLUE} />
+      <Confetti start={187} dur={13} count={70} />
+      <ChanceTag start={192.6} end={198.5} text="TO THE FINAL" sub="A NATION ERUPTS" accent={GOLD} />
+      <ScoreBug start={192.6} arg={2} eng={1} note="90+2'" badge="THE WINNER" />
       <Vignette strength={0} />
     </div>
   );
 }
 
-// ── PENALTY SHOOTOUT 200–246 (England win 4–3) ──────────────────────────────────
+// ── AFTERMATH 200–246 (no shootout — the maestro & the tribute to Diego) ─────────
 function ScenePens() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <Backdrop />
-      <FS id="pen-spot" br={1.3} /><FS id="pen-save" /><FS id="keeper-hero" dim={0.08} /><FS id="pen-winner" /><FS id="eng-pileon" /><FS id="stadium-wide-c" dim={0.16} />
-      <FS id="stadium-glow-b" br={1.2} /><FS id="gold-dust-e" br={1.7} /><FS id="crowd-tense-c" br={1.45} /><FS id="gold-dust-p" br={1.3} />
-      <ChanceTag start={201} end={205} text="THE SHOOTOUT" sub="TWELVE YARDS" accent={GOLD} />
-      <BeatCard start={205} end={210} text={<>KICK FOR KICK</>} sub="NERVE FOR NERVE" accent={GOLD} big={60} />
-      <BeatCard start={210} end={214.8} text={<>MESSI SCORES · KANE SCORES</>} sub="NOBODY BLINKS" accent={GOLD} big={44} />
-      <ChanceTag start={216.6} end={220.4} text="THE SAVE!" sub="TURNED AWAY" accent={GOLD} />
-      <ChanceTag start={223} end={225.5} text="ONE KICK TO WIN" sub="THE CURSE ON THE LINE" accent={GOLD} />
-      <BeatCard start={226} end={230} text={<>ONE KICK</>} sub="TO BREAK A GENERATION OF PAIN" accent={GOLD} big={64} />
-      <GoalFlash at={233.9} /><ChanceTag start={234.0} end={239} text="AND IT'S IN!" sub="ENGLAND WIN · 4–3" accent={GOLD} />
-      <Confetti start={234} dur={10} count={70} />
-      <ChanceTag start={240.3} end={245.5} text="THE CURSE IS BROKEN" sub="ENGLAND REACH THE FINAL" accent={GOLD} />
-      <ScoreBug start={240.6} arg={2} eng={2} note="4–3 PENS" badge="OUR PREDICTION" />
+      <FS id="af-messi-golden" />
+      <FS id="af-a" br={1.3} /><FS id="af-b" br={1.2} /><FS id="af-c" br={1.4} /><FS id="af-d" br={1.3} /><FS id="af-e" br={1.3} /><FS id="af-f" br={1.3} /><FS id="af-g" br={1.2} /><FS id="af-h" br={1.3} /><FS id="af-i" br={1.4} />
+      <ChanceTag start={201} end={205} text="NO SHOOTOUT TONIGHT" sub="ONLY ARGENTINA, MARCHING ON" accent={GOLD} />
+      <BeatCard start={205.5} end={210} text={<>TWO ASSISTS</>} sub="BOTH HIS" accent={ARG_BLUE} big={62} />
+      <BeatCard start={210.5} end={215} text={<>HE DID NOT SCORE —<br />HE DECIDED IT</>} accent={GOLD} big={50} />
+      <ChanceTag start={220.5} end={225.5} text="EYES TO THE SKY" sub="FOR DIEGO" accent={GOLD} />
+      <BeatCard start={226} end={230.5} text={<>MARADONA BEAT<br />ENGLAND ALONE</>} sub="EIGHTY-SIX" accent={GOLD} big={50} />
+      <BeatCard start={230.7} end={235.8} text={<>TONIGHT, HIS HEIR<br />DID IT AS A MAESTRO</>} accent={ARG_BLUE} big={48} />
+      <ChanceTag start={240.3} end={245.3} text="ON TO THE FINAL" sub="ARGENTINA · TO FACE SPAIN" accent={GOLD} />
+      <ScoreBug start={240.6} arg={2} eng={1} note="90+2'" badge="FULL-TIME" />
       <Vignette strength={0} />
     </div>
   );
 }
 
-// ── GOLDEN BOOT IN DEFEAT 246–262 ───────────────────────────────────────────────
+// ── THE TRIBUTE 246–262 (Messi & Diego — the old king and the new) ───────────────
 function SceneGoldenBoot() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <NightField o={0.5} tone="blue" />
-      <FS id="messi-golden" br={1.3} /><FS id="arg-despair" dim={0.14} /><FS id="destiny-rays-b" br={1.2} /><FS id="gold-dust-q" br={1.5} />
-      <ChanceTag start={248.8} end={251} text="TWO GOALS · NO FINAL" sub="THE GOLDEN BOOT" accent={GOLD} />
-      <BeatCard start={257} end={262} text={<>TOP SCORER ·<br />BEATEN BY THE SPOT</>} sub="THE HEIR, UNLIKE MARADONA, FALLS" accent={GOLD} big={48} />
+      <FS id="tr-a" br={1.3} /><FS id="tr-b" br={1.3} /><FS id="tr-c" br={1.3} /><FS id="tr-d" br={1.3} />
+      <ChanceTag start={248.8} end={253} text="CARRIED, ONE MORE TIME" sub="BY ITS NUMBER TEN" accent={GOLD} />
+      <BeatCard start={257} end={262} text={<>THE OLD KING<br />AND THE NEW</>} sub="TOGETHER AT LAST · INTO THE FINAL" accent={GOLD} big={52} />
       <Vignette strength={0} />
     </div>
   );
 }
 
-// ── VERDICT 262–283 (prediction recap) ──────────────────────────────────────────
+// ── VERDICT 262–283 (real full-time result card) ─────────────────────────────────
 function SceneVerdict() {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
-      <NightField o={0.8} />
-      <FS id="eng-march-b" dim={0.3} /><FS id="embers-c" dim={0.3} /><FS id="light-rays-gold-b" dim={0.32} /><FS id="gold-dust-f" dim={0.32} /><FS id="destiny-rays-c" dim={0.32} />
-      <SectionLabel start={262.4} end={266.6} text="ENGLAND MARCH ON" y={150} size={32} />
+      <NightField o={0.8} tone="blue" />
+      <FS id="vd-a" dim={0.3} /><FS id="vd-b" dim={0.3} /><FS id="vd-c" dim={0.32} /><FS id="vd-d" dim={0.32} /><FS id="vd-e" dim={0.32} />
+      <SectionLabel start={262.4} end={266.6} text="ARGENTINA MARCH ON" y={150} size={32} />
       <Sprite start={267} end={283}>
         <div style={{ position: 'absolute', inset: 0 }}>
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(6,10,22,0.24)' }} />
           <AmbientParticles start={267} dur={16} count={26} color="233,198,90" />
-          <PredictionCard start={267.3} />
+          <ResultCard start={267.3} />
         </div>
       </Sprite>
       <Vignette strength={0.4} />
@@ -379,16 +377,16 @@ function SceneEngage() {
   const t = useTime();
   const headP = Easing.easeOutCubic(clamp((t - 283) / 0.9, 0, 1));
   const cards = [
-    { label: 'COMMENT ENGLAND', sub: 'THREE LIONS', flag: <FlagENG w={68} />, accent: ENG_RED },
     { label: 'COMMENT ARGENTINA', sub: 'ALBICELESTE', flag: <FlagARG w={68} />, accent: ARG_BLUE },
+    { label: 'COMMENT ENGLAND', sub: 'THREE LIONS', flag: <FlagENG w={68} />, accent: ENG_RED },
   ];
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <NightField o={0.5} />
-      <FS id="night-rays-blue-c" dim={0.5} /><FS id="crowd-tense-d" dim={0.55} /><FS id="stadium-glow-c" dim={0.5} />
+      <FS id="en-a" dim={0.5} /><FS id="en-b" dim={0.55} /><FS id="en-c" dim={0.5} />
       <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,10,20,0.5)' }} />
       <AmbientParticles start={283} dur={12} count={28} color="233,198,90" />
-      <div style={{ position: 'absolute', top: 132, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: headP }}><Kicker size={30} color={GOLD}>Bury The Ghost, Or One Last Miracle?</Kicker></div>
+      <div style={{ position: 'absolute', top: 132, left: 0, right: 0, textAlign: 'center', zIndex: 25, opacity: headP }}><Kicker size={30} color={GOLD}>Messi's Masterpiece, Or England's Heartbreak?</Kicker></div>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 56, zIndex: 25 }}>
         {cards.map((c, i) => {
           const cp = Easing.easeOutBack(clamp((t - 283.8 - i * 0.4) / 0.7, 0, 1));
@@ -423,7 +421,7 @@ function MiniStrip() {
   );
 }
 
-// ── MYSTERY / EXCALIBUR reveal 295–324 (Rules #16/#17) ───────────────────────────
+// ── MYSTERY / EL DIEZ reveal 295–324 (Rules #16/#17) ─────────────────────────────
 function SceneMystery() {
   const t = useTime(); const lt = t - 295;
   const teaseP = clamp((lt - 0.3) / 0.5, 0, 1) * clamp((2.6 - lt) / 0.5, 0, 1);
@@ -443,7 +441,7 @@ function SceneMystery() {
       <AmbientParticles start={295} dur={29} count={54} color="245,210,120" maxR={4.2} />
       {teaseP > 0.01 && (
         <div style={{ position: 'absolute', left: 0, right: 0, top: 84, textAlign: 'center', opacity: teaseP, zIndex: 20 }}>
-          <div style={{ display: 'inline-block', fontFamily: SANS, fontWeight: 800, fontSize: 30, color: '#f4dca8', letterSpacing: '0.24em', textShadow: '0 2px 18px rgba(0,0,0,0.7)' }}>THE SWORD IN THE STONE</div>
+          <div style={{ display: 'inline-block', fontFamily: SANS, fontWeight: 800, fontSize: 30, color: '#f4dca8', letterSpacing: '0.24em', textShadow: '0 2px 18px rgba(0,0,0,0.7)' }}>THE GHOST OF EIGHTY-SIX</div>
         </div>
       )}
       {lt > 1.8 && (
@@ -458,8 +456,8 @@ function SceneMystery() {
       )}
       <div style={{ position: 'absolute', left: 0, right: 0, bottom: 46, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, zIndex: 24 }}>
         <div style={{ textAlign: 'center', opacity: txtP, transform: `translateY(${(1 - txtP) * 16}px)` }}>
-          <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 38, color: GOLD, letterSpacing: '0.03em', textShadow: '0 2px 24px rgba(233,198,90,0.5)' }}>EXCALIBUR · THE ONCE-AND-FUTURE KING</div>
-          <div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 19, color: '#f0dcb8', letterSpacing: '0.18em', marginTop: 6 }}>ENGLAND · LEGEND 105</div>
+          <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 40, color: GOLD, letterSpacing: '0.04em', textShadow: '0 2px 24px rgba(233,198,90,0.5)' }}>EL DIEZ · THE IMMORTAL TEN</div>
+          <div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 19, color: '#f0dcb8', letterSpacing: '0.18em', marginTop: 6 }}>ARGENTINA · LEGEND 105</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10, opacity: stripP }}>
           <MiniStrip />
