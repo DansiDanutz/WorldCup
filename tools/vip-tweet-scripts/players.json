@@ -1,0 +1,16 @@
+{
+  "_comment": "Default VIP footballer handles to scrape. Edit freely. Handles without the @.",
+  "players": [
+    { "name": "Lionel Messi", "handle": "leomessi" },
+    { "name": "Cristiano Ronaldo", "handle": "Cristiano" },
+    { "name": "Kylian Mbappé", "handle": "KMbappe" },
+    { "name": "Neymar Jr", "handle": "neymarjr" },
+    { "name": "Vinícius Jr", "handle": "vinijr" },
+    { "name": "Erling Haaland", "handle": "ErlingHaaland" },
+    { "name": "Jude Bellingham", "handle": "BellinghamJude" },
+    { "name": "Harry Kane", "handle": "HKane" },
+    { "name": "Mohamed Salah", "handle": "MoSalah" },
+    { "name": "Bukayo Saka", "handle": "BukayoSaka87" },
+    { "name": "Lautaro Martínez", "handle": "LautaroMartinez" }
+  ]
+}

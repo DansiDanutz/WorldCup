@@ -1,0 +1,23 @@
+.legend-card__actions {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  margin-top: 5px;
+}
+
+.legend-card__watch,
+.legend-card__disabled,
+.legend-card__unlock,
+.legend-card__voice {
+  width: 100%;
+}
+
+.legend-card__unlock {
+  min-height: 40px;
+  white-space: normal;
+}
+
+.legend-card__voice {
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}

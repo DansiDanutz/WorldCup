@@ -1,0 +1,103 @@
+[
+  {
+    "_note": "SAMPLE / illustrative data for offline dev — not real quotes.",
+    "id": "1001",
+    "author_handle": "Cristiano",
+    "author_name": "Cristiano Ronaldo",
+    "text": "One more World Cup. One more chance to make history with my country. The dream never dies. 🇵🇹 #WorldCup",
+    "created_at": "2026-06-24T18:30:00Z",
+    "likes": 1840000,
+    "retweets": 220000,
+    "url": "https://x.com/Cristiano/status/1001"
+  },
+  {
+    "id": "1002",
+    "author_handle": "KMbappe",
+    "author_name": "Kylian Mbappé",
+    "text": "Camp is open. The World Cup starts now in our heads. Allez les Bleus 🇫🇷",
+    "created_at": "2026-06-24T09:10:00Z",
+    "likes": 920000,
+    "retweets": 130000,
+    "url": "https://x.com/KMbappe/status/1002"
+  },
+  {
+    "id": "1003",
+    "author_handle": "vinijr",
+    "author_name": "Vinícius Jr",
+    "text": "Brasil. Copa do Mundo. Você sabe o que isso significa pra nós. Vamos com tudo 🇧🇷",
+    "created_at": "2026-06-23T21:45:00Z",
+    "likes": 610000,
+    "retweets": 88000,
+    "url": "https://x.com/vinijr/status/1003"
+  },
+  {
+    "id": "1004",
+    "author_handle": "ErlingHaaland",
+    "author_name": "Erling Haaland",
+    "text": "New gym PR this morning. Feeling strong. 💪",
+    "created_at": "2026-06-24T07:00:00Z",
+    "likes": 410000,
+    "retweets": 22000,
+    "url": "https://x.com/ErlingHaaland/status/1004"
+  },
+  {
+    "id": "1005",
+    "author_handle": "BellinghamJude",
+    "author_name": "Jude Bellingham",
+    "text": "Proud to wear this shirt. World Cup year — let's give the fans something to remember. 🏴",
+    "created_at": "2026-06-24T15:20:00Z",
+    "likes": 540000,
+    "retweets": 71000,
+    "url": "https://x.com/BellinghamJude/status/1005"
+  },
+  {
+    "id": "1006",
+    "author_handle": "MoSalah",
+    "author_name": "Mohamed Salah",
+    "text": "Thank you for all the birthday messages. Means a lot. ❤️",
+    "created_at": "2026-06-22T12:00:00Z",
+    "likes": 380000,
+    "retweets": 19000,
+    "url": "https://x.com/MoSalah/status/1006"
+  },
+  {
+    "id": "1007",
+    "author_handle": "HKane",
+    "author_name": "Harry Kane",
+    "text": "Every World Cup feels like the one. This time we go all the way. Believe. 🏴 #WorldCup",
+    "created_at": "2026-06-25T08:05:00Z",
+    "likes": 470000,
+    "retweets": 64000,
+    "url": "https://x.com/HKane/status/1007"
+  },
+  {
+    "id": "1008",
+    "author_handle": "neymarjr",
+    "author_name": "Neymar Jr",
+    "text": "Mundial chegando. A torcida do Brasil é gigante. Bora fazer história 🇧🇷",
+    "created_at": "2026-06-23T17:30:00Z",
+    "likes": 700000,
+    "retweets": 95000,
+    "url": "https://x.com/neymarjr/status/1008"
+  },
+  {
+    "id": "1009",
+    "author_handle": "Cristiano",
+    "author_name": "Cristiano Ronaldo",
+    "text": "Recovery day. Grateful for my family and my team. 🙏",
+    "created_at": "2026-06-22T20:00:00Z",
+    "likes": 990000,
+    "retweets": 70000,
+    "url": "https://x.com/Cristiano/status/1009"
+  },
+  {
+    "id": "1010",
+    "author_handle": "LautaroMartinez",
+    "author_name": "Lautaro Martínez",
+    "text": "Campeones del mundo defendiendo el título. El Mundial nos espera 🇦🇷⭐⭐⭐",
+    "created_at": "2026-06-24T22:15:00Z",
+    "likes": 520000,
+    "retweets": 77000,
+    "url": "https://x.com/LautaroMartinez/status/1010"
+  }
+]

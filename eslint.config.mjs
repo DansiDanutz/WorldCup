@@ -5,5 +5,5 @@ export default defineConfig([
   ...nextVitals,
   // marketing/ holds vendored, browser-runtime ad artifacts (React/Babel via
   // CDN globals) and standalone Node render scripts — not part of the Next app.
-  globalIgnores([".next/**", ".next_bad_*/**", "node_modules/**", "marketing/**"]),
+  globalIgnores([".next/**", ".next_bad_*/**", ".vercel/**", "node_modules/**", "marketing/**"]),
 ]);

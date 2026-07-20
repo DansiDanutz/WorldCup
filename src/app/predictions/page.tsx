@@ -1,4 +1,13 @@
-import { ArrowLeft, CalendarClock, PlayCircle, Search, Sparkles, Trophy, Video } from "lucide-react";
+import {
+  ArrowLeft,
+  CalendarClock,
+  CheckCircle2,
+  PlayCircle,
+  Search,
+  Sparkles,
+  Trophy,
+  Video,
+} from "lucide-react";
 import Link from "next/link";
 
 import { LegendCardCollection } from "@/components/legend-card-collection";
@@ -7,6 +16,7 @@ import { SmartMenu } from "@/components/smart-menu";
 import { LEGEND_CARDS } from "@/lib/legend-cards";
 import { getMatchScheduleData } from "@/lib/match-schedule-data";
 import { PREDICTIONS } from "@/lib/predictions";
+import { getMatchScore, getTeamDisplayName, groupTeamsById } from "@/lib/scoring";
 
 export const dynamic = "force-dynamic";
 
@@ -20,6 +30,14 @@ export default async function PredictionsPage() {
   const { teams, stages, matches } = await getMatchScheduleData();
   const episodes = [...PREDICTIONS].sort((a, b) => b.ep - a.ep);
   const liveCount = PREDICTIONS.filter((p) => p.youtube).length;
+  const completedCount = matches.filter((match) => match.status === "completed").length;
+  const scoredCount = matches.filter((match) => Boolean(match.points_applied_at)).length;
+  const teamsById = groupTeamsById(teams);
+  const final = matches.find((match) => match.match_number === 104);
+  const champion = final?.winner_team_id
+    ? getTeamDisplayName(final.winner_team_id, "Champion", teamsById)
+    : "Champion";
+  const finalScore = final?.status === "completed" ? getMatchScore(final) : null;
   const legendCardAnchorByEpisode = new Map<number, string>();
 
   for (const card of LEGEND_CARDS) {
@@ -89,6 +107,39 @@ export default async function PredictionsPage() {
       </header>
 
       <div className="page predictions-page">
+        <section className="tournament-finale" aria-labelledby="tournament-finale-title">
+          <div className="tournament-finale__icon" aria-hidden="true">
+            <Trophy size={28} />
+          </div>
+          <div className="tournament-finale__copy">
+            <p className="wc-card-eyebrow">The final chapter · July 19, 2026</p>
+            <h1 id="tournament-finale-title">{champion}, world champions</h1>
+            <p>
+              The tournament is complete. Explore the final scores, the finished leaderboard,
+              and every WorldCup26 Legends story from our YouTube season.
+            </p>
+          </div>
+          <dl className="tournament-finale__stats">
+            <div>
+              <dt>Final</dt>
+              <dd>{finalScore ?? "Complete"}</dd>
+            </div>
+            <div>
+              <dt>Matches scored</dt>
+              <dd>{scoredCount}/{matches.length}</dd>
+            </div>
+            <div>
+              <dt>Legend cards</dt>
+              <dd>{LEGEND_CARDS.length}</dd>
+            </div>
+          </dl>
+          {completedCount === matches.length && scoredCount === matches.length ? (
+            <span className="tournament-finale__verified">
+              <CheckCircle2 size={16} /> Final scoring complete
+            </span>
+          ) : null}
+        </section>
+
         <LegendCardCollection />
 
         <MatchScheduleExplorer matches={matches} stages={stages} teams={teams} />

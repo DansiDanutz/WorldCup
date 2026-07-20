@@ -69,8 +69,9 @@ read ALL of these living knowledge files:
 - **`content/youtube/SERIES_PLAYBOOK.md`** — DO / DON'T lists, per-episode
   checklist, and the results log.
 - **`content/youtube/EPISODE_PRODUCTION_STANDARD.md`** — the clip-based-ONLY
-  standard (rule #11): real Higgsfield animations from the team images, fans +
-  stadium + Mystery Supporter, gold standard Ep2/Ep6. NEVER image-based/Ken-Burns.
+  standard (rule #11): library-first video assets, fans + stadium + Mystery
+  Supporter, gold standard Ep2/Ep6. NEVER image-based/Ken-Burns, and NEVER spend
+  Higgsfield credits before checking the existing asset library.
 - **`content/youtube/CHANNEL_GROWTH_ACTION_PLAN.md`** — channel config + the
   growth law, the canonical channel (`@DansLab-Kimi`), and the packaging rules.
 - **`content/youtube/PREMIERE_CALENDAR.md`** — which episode premieres WHEN,
@@ -80,13 +81,91 @@ read ALL of these living knowledge files:
   requirement is unmet; content is split across two channels = 0 watch hours).
 - **`content/youtube/PRODUCTION_ACCELERATION.md`** — how we stay 48h ahead: the
   rolling 2-episode buffer, the backwards-from-kickoff timebox, batching the
-  Higgsfield asset step, and the one-command `build-episode.sh` (render ‖ VO).
+  asset-selection step, and the one-command `build-episode.sh` (render ‖ VO).
 - **`content/youtube/PREUPLOAD_CHECKLIST.md`** — the one-screen checklist to run
   before EVERY upload (the ⚠️ monetization-safe items: made-for-kids=No, AI
   disclosure, cleared music, no prize wording, non-affiliation line).
 
 After every published episode, UPDATE the playbook (log results at 48h + new
 learnings) and tick the episode off in the premiere calendar.
+
+### Channel positioning and packaging direction (GLOBAL ENGLISH -- do not pivot Romanian-only)
+
+WorldCup Central stays a global English channel. Do NOT reposition the channel
+as Romanian-only or local-only. The winning lane is:
+
+**WorldCup Central = cinematic World Cup stories, match myths, predictions, and
+forgotten legends.**
+
+Use the WorldCup26 Legends / mythic storytelling identity as the creative wrapper,
+but make every next video easy to understand and click from global YouTube search.
+Before writing a script, title, description, thumbnail prompt, Short, or pinned
+comment, apply these rules:
+
+1. **Searchable promise first, myth second.** A viewer must instantly understand
+   the match/topic and the reason to click today. Put the clear search phrase in
+   the title first; use the mythic phrase in the thumbnail, intro, description,
+   or second half of the title.
+   - Weak pattern: `England vs DR Congo: The Lions and the Leopard -- WorldCup26 Legends Ep.84`
+   - Stronger pattern: `England vs DR Congo Preview: Can the Leopards Shock England? | World Cup 2026`
+2. **First 5 seconds = stakes before poetry.** Open with the match/topic, the
+   tension, and the curiosity gap before the mythic narration. Formula:
+   `match/stakes -> mystery/history hook -> mythic framing -> story/prediction`.
+3. **Keep the formats separate and recognizable.**
+   - `WorldCup26 Legends`: cinematic match myth/previews with verified history,
+     Brian narration, Mystery Supporter, and predictions clearly labelled.
+   - `Match Myths`: timely searchable previews, upset angles, rivalry angles,
+     squad questions, and draw/qualifier reactions.
+   - `Forgotten World Cup Stories`: evergreen "Did you know?" stories about
+     players, nations, old matches, records, and almost-forgotten legends.
+4. **Thumbnail rule:** one dominant face/player/team/emblem conflict, <=4 words,
+   a clear question or tension, and no clutter. The image sells the myth; the
+   title sells the search intent.
+5. **Product CTA rule:** worldcup26.world is a companion layer, not the cold
+   open. Earn attention first, then place the app/free-game CTA after the story
+   payoff, in the end card, pinned comment, and description. Keep the safety line:
+   "free to play, just for fun, no prizes."
+6. **No generic highlight/news channel drift.** We are not competing on match
+   footage or breaking-news volume. Stay original: AI visuals, self-made
+   graphics, verified history, transparent prediction framing, and no unlicensed
+   match footage, broadcast clips, betting language, or rights-risk assets.
+7. **Every next-video package must answer:** "I came for the match. Why do I
+   stay for the story?" If the title/intro/thumbnail cannot answer that, rewrite
+   before production.
+
+Research-backed additions for next videos:
+
+1. **Optimize for watch-time quality, not clickbait CTR.** YouTube's title /
+   thumbnail guidance says titles must accurately represent the video, keep the
+   most important words near the beginning, and use thumbnails that are readable
+   across devices. If CTR is good but retention drops fast, the package overpromised.
+   Fix the intro or make the thumbnail/title more honest.
+2. **Use A/B tests after Premieres convert to normal long-form videos.** When
+   available in YouTube Studio, test up to 3 meaningfully different title /
+   thumbnail combinations. Do not test tiny variations. Judge winners by watch
+   time, not only CTR. Keep a default "safe/searchable" version as variant A.
+3. **Avoid the "mass-produced template" monetization risk.** The series may keep
+   the same structure, but each episode must be materially different in substance:
+   a unique verified history hook, a unique match tension, custom country/team
+   visuals, and original commentary. If two episodes can be swapped by only
+   changing team names, rewrite before rendering.
+4. **Treat official FIFA/broadcaster content as unbeatable on raw footage.** FIFA,
+   media partners, and rights holders will own official highlights, archives, and
+   premium access. WorldCup Central wins with original mythic framing, verified
+   story research, prediction transparency, custom AI visuals, and the
+   worldcup26.world companion game layer.
+5. **Do not make the channel or app look officially affiliated.** Use "World Cup"
+   descriptively/editorially, but avoid recurring official FIFA marks, emblem,
+   trophy art, mascot, official typeface, host-city marks, or official-looking
+   layout language near `worldcup26.world`, sponsors, CTAs, thumbnails, or merch.
+   Prefer generic soccer imagery, country colors, flags where permitted, and
+   custom original tournament-neutral branding.
+6. **Analytics loop per upload:** at 24h and 48h, log impressions, CTR, average
+   view duration, first-30-second retention, traffic sources, new viewers, subs
+   gained, comments, and which title/thumbnail was live. Diagnosis rule:
+   low impressions = topic/timing/distribution problem; high impressions + low
+   CTR = packaging problem; high CTR + low retention = promise/intro problem;
+   strong retention + weak subs = CTA/community problem.
 
 **TIMING IS THE JOB — HARD MINIMUM 48h: every episode must already be POSTED
 (as a scheduled Premiere) at least 48 hours before its real match kicks off.**
@@ -160,29 +239,49 @@ Non-negotiables distilled from channel data (details in the playbook):
       must be ZERO `line=` on LowerThird, ZERO `note=` on HistoryPlate, and no
       narration paragraphs. This applies to EXISTING episodes too: strip them and
       re-render. A render showing any sentence on screen is REJECTED — re-do it.
-11. **CLIP-BASED ONLY — REAL HIGGSFIELD ANIMATIONS, NEVER STILLS (hard rule, NO
-    EXCEPTIONS, NO "SIMPLIFY"):** EVERY episode is built from real Higgsfield
-    VIDEO clips. **NO-REPEAT RULE (hard, owner-mandated): every clip plays at most
-    ONCE in a video — NEVER reuse the same animation file twice, and NEVER stretch a
-    short clip across a long window so it visibly loops. A 5-min (300s) video needs
-    ~33 DISTINCT clips (one per narration beat, ~8–10s each). If you don't have
-    enough unique clips, GENERATE more (distinct shots/poses/emotions, Lukaku-film
-    method in the worldcup-episode skill) — do NOT loop. Before rendering, grep the
-    scene file: no `src=` value may appear more than once.**
-    `clips.json` `clips[]` is **always non-empty (≈25–34 clips)** and
-    covers **both teams' star players (animated), fans/ultras, the stadium, and the
-    animated Mystery Supporter(s)** — supporters and the story are the SUBJECT, not
-    a photo slideshow. Gold standard = **Ep2 & Ep6**; the next episode matches them
-    or better, never less. Full recipe + pipeline: **`EPISODE_PRODUCTION_STANDARD.md`**.
-    - **How:** reuse the paid library first (`content/videos/<Team>/`, prior-episode
-      `assets/`, `jobs-manifest.json`); for any missing shot, **GENERATE the clip via
-      the Higgsfield MCP from the player image in `content/images/<Team>/`** (image→
-      video, ~22.5 credits/5s). Then populate `clips.json` and render.
+11. **CLIP-BASED ONLY -- LIBRARY-FIRST VIDEO ASSETS, NEVER STILLS, HIGGSFIELD
+    CREDITS ARE RATIONED (hard rule, NO EXCEPTIONS, NO "SIMPLIFY"):** EVERY
+    episode is built from real VIDEO clips, but the default source is the asset
+    library we already paid for and generated, NOT new Higgsfield generations.
+    **Before calling Higgsfield for any video, search the existing library first**
+    (`content/videos/<Team>/`, other `content/videos/` folders, prior-episode
+    `assets/`, `jobs-manifest.json`, and reusable stadium/fan/supporter/player
+    clips). Build the shot list from owned/reusable clips first, then decide what
+    the video actually needs.
+
+    **NO-REPEAT RULE (hard, owner-mandated): every clip plays at most ONCE in a
+    video** -- never reuse the same animation file twice, and never stretch a
+    short clip across a long window so it visibly loops. A 5-min (300s) video
+    needs ~25-34 DISTINCT clips (one per narration beat, ~8-12s each). If the
+    first library pass does not give enough unique clips, widen the search across
+    compatible countries, fans, stadiums, neutral soccer atmosphere, player
+    closeups, flags/colors, Mystery Supporter material, and prior approved
+    episodes before spending any credits. Before rendering, grep the scene file:
+    no `src=` value may appear more than once.
+
+    `clips.json` `clips[]` is **always non-empty (~25-34 clips)** and covers both
+    teams' star players (animated), fans/ultras, the stadium, and the animated
+    Mystery Supporter(s) -- supporters and the story are the SUBJECT, not a photo
+    slideshow. Gold standard = **Ep2 & Ep6**; the next episode matches them or
+    better, never less. Full recipe + pipeline:
+    **`EPISODE_PRODUCTION_STANDARD.md`**.
+
+    - **Higgsfield credit rule:** use Higgsfield ONLY for special assets, hero
+      moments, missing must-have characters, or unique story beats that cannot be
+      solved with the existing library. NEVER use Higgsfield for the entire video,
+      every scene, generic filler, routine crowd shots, routine stadium shots, or
+      clips that are "nice to have" but not essential. Generate the smallest
+      number of clips needed, then stop.
+    - **Required workflow before generation:** (1) search and inventory the owned
+      library, (2) choose the clips that will actually be used in the video, (3)
+      identify only the remaining special gaps, (4) generate only those special
+      gaps if they are truly necessary, and (5) log the reason for each new
+      generation in the episode README / production notes.
     - **ABSOLUTELY FORBIDDEN:** shipping `clips: []`, "IMAGE-BASED (Ken-Burns on
-      stills)", a photo slideshow, or any "bulk"/simplified episode. There is NO
-      stills fallback — if a clip is missing you GENERATE it, you do not downgrade.
-      Ep15–Ep25 were made this wrong way; **we do not repeat it and do not rebuild
-      them — we move forward, clip-based, every time.**
+      stills)", a photo slideshow, any "bulk"/simplified episode, or a full-video
+      Higgsfield generation spree. There is NO stills fallback -- use the library
+      intelligently, and spend credits only when the video genuinely needs a
+      special missing asset.
 
 ## Video production pipeline
 
@@ -190,13 +289,14 @@ Each episode is a self-contained project under `marketing/match-videos/<epNN-...
 built on the Ep2 template (`match02-south-korea-vs-czech-republic/`):
 React/Babel 300s timeline → Playwright frame render → ElevenLabs Brian VO →
 two-stage ffmpeg mux (audio master, then video encode). See that project's
-README.md for commands. **The visuals are the paid Higgsfield VIDEO clips**
-(`content/videos/<Team>/`, job IDs in `jobs-manifest.json`, re-downloadable via
-`npm run fetch-assets`, or generated/fetched through the Higgsfield MCP) — the
-timeline plays these clips; it does NOT pan-and-zoom stills (see hard rules 10 &
-11 above: NO subtitles/caption text, and use the animations, not Ken-Burns
-stills). Ep2 (the canonical template) is clip-based — copy that, not the
-later image-only shortcuts.
+README.md for commands. **The visuals are library-first VIDEO clips**
+(`content/videos/<Team>/`, other reusable `content/videos/` folders, job IDs in
+`jobs-manifest.json`, re-downloadable via `npm run fetch-assets`, prior-episode
+`assets/`, or minimal special assets generated/fetched through the Higgsfield
+MCP only when truly needed). The timeline plays these clips; it does NOT
+pan-and-zoom stills (see hard rules 10 & 11 above: NO subtitles/caption text,
+use video animations, and preserve Higgsfield credits). Ep2 (the canonical
+template) is clip-based — copy that, not the later image-only shortcuts.
 
 ### Series versioning & insertion (CHECK BEFORE building any episode)
 
@@ -218,6 +318,65 @@ reuse or skip a number. Before creating an episode:
    and earlier episodes; never contradict `content/README.md`'s group draw.
 5. **Reuse, don't duplicate:** build on the Ep2 template (content swap), reuse
    the music/SFX library and any existing player/crowd clips for repeat nations.
+
+## Shorts standard — "DRAMA → IDOL", the 1-minute WOW (MANDATORY for every Short)
+
+Shorts are not trailers or teasers — each one is a **complete, self-contained mini-film**
+that must make the viewer go **WOW** in ~60 seconds (target 40–60s, hard ceiling 60s).
+If a Short is not wow, it does not ship. The bar is the same as the long-form episodes,
+compressed: real animation, real emotion, real payoff.
+
+**THE ARC — every Short runs DRAMA → IDOL (hard rule).** Open on the drama (the wound,
+the impossible odds, the mystery, the fall), travel the struggle, and land on the IDOL —
+the triumph / legend / the thing that made them immortal. The emotional curve must rise:
+**hook → drama/struggle → turn → idol/payoff → CTA.** No flat "fact lists." Same
+mystery+verified-history law as episodes (hard rule #9): a real "Did you know?" secret,
+auto-researched and cited, never invented.
+
+**Format & pipeline (validated gold standard):**
+- **Portrait 9:16, 1080×1920**, 30fps. Frame vertical (subject centered/upright); respect
+  mobile safe zones (~12% top / ~18% bottom clear of the YouTube UI).
+- **Character-locked Pixar visuals** — generate a hero reference frame, then reference it on
+  every shot of that player so the face stays consistent (the #1 failure mode). Soccer-only,
+  no logos/real footage (hard rules #5/#11); AI hoardings that invent brand text get blurred
+  before delivery (monetization rule #0).
+- **Real image→video motion**, never Ken-Burns stills: `seedance_2_0` for identity →
+  `kling3_0_turbo` fallback (Kling is the reliable workhorse). Atmospheric beats may use a
+  slow cinematic push only when a clip is unavailable.
+- **Brian VO** (ElevenLabs, voice `nPczCjzI2devNBz1zQrb`, `eleven_flash_v2_5`) carries the
+  story — **NO on-screen sentence text** (hard rule #10). Cleared BGM under, ducked.
+- **All on-screen text = designed HyperFrames motion cards** (HTML→MP4, GSAP, brand-true),
+  never flat ffmpeg/Pillow labels. Brand: WorldCup26 green `#106b4f` + gold "legendary"
+  accent + Inter + the real trophy mark (`public/brand-mark.svg`). Cards: a `DID YOU KNOW?`
+  opener, a player name lower-third (name + `SCORE · YEAR` only), and the end ad.
+- **ADVERTISE WORLDCUP26.WORLD, NOT THE CHANNEL.** Every Short ends on the app, not on
+  "@DansLab" — a **"Legendary Cards"** end card: *collect legendary player cards, unlock the
+  stories they never told you, **sign up free at worldcup26.world**.* The VO close must drive
+  to the site, not just "subscribe."
+
+**References:** story bank + portrait spec in `content/youtube/DID_YOU_KNOW_SHORTS.md`;
+gold-standard build = `~/Desktop/DavidAi/Videos/dyk-gaetjens/` (Gaetjens "Did You Know?",
+HyperFrames cards in `hf/index.html`). Match it or beat it — never less.
+
+### Story research — Firecrawl (fact-check the hook BEFORE scripting; hard rule #9)
+
+Every Short/episode hook must be auto-researched, verified, and source-cited (never invented).
+Use **Firecrawl** for this. The API key lives in `~/.openclaw/fleet.env` as `FIRECRAWL_API_KEY`
+(secret store — do **not** paste the raw key into git-tracked files like this one; source it:
+`set -a; . ~/.openclaw/fleet.env; set +a`). Endpoints: search `POST https://api.firecrawl.dev/v1/search`,
+scrape `POST https://api.firecrawl.dev/v1/scrape` — header `Authorization: Bearer $FIRECRAWL_API_KEY`.
+
+- **Write PRECISE queries with SPECIFIC words** — name the player + the exact hook + a verifier like
+  "true story / verified". Use proper nouns, years, and the specific incident; do NOT use vague queries.
+  Good: `Carlos Kaiser Henrique Raposo footballer faked entire career never played true story`.
+  Bad: `brazil football story`. Specific terms surface the primary source on the first hit.
+- These stories are our drama / mystery / "Did You Know?" engine — keep mining genuinely obscure,
+  emotional, twist-driven football tales (DRAMA → IDOL). Pull the primary source (Wikipedia / FIFA /
+  Britannica), extract the verified facts, cite them in the story entry, and frame any anecdote as
+  "it's said." Never invent (rule #9); soccer-only; monetization-safe (rules #0/#8).
+- The shorts bank/queue is `content/youtube/DID_YOU_KNOW_SHORTS.md` — append each new researched,
+  sourced story there. **Owner-requested addition: Carlos "Kaiser" Raposo — "the greatest footballer
+  never to play football" (DC-6, added 2026-06-29).**
 
 ## Player drama films — "WorldCup26 Bonus" (naming standard)
 
@@ -243,6 +402,12 @@ Lukaku film (`marketing/player-films/lukaku-the-promise/`).
 Next.js app (src/, Supabase, Vercel). The series always advertises
 **worldcup26.world** (pick 3 teams, **free to play for fun** — climb the
 leaderboard, no prizes; never promise money or prizes).
+
+Legend card "Listen story" playback MUST use ElevenLabs Brian through the
+server-only `/api/legend-cards/voice` route (`ELEVENLABS_API_KEY`, optional
+`ELEVENLABS_BRIAN_VOICE_ID`). Do not use random browser voices for cards. The
+only browser fallback allowed is an installed English voice explicitly named
+Brian; otherwise show an env/config error instead of playing a different voice.
 
 ## PRODUCTION PROCESS (mandatory — never render twice for a missed requirement)
 

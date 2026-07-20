@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        --green: #106b4f;
+        --green-bright: #1fb074;
+        --gold: #f4c430;
+        --gold-soft: #f8dd86;
+        --ink: #06130d;
+        --paper: #f6faf7;
+        --card-bg: rgba(7, 18, 13, 0.74);
+        --hair: rgba(248, 221, 134, 0.55);
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        font-family: Inter, system-ui, sans-serif;
+        background: #000;
+      }
+      #bg { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+
+      .ov { position: absolute; left: 0; width: 1080px; will-change: transform, opacity; }
+
+      .mark { width: 64px; height: 64px; border-radius: 16px; background: var(--green);
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 8px 28px rgba(16,107,79,0.55), inset 0 0 0 1.5px rgba(255,255,255,0.12); }
+      .mark svg { width: 40px; height: 40px; }
+
+      /* 1. DID YOU KNOW opener */
+      #dyk { top: 250px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+      .dyk-kicker { display: flex; align-items: center; gap: 14px; }
+      .dyk-kicker .mark { width: 46px; height: 46px; border-radius: 12px; }
+      .dyk-kicker .mark svg { width: 29px; height: 29px; }
+      .dyk-kicker span { font-size: 26px; font-weight: 800; letter-spacing: 0.34em;
+        color: var(--gold-soft); text-transform: uppercase; }
+      .dyk-card { position: relative; padding: 30px 60px 36px;
+        background: var(--card-bg); border-radius: 26px;
+        border: 1.5px solid var(--hair);
+        box-shadow: 0 24px 70px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.08);
+        -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); overflow: hidden; }
+      .dyk-card h1 { font-size: 96px; font-weight: 900; letter-spacing: -0.01em; color: #fff;
+        line-height: 1; text-shadow: 0 4px 30px rgba(0,0,0,0.5); }
+      .dyk-underline { height: 7px; width: 100%; margin-top: 18px; border-radius: 6px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-soft)); transform-origin: left center; }
+      .dyk-glow { position: absolute; inset: -40% -10%; background:
+        radial-gradient(60% 50% at 50% 0%, rgba(31,176,116,0.30), transparent 70%); pointer-events: none; }
+
+      /* 2. lower-third name */
+      #name { top: 1340px; left: 70px; width: 940px; display: flex; align-items: stretch; gap: 22px; }
+      .name-bar { width: 9px; border-radius: 6px; background: linear-gradient(180deg, var(--gold), var(--green-bright)); }
+      .name-body { display: flex; flex-direction: column; gap: 8px; }
+      .name-body .who { font-size: 78px; font-weight: 900; color: #fff; line-height: 0.96;
+        letter-spacing: -0.01em; text-shadow: 0 3px 22px rgba(0,0,0,0.6); }
+      .name-meta { display: flex; align-items: center; gap: 14px; }
+      .name-meta .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+      .name-meta span { font-size: 32px; font-weight: 800; letter-spacing: 0.16em;
+        color: var(--gold-soft); text-transform: uppercase; }
+
+      /* 3. PHONE app-card CTA */
+      #cta { top: 0; height: 1920px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 46px; }
+      #cta .scrim { position: absolute; inset: 0; background:
+        radial-gradient(70% 55% at 50% 42%, rgba(6,19,13,0.74), rgba(4,10,8,0.95)); }
+      #cta .phone { position: relative; width: 440px; height: 904px; border-radius: 58px;
+        background: linear-gradient(160deg,#1b1b1d,#0a0a0b); padding: 14px; transform: rotate(-3deg);
+        box-shadow: 0 50px 120px rgba(0,0,0,0.6), 0 0 80px rgba(31,176,116,0.2), inset 0 0 0 2px rgba(255,255,255,0.06); }
+      #cta .screen { width:100%; height:100%; border-radius:46px; overflow:hidden; position:relative;
+        background:linear-gradient(180deg,#0a2118,#06130d); }
+      #cta .island { position:absolute; top:16px; left:50%; transform:translateX(-50%);
+        width:108px; height:30px; background:#000; border-radius:18px; z-index:5; }
+      #cta .statusbar { display:flex; justify-content:space-between; align-items:center;
+        padding:18px 30px 0; color:#cfe7dd; font-size:20px; font-weight:700; }
+      #cta .apphead { display:flex; align-items:center; gap:9px; padding:20px 26px 4px; }
+      #cta .apphead .mark { width:30px; height:30px; border-radius:9px; }
+      #cta .apphead .mark svg { width:19px; height:19px; }
+      #cta .apphead b { font-size:21px; color:#fff; }
+      #cta .apphead b em { color:var(--gold-soft); font-style:normal; }
+      #cta .seclabel { padding:4px 26px 10px; font-size:13px; font-weight:800;
+        letter-spacing:.26em; color:var(--gold); text-transform:uppercase; }
+      #cta .appcard { margin:0 24px; border-radius:22px; overflow:hidden; position:relative;
+        border:3px solid var(--gold); box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 40px rgba(244,196,48,.25); }
+      #cta .appcard img { width:100%; height:500px; object-fit:cover; object-position:center 18%; display:block; }
+      #cta .appbadge { position:absolute; top:14px; left:14px; padding:6px 13px; border-radius:999px;
+        font-size:14px; font-weight:900; letter-spacing:.08em; text-transform:uppercase;
+        color:#06301f; background:linear-gradient(180deg,#ffd877,#e9b53f); }
+      #cta .appgrad { position:absolute; left:0; right:0; bottom:0; height:210px;
+        background:linear-gradient(180deg,transparent,rgba(4,12,8,.96)); }
+      #cta .apptext { position:absolute; left:20px; right:20px; bottom:20px; }
+      #cta .apptext .t { font-size:34px; font-weight:900; color:#fff; line-height:1; }
+      #cta .apptext .s { margin-top:7px; font-size:17px; font-weight:800; letter-spacing:.05em; color:var(--gold-soft); }
+      #cta .collect { margin:22px 24px 0; height:76px; border-radius:18px; display:flex;
+        align-items:center; justify-content:center; gap:10px; color:#fff; font-size:27px; font-weight:900;
+        background:linear-gradient(180deg,var(--green-bright),var(--green));
+        box-shadow:0 14px 36px rgba(16,107,79,.55),inset 0 1px 0 rgba(255,255,255,.25); }
+      #cta .unlock { text-align:center; margin-top:14px; font-size:17px; font-weight:600; color:rgba(228,243,237,.78); }
+      #cta .tag { position:relative; text-align:center; }
+      #cta .tag h2 { font-size:56px; font-weight:900; color:#fff; line-height:1.04; text-shadow:0 4px 26px rgba(0,0,0,.6); }
+      #cta .tag .pill { display:inline-flex; align-items:center; gap:12px; margin-top:22px;
+        padding:20px 40px; border-radius:999px; background:linear-gradient(180deg,#ffd877,#e9b53f);
+        color:#06301f; font-size:34px; font-weight:900; }
+
+      /* persistent brand chip */
+      #chip { top: 96px; display: flex; justify-content: center; }
+      #chip .inner { display: flex; align-items: center; gap: 12px; padding: 12px 22px 12px 12px;
+        background: rgba(6,19,13,0.5); border: 1px solid rgba(248,221,134,0.32); border-radius: 999px;
+        -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+      #chip .mark { width: 38px; height: 38px; border-radius: 11px; }
+      #chip .mark svg { width: 24px; height: 24px; }
+      #chip span { font-size: 27px; font-weight: 800; color: #fff; letter-spacing: 0.02em; }
+      #chip span em { color: var(--gold-soft); font-style: normal; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="root" data-start="0" data-width="1080" data-height="1920">
+      <video id="bg" data-start="0" data-duration="50" data-track-index="0"
+        src="bg.mp4" muted playsinline></video>
+
+      <div id="chip" class="ov clip" data-start="4.6" data-duration="34.4" data-track-index="1">
+        <div class="inner">
+          <div class="mark" data-mark></div>
+          <span>worldcup26<em>.world</em></span>
+        </div>
+      </div>
+
+      <div id="dyk" class="ov clip" data-start="0.5" data-duration="3.7" data-track-index="2">
+        <div class="dyk-kicker"><div class="mark" data-mark></div><span>WorldCup26</span></div>
+        <div class="dyk-card">
+          <div class="dyk-glow"></div>
+          <h1>DID YOU KNOW?</h1>
+          <div class="dyk-underline"></div>
+        </div>
+      </div>
+
+      <div id="name" class="ov clip" data-start="19.5" data-duration="13" data-track-index="2">
+        <div class="name-bar"></div>
+        <div class="name-body">
+          <div class="who">ROGER MILLA</div>
+          <div class="name-meta"><span class="dot"></span><span>Cameroon &middot; Italia '90</span></div>
+        </div>
+      </div>
+
+      <div id="cta" class="ov clip" data-start="39.5" data-duration="10.5" data-track-index="3">
+        <div class="scrim"></div>
+        <div class="phone">
+          <div class="screen">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:41</span><span>WorldCup26 &#9211;</span></div>
+            <div class="apphead"><div class="mark" data-mark></div><b>WorldCup26<em>.world</em></b></div>
+            <div class="seclabel">Legendary Card &middot; Unlocked</div>
+            <div class="appcard">
+              <img src="card.png" alt="" />
+              <span class="appbadge">&#9733; Legendary</span>
+              <div class="appgrad"></div>
+              <div class="apptext"><div class="t">The Dancing Lion</div><div class="s">Cameroon &middot; Italia '90</div></div>
+            </div>
+            <div class="collect">&#65291; Add to my album</div>
+            <div class="unlock">Unlock the dance that stunned the world</div>
+          </div>
+        </div>
+        <div class="tag">
+          <h2>Collect his legendary card</h2>
+          <span class="pill">Free at worldcup26.world</span>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+      <script>
+        var MARK = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/></svg>';
+        document.querySelectorAll('[data-mark]').forEach(function (m) { m.innerHTML = MARK; });
+
+        window.__timelines = window.__timelines || {};
+        var tl = gsap.timeline({ paused: true });
+
+        tl.from('#dyk .dyk-kicker', { y: 28, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.6);
+        tl.from('#dyk .dyk-card', { y: 46, opacity: 0, scale: 0.94, duration: 0.6, ease: 'back.out(1.5)' }, 0.75);
+        tl.from('#dyk .dyk-underline', { scaleX: 0, duration: 0.7, ease: 'power2.out' }, 1.15);
+        tl.to('#dyk', { opacity: 0, y: -26, duration: 0.5, ease: 'power2.in' }, 3.7);
+
+        tl.from('#chip', { y: -18, opacity: 0, duration: 0.6, ease: 'power2.out' }, 4.7);
+        tl.to('#chip', { opacity: 0, duration: 0.5, ease: 'power2.in' }, 38.6);
+
+        tl.from('#name .name-bar', { scaleY: 0, transformOrigin: 'top center', duration: 0.5, ease: 'power3.out' }, 19.7);
+        tl.from('#name .who', { x: -34, opacity: 0, duration: 0.55, ease: 'expo.out' }, 19.85);
+        tl.from('#name .name-meta', { x: -24, opacity: 0, duration: 0.5, ease: 'power2.out' }, 20.1);
+        tl.to('#name', { opacity: 0, y: 22, duration: 0.55, ease: 'power2.in' }, 31.9);
+
+        tl.from('#cta .scrim', { opacity: 0, duration: 0.6, ease: 'power1.out' }, 39.5);
+        tl.from('#cta .phone', { y: 140, opacity: 0, rotation: -11, scale: 0.88, duration: 0.85, ease: 'back.out(1.3)' }, 39.8);
+        tl.from('#cta .appcard', { opacity: 0, scale: 0.92, duration: 0.5, ease: 'power2.out' }, 40.5);
+        tl.from('#cta .collect', { y: 16, opacity: 0, duration: 0.45, ease: 'power2.out' }, 40.95);
+        tl.from('#cta .tag h2', { y: 30, opacity: 0, duration: 0.55, ease: 'power3.out' }, 41.2);
+        tl.from('#cta .tag .pill', { y: 24, opacity: 0, scale: 0.9, duration: 0.5, ease: 'back.out(1.6)' }, 41.6);
+        tl.to('#cta .phone', { rotation: -1.5, duration: 1.2, ease: 'sine.inOut' }, 40.65);
+        tl.to('#cta .collect', { scale: 1.045, duration: 0.6, ease: 'sine.inOut', repeat: 5, yoyo: true }, 42.0);
+
+        window.__timelines['root'] = tl;
+      </script>
+    </div>
+  </body>
+</html>

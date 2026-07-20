@@ -4,6 +4,9 @@
 !.env.example
 node_modules/
 .next/
+.next 2
+.next 3
+.playwright-mcp/
 *.tsbuildinfo
 /*.png
 /*.jpg

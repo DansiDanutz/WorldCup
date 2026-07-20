@@ -1,0 +1,375 @@
+.shell {
+  min-height: 100vh;
+  padding: 32px clamp(14px, 3vw, 40px);
+  color: #0d201b;
+  background:
+    linear-gradient(180deg, rgba(231, 244, 238, 0.94), rgba(247, 250, 249, 0.72) 360px),
+    #f7faf9;
+}
+
+.header,
+.panel,
+.notice,
+.toolbar,
+.contextPanel,
+.resultsHeader,
+.accountRow {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px 0 18px;
+}
+
+.header h1,
+.resultsHeader h2,
+.panel h2 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.header h1 {
+  max-width: 760px;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 0.98;
+}
+
+.header p,
+.panel p,
+.contextPanel p,
+.resultsHeader p,
+.accountMain p,
+.accountMain small,
+.rankBox span {
+  color: #5d6f69;
+}
+
+.headerActions,
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.primaryButton,
+.secondaryButton,
+.filterButton,
+.activeFilter {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.primaryButton {
+  color: #062019;
+  background: #f3c85d;
+  box-shadow: 0 8px 20px rgba(201, 148, 46, 0.2);
+}
+
+.primaryButton:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.secondaryButton,
+.filterButton {
+  color: #12352d;
+  border-color: #d8e3df;
+  background: #ffffff;
+}
+
+.activeFilter {
+  color: #ffffff;
+  background: #106b4f;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #106b4f;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.panel,
+.notice,
+.contextPanel {
+  margin-top: 16px;
+  border: 1px solid #d8e3df;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 45px rgba(17, 43, 36, 0.08);
+}
+
+.panel {
+  display: grid;
+  gap: 12px;
+  place-items: center;
+  padding: 36px 22px;
+  text-align: center;
+}
+
+.notice,
+.contextPanel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+}
+
+.notice {
+  color: #6d2b27;
+  border-color: #efc3c0;
+  background: #fff7f6;
+}
+
+.contextPanel {
+  color: #0b513b;
+  border-color: #9ac9b8;
+  background: #e5f3ee;
+}
+
+.metricsGrid {
+  display: grid;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric,
+.warningMetric {
+  display: flex;
+  min-height: 104px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border: 1px solid #d8e3df;
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.warningMetric {
+  border-color: #e4bd86;
+  background: #fff8ef;
+}
+
+.metric span,
+.warningMetric span {
+  display: block;
+  color: #5d6f69;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.metric strong,
+.warningMetric strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.metricIcon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 8px;
+  color: #0b513b;
+  background: #e5f3ee;
+}
+
+.toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid #d8e3df;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.searchLabel {
+  display: grid;
+  min-width: min(320px, 100%);
+  gap: 6px;
+  color: #5d6f69;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.searchLabel input {
+  min-height: 44px;
+  width: 100%;
+  border: 1px solid #d8e3df;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #ffffff;
+}
+
+.resultsHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.accountList {
+  display: grid;
+  width: min(1180px, 100%);
+  margin: 12px auto 0;
+  gap: 10px;
+}
+
+.accountRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 0.18fr);
+  gap: 16px;
+  border: 1px solid #d8e3df;
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.accountTitle,
+.teamList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.accountTitle strong {
+  font-size: 18px;
+}
+
+.accountMain p {
+  margin: 6px 0 0;
+}
+
+.accountMain small {
+  display: block;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.teamList {
+  margin-top: 10px;
+}
+
+.teamList span {
+  border: 1px solid #d8e3df;
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #12352d;
+  background: #f7faf9;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.rankBox {
+  display: grid;
+  align-content: center;
+  justify-items: end;
+  gap: 5px;
+  text-align: right;
+}
+
+.rankBox strong {
+  font-size: 28px;
+}
+
+.statusBadge,
+.warningBadge {
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.status-none,
+.status-draft,
+.warningBadge {
+  color: #6d2b27;
+  background: #ffe0dd;
+}
+
+.status-committed {
+  color: #244c96;
+  background: #e9effb;
+}
+
+.status-locked {
+  color: #0b513b;
+  background: #d6f5e6;
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 920px) {
+  .header,
+  .toolbar,
+  .resultsHeader {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .accountRow {
+    grid-template-columns: 1fr;
+  }
+
+  .rankBox {
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .shell {
+    padding: 18px 12px;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .filterButton,
+  .activeFilter {
+    width: 100%;
+  }
+}

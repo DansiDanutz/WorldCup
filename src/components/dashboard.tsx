@@ -18,7 +18,6 @@ import {
   Search,
   ShieldCheck,
   Sparkles,
-  Smartphone,
   Ticket,
   Trophy,
   UserRound,
@@ -1350,9 +1349,9 @@ export function Dashboard({
               </span>
               <span className="browse-tile__copy">
                 <strong>Collect Cards</strong>
-                <small>Main journey: listen, watch, collect, download</small>
+                <small>Main journey: listen, watch, collect</small>
               </span>
-              <span className="browse-tile__metric">124</span>
+              <span className="browse-tile__metric">141</span>
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
             <a className="browse-tile browse-tile--primary" href={showPickWorkflow ? "#pick" : "#me"}>
@@ -1414,15 +1413,15 @@ export function Dashboard({
               </span>
               <ArrowRight size={16} aria-hidden="true" />
             </a>
-            <Link className="browse-tile" href={{ pathname: "/predictions", hash: "legend-wallpapers" }}>
+            <Link className="browse-tile" href={{ pathname: "/predictions", hash: "legend-card-grid" }}>
               <span className="browse-tile__icon" aria-hidden="true">
-                <Smartphone size={18} />
+                <Sparkles size={18} />
               </span>
               <span className="browse-tile__copy">
-                <strong>Wallpapers</strong>
-                <small>HD portrait supporter cards</small>
+                <strong>Cards</strong>
+                <small>Exact episode artefacts to collect</small>
               </span>
-              <span className="browse-tile__metric">48</span>
+              <span className="browse-tile__metric">Album</span>
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
             <Link className="browse-tile" href={{ pathname: "/predictions", hash: "episode-library-title" }}>

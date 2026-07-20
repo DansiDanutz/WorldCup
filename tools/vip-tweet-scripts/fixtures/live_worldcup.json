@@ -1,0 +1,43 @@
+[
+  {
+    "_provenance": "Verified current World Cup 2026 storylines (sports news, 23-24 Jun 2026). Engagement omitted (ranked by recency) — these are NOT scraped verbatim tweets.",
+    "id": "live-messi",
+    "author_handle": "leomessi",
+    "author_name": "Lionel Messi",
+    "text": "Lionel Messi broke the all-time World Cup scoring record — a hat-trick against Algeria and a brace against Austria put him on five goals and top of the Golden Boot race.",
+    "created_at": "2026-06-24T21:00:00Z",
+    "url": "https://www.skysports.com/football/news/12098/13556951"
+  },
+  {
+    "id": "live-cr7",
+    "author_handle": "Cristiano",
+    "author_name": "Cristiano Ronaldo",
+    "text": "Cristiano Ronaldo scored twice as Portugal beat Uzbekistan 5-0 — becoming the first player ever to score in SIX different World Cups.",
+    "created_at": "2026-06-24T20:00:00Z",
+    "url": "https://www.espn.com/soccer/story/_/id/49153993"
+  },
+  {
+    "id": "live-haaland",
+    "author_handle": "ErlingHaaland",
+    "author_name": "Erling Haaland",
+    "text": "Erling Haaland is on four World Cup goals, two in each of Norway's opening games — and faces Mbappé's France in a Golden Boot showdown on June 26.",
+    "created_at": "2026-06-24T17:00:00Z",
+    "url": "https://www.nbcsports.com/soccer/news/2026-world-cup-top-goalscorers"
+  },
+  {
+    "id": "live-mbappe",
+    "author_handle": "KMbappe",
+    "author_name": "Kylian Mbappé",
+    "text": "Kylian Mbappé struck a double for France at the World Cup — also on four goals — in a match delayed nearly two hours by adverse weather. Allez les Bleus.",
+    "created_at": "2026-06-23T21:00:00Z",
+    "url": "https://www.espn.com/soccer/story/_/id/49117037"
+  },
+  {
+    "id": "live-vini",
+    "author_handle": "vinijr",
+    "author_name": "Vinícius Jr",
+    "text": "Vinícius Júnior scored in all three World Cup group games — only the fifth Brazilian ever to do it, joining Ronaldo, Romário, Rivaldo and Jairzinho.",
+    "created_at": "2026-06-24T18:30:00Z",
+    "url": "https://www.espn.com/soccer/story/_/id/49169240"
+  }
+]

@@ -194,6 +194,31 @@
   line-height: 1.4;
 }
 
+.episodeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: max-content;
+  max-width: 100%;
+  min-height: 32px;
+  border: 1px solid rgba(16, 107, 79, 0.2);
+  border-radius: 8px;
+  padding: 0 10px;
+  color: #063f2e;
+  background: var(--green-soft);
+  font-size: 12px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.episodeLink:hover,
+.episodeLink:focus-visible {
+  border-color: rgba(16, 107, 79, 0.38);
+  color: #ffffff;
+  background: var(--green);
+  outline: none;
+}
+
 .scorePill {
   display: inline-flex;
   flex: 0 0 auto;

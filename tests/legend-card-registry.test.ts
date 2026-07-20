@@ -3,6 +3,7 @@ import { describe, it } from "node:test";
 
 import { LEGEND_CARDS } from "@/lib/legend-cards";
 import { LEGEND_CARD_DEFINITIONS } from "@/lib/legend-card-registry";
+import { createLegendCardVoiceText, getSavedLegendCardVoicePublicPath } from "@/lib/story-voice";
 import {
   YOUTUBE_DID_YOU_KNOW_SHORTS,
   YOUTUBE_LEGEND_BONUS_VIDEOS,
@@ -10,27 +11,21 @@ import {
 } from "@/lib/youtube-legend-episodes";
 
 describe("Legend card registry", () => {
-  it("creates collectible cards for every series video, Did You Know short, the three bonus videos, and team supporter prompt", () => {
+  it("creates collectible cards for every series video, Did You Know short, and the three bonus videos", () => {
     const episodeCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "episode-special");
-    const supporterCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "supporter-card");
     const didYouKnowCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "did-you-know-short");
     const bonusCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "legend-bonus");
-    const uniqueEpisodeTeams = new Set(
-      YOUTUBE_LEGEND_EPISODES.flatMap((episode) => [episode.home, episode.away]),
-    );
 
     assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.length, 4);
     assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.filter((video) => video.kind === "series").length, 1);
-    assert.equal(YOUTUBE_LEGEND_EPISODES.length, 82);
+    assert.equal(YOUTUBE_LEGEND_EPISODES.length, 103);
     assert.equal(YOUTUBE_DID_YOU_KNOW_SHORTS.length, 12);
-    assert.equal(episodeCards.length, 83);
-    assert.equal(supporterCards.length, uniqueEpisodeTeams.size);
-    assert.equal(supporterCards.length, 48);
+    assert.equal(episodeCards.length, 104);
     assert.equal(didYouKnowCards.length, 12);
     assert.equal(bonusCards.length, 3);
-    assert.equal(LEGEND_CARD_DEFINITIONS.length, 146);
+    assert.equal(LEGEND_CARD_DEFINITIONS.length, 119);
     assert.equal(new Set(LEGEND_CARD_DEFINITIONS.map((card) => card.id)).size, LEGEND_CARD_DEFINITIONS.length);
-    assert.equal(supporterCards.every((card) => card.youtube === null), true);
+    assert.equal(LEGEND_CARD_DEFINITIONS.some((card) => String(card.kind) === "supporter-card"), false);
     assert.equal(didYouKnowCards.every((card) => Boolean(card.youtube)), true);
     assert.deepEqual(
       didYouKnowCards.map((card) => card.id).sort(),
@@ -51,12 +46,35 @@ describe("Legend card registry", () => {
     );
     assert.deepEqual(
       bonusCards.find((card) => card.id === "bonus-world-cup-secrets")?.alternateYoutube,
-      ["https://www.youtube.com/watch?v=0oHkstIXqjk"],
+      [
+        "https://www.youtube.com/watch?v=0oHkstIXqjk",
+        "https://www.youtube.com/watch?v=9EzJmef1QJI",
+        "https://www.youtube.com/watch?v=Eyr32VpWKdY",
+        "https://www.youtube.com/watch?v=qP2qU-JAr6A",
+        "https://www.youtube.com/watch?v=BrxftWhayzU",
+      ],
     );
     assert.deepEqual(
       bonusCards.map((card) => card.title).sort(),
       ["Luis Diaz", "Lukaku: The Promise", "World Cup Monopoly"].sort(),
     );
+  });
+
+  it("gives every collectible card a strong Brian script and saved voice path", () => {
+    const voicePaths = new Set<string>();
+
+    for (const card of LEGEND_CARD_DEFINITIONS) {
+      const voiceText = createLegendCardVoiceText(card);
+      const wordCount = voiceText.split(/\s+/).filter(Boolean).length;
+      const voicePath = getSavedLegendCardVoicePublicPath(card.id);
+
+      assert.ok(wordCount >= 75, `${card.id} Brian script is too short`);
+      assert.ok(wordCount <= 145, `${card.id} Brian script is too long`);
+      assert.match(voicePath, /^\/legend-cards\/voices\/[a-z0-9-]+\.mp3$/);
+      voicePaths.add(voicePath);
+    }
+
+    assert.equal(voicePaths.size, LEGEND_CARD_DEFINITIONS.length);
   });
 
   it("does not reuse card art or YouTube unlock sources across collectible cards", () => {
@@ -72,10 +90,18 @@ describe("Legend card registry", () => {
     assert.equal(new Set(youtubeCards.map((card) => card.youtube)).size, youtubeCards.length);
     assert.equal(new Set(LEGEND_CARDS.map((card) => card.image)).size, LEGEND_CARDS.length);
     assert.equal(longEpisodeCards.length, YOUTUBE_LEGEND_EPISODES.length);
-    assert.equal(appReadyEpisodeCards.length, 82);
-    assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/cards/")).length, 25);
+    assert.equal(appReadyEpisodeCards.length, 103);
+    assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/cards/")).length, 46);
     assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/reveal-frames/")).length, 57);
     assert.equal(longEpisodeCards.every((card) => card.image.startsWith("/legend-cards/youtube-rare/")), true);
+    assert.equal(episodeCards.find((card) => card.episode === 104)?.image.includes("ep104-argentina-vs-switzerland"), true);
+    assert.equal(episodeCards.find((card) => card.episode === 101)?.image.includes("ep101-spain-vs-belgium"), true);
+    assert.equal(episodeCards.find((card) => card.episode === 100)?.image.includes("ep100-switzerland-vs-colombia"), true);
+    assert.equal(episodeCards.find((card) => card.episode === 96)?.image.includes("ep096-mexico-vs-england"), true);
+    assert.equal(episodeCards.find((card) => card.episode === 95)?.image.includes("ep095-norway-vs-brazil"), true);
+    assert.equal(episodeCards.find((card) => card.episode === 94)?.image.includes("ep094-france-vs-paraguay"), true);
+    assert.equal(episodeCards.find((card) => card.episode === 90)?.image.includes("ep090-egypt-vs-australia"), true);
+    assert.equal(episodeCards.find((card) => card.episode === 84)?.image.includes("ep084-england-vs-dr-congo"), true);
     assert.equal(episodeCards.find((card) => card.episode === 83)?.image.includes("ep083-mexico-vs-ecuador"), true);
     assert.equal(episodeCards.find((card) => card.episode === 82)?.image.includes("ep082-france-vs-sweden"), true);
     assert.equal(episodeCards.find((card) => card.episode === 81)?.image.includes("ep081-ivory-coast-vs-norway"), true);
@@ -94,10 +120,6 @@ describe("Legend card registry", () => {
         "/legend-cards/bonus/world-cup-monopoly.png",
       ].sort(),
     );
-
-    const supporterImages = LEGEND_CARDS.filter((card) => card.kind === "supporter-card").map((card) => card.image);
-
-    assert.equal(supporterImages.length, 48);
-    assert.equal(new Set(supporterImages).size, supporterImages.length);
+    assert.equal(LEGEND_CARDS.some((card) => card.image.startsWith("/supporter-cards/")), false);
   });
 });

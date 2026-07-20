@@ -1,9 +1,10 @@
 "use client";
 
-import { CalendarClock, RefreshCw } from "lucide-react";
+import { CalendarClock, PlayCircle, RefreshCw } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import { CardViewControl } from "@/components/card-view-control";
+import { getYoutubeEpisodeForMatch } from "@/lib/match-youtube";
 import {
   formatKickoff,
   getMatchScore,
@@ -135,14 +136,20 @@ export function MatchScheduleExplorer({
           {visibleMatches.map((match) => {
             const stage = stagesById.get(match.stage_id);
             const statusClass = match.status === "completed" ? styles.scorePillCompleted : "";
+            const homeName = getTeamDisplayName(match.home_team_id, match.home_slot, teamsById);
+            const awayName = getTeamDisplayName(match.away_team_id, match.away_slot, teamsById);
+            const youtubeEpisode = getYoutubeEpisodeForMatch({
+              homeTeamId: match.home_team_id,
+              awayTeamId: match.away_team_id,
+              homeName,
+              awayName,
+            });
 
             return (
               <article className={styles.matchRow} key={match.id}>
                 <div className={styles.matchMain}>
                   <strong>
-                    #{match.match_number} ·{" "}
-                    {getTeamDisplayName(match.home_team_id, match.home_slot, teamsById)} vs{" "}
-                    {getTeamDisplayName(match.away_team_id, match.away_slot, teamsById)}
+                    #{match.match_number} · {homeName} vs {awayName}
                   </strong>
                   <span className={`${styles.scorePill} ${statusClass}`}>
                     {match.status === "completed" ? getMatchScore(match) : "Scheduled"}
@@ -151,6 +158,17 @@ export function MatchScheduleExplorer({
                 <div className={styles.matchSub}>
                   {stage?.name ?? match.stage_id} · {formatKickoff(match.kickoff_at)} · {match.venue}
                 </div>
+                {youtubeEpisode ? (
+                  <a
+                    className={styles.episodeLink}
+                    href={youtubeEpisode.youtube}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <PlayCircle size={15} aria-hidden="true" />
+                    <span>Watch Ep. {youtubeEpisode.ep}</span>
+                  </a>
+                ) : null}
               </article>
             );
           })}

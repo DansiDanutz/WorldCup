@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { describe, it } from "node:test";
 
+import { LEGEND_CARDS } from "@/lib/legend-cards";
 import { LEGEND_CARD_DEFINITIONS } from "@/lib/legend-card-registry";
-import { createLegendCardVoiceText } from "@/lib/story-voice";
 import {
   findSupporterCardAsset,
   getSupporterCardImagePath,
@@ -80,31 +80,10 @@ describe("supporter card asset pack", () => {
     assert.equal(getSupporterCardImagePath("Cabo Verde"), "/supporter-cards/capeverdesupporter.png");
   });
 
-  it("uses the real supporter stories in the generated Legend supporter cards", () => {
-    const supporterCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "supporter-card");
-    const usedAssetSlugs = new Set<string>();
+  it("keeps supporter assets out of the collectible Legend card registry", () => {
+    const supporterCards = LEGEND_CARD_DEFINITIONS.filter((card) => String(card.kind) === "supporter-card");
 
-    assert.equal(supporterCards.length, 48);
-
-    for (const card of supporterCards) {
-      const asset = findSupporterCardAsset(card.teams);
-
-      assert.ok(asset, `${card.teams} is missing a supporter card asset`);
-
-      assert.equal(card.title, asset.mysteryName);
-      assert.match(card.subtitle, new RegExp(asset.supporterReference.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-      assert.match(card.story, new RegExp(asset.story.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-      assert.match(card.voiceStory ?? "", new RegExp(asset.voiceStory.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-      assert.equal(card.youtube, null);
-      assert.doesNotMatch(card.story, /Every nation has a guardian|one seat into a whole stand|match-day omens/i);
-      assert.equal(getSupporterCardImagePath(card.imageTeam ?? card.teams), asset.publicPath);
-      const brianTextWordCount = createLegendCardVoiceText(card).split(/\s+/).length;
-
-      assert.ok(brianTextWordCount >= 95, `${card.id} Brian text is too short for 45 seconds`);
-      assert.ok(brianTextWordCount <= 125, `${card.id} Brian text is too long for 60 seconds`);
-      usedAssetSlugs.add(asset.slug);
-    }
-
-    assert.equal(usedAssetSlugs.size, 48);
+    assert.equal(supporterCards.length, 0);
+    assert.equal(LEGEND_CARDS.some((card) => card.image.startsWith("/supporter-cards/")), false);
   });
 });
