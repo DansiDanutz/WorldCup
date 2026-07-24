@@ -197,10 +197,15 @@ function SceneGhosts() {
       <FS id="messi-show" /><FS id="arg-crowd" dim={0.2} /><FS id="messi-golden" /><FS id="arg-despair" br={1.15} />
       <SectionLabel start={37} end={43} text="THE GOLDEN GHOSTS" y={150} size={34} />
       <BeatCard start={43.6} end={51.4} text={<>WON EVERYTHING —<br />EXCEPT THE CROWN</>} sub="THE MEN THE CUP FORGETS" accent={GOLD} big={54} />
-      <AwardShowcase clipId="mbappe-run" name="KYLIAN MBAPPÉ" nation="FRANCE" accent={FRA_BLUE} start={52} end={62} nameAt={52.2}
+      {/* Rule #23/#29: the name stays on screen only while HIS footage does. The 10s beat is
+          covered by TWO distinct Mbappé clips (celebration, then the hollow aftermath) rather
+          than one clip plus 5s of abstract rays carrying his caption. */}
+      <AwardShowcase clipId="mbappe-run" name="KYLIAN MBAPPÉ" nation="FRANCE" accent={FRA_BLUE} start={52} end={57} nameAt={52.2}
+        award={{ icon: '👟', label: 'GOLDEN BOOT', sub: '10 GOALS · BACK-TO-BACK', accent: GOLD }} />
+      <AwardShowcase clipId="mbappe-ghost" name="KYLIAN MBAPPÉ" nation="FRANCE" accent={FRA_BLUE} start={57} end={62} nameAt={56.4}
         award={{ icon: '👟', label: 'GOLDEN BOOT', sub: '10 GOALS · BACK-TO-BACK', accent: GOLD }} />
       <BeatCard start={63.2} end={72.8} text={<>A RECORD THAT MAY<br />NEVER BREAK</>} sub="BUT NO CUP · A BEAUTIFUL GHOST" accent={GOLD} big={52} />
-      <AwardShowcase clipId="messi-show" name="LIONEL MESSI" nation="ARGENTINA" accent={ARG_BLUE} start={74} end={81} nameAt={74.2}
+      <AwardShowcase clipId="messi-show" name="LIONEL MESSI" nation="ARGENTINA" accent={ARG_BLUE} start={74} end={79} nameAt={74.2}
         award={{ icon: '★', label: 'THE LAST DANCE', sub: 'HIS FINAL WORLD CUP', accent: ARG_BLUE }} />
       <AwardShowcase clipId="messi-golden" name="LIONEL MESSI" nation="ARGENTINA" accent={ARG_BLUE} start={81} end={86} nameAt={81.1}
         award={{ icon: '🥈', label: 'SILVER BOOT', sub: '8 GOALS · GENIUS', accent: '#cdd6e6' }} />

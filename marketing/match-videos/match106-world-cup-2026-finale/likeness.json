@@ -9,6 +9,13 @@
       "note": "Reused the existing photoreal library still (Rule #26, 0 credits for the still). France navy #10, correct likeness held through the closing close-up. REPLACED a generic white player that shipped in the first cut."
     },
     {
+      "clipId": "mbappe-ghost",
+      "name": "KYLIAN MBAPPÉ",
+      "sourceJob": "e6e112a8-41bb-4b8e-9c73-30f5272c7c21 -> i2v 71e8ea4d-ac10-46ba-a6f8-6348f01bb0ed",
+      "checkedBy": "frames @0.4/2.2/4.4s",
+      "note": "Second Mbappé shot (hollow, in the rain) covering 57-62s. Added because his NAME was on screen for 5s over abstract light rays after the first clip ended — the caption must never outlive his footage (Rule #23)."
+    },
+    {
       "clipId": "messi-show",
       "name": "LIONEL MESSI",
       "sourceJob": "pre-existing episode asset",

@@ -116,4 +116,15 @@ never been implemented. It now exists and is enforced by `likeness.json`: any na
 without a verified sign-off turns the preflight RED and blocks the render. Verified by
 negative test (removing the Mbappé entry correctly fails).
 
-Total generation: 3 stills + 7 clips ≈ 160 credits; the Mbappé still was reused free.
+**A second pass on the finished file** caught two more instances of the same defect the
+owner flagged — a NAME on screen without that player under it:
+- 57–62s: "KYLIAN MBAPPÉ" ran for 5s over abstract gold light rays after his clip ended.
+  Fixed by generating a SECOND Mbappé shot (hollow, in the rain — it suits the
+  "won everything except the crown" beat) so the caption never outlives his footage.
+- 79–81s: "LIONEL MESSI" ran 2s over crowd footage. His label now ends at 79 with his clip.
+
+Rule #23 restated for this series: a showcase's `end` must never exceed the end of its
+clip's window in `clips.json`. A long beat gets a SECOND distinct clip, never a caption
+floating over atmosphere.
+
+Total generation: 4 stills + 8 clips ≈ 190 credits; the first Mbappé still was reused free.
