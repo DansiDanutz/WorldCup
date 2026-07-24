@@ -1,0 +1,741 @@
+{
+  "comment": "Ep106 WORLD CUP 2026 GRAND FINALE & AWARDS. VERIFIED (tournament over): SPAIN 1-0 ARGENTINA (AET) in the final; Ferran Torres (sub, no goals all tournament) scored 106 (39s into 2nd half ET) past Emiliano Martinez, Argentina down to 10 after Enzo stoppage-time red. Spain 2nd title. Awards: Golden Boot Mbappe (10, first back-to-back), Golden Ball Rodri (back from ACL + back injury, I want to thank myself), Golden Glove Unai Simon (7 CS), Young Player Cubarsi (19); Messi Silver Boot in his last WC. THEME = The Crown and the Golden Ghosts. Legend 106 = SANT JORDI (Saint George of Catalonia): slays the dragon, a red rose blooms (victory + rebirth). Photoreal (Rule#22), nation-correct #28 (Spain red, France blue, Argentina blue/white), no hands on ball except GK-in-box #6, real-results-only #7. Contiguous BED (#25), features unique, backdrops recur bright/dimmed behind text (#27), no dur>source (#11), coverage-checked. Music: Kevin MacLeod / incompetech CC-BY 4.0. Clips vol=0.",
+  "clips": [
+    {
+      "id": "trophy-altar",
+      "src": "assets/clips/trophy-altar.mp4",
+      "at": 0,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ghost-mist",
+      "src": "assets/clips/ghost-mist.mp4",
+      "at": 5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "faceoff-silhouette",
+      "src": "assets/clips/faceoff-silhouette.mp4",
+      "at": 10,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "embers-rise",
+      "src": "assets/clips/embers-rise.mp4",
+      "at": 15,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "light-rays-gold",
+      "src": "assets/clips/light-rays-gold.mp4",
+      "at": 20,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 24,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 29,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-t",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 34,
+      "dur": 2,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 36,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-glow",
+      "src": "assets/clips/stadium-glow.mp4",
+      "at": 41,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "night-rays-blue",
+      "src": "assets/clips/night-rays-blue.mp4",
+      "at": 46,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-a",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 51,
+      "dur": 1,
+      "vol": 0
+    },
+    {
+      "id": "mbappe-run",
+      "src": "assets/clips/mbappe-run.mp4",
+      "at": 52,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "light-rays-gold-b",
+      "src": "assets/clips/light-rays-gold.mp4",
+      "at": 57,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "embers-b",
+      "src": "assets/clips/embers-rise.mp4",
+      "at": 62,
+      "dur": 1,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays-b",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 63,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-b",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 68,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 73,
+      "dur": 1,
+      "vol": 0
+    },
+    {
+      "id": "messi-show",
+      "src": "assets/clips/messi-show.mp4",
+      "at": 74,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "arg-crowd",
+      "src": "assets/clips/arg-crowd.mp4",
+      "at": 79,
+      "dur": 2,
+      "vol": 0
+    },
+    {
+      "id": "messi-golden",
+      "src": "assets/clips/messi-golden.mp4",
+      "at": 81,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "arg-despair",
+      "src": "assets/clips/arg-despair.mp4",
+      "at": 86,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-wide-b",
+      "src": "assets/clips/stadium-wide.mp4",
+      "at": 91,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "arg-crowd2",
+      "src": "assets/clips/arg-crowd2.mp4",
+      "at": 96,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense-b",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 98.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "night-rays-blue-b",
+      "src": "assets/clips/night-rays-blue.mp4",
+      "at": 103.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "embers-c",
+      "src": "assets/clips/embers-rise.mp4",
+      "at": 108.5,
+      "dur": 1,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-c",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 109.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "spain-crowd",
+      "src": "assets/clips/spain-crowd.mp4",
+      "at": 114.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense-c",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 119.5,
+      "dur": 2.5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-glow-b",
+      "src": "assets/clips/stadium-glow.mp4",
+      "at": 122,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ferran-strike",
+      "src": "assets/clips/ferran-strike.mp4",
+      "at": 127,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "goal-net",
+      "src": "assets/clips/goal-net.mp4",
+      "at": 132,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ferran-celeb",
+      "src": "assets/clips/ferran-celeb.mp4",
+      "at": 137,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-d",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 142,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "spain-crowd-b",
+      "src": "assets/clips/spain-crowd.mp4",
+      "at": 145,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense-d",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 150,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "simon-save",
+      "src": "assets/clips/simon-save.mp4",
+      "at": 153.5,
+      "dur": 2.2,
+      "vol": 0
+    },
+    {
+      "id": "stadium-glow-f",
+      "src": "assets/clips/stadium-glow.mp4",
+      "at": 155.7,
+      "dur": 2.8,
+      "vol": 0
+    },
+    {
+      "id": "stadium-glow-c",
+      "src": "assets/clips/stadium-glow.mp4",
+      "at": 158.5,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "cubarsi-show",
+      "src": "assets/clips/cubarsi-show.mp4",
+      "at": 162,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays-c",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 167,
+      "dur": 4,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense-e",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 171,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "light-rays-gold-c",
+      "src": "assets/clips/light-rays-gold.mp4",
+      "at": 176,
+      "dur": 1.5,
+      "vol": 0
+    },
+    {
+      "id": "rodri-trophy",
+      "src": "assets/clips/rodri-trophy.mp4",
+      "at": 177.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "trophy-hands",
+      "src": "assets/clips/trophy-hands.mp4",
+      "at": 182.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays-d",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 187.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "embers-d",
+      "src": "assets/clips/embers-rise.mp4",
+      "at": 192.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-e",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 197.5,
+      "dur": 0.5,
+      "vol": 0
+    },
+    {
+      "id": "light-rays-gold-d",
+      "src": "assets/clips/light-rays-gold.mp4",
+      "at": 198,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-f",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 203,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "spain-lift",
+      "src": "assets/clips/spain-lift.mp4",
+      "at": 206,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays-e",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 211,
+      "dur": 3.5,
+      "vol": 0
+    },
+    {
+      "id": "champions-handshake",
+      "src": "assets/clips/champions-handshake.mp4",
+      "at": 214.5,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "night-rays-blue-c",
+      "src": "assets/clips/night-rays-blue.mp4",
+      "at": 219,
+      "dur": 0.5,
+      "vol": 0
+    },
+    {
+      "id": "messi-final",
+      "src": "assets/clips/messi-final.mp4",
+      "at": 219.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "arg-crowd-b",
+      "src": "assets/clips/arg-crowd.mp4",
+      "at": 224.5,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "messi-coda2",
+      "src": "assets/clips/messi-coda2.mp4",
+      "at": 227.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "ghost-mist-b",
+      "src": "assets/clips/ghost-mist.mp4",
+      "at": 232.5,
+      "dur": 4.5,
+      "vol": 0
+    },
+    {
+      "id": "messi-goal2",
+      "src": "assets/clips/messi-goal2.mp4",
+      "at": 237,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "embers-e",
+      "src": "assets/clips/embers-rise.mp4",
+      "at": 242,
+      "dur": 3,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays-f",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 245,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "light-rays-gold-e",
+      "src": "assets/clips/light-rays-gold.mp4",
+      "at": 250,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-h",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 255,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "embers-f",
+      "src": "assets/clips/embers-rise.mp4",
+      "at": 260,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays-g",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 265,
+      "dur": 1,
+      "vol": 0
+    },
+    {
+      "id": "night-rays-blue-d",
+      "src": "assets/clips/night-rays-blue.mp4",
+      "at": 266,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "crowd-tense-f",
+      "src": "assets/clips/crowd-tense.mp4",
+      "at": 271,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "stadium-glow-e",
+      "src": "assets/clips/stadium-glow.mp4",
+      "at": 276,
+      "dur": 1,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays-h",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 277,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "light-rays-gold-f",
+      "src": "assets/clips/light-rays-gold.mp4",
+      "at": 282,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-i",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 287,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "embers-g",
+      "src": "assets/clips/embers-rise.mp4",
+      "at": 292,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays-i",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 297,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "light-rays-gold-g",
+      "src": "assets/clips/light-rays-gold.mp4",
+      "at": 302,
+      "dur": 1,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-j",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 303,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays-j",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 308,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "light-rays-gold-h",
+      "src": "assets/clips/light-rays-gold.mp4",
+      "at": 313,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "embers-h",
+      "src": "assets/clips/embers-rise.mp4",
+      "at": 318,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-k",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 323,
+      "dur": 1.5,
+      "vol": 0
+    },
+    {
+      "id": "light-rays-gold-i",
+      "src": "assets/clips/light-rays-gold.mp4",
+      "at": 324.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "destiny-rays-k",
+      "src": "assets/clips/destiny-rays.mp4",
+      "at": 329.5,
+      "dur": 5,
+      "vol": 0
+    },
+    {
+      "id": "gold-dust-l",
+      "src": "assets/clips/gold-dust.mp4",
+      "at": 334.5,
+      "dur": 1.5,
+      "vol": 0
+    }
+  ],
+  "music": {
+    "cues": [
+      {
+        "src": "music/cue-tense.mp3",
+        "at": 0,
+        "dur": 91,
+        "vol": 0.42,
+        "fadeIn": 1,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 91,
+        "dur": 154,
+        "vol": 0.4,
+        "fadeIn": 2,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-heroic.mp3",
+        "at": 245,
+        "dur": 91,
+        "vol": 0.44,
+        "fadeIn": 2.5,
+        "fadeOut": 6,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "hits": [
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 0.3,
+        "vol": 0.85
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1.2,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 10.2,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 16.2,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 23.6,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 36,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 52,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 74,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 91,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 98.6,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/goal.mp3",
+        "at": 128,
+        "vol": 0.96
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 132.4,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 145,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 153.5,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 162,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 177.5,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 206,
+        "vol": 0.65
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 206.4,
+        "vol": 0.72
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 219.5,
+        "vol": 0.55
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 245.5,
+        "vol": 0.7
+      },
+      {
+        "src": "sfx/mystic.mp3",
+        "at": 277,
+        "vol": 0.8
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 295,
+        "vol": 0.78
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 308,
+        "vol": 0.6
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 324.5,
+        "vol": 0.55
+      }
+    ]
+  }
+}

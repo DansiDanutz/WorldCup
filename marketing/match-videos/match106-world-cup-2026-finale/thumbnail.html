@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1920px; height:1080px; overflow:hidden; background:#08050c; font-family:'Inter','Arial Black',sans-serif; }
+  #t { position:relative; width:1920px; height:1080px; overflow:hidden; }
+  .half { position:absolute; top:0; height:100%; width:60%; background-size:cover; }
+  /* LEFT = the golden ghost (Messi), desaturated cold */
+  #L { left:0; background-image:url('thumb_messi.png'); background-position:50% 20%; clip-path:polygon(0 0, 100% 0, 80% 100%, 0 100%); filter:saturate(0.55) brightness(0.82) contrast(1.05); }
+  /* RIGHT = the champion (Ferran), warm red-gold */
+  #R { right:0; background-image:url('thumb_ferran.png'); background-position:50% 22%; clip-path:polygon(20% 0, 100% 0, 100% 100%, 0 100%); filter:saturate(1.18) contrast(1.1); }
+  .glow { position:absolute; top:0; height:100%; width:46%; z-index:2; }
+  #gL { left:0; background:linear-gradient(90deg, rgba(120,150,210,0.42), transparent 80%); }
+  #gR { right:0; background:linear-gradient(270deg, rgba(233,198,90,0.5), rgba(210,20,40,0.32) 40%, transparent 82%); }
+  #seam { position:absolute; top:-6%; left:50%; width:12px; height:112%; transform:translateX(-50%) rotate(6deg);
+    background:linear-gradient(180deg, transparent, #ffe9a0, #fff, #ffe9a0, transparent); box-shadow:0 0 70px 22px rgba(255,210,120,0.6); z-index:5; }
+  #vig { position:absolute; inset:0; z-index:6;
+    background:radial-gradient(ellipse at 50% 44%, transparent 38%, rgba(4,3,8,0.62) 100%),
+      linear-gradient(180deg, rgba(4,3,8,0.42) 0%, transparent 26%, transparent 46%, rgba(4,3,8,0.95) 100%); }
+  #kick { position:absolute; top:44px; left:56px; z-index:9; font-weight:900; font-size:46px; line-height:0.98; letter-spacing:0.02em; color:#fff; text-shadow:0 3px 16px #000, 0 0 26px rgba(0,0,0,0.85); }
+  #ep { position:absolute; top:36px; right:48px; z-index:9; text-align:center; font-weight:900; color:#2a1206; background:#f2c94c; border:4px solid #fff; border-radius:18px; padding:8px 20px 10px; box-shadow:0 8px 26px rgba(0,0,0,0.6); }
+  #ep .l { font-size:24px; letter-spacing:0.16em; display:block; } #ep .n { font-size:52px; line-height:0.9; display:block; }
+  #crown { position:absolute; left:50%; top:33%; transform:translate(-50%,-50%); z-index:9; font-size:150px; text-shadow:0 0 60px rgba(255,220,150,0.9), 0 8px 30px #000; }
+  #tag { position:absolute; left:0; right:0; bottom:172px; text-align:center; z-index:9; font-weight:800; font-size:46px; letter-spacing:0.08em; color:#ffe0a0; text-shadow:0 3px 16px #000, 0 2px 0 #301a06; }
+  #title { position:absolute; left:0; right:0; bottom:52px; text-align:center; z-index:9; font-weight:900; font-size:132px; line-height:0.94; color:#f7ead0; letter-spacing:0.005em;
+    text-shadow:0 6px 4px #000, 0 0 46px rgba(230,180,90,0.6), 0 2px 0 #301a06; -webkit-text-stroke:3px #201406; }
+  .badge { position:absolute; bottom:262px; z-index:9; width:120px; height:80px; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,0.7); overflow:hidden; }
+  #fL { left:150px; } #fR { right:150px; }
+</style></head><body><div id="t">
+  <div class="half" id="L"></div><div class="half" id="R"></div>
+  <div class="glow" id="gL"></div><div class="glow" id="gR"></div>
+  <div id="seam"></div><div id="vig"></div>
+  <div id="kick">WORLDCUP26<br>LEGENDS</div>
+  <div id="ep"><span class="l">EP</span><span class="n">106</span></div>
+  <div id="crown">&#128081;</div>
+  <!-- left flag = Argentina (ghost), right flag = Spain (champion) -->
+  <div class="badge" id="fL"><div style="position:relative;width:100%;height:100%;display:flex;flex-direction:column"><span style="flex:1;background:#6CACE4"></span><span style="flex:1;background:#fff;position:relative"><span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#f4c430;font-size:34px;font-weight:900">&#9728;</span></span><span style="flex:1;background:#6CACE4"></span></div></div>
+  <div class="badge" id="fR"><div style="position:relative;width:100%;height:100%;display:flex;flex-direction:column"><span style="flex:1;background:#d1122b"></span><span style="flex:2;background:#ffc400"></span><span style="flex:1;background:#d1122b"></span></div></div>
+  <div id="title">CHAMPIONS &amp; GHOSTS</div>
+  <div id="tag">SPAIN WIN IT ALL &middot; THE AWARDS</div>
+</div></body></html>
