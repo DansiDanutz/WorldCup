@@ -53,8 +53,8 @@ Canada → Korea) to pull the strongest discovery first.
 | Sun Jun 14 | Ep6 `short1_ghosts` (Argentina) | Ep6 `short3_legends_duo` | Ep13 NL v JPN if pre-kickoff |
 | Mon Jun 15 | Ep6 `short2_the_save` | Ep5 `short2_neymar_sees` (Brazil) | — |
 | Tue Jun 16 | Ep5 `short3_prophet` | Ep5 `short1_sixth_vision` | Ep6 ARG v ALG if window still open |
-| Wed Jun 17 | Ep4 `short2_cliffhanger` (USA) | Ep4 `short1_1930_secret` | **POST Ep7 Brazil v Haiti as Premiere** (48h before ~Jun 19 match) + produce Ep20 (France v Senegal) |
-| Thu Jun 18 | Ep4 `short3_liberty_fan` | Ep3 `short3_maple_leaf_man` (CAN) | Ep7 pre-match push; produce Ep20 (France v Senegal) |
+| Wed Jun 17 | Ep4 `short2_cliffhanger` (USA) | Ep4 `short1_1930_secret` | **POST Ep7 Brazil v Haiti as Premiere** (48h before ~Jun 19 match) + produce Ep14 |
+| Thu Jun 18 | Ep4 `short3_liberty_fan` | Ep3 `short3_maple_leaf_man` (CAN) | Ep7 pre-match push; produce Ep14 (France/Spain) |
 | Fri Jun 19 | Ep3 `short1_who_is_he` | Ep3 `short2_the_save` | Ep7 MATCH DAY — first-hour push; cut 3 Shorts from Ep7 |
 | Sat Jun 20 | Ep2 `short1_last_dance` (KOR) | Ep2 `short2_minute_41` | **POST Ep8 England v Ghana as Premiere** (48h before ~Jun 22 match) |
 | Sun Jun 21 | Ep2 `short3_taekwondo_master` | Ep7 short (new) | Ep8 pre-match push |
@@ -73,8 +73,7 @@ new premiere so the 2/day cadence never breaks.)
 Star-power data says big nations earn 3–10×. Build these next, in order — all
 have Stories already written in `content/Stories/`:
 
-1. **France** — v Senegal = **Ep20** (this branch), v Iraq = **Ep19** (branch
-   `claude/episode-renumber-publish-order`). Only **v Norway** has no episode yet.
+1. **France** (France v Senegal / v Iraq / v Norway) — no episode yet, top audience.
 2. **Spain** (Spain v Uruguay / v Cape Verde / v Saudi Arabia) — no episode yet.
 3. **Portugal** (Portugal v Colombia / v DR Congo / v Uzbekistan) — Ronaldo draw, no episode yet.
 4. **Argentina MD2/MD3** (v Austria / v Jordan) — reuse the Ep6 breakout audience (979).

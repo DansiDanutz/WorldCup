@@ -66,10 +66,50 @@ you're effectively working **5–7 days ahead** of the live match — comfortabl
 5. **One-command unattended build:** `marketing/match-videos/build-episode.sh
    <dir>` chains install → fetch-assets → serve → (render ‖ voice) → mux so an
    episode builds **overnight without babysitting**. Batch several:
-   `for ep in match20-... match21-...; do ./build-episode.sh $ep; done`.
+   `for ep in match14-... match15-...; do ./build-episode.sh $ep; done`.
 6. **Pre-write scripts in batch:** Stories for *every* matchup already exist in
    `content/Stories/` — draft the next several narration scripts in one pass so
    production is never waiting on writing.
+
+## The fix #4 — the LOCKED script prompt (research → script, fast + factual)
+
+Adapted from the Romayroh faceless-automation pipeline (`ROMAYROH_KNOWLEDGE.md`):
+feed the model REAL sources, then generate with a fixed prompt. This makes the
+"pre-write scripts in batch" step (#6 above) repeatable and on-canon.
+
+**Step 1 — Research (the hook is the job, CLAUDE.md #9):** web-search the fixture
+for a VERIFIED "Did you know?" secret (nation/player/event). Save 2–3 credible
+sources + the key facts into the episode README and `SCHEDULE.md` hook log.
+
+**Step 2 — Generate with this exact prompt** (paste sources after it):
+
+```
+You are writing the Brian (ElevenLabs) narration for WorldCup26 Legends,
+Episode N: <TEAM A> vs <TEAM B>, <group>, real kickoff <date/time>.
+Use ONLY the VERIFIED facts I paste below — never invent history; if unsure, omit.
+
+Structure (≈300s, ~30 short lines, each its own line of audio — never tempo-stretch):
+1) COLD OPEN HOOK in the FIRST 7 SECONDS — front-load the curiosity gap / shock in
+   line 1; do NOT open with scene-setting or a logo.
+2) One-line recap of the PREVIOUS episode's prediction, labeled as OUR PREDICTION.
+3) "Welcome back to WorldCup twenty-six Legends, episode N. <A> vs <B>."
+4) Tease the Mystery Supporter / Legend 0NN (pay it off at the end).
+5) The true HISTORY chapter (the verified hook) — captivating, curiosity-driven.
+6) The two squads / the duel.
+7) The match drama → OUR PREDICTION scoreline, stated EXPLICITLY as "our prediction
+   / our story", NEVER as a real result.
+8) Mystery Supporter payoff.
+9) CTA: play free at worldcup26.world — pick 3 nations, free to play, climb the
+   leaderboard, just for fun, no prizes (never promise money or prizes). Tease Episode N+1.
+
+HARD RULES: soccer/football ONLY (round-neck shirts, a pitch with goals; NO
+helmets/pads/American football). No on-screen subtitle/caption sentences — Brian's
+voice carries it. Spell numbers/dates as words for clean TTS. Keep every line short.
+Output JSON: { "voice":"Brian", "lines":[ { "at": <seconds>, "text": "..." }, ... ] }.
+```
+
+**Step 3 — QA the output** against the per-episode checklist + hard rules, then
+drop it in as `narration.json` and run `build-episode.sh` (render ‖ VO).
 
 ## Cadence vs fixture density (still chronological)
 

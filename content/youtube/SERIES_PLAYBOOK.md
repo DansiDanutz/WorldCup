@@ -27,8 +27,9 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
    is worth ~1,000+ views per asset.
 4. **Topical thumbnails**: big date or 3-word emotional headline ("JUNE 11",
    "HIS LAST DANCE"), one face, tear/emotion, thick black-outlined gold text.
-5. **Cold-open hook in the first 8 seconds** — heartbeat / question / flash-cuts.
-   Never open with a logo.
+5. **Cold-open hook in the first 7 seconds** — heartbeat / question / flash-cuts.
+   Never open with a logo. (2026 algo rewards a fast hook + high completion; see
+   `ALGORITHM_2026_CONFIG_PLAN.md`.)
 6. **Real history beats invented drama**: the "Mr. Five-Zero" 2001 story is
    shareable because it's TRUE and little-known. Every episode needs one
    verified "wait, what?" fact (researched, with sources).
@@ -80,6 +81,25 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
 
 ## DON'T (what cost us — never repeat)
 
+0. ❌ **NEVER ship an image-based / "Ken-Burns on stills" / `clips: []` episode.**
+   Ep15–Ep25 were downgraded that way — flat, no emotion, "bulk." Every episode
+   is **clip-based**: real Higgsfield animations made from the team images, with
+   fans/ultras, stadium, and the animated Mystery Supporter. Gold standard = Ep2 &
+   Ep6. Full rule: `EPISODE_PRODUCTION_STANDARD.md`. NO exceptions, no "simplify."
+
+0b. ❌ **NEVER reuse crowd/fans/stadium/celebration clips across episodes.**
+   (Caught after Ep55: `stadium.mp4`, `celebration.mp4`, `action-crowd.mp4` were
+   BYTE-IDENTICAL across Ep53/54/55, and the supporter "fans" footage was only
+   TWO clips alternating — the same avatars shown as Scottish, then Moroccan,
+   then Mexican fans. Looks cheap/unprofessional.) From **Ep56 on**: every
+   episode generates its OWN nation-specific crowd, fans, stadium and
+   celebration footage — correct kit colours, flags, supporter looks for THAT
+   match. **Verify by hash before render**: each shared/crowd/fan/stadium/
+   celebration clip MUST differ (md5) from the previous 2 episodes. The Ep2
+   template seeds the build but its shared clips are PLACEHOLDERS to replace,
+   not assets to copy forward. (Player Ken-Burns clips are already per-nation —
+   the gap was the generic crowd/atmosphere layer.)
+
 1. ❌ Don't upload after the match the episode is about (Ep2 mistake — lost the
    pre-match search wave).
 2. ❌ Don't publish without a same-day promotion plan (Ep2 had none at launch).
@@ -92,8 +112,8 @@ A 10/10 video with 0/10 distribution gets ~0 views. Every episode needs all four
 6. ❌ Don't skip the Shorts cut. Every episode must spawn 2–3 vertical Shorts
    (the 16s cold open, the goal moment, the Mystery Supporter) that point to
    the full video — Shorts are the channel's free discovery engine.
-7. ❌ Don't claim fixed prize amounts in video copy; say "live prize pool"
-   (compliance rule from the campaign pack).
+7. ❌ Don't promise money or prizes in video copy; say "free to play" / "just for
+   fun, no prizes" (compliance rule from the campaign pack).
 8. ❌ Don't drift from canon: scores/dates must match the Stories files and
    earlier episodes (Ep1 = 0-0 draw; Ep2 = KOR 1-0 CZE, Son 41').
 8b. ❌ **Never present our own predictions as real results.** Recaps of earlier
@@ -121,10 +141,15 @@ NFL quarterback for the Ep4 'USA' thumbnail until the prompt was hardened.
 - [ ] Title: `WorldCup26 [Team A] vs [Team B] | [Story Hook] — FIFA World Cup 2026 Match N`
 - [ ] Description: hook line + question + chapters + worldcup26.world + tags + music credit
 - [ ] **Premiere scheduled ≥48h before the real match kickoff**
-- [ ] 2–3 Shorts cut and scheduled (hook / goal / mystery legend)
+- [ ] 2–3 Shorts cut and scheduled (hook / goal / mystery legend) — each **LOOPED**
+      (last frame seams into the first so it auto-replays; 2026 algo loves replays)
 - [ ] First-hour push: WhatsApp, Telegram, X first-wave, community post, pinned comment
+- [ ] **Off-platform** (`ALGORITHM_2026_CONFIG_PLAN.md` §C): publish the episode's
+      blog article (`content/youtube/blog/`) + pin its thumbnail (`PINTEREST_PINS.md`)
+- [ ] **AI disclosure**: mark "Altered or synthetic content" in the upload Checks
+      step (does NOT reduce reach/monetization — keep "No, not made for kids")
 - [ ] End screen + cards linking previous episode and the playlist
-- [ ] After 48h: log results below + add new learnings above
+- [ ] After 48h: log results **+ RETENTION %** below + add new learnings above
 
 ## Results log
 
@@ -162,3 +187,55 @@ they still carry the old "Highlights & All Goals" titles and are leaving views o
 3. Community post with the thumbnail + "Did the prophecy come true?"
 4. Push through the campaign channels with the copy-bank links.
 5. Ep3 (Canada) must be PREMIERED before Canada's real kickoff.
+
+## Competitive refresh — Jun 2026 (action items, evidence-based)
+
+Sources: Tifo/Copa90 (football story), faceless AI-narration playbooks, Shorts hook
+science, YouTube×FIFA WC2026 live-window. Apply to Ep33+ and retro where free.
+
+**Retention (highest leverage — same uploads, more watch hours):**
+1. SECOND-0 HOOK: no logo/title card/"welcome" before the spoken secret. Open on the
+   most dramatic clip; Brian states the verified "Did you know?" as a claim by ~0:02.
+2. OPEN LOOP in first 30s, foregrounding the Mystery Supporter ("the supporter who saw
+   it became a legend — stay for who"); PAY IT OFF at the very end (closes the loop).
+3. 70% story / 30% facts; anchor each episode to ONE emotion (underdog/heartbreak/
+   redemption). One clip per beat, no repeats.
+4. Structure: 0:00 secret+loop → 0:10 stakes → 0:40–3:30 story → prediction → 4:15
+   payoff of the secret → CTA + exact next-fixture tease. Autoplay "All Episodes".
+5. Work the Premiere first hour live: reply in chat, pin a "predict the score" poll.
+
+**Packaging:**
+- TITLES = curiosity gap + REAL fixture name + one curiosity word (secret/untold/
+  nobody/before) + "(Ep.N)". Payoff must land (overpromise + early drop is penalised).
+- THUMBNAILS = one max-emotion face ≥25–30% of frame, 2–3 colours, 30%+ contrast pop,
+  ≤3 words; SHRINK/DROP the leaderboard phone (one dominant subject wins) — keep the
+  phone/CTA for the in-video end-screen. A/B phone vs no-phone in Studio.
+- SHORTS = frame-one triple hook (on-screen hook text + matching visual + Brian voice),
+  loop the ending back to frame 1, never resolve the mystery → "full story on channel".
+
+**Keep (research-validated):** verified mystery+history hook, ≥48h premiere into the
+WC live-window, Brian VO, clip-based no-repeat animation, soccer-only, ~5-min
+chronological format, Shorts 2–4/day + worldcup26.world funnel.
+
+## EP33+ ENHANCEMENT SET (ADDITIVE — never remove what already works)
+
+Apply FROM Ep33. These are layered ON TOP of the gold standard (Brian VO, clip-based
+no-repeat animation, NO subtitles, verified mystery+history hook, soccer-only, recap
+chain, ~5 min, chronological). Do NOT drop any of those.
+
+NEW, non-destructive additions:
+1. SPEED-RAMP CLIMAX — the winning goal plays slow-mo (rate ~0.4, dread) then SNAPS to
+   1.0 on the net ripple + a GoalFlash. (Ep6 technique, standardised.)
+2. OPEN-LOOP TEASE CHIP (~0:22–0:30) — small gold chip "LEGEND 0NN · STAY TO THE END"
+   foregrounding the Mystery Supporter as a retention loop; paid off at the reveal.
+3. REAL NEXT-FIXTURE END CARD — outro names the actual next match ("NEXT: A vs B") +
+   an "All Episodes" autoplay nudge (drives binge/session watch time).
+4. "PREDICT THE SCORE" engagement chip at the prediction beat (≤4 words, NOT a sentence).
+5. GOAL SFX RISERS — a riser/whoosh into each GoalFlash + a crowd swell (clips.json sfx).
+6. CINEMATIC GRADE PULSE — subtle film-grain + vignette breathe on the drama act only.
+7. THUMBNAIL A/B — generate a phone vs no-phone variant per episode; promote the
+   higher-CTR one in Studio (our own data favours the phone — test, don't assume).
+
+Build + TEST each in the Ep33 render before standardising; if a technique hurts
+clarity or the no-subtitles rule, drop that one (not the whole set). Log CTR/retention
+deltas here after 48h so the set stays evidence-led.

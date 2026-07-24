@@ -61,8 +61,8 @@ Electric Cyan:    #00D4AA  (numbers, stats, coefficients)
 
 ```
 [Left 60%]  Pixar character face, intense expression, looking at camera
-[Right 40%] Huge number "1.6x" or "$500K" in Electric Cyan
-             Small label: "COEFFICIENT" or "PRIZE POOL"
+[Right 40%] Huge number "1.6x" in Electric Cyan
+             Small label: "COEFFICIENT" or "LEADERBOARD"
 [Top]       Tiny country flag + team name
 [Bottom]    "Pick 3 Teams" logo watermark
 ```
@@ -104,7 +104,7 @@ Electric Cyan:    #00D4AA  (numbers, stats, coefficients)
 [Top]        "MY 3 TEAMS" in bold white
 [Center]     3 character portraits in a row
              + × ÷ symbols between them
-[Bottom]     Huge number: "= 47 POINTS" or "$12,400"
+[Bottom]     Huge number: "= 47 POINTS"
 [Accent]     Team flags above each portrait
 ```
 **Examples:**

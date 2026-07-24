@@ -18,7 +18,6 @@ supabase/.temp/
 
 # Build artifact backups
 .next_bad_*/
-
 # Match video render artifacts (marketing/match-videos/*)
 # Series rule: episodes ship with NO subtitles — never commit .srt files.
 marketing/match-videos/*/*.srt
@@ -39,13 +38,11 @@ marketing/match-videos/*/music/*.mp3
 marketing/match-videos/*/voice.log
 marketing/match-videos/*/mux.log
 marketing/match-videos/*/render-*.log
-marketing/match-videos/*/preview_*.mp4
 marketing/match-videos/*/audio_master.m4a
 marketing/match-videos/*/final_*.mp4
 marketing/match-videos/*/thumb-*.png
 marketing/match-videos/*/thumbnail.png
 marketing/match-videos/*/hook_16s.mp4
-marketing/match-videos/*/audio_master.m4a
 marketing/match-videos/*/thumbnail-2k.png
 marketing/match-videos/*/urls9.txt
 marketing/match-videos/*/dl2.sh
@@ -57,7 +54,35 @@ marketing/match-videos/*/render_loop.sh
 marketing/match-videos/*/ep10_pipeline.sh
 marketing/match-videos/*/shots.log
 marketing/match-videos/*/ep*_pipeline.sh
-marketing/match-videos/*/dl*.sh
-
 # Thumbnail kit: committed source + per-episode thumbnail.jpg; out/ is regenerable
 marketing/match-videos/_thumbnail-kit/out/
+# Player films — generated/large artifacts (code + VO are tracked)
+marketing/player-films/*/node_modules
+marketing/player-films/*/frames/
+marketing/player-films/*/lt/
+marketing/player-films/*/assets/*.mp4
+marketing/player-films/*/music/*.mp3
+marketing/player-films/*/*.mp4
+marketing/player-films/*/audio_master.m4a
+# Episode render/mux artifacts (ephemeral, regenerable — never track)
+marketing/**/frames/
+marketing/**/filter.txt
+marketing/**/audio_master.*
+marketing/**/*.log
+# WorldCup episode build artifacts (regenerable; masters delivered via file-send)
+marketing/match-videos/**/node_modules
+marketing/match-videos/**/frames/
+marketing/match-videos/**/audio/
+marketing/match-videos/**/music/
+__pycache__/
+*.pyc
+
+# Higgsfield source clips are re-fetchable (jobs-manifest.json / npm run fetch-assets)
+marketing/match-videos/*/assets/clips/
+marketing/match-videos/*/assets/squad/*.png
+# Intermediate render artifacts — only the final WorldCup26_*.mp4 is force-added
+marketing/match-videos/*/body_video.mp4
+marketing/match-videos/*/intro.mp4
+# Extracted frame sequences (rebuildable from the clips)
+marketing/match-videos/*/assets/seq/
+marketing/player-films/*/assets/seq/
