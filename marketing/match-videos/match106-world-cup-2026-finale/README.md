@@ -80,3 +80,40 @@ This build branch has no `public/special-cards/` or `/collection` page. To add L
   "landscape": "/special-cards/legend-106-landscape.png"
 }
 ```
+
+## v2 — likeness + intro rebuild (owner-flagged)
+
+The first cut shipped a **white player captioned "KYLIAN MBAPPÉ"** — a hard Rule #29
+violation. A full audit of all six named beats found three more problems:
+
+| Beat | v1 | v2 |
+|---|---|---|
+| Mbappé 52–62s | generic white player | real photoreal Mbappé, France navy #10 |
+| Cubarsí 162–167s | a man in his 30s under "AGE 19" | a visibly 19-year-old |
+| Rodri 177.5–182.5s | faceless neck-crop + garbled invented crest | correct face, Spain #16, correct crest |
+| Unai Simón 153.5–158.5s | generic keeper, cut away after 2.2s | correct bearded keeper, GK green #23, holds the full 5s |
+| Messi 74–86s | correct | unchanged |
+
+**Assets.** Rule #26 order was followed: the local library had only the *Pixar* Mbappé
+(banned for match action by Rule #22), but the Higgsfield library already held a photoreal
+Mbappé still (`a2fd9ec9…`) — reused for **0 still credits**, animated i2v. Rodri, Cubarsí
+and Simón had no photoreal stills in either library, so those three were generated with
+explicit physical descriptors and shirt numbers, then animated i2v.
+
+**Intro (0–24s) rebuilt** for a real emotional arc, replacing text-on-gradient beats and the
+literal crown/ghost emoji:
+- 0–4.6 the altar — a golden laurel crown ignites, ghostly silhouettes watching in the mist
+- 4.6–9.6 the question — a golden statue of a player crumbles to dust: "WHO DOES THE GAME REMEMBER?"
+- 9.6–14.2 the duel — THE CROWN vs THE GHOSTS as designed type with a light seam (no emoji)
+- 15.2–19.2 the tease — Sant Jordi's dragon in crimson mist, a rose blooming
+- 20–24 the thesis, then a sub-1s handoff into the title card (Rule #25)
+
+Three new mystic clips (`crown-ignite`, `ghost-statue`, `dragon-rose`) replace
+`trophy-altar` / `ghost-mist` / `embers-rise` in the intro slots.
+
+**Process fix.** `scripts/preflight-episode.mjs` — the gate CLAUDE.md calls mandatory — had
+never been implemented. It now exists and is enforced by `likeness.json`: any named showcase
+without a verified sign-off turns the preflight RED and blocks the render. Verified by
+negative test (removing the Mbappé entry correctly fails).
+
+Total generation: 3 stills + 7 clips ≈ 160 credits; the Mbappé still was reused free.

@@ -1,0 +1,47 @@
+{
+  "_comment": "Rule #29 sign-off. Every named showcase must appear here, checked against the ACTUAL still/clip on screen. Each entry was verified by extracting frames from the finished clip and confirming the face, build, age and shirt number match the named player.",
+  "verified": [
+    {
+      "clipId": "mbappe-run",
+      "name": "KYLIAN MBAPPÉ",
+      "sourceJob": "a2fd9ec9-2c85-455b-83fb-a7d671b57ad9 -> i2v b36c7642-f032-445f-b324-bc4c97151336",
+      "checkedBy": "frames @0.4/2.2/4.4s",
+      "note": "Reused the existing photoreal library still (Rule #26, 0 credits for the still). France navy #10, correct likeness held through the closing close-up. REPLACED a generic white player that shipped in the first cut."
+    },
+    {
+      "clipId": "messi-show",
+      "name": "LIONEL MESSI",
+      "sourceJob": "pre-existing episode asset",
+      "checkedBy": "final-video frame @76s",
+      "note": "Argentina #10 + captain armband, beard, correct build."
+    },
+    {
+      "clipId": "messi-golden",
+      "name": "LIONEL MESSI",
+      "sourceJob": "pre-existing episode asset",
+      "checkedBy": "final-video frame @83s",
+      "note": "Close-up, unmistakable likeness."
+    },
+    {
+      "clipId": "simon-save",
+      "name": "UNAI SIMÓN",
+      "sourceJob": "6fc047d1-8779-4742-a120-dc37bcc94f78 -> i2v 745842bc-ae2f-4b61-8b29-ffd2b5cc77e1",
+      "checkedBy": "frames @0.4/2.2/4.4s",
+      "note": "Spain GK green #23, full beard, correct crest. REPLACED a generic keeper whose face was legibly not Simón."
+    },
+    {
+      "clipId": "cubarsi-show",
+      "name": "PAU CUBARSÍ",
+      "sourceJob": "62689611-0683-4653-b894-edd7138d6fc9 -> i2v c2a191ef-242f-4c87-b921-2c8bee6406d8",
+      "checkedBy": "frames @0.4/2.2/4.4s",
+      "note": "Reads unmistakably as a 19-year-old across the whole clip. REPLACED a shot of a man in his thirties captioned 'AGE 19'."
+    },
+    {
+      "clipId": "rodri-trophy",
+      "name": "RODRI",
+      "sourceJob": "63528dde-e0a4-4e0a-b9a3-c87d52e1c033 -> i2v 263871d2-6af9-4d3a-a530-a9231c43004e",
+      "checkedBy": "frames @0.4/2.2/4.4s",
+      "note": "Spain red #16, correct crest and face. REPLACED a faceless neck-crop that dodged the likeness question and carried a garbled invented crest."
+    }
+  ]
+}

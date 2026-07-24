@@ -2,15 +2,15 @@
   "comment": "Ep106 WORLD CUP 2026 GRAND FINALE & AWARDS. VERIFIED (tournament over): SPAIN 1-0 ARGENTINA (AET) in the final; Ferran Torres (sub, no goals all tournament) scored 106 (39s into 2nd half ET) past Emiliano Martinez, Argentina down to 10 after Enzo stoppage-time red. Spain 2nd title. Awards: Golden Boot Mbappe (10, first back-to-back), Golden Ball Rodri (back from ACL + back injury, I want to thank myself), Golden Glove Unai Simon (7 CS), Young Player Cubarsi (19); Messi Silver Boot in his last WC. THEME = The Crown and the Golden Ghosts. Legend 106 = SANT JORDI (Saint George of Catalonia): slays the dragon, a red rose blooms (victory + rebirth). Photoreal (Rule#22), nation-correct #28 (Spain red, France blue, Argentina blue/white), no hands on ball except GK-in-box #6, real-results-only #7. Contiguous BED (#25), features unique, backdrops recur bright/dimmed behind text (#27), no dur>source (#11), coverage-checked. Music: Kevin MacLeod / incompetech CC-BY 4.0. Clips vol=0.",
   "clips": [
     {
-      "id": "trophy-altar",
-      "src": "assets/clips/trophy-altar.mp4",
+      "id": "crown-ignite",
+      "src": "assets/clips/crown-ignite.mp4",
       "at": 0,
       "dur": 5,
       "vol": 0
     },
     {
-      "id": "ghost-mist",
-      "src": "assets/clips/ghost-mist.mp4",
+      "id": "ghost-statue",
+      "src": "assets/clips/ghost-statue.mp4",
       "at": 5,
       "dur": 5,
       "vol": 0
@@ -23,8 +23,8 @@
       "vol": 0
     },
     {
-      "id": "embers-rise",
-      "src": "assets/clips/embers-rise.mp4",
+      "id": "dragon-rose",
+      "src": "assets/clips/dragon-rose.mp4",
       "at": 15,
       "dur": 5,
       "vol": 0
@@ -264,14 +264,7 @@
       "id": "simon-save",
       "src": "assets/clips/simon-save.mp4",
       "at": 153.5,
-      "dur": 2.2,
-      "vol": 0
-    },
-    {
-      "id": "stadium-glow-f",
-      "src": "assets/clips/stadium-glow.mp4",
-      "at": 155.7,
-      "dur": 2.8,
+      "dur": 5.0,
       "vol": 0
     },
     {

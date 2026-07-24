@@ -653,6 +653,28 @@ correct on-screen episode number, **no betting/odds wording** (monetization), **
 >1×** (rule #11, any clip `dur`>~10s fails), balanced JS syntax. A render that starts with
 a red preflight is a process failure — fix first.
 
+**The gate is now REAL — run it, don't assume it:**
+```
+node scripts/preflight-episode.mjs <episodeDir> <epNumber>     # exit 0 = GREEN, 1 = RED
+```
+Until Ep106 this script did not exist, so nothing mechanically enforced the rules and
+wrong-likeness showcases (Ep101 Yamal, Ep106 Mbappé) and overlapping VO reached finished
+renders. It now measures every VO line against `narration.json` (real overlap check, 0-indexed
+`line_00.mp3`), probes every clip source for loop violations, and blocks banned wording and
+`line=`/`note=` subtitles.
+
+**LIKENESS SIGN-OFF FILE (Rule #29 enforcement) — `<episodeDir>/likeness.json`:**
+every `PlayerShowcase`/`AwardShowcase` that puts a real player's NAME on screen must have a
+matching entry, or preflight goes RED:
+```json
+{ "verified": [ { "clipId": "mbappe-run", "name": "KYLIAN MBAPPÉ",
+                  "sourceJob": "<still job id> -> i2v <video job id>",
+                  "checkedBy": "frames @0.4/2.2/4.4s", "note": "France navy #10, likeness held" } ] }
+```
+The sign-off is only valid if you ACTUALLY extracted frames from the finished clip and looked
+at them — the file records a visual check, it does not replace one. Name mismatch, missing
+entry, or missing `sourceJob` all fail the render.
+
 **MANDATORY RETIME STEP (after VO, before render):** run
 `node scripts/retime-episode.mjs <dir> <ffmpeg>`. It measures each VO line, re-spaces the
 narration so NO line overlaps the next (Brian is NEVER sped up — `mux.mjs` keeps `tempo=1`),
