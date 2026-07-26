@@ -3,7 +3,8 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 
 export default defineConfig([
   ...nextVitals,
-  // marketing/ holds vendored, browser-runtime ad artifacts (React/Babel via
-  // CDN globals) and standalone Node render scripts — not part of the Next app.
-  globalIgnores([".next/**", ".next_bad_*/**", ".vercel/**", "node_modules/**", "marketing/**"]),
+  // marketing/ and claudeyoutube/ hold vendored, browser-runtime video artifacts
+  // (React/Babel via CDN globals, cross-file component definitions) and standalone
+  // Node render scripts — not part of the Next app, so they are not linted.
+  globalIgnores([".next/**", ".next_bad_*/**", ".vercel/**", "node_modules/**", "marketing/**", "claudeyoutube/**"]),
 ]);
