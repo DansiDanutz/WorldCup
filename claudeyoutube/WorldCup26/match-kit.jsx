@@ -610,7 +610,7 @@ function ChapterBar({ chapters }) {
     <div style={{ position: 'absolute', left: 0, right: 0, bottom: 96, display: 'flex', justifyContent: 'center', zIndex: 32 }}>
       <div style={{ display: 'flex', gap: 8, background: 'rgba(5,7,12,0.7)', borderRadius: 999, padding: '8px 18px', backdropFilter: 'blur(4px)' }}>
         {chapters.map((c, i) => {
-          const next = i < chapters.length - 1 ? chapters[i + 1].at : 300;
+          const next = i < chapters.length - 1 ? chapters[i + 1].at : Infinity;
           const active = t >= c.at && t < next;
           const done = t >= next;
           return (
