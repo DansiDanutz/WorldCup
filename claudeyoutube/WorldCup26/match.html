@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>WorldCup26 Legends — Episode 6: Argentina vs Algeria</title>
+<title>WorldCup26.world — What Football Left Behind (Milestone + FIFA Records)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -14,9 +14,9 @@
 </style>
 </head>
 <body>
-<div id="root" data-screen-label="WC26 Ep6 · t=0s"></div>
+<div id="root" data-screen-label="WC26 Doc · t=0s"></div>
 
-<!-- React + Babel (pinned, same stack as the worldcup26 ad) -->
+<!-- React + Babel (pinned, same stack as every episode) -->
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
@@ -28,57 +28,48 @@
 <script type="text/babel">
 const { useEffect } = React;
 
-// Scene timeline (global seconds) — 300s. Keep in sync with narration.json
-// (VO slots) and clips.json (video clip placements).
+// Scene timeline (global seconds) — 1470s documentary. Windows must match the
+// chapter map in README.md, narration.json (VO slots) and clips.json (clips).
 const SCENES = [
-  { c: SceneMystery0,      start: 0,     end: 16.0 },
-  { c: SceneRecapTitle,    start: 16.0,  end: 40.5 },
-  { c: SceneStadium,       start: 40.5,  end: 46.5 },
-  { c: SceneHistory,       start: 46.5,  end: 98.0 },
-  { c: SceneCanada,        start: 98.0,  end: 133.6 },
-  { c: SceneBosnia,        start: 133.6, end: 169.5 },
-  { c: SceneDuel,          start: 169.5, end: 188.5 },
-  { c: SceneDrama,         start: 188.5, end: 243.5 },
-  { c: SceneVerdict,       start: 243.5, end: 252.5 },
-  { c: SceneMysteryPayoff, start: 252.5, end: 272.0 },
-  { c: SceneApp,           start: 272.0, end: 290.0 },
-  { c: SceneCTA,           start: 290.0, end: 300.0 },
+  { c: SceneColdOpen,   start: 0,     end: 74.0 },
+  { c: SceneBuilt,      start: 74.0,  end: 242.0 },
+  { c: SceneThanks,     start: 242.0, end: 388.0 },
+  { c: SceneMoney,      start: 388.0, end: 611.0 },
+  { c: SceneRecords,    start: 611.0, end: 832.0 },
+  { c: SceneGreatest,   start: 832.0, end: 992.0 },
+  { c: SceneLeaves,     start: 992.0, end: 1331.0 },
+  { c: SceneClose,      start: 1331.0,end: 1470.0 },
 ];
 
-// Broadcast chapter bar (payoff-investment: viewers see minute 83 approaching)
+// Broadcast chapter bar (retention: viewers see the journey ahead).
 window.MV_CHAPTERS = [
-  { label: 'THE GHOSTS', at: 0 },
-  { label: 'THE WOUND', at: 46.5 },
-  { label: 'THE CHAMPIONS', at: 98 },
-  { label: 'THE FOXES', at: 133.6 },
-  { label: 'THE DUEL', at: 169.5 },
-  { label: 'MINUTE 83', at: 188.5 },
-  { label: 'THE LEGENDS', at: 243.5 },
+  { label: 'THE FINAL WHISTLE', at: 0 },
+  { label: 'WHAT WE BUILT', at: 74 },
+  { label: 'THANK YOU · 14K', at: 242 },
+  { label: 'THE MONEY', at: 388 },
+  { label: 'THE RECORDS', at: 611 },
+  { label: 'THE GREATEST', at: 832 },
+  { label: 'WHAT REMAINS', at: 992 },
+  { label: 'WE CONTINUE', at: 1331 },
 ];
 
-// Cinematic cut treatment per scene boundary (read by TransitionLayer).
+// Cinematic cut treatment per chapter boundary (read by TransitionLayer).
 window.MV_TRANSITIONS = [
-  { at: 16.0,  type: 'dip' },
-  { at: 27.0,  type: 'flash' },
-  { at: 37.5,  type: 'flash' },
-  { at: 40.5,  type: 'flash' },
-  { at: 46.5,  type: 'dip' },
-  { at: 98.0,  type: 'flash' },
-  { at: 133.6, type: 'flash' },
-  { at: 169.5, type: 'flash' },
-  { at: 188.5, type: 'dip' },
-  { at: 243.5, type: 'dip' },
-  { at: 252.5, type: 'dip' },
-  { at: 272.0, type: 'flash' },
-  { at: 290.0, type: 'flash' },
+  { at: 74.0,   type: 'dip' },
+  { at: 242.0,  type: 'dip' },
+  { at: 388.0,  type: 'dip' },
+  { at: 611.0,  type: 'dip' },
+  { at: 832.0,  type: 'dip' },
+  { at: 992.0,  type: 'dip' },
+  { at: 1331.0, type: 'dip' },
 ];
-const DURATION = 300.0;
+const DURATION = 1470.0;
 
 function ScreenLabeler() {
   const time = useTime();
   useEffect(() => {
     const root = document.getElementById('root');
-    if (root) root.dataset.screenLabel = `WC26 Ep6 · t=${Math.floor(time)}s`;
+    if (root) root.dataset.screenLabel = `WC26 Doc · t=${Math.floor(time)}s`;
   }, [Math.floor(time)]);
   return null;
 }
@@ -93,7 +84,7 @@ function SeekBridge() {
 
 function MatchVideo() {
   return (
-    <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26m06">
+    <Stage width={1920} height={1080} duration={DURATION} background="#050608" persistKey="wc26doc">
       <ScreenLabeler />
       <SeekBridge />
       {SCENES.map((s, i) => (

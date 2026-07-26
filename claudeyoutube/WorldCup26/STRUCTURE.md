@@ -27,8 +27,16 @@ Same engine, same file roles — only the *content* differs, because this is a s
 - `README.md` — production spec, chapter map, verified-facts + sources, monetization-safety, pipeline.
 - `narration.json` — the full ~20–25 min Brian VO script (timed lines), all facts source-cited in the `comment`.
 - `clips.json` — the shot plan (library-first, no-repeat), music cues, sfx.
-- `match-scenes.jsx` — timeline scaffold (to be filled per the chapter map in README).
-- engine files (`match-kit.jsx`, `animations.jsx`, `match.html`, `render.mjs`, `serve.mjs`, `mux.mjs`, `gen_audio.mjs`, `package.json`) — copied from `match06`, adapted for the longer runtime.
+- `match-scenes.jsx` — the 8-chapter timeline (0–1470s), one scene component per chapter, each
+  playing its `clips.json` clip IDs + short chapter labels (validated: every `ClipSprite id` exists in `clips.json`).
+- `match.html` — documentary host page: 8 `SCENES`, 8-chapter `ChapterBar`, `DURATION = 1470`.
+- engine files (`match-kit.jsx`, `animations.jsx`, `render.mjs`, `serve.mjs`, `mux.mjs`, `gen_audio.mjs`,
+  `package.json`) — copied from `match06`, adapted for the longer runtime (serve+render both on **port 8126**).
+
+> **Before render:** the `assets/*.mp4` clips (library-first, see `clips.json` `source` fields), the
+> `hf/*.mp4` HyperFrames number/record cards, the Brian VO (`audio/line_NN.mp3` via `npm run voice`) and the
+> `music/*.mp3` cues must be produced/placed first — the timeline and script are complete; the media is the
+> remaining production step (see README "PIPELINE").
 
 ## Pipeline (same as every episode)
 

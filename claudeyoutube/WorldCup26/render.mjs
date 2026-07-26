@@ -6,7 +6,7 @@ import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const HTML = process.env.URL || 'http://127.0.0.1:8094/match.html';
+const HTML = process.env.URL || 'http://127.0.0.1:8126/match.html';
 const EXEC = process.env.CHROMIUM_PATH || undefined;
 const FPS = Number(process.env.FPS || 30);
 const DURATION = Number(process.env.DURATION || 300);
