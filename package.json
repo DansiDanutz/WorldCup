@@ -13,6 +13,7 @@
     "lint": "eslint .",
     "test": "node --experimental-strip-types --import ./tests/register.mjs --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
+    "audit:prod": "npm audit --omit=dev --audit-level=high",
     "sync:results": "node scripts/sync-results.mjs",
     "voices:legend-cards": "node --experimental-strip-types --import ./tests/register.mjs scripts/generate-legend-card-voices.ts",
     "generate:migrations": "node scripts/generate-worldcup-sql.mjs && node scripts/generate-worldcup-kickoff-sql.mjs",
@@ -29,7 +30,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.87.0",
     "lucide-react": "^0.556.0",
-    "next": "^16.0.7",
+    "next": "^16.2.11",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
   },
@@ -42,6 +43,7 @@
     "typescript": "^5.9.3"
   },
   "overrides": {
-    "postcss": "8.5.15"
+    "postcss": "8.5.18",
+    "sharp": "0.35.0"
   }
 }
