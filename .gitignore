@@ -95,13 +95,12 @@ claudeyoutube/**/hf/_preview.png
 claudeyoutube/**/audio/_voice.txt
 claudeyoutube/**/audio_master.m4a
 claudeyoutube/**/filter.txt
-claudeyoutube/**/video_a.mp4
-claudeyoutube/**/video_b.mp4
-claudeyoutube/**/video_full.mp4
-claudeyoutube/**/concat.txt
 claudeyoutube/**/delivery/
+# generated working copy — rebuild with `node sync-cards.mjs` (cards-manifest.json)
 claudeyoutube/**/images/cards/
 # render/mux/serve logs and archived cuts kept locally while iterating
 claudeyoutube/**/*.log
 claudeyoutube/**/v2_archive.mp4
+# smoke-render stills and QA spot frames pulled from the finished cut
 claudeyoutube/**/shots/
+claudeyoutube/**/qa/
