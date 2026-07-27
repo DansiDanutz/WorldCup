@@ -87,6 +87,9 @@ claudeyoutube/**/audio/*.mp3
 claudeyoutube/**/music/*.mp3
 claudeyoutube/**/WorldCup26_*.mp4
 claudeyoutube/**/preview_*.mp4
+claudeyoutube/**/video_[ab].mp4
+claudeyoutube/**/video_full.mp4
+claudeyoutube/**/concat.txt
 claudeyoutube/**/hf/_frames-*/
 claudeyoutube/**/hf/_preview.png
 claudeyoutube/**/audio/_voice.txt
