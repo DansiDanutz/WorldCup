@@ -13,7 +13,13 @@ const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/ja
 const ROOT = path.resolve(process.cwd());
 
 http.createServer((req, res) => {
-  const f = path.resolve(ROOT, '.' + path.posix.normalize('/' + decodeURIComponent(new URL(req.url, 'http://x').pathname)));
+  let pathname;
+  try {
+    pathname = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+  } catch {
+    res.writeHead(400); return res.end(); // malformed percent-escape must not kill the render server
+  }
+  const f = path.resolve(ROOT, '.' + path.posix.normalize('/' + pathname));
   // Exact-root containment: a bare prefix check would also accept sibling dirs
   // (e.g. ROOT + "-evil"). Symlinked assets still work — the check constrains
   // the requested URL path, not the symlink target.
