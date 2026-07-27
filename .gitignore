@@ -101,3 +101,7 @@ claudeyoutube/**/video_full.mp4
 claudeyoutube/**/concat.txt
 claudeyoutube/**/delivery/
 claudeyoutube/**/images/cards/
+# render/mux/serve logs and archived cuts kept locally while iterating
+claudeyoutube/**/*.log
+claudeyoutube/**/v2_archive.mp4
+claudeyoutube/**/shots/
