@@ -143,6 +143,13 @@ execFileSync(ffmpegPath, [
   'audio_master.m4a',
 ], { stdio: 'inherit' });
 
+// AUDIO_ONLY=1 builds just the master so it can run in parallel with the frame
+// render (the video stage needs a complete frames/ directory).
+if (process.env.AUDIO_ONLY === '1') {
+  console.log('AUDIO_ONLY -> stopping after audio_master.m4a');
+  process.exit(0);
+}
+
 // ── Stage 2: video encode + mux ──────────────────────────────────────────────
 // crop the stray sub-pixel row so dimensions are even (libx264 needs even w/h)
 console.log('stage 2: video encode ->', OUT);
