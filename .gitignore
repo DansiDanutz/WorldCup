@@ -79,3 +79,13 @@ marketing/match-videos/**/audio/
 marketing/match-videos/**/music/
 __pycache__/
 *.pyc
+
+# claudeyoutube video projects — same policy as marketing/ (big media stays local)
+claudeyoutube/**/node_modules/
+claudeyoutube/**/frames*/
+claudeyoutube/**/audio/*.mp3
+claudeyoutube/**/music/*.mp3
+claudeyoutube/**/WorldCup26_*.mp4
+claudeyoutube/**/preview_*.mp4
+claudeyoutube/**/hf/_frames-*/
+claudeyoutube/**/hf/_preview.png

@@ -1,7 +1,24 @@
 # Local render guide — WorldCup26.world documentary (~24 min)
 
-The script, timeline and engine are complete and CI-green. To get a postable MP4 you render
-**locally** (where the DansLab asset library + ElevenLabs/HyperFrames keys live). Do these in order.
+## ⚡ STATUS (updated after the cloud production pass — most steps are DONE)
+
+| Piece | State |
+|---|---|
+| Script/timeline/engine | ✅ complete, CI-green |
+| **assets/ 35 clips** | ✅ **DONE — symlinked to 35 distinct library clips** (`content/videos/…`), narratively matched (Balogun→controversy, Ochoa→Carbajal beat, Spain→final, etc.). No copying needed. |
+| **hf/ 23 brand cards** | ✅ **DONE — pre-rendered MP4s committed** (built from `hf/cards-spec.json` + `hf/card.html` via `node hf/build-cards.mjs`; values match the VO exactly). |
+| **sfx/ 5 hits** | ✅ DONE — copied from match06. |
+| **music/ 9 cues** | ✅ script provided — run `./fetch-music.sh` once (mp3s are gitignored by repo policy). |
+| **Brian VO (153 lines)** | ❌ the ONLY missing piece — needs your `ELEVENLABS_API_KEY` (step 2). |
+| Render + mux | pending VO (steps 3). |
+
+So locally this is now: `npm install` → `./fetch-music.sh` → `npm run voice` (with key) →
+`npm run serve` + `npm run render` → `npm run mux`. Steps below kept for reference.
+
+> ⚠️ Disk note: the full render writes ~44,100 PNG frames (≈30–45 GB). Free the space or
+> render in two halves (`START`/`DURATION` env on `render.mjs`) and encode between halves.
+> To swap any symlinked visual for a richer generated clip later, just replace the symlink
+> with a real file of the same name — no timeline changes needed.
 
 ## 0. Get the folder
 ```
@@ -84,3 +101,43 @@ Output: **`WorldCup26_Milestone_FIFA_Records.mp4`** (~24 min, 1920×1080).
   Music: Kevin MacLeod (incompetech.com), CC-BY 4.0. Free to play at worldcup26.world — just for fun, no prizes.
 - **Pinned comment:** the worldcup26.world free pick-3 CTA + "which WC2026 moment will you remember?"
 - Upload as a scheduled **Premiere** if you want the live first-hour push.
+
+## Appendix — visual slot → library clip mapping (symlinks)
+
+| slot | library clip |
+|---|---|
+| `app-hero.mp4` | `content/videos/England/Jude-Bellingham.mp4` |
+| `brazil-1970-anim.mp4` | `content/videos/Brazil/Raphinha.mp4` |
+| `celebration-champions.mp4` | `content/videos/Spain/Lamine-Yamal.mp4` |
+| `champions-montage.mp4` | `content/videos/Germany/Joshua-Kimmich.mp4` |
+| `controversy-abstract.mp4` | `content/videos/USA/Folarin-Balogun.mp4` |
+| `crowd-packed-wide.mp4` | `content/videos/USA/Christian-Pulisic.mp4` |
+| `crowd-roar-fill.mp4` | `content/videos/England/Harry-Kane.mp4` |
+| `crowd-wide.mp4` | `content/videos/Portugal/CristianoRonaldo.mp4` |
+| `cruyff-1974.mp4` | `content/videos/Netherlands/FrenkieDeJong.mp4` |
+| `fans-diverse-joy.mp4` | `content/videos/Brazil/Vinicius-Junior.mp4` |
+| `final-drama.mp4` | `content/videos/Spain/Nico-Williams.mp4` |
+| `legend-cards-montage.mp4` | `content/videos/Croatia/Luka-Modric.mp4` |
+| `messi-fans-love.mp4` | `content/videos/Haiti/Duckens-Nazon.mp4` |
+| `messi-medal.mp4` | `content/videos/Argentina/Emiliano-Martinez.mp4` |
+| `milla-corner.mp4` | `content/videos/Ivory_Coast/Simon-Adingra.mp4` |
+| `milla-dance.mp4` | `content/videos/Senegal/Sadio-Mane.mp4` |
+| `pele-1958.mp4` | `content/videos/Brazil/Bruno-Guimaraes.mp4` |
+| `pele-young.mp4` | `content/videos/Brazil/Neymar.mp4` |
+| `player-mbappe.mp4` | `content/videos/France/Kylian-Mbappe.mp4` |
+| `player-messi-goal.mp4` | `content/videos/Argentina/Julian-Alvarez.mp4` |
+| `player-messi-hero.mp4` | `content/videos/Argentina/Alexis-Mac-Allister.mp4` |
+| `player-messi-run.mp4` | `content/videos/Argentina/Enzo-Fernandez.mp4` |
+| `player-messi-walk.mp4` | `content/videos/Argentina/Lionel-Messi.mp4` |
+| `puskas-hungary.mp4` | `content/videos/Portugal/BernardoSilva.mp4` |
+| `short-carbajal.mp4` | `content/videos/Mexico/Guillermo-Ochoa.mp4` |
+| `short-castro.mp4` | `content/videos/Uruguay/Federico-Valverde.mp4` |
+| `short-escobar.mp4` | `content/videos/Colombia/James-Rodriguez.mp4` |
+| `spain-tikitaka.mp4` | `content/videos/Spain/Pedri.mp4` |
+| `stadium-final-night.mp4` | `content/videos/Spain/Rodri.mp4` |
+| `stadium-lights.mp4` | `content/videos/Germany/Jamal-Musiala.mp4` |
+| `studio-craft.mp4` | `content/videos/France/Michael-Olise.mp4` |
+| `sunrise-pitch.mp4` | `content/videos/Japan/Kaoru-Mitoma.mp4` |
+| `torres-winner.mp4` | `content/videos/Spain/Dani-Carvajal.mp4` |
+| `tournament-recap.mp4` | `content/videos/Belgium/KevinDeBruyne.mp4` |
+| `vintage-teams.mp4` | `content/videos/Uruguay/Ronald-Araujo.mp4` |
