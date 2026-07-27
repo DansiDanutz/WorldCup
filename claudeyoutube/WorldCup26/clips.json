@@ -1,128 +1,2305 @@
 {
-  "comment": "Shot plan for the WorldCup26.world milestone + FIFA-records documentary (~24 min / 1470s). LIBRARY-FIRST + NO-REPEAT (hard rule #11): reuse player/fan/stadium clips already in content/videos/ and prior-episode assets/ (Messi, Mbappe, Alvarez, Dibu, fans, stadiums, trophy-neutral crowd) before generating anything. Higgsfield ONLY for the few special hero beats that don't exist (rationed). Every 'src' appears at most once. All money/record/number beats are HYPERFRAMES motion cards (HTML->MP4 in hf/), NOT flat text and NOT on-screen sentences (labels/numbers only, rule #10). Soccer-only, no logos/real footage/trophy art. This lists the anchor beats per chapter; fill the remaining montage windows with distinct library clips (still no-repeat). Music = Kevin MacLeod (incompetech, CC-BY 4.0), credited.",
-  "clips": [
-    { "id": "cold-final-night",  "beat": "ch0-hook",        "src": "assets/stadium-final-night.mp4", "at": 0.5,   "dur": 9.0,  "vol": 0.4,  "rate": 0.7, "source": "library" },
-    { "id": "cold-torres-winner","beat": "ch0-winner",      "src": "assets/celebration-champions.mp4","at": 9.0,  "dur": 9.0,  "vol": 0.45, "source": "library" },
-    { "id": "cold-messi-walk",   "beat": "ch0-messi",        "src": "assets/player-messi-walk.mp4",   "at": 17.5,  "dur": 12.0, "vol": 0.3,  "rate": 0.85, "source": "library" },
-    { "id": "cold-scale",        "beat": "ch0-scale",        "src": "assets/crowd-wide.mp4",          "at": 30.0,  "dur": 17.0, "vol": 0.35, "source": "library" },
-    { "id": "cold-title-card",   "beat": "ch0-title",        "src": "hf/card-title.mp4",              "at": 55.5,  "dur": 15.0, "vol": 0,    "source": "hyperframes" },
-
-    { "id": "build-app-hero",    "beat": "ch1-app",          "src": "assets/app-hero.mp4",            "at": 94.0,  "dur": 10.0, "vol": 0,    "source": "generate-or-library" },
-    { "id": "build-pick3-card",  "beat": "ch1-pick3",        "src": "hf/card-pick3.mp4",              "at": 100.5, "dur": 11.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "build-legendcards", "beat": "ch1-cards",        "src": "assets/legend-cards-montage.mp4","at": 124.0, "dur": 15.0, "vol": 0.25, "source": "library" },
-    { "id": "build-castro",      "beat": "ch1-short-castro", "src": "assets/short-castro.mp4",        "at": 163.5, "dur": 8.5,  "vol": 0.3,  "source": "library" },
-    { "id": "build-escobar",     "beat": "ch1-short-escobar","src": "assets/short-escobar.mp4",       "at": 173.0, "dur": 7.5,  "vol": 0.3,  "source": "library" },
-    { "id": "build-carbajal",    "beat": "ch1-short-keeper", "src": "assets/short-carbajal.mp4",      "at": 181.5, "dur": 8.0,  "vol": 0.3,  "source": "library" },
-    { "id": "build-craft",       "beat": "ch1-craft",        "src": "assets/studio-craft.mp4",        "at": 203.0, "dur": 24.0, "vol": 0.2,  "rate": 0.9, "source": "library" },
-
-    { "id": "thanks-14k-card",   "beat": "ch2-14k",          "src": "hf/card-14000.mp4",              "at": 242.5, "dur": 14.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "thanks-stadium",    "beat": "ch2-stadium",      "src": "assets/crowd-roar-fill.mp4",     "at": 270.0, "dur": 12.0, "vol": 0.5,  "source": "library" },
-    { "id": "thanks-community",  "beat": "ch2-community",     "src": "assets/fans-diverse-joy.mp4",    "at": 293.0, "dur": 20.0, "vol": 0.35, "source": "library" },
-    { "id": "thanks-basecamp",   "beat": "ch2-basecamp",     "src": "assets/sunrise-pitch.mp4",       "at": 342.0, "dur": 14.0, "vol": 0.25, "rate": 0.8, "source": "library" },
-
-    { "id": "money-655-card",    "beat": "ch3-pool",         "src": "hf/card-655m.mp4",               "at": 404.0, "dur": 10.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "money-50m-card",    "beat": "ch3-winner",       "src": "hf/card-50m.mp4",                "at": 423.0, "dur": 12.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "money-placings",    "beat": "ch3-placings",     "src": "hf/card-placings.mp4",           "at": 443.5, "dur": 12.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "money-clubs-card",  "beat": "ch3-clubs",        "src": "hf/card-355m-clubs.mp4",         "at": 475.0, "dur": 13.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "money-growth-card", "beat": "ch3-growth",       "src": "hf/card-money-growth.mp4",       "at": 528.0, "dur": 32.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "money-explode",     "beat": "ch3-explode",      "src": "assets/stadium-lights.mp4",      "at": 579.5, "dur": 22.0, "vol": 0.3,  "rate": 0.8, "source": "library" },
-
-    { "id": "rec-brazil5-card",  "beat": "ch4-brazil",       "src": "hf/card-brazil-5.mp4",           "at": 616.5, "dur": 16.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "rec-klose-card",    "beat": "ch4-klose",        "src": "hf/card-klose-16.mp4",           "at": 643.0, "dur": 14.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "rec-mbappe",        "beat": "ch4-mbappe",       "src": "assets/player-mbappe.mp4",       "at": 667.0, "dur": 6.0,  "vol": 0.3,  "source": "library" },
-    { "id": "rec-messi-scorer",  "beat": "ch4-messi-goals",  "src": "assets/player-messi-goal.mp4",   "at": 673.0, "dur": 12.0, "vol": 0.3,  "source": "library" },
-    { "id": "rec-scorers-card",  "beat": "ch4-scorers",      "src": "hf/card-scorers-2226.mp4",       "at": 685.5, "dur": 10.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "rec-boot-card",     "beat": "ch4-boot",         "src": "hf/card-golden-boot.mp4",        "at": 696.0, "dur": 12.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "rec-pele-young",    "beat": "ch4-youngest",     "src": "assets/pele-young.mp4",          "at": 708.0, "dur": 12.0, "vol": 0.3,  "source": "generate-or-library" },
-    { "id": "rec-milla-old",     "beat": "ch4-oldest",       "src": "assets/milla-dance.mp4",         "at": 720.0, "dur": 13.0, "vol": 0.35, "source": "generate-or-library" },
-    { "id": "rec-fastest-card",  "beat": "ch4-fastest",      "src": "hf/card-fastest-goal.mp4",       "at": 733.0, "dur": 12.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "rec-format-card",   "beat": "ch4-format",       "src": "hf/card-48-104-39.mp4",          "at": 756.0, "dur": 13.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "rec-308-card",      "beat": "ch4-308",          "src": "hf/card-308-goals.mp4",          "at": 769.0, "dur": 10.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "rec-attendance",    "beat": "ch4-attendance",   "src": "assets/crowd-packed-wide.mp4",   "at": 779.0, "dur": 20.0, "vol": 0.45, "source": "library" },
-    { "id": "rec-spain-def",     "beat": "ch4-spain-def",    "src": "hf/card-spain-1-goal.mp4",       "at": 806.5, "dur": 12.0, "vol": 0,    "source": "hyperframes" },
-
-    { "id": "great-brazil70",    "beat": "ch5-brazil70",     "src": "assets/brazil-1970-anim.mp4",    "at": 850.5, "dur": 14.0, "vol": 0.3,  "source": "generate-or-library" },
-    { "id": "great-spain10",     "beat": "ch5-spain10",      "src": "assets/spain-tikitaka.mp4",      "at": 872.0, "dur": 15.0, "vol": 0.3,  "source": "generate-or-library" },
-    { "id": "great-pele58",      "beat": "ch5-pele",         "src": "assets/pele-1958.mp4",           "at": 891.0, "dur": 11.0, "vol": 0.3,  "source": "generate-or-library" },
-    { "id": "great-machines",    "beat": "ch5-others",       "src": "assets/vintage-teams.mp4",       "at": 903.0, "dur": 9.0,  "vol": 0.3,  "source": "generate-or-library" },
-    { "id": "great-spain26-card","beat": "ch5-spain26",      "src": "hf/card-spain-double.mp4",       "at": 938.0, "dur": 18.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "great-montage",     "beat": "ch5-montage",      "src": "assets/champions-montage.mp4",   "at": 964.0, "dur": 20.0, "vol": 0.35, "source": "library" },
-
-    { "id": "leave-cruyff",      "beat": "ch6-cruyff",       "src": "assets/cruyff-1974.mp4",         "at": 1006.0,"dur": 13.0, "vol": 0.3,  "source": "generate-or-library" },
-    { "id": "leave-puskas",      "beat": "ch6-puskas",       "src": "assets/puskas-hungary.mp4",      "at": 1019.0,"dur": 12.0, "vol": 0.3,  "source": "generate-or-library" },
-    { "id": "leave-milla",       "beat": "ch6-milla",        "src": "assets/milla-corner.mp4",        "at": 1031.0,"dur": 12.0, "vol": 0.35, "source": "generate-or-library" },
-    { "id": "leave-messi-hero",  "beat": "ch6-messi-hero",   "src": "assets/player-messi-hero.mp4",   "at": 1062.0,"dur": 19.0, "vol": 0.3,  "source": "library" },
-    { "id": "leave-messi-drive", "beat": "ch6-messi-drive",  "src": "assets/player-messi-run.mp4",    "at": 1081.5,"dur": 11.5, "vol": 0.3,  "source": "library" },
-    { "id": "leave-final-drama", "beat": "ch6-final",        "src": "assets/final-drama.mp4",         "at": 1093.0,"dur": 21.0, "vol": 0.35, "source": "library" },
-    { "id": "leave-torres-goal", "beat": "ch6-torres",       "src": "assets/torres-winner.mp4",       "at": 1114.0,"dur": 11.0, "vol": 0.45, "source": "generate-or-library" },
-    { "id": "leave-medal",       "beat": "ch6-medal",        "src": "assets/messi-medal.mp4",         "at": 1130.0,"dur": 11.0, "vol": 0.3,  "rate": 0.85, "source": "generate-or-library" },
-    { "id": "leave-awards-card", "beat": "ch6-awards",       "src": "hf/card-golden-silver.mp4",      "at": 1141.0,"dur": 16.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "leave-messi-love",  "beat": "ch6-love",         "src": "assets/messi-fans-love.mp4",     "at": 1170.5,"dur": 22.0, "vol": 0.4,  "source": "library" },
-    { "id": "leave-trump-card",  "beat": "ch6-trump-setup",  "src": "hf/card-red-card.mp4",           "at": 1232.0,"dur": 13.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "leave-phonecall",   "beat": "ch6-phonecall",    "src": "assets/controversy-abstract.mp4","at": 1254.5,"dur": 20.0, "vol": 0.3,  "rate": 0.8, "source": "generate-or-library" },
-    { "id": "leave-belgium-card","beat": "ch6-belgium",      "src": "hf/card-usa-belgium-41.mp4",     "at": 1314.0,"dur": 10.0, "vol": 0,    "source": "hyperframes" },
-
-    { "id": "close-montage",     "beat": "ch7-montage",      "src": "assets/tournament-recap.mp4",    "at": 1331.0,"dur": 28.0, "vol": 0.4,  "source": "library" },
-    { "id": "close-14k-climb",   "beat": "ch7-climb",        "src": "hf/card-14k-climbing.mp4",       "at": 1370.0,"dur": 12.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "close-app-cta",     "beat": "ch7-cta",          "src": "hf/card-app-cta.mp4",            "at": 1399.0,"dur": 20.0, "vol": 0,    "source": "hyperframes" },
-    { "id": "close-endcard",     "beat": "ch7-end",          "src": "hf/card-subscribe-end.mp4",      "at": 1418.5,"dur": 20.0, "vol": 0,    "source": "hyperframes" }
-  ],
-  "hyperframes_cards": [
-    { "id": "card-title",         "text": "WORLDCUP26",           "sub": "WHAT FOOTBALL LEFT BEHIND" },
-    { "id": "card-pick3",         "text": "PICK 3 · PLAY FREE",   "sub": "worldcup26.world" },
-    { "id": "card-14000",         "text": "14,000",               "sub": "THANK YOU" },
-    { "id": "card-655m",          "text": "$655,000,000",         "sub": "2026 PRIZE POOL" },
-    { "id": "card-50m",           "text": "$50,000,000",          "sub": "WINNER · SPAIN" },
-    { "id": "card-placings",      "text": "$33M · $29M",          "sub": "2ND · 3RD" },
-    { "id": "card-355m-clubs",    "text": "$355,000,000",         "sub": "PAID TO CLUBS" },
-    { "id": "card-money-growth",  "text": "$2M → $50M",           "sub": "1982 · 2006 · 2018 · 2022 · 2026" },
-    { "id": "card-brazil-5",      "text": "BRAZIL · 5",           "sub": "MOST TITLES" },
-    { "id": "card-klose-16",      "text": "KLOSE · 16",           "sub": "2002 – 2014" },
-    { "id": "card-scorers-2226",  "text": "MBAPPÉ 22 · MESSI 21", "sub": "ALL-TIME" },
-    { "id": "card-golden-boot",   "text": "MBAPPÉ · 10",          "sub": "GOLDEN BOOT ×2" },
-    { "id": "card-fastest-goal",  "text": "10.8 SEC",             "sub": "ŞÜKÜR · 2002" },
-    { "id": "card-48-104-39",     "text": "48 · 104 · 39",        "sub": "TEAMS · MATCHES · DAYS" },
-    { "id": "card-308-goals",     "text": "308 GOALS",            "sub": "HIGHEST EVER" },
-    { "id": "card-spain-1-goal",  "text": "1 GOAL",               "sub": "SPAIN CONCEDED · 8 GAMES" },
-    { "id": "card-spain-double",  "text": "MEN'S + WOMEN'S",      "sub": "SPAIN · FIRST EVER" },
-    { "id": "card-golden-silver", "text": "GOLDEN: RODRI",        "sub": "SILVER: MESSI" },
-    { "id": "card-red-card",      "text": "BALOGUN · RED",        "sub": "USA vs BOSNIA" },
-    { "id": "card-usa-belgium-41","text": "BELGIUM 4 – 1 USA",    "sub": "ROUND OF 16" },
-    { "id": "card-14k-climbing",  "text": "14,000 +",             "sub": "AND CLIMBING" },
-    { "id": "card-app-cta",       "text": "PLAY FREE",            "sub": "worldcup26.world · no prizes" },
-    { "id": "card-subscribe-end", "text": "SUBSCRIBE",            "sub": "THE LEGENDS CONTINUE" }
-  ],
-  "music": {
-    "comment": "Kevin MacLeod (incompetech.com), CC-BY 4.0 - credit required in description. Emotional arc: warm/hopeful (build+thanks) -> driving/epic (money+records) -> reverent/cinematic (greatest+Messi) -> triumphant (close).",
-    "cues": [
-      { "src": "music/cue-cinematic-open.mp3", "at": 0,    "dur": 74,  "vol": 0.4,  "fadeIn": 1,   "fadeOut": 4 },
-      { "src": "music/cue-warm.mp3",           "at": 76,   "dur": 166, "vol": 0.38, "fadeIn": 2,   "fadeOut": 4, "loop": true },
-      { "src": "music/cue-uplift.mp3",         "at": 242,  "dur": 146, "vol": 0.42, "fadeIn": 2,   "fadeOut": 4, "loop": true },
-      { "src": "music/cue-drive.mp3",          "at": 388,  "dur": 223, "vol": 0.4,  "fadeIn": 2,   "fadeOut": 4, "loop": true },
-      { "src": "music/cue-epic.mp3",           "at": 611,  "dur": 221, "vol": 0.4,  "fadeIn": 2,   "fadeOut": 4, "loop": true },
-      { "src": "music/cue-noble.mp3",          "at": 832,  "dur": 160, "vol": 0.4,  "fadeIn": 2,   "fadeOut": 4, "loop": true },
-      { "src": "music/cue-reverent.mp3",       "at": 992,  "dur": 231, "vol": 0.38, "fadeIn": 2,   "fadeOut": 5, "loop": true },
-      { "src": "music/cue-tension.mp3",        "at": 1223, "dur": 108, "vol": 0.38, "fadeIn": 2,   "fadeOut": 4, "loop": true },
-      { "src": "music/cue-triumph.mp3",        "at": 1331, "dur": 139, "vol": 0.46, "fadeIn": 2,   "fadeOut": 5, "loop": true }
-    ]
+ "comment": "Documentary shot plan v2 - NO-LOOP + FULL-COVERAGE. Every assets/ clip plays exactly ONCE (dur = real length / rate). Cards trimmed to their animated portion (max 10s except title/CTA). graphics[] = procedural MotionKit beats (kinetic numbers/names, bar chart, flag wall, trophy, score plates, pitch lines) tiling every remaining second; AmbientStadium runs under everything so no frame is ever black. Music: Kevin MacLeod CC-BY 4.0 (credit in description).",
+ "clips": [
+  {
+   "id": "cold-final-night",
+   "beat": "ch0-hook",
+   "src": "assets/stadium-final-night.mp4",
+   "at": 0.5,
+   "dur": 7.2,
+   "vol": 0.4,
+   "rate": 0.7,
+   "source": "library"
   },
-  "sfx": {
-    "comment": "ElevenLabs sound-design hits at transitions and number-card reveals (whoosh into cards, stamp on big figures, braam on chapter turns).",
-    "hits": [
-      { "src": "sfx/braam.mp3",  "at": 30.0,   "vol": 0.7 },
-      { "src": "sfx/whoosh.mp3", "at": 55.3,   "vol": 0.55 },
-      { "src": "sfx/pop.mp3",    "at": 252.0,  "vol": 0.8 },
-      { "src": "sfx/stamp.mp3",  "at": 404.0,  "vol": 0.8 },
-      { "src": "sfx/stamp.mp3",  "at": 423.0,  "vol": 0.85 },
-      { "src": "sfx/stamp.mp3",  "at": 475.0,  "vol": 0.8 },
-      { "src": "sfx/whoosh.mp3", "at": 611.0,  "vol": 0.55 },
-      { "src": "sfx/stamp.mp3",  "at": 685.5,  "vol": 0.8 },
-      { "src": "sfx/braam.mp3",  "at": 745.0,  "vol": 0.7 },
-      { "src": "sfx/whoosh.mp3", "at": 992.0,  "vol": 0.5 },
-      { "src": "sfx/heartbeat.mp3","at": 1114.0,"vol": 0.7 },
-      { "src": "sfx/braam.mp3",  "at": 1223.0, "vol": 0.7 },
-      { "src": "sfx/stamp.mp3",  "at": 1314.0, "vol": 0.8 },
-      { "src": "sfx/whoosh.mp3", "at": 1331.0, "vol": 0.55 }
-    ]
+  {
+   "id": "cold-torres-winner",
+   "beat": "ch0-winner",
+   "src": "assets/celebration-champions.mp4",
+   "at": 9.0,
+   "dur": 7.2,
+   "vol": 0.45,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "cold-messi-walk",
+   "beat": "ch0-messi",
+   "src": "assets/player-messi-walk.mp4",
+   "at": 17.5,
+   "dur": 7.1,
+   "vol": 0.3,
+   "rate": 0.85,
+   "source": "library"
+  },
+  {
+   "id": "cold-scale",
+   "beat": "ch0-scale",
+   "src": "assets/crowd-wide.mp4",
+   "at": 30.0,
+   "dur": 7.2,
+   "vol": 0.35,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "cold-title-card",
+   "beat": "ch0-title",
+   "src": "hf/card-title.mp4",
+   "at": 55.5,
+   "dur": 15.0,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "build-app-hero",
+   "beat": "ch1-app",
+   "src": "assets/app-hero.mp4",
+   "at": 94.0,
+   "dur": 7.2,
+   "vol": 0,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "build-pick3-card",
+   "beat": "ch1-pick3",
+   "src": "hf/card-pick3.mp4",
+   "at": 100.5,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "build-legendcards",
+   "beat": "ch1-cards",
+   "src": "assets/legend-cards-montage.mp4",
+   "at": 124.0,
+   "dur": 7.2,
+   "vol": 0.25,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "build-castro",
+   "beat": "ch1-short-castro",
+   "src": "assets/short-castro.mp4",
+   "at": 163.5,
+   "dur": 7.2,
+   "vol": 0.3,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "build-escobar",
+   "beat": "ch1-short-escobar",
+   "src": "assets/short-escobar.mp4",
+   "at": 173.0,
+   "dur": 7.2,
+   "vol": 0.3,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "build-carbajal",
+   "beat": "ch1-short-keeper",
+   "src": "assets/short-carbajal.mp4",
+   "at": 181.5,
+   "dur": 8.7,
+   "vol": 0.3,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "build-craft",
+   "beat": "ch1-craft",
+   "src": "assets/studio-craft.mp4",
+   "at": 203.0,
+   "dur": 5.9,
+   "vol": 0.2,
+   "rate": 0.85,
+   "source": "library"
+  },
+  {
+   "id": "thanks-14k-card",
+   "beat": "ch2-14k",
+   "src": "hf/card-14000.mp4",
+   "at": 242.5,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "thanks-stadium",
+   "beat": "ch2-stadium",
+   "src": "assets/crowd-roar-fill.mp4",
+   "at": 270.0,
+   "dur": 7.2,
+   "vol": 0.5,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "thanks-community",
+   "beat": "ch2-community",
+   "src": "assets/fans-diverse-joy.mp4",
+   "at": 293.0,
+   "dur": 7.2,
+   "vol": 0.35,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "thanks-basecamp",
+   "beat": "ch2-basecamp",
+   "src": "assets/sunrise-pitch.mp4",
+   "at": 342.0,
+   "dur": 6.3,
+   "vol": 0.25,
+   "rate": 0.8,
+   "source": "library"
+  },
+  {
+   "id": "money-655-card",
+   "beat": "ch3-pool",
+   "src": "hf/card-655m.mp4",
+   "at": 404.0,
+   "dur": 10.0,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "money-50m-card",
+   "beat": "ch3-winner",
+   "src": "hf/card-50m.mp4",
+   "at": 423.0,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "money-placings",
+   "beat": "ch3-placings",
+   "src": "hf/card-placings.mp4",
+   "at": 443.5,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "money-clubs-card",
+   "beat": "ch3-clubs",
+   "src": "hf/card-355m-clubs.mp4",
+   "at": 475.0,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "money-explode",
+   "beat": "ch3-explode",
+   "src": "assets/stadium-lights.mp4",
+   "at": 579.5,
+   "dur": 6.3,
+   "vol": 0.3,
+   "rate": 0.8,
+   "source": "library"
+  },
+  {
+   "id": "rec-brazil5-card",
+   "beat": "ch4-brazil",
+   "src": "hf/card-brazil-5.mp4",
+   "at": 616.5,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "rec-klose-card",
+   "beat": "ch4-klose",
+   "src": "hf/card-klose-16.mp4",
+   "at": 643.0,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "rec-mbappe",
+   "beat": "ch4-mbappe",
+   "src": "assets/player-mbappe.mp4",
+   "at": 667.0,
+   "dur": 7.2,
+   "vol": 0.3,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "rec-messi-scorer",
+   "beat": "ch4-messi-goals",
+   "src": "assets/player-messi-goal.mp4",
+   "at": 673.0,
+   "dur": 8.6,
+   "vol": 0.3,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "rec-scorers-card",
+   "beat": "ch4-scorers",
+   "src": "hf/card-scorers-2226.mp4",
+   "at": 685.5,
+   "dur": 10.0,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "rec-boot-card",
+   "beat": "ch4-boot",
+   "src": "hf/card-golden-boot.mp4",
+   "at": 696.0,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "rec-pele-young",
+   "beat": "ch4-youngest",
+   "src": "assets/pele-young.mp4",
+   "at": 708.0,
+   "dur": 7.2,
+   "vol": 0.3,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "rec-milla-old",
+   "beat": "ch4-oldest",
+   "src": "assets/milla-dance.mp4",
+   "at": 720.0,
+   "dur": 7.2,
+   "vol": 0.35,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "rec-fastest-card",
+   "beat": "ch4-fastest",
+   "src": "hf/card-fastest-goal.mp4",
+   "at": 733.0,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "rec-format-card",
+   "beat": "ch4-format",
+   "src": "hf/card-48-104-39.mp4",
+   "at": 756.0,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "rec-308-card",
+   "beat": "ch4-308",
+   "src": "hf/card-308-goals.mp4",
+   "at": 769.0,
+   "dur": 10.0,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "rec-attendance",
+   "beat": "ch4-attendance",
+   "src": "assets/crowd-packed-wide.mp4",
+   "at": 779.0,
+   "dur": 7.2,
+   "vol": 0.45,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "rec-spain-def",
+   "beat": "ch4-spain-def",
+   "src": "hf/card-spain-1-goal.mp4",
+   "at": 806.5,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "great-brazil70",
+   "beat": "ch5-brazil70",
+   "src": "assets/brazil-1970-anim.mp4",
+   "at": 850.5,
+   "dur": 7.2,
+   "vol": 0.3,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "great-spain10",
+   "beat": "ch5-spain10",
+   "src": "assets/spain-tikitaka.mp4",
+   "at": 872.0,
+   "dur": 7.2,
+   "vol": 0.3,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "great-pele58",
+   "beat": "ch5-pele",
+   "src": "assets/pele-1958.mp4",
+   "at": 891.0,
+   "dur": 7.2,
+   "vol": 0.3,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "great-machines",
+   "beat": "ch5-others",
+   "src": "assets/vintage-teams.mp4",
+   "at": 903.0,
+   "dur": 7.2,
+   "vol": 0.3,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "great-spain26-card",
+   "beat": "ch5-spain26",
+   "src": "hf/card-spain-double.mp4",
+   "at": 938.0,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "great-montage",
+   "beat": "ch5-montage",
+   "src": "assets/champions-montage.mp4",
+   "at": 964.0,
+   "dur": 7.2,
+   "vol": 0.35,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "leave-cruyff",
+   "beat": "ch6-cruyff",
+   "src": "assets/cruyff-1974.mp4",
+   "at": 1006.0,
+   "dur": 7.2,
+   "vol": 0.3,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "leave-puskas",
+   "beat": "ch6-puskas",
+   "src": "assets/puskas-hungary.mp4",
+   "at": 1019.0,
+   "dur": 7.2,
+   "vol": 0.3,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "leave-milla",
+   "beat": "ch6-milla",
+   "src": "assets/milla-corner.mp4",
+   "at": 1031.0,
+   "dur": 7.2,
+   "vol": 0.35,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "leave-messi-hero",
+   "beat": "ch6-messi-hero",
+   "src": "assets/player-messi-hero.mp4",
+   "at": 1062.0,
+   "dur": 8.6,
+   "vol": 0.3,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "leave-messi-drive",
+   "beat": "ch6-messi-drive",
+   "src": "assets/player-messi-run.mp4",
+   "at": 1081.5,
+   "dur": 8.6,
+   "vol": 0.3,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "leave-final-drama",
+   "beat": "ch6-final",
+   "src": "assets/final-drama.mp4",
+   "at": 1093.0,
+   "dur": 7.2,
+   "vol": 0.35,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "leave-torres-goal",
+   "beat": "ch6-torres",
+   "src": "assets/torres-winner.mp4",
+   "at": 1114.0,
+   "dur": 7.2,
+   "vol": 0.45,
+   "source": "generate-or-library",
+   "rate": 0.7
+  },
+  {
+   "id": "leave-medal",
+   "beat": "ch6-medal",
+   "src": "assets/messi-medal.mp4",
+   "at": 1130.0,
+   "dur": 7.1,
+   "vol": 0.3,
+   "rate": 0.85,
+   "source": "generate-or-library"
+  },
+  {
+   "id": "leave-awards-card",
+   "beat": "ch6-awards",
+   "src": "hf/card-golden-silver.mp4",
+   "at": 1141.0,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "leave-messi-love",
+   "beat": "ch6-love",
+   "src": "assets/messi-fans-love.mp4",
+   "at": 1170.5,
+   "dur": 14.3,
+   "vol": 0.4,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "leave-trump-card",
+   "beat": "ch6-trump-setup",
+   "src": "hf/card-red-card.mp4",
+   "at": 1232.0,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "leave-phonecall",
+   "beat": "ch6-phonecall",
+   "src": "assets/controversy-abstract.mp4",
+   "at": 1254.5,
+   "dur": 6.3,
+   "vol": 0.3,
+   "rate": 0.8,
+   "source": "generate-or-library"
+  },
+  {
+   "id": "leave-belgium-card",
+   "beat": "ch6-belgium",
+   "src": "hf/card-usa-belgium-41.mp4",
+   "at": 1314.0,
+   "dur": 10.0,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "close-montage",
+   "beat": "ch7-montage",
+   "src": "assets/tournament-recap.mp4",
+   "at": 1331.0,
+   "dur": 7.2,
+   "vol": 0.4,
+   "source": "library",
+   "rate": 0.7
+  },
+  {
+   "id": "close-14k-climb",
+   "beat": "ch7-climb",
+   "src": "hf/card-14k-climbing.mp4",
+   "at": 1370.0,
+   "dur": 10,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "close-app-cta",
+   "beat": "ch7-cta",
+   "src": "hf/card-app-cta.mp4",
+   "at": 1399.0,
+   "dur": 20.0,
+   "vol": 0,
+   "source": "hyperframes"
+  },
+  {
+   "id": "close-endcard",
+   "beat": "ch7-end",
+   "src": "hf/card-subscribe-end.mp4",
+   "at": 1418.5,
+   "dur": 20.0,
+   "vol": 0,
+   "source": "hyperframes"
   }
+ ],
+ "hyperframes_cards": [
+  {
+   "id": "card-title",
+   "text": "WORLDCUP26",
+   "sub": "WHAT FOOTBALL LEFT BEHIND"
+  },
+  {
+   "id": "card-pick3",
+   "text": "PICK 3 · PLAY FREE",
+   "sub": "worldcup26.world"
+  },
+  {
+   "id": "card-14000",
+   "text": "14,000",
+   "sub": "THANK YOU"
+  },
+  {
+   "id": "card-655m",
+   "text": "$655,000,000",
+   "sub": "2026 PRIZE POOL"
+  },
+  {
+   "id": "card-50m",
+   "text": "$50,000,000",
+   "sub": "WINNER · SPAIN"
+  },
+  {
+   "id": "card-placings",
+   "text": "$33M · $29M",
+   "sub": "2ND · 3RD"
+  },
+  {
+   "id": "card-355m-clubs",
+   "text": "$355,000,000",
+   "sub": "PAID TO CLUBS"
+  },
+  {
+   "id": "card-money-growth",
+   "text": "$2M → $50M",
+   "sub": "1982 · 2006 · 2018 · 2022 · 2026"
+  },
+  {
+   "id": "card-brazil-5",
+   "text": "BRAZIL · 5",
+   "sub": "MOST TITLES"
+  },
+  {
+   "id": "card-klose-16",
+   "text": "KLOSE · 16",
+   "sub": "2002 – 2014"
+  },
+  {
+   "id": "card-scorers-2226",
+   "text": "MBAPPÉ 22 · MESSI 21",
+   "sub": "ALL-TIME"
+  },
+  {
+   "id": "card-golden-boot",
+   "text": "MBAPPÉ · 10",
+   "sub": "GOLDEN BOOT ×2"
+  },
+  {
+   "id": "card-fastest-goal",
+   "text": "10.8 SEC",
+   "sub": "ŞÜKÜR · 2002"
+  },
+  {
+   "id": "card-48-104-39",
+   "text": "48 · 104 · 39",
+   "sub": "TEAMS · MATCHES · DAYS"
+  },
+  {
+   "id": "card-308-goals",
+   "text": "308 GOALS",
+   "sub": "HIGHEST EVER"
+  },
+  {
+   "id": "card-spain-1-goal",
+   "text": "1 GOAL",
+   "sub": "SPAIN CONCEDED · 8 GAMES"
+  },
+  {
+   "id": "card-spain-double",
+   "text": "MEN'S + WOMEN'S",
+   "sub": "SPAIN · FIRST EVER"
+  },
+  {
+   "id": "card-golden-silver",
+   "text": "GOLDEN: RODRI",
+   "sub": "SILVER: MESSI"
+  },
+  {
+   "id": "card-red-card",
+   "text": "BALOGUN · RED",
+   "sub": "USA vs BOSNIA"
+  },
+  {
+   "id": "card-usa-belgium-41",
+   "text": "BELGIUM 4 – 1 USA",
+   "sub": "ROUND OF 16"
+  },
+  {
+   "id": "card-14k-climbing",
+   "text": "14,000 +",
+   "sub": "AND CLIMBING"
+  },
+  {
+   "id": "card-app-cta",
+   "text": "PLAY FREE",
+   "sub": "worldcup26.world · no prizes"
+  },
+  {
+   "id": "card-subscribe-end",
+   "text": "SUBSCRIBE",
+   "sub": "THE LEGENDS CONTINUE"
+  }
+ ],
+ "music": {
+  "comment": "Kevin MacLeod (incompetech.com), CC-BY 4.0 - credit required in description. Emotional arc: warm/hopeful (build+thanks) -> driving/epic (money+records) -> reverent/cinematic (greatest+Messi) -> triumphant (close).",
+  "cues": [
+   {
+    "src": "music/cue-cinematic-open.mp3",
+    "at": 0,
+    "dur": 74,
+    "vol": 0.4,
+    "fadeIn": 1,
+    "fadeOut": 4
+   },
+   {
+    "src": "music/cue-warm.mp3",
+    "at": 76,
+    "dur": 166,
+    "vol": 0.38,
+    "fadeIn": 2,
+    "fadeOut": 4,
+    "loop": true
+   },
+   {
+    "src": "music/cue-uplift.mp3",
+    "at": 242,
+    "dur": 146,
+    "vol": 0.42,
+    "fadeIn": 2,
+    "fadeOut": 4,
+    "loop": true
+   },
+   {
+    "src": "music/cue-drive.mp3",
+    "at": 388,
+    "dur": 223,
+    "vol": 0.4,
+    "fadeIn": 2,
+    "fadeOut": 4,
+    "loop": true
+   },
+   {
+    "src": "music/cue-epic.mp3",
+    "at": 611,
+    "dur": 221,
+    "vol": 0.4,
+    "fadeIn": 2,
+    "fadeOut": 4,
+    "loop": true
+   },
+   {
+    "src": "music/cue-noble.mp3",
+    "at": 832,
+    "dur": 160,
+    "vol": 0.4,
+    "fadeIn": 2,
+    "fadeOut": 4,
+    "loop": true
+   },
+   {
+    "src": "music/cue-reverent.mp3",
+    "at": 992,
+    "dur": 231,
+    "vol": 0.38,
+    "fadeIn": 2,
+    "fadeOut": 5,
+    "loop": true
+   },
+   {
+    "src": "music/cue-tension.mp3",
+    "at": 1223,
+    "dur": 108,
+    "vol": 0.38,
+    "fadeIn": 2,
+    "fadeOut": 4,
+    "loop": true
+   },
+   {
+    "src": "music/cue-triumph.mp3",
+    "at": 1331,
+    "dur": 139,
+    "vol": 0.46,
+    "fadeIn": 2,
+    "fadeOut": 5,
+    "loop": true
+   }
+  ]
+ },
+ "sfx": {
+  "comment": "ElevenLabs sound-design hits at transitions and number-card reveals (whoosh into cards, stamp on big figures, braam on chapter turns).",
+  "hits": [
+   {
+    "src": "sfx/braam.mp3",
+    "at": 17.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 30.0,
+    "vol": 0.7
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 36.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 47.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 55.3,
+    "vol": 0.55
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 70.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 76.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 112.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 131.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 141.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 153.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 190.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 209.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 228.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 252.0,
+    "vol": 0.8
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 256.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 277.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 300.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 318.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 334.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 346.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 356.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 379.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 388.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 404.0,
+    "vol": 0.8
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 414.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 423.0,
+    "vol": 0.85
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 433.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 454.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 465.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 475.0,
+    "vol": 0.8
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 485.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 497.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 510.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 520.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 528.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 559.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 571.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 590.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 602.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 611.0,
+    "vol": 0.55
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 626.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 633.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 653.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 657.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 682.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 685.5,
+    "vol": 0.8
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 708.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 720.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 745.0,
+    "vol": 0.7
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 766.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 779.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 787.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 799.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 818.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 832.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 839.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 846.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 861.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 879.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 898.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 903.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 912.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 948.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 956.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 974.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 984.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 992.0,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1013.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 1026.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1038.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1043.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1072.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1103.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/heartbeat.mp3",
+    "at": 1114.0,
+    "vol": 0.7
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 1125.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1137.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 1151.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1157.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1185.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1192.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1205.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 1218.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1223.0,
+    "vol": 0.7
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1242.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1245.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1254.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1263.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 1274.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1287.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1298.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 1309.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1314.0,
+    "vol": 0.8
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1324.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 1331.0,
+    "vol": 0.55
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1338.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1345.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1359.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 1378.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 1438.65,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 1466.65,
+    "vol": 0.5
+   }
+  ]
+ },
+ "graphics": [
+  {
+   "at": 17.5,
+   "dur": 11.5,
+   "type": "score",
+   "left": "SPAIN",
+   "score": "1–0",
+   "right": "ARGENTINA",
+   "note": "106'"
+  },
+  {
+   "at": 36.5,
+   "dur": 10.5,
+   "type": "flags",
+   "colors": [
+    [
+     "#d21034",
+     "#ffffff",
+     "#d21034"
+    ],
+    [
+     "#0038a8",
+     "#ffffff",
+     "#d21034"
+    ],
+    [
+     "#006847",
+     "#ffffff",
+     "#ce1126"
+    ],
+    [
+     "#002395",
+     "#ffffff",
+     "#ed2939"
+    ],
+    [
+     "#aa151b",
+     "#f1bf00",
+     "#aa151b"
+    ],
+    [
+     "#009246",
+     "#ffffff",
+     "#ce2b37"
+    ],
+    [
+     "#000000",
+     "#dd0000",
+     "#ffce00"
+    ],
+    [
+     "#75aadb",
+     "#ffffff",
+     "#75aadb"
+    ],
+    [
+     "#009c3b",
+     "#ffdf00",
+     "#009c3b"
+    ],
+    [
+     "#ff9933",
+     "#ffffff",
+     "#138808"
+    ],
+    [
+     "#e30a17",
+     "#ffffff",
+     "#e30a17"
+    ],
+    [
+     "#21468b",
+     "#ffffff",
+     "#ae1c28"
+    ],
+    [
+     "#dc143c",
+     "#ffffff",
+     "#dc143c"
+    ],
+    [
+     "#006233",
+     "#ffffff",
+     "#c1272d"
+    ],
+    [
+     "#3c3b6e",
+     "#ffffff",
+     "#b22234"
+    ],
+    [
+     "#f93",
+     "#ffffff",
+     "#128807"
+    ],
+    [
+     "#ce1126",
+     "#fcd116",
+     "#007a3d"
+    ],
+    [
+     "#0055a4",
+     "#ffffff",
+     "#ef4135"
+    ],
+    [
+     "#e8112d",
+     "#ffffff",
+     "#0033a0"
+    ],
+    [
+     "#007a4d",
+     "#ffb612",
+     "#de3831"
+    ],
+    [
+     "#ef3340",
+     "#ffffff",
+     "#009739"
+    ],
+    [
+     "#046a38",
+     "#ffffff",
+     "#c8102e"
+    ],
+    [
+     "#c60b1e",
+     "#ffc400",
+     "#c60b1e"
+    ],
+    [
+     "#00966e",
+     "#ed2939",
+     "#00966e"
+    ]
+   ]
+  },
+  {
+   "at": 47.5,
+   "dur": 7.5,
+   "type": "kinetic",
+   "size": 120,
+   "words": [
+    {
+     "w": "MONEY",
+     "at": 0.2,
+     "gold": true
+    },
+    {
+     "w": "RECORDS",
+     "at": 0.9
+    },
+    {
+     "w": "LEGENDS",
+     "at": 1.6
+    }
+   ]
+  },
+  {
+   "at": 70.5,
+   "dur": 5.5,
+   "type": "pitch"
+  },
+  {
+   "at": 76.0,
+   "dur": 17.5,
+   "type": "pitch"
+  },
+  {
+   "at": 112.0,
+   "dur": 11.5,
+   "type": "kinetic",
+   "size": 130,
+   "words": [
+    {
+     "w": "FREE",
+     "at": 0.2,
+     "gold": true
+    },
+    {
+     "w": "· FOR FUN ·",
+     "at": 0.9
+    },
+    {
+     "w": "NO PRIZES",
+     "at": 1.6
+    }
+   ]
+  },
+  {
+   "at": 131.5,
+   "dur": 10.0,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 141.5,
+   "dur": 11.5,
+   "type": "kinetic",
+   "size": 118,
+   "words": [
+    {
+     "w": "EPISODES",
+     "at": 0.2
+    },
+    {
+     "w": "MYTHS",
+     "at": 1.0,
+     "gold": true
+    },
+    {
+     "w": "SHORTS",
+     "at": 1.8
+    }
+   ]
+  },
+  {
+   "at": 153.0,
+   "dur": 10.5,
+   "type": "pitch"
+  },
+  {
+   "at": 190.5,
+   "dur": 12.0,
+   "type": "kinetic",
+   "size": 118,
+   "words": [
+    {
+     "w": "REAL",
+     "at": 0.2,
+     "gold": true
+    },
+    {
+     "w": "VERIFIED",
+     "at": 1.0
+    },
+    {
+     "w": "ORIGINAL",
+     "at": 1.8
+    }
+   ]
+  },
+  {
+   "at": 209.0,
+   "dur": 19.0,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 228.0,
+   "dur": 14.0,
+   "type": "pitch"
+  },
+  {
+   "at": 252.5,
+   "dur": 3.5,
+   "type": "pitch"
+  },
+  {
+   "at": 256.0,
+   "dur": 13.5,
+   "type": "kinetic",
+   "size": 210,
+   "words": [
+    {
+     "w": "14,000",
+     "at": 0.3,
+     "gold": true,
+     "big": true
+    }
+   ]
+  },
+  {
+   "at": 277.5,
+   "dur": 15.5,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 300.5,
+   "dur": 17.5,
+   "type": "pitch"
+  },
+  {
+   "at": 318.0,
+   "dur": 16.0,
+   "type": "trophy",
+   "label": "THANK YOU"
+  },
+  {
+   "at": 334.0,
+   "dur": 8.0,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 346.0,
+   "dur": 10.0,
+   "type": "kinetic",
+   "size": 130,
+   "words": [
+    {
+     "w": "BASE",
+     "at": 0.2
+    },
+    {
+     "w": "CAMP",
+     "at": 0.8,
+     "gold": true
+    }
+   ]
+  },
+  {
+   "at": 356.5,
+   "dur": 23.0,
+   "type": "pitch"
+  },
+  {
+   "at": 379.5,
+   "dur": 8.5,
+   "type": "pitch"
+  },
+  {
+   "at": 388.0,
+   "dur": 15.5,
+   "type": "kinetic",
+   "size": 230,
+   "words": [
+    {
+     "w": "MONEY",
+     "at": 0.3,
+     "gold": true,
+     "big": true
+    }
+   ]
+  },
+  {
+   "at": 414.0,
+   "dur": 9.0,
+   "type": "kinetic",
+   "size": 170,
+   "words": [
+    {
+     "w": "+50%",
+     "at": 0.3,
+     "gold": true,
+     "big": true
+    }
+   ]
+  },
+  {
+   "at": 433.0,
+   "dur": 10.5,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 454.0,
+   "dur": 11.0,
+   "type": "kinetic",
+   "size": 150,
+   "words": [
+    {
+     "w": "$10.5M",
+     "at": 0.3,
+     "gold": true
+    },
+    {
+     "w": "EVERY TEAM",
+     "at": 1.1
+    }
+   ]
+  },
+  {
+   "at": 465.0,
+   "dur": 10.0,
+   "type": "pitch"
+  },
+  {
+   "at": 485.0,
+   "dur": 12.0,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 497.0,
+   "dur": 12.0,
+   "type": "kinetic",
+   "size": 150,
+   "words": [
+    {
+     "w": "$11,000",
+     "at": 0.3,
+     "gold": true
+    },
+    {
+     "w": "PER DAY",
+     "at": 1.1
+    }
+   ]
+  },
+  {
+   "at": 510.0,
+   "dur": 10.0,
+   "type": "kinetic",
+   "size": 160,
+   "words": [
+    {
+     "w": "+70%",
+     "at": 0.3,
+     "gold": true,
+     "big": true
+    }
+   ]
+  },
+  {
+   "at": 520.0,
+   "dur": 8.0,
+   "type": "pitch"
+  },
+  {
+   "at": 528.0,
+   "dur": 31.0,
+   "type": "barchart",
+   "title": "WINNER’S PRIZE",
+   "bars": [
+    {
+     "label": "1982",
+     "v": 2
+    },
+    {
+     "label": "2006",
+     "v": 20
+    },
+    {
+     "label": "2018",
+     "v": 38
+    },
+    {
+     "label": "2022",
+     "v": 42
+    },
+    {
+     "label": "2026",
+     "v": 50
+    }
+   ]
+  },
+  {
+   "at": 559.5,
+   "dur": 11.0,
+   "type": "kinetic",
+   "size": 200,
+   "words": [
+    {
+     "w": "×25",
+     "at": 0.3,
+     "gold": true,
+     "big": true
+    }
+   ]
+  },
+  {
+   "at": 571.0,
+   "dur": 19.0,
+   "type": "trophy",
+   "label": "THE STAKES"
+  },
+  {
+   "at": 590.0,
+   "dur": 12.0,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 602.0,
+   "dur": 14.0,
+   "type": "pitch"
+  },
+  {
+   "at": 626.5,
+   "dur": 6.5,
+   "type": "pitch"
+  },
+  {
+   "at": 633.0,
+   "dur": 10.0,
+   "type": "kinetic",
+   "size": 130,
+   "words": [
+    {
+     "w": "22 / 22",
+     "at": 0.3,
+     "gold": true
+    },
+    {
+     "w": "TOURNAMENTS",
+     "at": 1.1
+    }
+   ]
+  },
+  {
+   "at": 653.0,
+   "dur": 4.0,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 657.0,
+   "dur": 10.0,
+   "type": "kinetic",
+   "size": 140,
+   "words": [
+    {
+     "w": "2026",
+     "at": 0.2
+    },
+    {
+     "w": "×2",
+     "at": 1.0,
+     "gold": true,
+     "big": true
+    }
+   ]
+  },
+  {
+   "at": 682.0,
+   "dur": 3.5,
+   "type": "pitch"
+  },
+  {
+   "at": 708.0,
+   "dur": 12.0,
+   "type": "score",
+   "left": "PELÉ",
+   "score": "17",
+   "right": "YEARS",
+   "note": "1958"
+  },
+  {
+   "at": 720.0,
+   "dur": 13.0,
+   "type": "score",
+   "left": "MILLA",
+   "score": "42",
+   "right": "YEARS",
+   "note": "1994"
+  },
+  {
+   "at": 745.0,
+   "dur": 11.0,
+   "type": "kinetic",
+   "size": 140,
+   "words": [
+    {
+     "w": "2026",
+     "at": 0.2,
+     "gold": true
+    },
+    {
+     "w": "REWROTE IT",
+     "at": 1.0
+    }
+   ]
+  },
+  {
+   "at": 766.0,
+   "dur": 3.0,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 779.0,
+   "dur": 9.0,
+   "type": "kinetic",
+   "size": 150,
+   "words": [
+    {
+     "w": "6.8M",
+     "at": 0.3,
+     "gold": true,
+     "big": true
+    },
+    {
+     "w": "FANS",
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "at": 787.0,
+   "dur": 12.0,
+   "type": "kinetic",
+   "size": 140,
+   "words": [
+    {
+     "w": "65,490",
+     "at": 0.3,
+     "gold": true
+    },
+    {
+     "w": "AVERAGE",
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "at": 799.0,
+   "dur": 7.5,
+   "type": "pitch"
+  },
+  {
+   "at": 818.5,
+   "dur": 14.0,
+   "type": "trophy",
+   "label": "GREATNESS"
+  },
+  {
+   "at": 832.5,
+   "dur": 6.5,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 839.0,
+   "dur": 7.0,
+   "type": "pitch"
+  },
+  {
+   "at": 846.0,
+   "dur": 15.0,
+   "type": "kinetic",
+   "size": 150,
+   "words": [
+    {
+     "w": "BRAZIL",
+     "at": 0.2
+    },
+    {
+     "w": "1970",
+     "at": 0.9,
+     "gold": true,
+     "big": true
+    }
+   ]
+  },
+  {
+   "at": 861.0,
+   "dur": 11.0,
+   "type": "score",
+   "left": "JAIRZINHO",
+   "score": "6/6",
+   "right": "GAMES",
+   "note": "1970"
+  },
+  {
+   "at": 879.5,
+   "dur": 11.5,
+   "type": "pitch"
+  },
+  {
+   "at": 898.5,
+   "dur": 4.5,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 903.0,
+   "dur": 9.0,
+   "type": "kinetic",
+   "size": 120,
+   "words": [
+    {
+     "w": "1954 · 1974 · 1982",
+     "at": 0.3
+    }
+   ]
+  },
+  {
+   "at": 912.0,
+   "dur": 26.0,
+   "type": "trophy",
+   "label": "EVERY ERA"
+  },
+  {
+   "at": 948.0,
+   "dur": 8.0,
+   "type": "pitch"
+  },
+  {
+   "at": 956.0,
+   "dur": 8.0,
+   "type": "kinetic",
+   "size": 130,
+   "words": [
+    {
+     "w": "FIRST",
+     "at": 0.2,
+     "gold": true
+    },
+    {
+     "w": "NATION",
+     "at": 0.9
+    },
+    {
+     "w": "EVER",
+     "at": 1.6
+    }
+   ]
+  },
+  {
+   "at": 974.0,
+   "dur": 10.0,
+   "type": "pitch"
+  },
+  {
+   "at": 984.0,
+   "dur": 22.0,
+   "type": "kinetic",
+   "size": 120,
+   "words": [
+    {
+     "w": "CRUYFF",
+     "at": 0.2
+    },
+    {
+     "w": "PUSKÁS",
+     "at": 1.1
+    },
+    {
+     "w": "MILLA",
+     "at": 2.0,
+     "gold": true
+    }
+   ]
+  },
+  {
+   "at": 1013.5,
+   "dur": 5.5,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 1026.5,
+   "dur": 4.5,
+   "type": "pitch"
+  },
+  {
+   "at": 1038.5,
+   "dur": 4.5,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 1043.0,
+   "dur": 19.0,
+   "type": "trophy",
+   "label": "IMMORTAL"
+  },
+  {
+   "at": 1072.0,
+   "dur": 9.5,
+   "type": "kinetic",
+   "size": 130,
+   "words": [
+    {
+     "w": "8",
+     "at": 0.2,
+     "gold": true,
+     "big": true
+    },
+    {
+     "w": "GOALS",
+     "at": 0.8
+    },
+    {
+     "w": "4",
+     "at": 1.5,
+     "gold": true,
+     "big": true
+    },
+    {
+     "w": "ASSISTS",
+     "at": 2.1
+    }
+   ]
+  },
+  {
+   "at": 1103.0,
+   "dur": 11.0,
+   "type": "score",
+   "left": "MARTÍNEZ",
+   "score": "11",
+   "right": "SAVES",
+   "note": "RECORD"
+  },
+  {
+   "at": 1114.0,
+   "dur": 11.0,
+   "type": "score",
+   "left": "TORRES",
+   "score": "106'",
+   "right": "GOAL",
+   "note": ""
+  },
+  {
+   "at": 1125.0,
+   "dur": 5.0,
+   "type": "pitch"
+  },
+  {
+   "at": 1137.5,
+   "dur": 3.5,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 1151.0,
+   "dur": 6.0,
+   "type": "pitch"
+  },
+  {
+   "at": 1157.0,
+   "dur": 13.5,
+   "type": "kinetic",
+   "size": 140,
+   "words": [
+    {
+     "w": "NO TROPHY",
+     "at": 0.3
+    },
+    {
+     "w": "NO GOLDEN BALL",
+     "at": 1.3
+    }
+   ]
+  },
+  {
+   "at": 1185.0,
+   "dur": 7.5,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 1192.5,
+   "dur": 12.5,
+   "type": "kinetic",
+   "size": 190,
+   "words": [
+    {
+     "w": "MESSI",
+     "at": 0.4,
+     "gold": true,
+     "big": true
+    }
+   ]
+  },
+  {
+   "at": 1205.0,
+   "dur": 13.0,
+   "type": "trophy",
+   "label": "THE PEOPLE’S PRIZE"
+  },
+  {
+   "at": 1218.0,
+   "dur": 5.0,
+   "type": "pitch"
+  },
+  {
+   "at": 1223.0,
+   "dur": 9.0,
+   "type": "pitch"
+  },
+  {
+   "at": 1242.0,
+   "dur": 3.5,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 1245.5,
+   "dur": 9.0,
+   "type": "kinetic",
+   "size": 140,
+   "words": [
+    {
+     "w": "AUTOMATIC",
+     "at": 0.2
+    },
+    {
+     "w": "BAN",
+     "at": 1.0,
+     "gold": true
+    }
+   ],
+   "accent": "red"
+  },
+  {
+   "at": 1254.5,
+   "dur": 8.5,
+   "type": "kinetic",
+   "size": 130,
+   "words": [
+    {
+     "w": "ONE",
+     "at": 0.2
+    },
+    {
+     "w": "PHONE CALL",
+     "at": 0.9,
+     "gold": true
+    }
+   ],
+   "accent": "red"
+  },
+  {
+   "at": 1263.0,
+   "dur": 11.5,
+   "type": "kinetic",
+   "size": 150,
+   "words": [
+    {
+     "w": "ARTICLE 27",
+     "at": 0.3,
+     "gold": true,
+     "big": true
+    }
+   ],
+   "accent": "red"
+  },
+  {
+   "at": 1274.5,
+   "dur": 12.5,
+   "type": "pitch"
+  },
+  {
+   "at": 1287.0,
+   "dur": 11.0,
+   "type": "kinetic",
+   "size": 120,
+   "words": [
+    {
+     "w": "RONALDO",
+     "at": 0.3
+    },
+    {
+     "w": "· SAME RULE ·",
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "at": 1298.0,
+   "dur": 11.0,
+   "type": "kinetic",
+   "size": 140,
+   "words": [
+    {
+     "w": "A RED LINE",
+     "at": 0.3,
+     "gold": true
+    }
+   ],
+   "accent": "red"
+  },
+  {
+   "at": 1309.0,
+   "dur": 5.0,
+   "type": "pitch"
+  },
+  {
+   "at": 1324.0,
+   "dur": 7.0,
+   "type": "kinetic",
+   "size": 170,
+   "words": [
+    {
+     "w": "1 – 4",
+     "at": 0.3,
+     "gold": true,
+     "big": true
+    }
+   ],
+   "accent": "red"
+  },
+  {
+   "at": 1338.5,
+   "dur": 7.0,
+   "type": "trophy",
+   "label": ""
+  },
+  {
+   "at": 1345.5,
+   "dur": 13.5,
+   "type": "trophy",
+   "label": "WHAT REMAINS"
+  },
+  {
+   "at": 1359.0,
+   "dur": 11.0,
+   "type": "kinetic",
+   "size": 160,
+   "words": [
+    {
+     "w": "39",
+     "at": 0.3,
+     "gold": true,
+     "big": true
+    },
+    {
+     "w": "DAYS",
+     "at": 1.0
+    }
+   ]
+  },
+  {
+   "at": 1378.0,
+   "dur": 21.0,
+   "type": "trophy",
+   "label": "WORLDCUP26"
+  },
+  {
+   "at": 1438.5,
+   "dur": 28.0,
+   "type": "kinetic",
+   "size": 110,
+   "words": [
+    {
+     "w": "worldcup26.world",
+     "at": 0.5,
+     "gold": true
+    }
+   ]
+  },
+  {
+   "at": 1466.5,
+   "dur": 3.5,
+   "type": "pitch"
+  }
+ ]
 }

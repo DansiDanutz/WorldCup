@@ -18,6 +18,41 @@ function Frame({ children, grain = false }) {
   );
 }
 
+// Procedural graphics beats (clips.json `graphics[]`) rendered through MotionKit.
+// Each chapter mounts one GraphicsLayer over its window — Remotion-style animated
+// numbers/names/charts that tile every second no clip or card covers (no-black rule).
+function GraphicsLayer({ from, to }) {
+  const K = window.MotionKit;
+  const beats = (window.MV_GRAPHICS || []).filter(b => b.at >= from - 0.01 && b.at < to);
+  return (
+    <div style={{ position: 'absolute', inset: 0, zIndex: 8 }}>
+      {beats.map((b, i) => {
+        const accent = b.accent === 'red' ? K.MK.red : K.MK.gold;
+        if (b.type === 'kinetic')  return <K.KineticWords key={i} from={b.at} dur={b.dur} words={b.words} size={b.size || 140} accent={accent} />;
+        if (b.type === 'score')    return <K.ScoreTicker key={i} from={b.at} dur={b.dur} left={b.left} right={b.right} score={b.score} note={b.note} />;
+        if (b.type === 'flags')    return <K.FlagWall key={i} from={b.at} dur={b.dur} colors={b.colors} />;
+        if (b.type === 'barchart') return <K.BarChartGrow key={i} from={b.at} dur={b.dur} title={b.title} bars={b.bars} />;
+        if (b.type === 'trophy')   return <K.TrophyGlow key={i} from={b.at} dur={b.dur} label={b.label} />;
+        if (b.type === 'pitch')    return <K.PitchLines key={i} from={b.at} dur={b.dur} />;
+        return null;
+      })}
+    </div>
+  );
+}
+
+// Always-on animated base + graphics for one chapter window.
+function ChapterBase({ from, to, tint = GREEN }) {
+  const K = window.MotionKit;
+  const t = useTime();
+  if (t < from || t >= to) return null;
+  return (
+    <React.Fragment>
+      <K.AmbientStadium from={from} dur={to - from} tint={tint} />
+      <GraphicsLayer from={from} to={to} />
+    </React.Fragment>
+  );
+}
+
 // Short chapter kicker (label only, fades in/out) — global time via TitleReveal.
 function ChapterTitle({ at, text, color = MV.gold, size = 96 }) {
   const t = useTime();
@@ -38,6 +73,7 @@ function ChapterTitle({ at, text, color = MV.gold, size = 96 }) {
 function SceneColdOpen() {
   return (
     <Frame>
+      <ChapterBase from={0} to={74} tint="#106b4f" />
       <ClipSprite id="cold-final-night" dim={0.25} style={{ filter: 'brightness(0.7) contrast(1.1)' }} />
       <ClipSprite id="cold-torres-winner" />
       <ClipSprite id="cold-messi-walk" dim={0.15} style={{ filter: 'saturate(0.9)' }} />
@@ -52,6 +88,7 @@ function SceneColdOpen() {
 function SceneBuilt() {
   return (
     <Frame>
+      <ChapterBase from={74} to={242.5} tint="#0e5a8a" />
       <ClipSprite id="build-app-hero" />
       <ClipSprite id="build-pick3-card" />
       <ClipSprite id="build-legendcards" dim={0.1} />
@@ -68,6 +105,7 @@ function SceneBuilt() {
 function SceneThanks() {
   return (
     <Frame>
+      <ChapterBase from={242.5} to={388} tint="#106b4f" />
       <ClipSprite id="thanks-14k-card" />
       <ClipSprite id="thanks-stadium" />
       <ClipSprite id="thanks-community" />
@@ -81,6 +119,7 @@ function SceneThanks() {
 function SceneMoney() {
   return (
     <Frame>
+      <ChapterBase from={388} to={611} tint="#8a6d0e" />
       <ClipSprite id="money-655-card" />
       <ClipSprite id="money-50m-card" />
       <ClipSprite id="money-placings" />
@@ -96,6 +135,7 @@ function SceneMoney() {
 function SceneRecords() {
   return (
     <Frame>
+      <ChapterBase from={611} to={832} tint="#0e5a8a" />
       <ClipSprite id="rec-brazil5-card" />
       <ClipSprite id="rec-klose-card" />
       <ClipSprite id="rec-mbappe" />
@@ -118,6 +158,7 @@ function SceneRecords() {
 function SceneGreatest() {
   return (
     <Frame>
+      <ChapterBase from={832} to={992} tint="#106b4f" />
       <ClipSprite id="great-brazil70" />
       <ClipSprite id="great-spain10" />
       <ClipSprite id="great-pele58" />
@@ -133,6 +174,7 @@ function SceneGreatest() {
 function SceneLeaves() {
   return (
     <Frame>
+      <ChapterBase from={992} to={1331} tint="#4a2a6b" />
       <ClipSprite id="leave-cruyff" />
       <ClipSprite id="leave-puskas" />
       <ClipSprite id="leave-milla" />
@@ -155,6 +197,7 @@ function SceneLeaves() {
 function SceneClose() {
   return (
     <Frame>
+      <ChapterBase from={1331} to={1470} tint="#106b4f" />
       <ClipSprite id="close-montage" dim={0.12} />
       <ClipSprite id="close-14k-climb" />
       <ClipSprite id="close-app-cta" />

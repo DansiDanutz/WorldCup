@@ -23,6 +23,7 @@
 
 <script type="text/babel" src="animations.jsx"></script>
 <script type="text/babel" src="match-kit.jsx"></script>
+<script type="text/babel" src="motion-kit.jsx"></script>
 <script type="text/babel" src="match-scenes.jsx"></script>
 
 <script type="text/babel">
@@ -106,6 +107,7 @@ fetch('./clips.json')
   .then((r) => r.json())
   .then((d) => {
     window.MV_CLIPS = d.clips || [];
+    window.MV_GRAPHICS = d.graphics || [];
     // QA guard: every ClipSprite id used in scenes must exist (warns loudly)
     fetch('./match-scenes.jsx').then(r => r.text()).then(src => {
       const used = [...src.matchAll(/ClipSprite id="([^"]+)"/g)].map(m => m[1]);
