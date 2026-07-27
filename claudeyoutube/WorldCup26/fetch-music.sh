@@ -3,7 +3,9 @@
 # credit REQUIRED in the video description; see README). Music mp3s are
 # gitignored by repo policy, so run this once after cloning.
 set -euo pipefail
-cd "$(dirname "$0")/music"
+cd "$(dirname "$0")"
+mkdir -p music
+cd music
 BASE="https://incompetech.com/music/royalty-free/mp3-royaltyfree"
 fetch() { # out track
   local out="$1" name="$2"
