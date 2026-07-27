@@ -16,7 +16,25 @@ So locally this is now: `npm install` → `./fetch-music.sh` → `npm run voice`
 `npm run serve` + `npm run render` → `npm run mux`. Steps below kept for reference.
 
 > ⚠️ Disk note: the full render writes ~44,100 PNG frames (≈30–45 GB). Free the space or
-> render in two halves (`START`/`DURATION` env on `render.mjs`) and encode between halves.
+> render in two halves and encode between them.
+>
+> `START` and `END` are **absolute positions on the timeline** — `END` is a timestamp to
+> stop at, *not* a segment length, and `START` is a frame index, *not* an offset added to
+> it. Passing a length (`START=22050 END=735`) would describe an empty range; `render.mjs`
+> rejects that with an explanatory error rather than writing zero frames and exiting 0.
+>
+> ```bash
+> # first half  -> frames 0 .. 22049
+> FPS=30 DURATION=1470 START=0     END=735  OUT=frames_a node render.mjs
+> # second half -> frames 22050 .. 44099   (END may be omitted; it defaults to DURATION)
+> FPS=30 DURATION=1470 START=22050 END=1470 OUT=frames_b node render.mjs
+> # resume after a crash: START = the next missing frame index
+> ```
+>
+> Encode each half with `-start_number` matching its first frame, then concat. Note the
+> frames are 1920x1081, so the encode needs `-vf crop=1920:1080:0:0` (libx264 requires
+> even dimensions).
+>
 > To swap any symlinked visual for a richer generated clip later, just replace the symlink
 > with a real file of the same name — no timeline changes needed.
 

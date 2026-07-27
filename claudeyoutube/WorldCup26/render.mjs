@@ -9,9 +9,18 @@ import path from 'node:path';
 const HTML = process.env.URL || 'http://127.0.0.1:8126/match.html';
 const EXEC = process.env.CHROMIUM_PATH || undefined;
 const FPS = Number(process.env.FPS || 30);
+// DURATION is the length of the whole timeline (used to clamp the seek time).
+// START/END bound the slice of it this process renders, so a long render can be
+// split into segments or resumed after a crash. Both are ABSOLUTE against the
+// timeline, never relative to the segment:
+//   full render      START=0     END unset  -> frames 0 .. DURATION*FPS-1
+//   first half       END=735               -> frames 0     .. 22049
+//   second half      START=22050           -> frames 22050 .. 44099
+//   resume a crash   START=<next frame idx>
 const DURATION = Number(process.env.DURATION || 300);
 const OUT = process.env.OUT || 'frames';
-const START = Number(process.env.START || 0); // resume support: first frame index
+const START = Number(process.env.START || 0); // absolute index of the first frame to render
+const END = Number(process.env.END || DURATION); // absolute timeline second to stop at
 const SHOTS = process.env.SHOTS ? process.env.SHOTS.split(',').map(Number) : null;
 const QUALITY = Number(process.env.QUALITY || 92);
 
@@ -59,7 +68,17 @@ if (SHOTS) {
     console.log('shot', t, '->', f);
   }
 } else {
-  const total = Math.round(DURATION * FPS);
+  const total = Math.round(END * FPS);
+  // An empty range means the caller passed a segment LENGTH where an absolute
+  // END was expected (e.g. START=22050 END=735). Fail loudly - silently writing
+  // zero frames and exiting 0 looks like a successful segment render.
+  if (START >= total) {
+    throw new Error(
+      `empty frame range: START=${START} is at or past END=${END}s (frame ${total}). ` +
+      `START and END are ABSOLUTE positions on the ${DURATION}s timeline, not a segment offset+length. ` +
+      `For the second half of a ${DURATION}s render use START=${Math.round(DURATION * FPS / 2)} with END=${DURATION}.`
+    );
+  }
   const t0 = Date.now();
   for (let i = START; i < total; i++) {
     const t = Math.min(DURATION - 1e-3, i / FPS);
