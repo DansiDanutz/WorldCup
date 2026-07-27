@@ -32,8 +32,18 @@ function GraphicsLayer({ from, to }) {
         if (b.type === 'score')    return <K.ScoreTicker key={i} from={b.at} dur={b.dur} left={b.left} right={b.right} score={b.score} note={b.note} />;
         if (b.type === 'flags')    return <K.FlagWall key={i} from={b.at} dur={b.dur} colors={b.colors} />;
         if (b.type === 'barchart') return <K.BarChartGrow key={i} from={b.at} dur={b.dur} title={b.title} bars={b.bars} />;
-        if (b.type === 'trophy')   return <K.TrophyGlow key={i} from={b.at} dur={b.dur} label={b.label} />;
+        if (b.type === 'trophy')   return <K.TrophyCup key={i} from={b.at} dur={b.dur} label={b.label} />;
         if (b.type === 'pitch')    return <K.PitchLines key={i} from={b.at} dur={b.dur} />;
+        if (b.type === 'name')     return <K.NamePlate key={i} from={b.at} dur={b.dur} name={b.name} stat={b.stat} meta={b.meta} accent={accent} />;
+        if (b.type === 'impact')   return <K.ImpactText key={i} from={b.at} dur={b.dur} text={b.text} size={b.size || 210} accent={accent} />;
+        if (b.type === 'clock')    return <K.ClockTick key={i} from={b.at} dur={b.dur} to={b.to} label={b.label} />;
+        if (b.type === 'ball')     return <K.BallToNet key={i} from={b.at} dur={b.dur} accent={accent} />;
+        if (b.type === 'timeline') return <K.YearTimeline key={i} from={b.at} dur={b.dur} years={b.years} label={b.label} />;
+        if (b.type === 'bowl')     return <K.StadiumBowl key={i} from={b.at} dur={b.dur} fillTo={b.fillTo || 1} label={b.label} />;
+        if (b.type === 'card')     return <K.CardShowcase key={i} from={b.at} dur={b.dur} src={b.src} name={b.name} meta={b.meta} accent={accent} />;
+        if (b.type === 'cardwall') return <K.CardWall key={i} from={b.at} dur={b.dur} srcs={b.srcs} label={b.label} columns={b.columns || 7} />;
+        if (b.type === 'phone')    return <K.PhoneMock key={i} from={b.at} dur={b.dur} srcs={b.srcs} />;
+        if (b.type === 'drift')    return <K.CardDrift key={i} from={b.at} dur={b.dur} srcs={b.srcs} count={b.count || 6} opacity={b.opacity || 0.5} />;
         return null;
       })}
     </div>
@@ -74,10 +84,6 @@ function SceneColdOpen() {
   return (
     <Frame>
       <ChapterBase from={0} to={74} tint="#106b4f" />
-      <ClipSprite id="cold-final-night" dim={0.25} style={{ filter: 'brightness(0.7) contrast(1.1)' }} />
-      <ClipSprite id="cold-torres-winner" />
-      <ClipSprite id="cold-messi-walk" dim={0.15} style={{ filter: 'saturate(0.9)' }} />
-      <ClipSprite id="cold-scale" dim={0.1} />
       <ClipSprite id="cold-title-card" />
       <ChapterTitle at={30.5} text="WHAT FOOTBALL LEFT BEHIND" color="#e8eeff" size={78} />
     </Frame>
@@ -89,13 +95,7 @@ function SceneBuilt() {
   return (
     <Frame>
       <ChapterBase from={74} to={242.5} tint="#0e5a8a" />
-      <ClipSprite id="build-app-hero" />
       <ClipSprite id="build-pick3-card" />
-      <ClipSprite id="build-legendcards" dim={0.1} />
-      <ClipSprite id="build-castro" />
-      <ClipSprite id="build-escobar" />
-      <ClipSprite id="build-carbajal" />
-      <ClipSprite id="build-craft" dim={0.15} />
       <ChapterTitle at={76} text="WHAT WE BUILT" color={MV.gold} />
     </Frame>
   );
@@ -106,10 +106,6 @@ function SceneThanks() {
   return (
     <Frame>
       <ChapterBase from={242.5} to={388} tint="#106b4f" />
-      <ClipSprite id="thanks-14k-card" />
-      <ClipSprite id="thanks-stadium" />
-      <ClipSprite id="thanks-community" />
-      <ClipSprite id="thanks-basecamp" dim={0.1} />
       <ChapterTitle at={242.5} text="THANK YOU" color={MV.gold} />
     </Frame>
   );
@@ -120,13 +116,8 @@ function SceneMoney() {
   return (
     <Frame>
       <ChapterBase from={388} to={611} tint="#8a6d0e" />
-      <ClipSprite id="money-655-card" />
-      <ClipSprite id="money-50m-card" />
-      <ClipSprite id="money-placings" />
-      <ClipSprite id="money-clubs-card" />
       {/* the static growth card was replaced by the animated BarChartGrow beat
           (clips.json graphics[], 528-559s) - values count up bar by bar */}
-      <ClipSprite id="money-explode" dim={0.2} />
       <ChapterTitle at={388} text="THE MONEY" color="#f6b40e" />
     </Frame>
   );
@@ -137,19 +128,6 @@ function SceneRecords() {
   return (
     <Frame>
       <ChapterBase from={611} to={832} tint="#0e5a8a" />
-      <ClipSprite id="rec-brazil5-card" />
-      <ClipSprite id="rec-klose-card" />
-      <ClipSprite id="rec-mbappe" />
-      <ClipSprite id="rec-messi-scorer" />
-      <ClipSprite id="rec-scorers-card" />
-      <ClipSprite id="rec-boot-card" />
-      <ClipSprite id="rec-pele-young" />
-      <ClipSprite id="rec-milla-old" />
-      <ClipSprite id="rec-fastest-card" />
-      <ClipSprite id="rec-format-card" />
-      <ClipSprite id="rec-308-card" />
-      <ClipSprite id="rec-attendance" dim={0.1} />
-      <ClipSprite id="rec-spain-def" />
       <ChapterTitle at={611} text="THE RECORD BOOKS" color="#e8eeff" size={82} />
     </Frame>
   );
@@ -160,12 +138,6 @@ function SceneGreatest() {
   return (
     <Frame>
       <ChapterBase from={832} to={992} tint="#106b4f" />
-      <ClipSprite id="great-brazil70" />
-      <ClipSprite id="great-spain10" />
-      <ClipSprite id="great-pele58" />
-      <ClipSprite id="great-machines" />
-      <ClipSprite id="great-spain26-card" />
-      <ClipSprite id="great-montage" dim={0.1} />
       <ChapterTitle at={832} text="THE GREATEST" color={MV.gold} />
     </Frame>
   );
@@ -176,19 +148,6 @@ function SceneLeaves() {
   return (
     <Frame>
       <ChapterBase from={992} to={1331} tint="#4a2a6b" />
-      <ClipSprite id="leave-cruyff" />
-      <ClipSprite id="leave-puskas" />
-      <ClipSprite id="leave-milla" />
-      <ClipSprite id="leave-messi-hero" />
-      <ClipSprite id="leave-messi-drive" />
-      <ClipSprite id="leave-final-drama" />
-      <ClipSprite id="leave-torres-goal" />
-      <ClipSprite id="leave-medal" dim={0.1} />
-      <ClipSprite id="leave-awards-card" />
-      <ClipSprite id="leave-messi-love" />
-      <ClipSprite id="leave-trump-card" />
-      <ClipSprite id="leave-phonecall" dim={0.2} />
-      <ClipSprite id="leave-belgium-card" />
       <ChapterTitle at={992} text="WHAT REMAINS" color="#e8eeff" />
     </Frame>
   );
@@ -199,10 +158,6 @@ function SceneClose() {
   return (
     <Frame>
       <ChapterBase from={1331} to={1470} tint="#106b4f" />
-      <ClipSprite id="close-montage" dim={0.12} />
-      <ClipSprite id="close-14k-climb" />
-      <ClipSprite id="close-app-cta" />
-      <ClipSprite id="close-endcard" />
       <Confetti start={1331} dur={10} />
       <ChapterTitle at={1331} text="WE CONTINUE" color={MV.gold} />
     </Frame>
