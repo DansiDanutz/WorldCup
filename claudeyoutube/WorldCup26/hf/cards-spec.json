@@ -1,29 +1,241 @@
 {
   "comment": "23 brand cards for the milestone documentary. Values MATCH narration.json exactly (verified figures, sources in narration comment + README). Labels only - never sentences (hard rule #10). dur mirrors the clips.json slot so the mp4 never loops mid-animation.",
-  "brand": { "bg": "#07090f", "green": "#106b4f", "gold": "#ffd24a", "text": "#f4f6fa", "muted": "#93a0b4", "red": "#d21034" },
+  "brand": {
+    "bg": "#07090f",
+    "green": "#106b4f",
+    "gold": "#ffd24a",
+    "text": "#f4f6fa",
+    "muted": "#93a0b4",
+    "red": "#d21034"
+  },
   "cards": [
-    { "id": "card-title",          "dur": 15, "type": "title",  "kicker": "WORLDCUP26",        "main": "WHAT WE BUILT",     "sub": "STORY · MONEY · LEGENDS" },
-    { "id": "card-pick3",          "dur": 11, "type": "title",  "kicker": "WORLDCUP26.WORLD",  "main": "PICK 3",            "sub": "FREE · FOR FUN · NO PRIZES" },
-    { "id": "card-14000",          "dur": 14, "type": "number", "main": "14,000", "countTo": 14000, "format": "comma", "label": "SUBSCRIBERS", "sub": "THANK YOU" },
-    { "id": "card-655m",           "dur": 10, "type": "number", "main": "$655M",  "countTo": 655,  "format": "$#M",   "label": "PRIZE POOL 2026", "sub": "+50% VS 2022" },
-    { "id": "card-50m",            "dur": 12, "type": "number", "main": "$50M",   "countTo": 50,   "format": "$#M",   "label": "SPAIN · CHAMPIONS", "sub": "RECORD CHEQUE" },
-    { "id": "card-placings",       "dur": 12, "type": "rows",   "label": "THE PAYOUTS", "rows": ["$33M — ARGENTINA", "$29M — THIRD PLACE", "$1.5M — EVERY TEAM"] },
-    { "id": "card-355m-clubs",     "dur": 13, "type": "number", "main": "$355M",  "countTo": 355,  "format": "$#M",   "label": "PAID TO CLUBS", "sub": "≈ $5,000 · PLAYER · DAY" },
-    { "id": "card-money-growth",   "dur": 32, "type": "rows",   "label": "WINNER'S PRIZE", "rows": ["1982 — $2M", "2006 — $20M", "2018 — $38M", "2022 — $42M", "2026 — $50M"], "slow": true },
-    { "id": "card-brazil-5",       "dur": 16, "type": "number", "main": "5", "countTo": 5, "format": "#", "label": "BRAZIL · TITLES", "sub": "58 · 62 · 70 · 94 · 02", "stars": 5 },
-    { "id": "card-klose-16",       "dur": 14, "type": "number", "main": "16", "countTo": 16, "format": "#", "label": "MIROSLAV KLOSE", "sub": "2002 – 2014" },
-    { "id": "card-scorers-2226",   "dur": 10, "type": "rows",   "label": "ALL-TIME SCORERS", "rows": ["MBAPPÉ — 22", "MESSI — 21", "KLOSE — 16"] },
-    { "id": "card-golden-boot",    "dur": 12, "type": "number", "main": "10", "countTo": 10, "format": "#", "label": "MBAPPÉ · GOLDEN BOOT", "sub": "×2 — FIRST EVER" },
-    { "id": "card-fastest-goal",   "dur": 12, "type": "number", "main": "10.8s", "countTo": 10.8, "format": "#.#s", "label": "HAKAN ŞÜKÜR", "sub": "TÜRKİYE · 2002" },
-    { "id": "card-48-104-39",      "dur": 13, "type": "rows",   "label": "FIRST EVER", "rows": ["48 — TEAMS", "104 — MATCHES", "39 — DAYS"] },
-    { "id": "card-308-goals",      "dur": 10, "type": "number", "main": "308", "countTo": 308, "format": "#", "label": "GOALS", "sub": "HIGHEST-SCORING EVER" },
-    { "id": "card-spain-1-goal",   "dur": 12, "type": "number", "main": "1", "countTo": 1, "format": "#", "label": "GOAL CONCEDED", "sub": "8 GAMES · SPAIN" },
-    { "id": "card-spain-double",   "dur": 18, "type": "title",  "kicker": "SPAIN", "main": "2010 + 2026", "sub": "MEN'S & WOMEN'S CHAMPIONS" },
-    { "id": "card-golden-silver",  "dur": 16, "type": "rows",   "label": "FIFA AWARDS", "rows": ["GOLDEN BALL — RODRI", "SILVER BALL — MESSI", "BRONZE BALL — MBAPPÉ"] },
-    { "id": "card-red-card",       "dur": 13, "type": "title",  "kicker": "BAN SUSPENDED", "main": "ARTICLE 27", "sub": "FIRST SINCE 1962", "accent": "red" },
-    { "id": "card-usa-belgium-41", "dur": 10, "type": "title",  "kicker": "SEATTLE", "main": "USA 1–4 BELGIUM", "sub": "", "accent": "red" },
-    { "id": "card-14k-climbing",   "dur": 12, "type": "number", "main": "14,000", "countTo": 14000, "format": "comma", "label": "AND CLIMBING", "sub": "" },
-    { "id": "card-app-cta",        "dur": 20, "type": "title",  "kicker": "PICK 3 · FREE", "main": "worldcup26.world", "sub": "JUST FOR FUN · NO PRIZES", "lower": true },
-    { "id": "card-subscribe-end",  "dur": 20, "type": "title",  "kicker": "WORLDCUP26", "main": "SUBSCRIBE", "sub": "THE LEGENDS CONTINUE" }
+    {
+      "id": "card-title",
+      "dur": 15,
+      "type": "title",
+      "kicker": "WORLDCUP26",
+      "main": "WHAT WE BUILT",
+      "sub": "STORY · MONEY · LEGENDS"
+    },
+    {
+      "id": "card-pick3",
+      "dur": 11,
+      "type": "title",
+      "kicker": "WORLDCUP26.WORLD",
+      "main": "PICK 3",
+      "sub": "FREE · FOR FUN · NO PRIZES"
+    },
+    {
+      "id": "card-14000",
+      "dur": 14,
+      "type": "number",
+      "main": "14,000",
+      "countTo": 14000,
+      "format": "comma",
+      "label": "SUBSCRIBERS",
+      "sub": "THANK YOU"
+    },
+    {
+      "id": "card-655m",
+      "dur": 10,
+      "type": "number",
+      "main": "$655M",
+      "countTo": 655,
+      "format": "$#M",
+      "label": "PRIZE POOL 2026",
+      "sub": "+50% VS 2022"
+    },
+    {
+      "id": "card-50m",
+      "dur": 12,
+      "type": "number",
+      "main": "$50M",
+      "countTo": 50,
+      "format": "$#M",
+      "label": "SPAIN · CHAMPIONS",
+      "sub": "RECORD CHEQUE"
+    },
+    {
+      "id": "card-placings",
+      "dur": 12,
+      "type": "rows",
+      "label": "THE PAYOUTS",
+      "rows": [
+        "$33M — ARGENTINA",
+        "$29M — THIRD PLACE",
+        "$10.5M — EVERY TEAM"
+      ]
+    },
+    {
+      "id": "card-355m-clubs",
+      "dur": 13,
+      "type": "number",
+      "main": "$355M",
+      "countTo": 355,
+      "format": "$#M",
+      "label": "PAID TO CLUBS",
+      "sub": "≈ $11,000 · PLAYER · DAY"
+    },
+    {
+      "id": "card-money-growth",
+      "dur": 32,
+      "type": "rows",
+      "label": "WINNER'S PRIZE",
+      "rows": [
+        "1982 — $2M",
+        "2006 — $20M",
+        "2018 — $38M",
+        "2022 — $42M",
+        "2026 — $50M"
+      ],
+      "slow": true
+    },
+    {
+      "id": "card-brazil-5",
+      "dur": 16,
+      "type": "number",
+      "main": "5",
+      "countTo": 5,
+      "format": "#",
+      "label": "BRAZIL · TITLES",
+      "sub": "58 · 62 · 70 · 94 · 02",
+      "stars": 5
+    },
+    {
+      "id": "card-klose-16",
+      "dur": 14,
+      "type": "number",
+      "main": "16",
+      "countTo": 16,
+      "format": "#",
+      "label": "MIROSLAV KLOSE",
+      "sub": "2002 – 2014"
+    },
+    {
+      "id": "card-scorers-2226",
+      "dur": 10,
+      "type": "rows",
+      "label": "ALL-TIME SCORERS",
+      "rows": [
+        "MBAPPÉ — 22",
+        "MESSI — 21",
+        "KLOSE — 16"
+      ]
+    },
+    {
+      "id": "card-golden-boot",
+      "dur": 12,
+      "type": "number",
+      "main": "10",
+      "countTo": 10,
+      "format": "#",
+      "label": "MBAPPÉ · GOLDEN BOOT",
+      "sub": "×2 — FIRST EVER"
+    },
+    {
+      "id": "card-fastest-goal",
+      "dur": 12,
+      "type": "number",
+      "main": "10.8s",
+      "countTo": 10.8,
+      "format": "#.#s",
+      "label": "HAKAN ŞÜKÜR",
+      "sub": "TÜRKİYE · 2002"
+    },
+    {
+      "id": "card-48-104-39",
+      "dur": 13,
+      "type": "rows",
+      "label": "FIRST EVER",
+      "rows": [
+        "48 — TEAMS",
+        "104 — MATCHES",
+        "39 — DAYS"
+      ]
+    },
+    {
+      "id": "card-308-goals",
+      "dur": 10,
+      "type": "number",
+      "main": "308",
+      "countTo": 308,
+      "format": "#",
+      "label": "GOALS",
+      "sub": "HIGHEST-SCORING EVER"
+    },
+    {
+      "id": "card-spain-1-goal",
+      "dur": 12,
+      "type": "number",
+      "main": "1",
+      "countTo": 1,
+      "format": "#",
+      "label": "GOAL CONCEDED",
+      "sub": "8 GAMES · SPAIN"
+    },
+    {
+      "id": "card-spain-double",
+      "dur": 18,
+      "type": "title",
+      "kicker": "SPAIN",
+      "main": "2010 + 2026",
+      "sub": "MEN'S & WOMEN'S CHAMPIONS"
+    },
+    {
+      "id": "card-golden-silver",
+      "dur": 16,
+      "type": "rows",
+      "label": "FIFA AWARDS",
+      "rows": [
+        "GOLDEN BALL — RODRI",
+        "SILVER BALL — MESSI",
+        "BRONZE BALL — MBAPPÉ"
+      ]
+    },
+    {
+      "id": "card-red-card",
+      "dur": 13,
+      "type": "title",
+      "kicker": "BAN SUSPENDED",
+      "main": "ARTICLE 27",
+      "sub": "BALOGUN · TRUMP · FIFA",
+      "accent": "red"
+    },
+    {
+      "id": "card-usa-belgium-41",
+      "dur": 10,
+      "type": "title",
+      "kicker": "SEATTLE",
+      "main": "USA 1–4 BELGIUM",
+      "sub": "",
+      "accent": "red"
+    },
+    {
+      "id": "card-14k-climbing",
+      "dur": 12,
+      "type": "number",
+      "main": "14,000",
+      "countTo": 14000,
+      "format": "comma",
+      "label": "AND CLIMBING",
+      "sub": ""
+    },
+    {
+      "id": "card-app-cta",
+      "dur": 20,
+      "type": "title",
+      "kicker": "PICK 3 · FREE",
+      "main": "worldcup26.world",
+      "sub": "JUST FOR FUN · NO PRIZES",
+      "lower": true
+    },
+    {
+      "id": "card-subscribe-end",
+      "dur": 20,
+      "type": "title",
+      "kicker": "WORLDCUP26",
+      "main": "SUBSCRIBE",
+      "sub": "THE LEGENDS CONTINUE"
+    }
   ]
 }
