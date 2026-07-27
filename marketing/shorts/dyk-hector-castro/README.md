@@ -49,7 +49,7 @@ and its final decided — by a centre-forward with one arm.
 > of the world… crowned by the man they said would never play at all."
 
 **Tag (drives to the app, not the channel — hard rule):**
-> "The Divine One-Armed Man. Collect his legend, free, at worldcup-twenty-six-dot-world."
+> "The Divine One-Armed Man. Collect his legend at worldcup-twenty-six-dot-world — free to play, just for fun, no prizes."
 
 *Length ≈ 150 words ≈ 50–55s at Brian's pace. Trim the middle sentence if it runs past 58s.*
 
@@ -61,7 +61,7 @@ and its final decided — by a centre-forward with one arm.
 - `HÉCTOR CASTRO` (name lower-third)
 - `EL DIVINO MANCO` (second-name reveal beat)
 - `URUGUAY 4–2 ARGENTINA · 1930` (final score bug)
-- End card: **"Legendary Cards"** → *collect the legends · sign up free · worldcup26.world*
+- End card: **"Legendary Cards"** → *collect the legends · free to play · just for fun · no prizes · worldcup26.world*
 - Card line: `The Divine One-Armed Man · Uruguay · 1904–1960`
 
 ---

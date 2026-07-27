@@ -2,20 +2,82 @@
   "short": "dyk-hector-castro",
   "title": "Did You Know… He Won The First World Cup With One Arm?",
   "subject": "Héctor Castro — El Divino Manco",
-  "format": { "aspect_ratio": "9:16", "width": 1080, "height": 1920, "fps": 30, "target_seconds": 52, "max_seconds": 60 },
-  "voice": { "narrator": "Brian", "provider": "elevenlabs", "voice_id": "nPczCjzI2devNBz1zQrb", "model": "eleven_flash_v2_5" },
+  "format": {
+    "aspect_ratio": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "target_seconds": 52,
+    "max_seconds": 60
+  },
+  "voice": {
+    "narrator": "Brian",
+    "provider": "elevenlabs",
+    "voice_id": "nPczCjzI2devNBz1zQrb",
+    "model": "eleven_flash_v2_5"
+  },
   "lines": [
-    { "id": "line_01", "beat": "hook", "text": "Did you know the man who scored the final goal of the very first World Cup final… had only one arm?" },
-    { "id": "line_02", "beat": "drama", "text": "Montevideo, nineteen-thirty. Héctor Castro was just thirteen when an electric saw took his right forearm forever." },
-    { "id": "line_03", "beat": "turn", "text": "They called him El Manco — the one-armed — a boy the game was supposed to leave behind." },
-    { "id": "line_04", "beat": "rise", "text": "Instead, he came back so beautiful to watch they gave him a second name: El Divino. The Divine One-Armed Man." },
-    { "id": "line_05", "beat": "first_goal", "text": "When the world gathered for the first World Cup in history, it was Castro who scored Uruguay's very first goal." },
-    { "id": "line_06", "beat": "final", "text": "And in the final, against Argentina, ninety thousand roaring — with the clock almost dead — the one-armed man rose, and scored the last goal of the match." },
-    { "id": "line_07", "beat": "idol", "text": "Uruguay four, Argentina two. The first champions of the world… crowned by the man they said would never play at all." },
-    { "id": "line_08", "beat": "cta", "text": "The Divine One-Armed Man. Collect his legend, free, at worldcup twenty-six dot world." }
+    {
+      "id": "line_01",
+      "beat": "hook",
+      "text": "Did you know the man who scored the final goal of the very first World Cup final… had only one arm?"
+    },
+    {
+      "id": "line_02",
+      "beat": "drama",
+      "text": "Montevideo, nineteen-thirty. Héctor Castro was just thirteen when an electric saw took his right forearm forever."
+    },
+    {
+      "id": "line_03",
+      "beat": "turn",
+      "text": "They called him El Manco — the one-armed — a boy the game was supposed to leave behind."
+    },
+    {
+      "id": "line_04",
+      "beat": "rise",
+      "text": "Instead, he came back so beautiful to watch they gave him a second name: El Divino. The Divine One-Armed Man."
+    },
+    {
+      "id": "line_05",
+      "beat": "first_goal",
+      "text": "When the world gathered for the first World Cup in history, it was Castro who scored Uruguay's very first goal."
+    },
+    {
+      "id": "line_06",
+      "beat": "final",
+      "text": "And in the final, against Argentina, ninety thousand roaring — with the clock almost dead — the one-armed man rose, and scored the last goal of the match."
+    },
+    {
+      "id": "line_07",
+      "beat": "idol",
+      "text": "Uruguay four, Argentina two. The first champions of the world… crowned by the man they said would never play at all."
+    },
+    {
+      "id": "line_08",
+      "beat": "cta",
+      "text": "The Divine One-Armed Man. Collect his legend at worldcup twenty-six dot world — free to play, just for fun, no prizes."
+    }
   ],
-  "labels": ["DID YOU KNOW?", "HÉCTOR CASTRO", "EL DIVINO MANCO", "URUGUAY 4–2 ARGENTINA · 1930"],
+  "labels": [
+    "DID YOU KNOW?",
+    "HÉCTOR CASTRO",
+    "EL DIVINO MANCO",
+    "URUGUAY 4–2 ARGENTINA · 1930"
+  ],
   "card_line": "The Divine One-Armed Man · Uruguay · 1904–1960",
-  "music": { "source": "Kevin MacLeod / incompetech (CC-BY 4.0)", "arc": "somber-to-triumphant", "ducked": true },
-  "safety": { "made_for_kids": false, "ai_disclosure": true, "cleared_music": true, "soccer_only": true, "no_graphic_content": true, "no_betting_language": true, "no_on_screen_sentences": true, "no_repeat_clips": true }
+  "music": {
+    "source": "Kevin MacLeod / incompetech (CC-BY 4.0)",
+    "arc": "somber-to-triumphant",
+    "ducked": true
+  },
+  "safety": {
+    "made_for_kids": false,
+    "ai_disclosure": true,
+    "cleared_music": true,
+    "soccer_only": true,
+    "no_graphic_content": true,
+    "no_betting_language": true,
+    "no_on_screen_sentences": true,
+    "no_repeat_clips": true
+  }
 }
