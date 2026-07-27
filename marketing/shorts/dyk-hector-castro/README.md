@@ -95,7 +95,7 @@ Brand: WorldCup26 green `#106b4f` + gold "legendary" accent + Inter + real troph
 1. **DID YOU KNOW?** opener.
 2. **Name lower-third:** `HÉCTOR CASTRO` + `URUGUAY · 1930`.
 3. **End ad ("Legendary Cards"):** *collect legendary player cards, unlock the stories they
-   never told you — sign up free at worldcup26.world.*
+   never told you — worldcup26.world, free to play · just for fun · no prizes.*
 
 ---
 
