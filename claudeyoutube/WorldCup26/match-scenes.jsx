@@ -124,7 +124,8 @@ function SceneMoney() {
       <ClipSprite id="money-50m-card" />
       <ClipSprite id="money-placings" />
       <ClipSprite id="money-clubs-card" />
-      <ClipSprite id="money-growth-card" />
+      {/* the static growth card was replaced by the animated BarChartGrow beat
+          (clips.json graphics[], 528-559s) - values count up bar by bar */}
       <ClipSprite id="money-explode" dim={0.2} />
       <ChapterTitle at={388} text="THE MONEY" color="#f6b40e" />
     </Frame>
