@@ -32,6 +32,12 @@ http.createServer((req, res) => {
   if (m) {
     const s = m[1] ? +m[1] : 0;
     const e = Math.min(m[2] ? +m[2] : size - 1, size - 1);
+    // unsatisfiable range (e.g. bytes=N- on an N-byte file) would produce a
+    // negative Content-Length, which Node rejects by killing the response —
+    // answer 416 instead so a probing client can't take the render server down
+    if (s >= size || s > e) {
+      res.writeHead(416, { 'Content-Range': `bytes */${size}` }); return res.end();
+    }
     res.writeHead(206, { 'Content-Type': type, 'Accept-Ranges': 'bytes',
       'Content-Range': `bytes ${s}-${e}/${size}`, 'Content-Length': e - s + 1 });
     fs.createReadStream(f, { start: s, end: e }).pipe(res);
