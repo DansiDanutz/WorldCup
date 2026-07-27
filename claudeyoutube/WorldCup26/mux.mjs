@@ -16,12 +16,16 @@ const NO_VO = process.env.NO_VO === '1'; // music+FX preview before the ElevenLa
 const { lines } = JSON.parse(fs.readFileSync('narration.json', 'utf8'));
 const { clips, music, sfx } = JSON.parse(fs.readFileSync('clips.json', 'utf8'));
 
+function probe(f) { return spawnSync(ffmpegPath, ['-i', f], { encoding: 'utf8' }).stderr || ''; }
 function durOf(f) {
-  const r = spawnSync(ffmpegPath, ['-i', f], { encoding: 'utf8' });
-  const m = (r.stderr || '').match(/Duration:\s*(\d+):(\d+):([\d.]+)/);
+  const m = probe(f).match(/Duration:\s*(\d+):(\d+):([\d.]+)/);
   if (!m) throw new Error('no duration for ' + f);
   return (+m[1]) * 3600 + (+m[2]) * 60 + parseFloat(m[3]);
 }
+// Many clips (all motion cards, plus several library/AI clips) carry no audio
+// stream. Referencing [idx:a] for those makes ffmpeg fail while building the
+// filter graph, so they must be excluded from the audio inputs.
+const hasAudio = (f) => /Stream .*Audio:/.test(probe(f));
 
 // ── Inputs (audio stage) ─────────────────────────────────────────────────────
 // Stage 1 mixes audio only; stage 2 encodes the frames and muxes the result.
@@ -30,7 +34,7 @@ function durOf(f) {
 const inputs = [];
 const voFiles = NO_VO ? [] : lines.map((_, i) => `audio/line_${String(i).padStart(2, '0')}.mp3`);
 for (const f of voFiles) inputs.push('-i', f);
-const clipFiles = clips.filter(c => fs.existsSync(c.src) && (c.vol ?? 0) > 0);
+const clipFiles = clips.filter(c => fs.existsSync(c.src) && (c.vol ?? 0) > 0 && hasAudio(c.src));
 for (const c of clipFiles) inputs.push('-i', c.src);
 const hits = (sfx?.hits || []).filter(h => fs.existsSync(h.src));
 for (const h of hits) inputs.push('-i', h.src);
