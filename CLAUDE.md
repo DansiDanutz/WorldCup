@@ -439,3 +439,15 @@ story, verified mystery+history, Brian VO, music, image/animation quality, no-re
 clips, monetization-safety. Enhancements are ADDED on top of the gold standard, never
 replacing what already works (see SERIES_PLAYBOOK "EP33+ ENHANCEMENT SET"). Preflight +
 the playbook checklists are the guardrails; use them every time.
+
+## Working preferences (owner)
+
+- **pnpm, never npm.** Use `pnpm install` / `pnpm add` / `pnpm dlx`, and `pnpm run <script>` for
+  everything in `package.json`. Note: this repo still carries a committed `package-lock.json` from
+  npm — migrating it to `pnpm-lock.yaml` is a separate, deliberate change, not a side effect.
+- **Conventional-commit messages**: `type(scope): summary` — e.g. `feat(dashboard): add a
+  selectable dark theme`, `fix(episode): correct Ep22 score bug`.
+- **Run the tests before every commit** — `pnpm test`, plus `pnpm typecheck` / `pnpm lint` when the
+  change touches app code, and `scripts/preflight-episode.mjs` before any render. Never commit
+  against a red or unrun suite. If a change has no gate that covers it, say so explicitly rather
+  than implying it passed.
