@@ -16,7 +16,7 @@ const ART = "/artwork.webp";
 
 const PIECE = {
   title: "Deep Water",
-  artist: "Your Name",
+  artist: "Aurelia",
   year: "2026",
   medium: "Acrylic on stretched canvas",
   size: "100 × 80 cm · 39⅜ × 31½ in",
