@@ -371,10 +371,10 @@ export default function App() {
             <Reveal>
               <p className="t-eyebrow mb-8">The study</p>
               <Tabs defaultValue="story">
-                <TabsList className="t-ui h-auto w-full justify-start gap-1 rounded-none border-b border-white/10 bg-transparent p-0">
+                <TabsList className="t-ui h-auto w-full flex-wrap justify-start gap-x-1 gap-y-0 rounded-none border-b border-white/10 bg-transparent p-0">
                   {[["story", "The painting"], ["scale", "Scale & place"], ["hands", "In your hands"]].map(([v, l]) => (
                     <TabsTrigger key={v} value={v}
-                      className="rounded-none border-b-2 border-transparent bg-transparent px-4 py-3 text-[12px] font-semibold uppercase tracking-[.14em] text-[hsl(var(--muted-foreground))] data-[state=active]:border-[hsl(var(--accent))] data-[state=active]:bg-transparent data-[state=active]:text-[hsl(var(--foreground))] data-[state=active]:shadow-none">
+                      className="rounded-none border-b-2 border-transparent bg-transparent px-3 py-3 text-[11.5px] sm:px-4 sm:text-[12px] font-semibold uppercase tracking-[.14em] text-[hsl(var(--muted-foreground))] data-[state=active]:border-[hsl(var(--accent))] data-[state=active]:bg-transparent data-[state=active]:text-[hsl(var(--foreground))] data-[state=active]:shadow-none">
                       {l}
                     </TabsTrigger>
                   ))}

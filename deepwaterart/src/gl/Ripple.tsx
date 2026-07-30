@@ -70,6 +70,19 @@ export function Ripple({ src, alt, className = "" }: { src: string; alt: string;
     const quiet = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 1 : 0;
     let raf = 0;
     let disposed = false;
+    let lost = false;
+    let wake = () => {};
+
+    // If the GPU drops the context the canvas can no longer draw, so fall back
+    // to the plain <img>. Registered before init so it is always in place.
+    const onContextLost = (e: Event) => {
+      e.preventDefault();
+      lost = true;
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+      setOk(false);
+    };
+    canvas.addEventListener("webglcontextlost", onContextLost);
 
     const img = new Image();
     img.crossOrigin = "anonymous";
@@ -108,7 +121,8 @@ export function Ripple({ src, alt, className = "" }: { src: string; alt: string;
 
       const DPR = Math.min(window.devicePixelRatio || 1, 2);
       const t0 = performance.now();
-      const loop = () => {
+
+      const render = () => {
         const w = Math.max(1, Math.floor(box.clientWidth * DPR));
         const h = Math.max(1, Math.floor(box.clientHeight * DPR));
         if (canvas.width !== w || canvas.height !== h) {
@@ -116,13 +130,32 @@ export function Ripple({ src, alt, className = "" }: { src: string; alt: string;
         }
         const m = mouse.current;
         m.hover += (m.target - m.hover) * 0.07;
-        gl.uniform1f(uTime, (performance.now() - t0) / 1000);
+        // With reduced motion the shader zeroes its own clock, so time is
+        // irrelevant and the image only changes when the pointer does.
+        gl.uniform1f(uTime, quiet ? 0 : (performance.now() - t0) / 1000);
         gl.uniform2f(uMouse, m.x, m.y);
         gl.uniform1f(uHover, m.hover);
         gl.drawArrays(gl.TRIANGLES, 0, 3);
-        raf = requestAnimationFrame(loop);
       };
-      loop();
+
+      const frame = () => {
+        if (disposed || lost) { raf = 0; return; }
+        render();
+        const m = mouse.current;
+        // Quiet mode keeps drawing only while the hover ease is still moving,
+        // then stops instead of burning a frame budget on an unchanging image.
+        if (!quiet || Math.abs(m.target - m.hover) > 0.002) {
+          raf = requestAnimationFrame(frame);
+        } else {
+          raf = 0;
+        }
+      };
+
+      // Wakes the loop for the one-shot cases: pointer input and resize.
+      wake = () => { if (!raf && !disposed && !lost) raf = requestAnimationFrame(frame); };
+
+      if (quiet) render();
+      raf = requestAnimationFrame(frame);
     };
     img.src = src;
 
@@ -131,16 +164,21 @@ export function Ripple({ src, alt, className = "" }: { src: string; alt: string;
       mouse.current.x = (e.clientX - r.left) / r.width;
       mouse.current.y = (e.clientY - r.top) / r.height;
       mouse.current.target = 1;
+      wake();
     };
-    const onLeave = () => { mouse.current.target = 0; };
+    const onLeave = () => { mouse.current.target = 0; wake(); };
+    const onResize = () => wake();
     box.addEventListener("pointermove", onMove);
     box.addEventListener("pointerleave", onLeave);
+    window.addEventListener("resize", onResize);
 
     return () => {
       disposed = true;
       cancelAnimationFrame(raf);
+      canvas.removeEventListener("webglcontextlost", onContextLost);
       box.removeEventListener("pointermove", onMove);
       box.removeEventListener("pointerleave", onLeave);
+      window.removeEventListener("resize", onResize);
     };
   }, [src]);
 
