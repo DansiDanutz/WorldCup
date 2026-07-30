@@ -23,12 +23,10 @@ const PIECE = {
   price: 1100,
   whatsapp: "40749180355",
   whatsappDisplay: "+40 749 180 355",
-  email: "you@example.com",
 };
 
 const WA_TEXT = `Hello — I'm writing about "${PIECE.title}" (${PIECE.size}). Is it still available?`;
 const waHref = `https://wa.me/${PIECE.whatsapp}?text=${encodeURIComponent(WA_TEXT)}`;
-const mailHref = `mailto:${PIECE.email}?subject=${encodeURIComponent(`Enquiry — "${PIECE.title}"`)}&body=${encodeURIComponent(WA_TEXT)}`;
 
 function useScrollProgress() {
   const [p, setP] = useState(0);
@@ -457,10 +455,6 @@ export default function App() {
                 <a href={`https://wa.me/${PIECE.whatsapp}`} target="_blank" rel="noopener noreferrer"
                    className="t-ui t-num text-[13px] tracking-[.14em] text-[hsl(var(--muted-foreground))] underline-offset-4 hover:text-[hsl(var(--foreground))] hover:underline">
                   {PIECE.whatsappDisplay}
-                </a>
-                <a href={mailHref}
-                   className="t-ui mt-2 text-[13px] text-[hsl(var(--muted-foreground))] underline-offset-4 hover:text-[hsl(var(--foreground))] hover:underline">
-                  or write by email
                 </a>
               </div>
               <ul className="t-ui mx-auto mt-14 flex max-w-lg flex-col gap-2 text-[12.5px] leading-relaxed text-[hsl(var(--muted-foreground))]">
