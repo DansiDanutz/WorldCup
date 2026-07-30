@@ -1,0 +1,109 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ══════════════════════════════════════════════════════════════
+   DESIGN SYSTEM — "Deep Water"
+   Every value below is sampled from the painting itself.
+   The site commits to one visual world: you are under the water
+   the painting depicts. That is a deliberate single-theme choice.
+   ══════════════════════════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    /* — Pigments, straight off the canvas — */
+    --sky:      194 35% 75%;   /* the band above the horizon */
+    --shallow:  197 48% 40%;   /* water just under the surface */
+    --sea:      200 60% 27%;   /* mid water */
+    --deep:     202 63% 14%;   /* the bottom of the canvas */
+    --abyss:    204 66%  8%;   /* below the painting */
+    --sienna:    20 47% 47%;   /* her shoulder */
+    --ember:     24 55% 59%;   /* the light on her hip */
+    --plaster:   34 22% 87%;   /* the wall it hangs on */
+
+    /* — shadcn token mapping — */
+    --background: 202 63% 14%;
+    --foreground: 194 22% 92%;
+    --card: 201 55% 17%;
+    --card-foreground: 194 22% 92%;
+    --popover: 202 63% 11%;
+    --popover-foreground: 194 22% 92%;
+    --primary: 194 35% 75%;
+    --primary-foreground: 202 63% 12%;
+    --secondary: 201 45% 21%;
+    --secondary-foreground: 194 22% 92%;
+    --muted: 201 40% 20%;
+    --muted-foreground: 197 16% 64%;
+    --accent: 24 55% 59%;
+    --accent-foreground: 204 66% 9%;
+    --destructive: 8 60% 48%;
+    --destructive-foreground: 194 22% 96%;
+    --border: 200 42% 23%;
+    --input: 200 42% 23%;
+    --ring: 194 35% 75%;
+
+    /* Square corners. A gallery has no rounded-lg. */
+    --radius: 2px;
+
+    /* — Type — */
+    --font-display: 'Bodoni Moda', 'Hoefler Text', Georgia, serif;
+    --font-text: 'Newsreader', 'Iowan Old Style', Palatino, Georgia, serif;
+    --font-ui: 'Archivo', ui-sans-serif, -apple-system, 'Segoe UI', sans-serif;
+  }
+
+  * { border-color: hsl(var(--border)); }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      transition-duration: .001ms !important;
+    }
+  }
+
+  body {
+    background-color: hsl(var(--abyss));
+    color: hsl(var(--foreground));
+    font-family: var(--font-text);
+    font-size: 17px;
+    line-height: 1.65;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    font-synthesis-weight: none;
+  }
+
+  ::selection { background: hsl(var(--accent) / .28); }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* — Type roles — */
+  .t-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: .95;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+  }
+  .t-eyebrow {
+    font-family: var(--font-ui);
+    font-size: .6875rem;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+  }
+  .t-ui { font-family: var(--font-ui); }
+  .t-num { font-variant-numeric: tabular-nums; }
+  .t-body { max-width: 60ch; }
+  .t-body p + p { margin-top: 1.35em; }
+
+  .rule-hair { height: 1px; background: hsl(var(--border)); }
+}
