@@ -7,6 +7,14 @@ Standalone "Did You Know?" Short (DRAMA → IDOL). Portrait 9:16, 1080×1920, 30
 100% AI Pixar visuals · soccer-only · cleared music · made-for-kids = **No** ·
 AI-disclosure = **Yes**. Gold-standard build match: `dyk-gaetjens` (Gaetjens "Did You Know?").
 
+> **STATUS: SPEC — not yet rendered.** This folder is the render-ready production
+> plan, not a built Short. `assets/`, `audio/` and `cards/` are intentionally empty
+> placeholders: every entry in `clips.json` carries a `source` of `generate`,
+> `library-or-generate` or `hyperframes`, meaning the media is produced when the
+> Short is built (see PIPELINE below). Generated media is gitignored repo-wide and
+> never committed, so those paths resolving only after a build is expected, not a
+> broken reference.
+
 ---
 
 ## THE SUBJECT (verified, source-cited — hard rule #9)

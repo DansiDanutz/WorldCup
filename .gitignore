@@ -67,6 +67,13 @@ marketing/player-films/*/assets/*.mp4
 marketing/player-films/*/music/*.mp3
 marketing/player-films/*/*.mp4
 marketing/player-films/*/audio_master.m4a
+# Shorts — same policy: the spec (README/narration/clips.json) is tracked, the
+# generated media is not. Each package ships empty assets/ audio/ cards/ dirs that
+# fill in at render time from the `source` field in clips.json.
+marketing/shorts/*/assets/*.mp4
+marketing/shorts/*/cards/*.mp4
+marketing/shorts/*/audio/*.mp3
+marketing/shorts/*/*.mp4
 # Episode render/mux artifacts (ephemeral, regenerable — never track)
 marketing/**/frames/
 marketing/**/filter.txt
