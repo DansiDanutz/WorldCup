@@ -1,0 +1,4648 @@
+{
+  "comment": "Documentary shot plan v4 - LEGEND CARDS ARE THE STAR. Zero generic player footage (library clips were generic characters, not likenesses). Real app card artwork (194 available) is used: hero CardShowcase for Castro/Escobar/Carbajal/Milla (each card IS that person), CardWall collection moments (100+ LEGEND CARDS), and a PhoneMock ending showing worldcup26.world with a live card/news feed - the app is the payoff. CardDrift runs behind every typography beat so no frame is a flat text slate. TrophyCup replaces the old dome shape. Music: Kevin MacLeod CC-BY 4.0.",
+  "clips": [
+    {
+      "id": "cold-title-card",
+      "beat": "ch0-title",
+      "src": "hf/card-title.mp4",
+      "at": 55.5,
+      "dur": 15,
+      "vol": 0,
+      "source": "hyperframes"
+    },
+    {
+      "id": "build-pick3-card",
+      "beat": "ch1-pick3",
+      "src": "hf/card-pick3.mp4",
+      "at": 100.5,
+      "dur": 10,
+      "vol": 0,
+      "source": "hyperframes"
+    }
+  ],
+  "hyperframes_cards": [
+    {
+      "id": "card-title",
+      "text": "WORLDCUP26",
+      "sub": "WHAT FOOTBALL LEFT BEHIND"
+    },
+    {
+      "id": "card-pick3",
+      "text": "PICK 3 · PLAY FREE",
+      "sub": "worldcup26.world"
+    },
+    {
+      "id": "card-14000",
+      "text": "14,000",
+      "sub": "THANK YOU"
+    },
+    {
+      "id": "card-655m",
+      "text": "$655,000,000",
+      "sub": "2026 PRIZE POOL"
+    },
+    {
+      "id": "card-50m",
+      "text": "$50,000,000",
+      "sub": "WINNER · SPAIN"
+    },
+    {
+      "id": "card-placings",
+      "text": "$33M · $29M",
+      "sub": "2ND · 3RD"
+    },
+    {
+      "id": "card-355m-clubs",
+      "text": "$355,000,000",
+      "sub": "PAID TO CLUBS"
+    },
+    {
+      "id": "card-money-growth",
+      "text": "$2M → $50M",
+      "sub": "1982 · 2006 · 2018 · 2022 · 2026"
+    },
+    {
+      "id": "card-brazil-5",
+      "text": "BRAZIL · 5",
+      "sub": "MOST TITLES"
+    },
+    {
+      "id": "card-klose-16",
+      "text": "KLOSE · 16",
+      "sub": "2002 – 2014"
+    },
+    {
+      "id": "card-scorers-2226",
+      "text": "MBAPPÉ 22 · MESSI 21",
+      "sub": "ALL-TIME"
+    },
+    {
+      "id": "card-golden-boot",
+      "text": "MBAPPÉ · 10",
+      "sub": "GOLDEN BOOT ×2"
+    },
+    {
+      "id": "card-fastest-goal",
+      "text": "10.8 SEC",
+      "sub": "ŞÜKÜR · 2002"
+    },
+    {
+      "id": "card-48-104-39",
+      "text": "48 · 104 · 39",
+      "sub": "TEAMS · MATCHES · DAYS"
+    },
+    {
+      "id": "card-308-goals",
+      "text": "308 GOALS",
+      "sub": "HIGHEST EVER"
+    },
+    {
+      "id": "card-spain-1-goal",
+      "text": "1 GOAL",
+      "sub": "SPAIN CONCEDED · 8 GAMES"
+    },
+    {
+      "id": "card-spain-double",
+      "text": "MEN'S + WOMEN'S",
+      "sub": "SPAIN · FIRST EVER"
+    },
+    {
+      "id": "card-golden-silver",
+      "text": "GOLDEN: RODRI",
+      "sub": "SILVER: MESSI"
+    },
+    {
+      "id": "card-red-card",
+      "text": "BALOGUN · RED",
+      "sub": "USA vs BOSNIA"
+    },
+    {
+      "id": "card-usa-belgium-41",
+      "text": "BELGIUM 4 – 1 USA",
+      "sub": "ROUND OF 16"
+    },
+    {
+      "id": "card-14k-climbing",
+      "text": "14,000 +",
+      "sub": "AND CLIMBING"
+    },
+    {
+      "id": "card-app-cta",
+      "text": "PLAY FREE",
+      "sub": "worldcup26.world · no prizes"
+    },
+    {
+      "id": "card-subscribe-end",
+      "text": "SUBSCRIBE",
+      "sub": "THE LEGENDS CONTINUE"
+    }
+  ],
+  "music": {
+    "comment": "Kevin MacLeod (incompetech.com), CC-BY 4.0 - credit required in description. Emotional arc: warm/hopeful (build+thanks) -> driving/epic (money+records) -> reverent/cinematic (greatest+Messi) -> triumphant (close).",
+    "cues": [
+      {
+        "src": "music/cue-cinematic-open.mp3",
+        "at": 0,
+        "dur": 74,
+        "vol": 0.4,
+        "fadeIn": 1,
+        "fadeOut": 4
+      },
+      {
+        "src": "music/cue-warm.mp3",
+        "at": 76,
+        "dur": 166,
+        "vol": 0.38,
+        "fadeIn": 2,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-uplift.mp3",
+        "at": 242,
+        "dur": 146,
+        "vol": 0.42,
+        "fadeIn": 2,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-drive.mp3",
+        "at": 388,
+        "dur": 223,
+        "vol": 0.4,
+        "fadeIn": 2,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-epic.mp3",
+        "at": 611,
+        "dur": 221,
+        "vol": 0.4,
+        "fadeIn": 2,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-noble.mp3",
+        "at": 832,
+        "dur": 160,
+        "vol": 0.4,
+        "fadeIn": 2,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-reverent.mp3",
+        "at": 992,
+        "dur": 231,
+        "vol": 0.38,
+        "fadeIn": 2,
+        "fadeOut": 5,
+        "loop": true
+      },
+      {
+        "src": "music/cue-tension.mp3",
+        "at": 1223,
+        "dur": 108,
+        "vol": 0.38,
+        "fadeIn": 2,
+        "fadeOut": 4,
+        "loop": true
+      },
+      {
+        "src": "music/cue-triumph.mp3",
+        "at": 1331,
+        "dur": 139,
+        "vol": 0.46,
+        "fadeIn": 2,
+        "fadeOut": 5,
+        "loop": true
+      }
+    ]
+  },
+  "sfx": {
+    "comment": "ElevenLabs sound-design hits at transitions and number-card reveals (whoosh into cards, stamp on big figures, braam on chapter turns).",
+    "hits": [
+      {
+        "src": "sfx/braam.mp3",
+        "at": 0.52,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 4.72,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/heartbeat.mp3",
+        "at": 9.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 13.72,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 17.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 24.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 30.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 36.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 47.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 55.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 62.65,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 68.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 76.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 85.9,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 94.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 100.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 112.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 118.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 124.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 124.72,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 125.14,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 125.56,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 125.98,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 126.4,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 126.82,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 133.62,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 141.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 148.1,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 153.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 154.22,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 154.64,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 155.06,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 155.48,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 155.9,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 156.32,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 163.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 164.4,
+        "vol": 0.34
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 173.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 173.9,
+        "vol": 0.34
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 181.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 182.4,
+        "vol": 0.34
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 190.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 197.38,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 203.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 214.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 221.93,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 228.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 235.97,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 242.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 249.93,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 256.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 263.7,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 270.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 276.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 282.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 293.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 300.7,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 307.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 318.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 326.8,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 334.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 340.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 346.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 356.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 369.43,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 380.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 388.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 396.8,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 404.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 414.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 423.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 429.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 435.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 443.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 454.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 460.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 466.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 475.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 486.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 497.05,
+        "vol": 0.45
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 497.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 497.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 497.95,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 504.15,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 510.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 520.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 528.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 545.33,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 559.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 571.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 579.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 591.88,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 602.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 611.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 616.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 624.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 633.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 643.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 650.7,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 657.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 667.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 673.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 679.88,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 685.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 696.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 702.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 708.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 714.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 720.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 720.9,
+        "vol": 0.34
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 727.15,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 733.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 739.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 745.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 756.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 763.15,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 769.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 779.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 787.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 793.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 799.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 799.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 799.95,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 806.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 813.1,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 818.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 828.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 832.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 839.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 839.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 839.95,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 846.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 850.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 861.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 872.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 879.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 885.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 891.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 897.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 903.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 912.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 920.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 930.12,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 938.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 948.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 957.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 957.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 957.95,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 964.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 974.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 984.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 992.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 999.7,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1006.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1013.15,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1019.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1025.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1031.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1037.6,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1043.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1053.05,
+        "vol": 0.45
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 1053.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 1053.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1053.95,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1062.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1072.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1081.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1093.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1103.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 1114.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1119.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1125.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1130.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1141.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1152.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1157.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1164.42,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 1170.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1177.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1186.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1192.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1199.38,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 1205.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1205.72,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1206.14,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1206.56,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1206.98,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1207.4,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1207.82,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1212.15,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1218.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 1223.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1232.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1239.42,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1245.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1254.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1263.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1273.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1280.7,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1287.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1298.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 1309.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1314.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1324.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1331.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1336.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1345.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1352.92,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1359.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/stamp.mp3",
+        "at": 1370.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/braam.mp3",
+        "at": 1378.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1389.55,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1399.12,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1409.72,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/whoosh.mp3",
+        "at": 1418.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1419.22,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1419.64,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1420.06,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1420.48,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1420.9,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1421.32,
+        "vol": 0.26
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1429.5,
+        "vol": 0.3
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1438.62,
+        "vol": 0.5
+      },
+      {
+        "src": "sfx/pop.mp3",
+        "at": 1455.83,
+        "vol": 0.3
+      }
+    ]
+  },
+  "graphics": [
+    {
+      "at": 0.1,
+      "dur": 4.8,
+      "type": "drift",
+      "srcs": [
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-00.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png",
+        "images/cards/hfc-04.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 0.4,
+      "dur": 4.2,
+      "type": "impact",
+      "text": "JULY 19",
+      "size": 250
+    },
+    {
+      "at": 4.3,
+      "dur": 5,
+      "type": "drift",
+      "srcs": [
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/hfc-15.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 4.6,
+      "dur": 4.4,
+      "type": "impact",
+      "text": "NEW YORK",
+      "size": 190
+    },
+    {
+      "at": 9,
+      "dur": 4.6,
+      "type": "clock",
+      "to": 106,
+      "label": "EXTRA TIME"
+    },
+    {
+      "at": 13.6,
+      "dur": 3.9,
+      "type": "ball"
+    },
+    {
+      "at": 17.5,
+      "dur": 6.5,
+      "type": "score",
+      "left": "SPAIN",
+      "score": "1–0",
+      "right": "ARGENTINA",
+      "note": "106'"
+    },
+    {
+      "at": 23.7,
+      "dur": 6.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-35.png",
+        "images/cards/hfc-02.png",
+        "images/cards/12-pak-the-secret-hero.png",
+        "images/cards/hfc-09.png",
+        "images/cards/hfc-29.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 24,
+      "dur": 6,
+      "type": "impact",
+      "text": "CHAMPIONS",
+      "size": 200
+    },
+    {
+      "at": 29.7,
+      "dur": 7.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-01.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-16.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 30,
+      "dur": 6.5,
+      "type": "impact",
+      "text": "104 MATCHES",
+      "size": 150
+    },
+    {
+      "at": 36.5,
+      "dur": 10.5,
+      "type": "flags",
+      "colors": [
+        [
+          "#d21034",
+          "#ffffff",
+          "#d21034"
+        ],
+        [
+          "#0038a8",
+          "#ffffff",
+          "#d21034"
+        ],
+        [
+          "#006847",
+          "#ffffff",
+          "#ce1126"
+        ],
+        [
+          "#002395",
+          "#ffffff",
+          "#ed2939"
+        ],
+        [
+          "#aa151b",
+          "#f1bf00",
+          "#aa151b"
+        ],
+        [
+          "#009246",
+          "#ffffff",
+          "#ce2b37"
+        ],
+        [
+          "#000000",
+          "#dd0000",
+          "#ffce00"
+        ],
+        [
+          "#75aadb",
+          "#ffffff",
+          "#75aadb"
+        ],
+        [
+          "#009c3b",
+          "#ffdf00",
+          "#009c3b"
+        ],
+        [
+          "#ff9933",
+          "#ffffff",
+          "#138808"
+        ],
+        [
+          "#e30a17",
+          "#ffffff",
+          "#e30a17"
+        ],
+        [
+          "#21468b",
+          "#ffffff",
+          "#ae1c28"
+        ],
+        [
+          "#dc143c",
+          "#ffffff",
+          "#dc143c"
+        ],
+        [
+          "#006233",
+          "#ffffff",
+          "#c1272d"
+        ],
+        [
+          "#3c3b6e",
+          "#ffffff",
+          "#b22234"
+        ],
+        [
+          "#f93",
+          "#ffffff",
+          "#128807"
+        ],
+        [
+          "#ce1126",
+          "#fcd116",
+          "#007a3d"
+        ],
+        [
+          "#0055a4",
+          "#ffffff",
+          "#ef4135"
+        ],
+        [
+          "#e8112d",
+          "#ffffff",
+          "#0033a0"
+        ],
+        [
+          "#007a4d",
+          "#ffb612",
+          "#de3831"
+        ],
+        [
+          "#ef3340",
+          "#ffffff",
+          "#009739"
+        ],
+        [
+          "#046a38",
+          "#ffffff",
+          "#c8102e"
+        ],
+        [
+          "#c60b1e",
+          "#ffc400",
+          "#c60b1e"
+        ],
+        [
+          "#00966e",
+          "#ed2939",
+          "#00966e"
+        ]
+      ]
+    },
+    {
+      "at": 47.2,
+      "dur": 8.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-23.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/hfc-33.png",
+        "images/cards/hfc-00.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 47.5,
+      "dur": 8,
+      "type": "kinetic",
+      "size": 118,
+      "words": [
+        {
+          "w": "MONEY",
+          "at": 0.2,
+          "gold": true
+        },
+        {
+          "w": "RECORDS",
+          "at": 0.9
+        },
+        {
+          "w": "LEGENDS",
+          "at": 1.6
+        }
+      ]
+    },
+    {
+      "at": 55.5,
+      "dur": 13,
+      "type": "trophy",
+      "label": "WHAT REMAINS"
+    },
+    {
+      "at": 68.2,
+      "dur": 8.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-18.png",
+        "images/cards/11-castro-the-one-armed-champion.png",
+        "images/cards/hfc-05.png",
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-32.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 68.5,
+      "dur": 7.5,
+      "type": "impact",
+      "text": "WORLDCUP26",
+      "size": 150
+    },
+    {
+      "at": 76,
+      "dur": 18,
+      "type": "pitch"
+    },
+    {
+      "at": 93.7,
+      "dur": 7.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-30.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-32.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/09-monti-two-nations.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 94,
+      "dur": 6.5,
+      "type": "kinetic",
+      "size": 120,
+      "words": [
+        {
+          "w": "worldcup26.world",
+          "at": 0.3,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 100.2,
+      "dur": 12.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-37.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/hfc-07.png",
+        "images/cards/hfc-10.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-17.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 100.5,
+      "dur": 11.5,
+      "type": "kinetic",
+      "size": 150,
+      "words": [
+        {
+          "w": "PICK",
+          "at": 0.2
+        },
+        {
+          "w": "3",
+          "at": 0.8,
+          "gold": true,
+          "big": true
+        }
+      ]
+    },
+    {
+      "at": 111.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-02.png",
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-31.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/hfc-38.png",
+        "images/cards/hfc-11.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 112,
+      "dur": 12,
+      "type": "kinetic",
+      "size": 120,
+      "words": [
+        {
+          "w": "FREE",
+          "at": 0.2,
+          "gold": true
+        },
+        {
+          "w": "· FOR FUN ·",
+          "at": 0.9
+        },
+        {
+          "w": "NO PRIZES",
+          "at": 1.6
+        }
+      ]
+    },
+    {
+      "at": 124,
+      "dur": 17.5,
+      "type": "cardwall",
+      "srcs": [
+        "images/cards/hfc-13.png",
+        "images/cards/hfc-14.png",
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-22.png",
+        "images/cards/hfc-18.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-04.png",
+        "images/cards/hfc-36.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/hfc-32.png",
+        "images/cards/hfc-09.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-19.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/hfc-39.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-02.png",
+        "images/cards/hfc-15.png",
+        "images/cards/11-castro-the-one-armed-champion.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-11.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-05.png",
+        "images/cards/hfc-25.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-12.png"
+      ],
+      "label": "100+ LEGEND CARDS",
+      "columns": 7
+    },
+    {
+      "at": 141.2,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-19.png",
+        "images/cards/hfc-08.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-26.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 141.5,
+      "dur": 12,
+      "type": "kinetic",
+      "size": 112,
+      "words": [
+        {
+          "w": "EPISODES",
+          "at": 0.2
+        },
+        {
+          "w": "MYTHS",
+          "at": 1,
+          "gold": true
+        },
+        {
+          "w": "SHORTS",
+          "at": 1.8
+        }
+      ]
+    },
+    {
+      "at": 153.5,
+      "dur": 10,
+      "type": "cardwall",
+      "srcs": [
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/hfc-33.png",
+        "images/cards/hfc-09.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-19.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-06.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/hfc-15.png",
+        "images/cards/12-pak-the-secret-hero.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-11.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-17.png",
+        "images/cards/hfc-25.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-13.png",
+        "images/cards/hfc-35.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-27.png",
+        "images/cards/hfc-22.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-34.png",
+        "images/cards/hfc-20.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png"
+      ],
+      "label": "THE COLLECTION",
+      "columns": 7
+    },
+    {
+      "at": 163.5,
+      "dur": 9.5,
+      "type": "card",
+      "src": "images/cards/11-castro-the-one-armed-champion.png",
+      "name": "HÉCTOR CASTRO",
+      "meta": "THE ONE-ARMED CHAMPION"
+    },
+    {
+      "at": 173,
+      "dur": 8.5,
+      "type": "card",
+      "src": "images/cards/07-escobar-the-gentleman.png",
+      "name": "ANDRÉS ESCOBAR",
+      "meta": "THE GENTLEMAN"
+    },
+    {
+      "at": 181.5,
+      "dur": 9,
+      "type": "card",
+      "src": "images/cards/03-carbajal-the-eternal-keeper.png",
+      "name": "ANTONIO CARBAJAL",
+      "meta": "FIVE WORLD CUPS"
+    },
+    {
+      "at": 190.2,
+      "dur": 13.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-09.png",
+        "images/cards/hfc-00.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/06-laurent-the-first-goal.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 190.5,
+      "dur": 12.5,
+      "type": "kinetic",
+      "size": 112,
+      "words": [
+        {
+          "w": "REAL",
+          "at": 0.2,
+          "gold": true
+        },
+        {
+          "w": "VERIFIED",
+          "at": 1
+        },
+        {
+          "w": "ORIGINAL",
+          "at": 1.8
+        }
+      ]
+    },
+    {
+      "at": 203,
+      "dur": 11.5,
+      "type": "pitch"
+    },
+    {
+      "at": 214.2,
+      "dur": 14.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-00.png",
+        "images/cards/hfc-29.png",
+        "images/cards/hfc-07.png",
+        "images/cards/hfc-14.png",
+        "images/cards/hfc-38.png",
+        "images/cards/04-socrates-the-doctor.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 214.5,
+      "dur": 13.5,
+      "type": "kinetic",
+      "size": 104,
+      "words": [
+        {
+          "w": "NO FOOTAGE",
+          "at": 0.2
+        },
+        {
+          "w": "NO RIGHTS DEALS",
+          "at": 1.1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 228,
+      "dur": 14.5,
+      "type": "trophy",
+      "label": "THE MISSION"
+    },
+    {
+      "at": 242.2,
+      "dur": 14.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-00.png",
+        "images/cards/hfc-02.png",
+        "images/cards/hfc-14.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-18.png",
+        "images/cards/hfc-27.png",
+        "images/cards/hfc-17.png",
+        "images/cards/hfc-06.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 242.5,
+      "dur": 13.5,
+      "type": "impact",
+      "text": "14,000",
+      "size": 280
+    },
+    {
+      "at": 255.7,
+      "dur": 14.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-35.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-39.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-28.png",
+        "images/cards/11-castro-the-one-armed-champion.png",
+        "images/cards/07-escobar-the-gentleman.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 256,
+      "dur": 14,
+      "type": "kinetic",
+      "size": 210,
+      "words": [
+        {
+          "w": "14,000",
+          "at": 0.3,
+          "gold": true,
+          "big": true
+        }
+      ]
+    },
+    {
+      "at": 270,
+      "dur": 12,
+      "type": "bowl",
+      "fillTo": 1,
+      "label": "A FULL END"
+    },
+    {
+      "at": 281.7,
+      "dur": 11.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-01.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-07.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-38.png",
+        "images/cards/hfc-19.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 282,
+      "dur": 11,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "THE LEGENDS",
+          "at": 0.2
+        },
+        {
+          "w": "OVER THE NOISE",
+          "at": 1.1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 293,
+      "dur": 14,
+      "type": "pitch"
+    },
+    {
+      "at": 306.7,
+      "dur": 11.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-29.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-13.png",
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-08.png",
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-22.png",
+        "images/cards/hfc-15.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 307,
+      "dur": 11,
+      "type": "kinetic",
+      "size": 118,
+      "words": [
+        {
+          "w": "SAME NAMES",
+          "at": 0.2
+        },
+        {
+          "w": "EVERY WEEK",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 318,
+      "dur": 16,
+      "type": "trophy",
+      "label": "THANK YOU"
+    },
+    {
+      "at": 333.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-29.png",
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-18.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png",
+        "images/cards/12-pak-the-secret-hero.png",
+        "images/cards/hfc-00.png",
+        "images/cards/hfc-01.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 334,
+      "dur": 12,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "NOT A",
+          "at": 0.2
+        },
+        {
+          "w": "FINISH LINE",
+          "at": 0.9,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 345.7,
+      "dur": 11.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-15.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-00.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-02.png",
+        "images/cards/hfc-05.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/hfc-09.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 346,
+      "dur": 10.5,
+      "type": "impact",
+      "text": "BASE CAMP",
+      "size": 170
+    },
+    {
+      "at": 356.5,
+      "dur": 23.5,
+      "type": "pitch"
+    },
+    {
+      "at": 379.7,
+      "dur": 8.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-09.png",
+        "images/cards/hfc-16.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-37.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 380,
+      "dur": 8,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "THE NUMBER",
+          "at": 0.2
+        },
+        {
+          "w": "THAT STOPS YOU",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 387.7,
+      "dur": 16.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-30.png",
+        "images/cards/hfc-02.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-14.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-09.png",
+        "images/cards/hfc-17.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 388,
+      "dur": 16,
+      "type": "impact",
+      "text": "MONEY",
+      "size": 280
+    },
+    {
+      "at": 403.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-37.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-21.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-00.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 404,
+      "dur": 10,
+      "type": "kinetic",
+      "size": 150,
+      "words": [
+        {
+          "w": "$655M",
+          "at": 0.3,
+          "gold": true,
+          "big": true
+        }
+      ]
+    },
+    {
+      "at": 413.7,
+      "dur": 9.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-10.png",
+        "images/cards/hfc-29.png",
+        "images/cards/hfc-20.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 414,
+      "dur": 9,
+      "type": "impact",
+      "text": "+50%",
+      "size": 210
+    },
+    {
+      "at": 422.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-17.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-31.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-39.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 423,
+      "dur": 12,
+      "type": "kinetic",
+      "size": 150,
+      "words": [
+        {
+          "w": "$50M",
+          "at": 0.3,
+          "gold": true,
+          "big": true
+        },
+        {
+          "w": "ONE CHEQUE",
+          "at": 1.2
+        }
+      ]
+    },
+    {
+      "at": 435,
+      "dur": 8.5,
+      "type": "trophy",
+      "label": "A RECORD"
+    },
+    {
+      "at": 443.2,
+      "dur": 11.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-38.png",
+        "images/cards/hfc-27.png",
+        "images/cards/hfc-11.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-17.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 443.5,
+      "dur": 10.5,
+      "type": "rows",
+      "label": "THE PAYOUTS",
+      "rows": [
+        "$33M — ARGENTINA",
+        "$29M — THIRD PLACE",
+        "$10.5M — EVERY TEAM"
+      ]
+    },
+    {
+      "at": 453.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-16.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png",
+        "images/cards/hfc-20.png",
+        "images/cards/hfc-04.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-11.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/hfc-18.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 454,
+      "dur": 12,
+      "type": "kinetic",
+      "size": 140,
+      "words": [
+        {
+          "w": "$10.5M",
+          "at": 0.3,
+          "gold": true
+        },
+        {
+          "w": "EVERY TEAM",
+          "at": 1.1
+        }
+      ]
+    },
+    {
+      "at": 465.7,
+      "dur": 9.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-28.png",
+        "images/cards/hfc-14.png",
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-00.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 466,
+      "dur": 9,
+      "type": "kinetic",
+      "size": 130,
+      "words": [
+        {
+          "w": "THE CLUBS",
+          "at": 0.3,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 474.7,
+      "dur": 12.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-32.png",
+        "images/cards/hfc-00.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-39.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 475,
+      "dur": 11.5,
+      "type": "kinetic",
+      "size": 150,
+      "words": [
+        {
+          "w": "$355M",
+          "at": 0.3,
+          "gold": true,
+          "big": true
+        }
+      ]
+    },
+    {
+      "at": 486.2,
+      "dur": 11.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-05.png",
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-09.png",
+        "images/cards/11-castro-the-one-armed-champion.png",
+        "images/cards/hfc-33.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-38.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 486.5,
+      "dur": 10.5,
+      "type": "kinetic",
+      "size": 140,
+      "words": [
+        {
+          "w": "$11,000",
+          "at": 0.3,
+          "gold": true
+        },
+        {
+          "w": "PER DAY",
+          "at": 1.1
+        }
+      ]
+    },
+    {
+      "at": 497,
+      "dur": 13,
+      "type": "cardwall",
+      "label": "100+ LEGEND CARDS",
+      "srcs": [
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-19.png",
+        "images/cards/hfc-32.png",
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-30.png",
+        "images/cards/hfc-26.png",
+        "images/cards/12-pak-the-secret-hero.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-38.png",
+        "images/cards/hfc-33.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/hfc-05.png",
+        "images/cards/hfc-18.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-10.png",
+        "images/cards/hfc-17.png",
+        "images/cards/11-castro-the-one-armed-champion.png"
+      ],
+      "columns": 7
+    },
+    {
+      "at": 509.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-13.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-12.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-20.png",
+        "images/cards/hfc-27.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-00.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 510,
+      "dur": 10,
+      "type": "impact",
+      "text": "+70%",
+      "size": 210
+    },
+    {
+      "at": 519.7,
+      "dur": 8.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-34.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-35.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 520,
+      "dur": 8,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "NOT ALWAYS",
+          "at": 0.2
+        },
+        {
+          "w": "LIKE THIS",
+          "at": 0.9,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 528,
+      "dur": 31.5,
+      "type": "barchart",
+      "title": "WINNER’S PRIZE",
+      "bars": [
+        {
+          "label": "1982",
+          "v": 2
+        },
+        {
+          "label": "2006",
+          "v": 20
+        },
+        {
+          "label": "2018",
+          "v": 38
+        },
+        {
+          "label": "2022",
+          "v": 42
+        },
+        {
+          "label": "2026",
+          "v": 50
+        }
+      ]
+    },
+    {
+      "at": 559.2,
+      "dur": 12.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-00.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-22.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-01.png",
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-07.png",
+        "images/cards/hfc-14.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 559.5,
+      "dur": 11.5,
+      "type": "impact",
+      "text": "×25",
+      "size": 260
+    },
+    {
+      "at": 570.7,
+      "dur": 9.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-28.png",
+        "images/cards/hfc-32.png",
+        "images/cards/hfc-05.png",
+        "images/cards/hfc-35.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 571,
+      "dur": 8.5,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "SAME TROPHY",
+          "at": 0.2
+        },
+        {
+          "w": "NEW STAKES",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 579.5,
+      "dur": 22.5,
+      "type": "trophy",
+      "label": "THE STAKES"
+    },
+    {
+      "at": 601.7,
+      "dur": 9.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-05.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-01.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 602,
+      "dur": 9,
+      "type": "kinetic",
+      "size": 130,
+      "words": [
+        {
+          "w": "THE RECORDS",
+          "at": 0.3,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 611,
+      "dur": 5.5,
+      "type": "pitch"
+    },
+    {
+      "at": 616.2,
+      "dur": 8.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-08.png",
+        "images/cards/hfc-15.png",
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-22.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 616.5,
+      "dur": 7.5,
+      "type": "impact",
+      "text": "BRAZIL",
+      "size": 230
+    },
+    {
+      "at": 623.7,
+      "dur": 9.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-29.png",
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-14.png",
+        "images/cards/hfc-08.png",
+        "images/cards/11-castro-the-one-armed-champion.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 624,
+      "dur": 9,
+      "type": "timeline",
+      "label": "BRAZIL · FIVE TITLES",
+      "years": [
+        {
+          "v": "58"
+        },
+        {
+          "v": "62"
+        },
+        {
+          "v": "70"
+        },
+        {
+          "v": "94"
+        },
+        {
+          "v": "02"
+        }
+      ]
+    },
+    {
+      "at": 632.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-23.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png",
+        "images/cards/hfc-17.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-12.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/hfc-01.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 633,
+      "dur": 10,
+      "type": "kinetic",
+      "size": 130,
+      "words": [
+        {
+          "w": "22 / 22",
+          "at": 0.3,
+          "gold": true
+        },
+        {
+          "w": "TOURNAMENTS",
+          "at": 1.1
+        }
+      ]
+    },
+    {
+      "at": 642.7,
+      "dur": 14.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-22.png",
+        "images/cards/hfc-02.png",
+        "images/cards/hfc-19.png",
+        "images/cards/hfc-09.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-10.png",
+        "images/cards/hfc-33.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 643,
+      "dur": 14,
+      "type": "name",
+      "name": "MIROSLAV KLOSE",
+      "stat": "16",
+      "meta": "GERMANY · 2002–2014"
+    },
+    {
+      "at": 656.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-34.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/hfc-30.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-13.png",
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-15.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 657,
+      "dur": 10,
+      "type": "impact",
+      "text": "2026",
+      "size": 240
+    },
+    {
+      "at": 666.7,
+      "dur": 6.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-00.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-04.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-38.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 667,
+      "dur": 6,
+      "type": "name",
+      "name": "KYLIAN MBAPPÉ",
+      "stat": "22",
+      "meta": "ALL-TIME LEADER"
+    },
+    {
+      "at": 672.7,
+      "dur": 13.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-10.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-17.png",
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-31.png",
+        "images/cards/05-milla-the-dancing-lion.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 673,
+      "dur": 12.5,
+      "type": "name",
+      "name": "LIONEL MESSI",
+      "stat": "21",
+      "meta": "SECOND · ALL TIME"
+    },
+    {
+      "at": 685.2,
+      "dur": 11.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-38.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/hfc-34.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png",
+        "images/cards/hfc-04.png",
+        "images/cards/hfc-11.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 685.5,
+      "dur": 10.5,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "BROKEN TWICE",
+          "at": 0.2
+        },
+        {
+          "w": "ONE SUMMER",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 695.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-18.png",
+        "images/cards/hfc-33.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-32.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/hfc-31.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/04-socrates-the-doctor.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 696,
+      "dur": 12,
+      "type": "name",
+      "name": "GOLDEN BOOT",
+      "stat": "10",
+      "meta": "MBAPPÉ · TWICE"
+    },
+    {
+      "at": 707.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-34.png",
+        "images/cards/hfc-08.png",
+        "images/cards/hfc-32.png",
+        "images/cards/hfc-39.png",
+        "images/cards/hfc-18.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/hfc-05.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 708,
+      "dur": 12,
+      "type": "name",
+      "name": "PELÉ",
+      "stat": "17",
+      "meta": "YOUNGEST SCORER · 1958"
+    },
+    {
+      "at": 720,
+      "dur": 13,
+      "type": "card",
+      "src": "images/cards/05-milla-the-dancing-lion.png",
+      "name": "ROGER MILLA",
+      "meta": "42 YEARS · 1994"
+    },
+    {
+      "at": 732.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-09.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-05.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-33.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/hfc-19.png",
+        "images/cards/11-castro-the-one-armed-champion.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 733,
+      "dur": 12,
+      "type": "name",
+      "name": "HAKAN ŞÜKÜR",
+      "stat": "10.8s",
+      "meta": "FASTEST GOAL · 2002"
+    },
+    {
+      "at": 744.7,
+      "dur": 11.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-06.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-17.png",
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-33.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/hfc-08.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 745,
+      "dur": 11,
+      "type": "kinetic",
+      "size": 130,
+      "words": [
+        {
+          "w": "2026",
+          "at": 0.2,
+          "gold": true
+        },
+        {
+          "w": "REWROTE IT",
+          "at": 1
+        }
+      ]
+    },
+    {
+      "at": 755.7,
+      "dur": 13.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-06.png",
+        "images/cards/12-pak-the-secret-hero.png",
+        "images/cards/hfc-17.png",
+        "images/cards/hfc-01.png",
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-38.png",
+        "images/cards/hfc-20.png",
+        "images/cards/07-escobar-the-gentleman.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 756,
+      "dur": 13,
+      "type": "timeline",
+      "label": "FIRST EVER",
+      "years": [
+        {
+          "v": "48",
+          "label": "TEAMS"
+        },
+        {
+          "v": "104",
+          "label": "MATCHES"
+        },
+        {
+          "v": "39",
+          "label": "DAYS"
+        }
+      ]
+    },
+    {
+      "at": 768.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-27.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-13.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-20.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-38.png",
+        "images/cards/hfc-34.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 769,
+      "dur": 10,
+      "type": "impact",
+      "text": "308 GOALS",
+      "size": 170
+    },
+    {
+      "at": 779,
+      "dur": 8,
+      "type": "bowl",
+      "fillTo": 1,
+      "label": "6.8M FANS"
+    },
+    {
+      "at": 786.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-14.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-08.png",
+        "images/cards/hfc-19.png",
+        "images/cards/hfc-07.png",
+        "images/cards/06-laurent-the-first-goal.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 787,
+      "dur": 12,
+      "type": "kinetic",
+      "size": 140,
+      "words": [
+        {
+          "w": "65,490",
+          "at": 0.3,
+          "gold": true
+        },
+        {
+          "w": "AVERAGE",
+          "at": 1.2
+        }
+      ]
+    },
+    {
+      "at": 799,
+      "dur": 7.5,
+      "type": "card",
+      "src": "images/cards/06-laurent-the-first-goal.png",
+      "name": "LUCIEN LAURENT",
+      "meta": "THE FIRST GOAL · 1930"
+    },
+    {
+      "at": 806.2,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-35.png",
+        "images/cards/hfc-00.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/hfc-33.png",
+        "images/cards/hfc-07.png",
+        "images/cards/hfc-14.png",
+        "images/cards/hfc-01.png",
+        "images/cards/hfc-08.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 806.5,
+      "dur": 12,
+      "type": "kinetic",
+      "size": 150,
+      "words": [
+        {
+          "w": "1",
+          "at": 0.3,
+          "gold": true,
+          "big": true
+        },
+        {
+          "w": "GOAL CONCEDED",
+          "at": 1
+        }
+      ]
+    },
+    {
+      "at": 818.5,
+      "dur": 9.5,
+      "type": "trophy",
+      "label": "QUIET STEEL"
+    },
+    {
+      "at": 827.7,
+      "dur": 5.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-34.png",
+        "images/cards/hfc-33.png",
+        "images/cards/hfc-30.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-37.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 828,
+      "dur": 4.5,
+      "type": "impact",
+      "text": "GREATNESS",
+      "size": 190
+    },
+    {
+      "at": 832.2,
+      "dur": 7.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-39.png",
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-24.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-28.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 832.5,
+      "dur": 6.5,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "THE GREATEST",
+          "at": 0.3,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 839,
+      "dur": 7,
+      "type": "card",
+      "src": "images/cards/02-garrincha-the-joy-of-the-people.png",
+      "name": "GARRINCHA",
+      "meta": "BRAZIL · 1958 & 1962"
+    },
+    {
+      "at": 845.7,
+      "dur": 5.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-35.png",
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-27.png",
+        "images/cards/world-cup-monopoly.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 846,
+      "dur": 4.5,
+      "type": "impact",
+      "text": "BRAZIL 1970",
+      "size": 180
+    },
+    {
+      "at": 850.2,
+      "dur": 11.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-01.png",
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-08.png",
+        "images/cards/hfc-15.png",
+        "images/cards/hfc-22.png",
+        "images/cards/hfc-33.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 850.5,
+      "dur": 10.5,
+      "type": "name",
+      "name": "BRAZIL 1970",
+      "stat": "6/6",
+      "meta": "PELÉ · JAIRZINHO · CARLOS ALBERTO"
+    },
+    {
+      "at": 860.7,
+      "dur": 11.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-29.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-33.png",
+        "images/cards/hfc-39.png",
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-11.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 861,
+      "dur": 11,
+      "type": "name",
+      "name": "JAIRZINHO",
+      "stat": "6",
+      "meta": "SCORED IN EVERY GAME"
+    },
+    {
+      "at": 871.7,
+      "dur": 7.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/01-gaetjens-the-vanished-hero.png",
+        "images/cards/hfc-18.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-15.png",
+        "images/cards/hfc-02.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 872,
+      "dur": 7,
+      "type": "impact",
+      "text": "TIKI-TAKA",
+      "size": 190
+    },
+    {
+      "at": 878.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-13.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/11-castro-the-one-armed-champion.png",
+        "images/cards/hfc-09.png",
+        "images/cards/hfc-34.png",
+        "images/cards/hfc-07.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-16.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 879,
+      "dur": 12,
+      "type": "name",
+      "name": "XAVI · INIESTA",
+      "stat": "2010",
+      "meta": "SPAIN"
+    },
+    {
+      "at": 890.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-31.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-20.png",
+        "images/cards/hfc-18.png",
+        "images/cards/hfc-30.png",
+        "images/cards/hfc-26.png",
+        "images/cards/world-cup-monopoly.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 891,
+      "dur": 12,
+      "type": "timeline",
+      "label": "BRAZIL · BACK TO BACK",
+      "years": [
+        {
+          "v": "1958"
+        },
+        {
+          "v": "1962"
+        }
+      ]
+    },
+    {
+      "at": 902.7,
+      "dur": 9.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-09.png",
+        "images/cards/hfc-37.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-13.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 903,
+      "dur": 9,
+      "type": "timeline",
+      "label": "THE MACHINES",
+      "years": [
+        {
+          "v": "1954"
+        },
+        {
+          "v": "1974"
+        },
+        {
+          "v": "1982"
+        }
+      ]
+    },
+    {
+      "at": 911.7,
+      "dur": 9.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-12.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 912,
+      "dur": 8.5,
+      "type": "kinetic",
+      "size": 118,
+      "words": [
+        {
+          "w": "DIFFERENT WAYS",
+          "at": 0.2
+        },
+        {
+          "w": "TO BE PERFECT",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 920.5,
+      "dur": 17.5,
+      "type": "trophy",
+      "label": "SPAIN 2026"
+    },
+    {
+      "at": 937.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-34.png",
+        "images/cards/hfc-37.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-25.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/11-castro-the-one-armed-champion.png",
+        "images/cards/hfc-03.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 938,
+      "dur": 10,
+      "type": "kinetic",
+      "size": 130,
+      "words": [
+        {
+          "w": "2010",
+          "at": 0.2
+        },
+        {
+          "w": "+",
+          "at": 0.7
+        },
+        {
+          "w": "2026",
+          "at": 1.1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 947.7,
+      "dur": 9.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-10.png",
+        "images/cards/hfc-29.png",
+        "images/cards/hfc-33.png",
+        "images/cards/hfc-17.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 948,
+      "dur": 9,
+      "type": "kinetic",
+      "size": 118,
+      "words": [
+        {
+          "w": "MEN’S",
+          "at": 0.2
+        },
+        {
+          "w": "&",
+          "at": 0.7,
+          "gold": true
+        },
+        {
+          "w": "WOMEN’S",
+          "at": 1.1
+        }
+      ]
+    },
+    {
+      "at": 957,
+      "dur": 7,
+      "type": "card",
+      "src": "images/cards/08-yashin-the-black-spider.png",
+      "name": "LEV YASHIN",
+      "meta": "THE BLACK SPIDER"
+    },
+    {
+      "at": 964,
+      "dur": 10,
+      "type": "bowl",
+      "fillTo": 1,
+      "label": "THE WORLD STOPPED"
+    },
+    {
+      "at": 973.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-31.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png",
+        "images/cards/hfc-22.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/hfc-38.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-03.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 974,
+      "dur": 10,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "THE STRANGEST",
+          "at": 0.2
+        },
+        {
+          "w": "TRUTH",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 983.7,
+      "dur": 8.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-20.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/hfc-34.png",
+        "images/cards/hfc-26.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 984,
+      "dur": 8,
+      "type": "impact",
+      "text": "NEVER LIFTED IT",
+      "size": 140
+    },
+    {
+      "at": 991.7,
+      "dur": 14.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-04.png",
+        "images/cards/hfc-30.png",
+        "images/cards/hfc-11.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-08.png",
+        "images/cards/hfc-27.png",
+        "images/cards/hfc-22.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 992,
+      "dur": 14,
+      "type": "kinetic",
+      "size": 118,
+      "words": [
+        {
+          "w": "NOT ONLY",
+          "at": 0.2
+        },
+        {
+          "w": "WHO WON",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 1005.7,
+      "dur": 13.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-18.png",
+        "images/cards/hfc-25.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png",
+        "images/cards/hfc-32.png",
+        "images/cards/hfc-01.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-35.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1006,
+      "dur": 13,
+      "type": "name",
+      "name": "JOHAN CRUYFF",
+      "stat": "1974",
+      "meta": "NETHERLANDS · NO TITLE"
+    },
+    {
+      "at": 1018.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/12-pak-the-secret-hero.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-18.png",
+        "images/cards/hfc-39.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/11-castro-the-one-armed-champion.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1019,
+      "dur": 12,
+      "type": "name",
+      "name": "FERENC PUSKÁS",
+      "stat": "1954",
+      "meta": "HUNGARY · NO TITLE"
+    },
+    {
+      "at": 1030.7,
+      "dur": 12.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-05.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-19.png",
+        "images/cards/hfc-17.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1031,
+      "dur": 12,
+      "type": "name",
+      "name": "ROGER MILLA",
+      "stat": "0",
+      "meta": "TROPHIES · IMMORTAL ANYWAY"
+    },
+    {
+      "at": 1042.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-33.png",
+        "images/cards/hfc-01.png",
+        "images/cards/hfc-24.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/hfc-09.png",
+        "images/cards/12-pak-the-secret-hero.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1043,
+      "dur": 10,
+      "type": "kinetic",
+      "size": 118,
+      "words": [
+        {
+          "w": "WE STILL SAY",
+          "at": 0.2
+        },
+        {
+          "w": "THEIR NAMES",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 1053,
+      "dur": 9,
+      "type": "cardwall",
+      "label": "COLLECT THE LEGENDS",
+      "srcs": [
+        "images/cards/hfc-19.png",
+        "images/cards/hfc-32.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-10.png",
+        "images/cards/hfc-06.png",
+        "images/cards/12-pak-the-secret-hero.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-38.png",
+        "images/cards/hfc-13.png",
+        "images/cards/hfc-20.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/hfc-05.png",
+        "images/cards/hfc-18.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-27.png",
+        "images/cards/hfc-34.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/11-castro-the-one-armed-champion.png",
+        "images/cards/hfc-11.png",
+        "images/cards/hfc-24.png"
+      ],
+      "columns": 7
+    },
+    {
+      "at": 1061.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/hfc-01.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-00.png",
+        "images/cards/hfc-07.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1062,
+      "dur": 10,
+      "type": "name",
+      "name": "LIONEL MESSI",
+      "stat": "6",
+      "meta": "HIS LAST WORLD CUP"
+    },
+    {
+      "at": 1071.7,
+      "dur": 10.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-07.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-26.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/hfc-15.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1072,
+      "dur": 9.5,
+      "type": "kinetic",
+      "size": 140,
+      "words": [
+        {
+          "w": "8",
+          "at": 0.2,
+          "gold": true,
+          "big": true
+        },
+        {
+          "w": "GOALS",
+          "at": 0.7
+        },
+        {
+          "w": "4",
+          "at": 1.3,
+          "gold": true,
+          "big": true
+        },
+        {
+          "w": "ASSISTS",
+          "at": 1.8
+        }
+      ]
+    },
+    {
+      "at": 1081.2,
+      "dur": 12.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-14.png",
+        "images/cards/hfc-10.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-28.png",
+        "images/cards/hfc-35.png",
+        "images/cards/hfc-16.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1081.5,
+      "dur": 11.5,
+      "type": "impact",
+      "text": "39 YEARS OLD",
+      "size": 160
+    },
+    {
+      "at": 1092.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-13.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-01.png",
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-11.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png",
+        "images/cards/hfc-08.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1093,
+      "dur": 10,
+      "type": "name",
+      "name": "RODRI",
+      "stat": "—",
+      "meta": "SPAIN · MIDFIELD"
+    },
+    {
+      "at": 1102.7,
+      "dur": 11.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-02.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-15.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-32.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1103,
+      "dur": 11,
+      "type": "name",
+      "name": "EMI MARTÍNEZ",
+      "stat": "11",
+      "meta": "SAVES · A FINAL RECORD"
+    },
+    {
+      "at": 1114,
+      "dur": 5,
+      "type": "ball"
+    },
+    {
+      "at": 1118.7,
+      "dur": 6.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-11.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-22.png",
+        "images/cards/hfc-25.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1119,
+      "dur": 6,
+      "type": "name",
+      "name": "FERRAN TORRES",
+      "stat": "106'",
+      "meta": "THE SUBSTITUTE"
+    },
+    {
+      "at": 1124.7,
+      "dur": 5.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-38.png",
+        "images/cards/hfc-29.png",
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-06.png",
+        "images/cards/world-cup-monopoly.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1125,
+      "dur": 5,
+      "type": "impact",
+      "text": "IT WAS OVER",
+      "size": 170
+    },
+    {
+      "at": 1129.7,
+      "dur": 11.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-33.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-06.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-29.png",
+        "images/cards/hfc-02.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1130,
+      "dur": 11,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "RUNNER-UP",
+          "at": 0.2
+        },
+        {
+          "w": "MEDAL",
+          "at": 0.9,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 1140.7,
+      "dur": 12.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-09.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-27.png",
+        "images/cards/hfc-04.png",
+        "images/cards/hfc-15.png",
+        "images/cards/hfc-02.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-23.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1141,
+      "dur": 11.5,
+      "type": "rows",
+      "label": "FIFA AWARDS",
+      "rows": [
+        "GOLDEN BALL — RODRI",
+        "SILVER BALL — MESSI",
+        "BRONZE BALL — MBAPPÉ"
+      ]
+    },
+    {
+      "at": 1152.2,
+      "dur": 5.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-30.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-34.png",
+        "images/cards/hfc-18.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1152.5,
+      "dur": 4.5,
+      "type": "impact",
+      "text": "SILVER",
+      "size": 200
+    },
+    {
+      "at": 1156.7,
+      "dur": 14.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-04.png",
+        "images/cards/hfc-07.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-10.png",
+        "images/cards/hfc-17.png",
+        "images/cards/09-monti-two-nations.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1157,
+      "dur": 13.5,
+      "type": "kinetic",
+      "size": 130,
+      "words": [
+        {
+          "w": "NO TROPHY",
+          "at": 0.3
+        },
+        {
+          "w": "NO GOLDEN BALL",
+          "at": 1.3
+        }
+      ]
+    },
+    {
+      "at": 1170.5,
+      "dur": 7,
+      "type": "bowl",
+      "fillTo": 1,
+      "label": "THEY SAW MESSI"
+    },
+    {
+      "at": 1177.2,
+      "dur": 9.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-34.png",
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-38.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1177.5,
+      "dur": 9,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "NOT THE SCORE",
+          "at": 0.2
+        },
+        {
+          "w": "THE MAN",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 1186.2,
+      "dur": 6.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/10-tostao-eyes-of-a-champion.png",
+        "images/cards/hfc-04.png",
+        "images/cards/hfc-15.png",
+        "images/cards/hfc-11.png",
+        "images/cards/hfc-06.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1186.5,
+      "dur": 6,
+      "type": "name",
+      "name": "IFFHS",
+      "stat": "#1",
+      "meta": "OVERRULED FIFA"
+    },
+    {
+      "at": 1192.2,
+      "dur": 13.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-18.png",
+        "images/cards/hfc-22.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-27.png",
+        "images/cards/hfc-32.png",
+        "images/cards/12-pak-the-secret-hero.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-31.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1192.5,
+      "dur": 12.5,
+      "type": "impact",
+      "text": "MESSI",
+      "size": 280
+    },
+    {
+      "at": 1205,
+      "dur": 13,
+      "type": "cardwall",
+      "srcs": [
+        "images/cards/hfc-39.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-04.png",
+        "images/cards/hfc-02.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/11-castro-the-one-armed-champion.png",
+        "images/cards/hfc-09.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-19.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/hfc-05.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-15.png",
+        "images/cards/hfc-30.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-11.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-25.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-33.png",
+        "images/cards/hfc-35.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/05-milla-the-dancing-lion.png",
+        "images/cards/hfc-22.png"
+      ],
+      "label": "COLLECT THE LEGENDS",
+      "columns": 7
+    },
+    {
+      "at": 1217.7,
+      "dur": 5.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/12-pak-the-secret-hero.png",
+        "images/cards/hfc-39.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-30.png",
+        "images/cards/hfc-13.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1218,
+      "dur": 5,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "DOESN’T FIT",
+          "at": 0.2
+        },
+        {
+          "w": "IN A TROPHY",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 1223,
+      "dur": 9,
+      "type": "pitch"
+    },
+    {
+      "at": 1231.7,
+      "dur": 14.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-10.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-05.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-13.png",
+        "images/cards/hfc-20.png",
+        "images/cards/hfc-34.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1232,
+      "dur": 13.5,
+      "type": "name",
+      "name": "FOLARIN BALOGUN",
+      "stat": "RED",
+      "meta": "USA vs BOSNIA · R32",
+      "accent": "red"
+    },
+    {
+      "at": 1245.2,
+      "dur": 9.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-39.png",
+        "images/cards/hfc-23.png",
+        "images/cards/hfc-27.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1245.5,
+      "dur": 9,
+      "type": "kinetic",
+      "size": 134,
+      "words": [
+        {
+          "w": "AUTOMATIC BAN",
+          "at": 0.3,
+          "gold": true
+        }
+      ],
+      "accent": "red"
+    },
+    {
+      "at": 1254.2,
+      "dur": 9.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-34.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1254.5,
+      "dur": 8.5,
+      "type": "impact",
+      "text": "ONE PHONE CALL",
+      "size": 150,
+      "accent": "red"
+    },
+    {
+      "at": 1262.7,
+      "dur": 10.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-04.png",
+        "images/cards/hfc-11.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/hfc-07.png",
+        "images/cards/hfc-28.png",
+        "images/cards/hfc-00.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1263,
+      "dur": 10,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "TRUMP",
+          "at": 0.2
+        },
+        {
+          "w": "→",
+          "at": 0.8
+        },
+        {
+          "w": "INFANTINO",
+          "at": 1.2,
+          "gold": true
+        }
+      ],
+      "accent": "red"
+    },
+    {
+      "at": 1272.7,
+      "dur": 14.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-14.png",
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-29.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/hfc-21.png",
+        "images/cards/hfc-11.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1273,
+      "dur": 14,
+      "type": "impact",
+      "text": "ARTICLE 27",
+      "size": 210,
+      "accent": "red"
+    },
+    {
+      "at": 1286.7,
+      "dur": 11.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-12.png",
+        "images/cards/hfc-28.png",
+        "images/cards/hfc-32.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/hfc-35.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-36.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1287,
+      "dur": 11,
+      "type": "name",
+      "name": "CRISTIANO RONALDO",
+      "stat": "2026",
+      "meta": "THE SAME RULE"
+    },
+    {
+      "at": 1297.7,
+      "dur": 11.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-23.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-02.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-26.png",
+        "images/cards/hfc-01.png",
+        "images/cards/hfc-08.png",
+        "images/cards/hfc-37.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1298,
+      "dur": 11,
+      "type": "impact",
+      "text": "A RED LINE",
+      "size": 180,
+      "accent": "red"
+    },
+    {
+      "at": 1309,
+      "dur": 5,
+      "type": "pitch"
+    },
+    {
+      "at": 1314,
+      "dur": 10,
+      "type": "score",
+      "left": "USA",
+      "score": "1–4",
+      "right": "BELGIUM",
+      "note": "SEATTLE"
+    },
+    {
+      "at": 1323.7,
+      "dur": 7.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-27.png",
+        "images/cards/hfc-31.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/12-pak-the-secret-hero.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1324,
+      "dur": 7,
+      "type": "kinetic",
+      "size": 124,
+      "words": [
+        {
+          "w": "NOT EVEN",
+          "at": 0.2
+        },
+        {
+          "w": "A PRESIDENT",
+          "at": 1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 1330.7,
+      "dur": 6.1,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-15.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png",
+        "images/cards/hfc-22.png",
+        "images/cards/hfc-29.png",
+        "images/cards/hfc-04.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1331,
+      "dur": 5.5,
+      "type": "impact",
+      "text": "WHAT REMAINS",
+      "size": 170
+    },
+    {
+      "at": 1336.2,
+      "dur": 9.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-35.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-02.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1336.5,
+      "dur": 9,
+      "type": "kinetic",
+      "size": 112,
+      "words": [
+        {
+          "w": "RICHEST PRIZES",
+          "at": 0.2
+        },
+        {
+          "w": "LOVED THE MOST",
+          "at": 1.1,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "at": 1345.5,
+      "dur": 13.5,
+      "type": "trophy",
+      "label": "ONE SUMMER"
+    },
+    {
+      "at": 1358.7,
+      "dur": 11.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-09.png",
+        "images/cards/hfc-18.png",
+        "images/cards/hfc-24.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-22.png",
+        "images/cards/hfc-01.png",
+        "images/cards/hfc-13.png",
+        "images/cards/04-socrates-the-doctor.png"
+      ],
+      "count": 8,
+      "opacity": 0.42
+    },
+    {
+      "at": 1359,
+      "dur": 11,
+      "type": "impact",
+      "text": "39 DAYS",
+      "size": 230
+    },
+    {
+      "at": 1369.7,
+      "dur": 8.6,
+      "type": "drift",
+      "srcs": [
+        "images/cards/hfc-15.png",
+        "images/cards/07-escobar-the-gentleman.png",
+        "images/cards/hfc-32.png",
+        "images/cards/hfc-36.png",
+        "images/cards/hfc-16.png"
+      ],
+      "count": 5,
+      "opacity": 0.42
+    },
+    {
+      "at": 1370,
+      "dur": 8,
+      "type": "kinetic",
+      "size": 190,
+      "words": [
+        {
+          "w": "14,000",
+          "at": 0.3,
+          "gold": true,
+          "big": true
+        }
+      ]
+    },
+    {
+      "at": 1378,
+      "dur": 21,
+      "type": "trophy",
+      "label": "WORLDCUP26"
+    },
+    {
+      "at": 1399,
+      "dur": 19.5,
+      "type": "phone",
+      "srcs": [
+        "images/cards/hfc-28.png",
+        "images/cards/hfc-23.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-30.png",
+        "images/cards/hfc-13.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-20.png",
+        "images/cards/06-laurent-the-first-goal.png",
+        "images/cards/hfc-37.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/09-monti-two-nations.png",
+        "images/cards/hfc-07.png"
+      ]
+    },
+    {
+      "at": 1418.5,
+      "dur": 20,
+      "type": "cardwall",
+      "srcs": [
+        "images/cards/hfc-09.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-19.png",
+        "images/cards/luis-diaz.png",
+        "images/cards/hfc-14.png",
+        "images/cards/04-socrates-the-doctor.png",
+        "images/cards/hfc-16.png",
+        "images/cards/hfc-06.png",
+        "images/cards/hfc-10.png",
+        "images/cards/hfc-15.png",
+        "images/cards/hfc-17.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-11.png",
+        "images/cards/hfc-03.png",
+        "images/cards/hfc-24.png",
+        "images/cards/hfc-25.png",
+        "images/cards/02-garrincha-the-joy-of-the-people.png",
+        "images/cards/hfc-31.png",
+        "images/cards/hfc-35.png",
+        "images/cards/hfc-38.png",
+        "images/cards/hfc-01.png",
+        "images/cards/hfc-22.png",
+        "images/cards/lukaku-the-promise.png",
+        "images/cards/10-tostao-eyes-of-a-champion.png",
+        "images/cards/hfc-20.png",
+        "images/cards/03-carbajal-the-eternal-keeper.png",
+        "images/cards/hfc-29.png",
+        "images/cards/01-gaetjens-the-vanished-hero.png"
+      ],
+      "label": "100+ CARDS",
+      "columns": 7
+    },
+    {
+      "at": 1438.5,
+      "dur": 31.5,
+      "type": "phone",
+      "srcs": [
+        "images/cards/hfc-28.png",
+        "images/cards/hfc-04.png",
+        "images/cards/world-cup-monopoly.png",
+        "images/cards/hfc-11.png",
+        "images/cards/hfc-13.png",
+        "images/cards/08-yashin-the-black-spider.png",
+        "images/cards/hfc-20.png",
+        "images/cards/hfc-18.png",
+        "images/cards/hfc-37.png",
+        "images/cards/hfc-25.png",
+        "images/cards/hfc-32.png",
+        "images/cards/hfc-07.png"
+      ]
+    }
+  ]
+}

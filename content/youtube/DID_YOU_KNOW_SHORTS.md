@@ -112,16 +112,26 @@ a candle-lit vigil with white doves & his honored portrait → empty stadium. De
 Genuinely obscure, fact-checked, DRAMA→IDOL. Ordered by recommended production priority.
 These are NEXT in the queue after Shorts 01–10 + the app promo.
 
-### DC-1 — The One-Armed Champion (Héctor Castro) ⭐ recommended next
-**Hook:** A man with one arm scored in the **first-ever World Cup final** — and won it.
-**Arc:** At 13, Héctor Castro lost his right forearm in an electric-saw accident. Uruguay called him
-"El Divino Manco" — "the divine one-armed one." He scored Uruguay's first-ever World Cup goal, then the
-**final, decisive 4th goal** in the 1930 final (Uruguay 4–2 Argentina) — the world's first champions.
-**Why obscure:** almost nobody knows the first World Cup was won with a one-armed centre-forward scoring in the final.
-**Sources:** [Wikipedia — Héctor Castro](https://en.wikipedia.org/wiki/H%C3%A9ctor_Castro) · A Halftime Report · qatarmoments.
-*Confidence: rock-solid (amputation as a teen; scored in the 1930 final; Uruguay champions).*
+### DC-1 — The One-Armed Champion (Héctor Castro) — PACKAGED ✅ (Short 8, next to render)
+**Title:** Did You Know… He Won The First World Cup With One Arm?
+**Hook:** The man who scored the **last goal of the very first World Cup final** had only **one arm**.
+**Arc (DRAMA → IDOL):** At **13**, Héctor Castro amputated his right forearm in an electric-saw accident —
+"El Manco," the one-armed. He came back so beautiful to watch they added "El Divino." He scored **Uruguay's
+first-ever World Cup goal** (vs Peru, 18 Jul 1930), then the **89th-minute goal — the LAST of the match** — in
+the **1930 final, Uruguay 4–2 Argentina**: the world's first champions, crowned by a one-armed man. (Also: 1928
+Olympic gold, Copa América 1926 & 1935.)
+**Why obscure:** almost nobody knows the first World Cup final was decided by a one-armed centre-forward.
+**On-screen labels:** `DID YOU KNOW?` · `HÉCTOR CASTRO` · `EL DIVINO MANCO` · `URUGUAY 4–2 ARGENTINA · 1930` ·
+card "The Divine One-Armed Man · Uruguay · 1904–1960"
+**Full production package:** `marketing/shorts/dyk-hector-castro/` (README + narration.json + clips.json).
+**Monetization-safety:** amputation carried by **VO only, never shown** (no saw contact/blood) — soccer-only,
+AI Pixar, no logos/real footage, cleared music; made-for-kids=No, AI-disclosure=Yes.
+**Sources:** [Wikipedia — Héctor Castro](https://en.wikipedia.org/wiki/H%C3%A9ctor_Castro) ·
+[CONMEBOL — El Manco Divino](https://www.conmebol.com/noticias/el-manco-divino-la-historia-de-hector-castro-con-uruguay/) ·
+[A Halftime Report](https://ahalftimereport.com/2016/02/26/el-divino-manco-the-one-armed-world-cup-winner/).
+*Confidence: rock-solid — amputation at 13; first Uruguay WC goal; 89th-min final goal in the 4–2 win; Olympic gold. Re-verified 2026-07-24.*
 
-### DC-2 — The Hat-Trick That Didn't Exist For 76 Years (Bert Patenaude)
+### DC-2 — The Hat-Trick That Didn't Exist For 76 Years (Bert Patenaude) ⭐ recommended next
 **Hook:** He scored the **first hat-trick in World Cup history** — and the record books ignored it for 76 years.
 **Arc:** USA's Bert Patenaude scored 3 vs Paraguay on 17 July 1930. For decades FIFA credited his 2nd goal to
 a teammate/own goal, so the milestone "belonged to no one." Only on **10 Nov 2006** — after a historian's review —

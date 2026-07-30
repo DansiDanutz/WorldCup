@@ -1,0 +1,91 @@
+{
+  "short": "dyk-hector-castro",
+  "no_repeat": true,
+  "aspect_ratio": "9:16",
+  "note": "Library-first: search content/videos/ for reusable 1930s stadium, crowds, sky-blue Uruguay fans, and generic soccer-celebration clips before generating. Generate via Higgsfield ONLY the hero Castro identity beats (character-locked to one reference frame). Every src used at most once. Soccer-only, no gridiron, no logos/real footage, no gore.",
+  "clips": [
+    {
+      "id": "c1",
+      "beat": "hook",
+      "line": "line_01",
+      "src": "assets/01_tunnel_silhouette.mp4",
+      "prompt": "Pixar-style cinematic silhouette of a 1930s footballer with one arm standing in a stadium tunnel, warm golden light behind him, soccer only, round-neck shirt, portrait 9:16, no logos",
+      "source": "generate"
+    },
+    {
+      "id": "c2",
+      "beat": "drama",
+      "line": "line_02",
+      "src": "assets/02_workshop_boy.mp4",
+      "prompt": "Pixar-style 1920s Montevideo carpentry workshop, a thirteen-year-old boy near a saw bench, camera turns to his solemn face then his shortened right arm, sober tone, NO saw contact, NO blood, portrait 9:16",
+      "source": "generate"
+    },
+    {
+      "id": "c3",
+      "beat": "turn",
+      "line": "line_03",
+      "src": "assets/03_training_alone.mp4",
+      "prompt": "Pixar-style young man with one arm training alone on a dusty pitch at dusk, ball at his feet, determined jaw, soccer only, portrait 9:16",
+      "source": "generate"
+    },
+    {
+      "id": "c4",
+      "beat": "rise",
+      "line": "line_04",
+      "src": "assets/04_dribble_crowd.mp4",
+      "prompt": "Pixar-style one-armed forward in a plain sky-blue shirt dribbling past defenders, crowd rising behind, 1930s stadium, soccer only, no crest/logos, portrait 9:16",
+      "source": "generate"
+    },
+    {
+      "id": "c5",
+      "beat": "first_goal",
+      "line": "line_05",
+      "src": "assets/05_net_ripple.mp4",
+      "prompt": "Pixar-style ball rippling the net at a packed 1930 stadium, one-armed player wheeling away with single arm raised in joy, soccer only, portrait 9:16",
+      "source": "library-or-generate"
+    },
+    {
+      "id": "c6",
+      "beat": "final",
+      "line": "line_06",
+      "src": "assets/06_final_leap.mp4",
+      "prompt": "Pixar-style night final, huge crowd, opponents in light-blue-and-white stripes, one-armed forward leaping to finish late, ball crossing the goal line, soccer only, no logos, portrait 9:16",
+      "source": "generate"
+    },
+    {
+      "id": "c7",
+      "beat": "idol",
+      "line": "line_07",
+      "src": "assets/07_hoisted_champion.mp4",
+      "prompt": "Pixar-style teammates hoisting the one-armed hero, golden confetti light, first-world-champions triumph, soccer only, portrait 9:16",
+      "source": "generate"
+    },
+    {
+      "id": "c8",
+      "beat": "cta",
+      "line": "line_08",
+      "src": "cards/end_legendary_cards.mp4",
+      "prompt": "HyperFrames Legendary Cards end card, WorldCup26 green #106b4f + gold accent, trophy mark, worldcup26.world CTA with 'free to play · just for fun · no prizes', portrait 9:16",
+      "source": "hyperframes"
+    }
+  ],
+  "cards": [
+    {
+      "id": "card_dyk",
+      "type": "opener",
+      "text": "DID YOU KNOW?"
+    },
+    {
+      "id": "card_name",
+      "type": "lower_third",
+      "text": "HÉCTOR CASTRO",
+      "sub": "URUGUAY · 1930"
+    },
+    {
+      "id": "card_end",
+      "type": "end_ad",
+      "text": "Legendary Cards",
+      "sub": "collect the legends · free to play · just for fun · no prizes · worldcup26.world"
+    }
+  ]
+}
