@@ -76,13 +76,24 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 
 /* ── The curtain: a short cinematic open ───────────────────── */
 function Curtain() {
-  const [stage, setStage] = useState(0);
+  const [stage, setStage] = useState(() => {
+    try { return sessionStorage.getItem("deep-water-entered") ? 2 : 0; }
+    catch { return 0; }
+  });
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setStage(2); return; }
-    const a = setTimeout(() => setStage(1), 220);
-    const b = setTimeout(() => setStage(2), 2300);
+    if (stage === 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      try { sessionStorage.setItem("deep-water-entered", "1"); } catch {}
+      setStage(2);
+      return;
+    }
+    const a = setTimeout(() => setStage(1), 180);
+    const b = setTimeout(() => {
+      try { sessionStorage.setItem("deep-water-entered", "1"); } catch {}
+      setStage(2);
+    }, 1850);
     return () => { clearTimeout(a); clearTimeout(b); };
-  }, []);
+  }, [stage]);
   useEffect(() => {
     document.body.style.overflow = stage < 2 ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -130,6 +141,42 @@ function DepthGauge({ progress }: { progress: number }) {
 }
 
 type Passage = { key: string; label: string; note: string; x: number; y: number };
+const ROOMS = [
+  { key: "living", label: "Living room", note: "Soft daylight and natural linen let the sea deepen without competing with it.", src: "/placements/living-room.jpg", alt: "Deep Water displayed above a neutral linen sofa in a calm contemporary living room." },
+  { key: "bedroom", label: "Bedroom", note: "A quieter setting turns the painting into the room's last thought at night.", src: "/placements/bedroom.jpg", alt: "Deep Water displayed above a low bed in a serene, softly lit bedroom." },
+  { key: "study", label: "Study", note: "Dark timber and focused light make the warm figure feel especially present.", src: "/placements/study.jpg", alt: "Deep Water displayed in a refined study with dark wood furniture." },
+  { key: "dining", label: "Dining room", note: "Across a table, the horizon gives the room distance and an unhurried rhythm.", src: "/placements/dining-room.jpg", alt: "Deep Water displayed in an elegant dining room with warm evening light." },
+] as const;
+
+function RoomPreview() {
+  const [activeKey, setActiveKey] = useState<(typeof ROOMS)[number]["key"]>("living");
+  const active = ROOMS.find((room) => room.key === activeKey) ?? ROOMS[0];
+  return (
+    <div className="mt-10">
+      <div className="relative overflow-hidden bg-black/20 shadow-[0_30px_70px_-38px_rgba(0,0,0,.9)]">
+        <img key={active.src} src={active.src} alt={active.alt} className="aspect-[3/2] w-full object-cover motion-safe:animate-in motion-safe:fade-in motion-safe:duration-500" loading="lazy" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-5 pb-4 pt-12">
+          <p className="t-ui text-[11px] font-semibold uppercase tracking-[.16em] text-white/85">{active.label}</p>
+        </div>
+      </div>
+      <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4" aria-label="Choose a room">
+        {ROOMS.map((room) => {
+          const selected = room.key === active.key;
+          return (
+            <button key={room.key} type="button" aria-pressed={selected} onClick={() => setActiveKey(room.key)}
+              className="t-ui min-h-11 rounded-[2px] border px-3 py-2 text-[11px] font-semibold uppercase tracking-[.1em] transition-colors"
+              style={{ borderColor: selected ? "hsl(var(--accent))" : "rgba(255,255,255,.14)", color: selected ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))", background: selected ? "hsl(var(--accent) / .1)" : "transparent" }}>
+              {room.label}
+            </button>
+          );
+        })}
+      </div>
+      <p className="mt-5 text-[15px] leading-relaxed text-[hsl(var(--muted-foreground))]" aria-live="polite">{active.note}</p>
+      <p className="t-ui mt-3 text-[11px] leading-relaxed tracking-wide text-white/45">Room views are visual guides. The painting is shown at its real 100 × 80 cm proportion.</p>
+    </div>
+  );
+}
+
 const PASSAGES: Passage[] = [
   { key: "horizon", label: "The horizon", note: "A pale band, laid in thin and left alone. It is the only exit in the picture, and she is not looking at it.", x: 50, y: 16 },
   { key: "blade", label: "The shoulder blade", note: "One lit edge, dragged in a single pass. The hardest passage here, and the one that makes the body read as a living thing rather than a shape.", x: 63, y: 46 },
@@ -157,7 +204,7 @@ function CloseReading() {
                   <TooltipTrigger asChild>
                     <button type="button" onClick={() => setActive(on ? null : p)}
                             aria-label={p.label} aria-pressed={on}
-                            className="absolute z-10 -translate-x-1/2 -translate-y-1/2 p-2"
+                            className="absolute z-10 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center"
                             style={{ left: `${p.x}%`, top: `${p.y}%` }}>
                       <span className="relative block h-3 w-3 rounded-full border transition-all duration-500"
                             style={{
@@ -395,9 +442,10 @@ export default function App() {
                 <TabsContent value="scale" className="mt-10">
                   <div className="t-body text-[1.0625rem] leading-[1.75] text-[hsl(var(--foreground))]/88">
                     <p>A metre tall. At 100 × 80 cm the figure sits close to life size, so the sea behind her stops being a picture you look at and becomes a room you stand in front of.</p>
-                    <p>Hang it where you pass it daily, with the horizon near your own eye level. In morning light the sea cools and pulls away from her. In late afternoon the warmth comes up in her skin and she moves forward off the canvas. Both are correct, and you will come to prefer one.</p>
-                    <p>It is painted around the sides on gallery-profile stretchers, so it hangs exactly as it is. A frame is a preference, not a requirement.</p>
+                    <p>Hang it where you pass it daily, with the horizon near your own eye level. Morning light cools the sea; late afternoon brings the warmth of the figure forward.</p>
                   </div>
+                  <RoomPreview />
+                  <p className="t-body mt-8 text-[1.0625rem] leading-[1.75] text-[hsl(var(--foreground))]/88">It is painted around the sides on gallery-profile stretchers, so it hangs exactly as it is. A frame is a preference, not a requirement.</p>
                 </TabsContent>
 
                 <TabsContent value="hands" className="mt-10">
