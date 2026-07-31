@@ -1,0 +1,33 @@
+{
+  "comment": "Generation manifest for 'WorldCup26 Bonus - Norway: The Viking Row'. All clips generated via the Higgsfield MCP (model seedance_2_0, 720p std, 16:9, native audio ON — the crowd 'RO! RO!' chant is the clips' own soundtrack). VO: 11 Brian lines via Higgsfield seed_audio using voice element 857b6dce-40c2-4dbb-88ef-bbab5d24892c ('Brian Narrator WC26'), cloned from the committed Brian ElevenLabs lines in marketing/player-films/lukaku-the-promise/audio (lines 00-06). Player clips reused from content/videos/Norway/ (no new player generations).",
+  "provider": "higgsfield-mcp",
+  "voice_clone": {
+    "voice_id": "857b6dce-40c2-4dbb-88ef-bbab5d24892c",
+    "name": "Brian Narrator WC26",
+    "reference": "marketing/player-films/lukaku-the-promise/audio/line_00..06 concatenated (34.7s)"
+  },
+  "clips": {
+    "assets/stadium.mp4":     { "job": "d4593036-24b1-4de9-99d8-a50b91c8d310", "dur": 8 },
+    "assets/horn.mp4":        { "job": "f97d224e-1164-489c-9949-811c31c84d66", "dur": 8 },
+    "assets/row1.mp4":        { "job": "8934ca2a-99a6-4d64-b3cf-bc285b12b381", "dur": 8 },
+    "assets/drummer.mp4":     { "job": "761581a5-870e-4d40-9d61-0541183e13b6", "dur": 4 },
+    "assets/row2.mp4":        { "job": "59ce9969-759e-4958-9f20-df4dde346bcf", "dur": 4 },
+    "assets/family.mp4":      { "job": "2090d903-449b-478b-8fb3-6b7278d5acbb", "dur": 4 },
+    "assets/flares.mp4":      { "job": "ea84cdd0-c58b-43d3-9344-a0459efffaf0", "dur": 4 },
+    "assets/celebration.mp4": { "job": "25d8a4cc-e454-44f8-9dde-d6fb840fb59f", "dur": 8 },
+    "assets/finale.mp4":      { "job": "65c9ff71-41f9-4963-95cb-45a9bf2850dd", "dur": 8 }
+  },
+  "vo": {
+    "audio/line_00.mp3": "36a09a20-89ae-4d68-836e-12f83fa92a64",
+    "audio/line_01.mp3": "63e62fe6-5329-45be-a28f-7fe9c983f7b4",
+    "audio/line_02.mp3": "39f9a978-8046-4c85-8682-39f8317771be",
+    "audio/line_03.mp3": "cc9e347e-79f3-4c97-b727-c9e0376ef3c4",
+    "audio/line_04.mp3": "e22b85d4-cee5-4c6c-b85c-d48ab3d21fff",
+    "audio/line_05.mp3": "d8fd34c7-d851-4f04-90ea-76f67e7ec2c2",
+    "audio/line_06.mp3": "c5845d22-c82f-449c-b95b-0e6a1980747d",
+    "audio/line_07.mp3": "4079fb1c-fffc-450e-bafd-dfb44c95171e",
+    "audio/line_08.mp3": "d6aeb88f-9349-4311-928a-6e5916f50b11",
+    "audio/line_09.mp3": "2e744edf-907a-42e6-96fa-ee7874c1aa22",
+    "audio/line_10.mp3": "55c6ebf3-3535-41a0-8307-c98adbded81c"
+  }
+}

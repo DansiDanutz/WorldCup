@@ -1,0 +1,20 @@
+{
+  "name": "wc26-norway-viking-row",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "WorldCup26 Bonus - Norway: The Viking Row. 100-second clip-based motivational film with Brian narration, the real RO! RO! chant between every player, and a worldcup26.world CTA.",
+  "scripts": {
+    "serve": "PORT=8123 node serve.mjs",
+    "render": "FPS=30 DURATION=100 OUT=frames node render.mjs",
+    "voice": "node gen_audio.mjs",
+    "mux": "FPS=30 DURATION=100 OUTFILE=WorldCup26_Bonus_Norway_The_Viking_Row.mp4 node mux.mjs",
+    "fetch-assets": "node fetch_assets.mjs"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^2.1.2",
+    "ffmpeg-static": "^5.3.0",
+    "playwright": "^1.60.0"
+  }
+}
