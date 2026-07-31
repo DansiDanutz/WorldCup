@@ -226,3 +226,20 @@ NEW, non-destructive additions:
 Build + TEST each in the Ep33 render before standardising; if a technique hurts
 clarity or the no-subtitles rule, drop that one (not the whole set). Log CTR/retention
 deltas here after 48h so the set stays evidence-led.
+
+### WorldCup26 Bonus — Erling Haaland: "The Viking Returns" (produced 2026-07-11)
+- 300s player drama film, `marketing/player-films/haaland-viking-conquest/`.
+- Hook: 1066 Stamford Bridge (300 ships → 24 returned) × Haaland born in Leeds. Sources in project README.
+- Style: REALISTIC cinematic character beats (owner-directed mid-production switch away from
+  Pixar characters) + stylized shots for the legend/flashback acts. 30 unique clips, no repeats.
+- New techniques worth reusing: (1) Higgsfield MCP works from the remote sandbox now (no fal
+  fallback needed); (2) sandbox Chromium has NO H.264 decoder — transcode clips to VP9 webm
+  before render; (3) vendor React/Babel/Inter locally (unpkg/google-fonts unreachable from the
+  render browser); (4) Kling 3.0 `sound:"on"` clips make great chant/crowd AUDIO BEDS — keep the
+  audio even after replacing the visuals; (5) 720p turbo generations at 12cr stretch a tight
+  credit budget (upscaled fine by cover-fit in a 1080p timeline).
+- VO: cloned "Brian Narrator WC26" element voice via Higgsfield seed_audio; scene windows derived
+  from MEASURED VO durations before any render (alignment gate green on first try).
+- Upload reminders: Made for kids = NO, AI/altered content = YES, credit Kevin MacLeod tracks
+  (Ritual, Achaidh Cheide, Five Armies, Master of the Feast — incompetech.com, CC-BY 4.0),
+  description labels the 2-1 as OUR PREDICTION, free-to-play/no-prizes wording only.

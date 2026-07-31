@@ -1,0 +1,16 @@
+# Render artifacts
+frames/
+frames-test/
+*.log
+dbg.mjs
+node_modules/
+filter.txt
+# Source clips are re-fetchable via higgsfield-jobs.json (job IDs) — too heavy for git
+assets/*.mp4
+assets/*.webm
+# Music cues re-downloadable from incompetech.com (see README credits)
+music/*.mp3
+# Final deliverable exceeds GitHub's 100MB file limit — delivered out-of-band
+WorldCup26_*.mp4
+preview_*.mp4
+WorldCup26_*.mp4.part-*
