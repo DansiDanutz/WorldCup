@@ -1,0 +1,7 @@
+{
+  "note": "clip -> {jobid, status}. status: done=downloaded, flight=rendering, todo=not submitted",
+  "done":   ["c01","c02","c03","c04","c05","c06","c15","c18","c20"],
+  "flight": {"c07":"9cf8e6ba-70d5-4250-a2ca-11e5b744e219","c08":"e185d829-43cd-4ed4-93dc-51f57bffd2cd","c09":"3202b790-e8a0-4e35-a2df-d5e48b27ab62","c21":"bdb1af30-e4f8-4051-bc17-e24dfeefb767","c22":"b80e11ff-d533-49ec-9c47-976fdedc2d76"},
+  "todo":   ["c10","c11","c12","c13","c14","c16","c17","c19","c23","c24","c25","c26","c27","c28"],
+  "abandon_kling": "9a2bbe91-9153-43f2-86e5-8ef7309bb5c2"
+}
