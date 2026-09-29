@@ -25,5 +25,6 @@ for (const slug of legends) {
   out.push({ slug, dur: +dur.toFixed(2), story: cut ? cut.silence : +dur.toFixed(2), cut });
   console.log(`${slug.padEnd(34)} dur=${dur.toFixed(1)}s  ${cut ? `CTA@${cut.resume}s (tail ${cut.tail}s) -> story ends ${cut.silence}s` : 'NO BOUNDARY (keeps full)'}`);
 }
+fs.mkdirSync('build', { recursive: true });   // build/ is gitignored — create it
 fs.writeFileSync('build/vo-cuts.json', JSON.stringify(out, null, 2) + '\n');
 console.log(`\n${out.filter(o=>o.cut).length}/${out.length} boundaries found; story-only total = ${out.reduce((a,o)=>a+o.story,0).toFixed(0)}s`);

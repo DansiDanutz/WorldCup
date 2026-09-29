@@ -57,6 +57,7 @@ for (const c of cuts) {
     card: `images/cards/${card}`, srcDir: dir, clips, images });
   console.log(`${m.name.padEnd(18)} vo=${c.story.toFixed(1)}s clips=${clips.length} imgs=${images.length} card=${card ? 'OK' : 'MISSING'}`);
 }
+fs.mkdirSync('build', { recursive: true });   // build/ is gitignored — create it
 fs.writeFileSync('build/chapters.json', JSON.stringify(chapters, null, 2) + '\n');
 const total = chapters.reduce((a, c) => a + c.voDur, 0);
 console.log(`\n${chapters.length} chapters · story VO ${total.toFixed(0)}s (${(total/60).toFixed(1)} min) · ${chapters.reduce((a,c)=>a+c.clips.length,0)} clips · ${chapters.reduce((a,c)=>a+c.images.length,0)} images`);
