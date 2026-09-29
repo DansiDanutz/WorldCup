@@ -48,12 +48,19 @@ node preflight.mjs       # GATE: coverage, no-repeat, refs, VO slots, rule #10, 
 PORT=8131 node serve.mjs &
 URL=http://127.0.0.1:8131/forgotten.html FPS=30 DURATION=743.06 OUT=frames \
   CHROMIUM_PATH=/usr/bin/google-chrome node render.mjs
-node mux-audio.mjs       # audio master
+node mux-audio.mjs       # audio master (VO + sfx + ducked music)
+node finish.mjs          # frame-gap check -> encode -> mux -> QA -> the MP4
+node gen-chapters.mjs    # YouTube chapter list, straight from film.json
+node thumb/shoot.mjs     # thumb/thumbnail.jpg
 ```
 
-Real Chrome is required — Chromium cannot decode the h264 source clips. Encode the
-frames with `-vf crop=1920:1080:0:0` (they render 1920x1081; libx264 needs even
-dimensions).
+Real Chrome is required — Chromium cannot decode the h264 source clips.
+
+`render.mjs`'s `START`/`END` are **absolute timeline positions**, not offset+length,
+so a render killed mid-way resumes with `START=<frames rendered> END=743.06` and no
+re-work. `finish.mjs` applies the mandatory `-vf crop=1920:1080:0:0` (frames render
+1920x1081; libx264 needs even dimensions) and refuses to encode if any frame is
+missing.
 
 ## Not in Vol. 1
 

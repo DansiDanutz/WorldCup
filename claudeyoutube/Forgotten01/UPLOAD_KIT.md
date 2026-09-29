@@ -25,18 +25,18 @@ no grave, no body, no answers. The boy who won a World Cup on legs that were
 never straight. The keeper who first put on the gloves to hide from his father,
 and ended up playing five World Cups. Ten true stories the tournament left behind.
 
-0:00  Cold open
-0:58  Joe Gaetjens — The Vanished Hero
-2:01  Garrincha — Joy of the People
-2:54  Antonio Carbajal — The Eternal Keeper
-3:50  Sócrates — The Doctor
-4:49  Roger Milla — The Dancing Lion
-5:59  Lucien Laurent — The First Goal
-7:01  Andrés Escobar — The Gentleman
-8:01  Lev Yashin — The Black Spider
-8:58  Luis Monti — Two Nations
-10:01 Tostão — Eyes of a Champion
-11:01 Collect the legends
+0:00   Cold open
+0:58   Joe Gaetjens — The Vanished Hero
+2:00   Garrincha — Joy of the People
+2:53   Antonio Carbajal — The Eternal Keeper
+3:49   Sócrates — The Doctor
+4:48   Roger Milla — The Dancing Lion
+5:59   Lucien Laurent — The First Goal
+7:00   Andrés Escobar — The Gentleman
+8:01   Lev Yashin — The Black Spider
+8:58   Luis Monti — Two Nations
+10:00  Tostão — Eyes of a Champion
+11:01  Collect the legends
 
 COLLECT THE LEGENDS
 Every legend in this film is a collectible card at worldcup26.world. Open a card,
