@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>FORGOTTEN Vol.1 — Ten World Cup Legends</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin:0; padding:0; height:100%; background:#05070c; }
+  #root { position: fixed; inset: 0; }
+  * { box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div id="root" data-screen-label="FORGOTTEN · t=0s"></div>
+<script src="vendor/react.development.js" crossorigin="anonymous"></script>
+<script src="vendor/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="vendor/babel.min.js" crossorigin="anonymous"></script>
+<script type="text/babel" src="animations.jsx"></script>
+<script type="text/babel" src="match-kit.jsx"></script>
+<script type="text/babel" src="motion-kit.jsx"></script>
+<script type="text/babel" src="living-card.jsx"></script>
+<script type="text/babel" src="forgotten-scenes.jsx"></script>
+<script type="text/babel">
+const { useEffect } = React;
+
+function ScreenLabeler() {
+  const time = useTime();
+  useEffect(() => {
+    const r = document.getElementById('root');
+    if (r) r.dataset.screenLabel = `FORGOTTEN \u00b7 t=${Math.floor(time)}s`;
+  }, [Math.floor(time)]);
+  return null;
+}
+
+function SeekBridge() {
+  const tl = useTimeline();
+  useEffect(() => {
+    window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+    window.__videosSettled = () => {
+      const vs = [...document.querySelectorAll('video[data-mv-clip]')];
+      return vs.every(v => v.readyState >= 2);
+    };
+  }, [tl.setTime, tl.setPlaying]);
+  return null;
+}
+
+function ForgottenFilm() {
+  return (
+    <Stage width={1920} height={1080} duration={window.__FILM_DURATION}
+           background="#05070c" fps={30} autoplay={false} persistKey="forgotten01">
+      <ScreenLabeler />
+      <SeekBridge />
+      <SceneFilm />
+    </Stage>
+  );
+}
+
+function boot() {
+  ReactDOM.createRoot(document.getElementById('root')).render(<ForgottenFilm />);
+}
+// Load the film data first so the timeline and the render can never drift apart.
+fetch('./film.json')
+  .then((r) => r.json())
+  .then((f) => { window.MV_FILM = f; window.__FILM_DURATION = f.duration; })
+  .catch((e) => { console.error('film.json load failed', e); window.MV_FILM = { graphics: [], chapters: [] }; window.__FILM_DURATION = 743.06; })
+  .finally(boot);
+</script>
+</body>
+</html>

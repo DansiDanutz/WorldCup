@@ -1,0 +1,1556 @@
+{
+ "duration": 743.06,
+ "chapters": [
+  {
+   "index": 1,
+   "name": "JOE GAETJENS",
+   "label": "THE VANISHED HERO",
+   "meta": "HAITI · 1950",
+   "card": "images/cards/01-gaetjens-the-vanished-hero.png",
+   "at": 58,
+   "dur": 62.62,
+   "side": "left",
+   "media": [
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/clips/1_hook.mp4",
+     "type": "video",
+     "at": 2.4,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/images/1_hook.png",
+     "type": "image",
+     "at": 7.44,
+     "dur": 2.81
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/clips/1_hook_fal.mp4",
+     "type": "video",
+     "at": 10.25,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/images/2_hero.png",
+     "type": "image",
+     "at": 15.29,
+     "dur": 2.81
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/clips/1b_hero.mp4",
+     "type": "video",
+     "at": 18.1,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/images/3_goal.png",
+     "type": "image",
+     "at": 23.14,
+     "dur": 2.81
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/clips/2_hero.mp4",
+     "type": "video",
+     "at": 25.96,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/images/4_dark.png",
+     "type": "image",
+     "at": 31,
+     "dur": 2.81
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/clips/3_goal.mp4",
+     "type": "video",
+     "at": 33.81,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/images/5_disappear.png",
+     "type": "image",
+     "at": 38.85,
+     "dur": 2.81
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/clips/3_goal_fal.mp4",
+     "type": "video",
+     "at": 41.66,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/clips/3b_goal.mp4",
+     "type": "video",
+     "at": 46.7,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/clips/4_celeb_fal.mp4",
+     "type": "video",
+     "at": 51.74,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/01-gaetjens-the-vanished-hero/clips/4b_celeb.mp4",
+     "type": "video",
+     "at": 56.78,
+     "dur": 5.04
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "name": "GARRINCHA",
+   "label": "JOY OF THE PEOPLE",
+   "meta": "BRAZIL · 1962",
+   "card": "images/cards/02-garrincha-the-joy-of-the-people.png",
+   "at": 120.62,
+   "dur": 53.01,
+   "side": "right",
+   "media": [
+    {
+     "src": "legends/02-garrincha-the-joy-of-the-people/clips/1_hero.mp4",
+     "type": "video",
+     "at": 2.4,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/02-garrincha-the-joy-of-the-people/images/beat2_child.png",
+     "type": "image",
+     "at": 7.44,
+     "dur": 4.92
+    },
+    {
+     "src": "legends/02-garrincha-the-joy-of-the-people/clips/2_child.mp4",
+     "type": "video",
+     "at": 12.36,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/02-garrincha-the-joy-of-the-people/images/beat3_dribble.png",
+     "type": "image",
+     "at": 17.4,
+     "dur": 4.92
+    },
+    {
+     "src": "legends/02-garrincha-the-joy-of-the-people/clips/3_dribble.mp4",
+     "type": "video",
+     "at": 22.32,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/02-garrincha-the-joy-of-the-people/images/beat4_triumph.png",
+     "type": "image",
+     "at": 27.36,
+     "dur": 4.92
+    },
+    {
+     "src": "legends/02-garrincha-the-joy-of-the-people/clips/4_triumph.mp4",
+     "type": "video",
+     "at": 32.29,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/02-garrincha-the-joy-of-the-people/images/card_portrait.png",
+     "type": "image",
+     "at": 37.33,
+     "dur": 4.92
+    },
+    {
+     "src": "legends/02-garrincha-the-joy-of-the-people/clips/5_closing.mp4",
+     "type": "video",
+     "at": 42.25,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/02-garrincha-the-joy-of-the-people/images/hero.png",
+     "type": "image",
+     "at": 47.29,
+     "dur": 4.92
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "name": "ANTONIO CARBAJAL",
+   "label": "THE ETERNAL KEEPER",
+   "meta": "MEXICO · 5 CUPS",
+   "card": "images/cards/03-carbajal-the-eternal-keeper.png",
+   "at": 173.63,
+   "dur": 56.12,
+   "side": "left",
+   "media": [
+    {
+     "src": "legends/03-carbajal-the-eternal-keeper/clips/1_hero.mp4",
+     "type": "video",
+     "at": 2.4,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/03-carbajal-the-eternal-keeper/images/beat2_child.png",
+     "type": "image",
+     "at": 7.44,
+     "dur": 5.54
+    },
+    {
+     "src": "legends/03-carbajal-the-eternal-keeper/clips/2_child.mp4",
+     "type": "video",
+     "at": 12.98,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/03-carbajal-the-eternal-keeper/images/beat3_save.png",
+     "type": "image",
+     "at": 18.02,
+     "dur": 5.54
+    },
+    {
+     "src": "legends/03-carbajal-the-eternal-keeper/clips/3_save.mp4",
+     "type": "video",
+     "at": 23.57,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/03-carbajal-the-eternal-keeper/images/beat4_triumph.png",
+     "type": "image",
+     "at": 28.61,
+     "dur": 5.54
+    },
+    {
+     "src": "legends/03-carbajal-the-eternal-keeper/clips/4_triumph.mp4",
+     "type": "video",
+     "at": 34.15,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/03-carbajal-the-eternal-keeper/images/card_portrait.png",
+     "type": "image",
+     "at": 39.19,
+     "dur": 5.54
+    },
+    {
+     "src": "legends/03-carbajal-the-eternal-keeper/clips/5_closing.mp4",
+     "type": "video",
+     "at": 44.74,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/03-carbajal-the-eternal-keeper/images/hero.png",
+     "type": "image",
+     "at": 49.78,
+     "dur": 5.54
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "name": "SÓCRATES",
+   "label": "THE DOCTOR",
+   "meta": "BRAZIL · 1982",
+   "card": "images/cards/04-socrates-the-doctor.png",
+   "at": 229.75,
+   "dur": 59.03,
+   "side": "right",
+   "media": [
+    {
+     "src": "legends/04-socrates-the-doctor/clips/1_hero.mp4",
+     "type": "video",
+     "at": 2.4,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/04-socrates-the-doctor/images/beat2_thinker.png",
+     "type": "image",
+     "at": 7.44,
+     "dur": 6.13
+    },
+    {
+     "src": "legends/04-socrates-the-doctor/clips/2_thinker.mp4",
+     "type": "video",
+     "at": 13.57,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/04-socrates-the-doctor/images/beat3_captain.png",
+     "type": "image",
+     "at": 18.61,
+     "dur": 6.13
+    },
+    {
+     "src": "legends/04-socrates-the-doctor/clips/3_captain.mp4",
+     "type": "video",
+     "at": 24.73,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/04-socrates-the-doctor/images/beat4_prophecy.png",
+     "type": "image",
+     "at": 29.77,
+     "dur": 6.13
+    },
+    {
+     "src": "legends/04-socrates-the-doctor/clips/4_prophecy.mp4",
+     "type": "video",
+     "at": 35.9,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/04-socrates-the-doctor/images/card_portrait.png",
+     "type": "image",
+     "at": 40.94,
+     "dur": 6.13
+    },
+    {
+     "src": "legends/04-socrates-the-doctor/clips/5_closing.mp4",
+     "type": "video",
+     "at": 47.06,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/04-socrates-the-doctor/images/hero.png",
+     "type": "image",
+     "at": 52.1,
+     "dur": 6.13
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "name": "ROGER MILLA",
+   "label": "THE DANCING LION",
+   "meta": "CAMEROON · 1990",
+   "card": "images/cards/05-milla-the-dancing-lion.png",
+   "at": 288.78,
+   "dur": 52.23,
+   "side": "left",
+   "media": [
+    {
+     "src": "legends/05-milla-the-dancing-lion/clips/1_hero.mp4",
+     "type": "video",
+     "at": 2.4,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/05-milla-the-dancing-lion/images/beat2_island.png",
+     "type": "image",
+     "at": 7.44,
+     "dur": 4.77
+    },
+    {
+     "src": "legends/05-milla-the-dancing-lion/clips/2_island.mp4",
+     "type": "video",
+     "at": 12.21,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/05-milla-the-dancing-lion/images/beat3_dance.png",
+     "type": "image",
+     "at": 17.25,
+     "dur": 4.77
+    },
+    {
+     "src": "legends/05-milla-the-dancing-lion/clips/3_dance.mp4",
+     "type": "video",
+     "at": 22.01,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/05-milla-the-dancing-lion/images/beat4_triumph.png",
+     "type": "image",
+     "at": 27.05,
+     "dur": 4.77
+    },
+    {
+     "src": "legends/05-milla-the-dancing-lion/clips/4_triumph.mp4",
+     "type": "video",
+     "at": 31.82,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/05-milla-the-dancing-lion/images/card_portrait.png",
+     "type": "image",
+     "at": 36.86,
+     "dur": 4.77
+    },
+    {
+     "src": "legends/05-milla-the-dancing-lion/clips/5_closing.mp4",
+     "type": "video",
+     "at": 41.62,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/05-milla-the-dancing-lion/images/hero.png",
+     "type": "image",
+     "at": 46.66,
+     "dur": 4.77
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "name": "LUCIEN LAURENT",
+   "label": "THE FIRST GOAL",
+   "meta": "FRANCE · 1930",
+   "card": "images/cards/06-laurent-the-first-goal.png",
+   "at": 359.01,
+   "dur": 61.76,
+   "side": "right",
+   "media": [
+    {
+     "src": "legends/06-laurent-the-first-goal/clips/1_hero.mp4",
+     "type": "video",
+     "at": 2.4,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/06-laurent-the-first-goal/images/beat2_factory.png",
+     "type": "image",
+     "at": 7.44,
+     "dur": 6.67
+    },
+    {
+     "src": "legends/06-laurent-the-first-goal/clips/2_factory.mp4",
+     "type": "video",
+     "at": 14.11,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/06-laurent-the-first-goal/images/beat3_goal.png",
+     "type": "image",
+     "at": 19.15,
+     "dur": 6.67
+    },
+    {
+     "src": "legends/06-laurent-the-first-goal/clips/3_goal.mp4",
+     "type": "video",
+     "at": 25.82,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/06-laurent-the-first-goal/images/beat4_elderly.png",
+     "type": "image",
+     "at": 30.86,
+     "dur": 6.67
+    },
+    {
+     "src": "legends/06-laurent-the-first-goal/clips/4_elderly.mp4",
+     "type": "video",
+     "at": 37.54,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/06-laurent-the-first-goal/images/card_portrait.png",
+     "type": "image",
+     "at": 42.58,
+     "dur": 6.67
+    },
+    {
+     "src": "legends/06-laurent-the-first-goal/clips/5_closing.mp4",
+     "type": "video",
+     "at": 49.25,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/06-laurent-the-first-goal/images/hero.png",
+     "type": "image",
+     "at": 54.29,
+     "dur": 6.67
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "name": "ANDRÉS ESCOBAR",
+   "label": "THE GENTLEMAN",
+   "meta": "COLOMBIA · 1994",
+   "card": "images/cards/07-escobar-the-gentleman.png",
+   "at": 420.77,
+   "dur": 60.47,
+   "side": "left",
+   "media": [
+    {
+     "src": "legends/07-escobar-the-gentleman/clips/1_hero.mp4",
+     "type": "video",
+     "at": 2.4,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/07-escobar-the-gentleman/images/beat2_owngoal.png",
+     "type": "image",
+     "at": 7.44,
+     "dur": 6.41
+    },
+    {
+     "src": "legends/07-escobar-the-gentleman/clips/2_owngoal.mp4",
+     "type": "video",
+     "at": 13.85,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/07-escobar-the-gentleman/images/beat3_sorrow.png",
+     "type": "image",
+     "at": 18.89,
+     "dur": 6.41
+    },
+    {
+     "src": "legends/07-escobar-the-gentleman/clips/3_sorrow.mp4",
+     "type": "video",
+     "at": 25.31,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/07-escobar-the-gentleman/images/beat4_tribute.png",
+     "type": "image",
+     "at": 30.35,
+     "dur": 6.41
+    },
+    {
+     "src": "legends/07-escobar-the-gentleman/clips/4_tribute.mp4",
+     "type": "video",
+     "at": 36.76,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/07-escobar-the-gentleman/images/card_portrait.png",
+     "type": "image",
+     "at": 41.8,
+     "dur": 6.41
+    },
+    {
+     "src": "legends/07-escobar-the-gentleman/clips/5_closing.mp4",
+     "type": "video",
+     "at": 48.22,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/07-escobar-the-gentleman/images/hero.png",
+     "type": "image",
+     "at": 53.26,
+     "dur": 6.41
+    }
+   ]
+  },
+  {
+   "index": 8,
+   "name": "LEV YASHIN",
+   "label": "THE BLACK SPIDER",
+   "meta": "USSR · 1963",
+   "card": "images/cards/08-yashin-the-black-spider.png",
+   "at": 481.24,
+   "dur": 56.97,
+   "side": "right",
+   "media": [
+    {
+     "src": "legends/08-yashin-the-black-spider/clips/1_hero.mp4",
+     "type": "video",
+     "at": 2.4,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/08-yashin-the-black-spider/images/beat2_save.png",
+     "type": "image",
+     "at": 7.44,
+     "dur": 5.71
+    },
+    {
+     "src": "legends/08-yashin-the-black-spider/clips/2_save.mp4",
+     "type": "video",
+     "at": 13.15,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/08-yashin-the-black-spider/images/beat3_ballon.png",
+     "type": "image",
+     "at": 18.19,
+     "dur": 5.71
+    },
+    {
+     "src": "legends/08-yashin-the-black-spider/clips/3_ballon.mp4",
+     "type": "video",
+     "at": 23.91,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/08-yashin-the-black-spider/images/beat4_hockey.png",
+     "type": "image",
+     "at": 28.95,
+     "dur": 5.71
+    },
+    {
+     "src": "legends/08-yashin-the-black-spider/clips/4_hockey.mp4",
+     "type": "video",
+     "at": 34.66,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/08-yashin-the-black-spider/images/card_portrait.png",
+     "type": "image",
+     "at": 39.7,
+     "dur": 5.71
+    },
+    {
+     "src": "legends/08-yashin-the-black-spider/clips/5_closing.mp4",
+     "type": "video",
+     "at": 45.42,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/08-yashin-the-black-spider/images/hero.png",
+     "type": "image",
+     "at": 50.46,
+     "dur": 5.71
+    }
+   ]
+  },
+  {
+   "index": 9,
+   "name": "LUIS MONTI",
+   "label": "TWO NATIONS",
+   "meta": "1930 · 1934",
+   "card": "images/cards/09-monti-two-nations.png",
+   "at": 538.21,
+   "dur": 62.74,
+   "side": "left",
+   "media": [
+    {
+     "src": "legends/09-monti-two-nations/clips/1_hero.mp4",
+     "type": "video",
+     "at": 2.4,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/09-monti-two-nations/images/beat2_threat.png",
+     "type": "image",
+     "at": 7.44,
+     "dur": 6.87
+    },
+    {
+     "src": "legends/09-monti-two-nations/clips/2_threat.mp4",
+     "type": "video",
+     "at": 14.31,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/09-monti-two-nations/images/beat3_italy.png",
+     "type": "image",
+     "at": 19.35,
+     "dur": 6.87
+    },
+    {
+     "src": "legends/09-monti-two-nations/clips/3_italy.mp4",
+     "type": "video",
+     "at": 26.22,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/09-monti-two-nations/images/beat4_triumph.png",
+     "type": "image",
+     "at": 31.26,
+     "dur": 6.87
+    },
+    {
+     "src": "legends/09-monti-two-nations/clips/4_triumph.mp4",
+     "type": "video",
+     "at": 38.12,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/09-monti-two-nations/images/card_portrait.png",
+     "type": "image",
+     "at": 43.16,
+     "dur": 6.87
+    },
+    {
+     "src": "legends/09-monti-two-nations/clips/5_closing.mp4",
+     "type": "video",
+     "at": 50.03,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/09-monti-two-nations/images/hero.png",
+     "type": "image",
+     "at": 55.07,
+     "dur": 6.87
+    }
+   ]
+  },
+  {
+   "index": 10,
+   "name": "TOSTÃO",
+   "label": "EYES OF A CHAMPION",
+   "meta": "BRAZIL · 1970",
+   "card": "images/cards/10-tostao-eyes-of-a-champion.png",
+   "at": 600.95,
+   "dur": 60.11,
+   "side": "right",
+   "media": [
+    {
+     "src": "legends/10-tostao-eyes-of-a-champion/clips/1_hero.mp4",
+     "type": "video",
+     "at": 2.4,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/10-tostao-eyes-of-a-champion/images/beat2_injury.png",
+     "type": "image",
+     "at": 7.44,
+     "dur": 6.34
+    },
+    {
+     "src": "legends/10-tostao-eyes-of-a-champion/clips/2_injury.mp4",
+     "type": "video",
+     "at": 13.78,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/10-tostao-eyes-of-a-champion/images/beat3_comeback.png",
+     "type": "image",
+     "at": 18.82,
+     "dur": 6.34
+    },
+    {
+     "src": "legends/10-tostao-eyes-of-a-champion/clips/3_comeback.mp4",
+     "type": "video",
+     "at": 25.16,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/10-tostao-eyes-of-a-champion/images/beat4_triumph.png",
+     "type": "image",
+     "at": 30.2,
+     "dur": 6.34
+    },
+    {
+     "src": "legends/10-tostao-eyes-of-a-champion/clips/4_triumph.mp4",
+     "type": "video",
+     "at": 36.55,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/10-tostao-eyes-of-a-champion/images/card_portrait.png",
+     "type": "image",
+     "at": 41.59,
+     "dur": 6.34
+    },
+    {
+     "src": "legends/10-tostao-eyes-of-a-champion/clips/5_closing.mp4",
+     "type": "video",
+     "at": 47.93,
+     "dur": 5.04
+    },
+    {
+     "src": "legends/10-tostao-eyes-of-a-champion/images/hero.png",
+     "type": "image",
+     "at": 52.97,
+     "dur": 6.34
+    }
+   ]
+  }
+ ],
+ "graphics": [
+  {
+   "at": 0,
+   "dur": 58,
+   "type": "ambient",
+   "tint": "#0c2b22"
+  },
+  {
+   "at": 0.6,
+   "dur": 5.4,
+   "type": "impact",
+   "text": "FORGOTTEN",
+   "size": 250
+  },
+  {
+   "at": 6.2,
+   "dur": 12,
+   "type": "cardwall",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "label": "TEN LEGENDS",
+   "columns": 5
+  },
+  {
+   "at": 18.2,
+   "dur": 31.4,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.44
+  },
+  {
+   "at": 18.6,
+   "dur": 5.2,
+   "type": "impact",
+   "text": "HE BEAT ENGLAND",
+   "size": 150
+  },
+  {
+   "at": 23.9,
+   "dur": 5.2,
+   "type": "impact",
+   "text": "THEN VANISHED",
+   "size": 170,
+   "accent": "red"
+  },
+  {
+   "at": 29.2,
+   "dur": 5.4,
+   "type": "impact",
+   "text": "BROKEN LEGS",
+   "size": 175
+  },
+  {
+   "at": 34.7,
+   "dur": 5.4,
+   "type": "impact",
+   "text": "HE HID IN GOAL",
+   "size": 150
+  },
+  {
+   "at": 41,
+   "dur": 8,
+   "type": "kinetic",
+   "words": [
+    "FOOTBALL",
+    "REMEMBERS",
+    "ITS CHAMPIONS"
+   ],
+   "size": 120
+  },
+  {
+   "at": 49.4,
+   "dur": 8.6,
+   "type": "impact",
+   "text": "IT FORGOT THESE",
+   "size": 148
+  },
+  {
+   "at": 58,
+   "dur": 62.62,
+   "type": "ambient",
+   "tint": "#102a20"
+  },
+  {
+   "at": 58.2,
+   "dur": 62.22,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.42
+  },
+  {
+   "at": 120.62,
+   "dur": 53.01,
+   "type": "ambient",
+   "tint": "#0e1f3a"
+  },
+  {
+   "at": 120.82000000000001,
+   "dur": 52.61,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.42
+  },
+  {
+   "at": 173.63,
+   "dur": 56.12,
+   "type": "ambient",
+   "tint": "#102a20"
+  },
+  {
+   "at": 173.82999999999998,
+   "dur": 55.72,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.42
+  },
+  {
+   "at": 229.75,
+   "dur": 59.03,
+   "type": "ambient",
+   "tint": "#0e1f3a"
+  },
+  {
+   "at": 229.95,
+   "dur": 58.63,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.42
+  },
+  {
+   "at": 288.78,
+   "dur": 52.23,
+   "type": "ambient",
+   "tint": "#102a20"
+  },
+  {
+   "at": 288.97999999999996,
+   "dur": 51.83,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.42
+  },
+  {
+   "at": 341.01,
+   "dur": 18,
+   "type": "ambient",
+   "tint": "#10263d"
+  },
+  {
+   "at": 341.40999999999997,
+   "dur": 16.8,
+   "type": "cardwall",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "label": "COLLECT THE LEGENDS",
+   "columns": 5
+  },
+  {
+   "at": 359.01,
+   "dur": 61.76,
+   "type": "ambient",
+   "tint": "#0e1f3a"
+  },
+  {
+   "at": 359.21,
+   "dur": 61.36,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.42
+  },
+  {
+   "at": 420.77,
+   "dur": 60.47,
+   "type": "ambient",
+   "tint": "#102a20"
+  },
+  {
+   "at": 420.96999999999997,
+   "dur": 60.07,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.42
+  },
+  {
+   "at": 481.24,
+   "dur": 56.97,
+   "type": "ambient",
+   "tint": "#0e1f3a"
+  },
+  {
+   "at": 481.44,
+   "dur": 56.57,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.42
+  },
+  {
+   "at": 538.21,
+   "dur": 62.74,
+   "type": "ambient",
+   "tint": "#102a20"
+  },
+  {
+   "at": 538.4100000000001,
+   "dur": 62.34,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.42
+  },
+  {
+   "at": 600.95,
+   "dur": 60.11,
+   "type": "ambient",
+   "tint": "#0e1f3a"
+  },
+  {
+   "at": 601.1500000000001,
+   "dur": 59.71,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.42
+  },
+  {
+   "at": 661.0600000000001,
+   "dur": 82,
+   "type": "ambient",
+   "tint": "#0d3b2e"
+  },
+  {
+   "at": 661.2600000000001,
+   "dur": 15.6,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 7,
+   "opacity": 0.44
+  },
+  {
+   "at": 661.46,
+   "dur": 15,
+   "type": "impact",
+   "text": "THEY ARE CARDS NOW",
+   "size": 130
+  },
+  {
+   "at": 676.86,
+   "dur": 20,
+   "type": "cardwall",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "label": "100+ LEGEND CARDS",
+   "columns": 5
+  },
+  {
+   "at": 697.2600000000001,
+   "dur": 44,
+   "type": "phone",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ]
+  },
+  {
+   "at": 697.2600000000001,
+   "dur": 44,
+   "type": "drift",
+   "srcs": [
+    "images/cards/01-gaetjens-the-vanished-hero.png",
+    "images/cards/02-garrincha-the-joy-of-the-people.png",
+    "images/cards/03-carbajal-the-eternal-keeper.png",
+    "images/cards/04-socrates-the-doctor.png",
+    "images/cards/05-milla-the-dancing-lion.png",
+    "images/cards/06-laurent-the-first-goal.png",
+    "images/cards/07-escobar-the-gentleman.png",
+    "images/cards/08-yashin-the-black-spider.png",
+    "images/cards/09-monti-two-nations.png",
+    "images/cards/10-tostao-eyes-of-a-champion.png",
+    "images/cards/11-castro-the-one-armed-champion.png",
+    "images/cards/12-pak-the-secret-hero.png"
+   ],
+   "count": 6,
+   "opacity": 0.26
+  }
+ ],
+ "vo": [
+  {
+   "src": "vo/01-gaetjens-the-vanished-hero.m4a",
+   "at": 64,
+   "dur": 47.62
+  },
+  {
+   "src": "vo/02-garrincha-the-joy-of-the-people.m4a",
+   "at": 126.62,
+   "dur": 38.01
+  },
+  {
+   "src": "vo/03-carbajal-the-eternal-keeper.m4a",
+   "at": 179.63,
+   "dur": 41.12
+  },
+  {
+   "src": "vo/04-socrates-the-doctor.m4a",
+   "at": 235.75,
+   "dur": 44.03
+  },
+  {
+   "src": "vo/05-milla-the-dancing-lion.m4a",
+   "at": 294.78,
+   "dur": 37.23
+  },
+  {
+   "src": "vo/06-laurent-the-first-goal.m4a",
+   "at": 365.01,
+   "dur": 46.76
+  },
+  {
+   "src": "vo/07-escobar-the-gentleman.m4a",
+   "at": 426.77,
+   "dur": 45.47
+  },
+  {
+   "src": "vo/08-yashin-the-black-spider.m4a",
+   "at": 487.24,
+   "dur": 41.97
+  },
+  {
+   "src": "vo/09-monti-two-nations.m4a",
+   "at": 544.21,
+   "dur": 47.74
+  },
+  {
+   "src": "vo/10-tostao-eyes-of-a-champion.m4a",
+   "at": 606.95,
+   "dur": 45.11
+  }
+ ],
+ "sfx": {
+  "hits": [
+   {
+    "src": "sfx/braam.mp3",
+    "at": 0.5,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 6.2,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 6.6,
+    "vol": 0.45
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 18.7,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 24,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 29.3,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 34.8,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 49.5,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 58.15,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 58.95,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 59.6,
+    "vol": 0.34
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 120.77,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 121.57,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 122.22,
+    "vol": 0.34
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 173.78,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 174.58,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 175.23,
+    "vol": 0.34
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 229.9,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 230.7,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 231.35,
+    "vol": 0.34
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 288.93,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 289.73,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 290.38,
+    "vol": 0.34
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 341.41,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 341.81,
+    "vol": 0.45
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 359.16,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 359.96,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 360.61,
+    "vol": 0.34
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 420.92,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 421.72,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 422.37,
+    "vol": 0.34
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 481.39,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 482.19,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 482.84,
+    "vol": 0.34
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 538.36,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 539.16,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 539.81,
+    "vol": 0.34
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 601.1,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/stamp.mp3",
+    "at": 601.9,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 602.55,
+    "vol": 0.34
+   },
+   {
+    "src": "sfx/braam.mp3",
+    "at": 661.46,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/whoosh.mp3",
+    "at": 676.86,
+    "vol": 0.5
+   },
+   {
+    "src": "sfx/pop.mp3",
+    "at": 697.36,
+    "vol": 0.5
+   }
+  ]
+ },
+ "music": {
+  "cues": [
+   {
+    "src": "music/cue-cinematic-open.mp3",
+    "at": 0,
+    "dur": 58,
+    "vol": 0.4,
+    "loop": true,
+    "fadeIn": 2,
+    "fadeOut": 4
+   },
+   {
+    "src": "music/cue-reverent.mp3",
+    "at": 58,
+    "dur": 301.01,
+    "vol": 0.3,
+    "loop": true,
+    "fadeIn": 2,
+    "fadeOut": 4
+   },
+   {
+    "src": "music/cue-noble.mp3",
+    "at": 359.01,
+    "dur": 302.05,
+    "vol": 0.3,
+    "loop": true,
+    "fadeIn": 2,
+    "fadeOut": 4
+   },
+   {
+    "src": "music/cue-triumph.mp3",
+    "at": 661.06,
+    "dur": 82,
+    "vol": 0.42,
+    "loop": true,
+    "fadeIn": 2,
+    "fadeOut": 4
+   }
+  ]
+ }
+}

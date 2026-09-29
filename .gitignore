@@ -105,6 +105,13 @@ claudeyoutube/**/filter.txt
 claudeyoutube/**/delivery/
 # generated working copy — rebuild with `node sync-cards.mjs` (cards-manifest.json)
 claudeyoutube/**/images/cards/
+# FORGOTTEN anthology (claudeyoutube/Forgotten01) — generated/large artifacts.
+# The spec (film.json, builders, scenes, preflight) is tracked; the media is not:
+# legends/ is restaged from content/youtube/did-you-know/ by build-manifest.mjs.
+claudeyoutube/**/legends/
+claudeyoutube/**/vo/
+claudeyoutube/**/build/
+claudeyoutube/**/FORGOTTEN_*.mp4
 # render/mux/serve logs and archived cuts kept locally while iterating
 claudeyoutube/**/*.log
 claudeyoutube/**/v2_archive.mp4
