@@ -40,8 +40,9 @@ silence detection; the cut is verified per legend in `build/vo-cuts.json`.
 
 ```bash
 pnpm install && node node_modules/ffmpeg-static/install.js   # ffmpeg binary
+./fetch-music.sh         # 4 cleared Kevin MacLeod cues (gitignored, fetched once)
 node find-cta.mjs        # locate each Short's CTA boundary
-node build-manifest.mjs  # story-only VO + stage clips/images/cards
+node build-manifest.mjs  # story-only VO + stage clips, stills and legend cards
 node build-timeline.mjs  # -> film.json (single source of truth)
 node preflight.mjs       # GATE: coverage, no-repeat, refs, VO slots, rule #10, monetization
 PORT=8131 node serve.mjs &

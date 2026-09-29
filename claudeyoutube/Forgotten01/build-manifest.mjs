@@ -22,6 +22,14 @@ const META = {
 };
 
 fs.mkdirSync('vo', { recursive: true });
+// Stage the legend cards. They live in the app at public/legend-cards/did-you-know/
+// and are gitignored here (claudeyoutube/**/images/cards/), so build-timeline.mjs
+// would throw on a fresh checkout unless this step restores them.
+fs.mkdirSync('images/cards', { recursive: true });
+for (const f of fs.readdirSync(CARDS).filter(f => /\.(png|jpe?g)$/.test(f))) {
+  fs.copyFileSync(path.join(CARDS, f), path.join('images/cards', f));
+}
+console.log(`staged ${fs.readdirSync('images/cards').length} legend cards -> images/cards/`);
 const chapters = [];
 for (const c of cuts) {
   const dir = path.join(SRC, c.slug);
@@ -38,8 +46,15 @@ for (const c of cuts) {
     ? fs.readdirSync(path.join(dir, 'assets/clips')).filter(f => f.endsWith('.mp4')).sort() : [];
   const images = fs.existsSync(path.join(dir, 'assets/images'))
     ? fs.readdirSync(path.join(dir, 'assets/images')).filter(f => /\.(png|jpe?g)$/.test(f) && f !== 'card.png').sort() : [];
+  // Stage the clips and stills the renderer serves. legends/ is gitignored, so this
+  // is what makes a fresh checkout reproducible from the committed Shorts.
+  fs.mkdirSync(`legends/${c.slug}/clips`, { recursive: true });
+  fs.mkdirSync(`legends/${c.slug}/images`, { recursive: true });
+  for (const f of clips)  fs.copyFileSync(path.join(dir, 'assets/clips', f),  `legends/${c.slug}/clips/${f}`);
+  for (const f of images) fs.copyFileSync(path.join(dir, 'assets/images', f), `legends/${c.slug}/images/${f}`);
+
   chapters.push({ slug: c.slug, ...m, vo: dst, voDur: c.story,
-    card: `${CARDS}/${card}`, srcDir: dir, clips, images });
+    card: `images/cards/${card}`, srcDir: dir, clips, images });
   console.log(`${m.name.padEnd(18)} vo=${c.story.toFixed(1)}s clips=${clips.length} imgs=${images.length} card=${card ? 'OK' : 'MISSING'}`);
 }
 fs.writeFileSync('build/chapters.json', JSON.stringify(chapters, null, 2) + '\n');
