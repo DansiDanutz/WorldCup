@@ -77,14 +77,16 @@ and its final decided — by a centre-forward with one arm.
 ## SHOT LIST — 8 DISTINCT clips (NO-REPEAT rule; every `src` used once)
 
 Library-first: search `content/videos/` for reusable 1930s-era stadium, crowd, sky-blue
-Uruguay fans, and generic soccer-celebration clips before generating. Generate via
+Uruguay fans, and generic soccer-celebration clips before generating. **Every non-card
+prompt is soccer-framed** (hard rule #6) — including the drama beat, which carries the
+loss as exclusion from the game rather than by depicting the injury. Generate via
 Higgsfield ONLY the hero Castro identity beats that don't exist. All clips 9:16, soccer-only,
 NO gridiron cues, NO real footage/logos, NO gore.
 
 | # | Beat | Shot (AI Pixar, 9:16) | Card / label |
 |---|------|------------------------|--------------|
 | 1 | HOOK | Cinematic silhouette of a one-armed footballer in a 1930s stadium tunnel, warm light behind him | `DID YOU KNOW?` |
-| 2 | DRAMA | 1920s Montevideo workshop; a 13-yr-old boy near a saw bench — camera turns to his face, then his shortened right arm. **Implied only — no saw contact, no blood, no gore.** | — |
+| 2 | DRAMA | A 13-yr-old boy alone at the edge of a dusty Montevideo **soccer pitch** at dusk, watching other boys play without him; right sleeve hanging empty, seen from behind/profile. **The accident is VO-only — no workshop, no saw, no wound shown.** | — |
 | 3 | TURN | Young man training alone on a dusty pitch at dusk, one arm, jaw set, ball at his feet | `HÉCTOR CASTRO` |
 | 4 | RISE | The same man dazzling — dribbling past defenders, crowd rising behind him; sky-blue shirt (generic, no crest) | `EL DIVINO MANCO` |
 | 5 | FIRST GOAL | Ball ripples the net at a packed 1930 Estadio Centenario; he wheels away, single arm raised | — |
@@ -121,7 +123,7 @@ Credit in the description.
 - [ ] Cleared music only (Kevin MacLeod), credited
 - [ ] 100% AI Pixar visuals — no real footage, club/FIFA logos, or copyrighted images
 - [ ] Soccer-only — no helmet/pads/gridiron; round-neck shirts, soccer pitch
-- [ ] **No graphic content** — amputation implied by VO only, never shown; no saw contact/blood
+- [ ] **No graphic content** — amputation is VO-only and never depicted: no workshop, saw, wound or blood in ANY prompt (a child near a cutting tool is a rule #0 risk even when stylised)
 - [ ] No betting/odds/prize wording; app CTA says "free to play, just for fun, no prizes"
 - [ ] No-repeat clips (every src once); NO on-screen sentence text (labels only)
 - [ ] Real-results framing: 1930 is real history (a played match) — stated as fact is OK here
