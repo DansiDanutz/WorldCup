@@ -1,0 +1,49 @@
+<!doctype html><meta charset="utf-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1280px;height:720px;overflow:hidden;background:#05070c}
+  #t{position:relative;width:1280px;height:720px;overflow:hidden;
+     font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+     background:radial-gradient(120% 90% at 20% 50%,#0d3b2e 0%,transparent 55%),
+                radial-gradient(100% 80% at 82% 45%,#221a06 0%,transparent 60%),
+                linear-gradient(180deg,#070a10 0%,#04060a 100%)}
+  /* fanned legend cards, left */
+  .fan{position:absolute;left:-26px;top:50%;width:640px;height:660px;margin-top:-330px}
+  .fan img{position:absolute;width:300px;height:538px;object-fit:cover;border-radius:16px;
+    border:3px solid rgba(255,210,74,.55);box-shadow:0 28px 70px rgba(0,0,0,.85)}
+  .c1{left:-10px;top:78px;transform:rotate(-14deg) scale(.80);filter:brightness(.50)}
+  .c2{left:118px;top:58px;transform:rotate(-7deg) scale(.88);filter:brightness(.72)}
+  .c3{left:250px;top:62px;transform:rotate(3deg) scale(.98);
+      box-shadow:0 34px 92px rgba(0,0,0,.9),0 0 120px rgba(255,200,60,.36)}
+  .halo{position:absolute;left:230px;top:120px;width:540px;height:540px;
+    background:radial-gradient(circle,rgba(255,196,60,.32) 0%,transparent 62%)}
+  /* right block */
+  .r{position:absolute;right:44px;top:50%;transform:translateY(-50%);width:760px;text-align:right}
+  .k{font-size:29px;font-weight:800;letter-spacing:.24em;color:#7fe3bd;text-transform:uppercase;
+     text-shadow:0 2px 18px rgba(0,0,0,.9)}
+  .big{margin-top:10px;font-size:116px;font-weight:900;letter-spacing:-.035em;white-space:nowrap;line-height:.9;
+    background:linear-gradient(180deg,#fff3c4 0%,#f6b40e 52%,#c9820a 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 8px 30px rgba(0,0,0,.95)) drop-shadow(0 0 48px rgba(246,180,14,.42))}
+  .sub{margin-top:14px;font-size:62px;font-weight:900;letter-spacing:-.02em;color:#fff;line-height:1;
+    text-shadow:0 6px 26px rgba(0,0,0,.95)}
+  .rule{margin:24px 0 0 auto;width:280px;height:8px;border-radius:4px;
+    background:linear-gradient(90deg,transparent,#f6b40e)}
+  .vig{position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(130% 100% at 50% 50%,transparent 42%,rgba(0,0,0,.82) 100%)}
+</style>
+<div id="t">
+  <div class="halo"></div>
+  <div class="fan">
+    <img class="c1" src="../images/cards/08-yashin-the-black-spider.png">
+    <img class="c2" src="../images/cards/05-milla-the-dancing-lion.png">
+    <img class="c3" src="../images/cards/01-gaetjens-the-vanished-hero.png">
+  </div>
+  <div class="r">
+    <div class="k">World Cup</div>
+    <div class="big">FORGOTTEN</div>
+    <div class="sub">10 LEGENDS</div>
+    <div class="rule"></div>
+  </div>
+  <div class="vig"></div>
+</div>
