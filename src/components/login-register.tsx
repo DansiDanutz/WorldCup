@@ -84,6 +84,13 @@ type LoginRegisterProps = {
   publicPaidActionGates?: PaidActionGates;
 };
 
+// The tournament is over and the site is the Legend card album. The prediction
+// game's sign-in panels (referral earnings, the paid agent ticket program, the
+// pick-any-3 team wall) describe a product visitors can no longer reach from the
+// album, and its money wording contradicts "free to play, no prizes". They are
+// kept in the source, switched off, rather than deleted.
+const SHOW_LEGACY_GAME_INFO = false;
+
 export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionGates }: LoginRegisterProps) {
   const normalizedInitialReferralCode = normalizeReferralCode(initialReferralCode ?? "");
   const postLoginRedirect = useMemo(() => normalizePostLoginRedirect(returnTo), [returnTo]);
@@ -103,7 +110,7 @@ export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionG
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
   const funMode = isFunMode();
   const referralAgreementCopy = funMode
-    ? "Free to play — pick 3 teams and climb the leaderboard. Just for fun, no prizes."
+    ? "Free to play — collect Legend cards by watching their stories. Just for fun, no prizes."
     : referralAgreementText;
   const canContinueWithReferral = Boolean(referralCode && referralInviter && referralAccepted);
   const selectedSignupPath = signupPath ?? (referralCode ? "referral" : noReferral ? "direct" : null);
@@ -258,14 +265,8 @@ export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionG
           {paidActionsPaused ? (
             <div className="launch-notice" aria-label="Launch status">
               <div>
-                <strong>Free account setup is open</strong>
-                <span>
-                  Create the free account first. Tickets and payment can be handled later.
-                </span>
-                <span>
-                  Pick any 3 teams. Your points start from your signup time, so earlier matches do
-                  not count.
-                </span>
+                <strong>Free account</strong>
+                <span>Sign in to save every Legend card you unlock to your account.</span>
               </div>
             </div>
           ) : null}
@@ -302,7 +303,7 @@ export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionG
                   >
                     <MousePointer2 size={17} />
                     <strong>I have an inviter</strong>
-                    <span>Add their code. Your own future referrals can earn 5%.</span>
+                    <span>Add the invite code a friend shared with you.</span>
                   </button>
                   <button
                     className={`auth-choice-card auth-choice-card--direct ${
@@ -321,7 +322,7 @@ export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionG
                   >
                     <ShieldCheck size={17} />
                     <strong>Direct signup</strong>
-                    <span>No inviter. You can still invite friends and earn 5%.</span>
+                    <span>No invite code needed. Just sign in.</span>
                   </button>
                 </div>
               ) : null}
@@ -359,7 +360,7 @@ export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionG
                     {referralCode ? (
                       <div className={`field-note ${referralInviter ? "success-note" : ""}`}>
                         {referralInviter
-                          ? `Referral recognized from ${referralInviter}. Your own invites can earn 5%.`
+                          ? `Invite recognized from ${referralInviter}.`
                           : referralChecked
                             ? "This referral code was not found."
                             : "Checking referral code..."}
@@ -395,7 +396,7 @@ export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionG
                 <div className="auth-path-panel auth-path-panel--accepted">
                   <Check size={16} />
                   <span>
-                    Direct signup selected. You can still invite friends and earn 5%.
+                    Direct signup selected.
                   </span>
                 </div>
               ) : null}
@@ -450,23 +451,23 @@ export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionG
 
         <details className="auth-worldcup-card" aria-labelledby="auth-title">
           <summary>
-            <span>FIFA World Cup 2026</span>
+            <span>WorldCup26 Legend Cards</span>
             <ChevronDown size={16} />
           </summary>
           <div className="auth-worldcup-card__body">
             <div className="auth-copy">
               <h1 className="motto" id="auth-title">
-                Predict the Game <span className="motto-accent">WorldCup26</span>
+                Collect the Legends <span className="motto-accent">WorldCup26</span>
               </h1>
               {funMode ? (
                 <p className="auth-freeplay-tagline">
-                  🏆 Free to play · just for fun — pick 3 teams and climb the leaderboard. No
-                  deposits, no prizes, nothing to buy.
+                  🏆 Free to play · just for fun — watch a legend&apos;s story to unlock their card.
+                  No deposits, no prizes, nothing to buy.
                 </p>
               ) : (
                 <p>
-                  Create your account, pick three teams, then receive an Admin or Agent assigned
-                  ticket to lock the entry.
+                  Sign in, watch a legend&apos;s story, and collect their card. Free to play, no
+                  prizes.
                 </p>
               )}
             </div>
@@ -480,92 +481,98 @@ export function LoginRegister({ initialReferralCode, returnTo, publicPaidActionG
                 <div className="auth-steps" aria-label="Signup steps">
                   <div>
                     <span>1</span>
-                    <strong>Register</strong>
-                    <small>Choose referral or direct signup.</small>
+                    <strong>Sign in</strong>
+                    <small>One Google account saves your album.</small>
                   </div>
                   <div>
                     <span>2</span>
-                    <strong>Google</strong>
-                    <small>One account, no password to manage.</small>
+                    <strong>Watch</strong>
+                    <small>Play a legend&apos;s story. 80% watched unlocks the card.</small>
                   </div>
                   <div>
                     <span>3</span>
-                    <strong>Play</strong>
-                    <small>Pick teams, receive tickets, track wallet activity.</small>
+                    <strong>Collect</strong>
+                    <small>Keep the card in your album for good.</small>
                   </div>
                 </div>
               </details>
 
-              <details className="auth-info-card">
-                <summary>
-                  <span>Referral rates</span>
-                  <ChevronDown size={16} />
-                </summary>
-                <div className="auth-benefits" aria-label="Referral benefits">
-                  <div>
-                    <Gift size={18} />
-                    <span>Referral accepted: your own invites can earn 5%.</span>
+              {/* Retired prediction-game panels (referral earnings, agent ticket program,
+                  pick-any-3 team wall). Kept, not deleted, behind one switch. */}
+              {SHOW_LEGACY_GAME_INFO ? (
+                <>
+                <details className="auth-info-card">
+                  <summary>
+                    <span>Referral rates</span>
+                    <ChevronDown size={16} />
+                  </summary>
+                  <div className="auth-benefits" aria-label="Referral benefits">
+                    <div>
+                      <Gift size={18} />
+                      <span>Referral accepted: your own invites can earn 5%.</span>
+                    </div>
+                    <div>
+                      <CircleDollarSign size={18} />
+                      <span>Direct signup: your own invites can also earn 5%.</span>
+                    </div>
+                    <div>
+                      <Users size={18} />
+                      <span>Track accepted referrals inside the Invite tab.</span>
+                    </div>
                   </div>
-                  <div>
-                    <CircleDollarSign size={18} />
-                    <span>Direct signup: your own invites can also earn 5%.</span>
-                  </div>
-                  <div>
-                    <Users size={18} />
-                    <span>Track accepted referrals inside the Invite tab.</span>
-                  </div>
-                </div>
-              </details>
+                </details>
 
-              <details className="auth-info-card">
-                <summary>
-                  <span>Agent Wanted</span>
-                  <ChevronDown size={16} />
-                </summary>
-                <div className="auth-benefits" aria-label="Agent program">
-                  <div>
-                    <CircleDollarSign size={18} />
-                    <span>Pay upfront for ticket codes you can assign to players.</span>
+                <details className="auth-info-card">
+                  <summary>
+                    <span>Agent Wanted</span>
+                    <ChevronDown size={16} />
+                  </summary>
+                  <div className="auth-benefits" aria-label="Agent program">
+                    <div>
+                      <CircleDollarSign size={18} />
+                      <span>Pay upfront for ticket codes you can assign to players.</span>
+                    </div>
+                    <div>
+                      <Gift size={18} />
+                      <span>Every 10 paid ticket codes unlock 1 extra free ticket code.</span>
+                    </div>
+                    <div>
+                      <Users size={18} />
+                      <span>Register as an agent in Wallet, then activate after your first ticket deposit.</span>
+                    </div>
                   </div>
-                  <div>
-                    <Gift size={18} />
-                    <span>Every 10 paid ticket codes unlock 1 extra free ticket code.</span>
-                  </div>
-                  <div>
-                    <Users size={18} />
-                    <span>Register as an agent in Wallet, then activate after your first ticket deposit.</span>
-                  </div>
-                </div>
-              </details>
+                </details>
 
-              <details className="auth-info-card">
-                <summary>
-                  <span>All 48 teams</span>
-                  <ChevronDown size={16} />
-                </summary>
-                <div className="flag-wall" aria-label="All 48 qualified nations">
-                  <div className="flag-wall-head">
-                    <span className="ds-label">Any 3 teams can still be chosen</span>
+                <details className="auth-info-card">
+                  <summary>
+                    <span>All 48 teams</span>
+                    <ChevronDown size={16} />
+                  </summary>
+                  <div className="flag-wall" aria-label="All 48 qualified nations">
+                    <div className="flag-wall-head">
+                      <span className="ds-label">Any 3 teams can still be chosen</span>
+                    </div>
+                    <p className="flag-wall-note">
+                      Past matches do not score for late signups; your points start from your account
+                      entry time.
+                    </p>
+                    <div className="flag-grid">
+                      {flagTeams.map(([id, name, code]) => (
+                        <Image
+                          alt={name}
+                          className="flag"
+                          height={22}
+                          key={id}
+                          loading="lazy"
+                          src={`https://flagcdn.com/w80/${code}.png`}
+                          width={32}
+                        />
+                      ))}
+                    </div>
                   </div>
-                  <p className="flag-wall-note">
-                    Past matches do not score for late signups; your points start from your account
-                    entry time.
-                  </p>
-                  <div className="flag-grid">
-                    {flagTeams.map(([id, name, code]) => (
-                      <Image
-                        alt={name}
-                        className="flag"
-                        height={22}
-                        key={id}
-                        loading="lazy"
-                        src={`https://flagcdn.com/w80/${code}.png`}
-                        width={32}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </details>
+                </details>
+                </>
+              ) : null}
             </div>
           </div>
         </details>

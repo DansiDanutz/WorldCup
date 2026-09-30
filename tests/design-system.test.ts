@@ -7,6 +7,7 @@ const homePage = readFileSync("src/app/page.tsx", "utf8");
 const walletPage = readFileSync("src/app/wallet/page.tsx", "utf8");
 const loginPage = readFileSync("src/app/login/page.tsx", "utf8");
 const loginOgImage = readFileSync("src/app/login/opengraph-image.tsx", "utf8");
+const rootOgImage = readFileSync("src/app/opengraph-image.tsx", "utf8");
 const coefficientsPage = readFileSync("src/app/coefficients/page.tsx", "utf8");
 const schemaPage = readFileSync("src/app/schema/page.tsx", "utf8");
 const previewPage = readFileSync("src/app/preview/page.tsx", "utf8");
@@ -157,9 +158,15 @@ describe("WorldCup design system integration", () => {
     assert.doesNotMatch(referralCodeRule, /overflow-wrap:\s*anywhere;/);
     assert.match(loginPage, /title:\s*"Join WorldCup26"/);
     assert.match(loginPage, /You are invited to WorldCup26/);
-    assert.match(loginOgImage, /Referral invite/);
-    assert.match(loginOgImage, /Pick 3 teams free\./);
-    assert.match(loginOgImage, /Your score starts from your signup time; earlier matches do not count\./);
+    assert.match(loginOgImage, /Collect the Legends\./);
+    assert.match(loginOgImage, /Watch a legend&apos;s story to unlock their card\./);
+    // The link-preview images are the most-shared surface the site has. After the
+    // tournament they still advertised pick-3, "Top places paid" and an odds-style
+    // "Coefficients 1.00–3.00" range; keep all of that out for good.
+    for (const shareImage of [loginOgImage, rootOgImage]) {
+      assert.doesNotMatch(shareImage, /Pick 3|Predict the Game|Prediction leaderboard|Top places paid|Coefficients?/i);
+      assert.match(shareImage, /no prizes|No prizes/);
+    }
   });
 
   it("keeps WhatsApp support reachable from user-facing app surfaces", () => {
@@ -798,7 +805,8 @@ describe("WorldCup design system integration", () => {
     assert.match(loginRegister, /flagTeams/);
     assert.match(loginRegister, /flagcdn\.com\/w80/);
     assert.match(loginRegister, /flag-wall/);
-    assert.match(loginRegister, /Predict the Game/);
+    assert.match(loginRegister, /Collect the Legends/);
+    assert.doesNotMatch(loginRegister, /Predict the Game/);
     assert.match(loginRegister, /motto-accent/);
     assert.match(globalsCss, /\.flag-wall/);
     assert.match(globalsCss, /\.flag-grid/);
@@ -810,9 +818,11 @@ describe("WorldCup design system integration", () => {
     assert.match(loginRegister, /const \[signupPath, setSignupPath\]/);
     assert.match(loginRegister, /auth-choice-grid auth-choice-grid--buttons/);
     assert.match(loginRegister, /I have an inviter/);
-    assert.match(loginRegister, /Your own future referrals can earn 5%/);
+    assert.match(loginRegister, /Add the invite code a friend shared with you\./);
     assert.match(loginRegister, /Direct signup/);
-    assert.match(loginRegister, /invite friends and earn 5%/);
+    // The sign-in form promised referral earnings ("earn 5%") beside a "no prizes"
+    // line. The two path cards stay; the money promise does not.
+    assert.doesNotMatch(loginRegister, /future referrals can earn 5%|invite friends and earn 5%/);
     assert.match(loginPage, /searchParams/);
     assert.match(loginPage, /initialReferralCode=\{refParam \?\? null\}/);
     assert.match(loginRegister, /initialReferralCode/);
@@ -1459,14 +1469,11 @@ describe("WorldCup design system integration", () => {
     assert.doesNotMatch(walletScreen, /Boolean\(withdrawalPolicyPause\)/);
 
     assert.match(loginRegister, /paidActionsPaused/);
-    assert.match(loginRegister, /Free account setup is open/);
-    assert.match(
-      loginRegister,
-      /Create the free account first\. Tickets and payment can be handled later\./,
-    );
-    assert.match(
-      loginRegister,
-      /Pick any 3 teams\. Your points start from your signup time, so earlier matches do\s+not count\./,
-    );
+    assert.match(loginRegister, /<strong>Free account<\/strong>/);
+    assert.match(loginRegister, /Sign in to save every Legend card you unlock to your account\./);
+    // The retired game's money panels stay in the source but are switched off.
+    assert.match(loginRegister, /const SHOW_LEGACY_GAME_INFO = false;/);
+    assert.match(loginRegister, /\{SHOW_LEGACY_GAME_INFO \? \([\s\S]*?Agent Wanted[\s\S]*?\) : null\}/);
+    assert.doesNotMatch(loginRegister, /Pick any 3 teams\. Your points start/); // retired with the game
   });
 });
