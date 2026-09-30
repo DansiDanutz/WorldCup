@@ -173,7 +173,7 @@ export function AppLaunchSplash() {
           <strong>
             WorldCup26<span>.world</span>
           </strong>
-          <small>Prediction Game</small>
+          <small>Legend Cards</small>
         </div>
       </div>
     </div>

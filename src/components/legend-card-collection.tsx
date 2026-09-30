@@ -9,6 +9,7 @@ import {
   LockKeyhole,
   LogIn,
   Newspaper,
+  PlayCircle,
   Search,
   Sparkles,
   Volume2,
@@ -18,6 +19,7 @@ import {
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 
 import { CardViewControl } from "@/components/card-view-control";
+import { LegendWatchPlayer } from "@/components/legend-watch-player";
 import { LEGEND_CARDS, type LegendCard } from "@/lib/legend-cards";
 import {
   createLegendCardVoiceText,
@@ -26,6 +28,7 @@ import {
   storyVoiceLanguage,
 } from "@/lib/story-voice";
 import { createBrowserSupabaseClient } from "@/lib/supabase";
+import { getYouTubeVideoId } from "@/lib/youtube-watch-progress";
 
 const unlockedStorageKey = "worldcup_legend_unlocked_cards";
 const openedStorageKey = "worldcup_legend_opened_cards";
@@ -501,6 +504,7 @@ export function LegendCardCollection() {
     getPulsePreviewSecondsRemaining(readStoredPulsePreview()),
   );
   const [watchTimerTick, setWatchTimerTick] = useState(() => Date.now());
+  const [watchingCard, setWatchingCard] = useState<LegendCard | null>(null);
   const [notificationStatusOverride, setNotificationStatusOverride] = useState<string | null>(null);
   const [status, setStatus] = useState(
     "Each card has one unique unlock path: listen to the story, open the matching YouTube video when required, then collect the exact artefact.",
@@ -1107,7 +1111,27 @@ export function LegendCardCollection() {
     syncAccountLegendEvent(card.id, "listened");
   }
 
+  // Default path: watch inside the app, where real playback is measured and the
+  // card unlocks at 80% watched. Embedded plays of a public video count toward
+  // the channel's watch time, which is the point of the whole card loop.
   function startWatch(card: LegendCard) {
+    if (!card.youtube) {
+      setStatus(`${card.title} unlocks when the episode is live on YouTube.`);
+      return;
+    }
+
+    if (!getYouTubeVideoId(card.youtube)) {
+      openOnYouTube(card);
+      return;
+    }
+
+    setWatchingCard(card);
+    setStatus(`Watch ${card.teams} to unlock ${card.title}.`);
+  }
+
+  // Fallback only, for videos YouTube will not play in an embed: open the video in
+  // a tab and gate on a dwell timer. Unverified by design — it cannot see playback.
+  function openOnYouTube(card: LegendCard) {
     if (!card.youtube) {
       setStatus(`${card.title} unlocks when the episode is live on YouTube.`);
       return;
@@ -1517,7 +1541,7 @@ export function LegendCardCollection() {
           {!accountToken ? (
             <Link
               className="legend-sync-link"
-              href={{ pathname: "/login", query: { returnTo: "/predictions#legend-cards" } }}
+              href={{ pathname: "/login", query: { returnTo: "/#legend-cards" } }}
             >
               <LogIn size={16} />
               Sign in to save
@@ -1729,7 +1753,7 @@ export function LegendCardCollection() {
               {!accountToken ? (
                 <Link
                   className="legend-pulse__signin"
-                  href={{ pathname: "/login", query: { returnTo: "/predictions#news" } }}
+                  href={{ pathname: "/login", query: { returnTo: "/#news" } }}
                 >
                   <LogIn size={16} />
                   Sign in for saved cards
@@ -1777,7 +1801,7 @@ export function LegendCardCollection() {
                 <div className="legend-pulse__preview-actions">
                   {activePreviewCard ? (
                     <button type="button" className="button" onClick={() => startWatch(activePreviewCard)}>
-                      <ExternalLink size={16} />
+                      <PlayCircle size={16} />
                       Watch to collect
                     </button>
                   ) : nextPulseItem ? (
@@ -2073,8 +2097,8 @@ export function LegendCardCollection() {
                       className="button legend-card__watch"
                       onClick={() => startWatch(card)}
                     >
-                      <ExternalLink size={16} />
-                      {hasWatchedEpisode || isWatchPending ? "Open again" : "Open YouTube"}
+                      <PlayCircle size={16} />
+                      {hasWatchedEpisode || isWatchPending ? "Watch again" : "Watch to unlock"}
                     </button>
                   ) : (
                     <span className="button secondary legend-card__disabled" aria-disabled="true">
@@ -2122,6 +2146,22 @@ export function LegendCardCollection() {
             {albumEmptyState.actionLabel}
           </button>
         </div>
+      ) : null}
+
+      {watchingCard ? (
+        <LegendWatchPlayer
+          card={watchingCard}
+          onClose={() => setWatchingCard(null)}
+          onVerified={(card) => markCardWatchReady(card)}
+          onOpenOnYouTube={(card) => {
+            setWatchingCard(null);
+            openOnYouTube(card);
+          }}
+          onCollect={(card) => {
+            setWatchingCard(null);
+            void unlockCard(card);
+          }}
+        />
       ) : null}
     </section>
   );

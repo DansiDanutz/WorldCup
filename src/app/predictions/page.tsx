@@ -98,8 +98,8 @@ export default async function PredictionsPage() {
             <Link className="nav-item" href={{ pathname: "/" }}>
               <ArrowLeft size={16} />
               <span className="nav-item__copy">
-                <strong>Game</strong>
-                <small>Dashboard</small>
+                <strong>Album</strong>
+                <small>Home</small>
               </span>
             </Link>
           </nav>

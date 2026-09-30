@@ -16,6 +16,7 @@ const dashboard = readFileSync("src/components/dashboard.tsx", "utf8");
 const legendCardsPromo = readFileSync("src/components/legend-cards-promo.tsx", "utf8");
 const legendCardsPromoCss = readFileSync("src/components/legend-cards-promo.css", "utf8");
 const legendCardCollection = readFileSync("src/components/legend-card-collection.tsx", "utf8");
+const legendWatchPlayer = readFileSync("src/components/legend-watch-player.tsx", "utf8");
 const legendCardsRoute = readFileSync("src/app/api/legend-cards/route.ts", "utf8");
 const legendCardVoiceRoute = readFileSync("src/app/api/legend-cards/voice/route.ts", "utf8");
 const rootLayout = readFileSync("src/app/layout.tsx", "utf8");
@@ -92,23 +93,38 @@ describe("WorldCup design system integration", () => {
   });
 
   it("makes the collectible card album the homepage entry point", () => {
+    // Post-tournament (Sep 2026): the home page IS the album. The prediction
+    // dashboard, wallet and coefficients stay in the codebase but are no longer
+    // rendered or linked from the home page.
     const promoIndex = homePage.indexOf("<LegendCardsPromo />");
-    const dashboardIndex = homePage.indexOf("<Dashboard");
+    const albumIndex = homePage.indexOf("<LegendCardCollection />");
 
     assert.ok(promoIndex >= 0, "Homepage should render the card promo");
-    assert.ok(dashboardIndex >= 0, "Homepage should still render the dashboard");
-    assert.ok(promoIndex < dashboardIndex, "Card collection should appear before dashboard data");
+    assert.ok(albumIndex > promoIndex, "Homepage should render the album right after the promo");
+    assert.doesNotMatch(homePage, /<Dashboard\b/);
+    assert.doesNotMatch(homePage, /href=\{\{ pathname: "\/(wallet|coefficients|play)" \}\}/);
+    assert.match(homePage, /free to play, just for fun, no prizes/);
+    // What search results, link previews and the first-paint splash say about the
+    // site. These still advertised "Pick 3 teams before the FIFA World Cup" two
+    // months after the final; keep the retired game and official marks out.
+    for (const surface of [rootLayout, appLaunchSplash]) {
+      assert.doesNotMatch(surface, /pick 3|pick three|Predict the Game|Prediction Game/i);
+    }
+    assert.doesNotMatch(rootLayout, /FIFA/);
+    assert.match(rootLayout, /Free to play, just for fun, no prizes/);
+    assert.match(appLaunchSplash, /Legend Cards/);
+    assert.match(legendWatchPlayer, /onCollect\(card\)/); // the modal finishes the unlock itself
     assert.match(legendCardsPromo, /Main app experience/);
     assert.match(legendCardsPromo, /Collect every WorldCup26 card\./);
     assert.match(legendCardsPromo, /No duplicate rewards, no reused unlocks/);
     assert.match(legendCardsPromo, /const collectorSteps = \[/);
     assert.match(legendCardsPromo, /Hear the story with Brian inside the app\./);
-    assert.match(legendCardsPromo, /Open the exact YouTube episode when a card needs video\./);
+    assert.match(legendCardsPromo, /Watch the episode right here\. 80% watched unlocks the card\./);
     assert.match(legendCardsPromo, /Save the unlocked card to your album\./);
     assert.match(legendCardsPromo, /Claim the exact artefact revealed by the video\./);
     assert.match(legendCardsPromo, /Start today&apos;s quest/);
-    assert.match(legendCardsPromo, /href="\/predictions#collector-quest"/);
-    assert.match(legendCardsPromo, /href="\/predictions#legend-card-grid"/);
+    assert.match(legendCardsPromo, /href="\/#collector-quest"/);
+    assert.match(legendCardsPromo, /href="\/#legend-card-grid"/);
     assert.match(legendCardsPromo, /Unique unlock/);
     assert.match(legendCardsPromo, /seriesCount/);
     assert.match(legendCardsPromo, /shortsCount/);
@@ -461,16 +477,24 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /visibleCards\.map/);
     assert.match(legendCardCollection, /legend-card-\$\{card\.id\}/);
     assert.match(legendCardCollection, /window\.open\(card\.youtube,\s*"_blank"/);
-    assert.match(legendCardCollection, /Open YouTube/);
+    assert.match(legendCardCollection, /Watch to unlock/); // opens the in-app verified player
     assert.match(legendCardCollection, /Listen story/);
     assert.match(legendCardCollection, /Every video unlocks\s*[\s\S]*?the exact card it reveals/);
+    // Post-tournament decision (Sep 2026, reversing June's voice-only call): cards
+    // unlock through a verified in-app YouTube watch, because embedded plays of a
+    // public video count toward the channel's watch hours. Stories stay voice-only;
+    // the old tab + dwell timer survives only as the fallback for embed errors.
+    assert.match(legendCardCollection, /import \{ LegendWatchPlayer \} from "@\/components\/legend-watch-player";/);
+    assert.match(legendCardCollection, /function startWatch\(card: LegendCard\)[\s\S]*?setWatchingCard\(card\)/);
+    assert.match(legendCardCollection, /function openOnYouTube\(card: LegendCard\)/);
+    assert.match(legendCardCollection, /onVerified=\{\(card\) => markCardWatchReady\(card\)\}/);
     assert.doesNotMatch(legendCardCollection, /watchUnlockSeconds/);
-    assert.doesNotMatch(legendCardCollection, /getYouTubeVideoId/);
-    assert.doesNotMatch(legendCardCollection, /loadYouTubeIframeApi/);
-    assert.doesNotMatch(legendCardCollection, /onYouTubeIframeAPIReady/);
-    assert.doesNotMatch(legendCardCollection, /window\.YT/);
-    assert.doesNotMatch(legendCardCollection, /LegendWatchModal/);
-    assert.doesNotMatch(legendCardCollection, /legend-watch-modal/);
+    assert.doesNotMatch(legendCardCollection, /window\.YT/); // player internals stay in their own component
+    assert.match(legendWatchPlayer, /WATCH_UNLOCK_FRACTION/);
+    assert.match(legendWatchPlayer, /recordPlaybackSample/);
+    assert.match(legendWatchPlayer, /https:\/\/www\.youtube\.com\/iframe_api/);
+    assert.match(legendWatchPlayer, /Skipping ahead doesn't count/);
+    assert.doesNotMatch(legendWatchPlayer, /PlayerState\.ENDED/); // reaching the end never unlocks on its own
     assert.match(legendCardCollection, /createBrowserSupabaseClient/);
     assert.match(legendCardCollection, /readAccountLegendState/);
     assert.match(legendCardCollection, /saveAccountLegendCardEvent/);
@@ -487,7 +511,10 @@ describe("WorldCup design system integration", () => {
     assert.match(legendCardCollection, /Authorization: `Bearer \$\{token\}`/);
     assert.match(legendCardCollection, /accountSyncLabel/);
     assert.match(legendCardCollection, /Sign in to save/);
-    assert.match(legendCardCollection, /returnTo:\s*"\/predictions#legend-cards"/);
+    assert.match(legendCardCollection, /returnTo:\s*"\/#legend-cards"/); // the album is the home page now
+    // Sign-in returns to "/", so the home page must consume the stored redirect —
+    // it used to happen only inside the prediction Dashboard.
+    assert.match(homePage, /<PostLoginRedirectHandler \/>/);
     assert.match(legendCardCollection, /className="legend-sync-link"/);
     assert.match(globalsCss, /\.legend-sync-link\s*{[\s\S]*?linear-gradient\(180deg,\s*#ffe29a/);
     assert.match(globalsCss, /\.legend-quest\s*{[\s\S]*?radial-gradient\(circle at 18% 0%,\s*rgba\(255,\s*207,\s*102,\s*0\.18\)/);
@@ -601,7 +628,8 @@ describe("WorldCup design system integration", () => {
     assert.match(globalsCss, /\.legend-collection\s*{[\s\S]*?scroll-margin-top:\s*120px;/);
     assert.match(globalsCss, /\.legend-search,\s*[\s\S]*?#legend-card-search\s*{[\s\S]*?scroll-margin-top:\s*clamp\(190px,\s*28vh,\s*280px\);/);
     assert.match(globalsCss, /\.legend-card\s*{[\s\S]*?scroll-margin-top:\s*120px;/);
-    assert.doesNotMatch(globalsCss, /\.legend-watch-modal/);
+    assert.match(globalsCss, /\.legend-watch-modal\s*{/); // verified in-app watch (Sep 2026)
+    assert.match(globalsCss, /@media \(max-width: 640px\) {\s*\.legend-watch-modal\s*{[\s\S]*?align-items: end;/);
     assert.match(globalsCss, /\.legend-card\.is-locked \.legend-card__image img\s*{[\s\S]*?filter:\s*blur\(7px\)/);
     assert.doesNotMatch(globalsCss, /\.legend-card--supporter \.legend-card__image/);
     assert.match(globalsCss, /\.legend-card--real-asset \.legend-card__image\s*{[\s\S]*?aspect-ratio:\s*8\s*\/\s*11;/);
@@ -1376,8 +1404,8 @@ describe("WorldCup design system integration", () => {
   });
 
   it("keeps paid-action policy pauses visible before disabled user controls", () => {
-    assert.match(homePage, /getPublicPaidActionGates/);
-    assert.match(homePage, /publicPaidActionGates/);
+    // The home page renders no paid controls any more, so it loads no paid gates.
+    assert.doesNotMatch(homePage, /publicPaidActionGates/);
     assert.match(walletPage, /WALLET_ACCOUNT_SETUP_GATES/);
     assert.match(walletPage, /publicPaidActionGates/);
     assert.match(loginPage, /LOGIN_ACCOUNT_SETUP_GATES/);

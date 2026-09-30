@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ExternalLink, Headphones, Sparkles } from "lucide-react";
+import { Check, Headphones, PlayCircle, Sparkles } from "lucide-react";
 
 import { LEGEND_CARDS } from "@/lib/legend-cards";
 
@@ -16,9 +16,9 @@ const collectorSteps = [
     detail: "Hear the story with Brian inside the app.",
   },
   {
-    icon: ExternalLink,
+    icon: PlayCircle,
     title: "Watch",
-    detail: "Open the exact YouTube episode when a card needs video.",
+    detail: "Watch the episode right here. 80% watched unlocks the card.",
   },
   {
     icon: Sparkles,
@@ -59,10 +59,10 @@ export function LegendCardsPromo() {
             the video revealed.
           </p>
           <div className="legend-promo__actions">
-            <Link className="legend-promo__cta" href="/predictions#collector-quest">
+            <Link className="legend-promo__cta" href="/#collector-quest">
               Start today&apos;s quest
             </Link>
-            <Link className="legend-promo__ghost" href="/predictions#legend-card-grid">
+            <Link className="legend-promo__ghost" href="/#legend-card-grid">
               Open full album
             </Link>
           </div>
