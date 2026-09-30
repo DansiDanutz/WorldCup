@@ -26,7 +26,8 @@
     "vercel:domain-guard": "node scripts/vercel-domain-guard.mjs",
     "vercel:domain-guard:fix": "node scripts/vercel-domain-guard.mjs --fix",
     "vercel:promote": "node scripts/vercel-promote-production.mjs",
-    "x:engage": "node scripts/x-engage.mjs"
+    "x:engage": "node scripts/x-engage.mjs",
+    "audit:cards": "node --experimental-strip-types --import ./tests/register.mjs scripts/audit-legend-cards.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.87.0",

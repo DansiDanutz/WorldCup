@@ -56,7 +56,7 @@ describe("Legend card registry", () => {
     );
     assert.deepEqual(
       bonusCards.map((card) => card.title).sort(),
-      ["Luis Diaz", "Lukaku: The Promise", "World Cup Monopoly"].sort(),
+      ["Luis Díaz", "Lukaku: The Promise", "World Cup Monopoly"].sort(),
     );
   });
 
