@@ -60,7 +60,7 @@ function createEpisodeCard(episode: YouTubeLegendEpisode): LegendCardDefinition 
     episode: episode.ep,
     episodeLabel: episode.episodeLabel,
     kind: "episode-special",
-    title: titleFromHook(episode.hook),
+    title: episode.cardTitle ?? titleFromHook(episode.hook),
     subtitle: `${episode.episodeLabel ?? `Episode ${episode.ep}`} special card`,
     teams: `${episode.home} vs ${episode.away}`,
     rarity: "Legendary",

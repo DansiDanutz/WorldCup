@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 
 import { normalizePostLoginRedirect } from "../src/lib/post-login-redirect.ts";
@@ -14,5 +15,16 @@ describe("post-login redirects", () => {
     assert.equal(normalizePostLoginRedirect("//example.com/predictions"), null);
     assert.equal(normalizePostLoginRedirect("/login"), null);
     assert.equal(normalizePostLoginRedirect("/api/legend-cards"), null);
+  });
+});
+
+describe("post-login redirect handler", () => {
+  const handler = readFileSync("src/components/post-login-redirect-handler.tsx", "utf8");
+
+  it("consumes the stored redirect on load and on sign-in", () => {
+    assert.match(handler, /consumePostLoginRedirect\(window\.localStorage\)/);
+    assert.match(handler, /getSession\(\)/);
+    assert.match(handler, /onAuthStateChange/);
+    assert.match(handler, /nextPath !== currentPath/); // never loops on the page it is already on
   });
 });

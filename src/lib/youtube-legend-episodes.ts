@@ -1,6 +1,9 @@
 export type YouTubeLegendEpisode = {
   ep: number;
   episodeLabel?: string;
+  // Card name shown in the album. Mirrors the myth phrase of the published video
+  // title; when absent the card falls back to a title derived from the hook.
+  cardTitle?: string;
   home: string;
   away: string;
   stage?: string;
@@ -41,6 +44,7 @@ export type YouTubeDidYouKnowShort = {
 export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   {
     ep: 1,
+    cardTitle: "The Azteca's Ghosts",
     home: "Mexico",
     away: "South Africa",
     stage: "Group A - Matchday 1",
@@ -54,6 +58,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 2,
+    cardTitle: "Son's Last Dance",
     home: "South Korea",
     away: "Czechia",
     stage: "Group A",
@@ -66,6 +71,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 3,
+    cardTitle: "The Maple Leaf Man",
     home: "Canada",
     away: "Bosnia & Herzegovina",
     stage: "Group B",
@@ -78,6 +84,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 4,
+    cardTitle: "The 1930 Secret America Forgot",
     home: "USA",
     away: "Paraguay",
     stage: "Group D",
@@ -90,6 +97,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 5,
+    cardTitle: "The Kings Have a Secret",
     home: "Brazil",
     away: "Morocco",
     stage: "Group C",
@@ -102,6 +110,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 6,
+    cardTitle: "The Night Football Betrayed Algeria",
     home: "Argentina",
     away: "Algeria",
     stage: "Group J",
@@ -114,6 +123,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 7,
+    cardTitle: "The Supermarket Worker Who Shocked Brazil",
     home: "Brazil",
     away: "Haiti",
     stage: "Group C",
@@ -126,6 +136,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 9,
+    cardTitle: "The Desert Trap",
     home: "Qatar",
     away: "Switzerland",
     stage: "Group stage",
@@ -138,6 +149,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 10,
+    cardTitle: "The Battle of the Underdogs",
     home: "Haiti",
     away: "Scotland",
     stage: "Group stage",
@@ -150,6 +162,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 11,
+    cardTitle: "England's Secret",
     home: "England",
     away: "Ghana",
     stage: "Group L",
@@ -162,6 +175,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 12,
+    cardTitle: "Two Nations With No Home",
     home: "Australia",
     away: "Turkey",
     stage: "Group stage",
@@ -174,6 +188,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 13,
+    cardTitle: "The Island of 150,000",
     home: "Germany",
     away: "Curacao",
     stage: "Group stage",
@@ -186,6 +201,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 14,
+    cardTitle: "Total Football Meets the Samurai",
     home: "Netherlands",
     away: "Japan",
     stage: "Group stage",
@@ -198,6 +214,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 15,
+    cardTitle: "The Footballer Who Helped Stop a War",
     home: "Ivory Coast",
     away: "Ecuador",
     stage: "Group E",
@@ -210,6 +227,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 16,
+    cardTitle: "The Team That Opened Africa's Door",
     home: "Sweden",
     away: "Tunisia",
     stage: "Group F",
@@ -222,6 +240,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 17,
+    cardTitle: "Half a Million on Spain's Stage",
     home: "Spain",
     away: "Cape Verde",
     stage: "Group H",
@@ -234,6 +253,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 18,
+    cardTitle: "The Number One That Never Won",
     home: "Belgium",
     away: "Egypt",
     stage: "Group G",
@@ -246,6 +266,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 19,
+    cardTitle: "The Silence of 200,000",
     home: "Saudi Arabia",
     away: "Uruguay",
     stage: "Group H",
@@ -258,6 +279,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 20,
+    cardTitle: "The Team That Went Home Unbeaten",
     home: "Iran",
     away: "New Zealand",
     stage: "Group G",
@@ -270,6 +292,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 21,
+    cardTitle: "The Debutants Who Knocked Out the Champions",
     home: "France",
     away: "Senegal",
     stage: "Group I",
@@ -282,6 +305,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 22,
+    cardTitle: "The War-Torn Champions of Asia",
     home: "Iraq",
     away: "Norway",
     stage: "Group I",
@@ -294,6 +318,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 23,
+    cardTitle: "The Tiny Kingdom's First World Cup",
     home: "Austria",
     away: "Jordan",
     stage: "Group J",
@@ -306,6 +331,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 24,
+    cardTitle: "The Free Kick the World Got Wrong",
     home: "Portugal",
     away: "DR Congo",
     stage: "Group K",
@@ -318,6 +344,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 25,
+    cardTitle: "The Tiny Nation That Broke England's Dream",
     home: "England",
     away: "Croatia",
     stage: "Group L",
@@ -330,6 +357,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 26,
+    cardTitle: "One Kick From History",
     home: "Ghana",
     away: "Panama",
     stage: "Group L",
@@ -342,6 +370,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 27,
+    cardTitle: "Twenty Years in the Cold",
     home: "Uzbekistan",
     away: "Colombia",
     stage: "Group K",
@@ -354,6 +383,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 28,
+    cardTitle: "The Goal That Woke a Continent",
     home: "Czechia",
     away: "South Africa",
     stage: "Group A",
@@ -366,6 +396,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 29,
+    cardTitle: "Born From the Same War",
     home: "Switzerland",
     away: "Bosnia & Herzegovina",
     stage: "Group B",
@@ -378,6 +409,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 30,
+    cardTitle: "Two Hosts, Two Curses",
     home: "Canada",
     away: "Qatar",
     stage: "Group B",
@@ -390,6 +422,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 31,
+    cardTitle: "It Took Both of Them",
     home: "Mexico",
     away: "South Korea",
     stage: "Group A",
@@ -402,6 +435,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 32,
+    cardTitle: "The Miracle on Grass",
     home: "USA",
     away: "Australia",
     stage: "Group D",
@@ -414,6 +448,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 33,
+    cardTitle: "The Team That Never Lost",
     home: "Scotland",
     away: "Morocco",
     stage: "Group C",
@@ -426,6 +461,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 34,
+    cardTitle: "Ten Seconds",
     home: "Turkey",
     away: "Paraguay",
     stage: "Group D",
@@ -438,6 +474,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 35,
+    cardTitle: "The Greatest Team That Never Won",
     home: "Netherlands",
     away: "Sweden",
     stage: "Group F",
@@ -450,6 +487,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 36,
+    cardTitle: "The Peacemaker Meets the Machine",
     home: "Germany",
     away: "Ivory Coast",
     stage: "Group E",
@@ -462,6 +500,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 37,
+    cardTitle: "The Smallest Nation Ever",
     home: "Ecuador",
     away: "Curacao",
     stage: "Group E",
@@ -474,6 +513,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 38,
+    cardTitle: "The Samurai and the Eagle",
     home: "Japan",
     away: "Tunisia",
     stage: "Group F",
@@ -486,6 +526,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 39,
+    cardTitle: "The Ghost of '22",
     home: "Spain",
     away: "Saudi Arabia",
     stage: "Group H",
@@ -498,6 +539,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 40,
+    cardTitle: "The Assassin and the Architect",
     home: "Belgium",
     away: "Iran",
     stage: "Group G",
@@ -510,6 +552,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 41,
+    cardTitle: "The Smallest Sharks",
     home: "Uruguay",
     away: "Cape Verde",
     stage: "Group H",
@@ -522,6 +565,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 42,
+    cardTitle: "The King's Last Dance",
     home: "Egypt",
     away: "New Zealand",
     stage: "Group G",
@@ -534,6 +578,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 43,
+    cardTitle: "Messi's Genius vs the Machine",
     home: "Argentina",
     away: "Austria",
     stage: "Group J",
@@ -870,6 +915,7 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
   },
   {
     ep: 71,
+    cardTitle: "El Dorado and the Two Number Tens",
     home: "Colombia",
     away: "Portugal",
     stage: "Group stage",
@@ -1295,7 +1341,7 @@ export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
     id: "bonus-luis-diaz",
     episode: 902,
     episodeLabel: "Bonus Legend",
-    title: "Luis Diaz",
+    title: "Luis Díaz",
     subtitle: "Legend bonus card",
     teams: "Colombia",
     story:

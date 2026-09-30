@@ -1,0 +1,64 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  @import url('');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden; background:#050608; }
+  #t {
+    position:relative; width:1280px; height:720px; overflow:hidden;
+    font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+    background:
+      radial-gradient(120% 90% at 12% 50%, #0d3b2e 0%, transparent 55%),
+      radial-gradient(100% 80% at 88% 42%, #1a1508 0%, transparent 60%),
+      linear-gradient(180deg,#070a10 0%,#04060a 100%);
+  }
+  /* card fan, left third */
+  .fan { position:absolute; left:-40px; top:50%; width:560px; height:640px; margin-top:-320px; }
+  .fan img {
+    position:absolute; width:296px; height:398px; object-fit:cover; border-radius:18px;
+    border:3px solid rgba(255,210,74,.55);
+    box-shadow:0 28px 70px rgba(0,0,0,.85), 0 0 60px rgba(255,200,60,.10);
+  }
+  .c1 { left:0px;   top:150px; transform:rotate(-16deg) scale(.86); filter:brightness(.58); }
+  .c2 { left:110px; top:112px; transform:rotate(-8deg)  scale(.95); filter:brightness(.78); }
+  .c3 { left:236px; top:118px; transform:rotate(3deg)   scale(1.06);
+        box-shadow:0 34px 90px rgba(0,0,0,.9), 0 0 110px rgba(255,200,60,.34); }
+  /* glow behind hero card */
+  .halo { position:absolute; left:200px; top:150px; width:520px; height:520px;
+          background:radial-gradient(circle, rgba(255,196,60,.30) 0%, transparent 62%); }
+
+  /* right block — width tuned so the 12-glyph number never clips */
+  .right { position:absolute; right:48px; top:50%; transform:translateY(-50%);
+           width:700px; text-align:right; }
+  .kicker { font-size:32px; font-weight:800; letter-spacing:.22em; color:#7fe3bd;
+            text-transform:uppercase; margin-bottom:12px;
+            text-shadow:0 2px 18px rgba(0,0,0,.9); }
+  .money { font-size:104px; font-weight:900; letter-spacing:-.035em; line-height:.96;
+           white-space:nowrap;
+           background:linear-gradient(180deg,#fff3c4 0%,#f6b40e 52%,#c9820a 100%);
+           -webkit-background-clip:text; background-clip:text; color:transparent;
+           filter:drop-shadow(0 8px 30px rgba(0,0,0,.95)) drop-shadow(0 0 46px rgba(246,180,14,.42)); }
+  .ask { margin-top:16px; font-size:104px; font-weight:900; letter-spacing:-.025em;
+         color:#ffffff; line-height:1; white-space:nowrap;
+         text-shadow:0 6px 26px rgba(0,0,0,.95), 0 0 44px rgba(255,255,255,.14); }
+  .rule { margin:26px 0 0 auto; width:280px; height:8px; border-radius:4px;
+          background:linear-gradient(90deg,transparent,#f6b40e); }
+
+  .vig { position:absolute; inset:0; pointer-events:none;
+         background:radial-gradient(130% 100% at 50% 50%, transparent 42%, rgba(0,0,0,.80) 100%); }
+</style>
+<div id="t">
+  <div class="halo"></div>
+  <div class="fan">
+    <img class="c1" src="../images/cards/hfc-19.png">
+    <img class="c2" src="../images/cards/04-socrates-the-doctor.png">
+    <img class="c3" src="../images/cards/08-yashin-the-black-spider.png">
+  </div>
+  <div class="right">
+    <div class="kicker">World Cup 2026</div>
+    <div class="money">$655,000,000</div>
+    <div class="ask">WHO GOT IT?</div>
+    <div class="rule"></div>
+  </div>
+  <div class="vig"></div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "name": "wc26-forgotten-vol1",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "FORGOTTEN Vol.1 — evergreen long-form anthology of the Did You Know legend stories (16:9).",
+  "dependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "playwright": "^1.60.0"
+  }
+}
