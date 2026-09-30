@@ -26,7 +26,10 @@ G({ at: 18.6, dur: 5.2, type: 'impact', text: 'HE BEAT ENGLAND', size: 150 });  
 G({ at: 23.9, dur: 5.2, type: 'impact', text: 'THEN VANISHED', size: 170, accent: 'red' }); hit('stamp', 24.0);
 G({ at: 29.2, dur: 5.4, type: 'impact', text: 'BROKEN LEGS', size: 175 });        hit('stamp', 29.3);
 G({ at: 34.7, dur: 5.4, type: 'impact', text: 'HE HID IN GOAL', size: 150 });     hit('stamp', 34.8);
-G({ at: 41.0, dur: 8.0, type: 'kinetic', words: ['FOOTBALL', 'REMEMBERS', 'ITS CHAMPIONS'], size: 120 });
+G({ at: 41.0, dur: 8.0, type: 'kinetic', words: [
+  { w: 'FOOTBALL', at: 0 }, { w: 'REMEMBERS', at: 0.45 },
+  { w: 'ITS', at: 0.9 }, { w: 'CHAMPIONS', at: 1.35 },
+], size: 120 });
 G({ at: 49.4, dur: 8.6, type: 'impact', text: 'IT FORGOT THESE', size: 148 });    hit('braam', 49.5);
 
 // ── chapters ─────────────────────────────────────────────────────────────────

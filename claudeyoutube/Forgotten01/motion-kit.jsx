@@ -70,9 +70,13 @@ function KineticWords({ from, dur, words, size = 150, color = MK.text, accent = 
     <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center',
       justifyContent: 'center', flexWrap: 'wrap', gap: '0.35em', padding: '0 180px',
       opacity: fadeOut, zIndex: 8 }}>
-      {words.map((it, i) => {
-        const p = mkBack(mkClamp((lt - it.at) / 0.5, 0, 1));
-        if (p <= 0) return null;
+      {words.map((raw, i) => {
+        // Accept a bare string as well as {w, at}. A string used to yield it.at ===
+        // undefined -> p === NaN, and `NaN <= 0` is false, so the guard below let an
+        // empty span through: the beat vanished silently instead of failing loudly.
+        const it = typeof raw === 'string' ? { w: raw, at: i * 0.45 } : raw;
+        const p = mkBack(mkClamp((lt - (it.at || 0)) / 0.5, 0, 1));
+        if (!(p > 0)) return null;
         const drift = Math.sin(lt * 0.8 + i * 1.7) * 4;
         return (
           <span key={i} style={{

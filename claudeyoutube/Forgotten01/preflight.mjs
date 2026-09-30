@@ -45,5 +45,18 @@ const banned = ['odds', 'bet ', 'betting', 'wager', 'bookmaker', 'jackpot', 'pri
 const found = banned.filter(w => blob.includes(w));
 found.length ? fail(`banned wording: ${found.join(', ')}`) : console.log('  ok  no betting/prize wording');
 
+// 7. graphic beats must be able to render. Kinetic words are read as {w, at}; a bare
+// string yielded it.at === undefined -> NaN, and `NaN <= 0` is false, so the component
+// emitted empty spans and the beat vanished from the film without any error. Coverage,
+// refs and wording all stayed green while a cold-open beat was simply missing, so the
+// gate now checks the payload shape too.
+const kin = f.graphics.filter(g => g.type === 'kinetic');
+const badKin = kin.flatMap((g, gi) => (g.words || []).flatMap((w, wi) =>
+  (typeof w === 'object' && w && typeof w.w === 'string' && typeof w.at === 'number')
+    ? [] : [`kinetic#${gi} word#${wi}`]));
+badKin.length
+  ? fail(`kinetic words must be {w:string, at:number}: ${badKin.join(', ')}`)
+  : console.log(`  ok  ${kin.length} kinetic beat(s), word payloads well-formed`);
+
 console.log(bad ? `\nPREFLIGHT RED — ${bad} failure(s)` : '\nPREFLIGHT GREEN');
 process.exit(bad ? 1 : 0);

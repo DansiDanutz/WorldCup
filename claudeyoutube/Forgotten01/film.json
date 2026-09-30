@@ -836,9 +836,22 @@
    "dur": 8,
    "type": "kinetic",
    "words": [
-    "FOOTBALL",
-    "REMEMBERS",
-    "ITS CHAMPIONS"
+    {
+     "w": "FOOTBALL",
+     "at": 0
+    },
+    {
+     "w": "REMEMBERS",
+     "at": 0.45
+    },
+    {
+     "w": "ITS",
+     "at": 0.9
+    },
+    {
+     "w": "CHAMPIONS",
+     "at": 1.35
+    }
    ],
    "size": 120
   },
