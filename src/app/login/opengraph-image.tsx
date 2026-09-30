@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "WorldCup26 referral invite";
+export const alt = "WorldCup26 Legend Cards invite";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -66,7 +66,7 @@ export default function LoginOpengraphImage() {
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div style={{ display: "flex", fontSize: 40, fontWeight: 900 }}>WorldCup26</div>
                 <div style={{ display: "flex", fontSize: 22, color: "rgba(255,255,255,0.74)" }}>
-                  Prediction leaderboard
+                  Legend cards
                 </div>
               </div>
             </div>
@@ -81,21 +81,21 @@ export default function LoginOpengraphImage() {
                 fontWeight: 900,
               }}
             >
-              Referral invite
+              Invite
             </div>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
             <div style={{ display: "flex", maxWidth: 850, fontSize: 76, lineHeight: 0.95, fontWeight: 950 }}>
-              Pick 3 teams free.
+              Collect the Legends.
             </div>
             <div style={{ display: "flex", maxWidth: 760, fontSize: 30, color: "rgba(255,255,255,0.82)" }}>
-              Your score starts from your signup time; earlier matches do not count.
+              Watch a legend&apos;s story to unlock their card.
             </div>
           </div>
 
           <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
-            {["Use invite code", "Track your rank", "Top places paid"].map((label) => (
+            {["Free to play", "Watch to unlock", "No prizes"].map((label) => (
               <div
                 key={label}
                 style={{

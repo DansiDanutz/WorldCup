@@ -134,7 +134,11 @@ export function LegendWatchPlayer({
   onCollect: (card: LegendCard) => void;
 }) {
   const videoId = getYouTubeVideoId(card.youtube);
-  const hostRef = useRef<HTMLDivElement | null>(null);
+  // YT.Player *replaces* the element it is given with its own iframe. If React
+  // owned that element, React could no longer swap it for the error fallback, and
+  // a failed video left a dead modal. So React owns only this stable wrapper; the
+  // node YouTube replaces is created imperatively inside it.
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const playerRef = useRef<YouTubePlayer | null>(null);
   const rangesRef = useRef<WatchRanges>([]);
   const lastSampleRef = useRef<number | null>(null);
@@ -186,12 +190,14 @@ export function LegendWatchPlayer({
   }, [verify]);
 
   useEffect(() => {
-    if (!videoId || !hostRef.current) {
+    const wrapper = wrapperRef.current;
+    if (!videoId || !wrapper) {
       return;
     }
 
     let cancelled = false;
-    const host = hostRef.current;
+    const host = document.createElement("div");
+    wrapper.appendChild(host);
     rangesRef.current = readSavedRanges(card.id);
 
     loadYouTubeIframeApi()
@@ -236,6 +242,7 @@ export function LegendWatchPlayer({
       saveRanges(card.id, rangesRef.current);
       playerRef.current?.destroy();
       playerRef.current = null;
+      wrapper.replaceChildren();
     };
   }, [card.id, verify, videoId]);
 
@@ -282,6 +289,7 @@ export function LegendWatchPlayer({
         </div>
 
         <div className="legend-watch-modal__player">
+          <div ref={wrapperRef} className="legend-watch-modal__embed" hidden={Boolean(error)} />
           {error ? (
             <div className="legend-watch-modal__fallback">
               <strong>{error}</strong>
@@ -291,9 +299,7 @@ export function LegendWatchPlayer({
                 </button>
               ) : null}
             </div>
-          ) : (
-            <div ref={hostRef} />
-          )}
+          ) : null}
         </div>
 
         {!error ? (

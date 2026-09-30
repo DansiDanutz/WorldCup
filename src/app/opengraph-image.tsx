@@ -1,9 +1,10 @@
 import { ImageResponse } from "next/og";
 
-// Branded social-share card. The product is referral-driven (WhatsApp / link
-// shares), so a clean on-brand preview is part of the core UX.
+// Branded social-share card: the picture shown on every WhatsApp / X / Telegram
+// link preview. It describes the Legend card album, and must never carry the
+// retired prediction game's team-picking or odds-style wording.
 export const runtime = "edge";
-export const alt = "WorldCup — Predict the Game · WorldCup26";
+export const alt = "WorldCup26 Legend Cards — watch the story, unlock the card";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -54,24 +55,24 @@ export default function OpengraphImage() {
             </svg>
           </div>
           <div style={{ display: "flex", fontSize: 60, fontWeight: 800, letterSpacing: -1 }}>
-            WorldCup
+            WorldCup26
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <div style={{ display: "flex", flexWrap: "wrap", fontSize: 58, fontWeight: 800 }}>
-            <span style={{ display: "flex" }}>Predict the Game ·&nbsp;</span>
-            <span style={{ display: "flex", color: "#f0c060" }}>WorldCup26</span>
+            <span style={{ display: "flex" }}>Collect the&nbsp;</span>
+            <span style={{ display: "flex", color: "#f0c060" }}>Legends</span>
           </div>
           <div style={{ display: "flex", fontSize: 30, color: "rgba(255,255,255,0.85)" }}>
-            Pick 3 teams free. Track your private points preview.
+            Watch a legend&apos;s story to unlock their card.
           </div>
         </div>
 
         <div style={{ display: "flex", gap: 36, fontSize: 28, color: "rgba(255,255,255,0.9)" }}>
-          <div style={{ display: "flex" }}>48 teams</div>
-          <div style={{ display: "flex" }}>104 matches</div>
-          <div style={{ display: "flex" }}>Coefficients 1.00–3.00</div>
+          <div style={{ display: "flex" }}>Legend cards</div>
+          <div style={{ display: "flex" }}>True World Cup stories</div>
+          <div style={{ display: "flex" }}>Free · no prizes</div>
         </div>
       </div>
     ),

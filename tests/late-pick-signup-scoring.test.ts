@@ -47,7 +47,10 @@ describe("late picks score from signup time", () => {
     assert.match(dashboard, /Pick any 3 teams, even after kickoff/);
     assert.match(dashboard, /Your score starts from your signup time/);
     assert.match(dashboard, /Past matches do not score for late signups/);
-    assert.match(loginRegister, /Pick any 3 teams/);
+    // Post-tournament the sign-in page no longer advertises picking teams; the
+    // late-entry rule survives only inside the switched-off legacy panel.
+    assert.match(loginRegister, /const SHOW_LEGACY_GAME_INFO = false;/);
+    assert.match(loginRegister, /Past matches do not score for late signups/);
     assert.match(kickoffCountdown, /Late entries score from signup/);
     assert.match(heroCard, /Points start from signup/);
     assert.match(heroSwiper, /Earlier matches score 0/);
