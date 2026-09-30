@@ -118,3 +118,8 @@ claudeyoutube/**/v2_archive.mp4
 # smoke-render stills and QA spot frames pulled from the finished cut
 claudeyoutube/**/shots/
 claudeyoutube/**/qa/
+
+# Two-pass ffmpeg stats files (the *.log glob above misses the .mbtree sidecar)
+claudeyoutube/**/ffmpeg2pass-*
+# Local convenience copies of finished masters (large, regenerable) — never commit
+/Downloads/
