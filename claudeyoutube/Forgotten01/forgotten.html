@@ -38,9 +38,13 @@ function SeekBridge() {
   const tl = useTimeline();
   useEffect(() => {
     window.__seek = (t) => { tl.setPlaying(false); tl.setTime(t); };
+    // Settled means BOTH: every clip has data, and no VideoSprite seek is still in
+    // flight. This used to check readyState only, which silently overwrote the
+    // pending-seek version match-kit.jsx installs — so the renderer would have
+    // screenshotted mid-seek even once the clips were being seeked at all.
     window.__videosSettled = () => {
       const vs = [...document.querySelectorAll('video[data-mv-clip]')];
-      return vs.every(v => v.readyState >= 2);
+      return (window.__pendingVideoSeeks || 0) === 0 && vs.every(v => v.readyState >= 2);
     };
   }, [tl.setTime, tl.setPlaying]);
   return null;

@@ -77,9 +77,14 @@ function LivingCard({ from, dur, card, media = [], side = 'left', w = 520 }) {
         {/* the legend, moving, inside the same frame */}
         {active ? (
           active.type === 'video'
-            ? <video src={active.src} muted playsInline preload="auto" data-mv-clip="1"
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%',
-                         objectFit: 'cover', opacity: ignite }} />
+            // Must go through VideoSprite, not a raw <video>. The renderer drives the
+            // timeline paused via window.__seek(t); a bare <video> is never played and
+            // never seeked, so it holds its first decoded frame for the whole shot and
+            // the film degrades into a slideshow of first frames (hard rule #11).
+            // VideoSprite seeks currentTime per frame and registers the pending seek
+            // so render.mjs waits for it before screenshotting.
+            ? <VideoSprite src={active.src} start={from + active.at} dur={active.dur}
+                fit="cover" style={{ opacity: ignite }} />
             : <img src={active.src} style={{
                 position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
                 opacity: ignite,

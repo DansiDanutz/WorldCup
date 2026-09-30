@@ -74,6 +74,7 @@ function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0, rate
       muted
       playsInline
       preload="auto"
+      data-mv-clip="1"
       style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%',
         objectFit: fit,
