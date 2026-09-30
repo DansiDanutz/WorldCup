@@ -69,6 +69,10 @@ function KineticWords({ from, dur, words, size = 150, color = MK.text, accent = 
   return (
     <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center',
       justifyContent: 'center', flexWrap: 'wrap', gap: '0.35em', padding: '0 180px',
+      // gap is in em, which resolves against THIS container's font-size — not the
+      // spans'. Without an explicit size here it fell back to the 16px default, so
+      // 0.35em was ~6px between 120px words and they ran together ("FOOTBALLREMEMBERS").
+      fontSize: size,
       opacity: fadeOut, zIndex: 8 }}>
       {words.map((raw, i) => {
         // Accept a bare string as well as {w, at}. A string used to yield it.at ===
