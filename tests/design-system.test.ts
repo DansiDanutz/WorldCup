@@ -502,6 +502,12 @@ describe("WorldCup design system integration", () => {
     assert.match(legendWatchPlayer, /https:\/\/www\.youtube\.com\/iframe_api/);
     assert.match(legendWatchPlayer, /Skipping ahead doesn't count/);
     assert.doesNotMatch(legendWatchPlayer, /PlayerState\.ENDED/); // reaching the end never unlocks on its own
+    // YT.Player replaces the node it is given with an iframe. React must never own
+    // that node, or the error fallback cannot render and a failed video leaves a
+    // dead modal (seen on production when YouTube refused the embed).
+    assert.match(legendWatchPlayer, /const host = document\.createElement\("div"\);\s*wrapper\.appendChild\(host\);/);
+    assert.doesNotMatch(legendWatchPlayer, /ref=\{hostRef\}/);
+    assert.match(legendWatchPlayer, /hidden=\{Boolean\(error\)\}/);
     assert.match(legendCardCollection, /createBrowserSupabaseClient/);
     assert.match(legendCardCollection, /readAccountLegendState/);
     assert.match(legendCardCollection, /saveAccountLegendCardEvent/);
