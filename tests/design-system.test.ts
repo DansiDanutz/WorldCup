@@ -160,12 +160,22 @@ describe("WorldCup design system integration", () => {
     assert.match(loginPage, /You are invited to WorldCup26/);
     assert.match(loginOgImage, /Collect the Legends\./);
     assert.match(loginOgImage, /Watch a legend&apos;s story to unlock their card\./);
-    // The link-preview images are the most-shared surface the site has. After the
-    // tournament they still advertised pick-3, "Top places paid" and an odds-style
-    // "Coefficients 1.00–3.00" range; keep all of that out for good.
-    for (const shareImage of [loginOgImage, rootOgImage]) {
-      assert.doesNotMatch(shareImage, /Pick 3|Predict the Game|Prediction leaderboard|Top places paid|Coefficients?/i);
-      assert.match(shareImage, /no prizes|No prizes/);
+    // The link previews are the most-shared surface the site has. After the
+    // tournament they still advertised pick-3, "Top places paid", a "paid
+    // leaderboard ... with a ticket" and an odds-style "Coefficients 1.00–3.00"
+    // range; keep all of that out for good. loginPage carries the text shown under
+    // every referral link (its description / openGraph / twitter metadata).
+    const loginMetadata = loginPage.slice(
+      loginPage.indexOf("export const metadata"),
+      loginPage.indexOf("type LoginPageSearchParams"),
+    );
+    assert.ok(loginMetadata.includes("openGraph"), "login metadata block not found");
+    for (const shareSurface of [loginOgImage, rootOgImage, loginMetadata]) {
+      assert.doesNotMatch(
+        shareSurface,
+        /Pick 3|3 teams|Predict the Game|Prediction leaderboard|Top places paid|paid leaderboard|ticket|Coefficients?/i,
+      );
+      assert.match(shareSurface, /no prizes|No prizes/);
     }
   });
 

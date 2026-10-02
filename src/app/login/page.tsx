@@ -8,11 +8,11 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Join WorldCup26",
   description:
-    "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+    "Sign in to save your WorldCup26 Legend cards. Watch a legend's story to unlock their card. Free to play, just for fun, no prizes.",
   openGraph: {
     title: "You are invited to WorldCup26",
     description:
-      "Pick 3 teams free and track your points from your signup time.",
+      "Collect the Legends. Watch a legend's story to unlock their card. Free, no prizes.",
     url: "/login",
     type: "website",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "You are invited to WorldCup26",
     description:
-      "Use your referral invite, save 3 teams free, and enter the paid leaderboard later with a ticket.",
+      "Sign in to save your WorldCup26 Legend cards. Watch a legend's story to unlock their card. Free to play, just for fun, no prizes.",
   },
 };
 
