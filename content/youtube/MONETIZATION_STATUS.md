@@ -1,7 +1,7 @@
 # WorldCup26 Legends — Monetization Status & Path (snapshot 2026-06-14)
 
 > Real YouTube Partner Program (YPP) eligibility as reported in Studio on
-> `@DansLab-Kimi`. The ONE blocker is watch time / Shorts views — everything in
+> `@DansLab-WorldCup`. The ONE blocker is watch time / Shorts views — everything in
 > this file is about earning that as fast as possible.
 
 ## Where we stand (real numbers)
@@ -21,13 +21,13 @@ alerted the instant you qualify.
 ## 🚩 The finding that explains the 0 — content is on the wrong channel
 
 We have **13 produced episodes** (all made June 2026, so all < 90 days old). If
-they were public on `@DansLab-Kimi` the "uploads in 90 days" count would be ~13.
+they were public on `@DansLab-WorldCup` the "uploads in 90 days" count would be ~13.
 It reads **3**. Conclusion: **only ~3 episodes are actually on the monetized,
 subscriber-bearing channel; the rest (and all their watch time) sit on the
 second channel** (the `UC7j29…` vs `UC7k…` split flagged in
 `CHANNEL_GROWTH_ACTION_PLAN.md`). That is why watch hours = 0.
 
-**#1 monetization move:** consolidate. Make `@DansLab-Kimi` the single home for
+**#1 monetization move:** consolidate. Make `@DansLab-WorldCup` the single home for
 all 13 episodes (public, not unlisted, **"No, not made for kids"**), retire the
 other channel. This instantly adds uploads and starts accruing watch hours from
 the audience you already have.
@@ -52,7 +52,7 @@ that feeds long-form watch time* (and subs), not as the monetization path itself
 
 ## The watch-hours playbook (everything compounds here)
 
-1. **Consolidate all 13 episodes onto `@DansLab-Kimi`, public.** Biggest single jump.
+1. **Consolidate all 13 episodes onto `@DansLab-WorldCup`, public.** Biggest single jump.
 2. **Playlist "All Episodes" + auto-play + end screens → next episode.** Session
    watch time is the cheapest watch-hour multiplier we have.
 3. **Premiere every new episode ≥48h before kickoff** (the hard rule) — premieres
@@ -108,7 +108,7 @@ pointed at banking **valid public watch hours**:
 
 ## KPI & decision log
 
-| Date | Subs | Watch hrs (365d) | Shorts views (90d) | Eps live on @DansLab-Kimi | Decision / change |
+| Date | Subs | Watch hrs (365d) | Shorts views (90d) | Eps live on @DansLab-WorldCup | Decision / change |
 |---|---|---|---|---|---|
 | Jun 14 | 1,327 | 0 | 0 | 3 | Baseline. Blocker = watch time. Action: consolidate + verify not-made-for-kids + point organic campaign at episodes |
 

@@ -1322,6 +1322,20 @@ export const YOUTUBE_LEGEND_EPISODES: YouTubeLegendEpisode[] = [
     youtube: "https://www.youtube.com/watch?v=QXIKEV5qxYo",
     imageTeam: "Argentina",
   },
+  {
+    ep: 106,
+    episodeLabel: "The Awards",
+    cardTitle: "Champions & Ghosts",
+    home: "Spain",
+    away: "Argentina",
+    stage: "Final & awards",
+    score: "1-0",
+    hook: "Champions and ghosts: Spain win it all.",
+    story:
+      "Spain beat Argentina 1-0 after extra time to become world champions, and Rodri took the Golden Ball without scoring once. Messi and Mbappe chased the crown to the very end; this card belongs to the night the ghosts were finally outrun.",
+    youtube: "https://www.youtube.com/watch?v=ZjsUIV0lafI",
+    imageTeam: "Spain",
+  },
 ];
 
 export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
@@ -1369,17 +1383,27 @@ export const YOUTUBE_LEGEND_BONUS_VIDEOS: YouTubeLegendBonusVideo[] = [
     imageTeam: "Mexico",
   },
   {
-    id: "bonus-launch-film",
-    episode: 900,
-    episodeLabel: "Launch Film",
-    kind: "series",
-    title: "WorldCup26 Launch",
-    subtitle: "Series launch card",
-    teams: "WorldCup26 Legends",
+    id: "bonus-forgotten-vol1",
+    episode: 904,
+    episodeLabel: "Documentary",
+    title: "Forgotten Legends",
+    subtitle: "Forgotten Vol. 1 documentary card",
+    teams: "Ten World Cup legends",
     story:
-      "The launch card opens the whole collection: nations, myths, rivalries, and a prediction game built around stories before every match.",
-    youtube: "https://www.youtube.com/watch?v=NGyPLObwq4c",
-    imageTeam: "USA",
+      "Football remembers its champions and forgot these ten: the man who beat England in 1950 and then vanished, the boy who won a World Cup on legs that were never straight, the keeper who hid in goal and played five World Cups. Watch the film and the forgotten come back.",
+    youtube: "https://www.youtube.com/watch?v=8Sgm1FeSMgg",
+  },
+  {
+    id: "bonus-norway-viking-row",
+    episode: 905,
+    episodeLabel: "Bonus Legend",
+    title: "The Viking Row",
+    subtitle: "Legend bonus card",
+    teams: "Norway",
+    story:
+      "A horn sounds, a drum sets the beat, and thousands of Norway fans sit down and row an invisible longship, shouting \"Ro!\" on every stroke. Dreamed up by a fan for a supporters' club in late 2025, the Viking Row swept the 2026 World Cup from stadiums to Times Square.",
+    youtube: "https://www.youtube.com/watch?v=jNcElhzknZA",
+    imageTeam: "Norway",
   },
 ];
 

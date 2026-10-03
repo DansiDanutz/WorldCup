@@ -1,4 +1,4 @@
-# 2026 Algorithm — Channel Configuration Plan (`@DansLab-Kimi`)
+# 2026 Algorithm — Channel Configuration Plan (`@DansLab-WorldCup`)
 
 > Created 2026-06-15. Source: *"How To Beat The NEW YouTube Algorithm in 2026
 > (For Faceless Channels)"* (https://www.youtube.com/watch?v=G9LfE3k-IEI).

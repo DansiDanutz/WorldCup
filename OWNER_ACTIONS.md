@@ -8,10 +8,10 @@
 ---
 
 ## 🔴 NOW — the monetization unlock (nothing else matters until this is done)
-- [ ] **Consolidate ALL episodes onto `@DansLab-Kimi`** (public, not made-for-kids).
+- [ ] **Consolidate ALL episodes onto `@DansLab-WorldCup`** (public, not made-for-kids).
       *Why:* watch time reads **0** only because content is split across two
       channels. This single move turns 0 → real watch hours. **Done when:** every
-      finished episode is public on `@DansLab-Kimi` and the other channel is retired.
+      finished episode is public on `@DansLab-WorldCup` and the other channel is retired.
 - [ ] **Run the 3 monetization-safe toggles on every video** (full list:
       `content/youtube/PREUPLOAD_CHECKLIST.md`):
   - [ ] **"No, not made for kids"** (video + channel default).

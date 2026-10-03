@@ -13,16 +13,16 @@ the **discovery engine that feeds long‑form watch time**, not the monetization
 path. ~3,000 hours ≈ **165 full‑equivalent views/day** — controllable. The 10M
 Shorts/90d path (~33k views/day) is upside only.
 
-Single home channel: **`@DansLab-Kimi`** (canonical handle, confirmed).
+Single home channel: **`@DansLab-WorldCup`** (canonical handle, confirmed).
 
 ---
 
 ## PHASE 0 — Consolidation + hygiene  (Day 0, ~60 min in Studio — biggest single jump)
 
-The #1 finding: only ~3 of ~13 episodes are on `@DansLab-Kimi`; the rest (and all
+The #1 finding: only ~3 of ~13 episodes are on `@DansLab-WorldCup`; the rest (and all
 their watch time) sit on the second channel. Until that's fixed, watch hours = 0.
 
-- [ ] **Move every episode onto `@DansLab-Kimi`, set Public** (re‑upload from the
+- [ ] **Move every episode onto `@DansLab-WorldCup`, set Public** (re‑upload from the
       renders in `marketing/match-videos/` if they can't be transferred). Retire/redirect the other channel.
 - [ ] On **every** video + in **Upload defaults**: **"No, it's not made for kids."**
 - [ ] In the **Checks** step on every upload: tick **"Altered or synthetic content."**

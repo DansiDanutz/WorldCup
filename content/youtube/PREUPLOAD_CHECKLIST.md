@@ -1,6 +1,6 @@
 # ✅ Pre-Upload Checklist — run this before EVERY video
 
-> One screen. Tick every box before you hit publish/schedule on `@DansLab-Kimi`.
+> One screen. Tick every box before you hit publish/schedule on `@DansLab-WorldCup`.
 > The ⚠️ items are the ones that get faceless channels demonetised — never skip them.
 > Details: `ALGORITHM_2026_CONFIG_PLAN.md`, `LEGAL_READINESS.md`, `SERIES_PLAYBOOK.md`.
 

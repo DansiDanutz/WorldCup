@@ -265,11 +265,12 @@ describe("WorldCup design system integration", () => {
     assert.match(youtubeLegendEpisodes, /export const YOUTUBE_LEGEND_EPISODES/);
     assert.match(youtubeLegendEpisodes, /export const YOUTUBE_LEGEND_BONUS_VIDEOS/);
     assert.match(youtubeLegendEpisodes, /export const YOUTUBE_DID_YOU_KNOW_SHORTS/);
-    assert.match(youtubeLegendEpisodes, /kind:\s*"series"/);
-    assert.equal(youtubeLegendEpisodes.match(/\bep:\s*\d+/g)?.length, 103);
-    assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Bonus Legend"/g)?.length, 3);
+    assert.match(youtubeLegendEpisodes, /kind\?:\s*"bonus" \| "series"/);
+    assert.equal(youtubeLegendEpisodes.match(/\bep:\s*\d+/g)?.length, 104);
+    assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Bonus Legend"/g)?.length, 4);
     assert.equal(youtubeLegendEpisodes.match(/episodeLabel:\s*"Did You Know\? Short"/g)?.length, 12);
-    assert.equal(youtubeLegendEpisodes.match(/kind:\s*"series"/g)?.length, 1);
+    // The launch film was the only series video and is retired (see below).
+    assert.equal(youtubeLegendEpisodes.match(/kind:\s*"series"/g)?.length ?? 0, 0);
     assert.match(youtubeLegendEpisodes, /SmHGZMbrOv4/);
     assert.match(youtubeLegendEpisodes, /V_NSSOTMd6w/);
     assert.match(youtubeLegendEpisodes, /qicbV-pTVdM/);
@@ -305,7 +306,13 @@ describe("WorldCup design system integration", () => {
     assert.match(youtubeLegendEpisodes, /iWAJytToqUU/);
     assert.match(youtubeLegendEpisodes, /ZUsFa2mNki0/);
     assert.match(youtubeLegendEpisodes, /KZ15CaO-y4E/);
-    assert.match(youtubeLegendEpisodes, /bonus-launch-film/);
+    // The launch film (NGyPLObwq4c) sells the retired paid leaderboard ("Into the
+    // money", "Top 10 paid"), so it must never come back as a card in a
+    // no-prizes album.
+    assert.doesNotMatch(youtubeLegendEpisodes, /bonus-launch-film|NGyPLObwq4c/);
+    assert.match(youtubeLegendEpisodes, /8Sgm1FeSMgg/);
+    assert.match(youtubeLegendEpisodes, /ZjsUIV0lafI/);
+    assert.match(youtubeLegendEpisodes, /jNcElhzknZA/);
     assert.match(youtubeLegendEpisodes, /youtubeForEpisode/);
     assert.match(legendCardRegistry, /export const LEGEND_CARD_DEFINITIONS: LegendCardDefinition\[\]/);
     assert.match(legendCardRegistry, /handMadeLegendCards/);

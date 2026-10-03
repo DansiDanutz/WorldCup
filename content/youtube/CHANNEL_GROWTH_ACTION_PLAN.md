@@ -23,15 +23,15 @@ The bottleneck has never been content quality. It's distribution, timing and pac
 
 ## ✅ RESOLVED — canonical channel + a branding problem to fix
 
-**Canonical channel: `@DansLab-Kimi`** (https://youtube.com/@DansLab-Kimi),
-confirmed by the owner Jun 14. Use this handle as the single source everywhere;
-retire/redirect any other channel so effort isn't split (split channels can't
-build one identity and momentum dies).
+**Canonical channel: `@DansLab-WorldCup`** (https://youtube.com/@DansLab-WorldCup,
+channel ID `UC7kFHZYDL2Z5eB8i9CVNyWg`), confirmed by the owner Oct 2, 2026. Use this
+handle as the single source everywhere; retire/redirect any other channel so effort
+isn't split (split channels can't build one identity and momentum dies).
 
-> Two `UC…` IDs were seen earlier (`UC7kFHZYDL2Z5eB8i9CVNyWg` and
-> `UC7j29XhArv5tlRqQj2qAb4Q`); the **handle** `@DansLab-Kimi` is now the
-> authoritative identifier. Confirm which `UC…` resolves to it (Studio →
-> Settings → Channel, or the API) only if a raw ID is ever needed.
+> History: until Oct 2026 these docs named `@DansLab-Kimi` (`UC7j29XhArv5tlRqQj2qAb4Q`)
+> as canonical. That handle no longer resolves (YouTube returns 404), every Legend card
+> video lives on `@DansLab-WorldCup`, and the owner confirmed it, so all references
+> were switched.
 
 ### ⚠️ Branding finding (high impact, easy fix)
 The channel name/handle reads **"DansLab"**, but 100% of the content is the
@@ -46,7 +46,7 @@ brand — in which case still set the handle to something football-searchable.
 
 ## 1. THIS WEEK — priority order (highest impact first)
 
-- [ ] **Consolidate ALL 13 episodes onto `@DansLab-Kimi` (public, not made-for-kids).**
+- [ ] **Consolidate ALL 13 episodes onto `@DansLab-WorldCup` (public, not made-for-kids).**
       Studio shows only 3 uploads + 0 watch hours — the rest are on the other
       channel, which is why monetization watch-time reads 0. This is the #1
       money move (`MONETIZATION_STATUS.md`).
@@ -66,7 +66,7 @@ brand — in which case still set the handle to something football-searchable.
 YouTube Studio → Customization / Settings.
 
 ### Handle & URL
-- **Current:** `@DansLab-Kimi` → https://youtube.com/@DansLab-Kimi
+- **Current:** `@DansLab-WorldCup` → https://youtube.com/@DansLab-WorldCup
 - **Recommended rename:** handle `@worldcup26legends`, channel name
   `WorldCup26 Legends` (Settings → Channel → Basic info / Customization →
   Branding). Free and instant; aligns name ↔ thumbnails ↔ search.

@@ -12,7 +12,7 @@ import { existsSync, writeFileSync } from "node:fs";
 import { LEGEND_CARDS, type LegendCard } from "@/lib/legend-cards";
 import { getYouTubeVideoId } from "@/lib/youtube-watch-progress";
 
-const CANONICAL_CHANNEL = "@DansLab-Kimi";
+const CANONICAL_CHANNEL = "@DansLab-WorldCup";
 const CONCURRENCY = 8;
 const BANNED = /\b(odds|bet|bets|betting|wager|stake|jackpot|bookmaker|cash prize|prize money|win money)\b/i;
 

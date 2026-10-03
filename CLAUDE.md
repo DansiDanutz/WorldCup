@@ -12,7 +12,7 @@ organic campaign machine, the worldcup26.world funnel, Higgsfield, and the live
 World Cup discovery window happening right now.
 
 **Priority levers, in order (detail in `MONETIZATION_STATUS.md`):**
-1. **Consolidate** every episode onto `@DansLab-Kimi`, public — the 0-hours root cause.
+1. **Consolidate** every episode onto `@DansLab-WorldCup`, public — the 0-hours root cause.
 2. **Verify "No, not made for kids"** on every video — made-for-kids silently
    disables fan funding and voids personalized features; Pixar style is
    high-risk, so check it TODAY.
@@ -73,7 +73,7 @@ read ALL of these living knowledge files:
   Supporter, gold standard Ep2/Ep6. NEVER image-based/Ken-Burns, and NEVER spend
   Higgsfield credits before checking the existing asset library.
 - **`content/youtube/CHANNEL_GROWTH_ACTION_PLAN.md`** — channel config + the
-  growth law, the canonical channel (`@DansLab-Kimi`), and the packaging rules.
+  growth law, the canonical channel (`@DansLab-WorldCup`), and the packaging rules.
 - **`content/youtube/PREMIERE_CALENDAR.md`** — which episode premieres WHEN,
   mapped to the real WC2026 fixtures, plus the Shorts posting schedule.
 - **`content/youtube/MONETIZATION_STATUS.md`** — real YPP eligibility, the

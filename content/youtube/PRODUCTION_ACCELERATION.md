@@ -123,7 +123,7 @@ subset*. Quality + timing + star power beats volume every time.
 An episode is "done" only when, **≥48h before kickoff**, ALL of these are true:
 - [ ] Final MP4 rendered, QA-passed (motion, audio −14 LUFS, soccer-only, canon)
 - [ ] Thumbnail + hook-first title + description + tags + pinned comment ready
-- [ ] Premiere scheduled on `@DansLab-Kimi`, "No, not made for kids"
+- [ ] Premiere scheduled on `@DansLab-WorldCup`, "No, not made for kids"
 - [ ] 3 Shorts cut and scheduled around it
 - [ ] First-hour push assets staged (WhatsApp/Telegram/X/community)
 

@@ -1,6 +1,6 @@
 # VIP Tweet → Video Script
 
-A short tool for **WorldCup26 Legends** (`@DansLab-Kimi`). It pulls what VIP
+A short tool for **WorldCup26 Legends** (`@DansLab-WorldCup`). It pulls what VIP
 footballers are posting about the World Cup, curates the best ones, and arranges
 them into a **channel-ready video script** plus a one-line prompt for the
 existing `/youtube-automation-pipeline`.

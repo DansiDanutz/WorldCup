@@ -1980,6 +1980,53 @@
       "layout": "portrait-card",
       "appImagePath": "/legend-cards/youtube-rare/cards/ep104-argentina-vs-switzerland-qxikev5qxyo.jpg",
       "appImageNote": "Channel thumbnail card asset for the YouTube episode."
+    },
+    {
+      "id": "ZjsUIV0lafI",
+      "youtube": "https://www.youtube.com/watch?v=ZjsUIV0lafI",
+      "episode": 106,
+      "kind": "episode-special",
+      "title": "Champions & Ghosts \u2014 The Awards (Ep.106)",
+      "source": "youtube-thumbnail",
+      "slug": "ep106-spain-vs-argentina-zjsuiv0lafi",
+      "imagePath": "/legend-cards/youtube-rare/reveal-frames/ep106-spain-vs-argentina-zjsuiv0lafi.jpg",
+      "revealPath": "/legend-cards/youtube-rare/reveal-frames/ep106-spain-vs-argentina-zjsuiv0lafi.jpg",
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/ep106-spain-vs-argentina-zjsuiv0lafi.jpg",
+      "appImageNote": "The video's own YouTube thumbnail (no end-screen card was extracted for it).",
+      "assetStatus": "app-ready"
+    },
+    {
+      "id": "8Sgm1FeSMgg",
+      "youtube": "https://www.youtube.com/watch?v=8Sgm1FeSMgg",
+      "cardId": "bonus-forgotten-vol1",
+      "episode": 904,
+      "kind": "bonus",
+      "title": "Forgotten World Cup Legends: 10 Players Football Tried to Erase",
+      "source": "youtube-thumbnail",
+      "slug": "bonus-forgotten-vol1-8sgm1fesmgg",
+      "imagePath": "/legend-cards/youtube-rare/reveal-frames/bonus-forgotten-vol1-8sgm1fesmgg.jpg",
+      "revealPath": "/legend-cards/youtube-rare/reveal-frames/bonus-forgotten-vol1-8sgm1fesmgg.jpg",
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/bonus-forgotten-vol1-8sgm1fesmgg.jpg",
+      "appImageNote": "The video's own YouTube thumbnail (no end-screen card was extracted for it).",
+      "assetStatus": "app-ready"
+    },
+    {
+      "id": "jNcElhzknZA",
+      "youtube": "https://www.youtube.com/watch?v=jNcElhzknZA",
+      "cardId": "bonus-norway-viking-row",
+      "episode": 905,
+      "kind": "bonus",
+      "title": "RO! RO! \u2014 The Viking Row",
+      "source": "youtube-thumbnail",
+      "slug": "bonus-norway-viking-row-jncelhzkna",
+      "imagePath": "/legend-cards/youtube-rare/reveal-frames/bonus-norway-viking-row-jncelhzkna.jpg",
+      "revealPath": "/legend-cards/youtube-rare/reveal-frames/bonus-norway-viking-row-jncelhzkna.jpg",
+      "layout": "wide-reveal",
+      "appImagePath": "/legend-cards/youtube-rare/reveal-frames/bonus-norway-viking-row-jncelhzkna.jpg",
+      "appImageNote": "The video's own YouTube thumbnail (no end-screen card was extracted for it).",
+      "assetStatus": "app-ready"
     }
   ]
 }

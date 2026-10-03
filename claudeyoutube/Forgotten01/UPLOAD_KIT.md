@@ -71,7 +71,7 @@ did you know football, worldcup26, legend cards
 - [ ] Altered/AI content disclosure → **Yes**
 - [ ] Music credited in the description (above)
 - [ ] No betting/odds/prize wording anywhere — the game is free-to-play
-- [ ] Public on **@DansLab-Kimi** (the consolidated channel — this is the watch-hours blocker)
+- [ ] Public on **@DansLab-WorldCup** (the consolidated channel — this is the watch-hours blocker)
 - [ ] Added to the "All Episodes" playlist; pinned comment carries the app CTA + no-prizes line
 
 ## Funnel

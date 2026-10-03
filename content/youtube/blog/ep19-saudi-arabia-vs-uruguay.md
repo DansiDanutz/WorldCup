@@ -6,8 +6,8 @@ episode: 19
 fixture: "Saudi Arabia vs Uruguay"
 date: 2026-06-15
 tags: ["World Cup 2026","Saudi Arabia","Uruguay","football stories","World Cup predictions","worldcup26"]
-video_url: "https://youtube.com/@DansLab-Kimi"
-canonical_channel: "@DansLab-Kimi"
+video_url: "https://youtube.com/@DansLab-WorldCup"
+canonical_channel: "@DansLab-WorldCup"
 ---
 
 <!-- ============================================================
@@ -53,4 +53,4 @@ And the man who heard the silence? Legend number nineteen: the Ghost of the Mara
 
 Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Free to play, climb the leaderboard, just for fun, no prizes.
 
-— New legend before every match. Subscribe on [@DansLab-Kimi](https://youtube.com/@DansLab-Kimi).
+— New legend before every match. Subscribe on [@DansLab-WorldCup](https://youtube.com/@DansLab-WorldCup).

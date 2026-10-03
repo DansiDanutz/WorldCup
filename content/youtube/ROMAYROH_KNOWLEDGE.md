@@ -99,7 +99,7 @@ research-then-write, retention-first 2026 thesis, packaging = title×thumbnail.
 ### IGNORE / DOESN'T FIT (be honest)
 - **Multi-channel scaling & niche-hopping for ad RPM** — that's arbitrage; we are
   ONE branded series tied to a product and a time-boxed event (the World Cup).
-  Consolidate on `@DansLab-Kimi`, don't spin up channels.
+  Consolidate on `@DansLab-WorldCup`, don't spin up channels.
 - **High-RPM-niche chasing** — our monetization North Star is **watch hours +
   the game funnel**, not RPM. (`MONETIZATION_STATUS.md`.)
 - **Generic "breaking news" thumbnail bar** — wrong tone for an emotional story
