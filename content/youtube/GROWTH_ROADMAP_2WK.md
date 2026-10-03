@@ -12,7 +12,7 @@ Everything below exists to move **watch hours** — the only unmet YPP requireme
 ## Week 1 (Jun 15–22) — fix the foundation + feed the machine
 
 **Owner-only (YouTube Studio / accounts) — highest leverage, do first:**
-- [ ] **Consolidate ALL episodes onto `@DansLab-Kimi`, public, "No, not made for
+- [ ] **Consolidate ALL episodes onto `@DansLab-WorldCup`, public, "No, not made for
       kids."** This is the 0-watch-hours root cause (`MONETIZATION_STATUS.md`).
 - [ ] **Verify "No, not made for kids"** on every existing video (Pixar style is
       high-risk; made-for-kids voids fan funding) — `CLAUDE.md` North Star #2.

@@ -1,6 +1,6 @@
 # Lukaku — The Promise (5-minute player drama film)
 
-**Format:** standalone 5:00 (300s) drama-mystery player film for `@DansLab-Kimi` —
+**Format:** standalone 5:00 (300s) drama-mystery player film for `@DansLab-WorldCup` —
 "the man behind the goals." Brian (ElevenLabs) VO, Pixar-style clip-based visuals
 (fal/Higgsfield), **NO on-screen subtitles** (CLAUDE.md #10), soccer-only.
 

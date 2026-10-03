@@ -6,8 +6,8 @@ episode: 23
 fixture: "Austria vs Jordan"
 date: 2026-06-15
 tags: ["World Cup 2026","Austria","Jordan","football stories","World Cup predictions","worldcup26"]
-video_url: "https://youtube.com/@DansLab-Kimi"
-canonical_channel: "@DansLab-Kimi"
+video_url: "https://youtube.com/@DansLab-WorldCup"
+canonical_channel: "@DansLab-WorldCup"
 ---
 
 <!-- ============================================================
@@ -53,4 +53,4 @@ And that old dreamer in the stands? Legend number twenty-three: the Keeper of th
 
 Pick 3 of the 48 nations at https://worldcup26.world — every goal they score, scores for you. Free to play, climb the leaderboard, just for fun, no prizes.
 
-— New legend before every match. Subscribe on [@DansLab-Kimi](https://youtube.com/@DansLab-Kimi).
+— New legend before every match. Subscribe on [@DansLab-WorldCup](https://youtube.com/@DansLab-WorldCup).
