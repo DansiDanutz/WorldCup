@@ -11,19 +11,21 @@ import {
 } from "@/lib/youtube-legend-episodes";
 
 describe("Legend card registry", () => {
-  it("creates collectible cards for every series video, Did You Know short, and the three bonus videos", () => {
+  it("creates collectible cards for every series video, Did You Know short, and the five bonus videos", () => {
     const episodeCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "episode-special");
     const didYouKnowCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "did-you-know-short");
     const bonusCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "legend-bonus");
 
-    assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.length, 4);
-    assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.filter((video) => video.kind === "series").length, 1);
-    assert.equal(YOUTUBE_LEGEND_EPISODES.length, 103);
+    assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.length, 5);
+    // The launch film was the only "series" video; it was retired because it sells
+    // the old paid leaderboard.
+    assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.filter((video) => video.kind === "series").length, 0);
+    assert.equal(YOUTUBE_LEGEND_EPISODES.length, 104);
     assert.equal(YOUTUBE_DID_YOU_KNOW_SHORTS.length, 12);
     assert.equal(episodeCards.length, 104);
     assert.equal(didYouKnowCards.length, 12);
-    assert.equal(bonusCards.length, 3);
-    assert.equal(LEGEND_CARD_DEFINITIONS.length, 119);
+    assert.equal(bonusCards.length, 5);
+    assert.equal(LEGEND_CARD_DEFINITIONS.length, 121);
     assert.equal(new Set(LEGEND_CARD_DEFINITIONS.map((card) => card.id)).size, LEGEND_CARD_DEFINITIONS.length);
     assert.equal(LEGEND_CARD_DEFINITIONS.some((card) => String(card.kind) === "supporter-card"), false);
     assert.equal(didYouKnowCards.every((card) => Boolean(card.youtube)), true);
@@ -56,7 +58,7 @@ describe("Legend card registry", () => {
     );
     assert.deepEqual(
       bonusCards.map((card) => card.title).sort(),
-      ["Luis Díaz", "Lukaku: The Promise", "World Cup Monopoly"].sort(),
+      ["Forgotten Legends", "Luis Díaz", "Lukaku: The Promise", "The Viking Row", "World Cup Monopoly"].sort(),
     );
   });
 
@@ -90,10 +92,11 @@ describe("Legend card registry", () => {
     assert.equal(new Set(youtubeCards.map((card) => card.youtube)).size, youtubeCards.length);
     assert.equal(new Set(LEGEND_CARDS.map((card) => card.image)).size, LEGEND_CARDS.length);
     assert.equal(longEpisodeCards.length, YOUTUBE_LEGEND_EPISODES.length);
-    assert.equal(appReadyEpisodeCards.length, 103);
+    assert.equal(appReadyEpisodeCards.length, 104);
     assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/cards/")).length, 46);
-    assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/reveal-frames/")).length, 57);
+    assert.equal(appReadyEpisodeCards.filter((card) => card.image.includes("/reveal-frames/")).length, 58);
     assert.equal(longEpisodeCards.every((card) => card.image.startsWith("/legend-cards/youtube-rare/")), true);
+    assert.equal(episodeCards.find((card) => card.episode === 106)?.image.includes("ep106-spain-vs-argentina"), true);
     assert.equal(episodeCards.find((card) => card.episode === 104)?.image.includes("ep104-argentina-vs-switzerland"), true);
     assert.equal(episodeCards.find((card) => card.episode === 101)?.image.includes("ep101-spain-vs-belgium"), true);
     assert.equal(episodeCards.find((card) => card.episode === 100)?.image.includes("ep100-switzerland-vs-colombia"), true);
@@ -118,6 +121,9 @@ describe("Legend card registry", () => {
         "/legend-cards/bonus/luis-diaz.png",
         "/legend-cards/bonus/lukaku-the-promise.png",
         "/legend-cards/bonus/world-cup-monopoly.png",
+        // Wide thumbnails, laid out like the episodes' reveal frames.
+        "/legend-cards/youtube-rare/reveal-frames/bonus-forgotten-vol1-8sgm1fesmgg.jpg",
+        "/legend-cards/youtube-rare/reveal-frames/bonus-norway-viking-row-jncelhzkna.jpg",
       ].sort(),
     );
     assert.equal(LEGEND_CARDS.some((card) => card.image.startsWith("/supporter-cards/")), false);
