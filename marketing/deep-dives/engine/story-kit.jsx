@@ -442,7 +442,7 @@ function ClipShot({ from, dur, src, rate = 1, offset = 0, vertical, aspect = 16 
   const scale = 1.03 + push * skInOut(p);
   const dx = (dir === 0 ? -1 : dir === 2 ? 1 : 0) * 22 * p, dy = (dir === 1 ? -1 : dir === 3 ? 1 : 0) * 14 * p;
   const tagIn = skEase(skClamp((lt - 0.35) / 0.6, 0, 1));
-  const sprite = { src, start: from, dur, rate, offset };
+  const sprite = { src, start: from, dur, rate, offset, loop: false };
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: '#000', opacity: 0.35 + 0.65 * inn, zIndex: 4 }}>
       <div style={{ position: 'absolute', inset: 0, transform: `translate(${dx}px,${dy}px) scale(${scale})` }}>

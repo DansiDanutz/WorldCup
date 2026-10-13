@@ -23,7 +23,7 @@ const BANNED = /\b(odds|bets?|betting|wager|stakes?|jackpot|bookmaker|coefficien
 const words = (s: unknown) => String(s).trim().split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
 
 type Scene = Record<string, unknown> & { type: string; words?: { w: string }[] };
-type Shot = { clip?: string; tag?: string; over?: Scene; scene?: Scene; w?: number; offset?: number };
+type Shot = { clip?: string; tag?: string; over?: Scene; scene?: Scene; w?: number; offset?: number; until?: number };
 type Episode = {
   number: number;
   slug: string;
@@ -62,7 +62,15 @@ describe("Did You Know? Deep Dives", () => {
       assert.ok(ep.sources.filter((s) => /^https:\/\//.test(s.url)).length >= 3, "needs at least 3 cited sources");
 
       const text: string[] = [ep.title, ep.thumbnail.hook, ep.card.title, ep.card.story];
-      const clips = new Map<string, number | undefined>();
+      // identity law needs the name map whenever the episode uses footage
+      const usesClips = ep.beats.some((beat) => shotsOf(beat).some((shot) => shot.clip));
+      if (usesClips) assert.ok(ep.people && typeof ep.people === "object", "footage-led episode needs a `people` map");
+      const approved = new Set(Object.values(LIBRARY).map((c) => c.who).filter(Boolean));
+      for (const [name, who] of Object.entries(ep.people ?? {})) {
+        assert.ok(who === null || approved.has(who), `people["${name}"] = "${who}" is not an approved identity`);
+      }
+      // source ranges each clip plays ([offset, until]); no frame may be shown twice
+      const spans = new Map<string, [number, number][]>();
       for (const beat of ep.beats) {
         text.push(beat.vo);
         // identity law: a face on screen must be the person the narration names
@@ -73,10 +81,15 @@ describe("Did You Know? Deep Dives", () => {
           if (shot.clip) {
             const clip = LIBRARY[shot.clip];
             assert.ok(clip, `clip "${shot.clip}" is not in the library`);
-            // once — or as segments with their own offsets (preflight checks no frame repeats)
-            assert.ok(!clips.has(shot.clip) || (shot.offset != null && clips.get(shot.clip) != null),
-              `clip "${shot.clip}" plays twice (no-repeat rule)`);
-            clips.set(shot.clip, shot.offset);
+            // once — or as segments with explicit, non-overlapping [offset, until] source ranges
+            const used = spans.get(shot.clip) ?? [];
+            const range: [number, number] = [shot.offset ?? 0, shot.until ?? clip.dur];
+            if (used.length) assert.ok(shot.offset != null, `clip "${shot.clip}" plays twice (no-repeat rule)`);
+            for (const [a, z] of used) {
+              assert.ok(range[0] >= z - 0.05 || range[1] <= a + 0.05,
+                `clip "${shot.clip}" replays source ${a}-${z}s (no frame twice)`);
+            }
+            spans.set(shot.clip, [...used, range]);
             if (clip.who) assert.ok(named.includes(clip.who), `"${shot.clip}" shows ${clip.who} but the narration doesn't name them`);
             if (clip.faces === "player" && !clip.who) {
               assert.equal(named.length, 0, `"${shot.clip}" shows an unnamed player while the narration names ${named.join(", ")}`);
@@ -92,9 +105,14 @@ describe("Did You Know? Deep Dives", () => {
             continue;
           }
           assert.ok(CODE_SCENES.has(scene.type), `scene "${scene.type}" is not a drawn scene`);
-          for (const face of (scene.faces as { clip: string }[] | undefined) ?? []) {
+          for (const face of (scene.faces as { clip: string; name?: string; meta?: string }[] | undefined) ?? []) {
             const who = LIBRARY[face.clip]?.who;
             assert.ok(who && named.includes(who), `faceoff panel "${face.clip}" is not an approved, named face`);
+            for (const label of [face.name, face.meta]) {
+              if (label == null) continue;
+              text.push(label);
+              assert.ok(words(label) <= 4, `faceoff label "${label}" is a sentence`);
+            }
           }
           for (const key of ["label", "title", "text", "sub", "meta", "name", "stat"]) {
             if (scene[key] != null) {

@@ -20,6 +20,13 @@ const CODE_SCENES = new Set(['date', 'nameplate', 'title', 'chapter', 'kinetic',
   'heartbeat', 'clip', 'faceoff']);
 const LIB = loadLibrary();
 const usedClips = new Map();
+// identity law needs to know who the narration names: footage-led episodes must map every spoken name
+const usesClips = ep.beats.some((b) => beatShots(b).some((s) => s.clip));
+if (usesClips && (!ep.people || typeof ep.people !== 'object')) fail('episode uses library clips but has no `people` map (spoken name -> approved identity or null)');
+const whoKeys = new Set(Object.values(LIB).map((c) => c.who).filter(Boolean));
+Object.entries(ep.people || {}).forEach(([name, who]) => {
+  if (who !== null && !whoKeys.has(who)) fail(`people["${name}"] = "${who}" is not an approved identity in the library`);
+});
 const words = (s) => String(s).trim().split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
 const TEXT_KEYS = ['label', 'title', 'text', 'sub', 'unit', 'meta', 'name', 'stat'];
 
@@ -112,8 +119,8 @@ if (fs.existsSync(filmFile)) {
   const spans = {};
   film.graphics.filter((g) => g.type === 'clip').forEach((g) => {
     if (g.rate < (g.minRate ?? MIN_RATE)) fail(`clip ${g.clip} at ${g.at}s plays at ${g.rate}x to fill ${g.dur}s — split the beat or use a longer clip`);
-    // the trailing 0.25s overlap is a crossfade, not new source frames
-    const end = g.offset + (g.dur - 0.25) * g.rate;
+    // the full played span, crossfade tail included (ClipShot also holds the last frame, never wraps)
+    const end = g.offset + g.dur * g.rate;
     if (end > g.clipDur + 0.05) fail(`clip ${g.clip} at ${g.at}s runs past its end and would loop`);
     (spans[g.clip] ||= []).forEach(([a, z]) => {
       if (g.offset < z - 0.05 && end > a + 0.05) fail(`clip ${g.clip} at ${g.at}s replays source ${a.toFixed(2)}–${z.toFixed(2)}s (no frame twice)`);
