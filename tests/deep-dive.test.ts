@@ -40,6 +40,23 @@ type Episode = {
 const shotsOf = (beat: Episode["beats"][number]): Shot[] =>
   beat.shots ?? (Array.isArray(beat.scene) ? beat.scene : [beat.scene!]).map((scene) => ({ scene }));
 
+// A clip plays once — or as segments with explicit, non-overlapping [offset, until] source
+// ranges. A shot's real length comes from the VO timing, which CI doesn't have, so a reused
+// clip must spell out `until` on every segment except one that runs to the clip's end
+// (preflight re-checks the exact played spans on the built film).
+type Spans = Map<string, [number, number, boolean][]>;
+function claimClipRange(spans: Spans, shot: Shot, clipDur: number) {
+  const used = spans.get(shot.clip!) ?? [];
+  const range: [number, number, boolean] = [shot.offset ?? 0, shot.until ?? clipDur, shot.until != null];
+  if (used.length) assert.ok(shot.offset != null, `clip "${shot.clip}" plays twice (no-repeat rule)`);
+  for (const [a, z, explicit] of used) {
+    const apart = range[0] >= z - 0.05 || range[1] <= a + 0.05;
+    const hint = explicit && range[2] ? "" : " — give each segment of a reused clip an explicit `until`";
+    assert.ok(apart, `clip "${shot.clip}" replays source ${a}-${z}s (no frame twice)${hint}`);
+  }
+  spans.set(shot.clip!, [...used, range]);
+}
+
 const episodes: Episode[] = existsSync(EPISODES)
   ? readdirSync(EPISODES).sort().map((dir) => JSON.parse(readFileSync(`${EPISODES}/${dir}/episode.json`, "utf8")))
   : [];
@@ -70,7 +87,7 @@ describe("Did You Know? Deep Dives", () => {
         assert.ok(who === null || approved.has(who), `people["${name}"] = "${who}" is not an approved identity`);
       }
       // source ranges each clip plays ([offset, until]); no frame may be shown twice
-      const spans = new Map<string, [number, number, boolean][]>();
+      const spans: Spans = new Map();
       for (const beat of ep.beats) {
         text.push(beat.vo);
         // identity law: a face on screen must be the person the narration names
@@ -81,19 +98,7 @@ describe("Did You Know? Deep Dives", () => {
           if (shot.clip) {
             const clip = LIBRARY[shot.clip];
             assert.ok(clip, `clip "${shot.clip}" is not in the library`);
-            // once — or as segments with explicit, non-overlapping [offset, until] source ranges.
-            // A shot's real length comes from the VO timing, which CI doesn't have, so a reused
-            // clip must spell out `until` on every segment except one that runs to the clip's end
-            // (preflight re-checks the exact played spans on the built film).
-            const used = spans.get(shot.clip) ?? [];
-            const range: [number, number, boolean] = [shot.offset ?? 0, shot.until ?? clip.dur, shot.until != null];
-            if (used.length) assert.ok(shot.offset != null, `clip "${shot.clip}" plays twice (no-repeat rule)`);
-            for (const [a, z, explicit] of used) {
-              const apart = range[0] >= z - 0.05 || range[1] <= a + 0.05;
-              const hint = explicit && range[2] ? "" : " — give each segment of a reused clip an explicit `until`";
-              assert.ok(apart, `clip "${shot.clip}" replays source ${a}-${z}s (no frame twice)${hint}`);
-            }
-            spans.set(shot.clip, [...used, range]);
+            claimClipRange(spans, shot, clip.dur);
             if (clip.who) assert.ok(named.includes(clip.who), `"${shot.clip}" shows ${clip.who} but the narration doesn't name them`);
             if (clip.faces === "player" && !clip.who) {
               assert.equal(named.length, 0, `"${shot.clip}" shows an unnamed player while the narration names ${named.join(", ")}`);
@@ -137,6 +142,26 @@ describe("Did You Know? Deep Dives", () => {
       assert.ok(wordCount >= 600 && wordCount <= 820, `${wordCount} words is not a ~5 minute script`);
     });
   }
+
+  it("checks reused-clip segments for repeated frames", () => {
+    // disjoint, explicit segments pass; the last one may run to the clip's end
+    const ok: Spans = new Map();
+    claimClipRange(ok, { clip: "c", offset: 0, until: 1.6 }, 5);
+    claimClipRange(ok, { clip: "c", offset: 2.6 }, 5);
+    // a non-terminal segment without `until` is assumed to run to the end, and the error says what to add
+    const open: Spans = new Map();
+    claimClipRange(open, { clip: "c", offset: 0 }, 5);
+    assert.throws(() => claimClipRange(open, { clip: "c", offset: 2.6 }, 5), /explicit `until`/);
+    // genuinely overlapping explicit ranges fail without the hint
+    const overlap: Spans = new Map();
+    claimClipRange(overlap, { clip: "c", offset: 0, until: 2 }, 5);
+    assert.throws(() => claimClipRange(overlap, { clip: "c", offset: 1, until: 3 }, 5),
+      (e: Error) => /replays source 0-2s/.test(e.message) && !/explicit/.test(e.message));
+    // a second use with no offset at all is a plain repeat
+    const twice: Spans = new Map();
+    claimClipRange(twice, { clip: "c" }, 5);
+    assert.throws(() => claimClipRange(twice, { clip: "c" }, 5), /plays twice/);
+  });
 
   it("keeps a re-downloadable source for every library clip", () => {
     for (const [alias, clip] of Object.entries(LIBRARY)) {
