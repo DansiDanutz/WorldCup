@@ -6,6 +6,7 @@ import {
   type YouTubeLegendBonusVideo,
   type YouTubeLegendEpisode,
 } from "@/lib/youtube-legend-episodes";
+import deepDiveCardData from "./deep-dive-cards.json" with { type: "json" };
 
 export type LegendCardKind = "episode-special" | "legend-bonus" | "did-you-know-short";
 export type LegendCardRarity = "Story" | "Rare" | "Legendary";
@@ -24,7 +25,26 @@ export type LegendCardDefinition = {
   youtube: string | null;
   alternateYoutube?: string[];
   imageTeam?: string;
+  // Explicit card art (public path). Deep Dive cards carry their own code-drawn art.
+  imagePath?: string;
 };
+
+// "Did You Know?" Deep Dives: 5-minute films about famous players. A card is added
+// here (by scripts/add-deep-dive-card.mjs) only once its video is live on YouTube,
+// because the card unlocks by watching that video.
+export type DeepDiveCard = {
+  id: string;
+  episode: number;
+  slug: string;
+  title: string;
+  subtitle: string;
+  teams: string;
+  story: string;
+  youtube: string;
+  image: string;
+};
+
+export const DEEP_DIVE_CARDS = deepDiveCardData as DeepDiveCard[];
 
 function slugify(value: string) {
   return value
@@ -120,6 +140,22 @@ function createDidYouKnowShortCard(short: YouTubeDidYouKnowShort): LegendCardDef
   };
 }
 
+function createDeepDiveCard(card: DeepDiveCard): LegendCardDefinition {
+  return {
+    id: card.id,
+    episode: card.episode,
+    episodeLabel: "Did You Know? Deep Dive",
+    kind: "legend-bonus",
+    title: card.title,
+    subtitle: card.subtitle,
+    teams: card.teams,
+    rarity: "Legendary",
+    story: card.story,
+    youtube: card.youtube,
+    imagePath: card.image,
+  };
+}
+
 function isSeriesVideo(video: YouTubeLegendBonusVideo) {
   return video.kind === "series";
 }
@@ -138,6 +174,8 @@ const channelBonusCards = YOUTUBE_LEGEND_BONUS_VIDEOS.filter(isStandaloneBonusVi
 
 const didYouKnowShortCards = YOUTUBE_DID_YOU_KNOW_SHORTS.map(createDidYouKnowShortCard);
 
+const deepDiveCards = DEEP_DIVE_CARDS.map(createDeepDiveCard);
+
 function isChannelBonus(card: LegendCardDefinition) {
   return card.episode >= 900;
 }
@@ -148,6 +186,7 @@ export const LEGEND_CARD_DEFINITIONS: LegendCardDefinition[] = [
   ...channelSeriesCards,
   ...didYouKnowShortCards,
   ...channelBonusCards,
+  ...deepDiveCards,
 ].sort((a, b) => {
   if (isChannelBonus(a) !== isChannelBonus(b)) {
     return isChannelBonus(a) ? 1 : -1;

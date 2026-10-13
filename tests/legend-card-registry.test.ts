@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 
 import { LEGEND_CARDS } from "@/lib/legend-cards";
-import { LEGEND_CARD_DEFINITIONS } from "@/lib/legend-card-registry";
+import { DEEP_DIVE_CARDS, LEGEND_CARD_DEFINITIONS } from "@/lib/legend-card-registry";
 import { createLegendCardVoiceText, getSavedLegendCardVoicePublicPath } from "@/lib/story-voice";
 import {
   YOUTUBE_DID_YOU_KNOW_SHORTS,
@@ -14,7 +14,9 @@ describe("Legend card registry", () => {
   it("creates collectible cards for every series video, Did You Know short, and the five bonus videos", () => {
     const episodeCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "episode-special");
     const didYouKnowCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "did-you-know-short");
-    const bonusCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "legend-bonus");
+    // Deep Dive cards are appended daily from src/lib/deep-dive-cards.json (episode
+    // 920+); the pinned counts below are for the hand-curated channel cards.
+    const bonusCards = LEGEND_CARD_DEFINITIONS.filter((card) => card.kind === "legend-bonus" && card.episode < 920);
 
     assert.equal(YOUTUBE_LEGEND_BONUS_VIDEOS.length, 5);
     // The launch film was the only "series" video; it was retired because it sells
@@ -25,7 +27,7 @@ describe("Legend card registry", () => {
     assert.equal(episodeCards.length, 104);
     assert.equal(didYouKnowCards.length, 12);
     assert.equal(bonusCards.length, 5);
-    assert.equal(LEGEND_CARD_DEFINITIONS.length, 121);
+    assert.equal(LEGEND_CARD_DEFINITIONS.length, 121 + DEEP_DIVE_CARDS.length);
     assert.equal(new Set(LEGEND_CARD_DEFINITIONS.map((card) => card.id)).size, LEGEND_CARD_DEFINITIONS.length);
     assert.equal(LEGEND_CARD_DEFINITIONS.some((card) => String(card.kind) === "supporter-card"), false);
     assert.equal(didYouKnowCards.every((card) => Boolean(card.youtube)), true);
@@ -84,7 +86,7 @@ describe("Legend card registry", () => {
     const episodeCards = LEGEND_CARDS.filter((card) => card.kind === "episode-special");
     const longEpisodeCards = episodeCards.filter((card) => (card.episode ?? 999) < 900);
     const didYouKnowCards = LEGEND_CARDS.filter((card) => card.kind === "did-you-know-short");
-    const bonusCards = LEGEND_CARDS.filter((card) => card.kind === "legend-bonus");
+    const bonusCards = LEGEND_CARDS.filter((card) => card.kind === "legend-bonus" && card.episode < 920);
     const appReadyEpisodeCards = longEpisodeCards.filter((card) =>
       card.image.startsWith("/legend-cards/youtube-rare/"),
     );
