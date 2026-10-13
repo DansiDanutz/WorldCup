@@ -69,6 +69,10 @@ function getYoutubeRareCardAsset(card: LegendCardDefinition) {
 }
 
 export function getLegendCardAssetImagePath(card: LegendCardDefinition) {
+  if (card.imagePath) {
+    return card.imagePath;
+  }
+
   const didYouKnowImage = didYouKnowCardImagePaths[card.id];
 
   if (didYouKnowImage) {
