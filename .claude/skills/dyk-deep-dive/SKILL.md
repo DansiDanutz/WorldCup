@@ -122,8 +122,9 @@ worldcup26.world.
    `built`. If not: stop at the preview and say the voice key is missing — never ship
    a preview, never substitute another voice.
 5. Commit the episode folder, card art and plan; PR → merge.
-6. Deliver the MP4 + thumbnail + UPLOAD_KIT to the owner (split into ≤25 MB parts on
-   a delivery branch if needed, per the documentary skill §7).
+6. Deliver to the owner with SendUserFile: the `_720p.mp4` copy (fits the 30 MB cap),
+   thumbnail and UPLOAD_KIT. The 1080p master is for upload; if it must be sent, split
+   it into ≤25 MB parts on a delivery branch (documentary skill §7).
 
 ## Rejections to never repeat
 
