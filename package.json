@@ -14,7 +14,7 @@
     "test": "node --experimental-strip-types --import ./tests/register.mjs --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
     "audit:prod": "npm audit --omit=dev --audit-level=high",
-    "audit:all": "npm audit --audit-level=high",
+    "audit:all": "node scripts/audit-all.mjs",
     "sync:results": "node scripts/sync-results.mjs",
     "voices:legend-cards": "node --experimental-strip-types --import ./tests/register.mjs scripts/generate-legend-card-voices.ts",
     "generate:migrations": "node scripts/generate-worldcup-sql.mjs && node scripts/generate-worldcup-kickoff-sql.mjs",
