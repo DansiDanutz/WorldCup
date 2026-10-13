@@ -5,12 +5,16 @@ import { describe, it } from "node:test";
 import { LEGEND_CARDS } from "@/lib/legend-cards";
 import { DEEP_DIVE_CARDS } from "@/lib/legend-card-registry";
 
-// "Did You Know? Deep Dives": 5-minute films about famous players, every visual drawn
-// in code. These checks keep the series' hard rules in CI, not just in the render-time
-// preflight: no faces (code-drawn scene types only), no on-screen sentences, no
-// gambling or prize wording, cited sources, and a card that really unlocks.
+// "Did You Know? Deep Dives": 5-minute films about famous players, cut from the owned
+// clip library plus drawn graphics. These checks keep the series' hard rules in CI, not
+// just in the render-time preflight: footage only from library/clips.json, every clip
+// once (rule #11), no on-screen sentences, no gambling or prize wording, cited sources,
+// and a card that really unlocks.
 
 const EPISODES = "marketing/deep-dives/episodes";
+const LIBRARY: Record<string, { src: string; url: string | null; who: string | null; dur: number }> = JSON.parse(
+  readFileSync("marketing/deep-dives/library/clips.json", "utf8"),
+);
 const CODE_SCENES = new Set([
   "date", "nameplate", "title", "chapter", "kinetic", "stadium", "route", "stat", "impact", "artifact",
   "timeline", "jersey", "pitch", "cardwall", "versus", "clock", "ballnet", "card", "phone", "heartbeat",
@@ -19,6 +23,7 @@ const BANNED = /\b(odds|bets?|betting|wager|stakes?|jackpot|bookmaker|coefficien
 const words = (s: unknown) => String(s).trim().split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
 
 type Scene = Record<string, unknown> & { type: string; words?: { w: string }[] };
+type Shot = { clip?: string; tag?: string; over?: Scene; scene?: Scene; w?: number };
 type Episode = {
   number: number;
   slug: string;
@@ -26,9 +31,13 @@ type Episode = {
   player: { name: string };
   thumbnail: { hook: string };
   card: { id: string; title: string; story: string };
-  beats: { vo: string; scene: Scene | Scene[] }[];
+  beats: { vo: string; scene?: Scene | Scene[]; shots?: Shot[] }[];
   sources: { claim: string; url: string }[];
 };
+
+// mirrors engine/lib.mjs beatShots(): a beat is a list of shots, or the older scene form
+const shotsOf = (beat: Episode["beats"][number]): Shot[] =>
+  beat.shots ?? (Array.isArray(beat.scene) ? beat.scene : [beat.scene!]).map((scene) => ({ scene }));
 
 const episodes: Episode[] = existsSync(EPISODES)
   ? readdirSync(EPISODES).sort().map((dir) => JSON.parse(readFileSync(`${EPISODES}/${dir}/episode.json`, "utf8")))
@@ -52,10 +61,25 @@ describe("Did You Know? Deep Dives", () => {
       assert.ok(ep.sources.filter((s) => /^https:\/\//.test(s.url)).length >= 3, "needs at least 3 cited sources");
 
       const text: string[] = [ep.title, ep.thumbnail.hook, ep.card.title, ep.card.story];
+      const clips = new Set<string>();
       for (const beat of ep.beats) {
         text.push(beat.vo);
-        for (const scene of Array.isArray(beat.scene) ? beat.scene : [beat.scene]) {
-          assert.ok(CODE_SCENES.has(scene.type), `scene "${scene.type}" is not code-drawn (no faces, no footage)`);
+        for (const shot of shotsOf(beat)) {
+          if (shot.clip) {
+            assert.ok(LIBRARY[shot.clip], `clip "${shot.clip}" is not in the library`);
+            assert.ok(!clips.has(shot.clip), `clip "${shot.clip}" plays twice (no-repeat rule)`);
+            clips.add(shot.clip);
+            if (shot.tag != null) {
+              text.push(shot.tag);
+              assert.ok(words(shot.tag) <= 4, `tag "${shot.tag}" is a sentence`);
+            }
+          }
+          const scene = shot.scene ?? shot.over;
+          if (!scene) {
+            assert.ok(shot.clip, "a shot needs a clip or a scene");
+            continue;
+          }
+          assert.ok(CODE_SCENES.has(scene.type), `scene "${scene.type}" is not a drawn scene`);
           for (const key of ["label", "title", "text", "sub", "meta", "name", "stat"]) {
             if (scene[key] != null) {
               text.push(String(scene[key]));
@@ -68,13 +92,22 @@ describe("Did You Know? Deep Dives", () => {
       for (const t of text) assert.doesNotMatch(t, BANNED, t.slice(0, 80));
 
       const last = ep.beats[ep.beats.length - 1];
-      assert.equal((Array.isArray(last.scene) ? last.scene.at(-1)! : last.scene).type, "phone");
+      assert.equal(shotsOf(last).at(-1)!.scene?.type, "phone");
       assert.match(last.vo, /worldcup26\.world/i);
       assert.match(last.vo, /no prizes/i);
       const wordCount = ep.beats.reduce((n, b) => n + words(b.vo), 0);
       assert.ok(wordCount >= 600 && wordCount <= 820, `${wordCount} words is not a ~5 minute script`);
     });
   }
+
+  it("keeps a re-downloadable source for every library clip", () => {
+    for (const [alias, clip] of Object.entries(LIBRARY)) {
+      assert.match(alias, /^[a-z0-9-]+$/);
+      // MP4s are gitignored: each needs a CDN URL, or must be a file tracked in the repo
+      assert.ok(clip.url ? /^https:\/\//.test(clip.url) : existsSync(clip.src), `${alias} has no source`);
+      assert.ok(clip.dur > 1, `${alias} has no duration`);
+    }
+  });
 
   it("only lists cards whose video and art exist, each unlocking from its own video", () => {
     const ids = new Set<string>();

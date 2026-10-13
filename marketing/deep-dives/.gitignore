@@ -3,3 +3,4 @@ engine/music/
 episodes/*/build/
 episodes/*/output/*
 !episodes/*/output/thumbnail.jpg
+library/clips/

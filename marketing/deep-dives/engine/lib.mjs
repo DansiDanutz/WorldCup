@@ -26,3 +26,22 @@ export function loadEpisode(epDir) {
 export const cardArtPath = (ep) => path.join(ROOT, 'public/legend-cards/deep-dive', `${ep.slug}.png`);
 export const outputName = (ep) =>
   `DidYouKnow_${String(ep.number).padStart(2, '0')}_${ep.player.name.replace(/[^A-Za-z0-9]+/g, '_')}.mp4`;
+
+// The clip library: paid generations we already own (library/clips.json), each
+// with who it shows. Episodes reference clips by alias.
+export const LIBRARY = path.join(ROOT, 'marketing/deep-dives/library/clips.json');
+export const loadLibrary = () => JSON.parse(fs.readFileSync(LIBRARY, 'utf8'));
+
+// A beat is either one drawn scene (`scene`, or a list that splits the beat) or a
+// list of `shots`: {clip, rate?, offset?, tag?, over?} plays a library clip (with an
+// optional drawn overlay on top), {scene} plays a drawn scene. `w` weights a shot's
+// share of the beat (default 1). Returns [{share, clip?, scene?, ...}] in order.
+export function beatShots(beat) {
+  const shots = beat.shots || (Array.isArray(beat.scene) ? beat.scene : [beat.scene]).map((scene) => ({ scene }));
+  const total = shots.reduce((n, s) => n + (s.w || 1), 0);
+  return shots.map((s) => ({ ...s, share: (s.w || 1) / total }));
+}
+// the drawn scenes of a beat: standalone scenes plus overlays on clips
+export const beatScenes = (beat) => beatShots(beat).flatMap((s) => (s.scene ? [s.scene] : s.over ? [s.over] : []));
+// slowest we let a clip play to fill its shot before it would loop
+export const MIN_RATE = 0.5;

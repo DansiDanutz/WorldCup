@@ -1,10 +1,11 @@
 // story-kit.jsx — the Deep Dive scene library. Every visual here is drawn in code
 // (SVG + CSS, a pure function of useTime()), so episodes need no generated footage.
 //
-// LAW: these films are about famous real players, and we own no honest likeness of
-// them. So nothing here ever draws a face. People appear as typography, numbers,
-// faceless shirts, dots on a pitch and lines on a map. On-screen words are labels
-// of four words or fewer, names, numbers and dates — never a sentence (rule #10).
+// The drawn scenes never draw a face: people appear as typography, numbers,
+// faceless shirts, dots on a pitch and lines on a map. Faces come only from
+// ClipShot, which plays owner-approved clips from the library (library/clips.json
+// records who each clip shows). On-screen words are labels of four words or fewer,
+// names, numbers and dates — never a sentence (rule #10).
 /* global React, useTime */
 
 const SK = {
@@ -418,6 +419,66 @@ function ChapterMark({ from, dur, index, title }) {
   );
 }
 
+// ClipShot — one shot from the paid clip library (marketing/deep-dives/library),
+// full-bleed with a slow camera push so it never sits still. Vertical clips get a
+// blurred cover of themselves behind a contained foreground instead of a crop.
+// `dim` darkens the shot when a code overlay sits on top; `tag` is a small place /
+// year label (≤4 words, rule #10). Every clip plays once and never loops (preflight).
+// Tracked blur boxes (library/clips.json `blur`): keyframes [sourceTime, cx, cy, w, h]
+// as fractions of the video frame, interpolated over time — they hide kit-maker
+// logos and federation crests (monetization rule #0/#5) as the camera moves.
+function blurBox(keys, st) {
+  let i = 0; while (i < keys.length - 2 && st > keys[i + 1][0]) i++;
+  const a = keys[i], b = keys[Math.min(i + 1, keys.length - 1)];
+  const f = b[0] === a[0] ? 0 : skClamp((st - a[0]) / (b[0] - a[0]), 0, 1);
+  return a.slice(1).map((v, j) => v + (b[j + 1] - v) * f);
+}
+
+function ClipShot({ from, dur, src, rate = 1, offset = 0, vertical, aspect = 16 / 9, blur, dim = 0, tag, k = 0, push = 0.07 }) {
+  const w = useWindow(from, dur, 0.18); if (!w) return null;
+  const { lt, inn } = w;
+  const p = skClamp(lt / Math.max(dur, 0.1), 0, 1);
+  const dir = k % 4;
+  const scale = 1.03 + push * skInOut(p);
+  const dx = (dir === 0 ? -1 : dir === 2 ? 1 : 0) * 22 * p, dy = (dir === 1 ? -1 : dir === 3 ? 1 : 0) * 14 * p;
+  const tagIn = skEase(skClamp((lt - 0.35) / 0.6, 0, 1));
+  const sprite = { src, start: from, dur, rate, offset };
+  return (
+    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: '#000', opacity: 0.35 + 0.65 * inn, zIndex: 4 }}>
+      <div style={{ position: 'absolute', inset: 0, transform: `translate(${dx}px,${dy}px) scale(${scale})` }}>
+        {vertical ? <VideoSprite {...sprite} style={{ filter: 'blur(38px) brightness(.45) saturate(1.2)', transform: 'scale(1.2)' }} /> : null}
+        <VideoSprite {...sprite} fit={vertical ? 'contain' : 'cover'} />
+        {(blur || []).map((m, i) => {
+          // the rect the video actually occupies on the 1920x1080 stage (cover crops, contain letterboxes)
+          const fill = vertical ? aspect > 16 / 9 : aspect < 16 / 9;
+          const rw = fill ? 1920 : 1080 * aspect, rh = fill ? 1920 / aspect : 1080;
+          const rx = (1920 - rw) / 2, ry = (1080 - rh) / 2;
+          const [cx, cy, bw, bh] = blurBox(m.keys, offset + lt * rate);
+          const x = rx + (cx - bw / 2) * rw, y = ry + (cy - bh / 2) * rh;
+          return (
+            <div key={i} style={{ position: 'absolute', left: x, top: y, width: bw * rw, height: bh * rh,
+              overflow: 'hidden', borderRadius: 18 }}>
+              <VideoSprite {...sprite} fit="fill" style={{ inset: 'auto', left: rx - x, top: ry - y, width: rw, height: rh, filter: 'blur(24px) saturate(.85)', transform: 'scale(1.0)' }} />
+            </div>
+          );
+        })}
+      </div>
+      {/* grade: lifted blacks at the edges, a floor for overlay text */}
+      <div style={{ position: 'absolute', inset: 0, background: `rgba(4,6,12,${dim})` }} />
+      <div style={{ position: 'absolute', inset: 0, background:
+        'linear-gradient(180deg, rgba(5,7,12,.45) 0%, rgba(5,7,12,0) 22%, rgba(5,7,12,0) 66%, rgba(5,7,12,.7) 100%)' }} />
+      {tag ? (
+        <div style={{ position: 'absolute', left: 90, bottom: 150, display: 'flex', alignItems: 'center', gap: 18,
+          opacity: tagIn * skClamp((from + dur - (from + lt)) / 0.3, 0, 1), transform: `translateX(${(1 - tagIn) * -30}px)` }}>
+          <div style={{ width: 8, height: 46, background: SK.gold }} />
+          <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 38, letterSpacing: '.28em', color: SK.text,
+            textShadow: '0 4px 24px rgba(0,0,0,.9)' }}>{tag}</div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 // CornerBug — persistent player name + "DID YOU KNOW?" in the corner (a name
 // label, allowed by rule #10), so every frame says who the episode is about.
 function CornerBug({ from, dur, name, number, colors }) {
@@ -439,5 +500,5 @@ function CornerBug({ from, dur, name, number, colors }) {
 
 Object.assign(window.MotionKit || (window.MotionKit = {}), {
   PlayerTitle, Jersey, StatCounter, RouteMap, TacticalPitch, Artifact, VersusBars,
-  Heartbeat, DateFlip, ChapterMark, CornerBug, ShirtSVG, SK,
+  Heartbeat, DateFlip, ChapterMark, CornerBug, ClipShot, ShirtSVG, SK,
 });

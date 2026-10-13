@@ -381,8 +381,8 @@ scrape `POST https://api.firecrawl.dev/v1/scrape` — header `Authorization: Bea
 ## "Did You Know?" Deep Dives — the current daily series (Oct 2026)
 
 5-minute stories about **famous, searchable players** (Messi, Yamal, Mbappé, Haaland…),
-one verified secret each, **every visual drawn in code — no Higgsfield, no faces**, Brian
-VO, and one new legend card per episode that unlocks by watching it. One episode per
+one verified secret each, **footage-led from the owned clip library (no new Higgsfield
+spend; a face only from a clip that is that player) + drawn graphics**, Brian VO, and one new legend card per episode that unlocks by watching it. One episode per
 day from the queue in `marketing/deep-dives/plan.json`. Mandatory reading before any
 Deep Dive work: **`.claude/skills/dyk-deep-dive/SKILL.md`** (plan:
 `content/youtube/DEEP_DIVE_PLAN.md`).

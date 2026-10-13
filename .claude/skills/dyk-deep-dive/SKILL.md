@@ -2,14 +2,14 @@
 name: dyk-deep-dive
 description: >-
   Produce a "Did You Know? Deep Dive" — a 5-minute YouTube story about a FAMOUS,
-  searchable player (Messi, Yamal, Mbappé, Haaland…) with every visual drawn in code
-  (no Higgsfield, no generated footage, no faces), Brian VO, a new legend card in the
-  app, and an upload kit. Use for any Deep Dive episode, the daily episode run, adding
+  searchable player (Messi, Yamal, Mbappé, Haaland…) cut from the clip library we
+  already paid for (no new Higgsfield spend) plus drawn graphics, Brian VO, a new
+  legend card in the app, and an upload kit. Use for any Deep Dive episode, the daily episode run, adding
   a Deep Dive card to the album, or planning the next Deep Dives. Engine:
   marketing/deep-dives/engine · queue: marketing/deep-dives/plan.json.
 ---
 
-# Did You Know? Deep Dive (5-minute, code-drawn, famous players)
+# Did You Know? Deep Dive (5-minute, library footage + drawn graphics, famous players)
 
 Read `CLAUDE.md` rules #0, #9, #10 first. This skill is the HOW.
 
@@ -21,13 +21,30 @@ Read `CLAUDE.md` rules #0, #9, #10 first. This skill is the HOW.
 - **Watch hours.** 5 minutes of story per upload is what the YPP threshold needs.
 - **The album.** Every episode creates one new legend card that unlocks by watching it.
 
-## LAW #1 — no faces, ever
+## LAW #1 — real football on screen, from the library (owner, 13 Oct 2026)
 
-We own no honest likeness of any famous player (the library's "Messi"/"Rodri" clips
-were rejected by the owner because they depict other people). So a Deep Dive never
-shows a face: players are **typography, numbers, faceless shirts, dots on a pitch and
-lines on a map**. The engine only accepts code-drawn scene types; preflight refuses
-anything else. No Higgsfield or other image/video generation.
+Owner's verdict on the first code-only cut: *"I don't like how it looks. It's a football
+video — you need to add interaction. Nothing impressive, no story."* So:
+
+- **Most of the film is moving football**: players, duels, saves, goals, fans, stadiums.
+  Ep1 runs 49 clip shots over ~70% of the runtime; drawn scenes are for what no footage
+  can show (the 2007 raffle map, a polaroid, a number counting up, the card, the phone).
+- **Library first, no new spend.** Clips come only from `marketing/deep-dives/library/clips.json`
+  — paid Higgsfield generations we already own (the account history holds 2,000+:
+  browse with `show_generations type=video`, filter prompts with jq, contact-sheet the
+  candidates, LOOK at them). Add a clip by alias with its `higgsfield` id, CDN `url`,
+  `who` it shows, `dur`, `w`/`h`. The MP4s are gitignored; `node library/fetch.mjs`
+  restores them.
+- **Faces only when the clip IS that person.** `who` records it (`messi`, `yamal`, …).
+  Never let the VO name a player over a clip of someone else (the documentary skill's
+  identity law). Generic players/fans/stadiums have `who: null` and can illustrate
+  anything that doesn't claim an identity.
+- **Every clip once** (rule #11) and **never looped**: a shot slower than 0.5× or longer
+  than its clip fails preflight — split the beat into more shots instead.
+- **Blur logos** (monetization rule #0/#5): close-ups showing a kit-maker logo or
+  federation crest get tracked `blur` boxes in clips.json — keyframes
+  `[sourceTime, cx, cy, w, h]` as fractions of the video frame. Measure them on
+  gridded frames (ffmpeg `drawgrid`), then render check frames and look.
 
 ## LAW #2 — verified or it doesn't ship
 
@@ -46,10 +63,13 @@ result that hasn't happened; WC 2026 is played (Spain 1–0 Argentina a.e.t., 19
 4. **Card reveal** (`card` scene) — "This story is now a legendary card…"
 5. **Close** (`phone` scene) — must say *worldcup26.world* and *no prizes*.
 
-One beat = one VO chunk + one scene (or a list of scenes that split the beat).
-Vary scene types; never three of the same in a row.
+One beat = one VO chunk + `shots`: a run of `{clip, tag?, over?}` (library clip, optional
+≤4-word place/year `tag`, optional drawn `over`lay such as a nameplate, stat, impact,
+clock or chapter) and `{scene}` (a full drawn scene). Shots split the beat evenly (`w`
+weights one). Cut every ~3–6 s; faster in the match climax. Open on stakes with real
+footage, never on a drawn slate.
 
-## Scene types (engine/story-kit.jsx + motion-kit.jsx)
+## Drawn scene types (engine/story-kit.jsx + motion-kit.jsx) — as `scene` or `over`
 
 | type | use | key props |
 |---|---|---|
@@ -79,6 +99,7 @@ cash prize, payout (preflight greps VO, labels, title and card).
 
 ```bash
 cd marketing/deep-dives
+node library/fetch.mjs                                             # restore the clip library
 mkdir episodes/NN-slug && $EDITOR episodes/NN-slug/episode.json   # copy 01 as the template
 PREVIEW=1 node engine/build.mjs episodes/NN-slug                    # estimated timing
 CHROMIUM_PATH=/usr/bin/google-chrome node engine/make-art.mjs episodes/NN-slug
@@ -134,3 +155,4 @@ worldcup26.world.
 | "THE NEXT MESSI?" over a wall of other players' faces | never put a person's name next to someone else's face |
 | Academy-era shirt showing the current number | `number: ''` for past-era shirts |
 | "PICK 3 · FREE" on the phone end card | the game is retired: `COLLECT · FREE` |
+| Code-only cut: "nothing impressive, no story" | footage-led (≥60% clips), a story with stakes, a mirror and a payoff — not a fact list |
