@@ -19,7 +19,17 @@ try {
 } catch (error) {
   raw = error.stdout; // npm audit exits non-zero when it finds anything
 }
-const vulns = JSON.parse(raw).vulnerabilities ?? {};
+let report;
+try {
+  report = JSON.parse(raw);
+} catch {
+  console.error("npm audit did not return a JSON report"); process.exit(1);
+}
+// An error response (registry down, bad lockfile) is not a clean audit.
+if (report.error || typeof report.vulnerabilities !== "object" || report.vulnerabilities === null) {
+  console.error("npm audit failed:", report.error?.summary ?? "no vulnerabilities report"); process.exit(1);
+}
+const vulns = report.vulnerabilities;
 const ghsa = (via) => (typeof via === "object" && via.url ? via.url.split("/").pop() : null);
 
 // A package is "allowed" when every advisory behind it (directly, or through the

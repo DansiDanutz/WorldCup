@@ -20,6 +20,13 @@ node preflight.mjs "$EP"
 
 DUR=$(node -e "console.log(require('$EP/build/film.json').duration)")
 FRAMES="$EP/build/frames"; mkdir -p "$FRAMES"
+# Frames are only reusable for the exact film.json that produced them (a preview's
+# estimated timing or an edited scene must never leak into the final cut).
+FILM_HASH=$(sha256sum "$EP/build/film.json" | cut -d' ' -f1)
+if [ "$(cat "$FRAMES/.film-hash" 2>/dev/null)" != "$FILM_HASH" ]; then
+  find "$FRAMES" -name 'f_*.jpg' -delete
+  echo "$FILM_HASH" > "$FRAMES/.film-hash"
+fi
 # resume from the first missing frame (renders are long; never restart from zero)
 START=$(node -e "
 const fs=require('fs');const have=new Set(fs.readdirSync('$FRAMES').map(f=>+f.slice(2,-4)));
@@ -28,7 +35,12 @@ let i=0;while(have.has(i))i++;console.log(i)")
 trap 'kill $(cat "$EP/build/serve.pid") 2>/dev/null || true' EXIT
 sleep 1
 URL="http://127.0.0.1:$PORT/marketing/deep-dives/engine/deep-dive.html?film=/${EP#$ROOT/}/build/film.json"
-URL="$URL" FPS=30 DURATION="$DUR" START="$START" OUT="$FRAMES" QUALITY=88 CHROMIUM_PATH="$CHROME" node render.mjs
+TOTAL=$(node -e "console.log(Math.round($DUR*30))")
+if [ "$START" -lt "$TOTAL" ]; then
+  URL="$URL" FPS=30 DURATION="$DUR" START="$START" OUT="$FRAMES" QUALITY=88 CHROMIUM_PATH="$CHROME" node render.mjs
+else
+  echo "all $TOTAL frames present — skipping render"
+fi
 node mux-audio.mjs "$EP"
 node finish.mjs "$EP"
 node kit.mjs "$EP"

@@ -43,7 +43,13 @@ ep.beats.forEach((b, i) => {
     }
     (s.words || []).forEach((w) => allText.push(w.w));
     if (s.words && s.words.length > 4) fail(`beat ${n}: kinetic beat shows ${s.words.length} words (max 4)`);
-    (s.years || []).forEach((y) => { if (words(y.label || '') > 3) fail(`beat ${n}: timeline label "${y.label}" over 3 words`); });
+    (s.years || []).forEach((y) => { allText.push(String(y.label || '')); if (words(y.label || '') > 3) fail(`beat ${n}: timeline label "${y.label}" over 3 words`); });
+    // other text the scenes render: comparison labels and map place names
+    [...(s.rows || []).map((r) => r.label), ...[s.a, s.b, ...(s.stops || [])].filter(Boolean).map((pt) => pt.name)]
+      .filter((v) => v != null).forEach((v) => {
+        allText.push(String(v));
+        if (words(v) > 4) fail(`beat ${n}: on-screen "${v}" is over 4 words (rule #10)`);
+      });
   });
 });
 allText.forEach((s) => { const m = String(s).match(BANNED); if (m) fail(`banned wording "${m[0]}" in: ${String(s).slice(0, 80)}`); });

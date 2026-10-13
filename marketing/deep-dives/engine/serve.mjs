@@ -11,6 +11,7 @@ const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/ja
   '.jpg': 'image/jpeg', '.mp4': 'video/mp4', '.mp3': 'audio/mpeg', '.m4a': 'audio/mp4', '.css': 'text/css' };
 
 const ROOT = path.resolve(process.cwd());
+const ALLOWED = ['/marketing/deep-dives/', '/public/legend-cards/'];
 
 http.createServer((req, res) => {
   let pathname;
@@ -19,7 +20,13 @@ http.createServer((req, res) => {
   } catch {
     res.writeHead(400); return res.end(); // malformed percent-escape must not kill the render server
   }
-  const f = path.resolve(ROOT, '.' + path.posix.normalize('/' + pathname));
+  const clean = path.posix.normalize('/' + pathname);
+  // Serve only what a render needs. The document root is the repository, so
+  // everything else (.env files, keys, source) must stay unreachable.
+  if (!ALLOWED.some((prefix) => clean.startsWith(prefix)) || clean.split('/').some((seg) => seg.startsWith('.'))) {
+    res.writeHead(404); return res.end();
+  }
+  const f = path.resolve(ROOT, '.' + clean);
   // Exact-root containment: a bare prefix check would also accept sibling dirs
   // (e.g. ROOT + "-evil"). Symlinked assets still work — the check constrains
   // the requested URL path, not the symlink target.
@@ -45,4 +52,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': type, 'Accept-Ranges': 'bytes', 'Content-Length': size });
     fs.createReadStream(f).pipe(res);
   }
-}).listen(PORT, () => console.log('range-capable server on :' + PORT));
+}).listen(PORT, '127.0.0.1', () => console.log('range-capable server on 127.0.0.1:' + PORT));

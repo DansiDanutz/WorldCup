@@ -79,15 +79,19 @@ async function sync() {
   const feed = [...xml.matchAll(/<entry>[\s\S]*?<yt:videoId>(.*?)<\/yt:videoId>[\s\S]*?<title>(.*?)<\/title>/g)]
     .map((m) => ({ id: m[1], title: m[2].replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'") }));
   const live = new Set(readJson(CARDS, []).map((c) => c.slug));
+  const built = new Set((readJson(PLAN, { episodes: [] }).episodes).filter((e) => e.status === "built").map((e) => e.slug));
   let added = 0;
   for (const dir of fs.existsSync(EPISODES) ? fs.readdirSync(EPISODES).sort() : []) {
     const epDir = path.join(EPISODES, dir);
     const ep = readJson(path.join(epDir, "episode.json"), null);
-    if (!ep || live.has(ep.slug)) continue;
-    const surname = norm(ep.player.name).split(" ").pop();
-    // exact title first; otherwise the player's surname + "did you know" (titles get tweaked in Studio)
-    const hit = feed.find((v) => norm(v.title) === norm(ep.title))
-      ?? feed.find((v) => norm(v.title).includes(surname) && norm(v.title).includes("did you know"));
+    // only finished episodes can be published; a scripted/preview one has no real video
+    if (!ep || live.has(ep.slug) || !built.has(ep.slug)) continue;
+    // The exact upload title, or a title that STARTS with the player's full name and
+    // carries "did you know". A name merely mentioned (Messi in the Yamal title) never matches.
+    const name = norm(ep.player.name);
+    const taken = new Set(readJson(CARDS, []).map((c) => videoId(c.youtube)));
+    const hit = feed.find((v) => !taken.has(v.id) && norm(v.title) === norm(ep.title))
+      ?? feed.find((v) => !taken.has(v.id) && norm(v.title).startsWith(name) && norm(v.title).includes("did you know"));
     if (!hit) { console.log(`not uploaded yet: ${ep.slug}`); continue; }
     await add(epDir, hit.id);
     added++;
