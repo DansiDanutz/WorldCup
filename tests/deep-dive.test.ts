@@ -70,7 +70,7 @@ describe("Did You Know? Deep Dives", () => {
         assert.ok(who === null || approved.has(who), `people["${name}"] = "${who}" is not an approved identity`);
       }
       // source ranges each clip plays ([offset, until]); no frame may be shown twice
-      const spans = new Map<string, [number, number][]>();
+      const spans = new Map<string, [number, number, boolean][]>();
       for (const beat of ep.beats) {
         text.push(beat.vo);
         // identity law: a face on screen must be the person the narration names
@@ -81,13 +81,17 @@ describe("Did You Know? Deep Dives", () => {
           if (shot.clip) {
             const clip = LIBRARY[shot.clip];
             assert.ok(clip, `clip "${shot.clip}" is not in the library`);
-            // once — or as segments with explicit, non-overlapping [offset, until] source ranges
+            // once — or as segments with explicit, non-overlapping [offset, until] source ranges.
+            // A shot's real length comes from the VO timing, which CI doesn't have, so a reused
+            // clip must spell out `until` on every segment except one that runs to the clip's end
+            // (preflight re-checks the exact played spans on the built film).
             const used = spans.get(shot.clip) ?? [];
-            const range: [number, number] = [shot.offset ?? 0, shot.until ?? clip.dur];
+            const range: [number, number, boolean] = [shot.offset ?? 0, shot.until ?? clip.dur, shot.until != null];
             if (used.length) assert.ok(shot.offset != null, `clip "${shot.clip}" plays twice (no-repeat rule)`);
-            for (const [a, z] of used) {
-              assert.ok(range[0] >= z - 0.05 || range[1] <= a + 0.05,
-                `clip "${shot.clip}" replays source ${a}-${z}s (no frame twice)`);
+            for (const [a, z, explicit] of used) {
+              const apart = range[0] >= z - 0.05 || range[1] <= a + 0.05;
+              const hint = explicit && range[2] ? "" : " — give each segment of a reused clip an explicit `until`";
+              assert.ok(apart, `clip "${shot.clip}" replays source ${a}-${z}s (no frame twice)${hint}`);
             }
             spans.set(shot.clip, [...used, range]);
             if (clip.who) assert.ok(named.includes(clip.who), `"${shot.clip}" shows ${clip.who} but the narration doesn't name them`);

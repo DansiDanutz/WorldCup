@@ -47,8 +47,8 @@ video — you need to add interaction. Nothing impressive, no story."* So:
     while the narration names nobody.
   - episode.json `people` maps every name the VO speaks to its `who` (or null = no
     approved likeness → faceless shots only). Preflight and CI enforce all of this.
-  - With only one short clip per star, cut it into **segments** (`offset`/`until`,
-    `minRate` 0.3 for slow portraits); preflight fails if any source frame repeats.
+  - With only one short clip per star, cut it into **segments** (`offset` + `until` on every
+    segment except one that runs to the clip's end; `minRate` 0.3 for slow portraits); preflight fails if any source frame repeats.
     The `faceoff` scene puts stills of both approved portraits side by side.
   - A new star needs an approved likeness first (ask the owner) — until then, tell
     their story with faceless footage, drawn scenes and the album card.
