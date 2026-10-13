@@ -12,6 +12,13 @@ const epDir = path.resolve(process.argv[2] || '.');
 const ep = loadEpisode(epDir);
 const KEY = process.env.ELEVENLABS_API_KEY;
 const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_multilingual_v2';
+// VO made elsewhere (e.g. scripts/deep-dive-push-vo.mjs on the machine that holds the key)
+// is already complete: nothing to generate, so no key is needed.
+const have = ep.beats.every((_, i) => fs.existsSync(path.join(epDir, 'vo', `beat_${String(i + 1).padStart(2, '0')}.mp3`)));
+if (have && process.env.FORCE !== '1') {
+  console.log(`Brian VO already complete: ${ep.beats.length} beats`);
+  process.exit(0);
+}
 if (!KEY) {
   console.error('ELEVENLABS_API_KEY is not set. Brian is mandatory for every episode, so no VO can be made.');
   console.error('Add it as an environment secret, then re-run. (PREVIEW=1 builds a silent picture-only preview.)');
