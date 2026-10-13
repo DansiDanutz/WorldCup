@@ -470,6 +470,13 @@
    "vo": "The calendar is printed. It raises its money. And then the photos simply vanish. For seventeen years, almost nobody sees them.",
    "shots": [
     {
+     "scene": {
+      "type": "impact",
+      "text": "VANISHED"
+     },
+     "w": 0.8
+    },
+    {
      "clip": "night-sky-roof",
      "over": {
       "type": "stat",
