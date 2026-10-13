@@ -3,7 +3,7 @@
 // the documentary skill's identity law for a Deep Dive episode.
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, loadEpisode, cardArtPath, loadLibrary, beatShots, MIN_RATE } from './lib.mjs';
+import { ROOT, loadEpisode, cardArtPath, loadLibrary, beatShots, MIN_RATE, namedIn } from './lib.mjs';
 
 const epDir = path.resolve(process.argv[2] || '.');
 const ep = loadEpisode(epDir);
@@ -17,7 +17,7 @@ const BANNED = /\b(odds|bets?|betting|wager|stakes?|jackpot|bookmaker|coefficien
 // shots from the owned library (library/clips.json), never ad-hoc files.
 const CODE_SCENES = new Set(['date', 'nameplate', 'title', 'chapter', 'kinetic', 'stadium', 'route', 'stat',
   'impact', 'artifact', 'timeline', 'jersey', 'pitch', 'cardwall', 'versus', 'clock', 'ballnet', 'card', 'phone',
-  'heartbeat', 'clip']);
+  'heartbeat', 'clip', 'faceoff']);
 const LIB = loadLibrary();
 const usedClips = new Map();
 const words = (s) => String(s).trim().split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
@@ -37,19 +37,32 @@ ep.beats.forEach((b, i) => {
   if (!b.vo || words(b.vo) < 2) fail(`beat ${n}: empty VO`);
   allText.push(b.vo);
   const shots = beatShots(b);
+  const named = namedIn(ep, b.vo);
   shots.forEach((shot) => {
     if (shot.clip) {
       const c = LIB[shot.clip];
       if (!c) { fail(`beat ${n}: clip "${shot.clip}" is not in library/clips.json`); return; }
       if (!fs.existsSync(path.join(ROOT, c.src))) fail(`beat ${n}: clip file ${c.src} missing (run library/fetch.mjs)`);
-      // rule #11: every clip plays at most once in a video
-      if (usedClips.has(shot.clip)) fail(`beat ${n}: clip "${shot.clip}" already used in beat ${usedClips.get(shot.clip)} (no-repeat rule)`);
-      usedClips.set(shot.clip, n);
+      // rule #11: a clip plays once — or in segments (explicit offsets) that never show a frame twice (checked on film.json)
+      if (usedClips.has(shot.clip) && (shot.offset == null || usedClips.get(shot.clip).offset == null)) {
+        fail(`beat ${n}: clip "${shot.clip}" already used in beat ${usedClips.get(shot.clip).n} (no-repeat rule; split it with offset/until)`);
+      }
+      usedClips.set(shot.clip, { n, offset: shot.offset });
+      // identity law: a face on screen must be the person the narration is about
+      if (c.who && !named.includes(c.who)) fail(`beat ${n}: "${shot.clip}" shows ${c.who}, but this beat's narration doesn't name them`);
+      if (c.faces === 'player' && !c.who && named.length) fail(`beat ${n}: "${shot.clip}" shows an unnamed player while the narration names ${named.join(', ')} — use a faceless clip`);
       if (shot.tag != null) { allText.push(String(shot.tag)); if (words(shot.tag) > 4) fail(`beat ${n}: tag "${shot.tag}" is over 4 words (rule #10)`); }
     } else if (!shot.scene) fail(`beat ${n}: a shot needs "clip" or "scene"`);
   });
   const scenes = shots.flatMap((sh) => (sh.scene ? [sh.scene] : sh.over ? [sh.over] : []));
   scenes.forEach((s) => {
+    (s.type === 'faceoff' ? s.faces || [] : []).forEach((f) => {
+      const c = LIB[f.clip];
+      if (!c?.who) fail(`beat ${n}: faceoff panel "${f.clip}" has no approved identity`);
+      else if (!named.includes(c.who)) fail(`beat ${n}: faceoff shows ${c.who}, but the narration doesn't name them`);
+      allText.push(String(f.name || ''), String(f.meta || ''));
+      if (words(f.name || '') > 4 || words(f.meta || '') > 4) fail(`beat ${n}: faceoff label over 4 words`);
+    });
     if (!s || !CODE_SCENES.has(s.type) || s.type === 'clip') fail(`beat ${n}: scene type "${s?.type}" is not a drawn scene`);
     for (const k of TEXT_KEYS) if (s[k] != null) {
       allText.push(String(s[k]));
@@ -96,9 +109,16 @@ if (fs.existsSync(filmFile)) {
     if (!film.graphics.some((g) => g.at <= s + 0.5 && g.at + g.dur >= s + 0.5)) { fail(`uncovered second at ${s}s`); break; }
   }
   // a clip slowed past MIN_RATE looks broken, and one that runs out loops visibly
+  const spans = {};
   film.graphics.filter((g) => g.type === 'clip').forEach((g) => {
-    if (g.rate < MIN_RATE) fail(`clip ${g.clip} at ${g.at}s plays at ${g.rate}x to fill ${g.dur}s — split the beat or use a longer clip`);
-    if (g.offset + g.dur * g.rate > g.clipDur + 0.05) fail(`clip ${g.clip} at ${g.at}s runs past its end and would loop`);
+    if (g.rate < (g.minRate ?? MIN_RATE)) fail(`clip ${g.clip} at ${g.at}s plays at ${g.rate}x to fill ${g.dur}s — split the beat or use a longer clip`);
+    // the trailing 0.25s overlap is a crossfade, not new source frames
+    const end = g.offset + (g.dur - 0.25) * g.rate;
+    if (end > g.clipDur + 0.05) fail(`clip ${g.clip} at ${g.at}s runs past its end and would loop`);
+    (spans[g.clip] ||= []).forEach(([a, z]) => {
+      if (g.offset < z - 0.05 && end > a + 0.05) fail(`clip ${g.clip} at ${g.at}s replays source ${a.toFixed(2)}–${z.toFixed(2)}s (no frame twice)`);
+    });
+    spans[g.clip].push([g.offset, end]);
   });
   const clipTime = film.graphics.filter((g) => g.type === 'clip').reduce((n, g) => n + g.dur, 0);
   if (usedClips.size && clipTime / film.duration < 0.5) warn(`clips cover only ${Math.round(100 * clipTime / film.duration)}% of the film`);

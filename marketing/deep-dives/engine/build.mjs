@@ -9,7 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { ROOT, FFMPEG, rel, loadEpisode, cardArtPath, loadLibrary, beatShots } from './lib.mjs';
+import { ROOT, FFMPEG, rel, loadEpisode, cardArtPath, loadLibrary, beatShots, clipFrame } from './lib.mjs';
 
 const epDir = path.resolve(process.argv[2] || '.');
 const ep = loadEpisode(epDir);
@@ -71,6 +71,9 @@ beats.forEach((b, i) => {
     if (s.type === 'card') { s.src = '/' + rel(cardArtPath(ep)); s.name = s.name || ep.card.title.toUpperCase(); s.meta = s.meta || P.nation.toUpperCase(); }
     if (s.type === 'cardwall' || s.type === 'drift') s.srcs = s.srcs || album;
     if (s.type === 'phone') s.srcs = ['/' + rel(cardArtPath(ep)), ...album];
+    // face panels: stills from the approved portrait clips (crop keeps kit logos out)
+    if (s.type === 'faceoff') s.faces = s.faces.map((f, j) => ({ ...f,
+      src: '/' + rel(clipFrame(LIB[f.clip], f.t, f.crop, path.join(epDir, 'build/faces', `b${i + 1}_${j}.png`))) }));
     return s;
   };
   // a beat is a run of shots: library clips (optionally with a drawn overlay) and drawn scenes
@@ -81,10 +84,12 @@ beats.forEach((b, i) => {
     if (shot.clip) {
       const c = LIB[shot.clip];
       if (!c) throw new Error(`beat ${i + 1}: clip "${shot.clip}" is not in library/clips.json`);
-      // play at real speed when the clip is long enough, else slow it just enough to fill the shot
-      const rate = shot.rate ?? Math.min(1, (c.dur - (shot.offset || 0) - 0.1) / D);
+      // play at real speed when the clip is long enough, else slow it just enough to fill
+      // the shot; `until` ends a segment early so the rest of the clip can play elsewhere
+      const end = shot.until ?? c.dur - 0.1;
+      const rate = shot.rate ?? Math.min(1, (end - (shot.offset || 0)) / D);
       G({ at: AT, dur: D, type: 'clip', clip: shot.clip, src: '/' + c.src, rate: +rate.toFixed(3), offset: shot.offset || 0,
-        clipDur: c.dur, vertical: c.h > c.w, aspect: +(c.w / c.h).toFixed(4), blur: c.blur, dim: shot.over ? 0.42 : 0, tag: shot.tag, k: i + k });
+        clipDur: c.dur, minRate: c.minRate, vertical: c.h > c.w, aspect: +(c.w / c.h).toFixed(4), blur: c.blur, dim: shot.over ? 0.42 : 0, tag: shot.tag, k: i + k });
       if (k === 0) hit('whoosh', at, 0.18);
       if (shot.over) {
         const o = enrich(shot.over);

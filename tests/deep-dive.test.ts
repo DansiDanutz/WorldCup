@@ -12,18 +12,18 @@ import { DEEP_DIVE_CARDS } from "@/lib/legend-card-registry";
 // and a card that really unlocks.
 
 const EPISODES = "marketing/deep-dives/episodes";
-const LIBRARY: Record<string, { src: string; url: string | null; who: string | null; dur: number }> = JSON.parse(
+const LIBRARY: Record<string, { src: string; url: string | null; who: string | null; faces: string; dur: number }> = JSON.parse(
   readFileSync("marketing/deep-dives/library/clips.json", "utf8"),
 );
 const CODE_SCENES = new Set([
   "date", "nameplate", "title", "chapter", "kinetic", "stadium", "route", "stat", "impact", "artifact",
-  "timeline", "jersey", "pitch", "cardwall", "versus", "clock", "ballnet", "card", "phone", "heartbeat",
+  "timeline", "jersey", "pitch", "cardwall", "versus", "clock", "ballnet", "card", "phone", "heartbeat", "faceoff",
 ]);
 const BANNED = /\b(odds|bets?|betting|wager|stakes?|jackpot|bookmaker|coefficients?|prize money|cash prizes?|win money|payout)\b/i;
 const words = (s: unknown) => String(s).trim().split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
 
 type Scene = Record<string, unknown> & { type: string; words?: { w: string }[] };
-type Shot = { clip?: string; tag?: string; over?: Scene; scene?: Scene; w?: number };
+type Shot = { clip?: string; tag?: string; over?: Scene; scene?: Scene; w?: number; offset?: number };
 type Episode = {
   number: number;
   slug: string;
@@ -33,6 +33,7 @@ type Episode = {
   card: { id: string; title: string; story: string };
   beats: { vo: string; scene?: Scene | Scene[]; shots?: Shot[] }[];
   sources: { claim: string; url: string }[];
+  people?: Record<string, string | null>;
 };
 
 // mirrors engine/lib.mjs beatShots(): a beat is a list of shots, or the older scene form
@@ -61,14 +62,25 @@ describe("Did You Know? Deep Dives", () => {
       assert.ok(ep.sources.filter((s) => /^https:\/\//.test(s.url)).length >= 3, "needs at least 3 cited sources");
 
       const text: string[] = [ep.title, ep.thumbnail.hook, ep.card.title, ep.card.story];
-      const clips = new Set<string>();
+      const clips = new Map<string, number | undefined>();
       for (const beat of ep.beats) {
         text.push(beat.vo);
+        // identity law: a face on screen must be the person the narration names
+        const named = Object.entries(ep.people ?? {})
+          .filter(([name]) => beat.vo.toLowerCase().includes(name.toLowerCase()))
+          .map(([name, who]) => who ?? `unapproved:${name}`);
         for (const shot of shotsOf(beat)) {
           if (shot.clip) {
-            assert.ok(LIBRARY[shot.clip], `clip "${shot.clip}" is not in the library`);
-            assert.ok(!clips.has(shot.clip), `clip "${shot.clip}" plays twice (no-repeat rule)`);
-            clips.add(shot.clip);
+            const clip = LIBRARY[shot.clip];
+            assert.ok(clip, `clip "${shot.clip}" is not in the library`);
+            // once — or as segments with their own offsets (preflight checks no frame repeats)
+            assert.ok(!clips.has(shot.clip) || (shot.offset != null && clips.get(shot.clip) != null),
+              `clip "${shot.clip}" plays twice (no-repeat rule)`);
+            clips.set(shot.clip, shot.offset);
+            if (clip.who) assert.ok(named.includes(clip.who), `"${shot.clip}" shows ${clip.who} but the narration doesn't name them`);
+            if (clip.faces === "player" && !clip.who) {
+              assert.equal(named.length, 0, `"${shot.clip}" shows an unnamed player while the narration names ${named.join(", ")}`);
+            }
             if (shot.tag != null) {
               text.push(shot.tag);
               assert.ok(words(shot.tag) <= 4, `tag "${shot.tag}" is a sentence`);
@@ -80,6 +92,10 @@ describe("Did You Know? Deep Dives", () => {
             continue;
           }
           assert.ok(CODE_SCENES.has(scene.type), `scene "${scene.type}" is not a drawn scene`);
+          for (const face of (scene.faces as { clip: string }[] | undefined) ?? []) {
+            const who = LIBRARY[face.clip]?.who;
+            assert.ok(who && named.includes(who), `faceoff panel "${face.clip}" is not an approved, named face`);
+          }
           for (const key of ["label", "title", "text", "sub", "meta", "name", "stat"]) {
             if (scene[key] != null) {
               text.push(String(scene[key]));
@@ -106,6 +122,7 @@ describe("Did You Know? Deep Dives", () => {
       // MP4s are gitignored: each needs a CDN URL, or must be a file tracked in the repo
       assert.ok(clip.url ? /^https:\/\//.test(clip.url) : existsSync(clip.src), `${alias} has no source`);
       assert.ok(clip.dur > 1, `${alias} has no duration`);
+      assert.match(clip.faces, /^(none|crowd|player)$/, `${alias} must say what faces it shows`);
     }
   });
 

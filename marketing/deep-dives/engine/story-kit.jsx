@@ -479,6 +479,40 @@ function ClipShot({ from, dur, src, rate = 1, offset = 0, vertical, aspect = 16 
   );
 }
 
+// FaceOff — the approved portraits side by side (stills from library clips whose
+// `who` is that player), name + meta under each, a VS spark between. Drifts apart
+// slowly so it is never a frozen slate.
+function FaceOff({ from, dur, faces = [] }) {
+  const w = useWindow(from, dur, 0.4); if (!w) return null;
+  const { lt, out } = w;
+  const p = skBack(skClamp(lt / 0.9, 0, 1)), drift = lt * 6;
+  const vs = skEase(skClamp((lt - 0.6) / 0.5, 0, 1));
+  return (
+    <div style={{ position: 'absolute', inset: 0, opacity: out, zIndex: 8, background: '#05070c' }}>
+      {faces.map((f, i) => (
+        <div key={i} style={{ position: 'absolute', top: 0, bottom: 0, width: '50%', left: i ? '50%' : 0, overflow: 'hidden',
+          transform: `translateX(${(i ? 1 : -1) * ((1 - p) * 300 + drift)}px)` }}>
+          <img src={f.src} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+            objectPosition: '50% 22%', transform: `scale(${1.04 + lt * 0.012})` }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(5,7,12,.9) 0%, rgba(5,7,12,0) 45%)' }} />
+          <div style={{ position: 'absolute', left: 0, right: 0, bottom: 150, textAlign: 'center',
+            opacity: skEase(skClamp((lt - 0.5) / 0.6, 0, 1)) }}>
+            <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 88, color: SK.text, letterSpacing: '-.01em',
+              textShadow: '0 8px 30px rgba(0,0,0,.9)' }}>{f.name}</div>
+            {f.meta ? <div style={{ marginTop: 10, fontFamily: FONT, fontWeight: 800, fontSize: 32, letterSpacing: '.4em',
+              color: SK.gold }}>{f.meta}</div> : null}
+          </div>
+        </div>
+      ))}
+      <div style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: 6, marginLeft: -3, background: SK.gold,
+        transform: `scaleY(${p})`, boxShadow: `0 0 40px ${SK.gold}` }} />
+      <div style={{ position: 'absolute', left: '50%', top: '42%', width: 170, height: 170, marginLeft: -85, borderRadius: '50%',
+        background: SK.gold, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT, fontWeight: 900,
+        fontSize: 72, color: '#1a1405', transform: `scale(${vs})`, boxShadow: `0 0 80px ${SK.gold}aa` }}>VS</div>
+    </div>
+  );
+}
+
 // CornerBug — persistent player name + "DID YOU KNOW?" in the corner (a name
 // label, allowed by rule #10), so every frame says who the episode is about.
 function CornerBug({ from, dur, name, number, colors }) {
@@ -500,5 +534,5 @@ function CornerBug({ from, dur, name, number, colors }) {
 
 Object.assign(window.MotionKit || (window.MotionKit = {}), {
   PlayerTitle, Jersey, StatCounter, RouteMap, TacticalPitch, Artifact, VersusBars,
-  Heartbeat, DateFlip, ChapterMark, CornerBug, ClipShot, ShirtSVG, SK,
+  Heartbeat, DateFlip, ChapterMark, CornerBug, ClipShot, FaceOff, ShirtSVG, SK,
 });

@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 export const ENGINE = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.resolve(ENGINE, '../../..');
@@ -43,5 +44,26 @@ export function beatShots(beat) {
 }
 // the drawn scenes of a beat: standalone scenes plus overlays on clips
 export const beatScenes = (beat) => beatShots(beat).flatMap((s) => (s.scene ? [s.scene] : s.over ? [s.over] : []));
-// slowest we let a clip play to fill its shot before it would loop
+// slowest we let a clip play to fill its shot (a clip may set its own `minRate`)
 export const MIN_RATE = 0.5;
+
+// IDENTITY LAW (owner, 13 Oct 2026: "how can you add images that don't look like Messi
+// and Yamal in a video about Messi and Yamal?"). A real person appears ONLY through a
+// library clip whose `who` is that person (owner-approved). Every other clip either
+// shows no identifiable face (`faces: none|crowd`) or, if it shows a player
+// (`faces: player`, who null), may only run while the narration names nobody.
+// episode.json `people` maps each spoken name to its `who` key (or null when we have
+// no approved likeness). Returns the who-keys a beat's VO names.
+export function namedIn(ep, vo) {
+  return Object.entries(ep.people || {}).filter(([name]) => vo.toLowerCase().includes(name.toLowerCase()))
+    .map(([name, who]) => who || `unapproved:${name}`);
+}
+
+// a still from a library clip (a face panel or the thumbnail), cropped as fractions
+export function clipFrame(clip, t, crop, out) {
+  const [x, y, w, h] = crop || [0, 0, 1, 1];
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  execFileSync(FFMPEG, ['-y', '-loglevel', 'error', '-ss', String(t || 0), '-i', path.join(ROOT, clip.src), '-frames:v', '1',
+    '-vf', `crop=iw*${w}:ih*${h}:iw*${x}:ih*${y}`, out]);
+  return out;
+}

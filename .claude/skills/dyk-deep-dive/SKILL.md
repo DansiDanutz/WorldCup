@@ -27,7 +27,7 @@ Owner's verdict on the first code-only cut: *"I don't like how it looks. It's a 
 video — you need to add interaction. Nothing impressive, no story."* So:
 
 - **Most of the film is moving football**: players, duels, saves, goals, fans, stadiums.
-  Ep1 runs 49 clip shots over ~70% of the runtime; drawn scenes are for what no footage
+  Ep1 runs ~50 clip shots over ~70% of the runtime; drawn scenes are for what no footage
   can show (the 2007 raffle map, a polaroid, a number counting up, the card, the phone).
 - **Library first, no new spend.** Clips come only from `marketing/deep-dives/library/clips.json`
   — paid Higgsfield generations we already own (the account history holds 2,000+:
@@ -35,10 +35,23 @@ video — you need to add interaction. Nothing impressive, no story."* So:
   candidates, LOOK at them). Add a clip by alias with its `higgsfield` id, CDN `url`,
   `who` it shows, `dur`, `w`/`h`. The MP4s are gitignored; `node library/fetch.mjs`
   restores them.
-- **Faces only when the clip IS that person.** `who` records it (`messi`, `yamal`, …).
-  Never let the VO name a player over a clip of someone else (the documentary skill's
-  identity law). Generic players/fans/stadiums have `who: null` and can illustrate
-  anything that doesn't claim an identity.
+- **IDENTITY LAW — a face only when the clip IS that person.** Owner, after the second
+  cut: *"How can you add images that don't look like Messi and Yamal in a video with
+  Messi and Yamal as the subject?"* Generated "Argentina #10" / "Spain #19" players are
+  look-alikes, not likenesses, and are banned. The library tags every clip:
+  - `who` — set ONLY for owner-approved likenesses (today: `messi-pixar-portrait`,
+    `yamal-pixar-portrait`, the two Pixar portraits the owner chose). Such a clip may
+    run only in a beat whose narration names that person.
+  - `faces` — `none` (stadiums, boots, ball, net, silhouettes), `crowd` (anonymous
+    fans) or `player` (a generic identifiable player). A `player` clip may run only
+    while the narration names nobody.
+  - episode.json `people` maps every name the VO speaks to its `who` (or null = no
+    approved likeness → faceless shots only). Preflight and CI enforce all of this.
+  - With only one short clip per star, cut it into **segments** (`offset`/`until`,
+    `minRate` 0.3 for slow portraits); preflight fails if any source frame repeats.
+    The `faceoff` scene puts stills of both approved portraits side by side.
+  - A new star needs an approved likeness first (ask the owner) — until then, tell
+    their story with faceless footage, drawn scenes and the album card.
 - **Every clip once** (rule #11) and **never looped**: a shot slower than 0.5× or longer
   than its clip fails preflight — split the beat into more shots instead.
 - **Blur logos** (monetization rule #0/#5): close-ups showing a kit-maker logo or
@@ -156,3 +169,4 @@ worldcup26.world.
 | Academy-era shirt showing the current number | `number: ''` for past-era shirts |
 | "PICK 3 · FREE" on the phone end card | the game is retired: `COLLECT · FREE` |
 | Code-only cut: "nothing impressive, no story" | footage-led (≥60% clips), a story with stakes, a mirror and a payoff — not a fact list |
+| Look-alike "Messi"/"Yamal" players in the cut | only `who`-approved clips show a named person; everything else faceless |

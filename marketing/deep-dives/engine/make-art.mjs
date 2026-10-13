@@ -5,9 +5,8 @@
 // library clip (crop as fractions; keep kit logos and crests out of the crop).
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
-import { ENGINE, ROOT, FFMPEG, loadEpisode, cardArtPath, loadLibrary } from './lib.mjs';
+import { ENGINE, loadEpisode, cardArtPath, loadLibrary, clipFrame } from './lib.mjs';
 
 const epDir = path.resolve(process.argv[2] || '.');
 const ep = loadEpisode(epDir);
@@ -16,12 +15,8 @@ const LIB = loadLibrary();
 const faces = (ep.thumbnail.faces || []).map((f, i) => {
   const c = LIB[f.clip];
   if (!c) throw new Error(`thumbnail face clip "${f.clip}" is not in the library`);
-  const [x, y, w, h] = f.crop || [0, 0, 1, 1];
-  const out = path.join(epDir, 'build', `thumb_face_${i}.png`);
-  fs.mkdirSync(path.dirname(out), { recursive: true });
-  execFileSync(FFMPEG, ['-y', '-loglevel', 'error', '-ss', String(f.t || 0), '-i', path.join(ROOT, c.src), '-frames:v', '1',
-    '-vf', `crop=iw*${w}:ih*${h}:iw*${x}:ih*${y}`, out]);
-  return 'file://' + out;
+  if (!c.who) throw new Error(`thumbnail face clip "${f.clip}" has no approved identity (who)`);
+  return 'file://' + clipFrame(c, f.t, f.crop, path.join(epDir, 'build', `thumb_face_${i}.png`));
 });
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 
