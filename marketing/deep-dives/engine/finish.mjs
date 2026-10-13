@@ -40,9 +40,16 @@ for (const at of [3, film.duration * 0.25, film.duration * 0.5, film.duration * 
   const p = path.join(qa, `t${Math.round(at)}.jpg`);
   spawnSync(FFMPEG, ['-y', '-loglevel', 'error', '-ss', String(at), '-i', OUT, '-frames:v', '1', '-q:v', '2', p]);
   const kb = Math.round(fs.statSync(p).size / 1024);
-  if (kb <= 60) bad++;
-  console.log(`  ${String(Math.round(at)).padStart(4)}s  ${String(kb).padStart(4)} KB  ${kb > 60 ? 'ok' : 'SUSPECT (flat/black?)'}`);
+  // Deep Dives are typography on near-black, so honest frames compress to ~45-110 KB;
+  // a genuinely black or empty frame is a few KB. 20 KB separates the two.
+  if (kb <= 20) bad++;
+  console.log(`  ${String(Math.round(at)).padStart(4)}s  ${String(kb).padStart(4)} KB  ${kb > 20 ? 'ok' : 'SUSPECT (black/empty?)'}`);
 }
 if (bad) { console.error('QA: suspect frames — inspect build/qa before delivering'); process.exit(1); }
 fs.rmSync(video);
+// A 720p copy for delivery: chat/file sends cap at 30 MB, the 1080p master is ~35-40 MB.
+const SMALL = OUT.replace('.mp4', '_720p.mp4');
+execFileSync(FFMPEG, ['-y', '-loglevel', 'error', '-i', OUT, '-vf', 'scale=1280:720', '-c:v', 'libx264',
+  '-preset', 'slow', '-crf', '26', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', SMALL], { stdio: 'inherit' });
+console.log(`720p copy: ${(fs.statSync(SMALL).size / 1048576).toFixed(1)} MB -> ${path.basename(SMALL)}`);
 console.log('\nDONE ->', OUT);
