@@ -35,7 +35,9 @@ async function gh(path, init = {}) {
   return res.json();
 }
 
-const file = await gh(`repos/${REPO}/contents/${EP}/episode.json?ref=${encodeURIComponent(BRANCH)}`);
+// Pin the script to one commit: the audio must match exactly the narration it was made from.
+const pinned = (await gh(`repos/${REPO}/git/ref/heads/${BRANCH}`)).object.sha;
+const file = await gh(`repos/${REPO}/contents/${EP}/episode.json?ref=${pinned}`);
 const ep = JSON.parse(Buffer.from(file.content, 'base64').toString('utf8'));
 const texts = ep.beats.map((b) => b.vo.trim());
 console.log(`${ep.slug}: ${texts.length} beats, ${texts.join(' ').split(/\s+/).length} words`);
@@ -70,8 +72,16 @@ for (let i = 0; i < texts.length; i++) {
   console.log(`vo  ${name}  ${(audio.length / 1024).toFixed(0)} KB`);
 }
 
-// one commit on top of the branch head
+// one commit on top of the branch head — but only if the narration hasn't changed since we
+// read it (build.mjs pairs audio with beats by file name, so stale audio would mis-speak)
 const ref = await gh(`repos/${REPO}/git/ref/heads/${BRANCH}`);
+if (ref.object.sha !== pinned) {
+  const now = await gh(`repos/${REPO}/contents/${EP}/episode.json?ref=${ref.object.sha}`);
+  if (now.sha !== file.sha) {
+    console.error(`episode.json changed on ${BRANCH} while the VO was being made (${pinned.slice(0, 7)} -> ${ref.object.sha.slice(0, 7)}). Nothing pushed; run again.`);
+    process.exit(1);
+  }
+}
 const head = await gh(`repos/${REPO}/git/commits/${ref.object.sha}`);
 const newTree = await gh(`repos/${REPO}/git/trees`, { method: 'POST', body: JSON.stringify({ base_tree: head.tree.sha, tree }) });
 const commit = await gh(`repos/${REPO}/git/commits`, {
