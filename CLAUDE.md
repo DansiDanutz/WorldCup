@@ -378,6 +378,15 @@ scrape `POST https://api.firecrawl.dev/v1/scrape` — header `Authorization: Bea
   sourced story there. **Owner-requested addition: Carlos "Kaiser" Raposo — "the greatest footballer
   never to play football" (DC-6, added 2026-06-29).**
 
+## "Did You Know?" Deep Dives — the current daily series (Oct 2026)
+
+5-minute stories about **famous, searchable players** (Messi, Yamal, Mbappé, Haaland…),
+one verified secret each, **every visual drawn in code — no Higgsfield, no faces**, Brian
+VO, and one new legend card per episode that unlocks by watching it. One episode per
+day from the queue in `marketing/deep-dives/plan.json`. Mandatory reading before any
+Deep Dive work: **`.claude/skills/dyk-deep-dive/SKILL.md`** (plan:
+`content/youtube/DEEP_DIVE_PLAN.md`).
+
 ## Player drama films — "WorldCup26 Bonus" (naming standard)
 
 Standalone player-life films (a player's path from nobody to idol — the drama of

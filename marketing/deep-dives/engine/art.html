@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Deep Dive art</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; background: #05070c; }
+  #art { position: relative; overflow: hidden; font-family: "Inter", sans-serif; }
+  .layer { position: absolute; inset: 0; }
+</style>
+</head>
+<body>
+<div id="art"></div>
+<script>
+// Card art (1080x1920, the album's portrait shape) and the YouTube thumbnail
+// (1280x720) for a Deep Dive episode, drawn entirely in code.
+// LAW: no faces. The player is the back of their shirt — name + number — under
+// floodlights in national colours. The only words are the name, the number and,
+// on the thumbnail, a hook of four words or fewer.
+const A = window.__ART || { mode: 'card', name: 'YAMAL', number: 19, colors: ['#c60b1e', '#ffc400'], hook: 'MESSI BATHED HIM', motif: 'polaroid' };
+const [c1, c2] = A.colors;
+
+function shirt(w, name, number) {
+  const fs = name.length > 9 ? 30 : name.length > 6 ? 36 : 42;
+  return `<svg width="${w}" height="${w * 1.05}" viewBox="0 0 400 420">
+    <defs>
+      <linearGradient id="sg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c1}" stop-opacity=".78"/>
+      </linearGradient>
+      <linearGradient id="fold" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset=".22" stop-color="#000" stop-opacity="0"/>
+        <stop offset=".78" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".32"/>
+      </linearGradient>
+    </defs>
+    <path d="M120 20 L160 8 Q200 34 240 8 L280 20 L388 78 L350 170 L310 152 L310 412 L90 412 L90 152 L50 170 L12 78 Z" fill="url(#sg)"/>
+    <path d="M120 20 L160 8 Q200 34 240 8 L280 20 L388 78 L350 170 L310 152 L310 412 L90 412 L90 152 L50 170 L12 78 Z" fill="url(#fold)"/>
+    <path d="M160 8 Q200 34 240 8" fill="none" stroke="${c2}" stroke-width="10"/>
+    <path d="M12 78 L50 170 M388 78 L350 170" stroke="${c2}" stroke-width="8"/>
+    <text x="200" y="128" text-anchor="middle" font-family="Inter" font-weight="900" font-size="${fs}" letter-spacing="3" fill="${c2}">${name.toUpperCase()}</text>
+    <text x="200" y="305" text-anchor="middle" font-family="Inter" font-weight="900" font-size="175" fill="${c2}" stroke="rgba(0,0,0,.25)" stroke-width="3">${number}</text>
+  </svg>`;
+}
+
+function stadium(W, H) {
+  const lights = [0.08, 0.92].map((x) => `
+    <div class="layer" style="background: radial-gradient(${W * 0.32}px ${H * 0.2}px at ${x * 100}% 14%, rgba(255,247,220,.9) 0%, rgba(255,230,160,.25) 22%, transparent 60%)"></div>`).join('');
+  const crowd = Array.from({ length: 220 }, (_, i) => {
+    const x = ((i * 2654435761) % 1000) / 1000 * W, y = H * 0.4 + ((i * 1597334677) % 1000) / 1000 * H * 0.16;
+    return `<div style="position:absolute;left:${x}px;top:${y}px;width:4px;height:4px;border-radius:50%;background:rgba(255,${180 + (i % 60)},120,${0.08 + (i % 7) * 0.025})"></div>`;
+  }).join('');
+  return `
+    <div class="layer" style="background: linear-gradient(180deg, #0b1424 0%, #0a1220 45%, #0c2a1c 62%, #0a1f15 100%)"></div>
+    <div class="layer" style="background: radial-gradient(${W}px ${H * 0.55}px at 50% 46%, ${c1}55 0%, transparent 65%)"></div>
+    ${lights}${crowd}
+    <div class="layer" style="top:62%; background: repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 ${W / 10}px, transparent ${W / 10}px ${W / 5}px)"></div>
+    <div class="layer" style="background: linear-gradient(0deg, rgba(0,0,0,.65) 0%, transparent 35%), radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,.6) 100%)"></div>`;
+}
+
+const root = document.getElementById('art');
+if (A.mode === 'card') {
+  const W = 1080, H = 1920;
+  root.style.width = W + 'px'; root.style.height = H + 'px';
+  root.innerHTML = `${stadium(W, H)}
+    <div class="layer" style="display:flex;align-items:center;justify-content:center;padding-top:240px">
+      <div style="filter: drop-shadow(0 60px 80px rgba(0,0,0,.8)) drop-shadow(0 0 120px ${c1}66)">${shirt(840, A.name, A.number)}</div>
+    </div>
+    <div class="layer" style="border: 14px solid ${'#ffd24a'}; border-radius: 40px; box-shadow: inset 0 0 0 4px rgba(0,0,0,.4), inset 0 0 120px rgba(255,210,74,.18)"></div>`;
+} else {
+  const W = 1280, H = 720;
+  root.style.width = W + 'px'; root.style.height = H + 'px';
+  const words = A.hook.split(' ');
+  root.innerHTML = `${stadium(W, H)}
+    <div class="layer" style="display:flex;align-items:center;justify-content:flex-end;padding-right:40px">
+      <div style="transform: rotate(4deg); filter: drop-shadow(0 30px 50px rgba(0,0,0,.85)) drop-shadow(0 0 80px ${c1}88)">${shirt(560, A.name, A.number)}</div>
+    </div>
+    <div class="layer" style="background: linear-gradient(90deg, rgba(5,7,12,.92) 0%, rgba(5,7,12,.75) 42%, transparent 62%)"></div>
+    <div class="layer" style="padding: 70px 60px; display:flex; flex-direction:column; justify-content:center; gap: 6px">
+      <div style="align-self:flex-start;background:#ffd24a;color:#1a1405;font-weight:900;font-size:30px;letter-spacing:.14em;padding:10px 20px;border-radius:10px">DID YOU KNOW?</div>
+      ${words.map((w, i) => `<div style="font-weight:900;font-size:${words.length > 3 ? 104 : 124}px;line-height:.95;color:${i === words.length - 1 ? '#ffd24a' : '#fff'};text-shadow:0 8px 30px rgba(0,0,0,.9);letter-spacing:-.01em">${w}</div>`).join('')}
+    </div>`;
+}
+window.__artReady = true;
+</script>
+</body>
+</html>

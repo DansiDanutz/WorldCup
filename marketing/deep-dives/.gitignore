@@ -1,0 +1,5 @@
+engine/node_modules/
+engine/music/
+episodes/*/build/
+episodes/*/output/*
+!episodes/*/output/thumbnail.jpg
