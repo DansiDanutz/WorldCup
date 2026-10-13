@@ -1,6 +1,6 @@
 # UPLOAD KIT — Did You Know? Ep.1: Lamine Yamal
 
-**File:** `output/DidYouKnow_01_Lamine_Yamal.mp4` · 5:05 · 1920x1080 · H.264 + AAC
+**File:** `output/DidYouKnow_01_Lamine_Yamal.mp4` · 4:54 · 1920x1080 · H.264 + AAC
 **Thumbnail:** `output/thumbnail.jpg` (1280x720, hook: "MESSI BATHED HIM")
 **Card:** `public/legend-cards/deep-dive/01-yamal-messi-bath-photo.png` → goes live in the album once this video's link is known
 
@@ -15,10 +15,10 @@ In 2007 a shy twenty-year-old Lionel Messi bathed a baby from Rocafonda for a ch
 
 0:00 The Bath Photo
 0:33 The Raffle
-1:27 The Photo
-2:14 The Boy From 304
-3:32 The Final
-4:48 Collect the card
+1:26 The Photo
+2:11 The Boy From 304
+3:27 The Final
+4:38 Collect the card
 
 COLLECT THE CARD
 "The Bath Photo" is a legendary card at worldcup26.world. Watch this story to the

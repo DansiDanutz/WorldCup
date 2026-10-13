@@ -3,35 +3,188 @@
   "cadence": "one episode per day, built in queue order",
   "statuses": "planned -> scripted (episode.json + preview, no VO yet) -> built (final MP4) -> published (card live in the app)",
   "episodes": [
-    { "number": 1, "slug": "01-yamal-messi-bath-photo", "player": "Lamine Yamal", "nation": "Spain", "shirt": 19, "colors": ["#c60b1e", "#ffc400"],
-      "hook": "Messi bathed baby Yamal for a 2007 charity calendar; 19 years later they met in the World Cup final.", "thumb": "MESSI BATHED HIM", "status": "scripted" },
-    { "number": 2, "slug": "02-messi-napkin-contract", "player": "Lionel Messi", "nation": "Argentina", "shirt": 10, "colors": ["#6cace4", "#0b2a5b"],
-      "hook": "Barcelona signed 13-year-old Messi on a restaurant napkin (14 Dec 2000) because his family needed the club to fund his growth-hormone treatment; the napkin sold for £762,400 in 2024.", "thumb": "SIGNED ON A NAPKIN", "status": "planned",
-      "sources": ["https://www.foxsports.com/stories/soccer/barca-inked-messi-agreement-on-napkin", "https://www.si.com/soccer/2012/02/06/barca-extract"] },
-    { "number": 3, "slug": "03-rodri-student-golden-ball", "player": "Rodri", "nation": "Spain", "shirt": 16, "colors": ["#c60b1e", "#ffc400"],
-      "hook": "The Ballon d'Or winner who kept living in a university hall of residence and finished a business degree — then won the 2026 Golden Ball without scoring a goal.", "thumb": "ZERO GOALS. BEST PLAYER.", "status": "planned",
-      "sources": ["https://www.fcbarcelona.com/en/news/4561492/10-things-about-rodri", "https://www.mancity.com/news/mens/manchester-city-midfielder-rodrigo-university-was-the-best-time-of-my-life-63799526", "https://www.sofascore.com/news/rodri-crowned-world-cup-2026-golden-ball-after-final-masterclass"] },
-    { "number": 4, "slug": "04-mbappe-gave-it-away", "player": "Kylian Mbappé", "nation": "France", "shirt": 10, "colors": ["#1f3a93", "#ffffff"],
-      "hook": "Mbappé gave his whole 2018 World Cup pay and winner's bonus to Premiers de Cordée, a charity for disabled children — and won the 2026 Golden Boot.", "thumb": "HE GAVE IT AWAY", "status": "planned",
-      "sources": ["https://www.cbsnews.com/amp/news/france-star-kylain-mbappe-donates-fifa-world-cup-earnings-to-childrens-charity-ninon-barel-premiers-de-cordee", "https://www.irishtimes.com/sport/soccer/2026/07/20/rodri-wins-world-cup-golden-ball-as-kylian-mbappe-wins-second-golden-boot/"] },
-    { "number": 5, "slug": "05-haaland-born-in-leeds", "player": "Erling Haaland", "nation": "Norway", "shirt": 9, "colors": ["#ba0c2f", "#ffffff"],
-      "hook": "Norway's striker was born in Leeds while his father played there; as a five-year-old he reportedly set an age-group standing long jump mark — and he led Norway back to a World Cup after 28 years.", "thumb": "BORN IN ENGLAND", "status": "planned",
-      "sources": ["https://en.wikipedia.org/wiki/Erling_Haaland", "https://www.mancity.com/news/mens/erling-haaland-10-things-factfile-63790703"] },
-    { "number": 6, "slug": "06-ronaldo-heart-surgery", "player": "Cristiano Ronaldo", "nation": "Portugal", "shirt": 7, "colors": ["#c8102e", "#f2c84b"],
-      "hook": "At 15, Sporting's academy found Ronaldo's heart racing at rest; a heart procedure nearly ended his career before it began.", "thumb": "HEART SURGERY AT 15", "status": "planned",
-      "sources": ["https://olympics.com/en/athletes/cristiano-ronaldo-dos-santos-aveiro", "https://sportsdigest.in/cristiano-ronaldo-heart-surgery-at-15/147701/amp/"] },
-    { "number": 7, "slug": "07-kane-too-chubby", "player": "Harry Kane", "nation": "England", "shirt": 9, "colors": ["#f4f4f4", "#0b1f4d"],
-      "hook": "Arsenal released eight-year-old Harry Kane — their academy director later admitted he was 'a bit chubby' and they made a mistake.", "thumb": "TOO CHUBBY FOR ARSENAL", "status": "planned",
-      "sources": ["https://www.nbcsports.com/soccer/news/why-did-arsenal-release-harry-kane", "https://www.si.com/soccer/2019/02/23/harry-kane-reveals-arsenal-release-youngster-fuelled-his-ambition-be-best"] },
-    { "number": 8, "slug": "08-salah-ten-hours-a-day", "player": "Mohamed Salah", "nation": "Egypt", "shirt": 10, "colors": ["#c8102e", "#ffffff"],
-      "hook": "At 14, Salah spent close to ten hours a day on up to five buses between his village, Nagrig, and training in Cairo.", "thumb": "10 HOURS A DAY", "status": "planned",
-      "sources": ["https://africa.espn.com/football/african-nations-cup/0/blog/post/3888180/egypt-hopes-mo-salah-can-deliver-afcon-though-his-hometownnagrigis-cheering-just-a-little-louder", "https://english.aawsat.com/node/1282676"] },
-    { "number": 9, "slug": "09-modric-refugee-hotel", "player": "Luka Modrić", "nation": "Croatia", "shirt": 10, "colors": ["#ececec", "#d10f1f"],
-      "hook": "A refugee child for seven years in Zadar's Hotel Kolovare, Modrić learned the game in the hotel car park — and became the Ballon d'Or winner who ended the Messi–Ronaldo era in 2018.", "thumb": "THE HOTEL CAR PARK", "status": "planned",
-      "sources": ["https://en.wikipedia.org/wiki/Luka_Modri%C4%87", "https://www.goal.com/story/goal502018modricen/index.html"] },
-    { "number": 10, "slug": "10-bellingham-number-retired", "player": "Jude Bellingham", "nation": "England", "shirt": 22, "colors": ["#1e5aa8", "#ffffff"],
-      "hook": "Birmingham City retired the No. 22 shirt in 2020 when Jude Bellingham was 17, after just 44 games.", "thumb": "RETIRED AT 17", "status": "planned",
-      "sources": ["https://www.eurosport.com/football/championship/2019-2020/birmingham-city-retire-jude-bellingham-s-shirt-number_sto7814269/story.shtml"] }
+    {
+      "number": 1,
+      "slug": "01-yamal-messi-bath-photo",
+      "player": "Lamine Yamal",
+      "nation": "Spain",
+      "shirt": 19,
+      "colors": [
+        "#c60b1e",
+        "#ffc400"
+      ],
+      "hook": "Messi bathed baby Yamal for a 2007 charity calendar; 19 years later they met in the World Cup final.",
+      "thumb": "MESSI BATHED HIM",
+      "status": "built"
+    },
+    {
+      "number": 2,
+      "slug": "02-messi-napkin-contract",
+      "player": "Lionel Messi",
+      "nation": "Argentina",
+      "shirt": 10,
+      "colors": [
+        "#6cace4",
+        "#0b2a5b"
+      ],
+      "hook": "Barcelona signed 13-year-old Messi on a restaurant napkin (14 Dec 2000) because his family needed the club to fund his growth-hormone treatment; the napkin sold for £762,400 in 2024.",
+      "thumb": "SIGNED ON A NAPKIN",
+      "status": "planned",
+      "sources": [
+        "https://www.foxsports.com/stories/soccer/barca-inked-messi-agreement-on-napkin",
+        "https://www.si.com/soccer/2012/02/06/barca-extract"
+      ]
+    },
+    {
+      "number": 3,
+      "slug": "03-rodri-student-golden-ball",
+      "player": "Rodri",
+      "nation": "Spain",
+      "shirt": 16,
+      "colors": [
+        "#c60b1e",
+        "#ffc400"
+      ],
+      "hook": "The Ballon d'Or winner who kept living in a university hall of residence and finished a business degree — then won the 2026 Golden Ball without scoring a goal.",
+      "thumb": "ZERO GOALS. BEST PLAYER.",
+      "status": "planned",
+      "sources": [
+        "https://www.fcbarcelona.com/en/news/4561492/10-things-about-rodri",
+        "https://www.mancity.com/news/mens/manchester-city-midfielder-rodrigo-university-was-the-best-time-of-my-life-63799526",
+        "https://www.sofascore.com/news/rodri-crowned-world-cup-2026-golden-ball-after-final-masterclass"
+      ]
+    },
+    {
+      "number": 4,
+      "slug": "04-mbappe-gave-it-away",
+      "player": "Kylian Mbappé",
+      "nation": "France",
+      "shirt": 10,
+      "colors": [
+        "#1f3a93",
+        "#ffffff"
+      ],
+      "hook": "Mbappé gave his whole 2018 World Cup pay and winner's bonus to Premiers de Cordée, a charity for disabled children — and won the 2026 Golden Boot.",
+      "thumb": "HE GAVE IT AWAY",
+      "status": "planned",
+      "sources": [
+        "https://www.cbsnews.com/amp/news/france-star-kylain-mbappe-donates-fifa-world-cup-earnings-to-childrens-charity-ninon-barel-premiers-de-cordee",
+        "https://www.irishtimes.com/sport/soccer/2026/07/20/rodri-wins-world-cup-golden-ball-as-kylian-mbappe-wins-second-golden-boot/"
+      ]
+    },
+    {
+      "number": 5,
+      "slug": "05-haaland-born-in-leeds",
+      "player": "Erling Haaland",
+      "nation": "Norway",
+      "shirt": 9,
+      "colors": [
+        "#ba0c2f",
+        "#ffffff"
+      ],
+      "hook": "Norway's striker was born in Leeds while his father played there; as a five-year-old he reportedly set an age-group standing long jump mark — and he led Norway back to a World Cup after 28 years.",
+      "thumb": "BORN IN ENGLAND",
+      "status": "planned",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Erling_Haaland",
+        "https://www.mancity.com/news/mens/erling-haaland-10-things-factfile-63790703"
+      ]
+    },
+    {
+      "number": 6,
+      "slug": "06-ronaldo-heart-surgery",
+      "player": "Cristiano Ronaldo",
+      "nation": "Portugal",
+      "shirt": 7,
+      "colors": [
+        "#c8102e",
+        "#f2c84b"
+      ],
+      "hook": "At 15, Sporting's academy found Ronaldo's heart racing at rest; a heart procedure nearly ended his career before it began.",
+      "thumb": "HEART SURGERY AT 15",
+      "status": "planned",
+      "sources": [
+        "https://olympics.com/en/athletes/cristiano-ronaldo-dos-santos-aveiro",
+        "https://sportsdigest.in/cristiano-ronaldo-heart-surgery-at-15/147701/amp/"
+      ]
+    },
+    {
+      "number": 7,
+      "slug": "07-kane-too-chubby",
+      "player": "Harry Kane",
+      "nation": "England",
+      "shirt": 9,
+      "colors": [
+        "#f4f4f4",
+        "#0b1f4d"
+      ],
+      "hook": "Arsenal released eight-year-old Harry Kane — their academy director later admitted he was 'a bit chubby' and they made a mistake.",
+      "thumb": "TOO CHUBBY FOR ARSENAL",
+      "status": "planned",
+      "sources": [
+        "https://www.nbcsports.com/soccer/news/why-did-arsenal-release-harry-kane",
+        "https://www.si.com/soccer/2019/02/23/harry-kane-reveals-arsenal-release-youngster-fuelled-his-ambition-be-best"
+      ]
+    },
+    {
+      "number": 8,
+      "slug": "08-salah-ten-hours-a-day",
+      "player": "Mohamed Salah",
+      "nation": "Egypt",
+      "shirt": 10,
+      "colors": [
+        "#c8102e",
+        "#ffffff"
+      ],
+      "hook": "At 14, Salah spent close to ten hours a day on up to five buses between his village, Nagrig, and training in Cairo.",
+      "thumb": "10 HOURS A DAY",
+      "status": "planned",
+      "sources": [
+        "https://africa.espn.com/football/african-nations-cup/0/blog/post/3888180/egypt-hopes-mo-salah-can-deliver-afcon-though-his-hometownnagrigis-cheering-just-a-little-louder",
+        "https://english.aawsat.com/node/1282676"
+      ]
+    },
+    {
+      "number": 9,
+      "slug": "09-modric-refugee-hotel",
+      "player": "Luka Modrić",
+      "nation": "Croatia",
+      "shirt": 10,
+      "colors": [
+        "#ececec",
+        "#d10f1f"
+      ],
+      "hook": "A refugee child for seven years in Zadar's Hotel Kolovare, Modrić learned the game in the hotel car park — and became the Ballon d'Or winner who ended the Messi–Ronaldo era in 2018.",
+      "thumb": "THE HOTEL CAR PARK",
+      "status": "planned",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Luka_Modri%C4%87",
+        "https://www.goal.com/story/goal502018modricen/index.html"
+      ]
+    },
+    {
+      "number": 10,
+      "slug": "10-bellingham-number-retired",
+      "player": "Jude Bellingham",
+      "nation": "England",
+      "shirt": 22,
+      "colors": [
+        "#1e5aa8",
+        "#ffffff"
+      ],
+      "hook": "Birmingham City retired the No. 22 shirt in 2020 when Jude Bellingham was 17, after just 44 games.",
+      "thumb": "RETIRED AT 17",
+      "status": "planned",
+      "sources": [
+        "https://www.eurosport.com/football/championship/2019-2020/birmingham-city-retire-jude-bellingham-s-shirt-number_sto7814269/story.shtml"
+      ]
+    }
   ],
-  "reserve": ["Neymar", "Vinícius Júnior", "Pedri", "Kevin De Bruyne", "Virgil van Dijk"]
+  "reserve": [
+    "Neymar",
+    "Vinícius Júnior",
+    "Pedri",
+    "Kevin De Bruyne",
+    "Virgil van Dijk"
+  ]
 }
