@@ -461,7 +461,8 @@
       "type": "artifact",
       "kind": "polaroid",
       "date": "2007",
-      "title": "CAMP NOU"
+      "title": "CAMP NOU",
+      "art": "bath"
      }
     }
    ]
@@ -644,7 +645,8 @@
       "type": "artifact",
       "kind": "polaroid",
       "date": "2024",
-      "title": "POSTED ONLINE"
+      "title": "POSTED ONLINE",
+      "art": "bath"
      }
     }
    ]

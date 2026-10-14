@@ -263,7 +263,83 @@ function TacticalPitch({ from, dur, frames, label, homeColor = SK.gold, awayColo
 // Artifact — a designed object from the story: a napkin, a photo, a ticket, a
 // shirt frame. Handwriting is drawn as abstract strokes (not legible sentences);
 // only the date and a ≤4-word title are real text.
-function Artifact({ from, dur, kind = 'napkin', title, date, accent = SK.gold }) {
+// BathSketch — our own drawing of the 2007 calendar shoot (the real AP photo is not ours
+// to use): a small plastic tub, a baby with closed eyes, two careful adult hands. No faces
+// but the baby's, so it claims no one's likeness. `lt` animates the water; `flash` fires
+// the camera at the narration's "Click".
+function BathSketch({ lt, flash = 0 }) {
+  const ripple = (k) => 1 + 0.06 * Math.sin(lt * 1.6 + k);
+  const bubbles = [0, 1, 2, 3, 4, 5].map((i) => {
+    const t = (lt * 0.35 + skRnd(i + 11)) % 1;
+    // bubbles rise beside the baby, never across the face
+    const side = i % 2 ? 1 : -1;
+    return <circle key={i} cx={276 + side * (95 + skRnd(i + 2) * 70)} cy={360 - t * 110} r={4 + skRnd(i + 7) * 7}
+      fill="none" stroke="rgba(255,255,255,.85)" strokeWidth="2" opacity={1 - t} />;
+  });
+  return (
+    <svg viewBox="0 0 552 546" width="100%" height="100%" style={{ display: 'block' }}>
+      <defs>
+        <linearGradient id="bs-wall" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#ecd9b6" /><stop offset="1" stopColor="#caa57a" />
+        </linearGradient>
+        <radialGradient id="bs-light" cx="0.25" cy="0.15" r="0.8">
+          <stop offset="0" stopColor="rgba(255,244,220,.9)" /><stop offset="1" stopColor="rgba(255,244,220,0)" />
+        </radialGradient>
+        <linearGradient id="bs-tub" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#8cc2e0" /><stop offset="1" stopColor="#4f8fb8" />
+        </linearGradient>
+        <radialGradient id="bs-skin" cx="0.4" cy="0.35" r="0.7">
+          <stop offset="0" stopColor="#d79a68" /><stop offset="1" stopColor="#a96a3e" />
+        </radialGradient>
+        <radialGradient id="bs-vig" cx="0.5" cy="0.5" r="0.75">
+          <stop offset="0.6" stopColor="rgba(40,24,10,0)" /><stop offset="1" stopColor="rgba(40,24,10,.55)" />
+        </radialGradient>
+      </defs>
+      {/* tiled wall and the light from a window */}
+      <rect width="552" height="546" fill="url(#bs-wall)" />
+      {Array.from({ length: 9 }, (_, i) => <line key={'v' + i} x1={i * 64} y1="0" x2={i * 64} y2="330" stroke="rgba(120,90,60,.18)" strokeWidth="2" />)}
+      {Array.from({ length: 6 }, (_, i) => <line key={'h' + i} x1="0" y1={i * 64} x2="552" y2={i * 64} stroke="rgba(120,90,60,.18)" strokeWidth="2" />)}
+      <rect width="552" height="546" fill="url(#bs-light)" />
+      <rect y="420" width="552" height="126" fill="#8a6440" />
+      {/* the subject, framed close like a real snapshot */}
+      <g transform="translate(276 300) scale(1.45) translate(-276 -292)">
+        {/* the tub */}
+        <path d="M86 330 Q92 470 160 482 L392 482 Q460 470 466 330 Z" fill="url(#bs-tub)" />
+        <ellipse cx="276" cy="330" rx="190" ry="52" fill="#a9d6ee" />
+        <ellipse cx="276" cy="333" rx="172" ry="42" fill="#d8f0fa" />
+        {/* the baby: shoulders in the water, head and hands above the rim */}
+        <ellipse cx="276" cy="352" rx="78" ry="34" fill="url(#bs-skin)" />
+        <circle cx="276" cy="282" r="58" fill="url(#bs-skin)" />
+        <path d="M226 262 q6 -34 32 -32 q10 -20 30 -12 q22 -10 34 16 q6 10 6 22 q-14 -18 -32 -14 q-14 -10 -30 0 q-22 -4 -40 20 z" fill="#2b1a10" />
+        {[0, 1, 2, 3].map((i) => <circle key={i} cx={244 + i * 22} cy={236 - (i % 2) * 6} r="9" fill="#2b1a10" />)}
+        <path d="M252 288 q8 7 16 0" fill="none" stroke="#3a2214" strokeWidth="3.5" strokeLinecap="round" />
+        <path d="M284 288 q8 7 16 0" fill="none" stroke="#3a2214" strokeWidth="3.5" strokeLinecap="round" />
+        <path d="M268 308 q8 6 16 0" fill="none" stroke="#6b3a22" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="246" cy="302" r="9" fill="rgba(230,120,100,.35)" />
+        <circle cx="306" cy="302" r="9" fill="rgba(230,120,100,.35)" />
+        <ellipse cx="216" cy="334" rx="16" ry="13" fill="url(#bs-skin)" />
+        <ellipse cx="336" cy="334" rx="16" ry="13" fill="url(#bs-skin)" />
+        {/* water over the body, rippling */}
+        <ellipse cx="276" cy="356" rx={150 * ripple(0)} ry={26 * ripple(1)} fill="rgba(170,220,240,.55)" />
+        <ellipse cx="276" cy="356" rx={110 * ripple(2)} ry={16 * ripple(3)} fill="none" stroke="rgba(255,255,255,.7)" strokeWidth="2.5" />
+        {bubbles}
+      </g>
+      {/* two careful adult hands under the baby's arms: sleeves and hands only, no faces */}
+      <path d="M-40 560 Q40 470 150 418" fill="none" stroke="#1d2b44" strokeWidth="78" strokeLinecap="round" />
+      <path d="M-40 560 Q40 470 150 418" fill="none" stroke="rgba(255,255,255,.08)" strokeWidth="20" strokeLinecap="round" />
+      <ellipse cx="168" cy="400" rx="40" ry="30" transform="rotate(-28 168 400)" fill="#e3b78f" />
+      <path d="M160 378 q26 -18 44 -6" fill="none" stroke="#c99a72" strokeWidth="6" strokeLinecap="round" />
+      <path d="M592 560 Q512 470 402 418" fill="none" stroke="#1d2b44" strokeWidth="78" strokeLinecap="round" />
+      <path d="M592 560 Q512 470 402 418" fill="none" stroke="rgba(255,255,255,.08)" strokeWidth="20" strokeLinecap="round" />
+      <ellipse cx="384" cy="400" rx="40" ry="30" transform="rotate(28 384 400)" fill="#e3b78f" />
+      <path d="M392 378 q-26 -18 -44 -6" fill="none" stroke="#c99a72" strokeWidth="6" strokeLinecap="round" />
+      <rect width="552" height="546" fill="url(#bs-vig)" />
+      {flash > 0 ? <rect width="552" height="546" fill="#fff" opacity={flash} /> : null}
+    </svg>
+  );
+}
+
+function Artifact({ from, dur, kind = 'napkin', title, date, art, accent = SK.gold }) {
   const w = useWindow(from, dur); if (!w) return null;
   const { lt, out } = w;
   const p = skBack(skClamp(lt / 1.0, 0, 1));
@@ -285,8 +361,16 @@ function Artifact({ from, dur, kind = 'napkin', title, date, accent = SK.gold })
         filter: 'drop-shadow(0 40px 60px rgba(0,0,0,.7))' }}>
         {isPhoto ? (
           <div style={{ width: 620, height: 700, background: '#f7f3ea', padding: '34px 34px 120px', position: 'relative' }}>
-            <div style={{ width: '100%', height: '100%', background: `radial-gradient(circle at 40% 45%, #f3d9b0 0%, #c89a64 38%, #4a3626 100%)`,
-              filter: `blur(${18 - 10 * write}px) sepia(.5)`, opacity: 0.6 + 0.4 * write }} />
+            {art === 'bath' ? (
+              // develops like a polaroid: from a warm blur to a sharp, slightly faded print
+              <div style={{ width: '100%', height: '100%', overflow: 'hidden',
+                filter: `blur(${Math.max(0, 8 - 14 * write)}px) sepia(.28) saturate(${0.6 + 0.4 * write})`, opacity: 0.55 + 0.45 * write }}>
+                <BathSketch lt={lt} flash={skClamp(1 - Math.abs(lt - (dur - 1.4)) / 0.25, 0, 1) * 0.9} />
+              </div>
+            ) : (
+              <div style={{ width: '100%', height: '100%', background: `radial-gradient(circle at 40% 45%, #f3d9b0 0%, #c89a64 38%, #4a3626 100%)`,
+                filter: `blur(${18 - 10 * write}px) sepia(.5)`, opacity: 0.6 + 0.4 * write }} />
+            )}
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 34, textAlign: 'center', fontFamily: FONT,
               fontWeight: 800, fontSize: 40, color: SK.ink, letterSpacing: '.18em' }}>{date}</div>
           </div>
