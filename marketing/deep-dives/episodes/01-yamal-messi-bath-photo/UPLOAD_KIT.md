@@ -48,14 +48,15 @@ https://creativecommons.org/licenses/by/4.0/
 Cues: Dreams Become Real · Ascending the Vale · Fanfare for Space
 
 DISCLOSURE
-All visuals are original motion graphics. No match footage or broadcast clips are used.
+Visuals are AI-generated animation and original motion graphics. No match footage,
+broadcast clips or real photos are used. Narration is an AI voice.
 Not affiliated with, endorsed by, or associated with FIFA, any club or any player.
 "World Cup" is used descriptively to refer to the tournament.
 ```
 
 ## Tags
 ```
-Lamine Yamal, did you know football, football facts, soccer stories, world cup 2026, worldcup26, legend cards, Spain football
+Lamine Yamal, Messi, Lionel Messi, Messi Yamal, Messi bathed Yamal, Messi Yamal baby photo, Lamine Yamal baby, Yamal Messi photo, World Cup 2026 final, Spain vs Argentina, Lamine Yamal story, Messi story, did you know football, football facts, soccer stories, football stories, Rocafonda, Yamal 304, Barcelona, La Masia, World Cup 2026, worldcup26, legend cards
 ```
 
 ## Pinned comment
