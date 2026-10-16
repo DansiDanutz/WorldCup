@@ -48,15 +48,16 @@ https://creativecommons.org/licenses/by/4.0/
 Cues: Dreams Become Real · Ascending the Vale · Fanfare for Space
 
 DISCLOSURE
-Visuals are AI-generated animation and original motion graphics. No match footage,
-broadcast clips or real photos are used. Narration is an AI voice.
+All visuals are AI-generated football scenes and original motion graphics. No real
+match footage, broadcast clips or copyrighted photographs are used. Player likenesses
+are stylised AI depictions used for storytelling. Narration is an AI voice.
 Not affiliated with, endorsed by, or associated with FIFA, any club or any player.
 "World Cup" is used descriptively to refer to the tournament.
 ```
 
 ## Tags
 ```
-Lamine Yamal, Messi, Lionel Messi, Messi Yamal, Messi bathed Yamal, Messi Yamal baby photo, Lamine Yamal baby, Yamal Messi photo, World Cup 2026 final, Spain vs Argentina, Lamine Yamal story, Messi story, did you know football, football facts, soccer stories, football stories, Rocafonda, Yamal 304, Barcelona, La Masia, World Cup 2026, worldcup26, legend cards
+Lamine Yamal, Messi, Lionel Messi, Messi Yamal, Messi bathed Yamal, Messi Yamal baby photo, Lamine Yamal baby, Yamal Messi photo, World Cup 2026 final, Spain vs Argentina, Lamine Yamal story, Messi story, did you know football, football facts, soccer stories, football stories, Rocafonda, Yamal 304, Barcelona, La Masia, World Cup 2026, worldcup26, legend cards, world cup 2026, Spain football
 ```
 
 ## Pinned comment
@@ -68,7 +69,7 @@ collect "The Bath Photo" free at worldcup26.world (just for fun, no prizes).
 ## Upload checklist (⚠️ monetization)
 - [ ] Channel: **@DansLab-WorldCup**, public (or a Premiere)
 - [ ] Made for kids → **No**
-- [ ] Altered/synthetic content → **Yes** (AI narration voice)
+- [ ] Altered/synthetic content → **Yes** (AI visuals and narration voice)
 - [ ] Music credit in the description (above)
 - [ ] Thumbnail uploaded; title ≤100 chars, player name first
 - [ ] Added to the "Did You Know? Deep Dives" playlist; pinned comment posted

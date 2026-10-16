@@ -532,7 +532,8 @@
    "shots": [
     {
      "clip": "spain-feet-pixar",
-     "tag": "ROCAFONDA"
+     "tag": "ROCAFONDA",
+     "until": 5.3
     },
     {
      "scene": {
@@ -729,13 +730,16 @@
    "vo": "Emiliano Martínez saves from Yamal. At the other end, Unai Simón denies Messi.",
    "shots": [
     {
-     "clip": "arg-drive-night"
+     "clip": "fans-anxious-hands",
+     "w": 1.4
     },
     {
-     "clip": "fans-anxious-hands"
+     "clip": "arg-drive-night",
+     "w": 1.1
     },
     {
-     "clip": "fans-arg-pixar-anxious"
+     "clip": "fans-arg-pixar-anxious",
+     "w": 0.5
     }
    ]
   },
@@ -751,7 +755,7 @@
      }
     },
     {
-     "clip": "spain-keeper-ready"
+     "clip": "spain-keeper-dive"
     }
    ]
   },
@@ -931,5 +935,29 @@
   "Monfort": null,
   "Celia": null,
   "Maradona": null
- }
+ },
+ "tags": [
+  "Messi",
+  "Lionel Messi",
+  "Messi Yamal",
+  "Messi bathed Yamal",
+  "Messi Yamal baby photo",
+  "Lamine Yamal baby",
+  "Yamal Messi photo",
+  "World Cup 2026 final",
+  "Spain vs Argentina",
+  "Lamine Yamal story",
+  "Messi story",
+  "did you know football",
+  "football facts",
+  "soccer stories",
+  "football stories",
+  "Rocafonda",
+  "Yamal 304",
+  "Barcelona",
+  "La Masia",
+  "World Cup 2026",
+  "worldcup26",
+  "legend cards"
+ ]
 }

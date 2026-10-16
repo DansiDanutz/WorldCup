@@ -44,7 +44,14 @@ function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0, rate
     const target = Math.min(loop ? raw % clipDur : raw, clipDur - 0.07);
     if (playing) {
       // Preview mode: free-run playback, only correct large drift.
-      if (v.paused) v.play().catch(() => {});
+      // The timeline can slow portraits to 0.3x. Leaving the media at 1x makes
+      // the interactive preview jump backwards at every drift correction.
+      v.playbackRate = rate;
+      v.loop = loop;
+      if (!loop && raw >= clipDur - 0.07) {
+        v.pause();
+        v.currentTime = target;
+      } else if (v.paused) v.play().catch(() => {});
       if (Math.abs(v.currentTime - target) > 0.4) v.currentTime = target;
     } else {
       if (!v.paused) v.pause();

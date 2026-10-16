@@ -12,7 +12,7 @@ import { DEEP_DIVE_CARDS } from "@/lib/legend-card-registry";
 // and a card that really unlocks.
 
 const EPISODES = "marketing/deep-dives/episodes";
-const LIBRARY: Record<string, { src: string; url: string | null; who: string | null; faces: string; dur: number }> = JSON.parse(
+const LIBRARY: Record<string, { src: string; url: string | null; who: string | null; faces: string; dur: number; crop?: number[] }> = JSON.parse(
   readFileSync("marketing/deep-dives/library/clips.json", "utf8"),
 );
 const CODE_SCENES = new Set([
@@ -170,6 +170,12 @@ describe("Did You Know? Deep Dives", () => {
       assert.ok(clip.url ? /^https:\/\//.test(clip.url) : existsSync(clip.src), `${alias} has no source`);
       assert.ok(clip.dur > 1, `${alias} has no duration`);
       assert.match(clip.faces, /^(none|crowd|player)$/, `${alias} must say what faces it shows`);
+      if (clip.crop) {
+        const [x, y, w, h] = clip.crop;
+        assert.equal(clip.crop.length, 4, `${alias}: crop needs four coordinates`);
+        assert.ok(clip.crop.every(Number.isFinite) && x >= 0 && y >= 0 && w > 0 && h > 0 && x + w <= 1 && y + h <= 1,
+          `${alias}: crop must stay inside the source frame`);
+      }
     }
   });
 

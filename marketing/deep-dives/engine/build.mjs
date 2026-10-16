@@ -89,7 +89,7 @@ beats.forEach((b, i) => {
       const end = shot.until ?? c.dur - 0.1;
       const rate = shot.rate ?? Math.min(1, (end - (shot.offset || 0)) / D);
       G({ at: AT, dur: D, type: 'clip', clip: shot.clip, src: '/' + c.src, rate: +rate.toFixed(3), offset: shot.offset || 0,
-        clipDur: c.dur, minRate: c.minRate, vertical: c.h > c.w, aspect: +(c.w / c.h).toFixed(4), blur: c.blur, dim: shot.over ? 0.42 : 0, tag: shot.tag, k: i + k });
+        clipDur: c.dur, minRate: c.minRate, vertical: c.h > c.w, aspect: +(c.w / c.h).toFixed(4), crop: c.crop, blur: c.blur, dim: shot.over ? 0.42 : 0, tag: shot.tag, k: i + k });
       if (k === 0) hit('whoosh', at, 0.18);
       if (shot.over) {
         const o = enrich(shot.over);

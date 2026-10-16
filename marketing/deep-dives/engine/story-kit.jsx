@@ -518,7 +518,7 @@ function blurBox(keys, st) {
   return a.slice(1).map((v, j) => v + (b[j + 1] - v) * f);
 }
 
-function ClipShot({ from, dur, src, rate = 1, offset = 0, vertical, aspect = 16 / 9, blur, dim = 0, tag, k = 0, push = 0.07 }) {
+function ClipShot({ from, dur, src, rate = 1, offset = 0, vertical, aspect = 16 / 9, crop, blur, dim = 0, tag, k = 0, push = 0.07 }) {
   const w = useWindow(from, dur, 0.18); if (!w) return null;
   const { lt, inn } = w;
   const p = skClamp(lt / Math.max(dur, 0.1), 0, 1);
@@ -527,16 +527,23 @@ function ClipShot({ from, dur, src, rate = 1, offset = 0, vertical, aspect = 16 
   const dx = (dir === 0 ? -1 : dir === 2 ? 1 : 0) * 22 * p, dy = (dir === 1 ? -1 : dir === 3 ? 1 : 0) * 14 * p;
   const tagIn = skEase(skClamp((lt - 0.35) / 0.6, 0, 1));
   const sprite = { src, start: from, dur, rate, offset, loop: false };
+  // A source crop removes unrelated scoreboards / unapproved player faces,
+  // rather than concealing them behind an overlay that can animate away.
+  const [cropX, cropY, cropW, cropH] = crop || [0, 0, 1, 1];
+  const framedAspect = aspect * cropW / cropH;
+  const fill = crop ? framedAspect < 16 / 9 : vertical ? aspect > 16 / 9 : aspect < 16 / 9;
+  const framedW = fill ? 1920 : 1080 * framedAspect;
+  const framedH = fill ? 1920 / framedAspect : 1080;
+  const rw = framedW / cropW, rh = framedH / cropH;
+  const rx = (1920 - framedW) / 2 - cropX * rw, ry = (1080 - framedH) / 2 - cropY * rh;
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: '#000', opacity: 0.35 + 0.65 * inn, zIndex: 4 }}>
       <div style={{ position: 'absolute', inset: 0, transform: `translate(${dx}px,${dy}px) scale(${scale})` }}>
-        {vertical ? <VideoSprite {...sprite} style={{ filter: 'blur(38px) brightness(.45) saturate(1.2)', transform: 'scale(1.2)' }} /> : null}
-        <VideoSprite {...sprite} fit={vertical ? 'contain' : 'cover'} />
+        {vertical && !crop ? <VideoSprite {...sprite} style={{ filter: 'blur(38px) brightness(.45) saturate(1.2)', transform: 'scale(1.2)' }} /> : null}
+        <VideoSprite {...sprite} fit={crop ? 'fill' : vertical ? 'contain' : 'cover'}
+          style={crop ? { inset: 'auto', left: rx, top: ry, width: rw, height: rh } : {}} />
         {(blur || []).map((m, i) => {
           // the rect the video actually occupies on the 1920x1080 stage (cover crops, contain letterboxes)
-          const fill = vertical ? aspect > 16 / 9 : aspect < 16 / 9;
-          const rw = fill ? 1920 : 1080 * aspect, rh = fill ? 1920 / aspect : 1080;
-          const rx = (1920 - rw) / 2, ry = (1080 - rh) / 2;
           const [cx, cy, bw, bh] = blurBox(m.keys, offset + lt * rate);
           const x = rx + (cx - bw / 2) * rw, y = ry + (cy - bh / 2) * rh;
           return (

@@ -19,6 +19,14 @@ const CODE_SCENES = new Set(['date', 'nameplate', 'title', 'chapter', 'kinetic',
   'impact', 'artifact', 'timeline', 'jersey', 'pitch', 'cardwall', 'versus', 'clock', 'ballnet', 'card', 'phone',
   'heartbeat', 'clip', 'faceoff']);
 const LIB = loadLibrary();
+for (const [alias, c] of Object.entries(LIB)) {
+  if (c.crop) {
+    const [x, y, w, h] = c.crop;
+    if (c.crop.length !== 4 || !c.crop.every(Number.isFinite) || x < 0 || y < 0 || w <= 0 || h <= 0 || x + w > 1 || y + h > 1) {
+      fail(`clip ${alias}: crop must be [x, y, width, height] inside the source frame`);
+    }
+  }
+}
 const usedClips = new Map();
 // identity law needs to know who the narration names: footage-led episodes must map every spoken name
 const usesClips = ep.beats.some((b) => beatShots(b).some((s) => s.clip));

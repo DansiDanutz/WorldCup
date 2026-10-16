@@ -13,8 +13,8 @@ const chapters = [`0:00 ${ep.card.title}`, ...film.chapters.map((c) => `${ts(c.a
 const phone = film.graphics.find((g) => g.type === 'phone');
 if (phone) chapters.push(`${ts(phone.at - 6)} Collect the card`);
 const P = ep.player;
-const tags = [P.name, ...(ep.tags || []), 'did you know football', 'football facts', 'soccer stories',
-  'world cup 2026', 'worldcup26', 'legend cards', `${P.nation} football`].join(', ');
+const tags = [...new Set([P.name, ...(ep.tags || []), 'did you know football', 'football facts', 'soccer stories',
+  'world cup 2026', 'worldcup26', 'legend cards', `${P.nation} football`])].join(', ');
 
 const kit = `# UPLOAD KIT — Did You Know? Ep.${ep.number}: ${P.name}
 
@@ -47,7 +47,9 @@ https://creativecommons.org/licenses/by/4.0/
 Cues: Dreams Become Real · Ascending the Vale · Fanfare for Space
 
 DISCLOSURE
-All visuals are original motion graphics. No match footage or broadcast clips are used.
+All visuals are AI-generated football scenes and original motion graphics. No real
+match footage, broadcast clips or copyrighted photographs are used. Player likenesses
+are stylised AI depictions used for storytelling. Narration is an AI voice.
 Not affiliated with, endorsed by, or associated with FIFA, any club or any player.
 "World Cup" is used descriptively to refer to the tournament.
 \`\`\`
@@ -66,7 +68,7 @@ collect "${ep.card.title}" free at worldcup26.world (just for fun, no prizes).
 ## Upload checklist (⚠️ monetization)
 - [ ] Channel: **@DansLab-WorldCup**, public (or a Premiere)
 - [ ] Made for kids → **No**
-- [ ] Altered/synthetic content → **Yes** (AI narration voice)
+- [ ] Altered/synthetic content → **Yes** (AI visuals and narration voice)
 - [ ] Music credit in the description (above)
 - [ ] Thumbnail uploaded; title ≤100 chars, player name first
 - [ ] Added to the "Did You Know? Deep Dives" playlist; pinned comment posted

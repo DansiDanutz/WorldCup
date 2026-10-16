@@ -33,7 +33,14 @@
   "dur": 8.04,
   "w": 1920,
   "h": 1080,
-  "faces": "none"
+  "faces": "none",
+  "crop": [
+   0,
+   0,
+   0.58,
+   0.8
+  ],
+  "framingNote": "Keep the ball and net; exclude the unapproved goalkeeper face and advertising."
  },
  "boot-touchline": {
   "src": "marketing/deep-dives/library/clips/boot-touchline.mp4",
@@ -93,7 +100,14 @@
   "dur": 5.04,
   "w": 1280,
   "h": 720,
-  "faces": "crowd"
+  "faces": "crowd",
+  "crop": [
+   0,
+   0,
+   1,
+   0.7
+  ],
+  "framingNote": "Frame the crowd faces and flags above foreground shirt marks; final motion QA still required."
  },
  "fans-arg-flags": {
   "src": "marketing/deep-dives/library/clips/fans-arg-flags.mp4",
@@ -105,7 +119,14 @@
   "dur": 5.04,
   "w": 1280,
   "h": 720,
-  "faces": "crowd"
+  "faces": "crowd",
+  "crop": [
+   0,
+   0,
+   1,
+   0.62
+  ],
+  "framingNote": "Frame the crowd faces and flags above foreground shirt marks; final motion QA still required."
  },
  "fans-arg-pixar": {
   "src": "marketing/deep-dives/library/clips/fans-arg-pixar.mp4",
@@ -117,7 +138,14 @@
   "dur": 5.04,
   "w": 1920,
   "h": 1080,
-  "faces": "crowd"
+  "faces": "crowd",
+  "crop": [
+   0,
+   0,
+   1,
+   0.6
+  ],
+  "framingNote": "Frame the crowd faces and flags above foreground shirt marks; final motion QA still required."
  },
  "fans-arg-pixar-anxious": {
   "src": "marketing/deep-dives/library/clips/fans-arg-pixar-anxious.mp4",
@@ -129,7 +157,14 @@
   "dur": 10.04,
   "w": 1924,
   "h": 1076,
-  "faces": "crowd"
+  "faces": "crowd",
+  "crop": [
+   0,
+   0.28,
+   1,
+   0.45
+  ],
+  "framingNote": "Exclude unrelated ARG 1-1 BRA scoreboard and lower shirt marks."
  },
  "fans-arg-pixar-joy": {
   "src": "marketing/deep-dives/library/clips/fans-arg-pixar-joy.mp4",
@@ -141,7 +176,14 @@
   "dur": 5.04,
   "w": 1920,
   "h": 1080,
-  "faces": "crowd"
+  "faces": "crowd",
+  "crop": [
+   0,
+   0,
+   1,
+   0.6
+  ],
+  "framingNote": "Frame the crowd faces and flags above foreground shirt marks; final motion QA still required."
  },
  "fans-arg-tifo": {
   "src": "marketing/deep-dives/library/clips/fans-arg-tifo.mp4",
@@ -153,7 +195,14 @@
   "dur": 5.04,
   "w": 1280,
   "h": 720,
-  "faces": "crowd"
+  "faces": "crowd",
+  "crop": [
+   0,
+   0,
+   1,
+   0.6
+  ],
+  "framingNote": "Frame the crowd faces and flags above foreground shirt marks; final motion QA still required."
  },
  "fans-nervous": {
   "src": "marketing/deep-dives/library/clips/fans-nervous.mp4",
@@ -165,7 +214,14 @@
   "dur": 5.04,
   "w": 1280,
   "h": 720,
-  "faces": "crowd"
+  "faces": "crowd",
+  "crop": [
+   0,
+   0,
+   1,
+   0.7
+  ],
+  "framingNote": "Frame the crowd faces and flags above foreground shirt marks; final motion QA still required."
  },
  "fans-roar-confetti": {
   "src": "marketing/deep-dives/library/clips/fans-roar-confetti.mp4",
@@ -189,7 +245,14 @@
   "dur": 5.04,
   "w": 1920,
   "h": 1080,
-  "faces": "crowd"
+  "faces": "crowd",
+  "crop": [
+   0,
+   0,
+   1,
+   0.6
+  ],
+  "framingNote": "Frame the crowd faces and flags above foreground shirt marks; final motion QA still required."
  },
  "fans-spain-pixar-face": {
   "src": "marketing/deep-dives/library/clips/fans-spain-pixar-face.mp4",
@@ -201,7 +264,14 @@
   "dur": 5.04,
   "w": 1280,
   "h": 720,
-  "faces": "crowd"
+  "faces": "crowd",
+  "crop": [
+   0,
+   0,
+   1,
+   0.75
+  ],
+  "framingNote": "Frame the crowd faces and flags above foreground shirt marks; final motion QA still required."
  },
  "fans-spain-pixar-flags": {
   "src": "marketing/deep-dives/library/clips/fans-spain-pixar-flags.mp4",
@@ -526,7 +596,14 @@
   "dur": 10.04,
   "w": 1280,
   "h": 720,
-  "faces": "none"
+  "faces": "none",
+  "crop": [
+   0,
+   0.61,
+   1,
+   0.39
+  ],
+  "framingNote": "Keep ball and boots; exclude the unapproved goalkeeper face."
  },
  "spain-flag": {
   "src": "marketing/deep-dives/library/clips/spain-flag.mp4",
