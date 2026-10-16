@@ -3,7 +3,7 @@
 // the documentary skill's identity law for a Deep Dive episode.
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, loadEpisode, cardArtPath } from './lib.mjs';
+import { ROOT, loadEpisode, cardArtPath, loadLibrary, beatShots, MIN_RATE, namedIn } from './lib.mjs';
 
 const epDir = path.resolve(process.argv[2] || '.');
 const ep = loadEpisode(epDir);
@@ -13,11 +13,28 @@ const fail = (m) => fails.push(m), warn = (m) => warns.push(m);
 
 // Rule #0 — no gambling look, no prize/cash wording anywhere we publish.
 const BANNED = /\b(odds|bets?|betting|wager|stakes?|jackpot|bookmaker|coefficients?|prize money|cash prizes?|win money|payout)\b/i;
-// Scene types that only draw shapes and type. Anything else (a clip, a photo of a
-// person) is refused: we own no honest likeness of these players.
+// Scene types that only draw shapes and type. Moving pictures come only as `clip`
+// shots from the owned library (library/clips.json), never ad-hoc files.
 const CODE_SCENES = new Set(['date', 'nameplate', 'title', 'chapter', 'kinetic', 'stadium', 'route', 'stat',
   'impact', 'artifact', 'timeline', 'jersey', 'pitch', 'cardwall', 'versus', 'clock', 'ballnet', 'card', 'phone',
-  'heartbeat']);
+  'heartbeat', 'clip', 'faceoff']);
+const LIB = loadLibrary();
+for (const [alias, c] of Object.entries(LIB)) {
+  if (c.crop) {
+    const [x, y, w, h] = c.crop;
+    if (c.crop.length !== 4 || !c.crop.every(Number.isFinite) || x < 0 || y < 0 || w <= 0 || h <= 0 || x + w > 1 || y + h > 1) {
+      fail(`clip ${alias}: crop must be [x, y, width, height] inside the source frame`);
+    }
+  }
+}
+const usedClips = new Map();
+// identity law needs to know who the narration names: footage-led episodes must map every spoken name
+const usesClips = ep.beats.some((b) => beatShots(b).some((s) => s.clip));
+if (usesClips && (!ep.people || typeof ep.people !== 'object')) fail('episode uses library clips but has no `people` map (spoken name -> approved identity or null)');
+const whoKeys = new Set(Object.values(LIB).map((c) => c.who).filter(Boolean));
+Object.entries(ep.people || {}).forEach(([name, who]) => {
+  if (who !== null && !whoKeys.has(who)) fail(`people["${name}"] = "${who}" is not an approved identity in the library`);
+});
 const words = (s) => String(s).trim().split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
 const TEXT_KEYS = ['label', 'title', 'text', 'sub', 'unit', 'meta', 'name', 'stat'];
 
@@ -34,9 +51,34 @@ ep.beats.forEach((b, i) => {
   const n = i + 1;
   if (!b.vo || words(b.vo) < 2) fail(`beat ${n}: empty VO`);
   allText.push(b.vo);
-  const scenes = Array.isArray(b.scene) ? b.scene : [b.scene];
+  const shots = beatShots(b);
+  const named = namedIn(ep, b.vo);
+  shots.forEach((shot) => {
+    if (shot.clip) {
+      const c = LIB[shot.clip];
+      if (!c) { fail(`beat ${n}: clip "${shot.clip}" is not in library/clips.json`); return; }
+      if (!fs.existsSync(path.join(ROOT, c.src))) fail(`beat ${n}: clip file ${c.src} missing (run library/fetch.mjs)`);
+      // rule #11: a clip plays once — or in segments (explicit offsets) that never show a frame twice (checked on film.json)
+      if (usedClips.has(shot.clip) && (shot.offset == null || usedClips.get(shot.clip).offset == null)) {
+        fail(`beat ${n}: clip "${shot.clip}" already used in beat ${usedClips.get(shot.clip).n} (no-repeat rule; split it with offset/until)`);
+      }
+      usedClips.set(shot.clip, { n, offset: shot.offset });
+      // identity law: a face on screen must be the person the narration is about
+      if (c.who && !named.includes(c.who)) fail(`beat ${n}: "${shot.clip}" shows ${c.who}, but this beat's narration doesn't name them`);
+      if (c.faces === 'player' && !c.who && named.length) fail(`beat ${n}: "${shot.clip}" shows an unnamed player while the narration names ${named.join(', ')} — use a faceless clip`);
+      if (shot.tag != null) { allText.push(String(shot.tag)); if (words(shot.tag) > 4) fail(`beat ${n}: tag "${shot.tag}" is over 4 words (rule #10)`); }
+    } else if (!shot.scene) fail(`beat ${n}: a shot needs "clip" or "scene"`);
+  });
+  const scenes = shots.flatMap((sh) => (sh.scene ? [sh.scene] : sh.over ? [sh.over] : []));
   scenes.forEach((s) => {
-    if (!s || !CODE_SCENES.has(s.type)) fail(`beat ${n}: scene type "${s?.type}" is not a code-drawn scene`);
+    (s.type === 'faceoff' ? s.faces || [] : []).forEach((f) => {
+      const c = LIB[f.clip];
+      if (!c?.who) fail(`beat ${n}: faceoff panel "${f.clip}" has no approved identity`);
+      else if (!named.includes(c.who)) fail(`beat ${n}: faceoff shows ${c.who}, but the narration doesn't name them`);
+      allText.push(String(f.name || ''), String(f.meta || ''));
+      if (words(f.name || '') > 4 || words(f.meta || '') > 4) fail(`beat ${n}: faceoff label over 4 words`);
+    });
+    if (!s || !CODE_SCENES.has(s.type) || s.type === 'clip') fail(`beat ${n}: scene type "${s?.type}" is not a drawn scene`);
     for (const k of TEXT_KEYS) if (s[k] != null) {
       allText.push(String(s[k]));
       if (words(s[k]) > 4) fail(`beat ${n}: on-screen ${k} "${s[k]}" is over 4 words (rule #10)`);
@@ -55,10 +97,10 @@ ep.beats.forEach((b, i) => {
 allText.forEach((s) => { const m = String(s).match(BANNED); if (m) fail(`banned wording "${m[0]}" in: ${String(s).slice(0, 80)}`); });
 
 const last = ep.beats[ep.beats.length - 1];
-const lastScene = Array.isArray(last.scene) ? last.scene[last.scene.length - 1] : last.scene;
-if (lastScene.type !== 'phone') fail('the episode must end on the phone end card (worldcup26.world)');
+const lastShot = beatShots(last).at(-1);
+if (lastShot.scene?.type !== 'phone') fail('the episode must end on the phone end card (worldcup26.world)');
 if (!/worldcup26\.world/i.test(last.vo) || !/no prizes/i.test(last.vo)) fail('closing VO must name worldcup26.world and say "no prizes"');
-if (!ep.beats.some((b) => (Array.isArray(b.scene) ? b.scene : [b.scene]).some((s) => s.type === 'card'))) fail('no card reveal beat');
+if (!ep.beats.some((b) => beatShots(b).some((s) => s.scene?.type === 'card'))) fail('no card reveal beat');
 
 // VO present (one mp3 per beat) unless this is a picture-only preview.
 const vo = ep.beats.map((_, i) => path.join(epDir, 'vo', `beat_${String(i + 1).padStart(2, '0')}.mp3`));
@@ -81,6 +123,20 @@ if (fs.existsSync(filmFile)) {
   for (let s = 0; s < Math.floor(film.duration); s++) {
     if (!film.graphics.some((g) => g.at <= s + 0.5 && g.at + g.dur >= s + 0.5)) { fail(`uncovered second at ${s}s`); break; }
   }
+  // a clip slowed past MIN_RATE looks broken, and one that runs out loops visibly
+  const spans = {};
+  film.graphics.filter((g) => g.type === 'clip').forEach((g) => {
+    if (g.rate < (g.minRate ?? MIN_RATE)) fail(`clip ${g.clip} at ${g.at}s plays at ${g.rate}x to fill ${g.dur}s — split the beat or use a longer clip`);
+    // the full played span, crossfade tail included (ClipShot also holds the last frame, never wraps)
+    const end = g.offset + g.dur * g.rate;
+    if (end > g.clipDur + 0.05) fail(`clip ${g.clip} at ${g.at}s runs past its end and would loop`);
+    (spans[g.clip] ||= []).forEach(([a, z]) => {
+      if (g.offset < z - 0.05 && end > a + 0.05) fail(`clip ${g.clip} at ${g.at}s replays source ${a.toFixed(2)}–${z.toFixed(2)}s (no frame twice)`);
+    });
+    spans[g.clip].push([g.offset, end]);
+  });
+  const clipTime = film.graphics.filter((g) => g.type === 'clip').reduce((n, g) => n + g.dur, 0);
+  if (usedClips.size && clipTime / film.duration < 0.5) warn(`clips cover only ${Math.round(100 * clipTime / film.duration)}% of the film`);
   const per = film.duration / Math.max(1, film.sfx.hits.length);
   if (per > 9) warn(`sound design is thin: 1 hit per ${per.toFixed(1)}s (target ≈ 6.5s)`);
   if (film.preview && !PREVIEW) fail('film.json is a PREVIEW build — rebuild with VO before the final render');

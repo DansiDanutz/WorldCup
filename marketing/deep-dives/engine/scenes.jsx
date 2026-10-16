@@ -7,7 +7,7 @@ const SCENE_TYPES = {
   stadium: 'StadiumBowl', ballnet: 'BallToNet', card: 'CardShowcase', clock: 'ClockTick',
   title: 'PlayerTitle', jersey: 'Jersey', stat: 'StatCounter', route: 'RouteMap', pitch: 'TacticalPitch',
   artifact: 'Artifact', versus: 'VersusBars', heartbeat: 'Heartbeat', date: 'DateFlip',
-  chapter: 'ChapterMark', bug: 'CornerBug',
+  chapter: 'ChapterMark', bug: 'CornerBug', clip: 'ClipShot', faceoff: 'FaceOff',
 };
 
 function FilmLayer() {
@@ -31,7 +31,7 @@ function SceneFilm() {
   return (
     <div style={{ position: 'absolute', inset: 0, background: '#05070c', overflow: 'hidden' }}>
       <FilmLayer />
-      <Vignette strength={0.6} />
+      <Vignette strength={0.42} />
       <Letterbox />
     </div>
   );

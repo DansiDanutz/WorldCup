@@ -9,7 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { ROOT, FFMPEG, rel, loadEpisode, cardArtPath } from './lib.mjs';
+import { ROOT, FFMPEG, rel, loadEpisode, cardArtPath, loadLibrary, beatShots, clipFrame } from './lib.mjs';
 
 const epDir = path.resolve(process.argv[2] || '.');
 const ep = loadEpisode(epDir);
@@ -31,6 +31,7 @@ const beats = ep.beats.map((b, i) => {
   return { ...b, voDur: has ? audioDuration(voFile(i)) : words / WPS + 0.35, voSrc: has ? rel(voFile(i)) : null };
 });
 
+const LIB = loadLibrary();
 const P = ep.player;
 const colors = P.colors;
 const film = { duration: 0, episode: ep.slug, preview: PREVIEW, graphics: [], vo: [], sfx: { hits: [] }, music: { cues: [] } };
@@ -70,14 +71,37 @@ beats.forEach((b, i) => {
     if (s.type === 'card') { s.src = '/' + rel(cardArtPath(ep)); s.name = s.name || ep.card.title.toUpperCase(); s.meta = s.meta || P.nation.toUpperCase(); }
     if (s.type === 'cardwall' || s.type === 'drift') s.srcs = s.srcs || album;
     if (s.type === 'phone') s.srcs = ['/' + rel(cardArtPath(ep)), ...album];
+    // face panels: stills from the approved portrait clips (crop keeps kit logos out)
+    if (s.type === 'faceoff') s.faces = s.faces.map((f, j) => ({ ...f,
+      src: '/' + rel(clipFrame(LIB[f.clip], f.t, f.crop, path.join(epDir, 'build/faces', `b${i + 1}_${j}.png`))) }));
     return s;
   };
-  // a beat may split into several scenes ([{...}, {...}]) that share it evenly
-  const parts = (Array.isArray(b.scene) ? b.scene : [b.scene]).map(enrich);
-  parts.forEach((ps, k) => {
-    const at = t + (dur / parts.length) * k;
-    G({ at: +at.toFixed(2), dur: +(dur / parts.length + 0.25).toFixed(2), ...ps });
-    (SFX_FOR[ps.type] || [['pop', 0.2, 0.25]]).forEach(([n, off, v]) => hit(n, at + off, v));
+  // a beat is a run of shots: library clips (optionally with a drawn overlay) and drawn scenes
+  let at = t;
+  beatShots(b).forEach((shot, k) => {
+    const sd = dur * shot.share;
+    const D = +(sd + 0.25).toFixed(2), AT = +at.toFixed(2);
+    if (shot.clip) {
+      const c = LIB[shot.clip];
+      if (!c) throw new Error(`beat ${i + 1}: clip "${shot.clip}" is not in library/clips.json`);
+      // play at real speed when the clip is long enough, else slow it just enough to fill
+      // the shot; `until` ends a segment early so the rest of the clip can play elsewhere
+      const end = shot.until ?? c.dur - 0.1;
+      const rate = shot.rate ?? Math.min(1, (end - (shot.offset || 0)) / D);
+      G({ at: AT, dur: D, type: 'clip', clip: shot.clip, src: '/' + c.src, rate: +rate.toFixed(3), offset: shot.offset || 0,
+        clipDur: c.dur, minRate: c.minRate, vertical: c.h > c.w, aspect: +(c.w / c.h).toFixed(4), crop: c.crop, blur: c.blur, dim: shot.over ? 0.42 : 0, tag: shot.tag, k: i + k });
+      if (k === 0) hit('whoosh', at, 0.18);
+      if (shot.over) {
+        const o = enrich(shot.over);
+        G({ at: AT, dur: D, ...o });
+        (SFX_FOR[o.type] || [['pop', 0.2, 0.25]]).forEach(([n, off, v]) => hit(n, at + off, v));
+      }
+    } else {
+      const ps = enrich(shot.scene);
+      G({ at: AT, dur: D, ...ps });
+      (SFX_FOR[ps.type] || [['pop', 0.2, 0.25]]).forEach(([n, off, v]) => hit(n, at + off, v));
+    }
+    at += sd;
   });
   film.vo.push({ src: b.voSrc, at: +t.toFixed(2), dur: +b.voDur.toFixed(2), text: b.vo });
   t += dur;

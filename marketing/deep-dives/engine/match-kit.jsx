@@ -26,7 +26,7 @@ const MV = {
 window.__pendingVideoSeeks = 0;
 window.__videosSettled = () => window.__pendingVideoSeeks === 0;
 
-function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0, rate = 1 }) {
+function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0, rate = 1, offset = 0, loop = true }) {
   const t = useTime();
   const { playing } = useTimeline();
   const ref = React.useRef(null);
@@ -39,10 +39,19 @@ function VideoSprite({ src, start, dur, fit = 'cover', style = {}, dim = 0, rate
     const clipDur = (isFinite(v.duration) && v.duration > 0.2) ? v.duration : 5;
     // Loop the short source for as long as the sprite is on screen, holding
     // just shy of the end so a loop boundary never shows a black frame.
-    const target = Math.min((local * rate) % clipDur, clipDur - 0.07);
+    // loop=false (story shots) holds the last frame instead of wrapping to the start
+    const raw = offset + local * rate;
+    const target = Math.min(loop ? raw % clipDur : raw, clipDur - 0.07);
     if (playing) {
       // Preview mode: free-run playback, only correct large drift.
-      if (v.paused) v.play().catch(() => {});
+      // The timeline can slow portraits to 0.3x. Leaving the media at 1x makes
+      // the interactive preview jump backwards at every drift correction.
+      v.playbackRate = rate;
+      v.loop = loop;
+      if (!loop && raw >= clipDur - 0.07) {
+        v.pause();
+        v.currentTime = target;
+      } else if (v.paused) v.play().catch(() => {});
       if (Math.abs(v.currentTime - target) > 0.4) v.currentTime = target;
     } else {
       if (!v.paused) v.pause();

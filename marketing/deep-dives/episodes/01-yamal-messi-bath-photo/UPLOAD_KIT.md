@@ -1,6 +1,6 @@
 # UPLOAD KIT — Did You Know? Ep.1: Lamine Yamal
 
-**File:** `output/DidYouKnow_01_Lamine_Yamal.mp4` · 4:53 · 1920x1080 · H.264 + AAC
+**File:** `output/DidYouKnow_01_Lamine_Yamal.mp4` · 4:54 · 1920x1080 · H.264 + AAC
 **Thumbnail:** `output/thumbnail.jpg` (1280x720, hook: "MESSI BATHED HIM")
 **Card:** `public/legend-cards/deep-dive/01-yamal-messi-bath-photo.png` → goes live in the album once this video's link is known
 
@@ -14,11 +14,11 @@ Messi Bathed Lamine Yamal as a Baby — 19 Years Later They Met in the World Cup
 In 2007 a shy twenty-year-old Lionel Messi bathed a baby from Rocafonda for a charity calendar photo. The baby was Lamine Yamal. The pictures were forgotten for seventeen years, until the two met in the 2026 World Cup final.
 
 0:00 The Bath Photo
-0:24 The Raffle
-1:11 The Photo
-2:06 The Prophecy
-3:26 The Final
-4:37 Collect the card
+0:33 The Raffle
+1:26 The Photo
+2:11 The Boy From 304
+3:27 The Final
+4:38 Collect the card
 
 COLLECT THE CARD
 "The Bath Photo" is a legendary card at worldcup26.world. Watch this story to the
@@ -38,6 +38,9 @@ SOURCES
 • https://en.wikipedia.org/wiki/Lionel_Messi
 • https://www.tntsports.co.uk/football/euro/2024/lamine-yamal-wayne-rooney-cristiano-ronaldo-youngest-scorers-in-euros-history_sto20016743/story.shtml
 • https://global.espn.com/football/story/_/id/49142360/watching-spain-lamine-yamal-score-first-world-cup-goal-hometown-rocafonda
+• https://www.fcbarcelona.com/en/football/first-team/news/769781/10-years-since-messis-historic-goal-against-getafe
+• https://www.khaleejtimes.com/sports/fifa-world-cup/messis-birthday-the-grandmother-and-the-napkin-that-changed-football
+• https://en.wikipedia.org/wiki/Lamine_Yamal
 
 MUSIC
 Kevin MacLeod (incompetech.com) — licensed under Creative Commons: By Attribution 4.0
@@ -45,14 +48,16 @@ https://creativecommons.org/licenses/by/4.0/
 Cues: Dreams Become Real · Ascending the Vale · Fanfare for Space
 
 DISCLOSURE
-All visuals are original motion graphics. No match footage or broadcast clips are used.
+All visuals are AI-generated football scenes and original motion graphics. No real
+match footage, broadcast clips or copyrighted photographs are used. Player likenesses
+are stylised AI depictions used for storytelling. Narration is an AI voice.
 Not affiliated with, endorsed by, or associated with FIFA, any club or any player.
 "World Cup" is used descriptively to refer to the tournament.
 ```
 
 ## Tags
 ```
-Lamine Yamal, did you know football, football facts, soccer stories, world cup 2026, worldcup26, legend cards, Spain football
+Lamine Yamal, Messi, Lionel Messi, Messi Yamal, Messi bathed Yamal, Messi Yamal baby photo, Lamine Yamal baby, Yamal Messi photo, World Cup 2026 final, Spain vs Argentina, Lamine Yamal story, Messi story, did you know football, football facts, soccer stories, football stories, Rocafonda, Yamal 304, Barcelona, La Masia, World Cup 2026, worldcup26, legend cards, world cup 2026, Spain football
 ```
 
 ## Pinned comment
@@ -64,7 +69,7 @@ collect "The Bath Photo" free at worldcup26.world (just for fun, no prizes).
 ## Upload checklist (⚠️ monetization)
 - [ ] Channel: **@DansLab-WorldCup**, public (or a Premiere)
 - [ ] Made for kids → **No**
-- [ ] Altered/synthetic content → **Yes** (AI narration voice)
+- [ ] Altered/synthetic content → **Yes** (AI visuals and narration voice)
 - [ ] Music credit in the description (above)
 - [ ] Thumbnail uploaded; title ≤100 chars, player name first
 - [ ] Added to the "Did You Know? Deep Dives" playlist; pinned comment posted

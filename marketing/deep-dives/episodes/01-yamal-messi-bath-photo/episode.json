@@ -1,600 +1,963 @@
 {
-  "number": 1,
-  "slug": "01-yamal-messi-bath-photo",
-  "title": "Messi Bathed Lamine Yamal as a Baby — 19 Years Later They Met in the World Cup Final | Did You Know?",
-  "player": {
-    "name": "Lamine Yamal",
-    "short": "YAMAL",
-    "number": 19,
-    "nation": "Spain",
-    "colors": [
-      "#c60b1e",
-      "#ffc400"
-    ]
-  },
-  "thumbnail": {
-    "hook": "MESSI BATHED HIM"
-  },
-  "card": {
-    "id": "dyk-yamal-bath-photo",
-    "title": "The Bath Photo",
-    "subtitle": "Did You Know? deep dive card",
-    "teams": "Spain · Argentina",
-    "story": "In 2007 a shy twenty-year-old Lionel Messi bathed a baby from Rocafonda for a charity calendar photo. The baby was Lamine Yamal. The pictures were forgotten for seventeen years, until the two met in the 2026 World Cup final."
-  },
-  "beats": [
-    {
-      "vo": "July the nineteenth, twenty twenty-six. New Jersey. The World Cup final. Spain against Argentina.",
-      "scene": {
-        "type": "date",
-        "date": "19·07·2026",
-        "label": "THE FINAL"
-      }
-    },
-    {
-      "vo": "On one side, Lionel Messi, chasing one last crown. On the other, Lamine Yamal, nineteen years old, the boy Spain has built its future around.",
-      "scene": [
-        {
-          "type": "nameplate",
-          "name": "LIONEL MESSI",
-          "meta": "ARGENTINA · 10"
-        },
-        {
-          "type": "nameplate",
-          "name": "LAMINE YAMAL",
-          "meta": "SPAIN · 19"
-        }
-      ]
-    },
-    {
-      "vo": "But did you know these two had met before? Nineteen years earlier. In a bathtub.",
-      "scene": {
-        "type": "title",
-        "label": "THE BATH PHOTO"
-      }
-    },
-    {
-      "vo": "Chapter one. The raffle.",
-      "scene": {
-        "type": "chapter",
-        "title": "THE RAFFLE"
-      }
-    },
-    {
-      "vo": "In two thousand and seven, Barcelona's club foundation teamed up with UNICEF and the newspaper Diario Sport to make a charity calendar.",
-      "scene": {
-        "type": "kinetic",
-        "words": [
-          {
-            "w": "CHARITY",
-            "at": 0
-          },
-          {
-            "w": "CALENDAR",
-            "at": 0.5
-          },
-          {
-            "w": "2007",
-            "at": 1.1
-          }
-        ],
-        "size": 140
-      }
-    },
-    {
-      "vo": "The idea was simple. Families from the neighbourhoods around Barcelona would be photographed at the Camp Nou, with a first-team player.",
-      "scene": {
-        "type": "stadium",
-        "label": "CAMP NOU"
-      }
-    },
-    {
-      "vo": "In Rocafonda, a working-class district of Mataró, the families signed up for a raffle. One young couple won it.",
-      "scene": {
-        "type": "route",
-        "label": "THE JOURNEY",
-        "a": {
-          "name": "Rocafonda",
-          "x": 1320,
-          "y": 250
-        },
-        "b": {
-          "name": "Camp Nou",
-          "x": 300,
-          "y": 470
-        }
-      }
-    },
-    {
-      "vo": "His father was from Morocco. His mother, from Equatorial Guinea. Their son was a baby, born that July. His name was Lamine.",
-      "scene": {
-        "type": "nameplate",
-        "name": "LAMINE",
-        "meta": "BORN · 13 JULY 2007"
-      }
-    },
-    {
-      "vo": "And the player chosen to hold him was a shy twenty-year-old from Rosario, in Argentina.",
-      "scene": {
-        "type": "stat",
-        "value": 20,
-        "label": "HIS AGE",
-        "sub": "ROSARIO · ARGENTINA"
-      }
-    },
-    {
-      "vo": "Lionel Messi.",
-      "scene": {
-        "type": "impact",
-        "text": "LIONEL MESSI",
-        "size": 170
-      }
-    },
-    {
-      "vo": "Chapter two. The photo.",
-      "scene": {
-        "type": "chapter",
-        "title": "THE PHOTO"
-      }
-    },
-    {
-      "vo": "The photographer, Joan Monfort, set up a small plastic tub of water. Messi was asked to bathe the baby for the camera. He was shy, and careful, and he did it.",
-      "scene": {
-        "type": "artifact",
-        "kind": "polaroid",
-        "date": "CAMP NOU · 2007",
-        "title": "THE BATH PHOTO"
-      }
-    },
-    {
-      "vo": "The pictures went into the calendar. The calendar raised its money. And then the photos simply disappeared. For seventeen years, almost nobody saw them.",
-      "scene": {
-        "type": "stat",
-        "value": 17,
-        "label": "YEARS FORGOTTEN",
-        "sub": "2007 — 2024"
-      }
-    },
-    {
-      "vo": "In those years, Messi became the greatest player of his generation. His first Ballon d'Or in two thousand and nine. A World Cup in Qatar. Eight Ballon d'Or awards in all.",
-      "scene": {
-        "type": "timeline",
-        "label": "MESSI",
-        "years": [
-          {
-            "v": "2007",
-            "label": "THE PHOTO"
-          },
-          {
-            "v": "2009",
-            "label": "BALLON D'OR"
-          },
-          {
-            "v": "2022",
-            "label": "WORLD CHAMPION"
-          },
-          {
-            "v": "2023",
-            "label": "EIGHTH BALLON D'OR"
-          }
-        ]
-      }
-    },
-    {
-      "vo": "And the baby from Rocafonda grew up inside La Masia, Barcelona's academy. The same school that had made Messi.",
-      "scene": {
-        "type": "jersey",
-        "colors": [
-          "#a50044",
-          "#edbb00"
-        ],
-        "number": "",
-        "name": "YAMAL",
-        "label": "LA MASIA"
-      }
-    },
-    {
-      "vo": "In April twenty twenty-three, at fifteen years old, Lamine Yamal made his first-team debut for Barcelona.",
-      "scene": {
-        "type": "stat",
-        "value": 15,
-        "label": "AGE AT DEBUT",
-        "sub": "BARCELONA · 2023"
-      }
-    },
-    {
-      "vo": "Chapter three. The prophecy.",
-      "scene": {
-        "type": "chapter",
-        "title": "THE PROPHECY"
-      }
-    },
-    {
-      "vo": "A few weeks earlier, against Croatia, he had already become the youngest player ever to appear at a European Championship. Sixteen years and three hundred and thirty-eight days old.",
-      "scene": {
-        "type": "stat",
-        "value": 16,
-        "label": "YOUNGEST EVER",
-        "sub": "EURO 2024 · CROATIA"
-      }
-    },
-    {
-      "vo": "Summer, twenty twenty-four. The European Championship in Germany. Yamal is sixteen. In the semi-final against France, he cuts inside and curls a shot into the top corner from outside the box.",
-      "scene": {
-        "type": "pitch",
-        "label": "SPAIN · FRANCE",
-        "frames": [
-          {
-            "t": 0,
-            "ball": [
-              77,
-              17
-            ],
-            "home": [
-              [
-                76,
-                17
-              ],
-              [
-                70,
-                34
-              ],
-              [
-                84,
-                44
-              ]
-            ],
-            "away": [
-              [
-                86,
-                22
-              ],
-              [
-                89,
-                31
-              ],
-              [
-                88,
-                40
-              ],
-              [
-                93,
-                27
-              ],
-              [
-                103,
-                34
-              ]
-            ]
-          },
-          {
-            "t": 0.4,
-            "ball": [
-              80,
-              23
-            ],
-            "home": [
-              [
-                79,
-                22
-              ],
-              [
-                74,
-                33
-              ],
-              [
-                86,
-                44
-              ]
-            ],
-            "away": [
-              [
-                85,
-                24
-              ],
-              [
-                88,
-                30
-              ],
-              [
-                88,
-                39
-              ],
-              [
-                92,
-                28
-              ],
-              [
-                103,
-                33
-              ]
-            ]
-          },
-          {
-            "t": 0.55,
-            "ball": [
-              81,
-              24
-            ],
-            "home": [
-              [
-                80,
-                23
-              ],
-              [
-                75,
-                33
-              ],
-              [
-                87,
-                43
-              ]
-            ],
-            "away": [
-              [
-                85,
-                25
-              ],
-              [
-                88,
-                30
-              ],
-              [
-                88,
-                39
-              ],
-              [
-                92,
-                29
-              ],
-              [
-                103,
-                33
-              ]
-            ]
-          },
-          {
-            "t": 1,
-            "ball": [
-              105,
-              30.6
-            ],
-            "home": [
-              [
-                81,
-                23
-              ],
-              [
-                77,
-                32
-              ],
-              [
-                89,
-                42
-              ]
-            ],
-            "away": [
-              [
-                85,
-                25
-              ],
-              [
-                88,
-                30
-              ],
-              [
-                89,
-                38
-              ],
-              [
-                93,
-                29
-              ],
-              [
-                104,
-                32
-              ]
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "vo": "That night he also broke a record that had stood since nineteen fifty-eight, when Pelé was seventeen. Nobody younger had ever played in the semi-final of a major tournament.",
-      "scene": {
-        "type": "nameplate",
-        "name": "PELÉ · 1958",
-        "meta": "RECORD BROKEN"
-      }
-    },
-    {
-      "vo": "He is the youngest player ever to score at a European Championship. Five days later, Spain are champions of Europe, and he is named the best young player of the tournament.",
-      "scene": {
-        "type": "impact",
-        "text": "YOUNGEST EVER",
-        "size": 160
-      }
-    },
-    {
-      "vo": "That summer, his father, Mounir Nasraoui, found the old photos and posted one online. His caption: the beginning of two legends.",
-      "scene": {
-        "type": "kinetic",
-        "words": [
-          {
-            "w": "TWO",
-            "at": 0.2
-          },
-          {
-            "w": "LEGENDS",
-            "at": 0.7
-          }
-        ],
-        "size": 170
-      }
-    },
-    {
-      "vo": "The world could hardly believe it. Messi had once bathed the boy who was now being called the next Messi.",
-      "scene": {
-        "type": "impact",
-        "text": "THE NEXT MESSI?",
-        "size": 150
-      }
-    },
-    {
-      "vo": "And every time Yamal scores, he points back to where it began. Three, zero, four. The last digits of Rocafonda's postcode.",
-      "scene": {
-        "type": "stat",
-        "value": 304,
-        "label": "ROCAFONDA",
-        "sub": "POSTCODE 08304"
-      }
-    },
-    {
-      "vo": "Chapter four. The final.",
-      "scene": {
-        "type": "chapter",
-        "title": "THE FINAL"
-      }
-    },
-    {
-      "vo": "On the road to that final, against Saudi Arabia on the twenty-first of June, Yamal scored his first World Cup goal. Only Gavi had ever scored for Spain at a World Cup at a younger age.",
-      "scene": {
-        "type": "stat",
-        "value": 18,
-        "label": "FIRST WORLD CUP GOAL",
-        "sub": "SPAIN · SAUDI ARABIA"
-      }
-    },
-    {
-      "vo": "Which brings us back to New Jersey. Nineteen years after the bath photo, the two of them walk out for the biggest match in football.",
-      "scene": {
-        "type": "versus",
-        "label": "AGE AT THE FINAL",
-        "rows": [
-          {
-            "label": "MESSI",
-            "value": 39
-          },
-          {
-            "label": "YAMAL",
-            "value": 19,
-            "accent": "red"
-          }
-        ]
-      }
-    },
-    {
-      "vo": "Emiliano Martínez saves from Yamal. Unai Simón denies Messi. Ninety minutes, and nobody scores.",
-      "scene": {
-        "type": "clock",
-        "to": 90,
-        "label": "0 — 0"
-      }
-    },
-    {
-      "vo": "Then, in the hundred and sixth minute, Ferran Torres taps in from close range. Spain win one-nil. They are champions of the world.",
-      "scene": [
-        {
-          "type": "clock",
-          "to": 106,
-          "label": "EXTRA TIME"
-        },
-        {
-          "type": "ballnet"
-        }
-      ]
-    },
-    {
-      "vo": "Messi takes the Silver Ball as the tournament's second-best player. And the baby he once held in a plastic tub is a world champion at nineteen.",
-      "scene": {
-        "type": "nameplate",
-        "name": "SPAIN",
-        "stat": "1–0",
-        "meta": "WORLD CHAMPIONS"
-      }
-    },
-    {
-      "vo": "A charity raffle in Rocafonda. A shy twenty-year-old, a tub of water and a baby. Nineteen years later, the same two names in the same World Cup final.",
-      "scene": {
-        "type": "timeline",
-        "label": "NINETEEN YEARS",
-        "years": [
-          {
-            "v": "2007",
-            "label": "THE BATH"
-          },
-          {
-            "v": "2024",
-            "label": "THE PHOTO RETURNS"
-          },
-          {
-            "v": "2026",
-            "label": "THE FINAL"
-          }
-        ]
-      }
-    },
-    {
-      "vo": "This story is now a legendary card. The Bath Photo. Watch it to the end and it unlocks in your album.",
-      "scene": {
-        "type": "card"
-      }
-    },
-    {
-      "vo": "Collect the legends, free, at worldcup26.world. Free to play, just for fun, no prizes. See you in the next Did You Know.",
-      "scene": {
-        "type": "phone"
-      }
-    }
-  ],
-  "sources": [
-    {
-      "claim": "2007 charity calendar (Barça Foundation, UNICEF, Diario Sport); raffle in Rocafonda, Mataró; photographer Joan Monfort; shy Messi",
-      "url": "https://en.prothomalo.com/sports/football/8zd5xgfdk1"
-    },
-    {
-      "claim": "Photos resurfaced in 2024 when Mounir Nasraoui posted one: 'The beginning of two legends'",
-      "url": "https://www.nbcnews.com/news/world/lionel-messi-lamine-yamal-baby-photo-euros-copa-america-rcna161092"
-    },
-    {
-      "claim": "AP photographer Joan Monfort took the photos at the Camp Nou",
-      "url": "https://www.cbsnews.com/amp/miami/news/lionel-messi-lamine-yamal-baby-barcelona-photos-joan-monfort"
-    },
-    {
-      "claim": "304 celebration = end of Rocafonda's postcode 08304",
-      "url": "https://www.beinsports.com/en-us/soccer/la-liga/articles-video/why-does-lamine-yamal-celebrate-his-goals-with-a-304-2024-09-24"
-    },
-    {
-      "claim": "Euro 2024 semi-final goal v France aged 16; best young player at Euro 2024",
-      "url": "https://www.vavel.com/en/data/lamine-yamal/bio/"
-    },
-    {
-      "claim": "2026 final: Spain 1-0 Argentina a.e.t., MetLife Stadium, 19 July 2026; Ferran Torres 106'; Martínez saved from Yamal, Simón denied Messi",
-      "url": "https://www.nbcboston.com/world-cup/spain-argentina-final-messi-yamal-score"
-    },
-    {
-      "claim": "Rodri Golden Ball, Messi Silver Ball, Mbappé Bronze Ball",
-      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/rodri-earns-adidas-golden-ball"
-    },
-    {
-      "claim": "Youngest goalscorer in Euros history (16y 362d) v France, Munich, 9 July 2024; born 13 July 2007",
-      "url": "https://www.guinnessworldrecords.com/world-records/88677-youngest-goalscorer-in-a-football-soccer-uefa-european-championships"
-    },
-    {
-      "claim": "First-team debut 29 April 2023 v Real Betis, aged 15 years 290 days",
-      "url": "https://en.wikipedia.org/wiki/Lamine_Yamal"
-    },
-    {
-      "claim": "Messi's eight Ballon d'Or awards (2009 first, 2023 eighth); 2022 World Cup",
-      "url": "https://en.wikipedia.org/wiki/Lionel_Messi"
-    },
-    {
-      "claim": "Youngest player at a Euros (16y 338d v Croatia); youngest in a major-tournament semi-final, passing Pelé's 1958 record",
-      "url": "https://www.tntsports.co.uk/football/euro/2024/lamine-yamal-wayne-rooney-cristiano-ronaldo-youngest-scorers-in-euros-history_sto20016743/story.shtml"
-    },
-    {
-      "claim": "First World Cup goal v Saudi Arabia, 21 June 2026; Spain's second-youngest World Cup scorer after Gavi",
-      "url": "https://global.espn.com/football/story/_/id/49142360/watching-spain-lamine-yamal-score-first-world-cup-goal-hometown-rocafonda"
-    }
+ "number": 1,
+ "slug": "01-yamal-messi-bath-photo",
+ "title": "Messi Bathed Lamine Yamal as a Baby — 19 Years Later They Met in the World Cup Final | Did You Know?",
+ "player": {
+  "name": "Lamine Yamal",
+  "short": "YAMAL",
+  "number": 19,
+  "nation": "Spain",
+  "colors": [
+   "#c60b1e",
+   "#ffc400"
   ]
+ },
+ "thumbnail": {
+  "hook": "MESSI BATHED HIM",
+  "faces": [
+   {
+    "clip": "messi-pixar-portrait",
+    "t": 2.5,
+    "crop": [
+     0.3,
+     0,
+     0.42,
+     0.64
+    ]
+   },
+   {
+    "clip": "yamal-pixar-portrait",
+    "t": 2.5,
+    "crop": [
+     0.27,
+     0.02,
+     0.46,
+     0.6
+    ]
+   }
+  ]
+ },
+ "card": {
+  "id": "dyk-yamal-bath-photo",
+  "title": "The Bath Photo",
+  "subtitle": "Did You Know? deep dive card",
+  "teams": "Spain · Argentina",
+  "story": "In 2007 a shy twenty-year-old Lionel Messi bathed a baby from Rocafonda for a charity calendar photo. The baby was Lamine Yamal. The pictures were forgotten for seventeen years, until the two met in the 2026 World Cup final."
+ },
+ "beats": [
+  {
+   "vo": "New Jersey. The nineteenth of July, twenty twenty-six. The World Cup final. Spain against Argentina. And after ninety minutes, nobody has scored.",
+   "shots": [
+    {
+     "clip": "stadium-drone-orbit",
+     "over": {
+      "type": "date",
+      "date": "19 · 07 · 2026",
+      "label": "WORLD CUP FINAL"
+     }
+    },
+    {
+     "clip": "fans-arg-tifo"
+    },
+    {
+     "clip": "fans-spain-scarves"
+    }
+   ]
+  },
+  {
+   "vo": "On one side, Lionel Messi. Thirty-nine years old, chasing one last crown.",
+   "shots": [
+    {
+     "clip": "messi-pixar-portrait",
+     "offset": 0,
+     "until": 1.8,
+     "over": {
+      "type": "nameplate",
+      "name": "LIONEL MESSI",
+      "meta": "ARGENTINA · 39"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "On the other, Lamine Yamal. Nineteen. The boy the whole world calls the next Messi.",
+   "shots": [
+    {
+     "clip": "yamal-pixar-portrait",
+     "offset": 0,
+     "until": 1.8,
+     "over": {
+      "type": "nameplate",
+      "name": "LAMINE YAMAL",
+      "meta": "SPAIN · 19"
+     },
+     "w": 1.3
+    },
+    {
+     "clip": "fans-spain-pixar-face"
+    }
+   ]
+  },
+  {
+   "vo": "But here is the secret almost nobody in that stadium knew. These two had met before. Nineteen years earlier. And Messi was holding him, in a bathtub.",
+   "shots": [
+    {
+     "clip": "silhouettes-faceoff"
+    },
+    {
+     "scene": {
+      "type": "title",
+      "label": "THE BATH PHOTO"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "Chapter one. The raffle.",
+   "shots": [
+    {
+     "clip": "stadium-pixar-night",
+     "over": {
+      "type": "chapter",
+      "title": "The Raffle"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "Summer, two thousand and seven. Barcelona's club foundation, UNICEF and the newspaper Diario Sport are making a charity calendar. Families from the neighbourhoods around Barcelona will be photographed at the Camp Nou, with a first-team player.",
+   "shots": [
+    {
+     "clip": "floodlight-towers",
+     "over": {
+      "type": "date",
+      "date": "2007",
+      "label": "A CHARITY CALENDAR"
+     }
+    },
+    {
+     "clip": "stadium-empty-wide"
+    }
+   ]
+  },
+  {
+   "vo": "Up the coast in Mataró, in a working-class district called Rocafonda, families sign up for a raffle. One young couple wins it.",
+   "shots": [
+    {
+     "scene": {
+      "type": "route",
+      "a": {
+       "name": "ROCAFONDA",
+       "x": 1240,
+       "y": 210
+      },
+      "b": {
+       "name": "CAMP NOU",
+       "x": 420,
+       "y": 520
+      },
+      "label": "THE RAFFLE"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "The father, Mounir, is from Morocco. The mother, Sheila, from Equatorial Guinea. Their son is only weeks old. His name is Lamine.",
+   "shots": [
+    {
+     "scene": {
+      "type": "nameplate",
+      "name": "LAMINE",
+      "meta": "BORN 13 JULY 2007"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "And the player who will hold him is Barcelona's shy twenty-year-old from Rosario. That spring, against Getafe, he had dribbled past half a team, in a goal so like Maradona's that all of Spain was talking about it.",
+   "shots": [
+    {
+     "clip": "boots-lacing"
+    },
+    {
+     "scene": {
+      "type": "pitch",
+      "frames": [
+       {
+        "t": 0,
+        "ball": [
+         46,
+         58
+        ],
+        "home": [
+         [
+          46,
+          58
+         ]
+        ],
+        "away": [
+         [
+          58,
+          52
+         ],
+         [
+          66,
+          44
+         ],
+         [
+          74,
+          50
+         ],
+         [
+          84,
+          40
+         ],
+         [
+          92,
+          30
+         ],
+         [
+          101,
+          34
+         ]
+        ]
+       },
+       {
+        "t": 0.2,
+        "ball": [
+         57,
+         54
+        ],
+        "home": [
+         [
+          56,
+          55
+         ]
+        ],
+        "away": [
+         [
+          60,
+          53
+         ],
+         [
+          66,
+          44
+         ],
+         [
+          74,
+          50
+         ],
+         [
+          84,
+          40
+         ],
+         [
+          92,
+          30
+         ],
+         [
+          101,
+          34
+         ]
+        ]
+       },
+       {
+        "t": 0.4,
+        "ball": [
+         68,
+         48
+        ],
+        "home": [
+         [
+          67,
+          49
+         ]
+        ],
+        "away": [
+         [
+          60,
+          56
+         ],
+         [
+          69,
+          46
+         ],
+         [
+          74,
+          50
+         ],
+         [
+          84,
+          40
+         ],
+         [
+          92,
+          30
+         ],
+         [
+          101,
+          34
+         ]
+        ]
+       },
+       {
+        "t": 0.6,
+        "ball": [
+         80,
+         44
+        ],
+        "home": [
+         [
+          79,
+          45
+         ]
+        ],
+        "away": [
+         [
+          62,
+          57
+         ],
+         [
+          70,
+          49
+         ],
+         [
+          77,
+          48
+         ],
+         [
+          84,
+          42
+         ],
+         [
+          92,
+          32
+         ],
+         [
+          100,
+          34
+         ]
+        ]
+       },
+       {
+        "t": 0.8,
+        "ball": [
+         92,
+         36
+        ],
+        "home": [
+         [
+          91,
+          37
+         ]
+        ],
+        "away": [
+         [
+          64,
+          57
+         ],
+         [
+          72,
+          50
+         ],
+         [
+          80,
+          47
+         ],
+         [
+          87,
+          42
+         ],
+         [
+          93,
+          34
+         ],
+         [
+          98,
+          36
+         ]
+        ]
+       },
+       {
+        "t": 1,
+        "ball": [
+         105,
+         31
+        ],
+        "home": [
+         [
+          100,
+          34
+         ]
+        ],
+        "away": [
+         [
+          66,
+          57
+         ],
+         [
+          74,
+          50
+         ],
+         [
+          82,
+          46
+         ],
+         [
+          89,
+          41
+         ],
+         [
+          95,
+          35
+         ],
+         [
+          97,
+          40
+         ]
+        ]
+       }
+      ],
+      "label": "GETAFE · 2007"
+     },
+     "w": 1.5
+    },
+    {
+     "clip": "net-glow-empty"
+    }
+   ]
+  },
+  {
+   "vo": "Lionel Messi.",
+   "shots": [
+    {
+     "clip": "messi-pixar-portrait",
+     "offset": 1.8,
+     "until": 2.6,
+     "over": {
+      "type": "impact",
+      "text": "MESSI"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "Chapter two. The photo.",
+   "shots": [
+    {
+     "clip": "mist-pitch",
+     "over": {
+      "type": "chapter",
+      "title": "The Photo"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "The photographer, Joan Monfort, fills a small plastic tub with water. Messi is asked to bathe the baby for the camera. He is nervous. Careful. Gentle. Click.",
+   "shots": [
+    {
+     "scene": {
+      "type": "artifact",
+      "kind": "polaroid",
+      "date": "2007",
+      "title": "CAMP NOU",
+      "art": "bath"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "The calendar is printed. It raises its money. And then the photos simply vanish. For seventeen years, almost nobody sees them.",
+   "shots": [
+    {
+     "scene": {
+      "type": "impact",
+      "text": "VANISHED"
+     },
+     "w": 0.8
+    },
+    {
+     "clip": "night-sky-roof",
+     "over": {
+      "type": "stat",
+      "value": 17,
+      "label": "YEARS FORGOTTEN"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "In those seventeen years, Messi becomes the greatest player of his generation. Eight Ballon d'Or awards. And in Qatar, in twenty twenty-two, the World Cup he had chased all his life.",
+   "shots": [
+    {
+     "clip": "stadium-drone-after",
+     "tag": "8 BALLON D'OR"
+    },
+    {
+     "clip": "fans-arg-pixar-joy"
+    },
+    {
+     "clip": "trophy-pedestal",
+     "tag": "QATAR 2022"
+    }
+   ]
+  },
+  {
+   "vo": "And every time he scores, he points to the sky. For his grandmother Celia, the woman who first walked him to football, in Rosario.",
+   "shots": [
+    {
+     "clip": "rosario-grandmother",
+     "tag": "ROSARIO"
+    },
+    {
+     "clip": "phone-lights-crowd"
+    }
+   ]
+  },
+  {
+   "vo": "Chapter three. The boy from three-zero-four.",
+   "shots": [
+    {
+     "clip": "fans-spain-pixar-flags",
+     "over": {
+      "type": "chapter",
+      "title": "The Boy From 304"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "Meanwhile, the baby from the bathtub grows up in Rocafonda, the ball always at his feet. At six, Barcelona bring him into La Masia. The same academy that made Messi.",
+   "shots": [
+    {
+     "clip": "spain-feet-pixar",
+     "tag": "ROCAFONDA",
+     "until": 5.3
+    },
+    {
+     "scene": {
+      "type": "jersey",
+      "number": "",
+      "label": "LA MASIA · AGE 6"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "April twenty twenty-three. At fifteen years and two hundred and ninety days old, he makes his first-team debut.",
+   "shots": [
+    {
+     "clip": "boot-touchline",
+     "over": {
+      "type": "stat",
+      "value": 15,
+      "label": "YEARS OLD",
+      "sub": "FIRST-TEAM DEBUT"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "And when Yamal scores, he makes a sign with his fingers. Three. Zero. Four. The last digits of Rocafonda's postcode. Like Messi pointing to the sky, he points back to where it all began.",
+   "shots": [
+    {
+     "clip": "yamal-pixar-portrait",
+     "offset": 1.8,
+     "until": 3.4,
+     "over": {
+      "type": "kinetic",
+      "words": [
+       {
+        "w": "3",
+        "at": 0.6
+       },
+       {
+        "w": "0",
+        "at": 1.2
+       },
+       {
+        "w": "4",
+        "at": 1.8
+       }
+      ]
+     }
+    },
+    {
+     "clip": "stadium-aerial-night"
+    },
+    {
+     "clip": "empty-pitch-fog"
+    }
+   ]
+  },
+  {
+   "vo": "Summer, twenty twenty-four. The European Championship semi-final, against France. Yamal is sixteen. He cuts inside from the right and curls the ball into the top corner.",
+   "shots": [
+    {
+     "clip": "stadium-drone-full",
+     "tag": "EURO 2024"
+    },
+    {
+     "clip": "ball-top-corner-pixar"
+    },
+    {
+     "clip": "fans-spain-stand"
+    }
+   ]
+  },
+  {
+   "vo": "The youngest scorer in the history of the Euros. Four days later, he turns seventeen. Five days later, Spain are champions of Europe.",
+   "shots": [
+    {
+     "clip": "spain-flag",
+     "over": {
+      "type": "stat",
+      "value": 16,
+      "label": "YEARS OLD",
+      "sub": "YOUNGEST EVER SCORER"
+     }
+    },
+    {
+     "clip": "fans-roar-confetti"
+    }
+   ]
+  },
+  {
+   "vo": "That summer, his father, Mounir, digs out the old photos and posts one online. Messi, and a baby in a tub. His caption: the beginning of two legends.",
+   "shots": [
+    {
+     "scene": {
+      "type": "kinetic",
+      "words": [
+       {
+        "w": "TWO",
+        "at": 0.5
+       },
+       {
+        "w": "LEGENDS",
+        "at": 1.1
+       }
+      ]
+     }
+    },
+    {
+     "scene": {
+      "type": "artifact",
+      "kind": "polaroid",
+      "date": "2024",
+      "title": "POSTED ONLINE",
+      "art": "bath"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "The world could hardly believe it. Messi had bathed the boy now being called the next Messi.",
+   "shots": [
+    {
+     "clip": "fans-spain-pixar"
+    },
+    {
+     "clip": "fans-arg-pixar"
+    }
+   ]
+  },
+  {
+   "vo": "Chapter four. The final.",
+   "shots": [
+    {
+     "clip": "tunnel-light",
+     "over": {
+      "type": "chapter",
+      "title": "The Final"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "On the road to New Jersey, against Saudi Arabia, Yamal scores his first World Cup goal. Only Gavi had ever scored for Spain at a World Cup at a younger age.",
+   "shots": [
+    {
+     "clip": "stadium-kickoff-aerial",
+     "tag": "21 JUNE 2026"
+    },
+    {
+     "clip": "stadium-aerial-glow"
+    }
+   ]
+  },
+  {
+   "vo": "And so, nineteen years after the bathtub, Messi and Yamal walk out together, for the biggest match in football.",
+   "shots": [
+    {
+     "clip": "fans-arg-flags"
+    },
+    {
+     "scene": {
+      "type": "faceoff",
+      "faces": [
+       {
+        "clip": "messi-pixar-portrait",
+        "t": 1.2,
+        "crop": [
+         0.24,
+         0,
+         0.52,
+         0.58
+        ],
+        "name": "MESSI",
+        "meta": "AGE 39"
+       },
+       {
+        "clip": "yamal-pixar-portrait",
+        "t": 4.7,
+        "crop": [
+         0.26,
+         0,
+         0.48,
+         0.62
+        ],
+        "name": "YAMAL",
+        "meta": "AGE 19"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "vo": "Emiliano Martínez saves from Yamal. At the other end, Unai Simón denies Messi.",
+   "shots": [
+    {
+     "clip": "fans-anxious-hands",
+     "w": 1.4
+    },
+    {
+     "clip": "arg-drive-night",
+     "w": 1.1
+    },
+    {
+     "clip": "fans-arg-pixar-anxious",
+     "w": 0.5
+    }
+   ]
+  },
+  {
+   "vo": "Ninety minutes. Nothing. Extra time.",
+   "shots": [
+    {
+     "clip": "fans-nervous",
+     "over": {
+      "type": "clock",
+      "to": 106,
+      "label": "EXTRA TIME"
+     }
+    },
+    {
+     "clip": "spain-keeper-dive"
+    }
+   ]
+  },
+  {
+   "vo": "Then, in the hundred and sixth minute, Ferran Torres finishes from close range. One-nil, Spain.",
+   "shots": [
+    {
+     "scene": {
+      "type": "ballnet"
+     }
+    },
+    {
+     "clip": "celebration-wide-confetti",
+     "over": {
+      "type": "impact",
+      "text": "106'"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "Spain hold on. They are champions of the world.",
+   "shots": [
+    {
+     "clip": "spain-trophy-lift"
+    },
+    {
+     "clip": "spain-arms-wide"
+    },
+    {
+     "clip": "spain-huddle"
+    }
+   ]
+  },
+  {
+   "vo": "Messi takes the Silver Ball, the second-best player of the tournament. And Lamine Yamal, the baby he once held in a plastic tub, is a world champion at nineteen.",
+   "shots": [
+    {
+     "clip": "messi-pixar-portrait",
+     "offset": 2.6,
+     "until": 4.3,
+     "tag": "SILVER BALL"
+    },
+    {
+     "clip": "yamal-pixar-portrait",
+     "offset": 3.4,
+     "tag": "WORLD CHAMPION"
+    },
+    {
+     "clip": "trophy-hands"
+    }
+   ]
+  },
+  {
+   "vo": "A charity raffle in Rocafonda. A shy twenty-year-old, a tub of water and a baby. Nineteen years later, the same two names, Messi and Yamal, in the same World Cup final. One points to the sky. The other, to three-zero-four.",
+   "shots": [
+    {
+     "clip": "messi-pixar-portrait",
+     "offset": 4.3,
+     "w": 0.8
+    },
+    {
+     "scene": {
+      "type": "timeline",
+      "years": [
+       {
+        "v": 2007,
+        "label": "THE BATH"
+       },
+       {
+        "v": 2024,
+        "label": "THE PHOTO"
+       },
+       {
+        "v": 2026,
+        "label": "THE FINAL"
+       }
+      ]
+     },
+     "w": 2
+    }
+   ]
+  },
+  {
+   "vo": "This story is now a legendary card. The Bath Photo. Watch it to the end and it unlocks in your album.",
+   "shots": [
+    {
+     "scene": {
+      "type": "card"
+     }
+    }
+   ]
+  },
+  {
+   "vo": "Collect the legends, free, at worldcup26.world. Free to play, just for fun, no prizes. See you in the next Did You Know.",
+   "shots": [
+    {
+     "scene": {
+      "type": "phone"
+     }
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "claim": "2007 charity calendar (Barça Foundation, UNICEF, Diario Sport); raffle in Rocafonda, Mataró; photographer Joan Monfort; shy Messi",
+   "url": "https://en.prothomalo.com/sports/football/8zd5xgfdk1"
+  },
+  {
+   "claim": "Photos resurfaced in 2024 when Mounir Nasraoui posted one: 'The beginning of two legends'",
+   "url": "https://www.nbcnews.com/news/world/lionel-messi-lamine-yamal-baby-photo-euros-copa-america-rcna161092"
+  },
+  {
+   "claim": "AP photographer Joan Monfort took the photos at the Camp Nou",
+   "url": "https://www.cbsnews.com/amp/miami/news/lionel-messi-lamine-yamal-baby-barcelona-photos-joan-monfort"
+  },
+  {
+   "claim": "304 celebration = end of Rocafonda's postcode 08304",
+   "url": "https://www.beinsports.com/en-us/soccer/la-liga/articles-video/why-does-lamine-yamal-celebrate-his-goals-with-a-304-2024-09-24"
+  },
+  {
+   "claim": "Euro 2024 semi-final goal v France aged 16; best young player at Euro 2024",
+   "url": "https://www.vavel.com/en/data/lamine-yamal/bio/"
+  },
+  {
+   "claim": "2026 final: Spain 1-0 Argentina a.e.t., MetLife Stadium, 19 July 2026; Ferran Torres 106'; Martínez saved from Yamal, Simón denied Messi",
+   "url": "https://www.nbcboston.com/world-cup/spain-argentina-final-messi-yamal-score"
+  },
+  {
+   "claim": "Rodri Golden Ball, Messi Silver Ball, Mbappé Bronze Ball",
+   "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/rodri-earns-adidas-golden-ball"
+  },
+  {
+   "claim": "Youngest goalscorer in Euros history (16y 362d) v France, Munich, 9 July 2024; born 13 July 2007",
+   "url": "https://www.guinnessworldrecords.com/world-records/88677-youngest-goalscorer-in-a-football-soccer-uefa-european-championships"
+  },
+  {
+   "claim": "First-team debut 29 April 2023 v Real Betis, aged 15 years 290 days",
+   "url": "https://en.wikipedia.org/wiki/Lamine_Yamal"
+  },
+  {
+   "claim": "Messi's eight Ballon d'Or awards (2009 first, 2023 eighth); 2022 World Cup",
+   "url": "https://en.wikipedia.org/wiki/Lionel_Messi"
+  },
+  {
+   "claim": "Youngest player at a Euros (16y 338d v Croatia); youngest in a major-tournament semi-final, passing Pelé's 1958 record",
+   "url": "https://www.tntsports.co.uk/football/euro/2024/lamine-yamal-wayne-rooney-cristiano-ronaldo-youngest-scorers-in-euros-history_sto20016743/story.shtml"
+  },
+  {
+   "claim": "First World Cup goal v Saudi Arabia, 21 June 2026; Spain's second-youngest World Cup scorer after Gavi",
+   "url": "https://global.espn.com/football/story/_/id/49142360/watching-spain-lamine-yamal-score-first-world-cup-goal-hometown-rocafonda"
+  },
+  {
+   "claim": "Messi's goal v Getafe, Copa del Rey semi-final, 18 April 2007, compared to Maradona's 1986 goal",
+   "url": "https://www.fcbarcelona.com/en/football/first-team/news/769781/10-years-since-messis-historic-goal-against-getafe"
+  },
+  {
+   "claim": "Messi points to the sky for his maternal grandmother Celia, who took him to training",
+   "url": "https://www.khaleejtimes.com/sports/fifa-world-cup/messis-birthday-the-grandmother-and-the-napkin-that-changed-football"
+  },
+  {
+   "claim": "Joined Barcelona / La Masia in 2014 aged six; grew up in Rocafonda, Mataró; mother Sheila Ebana from Equatorial Guinea",
+   "url": "https://en.wikipedia.org/wiki/Lamine_Yamal"
+  }
+ ],
+ "people": {
+  "Messi": "messi",
+  "Yamal": "yamal",
+  "Lamine": "yamal",
+  "Ferran Torres": null,
+  "Martínez": null,
+  "Simón": null,
+  "Gavi": null,
+  "Mounir": null,
+  "Sheila": null,
+  "Monfort": null,
+  "Celia": null,
+  "Maradona": null
+ },
+ "tags": [
+  "Messi",
+  "Lionel Messi",
+  "Messi Yamal",
+  "Messi bathed Yamal",
+  "Messi Yamal baby photo",
+  "Lamine Yamal baby",
+  "Yamal Messi photo",
+  "World Cup 2026 final",
+  "Spain vs Argentina",
+  "Lamine Yamal story",
+  "Messi story",
+  "did you know football",
+  "football facts",
+  "soccer stories",
+  "football stories",
+  "Rocafonda",
+  "Yamal 304",
+  "Barcelona",
+  "La Masia",
+  "World Cup 2026",
+  "worldcup26",
+  "legend cards"
+ ]
 }

@@ -11,7 +11,7 @@ const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/ja
   '.jpg': 'image/jpeg', '.mp4': 'video/mp4', '.mp3': 'audio/mpeg', '.m4a': 'audio/mp4', '.css': 'text/css' };
 
 const ROOT = path.resolve(process.cwd());
-const ALLOWED = ['/marketing/deep-dives/', '/public/legend-cards/'];
+const ALLOWED = ['/marketing/deep-dives/', '/public/legend-cards/', '/content/videos/'];
 
 http.createServer((req, res) => {
   let pathname;

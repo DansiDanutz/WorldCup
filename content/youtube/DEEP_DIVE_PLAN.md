@@ -1,9 +1,10 @@
 # Did You Know? Deep Dive — plan for the next 10 episodes
 
 **Format:** 5-minute stories about **famous, searchable players** — the names people type
-into YouTube — each built on one verified "did you know?" secret. Every visual is drawn
-in code (typography, faceless shirts, maps, pitch diagrams, stats); **no Higgsfield, no
-generated footage, no faces.** Brian narrates. Every episode adds one legend card to the
+into YouTube — each built on one verified "did you know?" secret, told as a story with stakes. The
+picture is **real football cut from the clip library we already paid for** (no new
+Higgsfield spend; faces only from clips that genuinely show that player), with drawn
+graphics on top for names, numbers, maps and the card. Brian narrates. Every episode adds one legend card to the
 album that unlocks by watching it.
 
 How to build one: `.claude/skills/dyk-deep-dive/SKILL.md`. Queue (machine-readable,

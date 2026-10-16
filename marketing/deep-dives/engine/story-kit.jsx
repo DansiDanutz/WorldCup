@@ -1,10 +1,11 @@
 // story-kit.jsx — the Deep Dive scene library. Every visual here is drawn in code
 // (SVG + CSS, a pure function of useTime()), so episodes need no generated footage.
 //
-// LAW: these films are about famous real players, and we own no honest likeness of
-// them. So nothing here ever draws a face. People appear as typography, numbers,
-// faceless shirts, dots on a pitch and lines on a map. On-screen words are labels
-// of four words or fewer, names, numbers and dates — never a sentence (rule #10).
+// The drawn scenes never draw a face: people appear as typography, numbers,
+// faceless shirts, dots on a pitch and lines on a map. Faces come only from
+// ClipShot, which plays owner-approved clips from the library (library/clips.json
+// records who each clip shows). On-screen words are labels of four words or fewer,
+// names, numbers and dates — never a sentence (rule #10).
 /* global React, useTime */
 
 const SK = {
@@ -262,7 +263,83 @@ function TacticalPitch({ from, dur, frames, label, homeColor = SK.gold, awayColo
 // Artifact — a designed object from the story: a napkin, a photo, a ticket, a
 // shirt frame. Handwriting is drawn as abstract strokes (not legible sentences);
 // only the date and a ≤4-word title are real text.
-function Artifact({ from, dur, kind = 'napkin', title, date, accent = SK.gold }) {
+// BathSketch — our own drawing of the 2007 calendar shoot (the real AP photo is not ours
+// to use): a small plastic tub, a baby with closed eyes, two careful adult hands. No faces
+// but the baby's, so it claims no one's likeness. `lt` animates the water; `flash` fires
+// the camera at the narration's "Click".
+function BathSketch({ lt, flash = 0 }) {
+  const ripple = (k) => 1 + 0.06 * Math.sin(lt * 1.6 + k);
+  const bubbles = [0, 1, 2, 3, 4, 5].map((i) => {
+    const t = (lt * 0.35 + skRnd(i + 11)) % 1;
+    // bubbles rise beside the baby, never across the face
+    const side = i % 2 ? 1 : -1;
+    return <circle key={i} cx={276 + side * (95 + skRnd(i + 2) * 70)} cy={360 - t * 110} r={4 + skRnd(i + 7) * 7}
+      fill="none" stroke="rgba(255,255,255,.85)" strokeWidth="2" opacity={1 - t} />;
+  });
+  return (
+    <svg viewBox="0 0 552 546" width="100%" height="100%" style={{ display: 'block' }}>
+      <defs>
+        <linearGradient id="bs-wall" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#ecd9b6" /><stop offset="1" stopColor="#caa57a" />
+        </linearGradient>
+        <radialGradient id="bs-light" cx="0.25" cy="0.15" r="0.8">
+          <stop offset="0" stopColor="rgba(255,244,220,.9)" /><stop offset="1" stopColor="rgba(255,244,220,0)" />
+        </radialGradient>
+        <linearGradient id="bs-tub" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#8cc2e0" /><stop offset="1" stopColor="#4f8fb8" />
+        </linearGradient>
+        <radialGradient id="bs-skin" cx="0.4" cy="0.35" r="0.7">
+          <stop offset="0" stopColor="#d79a68" /><stop offset="1" stopColor="#a96a3e" />
+        </radialGradient>
+        <radialGradient id="bs-vig" cx="0.5" cy="0.5" r="0.75">
+          <stop offset="0.6" stopColor="rgba(40,24,10,0)" /><stop offset="1" stopColor="rgba(40,24,10,.55)" />
+        </radialGradient>
+      </defs>
+      {/* tiled wall and the light from a window */}
+      <rect width="552" height="546" fill="url(#bs-wall)" />
+      {Array.from({ length: 9 }, (_, i) => <line key={'v' + i} x1={i * 64} y1="0" x2={i * 64} y2="330" stroke="rgba(120,90,60,.18)" strokeWidth="2" />)}
+      {Array.from({ length: 6 }, (_, i) => <line key={'h' + i} x1="0" y1={i * 64} x2="552" y2={i * 64} stroke="rgba(120,90,60,.18)" strokeWidth="2" />)}
+      <rect width="552" height="546" fill="url(#bs-light)" />
+      <rect y="420" width="552" height="126" fill="#8a6440" />
+      {/* the subject, framed close like a real snapshot */}
+      <g transform="translate(276 300) scale(1.45) translate(-276 -292)">
+        {/* the tub */}
+        <path d="M86 330 Q92 470 160 482 L392 482 Q460 470 466 330 Z" fill="url(#bs-tub)" />
+        <ellipse cx="276" cy="330" rx="190" ry="52" fill="#a9d6ee" />
+        <ellipse cx="276" cy="333" rx="172" ry="42" fill="#d8f0fa" />
+        {/* the baby: shoulders in the water, head and hands above the rim */}
+        <ellipse cx="276" cy="352" rx="78" ry="34" fill="url(#bs-skin)" />
+        <circle cx="276" cy="282" r="58" fill="url(#bs-skin)" />
+        <path d="M226 262 q6 -34 32 -32 q10 -20 30 -12 q22 -10 34 16 q6 10 6 22 q-14 -18 -32 -14 q-14 -10 -30 0 q-22 -4 -40 20 z" fill="#2b1a10" />
+        {[0, 1, 2, 3].map((i) => <circle key={i} cx={244 + i * 22} cy={236 - (i % 2) * 6} r="9" fill="#2b1a10" />)}
+        <path d="M252 288 q8 7 16 0" fill="none" stroke="#3a2214" strokeWidth="3.5" strokeLinecap="round" />
+        <path d="M284 288 q8 7 16 0" fill="none" stroke="#3a2214" strokeWidth="3.5" strokeLinecap="round" />
+        <path d="M268 308 q8 6 16 0" fill="none" stroke="#6b3a22" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="246" cy="302" r="9" fill="rgba(230,120,100,.35)" />
+        <circle cx="306" cy="302" r="9" fill="rgba(230,120,100,.35)" />
+        <ellipse cx="216" cy="334" rx="16" ry="13" fill="url(#bs-skin)" />
+        <ellipse cx="336" cy="334" rx="16" ry="13" fill="url(#bs-skin)" />
+        {/* water over the body, rippling */}
+        <ellipse cx="276" cy="356" rx={150 * ripple(0)} ry={26 * ripple(1)} fill="rgba(170,220,240,.55)" />
+        <ellipse cx="276" cy="356" rx={110 * ripple(2)} ry={16 * ripple(3)} fill="none" stroke="rgba(255,255,255,.7)" strokeWidth="2.5" />
+        {bubbles}
+      </g>
+      {/* two careful adult hands under the baby's arms: sleeves and hands only, no faces */}
+      <path d="M-40 560 Q40 470 150 418" fill="none" stroke="#1d2b44" strokeWidth="78" strokeLinecap="round" />
+      <path d="M-40 560 Q40 470 150 418" fill="none" stroke="rgba(255,255,255,.08)" strokeWidth="20" strokeLinecap="round" />
+      <ellipse cx="168" cy="400" rx="40" ry="30" transform="rotate(-28 168 400)" fill="#e3b78f" />
+      <path d="M160 378 q26 -18 44 -6" fill="none" stroke="#c99a72" strokeWidth="6" strokeLinecap="round" />
+      <path d="M592 560 Q512 470 402 418" fill="none" stroke="#1d2b44" strokeWidth="78" strokeLinecap="round" />
+      <path d="M592 560 Q512 470 402 418" fill="none" stroke="rgba(255,255,255,.08)" strokeWidth="20" strokeLinecap="round" />
+      <ellipse cx="384" cy="400" rx="40" ry="30" transform="rotate(28 384 400)" fill="#e3b78f" />
+      <path d="M392 378 q-26 -18 -44 -6" fill="none" stroke="#c99a72" strokeWidth="6" strokeLinecap="round" />
+      <rect width="552" height="546" fill="url(#bs-vig)" />
+      {flash > 0 ? <rect width="552" height="546" fill="#fff" opacity={flash} /> : null}
+    </svg>
+  );
+}
+
+function Artifact({ from, dur, kind = 'napkin', title, date, art, accent = SK.gold }) {
   const w = useWindow(from, dur); if (!w) return null;
   const { lt, out } = w;
   const p = skBack(skClamp(lt / 1.0, 0, 1));
@@ -284,8 +361,16 @@ function Artifact({ from, dur, kind = 'napkin', title, date, accent = SK.gold })
         filter: 'drop-shadow(0 40px 60px rgba(0,0,0,.7))' }}>
         {isPhoto ? (
           <div style={{ width: 620, height: 700, background: '#f7f3ea', padding: '34px 34px 120px', position: 'relative' }}>
-            <div style={{ width: '100%', height: '100%', background: `radial-gradient(circle at 40% 45%, #f3d9b0 0%, #c89a64 38%, #4a3626 100%)`,
-              filter: `blur(${18 - 10 * write}px) sepia(.5)`, opacity: 0.6 + 0.4 * write }} />
+            {art === 'bath' ? (
+              // develops like a polaroid: from a warm blur to a sharp, slightly faded print
+              <div style={{ width: '100%', height: '100%', overflow: 'hidden',
+                filter: `blur(${Math.max(0, 8 - 14 * write)}px) sepia(.28) saturate(${0.6 + 0.4 * write})`, opacity: 0.55 + 0.45 * write }}>
+                <BathSketch lt={lt} flash={skClamp(1 - Math.abs(lt - (dur - 1.4)) / 0.25, 0, 1) * 0.9} />
+              </div>
+            ) : (
+              <div style={{ width: '100%', height: '100%', background: `radial-gradient(circle at 40% 45%, #f3d9b0 0%, #c89a64 38%, #4a3626 100%)`,
+                filter: `blur(${18 - 10 * write}px) sepia(.5)`, opacity: 0.6 + 0.4 * write }} />
+            )}
             <div style={{ position: 'absolute', left: 0, right: 0, bottom: 34, textAlign: 'center', fontFamily: FONT,
               fontWeight: 800, fontSize: 40, color: SK.ink, letterSpacing: '.18em' }}>{date}</div>
           </div>
@@ -418,6 +503,107 @@ function ChapterMark({ from, dur, index, title }) {
   );
 }
 
+// ClipShot — one shot from the paid clip library (marketing/deep-dives/library),
+// full-bleed with a slow camera push so it never sits still. Vertical clips get a
+// blurred cover of themselves behind a contained foreground instead of a crop.
+// `dim` darkens the shot when a code overlay sits on top; `tag` is a small place /
+// year label (≤4 words, rule #10). Every clip plays once and never loops (preflight).
+// Tracked blur boxes (library/clips.json `blur`): keyframes [sourceTime, cx, cy, w, h]
+// as fractions of the video frame, interpolated over time — they hide kit-maker
+// logos and federation crests (monetization rule #0/#5) as the camera moves.
+function blurBox(keys, st) {
+  let i = 0; while (i < keys.length - 2 && st > keys[i + 1][0]) i++;
+  const a = keys[i], b = keys[Math.min(i + 1, keys.length - 1)];
+  const f = b[0] === a[0] ? 0 : skClamp((st - a[0]) / (b[0] - a[0]), 0, 1);
+  return a.slice(1).map((v, j) => v + (b[j + 1] - v) * f);
+}
+
+function ClipShot({ from, dur, src, rate = 1, offset = 0, vertical, aspect = 16 / 9, crop, blur, dim = 0, tag, k = 0, push = 0.07 }) {
+  const w = useWindow(from, dur, 0.18); if (!w) return null;
+  const { lt, inn } = w;
+  const p = skClamp(lt / Math.max(dur, 0.1), 0, 1);
+  const dir = k % 4;
+  const scale = 1.03 + push * skInOut(p);
+  const dx = (dir === 0 ? -1 : dir === 2 ? 1 : 0) * 22 * p, dy = (dir === 1 ? -1 : dir === 3 ? 1 : 0) * 14 * p;
+  const tagIn = skEase(skClamp((lt - 0.35) / 0.6, 0, 1));
+  const sprite = { src, start: from, dur, rate, offset, loop: false };
+  // A source crop removes unrelated scoreboards / unapproved player faces,
+  // rather than concealing them behind an overlay that can animate away.
+  const [cropX, cropY, cropW, cropH] = crop || [0, 0, 1, 1];
+  const framedAspect = aspect * cropW / cropH;
+  const fill = crop ? framedAspect < 16 / 9 : vertical ? aspect > 16 / 9 : aspect < 16 / 9;
+  const framedW = fill ? 1920 : 1080 * framedAspect;
+  const framedH = fill ? 1920 / framedAspect : 1080;
+  const rw = framedW / cropW, rh = framedH / cropH;
+  const rx = (1920 - framedW) / 2 - cropX * rw, ry = (1080 - framedH) / 2 - cropY * rh;
+  return (
+    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: '#000', opacity: 0.35 + 0.65 * inn, zIndex: 4 }}>
+      <div style={{ position: 'absolute', inset: 0, transform: `translate(${dx}px,${dy}px) scale(${scale})` }}>
+        {vertical && !crop ? <VideoSprite {...sprite} style={{ filter: 'blur(38px) brightness(.45) saturate(1.2)', transform: 'scale(1.2)' }} /> : null}
+        <VideoSprite {...sprite} fit={crop ? 'fill' : vertical ? 'contain' : 'cover'}
+          style={crop ? { inset: 'auto', left: rx, top: ry, width: rw, height: rh } : {}} />
+        {(blur || []).map((m, i) => {
+          // the rect the video actually occupies on the 1920x1080 stage (cover crops, contain letterboxes)
+          const [cx, cy, bw, bh] = blurBox(m.keys, offset + lt * rate);
+          const x = rx + (cx - bw / 2) * rw, y = ry + (cy - bh / 2) * rh;
+          return (
+            <div key={i} style={{ position: 'absolute', left: x, top: y, width: bw * rw, height: bh * rh,
+              overflow: 'hidden', borderRadius: 18 }}>
+              <VideoSprite {...sprite} fit="fill" style={{ inset: 'auto', left: rx - x, top: ry - y, width: rw, height: rh, filter: 'blur(24px) saturate(.85)', transform: 'scale(1.0)' }} />
+            </div>
+          );
+        })}
+      </div>
+      {/* grade: lifted blacks at the edges, a floor for overlay text */}
+      <div style={{ position: 'absolute', inset: 0, background: `rgba(4,6,12,${dim})` }} />
+      <div style={{ position: 'absolute', inset: 0, background:
+        'linear-gradient(180deg, rgba(5,7,12,.45) 0%, rgba(5,7,12,0) 22%, rgba(5,7,12,0) 66%, rgba(5,7,12,.7) 100%)' }} />
+      {tag ? (
+        <div style={{ position: 'absolute', left: 90, bottom: 150, display: 'flex', alignItems: 'center', gap: 18,
+          opacity: tagIn * skClamp((from + dur - (from + lt)) / 0.3, 0, 1), transform: `translateX(${(1 - tagIn) * -30}px)` }}>
+          <div style={{ width: 8, height: 46, background: SK.gold }} />
+          <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 38, letterSpacing: '.28em', color: SK.text,
+            textShadow: '0 4px 24px rgba(0,0,0,.9)' }}>{tag}</div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+// FaceOff — the approved portraits side by side (stills from library clips whose
+// `who` is that player), name + meta under each, a VS spark between. Drifts apart
+// slowly so it is never a frozen slate.
+function FaceOff({ from, dur, faces = [] }) {
+  const w = useWindow(from, dur, 0.4); if (!w) return null;
+  const { lt, out } = w;
+  const p = skBack(skClamp(lt / 0.9, 0, 1)), drift = lt * 6;
+  const vs = skEase(skClamp((lt - 0.6) / 0.5, 0, 1));
+  return (
+    <div style={{ position: 'absolute', inset: 0, opacity: out, zIndex: 8, background: '#05070c' }}>
+      {faces.map((f, i) => (
+        <div key={i} style={{ position: 'absolute', top: 0, bottom: 0, width: '50%', left: i ? '50%' : 0, overflow: 'hidden',
+          transform: `translateX(${(i ? 1 : -1) * ((1 - p) * 300 + drift)}px)` }}>
+          <img src={f.src} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+            objectPosition: '50% 22%', transform: `scale(${1.04 + lt * 0.012})` }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(5,7,12,.9) 0%, rgba(5,7,12,0) 45%)' }} />
+          <div style={{ position: 'absolute', left: 0, right: 0, bottom: 150, textAlign: 'center',
+            opacity: skEase(skClamp((lt - 0.5) / 0.6, 0, 1)) }}>
+            <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 88, color: SK.text, letterSpacing: '-.01em',
+              textShadow: '0 8px 30px rgba(0,0,0,.9)' }}>{f.name}</div>
+            {f.meta ? <div style={{ marginTop: 10, fontFamily: FONT, fontWeight: 800, fontSize: 32, letterSpacing: '.4em',
+              color: SK.gold }}>{f.meta}</div> : null}
+          </div>
+        </div>
+      ))}
+      <div style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: 6, marginLeft: -3, background: SK.gold,
+        transform: `scaleY(${p})`, boxShadow: `0 0 40px ${SK.gold}` }} />
+      <div style={{ position: 'absolute', left: '50%', top: '42%', width: 170, height: 170, marginLeft: -85, borderRadius: '50%',
+        background: SK.gold, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT, fontWeight: 900,
+        fontSize: 72, color: '#1a1405', transform: `scale(${vs})`, boxShadow: `0 0 80px ${SK.gold}aa` }}>VS</div>
+    </div>
+  );
+}
+
 // CornerBug — persistent player name + "DID YOU KNOW?" in the corner (a name
 // label, allowed by rule #10), so every frame says who the episode is about.
 function CornerBug({ from, dur, name, number, colors }) {
@@ -439,5 +625,5 @@ function CornerBug({ from, dur, name, number, colors }) {
 
 Object.assign(window.MotionKit || (window.MotionKit = {}), {
   PlayerTitle, Jersey, StatCounter, RouteMap, TacticalPitch, Artifact, VersusBars,
-  Heartbeat, DateFlip, ChapterMark, CornerBug, ShirtSVG, SK,
+  Heartbeat, DateFlip, ChapterMark, CornerBug, ClipShot, FaceOff, ShirtSVG, SK,
 });
